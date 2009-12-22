@@ -1,14 +1,16 @@
 #mlbox
   %h2
-    Bioconductor user list recent activity
+    Recent activity on the Bioconductor mailing list
   %ul
     - @item[:posts].each_with_index do |p, i|
       %li{ :class => "#{i % 2 == 0 ? 'even' : 'odd'}" }
-        = Time.parse(p[:date]).strftime("%d-%b") + "|"
-        %a{ :href => p[:link] }
-          = p[:title]
-  %a.right{ :href => "#{@item[:bioc_list_main_url]}" }
-    subscribe
-  %a.left{ :href => "#{@item[:bioc_list_search]}" }
-    search
+        = Time.parse(p[:date]).strftime("%d-%b") + " |"
+        %a{ :href => p[:link], :title => p[:title] }
+          = excerptize(p[:title], :length => 50)
+  %form.right{ :method => "get", :action => @item[:bioc_list_main_url] }
+    %input{ :type => "submit", :value => "subscribe" }
+  %form{ :method => "get", :action => "http://search.gmane.org" }
+    %input{ :type => "hidden", :name => "group", :value => "gmane.science.biology.informatics.conductor" }
+    %input{ :type => "text", :name => "query" }
+    %input{ :type => "submit", :value => "search" }
 
