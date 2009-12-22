@@ -5,9 +5,10 @@
   %ul
     - @item.children[0..5].each_with_index do |p, i|
       %li{ :class => "#{i % 2 == 0 ? 'even' : 'odd'}" }
-        = timeago(p[:date]) + " |"
         %a{ :href => p[:link], :title => p[:title] }
           = excerptize(p[:title], :length => 50)
+        %abbr.timeago{ :title => "#{p[:date].iso8601}" }
+          = p[:date].iso8601.to_s
   %form.right{ :method => "get", :action => @item[:bioc_list_main_url] }
     %input{ :type => "submit", :value => "subscribe" }
   %form{ :method => "get", :action => "http://search.gmane.org" }

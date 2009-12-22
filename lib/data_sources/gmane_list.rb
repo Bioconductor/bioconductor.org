@@ -24,12 +24,16 @@ class GmaneList < Nanoc3::DataSource
     end.sort { |a, b| b[:date] <=> a[:date] }
   end
 
-  def fix_date(rss_item)
-    Time.parse(item["dc:date"] + " GMT") rescue Time.now
-  end
-  
   def items
     @items ||= fetch()
+  end
+
+  private
+
+  def fix_date(rss_item)
+    Time.parse(rss_item["dc:date"] + " GMT").utc
+  rescue
+    Time.new.utc
   end
 end
 
