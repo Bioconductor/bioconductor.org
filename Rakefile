@@ -23,3 +23,10 @@ task :real_clean do
 end
 
 task :default => :build
+
+task :deploy_merlot2_local do
+  dst = '/usr/local/nginx/sites/bioconductor.org'
+  site_config = YAML.load_file("./config.yaml")
+  output_dir = site_config["output_dir"]
+  system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
+end
