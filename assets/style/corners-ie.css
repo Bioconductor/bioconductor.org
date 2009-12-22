@@ -1,0 +1,39 @@
+.rounded_colhead
+{
+  position: relative;
+}
+
+.rounded_colhead > .tl, .rounded_colhead > .tr, .rounded_colhead > .bl, .rounded_colhead > .br
+{
+  width: 6px;
+  height: 6px;
+  position: absolute;
+}
+
+.rounded_colhead > .tl
+{
+  background: url(/images/ui/rounded/colhead-tl.png) top left no-repeat;
+  top: 0;
+  left: 0;
+}
+
+.rounded_colhead > .tr
+{
+  background: url(/images/ui/rounded/colhead-tr.png) top right no-repeat;
+  top: 0;
+  right: 0;
+}
+
+.rounded_colhead > .bl
+{
+  background: url(/images/ui/rounded/colhead-bl.png) bottom left no-repeat;
+  bottom: 0;
+  left: 0;
+}
+
+.rounded_colhead > .br
+{
+  background: url(/images/ui/rounded/colhead-br.png) bottom right no-repeat;
+  bottom: 0;
+  right: 0;
+}

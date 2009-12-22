@@ -1,0 +1,4 @@
+- Transform dates to "1 hour ago" type text
+- Consider grouping by time to avoid repeated info
+- investigate whether feed is really getting updated as expected.
+- investigate time sorting in producing results
