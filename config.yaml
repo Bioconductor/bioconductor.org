@@ -5,4 +5,6 @@ data_sources:
   type: filesystem_compact
 - items_root: /mailing-list-posts
   type: gmane_list
+  config:
+    gmane_rss_url: 'http://rss.gmane.org/topics/excerpts/gmane.science.biology.informatics.conductor'
 output_dir: output

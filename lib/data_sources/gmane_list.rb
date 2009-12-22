@@ -8,9 +8,7 @@ require 'yaml'
 class GmaneList < Nanoc3::DataSource
   identifier :gmane_list
   def fetch
-    # FIXME: make this URL part of site config
-    bioc_list_url = ('http://rss.gmane.org/topics/excerpts/' +
-                     'gmane.science.biology.informatics.conductor')
+    bioc_list_url = self.config[:gmane_rss_url]
     data = HTTParty.get(bioc_list_url)
     data["rdf:RDF"]["item"].map do |item|
       attributes = {
