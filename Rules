@@ -5,7 +5,7 @@ compile '/mailing-list-posts/' do
   layout 'default'
 end
 
-compile '/mailing-list-posts/[0-9]+' do
+route '/mailing-list-posts/[0-9]+/' do
   nil
 end
 
