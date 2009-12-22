@@ -1,0 +1,14 @@
+#mlbox
+  %h2
+    Bioconductor user list recent activity
+  %ul
+    - @item[:posts].each_with_index do |p, i|
+      %li{ :class => "#{i % 2 == 0 ? 'even' : 'odd'}" }
+        = Time.parse(p[:date]).strftime("%d-%b") + "|"
+        %a{ :href => p[:link] }
+          = p[:title]
+  %a.right{ :href => "#{@item[:bioc_list_main_url]}" }
+    subscribe
+  %a.left{ :href => "#{@item[:bioc_list_search]}" }
+    search
+

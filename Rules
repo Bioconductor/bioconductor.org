@@ -1,0 +1,25 @@
+#!/usr/bin/env ruby
+
+compile '/mailing-list-posts/' do
+  filter :haml
+  layout 'default'
+end
+
+compile '/style/*/' do
+  filter :sass
+end
+
+compile '*' do
+  filter :erb
+  layout 'default'
+end
+
+route '/style/*/' do
+  item.identifier.chop + '.css'
+end
+
+route '*' do
+  item.identifier + 'index.html'
+end
+
+layout '*', :erb
