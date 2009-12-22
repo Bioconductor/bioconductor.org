@@ -1,4 +1,5 @@
 --- 
 title: Bioconductor Mailing List Widget
 bioc_list_main_url: https://stat.ethz.ch/mailman/listinfo/bioconductor
-bioc_list_search: http://dir.gmane.org/gmane.science.biology.informatics.conductor
+bioc_list_search: http://search.gmane.org
+bioc_group: gmane.science.biology.informatics.conductor

@@ -11,7 +11,7 @@
           = p[:date].iso8601.to_s
   %form.right{ :method => "get", :action => @item[:bioc_list_main_url] }
     %input{ :type => "submit", :value => "subscribe" }
-  %form{ :method => "get", :action => "http://search.gmane.org" }
-    %input{ :type => "hidden", :name => "group", :value => "gmane.science.biology.informatics.conductor" }
+  %form{ :method => "get", :action => @item[:bioc_list_search] }
+    %input{ :type => "hidden", :name => "group", :value => @item[:bioc_group] }
     %input{ :type => "text", :name => "query" }
     %input{ :type => "submit", :value => "search" }
