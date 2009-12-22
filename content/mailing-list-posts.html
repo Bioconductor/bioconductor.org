@@ -1,7 +1,7 @@
 %script{ :type => "text/javascript", :src => "/js/bioc-style.js" }
 #mlbox
   %h2
-    Recent activity on the Bioconductor mailing list
+    Recent posts on the Bioconductor mailing list
   %ul
     - @item.children[0..5].each_with_index do |p, i|
       %li{ :class => "#{i % 2 == 0 ? 'even' : 'odd'}" }
