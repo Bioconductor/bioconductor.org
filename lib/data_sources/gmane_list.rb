@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'httparty'
+require 'time'
 require 'yaml'
 
 class GmaneList < Nanoc3::DataSource
@@ -14,7 +15,7 @@ class GmaneList < Nanoc3::DataSource
     data["rdf:RDF"]["item"].map do |item|
       attributes = {
         :title => item["title"],
-        :date => item["dc:date"],
+        :date => (Time.parse(item["dc:date"]) rescue Time.now),
         :link => item["link"],
         :author => item["dc:creator"]
       }
@@ -22,7 +23,7 @@ class GmaneList < Nanoc3::DataSource
       mtime = nil
       identifier = "/#{File.basename(item["link"])}/"
       Nanoc3::Item.new(content, attributes, identifier, mtime)
-    end
+    end.sort { |a, b| b[:date] <=> a[:date] }
   end
   
   def items
