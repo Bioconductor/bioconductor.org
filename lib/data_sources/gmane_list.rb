@@ -13,7 +13,7 @@ class GmaneList < Nanoc3::DataSource
     data["rdf:RDF"]["item"].map do |item|
       attributes = {
         :title => item["title"],
-        :date => (Time.parse(item["dc:date"]) rescue Time.now),
+        :date => fix_date(item),
         :link => item["link"],
         :author => item["dc:creator"]
       }
@@ -22,6 +22,10 @@ class GmaneList < Nanoc3::DataSource
       identifier = "/#{File.basename(item["link"])}/"
       Nanoc3::Item.new(content, attributes, identifier, mtime)
     end.sort { |a, b| b[:date] <=> a[:date] }
+  end
+
+  def fix_date(rss_item)
+    Time.parse(item["dc:date"] + " GMT") rescue Time.now
   end
   
   def items

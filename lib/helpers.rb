@@ -8,11 +8,7 @@ def timeago(time, options = {})
   delta_minutes = (start_date.to_i - time.to_i).floor / 60
   if delta_minutes.abs <= (8724*60)       
     distance = distance_of_time_in_words(delta_minutes)       
-    if delta_minutes < 0
-      return "#{distance} from now"
-    else
-      return "#{distance} ago"
-    end
+    return "#{distance} ago"
   else
     return "on #{DateTime.now.to_formatted_s(date_format)}"
   end
@@ -20,19 +16,21 @@ end
 
 def distance_of_time_in_words(minutes)
   case
-  when minutes < 1
-    "less than a minute"
-  when minutes < 50
-    pluralize(minutes, "minute")
   when minutes < 90
-    "about one hour"
+    "#{minutes} #{pluralize(minutes, "minute")}"
   when minutes < 1080
     "#{(minutes / 60).round} hours"
-  when minutes < 1440
-    "one day"
-  when minutes < 2880
-    "about one day"
   else
-    "#{(minutes / 1440).round} days"
+    days = (minutes / 1440).round
+    "#{days} #{pluralize(days, "day")}"
+  end
+end
+
+def pluralize(count, what)
+  case
+  when count == 0 || count > 1
+    what + "s"
+  when count == 1
+    what
   end
 end
