@@ -1,0 +1,17 @@
+%ul
+  %li
+    %a{ :href => "/getting-started/" }
+      Get started
+  %li
+    Courses and other upcoming
+    %a{ :href => "/events/" }
+      events
+  %li
+    Need
+    %a{ :href => "/help/" }
+      Help
+    ?
+
+- begin
+  - mlitem = find_item(@items, '/mailing-list-posts/')
+  = mlitem.reps[0].content_at_snapshot(:last)

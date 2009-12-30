@@ -1,6 +1,13 @@
 include Nanoc3::Helpers::Text
+include Nanoc3::Helpers::Rendering
+include Nanoc3::Helpers::Breadcrumbs
+
 require 'time'
 
+
+def find_item(items, identifier)
+  items.find { |i| i.identifier == identifier }
+end
 
 def timeago(time, options = {})
   start_date = options.delete(:start_date) || Time.new

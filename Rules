@@ -2,7 +2,7 @@
 
 compile '/mailing-list-posts/' do
   filter :haml
-  layout 'default'
+  ## no layout as this gets included in homepage '/'
 end
 
 route '/mailing-list-posts/[0-9]+/' do
@@ -13,8 +13,14 @@ compile '/style/*/' do
   filter :sass
 end
 
+compile '/' do
+  filter :haml
+  layout 'default'
+
+end
+
 compile '*' do
-  filter :erb
+  filter :bluecloth
   layout 'default'
 end
 
