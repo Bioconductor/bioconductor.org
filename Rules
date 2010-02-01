@@ -23,6 +23,10 @@ compile '/' do
 
 end
 
+compile '/workshops/*' do
+  layout 'default'
+end
+
 compile '*' do
   filter :bluecloth
   layout 'default'

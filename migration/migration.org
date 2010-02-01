@@ -1,0 +1,53 @@
+* Migrating Content From Plone
+
+There is a Windows-based software tool called Enfold Desktop
+(http://www.enfoldsystems.com/) that seems to work for copying over
+Plone content as flat files recursively in bulk.
+
+We setup a user account 'userprimary' (ask Dirk or Seth for password).
+You install the Enfold Desktop and then create a new sesion (File
+menu).  The URL to use is: http://cobra.fhcrc.org:12080.
+
+I manually copied files and directories out of plone.  I was not able
+to copy everything in one go, but had to do it in chunks.  Even then
+sometimes a copy looks like it finishes, but ends up missing many
+files and subdirectories.  It seems that if what you try to copy is
+either too deep or too large it (silently) craps out.
+
+** Converting the Workshop content
+
+One issue is that we have a lot of static assets in workshops -- all
+of the *.pdf and *.R files and nanoc isn't great and handling those.
+Either we create each of those as a content item or we store them
+outside of content/ and rsync them into output/.  But that leaves the
+index pages that need to be either converted (current existing pages
+are full of Plone cruft on export) or created -- we were relying on
+Plone's folder index generation and essentially need to come up with
+our own scheme.
+
+What we come up with needs to make it easy to add new course materials
+and have an index generated.
+
+Go through workshops/, for each directory create a corresponding item
+and set its contents to be a simple listing of what's in the
+directory.  Need to special case existing index pages and convert
+those instead.
+
+Do we want to svn checkin all of the content, by which I mean the
+static assets?  Currently the workshops directory (possibly
+incomplete) comprises 1.2GB.
+
+I have the start of a script to extract content from existing
+Plone-crufted pages.
+
+* Redirecting posted URLs to new locations
+
+For posted URLs that we wish to reorganize, such as the posting guide,
+we want our server to return 301 Moved Permanently and redirect to the
+new location.  For Apache, we should be able to do with with
+mod_rewrite with directive added to a .htaccess file at the root of
+the site.  This should be something we can manage from svn.
+
+
+
+
