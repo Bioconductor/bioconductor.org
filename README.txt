@@ -23,6 +23,49 @@ Finally, you need to install the following rubygems:
     sudo gem install nanoc3 BlueCloth rack mime-types haml json \
                      rack-cache httparty rake
 
+Windows Developer Setup
+-----------------------
+
+1. Download and run the one-click ruby installer:
+
+       http://www.ruby-lang.org/en/downloads/
+
+   Accept all default settings.
+
+2. In a newly opened shell (to pick up configuration changes made by
+   the Ruby installer) run the following command to install the
+   required Ruby gems:
+
+       gem install nanoc3 BlueCloth rack mime-types haml json rack-cache httparty rake
+
+3. Install subversion client package.  Windows packages are listed
+   here:
+
+       http://subversion.tigris.org/getting.html#binary-packages
+
+   I installed the collabnet package, but had to go through an anoying
+   registration process.  The other binaries should be fine and might
+   require less hoop jumping.  You will need to open a new terminal
+   window to pickup the config so that you will be able to use the svn
+   command.
+
+4. Checkout the bioconductor.org codebase:
+
+       svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
+
+5. Build the site
+
+       cd bioconductor.org
+       rake
+
+6. Run the built-in dev server
+
+       nanoc3 aco
+
+7. Test in a browser by going to http://localhost:3000/
+
+
+
 nginx installation
 ------------------
 
@@ -76,7 +119,7 @@ bioconductor.org site code
 --------------------------
 
     svn co  \
-    https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org/
+    https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
 
 scheduled update
 ----------------
