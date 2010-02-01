@@ -23,6 +23,12 @@ compile '/' do
 
 end
 
+compile '/workshops/' do
+  filter :erb
+  filter :bluecloth
+  layout 'default'
+end
+
 compile '/workshops/*' do
   layout 'default'
 end

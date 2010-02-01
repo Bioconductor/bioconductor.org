@@ -2,30 +2,30 @@
 
 require 'rubygems'
 require 'builder'
-require 'nokogiri'
+require 'hpricot'
 require 'yaml'
 
 def parse_title(doc)
-  doc.css("title").text.gsub(/[\n ]+/, " ").strip
+  doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
 end
 
 def parse_attributes(doc)
   attrs = {}
-  doc.css("meta").each do |meta_tag|
-    next unless meta_tag.attributes.has_key? "name"
-    name = meta_tag.attributes["name"].text
+  doc.search("meta").each do |meta_tag|
+    name = meta_tag["name"]
+    next unless name
     case name
     when /^DC\./
-      attrs[name] = meta_tag.attributes["content"].text
+      attrs[name] = meta_tag["content"]
     end
   end
   attrs["title"] = parse_title(doc)
-  attrs["plone_url"] = doc.css("base")[0].attributes["href"].text
+  attrs["plone_url"] = doc.search("base")[0]["href"]
   attrs
 end
 
 def parse_content(doc)
-  doc.css("div.documentContent").children.to_s
+  doc.search("div.documentContent").inner_html
 end
 
 def create_file_index(dir)
@@ -60,11 +60,15 @@ def import_workshop_index_files(input, content)
   workshop_out_dir = "#{outdir}/#{File.basename(indir)}"
   Dir.chdir(input) do
     Dir["**/*"].each do |f|
-      if File.basename(f) == "index_html"
+      if File.fnmatch("index[._]html", File.basename(f))
         puts "processing: #{input}/#{f}"
         dest_dir = "#{workshop_out_dir}/#{File.dirname(f)}"
         FileUtils.mkdir_p(dest_dir)
-        doc = Nokogiri::HTML(open("#{indir}/#{f}"))
+        if !File.size?("#{indir}/#{f}")
+          puts "empty file, skipping"
+          next
+        end
+        doc = Hpricot(open("#{indir}/#{f}"))
         print "."
         attrs = parse_attributes(doc)
         print "."
@@ -84,7 +88,7 @@ end
 # infile = ARGV[0]
 # puts "processing: #{infile}"
 
-# doc = Nokogiri::HTML(open(infile))
+# doc = Hpricot(open(infile))
 # attrs = parse_attributes(doc)
 # content = parse_content(doc)
 # open("test1.html", "w") do |f|
@@ -94,4 +98,4 @@ end
 #   f.write(attrs.to_yaml)
 # end
 
-import_workshop_index_files("plone-bioconductor.org/workshops", "contents")
+import_workshop_index_files("plone-bioconductor.org/workshops", "content")
