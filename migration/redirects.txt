@@ -1,44 +1,49 @@
+# These URLs are not going to make it to the new site
+/overview/screenshots/ /dev/null
+/docs/pslides/ /dev/null
+
+# Here is content that we want to revise and map to new URL
+/overview /about
+/overview/related/ /about/related-projects
+/docs/faq/ /help/faq
+
+# Below are URLs for content we will keep essential as-is, but move to
+# a new URL
 /GettingStarted/ /install/
 /overview/coredevs/ /about/core-team/
-/overview/screenshots/ /dev/null
-UPDATE /overview/related/ /about/related-projects
 /overview/advisoryboard/ /about/advisory-board
 /download/ /releases
 /download/oldrelease/BioC2.4/ /releases/Bioconductor-2.4
 (and more, use a regex here)
 /download/mirrors/ /about/mirrors
 /docs/annualreports/ /about/annual-reports
-/docs/pslides/ /dev/null
 /docs/install/ /install
 /docs/workflows/ /help/workflows
-UPDATE MAJOR /docs/faq/ /help/faq
 /pub/ /about/publications
 /workshops/ /help/course-materials
-# or /blog?
 /News/ /events
-# can we have a better short name? bioc-solutions
-bioconductor.org/mogr /help/books/mogr
 
-/mogr/chapter-code                    /help/books/bioinformatics-and-computational-biology-solutions/chapter-code                   
-/mogr/chapter-code/metaOverview.R     /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaOverview.R 
-/mogr/chapter-code/metaQuery.R        /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaQuery.R    
-/mogr/chapter-code/metaOutput.R       /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaOutput.R   
-/mogr/chapter-code/metaVisualize.R    /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaVisualize.R
-
-/docs/mogr                     /help/books/bioinformatics-and-computational-biology-solutions
-/docs/mogr/bcbs_small.jpg      /help/books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg 
-/docs/mogr/index.html          /help/books/bioinformatics-and-computational-biology-solutions/index.html     
-/docs/mogr/bc1view             /help/books/bioinformatics-and-computational-biology-solutions/bc1view        
-/docs/mogr/preprocessing       /help/books/bioinformatics-and-computational-biology-solutions/preprocessing  
-/docs/mogr/metadata            /help/books/bioinformatics-and-computational-biology-solutions/metadata       
-/docs/mogr/microarrays         /help/books/bioinformatics-and-computational-biology-solutions/microarrays    
-/docs/mogr/graphs              /help/books/bioinformatics-and-computational-biology-solutions/graphs         
-/docs/mogr/case                /help/books/bioinformatics-and-computational-biology-solutions/case           
-/docs/mogr/getmono             /help/books/bioinformatics-and-computational-biology-solutions/getmono        
-/docs/mogr/data                /help/books/bioinformatics-and-computational-biology-solutions/data           
-
-/pub/biocases                 /help/books/bioconductor-case-studies
-
-/pub/RBioinf/                /help/books/r-programming-for-bioinformatics
-
-/docs/mailList.html  /help/mailing-list
+# 1st BioC monograph
+/mogr /help/books/bioinformatics-and-computational-biology-solutions
+/mogr/chapter-code /help/books/bioinformatics-and-computational-biology-solutions/chapter-code
+/mogr/chapter-code/metaOverview.R /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaOverview.R
+/mogr/chapter-code/metaQuery.R /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaQuery.R
+/mogr/chapter-code/metaOutput.R /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaOutput.R
+/mogr/chapter-code/metaVisualize.R /help/books/bioinformatics-and-computational-biology-solutions/chapter-code/metaVisualize.R
+/docs/mogr /help/books/bioinformatics-and-computational-biology-solutions
+/docs/mogr/bcbs_small.jpg /help/books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg
+/docs/mogr/index.html /help/books/bioinformatics-and-computational-biology-solutions/index.html
+/docs/mogr/bc1view /help/books/bioinformatics-and-computational-biology-solutions/bc1view
+/docs/mogr/preprocessing /help/books/bioinformatics-and-computational-biology-solutions/preprocessing
+/docs/mogr/metadata /help/books/bioinformatics-and-computational-biology-solutions/metadata
+/docs/mogr/microarrays /help/books/bioinformatics-and-computational-biology-solutions/microarrays
+/docs/mogr/graphs /help/books/bioinformatics-and-computational-biology-solutions/graphs
+/docs/mogr/case /help/books/bioinformatics-and-computational-biology-solutions/case
+/docs/mogr/getmono /help/books/bioinformatics-and-computational-biology-solutions/getmono
+/docs/mogr/data /help/books/bioinformatics-and-computational-biology-solutions/data
+# Case studies book
+/pub/biocases /help/books/bioconductor-case-studies
+# R for Bioinf book
+/pub/RBioinf/ /help/books/r-programming-for-bioinformatics
+# other
+/docs/mailList.html /help/mailing-list
