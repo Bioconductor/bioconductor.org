@@ -1,18 +1,35 @@
 * Migrating Content From Plone
+** Plone migration: use wget
+- Tried Enfold Systems desktop tool, it produces same raw HTML as
+  wget.
+- wget script:
+#+BEGIN_SRC sh
+#!/bin/bash
 
-There is a Windows-based software tool called Enfold Desktop
-(http://www.enfoldsystems.com/) that seems to work for copying over
-Plone content as flat files recursively in bulk.
+wget --limit-rate=500k \
+     --mirror \
+     --convert-links \
+     --ignore-case \
+     --exclude-directories=packages,data,repository,checkResults \
+     --output-file=mirror.log \
+     http://bioconductor.org
+#+END_SRC
+- Result is 1533596 bytes  breakdown is:
+| Size | Path                            |
+| 32K  | bioconductor.org/GettingStarted |
+| 1.9M | bioconductor.org/overview       |
+| 1.1M | bioconductor.org/download       |
+| 44M  | bioconductor.org/docs           |
+| 61M  | bioconductor.org/pub            |
+| 1.4G | bioconductor.org/workshops      |
+| 2.4M | bioconductor.org/News           |
+| 32K  | bioconductor.org/developers     |
+| 104K | bioconductor.org/services       |
+| 44K  | bioconductor.org/mogr           |
+| 1.5G | bioconductor.org/               |
 
-We setup a user account 'userprimary' (ask Dirk or Seth for password).
-You install the Enfold Desktop and then create a new sesion (File
-menu).  The URL to use is: http://cobra.fhcrc.org:12080.
-
-I manually copied files and directories out of plone.  I was not able
-to copy everything in one go, but had to do it in chunks.  Even then
-sometimes a copy looks like it finishes, but ends up missing many
-files and subdirectories.  It seems that if what you try to copy is
-either too deep or too large it (silently) craps out.
+There are some large .gz and .zip files mixed in there that I believe
+take up the bulk of the space under /workshops.
 
 ** Converting the Workshop content
 
@@ -40,14 +57,34 @@ incomplete) comprises 1.2GB.
 I have the start of a script to extract content from existing
 Plone-crufted pages.
 
-* Redirecting posted URLs to new locations
+** Redirect existing URLs to new site: How?
+Using Apache and mod_rewrite, this is easy to accomplish using a
+.htaccess file with full paths and/or regex redirecting with desired
+moved permanently HTTP status code.  Advantage of a =.htaccess= file
+approach is that it will be easily managed in svn.
 
-For posted URLs that we wish to reorganize, such as the posting guide,
-we want our server to return 301 Moved Permanently and redirect to the
-new location.  For Apache, we should be able to do with with
-mod_rewrite with directive added to a .htaccess file at the root of
-the site.  This should be something we can manage from svn.
+Here's what the =.htaccess= file will look like:
+#+BEGIN_EXAMPLE
+<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteBase /
+Redirect 301 /fizzle /foozle
+</IfModule>
+#+END_EXAMPLE
 
-
-
-
+** Convertion of workshops course material content
+*** Created migration/workshop.rb proof-of-concept
+- Converts existing index pages (run once)
+- Creates index pages when none found (intended to run anytime new
+  course material is added).
+- Uses Ruby XML/HTML parsing library to clean extracted HTML pages.
+**** Usage needs refinement
+- Call =import_workshop_index_files= for the one-time index converting
+  functionality.
+- Call =build_file_index_files= for the on-demand index creation.
+  This tags content as auto-generated so that only auto-generated
+  indices get rebuilt.
+- Need to put a simple CLI in place with help?
+*** Demo: http://merlot2.fhcrc.org/workshops/
+*** Issue: How to store large data?
+*** Issue: How to setup for easy addition of new courses?
