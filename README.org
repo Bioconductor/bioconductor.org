@@ -1,3 +1,17 @@
+#+TITLE:     README.org
+#+AUTHOR:    Seth Falcon
+#+EMAIL:     sfalcon@fhcrc.org
+#+DATE:      2010-02-05 Fri
+#+DESCRIPTION: 
+#+KEYWORDS: 
+#+LANGUAGE:  en
+#+OPTIONS:   H:3 num:t toc:t \n:nil @:t ::t |:t ^:t -:t f:t *:t <:t
+#+OPTIONS:   TeX:t LaTeX:nil skip:nil d:nil todo:t pri:nil tags:not-in-toc
+#+INFOJS_OPT: view:nil toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
+#+EXPORT_SELECT_TAGS: export
+#+EXPORT_EXCLUDE_TAGS: noexport
+#+LINK_UP:   
+#+LINK_HOME: 
 * Site Maintainer README for bioconductor.org 
 
 ** Unix-ish Developer Required Software
@@ -72,160 +86,138 @@ Install the gems used by the website as follows:
 *** Test in a browser by going to http://localhost:3000/
 
 ** Overview of site source code
-*** README.org
-You are reading this file or a file generated from this file.
-*** Rakefile
-A =Rakefile= is to =rake= as a =Makefile= is to =make=.  You can see
-the available targets by running =rake -T= in the directory containing
-=Rakefile=.
-*** Rules
-This is a Ruby syntax file that describes how site content is
-transformed from its source form into its output form (this is called
-filtering), what layout to use (layouts are the shared templates), and
-where to write the output (this is called routing).  See the [[http://nanoc.stoneship.org/tutorial/][nanoc
-tutorial]] and the [[http://nanoc.stoneship.org/manual/][nanoc manual]] for details.
-*** assets
-This directory is not managed by nanoc.  It contains files that do not
-undergo any filtering, layout-ing, or routing.  Contents of the assets
-directory are copied to the output directory using rsync.
-*** config.yaml
-Nanoc configuration file for the bioconductor.org site.  This file is
-written in [[http://www.yaml.org/][YAML]].
-*** content
-This is where the bulk of the raw (source form) site content lives.
-Important details:
 
-- Content always has two related files: a =.yaml= file containing item
-  attributes and a =.<extension>= file containing the raw source
-  content.  You can actually use whatever extension you want.
+- README.org :: You are reading this file or a file generated from
+                this file.
 
-- The default behavior is that a content file like =help.markdown= is
-  filtered into HTML and then written to =output/help/index.html=.
-  This scheme allows for clean URLs that avoid having a file
-  extension.
-*** layouts
-This is where the content templates live.
-*** lib
-Ruby helper functions and nanoc extensions live here.  Files in this
-directory are automatically loaded by nanoc during site processing.
-*** migration
-Documentation and scripts used in the process of migrating the
-bioconductor.org site from Plone to nanoc.
-*** output
-This directory is created when you compile the bioconductor.org site
-using nanoc.  It contains the final static HTML and other assets.
-Deploying the site essentially means pushing out an update of the
-contents of output to the live server.
-*** scripts
-Helper scripts for managing the site live here.
+- Rakefile :: A =Rakefile= is to =rake= as a =Makefile= is to =make=.
+              You can see the available targets by running =rake -T=
+              in the directory containing =Rakefile=.
+
+- Rules :: This is a Ruby syntax file that describes how site content
+           is transformed from its source form into its output form
+           (this is called filtering), what layout to use (layouts are
+           the shared templates), and where to write the output (this
+           is called routing).  See the [[http://nanoc.stoneship.org/tutorial/][nanoc tutorial]] and the [[http://nanoc.stoneship.org/manual/][nanoc
+           manual]] for details.
+
+- assets :: This directory is not managed by nanoc.  It contains files
+            that do not undergo any filtering, layout-ing, or routing.
+            Contents of the assets directory are copied to the output
+            directory using rsync.
+
+- config.yaml :: Nanoc configuration file for the bioconductor.org
+                 site.  This file is written in [[http://www.yaml.org/][YAML]].
+
+- content :: This is where the bulk of the raw (source form) site
+             content lives. Important details:
+
+             - Content always has two related files: a =.yaml= file
+               containing item attributes and a =.<extension>= file
+               containing the raw source content.  You can actually
+               use whatever extension you want.
+
+             - The default behavior is that a content file like
+               =help.markdown= is filtered into HTML and then written
+               to =output/help/index.html=. This scheme allows for
+               clean URLs that avoid having a file extension.
+
+- layouts :: This is where the content templates live.
+
+- lib :: Ruby helper functions and nanoc extensions live here.  Files
+         in this directory are automatically loaded by nanoc during
+         site processing.
+
+- migration :: Documentation and scripts used in the process of
+               migrating the bioconductor.org site from Plone to
+               nanoc.
+
+- output :: This directory is created when you compile the
+            bioconductor.org site using nanoc.  It contains the final
+            static HTML and other assets. Deploying the site
+            essentially means pushing out an update of the contents of
+            output to the live server.
+
+- scripts :: Helper scripts for managing the site live here.
 
 ** How to add a page
 ** How to add course material
 You will use a helper script =./scripts/add_course= to add course
 material to the site.  PDF files for labs and presentations as well
-as course-specific packages and data are not stored in svn.  The index
-pages that describe the course and provide links to the materials are
+as course-specific packages and data are *not* stored in svn.  The index
+pages that describe the course and provide links to the materials *are*
 stored in svn.  The =add_course= script will help with index file
 creation and data transfer.
 
-*** Using add_course
+*** Using =add_course=
 
-For the impatient: =add_course --help=.  Now for some details.
+1. Generate a skeleton course directory structure.
 
-**** Generating index files with =add_course=
+   : ./add_course create seattle-intro
 
-#+begin_src sh
-./scripts/add_course index --year=2010 \
-  --title="Introduction to R and Bioconductor" \
-  $HOME/COURSES/seattle-jan-2010
-#+end_src
+   This will create a =seattle-intro/= directory in your current
+   working directory.  Inside will be a =course_config.yaml= file that
+   will look like this:
 
-Where the =$HOME/COURSES/seattle-jan-2010= directory might look like:
+   #+begin_src yaml
+     title:
+       The title of the course goes here
+     start_date: 2010-01-27
+     end_date: 2010-01-29
+     instructors: ["Someone", "Another"]
+     location: "Seattle, USA"
+     url: https://secure.bioconductor.org/SeattleJan10/
+     tags: ["intro", "seattle", "package"]
+     description:
+       You can put some description text here.
+       Must be indented.
+   #+end_src
 
-#+begin_example
-seattle-jan-2010
-|-- packages
-|   |-- day1_0.0.1.tar.gz
-|   |-- day2_0.0.1.tar.gz
-|   `-- day3_0.0.1.tar.gz
-`-- presentation-slides
-    |-- First-steps-presentation.pdf
-    |-- Microarray-presentation.pdf
-    |-- annotation-presentation.pdf
-    `-- sequence-presentation.pdf
-#+end_example
+2. Put course materials as files and directories into the skeleton
+   directory.  For example, you might end up with a directory like
+   that shown below with two subdirectories, =packages= and
+   =presentation-slides=, each containing course materials.
 
-In this case, =add_course= will create three new content items:
+   #+begin_example
+   seattle-intro
+   |-- course_config.yaml
+   |-- packages
+   |   |-- day1_0.0.1.tar.gz
+   |   |-- day2_0.0.1.tar.gz
+   |   `-- day3_0.0.1.tar.gz
+   `-- presentation-slides
+       |-- First-steps-presentation.pdf
+       |-- Microarray-presentation.pdf
+       |-- annotation-presentation.pdf
+       `-- sequence-presentation.pdf
+   #+end_example
 
-  : /help/course-notes/2010/seattle-jan-2010/
-  : /help/course-notes/2010/seattle-jan-2010/packages/
-  : /help/course-notes/2010/seattle-jan-2010/presentation-slides/
+3. Now you are ready to create the index files.
 
-The generated files will be written to the =content= directory under
-the structure indicated above.
+     : add_course index ./seattle-intro
+     : CREATED: content/help/course-notes/2010/01/seattle-intro.(html|yaml)
+     : COPIED for preview:
+     :   src: ./seattle-intro/*
+     :   dst: output/help/course-notes/2010/01/seattle-intro/
+     : NEXT STEPS: run 'rake devserver' and preview at http://localhost:3000/
 
-**** Previewing
+   This will create a course index content item in content filed
+   appropriately based on the metadata provided in
+   =course_config.yaml=.  It will also copy the files and directories
+   you created into the output directory so that you can do a full
+   preview after compiling the site.
 
-After you have run =add_course index ...=, you will have new index
-files in the content directory and the data files will have been
-copied to the output directory (for previewing and link verification
-only).  To preview:
+4. If everything looks good, you can sync the data files to the web
+   server:
 
- : rake
- : nanoc3 aco
- : # browse http://localhost:3000/ 
+      : add_course sync ./seattle-intro
+      : SYNC:
+      :  src: ./seattle-intro
+      :  dst: webadmin@cobra:/extra/www/bioc/help/course-notes/2010/
+      : NEXT STEPS: svn add/checkin changes in contents
 
-You can edit these files as desired.  You can add tags to the yaml files.
-These files will be checked into svn.
-
-**** Syncing materials to the webserver
-
-#+begin_src sh
-./scripts/add_course sync --dry-run --year=2010 $HOME/COURSES/seattle-jan-2010
-#+end_src
-
-This uses rsync to copy seattle-jan-2010 to the
-/help/course-notes/data directory on the live webserver.
-
-**** Adding the course to existing index
-If this is the first course of the year, you will need to create a
-year index page (you can use previous years as a starting point).
-Otherwise, you need to edit the year index and add a link to the newly
-added course.  This step is not automated.
-
-**** Checklist for adding course content
-1. add_course index --year= --title=  DIR
-2. rake, preview site, verify links.  Edit generated content yaml
-   files to add tags if you want.
-3. add_course sync --year= DIR
-4. Commit new files in content/
-5. Verify on live site
-6. Edit year index and add main course index page to year index.
-
-TODO: think about course content organization.  Do we want to stick
-with existing scheme of year-based index pages?  If we put enough
-metadata into course index page yaml we could autogenerate these
-entirely.  We could also do other sorting displays...
-
-**** consider an alternate approach as follows
-
-Run script to generate a skeleton course directory structure ala nanoc
-create_site.  There will be a yaml file to edit where general course
-information can be specified such as:
-
-- title
-- start_date
-- end_date
-- instructors
-- location
-- url
-
-Then content is placed in this directory.  Then add_content index on
-this dir generates various index files and links in to the overall
-index using the metadata and does a data copy as above to output to
-allow previewing.  Finally add_content sync pushes the data out.  You
-still have to commit the new index files and mods to svn as a last
-step (good for it to be last to avoid broken links).
+5. Finally, add the new course index file that was generated in the
+   content directory and commit.
 
 ** nginx installation
 #+begin_src sh
