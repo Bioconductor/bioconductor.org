@@ -1,0 +1,289 @@
+* Site Maintainer README for bioconductor.org 
+
+** Unix-ish Developer Required Software
+
+*** Required software
+**** Ruby
+
+We've tested the site with Ruby 1.8.7, but expect that more recent
+versions of Ruby will also work.  Ruby comes standard on OS X and most
+Linux distributions.
+
+**** rubygems
+
+You need to have the rubygems package installed.  You can test for
+this as:
+
+  : gem --version
+  : 1.3.5
+
+If you have the =gem= command, but an older version, you can update
+your rubygem install with: =sudo gem update --system=.  On SuSE Linux,
+you may need to do =sudo zypper install rubygems=
+
+**** you need these gems
+
+Install the gems used by the website as follows:
+
+  :  sudo gem install nanoc3 BlueCloth rack mime-types haml json \
+  :                   rack-cache httparty rake
+
+** Windows Developer Required Software
+
+1. Download and run the one-click ruby installer
+   http://www.ruby-lang.org/en/downloads/.  Accept all default
+   settings.
+
+2. In a newly opened shell (to pick up configuration changes made by
+   the Ruby installer), run the following command to install the
+   Ruby gems used by the website:
+
+   : gem install nanoc3 BlueCloth rack mime-types haml json rack-cache httparty rake
+
+3. Install subversion client package.  Windows packages are listed
+   here:
+
+       http://subversion.tigris.org/getting.html#binary-packages
+
+   I installed the collabnet package, but had to go through an anoying
+   registration process.  The other binaries should be fine and might
+   require less hoop jumping.  You will need to open a new terminal
+   window to pickup the updated config after installing so that you
+   will be able to use the svn command.
+
+4. Follow the developer setup instructions below.
+
+
+** Developer Setup
+
+*** Checkout the bioconductor.org codebase
+
+   : svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
+
+*** Build the site
+
+   : cd bioconductor.org
+   : rake
+
+*** Run the built-in development server
+
+   : nanoc3 aco
+
+*** Test in a browser by going to http://localhost:3000/
+
+** Overview of site source code
+*** README.org
+You are reading this file or a file generated from this file.
+*** Rakefile
+A =Rakefile= is to =rake= as a =Makefile= is to =make=.  You can see
+the available targets by running =rake -T= in the directory containing
+=Rakefile=.
+*** Rules
+This is a Ruby syntax file that describes how site content is
+transformed from its source form into its output form (this is called
+filtering), what layout to use (layouts are the shared templates), and
+where to write the output (this is called routing).  See the [[http://nanoc.stoneship.org/tutorial/][nanoc
+tutorial]] and the [[http://nanoc.stoneship.org/manual/][nanoc manual]] for details.
+*** assets
+This directory is not managed by nanoc.  It contains files that do not
+undergo any filtering, layout-ing, or routing.  Contents of the assets
+directory are copied to the output directory using rsync.
+*** config.yaml
+Nanoc configuration file for the bioconductor.org site.  This file is
+written in [[http://www.yaml.org/][YAML]].
+*** content
+This is where the bulk of the raw (source form) site content lives.
+Important details:
+
+- Content always has two related files: a =.yaml= file containing item
+  attributes and a =.<extension>= file containing the raw source
+  content.  You can actually use whatever extension you want.
+
+- The default behavior is that a content file like =help.markdown= is
+  filtered into HTML and then written to =output/help/index.html=.
+  This scheme allows for clean URLs that avoid having a file
+  extension.
+*** layouts
+This is where the content templates live.
+*** lib
+Ruby helper functions and nanoc extensions live here.  Files in this
+directory are automatically loaded by nanoc during site processing.
+*** migration
+Documentation and scripts used in the process of migrating the
+bioconductor.org site from Plone to nanoc.
+*** output
+This directory is created when you compile the bioconductor.org site
+using nanoc.  It contains the final static HTML and other assets.
+Deploying the site essentially means pushing out an update of the
+contents of output to the live server.
+*** scripts
+Helper scripts for managing the site live here.
+
+** How to add a page
+** How to add course material
+You will use a helper script =./scripts/add_course= to add course
+material to the site.  PDF files for labs and presentations as well
+as course-specific packages and data are not stored in svn.  The index
+pages that describe the course and provide links to the materials are
+stored in svn.  The =add_course= script will help with index file
+creation and data transfer.
+
+*** Using add_course
+
+For the impatient: =add_course --help=.  Now for some details.
+
+**** Generating index files with =add_course=
+
+#+begin_src sh
+./scripts/add_course index --year=2010 \
+  --title="Introduction to R and Bioconductor" \
+  $HOME/COURSES/seattle-jan-2010
+#+end_src
+
+Where the =$HOME/COURSES/seattle-jan-2010= directory might look like:
+
+#+begin_example
+seattle-jan-2010
+|-- packages
+|   |-- day1_0.0.1.tar.gz
+|   |-- day2_0.0.1.tar.gz
+|   `-- day3_0.0.1.tar.gz
+`-- presentation-slides
+    |-- First-steps-presentation.pdf
+    |-- Microarray-presentation.pdf
+    |-- annotation-presentation.pdf
+    `-- sequence-presentation.pdf
+#+end_example
+
+In this case, =add_course= will create three new content items:
+
+  : /help/course-notes/2010/seattle-jan-2010/
+  : /help/course-notes/2010/seattle-jan-2010/packages/
+  : /help/course-notes/2010/seattle-jan-2010/presentation-slides/
+
+The generated files will be written to the =content= directory under
+the structure indicated above.
+
+**** Previewing
+
+After you have run =add_course index ...=, you will have new index
+files in the content directory and the data files will have been
+copied to the output directory (for previewing and link verification
+only).  To preview:
+
+ : rake
+ : nanoc3 aco
+ : # browse http://localhost:3000/ 
+
+You can edit these files as desired.  You can add tags to the yaml files.
+These files will be checked into svn.
+
+**** Syncing materials to the webserver
+
+#+begin_src sh
+./scripts/add_course sync --dry-run --year=2010 $HOME/COURSES/seattle-jan-2010
+#+end_src
+
+This uses rsync to copy seattle-jan-2010 to the
+/help/course-notes/data directory on the live webserver.
+
+**** Adding the course to existing index
+If this is the first course of the year, you will need to create a
+year index page (you can use previous years as a starting point).
+Otherwise, you need to edit the year index and add a link to the newly
+added course.  This step is not automated.
+
+**** Checklist for adding course content
+1. add_course index --year= --title=  DIR
+2. rake, preview site, verify links.  Edit generated content yaml
+   files to add tags if you want.
+3. add_course sync --year= DIR
+4. Commit new files in content/
+5. Verify on live site
+6. Edit year index and add main course index page to year index.
+
+TODO: think about course content organization.  Do we want to stick
+with existing scheme of year-based index pages?  If we put enough
+metadata into course index page yaml we could autogenerate these
+entirely.  We could also do other sorting displays...
+
+** nginx installation
+#+begin_src sh
+    ./configure \
+      --user=nginx \
+      --group=nginx \
+      --with-http_ssl_module \
+      --with-http_gzip_static_module
+    
+    make
+    sudo make install
+#+end_src
+
+nginx paths:
+
+  : path prefix: "/usr/local/nginx"
+  : binary file: "/usr/local/nginx/sbin/nginx"
+  : configuration file: "/usr/local/nginx/conf/nginx.conf"
+  : error log file: "/usr/local/nginx/logs/error.log"
+  : http access log file: "/usr/local/nginx/logs/access.log"
+
+*** creating an nginx user (SuSE Linux)
+
+    : sudo useradd -c "nginx worker" -d /usr/local/nginx -s /bin/false \
+    :              -g www -G www nginx
+
+*** nginx config
+
+Followed basic config.
+
+#+begin_example
+user  nginx www;
+gzip  on;
+gzip_types text/plain text/css text/javascript;
+
+server {
+    listen       80;
+    server_name  merlot2.fhcrc.org www.merlot2.fhcrc.org;
+
+    #charset koi8-r;
+
+    #access_log  logs/host.access.log  main;
+
+    location / {
+        root   sites/bioconductor.org;
+        index  index.html index.htm;
+    }
+#+end_example
+
+*** scheduled update
+
+Created a rake task for local deployment:
+
+#+begin_src ruby
+task :deploy_merlot2_local do
+  dst = '/usr/local/nginx/sites/bioconductor.org'
+  site_config = YAML.load_file("./config.yaml")
+  output_dir = site_config["output_dir"]
+  system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
+end
+#+end_src
+
+Added a script to an svn checkout working copy:
+
+#+begin_src sh
+    #!/bin/bash
+    svn update && rake default deploy_merlot2_local
+#+end_src
+
+Added chrontab entry:
+
+#+begin_example
+    PATH=/usr/bin:/bin
+    MAILTO=sfalcon@fhcrc.org
+    
+    # test for bioconductor.org nanoc site gen
+    */5 * * * *  cd $HOME/src/SVN/bioconductor.org;./update_site >> cron.log 2>&1
+#+end_example
+
+Started nginx as: =sudo /usr/local/nginx/sbin/nginx=
+
