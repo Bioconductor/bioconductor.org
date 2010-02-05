@@ -207,6 +207,26 @@ with existing scheme of year-based index pages?  If we put enough
 metadata into course index page yaml we could autogenerate these
 entirely.  We could also do other sorting displays...
 
+**** consider an alternate approach as follows
+
+Run script to generate a skeleton course directory structure ala nanoc
+create_site.  There will be a yaml file to edit where general course
+information can be specified such as:
+
+- title
+- start_date
+- end_date
+- instructors
+- location
+- url
+
+Then content is placed in this directory.  Then add_content index on
+this dir generates various index files and links in to the overall
+index using the metadata and does a data copy as above to output to
+allow previewing.  Finally add_content sync pushes the data out.  You
+still have to commit the new index files and mods to svn as a last
+step (good for it to be last to avoid broken links).
+
 ** nginx installation
 #+begin_src sh
     ./configure \
