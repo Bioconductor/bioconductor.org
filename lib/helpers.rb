@@ -4,6 +4,14 @@ include Nanoc3::Helpers::Breadcrumbs
 
 require 'time'
 
+def nav_link_unless_current(text, path)
+  if @item_rep && ((@item_rep.path == path) ||
+    (path.length > 1 && @item_rep.path =~ /^#{path[1..-1]}/))
+    %[<span class="current">#{text}</span>]
+  else
+    %[<a href="#{path}">#{text}</a>]
+  end
+end
 
 def find_item(items, identifier)
   items.find { |i| i.identifier == identifier }

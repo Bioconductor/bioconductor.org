@@ -1,0 +1,73 @@
+#!/usr/bin/env ruby
+
+$LOAD_PATH.unshift(File.dirname(__FILE__))
+require 'rubygems'
+require 'reverse_markdown'
+require 'hpricot'
+require 'yaml'
+
+class PloneConverter
+
+  def initialize(file_path, dest_id, markdown = false)
+    @doc = Hpricot(open(file_path))
+    @dest_id = dest_id
+    @markdown = markdown
+  end
+
+  def parse_title
+    @doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
+  end
+
+  def parse_attributes
+    attrs = {}
+    @doc.search("meta").each do |meta_tag|
+      name = meta_tag["name"]
+      next unless name
+      case name
+      when /^DC\./
+        attrs[name] = meta_tag["content"]
+      end
+    end
+    attrs["title"] = parse_title()
+    attrs["plone_url"] = @doc.search("base")[0]["href"]
+    attrs
+  end
+
+  def parse_content
+    @doc.search("div.documentContent").inner_html
+  end
+
+  def convert
+    unless (@dest_id =~ /^\/.*\/$/)
+      raise "dest_id must start/end with /"
+    end
+    dest_path = "content#{@dest_id}"
+    dest_html = dest_path.chop + ".html"
+    dest_yaml = dest_path.chop + ".yaml"
+    attrs = parse_attributes()
+    content = parse_content()
+    if @markdown
+      r = ReverseMarkdown.new
+      content = r.parse_string(content)
+    end
+    open(dest_html, "w") do |out|
+      out.write(content)
+    end
+    open(dest_yaml, "w") do |out|
+      out.write(attrs.to_yaml)
+    end
+    [dest_html, dest_yaml]
+  end
+end
+
+if __FILE__ == $0
+  plone_file = ARGV[0]
+  dest_id = ARGV[1]
+  markdown = ARGV[2]
+  converter = PloneConverter.new(plone_file, dest_id)
+  output = converter.convert
+  puts "Wrote output to:"
+  output.each do |f|
+    puts "    #{f}"
+  end
+end

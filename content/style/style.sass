@@ -5,11 +5,11 @@
 
 body
   background: #fff
-  font-size: 62.5%
 
 a
+  color: #0F4DA8
   &:visited
-    color: #f30
+    color: #052F6D
 
 pre
   background: #eeeeee
@@ -17,11 +17,43 @@ pre
   border-style: dashed
   padding: 10px
 
+#page
+  display: block
+  width: 960px
+  margin: 0px auto
+
+#nav
+  width: 75%
+  padding: 10px 0 30px 10px
+  margin-bottom: 20px
+  border-bottom: 1px solid #ccc
+  
+  ul
+    list-style-type: none
+
+  li
+    font-size: 14px
+    margin: 0 10px 0 0
+    float: left
+
+  a, span
+    text-decoration: none
+    padding: 5px
+    border: 1px solid
+    color: #000
+    background-color: #eee 
+    &:hover
+      background-color: #ddd
+    &:visited
+      color: #000
+  span.current
+    background-color: #fff
+
 #main
-  position: absolute
-  top: 40px
-  left: 280px
-  width: 500px
+  width: 100%
+  margin: 20px 0 10px 0
+  padding-top: 20px
+  min-height: 500px
 
   h1
     font-size: 2em
@@ -40,50 +72,28 @@ pre
     margin-bottom: 1em
 
   p
-    margin: 0 0 1.5em
-    font-size: 1.4em
+    margin: 0 1. 1.5em
+    font-size: 14px
 
   pre
     margin: 1.5em 0
 
   pre, code, tt
-    font: 1.2em 'Monaco', 'andale mono', 'lucida console', monospace
+    font: 12px 'Monaco', 'andale mono', 'lucida console', monospace
     line-height: 1.2
 
   ul
     margin: 1em
     list-style-type: square
 
-#sidebar
-  position: absolute
-  top: 40px
-  left: 20px
-  width: 200px
-  padding: 20px 20px 0 0
-  border-right: 1px solid #ccc
-  text-align: right
-
-  h2
-    font-size: 1.3em
-    color: #333
-    letter-spacing: 1px
-    line-height: 2em
-
-  ul
-    list-style-type: none
-    margin: 2em 0
-
-  li
-    font-size: 1.4em
-    line-height: 2em
-
-  a
-    &:hover
-      font-weight: bold
-      background-color: #eeeeee
-    &:visited
-      color: #333
-  
+#footer
+  background-color: #eee
+  width: 100%
+  height: 80px
+  margin: 20px 0 0 0
+  padding: 60px 0 10px 0
+  p
+    margin-left: 15px
 
 #mlbox
   width: 430px

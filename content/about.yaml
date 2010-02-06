@@ -1,2 +1,10 @@
 --- 
 title: About
+subnav:
+  - href: core-team/
+    text: Core Team
+  - href: advisory-board/
+    text: Advisory Board
+  - href: related-projects/
+    text: Related Projects
+

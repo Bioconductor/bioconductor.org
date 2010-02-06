@@ -8,30 +8,17 @@
     <script type="text/javascript" src="/js/jquery.timeago.js"></script>
   </head>
   <body>
-    <div id="crumbs">
-      <% breadcrumbs_trail.each_with_index do |crumb, i| %>
-        <a href="<%= crumb.identifier %>"><%= crumb[:title] %></a>
-        <%= i + 1 < breadcrumbs_trail.length ? "&raquo;" : "" %>
-      <% end %> 
-    </div>
+
+    <%= render("/nav/") %>
+  <div id="page">
+    <% if @item[:subnav] %>
+      <%= render("/subnav/", :pages => @item[:subnav]) %>
+    <% end %>
     <div id="main">
 <%= yield %>
     </div>
-    <div id="sidebar">
-      <h2><a href="/getting-started/">Getting Started</a></h2>
-      <ul>
-        <li><a href="/getting-started/installation/">Installation</a></li>
-        <li><a href="/about/">About Bioconductor</a></li>
-      </ul>
-      <h2><a href="/events/">Events</a></h2>
-      <h2><a href="/help/">Getting Help</a></h2>
-      <ul>
-        <li><a href="/help/workflows/">Workflows</a></li>
-        <li><a href="/help/">Software Packages</a></li>
-        <li><a href="/help/course-notes/">Course Materials</a></li>
-        <li><a href="/help/bioconductor-books/">Books</a></li>
-      </ul>
-      <h2><a href="/developers/">Package Developers</a></h2>
-    </div>
+  </div>
+    <%= render("/footer/") %>
+
   </body>
 </html>

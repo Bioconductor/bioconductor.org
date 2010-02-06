@@ -1,0 +1,10 @@
+--- 
+title: A New Item
+subnav:
+  - href: "#install-R"
+    text: Install R
+  - href: "#find-bioconductor-packages"
+    text: Find Bioconductor Packages
+  - href: "#install-bioconductor-packages"
+    text: Install Bioconductor Packages
+

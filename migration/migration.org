@@ -73,6 +73,7 @@ Redirect 301 /fizzle /foozle
 #+END_EXAMPLE
 
 ** Convertion of workshops course material content
+See details in [[../README.org][README]] for how this will work
 *** Created migration/workshop.rb proof-of-concept
 - Converts existing index pages (run once)
 - Creates index pages when none found (intended to run anytime new
@@ -85,6 +86,50 @@ Redirect 301 /fizzle /foozle
   This tags content as auto-generated so that only auto-generated
   indices get rebuilt.
 - Need to put a simple CLI in place with help?
-*** Demo: http://merlot2.fhcrc.org/workshops/
-*** Issue: How to store large data?
-*** Issue: How to setup for easy addition of new courses?
+
+** Page Template Types
+*** Homepage
+*** Install
+*** Help
+*** course main index page
+*** course Year summary page
+*** About
+*** Content page
+- all sub-pages of /about
+- many pages under /help
+*** Events
+**** Event
+*** Package homepage
+*** List of packages page
+
+*** Blog archive
+Includes by tag and by date
+*** Blog post
+*** Blog tag
+** Browser stats from google analytics
+
+Overview of current bioconductor.org traffic
+
+| Browser | Visits | Percent |
+| Firefox | 9511   | 50.3    |
+| IE      | 4455   | 23.6    |
+| Safari  | 3227   | 17.1    |
+| Chrome  | 1087   | 5.75    |
+| Opera   | 279    | 1.5     | 
+
+Breakdown by version
+
+Firefox
+| Version | Visits | Percent |
+|   3.5.5 |   4119 |    43.3 |
+|   3.5.6 |   1786 |    18.8 |
+|  3.0.15 |   1331 |    14.0 |
+|  3.0.16 |    465 |     4.9 |
+|   3.5.3 |    176 |     1.9 |
+
+Internet Explorer
+| Version | Visits | Pecent |
+|     8.0 |   1712 |   38.4 |
+|     7.0 |   1599 |   35.9 |
+|     6.0 |   1141 |   25.6 |
+|    5.01 |      1 |   0.02 |

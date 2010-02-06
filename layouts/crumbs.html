@@ -1,0 +1,6 @@
+<div id="crumbs">
+  <% breadcrumbs_trail.each_with_index do |crumb, i| %>
+  <a href="<%= crumb.identifier %>"><%= crumb[:title] %></a>
+  <%= i + 1 < breadcrumbs_trail.length ? "&raquo;" : "" %>
+  <% end %> 
+</div>
