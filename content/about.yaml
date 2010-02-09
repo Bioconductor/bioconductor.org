@@ -7,4 +7,10 @@ subnav:
     text: Advisory Board
   - href: related-projects/
     text: Related Projects
+  - href: mirrors/
+    text: Mirrors
+  - href: annual-reports/
+    text: Annual Reports
+  - href: publications/
+    text: Publications
 
