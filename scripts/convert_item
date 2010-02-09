@@ -8,13 +8,16 @@ require 'yaml'
 
 class PloneConverter
 
-  def initialize(file_path, dest_id, markdown = false)
+  def initialize(file_path, dest_id, selector = "div.documentContent",
+                 markdown = false)
     @doc = Hpricot(open(file_path))
     @dest_id = dest_id
     @markdown = markdown
+    @selector = selector
   end
 
   def parse_title
+    puts "using selector: #{@selector}"
     @doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
   end
 
@@ -34,7 +37,7 @@ class PloneConverter
   end
 
   def parse_content
-    @doc.search("div.documentContent").inner_html
+    @doc.search(@selector).inner_html
   end
 
   def convert
@@ -63,8 +66,10 @@ end
 if __FILE__ == $0
   plone_file = ARGV[0]
   dest_id = ARGV[1]
-  markdown = ARGV[2]
-  converter = PloneConverter.new(plone_file, dest_id)
+  selector = ARGV[2]
+  markdown = ARGV[3] || false
+  puts "S: #{selector}"
+  converter = PloneConverter.new(plone_file, dest_id, selector, markdown)
   output = converter.convert
   puts "Wrote output to:"
   output.each do |f|

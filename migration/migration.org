@@ -106,6 +106,22 @@ See details in [[../README.org][README]] for how this will work
 Includes by tag and by date
 *** Blog post
 *** Blog tag
+** Plone html cleanup using tidy
+#+begin_src sh
+tidy -utf8 -asxhtml -bare -clean -indent
+#+end_src
+
+#+begin_src ruby
+  require 'find'
+  
+  Find.find('.') do |f|
+    if !f.match(/\.git/)
+      if !File.basename(f).match(/\./)
+        puts f
+      end
+    end
+  end
+#+end_src
 ** Browser stats from google analytics
 
 Overview of current bioconductor.org traffic
