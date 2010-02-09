@@ -11,8 +11,8 @@
 
     <%= render("/nav/") %>
   <div id="page">
-    <% if @item[:subnav] %>
-      <%= render("/subnav/", :pages => @item[:subnav]) %>
+    <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
+      <%= render("/subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
     <% end %>
     <div id="main">
 <%= yield %>

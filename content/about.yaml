@@ -1,16 +1,16 @@
 --- 
 title: About
 subnav:
-  - href: core-team/
+  - href: /about/core-team/
     text: Core Team
-  - href: advisory-board/
+  - href: /about/advisory-board/
     text: Advisory Board
-  - href: related-projects/
+  - href: /about/related-projects/
     text: Related Projects
-  - href: mirrors/
+  - href: /about/mirrors/
     text: Mirrors
-  - href: annual-reports/
+  - href: /about/annual-reports/
     text: Annual Reports
-  - href: publications/
+  - href: /about/publications/
     text: Publications
 
