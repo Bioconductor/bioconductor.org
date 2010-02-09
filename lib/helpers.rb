@@ -49,3 +49,12 @@ def pluralize(count, what)
     what
   end
 end
+
+def add_missing_info 
+  items.each do |item| 
+    if item[:file] 
+      # nanoc3 >= 3.1 will have this feature, add for older versions 
+      item[:extension] ||= item[:file].path.match(/\..*$/)[0]
+    end 
+  end 
+end 

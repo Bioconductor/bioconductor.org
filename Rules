@@ -1,5 +1,9 @@
 #!/usr/bin/env ruby
 
+preprocess do 
+  add_missing_info 
+end 
+
 compile '/mailing-list-posts/' do
   filter :haml
   ## no layout as this gets included in homepage '/'
@@ -34,7 +38,14 @@ compile '/workshops/*' do
 end
 
 compile '*' do
-  filter :bluecloth
+  case item[:extension]
+  when '.md', '.markdown'
+    filter :bluecloth
+  when '.haml'
+    filter :haml
+  when '.sass'
+    filter :sass
+  end
   layout 'default'
 end
 
