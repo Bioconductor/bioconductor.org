@@ -149,14 +149,28 @@ pages that describe the course and provide links to the materials *are*
 stored in svn.  The =add_course= script will help with index file
 creation and data transfer.
 
+*** =add_course= workflow and important tips
+
+To add a course, you will typically perform the following steps (each
+described in detail below):
+
+0. Always from =./scripts/add_course= from the top-level of your
+   website Subversion working copy.
+1. Run =add_course create COURSE_NAME=
+2. Run =add_course index ./COURSE_NAME=
+3. Build and preview site
+4. Run =add_course sync ./COURSE_NAME=
+5. Use svn to commit changes and additions made by =add_course=
+
 *** Using =add_course=
 
 1. Generate a skeleton course directory structure.
 
-   : ./add_course create seattle-intro
+   : ./scripts/add_course create seattle-intro
 
-   This will create a =seattle-intro/= directory in your current
-   working directory.  Inside will be a =course_config.yaml= file that
+   This will create a =seattle-intro/= directory in the top-level of
+   your website working copy -- do not add this directory or any files
+   within it to svn.  Inside will be a =course_config.yaml= file that
    will look like this:
 
    #+begin_src yaml
@@ -218,6 +232,15 @@ creation and data transfer.
 
 5. Finally, add the new course index file that was generated in the
    content directory and commit.
+
+*** Modifying an existing course
+
+You can edit the pages for an existing course by editing the files in
+=./content=.  If you need to add or modify data files, you will need
+to rerun =./scripts/add_course sync=.  The sync performed by
+=add_course= will add new files and replace existing files, but *will
+not delete files already on the server*.  To remove a file from a
+course, you will need to ssh to the remote server and remove manually.
 
 ** nginx installation
 #+begin_src sh
