@@ -7,4 +7,6 @@ data_sources:
   type: gmane_list
   config:
     gmane_rss_url: 'http://rss.gmane.org/topics/excerpts/gmane.science.biology.informatics.conductor'
+    cache_file: tmp/gmane_list_cache_file.yaml
+    ttl: 10
 output_dir: output
