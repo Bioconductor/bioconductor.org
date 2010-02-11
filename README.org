@@ -154,12 +154,12 @@ creation and data transfer.
 To add a course, you will typically perform the following steps (each
 described in detail below):
 
-0. Always from =./scripts/add_course= from the top-level of your
+0. Always run =./scripts/add_course= from the top-level of your
    website Subversion working copy.
-1. Run =add_course create COURSE_NAME=
-2. Run =add_course index ./COURSE_NAME=
+1. Run =./scripts/add_course create COURSE_NAME=
+2. Run =./scripts/add_course index ./COURSE_NAME=
 3. Build and preview site
-4. Run =add_course sync ./COURSE_NAME=
+4. Run =./scripts/add_course sync ./COURSE_NAME=
 5. Use svn to commit changes and additions made by =add_course=
 
 *** Using =add_course=
@@ -208,7 +208,7 @@ described in detail below):
 
 3. Now you are ready to create the index files.
 
-     : add_course index ./seattle-intro
+     : ./scripts/add_course index ./seattle-intro
      : CREATED: content/help/course-notes/2010/01/seattle-intro.(html|yaml)
      : COPIED for preview:
      :   src: ./seattle-intro/*
@@ -224,7 +224,7 @@ described in detail below):
 4. If everything looks good, you can sync the data files to the web
    server:
 
-      : add_course sync ./seattle-intro
+      : ./scripts/add_course sync ./seattle-intro
       : SYNC:
       :  src: ./seattle-intro
       :  dst: webadmin@cobra:/extra/www/bioc/help/course-notes/2010/
