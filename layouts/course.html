@@ -1,0 +1,30 @@
+<%= doctype %>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+  <%= render("/sitehead/") %>
+  <body>
+    <%= render("/nav/") %>
+  <div id="page">
+    <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
+      <%= render("/subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
+    <% end %>
+    <div id="main">
+    <div id="course">
+      <h1><%=  @item[:title] %></h1>
+      <p class="location"><%= @item[:location] %></p>
+      <p class="dates"><%= @item[:start_date] %> - <%= @item[:start_date] %></p>
+      <h2>Instructors</h2>
+      <ul class="instructors">
+        <% @item[:instructors].each do |t| %>
+        <li><%= t %></li>
+        <% end %>
+      </ul>
+      <h2>Description</h2>
+      <p><%= @item[:description] %></p>
+      <h2>Materials</h2>
+      <%= yield %>
+    </div>
+    </div>
+  </div>
+    <%= render("/footer/") %>
+  </body>
+</html>
