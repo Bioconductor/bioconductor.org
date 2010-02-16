@@ -46,7 +46,11 @@ compile '*' do
   when '.sass'
     filter :sass
   end
-  layout 'default'
+  if item[:layout]
+    layout item[:layout]
+  else
+    layout 'default'
+  end
 end
 
 route '/style/*/' do
