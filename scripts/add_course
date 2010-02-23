@@ -11,7 +11,7 @@ class AddCourse
   def initialize
     verify_nanoc_dir()
     @config = YAML.load_file("config.yaml")
-    @course_dir = "course-materials"
+    @course_dir = "help/course-materials"
     @content_dir = "content"
   end
 
@@ -101,13 +101,19 @@ EOF
     name = name.sub(/\/$/, "")
     course = YAML.load_file("#{name}/course_config.yaml")
     src = "#{name}"
-    dst = "SERVER:/site/root/" + @course_dir + "/" + course_year(course)
-    cmd = "rsync -av #{src} #{dst}"
+    deploy_root = @config["deploy_root"]
+    host, path = deploy_root.split(":")
+    yearpath = "/" + @course_dir + "/" + course_year(course)
+    dst = deploy_root + yearpath
+    dir_cmd = "ssh #{host} mkdir -p #{path}#{yearpath}"
+    cmd = "rsync -avR #{src} #{dst}"
     puts "SYNC:"
     puts "    src: #{src}"
     puts "    dst: #{dst}"
+    puts "    cmd: #{dir_cmd}"
     puts "    cmd: #{cmd}"
-    puts "NOT IMPLEMENTED - nothing synced"
+    raise "cmd failed: #{dir_cmd}" unless system(dir_cmd)
+    raise "cmd failed: #{cmd}" unless system(cmd)
     puts "NEXT STEPS:"
     puts "    - svn add/commit changes in contents/"
     puts "    - wait 10 minutes for changes to propagate"

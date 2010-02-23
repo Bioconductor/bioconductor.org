@@ -10,3 +10,4 @@ data_sources:
     cache_file: tmp/gmane_list_cache_file.yaml
     ttl: 10
 output_dir: output
+deploy_root: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org
