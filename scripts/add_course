@@ -65,10 +65,12 @@ EOF
     open(config, "w") do |f|
       f.write(COURSE_YAML)
     end
-    puts "Course directory created at: #{name}"
-    puts "NEXT STEPS:"
-    puts "    - edit #{config}"
-    puts "    - run ./scripts/add_course index #{name}"
+    msg = <<EOF
+Course directory created at: #{name}
+NEXT STEPS:
+    - edit #{config}
+    - run ./scripts/add_course index #{name}
+EOF
   end
 
   def index(name)
@@ -86,16 +88,21 @@ EOF
     rsync_src = "#{name}/"
     rsync_dst = @config["output_dir"] + "/" + @course_dir + "/" + course_path
     rsync_cmd = "rsync -a --exclude='*.yaml' #{rsync_src} #{rsync_dst}"
-    puts "COPYING for preview:"
-    puts "    src: #{rsync_src}"
-    puts "    dst: #{rsync_dst}"
-    puts "    cmd: #{rsync_cmd}"
+    msg = <<EOF
+COPYING for preview:
+    src: #{rsync_src}
+    dst: #{rsync_dst}
+    cmd: #{rsync_cmd}
+EOF
     run_cmd("mkdir -p #{File.dirname(rsync_dst)}") 
     run_cmd(rsync_cmd)
-    puts "NEXT STEPS:"
-    puts "    - preview site with 'rake devserver'"
-    puts "    - edit CREATED files to add descriptons for links"
-    puts "    - if happy, run ./scripts/add_course sync"
+    puts msg
+    msg = <<EOF
+NEXT STEPS:
+    - preview site with 'rake devserver'
+    - edit CREATED files to add descriptons for links
+    - if happy, run ./scripts/add_course sync
+EOF
   end
 
   def sync(name)
@@ -108,17 +115,23 @@ EOF
     dst = deploy_root + yearpath
     dir_cmd = "ssh #{host} mkdir -p #{path}#{yearpath}"
     cmd = "rsync -avR --exclude='*.yaml' #{src} #{dst}"
-    puts "SYNC:"
-    puts "    src: #{src}"
-    puts "    dst: #{dst}"
-    puts "    cmd: #{dir_cmd}"
-    puts "    cmd: #{cmd}"
+    msg = <<EOF
+SYNC:
+    src: #{src}
+    dst: #{dst}
+    cmd: #{dir_cmd}
+    cmd: #{cmd}
+EOF
+    puts msg
     run_cmd(dir_cmd)
     run_cmd(cmd)
-    puts "NEXT STEPS:"
-    puts "    - svn add/commit changes in contents/"
-    puts "    - wait 10 minutes for changes to propagate"
-    puts "    - verify content on live site"
+    msg = <<EOF
+NEXT STEPS:
+    - svn add/commit changes in contents/
+    - wait 10 minutes for changes to propagate
+    - verify content on live site
+EOF
+    puts msg
   end
 
   def course_year(course)
