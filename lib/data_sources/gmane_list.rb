@@ -22,7 +22,10 @@ class GmaneList < Nanoc3::DataSource
     self.config[:cache_file]
   end
 
-  def setup
+  # I would have thought that these setup actions would
+  # be placed in the 'setup' method, but it doesn't seem to get
+  # called.  up and down methods do get called.
+  def up
     if cache_file().nil?
       raise "please add a 'cache_file' entry to config.yaml"
     end
