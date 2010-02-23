@@ -3,7 +3,7 @@
 require 'rubygems'
 require 'yaml'
 require 'builder'
-#require 'clip'
+require 'fileutils'
 
 class AddCourse
   CMDS = ["create", "index", "sync"]
@@ -85,12 +85,13 @@ EOF
     name = name.sub(/\/$/, "")
     rsync_src = "#{name}/"
     rsync_dst = @config["output_dir"] + "/" + @course_dir + "/" + course_path
-    rsync_cmd = "rsync -a #{rsync_src} #{rsync_dst}"
+    rsync_cmd = "rsync -a --exclude='*.yaml' #{rsync_src} #{rsync_dst}"
     puts "COPYING for preview:"
     puts "    src: #{rsync_src}"
     puts "    dst: #{rsync_dst}"
     puts "    cmd: #{rsync_cmd}"
-    system(rsync_cmd)
+    run_cmd("mkdir -p #{File.dirname(rsync_dst)}") 
+    run_cmd(rsync_cmd)
     puts "NEXT STEPS:"
     puts "    - preview site with 'rake devserver'"
     puts "    - edit CREATED files to add descriptons for links"
@@ -106,14 +107,14 @@ EOF
     yearpath = "/" + @course_dir + "/" + course_year(course)
     dst = deploy_root + yearpath
     dir_cmd = "ssh #{host} mkdir -p #{path}#{yearpath}"
-    cmd = "rsync -avR #{src} #{dst}"
+    cmd = "rsync -avR --exclude='*.yaml' #{src} #{dst}"
     puts "SYNC:"
     puts "    src: #{src}"
     puts "    dst: #{dst}"
     puts "    cmd: #{dir_cmd}"
     puts "    cmd: #{cmd}"
-    raise "cmd failed: #{dir_cmd}" unless system(dir_cmd)
-    raise "cmd failed: #{cmd}" unless system(cmd)
+    run_cmd(dir_cmd)
+    run_cmd(cmd)
     puts "NEXT STEPS:"
     puts "    - svn add/commit changes in contents/"
     puts "    - wait 10 minutes for changes to propagate"
@@ -193,6 +194,10 @@ EOF
       $stderr.puts "missing DIR" if !course_dir
       exit 1
     end
+  end
+
+  def run_cmd(cmd)
+    raise "command failed: #{cmd}" unless system(cmd)
   end
 
   def run(args)
