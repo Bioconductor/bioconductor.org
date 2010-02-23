@@ -93,6 +93,7 @@ EOF
     system(rsync_cmd)
     puts "NEXT STEPS:"
     puts "    - preview site with 'rake devserver'"
+    puts "    - edit CREATED files to add descriptons for links"
     puts "    - if happy, run ./scripts/add_course sync"
   end
 
@@ -105,8 +106,6 @@ EOF
   end
 
   def course_year(course)
-    # FIXME: should we parse into a Time to verify
-    # what's in the file and extract year?
     course["start_date"].year.to_s
   end
 
