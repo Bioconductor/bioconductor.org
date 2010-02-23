@@ -98,7 +98,16 @@ EOF
   end
 
   def sync(name)
-    puts "sorry, not implemented yet"
+    name = name.sub(/\/$/, "")
+    course = YAML.load_file("#{name}/course_config.yaml")
+    src = "#{name}"
+    dst = "SERVER:/site/root/" + @course_dir + "/" + course_year(course)
+    cmd = "rsync -av #{src} #{dst}"
+    puts "SYNC:"
+    puts "    src: #{src}"
+    puts "    dst: #{dst}"
+    puts "    cmd: #{cmd}"
+    puts "NOT IMPLEMENTED - nothing synced"
     puts "NEXT STEPS:"
     puts "    - svn add/commit changes in contents/"
     puts "    - wait 10 minutes for changes to propagate"

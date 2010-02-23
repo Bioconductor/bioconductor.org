@@ -13,7 +13,6 @@
 #+LINK_UP:   
 #+LINK_HOME: 
 * Site Maintainer README for bioconductor.org 
-
 ** Unix-ish Developer Required Software
 
 *** Required software
@@ -66,7 +65,6 @@ Install the gems used by the website as follows:
    will be able to use the svn command.
 
 4. Follow the developer setup instructions below.
-
 
 ** Developer Setup
 
@@ -242,7 +240,125 @@ to rerun =./scripts/add_course sync=.  The sync performed by
 not delete files already on the server*.  To remove a file from a
 course, you will need to ssh to the remote server and remove manually.
 
-** nginx installation
+** Test site scheduled update
+The bioconductor-test.fhcrc.org test site currently runs on
+merlot2.fhcrc.org.  The biocadmin user's crontab is used to schedule
+site updates every ten minutes.  Below are some details on how the
+test site is configured.
+
+The site source is located at
+=~biocadmin/bioc-test-web/bioconductor.org=.  The
+=deploy_merlot2_local= Rake task deploys site content to the testing
+server root on merlot2.
+
+#+begin_src ruby
+task :deploy_merlot2_local do
+  dst = '/loc/www/bioconductor.org'
+  site_config = YAML.load_file("./config.yaml")
+  output_dir = site_config["output_dir"]
+  system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
+end
+#+end_src
+
+An =update_site= shell script updates from svn, builds the site, and
+deploys it using Rake.
+
+#+begin_src sh
+    #!/bin/bash
+    svn update && rake default deploy_merlot2_local
+#+end_src
+
+We keep track of the output of in a local =cron.log= file and handle
+log rotation using =logrotate=.  For this we need a config file:
+
+#+begin_example
+  # logrotate.conf
+  /home/biocadmin/bioc-test-web/cron.log {
+      rotate 5
+      daily
+  }
+#+end_example
+
+The following crontab entries are used to schedule site update,
+deployment, and log rotation (biocadmin user):
+
+#+begin_example
+  PATH=/usr/bin:/bin
+  MAILTO=devteam-bioc@fhcrc.org
+    
+  # bioconductor-test.fhcrc.org website publishing
+  ,*/10 * * * *  cd $HOME/bioc-test-web;./update_site >> cron.log 2>&1
+  0    0 * * *  logrotate -s $HOME/bioc-test-web/logrotate.state $HOME/bioc-test-web/logrotate.conf
+#+end_example
+
+** Test site SuSE Apache Configuration
+A good resource is available [[http://en.opensuse.org/Apache_Quickstart_HOWTO][here]].
+*** Edit /etc/sysconfig/apache2
+
+Make sure the following modules are listed in the APACHE_MODULES
+variable:
+
+- rewrite
+- deflate
+
+One way to add them is to do:
+
+ : sudo /usr/sbin/a2enmod deflate
+ : sudo /usr/sbin/a2enmod rewrite
+
+*** Edit /etc/apache2/vhosts.d/bioconductor-test.conf
+
+#+begin_example
+  <VirtualHost *:80>
+      ServerAdmin devteam-bioc@fhcrc.org
+      ServerName bioconductor-test.fhcrc.org
+  
+      # DocumentRoot: The directory out of which you will serve your                        
+      # documents. By default, all requests are taken from this directory, but              
+      # symbolic links and aliases may be used to point to other locations.                 
+      DocumentRoot /loc/www/bioconductor-test.fhcrc.org
+  
+      # if not specified, the global error log is used                                      
+      ErrorLog /var/log/apache2/bioconductor-test.fhcrc.org-error_log
+      CustomLog /var/log/apache2/bioconductor-test.fhcrc.org-access_log combined
+  
+      # don't loose time with IP address lookups                                            
+      HostnameLookups Off
+  
+      # needed for named virtual hosts                                                      
+      UseCanonicalName Off
+  
+      ServerSignature On
+  
+      # doc root                                                                            
+      <Directory "/loc/www/bioconductor-test.fhcrc.org">
+          # The Options directive is both complicated and important.  Please see            
+          # http://httpd.apache.org/docs-2.2/mod/core.html#options                          
+          # for more information.                                                           
+          Options FollowSymLinks
+  
+          # AllowOverride controls what directives may be placed in .htaccess files.        
+          AllowOverride FileInfo Indexes
+  
+          # Controls who can get stuff from this server.                                    
+          Order allow,deny
+          Allow from all
+  
+          # output compression using mod deflate                                            
+          AddOutputFilterByType DEFLATE text/html text/css application/javascript
+          BrowserMatch ^Mozilla/4 gzip-only-text/html
+          BrowserMatch ^Mozilla/4\.0[678] no-gzip
+          BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+      </Directory>
+  </VirtualHost>
+#+end_example
+*** TODO Add apache2 to rc startup config
+*** Start apache using /etc/init.d/apache2 restart
+** Test site nginx installation
+We will most likely deploy the test and produciton sites using
+Apache2.  A first test setup was configured using nginx.  The details
+follow.
+
 #+begin_src sh
     ./configure \
       --user=nginx \
@@ -290,35 +406,4 @@ server {
     }
 #+end_example
 
-*** scheduled update
-
-Created a rake task for local deployment:
-
-#+begin_src ruby
-task :deploy_merlot2_local do
-  dst = '/usr/local/nginx/sites/bioconductor.org'
-  site_config = YAML.load_file("./config.yaml")
-  output_dir = site_config["output_dir"]
-  system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
-end
-#+end_src
-
-Added a script to an svn checkout working copy:
-
-#+begin_src sh
-    #!/bin/bash
-    svn update && rake default deploy_merlot2_local
-#+end_src
-
-Added chrontab entry:
-
-#+begin_example
-    PATH=/usr/bin:/bin
-    MAILTO=sfalcon@fhcrc.org
-    
-    # test for bioconductor.org nanoc site gen
-    */5 * * * *  cd $HOME/src/SVN/bioconductor.org;./update_site >> cron.log 2>&1
-#+end_example
-
 Started nginx as: =sudo /usr/local/nginx/sbin/nginx=
-

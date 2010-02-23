@@ -29,7 +29,7 @@ task :build => [ :compile, :copy_assets ]
 task :default => :build
 
 task :deploy_merlot2_local do
-  dst = '/usr/local/nginx/sites/bioconductor.org'
+  dst = '/loc/www/bioconductor.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
   system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
