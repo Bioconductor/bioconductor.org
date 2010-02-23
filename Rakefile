@@ -32,7 +32,7 @@ task :deploy_merlot2_local do
   dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
-  system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
+  system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{output_dir}/ #{dst}"
 end
 
 desc "Runs nanoc's dev server on localhost:3000"
