@@ -240,9 +240,25 @@ to rerun =./scripts/add_course sync=.  The sync performed by
 not delete files already on the server*.  To remove a file from a
 course, you will need to ssh to the remote server and remove manually.
 
-** Test site scheduled update
-The bioconductor-test.fhcrc.org test site currently runs on
-merlot2.fhcrc.org.  The biocadmin user's crontab is used to schedule
+** http://bioconductor-test.fhcrc.org test site
+We run an inside FHCRC only test instance of the Bioconductor website
+at the above URL.  The site is rebuilt every ten minutes.  Here's an
+overview of the test site configuration:
+
+- bioconductor-test.fhcrc.org is a DNS CNAME for merlot2.fhcrc.org.
+
+- The site is served by the system installed Apache2 instance on
+  merlot2.
+
+- The scheduled svn checkout and rebuild is handled by the biocadmin
+  user's crontab.
+
+- biocadmin uses files under ~/bioc-test-web
+
+- Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
+
+*** Test site scheduled update
+The biocadmin user's crontab on merlot2 is used to schedule
 site updates every ten minutes.  Below are some details on how the
 test site is configured.
 
@@ -275,6 +291,7 @@ log rotation using =logrotate=.  For this we need a config file:
   # logrotate.conf
   /home/biocadmin/bioc-test-web/cron.log {
       rotate 5
+      compress
       daily
   }
 #+end_example
@@ -283,7 +300,7 @@ The following crontab entries are used to schedule site update,
 deployment, and log rotation (biocadmin user):
 
 #+begin_example
-  PATH=/usr/bin:/bin
+  PATH=/usr/bin:/bin:/usr/sbin
   MAILTO=devteam-bioc@fhcrc.org
     
   # bioconductor-test.fhcrc.org website publishing
@@ -291,9 +308,11 @@ deployment, and log rotation (biocadmin user):
   0    0 * * *  logrotate -s $HOME/bioc-test-web/logrotate.state $HOME/bioc-test-web/logrotate.conf
 #+end_example
 
-** Test site SuSE Apache Configuration
+*** Test site SuSE Apache Configuration
 A good resource is available [[http://en.opensuse.org/Apache_Quickstart_HOWTO][here]].
-*** Edit /etc/sysconfig/apache2
+
+**** Apache module config
+Edit /etc/sysconfig/apache2
 
 Make sure the following modules are listed in the APACHE_MODULES
 variable:
@@ -306,7 +325,8 @@ One way to add them is to do:
  : sudo /usr/sbin/a2enmod deflate
  : sudo /usr/sbin/a2enmod rewrite
 
-*** Edit /etc/apache2/vhosts.d/bioconductor-test.conf
+**** Apache vhosts config
+Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 
 #+begin_example
   <VirtualHost *:80>
@@ -353,8 +373,8 @@ One way to add them is to do:
   </VirtualHost>
 #+end_example
 *** TODO Add apache2 to rc startup config
-*** Start apache using /etc/init.d/apache2 restart
-** Test site nginx installation
+*** Start apache using /etc/init.d/apache2 re
+*** Test site nginx installation
 We will most likely deploy the test and produciton sites using
 Apache2.  A first test setup was configured using nginx.  The details
 follow.
