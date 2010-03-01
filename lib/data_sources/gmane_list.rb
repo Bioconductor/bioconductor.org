@@ -45,7 +45,6 @@ class GmaneList < Nanoc3::DataSource
         entries = res[:entries]
         puts "GMANE 200 UPDATE saved"
       else
-        puts "GMANE 304 content not modified"
         write_cache(cache_data)
       end
     else
@@ -56,12 +55,22 @@ class GmaneList < Nanoc3::DataSource
 
   def fetch_entries_conditional(have_last_mod)
     bioc_list_url = self.config[:gmane_rss_url]
-    data = HTTParty.get(bioc_list_url,
-                        :headers => if_modified_since(have_last_mod))
+    data = begin
+             HTTParty.get(bioc_list_url,
+                          :headers => if_modified_since(have_last_mod),
+                          :timeout => 6)
+           rescue Timeout::Error
+             puts "GMANE timeout error"
+             return nil
+           end
     if data.code == 304
+      puts "GMANE 304 content not modified"
       return nil
     end
-    # FIXME: add error handling for non-200 cases
+    if data.code >= 400
+      puts "GMANE error: HTTP #{data.code}"
+      return nil
+    end
     entries = data["rdf:RDF"]["item"].map do |item|
       attributes = {
         :title => item["title"],
