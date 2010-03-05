@@ -39,12 +39,17 @@ def parse_content(doc)
         nil
       end
     end.compact.remove
+    c.search("div").collect! {|n| n if n.empty? }.compact.remove
     c.search("a.link-parent").remove
     c.search("a#documentContent").remove
     c.search("div.documentDescription").remove
     c.search("div.discussion").remove
-    # FIXME: remove class attribute for "h1.documentFirstHeading"
-    # use remove_attr("class") I think
+    c.traverse_all_elements do |e|
+      if e.elem?
+        e.remove_attribute("class") if e["class"]
+        e.remove_attribute("id") if e["id"]
+      end
+    end
     c.inner_html
   else
     nil
