@@ -1,0 +1,8 @@
+<h1>Course Materials</h1>
+
+<ul>
+<% @item.children.each do |item| %>
+<li><a href="<%= item.identifier %>"><%= item[:title] %></a></li>
+<% end %>
+
+</ul>

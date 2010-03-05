@@ -1,0 +1,616 @@
+
+            <div>
+              
+
+              
+
+              
+
+              <div>
+                <h1>Hypergeometric Tests for Gene Lists</h1>
+              </div>
+            </div>
+
+            <div>
+              <div>
+                <h1>Hypergeometric Tests for Gene
+                Lists</h1>
+
+                <h2>The
+                Category and GOstats BioC Packages</h2>
+
+                <table rules="none" frame="void">
+                  <col />
+                  <col />
+
+                  <tbody valign="top">
+                    <tr>
+                      <th>Authors:</th>
+
+                      <td>Seth Falcon and Robert Gentleman</td>
+                    </tr>
+
+                    <tr>
+                      <th>Date:</th>
+
+                      <td>2007-01-06</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!-- Definitions of interpreted text roles (classes) for S5/HTML data. -->
+                <!-- This data file has been placed in the public domain. -->
+                <!-- Colours
+======= -->
+                <!-- Text Sizes
+========== -->
+                <!-- Display in Slides (Presentation Mode) Only
+========================================== -->
+                <!-- Display in Outline Mode Only
+============================ -->
+                <!-- Display in Print Only
+===================== -->
+                <!-- Display in Handout Mode Only
+============================ -->
+                <!-- Incremental Display
+=================== -->
+              </div>
+
+              <div>
+                <h1>In Brief</h1>
+
+                <ol>
+                  <li>Obtain data (microarray)</li>
+
+                  <li>Select interesting genes</li>
+
+                  <li>Choose a category database (GO)</li>
+
+                  <li>Test whether any category terms are over
+                  represented, giving functional insight into a
+                  subset of the gene list.</li>
+                </ol>
+              </div>
+
+              <div>
+                <h1>And a bit less brief</h1>
+
+                <ol>
+                  <li>Obtain data (microarray)
+
+                    <ol>
+                      <li>Process data into an <tt><span>ExpressionSet</span></tt></li>
+
+                      <li>Perform non-specific filtering</li>
+
+                      <li>Define the <em>gene universe</em></li>
+                    </ol>
+                  </li>
+
+                  <li>Select interesting genes
+
+                    <ul>
+                      <li>Use the method of your choice. Our
+                      example will use a simple t-test for
+                      differential expression between two
+                      groups</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+
+              <div>
+                <h1>And a bit less brief</h1>
+
+                <ol start="3">
+                  <li>Choose a category database (GO)
+
+                    <ul>
+                      <li>Besides GO, we support KEGG and
+                      PFAM.</li>
+
+                      <li>Hope to have support for chromosome
+                      location soon.</li>
+                    </ul>
+                  </li>
+
+                  <li>Test whether any category terms are over
+                  represented, giving functional insight into a
+                  subset of the gene list.
+
+                    <ul>
+                      <li>Can also test for under representation,
+                      although this is not often done.</li>
+
+                      <li>Interpreting the test can be difficult
+                      because of multiple testing.</li>
+
+                      <li>For GO, there are modified testing
+                      algorithms that take the relationships among
+                      the GO terms into account.</li>
+                    </ul>
+                  </li>
+                </ol>
+              </div>
+
+              <div>
+                <h1>Reviewing GO</h1>
+
+                <ul>
+                  <li>Three ontologies, each is a <em>DAG</em>:
+
+                    <ol>
+                      <li><strong>BP</strong> Biological
+                      Process</li>
+
+                      <li><strong>CC</strong> Celullar
+                      Component</li>
+
+                      <li><strong>MF</strong> Molecular
+                      Function</li>
+                    </ol>
+                  </li>
+
+                  <li>Each GO Term has zero or more Entrez Gene IDs
+                  annotated at it.</li>
+
+                  <li>Parent terms inherit annotations from child
+                  terms.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h1>MF subgraph</h1>
+
+                <div>
+                  <img src="images/GOMF-ex.jpg" alt="images/GOMF-ex.jpg" />
+                </div>
+              </div>
+
+              <div>
+                <h1>GO Evidence Codes</h1>
+
+                <table rules="none" frame="void">
+                  <col />
+                  <col />
+
+                  <tbody valign="top">
+                    <tr>
+                      <th>IMP:</th>
+
+                      <td>inferred from mutant
+                      phenotype</td>
+                    </tr>
+
+                    <tr>
+                      <th>IGI:</th>
+
+                      <td>inferred from genetic
+                      interaction</td>
+                    </tr>
+
+                    <tr>
+                      <th>IPI:</th>
+
+                      <td>inferred from physical
+                      interaction</td>
+                    </tr>
+
+                    <tr>
+                      <th>ISS:</th>
+
+                      <td>inferred from sequence
+                      similarity</td>
+                    </tr>
+
+                    <tr>
+                      <th>IDA:</th>
+
+                      <td>inferred from direct
+                      assay</td>
+                    </tr>
+
+                    <tr>
+                      <th>IEP:</th>
+
+                      <td>inferred from
+                      expression pattern</td>
+                    </tr>
+
+                    <tr>
+                      <th>IEA:</th>
+
+                      <td>inferred from
+                      electronic annotation</td>
+                    </tr>
+
+                    <tr>
+                      <th>TAS:</th>
+
+                      <td>traceable author
+                      statement</td>
+                    </tr>
+
+                    <tr>
+                      <th>NAS:</th>
+
+                      <td><em>non-traceable
+                      author statement</em></td>
+                    </tr>
+
+                    <tr>
+                      <th>ND:</th>
+
+                      <td>no biological data
+                      available</td>
+                    </tr>
+
+                    <tr>
+                      <th>IC:</th>
+
+                      <td>inferred by
+                      curator</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <div>
+                <h1>Back to the question</h1>
+
+                <p>Are there any GO terms that have a larger than
+                expected subset of our selected genes in their
+                annotation list?</p>
+
+                <p>If so, these GO terms will give us insight into
+                the functional characterisitcs of the respective
+                subset of the gene list.</p>
+
+                <p>But what does larger than
+                expected mean?</p>
+              </div>
+
+              <div>
+                <h1>Classical probability</h1>
+
+                <div>
+                  <img src="images/urn1.jpg" alt="images/urn1.jpg" />
+                </div>
+              </div>
+
+              <div>
+                <h1>An urn model</h1>
+
+                <ul>
+                  <li>The urn contains a ball for each gene in the
+                  <em>gene universe</em>.</li>
+
+                  <li>Paint the balls representing genes in our
+                  selected list white and paint the rest
+                  black.</li>
+
+                  <li>Don't forget to label the balls so that you
+                  know which gene is which!</li>
+                </ul>
+              </div>
+
+              <div>
+                <h1>The Hypergeometric Distribution</h1>
+
+                <p>From Wikipedia, the free encyclopedia:</p>
+
+                <blockquote>
+                  ... the hypergeometric distribution is a discrete
+                  probability distribution that describes the
+                  number of successes in a sequence of n draws from
+                  a finite population without replacement.
+                </blockquote>
+
+                <p><strong>TODO</strong>: insert detailed proof
+                that a hypergeometric test is equivalent to a
+                one-tailed Fisher's Exact test.</p>
+              </div>
+
+              <div>
+                <h1>Testing a term (1)</h1>
+
+                <p>Testing a GO term amounts to drawing the genes
+                annotated at it from the urn and tallying white and
+                black.</p>
+
+                <div>
+                  <div>
+                    <img src="images/empty.jpg" alt="images/empty.jpg" /> <img src="images/full1.jpg" alt="images/full1.jpg" /> <img src="images/full2.jpg" alt="images/full2.jpg" /> <img src="images/full3.jpg" alt="images/full3.jpg" />
+                  </div><img src="images/full3.jpg" alt="images/full3.jpg" />
+                </div>
+              </div>
+
+              <div>
+                <h1>Testing a term (2)</h1>
+
+                <table border="1">
+                  <colgroup>
+                    <col width="36%" />
+                    <col width="38%" />
+                    <col width="26%" />
+                  </colgroup>
+
+                  <thead valign="bottom">
+                    <tr>
+                      <th>.</th>
+
+                      <th>Selected (white)</th>
+
+                      <th>Not (black)</th>
+                    </tr>
+                  </thead>
+
+                  <tbody valign="top">
+                    <tr>
+                      <td>in GO term</td>
+
+                      <td>n11</td>
+
+                      <td>n12</td>
+                    </tr>
+
+                    <tr>
+                      <td>not in GO term</td>
+
+                      <td>n21</td>
+
+                      <td>n22</td>
+                    </tr>
+                  </tbody>
+                </table>
+
+                <p>Testing a GO term amounts to drawing the genes
+                annotated at it from the urn and filling out the
+                table.</p>
+
+                <p>NB: You can apply other two-way table tests
+                besides Fisher's Exact test. For large categories,
+                that may make sense.</p>
+              </div>
+
+              <div>
+                <h1>What's in the universe?</h1><img src="images/galaxy1.jpg" align="right" alt="images/galaxy1.jpg" />
+
+                <p>What genes were candidates for selection?</p>
+
+                <p>The choice makes a big impact on Hypergeometric
+                test results.</p>
+
+                <p>Possibilities:</p>
+
+                <ul>
+                  <li>All genes that have a GO annotation</li>
+
+                  <li>All genes on the chip</li>
+
+                  <li>All genes from the chip that pass a
+                  non-specific filter</li>
+                </ul>
+              </div>
+
+              <div>
+                <h1>The universe matters</h1><img src="images/pval_vs_size.png" align="right" alt="images/pval_vs_size.png" />
+                <pre>
+P &lt;- function(size) {
+    nFound &lt;- 10
+    nDrawn &lt;- 400
+    nAtCat &lt;- 40
+    nNotAtCat &lt;- size - nAtCat
+    phyper(nFound-1, nAtCat, nNotAtCat,
+           nDrawn, lower.tail=FALSE)
+}
+
+                   P(1000) ---&gt; 0.986
+                   P(5000) ---&gt; 0.000914
+</pre>
+              </div>
+
+              <div>
+                <h1>Non-specific filtering</h1>
+
+                <ul>
+                  <li>Remove probe sets with no Entrez Gene ID or
+                  no GO annotation.</li>
+
+                  <li>Compute IQR, and filter out probe sets with
+                  little variance across samples.</li>
+
+                  <li>If two or more probe sets map to the same
+                  Entrez Gene ID, keep only one (the one with
+                  largest IQR). This is important to avoid double
+                  counting.</li>
+                </ul><img src="images/filter1.jpg" align="right" alt="images/filter1.jpg" />
+              </div>
+
+              <div>
+                <h1>Review</h1>
+
+                <ol start="0">
+                  <li>Obtain data</li>
+
+                  <li>Perform non-specific filtering, decide on a
+                  gene universe.</li>
+
+                  <li>Select interesting genes.</li>
+
+                  <li>Use GOstats to compute over representation of
+                  GO terms.</li>
+                </ol>
+              </div>
+
+              <div>
+                <h1>Using the Category and GOstats Packages</h1>
+
+                <p>First, a short diversion:</p>
+
+                <blockquote>
+                  Object Oriented Programming in R: the S4 Object
+                  System.
+                </blockquote>
+
+                <ul>
+                  <li>Classes structure data and encapsulate noun
+                  concepts</li>
+
+                  <li>Methods (functions) operate on objects
+                  (instances of classes). They do the right thing
+                  based on the object's class. They encapsulate
+                  verb concepts.</li>
+                </ul>
+              </div>
+
+              <div>
+                <h1>Key classes in Category &amp; GOstats</h1>
+
+                <p><span>Inputs</span>:</p>
+                <pre>
+HyperGParams
+
+  GOHyperGParams
+  KEGGHyperGParams
+  PFAMHyperGParams
+</pre>
+
+                <p><span>Outputs</span>:</p>
+                <pre>
+HyperGResult      GOHyperGResult
+</pre>
+              </div>
+
+              <div>
+                <h1>Input: GOHyperGParams accessors</h1>
+
+                <p>If <tt><span>p</span></tt> is a GOHyperGParams
+                instance:</p>
+                <pre>
+geneIds(p)              testDirection(p)
+universeGeneIds(p)      conditional(p)
+annotation(p)           pvalueCutoff(p)
+ontology(p)
+</pre>
+
+                <p>There are also replacement forms for
+                setting:</p>
+                <pre>
+conditional(p) &lt;- TRUE
+pvalueCutoff(p) &lt;- 0.0000001
+</pre>
+              </div>
+
+              <div>
+                <h1>Output: GOHyperGResult accessors</h1>
+
+                <p>If <tt><span>r</span></tt> is a GOHyperGResult
+                instances:</p>
+                <pre>
+pvalues           universeCounts    summary
+oddsRatios        geneCounts        htmlReport
+expectedCounts    goDag
+                  geneIdUniverse
+                  selectedGenes
+</pre>
+
+                <p>Most of the accessors for HyperGParams work here
+                too, so you can answer: Was it conditionl? Over or
+                under representation? Etc.</p>
+              </div>
+
+              <div>
+                <h1>hyperGTest</h1>
+                <pre>
+hyperGTest(p)
+</pre>
+
+                <p><tt><span>p</span></tt> can be a:</p>
+
+                <blockquote>
+                  <ul>
+                    <li>GOHyperGParams</li>
+
+                    <li>KEGGHyperGParams</li>
+
+                    <li>PFAMHyperGParams</li>
+                  </ul>
+                </blockquote>
+
+                <p>Parameter class design makes it easier to run
+                many tests and allows using a single instance as a
+                template for tweaking.</p>
+              </div>
+
+              <div>
+                <h1>GO and Hypergeometric Dangers</h1>
+
+                <div>
+                  <p>The Hypergeometric test assumes independence
+                  of categories.</p>
+
+                  <p>GO terms are <strong>not</strong> independent
+                  of each other.</p>
+                </div>
+
+                <div>
+                  <p>Test results often include directly related
+                  terms with significant gene overlap.</p>
+
+                  <p>Is there really evidence for both terms?</p>
+                </div>
+              </div>
+
+              <div>
+                <h1>GO Testing Philosophy</h1>
+
+                <p>More general statements require evidence beyond
+                that which is required to prove more specific
+                statements.</p>
+
+                <p>This is an essential component of the scientific
+                method.</p>
+
+                <p>We only want to call a GO term significant if
+                there is evidence beyond that provided by its
+                significant children.</p>
+              </div>
+
+              <div>
+                <h1>A Conditional Algorithm</h1>
+
+                <p>Condition out child terms that have tested as
+                significant when testing a given term.</p>
+
+                <p>Assess whether there is additional evidence for
+                the parent term.</p>
+
+                <p>How:</p>
+
+                <blockquote>
+                  <ol>
+                    <li>Walk leaves of the GO DAG, compute
+                    Hypergeometric as usual.</li>
+
+                    <li>When computing the next level, remove genes
+                    from significant children.</li>
+                  </ol>
+                </blockquote>
+              </div>
+
+              <div>
+                <h1>Lab Time</h1>
+
+                <ul>
+                  <li>ALL dataset (ALL1/AF4 vs NEG)</li>
+
+                  <li>Work through details of non-specific
+                  filtering</li>
+
+                  <li>Play with hyperGTest</li>
+
+                  <li>Try out KEGG and PFAM based tests</li>
+                </ul><img src="images/scientist.gif" align="right" alt="images/scientist.gif" />
+              </div>
+            </div>
+          

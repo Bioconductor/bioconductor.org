@@ -1,0 +1,357 @@
+
+            <h1>Installing R Development tools on
+            Windows</h1>
+
+            <div>
+              <p><a name="contents">Contents</a></p>
+
+              <ul>
+                <li><a href="instructions-windows.html#downloading-files" name="id3">Downloading
+                Files</a></li>
+
+                <li><a href="instructions-windows.html#tool-chain-installation" name="id4">
+                Tool chain installation</a></li>
+
+                <li><a href="instructions-windows.html#further-configuration-and-testing" name="id5">
+                Further configuration and testing</a></li>
+
+                <li><a href="instructions-windows.html#miktex" name="id6">MikTeX</a></li>
+
+                <li><a href="instructions-windows.html#building-r-from-source" name="id7">Building
+                R from source</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h1><a href="instructions-windows.html#id3" name="downloading-files">Downloading
+              Files</a></h1>
+
+              <p>You will need the following files, downloaded to
+              your computer (WARNING, these are large files,
+              15-30MB each):</p>
+
+              <ul>
+                <li><a href="http://bioconductor.org/repository/MinicourseTools/Rminicourse-WinToolset.zip">
+                Rminicourse-WinToolset.zip</a></li>
+
+                <li><a href="http://bioconductor.org/repository/MinicourseTools/R-2.3.r36984.tgz">
+                R-2.3.r36984.tgz</a></li>
+
+                <li>MikTeX installer, instructions at <a href="http://www.miktex.org/setup.html">http://www.miktex.org/setup.html</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h1><a href="instructions-windows.html#id4" name="tool-chain-installation">Tool chain
+              installation</a></h1>
+
+              <p>The file Rminicourse-WinToolset.zip contains the
+              tools you'll need.</p>
+
+              <ol>
+                <li>
+                  <p>Start by 'unzipping'
+                  Rminicourse-WinToolset.zip. To do this: Find
+                  Rminicourse-WinToolset.zip on your desktop,
+                  right-click on the icon, and choose 'Extract
+                  all...' from the menu. Follow the on-screen
+                  instructions, and extract the files into a
+                  convenient place on your computer. It will be
+                  easier to extract it at the 'top level' of your
+                  hard drive, e.g., C:\Rminicourse-WinToolset. The
+                  folder you have just created should contain the
+                  following files:</p>
+                  <pre>
+Rtools.zip<br />
+MinGW-5.0.0.exe<br />
+ActivePerl-5.6.1.638-MSWin32-x86.msi<br />
+htmlhelp.exe<br />
+README.TXT<br />
+</pre>
+                </li>
+
+                <li>
+                  <p>Rtools. Find the folder
+                  'Rtools.zip' in the directory you've just
+                  extracted. Right-click on Rtools.zip, and choose
+                  'Extract All...'. Follow the instructions to
+                  extract the files into a top level directory,
+                  e.g., c:\Rtools. It is VERY IMPORTANT that Rtools
+                  is in a top level directory.</p>
+                </li>
+
+                <li>
+                  <p>MinGW. (NB: make sure that any
+                  earlier versions of MinGW have been uninstalled
+                  before starting this procedure) Return to the
+                  "Rminicourse-WinToolset" directory, and double
+                  click on the "MinGW-5.0.0.exe" file. Follow the
+                  on-screen instructions.</p>
+
+                  <p>Choose a mirror, located in the US.</p>
+
+                  <p>Choose to install the 'Candidate' version of
+                  MinGW.</p>
+
+                  <p>Select MinGW base tools, g++ compiler, and g77
+                  compiler</p>
+
+                  <p>The 'Destination location' must be a top-level
+                  directory, preferably the default c:\MinGW.</p>
+                </li>
+
+                <li>
+                  <p>ActivePerl. Return to the
+                  "Rminicourse-WinToolset" directory, and double
+                  click on the ActivePerl-5.6.1.638-MSWin32-x86.msi
+                  icon. Select default choices on all screens.</p>
+                </li>
+
+                <li>
+                  <p>Microsoft HTML Help Workshop.
+                  Return to the "Rminicourse-WinToolset" directory,
+                  double click on the "htmlhelp.exe" file, and
+                  accept default choices.</p>
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <h1><a href="instructions-windows.html#id5" name="further-configuration-and-testing">Further configuration
+              and testing</a></h1>
+
+              <p>Windows needs to be provided with information
+              about where the tools you have installed can be
+              found. You need to modify so-called 'Environment
+              variables' to provide this information. To do
+              this:</p>
+
+              <ol>
+                <li>
+                  <p>From the 'Start' menu, choose
+                  'Control panels'. Then double click on the
+                  'System' control panel, and choose the 'Advanced'
+                  tab. Click on the 'Environment Variables'
+                  button.</p>
+                </li>
+
+                <li>
+                  <p>This is a tricky step. We want
+                  to provide a particular value to a variable
+                  called PATH. Check in the 'System variables'
+                  list. If there is a variable named PATH, then
+                  select it and choose 'Edit'. If the PATH variable
+                  does NOT exist in the System variables list, look
+                  for PATH in the User variables list and, if it
+                  exists, select it and choose 'Edit'. If there is
+                  no PATH variable in either list, choose 'New' in
+                  the user variable list.</p>
+                </li>
+
+                <li>
+                  <p>You will be presented with a
+                  dialog box with two pieces of information. Make
+                  sure the variable name is PATH. Assuming you are
+                  creating a new PATH variable, enter the following
+                  for the 'Variable value':</p>
+                  <pre>
+.;C:\Rtools\bin;C:\Perl\bin;C:\MinGW\bin;c:\Program Files\HTML Help Workshop<br />
+</pre>
+
+                  <p>If you are editing an existing variable, then
+                  place this information IN FRONT of any values
+                  that already exist. It is worth figuring out what
+                  is going on here. You are providing Windows with
+                  locations where Windows will look to try and find
+                  programs. Further, you are telling Windows the
+                  order in which it should look for programs: first
+                  in the 'current' directory (that's the . at the
+                  front), then in c:\RTools\bin, then... When asked
+                  to find a program with some name, Windows will
+                  use the first program with a matching name. Small
+                  typing errors, missing or incorrectly ordered
+                  directories will cause problems later.</p>
+                </li>
+
+                <li>
+                  <p>Close the 'Edit User Variables',
+                  'Environment Variables', and 'System Properties'
+                  windows, saving changes each time.</p>
+                </li>
+              </ol>
+
+              <p>You're now ready to test the configuration. To do
+              this:</p>
+
+              <ol>
+                <li>
+                  <p>start a DOS shell by choosing
+                  the Start menu, then the 'Run...' item. You will
+                  be asked to type the name of a program for
+                  Windows to open for you. Type:</p>
+                  <pre>
+cmd<br />
+</pre>
+
+                  <p>This creates a DOS shell, where commands can
+                  be entered.</p>
+                </li>
+
+                <li>
+                  <p>Look at your path. Type:</p>
+                  <pre>
+set PATH<br />
+</pre>
+
+                  <p>Make sure that the Path starts with
+                  ".;c:\Rtools\bin;". If not, it is likely that a
+                  System variable is defined and named PATH, but
+                  you edited the user variable. Return to a
+                  previous step and edit the PATH System
+                  variable.</p>
+                </li>
+
+                <li>
+                  <p>Test Rtools. First, list files
+                  in the Rtools directory by typing:</p>
+                  <pre>
+dir c:\Rtools\bin<br />
+</pre>
+
+                  <p>You will see a number of programs (files
+                  ending with '.exe'). Try typing:</p>
+                  <pre>
+tar --version<br />
+</pre>
+
+                  <p>This should provide output that starts with
+                  'tar (GNU tar) ...'. Now type:</p>
+                  <pre>
+c:\Rtools\bin\tar --version<br />
+</pre>
+
+                  <p>The output from these two commands should
+                  match exactly. Do the same for gcc, making sure
+                  that the version number is 3.4.4. While you're at
+                  it, you might do:</p>
+                  <pre>
+ls c:\Rtools\bin<br />
+</pre>
+
+                  <p>and find some useful unix-like commands
+                  (including 'ls', which lists files much like DIR
+                  does).</p>
+                </li>
+
+                <li>
+                  <p>Test perl. Try:</p>
+                  <pre>
+perl --version<br />
+</pre>
+
+                  <p>and check to see that the version is
+                  5.6.1.</p>
+                </li>
+              </ol>
+            </div>
+
+            <div>
+              <h1><a href="instructions-windows.html#id6" name="miktex">MikTeX</a></h1>
+
+              <p>Follow the instructions on the MikTeX web site
+              (link above) to install LaTeX. Make sure that PATH
+              contains c:\texmf\miktex\bin.</p>
+            </div>
+
+            <div>
+              <h1><a href="instructions-windows.html#id7" name="building-r-from-source">Building R from
+              source</a></h1>
+
+              <p>Here are the step for building R from source.</p>
+
+              <ol>
+                <li>
+                  <p>Download the R 'tarball' file,
+                  R-2.3.r36984.tgz, from the location given
+                  above.</p>
+                </li>
+
+                <li>
+                  <p>Unpack the tarball. Choose a
+                  directory path WITHOUT spaces in the path name. A
+                  good place is a top-level directory, e.g., c:\R.
+                  We'll call this directory R_HOME. Open a DOS
+                  shell (Start --&gt; Run --&gt; cmd), change to
+                  the top-level of the C drive:</p>
+                  <pre>
+cd c:\<br />
+</pre>
+
+                  <p>(change to another directory if you want to
+                  install R in a different location) and extract
+                  the R files:</p>
+                  <pre>
+tar zxvf c:\Path\to\R-2.3.r36984.tgz<br />
+</pre>
+
+                  <p>The 'zxvf' are options. provided to the tar
+                  command. If you're wondering what they mean, try
+                  the command tar --help.</p>
+
+                  <p>tar will extract the files to a folder called
+                  R-2.3.r36984. Rename this to R-2.3, with:</p>
+                  <pre>
+mv R-2.3.r36984 R-2.3<br />
+</pre>
+
+                  <p>(this is the same as the DOS command REN
+                  R-2.3.r36984 R2-3; mv ('move') is a version of a
+                  standard unix command, and is one of the
+                  Rtools).</p>
+                </li>
+
+                <li>
+                  <p>Execute the following
+                  commands:</p>
+                  <pre>
+cd c:\R-2.3\src\gnuwin32<br />
+make<br />
+make bitmapdll<br />
+make recommended<br />
+</pre>
+
+                  <p>These should generate a lot of screen output,
+                  and each might take several minutes to
+                  complete.</p>
+                </li>
+
+                <li>
+                  <p>As a convenience, you can tell
+                  Windows where to find R. Do this by adding
+                  c:\R-2.3\bin to the PATH variable, as outlined
+                  above. Start a new DOS shell after setting the
+                  PATH variable, because DOS shells only know about
+                  the PATH in effect at the time they were
+                  started.</p>
+                </li>
+
+                <li>
+                  <p>Test. Try typing the
+                  command:</p>
+                  <pre>
+Rgui<br />
+</pre>
+
+                  <p>in a new DOS shell. This should launch R with
+                  the interface you are familiar with. Try, in R,
+                  typing the command:</p>
+                  <pre>
+sessionInfo()<br />
+</pre>
+
+                  <p>This R was made today, and by you!
+                  Congratulations!</p>
+                </li>
+              </ol>
+            </div>
+          

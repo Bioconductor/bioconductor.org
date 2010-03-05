@@ -1,0 +1,336 @@
+
+            <h1>ApoAI Data:<br />
+            Two groups compared through a common reference</h1>
+
+            <p>Gordon Smyth<br />
+            16 August 2005</p>
+
+            <h2>1. Aims</h2>
+
+            <p>This case study introduces linear modeling as a tool
+            for identifying differentially express genes in the
+            context of a two-group cDNA microarray experiment using
+            a common reference.</p>
+
+            <h2>2. Required data</h2>
+
+            <p>The ApoAI data set is required for this lab and can
+            be obtained from <a href="Data/apoai.zip">Data/apoai.zip</a>. You should create
+            a clean directory, unpack this file into that
+            directory, then set that directory as your working
+            directory for your R session using setwd() or
+            otherwise.</p>
+
+            <h2>3. The ApoAI experiment</h2>
+
+            <p>In this section we consider a case study where two
+            RNA sources are compared through a common reference
+            RNA. The analysis of the log-ratios involves a
+            two-sample comparison of means for each gene. The data
+            is available as an RGList object in the saved R data
+            file <code>ApoAI.RData</code>.</p>
+
+            <p><b>Background</b>. The data is from a study of lipid
+            metabolism by Callow et al (2000). The apolipoprotein
+            AI (ApoAI) gene is known to play a pivotal role in high
+            density lipoprotein (HDL) metabolism. Mice which have
+            the ApoAI gene knocked out have very low HDL
+            cholesterol levels. The purpose of this experiment is
+            to determine how ApoAI deficiency affects the action of
+            other genes in the liver, with the idea that this will
+            help determine the molecular pathways through which
+            ApoAI operates.</p>
+
+            <p><b>Hybridizations</b>. The experiment compared 8
+            ApoAI knockout mice with 8 wild type (normal) C57BL/6
+            ("black six") mice, the control mice. For each of these
+            16 mice, target mRNA was obtained from liver tissue and
+            labelled using a Cy5 dye. The RNA from each mouse was
+            hybridized to a separate microarray. Common reference
+            RNA was labelled with Cy3 dye and used for all the
+            arrays. The reference RNA was obtained by pooling RNA
+            extracted from the 8 control mice.</p>
+
+            <div>
+              <table border="1">
+                <tbody>
+                  <tr>
+                    <th>Number of arrays</th>
+
+                    <th>Red (Cy5)</th>
+
+                    <th>Green (Cy3)</th>
+                  </tr>
+
+                  <tr>
+                    <td>8</td>
+
+                    <td>Wild Type "black six" mice (<b>WT</b>)</td>
+
+                    <td>Pooled Reference (<b>Ref</b>)</td>
+                  </tr>
+
+                  <tr>
+                    <td>8</td>
+
+                    <td>ApoAI Knockout (<b>KO</b>)</td>
+
+                    <td>Pooled Reference (<b>Ref</b>)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>Diagrammatically, the experimental design
+            is:</p><img src="images-apoest/ApoAIdesign.png" alt="ApoAIdesign.png" /><br />
+            <br />
+
+            <p>This is an example of a single comparison experiment
+            using a common reference. The fact that the comparison
+            is made by way of a common reference rather than
+            directly as for the swirl experiment makes this, for
+            each gene, a two-sample rather than a single-sample
+            setup.</p>
+
+            <h2>4. Load the data</h2>
+            <pre>
+ library(limma)
+ load("ApoAI.RData")
+ objects()
+ names(RG)
+ RG$targets
+ RG
+</pre>
+
+            <p><b>Exercise</b>: All data objects in limma have
+            object-orientated features which allow them to behave
+            in many ways, such as subsetting, cbind() and rbind(),
+            analogously to ordinary matrices. Explore the
+            matrix-like properties of RGList objects. Try for
+            example:</p>
+            <pre>
+ dim(RG)
+ ncol(RG)
+ colnames(RG)
+ RG[,1:2]
+ RG1 &lt;- RG[,1:2]
+ RG2 &lt;- RG[,9:10]
+ cbind(RG1,RG2)
+ i &lt;- RG$genes$TYPE=="Control"
+ RG[i,]
+</pre>
+
+            <h2>5. Normalize</h2>
+
+            <p>The following command does print-tip loess
+            normalization of the log-ratios by default:</p>
+            <pre>
+ MA &lt;- normalizeWithinArrays(RG)
+</pre>
+
+            <h2>6. Defining a design matrix</h2>
+
+            <p>In order to construct a design matrix, let us remind
+            ourselves of the linear model which we are fitting for
+            each gene:</p><img src="images-apoest/LinearModel.png" alt="LinearModel.png" /><br />
+
+            <p>where <img src="images-apoest/y.png" align="middle" alt="y.png" /> is the vector of normalized log
+            ratios from the sixteen arrays, <img src="images-apoest/Ey.png" align="middle" alt="Ey.png" />
+            is the Expected Value of <img src="images-apoest/y.png" align="middle" alt="y.png" />, <img src="images-apoest/X.png" align="bottom" alt="X.png" /> is
+            the design matrix and <img src="images-apoest/alpha.png" align="middle" alt="alpha.png" /> is the vector of log ratios to estimate,
+            corresponding to the "<b>M</b>" (fold change) column in
+            the final list of differentially expressed genes given
+            by <code>topTable()</code>. The estimated log ratios
+            are also known as "coefficients", "parameters" and "log
+            fold changes".</p>
+
+            <p>This experiment has three types of RNA: Reference
+            (<b>Ref</b>), Wild Type (<b>WT</b>), and Knockout
+            (<b>KO</b>), so it is sufficient to estimate two log
+            ratios in the linear model for each gene, i.e. we will
+            estimate two parameters, so our design matrix should
+            have two columns. In our case, the two parameters in
+            the <img src="images-apoest/alpha.png" align="middle" alt="alpha.png" /> vector are the log ratios which
+            compare gene expression levels in <b>WT vs Ref</b> and
+            <b>KO vs WT</b>. (There are other possible
+            parameterizations which could have been chosen instead.
+            We are using one which allows us to estimate the
+            contrast of interest (<b>KO vs WT</b>) directly from
+            the linear model fit, rather than estimating it later
+            as a contrast (i.e. a linear combination of parameters
+            estimated from the linear model).</p>
+
+            <p>The design matrix we will use is:</p><img src="images-apoest/ApoAIdesignMatrix.png" alt="ApoAIdesignMatrix.png" /><br />
+
+            <p>where the first column is for the "<b>WT vs Ref</b>"
+            parameter and the second column is for the "<b>KO vs
+            WT</b>" parameter. The first 8 arrays hybridize
+            <b>WT</b> RNA with <b>Ref</b> RNA so it makes sense
+            that they each have a '1' in the <b>WT vs Ref</b>
+            column. The last 8 arrays hybridize <b>KO</b> RNA with
+            <b>Ref</b> RNA which corresponds to the sum of the two
+            parameters, "<b>WT vs Ref</b>" and "<b>KO vs WT</b>"
+            which is clear if you replace "<b>vs</b>" with a minus
+            sign (remembering that everything has been log2
+            transformed so that subtraction here actually
+            represents a log ratio).</p>
+
+            <p>This design matrix can be defined in R as
+            follows:</p>
+            <pre>
+ design &lt;- cbind("WT-Ref"=1,"KO-WT"=rep(0:1,c(8,8)))
+ design
+</pre>
+
+            <p><b>Exercise</b>: Find another way to construct this
+            same design matrix using RG$targets$Cy5 and
+            model.matrix().</p>
+
+            <h2>7. Fitting a linear model</h2>
+            <pre>
+ fit &lt;- lmFit(MA,design=design)
+ colnames(fit)
+ names(fit)
+</pre>
+
+            <h2>8. Empirical Bayes statistics</h2>
+            <pre>
+ fit &lt;- eBayes(fit)
+ names(fit)
+ summary(fit)
+</pre>
+
+            <h2>9. Display tables of differentially expressed
+            genes</h2>
+
+            <p>We now use the function <code>topTable</code> to
+            obtain a list the genes with the most evidence of
+            differential expression between the Knockout and
+            Wild-Type RNA samples. The knockout gene (ApoAI) should
+            theoretically have a log fold change of minus infinity,
+            but microarrays cannot measure extremely large fold
+            changes. While the M value of the ApoAI gene in the
+            topTable may not have much biological meaning, the high
+            ranking shows that this gene is consistently
+            down-regulated across the replicate arrays.</p>
+            <pre>
+ topTable(fit,coef="KO-WT",adjust="fdr")
+</pre>The arguments of topTable can be studied in more detail with
+<code>?topTable</code> or <code>args(topTable)</code>. The default
+method for ranking genes is the B statistic (log odds of
+differential expression, Lonnstedt and Speed [2]), but the
+moderated t statistic and p-value can also be used. Using the
+average fold-change (the M column) is not usually recommended
+because this ignores the genewise variability between replicate
+arrays.
+
+            <p><b>Exercise</b>: Try to achieve the same top-table
+            using a completely different design matrix and forming
+            contrasts. Use the function</p>
+            <pre>
+ modelMatrix(RG$targets, ref="Pool")
+</pre>
+
+            <p>to format a different design matrix. Then use
+            makeContrasts() and contrasts.fit() to form the KO vs
+            Wt comparison.</p>
+
+            <h2>10. Removing control spots</h2>
+
+            <p>In most practical studies one will want to remove
+            the control probes from the data before undertaking the
+            differential expression study. This can be done by
+            examining the columns of the probe annotation data
+            frame, RG$genes:</p>
+            <pre>
+ table(RG$genes$TYPE)
+ isGene &lt;- RG$genes$TYPE=="cDNA"
+ MA2 &lt;- MA[isGene,]
+</pre>
+
+            <p>Now repeat the linear model steps with the reduced
+            data.</p>
+
+            <h2>11. MA plot of coefficients from the fitted
+            model</h2>
+
+            <p>Using an M A plot, we can see which genes are
+            selected as being differentially expressed by the B
+            statistic (log odds of differential expression), which
+            is the default ranking statistic for the topTable. Of
+            course, the differentially expressed genes selected by
+            the B statistic may not have the most extreme fold
+            changes (M values), because some of the genes with
+            extreme average fold changes may vary significantly
+            between replicate arrays so they will be down-weighted
+            by the empirical Bayes statistics.</p>
+            <pre>
+ plotMA(fit, 2)
+</pre>
+
+            <p>Now add gene labels:</p>
+            <pre>
+ top10 &lt;- order(fit$lods[,"KO-WT"],decreasing=TRUE)[1:10]
+ A &lt;- fit$Amean
+ M &lt;- fit$coef[,2]
+ shortlabels &lt;- substring(fit$genes[,"NAME"],1,5)
+ text(A[top10],M[top10],labels=shortlabels[top10],cex=0.8,col="blue")
+</pre>
+
+            <h2>Acknowledgements</h2>
+
+            <p>Thanks to Yee Hwa Yang and Sandrine Dudoit for the
+            ApoAI data.</p>
+
+            <h2>References</h2>
+
+            <ol>
+              <li>Callow, M. J., Dudoit, S., Gong, E. L., Speed, T.
+              P., and Rubin, E. M. (2000). Microarray expression
+              profiling identifies genes with altered expression in
+              HDL deficient mice. <i>Genome Research</i> <b>10</b>,
+              2022-2029. <a href="http://www.genome.org/cgi/content/full/10/12/2022">http://www.genome.org/cgi/content/full/10/12/2022</a></li>
+
+              <li>Smyth, G. K., and Speed, T. P. (2003).
+              Normalization of cDNA microarray data. <i>Methods</i>
+              31, 265-273.
+              http://www.statsci.org/smyth/pubs/normalize.pdf</li>
+
+              <li>L<span>�</span>nnstedt, I, and Speed
+              T. P. (2002). Replicated microarray data. Statistica
+              Sinica 12, 31-46.</li>
+
+              <li>Smyth, G. K. (2004). Linear models and empirical
+              Bayes methods for assessing differential expression
+              in microarray experiments. <i>Statistical
+              Applications in Genetics and Molecular Biology</i>
+              <b>3</b>, No. 1, Article 3. <a href="http://www.bepress.com/sagmb/vol3/iss1/art3/">http://www.bepress.com/sagmb/vol3/iss1/art3/</a></li>
+            </ol>
+
+            <h2>Glossary</h2>
+
+            <table border="2">
+              <tbody>
+                <tr>
+                  <td>Knockout RNA</td>
+
+                  <td>RNA extracted from a biological specimen
+                  which has had one gene artificially knocked out
+                  (removed) from it in a laboratory.</td>
+                </tr>
+
+                <tr>
+                  <td>Wild Type RNA</td>
+
+                  <td>RNA extracted from a biological specimen
+                  whose genes are in their natural form (as found
+                  in the wild).</td>
+                </tr>
+              </tbody>
+            </table>
+
+            <p> </p>
+
+            <p><a href="">Return to list of
+            Exercises</a></p>
+          

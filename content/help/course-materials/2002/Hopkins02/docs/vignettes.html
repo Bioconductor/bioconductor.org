@@ -1,0 +1,62 @@
+
+            <p>Each Bioconductor package contains at least one
+            vignette, a document that provides a task-oriented
+            description of package functionality. Vignettes contain
+            executable examples and are intended to be used
+            interactively.</p>
+
+            <p>You can access the PDF version of a vignette for any
+            installed package from inside R as follows:</p>
+            <pre>
+library("Biobase")<br />
+## now load package of interset, here GOstats<br />
+library("GOstats")<br />
+openVignette()<br />
+</pre>
+
+            <p>This will present you with a menu where you can
+            select the desired vignette. Selecting a vignette
+            should cause the corresponding PDF file to open on your
+            system.</p>
+
+            <p>The vignette files, both the PDF and the Rnw sources
+            document, are located in the <code>doc</code> directory
+            of an installed package (inst/doc for an uninstalled
+            package tarball). You can discover the location of an
+            installed package as follows:</p>
+            <pre>
+system.file(package = "GOstats")<br />
+</pre>
+
+            <p>You can extract all of the R code from a vignette
+            source file (these files are in Sweave format) as shown
+            below. The result will be a <code>.R</code> file for
+            each vignette source file written to your current
+            working directory. You can use these R files to cut and
+            paste into an R session so that you can work the
+            examples in the vignette yourself.</p>
+            <pre>
+library("tools")<br />
+vigSrc = list.files(pattern = "Rnw$",<br />
+                    system.file("doc", package = "GOstats"),<br />
+                    full.names = TRUE)<br />
+vigSrc<br />
+for (v in vigSrc) Stangle(v)<br />
+</pre>
+
+            <p>You can also download the vignette for a package
+            that isn't installed on your system. Package vignettes
+            are linked from each package's description page which
+            can be reached from the <a href="http://bioconductor.org/packages/release/BiocViews.html">
+            BiocViews</a> page.</p><br />
+            <br />
+
+            <p><b>Term of use for the vignettes:</b> You are
+            welcome to use these materials for instructional
+            purposes. However, you may not include these in
+            separately published works (articles, books,
+            websites).When using all or parts of the Bioconductor
+            course materials (slides, vignettes, scripts) we would
+            appreciate it if you would cite the authors and refer
+            your audience to the Bioconductor website</p>
+          

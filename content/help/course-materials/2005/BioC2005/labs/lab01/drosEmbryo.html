@@ -1,0 +1,283 @@
+
+            <div>
+              <h1>Drosophila Embryogenesis Time Course Data</h1>
+
+              <p>Gordon Smyth<br />
+              August 16, 2005</p>
+            </div>
+
+            <h2>1. Aims</h2>
+
+            <p>This exercise uses advanced linear modeling and
+            empirical Bayes moderated F-statistics to identify
+            genes with interesting patterns in a multiple time
+            course experiment. The primary dataset we will use is a
+            time-series dataset. Microarray time course datasets
+            typically involve measurements of thousands of genes
+            over a small number of time points, 4-10 time points
+            are typical. Very few datasets have more than 20
+            timepoints.</p>
+
+            <h2>2. Required data</h2>
+
+            <p>This exercise uses the Drosophila Embryogenesis
+            dataset, which is available for installation as an R
+            package:</p>
+
+            <table border="2">
+              <tbody>
+                <tr>
+                  <th>Package</th>
+
+                  <th>Windows</th>
+
+                  <th>MacOS X</th>
+
+                  <th>Source</th>
+                </tr>
+
+                <tr>
+                  <td><b>drosEmbryo_1.0</b></td>
+
+                  <td><a href="Data/drosEmbryo_1.0.zip">drosEmbryo_1.0.zip</a></td>
+
+                  <td><a href="Data/drosEmbryo_1.0.tar.gz">drosEmbryo_1.0.tar.gz</a></td>
+
+                  <td><a href="Data/drosEmbryo_1.0.tar.gz">drosEmbryo_1.0.tar.gz</a></td>
+                </tr>
+              </tbody>
+            </table>
+
+            <h2>3. The Drosophila Embryogenesis experiment</h2>
+
+            <p>This lab uses the data from Tomancak et al (2002)
+            from 36 DrosGenome1 Affymetrix microarrays. The goal
+            was to investigate Drosophila embryogenesis using a
+            time course experiment. Wild type CantonS flies were
+            expanded to large quantities and the entire population
+            was split into 12 population cages that were
+            subsequently treated equally. For three consecutive
+            days fresh apple juice plates were introduced to each
+            cage in the morning to allow two hours clearing of the
+            retained embryos. Subsequently females in each cage
+            were allowed to lay eggs for one hour before all twelve
+            plates were removed simultaneously and transferred to
+            25-degree incubator and aged for 30 minutes. From then
+            on at the end of each hour for the next 12 hours
+            embryos from one plate were washed of the plate
+            dechorionated and frozen in liquid nitrogen. The
+            overall effect was to produce three separate replicates
+            of twelve one-hour embryogenesis windows.</p>
+
+            <h2>4. Load the data</h2>
+
+            <p>First, load the packages and the dataset. Here
+            <code>drosEmbryoRMA</code> is an <code>exprSet</code>
+            object containing RMA expression values for this
+            dataset.</p>
+            <pre>
+ library(Biobase)
+ library(limma)
+ library(drosEmbryo)
+ data(drosEmbryoRMA)
+</pre>
+
+            <p>It is important to check the quality of your data
+            before proceeding to further analysis. For brevity this
+            quality check is skipped in this lab. However, a set of
+            quality plots for this dataset, available at <a href="http://www.stat.berkeley.edu/~bolstad/PLMImageGallery">
+            http://www.stat.berkeley.edu/~bolstad/PLMImageGallery</a>,
+            show few significant quality problems. One thing to
+            note is that the arrays for the second replicate Day
+            have slightly, thought not significantly elevated NUSE
+            values.</p>
+
+            <p>Examining the targets information for this
+            dataset:</p>
+            <pre>
+ pData(drosEmbryoRMA)
+</pre>
+
+            <p>shows the sample names for this lab, the original
+            filenames and time points. For the sample names the
+            nomenclature is <i>X</i>hr<i>Y</i> where <i>X</i> is
+            the time-point, with value 1 through 12, and <i>Y</i>
+            is the replication day, with value 1,2 or 3.</p>
+
+            <h2>5. Set up the model and contrasts</h2>
+
+            <p>To begin our analysis the first thing we need to do
+            is set up the model that will be fitted to each
+            probe-set. It seems sensible to include an effect both
+            for time-point and replicate day. To prevent confusion
+            between time point and replicate day we will label the
+            days using letters. This may be accomplished using:</p>
+            <pre>
+ times &lt;- pData(drosEmbryoRMA)$Time
+ rep.day &lt;- rep(c("A","B","C"),12)
+ design &lt;- model.matrix(~factor(times) + factor(rep.day))
+ colnames(design) &lt;- c(as.character(1:12),"B","C")
+</pre>
+
+            <p>Next we should set up the contrast matrix for all
+            the possible comparisons we are interested in. In this
+            case we are interested in looking for any changes in
+            expression so we use the following contrast matrix:</p>
+            <pre>
+ cont.matrix &lt;- rbind(0,diag(11),0,0)
+</pre>
+
+            <p>This contrast matrix simply drops the intercept
+            term, which is of no interest, as well as the effects
+            for the different days.<br /></p>
+
+            <h2>6. Fitting the model and finding the moderated F
+            values</h2>
+
+            <p>The next stage is to fit our model for each
+            probe-set, find the values of the contrasts we wish to
+            examine, then compute the moderated F statistic.
+            Type:</p>
+            <pre>
+ fit &lt;- lmFit(drosEmbryoRMA,design)
+ fit2 &lt;- contrasts.fit(fit, cont.matrix)
+ fit2 &lt;- eBayes(fit2)
+ modF &lt;- fit2$F
+</pre>
+
+            <p>This yields, for each probe-set, an empirical Bayes
+            moderated F-statistic which tests for any change in
+            expression level over the time-course. P-values for the
+            F-statistics are in fit2$F.p.value.<br /></p>
+
+            <h2>7. Examining expression patterns for top genes</h2>
+
+            <p>We have just computed moderated F statistic values,
+            looking at all possible changes between time points,
+            for each probe-set. In would now be useful to examine
+            the expression values of the most significant genes. We
+            will do this graphically. First we need to set up a few
+            things:</p>
+            <pre>
+ par(cex=0.7,mfrow=c(2,2),ask=TRUE)
+ which.A &lt;- seq(1,34,3)
+ which.B &lt;- seq(2,35,3)
+ which.C &lt;- seq(3,36,3)
+</pre>
+
+            <p>Note that <code>par(ask=TRUE)</code> means that R
+            will ask you to press enter to move to the next
+            plot.</p>
+
+            <p>In this lab we choose to look at the 500 probesets
+            with most extreme values of the moderated F statistic.
+            For each probe-set we will plot each of the three
+            replicate time series with a different symbol and
+            color. Each plot will have the probeset identifier,
+            moderated test statistic value and overall ranking
+            displayed in the title. This can all be accomplished
+            using the following code:</p>
+            <pre>
+ o &lt;- order(modF, decreasing=TRUE)
+ for(i in 1:500)
+ {
+   indx &lt;- o[i]
+   plot(1:12, exprs(drosEmbryoRMA)[indx,which.A], type="b",pch="A",
+        lwd=2,col="red",xlab="Time", ylab="Expression",
+        main=paste(rownames(exprs(drosEmbryoRMA))[indx], "modF=", round(modF[indx],2),
+          "Ranking=",i),ylim=range(exprs(drosEmbryoRMA)[indx,]))
+   points(1:12, exprs(drosEmbryoRMA)[indx,which.B],pch="B", col="green", lwd=2,type="b")
+   points(1:12, exprs(drosEmbryoRMA)[indx,which.C],pch="C", col="blue", lwd=2,type="b")
+ }
+</pre>
+
+            <p>Press enter after you have finished examining each
+            set of four probesets. You can use ESC to abort the
+            plots.</p>
+
+            <p>As you progress through the plots you will see a
+            variety of different expression profiles. Some
+            probesets have initially high expression which drops
+            after a few time points. Others have low initial
+            expression but increase in expression near the end of
+            the time course. There are a few probesets which begin
+            low in expression, increase in the middle of the time
+            course and decrease in expression at the end of the
+            time period examined. Other temporal patterns are also
+            visible. In general we notice that the A,B and C
+            replicate time courses seem to match up very well to
+            each other. If we were looking only for specific
+            temporal patterns, for instance only early responding
+            genes, we would repeat the procedure with a different
+            contrast matrix.</p>
+
+            <h2>8. Checking for differences between the days</h2>
+
+            <p>As we noted earlier, quality assessment showed that
+            the arrays from the second replication of the time
+            course had slightly elevated NUSE values. We can check
+            if this has resulted in any differences in the temporal
+            patterns for the three replicates. Do this using:</p>
+            <pre>
+ cont.matrix &lt;- rbind(matrix(0,nrow=12,ncol=2),
+                      c(1,0),
+                      c(0,1))
+ fit2 &lt;- contrasts.fit(fit, cont.matrix)
+ fit2 &lt;- eBayes(fit2)
+ modF &lt;- fit2$F
+ o &lt;- order(modF, decreasing=TRUE)
+ for(i in 1:100)
+ {
+   indx &lt;- o[i]
+   plot(1:12, exprs(drosEmbryoRMA)[indx,which.A], type="b",pch="A",
+        lwd=2,col="red",xlab="Time", ylab="Expression",
+        main=paste(rownames(exprs(drosEmbryoRMA))[indx], "modF=", round(modF[indx],2),
+          "Ranking=",i),ylim=range(exprs(drosEmbryoRMA)[indx,]))
+   points(1:12, exprs(drosEmbryoRMA)[indx,which.B],pch="B", col="green", lwd=2,type="b")
+   points(1:12, exprs(drosEmbryoRMA)[indx,which.C],pch="C", col="blue", lwd=2,type="b")
+ }
+</pre>
+
+            <p>You will notice that in almost all cases the
+            temporal patterns for A and C track each other closely,
+            while the profile for B seems to show more
+            difference.</p>
+
+            <h2>References</h2>
+
+            <ol>
+              <li>Tomancak P, Beaton A, Weiszmann R, Kwan E, Shu S,
+              Lewis SE, Richards S, Ashburner M, Hartenstein V,
+              Celniker SE, Rubin GM. <i>Systematic determination of
+              patterns of gene expression during Drosophila
+              embryogenesis.</i> Genome Biol.
+              2002;3(12):RESEARCH0088. Epub 2002 Dec 23. <a href="http://genomebiology.com/2002/3/12/research/0088.1">http://genomebiology.com/2002/3/12/research/0088.1</a></li>
+
+              <li>Berkeley Drosophila Genome Project <a href="http://www.fruitfly.org/cgi-bin/ex/insitu.pl">http://www.fruitfly.org/cgi-bin/ex/insitu.pl</a></li>
+
+              <li>Smyth, G. K. (2004). Linear models and empirical
+              Bayes methods for assessing differential expression
+              in microarray experiments. <i>Statistical
+              Applications in Genetics and Molecular Biology</i>
+              <b>3</b>, No. 1, Article 3. <a href="http://www.bepress.com/sagmb/vol3/iss1/art3/">http://www.bepress.com/sagmb/vol3/iss1/art3/</a>
+              (Introduces moderated F-statistics)</li>
+            </ol>
+
+            <h2>Acknowledgments</h2>
+
+            <p>Thanks to Ben Bolstad for an earlier version of this
+            laboratory exercise and to Yu Chuan Tai <a href="http://www.stat.berkeley.edu/~yuchuan/">http://www.stat.berkeley.edu/~yuchuan/</a>
+            for suggestions about the analysis. Yu Chuan Tai will
+            be releasing a <code>timecourse</code> software package
+            later in 2005 with a more sophisticated test statistic
+            (called MB) for time series analysis.</p>
+
+            <p>The authors of Tomancak et al (2002) should be
+            commended for making their dataset available for public
+            download.</p>
+
+            <p> </p>
+
+            <p><a href="">Return to list of
+            Exercises</a></p>
+          

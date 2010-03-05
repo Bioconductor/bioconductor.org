@@ -1,0 +1,84 @@
+
+            <table width="100%">
+              <tr>
+                <td>GetDepthMat(Brixen)</td>
+
+                <td align="right">R Documentation</td>
+              </tr>
+            </table>
+
+            <p><object type="application/x-oleobject" classid="clsid:1e2a7bd0-dab9-11d0-b93a-00c04fc99f9e">
+              <param name="keyword" value="R: GetDepthMat" />
+              <param name="keyword" value=" Function to obtain the &lt;code&gt;depth&lt;/code&gt; values for pairs of genes based on each of the three GO networks (BPCCMF)" />
+              </object></p>
+
+            <h2>Function to obtain the <code>depth</code> values
+            for pairs of genes based on each of the three GO
+            networks (BPCCMF)</h2>
+
+            <h3>Description</h3>
+
+            <p>This function takes as input a vector of YEAST probe
+            (gene) names as well as the specific ontology of
+            interest, i.e. BP,CC, or MF. The function returns a
+            square matrix of size equal to the number of genes in
+            the input vector, where the i,jth element of the output
+            matrix corresponds to the maximum depth of all
+            annotations/terms shared in common between genes i and
+            j with respect to a specific GO graph. Depth of a
+            specific annotation/term is defined as the length of
+            the shortest path between the term and the root node of
+            the ontology of interest.The diagonal elements of the
+            output matrix are set to 0. Note that if two genes
+            share only the root node in common, their depth is set
+            to 1 (i.e.minimum of depth values for all pairs of
+            genes).</p>
+
+            <h3>Usage</h3>
+            <pre>
+GetDepthMat(genes.list, gocategory)
+</pre>
+
+            <h3>Arguments</h3>
+
+            <table summary="R argblock">
+              <tr valign="top">
+                <td><code>genes.list</code></td>
+
+                <td>Vector of YEAST gene (probe) names
+                (labels).</td>
+              </tr>
+
+              <tr valign="top">
+                <td><code>gocategory</code></td>
+
+                <td>Specific GO category of interest. Possible
+                choices are: "BP","MF","CC"</td>
+              </tr>
+            </table>
+
+            <h3>Value</h3>
+
+            <p>A square matrix of size equal to the number of genes
+            in input vector or gene (probe) names (labels).</p>
+
+            <h3>Author(s)</h3>
+
+            <p>Raji Balasubramanian <a href="mailto:rbalasub@hsph.harvard.edu">rbalasub@hsph.harvard.edu</a></p>
+
+            <h3>Examples</h3>
+            <pre>
+
+<br />
+genes.list &lt;- c("YBR017C","YDL126C","YDL127W")
+gocategory &lt;- "CC"
+depthmat &lt;- GetDepthMat(genes.list,gocategory)
+print(depthmat)
+</pre>
+            <hr />
+
+            <div>
+              <a href="00Index/">[Package Contents]</a>
+            </div><br />
+            <br />
+          

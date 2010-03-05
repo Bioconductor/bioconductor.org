@@ -1,0 +1,161 @@
+
+  <h1>multtest and ALL data<br /></h1>
+
+  <p>Kasper Daniel Hansen<br />
+  (adapted from the multtest vignettes)<br />
+  Bioconductor 2. August 2006</p>
+
+  <h2>1. Introduction</h2>We will look at adjusting for multiple
+  testing in an analysis of the ALL dataset. This analysis is very
+  rudimental and quite similar to what is done in the multtest
+  vignette. The ALL dataset was chosen because of its size and
+  availability as a Bioconductor data package.
+
+  <h2>1. Getting started</h2>
+
+  <p>You will need the following packages from Bioconductor:
+  multtest, ALL and genefilter. First we load the packages and the
+  data:</p>
+  <pre>
+library(multtest)
+library(ALL)
+library(genefilter)
+data(ALL)
+</pre>
+
+  <p>ALL is an exprSet from a study with 128 samples using the
+  Affymetrix hgu95av2 chip with 12,625 probesets. The data has been
+  preprocessed using RMA. We start by following the original
+  article and filter out probesets where i) the coefficient of
+  variation is between 0.7 and 10 and where ii) at least 20% of the
+  samples have a measured intensity of at least 100 (on the
+  original scale, not the log2 scale which is the scale of the expr
+  slot in the ALL data)</p>
+  <pre>
+ffun &lt;- filterfun(pOverA(p = 0.2, A = 100), cv(a = 0.7, b = 10))
+filt &lt;- genefilter(2^exprs(ALL), ffun)
+filtALL &lt;- ALL[filt, ]
+</pre>
+
+  <p>filtALL now contains 431 genes (probesets). If you are
+  unfamilar with the data, you can have a look at the covariates
+  by</p>
+  <pre>
+filtALL
+summary(pData(filtALL))
+</pre>
+
+  <h2>3. Standard t-tests and marginal adjustments</h2>
+
+  <p>We start by finding genes that are differentially expressed
+  between B-cells and T-cells. We will be using the BT covariate
+  which has no missing values. However, since the two types have
+  been subdivided into T1, T2, etc. we start by defining a new
+  variable which is TRUE when the sample comes from a B-cell and
+  FALSE if coming from a T-cell:</p>
+  <pre>
+BT &lt;- is.element(pData(filtALL)$BT,
+    c("B", "B1", "B2", "B3", "B4", "B5"))
+</pre>
+
+  <p>Next we do a Welsh t-test (not assuming equal variances in the
+  two groups) and save the p-vales. By looking at them, we see that
+  without adjusting for multiple testing, 296 genes are significant
+  at level 0.05.</p>
+  <pre>
+rawp &lt;- esApply(filtALL.sex, MARGIN = 1, FUN = function(x) {
+    t.test(x[bt], x[!bt])$p.value
+})
+sum(rawp &lt;= 0.05)
+</pre>
+
+  <p>We will start by doing a marginal adjustment of the p-values.
+  Marginal adjustments only take the vector of p-values into
+  account and are therefore not as powerful as joint adjustments.
+  On the other hand, they are easy to do and there are no
+  restrictions on the sample size. A number of procedures have been
+  suggested, we start be looking at the results for procedures
+  controlling the familywise error rate (FWER). By doing so, we try
+  to control the possibility of making a single ***.</p>
+  <pre>
+fwer &lt;- mt.rawp2adjp(rawp, c("Bonferroni", "Holm", "Hochberg"))
+mt.reject(fwer$adjp, alpha = 0.05)$r
+</pre>
+
+  <p>We see that the Bonferroni adjustment is the most conservative
+  (yielding the least rejections) while the Holm and Hochberg
+  adjustments yields similar results.</p>
+
+  <p>We can also try to control the false discory rate (FDR) which
+  is very popular in genomics. By doing so, we try to control the
+  expected number of false negatives amongst the total number of
+  rejected hypotheses. This is a popular error rate because it is
+  relative to how many rejections one has in total. Two popular
+  marginal procedures exists for this: Benjamini-Hochberg and
+  Bejamini-Yuketeli. The first procedure assumes weak dependence
+  amongst the test-statistics, but is also the least
+  conservative.</p>
+  <pre>
+fwer &lt;- mt.rawp2adjp(rawp, c("BH", "BY"))
+mt.reject(fwer$adjp, alpha = 0.01)$r
+</pre>
+
+  <p>Note that the alpha parameter this time has a different
+  interpretation because the error rate (FDR vs. FWER) is
+  different.</p>
+
+  <p>It would be a good idea to try out the methodology on another
+  covariate. While the mechanical steps are very similar, try to
+  interpret the results. I would suggest sex. Note that sex
+  (surprisingly) has a few missing values, so you will need to
+  subset the filtALL exprSet to remove these sample, an example
+  would be</p>
+  <pre>
+filtALL.sex &lt;- filtALL[, !is.na(pData(filtALL)$sex)]
+</pre>
+
+  <h2>4. Standard t-tests and joint adjustments</h2>
+
+  <p>We will now be using a joint procedure. These types of
+  procedures have the advantage that it is possible to take the
+  dependency structure of the data into account. In general they
+  are preferred to marginal adjustments, with the caveat that one
+  needs a reasonable number of samples to use them. They are also
+  much slower.</p>
+
+  <p>We will be using the bootstrap estimator and use a step-down
+  minP procedure. In the following we are using 5,000 bootstrap
+  replicates (which is a reasonable number). That may take too long
+  to complete on your machine. We have supplied a complete run in
+  the multtestPractical.rda file which can be loaded by the command
+  below, given that the working directory contains the data
+  file.</p>
+  <pre>
+seed &lt;- 675
+MTP.BT &lt;- MTP(X = filtALL, Y = BT, alternative = "two.sided",
+    typeone = "fdr", alpha = 0.01, B = 5000, method = "sd.minP", seed = seed)
+getwd()
+list.files()
+setwd()
+load("multtestPractical.rda")
+</pre>The workhorse function MTP contains a seed argument, which
+explicitely allows for reproducibility. Note that we are
+considering a two-sided alternative. This means we are searching
+for genes which are different between the two groups. By using a
+one-sided alternative (less/greater) we would be looking for genes
+that are higher expressed in one of the groups (of course, in that
+case care needs to be taken that the groups are in the right
+order).<br />
+  <br />
+
+  <p>MTP produces a member of the S4 class MTP. You can examine
+  this class a bit by</p>
+  <pre>
+slotNames("MTP")
+</pre>The class has an update method which allows the user to try
+out different error rates, different levels and so on, without
+recomputing the boostrap procedure. Let us say we want to try out
+the family-wise error rate.
+  <pre>
+update(MTP.BT, alpha = 0.05, typeone = "fwer")
+</pre>
