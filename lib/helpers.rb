@@ -72,3 +72,8 @@ end
 def doctype
   %[<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">]
 end
+
+def course_materials
+  top = @items.find { |i| i.identifier == "/help/course-materials/" }
+  top.children.sort { |a, b| b[:title] <=> a[:title] }
+end
