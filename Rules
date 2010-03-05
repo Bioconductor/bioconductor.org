@@ -43,6 +43,8 @@ compile '*' do
     filter :bluecloth
   when '.haml'
     filter :haml
+  when '.html'
+    filter :erb
   when '.sass'
     filter :sass
   end

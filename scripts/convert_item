@@ -6,14 +6,13 @@ require 'yaml'
 
 class PloneConverter
 
-  def initialize(file_path, dest_id, selector = "div.documentContent")
+  def initialize(file_path, dest_id)
     @doc = Hpricot(open(file_path))
     @dest_id = dest_id
     @selector = selector
   end
 
   def parse_title
-    puts "using selector: #{@selector}"
     @doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
   end
 
@@ -28,12 +27,48 @@ class PloneConverter
       end
     end
     attrs["title"] = parse_title()
-    attrs["plone_url"] = @doc.search("base")[0]["href"]
+    tmp = @doc.search("base")
+    if tmp
+      attrs["plone_url"] = @doc.search("base")[0]["href"] rescue ""
+    end
     attrs
   end
 
   def parse_content
-    @doc.search(@selector).inner_html
+    c = @doc.search("div.plain")
+    if c.empty?
+      c = @doc.search("div.documentContent")
+    end
+    if c.empty?
+      c = @doc.search("body")
+    end
+    if !c.empty?
+      c.search("img[@src='']").remove
+      c.search("img").collect! do |node|
+        if /_icon\.gif/.match(node["src"])
+          node
+        else
+          nil
+        end
+      end.compact.remove
+      c.search("div").collect! {|n| n if n.empty? }.compact.remove
+      c.search("a.link-parent").remove
+      c.search("a").each do |a|
+        a.remove_attribute("target") if a["target"]
+      end
+      c.search("a#documentContent").remove
+      c.search("div.documentDescription").remove
+      c.search("div.discussion").remove
+      c[0].traverse_all_element do |e|
+        if e.elem?
+          e.remove_attribute("class") if e["class"]
+          e.remove_attribute("id") if e["id"]
+        end
+      end
+      c.inner_html
+    else
+      nil
+    end
   end
 
   def convert
@@ -45,13 +80,17 @@ class PloneConverter
     dest_yaml = dest_path.chop + ".yaml"
     attrs = parse_attributes()
     content = parse_content()
-    open(dest_html, "w") do |out|
-      out.write(content)
+    if content
+      open(dest_html, "w") do |out|
+        out.write(content)
+      end
+      open(dest_yaml, "w") do |out|
+        out.write(attrs.to_yaml)
+      end
+      [dest_html, dest_yaml]
+    else
+      []
     end
-    open(dest_yaml, "w") do |out|
-      out.write(attrs.to_yaml)
-    end
-    [dest_html, dest_yaml]
   end
 end
 
@@ -64,22 +103,21 @@ nanoc_id - determines the output file according to nanoc_id syntax.
            Basically this is the relative URL for the output.
            E.g. /about/foo/.
 
-selector - A string to identify the div in which the main HTML content
-           is living.  Most likely one of "div.documentContent" or
-           "div.plain"
-
 EOF
 
 if __FILE__ == $0
-  if ARGV.count != 3
+  if ARGV.count != 2
     puts USAGE
     exit 1
   end
-  plone_file, dest_id, selector = ARGV
-  converter = PloneConverter.new(plone_file, dest_id, selector)
+  plone_file, dest_id = ARGV
+  converter = PloneConverter.new(plone_file, dest_id)
   output = converter.convert
-  puts "Wrote output to:"
-  output.each do |f|
-    puts "    #{f}"
+  if output.empty?
+    puts "No content: #{f}"
+  else
+    output.each do |f|
+      puts "Wrote: #{f}"
+    end
   end
 end

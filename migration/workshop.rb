@@ -7,7 +7,13 @@ require 'yaml'
 require 'fileutils'
 
 def parse_title(doc)
-  doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
+  t = doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
+  t = t.sub(/ - bioconductor\.org/, "")
+  if /folder listing/i.match(t)
+    nil
+  else
+    t
+  end
 end
 
 def parse_attributes(doc)
@@ -115,6 +121,9 @@ def import_workshop_index_files(input, content)
         end
         doc = Hpricot(open("#{indir}/#{f}"))
         attrs = parse_attributes(doc)
+        if attrs["title"].nil?
+          attrs["title"] = File.basename(dest_dir)
+        end
         print "A"
         content = parse_content(doc)
         if content.nil?
@@ -162,6 +171,6 @@ end
 if __FILE__ == $0
   #build_file_index_files("plone-bioconductor.org/workshops", "content")
   import_workshop_index_files("../_MIRROR/bioconductor.org/workshops",
-                              "content")
+                              "content/help")
 end
 

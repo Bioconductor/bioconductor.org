@@ -7,6 +7,9 @@
     <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
       <%= render("/subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
     <% end %>
+    <% if (/course-materials/.match(@item.identifier))%>
+      <%= render("/crumbs/") %>
+    <% end %>
     <div id="main">
       <%= yield %>
     </div>
