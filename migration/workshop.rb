@@ -8,7 +8,7 @@ require 'fileutils'
 
 def parse_title(doc)
   t = doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
-  t = t.sub(/ - bioconductor\.org/, "")
+  t = t.sub(/ *(-|&mdash;)* bioconductor\.org/, "")
   if /folder listing/i.match(t)
     nil
   else
