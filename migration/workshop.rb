@@ -21,7 +21,7 @@ def parse_attributes(doc)
     end
   end
   attrs["title"] = parse_title(doc)
-  attrs["plone_url"] = doc.search("base")[0]["href"]
+  attrs["plone_url"] = doc.search("base")[0]["href"] rescue ""
   attrs
 end
 
@@ -29,6 +29,9 @@ def parse_content(doc)
   c = doc.search("div.plain")
   if c.empty?
     c = doc.search("div.documentContent")
+  end
+  if c.empty?
+    c = doc.search("body")
   end
   if !c.empty?
     c.search("img[@src='']").remove
@@ -41,10 +44,13 @@ def parse_content(doc)
     end.compact.remove
     c.search("div").collect! {|n| n if n.empty? }.compact.remove
     c.search("a.link-parent").remove
+    c.search("a").each do |a|
+      a.remove_attribute("target") if a["target"]
+    end
     c.search("a#documentContent").remove
     c.search("div.documentDescription").remove
     c.search("div.discussion").remove
-    c.traverse_all_elements do |e|
+    c[0].traverse_all_element do |e|
       if e.elem?
         e.remove_attribute("class") if e["class"]
         e.remove_attribute("id") if e["id"]
@@ -96,25 +102,26 @@ def import_workshop_index_files(input, content)
   workshop_out_dir = "#{outdir}/course-materials"
   Dir.chdir(input) do
     Dir["**/*"].each do |f|
-      if File.fnmatch("index[._]html", File.basename(f))
-        puts "processing: #{input}/#{f}"
+      if File.fnmatch("*.html", File.basename(f))
+        print "processing: #{f} "
         dest_dir = "#{workshop_out_dir}/#{File.dirname(f)}".sub(/\/$/, "")
-        # FIXME: handle case when dirname(f) == "."
+        if !File.fnmatch("index.html", File.basename(f))
+          dest_dir = "#{workshop_out_dir}/#{f}".sub(/\/$/, "")
+        end
         FileUtils.mkdir_p(File.dirname(dest_dir))
         if !File.size?("#{indir}/#{f}")
-          puts "empty file, skipping"
+          puts "<empty>"
           next
         end
         doc = Hpricot(open("#{indir}/#{f}"))
-        print "."
         attrs = parse_attributes(doc)
-        print "."
+        print "A"
         content = parse_content(doc)
         if content.nil?
           puts "No content for #{indir}/#{f}"
           next
         end
-        puts "."
+        puts "C"
         open("#{dest_dir}.html", "w") do |out|
           out.write(content)
         end
