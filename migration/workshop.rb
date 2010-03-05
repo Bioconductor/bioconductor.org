@@ -4,6 +4,7 @@ require 'rubygems'
 require 'builder'
 require 'hpricot'
 require 'yaml'
+require 'fileutils'
 
 def parse_title(doc)
   doc.search("title").inner_html.gsub(/[\n ]+/, " ").strip
@@ -30,6 +31,20 @@ def parse_content(doc)
     c = doc.search("div.documentContent")
   end
   if !c.empty?
+    c.search("img[@src='']").remove
+    c.search("img").collect! do |node|
+      if /_icon\.gif/.match(node["src"])
+        node
+      else
+        nil
+      end
+    end.compact.remove
+    c.search("a.link-parent").remove
+    c.search("a#documentContent").remove
+    c.search("div.documentDescription").remove
+    c.search("div.discussion").remove
+    # FIXME: remove class attribute for "h1.documentFirstHeading"
+    # use remove_attr("class") I think
     c.inner_html
   else
     nil
