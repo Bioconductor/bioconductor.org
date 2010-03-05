@@ -25,7 +25,15 @@ def parse_attributes(doc)
 end
 
 def parse_content(doc)
-  doc.search("div.documentContent").inner_html
+  c = doc.search("div.plain")
+  if c.empty?
+    c = doc.search("div.documentContent")
+  end
+  if !c.empty?
+    c.inner_html
+  else
+    nil
+  end
 end
 
 def create_file_index(dir)
@@ -65,7 +73,7 @@ end
 def import_workshop_index_files(input, content)
   indir = File.expand_path(input)
   outdir = File.expand_path(content)
-  workshop_out_dir = "#{outdir}/#{File.basename(indir)}"
+  workshop_out_dir = "#{outdir}/course-materials"
   Dir.chdir(input) do
     Dir["**/*"].each do |f|
       if File.fnmatch("index[._]html", File.basename(f))
@@ -82,6 +90,10 @@ def import_workshop_index_files(input, content)
         attrs = parse_attributes(doc)
         print "."
         content = parse_content(doc)
+        if content.nil?
+          puts "No content for #{indir}/#{f}"
+          next
+        end
         puts "."
         open("#{dest_dir}.html", "w") do |out|
           out.write(content)
@@ -121,8 +133,8 @@ def build_file_index_files(input, content)
 end
 
 if __FILE__ == $0
-  build_file_index_files("plone-bioconductor.org/workshops", "content")
-  # import_workshop_index_files("plone-bioconductor.org/workshops",
-  # "content")
+  #build_file_index_files("plone-bioconductor.org/workshops", "content")
+  import_workshop_index_files("../_MIRROR/bioconductor.org/workshops",
+                              "content")
 end
 

@@ -1,18 +1,14 @@
 #!/usr/bin/env ruby
 
-$LOAD_PATH.unshift(File.dirname(__FILE__))
 require 'rubygems'
-require 'reverse_markdown'
 require 'hpricot'
 require 'yaml'
 
 class PloneConverter
 
-  def initialize(file_path, dest_id, selector = "div.documentContent",
-                 markdown = false)
+  def initialize(file_path, dest_id, selector = "div.documentContent")
     @doc = Hpricot(open(file_path))
     @dest_id = dest_id
-    @markdown = markdown
     @selector = selector
   end
 
@@ -49,10 +45,6 @@ class PloneConverter
     dest_yaml = dest_path.chop + ".yaml"
     attrs = parse_attributes()
     content = parse_content()
-    if @markdown
-      r = ReverseMarkdown.new
-      content = r.parse_string(content)
-    end
     open(dest_html, "w") do |out|
       out.write(content)
     end
@@ -63,13 +55,28 @@ class PloneConverter
   end
 end
 
+USAGE = <<EOF
+Usage: #{$0} infile nanoc_id selector
+
+infile - path to input HTML file that you want to convert
+
+nanoc_id - determines the output file according to nanoc_id syntax.
+           Basically this is the relative URL for the output.
+           E.g. /about/foo/.
+
+selector - A string to identify the div in which the main HTML content
+           is living.  Most likely one of "div.documentContent" or
+           "div.plain"
+
+EOF
+
 if __FILE__ == $0
-  plone_file = ARGV[0]
-  dest_id = ARGV[1]
-  selector = ARGV[2]
-  markdown = ARGV[3] || false
-  puts "S: #{selector}"
-  converter = PloneConverter.new(plone_file, dest_id, selector, markdown)
+  if ARGV.count != 3
+    puts USAGE
+    exit 1
+  end
+  plone_file, dest_id, selector = ARGV
+  converter = PloneConverter.new(plone_file, dest_id, selector)
   output = converter.convert
   puts "Wrote output to:"
   output.each do |f|
