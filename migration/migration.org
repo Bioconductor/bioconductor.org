@@ -1,4 +1,5 @@
 * Migrating Content From Plone
+
 ** Plone migration: use wget
 - Tried Enfold Systems desktop tool, it produces same raw HTML as
   wget.
@@ -31,32 +32,55 @@ wget --limit-rate=500k \
 There are some large .gz and .zip files mixed in there that I believe
 take up the bulk of the space under /workshops.
 
+** Plone html cleanup using tidy
+#+begin_src sh
+tidy -utf8 -asxhtml -bare -clean -indent
+#+end_src
+
+#+begin_src ruby
+  require 'find'
+  
+  Find.find('.') do |f|
+    if !f.match(/\.git/)
+      if !File.basename(f).match(/\./)
+        puts f
+      end
+    end
+  end
+#+end_src
 ** Converting the Workshop content
+Use the =workshops.rb= file.  Path that is processed is hard-coded at
+the bottom in the call:
 
-One issue is that we have a lot of static assets in workshops -- all
-of the *.pdf and *.R files and nanoc isn't great and handling those.
-Either we create each of those as a content item or we store them
-outside of content/ and rsync them into output/.  But that leaves the
-index pages that need to be either converted (current existing pages
-are full of Plone cruft on export) or created -- we were relying on
-Plone's folder index generation and essentially need to come up with
-our own scheme.
+#+begin_src ruby
+  import_workshop_index_files("../_MIRROR/bioconductor.org/workshops",
+                              "content/help")
 
-What we come up with needs to make it easy to add new course materials
-and have an index generated.
+#+end_src
 
-Go through workshops/, for each directory create a corresponding item
-and set its contents to be a simple listing of what's in the
-directory.  Need to special case existing index pages and convert
-those instead.
+This processes the workshops directory in the wget-based mirror,
+extracts and cleans content and writes html and yaml files under
+content.  These have since been checked into svn.  Running the script
+also produces a workshop_rewrites.txt file which contains Apache-style
+redirect directives that should be put in a =.htaccess= file to
+support 301 redirects of the old URLs for this content.
+** Syncing workshops non-html conent
+Starting with a wget-produced mirror of the original bioconductor.org
+site, we synced non-html workshop files to the test site server using
+rsync.
 
-Do we want to svn checkin all of the content, by which I mean the
-static assets?  Currently the workshops directory (possibly
-incomplete) comprises 1.2GB.
-
-I have the start of a script to extract content from existing
-Plone-crufted pages.
-
+#+begin_example
+cd workshops
+rsync --dry-run -av --exclude "*html" \
+  --exclude "*tidy-error.txt" \
+  --exclude "*navBatchStart*" \
+  * biocadmin@merlot2:/loc/www/bioconductor-test.fhcrc.org/help/course-materials
+#+end_example
+*** 404 check after migration
+You can run wget as shown below to get a report on 404s for the site.
+#+begin_example
+wget -r --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
+#+end_example
 ** Redirect existing URLs to new site: How?
 Using Apache and mod_rewrite, this is easy to accomplish using a
 .htaccess file with full paths and/or regex redirecting with desired
@@ -71,21 +95,6 @@ Here's what the =.htaccess= file will look like:
 Redirect 301 /fizzle /foozle
 </IfModule>
 #+END_EXAMPLE
-
-** Convertion of workshops course material content
-See details in [[../README.org][README]] for how this will work
-*** Created migration/workshop.rb proof-of-concept
-- Converts existing index pages (run once)
-- Creates index pages when none found (intended to run anytime new
-  course material is added).
-- Uses Ruby XML/HTML parsing library to clean extracted HTML pages.
-**** Usage needs refinement
-- Call =import_workshop_index_files= for the one-time index converting
-  functionality.
-- Call =build_file_index_files= for the on-demand index creation.
-  This tags content as auto-generated so that only auto-generated
-  indices get rebuilt.
-- Need to put a simple CLI in place with help?
 
 ** Page Template Types
 *** Homepage
@@ -106,22 +115,7 @@ See details in [[../README.org][README]] for how this will work
 Includes by tag and by date
 *** Blog post
 *** Blog tag
-** Plone html cleanup using tidy
-#+begin_src sh
-tidy -utf8 -asxhtml -bare -clean -indent
-#+end_src
 
-#+begin_src ruby
-  require 'find'
-  
-  Find.find('.') do |f|
-    if !f.match(/\.git/)
-      if !File.basename(f).match(/\./)
-        puts f
-      end
-    end
-  end
-#+end_src
 ** Browser stats from google analytics
 
 Overview of current bioconductor.org traffic
