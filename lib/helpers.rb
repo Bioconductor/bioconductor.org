@@ -61,11 +61,13 @@ end
 
 def annual_reports
   # FIXME: need a more robust way to obtain assets path
-  Dir.glob("assets/about/annual-reports/*").map do |f|
-    {
-      :href => "/#{f}",
-      :name => File.basename(f)
-    }
+  Dir.chdir("assets/about/annual-reports") do
+    Dir.glob("*").map do |f|
+      {
+        :href => f,
+        :name => f
+      }
+    end
   end
 end
 
