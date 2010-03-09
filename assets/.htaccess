@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
-RewriteRule ^workshops/2002/Hopkins02/docs/vignettes.html /help/course-materials/2002/Hopkins02/docs/vignettes/ [R=301]
+RewriteRule ^workshops/2002/Hopkins02/docs/vignettes.html /help/course-materials/2002/Hopkins02/vignettes/ [R=301]
 RewriteRule ^workshops/2002/Summer02Course/Labs/golub.html /help/course-materials/2002/Summer02Course/Labs/golub/ [R=301]
 RewriteRule ^workshops/2004/Bressanone/Friday/L9/dcgr.html /help/course-materials/2004/Bressanone/Friday/L9/dcgr/ [R=301]
 RewriteRule ^workshops/2004/Bressanone/Wednesday/LabAnnotate/Brixen/chm/00Index.html /help/course-materials/2004/Bressanone/Wednesday/LabAnnotate/Brixen/chm/00Index/ [R=301]
@@ -39,5 +39,5 @@ RewriteRule ^workshops/2006/rforbioinformatics/software/windows/instructions-win
 RewriteRule ^workshops/2007/biocadv/Labs/GOstats/ALL_hgo.html /help/course-materials/2007/biocadv/Labs/GOstats/ALL_hgo/ [R=301]
 RewriteRule ^workshops/2007/biocadv/Lectures/GOstats/GOHyperG-slides.html /help/course-materials/2007/biocadv/Lectures/GOstats/GOHyperG-slides/ [R=301]
 RewriteRule ^workshops/2007/biocadv/schedule.html /help/course-materials/2007/biocadv/schedule/ [R=301]
-RewriteRule ^workshops/docs/mailList.html /help/course-materials/docs/mailList/ [R=301]
+RewriteRule ^workshops/docs/mailList.html /help/mailing-list/ [R=301]
 </IfModule>
