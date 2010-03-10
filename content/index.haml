@@ -13,7 +13,7 @@
 
 - begin
   - mlitem = find_item(@items, '/mailing-list-posts/')
-  = mlitem.reps[0].content_at_snapshot(:last)
+  = render('/mlwidget/', :ml_item => mlitem)
 
 #bioconductor_blog.box1
   %h2 The Bioconductor blog

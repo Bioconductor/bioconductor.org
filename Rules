@@ -63,4 +63,5 @@ route '*' do
   item.identifier + 'index.html'
 end
 
+layout '/mlwidget/', :haml
 layout '*', :erb
