@@ -1,4 +1,4 @@
 $('document').ready(function () {
-    $('#mlbox').corner("5px")
+    $('.box1').corner("5px")
     $('abbr.timeago').timeago()
 })
