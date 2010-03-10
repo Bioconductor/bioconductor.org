@@ -107,6 +107,21 @@ def create_file_index(dir)
   { :content => content, :attrs => attrs }
 end
 
+def rewrite_workshop(f)
+  orig = ""
+  new = "/help/course-materials/"
+  case f
+  when /index\.html$/
+    fdir = File.dirname(f)
+    orig = "#{fdir}/?(index\\.html)?$"
+    new += File.dirname(f)
+  else
+    orig = f
+    new += f.sub(/\.html$/, "")
+  end
+  "RewriteRule ^workshops/#{orig} #{new}/ [R=301]"
+end
+
 ##
 # import plone workshop index_html into nanoc content
 #
@@ -126,9 +141,8 @@ def import_workshop_index_files(input, content)
         dest_dir = "#{workshop_out_dir}/#{File.dirname(f)}".sub(/\/$/, "")
         if !File.fnmatch("index.html", File.basename(f))
           dest_dir = "#{workshop_out_dir}/#{f}".sub(/\.html$/, "")
-          dest_path = "/help/course-materials/#{f}".sub(/\.html$/, "")
-          rewrites << "RewriteRule ^workshops/#{f} #{dest_path}/ [R=301]"
         end
+        rewrites << rewrite_workshop(f)
         FileUtils.mkdir_p(File.dirname(dest_dir))
         if !File.size?("#{indir}/#{f}")
           puts "<empty>"
