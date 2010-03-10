@@ -1,0 +1,14 @@
+<div id="events" class="box1">
+<h2>Upcoming Courses and Meetings</h2>
+<ul class="event_list">
+  <% @events[0..4].each do |e| %>
+    <li><h3><%= e[:title] %></h3>
+      <p><%= e[:description] %>
+      <% if (e[:link]) %>
+        <a href="<%= e[:link][:href] %>"><%= e[:link][:text] %></a>
+      <% end %>
+    </p>
+    </li>
+  <% end %>
+</ul>
+</div>

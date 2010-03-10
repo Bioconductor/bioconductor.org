@@ -1,17 +1,21 @@
-%ul
-  %li
-    %a{ :href => "/getting-started/" }
-      Get started
-  %li
-    Courses and other upcoming
-    %a{ :href => "/events/" }
-      events
-  %li
-    Need
-    %a{ :href => "/help/" }
-      Help
-    ?
+= render('/events/', :events => find_item(@items, '/events/')[:events])
+
+#about_bioconductor.box1
+  %h2 About the Bioconductor project
+  %p
+    Bioconductor is an open source and open development software
+    project to provide tools for the analysis and comprehension of
+    genomic data.  Bioconductor is based primarily on the R
+    programming language, but does contain contributions in other
+    programming languages. It has two releases each year that follow
+    the semiannual releases of R.  Put an intro welcome paragraph here
+
 
 - begin
   - mlitem = find_item(@items, '/mailing-list-posts/')
   = mlitem.reps[0].content_at_snapshot(:last)
+
+#bioconductor_blog.box1
+  %h2 The Bioconductor blog
+  %p
+    Blog entries could go here
