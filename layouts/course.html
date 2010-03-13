@@ -7,6 +7,7 @@
     <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
       <%= render("/subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
     <% end %>
+    <%= render("/crumbs/") %>
     <div id="main">
     <div id="course">
       <h1><%=  @item[:title] %></h1>
