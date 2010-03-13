@@ -106,6 +106,7 @@ NEXT STEPS:
     - edit CREATED files to add descriptons for links
     - if happy, run ./scripts/add_course sync
 EOF
+    puts msg
   end
 
   def sync(name)
