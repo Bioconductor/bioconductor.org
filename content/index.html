@@ -1,0 +1,31 @@
+<%= render('/events/', :events => find_item(@items, '/events/')[:events]) %>
+
+<div id="about_bioconductor" class="box1">
+
+  <h2>About the Bioconductor project</h2>
+
+  <p>Bioconductor is an open source and open development software
+  project to provide tools for the analysis and comprehension of
+  genomic data.  Bioconductor is based primarily on the R programming
+  language, but does contain contributions in other programming
+  languages. It has two releases each year that follow the semiannual
+  releases of R.  Put an intro welcome paragraph here</p>
+</div>
+
+<%= render('/mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+
+<div id="bioconductor_blog" class="box1">
+  <h2>The Bioconductor blog</h2>
+
+  <h3>Bioconductor 2.5 released</h3>
+  
+  <p>Following the usual 6-month cycle, the Bioconductor community has
+  released Bioconductor 2.5 on October 28th, 2009. This new release is
+  comprised of 352 software packages and more than 400 updated
+  annotation packages. It has been expressly designed to work with the
+  recently released R 2.10.0.</p>
+
+  <h3>Ten things you should know about R</h3>
+  
+  <p>Coming soon...</p>
+</div>    

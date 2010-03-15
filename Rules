@@ -5,7 +5,7 @@ preprocess do
 end 
 
 compile '/mailing-list-posts/' do
-  filter :haml
+  filter :erb
   ## no layout as this gets included in homepage '/'
 end
 
@@ -21,26 +21,10 @@ compile '/style/*/' do
   filter :sass
 end
 
-compile '/' do
-  filter :haml
-  layout 'default'
-
-end
-
-compile '/workshops/' do
-  filter :erb
-  filter :bluecloth
-  layout 'default'
-end
-
-compile '/workshops/*' do
-  layout 'default'
-end
-
 compile '*' do
   case item[:extension]
   when '.md', '.markdown'
-    filter :bluecloth
+    filter :rdiscount
   when '.haml'
     filter :haml
   when '.html'
@@ -63,5 +47,4 @@ route '*' do
   item.identifier + 'index.html'
 end
 
-layout '/mlwidget/', :haml
 layout '*', :erb

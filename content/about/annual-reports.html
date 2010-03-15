@@ -1,0 +1,7 @@
+<h1>Bioconductor project annual reports</h1>
+
+<ul>
+  <% annual_reports.each do |r| %>
+  <li><a href="<%= r[:href] %>"><%= r[:name] %></a></li>
+  <% end %>
+</ul>
