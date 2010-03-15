@@ -1,0 +1,209 @@
+<h1>Posting guide for Bioconductor mailing lists</h1>
+
+            <h2>Before sending mail to the list</h2>
+
+            <ol>
+              <li>
+                <p>Read the relevant R documentation.
+                If you are having trouble with function somefunc,
+                try help("somefunc"). If you are searching for a
+                function, try help.search("somefunc").
+                Alternatively, use help.start() to start the HTML
+                search engine.</p>
+              </li>
+
+              <li>
+                <p>Make sure your question hasn't
+                already been answered by searching the <a href="http://bioconductor.org/docs/faq/">FAQ</a>.</p>
+              </li>
+
+              <li>
+                <p>Read the vignette(s) for the
+                package(s) you are using:</p>
+              </li>
+
+              <li>
+                <pre>
+## List available vignettes for "somepkg"<br />
+vignette(package="somepkg")<br />
+## open the "intro" vingnette in "somepkg"<br />
+vignette("intro", package="somepkg")<br />
+</pre>
+              </li>
+
+              <li>
+                <p>Check the <a href="http://dir.gmane.org/gmane.science.biology.informatics.conductor">
+                BioConductor mailing list archives</a> and the
+                <a href="http://tolstoy.newcastle.edu.au/R/">R-help mailing
+                list archive</a> to see if your question has been
+                asked (and answered) already.</p>
+              </li>
+
+              <li>
+                <p>Try a <a href="http://www.google.com/">Google</a> search.</p>
+              </li>
+
+              <li>
+                <p>See if the error is reproducible
+                when you run the code again from a fresh R session
+                or if you use a slightly different dataset.</p>
+              </li>
+
+              <li>
+                <p>Ensure that you have <a href="http://bioconductor.org/docs/install/">updated
+                installed packages</a> to their current
+                version.</p>
+              </li>
+            </ol>
+
+            <h2>While sending mail to the list</h2>
+
+            <ol>
+              <li>
+                <p>Start a new mail instead of
+                replying to an existing mail and changing the
+                subject.</p>
+              </li>
+
+              <li>
+                <p>Use an informative subject line.
+                This will help attract responders and also helps
+                others in the future when they search the
+                archives.</p>
+              </li>
+
+              <li>Identify yourself. Anonymous postings are much
+              less likely to get responses.<br /></li>
+
+              <li>
+                <p>If possible, send a simple and
+                reproducible example along with the output of
+                sessionInfo(). If the example produces an error,
+                also provide the error message and the output of
+                traceback().</p>
+              </li>
+
+              <li>Choose your audience appropriately:
+
+                <dl>
+                  <dt>BioConductor mailing list</dt>
+
+                  <dd>For general question using Bioconductor
+                  packages and bioinformatics. Note that questions
+                  that are conceptual in nature are welcomed
+                  here.</dd>
+
+                  <dt>Direct email to package maintainer</dt>
+
+                  <dd>Alternatively, if the package is in
+                  development version, you can try asking the
+                  package authors directly.</dd>
+
+                  <dt>R-help mailing list</dt>
+
+                  <dd>R-help is more suited questions that have to
+                  do with the underlying R program.</dd>
+
+                  <dt>BioC-devel and R-devel</dt>
+
+                  <dd>These lists are for discussing code
+                  development and other more technical stuff.</dd>
+                </dl>
+              </li>
+
+              <li>
+                <p>Read your mail again. Have you
+                stated your goal and objectives clearly? Keep your
+                mail as precise and concise as you can.</p>
+              </li>
+            </ol>
+
+            <h2>Some optional settings</h2>
+
+            <ol>
+              <li>Please use plain text instead of HTML as will be
+              easier to detect spam and malicious software. Plain
+              texts are also smaller in size and easier to
+              read.</li>
+
+              <li>Ensure that your lines are wrapped at about 72
+              characters, which makes postings more readable.
+              Otherwise one paragraph will be rendered on one long
+              line when someone replies to your mail. See this
+              webpage (<a href="http://expita.com/nomime.html">http://expita.com/nomime.html</a>)
+              for instructions on how to configure your mail client
+              to send plain text and line wrapping.</li>
+
+              <li>Try to ensure that your codes are readable. Long
+              lines of codes should be simplified and have new
+              lines at the appropriate places. Note that as a
+              consequence of line wrapping, your codes may wrap at
+              unexpected places.</li>
+
+              <li>The only allowed attachment is PS, PDF, JPG, PNG
+              (?) and mail must be less that 40 KB in size.
+              Otherwise your mail will require administrator
+              approval before being posted.</li>
+
+              <li>Learn to write in clear, grammatical,
+              correctly-spelled language. If your mail client
+              supports a spell check, please utilize it. Otherwise
+              compose in a word composer beforehand that has these
+              features.</li>
+
+              <li>Read over your mail. Is it easy to understand and
+              does your mail sound polite? Remember that
+              BioConductor and its mailing list is created and
+              maintained by volunteers who are not paid technical
+              support people.</li>
+            </ol>
+
+            <h2>When replying to mail on the list</h2>
+
+            <ol>
+              <li>Respond to everyone in the list, which ensures
+              that your response is archived.</li>
+
+              <li>If possible, write an answer that can be
+              understood by readers with different scientific
+              backgrounds and skill levels / skill profiles.</li>
+
+              <li>When answering a question, consider including
+              some explanation of how you arrived at your solution
+              (rather than just writing a solution). This way, you
+              help people not only to solve their problem at hand,
+              but also to help themselves in the future.</li>
+
+              <li>Rudeness and ad hominem comments are not
+              acceptable.</li>
+
+              <li>Brevity is OK. Consider, though, that information
+              that is obvious and not worth mentioning to you may
+              be very helpful to others.</li>
+
+              <li>If you believe the issue has been discussed
+              before, please give the URL of the relevant thread or
+              website.</li>
+            </ol>
+
+            <h2>Why a posting guide ?</h2>
+
+            <ol>
+              <li>Good questions attract good responses.</li>
+
+              <li>The act of formulating good questions can help to
+              solve the problem itself.</li>
+
+              <li>Good questions avoid wasting other people's time
+              and avoids embarrassment.</li>
+            </ol>
+
+            <h2>Acknowledgments</h2>
+
+            <p>This posting guide has been heavily adapted from the
+            R-help mailing list posting guide (<a href="http://www.r-project.org/posting-guide.html">http://www.r-project.org/posting-guide.html</a>),
+            various comments and suggestions by BioConductor
+            posters and inspired by Eric Raymonds' essay on
+            <a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html">How
+            To Ask Questions The Smart Way</a>.</p>
+          
