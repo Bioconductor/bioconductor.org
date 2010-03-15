@@ -3,13 +3,13 @@
 require 'rubygems'
 require 'hpricot'
 require 'yaml'
+require 'fileutils'
 
 class PloneConverter
 
   def initialize(file_path, dest_id)
     @doc = Hpricot(open(file_path))
     @dest_id = dest_id
-    @selector = selector
   end
 
   def parse_title
@@ -81,6 +81,7 @@ class PloneConverter
     attrs = parse_attributes()
     content = parse_content()
     if content
+      FileUtils.mkdir_p(File.dirname(dest_html))
       open(dest_html, "w") do |out|
         out.write(content)
       end
@@ -95,7 +96,7 @@ class PloneConverter
 end
 
 USAGE = <<EOF
-Usage: #{$0} infile nanoc_id selector
+Usage: #{$0} infile nanoc_id
 
 infile - path to input HTML file that you want to convert
 
