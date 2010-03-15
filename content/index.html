@@ -1,4 +1,4 @@
-<%= render('/events/', :events => find_item(@items, '/events/')[:events]) %>
+<%= render('/_events/', :events => find_item(@items, '/events/')[:events]) %>
 
 <div id="about_bioconductor" class="box1">
 
@@ -12,7 +12,7 @@
   releases of R.  Put an intro welcome paragraph here</p>
 </div>
 
-<%= render('/mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+<%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
 
 <div id="bioconductor_blog" class="box1">
   <h2>The Bioconductor blog</h2>

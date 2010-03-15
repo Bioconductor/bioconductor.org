@@ -1,13 +1,13 @@
 <%= doctype %>
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
-  <%= render("/sitehead/") %>
+  <%= render("/_sitehead/") %>
   <body>
-    <%= render("/nav/") %>
+    <%= render("/_nav/") %>
   <div id="page">
     <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
-      <%= render("/subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
+      <%= render("/_subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
     <% end %>
-    <%= render("/crumbs/") %>
+    <%= render("/_crumbs/") %>
     <div id="main">
     <div id="course">
       <h1><%=  @item[:title] %></h1>
@@ -26,6 +26,6 @@
     </div>
     </div>
   </div>
-    <%= render("/footer/") %>
+    <%= render("/_footer/") %>
   </body>
 </html>

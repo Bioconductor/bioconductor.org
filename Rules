@@ -4,6 +4,8 @@ preprocess do
   add_missing_info 
 end 
 
+# compiltiation rules
+
 compile '/mailing-list-posts/' do
   filter :erb
   ## no layout as this gets included in homepage '/'
@@ -31,6 +33,8 @@ compile '*' do
   end
 end
 
+# routing rules
+
 route '/mailing-list-posts/' do
   nil
 end
@@ -50,5 +54,7 @@ end
 route '*' do
   item.identifier + 'index.html'
 end
+
+# layouting rules
 
 layout '*', :erb

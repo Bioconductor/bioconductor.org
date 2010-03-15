@@ -154,7 +154,7 @@ EOF
     outyaml = outbase + ".yaml"
     if !File.exist?(outhtml)
       open(outhtml, "w") do |f|
-        f.write(%[<%= render("course_year_summary", :year => @item) %>])
+        f.write(%[<%= render("_course_year_summary", :year => @item) %>])
       end
     end
     if !File.exist?(outyaml)
