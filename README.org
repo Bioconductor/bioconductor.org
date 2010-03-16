@@ -38,8 +38,8 @@ you may need to do =sudo zypper install rubygems=
 
 Install the gems used by the website as follows:
 
-  :  sudo gem install nanoc3 BlueCloth rack mime-types haml json \
-  :                   rack-cache httparty rake rdiscount
+  :  sudo gem install nanoc3 rdiscount rack mime-types haml json \
+  :                   rack-cache httparty rake
 
 ** Windows Developer Required Software
 
@@ -51,7 +51,7 @@ Install the gems used by the website as follows:
    the Ruby installer), run the following command to install the
    Ruby gems used by the website:
 
-   : gem install nanoc3 BlueCloth rack mime-types haml json rack-cache httparty rake
+   : gem install nanoc3 rdiscount rack mime-types haml json rack-cache httparty rake
 
 3. Install subversion client package.  Windows packages are listed
    here:
