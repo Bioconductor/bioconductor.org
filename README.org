@@ -58,7 +58,7 @@ Install the gems used by the website as follows:
 
        http://subversion.tigris.org/getting.html#binary-packages
 
-   I installed the collabnet package, but had to go through an anoying
+   I installed the collabnet package, but had to go through an annoying
    registration process.  The other binaries should be fine and might
    require less hoop jumping.  You will need to open a new terminal
    window to pickup the updated config after installing so that you
@@ -96,8 +96,9 @@ Install the gems used by the website as follows:
            is transformed from its source form into its output form
            (this is called filtering), what layout to use (layouts are
            the shared templates), and where to write the output (this
-           is called routing).  See the [[http://nanoc.stoneship.org/tutorial/][nanoc tutorial]] and the [[http://nanoc.stoneship.org/manual/][nanoc
-           manual]] for details.
+           is called routing).  See the
+           [[http://nanoc.stoneship.org/tutorial/][nanoc tutorial]] and the
+           [[http://nanoc.stoneship.org/manual/][nanoc manual]] for details.
 
 - assets :: This directory is not managed by nanoc.  It contains files
             that do not undergo any filtering, layout-ing, or routing.
@@ -375,7 +376,7 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 *** TODO Add apache2 to rc startup config
 *** Start apache using /etc/init.d/apache2 re
 *** Test site nginx installation
-We will most likely deploy the test and produciton sites using
+We will most likely deploy the test and production sites using
 Apache2.  A first test setup was configured using nginx.  The details
 follow.
 
