@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby
+
+require 'rubygems'
+require 'yaml'
+require 'fileutils'
+
+USAGE = <<EOF
+Usage: #{$0} EVENT
+
+EVENT
+    Name of the event in the format suitable for use as filename.
+
+EOF
+
+def write_file(fname, content)
+  if File.exist?(fname)
+    abort("error: file #{fname} already exists")
+  end
+  open(fname, "w") { |f| f.write(content) }
+  puts "wrote #{fname}"
+end
+
+
+if ARGV.length != 1
+  abort(USAGE)
+end
+
+fname = ARGV[0]
+
+htmlfile = "content/events/#{fname}.html"
+yamlfile = "content/events/#{fname}.yaml"
+
+today = Time.now.strftime("%Y-%m-%d")
+
+event = <<EOF
+---
+title: TITLE FOR #{fname}
+location: Seattle, WA, USA
+event_host: FHCRC
+start: #{today}
+end:   #{today}
+description:
+  BLURB FOR #{fname}
+link:
+  - text: details and registration
+  - url: https://secure.bioconductor.org/#{fname}
+EOF
+
+write_file(htmlfile, "<!-- nanoc placeholder -->")
+write_file(yamlfile, event)
