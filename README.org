@@ -39,7 +39,7 @@ you may need to do =sudo zypper install rubygems=
 Install the gems used by the website as follows:
 
   :  sudo gem install nanoc3 BlueCloth rack mime-types haml json \
-  :                   rack-cache httparty rake
+  :                   rack-cache httparty rake rdiscount
 
 ** Windows Developer Required Software
 
