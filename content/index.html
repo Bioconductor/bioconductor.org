@@ -1,18 +1,48 @@
-<%= render('/_events/', :events => find_item(@items, '/events/')[:events]) %>
-
 <div id="about_bioconductor" class="box1">
 
-  <h2>About the Bioconductor project</h2>
+  <h2>About Bioconductor</h2>
 
-  <p>Bioconductor is an open source and open development software
-  project to provide tools for the analysis and comprehension of
-  genomic data.  Bioconductor is based primarily on the R programming
-  language, but does contain contributions in other programming
-  languages. It has two releases each year that follow the semiannual
-  releases of R.  Put an intro welcome paragraph here</p>
+  <p>Bioconductor provides tools for the analysis and comprehension of
+  high-throughput genomic data.  Bioconductor uses the R statistical
+  programming language, and is open source and open development. It
+  has two releases each year, more than 350 packages, and an active
+  user community.</p>
+
 </div>
 
 <%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+
+<div id="new_user_orientation" class="box1">
+
+  <h2>Use Bioconductor for...</h2>
+  
+  <table>
+
+    <tr valign="top">
+
+      <td><a href="">Microarrays</a>: One- and two-color, exon, copy
+        number, SNP, methylation, quality assesement, normalization,
+        differential expression, clustering, gene set enrichment,
+        genetical genomics, GEO, ArrayExpress, ...</td>
+
+      <td><a href="/help/workflows/high-throughput-sequencing/">Sequence Data</a>: fasta, fastq, MAQ, BWA,
+        Bowtie, BAM, gff, bed, wig, trimming, transformation,
+        alignment, quality assessment, ChIP-seq, differential
+        expression, RNA-seq, SRA, ...</td>
+
+      <td><a href="">Annotation</a>: microarray, gene, pathway, gene
+        ontology, homology, Biomart, UCSC, ...</td>
+
+      <td><a href="">High Throughput Assays</a>: flow cytometry, mass
+        spec, HTqPCR, ...</td>
+
+    </tr>
+
+  </table>
+
+</div>
+
+<%= render('/_events/', :events => find_item(@items, '/events/')[:events]) %>
 
 <div id="bioconductor_blog" class="box1">
   <h2>The Bioconductor blog</h2>
