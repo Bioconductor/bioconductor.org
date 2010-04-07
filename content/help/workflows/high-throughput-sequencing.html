@@ -54,7 +54,47 @@ xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl,
 <img src="./barcode-cumulative-reads.png" 
      alt="cumulative barcode reads" />
 
-<h2>Key Packages</h2>
+<h2>Installation</h2>
+
+<p>
+Follow <a href="">installation instructions</a> to start using these
+packages.  To install the <code>ShortRead</code> package and all of
+its dependencies, evaluate the commands
+<pre>
+  > source("http://bioconductor.org/biocLite.R")
+  > biocLite("ShortRead")
+</pre>
+Package installation is required only once per R installation. To use
+the <code>ShortRead</code> package, evaluate the command
+<pre>
+  > library("ShortRead")
+</pre>
+This command is required once in each R session.
+</p>
+
+<h2>Exploring Package Content</h2>
+<p>
+Packages have extensive help pages, and include vignettes highlighting
+common use cases; the help pages and vignettes are available from
+within R. After loading a package, use syntax like
+<pre>
+  > help(package="ShortRead")
+  > ?read454
+</pre>
+to obtain an overview of help on the <code>ShortRead</code> package,
+and the <code>read454</code> function, and
+<pre>
+  > browseVignettes(package="ShortRead")
+</pre>
+to view vignettes (providing a more comprehensive introduction to
+package functionality) in the <code>ShortRead</code> package. Use
+<pre>
+  > help.start()
+</pre>
+to open a web page containing comprehensive help resources.
+</p>
+
+<h2>Resources</h2>
 
 <p>The following packages illustrate the diversity of functionality
   available; all are in the release version of Bioconductor.</p>
@@ -112,43 +152,3 @@ xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl,
     for analysis of differential expression and RNA-seq style analysis.</li>
 
 </ul>
-
-<h2>Installation</h2>
-
-<p>
-Follow <a href="">installation instructions</a> to start using these
-packages.  To install the <code>ShortRead</code> package and all of
-its dependencies, evaluate the commands
-<pre>
-  > source("http://bioconductor.org/biocLite.R")
-  > biocLite("ShortRead")
-</pre>
-Package installation is required only once per R installation. To use
-the <code>ShortRead</code> package, evaluate the command
-<pre>
-  > library("ShortRead")
-</pre>
-This command is required once in each R session.
-</p>
-
-<h2>Exploring Package Content</h2>
-<p>
-Packages have extensive help pages, and include vignettes highlighting
-common use cases; the help pages and vignettes are available from
-within R. After loading a package, use syntax like
-<pre>
-  > help(package="ShortRead")
-  > ?read454
-</pre>
-to obtain an overview of help on the <code>ShortRead</code> package,
-and the <code>read454</code> function, and
-<pre>
-  > browseVignettes(package="ShortRead")
-</pre>
-to view vignettes (providing a more comprehensive introduction to
-package functionality) in the <code>ShortRead</code> package. Use
-<pre>
-  > help.start()
-</pre>
-to open a web page containing comprehensive help resources.
-</p>
