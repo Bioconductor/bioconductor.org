@@ -1,103 +1,95 @@
-<h1>Using Bioconductor for Sequence Data</h1>
+Using Bioconductor for Sequence Data
+====================================
 
-<p>
-  Bioconductor can input diverse sequence-related file types,
-  including fasta, fastq, MAQ, BWA, Bowtie, BAM, gff, bed, and wig
-  files. Packages support common and advanced sequence manipulation
-  operations such as trimming, transformation, and alignment.
-  Domain-specific analyses include quality assessment, ChIP-seq,
-  differential expression, RNA-seq, and other approaches. Bioconductor
-  includes an interface to the Sequence Read Archive.
-</p>
+Bioconductor can input diverse sequence-related file types, including
+fasta, fastq, MAQ, BWA, Bowtie, BAM, gff, bed, and wig files. Packages
+support common and advanced sequence manipulation operations such as
+trimming, transformation, and alignment.  Domain-specific analyses
+include quality assessment, ChIP-seq, differential expression,
+RNA-seq, and other approaches. Bioconductor includes an interface to
+the Sequence Read Archive.
 
-<h2>Sample Work Flow</h2>
 
-<p>
-  The following psuedo-code illustrates a typical R / Bioconductor
-  session. It shows initial exploration of 454 resequencing of a 16S
-  RNA microbial community samples.
-</p>
+## Sample Work Flow ##
 
-<p>
-  The work flow loads the ShortRead package and its dependencies. It
-  inputs about 250,000 reads of 200-250 bp each from a fastq
-  file. Flexible pattern matching (note the ambiguity letter `V')
-  removes a PCR primer artefact. The final lines plot the cumulative
-  number of trimmed reads as a function of their (log) abundance.
-</p>
+The following psuedo-code illustrates a typical R / Bioconductor
+session. It shows initial exploration of 454 resequencing of a 16S
+RNA microbial community samples.
 
-<p>
-  The result shows that most of the reads are from relatively few
-  sequences that each occur many times.
-</p>
-  
-<pre>
-## Load packages; also loads Biostrings, IRanges, ...
-library(ShortRead)
-library(lattice) # for advanced plotting
+The work flow loads the ShortRead package and its dependencies. It
+inputs about 250,000 reads of 200-250 bp each from a fastq
+file. Flexible pattern matching (note the ambiguity letter `V')
+removes a PCR primer artefact. The final lines plot the cumulative
+number of trimmed reads as a function of their (log) abundance.
 
-## Input
-seq <- readFastq("/path/to/file.fastq")
+The result shows that most of the reads are from relatively few
+sequences that each occur many times.
 
-## Remove a PCR primer
-pcrPrimer <- "GGACTACCVGGGTATCTAAT"
-trimmed <- trimLRPatterns(pcrPrimer, subject=sread(seq))
+    ## Load packages; also loads Biostrings, IRanges, ...
+    library(ShortRead)
+    library(lattice) # for advanced plotting
+    
+    ## Input
+    seq <- readFastq("/path/to/file.fastq")
+    
+    ## Remove a PCR primer
+    pcrPrimer <- "GGACTACCVGGGTATCTAAT"
+    trimmed <- trimLRPatterns(pcrPrimer, subject=sread(seq))
+    
+    ## Calculate and plot cumulative reads vs. occurrences
+    tbl <- tables(trimmed)[[2]]
+    xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl, 
+          scales=list(x=list(log=TRUE)), type="b", pch=20,
+          xlab="Number of Occurrences", 
+          ylab="Cumulative Number of Reads")
 
-## Calculate and plot cumulative reads vs. occurrences
-tbl <- tables(trimmed)[[2]]
-xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl, 
-      scales=list(x=list(log=TRUE)), type="b", pch=20,
-      xlab="Number of Occurrences", 
-      ylab="Cumulative Number of Reads")
-</pre>
 
-<img src="/images/help/workflows/cumulative-reads.png" 
-     alt="cumulative reads" />
+![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
-<h2>Installation</h2>
 
-<p>
-Follow <a href="">installation instructions</a> to start using these
-packages.  To install the <code>ShortRead</code> package and all of
+## Installation ##
+
+Follow [installation instructions]("/install/"") to start using these
+packages.  To install the `ShortRead` package and all of
 its dependencies, evaluate the commands
-<pre>
-  > source("http://bioconductor.org/biocLite.R")
-  > biocLite("ShortRead")
-</pre>
-Package installation is required only once per R installation. To use
-the <code>ShortRead</code> package, evaluate the command
-<pre>
-  > library("ShortRead")
-</pre>
-This command is required once in each R session.
-</p>
 
-<h2>Exploring Package Content</h2>
-<p>
+    > source("http://bioconductor.org/biocLite.R")
+    > biocLite("ShortRead")
+
+Package installation is required only once per R installation. To use
+the `ShortRead` package, evaluate the command
+
+    > library("ShortRead")
+
+This command is required once in each R session.
+
+
+## Exploring Package Content ##
+
 Packages have extensive help pages, and include vignettes highlighting
 common use cases; the help pages and vignettes are available from
 within R. After loading a package, use syntax like
-<pre>
-  > help(package="ShortRead")
-  > ?readFastq
-</pre>
-to obtain an overview of help on the <code>ShortRead</code> package,
-and the <code>readFastq</code> function, and
-<pre>
-  > browseVignettes(package="ShortRead")
-</pre>
+
+    > help(package="ShortRead")
+    > ?readFastq
+
+to obtain an overview of help on the `ShortRead` package,
+and the `readFastq` function, and
+
+    > browseVignettes(package="ShortRead")
+
 to view vignettes (providing a more comprehensive introduction to
-package functionality) in the <code>ShortRead</code> package. Use
-<pre>
-  > help.start()
-</pre>
+package functionality) in the `ShortRead` package. Use
+
+    > help.start()
+
 to open a web page containing comprehensive help resources.
-</p>
 
-<h2>Sequencing Resources</h2>
 
-<p>The following packages illustrate the diversity of functionality
-  available; all are in the release version of Bioconductor.</p>
+## Sequencing Resources ##
+
+The following packages illustrate the diversity of functionality
+  available; all are in the release version of Bioconductor.
 
 <ul>
 
