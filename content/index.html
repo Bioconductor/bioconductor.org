@@ -10,37 +10,62 @@
 
 </div>
 
-<%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
-
 <div id="new_user_orientation" class="box1">
 
   <h2>Use Bioconductor for...</h2>
-  
-  <table>
 
-    <tr valign="top">
+  <ul id="uses">
+      <li>
+        <a href="#">
+          <h3>Microarrays</h3>
+          <p>Affymetrix, Illumina, Nimblegen, Agilent, and others</p>
+          <p>expression, exon, copy number, SNP, methylation</p>
+          <p>quality assesement, normalization, differential expression,
+          clustering, gene set enrichment, genetical genomics</p>
+          <p>GEO, ArrayExpress</p>
+        </a>
+      </li>
 
-      <td><a href="">Microarrays</a>: One- and two-color, exon, copy
-        number, SNP, methylation, quality assesement, normalization,
-        differential expression, clustering, gene set enrichment,
-        genetical genomics, GEO, ArrayExpress, ...</td>
+      <li>
+        <a href="/help/workflows/high-throughput-sequencing/">
+          <h3>Sequence Data</h3>
+          <p>
+            fasta, fastq, MAQ, BWA, Bowtie, BAM, gff, bed, wig
+          </p>
+          <p>
+            trimming, transformation,
+            alignment, quality assessment, ChIP-seq, differential
+            expression, RNA-seq, SRA, ...
+          </p>
+        </a>
+      </li>
 
-      <td><a href="/help/workflows/high-throughput-sequencing/">Sequence Data</a>: fasta, fastq, MAQ, BWA,
-        Bowtie, BAM, gff, bed, wig, trimming, transformation,
-        alignment, quality assessment, ChIP-seq, differential
-        expression, RNA-seq, SRA, ...</td>
+      <li>
+        <a href="">
+          <h3>Annotation</h3>
+          <p>
+            microarray, gene, pathway, gene
+            ontology, homology
+          </p>
+          <p>
+            Biomart, UCSC, ...
+          </p>
+        </a>
+      </li>
 
-      <td><a href="">Annotation</a>: microarray, gene, pathway, gene
-        ontology, homology, Biomart, UCSC, ...</td>
-
-      <td><a href="">High Throughput Assays</a>: flow cytometry, mass
-        spec, HTqPCR, ...</td>
-
-    </tr>
-
-  </table>
+      <li>
+        <a href="">
+          <h3>High Throughput Assays</h3>
+          <p>
+            flow cytometry, mass spec, HTqPCR, ...
+          </p>
+        </a>
+      </li>
+  </ul>
 
 </div>
+
+<%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
 
 <%= render('/_events/', :events => find_item(@items, '/events/')[:events]) %>
 
