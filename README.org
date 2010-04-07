@@ -282,7 +282,7 @@ deploys it using Rake.
 
 #+begin_src sh
     #!/bin/bash
-    svn update && rake default deploy_merlot2_local
+    svn update && rake real_clean default deploy_merlot2_local
 #+end_src
 
 We keep track of the output of in a local =cron.log= file and handle
