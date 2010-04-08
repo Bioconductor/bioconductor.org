@@ -15,15 +15,19 @@ compile '/style/*/' do
   filter :sass
 end
 
+compile '/sitemap/' do
+  # nothing
+end
+
 compile '*' do
   case item[:extension]
-  when '.md', '.markdown'
+  when /md$/, /markdown$/
     filter :rdiscount
-  when '.haml'
+  when /haml$/
     filter :haml
-  when '.html'
+  when /html$/
     filter :erb
-  when '.sass'
+  when /sass$/
     filter :sass
   end
   if item[:layout]
