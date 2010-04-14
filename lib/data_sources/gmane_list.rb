@@ -62,6 +62,9 @@ class GmaneList < Nanoc3::DataSource
            rescue Timeout::Error
              puts "GMANE timeout error"
              return nil
+           rescue TCPSocket::SocketError
+             puts "Socket error"
+             return nil
            end
     if data.code == 304
       puts "GMANE 304 content not modified"
