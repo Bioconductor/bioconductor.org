@@ -16,9 +16,9 @@ The following psuedo-code illustrates a typical R / Bioconductor
 session. It shows initial exploration of 454 resequencing of a 16S
 RNA microbial community samples.
 
-The work flow loads the ShortRead package and its dependencies. It
-inputs about 250,000 reads of 200-250 bp each from a fastq
-file. Flexible pattern matching (note the ambiguity letter `V')
+The work flow loads the <code>ShortRead</code> package and its
+dependencies. It inputs about 250,000 reads of 200-250 bp each from a
+fastq file. Flexible pattern matching (note the ambiguity letter `V')
 removes a PCR primer artefact. The final lines plot the cumulative
 number of trimmed reads as a function of their (log) abundance.
 
@@ -50,18 +50,22 @@ sequences that each occur many times.
 ## Installation ##
 
 Follow [installation instructions]("/install/"") to start using these
-packages.  To install the `ShortRead` package and all of
+packages.  To install the <code>ShortRead</code> package and all of
 its dependencies, evaluate the commands
 
     > source("http://bioconductor.org/biocLite.R")
     > biocLite("ShortRead")
 
-Package installation is required only once per R installation. To use
-the `ShortRead` package, evaluate the command
+Package installation is required only once per R installation. View a
+full list of
+[available packages](http://bioconductor.org/packages/release/Software.html).
+
+To use the <code>ShortRead</code> package, evaluate the
+command
 
     > library("ShortRead")
 
-This command is required once in each R session.
+This instruction is required once in each R session.
 
 
 ## Exploring Package Content ##
@@ -73,13 +77,13 @@ within R. After loading a package, use syntax like
     > help(package="ShortRead")
     > ?readFastq
 
-to obtain an overview of help on the `ShortRead` package,
-and the `readFastq` function, and
+to obtain an overview of help on the <code>ShortRead</code> package,
+and the <code>readFastq</code> function, and
 
     > browseVignettes(package="ShortRead")
 
 to view vignettes (providing a more comprehensive introduction to
-package functionality) in the `ShortRead` package. Use
+package functionality) in the <code>ShortRead</code> package. Use
 
     > help.start()
 
@@ -89,56 +93,54 @@ to open a web page containing comprehensive help resources.
 ## Sequencing Resources ##
 
 The following packages illustrate the diversity of functionality
-  available; all are in the release version of Bioconductor.
+available; all are in the release version of Bioconductor.
 
-<ul>
+* [IRanges](http://bioconductor.org/packages/release/bioc/html/IRanges.html),
+  [GenomicRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
+  and
+  [genomeIntervals](http://bioconductor.org/packages/release/bioc/html/genomeIntervals.html)
+  for range-based (e.g., chromosomal regions) calculation, data
+  manipulation, and general-purpose data
+  representation. [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html)
+  for alignment, pattern matching (e.g., primer removal), and data
+  manipulation of large biological sequences or sets of
+  sequences.
 
-  <li><a href="http://bioconductor.org/packages/release/bioc/html/IRanges.html">IRanges</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html">GenomicRanges</a>
-    and <a href="http://bioconductor.org/packages/release/bioc/html/genomeIntervals.html">genomeIntervals</a>
-    for range-based (e.g., chromosomal regions) calculation, data
-    manipulation, and general-purpose data representation.
-    <a href="http://bioconductor.org/packages/release/bioc/html/Biostrings.html">Biostrings</a>
-    for alignment, pattern matching (e.g., primer removal), and data
-    manipulation of large biological sequences or sets of
-    sequences.</li>
+* [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html)
+  and
+  [Rsamtools](http://bioconductor.org/packages/release/bioc/html/Rsamtools.html)
+  for file I/O, quality assessment, and high-level, general purpose
+  data summary.
+  [rtracklayer](http://bioconductor.org/packages/release/bioc/html/rtracklayer.html)
+  for import and export of tracks on the UCSC genome browser.
 
-  <li><a href="http://bioconductor.org/packages/release/bioc/html/ShortRead.html">ShortRead</a> and
-    <a href="http://bioconductor.org/packages/release/bioc/html/Rsamtools.html">Rsamtools</a>
-    for file I/O, quality assessment, and high-level, general purpose
-    data summary.
-    <a href="http://bioconductor.org/packages/release/bioc/html/rtracklayer.html">rtracklayer</a>
-    for import and export of tracks on the UCSC genome browser.</li>
+* [BSgenome](http://bioconductor.org/packages/release/bioc/html/BSgenome.html)
+  for accessing and manipulating curated whole-genome representations.
+  [GenomicFeatures](http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html)
+  for annotation of sequence features across common genomes,
+  [biomaRt](http://bioconductor.org/packages/release/bioc/html/biomaRt.html)
+  for access to Biomart data bases.
 
-  <li><a href="http://bioconductor.org/packages/release/bioc/html/BSgenome.html">BSgenome</a>
-    for accessing and manipulating curated whole-genome
-    representations.
-    <a href="http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html">GenomicFeatures</a>
-    for annotation of sequence features across common genomes,
-    <a href="http://bioconductor.org/packages/release/bioc/html/biomaRt.html">biomaRt</a>
-    for access to Biomart data bases.</li>
-    
-  <li>
-    <a href="http://bioconductor.org/packages/release/bioc/html/SRAdb.html">SRAdb</a>
-    for querying and retrieving data from the Sequence Read Archive.</li>
-    
-    
-  <li>ChIP-seq and related (e.g., motif discovery, identification of
-    high-coverage segments) activities are facilitated by packages such as
-    <a href="http://bioconductor.org/packages/release/bioc/html/CSAR.html">CSAR</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/chipseq.html">chipseq</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/ChIPseqR.html">ChIPseqR</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/ChIPsim.html">ChIPsim</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/ChIPpeakAnno.html">ChIPpeakAnno</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/rGADEM.html">rGADEM</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/segmentSeq.html">segmentSeq</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/segmentSeq.html">segmentSeq</a>.</li>
+* [SRAdb](http://bioconductor.org/packages/release/bioc/html/SRAdb.html)
+  for querying and retrieving data from the Sequence Read Archive.
 
-  <li>Differential expression and RNA-seq style analysis can be accomplished with
-    <a href="http://bioconductor.org/packages/release/bioc/html/Genominator.html">Genominator</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/edgeR.html">edgeR</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/baySeq.html">baySeq</a>,
-    <a href="http://bioconductor.org/packages/release/bioc/html/DESeg.html">DESeg</a>, and
-    <a href="http://bioconductor.org/packages/release/bioc/html/DEGseq.html">DEGseq</a>.</li>
+* ChIP-seq and related (e.g., motif discovery, identification of
+  high-coverage segments) activities are facilitated by packages such
+  as
+  [CSAR](http://bioconductor.org/packages/release/bioc/html/CSAR.html),
+  [chipseq](http://bioconductor.org/packages/release/bioc/html/chipseq.html),
+  [ChIPseqR](http://bioconductor.org/packages/release/bioc/html/ChIPseqR.html),
+  [ChIPsim](http://bioconductor.org/packages/release/bioc/html/ChIPsim.html),
+  [ChIPpeakAnno](http://bioconductor.org/packages/release/bioc/html/ChIPpeakAnno.html),
+  [rGADEM](http://bioconductor.org/packages/release/bioc/html/rGADEM.html),
+  [segmentSeq](http://bioconductor.org/packages/release/bioc/html/segmentSeq.html),
+  [segmentSeq](http://bioconductor.org/packages/release/bioc/html/segmentSeq.html).
 
-</ul>
+* Differential expression and RNA-seq style analysis can be
+  accomplished with
+  [Genominator](http://bioconductor.org/packages/release/bioc/html/Genominator.html),
+  [edgeR](http://bioconductor.org/packages/release/bioc/html/edgeR.html),
+  [baySeq](http://bioconductor.org/packages/release/bioc/html/baySeq.html),
+  [DESeg](http://bioconductor.org/packages/release/bioc/html/DESeg.html),
+  and
+  [DEGseq](http://bioconductor.org/packages/release/bioc/html/DEGseq.html).
