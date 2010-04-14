@@ -47,7 +47,7 @@ sequences that each occur many times.
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
 
-## Installation ##
+## Installation and Use ##
 
 Follow [installation instructions]("/install/"") to start using these
 packages.  To install the <code>ShortRead</code> package and all of

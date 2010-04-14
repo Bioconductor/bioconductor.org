@@ -11,7 +11,7 @@ methylation, and other assays.
 
 Major work flows in Bioconductor include pre-processing, quality
 assessment, differential expression, clustering and classification,
-gene set enrichment analysis, and genetic genomics.
+gene set enrichment analysis, and genetical genomics.
 
 Bioconductor offers extensive interfaces to community resources,
 including GEO, ArrayExpress, Biomart, genome browsers, GO, KEGG, and
@@ -20,7 +20,9 @@ diverse annotation sources.
 ## Sample Work Flow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
-session. It uses RMA to pre-process Affymetrix arrays. 
+session. It uses RMA from the <code>affy</code> package to pre-process
+Affymetrix arrays, and the <code>limma</code> package for assessing
+differential expression.
 
     ## Load packages
     library(affy)   # Affymetrix pre-processing
@@ -50,20 +52,20 @@ discovery rate, in this case) significance of the difference, and
 log-odds ratio. These results can be used in further analysis and
 annotation.
 
-                ID logFC AveExpr    t  P.Value adj.P.Val     B
-    156  1636_g_at  1.10    9.20 9.03 4.88e-14  1.23e-10 21.29
-    1915  39730_at  1.15    9.00 8.59 3.88e-13  4.89e-10 19.34
-    155    1635_at  1.20    7.90 7.34 1.23e-10  1.03e-07 13.91
-    163    1674_at  1.43    5.00 7.05 4.55e-10  2.87e-07 12.67
-    2066  40504_at  1.18    4.24 6.66 2.57e-09  1.30e-06 11.03
-    2014  40202_at  1.78    8.62 6.39 8.62e-09  3.63e-06  9.89
-    1262  37015_at  1.03    4.33 6.24 1.66e-08  6.00e-06  9.27
-    437   32434_at  1.68    4.47 5.97 5.38e-08  1.70e-05  8.16
-    1269  37027_at  1.35    8.44 5.81 1.10e-07  3.08e-05  7.49
-    1366  37403_at  1.12    5.09 5.48 4.27e-07  1.08e-04  6.21
+          ID logFC AveExpr    t  P.Value adj.P.Val     B
+    636_g_at  1.10    9.20 9.03 4.88e-14  1.23e-10 21.29
+    39730_at  1.15    9.00 8.59 3.88e-13  4.89e-10 19.34
+     1635_at  1.20    7.90 7.34 1.23e-10  1.03e-07 13.91
+     1674_at  1.43    5.00 7.05 4.55e-10  2.87e-07 12.67
+    40504_at  1.18    4.24 6.66 2.57e-09  1.30e-06 11.03
+    40202_at  1.78    8.62 6.39 8.62e-09  3.63e-06  9.89
+    37015_at  1.03    4.33 6.24 1.66e-08  6.00e-06  9.27
+    32434_at  1.68    4.47 5.97 5.38e-08  1.70e-05  8.16
+    37027_at  1.35    8.44 5.81 1.10e-07  3.08e-05  7.49
+    37403_at  1.12    5.09 5.48 4.27e-07  1.08e-04  6.21
    
 
-## Installation ##
+## Installation and Use ##
 
 Follow [installation instructions]("/install/"") to start using these
 packages.  The <code>affy</code> and <code>limma</code> packages are
