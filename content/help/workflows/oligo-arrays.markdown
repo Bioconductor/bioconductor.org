@@ -1,9 +1,9 @@
 Using Bioconductor for Microarray Analysis
 ==========================================
 
-Bioconductor has advanced facilities for analysis of diverse
-microarray platforms, including Affymetrix, Illumina, Nimblegen,
-Agilent, and other one- and two-color technologies. 
+Bioconductor has advanced facilities for analysis of microarray
+platforms including Affymetrix, Illumina, Nimblegen, Agilent, and
+other one- and two-color technologies.
 
 Bioconductor includes extensive support for analysis of expression
 arrays, and well-developed support for exon, copy number, SNP,
@@ -29,7 +29,7 @@ differential expression.
     library(limma)  # two-color pre-processing; differential
                     # expression
                     
-    ## input "phenotype" data, describing the experimental design
+    ## import "phenotype" data, describing the experimental design
     phenoData <- read.AnnotatedDataFrame("sample-description.csv")
     
     ## RMA normalization

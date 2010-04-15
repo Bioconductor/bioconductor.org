@@ -1,13 +1,13 @@
 Using Bioconductor for Sequence Data
 ====================================
 
-Bioconductor can input diverse sequence-related file types, including
-fasta, fastq, MAQ, BWA, Bowtie, BAM, gff, bed, and wig files. Packages
-support common and advanced sequence manipulation operations such as
-trimming, transformation, and alignment.  Domain-specific analyses
-include quality assessment, ChIP-seq, differential expression,
-RNA-seq, and other approaches. Bioconductor includes an interface to
-the Sequence Read Archive.
+Bioconductor can import diverse sequence-related file types, including
+fasta, fastq, ELAND, MAQ, BWA, Bowtie, SSOAP, BAM, gff, bed, and wig
+files. Packages support common and advanced sequence manipulation
+operations such as trimming, transformation, and alignment.
+Domain-specific analyses include quality assessment, ChIP-seq,
+differential expression, RNA-seq, and other approaches. Bioconductor
+includes an interface to the Sequence Read Archive.
 
 
 ## Sample Work Flow ##
