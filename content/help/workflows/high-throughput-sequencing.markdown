@@ -26,23 +26,22 @@ The result shows that most of the reads are from relatively few
 sequences that each occur many times.
 
     ## Load packages; also loads Biostrings, IRanges, ...
-    library(ShortRead)
-    library(lattice) # for advanced plotting
+    > library(ShortRead)
+    > library(lattice) # for advanced plotting
     
     ## Input
-    seq <- readFastq("/path/to/file.fastq")
+    > seq <- readFastq("/path/to/file.fastq")
     
     ## Remove a PCR primer
-    pcrPrimer <- "GGACTACCVGGGTATCTAAT"
-    trimmed <- trimLRPatterns(pcrPrimer, subject=sread(seq))
+    > pcrPrimer <- "GGACTACCVGGGTATCTAAT"
+    > trimmed <- trimLRPatterns(pcrPrimer, subject=sread(seq))
     
     ## Calculate and plot cumulative reads vs. occurrences
-    tbl <- tables(trimmed)[[2]]
-    xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl, 
-          scales=list(x=list(log=TRUE)), type="b", pch=20,
-          xlab="Number of Occurrences", 
-          ylab="Cumulative Number of Reads")
-
+    > tbl <- tables(trimmed)[[2]]
+    > xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl, 
+            scales=list(x=list(log=TRUE)), type="b", pch=20,
+            xlab="Number of Occurrences", 
+            ylab="Cumulative Number of Reads")
 
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 

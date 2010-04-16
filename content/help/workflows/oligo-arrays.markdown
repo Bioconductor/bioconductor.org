@@ -25,22 +25,22 @@ Affymetrix arrays, and the <code>limma</code> package for assessing
 differential expression.
 
     ## Load packages
-    library(affy)   # Affymetrix pre-processing
-    library(limma)  # two-color pre-processing; differential
-                    # expression
+    > library(affy)   # Affymetrix pre-processing
+    > library(limma)  # two-color pre-processing; differential
+                      # expression
                     
     ## import "phenotype" data, describing the experimental design
-    phenoData <- read.AnnotatedDataFrame("sample-description.csv")
+    > phenoData <- read.AnnotatedDataFrame("sample-description.csv")
     
     ## RMA normalization
-    eset <- justRMA("/celfile-directory", phenoData=phenoData)
+    > eset <- justRMA("/celfile-directory", phenoData=phenoData)
     
     ## differential expression
-    design <-                   # describe model to be fit
-        model.matrix(~ Disease, pData(eset))
-    fit <- lmFit(eset, design)  # fit each probeset to model
-    efit <- eBayes(efit)        # empirical Bayes adjustment
-    topTable(efit, coef=2)      # table of differentially expressed probesets
+    > design <-                   # describe model to be fit
+          model.matrix(~ Disease, pData(eset))
+    > fit <- lmFit(eset, design)  # fit each probeset to model
+    > efit <- eBayes(efit)        # empirical Bayes adjustment
+    > topTable(efit, coef=2)      # table of differentially expressed probesets
     
 A top table resulting from a more complete analysis, described in
 Chapter 7 of [Bioconductor Case Studies](/help/bioconductor-books/),
@@ -76,10 +76,10 @@ automatically with
     > biocLite()
 
 To install additional packages, such as the annotations associated
-with the Affymetrix Human Genome U133A 2.0, use
+with the Affymetrix Human Genome U95A 2.0, use
 
     > source("http://bioconductor.org/biocLite.R")
-    > biocLite("hgu133a2.db")
+    > biocLite("hgu95av2.db")
 
 Package installation is required only once per R installation. View a
 full list of
