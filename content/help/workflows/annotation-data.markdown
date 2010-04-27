@@ -97,17 +97,24 @@ within R. After loading a package, use syntax like
     > help(package="GO.db")
     > ?GOTERM
 
-to obtain an overview of help on the <code>GO.db</code> package,
-and the <code>GOTERM</code> function, and
+To obtain an overview of help on the <code>GO.db</code> package, and
+the <code>GOTERM</code> mapping, you could see the vignette from the
+<code>AnnotationDbi</code> package.  The <code>AnnotationDbi</code>
+package is a central point in the infrastructure of the annotation
+packages and will always be loaded if you have loaded any of the
+annotation packages that end with a .db extension.  Therefore, it also
+contains most of the instructions on how to use bioconductors
+gene-centric annotation resources.  You can load the primary vignette
+for the <code>AnnotationDbi</code> package like this.
 
     > browseVignettes(package="AnnotationDbi")
 
-to view vignettes (providing a more comprehensive introduction to
+To view vignettes (providing a more comprehensive introduction to
 package functionality) in the <code>AnnotationDbi</code> package. Use
 
     > help.start()
 
-to open a web page containing comprehensive help resources.
+To open a web page containing comprehensive help resources.
 
 ## Annotation Resources ##
 
@@ -121,7 +128,7 @@ the annotate package for how to use some of the extra tools provided.
 * [AnnotationDbi](http://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html)
   Almost all annotations require the AnnotationDbi package. This
   package will be automatically installed for you if you install
-  another annotation package using biocLite(). It contains the code to
+  another ".db" annotation package using biocLite(). It contains the code to
   allow annotation mapping objects to be made and manipulated as well
   as code to generate custom chip platforms.
 * [Category](http://bioconductor.org/packages/release/bioc/html/Category.html)
