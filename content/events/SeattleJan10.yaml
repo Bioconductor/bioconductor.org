@@ -1,0 +1,16 @@
+---
+title: Introduction to R and Bioconductor
+location: Seattle, WA, USA
+event_host: FHCRC
+start: 2010-01-27
+end:   2010-01-29
+description:
+  This course introduces R and Bioconductor tools for analysis of
+  high-throughput microarray and short read sequence data. It is
+  designed for beginning or intermediate users of R and Bioconductor.
+  A major theme for this workshop is reproducible research. To that
+  end, participants will develop their own R package containing work
+  developed during the course.
+link:
+  text: details and registration
+  url: https://secure.bioconductor.org/SeattleJan10

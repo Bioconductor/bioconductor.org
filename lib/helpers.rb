@@ -5,6 +5,20 @@ include Nanoc3::Helpers::XMLSitemap
 
 require 'time'
 
+class Time
+  def to_date
+    Date.new(year, month, day)
+  rescue NameError
+    nil
+  end
+end
+
+class Date
+  def to_time
+    Time.local(year, month, day)
+  end
+end
+
 def nav_link_unless_current(text, path)
   if @item_rep && @item_rep.path && ((@item_rep.path == path) ||
     (path.length > 1 && @item_rep.path[1..-1] =~ /^#{path[1..-1]}/))
@@ -79,4 +93,26 @@ end
 def course_materials
   top = @items.find { |i| i.identifier == "/help/course-materials/" }
   top.children.sort { |a, b| b[:title] <=> a[:title] }
+end
+
+def upcoming_events(events)
+  events.children.sort{|a, b| a[:start] <=> b[:start]}.select do |e|
+    e[:end] >= Time.now.to_date
+  end
+end
+
+def event_date(e)
+  if (e[:start].month == e[:end].month)
+    if (e[:start].day == e[:end].day)
+      d1 = e[:start].strftime("%d %B %Y")
+      d2 = ""
+    else
+      d1 = e[:start].strftime("%d")
+      d2 = e[:end].strftime(" - %d %B %Y")
+    end
+  else
+    d1 = e[:start].strftime("%d %B")
+    d2 = e[:end].strftime(" - %d %B %Y")
+  end
+  d1 + d2
 end

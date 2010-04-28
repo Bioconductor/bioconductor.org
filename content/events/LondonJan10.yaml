@@ -1,0 +1,17 @@
+---
+title: Microarray & high throughput sequencing data analysis with Bioconductor
+location: London, UK
+event_host: EMBL-EBI
+start: 2010-01-31
+end:   2010-02-05
+description:
+  This course consists of lectures and hands-on labs. Days 1 to 4 will focus
+  on all aspects of the data analysis of microarray experiments including
+  preprocessing, quality assessment, differential expression, machine learning,
+  etc. Additional talks will address genotyping and image analysis applications.
+  Day 5 will cover the analysis of high throughput sequencing (HTS) data,
+  focusing on RNA-seq and ChIP-seq as well as the crucial aspects of HTS data
+  management.
+link:
+  text: details and registration
+  url: http://www.ebi.ac.uk/training/handson/course_100131_bioconductor.html

@@ -1,0 +1,14 @@
+---
+title: Advanced R Programming for Bioinformatics
+location: Seattle, WA, USA
+event_host: FHCRC
+start: 2010-05-20
+end:   2010-05-21
+description:
+  This workshop is suited for experienced R / Bioconductor users interested
+  in developing or honing advance R programming skills. The course emphasizes
+  programming "best practices", and encourages participants to contribute
+  their experience in a group learning environment.
+link:
+  text: details and registration
+  url: https://secure.bioconductor.org/SeattleMay10

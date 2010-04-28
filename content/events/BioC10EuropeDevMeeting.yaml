@@ -1,0 +1,18 @@
+---
+title: BioC 2010 European Developers' Meeting
+location: Manchester, UK
+event_host: University of Manchester
+start: 2010-01-07
+end:   2010-01-08
+description:
+  This year, the meeting will focus on the many challenges presented by
+  Massively Parallel Nucleotide Sequencing, which include data management
+  and storage through to statistics, visualisation and annotation. Many of
+  these issues also affect the way we analyse data arising from other
+  technologies, including microarrays and proteomics, so the meeting will
+  therefore be of interest to many, even if they currently have no direct
+  involvement with high throughput sequencing data. Sessions will include
+  disccussions on data management, statistics, annotation and visualisation.
+link:
+  text: details and registration
+  url: http://bioinformatics.picr.man.ac.uk/bioc2010/index.html

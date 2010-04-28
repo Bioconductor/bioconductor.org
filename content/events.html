@@ -1,12 +1,1 @@
-<h1>Upcoming Courses, Conferences, and Meetings</h1>
-
-<ul class="event_list">
-  <% @item[:events].each do |e| %>
-    <li><h2><%= e[:title] %></h2>
-      <p><%= e[:description] %></p>
-      <% if (e[:link]) %>
-        <p><a href="<%= e[:link][:href] %>"><%= e[:link][:text] %></a></p>
-      <% end %>
-    </li>
-  <% end %>
-</ul>
+<%= render('/_events/', :events => find_item(@items, '/events/')) %>
