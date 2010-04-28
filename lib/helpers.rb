@@ -101,6 +101,12 @@ def upcoming_events(events)
   end
 end
 
+def previous_events(events)
+  events.children.sort{|a, b| b[:start] <=> a[:start]}.select do |e|
+    e[:end] < Time.now.to_date
+  end
+end
+
 def event_date(e)
   if (e[:start].month == e[:end].month)
     if (e[:start].day == e[:end].day)

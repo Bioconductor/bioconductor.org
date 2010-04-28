@@ -1,7 +1,7 @@
-<div id="events" class="box1">
-<h2>Upcoming Courses and Meetings</h2>
+<div id="previous_events" class="box1">
+<h2>Previous Courses and Meetings</h2>
 <ul class="event_list">
-  <% upcoming_events(@events).each do |e| %>
+  <% previous_events(@events).each do |e| %>
     <li><a href="<%= e[:link][:url] %>"><h3><%= e[:title] %></h3></a>
       <p>
         <%= event_date(e) %> &mdash; <%= e[:location] %>
@@ -9,5 +9,4 @@
     </li>
   <% end %>
 </ul>
-<a href="/events/">See all events</a>
 </div>
