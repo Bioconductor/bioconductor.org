@@ -42,8 +42,8 @@ end:   #{today}
 description:
   BLURB FOR #{fname}
 link:
-  - text: details and registration
-  - url: https://secure.bioconductor.org/#{fname}
+  text: details and registration
+  url: https://secure.bioconductor.org/#{fname}
 EOF
 
 write_file(htmlfile, "<!-- nanoc placeholder -->")
