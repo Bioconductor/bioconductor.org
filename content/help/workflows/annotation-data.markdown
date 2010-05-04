@@ -68,7 +68,7 @@ they belong.
 
 Follow [installation instructions]("/install/"") to start using these
 packages.  To install the annotations associated with the Affymetrix
-Human Genome U95 V 2.0 and Gene Ontology, use
+Human Genome U95 V 2.0, and with Gene Ontology, use
 
     > source("http://bioconductor.org/biocLite.R")
     > biocLite(c("hgu95av2.db", "GO.db"))
@@ -80,8 +80,7 @@ and
 [annotation](http://bioconductor.org/packages/release/AnnotationData.html)
 packages.
 
-To use the <code>AnnotationDbi</code> and <code>GO.db</code> package,
-evaluate the commands
+To use the `AnnotationDbi` and `GO.db` package, evaluate the commands
 
     > library(AnnotationDbi")
     > library("GO.db")
@@ -97,20 +96,14 @@ within R. After loading a package, use syntax like
     > help(package="GO.db")
     > ?GOTERM
 
-To obtain an overview of help on the <code>GO.db</code> package, and
-the <code>GOTERM</code> mapping, you could see the vignette from the
-<code>AnnotationDbi</code> package.  The <code>AnnotationDbi</code>
-package is a central point in the infrastructure of the annotation
-packages and will always be loaded if you have loaded any of the
-annotation packages that end with a .db extension.  Therefore, it also
-contains most of the instructions on how to use bioconductors
-gene-centric annotation resources.  You can load the primary vignette
-for the <code>AnnotationDbi</code> package like this.
+to obtain an overview of help on the `GO.db` package, and the `GOTERM`
+mapping.  The `AnnotationDbi` package is used by most `.db`
+packages. View the vignettes in the `AnnotationDbi` package with
 
     > browseVignettes(package="AnnotationDbi")
 
 To view vignettes (providing a more comprehensive introduction to
-package functionality) in the <code>AnnotationDbi</code> package. Use
+package functionality) in the `AnnotationDbi` package. Use
 
     > help.start()
 
@@ -120,13 +113,15 @@ To open a web page containing comprehensive help resources.
 
 The following guides the user through key annotation packages.  Users
 interested in how to create custom chip packages should see the
-vignettes in AnnotationDbi package. There is additional information in
-the annotate package for how to use some of the extra tools provided.
+vignettes in `AnnotationDbi` package. There is additional information
+in the annotate package for how to use some of the extra tools
+provided.
 
 ### Key Packages ###
 
-* [AnnotationDbi](http://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html)
-  Almost all annotations require the AnnotationDbi package. This
+*
+  [AnnotationDbi](http://bioconductor.org/packages/release/bioc/html/AnnotationDbi.html)
+  Almost all annotations require the `AnnotationDbi` package. This
   package will be automatically installed for you if you install
   another ".db" annotation package using biocLite(). It contains the code to
   allow annotation mapping objects to be made and manipulated as well
@@ -167,7 +162,7 @@ the annotate package for how to use some of the extra tools provided.
   Ontology. [PFAM.db](http://www.bioconductor.org/packages/release/data/annotation/html/PFAM.db.html)
   for accessing data that pertains to different protein family
   identifiers and how they relate to each other.
-* Chip Annotation packages are for accessing only the data from one
+* Chip annotation packages are for accessing only the data from one
   specific platform at a time. These packages are named like this:
   "platformName".db.  Where "platformName" is the name of the chip
   platform that these packages refer to. And example would be
@@ -188,7 +183,7 @@ the annotate package for how to use some of the extra tools provided.
   [human.db0](http://www.bioconductor.org/packages/release/data/annotation/html/Human.db0.html). Users
   should not need these installed unless they plan to make custom chip
   packages according the guidelines in the SQLForge vignette that is
-  included with the AnnotationDbi package.  These packages must be
+  included with the `AnnotationDbi` package.  These packages must be
   upgraded before you attempt to update your custom chip packages as
   they contain the source databases needed by the SQLForge code.
 * For relevant Affymetrix platforms you may also want the cdf and

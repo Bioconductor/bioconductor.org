@@ -13,12 +13,12 @@ includes an interface to the Sequence Read Archive.
 ## Sample Work Flow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
-session. It shows initial exploration of 454 resequencing of a 16S
-RNA microbial community samples.
+session. It shows initial exploration of 454 resequencing of a 16S RNA
+microbial community samples.
 
-The work flow loads the <code>ShortRead</code> package and its
-dependencies. It inputs about 250,000 reads of 200-250 bp each from a
-fastq file. Flexible pattern matching (note the ambiguity letter `V')
+The work flow loads the `ShortRead` package and its dependencies. It
+inputs about 250,000 reads of 200-250 bp each from a fastq
+file. Flexible pattern matching (note the ambiguity letter `V')
 removes a PCR primer artefact. The final lines plot the cumulative
 number of trimmed reads as a function of their (log) abundance.
 
@@ -45,12 +45,11 @@ sequences that each occur many times.
 
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
-
 ## Installation and Use ##
 
 Follow [installation instructions]("/install/"") to start using these
-packages.  To install the <code>ShortRead</code> package and all of
-its dependencies, evaluate the commands
+packages.  To install the `ShortRead` package and all of its
+dependencies, evaluate the commands
 
     > source("http://bioconductor.org/biocLite.R")
     > biocLite("ShortRead")
@@ -59,13 +58,11 @@ Package installation is required only once per R installation. View a
 full list of
 [available packages](http://bioconductor.org/packages/release/Software.html).
 
-To use the <code>ShortRead</code> package, evaluate the
-command
+To use the `ShortRead` package, evaluate the command
 
     > library("ShortRead")
 
 This instruction is required once in each R session.
-
 
 ## Exploring Package Content ##
 
@@ -76,13 +73,13 @@ within R. After loading a package, use syntax like
     > help(package="ShortRead")
     > ?readFastq
 
-to obtain an overview of help on the <code>ShortRead</code> package,
-and the <code>readFastq</code> function, and
+to obtain an overview of help on the `ShortRead` package, and the
+`readFastq` function, and
 
     > browseVignettes(package="ShortRead")
 
 to view vignettes (providing a more comprehensive introduction to
-package functionality) in the <code>ShortRead</code> package. Use
+package functionality) in the `ShortRead` package. Use
 
     > help.start()
 

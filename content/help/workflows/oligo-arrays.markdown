@@ -20,9 +20,8 @@ diverse annotation sources.
 ## Sample Work Flow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
-session. It uses RMA from the <code>affy</code> package to pre-process
-Affymetrix arrays, and the <code>limma</code> package for assessing
-differential expression.
+session. It uses RMA from the `affy` package to pre-process Affymetrix
+arrays, and the `limma` package for assessing differential expression.
 
     ## Load packages
     > library(affy)   # Affymetrix pre-processing
@@ -68,9 +67,8 @@ annotation.
 ## Installation and Use ##
 
 Follow [installation instructions]("/install/"") to start using these
-packages.  The <code>affy</code> and <code>limma</code> packages are
-part of the core Bioconductor packages, and are installed
-automatically with
+packages.  The `affy` and `limma` packages are part of the core
+Bioconductor packages, and are installed automatically with
 
     > source("http://bioconductor.org/biocLite.R")
     > biocLite()
@@ -85,8 +83,7 @@ Package installation is required only once per R installation. View a
 full list of
 [available packages](http://bioconductor.org/packages/release/Software.html).
 
-To use the <code>affy</code> and <code>limma</code> packages, evaluate
-the commands
+To use the `affy` and `limma` packages, evaluate the commands
 
     > library("affy")
     > library("limma")
@@ -102,13 +99,13 @@ within R. After loading a package, use syntax like
     > help(package="limma")
     > ?topTable
 
-to obtain an overview of help on the <code>limma</code> package,
-and the <code>topTable</code> function, and
+to obtain an overview of help on the `limma` package, and the
+`topTable` function, and
 
     > browseVignettes(package="limma")
 
 to view vignettes (providing a more comprehensive introduction to
-package functionality) in the <code>limma</code> package. Use
+package functionality) in the `limma` package. Use
 
     > help.start()
 
@@ -129,8 +126,7 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 [affyPLM](http://bioconductor.org/packages/release/bioc/html/affyPLM.html)
 
 * Require cdf package, probe package and annotation package
-* All these packages are available from Bioconductor via
-  <code>biocLite()</code>
+* All these packages are available from Bioconductor via `biocLite()`
 
 [xps](http://bioconductor.org/packages/release/bioc/html/xps.html)
 
@@ -144,7 +140,7 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 * Requires a pdInfoPackage built using
   [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation data together
-* These packages are available from Bioconductor via <code>biocLite()</code>
+* These packages are available from Bioconductor via `biocLite()`
 * Most cases will require a 64-bit computer running Linux and &gt;= 8Gb RAM
 
 [exonmap](http://bioconductor.org/packages/release/bioc/html/exonmap.html)
@@ -167,8 +163,7 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 * Requires a pdInfoPackage built using
   [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation data together
-* These packages are available from Bioconductor via
-  <code>biocLite()</code>
+* These packages are available from Bioconductor via `biocLite()`
 
 [xps](http://bioconductor.org/packages/release/bioc/html/xps.html)
 
@@ -182,8 +177,7 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 * Requires a pdInfoPackage built using
   [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation and HapMap data
-* These packages are available from Bioconductor via
-  <code>biocLite()</code>
+* These packages are available from Bioconductor via `biocLite()`
 * Not yet capable of processing CNV regions in SNP5.0 and SNP6.0 </ul>
 
 ### Affymetrix Tiling Arrays ###
@@ -198,7 +192,7 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 
 [oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
 
-* Requires a <code>pdInfoPackage</code> built using
+* Requires a `pdInfoPackage` built using
   [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
 
 ### Illumina Expression Microarrays ###
@@ -206,10 +200,9 @@ and in Bioconductor [Books and monographs](/help/bioconductor-books/).
 [lumi](http://bioconductor.org/packages/release/bioc/html/lumi.html)
 
 * Requires lumi-specific mapping and annotation packages (e.g.,
-  <code>lumiHumanAll.db</code> and <code>lumiHumanIDMapping</code>)
+  `lumiHumanAll.db` and `lumiHumanIDMapping`)
 
 [beadarray](http://bioconductor.org/packages/release/bioc/html/beadarray.html)
 
 * Requires beadarray-specific mapping and annotation packages (e.g.,
-  <code>illuminaHumanv1BeadID.db</code> and <code>illuminaHumanV1.db</code>)
-x
+  `illuminaHumanv1BeadID.db` and `illuminaHumanV1.db`)
