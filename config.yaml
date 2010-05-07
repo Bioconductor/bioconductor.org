@@ -2,7 +2,7 @@
 data_sources: 
 - items_root: /
   layouts_root: /
-  type: filesystem_compact
+  type: filesystem_unified
 - items_root: /mailing-list-posts
   type: gmane_list
   config:
