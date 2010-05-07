@@ -32,7 +32,7 @@ compile '*' do
   end
   if item[:layout]
     layout item[:layout]
-  else
+  elsif !item.binary?
     layout 'default'
   end
 end
@@ -56,7 +56,11 @@ route '/style/*/' do
 end
 
 route '*' do
-  item.identifier + 'index.html'
+  if item.binary?
+    item.identifier.chop + "." + item[:extension]
+  else
+    item.identifier + 'index.html'
+  end
 end
 
 # layouting rules
