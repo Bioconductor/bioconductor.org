@@ -335,4 +335,5 @@ RewriteRule ^workshops/2010/?(index\.html)?$ /help/course-materials/2010/ [R=301
 RewriteRule ^workshops/docs/mailList.html /help/course-materials/docs/mailList/ [R=301]
 RewriteRule ^workshops/./?(index\.html)?$ /help/course-materials/./ [R=301]
 RewriteRule ^workshops/docs/mailList.html /help/mailing-list/ [R=301]
+RewriteRule ^docs/vignettes.html /help/package-vignettes/ [R=301]
 </IfModule>
