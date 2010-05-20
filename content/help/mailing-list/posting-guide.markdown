@@ -1,14 +1,12 @@
 # Posting guide #
 
-Why a posting guide?
+## Why? ##
 
 * Good questions attract good responses.
 
-* The act of formulating good questions can help to solve the problem
-  itself.
+* Formulating good questions can help to solve the problem itself.
 
-* Good questions avoid wasting other people's time and avoids
-  embarrassment.
+* Good questions help avoid embarrassment.
 
 ## Preparing ##
 
