@@ -1,0 +1,236 @@
+<html>
+  <head>
+    <title>
+      Code examples for Chapter 1: 'The ALL Data Set'
+    </title>
+
+    <link rel='stylesheet' type='text/css' href='../useRbook.css'>
+    <script src='../useRbook.js' type='text/javascript'></script>
+  </head>
+  <body style='font-family: helvetica,arial,sans-serif;'>
+<small>
+  <a class='down' href='preface.R' target='_blank'>
+    download code
+  </a>
+</small>
+
+<div align='center'>  <table width='400' class='codeContainer'>
+
+<table class='codeContainer' id='chunkCont1'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk1' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk1'>
+        <span class='header'>
+          ## Chunk 1
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk1' onclick='highlightChunk(1)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("Biobase")<br>
+library("ALL")<br>
+library("genefilter")<br>
+data("ALL")
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont2'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk2' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk2'>
+        <span class='header'>
+          ## Chunk 2
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk2' onclick='highlightChunk(2)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+bcell&ensp;=&ensp;grep("^B",&ensp;as.character(ALL$BT))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont3'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk3' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk3'>
+        <span class='header'>
+          ## Chunk 3
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk3' onclick='highlightChunk(3)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+types&ensp;=&ensp;c("NEG",&ensp;"BCR/ABL")<br>
+moltyp&ensp;=&ensp;which(as.character(ALL$mol.biol)&ensp;%in%&ensp;types)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont4'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk4' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk4'>
+        <span class='header'>
+          ## Chunk 4
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk4' onclick='highlightChunk(4)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+ALL_bcrneg&ensp;=&ensp;ALL[,&ensp;intersect(bcell,&ensp;moltyp)]
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont5'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk5' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(5)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk5'>
+        <span class='header'>
+          ## Chunk 5
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(5)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk5' onclick='highlightChunk(5)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+ALL_bcrneg$mol.biol&ensp;=&ensp;factor(ALL_bcrneg$mol.biol)<br>
+ALL_bcrneg$BT&ensp;=&ensp;factor(ALL_bcrneg$BT)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont6'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk6' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(6)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk6'>
+        <span class='header'>
+          ## Chunk 6
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(6)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk6' onclick='highlightChunk(6)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+varCut&ensp;=&ensp;0.5<br>
+filt_bcrneg&ensp;=&ensp;nsFilter(ALL_bcrneg,&ensp;require.entrez=TRUE,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;require.GOBP=TRUE,&ensp;remove.dupEntrez=TRUE,<br>
+&ensp;&ensp;&ensp;&ensp;var.func=IQR,&ensp;var.cutoff=varCut,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;feature.exclude="^AFFX")<br>
+filt_bcrneg$filter.log<br>
+ALLfilt_bcrneg&ensp;=&ensp;filt_bcrneg$eset
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont7'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk7' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(7)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk7'>
+        <span class='header'>
+          ## Chunk 7
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(7)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk7' onclick='highlightChunk(7)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+types&ensp;=&ensp;c("ALL1/AF4",&ensp;"BCR/ABL")<br>
+moltyp&ensp;=&ensp;which(ALL$mol.biol&ensp;%in%&ensp;types)<br>
+ALL_af4bcr&ensp;=&ensp;ALL[,&ensp;intersect(bcell,&ensp;moltyp)]<br>
+ALL_af4bcr$mol.biol&ensp;=&ensp;factor(ALL_af4bcr$mol.biol)<br>
+ALL_af4bcr$BT&ensp;=&ensp;factor(ALL_af4bcr$BT)<br>
+filt_af4bcr&ensp;=&ensp;nsFilter(ALL_af4bcr,require.entrez=TRUE,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;require.GOBP=TRUE,&ensp;remove.dupEntrez=TRUE,<br>
+&ensp;&ensp;&ensp;&ensp;var.func=IQR,&ensp;var.cutoff=varCut)<br>
+ALLfilt_af4bcr&ensp;=&ensp;filt_af4bcr$eset
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+  </table>
+</div>
+</body></html>

@@ -115,7 +115,7 @@ if __FILE__ == $0
   converter = PloneConverter.new(plone_file, dest_id)
   output = converter.convert
   if output.empty?
-    puts "No content: #{f}"
+    puts "No content: #{plone_file}"
   else
     output.each do |f|
       puts "Wrote: #{f}"

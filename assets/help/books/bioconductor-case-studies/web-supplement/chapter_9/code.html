@@ -1,0 +1,1577 @@
+<html>
+  <head>
+    <title>
+      Code examples for Chapter 9: 'Unsupervised Machine Learning'
+    </title>
+
+    <link rel='stylesheet' type='text/css' href='../useRbook.css'>
+    <script src='../useRbook.js' type='text/javascript'></script>
+  </head>
+  <body style='font-family: helvetica,arial,sans-serif;'>
+<small>
+  <a class='down' href='ML1.R' target='_blank'>
+    download code
+  </a>
+</small>
+
+<div align='center'>  <table width='400' class='codeContainer'>
+
+<table class='codeContainer' id='chunkCont1'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk1' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk1'>
+        <span class='header'>
+          ## Chunk 1
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk1' onclick='highlightChunk(1)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("BiocCaseStudies")<br>
+options(width=56)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont2'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk2' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk2'>
+        <span class='header'>
+          ## Chunk 2
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk2' onclick='highlightChunk(2)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("Biobase")<br>
+library("RColorBrewer")<br>
+library("bioDist")<br>
+library("genefilter")<br>
+library("class")<br>
+library("MLInterfaces")<br>
+library("hgu95av2.db")<br>
+library("annotate")<br>
+library("randomForest")
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont3'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk3' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk3'>
+        <span class='header'>
+          ## Chunk 3
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk3' onclick='highlightChunk(3)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("ALL")<br>
+data(ALL)<br>
+bcell&ensp;=&ensp;grep("^B",&ensp;as.character(ALL$BT))<br>
+moltyp&ensp;=&ensp;which(as.character(ALL$mol.biol)&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;%in%&ensp;c("NEG",&ensp;"BCR/ABL"))<br>
+ALL_bcrneg&ensp;=&ensp;ALL[,&ensp;intersect(bcell,&ensp;moltyp)]<br>
+ALL_bcrneg$mol.biol&ensp;=&ensp;factor(ALL_bcrneg$mol.biol)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont4'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk4'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk4'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk4' style='display:none;'>
+        <span class='header'>
+          ## Chunk 4
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk4' onclick='highlightChunk(4)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+table(ALL_bcrneg$mol.biol)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont5'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk5' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(5)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk5'>
+        <span class='header'>
+          ## Chunk 5
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(5)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk5' onclick='highlightChunk(5)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+ALLfilt_bcrneg&ensp;=&ensp;nsFilter(ALL_bcrneg,&ensp;var.cutoff=0.75)$eset
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont6'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk6'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(6)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk6'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk6' style='display:none;'>
+        <span class='header'>
+          ## Chunk 6
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(6)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk6' onclick='highlightChunk(6)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+class(ALLfilt_bcrneg)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont7'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk7' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(7)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk7'>
+        <span class='header'>
+          ## Chunk 7
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(7)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk7' onclick='highlightChunk(7)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+rowIQRs&ensp;=&ensp;function(eSet)&ensp;{<br>
+&ensp;&ensp;&ensp;&ensp;numSamp&ensp;=&ensp;ncol(eSet)<br>
+&ensp;&ensp;&ensp;&ensp;lowQ&ensp;=&ensp;rowQ(eSet,&ensp;floor(0.25&ensp;*&ensp;numSamp))<br>
+&ensp;&ensp;&ensp;&ensp;upQ&ensp;=&ensp;rowQ(eSet,&ensp;ceiling(0.75&ensp;*&ensp;numSamp))<br>
+&ensp;&ensp;&ensp;&ensp;upQ&ensp;-&ensp;lowQ<br>
+}
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont8'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk8' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(8)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk8'>
+        <span class='header'>
+          ## Chunk 8
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(8)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk8' onclick='highlightChunk(8)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+standardize&ensp;=&ensp;function(x)&ensp;(x&ensp;-&ensp;rowMedians(x))&ensp;/&ensp;rowIQRs(x)<br>
+exprs(ALLfilt_bcrneg)&ensp;=&ensp;standardize(exprs(ALLfilt_bcrneg))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont9'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk9' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(9)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk9'>
+        <span class='header'>
+          ## Chunk 9
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(9)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk9' onclick='highlightChunk(9)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+eucD&ensp;=&ensp;dist(t(exprs(ALLfilt_bcrneg)))<br>
+eucM&ensp;=&ensp;as.matrix(eucD)<br>
+dim(eucM)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont10'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk10' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(10)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk10'>
+        <span class='header'>
+          ## Chunk 10
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(10)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk10' onclick='highlightChunk(10)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("RColorBrewer")<br>
+hmcol&ensp;=&ensp;colorRampPalette(brewer.pal(10,&ensp;"RdBu"))(256)<br>
+hmcol&ensp;=&ensp;rev(hmcol)<br>
+heatmap(eucM,&ensp;sym=TRUE,&ensp;col=hmcol,&ensp;distfun=as.dist)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont11'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk11'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(11)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk11'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk11' style='display:none;'>
+        <span class='header'>
+          ## Chunk 11
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(11)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk11' onclick='highlightChunk(11)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+spD&ensp;=&ensp;&ensp;spearman.dist(ALLfilt_bcrneg)<br>
+##&ensp;spD@Size<br>
+attr(spD,&ensp;"Size")<br>
+spM&ensp;=&ensp;as.matrix(spD)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont12'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk12'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(12)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk12'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk12' style='display:none;'>
+        <span class='header'>
+          ## Chunk 12
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(12)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk12' onclick='highlightChunk(12)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+heatmap(spM,&ensp;sym=TRUE,&ensp;col=hmcol,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;distfun=function(x)&ensp;as.dist(x))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont13'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk13' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(13)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk13'>
+        <span class='header'>
+          ## Chunk 13
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(13)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk13' onclick='highlightChunk(13)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+closest.top("03002",&ensp;eucM,&ensp;1)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont14'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk14'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(14)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk14'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk14' style='display:none;'>
+        <span class='header'>
+          ## Chunk 14
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(14)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk14' onclick='highlightChunk(14)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+cD&ensp;=&ensp;MIdist(ALLfilt_bcrneg)<br>
+cM&ensp;=&ensp;as.matrix(cD)<br>
+closest.top("03002",&ensp;cM,&ensp;1)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont15'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk15' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(15)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk15'>
+        <span class='header'>
+          ## Chunk 15
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(15)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk15' onclick='highlightChunk(15)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+&ensp;Negs&ensp;=&ensp;which(ALLfilt_bcrneg$mol.biol&ensp;==&ensp;"NEG")<br>
+&ensp;Bcr&ensp;=&ensp;which(ALLfilt_bcrneg$mol.biol&ensp;==&ensp;"BCR/ABL")<br>
+&ensp;S1&ensp;=&ensp;sample(Negs,&ensp;20,&ensp;replace=FALSE)<br>
+&ensp;S2&ensp;=&ensp;sample(Bcr,&ensp;20,&ensp;replace&ensp;=&ensp;FALSE)<br>
+&ensp;TrainInd&ensp;=&ensp;c(S1,&ensp;S2)<br>
+&ensp;TestInd&ensp;=&ensp;setdiff(1:79,&ensp;TrainInd)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont16'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk16'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(16)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk16'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk16' style='display:none;'>
+        <span class='header'>
+          ## Chunk 16
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(16)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk16' onclick='highlightChunk(16)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+kans&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;data=ALLfilt_bcrneg,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;knnI(k=1,l=0),&ensp;TrainInd)<br>
+confuMat(kans)<br>
+dldans&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;ALLfilt_bcrneg,&ensp;dldaI,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;TrainInd)<br>
+confuMat(dldans)<br>
+ldaans&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;ALLfilt_bcrneg,&ensp;ldaI,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;TrainInd)<br>
+confuMat(ldaans)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont17'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk17' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(17)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk17'>
+        <span class='header'>
+          ## Chunk 17
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(17)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk17' onclick='highlightChunk(17)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+Traintt&ensp;=&ensp;rowttests(ALLfilt_bcrneg[,&ensp;TrainInd],&ensp;"mol.biol")<br>
+ordTT&ensp;=&ensp;order(abs(Traintt$statistic),&ensp;decreasing=TRUE)&ensp;<br>
+fNtt&ensp;=&ensp;featureNames(ALLfilt_bcrneg)[ordTT[1:50]]
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont18'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk18'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(18)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk18'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk18' style='display:none;'>
+        <span class='header'>
+          ## Chunk 18
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(18)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk18' onclick='highlightChunk(18)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+alltt&ensp;=&ensp;rowttests(ALLfilt_bcrneg,&ensp;"mol.biol")<br>
+ordall&ensp;=&ensp;order(abs(alltt$statistic),&ensp;decreasing=TRUE)<br>
+fNall&ensp;=&ensp;featureNames(ALLfilt_bcrneg)[ordall[1:50]]<br>
+intersect(fNall,&ensp;fNtt)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont19'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk19' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(19)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk19'>
+        <span class='header'>
+          ## Chunk 19
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(19)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk19' onclick='highlightChunk(19)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+BNf&ensp;=&ensp;ALLfilt_bcrneg[fNtt,]<br>
+knnf&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;data=BNf,&ensp;knnI(k=1,l=0),&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;TrainInd)<br>
+&ensp;confuMat(knnf)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont20'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk20'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(20)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk20'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk20' style='display:none;'>
+        <span class='header'>
+          ## Chunk 20
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(20)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk20' onclick='highlightChunk(20)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+&ensp;dldtt&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;BNf,&ensp;dldaI,&ensp;TrainInd)<br>
+&ensp;confuMat(dldtt)<br>
+&ensp;ldatt&ensp;&ensp;=&ensp;MLearn(&ensp;mol.biol&ensp;~&ensp;.,&ensp;BNf,&ensp;ldaI,&ensp;TrainInd)<br>
+&ensp;confuMat(ldatt)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont21'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk21' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(21)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk21'>
+        <span class='header'>
+          ## Chunk 21
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(21)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk21' onclick='highlightChunk(21)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+BNx&ensp;=&ensp;ALLfilt_bcrneg[1:1000,]
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont22'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk22' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(22)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk22'>
+        <span class='header'>
+          ## Chunk 22
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(22)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk22' onclick='highlightChunk(22)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knnXval1&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knn.cvI(k=1,&ensp;l=0),<br>
+&ensp;&ensp;&ensp;&ensp;trainInd=1:ncol(BNx))&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont23'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk23' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(23)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk23'>
+        <span class='header'>
+          ## Chunk 23
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(23)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk23' onclick='highlightChunk(23)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;knnXval1&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knnI(k=1,&ensp;l=0),<br>
+##&ensp;&ensp;&ensp;&ensp;&ensp;xvalSpec("LOO"))&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont24'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk24'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(24)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk24'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk24' style='display:none;'>
+        <span class='header'>
+          ## Chunk 24
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(24)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk24' onclick='highlightChunk(24)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knnCM&ensp;=&ensp;confuMat(knnXval1)<br>
+knnCM<br>
+#overall&ensp;error&ensp;rate<br>
+(knnCM[1,2]&ensp;+&ensp;knnCM[2,1])/sum(knnCM)<br>
+#class&ensp;conditional&ensp;error&ensp;rates<br>
+knnCM[1,2]/sum(knnCM[1,])<br>
+knnCM[2,1]/sum(knnCM[2,])
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont25'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk25' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(25)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk25'>
+        <span class='header'>
+          ## Chunk 25
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(25)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk25' onclick='highlightChunk(25)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+confuMat(knnXval1)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont26'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk26' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(26)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk26'>
+        <span class='header'>
+          ## Chunk 26
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(26)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk26' onclick='highlightChunk(26)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+lk3f1&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knnI(k=1),<br>
+&ensp;&ensp;&ensp;&ensp;xvalSpec("LOO",&ensp;fsFun=fs.absT(50)))<br>
+confuMat(lk3f1)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont27'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk27'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(27)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk27'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk27' style='display:none;'>
+        <span class='header'>
+          ## Chunk 27
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(27)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk27' onclick='highlightChunk(27)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+lk3f2&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knnI(k=1),<br>
+&ensp;&ensp;&ensp;&ensp;xvalSpec("LOO",&ensp;fsFun=fs.absT(5)))<br>
+confuMat(lk3f2)<br>
+table(unlist(fsHistory(lk3f2)))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont28'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk28'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(28)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk28'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk28' style='display:none;'>
+        <span class='header'>
+          ## Chunk 28
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(28)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk28' onclick='highlightChunk(28)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knnXval2&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knn.cvI(k=2,&ensp;l=0),&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;trainInd=1:ncol(BNx))<br>
+confuMat(knnXval2)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont29'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk29'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(29)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk29'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk29' style='display:none;'>
+        <span class='header'>
+          ## Chunk 29
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(29)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk29' onclick='highlightChunk(29)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knnXval3&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knn.cvI(k=3,&ensp;l=0),&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;trainInd=1:ncol(BNx))<br>
+confuMat(knnXval3)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont30'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk30'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(30)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk30'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk30' style='display:none;'>
+        <span class='header'>
+          ## Chunk 30
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(30)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk30' onclick='highlightChunk(30)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knnXval5&ensp;=&ensp;MLearn(mol.biol~.,&ensp;data=BNx,&ensp;knn.cvI(k=5,&ensp;l=0),<br>
+&ensp;&ensp;&ensp;&ensp;trainInd=1:ncol(BNx))&ensp;<br>
+confuMat(knnXval5)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont31'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk31' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(31)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk31'>
+        <span class='header'>
+          ## Chunk 31
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(31)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk31' onclick='highlightChunk(31)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("randomForest")<br>
+set.seed(123)<br>
+rf1&ensp;=&ensp;MLearn(&ensp;mol.biol~.,&ensp;data=ALLfilt_bcrneg,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;randomForestI,&ensp;TrainInd,&ensp;ntree=1000,&ensp;mtry=55,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;importance=TRUE)&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont32'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk32' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(32)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk32'>
+        <span class='header'>
+          ## Chunk 32
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(32)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk32' onclick='highlightChunk(32)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+rf2&ensp;=&ensp;MLearn(&ensp;mol.biol~.,&ensp;data=ALLfilt_bcrneg,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;randomForestI,&ensp;TrainInd,&ensp;ntree=1000,&ensp;mtry=10,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;importance=TRUE)&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont33'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk33' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(33)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk33'>
+        <span class='header'>
+          ## Chunk 33
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(33)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk33' onclick='highlightChunk(33)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+trainY&ensp;=&ensp;ALLfilt_bcrneg$mol.biol[TrainInd]<br>
+confuMat(rf1,&ensp;"train")<br>
+confuMat(rf1,&ensp;"test")
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont34'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk34' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(34)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk34'>
+        <span class='header'>
+          ## Chunk 34
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(34)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk34' onclick='highlightChunk(34)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+confuMat(rf2,&ensp;"train")<br>
+confuMat(rf2,&ensp;"test")
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont35'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk35'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(35)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk35'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk35' style='display:none;'>
+        <span class='header'>
+          ## Chunk 35
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(35)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk35' onclick='highlightChunk(35)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+cf1&ensp;=&ensp;confuMat(rf1)<br>
+overallErrM1&ensp;=&ensp;(cf1[2,1]&ensp;+&ensp;cf1[1,2])/sum(cf1)<br>
+overallErrM1<br>
+perClass1&ensp;=&ensp;c(cf1[1,2],&ensp;cf1[2,1])/rowSums(cf1)<br>
+perClass1
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont36'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk36'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(36)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk36'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk36' style='display:none;'>
+        <span class='header'>
+          ## Chunk 36
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(36)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk36' onclick='highlightChunk(36)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+cf2&ensp;=&ensp;confuMat(rf2)<br>
+overallErrM2&ensp;=&ensp;(cf2[2,1]&ensp;+&ensp;cf2[1,2])/sum(cf2)<br>
+overallErrM2<br>
+perClass2&ensp;=&ensp;c(cf2[1,2],&ensp;cf2[2,1])/rowSums(cf2)<br>
+perClass2
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont37'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk37'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(37)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk37'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk37' style='display:none;'>
+        <span class='header'>
+          ## Chunk 37
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(37)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk37' onclick='highlightChunk(37)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+cfKNN&ensp;=&ensp;confuMat(knnf)<br>
+(cfKNN[1,2]&ensp;+&ensp;cfKNN[2,1])/sum(cfKNN)<br>
+#class&ensp;conditional&ensp;error&ensp;rates<br>
+cfKNN[1,2]/sum(cfKNN[1,])<br>
+cfKNN[2,1]/sum(cfKNN[2,])
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont38'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk38' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(38)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk38'>
+        <span class='header'>
+          ## Chunk 38
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(38)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk38' onclick='highlightChunk(38)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+opar&ensp;=&ensp;par(no.readonly=TRUE,&ensp;mar=c(7,5,4,2))<br>
+par(las=2)<br>
+impV1&ensp;=&ensp;getVarImp(rf1)<br>
+plot(impV1,&ensp;n=15,&ensp;plat="hgu95av2",&ensp;toktype="SYMBOL")<br>
+par(opar)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont39'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk39' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(39)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk39'>
+        <span class='header'>
+          ## Chunk 39
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(39)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk39' onclick='highlightChunk(39)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+par(las=2,&ensp;mar=c(7,5,4,2))<br>
+impV2&ensp;=&ensp;getVarImp(rf2)<br>
+plot(impV2,&ensp;n=15,&ensp;plat="hgu95av2",&ensp;toktype="SYMBOL")<br>
+par(opar)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont40'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk40'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(40)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk40'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk40' style='display:none;'>
+        <span class='header'>
+          ## Chunk 40
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(40)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk40' onclick='highlightChunk(40)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+impvars&ensp;=&ensp;function(x,&ensp;which="MeanDecreaseAccuracy",&ensp;k=10)&ensp;{<br>
+&ensp;&ensp;&ensp;&ensp;v1&ensp;=&ensp;order(importance(x)[,which],&ensp;decreasing=TRUE)<br>
+&ensp;&ensp;&ensp;&ensp;importance(x)[v1[1:k],]<br>
+}<br>
+ivm1&ensp;=&ensp;impvars(rf1@RObject,&ensp;k=20)<br>
+ivm2&ensp;=&ensp;impvars(rf2@RObject,&ensp;k=20)<br>
+intersect(row.names(ivm1)&ensp;,&ensp;row.names(ivm2))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont41'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk41'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(41)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk41'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk41' style='display:none;'>
+        <span class='header'>
+          ## Chunk 41
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(41)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk41' onclick='highlightChunk(41)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+rfRev&ensp;=&ensp;MLearn(&ensp;mol.biol~.,&ensp;data=ALLfilt_bcrneg,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;randomForestI,&ensp;TestInd,&ensp;ntree=2000,&ensp;mtry=10,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;importance=TRUE)&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont42'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk42'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(42)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk42'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk42' style='display:none;'>
+        <span class='header'>
+          ## Chunk 42
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(42)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk42' onclick='highlightChunk(42)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;rfRev
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont43'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk43'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(43)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk43'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk43' style='display:none;'>
+        <span class='header'>
+          ## Chunk 43
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(43)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk43' onclick='highlightChunk(43)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+cfR&ensp;=&ensp;confuMat(rfRev)<br>
+cfR<br>
+overallErr&ensp;=&ensp;(cfR[2,1]&ensp;+&ensp;cfR[1,2])/sum(cfR)<br>
+overallErr<br>
+perClass&ensp;=&ensp;c(cfR[1,2],&ensp;cfR[2,1])/rowSums(cfR)<br>
+perClass
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont44'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk44'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(44)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk44'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk44' style='display:none;'>
+        <span class='header'>
+          ## Chunk 44
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(44)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk44' onclick='highlightChunk(44)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+rfAll&ensp;=&ensp;MLearn(&ensp;mol.biol~.,&ensp;data=ALLfilt_bcrneg,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;randomForestI,&ensp;1:79,&ensp;ntree=1000,&ensp;mtry=10,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;importance=TRUE)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont45'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk45'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(45)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk45'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk45' style='display:none;'>
+        <span class='header'>
+          ## Chunk 45
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(45)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk45' onclick='highlightChunk(45)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;rfAll@RObject
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont46'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk46' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(46)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk46'>
+        <span class='header'>
+          ## Chunk 46
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(46)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk46' onclick='highlightChunk(46)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+Bcell&ensp;=&ensp;grep("^B",&ensp;ALL$BT)<br>
+ALLs&ensp;=&ensp;ALL[,Bcell]<br>
+types&ensp;=&ensp;c("BCR/ABL",&ensp;"NEG",&ensp;"ALL1/AF4")<br>
+threeG&ensp;=&ensp;ALLs$mol.biol&ensp;%in%&ensp;types<br>
+ALL3g&ensp;=&ensp;ALLs[,threeG]<br>
+qrange&ensp;<-&ensp;function(x)<br>
+&ensp;&ensp;&ensp;&ensp;diff(quantile(x,&ensp;c(0.1,&ensp;0.9)))<br>
+ALL3gf&ensp;=&ensp;nsFilter(ALL3g,&ensp;var.cutoff=0.75,&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;var.func=qrange)$eset<br>
+ALL3gf$mol.biol&ensp;=&ensp;factor(ALL3gf$mol.biol)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont47'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk47' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(47)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk47'>
+        <span class='header'>
+          ## Chunk 47
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(47)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk47' onclick='highlightChunk(47)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+s1&ensp;=&ensp;table(ALL3gf$mol.biol)<br>
+trainN&ensp;=&ensp;ceiling(s1/2)<br>
+sN&ensp;=&ensp;split(1:length(ALL3gf$mol.biol),&ensp;ALL3gf$mol.biol)<br>
+trainInd&ensp;=&ensp;NULL<br>
+testInd&ensp;=&ensp;NULL<br>
+set.seed(777)<br>
+for(i&ensp;in&ensp;1:3)&ensp;{<br>
+&ensp;&ensp;&ensp;&ensp;trI&ensp;=&ensp;sample(sN[[i]],&ensp;trainN[[i]])<br>
+&ensp;&ensp;&ensp;&ensp;teI&ensp;=&ensp;setdiff(sN[[i]],&ensp;trI)<br>
+&ensp;&ensp;&ensp;&ensp;trainInd&ensp;=&ensp;c(trainInd,&ensp;trI)<br>
+&ensp;&ensp;&ensp;&ensp;testInd&ensp;=&ensp;c(testInd,&ensp;teI)<br>
+}<br>
+trainSet&ensp;=&ensp;ALL3gf[,&ensp;trainInd]<br>
+testSet&ensp;=&ensp;ALL3gf[,&ensp;testInd]
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='hiddenCodeContainer' id='chunkCont48'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunkSol' id='showChunk48'>
+        <img class='showChunk' src='../plus.png' onclick='toggleChunk(48)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <span class='solChunk' id='solChunk48'>
+        &nbsp;&nbsp;(solution chunk)
+      </span>
+      <div class='hideChunk' id='hideChunk48' style='display:none;'>
+        <span class='header'>
+          ## Chunk 48
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(48)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk48' onclick='highlightChunk(48)'style='display:none;'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+knn1MV&ensp;=&ensp;knn(t(exprs(trainSet)),&ensp;t(exprs(testSet)),&ensp;<br>
+&ensp;&ensp;&ensp;&ensp;trainSet$mol.biol)<br>
+tab1&ensp;=&ensp;table(knn1MV,&ensp;testSet$mol.biol)<br>
+tab1
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+  </table>
+</div>
+</body></html>
