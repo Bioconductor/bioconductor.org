@@ -428,3 +428,23 @@ server {
 #+end_example
 
 Started nginx as: =sudo /usr/local/nginx/sbin/nginx=
+
+** How to test for broken links
+You can run wget as shown below to get a report on 404s for the site.
+#+begin_example
+wget -r --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
+#+end_example
+*** 404 report for bioconductor-test.fhcrc.org (Tue May 25 09:07:49 2010)
+# TO FIX
+## depends on packages, etc.
+http://bioconductor-test.fhcrc.org/packages/release/bioc/
+http://bioconductor-test.fhcrc.org/about/publications/compendia/genemetaex/GeneMetaEx_1.0.0.tar.gz
+http://bioconductor-test.fhcrc.org/about/publications/compendia/golubrr/GolubRR_1.3.1.tar.gz
+http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/flowWorkFlow.pdf
+http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/CompStatViz_2.0.1.zip
+http://bioconductor-test.fhcrc.org/about/publications/compendia/golubrr/GolubRR_1.3.1.zip
+http://bioconductor-test.fhcrc.org/help/bioconductor-packages/
+http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/CompStatViz_2.0.1.tar.gz
+http://bioconductor-test.fhcrc.org/help/docs/papers/2003/Compendium/golubEsets_1.0.tar.gz
+http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/tutorial.mpeg
+http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/dataFiles.tar

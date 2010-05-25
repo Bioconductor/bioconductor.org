@@ -1,0 +1,12 @@
+--- 
+title: How to Mirror Bioconductor Packages
+DC.date.created: 2005-06-28 17:06:55
+DC.date.modified: 2010-04-23 12:05:39
+DC.description: |-
+  The Bioconductor package repositories may be mirrored with rsync.
+  If you would like to become a mirror for package and data package
+  repositories, please use the commands below.
+DC.creator: admin
+plone_url: http://bioconductor.org/download/mirrors/mirror-howto.html
+DC.format: text/html
+DC.type: Document

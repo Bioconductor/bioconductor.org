@@ -1,8 +1,8 @@
 Bioconductor Mailing Lists
 ==========================
 
-Please read the [posting guide](/help/mailing-list/posting-guide/)
-before sending mail to the Bioconductor mail lists.
+Please read the [posting guide][5] before sending mail to the
+Bioconductor mail lists.
 
 You might also be interested in [searching][3] the Bioconductor mail
 list.
@@ -19,18 +19,17 @@ well as general discussions on topics of interest to the
 Bioconductor community.
 
 
-Send mail to everyone subscribed to the  bioconductor mail list by reading the [posting guide][5]  and then sending an email to [bioconductor@stat.math.ethz.ch][6] 
+Send mail to everyone subscribed to the bioconductor mail list by
+reading the [posting guide][5] and then sending an email to
+[bioconductor@stat.math.ethz.ch][6]
 
 
-Obtain Information about the list by sending an email
-with 'info' as its contents to [bioconductor-request@stat.math.ethz.ch][7] . You can subscribe and unsubscribe by
-E-mail (instead of the web interface), however to unsubscribe
-you currently need the mailing list password which is sent when
-subscribing and in a monthly reminder.
+Obtain Information about the list by sending an email with 'info' as
+its contents to [bioconductor-request@stat.math.ethz.ch][7] . You can
+subscribe and unsubscribe by E-mail (instead of the web interface),
+however to unsubscribe you currently need the mailing list password
+which is sent when subscribing and in a monthly reminder.
     
-
-
-
 
 ## bioc-devel ##
 
@@ -63,12 +62,12 @@ package-level solution.
    subscribe and choose digests (in plain or MIME format). Use the web
    interface for the lists, given above.
 
-  [2]: postingGuide.html
-  [3]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
-  [4]: https://stat.ethz.ch/mailman/listinfo/bioconductor
-  [5]: postingGuide.html
-  [6]: mailto:bioconductor@stat.math.ethz.ch
-  [7]: mailto:bioconductor-request@stat.math.ethz.ch
-  [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
-  [9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
-  [11]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
+
+[3]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
+[4]: https://stat.ethz.ch/mailman/listinfo/bioconductor
+[5]: /help/mailing-list/posting-guide/
+[6]: mailto:bioconductor@stat.math.ethz.ch
+[7]: mailto:bioconductor-request@stat.math.ethz.ch
+[8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
+[9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
+[11]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
