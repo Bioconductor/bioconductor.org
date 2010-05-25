@@ -122,3 +122,19 @@ def event_date(e)
   end
   d1 + d2
 end
+
+def has_subnav?(anItem)
+  (anItem[:subnav] || anItem.parent[:subnav]) rescue false
+end
+
+def subnav_items(anItem)
+  if anItem[:subnav]
+    anItem.children
+  elsif anItem.parent[:subnav]
+    anItem.parent.children
+  else
+    []
+  end
+  rescue
+    []
+end

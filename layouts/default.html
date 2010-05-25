@@ -4,11 +4,11 @@
   <body>
     <%= render("/_nav/") %>
   <div id="page">
-    <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
-      <%= render("/_subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
-    <% end %>
     <% if (@item.identifier != '/')%>
       <%= render("/_crumbs/") %>
+    <% end %>
+    <% if has_subnav?(@item) %>
+      <%= render("/_subnav/", :pages => subnav_items(@item)) %>
     <% end %>
     <div id="main">
       <%= yield %>

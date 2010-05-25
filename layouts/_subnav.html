@@ -1,7 +1,7 @@
 <div id="subnav">
   <% @pages.each do |p| %>
   <ul>
-    <li><a href="<%= p[:href] %>"><%= p[:text] %></a></li>
+    <li><a href="<%= p.identifier %>"><%= p[:title] %></a></li>
   </ul>
   <% end %>
 </div>
