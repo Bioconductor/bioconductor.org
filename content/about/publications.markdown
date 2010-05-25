@@ -1,24 +1,27 @@
 ** Bioconductor Books **
 
-<a href="http://bioconductor.org/pub/docs/mogr/" title="Landmark
-Bioconductor Book">
-<img src="../docs/mogr/bcbs_small.jpg" height="100"
-alt="Monograph" width="65" /></a> 
+<a
+href="/help/books/bioinformatics-and-computational-biology-solutions/"
+title="Landmark Bioconductor Book">
+<img src="/help/books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg" height="100"
+alt="Monograph" width="65" /></a>
 
 <a
-href="http://bioconductor.org/pub/RBioinf/" title="R Programming for
-Bioinformatics">
+href="/help/books/r-programming-for-bioinformatics/"
+title="R Programming for Bioinformatics">
 <img
-src="http://bioconductor.org/pub/RBioinf/RProgrammingforBioinformaticsSmall"
+src="/help/books/r-programming-for-bioinformatics/rbioinf-small.jpg"
 height="100" alt="R Programming for Bioinformatics" width="65" /></a>
 
-<a href="http://bioconductor.org/pub/biocases/" title="Bioconductor
-Case Studies">
-<img src="http://bioconductor.org/pub/biocases/BioconductorCaseStudiesSmall" height="100" alt="RProgramming for Bioinformatics" width="65" /></a>
+<a href="/help/books/bioconductor-case-studies/"
+title="Bioconductor Case Studies">
+<img
+src="/help/books/bioconductor-case-studies/case-studies-small.jpg"
+height="100" alt="Bioconductor Case Studies" width="65" /></a>
 
 ** Bioconductor Publications **
 
-* [Bioconductor Technical Reports](../docs/techreports)
+* [Bioconductor Technical Reports](tech-reports/)
 
 * [BioC Working Papers](http://www.bepress.com/bioconductor/)
 
@@ -26,9 +29,9 @@ Case Studies">
 
 ** Compendia **
 
-* [GeneMetaEx](genemetaex)
-* [GolubRR](golubrr)
-* [CompStatViz](CompStatViz)
+* [GeneMetaEx](compendia/genemetaex/)
+* [GolubRR](compendia/golubrr/)
+* [CompStatViz](compendia/CompStatViz/)
 
 ** Publications Related to Bioconductor **
  
