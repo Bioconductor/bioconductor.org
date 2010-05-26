@@ -4,7 +4,7 @@ preprocess do
   add_missing_info 
 end 
 
-# compiltiation rules
+# compilation rules
 
 compile '/mailing-list-posts/' do
   filter :erb
