@@ -2,17 +2,18 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteRule ^.*/docs/mailList.html /help/mailing-list/ [R=301,L]
+RewriteRule ^.*docs/mailList.html /help/mailing-list/ [R=301,L]
 RewriteRule ^docs/vignettes.html$ /help/package-vignettes/ [R=301,L]
 
 RewriteRule ^workshops(.*)$ /help/course-materials$1 [R=301]
 
 RewriteRule ^pub(.*)$ /about/publications/$1 [R=301]
-RewriteRule ^(docs/)?mogr(.*)$ /help/books/bioinformatics-and-computational-biology-solut$
-RewriteRule ^pub/biocases(.*)$ /help/books/bioconductor-case-studies/web-supplement$1 [R=$
+RewriteRule ^docs/mogr(.*)$ /help/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+RewriteRule ^mogr(.*)$ /help/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+RewriteRule ^pub/biocases(.*)$ /help/books/bioconductor-case-studies/web-supplement$1 [R=301]
 RewriteRule ^pub/RBioinf(.*)$ /help/books/r-programming-for-bioinformatics$1 [R=301]
 
-RewriteCond %{REQUEST_FILENAME} (.*)\.html$
+RewriteCond %{REQUEST_FILENAME} (.*)[._]html$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %1 -d
 RewriteRule ^.*$ %1/ [R=301]
