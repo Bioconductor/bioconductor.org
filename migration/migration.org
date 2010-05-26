@@ -64,7 +64,7 @@ content.  These have since been checked into svn.  Running the script
 also produces a workshop_rewrites.txt file which contains Apache-style
 redirect directives that should be put in a =.htaccess= file to
 support 301 redirects of the old URLs for this content.
-** Syncing workshops non-html conent
+** Syncing workshops non-html content
 Starting with a wget-produced mirror of the original bioconductor.org
 site, we synced non-html workshop files to the test site server using
 rsync.
@@ -138,8 +138,8 @@ Firefox
 |   3.5.3 |    176 |     1.9 |
 
 Internet Explorer
-| Version | Visits | Pecent |
-|     8.0 |   1712 |   38.4 |
-|     7.0 |   1599 |   35.9 |
-|     6.0 |   1141 |   25.6 |
-|    5.01 |      1 |   0.02 |
+| Version | Visits | Percent |
+|     8.0 |   1712 |    38.4 |
+|     7.0 |   1599 |    35.9 |
+|     6.0 |   1141 |    25.6 |
+|    5.01 |      1 |    0.02 |
