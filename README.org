@@ -257,7 +257,6 @@ overview of the test site configuration:
 - biocadmin uses files under ~/bioc-test-web
 
 - Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
-
 *** Test site scheduled update
 The biocadmin user's crontab on merlot2 is used to schedule
 site updates every ten minutes.  Below are some details on how the
@@ -366,7 +365,7 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
           Allow from all
   
           # output compression using mod deflate                                            
-          AddOutputFilterByType DEFLATE text/html text/css application/javascript
+          AddOutputFilterByType DEFLATE text/html text/css application/javascript text/x-js
           BrowserMatch ^Mozilla/4 gzip-only-text/html
           BrowserMatch ^Mozilla/4\.0[678] no-gzip
           BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
