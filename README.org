@@ -454,6 +454,10 @@ revert to current quickly.  Dirk should be able to suggest a way to
 achieve this.  Ideally, you would not change the bioconductor.org DNS
 record as this can take awhile to propagate and doesn't give a quick
 way to revert.
+**** Site monitoring and alerting
+I imagine PHS IT has some monitoring that can be put in place for the
+new site.  Would also make sense to add an external monitor so that
+you will know if the site becomes unreachable from the outside.
 **** Squid
 I'm not sure what the current status is w.r.t. to Squid proxy/cache.
 With the new setup, I would anticipate that a reasonable web server
@@ -502,3 +506,4 @@ Plone-based site.
   wget-based snapshot may not be as complete as thought.  Not sure if
   the issue is wget config options or Plone getting overwhelmed with
   requests and failing to respond.
+
