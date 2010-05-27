@@ -310,7 +310,6 @@ deployment, and log rotation (biocadmin user):
 
 *** Test site SuSE Apache Configuration
 A good resource is available [[http://en.opensuse.org/Apache_Quickstart_HOWTO][here]].
-
 **** Apache module config
 Edit /etc/sysconfig/apache2
 
@@ -447,3 +446,59 @@ http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/Comp
 http://bioconductor-test.fhcrc.org/help/docs/papers/2003/Compendium/golubEsets_1.0.tar.gz
 http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/tutorial.mpeg
 http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/dataFiles.tar
+** Note on launching the new site
+*** Discuss production setup with Dirk
+**** DNS
+You want to set things up so that you can move to the new site or
+revert to current quickly.  Dirk should be able to suggest a way to
+achieve this.  Ideally, you would not change the bioconductor.org DNS
+record as this can take awhile to propagate and doesn't give a quick
+way to revert.
+**** Squid
+I'm not sure what the current status is w.r.t. to Squid proxy/cache.
+With the new setup, I would anticipate that a reasonable web server
+running Apache will be enough for the load and that if more throughput
+or redundancy is desired, setting up a second server and load
+balancing would be a good next step.
+*** Optimize redirects
+Currently the redirects are defined using Apache's mod_rewrite in a
+top-level =.htaccess= file.  This has the advantage of allowing easy
+revision of the rewrite rules via svn that are picked up by Apache on
+site update.  The downside is that using .htaccess files is suboptimal
+in terms of performance.  So before the site is launched, consider the
+following changes:
+
+1. Copy the directives in the top-level .htaccess file to the site's
+   vhost config =/etc/apache2/vhosts.d/bioconductor-test.conf=.
+
+2. Remove the .htaccess file
+
+3. Edit the same vhosts.d config file to set Options to None for the
+   top-level directory.  This should disable .htaccess files as it
+   isn't enough just to remove the .htaccess file itself.
+*** Testing the site
+**** Use a few days worth of access logs
+Extract paths from a few days of access logs (make sure to filter for
+200 responses) and "replay" these against the test site.  This should
+give a good idea of whether the redirects are doing enough and whether
+or not basic repository structure has been appropriately mirrored.
+**** Use wget to test for broken links on the site
+#+begin_example
+wget -r -l 20 --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
+#+end_example
+**** Work with Dirk to make the test site available on the internet
+Then you can ask Wolfgang to do some tests to see how the site
+performs from Europe.  You could also run some site performance
+analysis tools like YSlow to get some suggestions for improvements.
+**** Test site performance
+You might look into running some simple benchmarks with =ab= or
+=httperf=.  Might be interesting to compare against the current
+Plone-based site.
+
+*** Misc Concerns
+- In trying to get some test data from the current site using wget,
+  I've seen a number of cases where a wget request failed, but then
+  works when I try in a browser.  This makes me worried that the
+  wget-based snapshot may not be as complete as thought.  Not sure if
+  the issue is wget config options or Plone getting overwhelmed with
+  requests and failing to respond.
