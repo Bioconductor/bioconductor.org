@@ -189,13 +189,13 @@ EOF
   end
 
   def write_content(base, data)
-    dest_html = "#{base}.markdown"
+    dest_html = "#{base}.md"
     dest_yaml = "#{base}.yaml"
     FileUtils.mkdir_p(File.dirname(dest_html))
     open(dest_html, "w") { |fh| fh.write(data[:content]) }
     open(dest_yaml, "w") { |fh| fh.write(data[:attrs].to_yaml) }
     p = base.sub(/.*\/content\/(.*$)/, "\\1")
-    puts "CREATED: #{p} (.markdown, .yaml)"
+    puts "CREATED: #{p} (.md, .yaml)"
   end
 
   def verify_nanoc_dir

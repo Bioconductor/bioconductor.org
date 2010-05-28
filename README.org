@@ -117,8 +117,8 @@ Install the gems used by the website as follows:
                use whatever extension you want.
 
              - The default behavior is that a content file like
-               =help.markdown= is filtered into HTML and then written
-               to =output/help/index.html=. This scheme allows for
+               =help.md= is filtered into HTML and then written to
+               =output/help/index.html=. This scheme allows for
                clean URLs that avoid having a file extension.
 
 - layouts :: This is where the content templates live.
