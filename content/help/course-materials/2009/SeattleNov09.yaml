@@ -1,9 +1,2 @@
 --- 
 title: High throughput sequence analysis tools and approaches with Bioconductor
-DC.date.created: 2009-11-18 15:26:13
-DC.date.modified: 2009-11-18 15:27:43
-DC.description: This intermediate course consists of lectures and hands-on labs. Participants are expected to have some familiarity and experience with R and Bioconductor. Experience with analysis of high throughput sequence data is not required. We focus on analysis of Illumina / Solexa data; Roche / 454 and other similar sources will be mentioned, but Bioconductor tools are not designed for direct use with SOLiD 'color space' data. The first day of the course provides users with a comprehensive overview of essential tools and paradigms for manipulating sequence data. Days 2 and 3 focus on the ChIP-seq, RNA-seq, and rare variant application domains.
-DC.creator: mtmorgan
-plone_url: ""
-DC.format: text/html
-DC.type: Folder
