@@ -41,6 +41,15 @@ Install the gems used by the website as follows:
   :  sudo gem install nanoc rdiscount rack mime-types haml json \
   :                   rack-cache httparty rake
 
+If installing on OpenSuse, you will need to do the following commands: 
+FROM THE ROOT DIRECTORY!  The reason for this is that root cannot 
+*SEE* the mounted directories on these systems.
+
+  :  sudo zypper install rubygems
+  :  sudo gem install rubygems-update
+  :  sudo update_rubygems
+
+
 ** Windows Developer Required Software
 
 1. Download and run the one-click ruby installer
