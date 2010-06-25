@@ -1,5 +1,5 @@
-Using Bioconductor for Annotation
-=================================
+![](/images/icons/help.gif)Using Bioconductor for Annotation
+============================================================
 
 Bioconductor has extensive facilities for mapping between microarray
 probe, gene, pathway, gene ontology, homology and other annotations.

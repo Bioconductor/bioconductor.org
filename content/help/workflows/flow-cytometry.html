@@ -1,67 +1,58 @@
+<h1><img src="/images/icons/help.gif" alt=""/>Flow Cytometry Packages</h1>
 
-            <h2>Key packages</h2>
+<p>Open source Bioconductor packages for analysis of flow cytometry data
+provides a unified framework for bioinformaticians to develop methods to
+analyze and interpret flow cytometry data. A workflow for analysis of flow
+cytometry data might involve the following packages.</p>
 
-            <p>Open source Bioconductor packages for analysis of
-            flow cytometry data provides a unified framework for
-            bioinformaticians to develop methods to analyze and
-            interpret flow cytometry data. A workflow for analysis
-            of flow cytometry data might involve the following
-            packages.</p>
+<ul>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowCore.html">
+  flowCore</a> - handles importing, storing, preprocessing and assessment of
+  data from flow cytometry experiments</li>
 
-            <ul>
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowCore.html">
-              flowCore</a> - handles importing, storing,
-              preprocessing and assessment of data from flow
-              cytometry experiments</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowViz.html">
+  flowViz</a> - provides graphical methods for visualization of flow cytometry
+  data.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowViz.html">
-              flowViz</a> - provides graphical methods for
-              visualization of flow cytometry data.</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowQ.html">
+  flowQ</a> - provides quality control and quality assessment tools for flow
+  cytometry data</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowQ.html">
-              flowQ</a> - provides quality control and quality
-              assessment tools for flow cytometry data</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowStats.html">
+  flowStats</a> - provides tools and methods to analyze flow cytometry data
+  that are beyond the basic infrastructure provided in the flowCore package.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowStats.html">
-              flowStats</a> - provides tools and methods to analyze
-              flow cytometry data that are beyond the basic
-              infrastructure provided in the flowCore package.</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowUtils.html">
+  flowUtils</a> - provides utilities, mainly to integrate foreign flow
+  cytometry analysis tools.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowUtils.html">
-              flowUtils</a> - provides utilities, mainly to
-              integrate foreign flow cytometry analysis tools.</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowClust.html">
+  flowClust</a> - provides tools for robust model based clustering using t
+  mixture models with Box-Cox transformation.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowClust.html">
-              flowClust</a> - provides tools for robust model based
-              clustering using t mixture models with Box-Cox
-              transformation.</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowMerge.html">
+  flowMerge</a> - provides tools for merging of mixture components for model
+  based automated gating of flow cytometry data using the flowClust framework.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowMerge.html">
-              flowMerge</a> - provides tools for merging of mixture
-              components for model based automated gating of flow
-              cytometry data using the flowClust framework.</li>
+  <li><a href="http://bioconductor.org/packages/release/bioc/html/flowFP.html">
+  flowFP</a> - provides tools for fingerprint generation of flow cytometry data
+  to facilitate the application of machine learning and data mining tools for
+  flow cytometry.</li>
 
-              <li><a href="http://bioconductor.org/packages/release/bioc/html/flowFP.html">
-              flowFP</a> - provides tools for fingerprint
-              generation of flow cytometry data to facilitate the
-              application of machine learning and data mining tools
-              for flow cytometry.</li>
+  <li><a href="http://www.bioconductor.org/packages/2.6/bioc/html/iFlow.html">
+  iFlow</a> - provides GUI and tools to explore, analyze, and visualize flow
+  cytometry data. The tutorial video can be downloaded from
+  <a href="../flowcytometry/tutorial.mpeg">here</a>.</li>
+</ul>
 
-              <li><a href="http://www.bioconductor.org/packages/2.6/bioc/html/iFlow.html">
-              iFlow</a> - provides GUI and tools to explore,
-              analyze, and visualize flow cytometry data. The
-              tutorial video can be downloaded from <a href="../flowcytometry/tutorial.mpeg">here</a>.</li>
-            </ul>
+<p>These packages can be installed using <a href="/install/">biocLite("package name")</a>.
+Each package also contains a detailed vignette illustrating typical use cases
+as well as man pages. The vignette for a package can be viewed using
+openVignette("package name")</p>
 
-            <p>These packages can be installed using <a href="/install/">biocLite("package name")</a>. Each
-            package also contains a detailed vignette illustrating
-            typical use cases as well as man pages. The vignette
-            for a package can be viewed using openVignette("package
-            name")</p>
+<p>A typical workflow using the packages flowCore, flowViz, flowQ and flowStats
+is described in detail in
+<a href="../flowcytometry/flowWorkFlow.pdf">flowWorkFlow.pdf</a>.
+The data files used in the workflow can be downloaded from
+<a href="../flowcytometry/dataFiles.tar">here</a>.</p>
 
-            <p>A typical workflow using the packages flowCore,
-            flowViz, flowQ and flowStats is described in detail in
-            <a href="../flowcytometry/flowWorkFlow.pdf">flowWorkFlow.pdf</a>.
-            The data files used in the workflow can be downloaded
-            from <a href="../flowcytometry/dataFiles.tar">here</a>.</p>
-          

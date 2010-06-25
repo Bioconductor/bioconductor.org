@@ -1,5 +1,5 @@
-Using Bioconductor for Microarray Analysis
-==========================================
+![](/images/icons/help.gif)Using Bioconductor for Microarray Analysis
+=====================================================================
 
 Bioconductor has advanced facilities for analysis of microarray
 platforms including Affymetrix, Illumina, Nimblegen, Agilent, and

@@ -1,5 +1,5 @@
-Using Bioconductor for Sequence Data
-====================================
+![](/images/icons/help.gif)Using Bioconductor for Sequence Data
+===============================================================
 
 Bioconductor can import diverse sequence-related file types, including
 fasta, fastq, ELAND, MAQ, BWA, Bowtie, SSOAP, BAM, gff, bed, and wig
