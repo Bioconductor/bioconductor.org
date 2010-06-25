@@ -1,102 +1,108 @@
-<div id="about_bioconductor" class="box1">
+<div class="shaded_box">
 
-  <h2>About Bioconductor</h2>
-
-  <p>Bioconductor provides tools for the analysis and comprehension of
-  high-throughput genomic data.  Bioconductor uses the R statistical
-  programming language, and is open source and open development. It
-  has two releases each year, more than 350 packages, and an active
-  user community.</p>
-
+  <table cellspacing="0" cellpadding="0" summary=""><!-- table used for precise positioning -->
+    <tr valign="top">
+      <td style="border-right:1px silver solid;width:266px;">
+        <h1 style="border:0;margin:0;background-image:none">About<br/>Bioconductor</h1>
+        <p style="line-height:1.5em;padding-right:5em">
+		Bioconductor provides tools for the analysis and comprehension of
+		high-throughput genomic data. Bioconductor uses the R statistical
+		programming language, and is open source and open development. It
+		has two releases each year, more than 350 packages, and an active
+		user community.</p>
+      </td>
+      <td style="padding-left:35px">        
+        <p class="olive" style="font-size:large">Use Bioconductor for...</p>
+        <ul class="big_arrow_list" style="float:left;width:43%;">
+          <li><span style="font-size:120%;font-weight:bold">
+            <a href="/help/workflows/oligo-arrays/">Microarrays</a></span>
+            <p>
+              Import Affymetrix, Illumina, Nimblegen, Agilent, and
+              other platforms.
+            </p>
+            <p>
+              Peform quality assesement, normalization, differential
+              expression, clustering, classification, gene set
+              enrichment, genetical genomics and other work flows for
+              expression, exon, copy number, SNP, methylation and other
+              assays.
+            </p>
+            <p>
+              Access GEO, ArrayExpress, Biomart, UCSC, and other
+              community resources.
+            </p>
+          </li>
+         <li><span style="font-size:120%;font-weight:bold"><a href="#">
+           High Throughput Assays</a></span>
+           <p>
+             Perform flow cytometric, mass spec, HTqPCR, and other
+             assays.
+           </p>
+          </li>
+        </ul>
+        <ul class="big_arrow_list" style="float:right;width:43%;">
+          <li><span style="font-size:120%;font-weight:bold">
+            <a href="/help/workflows/high-throughput-sequencing/">
+            Sequence Data</a></span>
+            <p>
+              Import fasta, fastq, ELAND, MAQ, BWA, Bowtie, SSOAP, BAM,
+              gff, bed, wig, and other sequence formats.
+            </p>
+            <p>
+              Trim, transform, align, and manipulate sequences. Perform
+              quality assessment, ChIP-seq, differential expression,
+              RNA-seq, and other work flows.
+            </p>
+            <p>
+              Access the Sequence Read Archive.
+            </p>
+          </li>
+          <li><span style="font-size:120%;font-weight:bold">
+            <a href="/help/workflows/annotation-data/">Annotation</a></span>
+            <p>
+              Use microarray probe, gene, pathway, gene ontology,
+              homology and other annotations.
+            </p>
+            <p>
+              Access GO, KEGG, NCBI, Biomart, UCSC, vendor, and other
+              sources through consistent Bioconductor interfaces.
+            </p>
+          </li>
+        </ul>
+      </td>
+    </tr>
+  </table>
 </div>
 
-<div id="new_user_orientation" class="box1">
-
-  <h2>Use Bioconductor for...</h2>
-
-  <ul id="uses">
-      <li>
-        <a href="/help/workflows/oligo-arrays/">
-          <h3>Microarrays</h3>
-          <p>
-            Import Affymetrix, Illumina, Nimblegen, Agilent, and
-            other platforms.
-          </p>
-          <p>
-            Peform quality assesement, normalization, differential
-            expression, clustering, classification, gene set
-            enrichment, genetical genomics and other work flows for
-            expression, exon, copy number, SNP, methylation and other
-            assays.
-          </p>
-          <p>
-            Access GEO, ArrayExpress, Biomart, UCSC, and other
-            community resources.
-          </p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/help/workflows/high-throughput-sequencing/">
-          <h3>Sequence Data</h3>
-          <p>
-            Import fasta, fastq, ELAND, MAQ, BWA, Bowtie, SSOAP, BAM,
-            gff, bed, wig, and other sequence formats.
-          </p>
-          <p>
-            Trim, transform, align, and manipulate sequences. Perform
-            quality assessment, ChIP-seq, differential expression,
-            RNA-seq, and other work flows.
-          </p>
-          <p>
-            Access the Sequence Read Archive.
-          </p>
-        </a>
-      </li>
-
-      <li>
-        <a href="/help/workflows/annotation-data/">
-          <h3>Annotation</h3>
-          <p>
-            Use microarray probe, gene, pathway, gene ontology,
-            homology and other annotations.
-          </p>
-          <p>
-            Access GO, KEGG, NCBI, Biomart, UCSC, vendor, and other
-            sources through consistent Bioconductor interfaces.
-          </p>
-        </a>
-      </li>
-
-      <li>
-        <a href="">
-          <h3>High Throughput Assays</h3>
-          <p>
-            Perform flow cytometric, mass spec, HTqPCR, and other
-            assays.
-          </p>
-        </a>
-      </li>
-  </ul>
-
+<div class="hp_alert_box">
+  <img src="/images/icons/conference.gif" align="left" alt="" style="margin-right:12px;"/><span style="font-size:larger"><b><a href="#">Save the date! Bioc 2010</a></b></span><br/>The annual Bioconductor conference is scheduled for July 28 (developer day), 29 and 30. More details shortly.<br clear="all"/>
 </div>
 
-<%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+<div class="hp_options_box">
 
-<%= render('/_upcoming_events/', :events => find_item(@items, '/events/')) %>
+  <div style="float:left;width:33%;">
+    <%= render('/_mlwidget/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+  </div>
 
-<div id="bioconductor_blog" class="box1">
-  <h2>The Bioconductor blog</h2>
+  <div style="float:left;width:33%;">
+    <%= render('/_upcoming_events/', :events => find_item(@items, '/events/')) %>
+  </div>
 
-  <h3>Bioconductor 2.5 released</h3>
-  
-  <p>Following the usual 6-month cycle, the Bioconductor community has
-  released Bioconductor 2.5 on October 28th, 2009. This new release is
-  comprised of 352 software packages and more than 400 updated
-  annotation packages. It has been expressly designed to work with the
-  recently released R 2.10.0.</p>
+  <div style="float:right;width:33%;">
+    <div style="padding:0 0 0 12px">
+      <h2 style="min-height:40px;">
+        <img src="/images/icons/blog.gif" alt=""/>The Bioconductor Blog
+      </h2>
+      <p><a href="#"><b>Bioconductor 2.5 released</b></a><br/>
+      Following the usual 6-month cycle, the Bioconductor community has
+      released Bioconductor 2.5 on October 28th, 2009. This new release
+	  is comprised of 352 software packages and more than 400 updated
+      annotation packages. It has been expressly designed to work with
+	  the recently released R 2.10.0.</p>
+      <p><a href="#"><b>Ten things you should know about R</b></a><br/>
+        Coming soon</p>
+    </div>
+  </div>
 
-  <h3>Ten things you should know about R</h3>
-  
-  <p>Coming soon...</p>
-</div>    
+</div>
+<br clear="all"/>
