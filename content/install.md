@@ -31,6 +31,9 @@ the main ones).
 
 Find a package
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
 <h2 id="install-bioconductor-packages">Install Base Bioconductor Packages</h2>
 
 
@@ -57,6 +60,8 @@ The biocLite script has arguments that change the default behavior:
         R library where packages are installed.
 </p>
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2>Install additional Bioconductor packages</h2>
 
 There are many Bioconductor and R packages in addition to those in the
@@ -72,6 +77,8 @@ Install "pkg1" and "pkg2" with
 
 <p class="code_box">    biocLite(c("pkg1", "pkg2"))
 </p>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
 <h2 id="update-bioconductor-packages">Update installed Bioconductor packages</h2>
@@ -108,3 +115,5 @@ As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
 might introduce wrinkles that disrupt your work flow.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
