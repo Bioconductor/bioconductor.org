@@ -256,7 +256,7 @@ li.footer_nav_list_element { float:left; } /* the five main nav elements, not th
   margin-top:1em;
   margin-bottom:1em;
   overflow-x: auto;
-  white-space:nowrap;
+  white-space:pre;
 }
 
 /* simple grey-backgrounded box has no border. use like this <div class='grey_box'>...</div> */
