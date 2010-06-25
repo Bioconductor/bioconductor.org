@@ -1,3 +1,6 @@
+![](/images/icons/help.gif)Help
+===============================
+
 * [Workflows](/help/workflows/)
 * [Course Materials](/help/course-materials/)
 * [Mailing List](/help/mailing-list/)
