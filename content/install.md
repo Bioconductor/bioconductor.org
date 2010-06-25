@@ -1,3 +1,15 @@
+![](/images/icons/install.gif)Install
+===========================================================
+
+* [install R](#install-R)
+
+* [Find Bioconductor Packages](#find-bioconductor-packages)
+
+* [Install Bioconductor Packages](#install-bioconductor-packages)
+
+* [Update Bioconductor Packages](#update-bioconductor-packages)
+
+
 <h2 id="install-R"">Install R</h2>
 
 1. Download the most recent version of [R][].  The [R FAQs][] and the [R
