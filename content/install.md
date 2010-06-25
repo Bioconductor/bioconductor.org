@@ -37,8 +37,7 @@ Find a package
 Install BioConductor packages using the biocLite.R installation
 script. In an R command window, type the following:
 
-<p class="code_box">
-    source("http://bioconductor.org/biocLite.R")<br/>
+<p class="code_box">    source("http://bioconductor.org/biocLite.R")
     biocLite()
 </p>
 
@@ -50,13 +49,12 @@ packages, the script prints "Installation complete" and TRUE.
 
 The biocLite script has arguments that change the default behavior:
 
-<p class="code_box">
-    <b>pkgs</b><br/>
-    &nbsp&nbsp&nbsp Character vector of BioConductor packages to install.<br/>
-    <b>destdir</b><br/>
-    &nbsp&nbsp&nbsp File system directory for downloaded packages.<br/>
-    <b>lib</b><br/>
-    &nbsp&nbsp&nbsp R library where packages are installed.<br/>
+<p class="code_box">    <b>pkgs</b>
+        Character vector of BioConductor packages to install.
+    <b>destdir</b>
+        File system directory for downloaded packages.
+    <b>lib</b>
+        R library where packages are installed.
 </p>
 
 <h2>Install additional Bioconductor packages</h2>
@@ -66,15 +64,13 @@ default installation of biocLite. A catalog of the Bioconductor
 packages is available at BiocViews. To install a new package, e.g.,
 EBImage, use
 
-<p class="code_box">
-    source("http://bioconductor.org/biocLite.R")<br/>
+<p class="code_box">    source("http://bioconductor.org/biocLite.R")
     biocLite("EBImage")
 </p>
 
 Install "pkg1" and "pkg2" with
 
-<p class="code_box">
-    biocLite(c("pkg1", "pkg2"))
+<p class="code_box">    biocLite(c("pkg1", "pkg2"))
 </p>
 
 
@@ -84,16 +80,14 @@ Bioconductor packages, especially those in the development branch, are
 updated fairly regularly. To identify packages requiring update, start
 a new session of R and enter
 
-<p class="code_box">
-    source("http://bioconductor.org/biocLite.R")<br/>
+<p class="code_box">    source("http://bioconductor.org/biocLite.R")
     old.packages(repos=biocinstallRepos())
 </p>
 
 To update all installed packages that are out of date, start a new
 session of R and enter
 
-<p class="code_box">
-    source("http://bioconductor.org/biocLite.R")<br/>
+<p class="code_box">    source("http://bioconductor.org/biocLite.R")
     update.packages(repos=biocinstallRepos(), ask=FALSE)
 </p>
 
@@ -105,9 +99,8 @@ installed packages to be recompiled for source (C or Fortran)
 compatibility. One way to address this might be to start a new R
 session and enter
 
-<p class="code_box">
-    source("http://bioconductor.org/biocLite.R")<br/>
-    pkgs <- rownames(installed.packages())<br/>
+<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    pkgs <- rownames(installed.packages())
     biocLite(pkgs)
 </p>
 
@@ -115,4 +108,3 @@ As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
 might introduce wrinkles that disrupt your work flow.
-
