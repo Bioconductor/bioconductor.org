@@ -1,4 +1,4 @@
-<div id="crumbs">
+<div id="PageBreadcrumbs" class="PageBreadcrumbs">
   <% breadcrumbs_trail.each_with_index do |crumb, i| %>
   <% next unless crumb %>
   <a href="<%= crumb.identifier %>"><%= crumb[:title] %></a>

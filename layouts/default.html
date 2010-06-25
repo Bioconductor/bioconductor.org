@@ -3,17 +3,17 @@
   <%= render("/_sitehead/") %>
   <body>
     <%= render("/_nav/") %>
-  <div id="page">
-    <% if (@item.identifier != '/')%>
-      <%= render("/_crumbs/") %>
-    <% end %>
-    <% if has_subnav?(@item) %>
-      <%= render("/_subnav/", :pages => subnav_items(@item)) %>
-    <% end %>
-    <div id="main">
+  <div id="SiteContainer" class="SiteContainer">
+  	<div id="PageContent" class="PageContent">
+      <% if (@item.identifier != '/')%>
+        <%= render("/_crumbs/") %>
+      <% end %>
+      <% if has_subnav?(@item) %>
+        <%= render("/_subnav/", :pages => subnav_items(@item)) %>
+      <% end %>
       <%= yield %>
     </div>
-  </div>
     <%= render("/_footer/") %>
+  </div>
   </body>
 </html>
