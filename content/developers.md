@@ -1,5 +1,5 @@
-Info for package contributors goes here
----------------------------------------
+![](/images/icons/magnifier.gif)Bioconductor Developer Page
+===========================================================
 
 * [How to contribute](http://wiki.fhcrc.org/bioc/HowTo/Package_Contribution/)
 
