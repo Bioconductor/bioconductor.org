@@ -1,7 +1,12 @@
 <div id="PageBreadcrumbs" class="PageBreadcrumbs">
-  <% breadcrumbs_trail.each_with_index do |crumb, i| %>
-  <% next unless crumb %>
-  <a href="<%= crumb.identifier %>"><%= crumb[:title] %></a>
-  <%= i + 1 < breadcrumbs_trail.length ? "&raquo;" : "" %>
-  <% end %> 
+  <ul>
+    <% breadcrumbs_trail.each_with_index do |crumb, i| %>
+    <% next unless crumb %>
+      <% if (i + 1 < breadcrumbs_trail.length) %>
+        <li><a href="<%= crumb.identifier %>"><%= crumb[:title] %></a></li>
+      <% else %>
+        <li><%= crumb[:title] %></li>
+      <% end %>
+    <% end %>
+  </ul>
 </div>
