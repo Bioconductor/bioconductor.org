@@ -40,9 +40,8 @@ Find a package
 Install BioConductor packages using the biocLite.R installation
 script. In an R command window, type the following:
 
-<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    source("http://bioconductor.org/biocLite.R")
     biocLite()
-</p>
 
 This installs the following packages: affy, affydata, affyPLM,
 annaffy, annotate, Biobase, Biostrings, DynDoc, gcrma, genefilter,
@@ -52,13 +51,12 @@ packages, the script prints "Installation complete" and TRUE.
 
 The biocLite script has arguments that change the default behavior:
 
-<p class="code_box">    <b>pkgs</b>
+    pkgs
         Character vector of BioConductor packages to install.
-    <b>destdir</b>
+    destdir
         File system directory for downloaded packages.
-    <b>lib</b>
+    lib
         R library where packages are installed.
-</p>
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -69,14 +67,12 @@ default installation of biocLite. A catalog of the Bioconductor
 packages is available at BiocViews. To install a new package, e.g.,
 EBImage, use
 
-<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    source("http://bioconductor.org/biocLite.R")
     biocLite("EBImage")
-</p>
 
 Install "pkg1" and "pkg2" with
 
-<p class="code_box">    biocLite(c("pkg1", "pkg2"))
-</p>
+    biocLite(c("pkg1", "pkg2"))
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -87,16 +83,14 @@ Bioconductor packages, especially those in the development branch, are
 updated fairly regularly. To identify packages requiring update, start
 a new session of R and enter
 
-<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    source("http://bioconductor.org/biocLite.R")
     old.packages(repos=biocinstallRepos())
-</p>
 
 To update all installed packages that are out of date, start a new
 session of R and enter
 
-<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    source("http://bioconductor.org/biocLite.R")
     update.packages(repos=biocinstallRepos(), ask=FALSE)
-</p>
 
 Read the help page for update.packages for additional details.
 Recompiling installed Bioconductor packages
@@ -106,10 +100,9 @@ installed packages to be recompiled for source (C or Fortran)
 compatibility. One way to address this might be to start a new R
 session and enter
 
-<p class="code_box">    source("http://bioconductor.org/biocLite.R")
+    source("http://bioconductor.org/biocLite.R")
     pkgs <- rownames(installed.packages())
     biocLite(pkgs)
-</p>
 
 As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
