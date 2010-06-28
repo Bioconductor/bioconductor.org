@@ -22,6 +22,19 @@ We've tested the site with Ruby 1.8.7, but expect that more recent
 versions of Ruby will also work.  Ruby comes standard on OS X and most
 Linux distributions.
 
+***** updating Ruby to 1.9.1 (if needed)
+The Ruby 1.9.1 interpreter is not avaliable yet for Linux. You will need to compile 
+from source archieve:
+  :cd ruby-1.9.1-XXX.tar.gz
+  :./configure
+  :make
+  :make test
+
+Since Ruby will be intalled to /usr/local, you will need to 
+run ==sudo make install== command as root with sudo. Make sure that your 
+binary in ROOT directory (i.e., /loc), not your home directory. Even you 
+use ==sudo==, the root cannot see or access your home directory.
+
 **** rubygems
 
 You need to have the rubygems package installed.  You can test for
