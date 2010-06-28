@@ -32,7 +32,3 @@ packages focused primarily on DNA microarray data analysis. As the
 project has matured, the functional scope of the software packages
 broadened to include the analysis of all types of genomic data, such
 as SAGE, sequence, or SNP data.
-
-* [core team](/about/core-team/)
-* [advisory board](/about/advisory-board/)
-* [related projects](/about/related-projects/)
