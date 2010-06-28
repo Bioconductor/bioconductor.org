@@ -1,4 +1,4 @@
-<% @pages.each do |p| %>
+<% @pages.sort{|a, b| a[:title] <=> b[:title]}.select do |p| %>
   <ul class="section_nav">
     <li><a href="<%= p.identifier %>"><%= p[:title] %></a></li>
   </ul>
