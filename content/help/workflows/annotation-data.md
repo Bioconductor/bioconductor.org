@@ -157,7 +157,7 @@ provided.
   data. Some examples of this are:
   [KEGG.db](http://www.bioconductor.org/packages/release/data/annotation/html/KEGG.db.html)
   for accessing data that pertains to Kyoto Encyclopedia of Genes and
-  Genomes. [GO.db for](http://www.bioconductor.org/packages/release/data/annotation/html/GO.db.html)
+  Genomes. [GO.db](http://www.bioconductor.org/packages/release/data/annotation/html/GO.db.html) for
   accessing data that pertains to the Gene
   Ontology. [PFAM.db](http://www.bioconductor.org/packages/release/data/annotation/html/PFAM.db.html)
   for accessing data that pertains to different protein family
@@ -180,7 +180,7 @@ provided.
   available .db0 packages can be obtained by calling
   available.db0Pkgs(). There is one of these for each supported
   organism. An example would be
-  [human.db0](http://www.bioconductor.org/packages/release/data/annotation/html/Human.db0.html). Users
+  [human.db0](http://www.bioconductor.org/packages/release/data/annotation/html/human.db0.html). Users
   should not need these installed unless they plan to make custom chip
   packages according the guidelines in the SQLForge vignette that is
   included with the `AnnotationDbi` package.  These packages must be
