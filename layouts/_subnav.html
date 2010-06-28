@@ -1,7 +1,9 @@
-<div id="subnav">
-  <% @pages.each do |p| %>
-  <ul>
+<% @pages.each do |p| %>
+  <ul class="section_nav">
     <li><a href="<%= p.identifier %>"><%= p[:title] %></a></li>
   </ul>
-  <% end %>
-</div>
+<% end %>
+
+<% @item[:subnav].each do |s| %>
+  <%= render(s[:include].to_s) %>
+<% end %>

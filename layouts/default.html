@@ -4,14 +4,21 @@
   <body>
     <%= render("/_nav/") %>
   <div id="SiteContainer" class="SiteContainer">
-  	<div id="PageContent" class="PageContent">
+    <% if has_subnav?(@item) %>
+    <div id="PageContent" class="PageContent WithRightRail">
+    <% else %>
+    <div id="PageContent" class="PageContent">
+    <% end %>
       <% if (@item.identifier != '/')%>
         <%= render("/_crumbs/") %>
       <% end %>
+      <%= yield %>
       <% if has_subnav?(@item) %>
+        </div>
+        <div id="RightRail" class="RightRail">
+        <a name="section-navigation"></a> <!-- accessibility anchor -->
         <%= render("/_subnav/", :pages => subnav_items(@item)) %>
       <% end %>
-      <%= yield %>
     </div>
     <%= render("/_footer/") %>
   </div>
