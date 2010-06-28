@@ -1,9 +1,7 @@
-Bioconductor Advisory Board Members
-===================================
+Advisory Board
+==============
 
 * Duncan Temple Lang
 * Eric Schadt
 * Ram Samudrala
 * Simon Tavare (chair)
-
-

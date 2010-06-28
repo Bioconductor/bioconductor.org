@@ -1,5 +1,5 @@
-Bioconductor Core Developers
-============================
+Core Developers
+===============
 
 * [Patrick Aboyoun](mailto:paboyoun@fhcrc.org),
   [Fred Hutchinson Cancer Research Center](http://www.fhcrc.org/), USA.

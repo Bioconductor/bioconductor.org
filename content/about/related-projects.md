@@ -1,5 +1,8 @@
+Related Projects
+================
+
 R Related Projects
-==================
+------------------
 
 * [The R Project for Statistical Computing](http://www.r-project.org/)
 * [The Comprehensive R Archive Network (CRAN)](http://cran.r-project.org/)
@@ -9,7 +12,7 @@ R Related Projects
 * [The R Graph Gallery](http://addictedtor.free.fr/graphiques/)
 
 Other Related Projects
-======================
+----------------------
 
 * [Bayesian Analysis of Microarray](http://www.bioss.sari.ac.uk/%7Edirk/essays/GeneExpression/bayes_net.html)
 * [BioJava](http://biojava.org/)

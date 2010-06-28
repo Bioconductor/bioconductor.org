@@ -1,7 +1,7 @@
-<h1>Bioconductor project annual reports</h1>
+<h1>Annual Reports</h1>
 
 <ul>
-  <% annual_reports.each do |r| %>
+  <% annual_reports.sort{|a, b| b[:name] <=> a[:name]}.select do |r| %>
   <li><a href="<%= r[:href] %>"><%= r[:name] %></a></li>
   <% end %>
 </ul>

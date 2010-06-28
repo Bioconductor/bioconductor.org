@@ -1,12 +1,15 @@
-# Bioconductor Package Mirrors #
+Mirrors
+=======
 
-## United States ##
+United States
+-------------
 
 * [National Cancer Institute, National Institutes of Health](http://nci.nih.gov/)
   
   URL: <http://watson.nci.nih.gov/bioc_mirror/>
 
-## Germany ##
+Germany
+-------
 
 * [Department of Statistics, TU Dortmund](http://www.statistik.tu-dortmund.de/)
   

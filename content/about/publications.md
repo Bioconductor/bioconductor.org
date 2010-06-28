@@ -1,4 +1,8 @@
-** Bioconductor Books **
+Publications
+============
+
+Bioconductor Books
+------------------
 
 <a
 href="/help/books/bioinformatics-and-computational-biology-solutions/"
@@ -19,7 +23,8 @@ title="Bioconductor Case Studies">
 src="/help/books/bioconductor-case-studies/case-studies-small.jpg"
 height="100" alt="Bioconductor Case Studies" width="65" /></a>
 
-** Bioconductor Publications **
+Bioconductor Papers
+-------------------
 
 * [Bioconductor Technical Reports](tech-reports/)
 
@@ -27,13 +32,15 @@ height="100" alt="Bioconductor Case Studies" width="65" /></a>
 
 * [Instructions for Authors](http://www.bepress.com/bioconductor/authors.instructions.html)
 
-** Compendia **
+Compendia
+---------
 
 * [GeneMetaEx](compendia/genemetaex/)
 * [GolubRR](compendia/golubrr/)
 * [CompStatViz](compendia/CompStatViz/)
 
-** Publications Related to Bioconductor **
+Related Publications
+--------------------
  
 * [Google Scholar Beta](http://scholar.google.com/scholar?q=bioconductor&amp;ie=UTF-8&amp;oe=UTF-8&amp;hl=en&amp;btnG=Search)
 
@@ -48,4 +55,3 @@ height="100" alt="Bioconductor Case Studies" width="65" /></a>
 * [BioMed Central Bioinformatics](http://www.biomedcentral.com/search/results.asp?terms=bioconductor&amp;drpPhrase1=and&amp;type=niche_advanced_results&amp;jou_id=1002&amp;Search.x=10)
 
 * [Ingenta](http://www.ingentaconnect.com/search?title=bioconductor&amp;database=1&amp;search.x=0&amp;search.y=0)
-
