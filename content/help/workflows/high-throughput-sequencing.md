@@ -19,7 +19,7 @@ microbial community samples.
 The work flow loads the `ShortRead` package and its dependencies. It
 inputs about 250,000 reads of 200-250 bp each from a fastq
 file. Flexible pattern matching (note the ambiguity letter `V')
-removes a PCR primer artefact. The final lines plot the cumulative
+removes a PCR primer artifact. The final lines plot the cumulative
 number of trimmed reads as a function of their (log) abundance.
 
 The result shows that most of the reads are from relatively few
@@ -39,9 +39,9 @@ sequences that each occur many times.
     ## Calculate and plot cumulative reads vs. occurrences
     > tbl <- tables(trimmed)[[2]]
     > xyplot(cumsum(nReads * nOccurrences) ~ nOccurrences, tbl, 
-            scales=list(x=list(log=TRUE)), type="b", pch=20,
-            xlab="Number of Occurrences", 
-            ylab="Cumulative Number of Reads")
+             scales=list(x=list(log=TRUE)), type="b", pch=20,
+             xlab="Number of Occurrences", 
+             ylab="Cumulative Number of Reads")
 
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
