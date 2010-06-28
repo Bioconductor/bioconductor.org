@@ -11,92 +11,23 @@
         &nbsp; as the last line in each box.  if omitted and the box ends with a 
         <ul> element, the boxes won't line up correctly.  --> 
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/workflows/">Workflows</a>
-  <span class="olive">&raquo;</span></p>
-  <p>Bioconductor meets your established and leading-edge genomic analysis needs.
-     Common workflows in the Bioconductor project are: </p>
-  <ul>
-    <li><a href="/help/workflows/oligo-arrays/">Oligonucleotide Arrays</a></li>
-    <li><a href="/help/workflows/high-throughput-sequencing/">High-throughput Sequence Analysis</a></li>
-    <li><a href="/help/workflows/annotation-data/">Accessing Annotation Data</a></li>
-    <li><a href="/help/workflows/flow-cytometry/">Flow Cytometry</a></li>
-  </ul>
-  &nbsp;
-</div>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/course-materials/">Course Materials</a>
-  <span class="olive">&raquo;</span></p>
-  <p>You are welcome to use these materials for instructional purposes.
-  However, you may not include these in separately published works
-  (articles, books, websites).</p> 
-  <a href="/help/course-materials/2010/">2010</a> <span class="blue">|</span> 
-  <a href="/help/course-materials/2009/">2009</a> <span class="blue">|</span>
-  <a href="/help/course-materials/2008/">2008</a> <span class="blue">|</span>
-  <a href="/help/course-materials/2007/">2007</a> <span class="blue">|</span>
-  <a href="/help/course-materials/2006/">2006</a><br/>
-  <a href="/help/course-materials/2005/">2005</a> <span class="blue">|</span>
-  <a href="/help/course-materials/2004/">2004</a> <span class="blue">|</span>
-  <a href="/help/course-materials/2003/">2003</a> <span class="blue">|</span> 
-  <a href="/help/course-materials/2002/">2002</a>
-  &nbsp;
-</div>
+<%= render("/_workflows/") %>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/mailing-list/">Mailing List</a>
-  <span class="olive">&raquo;</span></p>
-  <p>Please read the <a href="/help/mailing-list/posting-guide/">posting guide</a>
-  before sending mail to the Bioconductor mail lists. </p>
-  <ul>
-    <li><a href="https://stat.ethz.ch/mailman/listinfo/bioconductor">bioconductor</a></li>
-    <li><a href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">bioc-devel</a></li>
-    <li><a href="https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing">bioc-sig-sequencing</a></li>
-  </ul>
-  &nbsp;
-</div>
+<%= render("/_course_materials/") %>
+
+<%= render("/_mailing_list/") %>
+
 
 <br clear="all"/>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/package-vignettes/">Package Vignettes</a>
-  <span class="olive">&raquo;</span></p>
-  <p>Each Bioconductor package contains at least one vignette, a document that
-  provides a task-oriented description of package functionality. Vignettes
-  contain executable examples and are intended to be used interactively.</p>
-  &nbsp;
-</div>
+<%= render("/_package_vignettes/") %>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/books/">Bioconductor Books</a>
-  <span class="olive">&raquo;</span></p>
-  <ul>
-    <li><a href="/help/books/bioinformatics-and-computational-biology-solutions/">Bioinformatics and Computational Biology Solutions Using R and
-      Bioconductor</a></li>
-    <li><a href="/help/books/r-programming-for-bioinformatics/">R Programming for Bioinformatics</a></li>
-    <li><a href="/help/books/bioconductor-case-studies/">Bioconductor Case Studies</a></li>
-  </ul>
-  &nbsp;
-</div>
+<%= render("/_bioconductor_books/") %>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header"><a href="/help/bioconductor-packages/">Finding Bioconductor Packages</a>
-  <span class="olive">&raquo;</span></p>
-  <p></p>
-  &nbsp;
-</div>
+<%= render("/_finding_bioc_packages/") %>
+
 
 <br clear="all"/>
 
-<div class="shaded_box" style="width:33%;float:left;">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header">Help Using R <span class="olive">&raquo;</span></p>
-  <p></p>
-  &nbsp;
-</div>
+<%= render("/_help_using_R/") %>
