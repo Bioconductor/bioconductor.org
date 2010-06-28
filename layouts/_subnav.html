@@ -4,6 +4,8 @@
   </ul>
 <% end %>
 
-<% @item[:subnav].each do |s| %>
-  <%= render(s[:include].to_s) %>
+<% if (@item[:subnav].kind_of? Array) %>
+  <% @item[:subnav].each do |s| %>
+    <%= render(s[:include].to_s) %>
+  <% end %>
 <% end %>
