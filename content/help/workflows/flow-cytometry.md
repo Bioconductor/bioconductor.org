@@ -28,7 +28,7 @@ cytometry data might involve the following packages.
 * [flowFP](http://bioconductor.org/packages/release/bioc/html/flowFP.html) -
   provides tools for fingerprint generation of flow cytometry data to facilitate
   the application of machine learning and data mining tools for flow cytometry.
-* [iFlow](http://www.bioconductor.org/packages/2.6/bioc/html/iFlow.html) -
+* [iFlow](http://www.bioconductor.org/packages/release/bioc/html/iFlow.html) -
   provides GUI and tools to explore, analyze, and visualize flow cytometry data.
   The tutorial video can be downloaded from
   [here](../flowcytometry/tutorial.mpeg).
