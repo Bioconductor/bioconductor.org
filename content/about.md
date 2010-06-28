@@ -1,5 +1,5 @@
-About Bioconductor
-==================
+![](/images/icons/magnifier.gif)About Bioconductor
+==================================================
 
 Bioconductor is an open source and open development software project
 to provide tools for the analysis and comprehension of genomic data.
