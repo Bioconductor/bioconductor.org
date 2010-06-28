@@ -118,7 +118,7 @@ The following provide a brief overview of packages useful for
 pre-processing. More comprehensive work flows can be found in
 documentation (available from
 [package descriptions](http://bioconductor.org/packages/release/Software.html))
-and in Bioconductor [Books and monographs](/help/bioconductor-books/).
+and in Bioconductor [Books and monographs](/help/books/).
 
 ### Affymetrix 3'-biased Arrays ###
 
