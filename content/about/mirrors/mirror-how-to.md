@@ -7,7 +7,7 @@ repositories, please use the commands below.
 ## BioC 2.6 repos ##
 
 If you want to mirror the Bioconductor **2.6** repos (the current
-release verion), please use the following commands:
+release version), please use the following commands:
 
 ### All Bioconductor 2.6 repos ###
 
