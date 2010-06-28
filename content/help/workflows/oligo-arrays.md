@@ -42,7 +42,8 @@ arrays, and the `limma` package for assessing differential expression.
     > topTable(efit, coef=2)      # table of differentially expressed probesets
     
 A top table resulting from a more complete analysis, described in
-Chapter 7 of [Bioconductor Case Studies](/help/bioconductor-books/),
+Chapter 7 of [Bioconductor Case
+Studies](/help/books/bioconductor-case-studies/), 
 is shown below. The table enumerates Affymetrix probes, the log-fold
 difference between two experimental groups, the average expression
 across all samples, the t-statistic describing differential
