@@ -1,5 +1,5 @@
-Core Team
-=========
+![](/images/icons/magnifier.gif)Core Team
+=========================================
 
 * [Patrick Aboyoun](mailto:paboyoun@fhcrc.org),
   [Fred Hutchinson Cancer Research Center](http://www.fhcrc.org/), USA.

@@ -1,5 +1,5 @@
-Publications
-============
+![](/images/icons/magnifier.gif)Publications
+============================================
 
 Bioconductor Books
 ------------------

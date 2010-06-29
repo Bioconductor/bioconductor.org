@@ -1,5 +1,5 @@
-Related Projects
-================
+![](/images/icons/magnifier.gif)Related Projects
+================================================
 
 R Related Projects
 ------------------

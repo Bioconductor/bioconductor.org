@@ -1,4 +1,4 @@
-# How to Create a Bioconductor Mirror Site #
+# ![](/images/icons/magnifier.gif)How to Create a Bioconductor Mirror Site #
 
 The Bioconductor package repositories may be mirrored with `rsync`.  If
 you would like to become a mirror for package and data package
@@ -51,7 +51,7 @@ devel version), please use the following commands:
 
 ## Additional information ##
 
-Bioconductor is big (> 50G for BioC 2.4). Please check the size of
+Bioconductor is big (> 64G for BioC 2.6). Please check the size of
 what will be transferred with e.g. `rsync -avn bioconductor.org::2.6`
 and make sure you have enough room on your local disk before you
 start.
@@ -69,5 +69,3 @@ would like to have your mirror listed on this page.
 The [Bioconductor](/) master package repositories reside at [Fred
 Hutchinson Cancer Research Center](http://www.fhcrc.org/) in Seattle,
 WA, USA.
-
-        

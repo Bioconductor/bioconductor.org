@@ -1,5 +1,5 @@
-Mirrors
-=======
+![](/images/icons/magnifier.gif)Mirrors
+=======================================
 
 United States
 -------------
