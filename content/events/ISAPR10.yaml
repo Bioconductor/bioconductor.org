@@ -1,0 +1,15 @@
+---
+title: Introduction to Statistical Analysis and Programming in R
+location: Heidelberg, Germany
+event_host: EMBL Heidelberg
+start: 2010-05-28
+end:   2010-05-29
+description:
+  This course is addressed at beginners with some experience in 
+  programming who want to learn using R for the analysis and visualization 
+  of their own data. It will cover the basics of the R language, as well 
+  as practical usage of statistical methods.
+
+link:
+  text: details and registration
+  url: https://stat.ethz.ch/pipermail/bioconductor/2010-February/031615.html
