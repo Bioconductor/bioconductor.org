@@ -1,0 +1,15 @@
+---
+title: Statistical Microarray Analysis Using R & Bioconductor
+location: London, UK
+event_host: Imperial College
+start: 2010-06-17
+end:   2010-06-18
+description:
+  A two day course which will discuss microarray analysis, from the
+  normalisation of the raw expression data, to the applying of valid
+  statistical analyses, and the interpretation of results. This course is
+  aimed at biologists and other researchers who want to learn how to analyse
+  their microarray data using R and the Bioconductor project modules. 
+link:
+  text: details and registration
+  url: http://www3.imperial.ac.uk/stathelp/courses/statisticalmicroarrayanalysisusingr
