@@ -1,4 +1,4 @@
-# Posting guide #
+# ![](/images/icons/magnifier.gif)Posting guide #
 
 ## Why? ##
 
@@ -16,7 +16,7 @@
   try `help.search("somefunc")`. Read the vignette(s) for the
   package(s) using `browseVignettes(package="somepkg")`
 
-* Search the [FAQ](http://bioconductor.org/docs/faq/") and
+* Search the [FAQ](http://bioconductor.org/docs/faq/) and
   [Bioconductor](http://dir.gmane.org/gmane.science.biology.informatics.conductor)
   and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
   similar posts. Try a [Google](http://www.google.com/) search.
@@ -26,8 +26,7 @@
   with the `--vanilla` option to avoid loading .Rprofile or .RData
   files.
   
-* Ensure that your installed packages are
-  [up-to-date](http://bioconductor.org/docs/install/).
+* Ensure that your installed packages are [up-to-date](/install/).
 
 ## Composing ##
 
@@ -57,7 +56,7 @@
   read.
 
 * Avoid attachments; if specific data or images are essential, post
-  them to a publically accessible location and include the link in
+  them to a publicly accessible location and include the link in
   your email.
 
 * Read over your mail. Is it polite and easy to understand? Remember
@@ -88,9 +87,7 @@
 ## Acknowledgments ##
 
 This posting guide has been heavily adapted from the
-[R-help posting guide](http://www.r-project.org/posting-guide.html">http://www.r-project.org/posting-guide.html),
+[R-help posting guide](http://www.r-project.org/posting-guide.html),
 various comments and suggestions by Bioconductor posters and inspired
-by Eric Raymonds' essay on
+by Eric Steven Raymond's essay on
 [How To Ask Questions The Smart Way](http://www.catb.org/%7Eesr/faqs/smart-questions.html).
-
-            
