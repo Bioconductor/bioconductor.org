@@ -7,7 +7,7 @@ Core Team
   USA.
 * [Ben Bolstad](http://stat-www.berkeley.edu/users/bolstad/), Division of
   Biostatistics, UC Berkeley, USA.
-* [Vince Carey](http://www.biostat.harvard.edu/~carey, Harvard Medical School,
+* [Vince Carey](http://www.biostat.harvard.edu/~carey), Harvard Medical School,
   USA.
 * Marc Carlson, [Fred Hutchinson Cancer Research Center](http://www.fhcrc.org/),
   USA.
@@ -21,7 +21,7 @@ Core Team
   Biostatistics, UC Berkeley, USA.
 * [Byron Ellis](http://biosun1.harvard.edu/~bellis), Harvard Department of
   Statistics, USA.
-* [Seth Falcon](http://gentleman-lab.fhcrc.org/lab-members/sfalcon/),
+* [Seth Falcon](mailto:sfalcon@fhcrc.org),
   [Fred Hutchinson Cancer Research Center](http://www.fhcrc.org/), USA.
 * Laurent Gautier, France.
 * Robert Gentleman, Genentech Research and Early Development, USA.
