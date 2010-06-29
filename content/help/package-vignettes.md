@@ -1,3 +1,5 @@
+# ![](/images/icons/help.gif)Package Vignettes #
+
 Each Bioconductor package contains at least one vignette, a document
 that provides a task-oriented description of package
 functionality. Vignettes contain executable examples and are intended
@@ -21,11 +23,10 @@ location of an installed package as follows:
     system.file(package = "Biostrings")
 
 You can extract all of the R code from a vignette source file (these
-files are in Sweave format) as shown below. The result will be a
-`.R` file for each vignette source file written to your
-current working directory. You can use these R files to cut and paste
-into an R session so that you can work the examples in the vignette
-yourself.
+files are in Sweave format) as shown below. The result will be a `.R`
+file for each vignette source file written to your current working
+directory. You can use these R files to cut and paste into an R
+session so that you can work the examples in the vignette yourself.
 
     library("tools")
     vigSrc = list.files(pattern = "Rnw$",
@@ -36,7 +37,8 @@ yourself.
 
 You can also download the vignette for a package that isn't installed
 on your system by visiting the package's description page linked from
-the [list of Bioconductor packages](/packages/release/bioc/)
+the
+[list of Bioconductor packages](http://www.bioconductor.org/packages/release/bioc/)
 
 *Term of use for the vignettes*: You are welcome to use these
 materials for instructional purposes. However, you may not include

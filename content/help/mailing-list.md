@@ -1,5 +1,4 @@
-Bioconductor Mailing Lists
-==========================
+# ![](/images/icons/help.gif)Bioconductor Mailing Lists #
 
 Please read the [posting guide][5] before sending mail to the
 Bioconductor mail lists.
@@ -18,18 +17,15 @@ patches to the source code and documentation of Bioconductor, as
 well as general discussions on topics of interest to the
 Bioconductor community.
 
-
 Send mail to everyone subscribed to the bioconductor mail list by
 reading the [posting guide][5] and then sending an email to
 [bioconductor@stat.math.ethz.ch][6]
-
 
 Obtain Information about the list by sending an email with 'info' as
 its contents to [bioconductor-request@stat.math.ethz.ch][7] . You can
 subscribe and unsubscribe by E-mail (instead of the web interface),
 however to unsubscribe you currently need the mailing list password
 which is sent when subscribing and in a monthly reminder.
-    
 
 ## bioc-devel ##
 
@@ -44,7 +40,6 @@ others who have an interest in keeping up to date with these matters.
 ## bioc-sig-sequencing ##
 
 Subscribe to or browse this list through the [web interface][9].
-
 
 This list is for discussion and development of Bioconductor packages
 for analysis of ultra-high throughput sequencing data. Ultra-high

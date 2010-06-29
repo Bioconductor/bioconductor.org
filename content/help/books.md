@@ -1,4 +1,4 @@
-# Bioconductor Books #
+# ![](/images/icons/help.gif)Bioconductor Books #
 
 * [Bioinformatics and Computational Biology Solutions Using R and
   Bioconductor][1]

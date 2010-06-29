@@ -1,5 +1,4 @@
-![](/images/icons/help.gif)Bioconductor Workflows
-=================================================
+# ![](/images/icons/help.gif)Bioconductor Workflows #
 
 Bioconductor meets your established and leading-edge genomic analysis
 needs. Common workflows in the Bioconductor project are:
