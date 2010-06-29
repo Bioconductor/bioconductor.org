@@ -8,11 +8,11 @@ Bioconductor has built-in representations of GO, KEGG, vendor, and
 other annotations, and can easily access NCBI, Biomart, UCSC, and
 other sources.
 
-## Sample Work Flow ##
+## Sample Workflow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It continues the
-[differential expression](/help/workflows/oligo-arrays/) work flow,
+[differential expression](/help/workflows/oligo-arrays/) workflow,
 taking a 'top table' of differentially expressed probesets and
 discovering the genes probed, and the Gene Ontology pathways to which
 they belong.
@@ -23,7 +23,7 @@ they belong.
     ##   tbl <- topTable(efit, coef=2)
     ##   ids <- tbl[["ID"]]
     ##
-    ## as part of a more extensive work flow.
+    ## as part of a more extensive workflow.
     > ids <- c("39730_at", "1635_at", "1674_at", "40504_at", "40202_at")
              
     ## load libraries as sources of annotation

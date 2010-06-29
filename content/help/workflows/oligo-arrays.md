@@ -9,7 +9,7 @@ Bioconductor includes extensive support for analysis of expression
 arrays, and well-developed support for exon, copy number, SNP,
 methylation, and other assays.
 
-Major work flows in Bioconductor include pre-processing, quality
+Major workflows in Bioconductor include pre-processing, quality
 assessment, differential expression, clustering and classification,
 gene set enrichment analysis, and genetical genomics.
 
@@ -17,7 +17,7 @@ Bioconductor offers extensive interfaces to community resources,
 including GEO, ArrayExpress, Biomart, genome browsers, GO, KEGG, and
 diverse annotation sources.
 
-## Sample Work Flow ##
+## Sample Workflow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It uses RMA from the `affy` package to pre-process Affymetrix
@@ -115,7 +115,7 @@ to open a web page containing comprehensive help resources.
 ## Pre-Processing Resources ##
 
 The following provide a brief overview of packages useful for
-pre-processing. More comprehensive work flows can be found in
+pre-processing. More comprehensive workflows can be found in
 documentation (available from
 [package descriptions](http://bioconductor.org/packages/release/Software.html))
 and in Bioconductor [Books and monographs](/help/books/).

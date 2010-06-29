@@ -109,6 +109,6 @@ session and enter
 As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
-might introduce wrinkles that disrupt your work flow.
+might introduce wrinkles that disrupt your workflow.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

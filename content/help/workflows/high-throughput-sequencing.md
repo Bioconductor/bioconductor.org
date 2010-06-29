@@ -10,13 +10,13 @@ differential expression, RNA-seq, and other approaches. Bioconductor
 includes an interface to the Sequence Read Archive.
 
 
-## Sample Work Flow ##
+## Sample Workflow ##
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It shows initial exploration of 454 resequencing of a 16S RNA
 microbial community samples.
 
-The work flow loads the `ShortRead` package and its dependencies. It
+The workflow loads the `ShortRead` package and its dependencies. It
 inputs about 250,000 reads of 200-250 bp each from a fastq
 file. Flexible pattern matching (note the ambiguity letter `V')
 removes a PCR primer artifact. The final lines plot the cumulative
