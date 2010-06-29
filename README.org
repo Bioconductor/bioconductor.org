@@ -162,6 +162,32 @@ FROM THE ROOT DIRECTORY!  The reason for this is that root cannot
 - scripts :: Helper scripts for managing the site live here.
 
 ** How to add a page
+
+** How to add event
+You will use a helper scripts =./scripts/add_event= to add event
+to the site using the following steps:
+
+0. Run =./scripts/add_event= from the top-level of your webiste
+   Subversion working copy
+1. Run =./scripts/add_event EVENT_NAME=
+   This will create two files (EVENT_NAME.yaml and EVENT_NAME.html) 
+   in the =./content/evnets/= directory
+3. Inside the default =EVENT_NAME.yaml= file will look like this:
+   #+begin_src yaml
+     title: TITLE FOR EVENT_NAME
+     location: Seattle, WA, USA
+     event_host: FHCRC
+     start: 2010-06-29
+     end:   2010-06-29
+     description:
+       BLURB FOR EVENT_NAME
+     link:
+       text: details and registration
+       url: https://secure.bioconductor.org/EVENT_NAME
+4. Edit the =EVENT_NAME.yaml= file
+5. Use svn to commit changes and additions by =add_event=
+
+
 ** How to add course material
 You will use a helper script =./scripts/add_course= to add course
 material to the site.  PDF files for labs and presentations as well
