@@ -1,4 +1,4 @@
-# Bioconductor Case Studies #
+# ![](/images/icons/help.gif)Bioconductor Case Studies #
 
 Authors: Florian Hahne, Wolfgang Huber, Robert Gentleman, Seth Falcon
 

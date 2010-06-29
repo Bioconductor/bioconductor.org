@@ -1,11 +1,10 @@
-# R Programming for Bioinformatics #
+# ![](/images/icons/help.gif)R Programming for Bioinformatics #
 
 Author: Robert Gentleman
 
 *Released 14 July 2008*
 
-![cover image for R Programming for
- Bioinformatics](web-supplement/book.jpg)
+![cover image for R Programming for Bioinformatics](web-supplement/book.jpg)
 
 Thanks to its data handling and modeling capabilities and its
 flexibility, R is becoming the most widely used software in
@@ -13,7 +12,7 @@ bioinformatics. _R Programming for Bioinformatics_ builds the
 programming skills needed to use R for solving bioinformatics and
 computational biology problems.
 
-Drawing on the author’s experiences as an R expert, the book begins
+Drawing on the author's experiences as an R expert, the book begins
 with coverage on the general properties of the R language, several
 unique programming aspects of R, and object-oriented programming in
 R. It presents methods for data input and output as well as database
