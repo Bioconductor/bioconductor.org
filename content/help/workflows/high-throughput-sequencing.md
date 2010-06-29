@@ -115,7 +115,7 @@ available; all are in the release version of Bioconductor.
   [GenomicFeatures](http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html)
   for annotation of sequence features across common genomes,
   [biomaRt](http://bioconductor.org/packages/release/bioc/html/biomaRt.html)
-  for access to Biomart data bases.
+  for access to Biomart databases.
 
 * [SRAdb](http://bioconductor.org/packages/release/bioc/html/SRAdb.html)
   for querying and retrieving data from the Sequence Read Archive.
