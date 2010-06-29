@@ -1,7 +1,7 @@
 # ![](/images/icons/blog.gif)BioC 2.6 Released #
 
 **Bioconductor 2.6, consisting of 389 packages and designed to work with R
-version 2.11, was released today.**
+version 2.11, was released on April 23, 2010.**
 
 We are pleased to announce the release of Bioconductor 2.6. This release
 includes 37 new software packages, and many changes to existing packages.
@@ -22,7 +22,7 @@ experimental 64-bit Windows builds for most of its packages.
 
 To install Bioconductor 2.6
 
-1. Install R 2.11.0.  Bioconductor 2.6 has been designed expressly for this
+1. Install R 2.11.  Bioconductor 2.6 has been designed expressly for this
    version of R.
 1. Follow the [installation](/install/) instructions.
 
