@@ -43,13 +43,14 @@ script. In an R command window, type the following:
     source("http://bioconductor.org/biocLite.R")
     biocLite()
 
-This installs the following packages: affy, affydata, affyPLM,
-annaffy, annotate, Biobase, Biostrings, DynDoc, gcrma, genefilter,
-geneplotter, hgu95av2.db, limma, marray, matchprobes, multtest, ROC,
-vsn, xtable, affyQCReport. After downloading and installing these
-packages, the script prints "Installation complete" and TRUE.
+This installs the following packages: `affy`, `affydata`, `affyPLM`,
+`affyQCReport`, `annaffy`, `annotate`, `Biobase`, `biomaRt`, `Biostrings`,
+`DynDoc`, `gcrma`, `genefilter`, `geneplotter`, `GenomicRanges`,
+`hgu95av2.db`, `limma`, `marray`, `multtest`, `vsn`, and `xtable`.
+After downloading and installing these packages, the script prints
+"Installation complete" and TRUE.
 
-The biocLite script has arguments that change the default behavior:
+The biocLite.R script has arguments that change the default behavior:
 
     pkgs
         Character vector of BioConductor packages to install.
@@ -63,9 +64,10 @@ The biocLite script has arguments that change the default behavior:
 <h2>Install additional Bioconductor packages</h2>
 
 There are many Bioconductor and R packages in addition to those in the
-default installation of biocLite. A catalog of the Bioconductor
-packages is available at BiocViews. To install a new package, e.g.,
-EBImage, use
+default installation of `biocLite`. A catalog of the Bioconductor
+packages is available at
+[BiocViews](http://www.bioconductor.org/packages/release/BiocViews.html).
+To install a new package, e.g., EBImage, use
 
     source("http://bioconductor.org/biocLite.R")
     biocLite("EBImage")
@@ -92,7 +94,7 @@ session of R and enter
     source("http://bioconductor.org/biocLite.R")
     update.packages(repos=biocinstallRepos(), ask=FALSE)
 
-Read the help page for update.packages for additional details.
+Read the help page for `update.packages` for additional details.
 Recompiling installed Bioconductor packages
 
 Rarely, underlying changes in the operating system require ALL
