@@ -1,4 +1,4 @@
-# Bioconductor Technical Reports #
+# ![](/images/icons/magnifier.gif)Bioconductor Technical Reports #
 
 * Bioconductor Core (November 2002). _[An Overview of Projects in
   Computing for Genomic Analysis](relProjTR.pdf)_.
