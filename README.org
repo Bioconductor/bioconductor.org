@@ -16,36 +16,44 @@
 ** Unix-ish Developer Required Software
 
 *** Required software
+
 **** Ruby
 
 We've tested the site with Ruby 1.8.7, but expect that more recent
-versions of Ruby will also work.  Ruby comes standard on OS X and most
+versions of Ruby will also work. Ruby comes standard on OS X and most
 Linux distributions.
 
 ***** updating Ruby to 1.9.1 (if needed)
-The Ruby 1.9.1 interpreter is not avaliable yet for Linux. You will need to compile 
-from source archieve:
+
+The Ruby 1.9.1 interpreter is not yet available for Linux. You will need
+to compile from source archive:
   :cd ruby-1.9.1-XXX.tar.gz
   :./configure
   :make
   :make test
 
-Since Ruby will be intalled to /usr/local, you will need to 
-run ==sudo make install== command as root with sudo. Make sure that your 
-binary in ROOT directory (i.e., /loc), not your home directory. Even you 
-use ==sudo==, the root cannot see or access your home directory.
+Since Ruby will be installed to /usr/local, you will need to run
+==sudo make install== command as root with sudo. Make sure that your
+binary is in a ROOT directory (i.e., /loc), not your home directory.
+If you use ==sudo==, the root cannot see or access your home directory.
 
 **** rubygems
 
-You need to have the rubygems package installed.  You can test for
+You need to have the rubygems package installed. You can test for
 this as:
 
   : gem --version
   : 1.3.5
 
 If you have the =gem= command, but an older version, you can update
-your rubygem install with: =sudo gem update --system=.  On SuSE Linux,
-you may need to do =sudo zypper install rubygems=
+your rubygem install with: =sudo gem update --system=. On SuSE Linux,
+you may need to
+
+  :  sudo zypper install rubygems
+  :  sudo gem install rubygems-update
+  :  sudo update_rubygems
+
+from the ROOT directory.
 
 **** you need these gems
 
@@ -54,35 +62,26 @@ Install the gems used by the website as follows:
   :  sudo gem install nanoc rdiscount rack mime-types haml json \
   :                   rack-cache httparty rake
 
-If installing on OpenSuse, you will need to do the following commands: 
-FROM THE ROOT DIRECTORY!  The reason for this is that root cannot 
-*SEE* the mounted directories on these systems.
-
-  :  sudo zypper install rubygems
-  :  sudo gem install rubygems-update
-  :  sudo update_rubygems
-
-
 ** Windows Developer Required Software
 
 1. Download and run the one-click ruby installer
-   http://www.ruby-lang.org/en/downloads/.  Accept all default
+   http://www.ruby-lang.org/en/downloads/. Accept all default
    settings.
 
-2. In a newly opened shell (to pick up configuration changes made by
-   the Ruby installer), run the following command to install the
-   Ruby gems used by the website:
+2. In a newly opened shell (to pick up configuration changes made
+   by the Ruby installer), run the following command to install
+   the Ruby gems used by the website:
 
    : gem install nanoc rdiscount rack mime-types haml json rack-cache httparty rake
 
-3. Install subversion client package.  Windows packages are listed
+3. Install subversion client package. Windows packages are listed
    here:
 
        http://subversion.tigris.org/getting.html#binary-packages
 
    I installed the collabnet package, but had to go through an annoying
-   registration process.  The other binaries should be fine and might
-   require less hoop jumping.  You will need to open a new terminal
+   registration process. The other binaries should be fine and might
+   require less hoop jumping. You will need to open a new terminal
    window to pickup the updated config after installing so that you
    will be able to use the svn command.
 
@@ -118,24 +117,24 @@ FROM THE ROOT DIRECTORY!  The reason for this is that root cannot
            is transformed from its source form into its output form
            (this is called filtering), what layout to use (layouts are
            the shared templates), and where to write the output (this
-           is called routing).  See the
+           is called routing). See the
            [[http://nanoc.stoneship.org/tutorial/][nanoc tutorial]] and the
            [[http://nanoc.stoneship.org/manual/][nanoc manual]] for details.
 
-- assets :: This directory is not managed by nanoc.  It contains files
+- assets :: This directory is not managed by nanoc. It contains files
             that do not undergo any filtering, layout-ing, or routing.
             Contents of the assets directory are copied to the output
             directory using rsync.
 
 - config.yaml :: Nanoc configuration file for the bioconductor.org
-                 site.  This file is written in [[http://www.yaml.org/][YAML]].
+                 site. This file is written in [[http://www.yaml.org/][YAML]].
 
 - content :: This is where the bulk of the raw (source form) site
              content lives. Important details:
 
              - Content always has two related files: a =.yaml= file
                containing item attributes and a =.<extension>= file
-               containing the raw source content.  You can actually
+               containing the raw source content. You can actually
                use whatever extension you want.
 
              - The default behavior is that a content file like
@@ -145,7 +144,7 @@ FROM THE ROOT DIRECTORY!  The reason for this is that root cannot
 
 - layouts :: This is where the content templates live.
 
-- lib :: Ruby helper functions and nanoc extensions live here.  Files
+- lib :: Ruby helper functions and nanoc extensions live here. Files
          in this directory are automatically loaded by nanoc during
          site processing.
 
@@ -154,25 +153,26 @@ FROM THE ROOT DIRECTORY!  The reason for this is that root cannot
                nanoc.
 
 - output :: This directory is created when you compile the
-            bioconductor.org site using nanoc.  It contains the final
-            static HTML and other assets. Deploying the site
-            essentially means pushing out an update of the contents of
-            output to the live server.
+            bioconductor.org site using nanoc. It contains the final
+            static HTML and other assets. Deploying the site means
+            pushing out an update of the contents of output to the
+            live server.
 
 - scripts :: Helper scripts for managing the site live here.
 
 ** How to add a page
 
 ** How to add event
+
 You will use a helper scripts =./scripts/add_event= to add event
 to the site using the following steps:
 
-0. Run =./scripts/add_event= from the top-level of your webiste
-   Subversion working copy
+0. Always run =./scripts/add_event= from the top-level of your
+   website Subversion working copy
 1. Run =./scripts/add_event EVENT_NAME=
    This will create two files (EVENT_NAME.yaml and EVENT_NAME.html) 
    in the =./content/evnets/= directory
-3. Inside the default =EVENT_NAME.yaml= file will look like this:
+3. The default =EVENT_NAME.yaml= file will look like this:
    #+begin_src yaml
      title: TITLE FOR EVENT_NAME
      location: Seattle, WA, USA
@@ -184,22 +184,23 @@ to the site using the following steps:
      link:
        text: details and registration
        url: https://secure.bioconductor.org/EVENT_NAME
+   #+end_src
 4. Edit the =EVENT_NAME.yaml= file
 5. Use svn to commit changes and additions by =add_event=
 
-
 ** How to add course material
+
 You will use a helper script =./scripts/add_course= to add course
-material to the site.  PDF files for labs and presentations as well
-as course-specific packages and data are *not* stored in svn.  The index
-pages that describe the course and provide links to the materials *are*
-stored in svn.  The =add_course= script will help with index file
-creation and data transfer.
+material to the site. PDF files for labs and presentations as well
+as course-specific packages and data are *not* stored in svn. The
+index pages that describe the course and provide links to the
+materials *are* stored in svn. The =add_course= script will help
+with index file creation and data transfer.
 
 *** =add_course= workflow and important tips
 
-To add a course, you will typically perform the following steps (each
-described in detail below):
+To add a course, you will typically perform the following steps
+(each described in detail below):
 
 0. Always run =./scripts/add_course= from the top-level of your
    website Subversion working copy.
@@ -215,10 +216,10 @@ described in detail below):
 
    : ./scripts/add_course create seattle-intro
 
-   This will create a =seattle-intro/= directory in the top-level of
-   your website working copy -- do not add this directory or any files
-   within it to svn.  Inside will be a =course_config.yaml= file that
-   will look like this:
+   This will create a =seattle-intro/= directory in the top-level
+   of your website working copy -- do not add this directory or any
+   files within it to svn. Inside will be a =course_config.yaml=
+   file that will look like this:
 
    #+begin_src yaml
      title:
@@ -235,7 +236,7 @@ described in detail below):
    #+end_src
 
 2. Put course materials as files and directories into the skeleton
-   directory.  For example, you might end up with a directory like
+   directory. For example, you might end up with a directory like
    that shown below with two subdirectories, =packages= and
    =presentation-slides=, each containing course materials.
 
@@ -264,7 +265,7 @@ described in detail below):
 
    This will create a course index content item in content filed
    appropriately based on the metadata provided in
-   =course_config.yaml=.  It will also copy the files and directories
+   =course_config.yaml=. It will also copy the files and directories
    you created into the output directory so that you can do a full
    preview after compiling the site.
 
@@ -283,15 +284,16 @@ described in detail below):
 *** Modifying an existing course
 
 You can edit the pages for an existing course by editing the files in
-=./content=.  If you need to add or modify data files, you will need
-to rerun =./scripts/add_course sync=.  The sync performed by
-=add_course= will add new files and replace existing files, but *will
-not delete files already on the server*.  To remove a file from a
-course, you will need to ssh to the remote server and remove manually.
+=./content=. If you need to add or modify data files, you will need to
+rerun =./scripts/add_course sync=. The sync performed by =add_course=
+will add new files and replace existing files, but *will not delete
+files already on the server*. To remove a file from a course, you will
+need to ssh to the remote server and remove manually.
 
 ** http://bioconductor-test.fhcrc.org test site
+
 We run an inside FHCRC only test instance of the Bioconductor website
-at the above URL.  The site is rebuilt every ten minutes.  Here's an
+at the above URL. The site is rebuilt every ten minutes. Here's an
 overview of the test site configuration:
 
 - bioconductor-test.fhcrc.org is a DNS CNAME for merlot2.fhcrc.org.
@@ -305,15 +307,17 @@ overview of the test site configuration:
 - biocadmin uses files under ~/bioc-test-web
 
 - Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
+
 *** Test site scheduled update
-The biocadmin user's crontab on merlot2 is used to schedule
-site updates every ten minutes.  Below are some details on how the
-test site is configured.
+
+The biocadmin user's crontab on merlot2 is used to schedule site
+updates every ten minutes. Below are some details on how the test
+site is configured.
 
 The site source is located at
-=~biocadmin/bioc-test-web/bioconductor.org=.  The
-=deploy_merlot2_local= Rake task deploys site content to the testing
-server root on merlot2.
+=~biocadmin/bioc-test-web/bioconductor.org=. The
+=deploy_merlot2_local= Rake task deploys site content to the
+testing server root on merlot2.
 
 #+begin_src ruby
 task :deploy_merlot2_local do
@@ -324,8 +328,8 @@ task :deploy_merlot2_local do
 end
 #+end_src
 
-An =update_site= shell script updates from svn, builds the site, and
-deploys it using Rake.
+An =update_site= shell script updates from svn, builds the site,
+and deploys it using Rake.
 
 #+begin_src sh
     #!/bin/bash
@@ -333,7 +337,7 @@ deploys it using Rake.
 #+end_src
 
 We keep track of the output of in a local =cron.log= file and handle
-log rotation using =logrotate=.  For this we need a config file:
+log rotation using =logrotate=. For this we need a config file:
 
 #+begin_example
   # logrotate.conf
@@ -357,8 +361,11 @@ deployment, and log rotation (biocadmin user):
 #+end_example
 
 *** Test site SuSE Apache Configuration
+
 A good resource is available [[http://en.opensuse.org/Apache_Quickstart_HOWTO][here]].
+
 **** Apache module config
+
 Edit /etc/sysconfig/apache2
 
 Make sure the following modules are listed in the APACHE_MODULES
@@ -369,49 +376,50 @@ variable:
 
 One way to add them is to do:
 
- : sudo /usr/sbin/a2enmod deflate
- : sudo /usr/sbin/a2enmod rewrite
+  : sudo /usr/sbin/a2enmod deflate
+  : sudo /usr/sbin/a2enmod rewrite
 
 **** Apache vhosts config
+
 Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 
 #+begin_example
   <VirtualHost *:80>
       ServerAdmin devteam-bioc@fhcrc.org
       ServerName bioconductor-test.fhcrc.org
-  
-      # DocumentRoot: The directory out of which you will serve your                        
-      # documents. By default, all requests are taken from this directory, but              
-      # symbolic links and aliases may be used to point to other locations.                 
+
+      # DocumentRoot: The directory out of which you will serve your
+      # documents. By default, all requests are taken from this directory, but
+      # symbolic links and aliases may be used to point to other locations.
       DocumentRoot /loc/www/bioconductor-test.fhcrc.org
-  
-      # if not specified, the global error log is used                                      
+
+      # if not specified, the global error log is used
       ErrorLog /var/log/apache2/bioconductor-test.fhcrc.org-error_log
       CustomLog /var/log/apache2/bioconductor-test.fhcrc.org-access_log combined
-  
-      # don't loose time with IP address lookups                                            
+
+      # don't loose time with IP address lookups
       HostnameLookups Off
-  
-      # needed for named virtual hosts                                                      
+
+      # needed for named virtual hosts
       UseCanonicalName Off
-  
+
       ServerSignature On
-  
-      # doc root                                                                            
+
+      # doc root
       <Directory "/loc/www/bioconductor-test.fhcrc.org">
-          # The Options directive is both complicated and important.  Please see            
-          # http://httpd.apache.org/docs-2.2/mod/core.html#options                          
-          # for more information.                                                           
+          # The Options directive is both complicated and important. Please see
+          # http://httpd.apache.org/docs-2.2/mod/core.html#options
+          # for more information.
           Options FollowSymLinks
-  
-          # AllowOverride controls what directives may be placed in .htaccess files.        
+
+          # AllowOverride controls what directives may be placed in .htaccess files.
           AllowOverride FileInfo Indexes
-  
-          # Controls who can get stuff from this server.                                    
+
+          # Controls who can get stuff from this server.
           Order allow,deny
           Allow from all
-  
-          # output compression using mod deflate                                            
+
+          # output compression using mod deflate
           AddOutputFilterByType DEFLATE text/html text/css application/javascript text/x-js
           BrowserMatch ^Mozilla/4 gzip-only-text/html
           BrowserMatch ^Mozilla/4\.0[678] no-gzip
@@ -419,11 +427,15 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
       </Directory>
   </VirtualHost>
 #+end_example
+
 *** TODO Add apache2 to rc startup config
+
 *** Start apache using /etc/init.d/apache2 re
+
 *** Test site nginx installation
+
 We will most likely deploy the test and production sites using
-Apache2.  A first test setup was configured using nginx.  The details
+Apache2. A first test setup was configured using nginx. The details
 follow.
 
 #+begin_src sh
@@ -432,7 +444,7 @@ follow.
       --group=nginx \
       --with-http_ssl_module \
       --with-http_gzip_static_module
-    
+
     make
     sudo make install
 #+end_src
@@ -476,11 +488,15 @@ server {
 Started nginx as: =sudo /usr/local/nginx/sbin/nginx=
 
 ** How to test for broken links
+
 You can run wget as shown below to get a report on 404s for the site.
+
 #+begin_example
 wget -r --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
 #+end_example
+
 *** 404 report for bioconductor-test.fhcrc.org (Tue May 25 09:07:49 2010)
+
 # TO FIX
 ## depends on packages, etc.
 http://bioconductor-test.fhcrc.org/packages/release/bioc/
@@ -494,30 +510,40 @@ http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/Comp
 http://bioconductor-test.fhcrc.org/help/docs/papers/2003/Compendium/golubEsets_1.0.tar.gz
 http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/tutorial.mpeg
 http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/dataFiles.tar
+
 ** Note on launching the new site
+
 *** Discuss production setup with Dirk
+
 **** DNS
+
 You want to set things up so that you can move to the new site or
-revert to current quickly.  Dirk should be able to suggest a way to
-achieve this.  Ideally, you would not change the bioconductor.org DNS
+revert to current quickly. Dirk should be able to suggest a way to
+achieve this. Ideally, you would not change the bioconductor.org DNS
 record as this can take awhile to propagate and doesn't give a quick
 way to revert.
+
 **** Site monitoring and alerting
+
 I imagine PHS IT has some monitoring that can be put in place for the
-new site.  Would also make sense to add an external monitor so that
+new site. Would also make sense to add an external monitor so that
 you will know if the site becomes unreachable from the outside.
+
 **** Squid
+
 I'm not sure what the current status is w.r.t. to Squid proxy/cache.
 With the new setup, I would anticipate that a reasonable web server
 running Apache will be enough for the load and that if more throughput
 or redundancy is desired, setting up a second server and load
 balancing would be a good next step.
+
 *** Optimize redirects
+
 Currently the redirects are defined using Apache's mod_rewrite in a
-top-level =.htaccess= file.  This has the advantage of allowing easy
+top-level =.htaccess= file. This has the advantage of allowing easy
 revision of the rewrite rules via svn that are picked up by Apache on
-site update.  The downside is that using .htaccess files is suboptimal
-in terms of performance.  So before the site is launched, consider the
+site update. The downside is that using .htaccess files is suboptimal
+in terms of performance. So before the site is launched, consider the
 following changes:
 
 1. Copy the directives in the top-level .htaccess file to the site's
@@ -526,32 +552,41 @@ following changes:
 2. Remove the .htaccess file
 
 3. Edit the same vhosts.d config file to set Options to None for the
-   top-level directory.  This should disable .htaccess files as it
+   top-level directory. This should disable .htaccess files as it
    isn't enough just to remove the .htaccess file itself.
+
 *** Testing the site
+
 **** Use a few days worth of access logs
+
 Extract paths from a few days of access logs (make sure to filter for
-200 responses) and "replay" these against the test site.  This should
+200 responses) and "replay" these against the test site. This should
 give a good idea of whether the redirects are doing enough and whether
 or not basic repository structure has been appropriately mirrored.
+
 **** Use wget to test for broken links on the site
+
 #+begin_example
 wget -r -l 20 --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
 #+end_example
+
 **** Work with Dirk to make the test site available on the internet
+
 Then you can ask Wolfgang to do some tests to see how the site
-performs from Europe.  You could also run some site performance
+performs from Europe. You could also run some site performance
 analysis tools like YSlow to get some suggestions for improvements.
+
 **** Test site performance
+
 You might look into running some simple benchmarks with =ab= or
-=httperf=.  Might be interesting to compare against the current
+=httperf=. Might be interesting to compare against the current
 Plone-based site.
 
 *** Misc Concerns
-- In trying to get some test data from the current site using wget,
-  I've seen a number of cases where a wget request failed, but then
-  works when I try in a browser.  This makes me worried that the
-  wget-based snapshot may not be as complete as thought.  Not sure if
-  the issue is wget config options or Plone getting overwhelmed with
-  requests and failing to respond.
 
+In trying to get some test data from the current site using wget,
+I've seen a number of cases where a wget request failed, but then
+works when I try in a browser. This makes me worried that the
+wget-based snapshot may not be as complete as thought. Not sure if
+the issue is wget config options or Plone getting overwhelmed with
+requests and failing to respond.
