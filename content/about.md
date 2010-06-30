@@ -80,25 +80,26 @@ Main Features of the Bioconductor Project
     with a strong commitment to good documentation and software design.
 
 * **Documentation and reproducible research**. Each
-  [Bioconductor package](/packages/release/bioc/) contains at least one
-  [vignette](/help/package-vignettes/), which is a document that provides
-  a textual, task-oriented description of the package's functionality.
-  These vignettes come in several forms. Many are simple "HowTo"s that are
-  designed to demonstrate how a particular task can be accomplished with
-  that package's software. Others provide a more thorough overview of the
-  package or might even discuss general issues related to the package.
-  In the future, we are looking towards providing vignettes that are not
-  specifically tied to a package, but rather are demonstrating more complex
-  concepts. As with all aspects of the Bioconductor project, users are
-  encouraged to participate in this effort.
+  [Bioconductor package](http://www.bioconductor.org/packages/release/bioc/)
+  contains at least one [vignette](/help/package-vignettes/), which is
+  a document that provides a textual, task-oriented description of the
+  package's functionality. These vignettes come in several forms. Many
+  are simple "HowTo"s that are designed to demonstrate how a particular
+  task can be accomplished with that package's software. Others provide
+  a more thorough overview of the package or might even discuss general
+  issues related to the package. In the future, we are looking towards
+  providing vignettes that are not specifically tied to a package, but
+  rather are demonstrating more complex concepts. As with all aspects of
+  the Bioconductor project, users are encouraged to participate in this
+  effort.
 
 * **Statistical and graphical methods**. The Bioconductor project aims to
   provide access to a wide range of powerful statistical and graphical
-  methods for the analysis of genomic data. Analysis
-  [packages](/packages/release/bioc/) are available for: pre-processing
-  Affymetrix and cDNA array data; identifying differentially expressed
-  genes; graph theoretical analyses; plotting genomic data. In addition,
-  the
+  methods for the analysis of genomic data.
+  [Analysis packages](http://www.bioconductor.org/packages/release/bioc/)
+  are available for: pre-processing Affymetrix and cDNA array data;
+  identifying differentially expressed genes; graph theoretical analyses;
+  plotting genomic data. In addition, the
   [R package system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
   itself provides implementations for a broad range of state-of-the-art
   statistical and graphical techniques, including linear and non-linear
