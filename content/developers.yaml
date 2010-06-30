@@ -1,2 +1,4 @@
 --- 
 title: Developers
+subnav:
+  - include: /_finding_bioc_devel_packages/
