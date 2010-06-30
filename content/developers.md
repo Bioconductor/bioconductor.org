@@ -1,9 +1,18 @@
 ![](/images/icons/magnifier.gif)Developers
 ==========================================
 
-The Bioconductor project has always thrived because of the grass roots efforts of a richly talented scientific development community.  This project welcomes package contributions from all such developers and seeks to work with you to ensure that your package is the best it can be.
+Bioconductor is an open development project, meaning that all developers from
+the scientific community are able to contribute software. In order to foster
+coherence within the project, developers are encouraged to follow a common
+set of [package guidelines](/developers/guidelines/) to make it easier for
+other to use and extend the software. New software is added to the project
+through a [package submission process](/developers/submission/).
 
-To that end, this project has [directions](/developers/directions/) and [guidelines](/developers/guidelines/) which will help you to get started.  The [guidelines](/developers/guidelines/) contain some requirements in terms of documentation and coding practices to guarantee that your package contains maintainable code that will be easy for others to use and extend.  Additionally, we have a [wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/) where you can read about key infrastructure the core team is presently working on along with a [developer mailing list](https://stat.ethz.ch/mailman/listinfo/bioc-devel) that will put you in touch with all Bioconductor developers.
+Additionally, there is a
+[Developer's Wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/) that provides
+information on the current direction of the core team and a
+[developer mailing list](https://stat.ethz.ch/mailman/listinfo/bioc-devel)
+that facilitates communication amongst the Bioconductor developers.
 
 * [Developer Wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/)
 * [Developer Mailing List](https://stat.ethz.ch/mailman/listinfo/bioc-devel)
