@@ -87,7 +87,11 @@
   </div>
 
   <div style="float:left;width:33%;">
-    <%= render('/_upcoming_events/', :events => find_item(@items, '/events/')) %>
+    <div style="padding:0 0 0 12px">
+      <%= render('/_upcoming_events/', :events => find_item(@items, '/events/')) %>
+      <p style="font-weight:bold"><a href="/events/">See all events</a>&nbsp;
+	  <span class="blue">&raquo;</span></p>
+    </div>
   </div>
 
   <div style="float:right;width:33%;">
