@@ -170,9 +170,9 @@ to the site using the following steps:
 0. Always run =./scripts/add_event= from the top-level of your
    website Subversion working copy
 1. Run =./scripts/add_event EVENT_NAME=
-   This will create two files (EVENT_NAME.yaml and EVENT_NAME.html) 
-   in the =./content/evnets/= directory
-3. The default =EVENT_NAME.yaml= file will look like this:
+   This will create an EVENT_NAME.yaml file in the
+   =./content/evnets/= directory
+2. The default =EVENT_NAME.yaml= file will look like this:
    #+begin_src yaml
      title: TITLE FOR EVENT_NAME
      location: Seattle, WA, USA
@@ -185,8 +185,8 @@ to the site using the following steps:
        text: details and registration
        url: https://secure.bioconductor.org/EVENT_NAME
    #+end_src
-4. Edit the =EVENT_NAME.yaml= file
-5. Use svn to commit changes and additions by =add_event=
+3. Edit the =EVENT_NAME.yaml= file
+4. Use svn to commit changes and additions by =add_event=
 
 ** How to add course material
 

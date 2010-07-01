@@ -27,7 +27,6 @@ end
 
 fname = ARGV[0]
 
-htmlfile = "content/events/#{fname}.html"
 yamlfile = "content/events/#{fname}.yaml"
 
 today = Time.now.strftime("%Y-%m-%d")
@@ -46,5 +45,4 @@ link:
   url: https://secure.bioconductor.org/#{fname}
 EOF
 
-write_file(htmlfile, "<!-- nanoc placeholder -->")
 write_file(yamlfile, event)
