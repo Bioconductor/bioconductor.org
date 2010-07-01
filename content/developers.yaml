@@ -1,4 +1,5 @@
 --- 
 title: Developers
 subnav:
+  - include: /_package_build_reports_and_svn/
   - include: /_finding_bioc_devel_packages/

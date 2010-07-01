@@ -37,3 +37,8 @@ package in the release and development branches can be built via
 `R CMD build` and checked via `R CMD check`. Packages that fail to
 pass these checks will regretfully be dropped from the next release
 of Bioconductor.
+
+<h2 id="howto">How to Wiki page</h2>
+
+There is also a [wiki how to](http://wiki.fhcrc.org/bioc/HowTo) page that
+explains how to do many common things.
