@@ -12,7 +12,20 @@ Additionally, there is a
 [Developer's Wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/) that provides
 information on the current direction of the core team and a
 [developer mailing list](https://stat.ethz.ch/mailman/listinfo/bioc-devel)
-that facilitates communication amongst the Bioconductor developers.
+that facilitates communication amongst the Bioconductor developers.  
 
 * [Developer Wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/)
 * [Developer Mailing List](https://stat.ethz.ch/mailman/listinfo/bioc-devel)
+
+Once a package has been submitted, the rapid development of R and
+Bioconductor means that there is some danger it could become
+disfunctional over time.  Therefore you will want to check on it
+periodically to ensure that it is still working as expected.  To
+facilitate this, Bioconductor maintains a [build
+system](http://bioconductor.org/checkResults/) to check that every
+package in the release and development branches can be built and
+checked every night.  If you have incorporated unit tests in the right
+way, these will also be run every night during check.  An output of
+these efforts is available here:
+
+* [Build/Check Results](http://bioconductor.org/checkResults/)
