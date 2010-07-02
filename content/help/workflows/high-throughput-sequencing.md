@@ -9,8 +9,12 @@ Domain-specific analyses include quality assessment, ChIP-seq,
 differential expression, RNA-seq, and other approaches. Bioconductor
 includes an interface to the Sequence Read Archive.
 
+* [Sample Workflow](#sample-workflow)  
+* [Installation and Use](#install-and-use)
+* [Exploring Package Content](#exploring-package-content)
+* [Sequencing Resources](#sequencing-resources)
 
-## Sample Workflow ##
+<h2 id="sample-workflow">Sample Workflow</h2>
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It shows initial exploration of 454 resequencing of a 16S RNA
@@ -45,9 +49,9 @@ sequences that each occur many times.
 
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
-## Installation and Use ##
+<h2 id="install-and-use">Installation and Use</h2>
 
-Follow [installation instructions]("/install/"") to start using these
+Follow [installation instructions](/install/) to start using these
 packages.  To install the `ShortRead` package and all of its
 dependencies, evaluate the commands
 
@@ -64,7 +68,7 @@ To use the `ShortRead` package, evaluate the command
 
 This instruction is required once in each R session.
 
-## Exploring Package Content ##
+<h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
 common use cases; the help pages and vignettes are available from
@@ -86,7 +90,7 @@ package functionality) in the `ShortRead` package. Use
 to open a web page containing comprehensive help resources.
 
 
-## Sequencing Resources ##
+<h2 id="sequencing-resources">Sequencing Resources</h2>
 
 The following packages illustrate the diversity of functionality
 available; all are in the release version of Bioconductor.
