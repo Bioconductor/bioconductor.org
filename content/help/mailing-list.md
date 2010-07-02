@@ -1,4 +1,4 @@
-# ![](/images/icons/help.gif)Bioconductor Mailing Lists #
+# ![](/images/icons/help.gif)Mailing Lists #
 
 Please read the [posting guide][5] before sending mail to the
 Bioconductor mail lists.
