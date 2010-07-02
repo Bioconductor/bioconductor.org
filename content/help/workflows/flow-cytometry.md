@@ -25,13 +25,26 @@ cytometry data might involve the following packages.
 * [flowMerge](http://bioconductor.org/packages/release/bioc/html/flowMerge.html) -
   provides tools for merging of mixture components for model based automated
   gating of flow cytometry data using the flowClust framework.
+* [flowMeans](http://bioconductor.org/packages/release/bioc/html/flowMeans.html) - 
+  provides tools to identify cell population using non-parametric clustering
+  and segmented-regression-based change point detection.
+* [flowTrans](http://bioconductor.org/packages/release/bioc/html/flowTrans.html) - 
+  profiles maximum likelihood estimation of parameters for flow cytometry data transformations.
+* [SamSPECTRAL](http://bioconductor.org/packages/release/bioc/html/SamSPECTRAL.html) -
+  provides tools to identify cell population using a classic spectral
+  clustering algorithm.
 * [flowFP](http://bioconductor.org/packages/release/bioc/html/flowFP.html) -
   provides tools for fingerprint generation of flow cytometry data to facilitate
-  the application of machine learning and data mining tools for flow cytometry.
+  the application of machine learning and data mining tools for flow
+  cytometry.
+* [flowFlowJo](http://bioconductor.org/packages/release/bioc/html/flowFlowJo.html) -
+  provides tools to import "FlowJo Workspace" (an XML document) into R in 
+  the `flowCore` paradigm.
 * [iFlow](http://www.bioconductor.org/packages/release/bioc/html/iFlow.html) -
   provides GUI and tools to explore, analyze, and visualize flow cytometry data.
   The tutorial video can be downloaded from
   [here](../flowcytometry/tutorial.mpeg).
+
 
 These packages can be installed using [biocLite("package name")](/install/)
 Each package also contains a detailed vignette illustrating typical use cases

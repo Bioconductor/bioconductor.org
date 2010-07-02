@@ -43,7 +43,7 @@ HLADR.
   	column names:
   	FSC SSC CD8 CD69 CD4 CD3 HLADr Time
 
-First, we need to tranform all the fluorescense channels. Using a `workFlow`
+First, we need to transform all the fluorescence channels. Using a `workFlow`
 object can help to keep track of our progress.
 
     ## Create a workflow instance and transform data using asinh
@@ -116,7 +116,7 @@ to open a web page containing comprehensive help resources.
 
 <h2 id="diverse-assays-resources">Diverse Assays Resources</h2>
 The following provide a brief overview of packages useful for analysis of
-high-throught assays. More comprehensive workflows can be found in documentation
+high-throughput assays. More comprehensive workflows can be found in documentation
 (available from [package
 descriptions](http://bioconductor.org/packages/release/Software.html)) and in
 Bioconductor [Books and monographs](/help/books/). 
@@ -157,7 +157,7 @@ Bioconductor [Books and monographs](/help/books/).
 * This package supports the xCELLigence system which contains a series of
   real-time cell analyzer (RTCA).
 
-### High-throughtput qPCR Assays ###
+### High-throughput qPCR Assays ###
 [HTqPCR](http://bioconductor.org/packages/release/bioc/html/HTqPCR.html),
 [ddCt](http://bioconductor.org/packages/release/bioc/html/ddCt.html),
 [qpcrNorm](http://bioconductor.org/packages/release/bioc/html/qpcrNorm.html)
@@ -174,4 +174,4 @@ from quantitative real-time PCR data.
 [xcms](http://bioconductor.org/packages/release/bioc/html/xcms.html)
 
 * These packages provide framework for processing, visualization, and
-  statistical analyzation of mass spectral and proteomics data.
+  statistical analysis of mass spectral and proteomics data.
