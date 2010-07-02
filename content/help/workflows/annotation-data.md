@@ -8,7 +8,12 @@ Bioconductor has built-in representations of GO, KEGG, vendor, and
 other annotations, and can easily access NCBI, Biomart, UCSC, and
 other sources.
 
-## Sample Workflow ##
+* [Sample Workflow](#sample-workflow)  
+* [Installation and Use](#install-and-use)
+* [Exploring Package Content](#exploring-package-content)
+* [Annotation Resources](#annotation-resources)
+
+<h2 id="sample-workflow">Sample Workflow</h2>
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It continues the
@@ -64,9 +69,9 @@ they belong.
     GO:0007155                                                         cell adhesion
     GO:0007165                                                   signal transduction
 
-## Installation and Use ##
+<h2 id="install-and-use">Installation and Use</h2>
 
-Follow [installation instructions]("/install/"") to start using these
+Follow [installation instructions](/install/) to start using these
 packages.  To install the annotations associated with the Affymetrix
 Human Genome U95 V 2.0, and with Gene Ontology, use
 
@@ -87,7 +92,7 @@ To use the `AnnotationDbi` and `GO.db` package, evaluate the commands
 
 These commands are required once in each R session.
 
-## Exploring Package Content ##
+<h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
 common use cases; the help pages and vignettes are available from
@@ -109,7 +114,7 @@ package functionality) in the `AnnotationDbi` package. Use
 
 To open a web page containing comprehensive help resources.
 
-## Annotation Resources ##
+<h2 id="annotation-resources">Annotation Resources</h2>
 
 The following guides the user through key annotation packages.  Users
 interested in how to create custom chip packages should see the
