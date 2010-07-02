@@ -17,7 +17,12 @@ Bioconductor offers extensive interfaces to community resources,
 including GEO, ArrayExpress, Biomart, genome browsers, GO, KEGG, and
 diverse annotation sources.
 
-## Sample Workflow ##
+* [Sample Workflow](#sample-workflow)  
+* [Installation and Use](#install-and-use)
+* [Exploring Package Content](#exploring-package-content)
+* [Pre-Processing Resources](#pre-processing-resources)
+
+<h2 id="sample-workflow"> Sample Workflow</h2>
 
 The following psuedo-code illustrates a typical R / Bioconductor
 session. It uses RMA from the `affy` package to pre-process Affymetrix
@@ -65,9 +70,10 @@ annotation.
     37403_at  1.12    5.09 5.48 4.27e-07  1.08e-04  6.21
    
 
-## Installation and Use ##
 
-Follow [installation instructions]("/install/"") to start using these
+<h2 id="install-and-use">Installation and Use</h2>
+
+Follow [installation instructions](/install/) to start using these
 packages.  The `affy` and `limma` packages are part of the core
 Bioconductor packages, and are installed automatically with
 
@@ -91,7 +97,7 @@ To use the `affy` and `limma` packages, evaluate the commands
 
 These commands are required once in each R session.
 
-## Exploring Package Content ##
+<h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
 common use cases; the help pages and vignettes are available from
@@ -112,7 +118,8 @@ package functionality) in the `limma` package. Use
 
 to open a web page containing comprehensive help resources.
 
-## Pre-Processing Resources ##
+
+<h2 id="pre-processing-resources">Pre-Processing Resources</h2>
 
 The following provide a brief overview of packages useful for
 pre-processing. More comprehensive workflows can be found in
