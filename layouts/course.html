@@ -2,30 +2,24 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
   <%= render("/_sitehead/") %>
   <body>
-    <%= render("/_nav/") %>
-  <div id="page">
-    <% if (@item[:subnav] || @item.parent[:subnav] rescue false) %>
-      <%= render("/_subnav/", :pages => @item[:subnav] || @item.parent[:subnav]) %>
-    <% end %>
-    <%= render("/_crumbs/") %>
-    <div id="main">
-    <div id="course">
-      <h1><%=  @item[:title] %></h1>
-      <p class="location"><%= @item[:location] %></p>
-      <p class="dates"><%= @item[:start_date] %> - <%= @item[:start_date] %></p>
-      <h2>Instructors</h2>
-      <ul class="instructors">
-        <% @item[:instructors].each do |t| %>
-        <li><%= t %></li>
-        <% end %>
-      </ul>
-      <h2>Description</h2>
-      <p><%= @item[:description] %></p>
-      <h2>Materials</h2>
-      <%= yield %>
+    <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
+    <div id="SiteContainer" class="SiteContainer">
+      <div id="PageContent" class="PageContent">
+        <h1><img src="/images/icons/help.gif" alt="" /><%=  @item[:title] %></h1>
+        <p class="location"><%= @item[:location] %></p>
+        <p class="dates"><%= @item[:start_date] %> - <%= @item[:start_date] %></p>
+        <h2>Instructors</h2>
+        <ul class="instructors">
+          <% @item[:instructors].each do |t| %>
+          <li><%= t %></li>
+          <% end %>
+        </ul>
+        <h2>Description</h2>
+        <p><%= @item[:description] %></p>
+        <h2>Materials</h2>
+        <%= yield %>
+      </div>
+      <%= render("/_footer/") %>
     </div>
-    </div>
-  </div>
-    <%= render("/_footer/") %>
   </body>
 </html>
