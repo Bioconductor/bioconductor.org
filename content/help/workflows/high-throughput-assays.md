@@ -2,8 +2,8 @@
 ========================================================================
 
 Bioconductor includes packages for analysis of diverse areas of
-high-throughput assays such as flow cytometry, mass spectrometry, qPCR, and
-other cell-based data. 
+high-throughput assays such as flow cytometry, quantitative real-time PCR,
+mass spectrometry, proteomics and other cell-based data. 
 
 * [Sample Workflow](#sample-workflow)  
 * [Installation and Use](#install-and-use)
@@ -13,7 +13,7 @@ other cell-based data.
 <h2 id="sample-workflow"> Sample Workflow</h2>
 
 The following psuedo-code illustrates a typical R / Bioconductor
-session. It makes use of the flow packages to load, transform and
+session. It makes use of the flow cytometry packages to load, transform and
 visualize the flow data and gate certain populations in the dataset. 
 
 The workflow loads the `flowCore`, `flowStats` and `flowViz` packages and its
@@ -150,7 +150,7 @@ Bioconductor [Books and monographs](/help/books/).
 [RNAither](http://bioconductor.org/packages/release/bioc/html/RNAither.html)
 
 * These packages provide data structures and algorithms for cell-based
-  high-throughput screen (HTS).
+  high-throughput screens (HTS).
 
 [RTCA](http://bioconductor.org/packages/release/bioc/html/RTCA.html)
 
@@ -162,11 +162,16 @@ Bioconductor [Books and monographs](/help/books/).
 [ddCt](http://bioconductor.org/packages/release/bioc/html/ddCt.html),
 [qpcrNorm](http://bioconductor.org/packages/release/bioc/html/qpcrNorm.html)
 
-* These package provides algorithm for the analysis of cycle threshold (Ct)
+* These package provide algorithm for the analysis of cycle threshold (Ct)
 from quantitative real-time PCR data.
 
 ### Mass Spectrometry and Proteomics data ###
 [clippda](http://bioconductor.org/packages/release/bioc/html/clippda.html),
 [MassArray](http://bioconductor.org/packages/release/bioc/html/MassArray.html),
 [MassSpecWavelet](http://bioconductor.org/packages/release/bioc/html/MassSpecWavelet.html),
-[PROcess](http://bioconductor.org/packages/release/bioc/html/PROcess.html)
+[PROcess](http://bioconductor.org/packages/release/bioc/html/PROcess.html),
+[flagme](http://bioconductor.org/packages/release/bioc/html/flagme.html),
+[xcms](http://bioconductor.org/packages/release/bioc/html/xcms.html)
+
+* These packages provide framework for processing, visualization, and
+  statistical analyzation of mass spectral and proteomics data.
