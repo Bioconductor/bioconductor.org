@@ -128,6 +128,7 @@ Bioconductor [Books and monographs](/help/books/).
 [flowStats](http://bioconductor.org/packages/release/bioc/html/flowStats.html),
 [flowUtils](http://bioconductor.org/packages/release/bioc/html/flowUtils.html),
 [flowFP](http://bioconductor.org/packages/release/bioc/html/flowFP.html),
+[flowTrans](http://bioconductor.org/packages/release/bioc/html/flowTrans.html),
 [iFlow](http://bioconductor.org/packages/release/bioc/html/iFlow.html)
 
 * These packages provide infrastructure, utilities, visualization and
@@ -145,10 +146,11 @@ Bioconductor [Books and monographs](/help/books/).
 ### Cell-based Assays ###
 [cellHTS](http://bioconductor.org/packages/release/bioc/html/cellHTS.html),
 [cellHTS2](http://bioconductor.org/packages/release/bioc/html/cellHTS2.html),
-[prada](http://bioconductor.org/packages/release/bioc/html/prada.html)
+[prada](http://bioconductor.org/packages/release/bioc/html/prada.html),
+[RNAither](http://bioconductor.org/packages/release/bioc/html/RNAither.html)
 
 * These packages provide data structures and algorithms for cell-based
-  high-throughput screen (HTS) performed in plate format.
+  high-throughput screen (HTS).
 
 [RTCA](http://bioconductor.org/packages/release/bioc/html/RTCA.html)
 
@@ -157,10 +159,14 @@ Bioconductor [Books and monographs](/help/books/).
 
 ### High-throughtput qPCR Assays ###
 [HTqPCR](http://bioconductor.org/packages/release/bioc/html/HTqPCR.html),
-[ddCt](http://bioconductor.org/packages/release/bioc/html/ddCt.html)
+[ddCt](http://bioconductor.org/packages/release/bioc/html/ddCt.html),
+[qpcrNorm](http://bioconductor.org/packages/release/bioc/html/qpcrNorm.html)
 
 * These package provides algorithm for the analysis of cycle threshold (Ct)
 from quantitative real-time PCR data.
 
-
-### Mass Spectrum ###
+### Mass Spectrometry and Proteomics data ###
+[clippda](http://bioconductor.org/packages/release/bioc/html/clippda.html),
+[MassArray](http://bioconductor.org/packages/release/bioc/html/MassArray.html),
+[MassSpecWavelet](http://bioconductor.org/packages/release/bioc/html/MassSpecWavelet.html),
+[PROcess](http://bioconductor.org/packages/release/bioc/html/PROcess.html)
