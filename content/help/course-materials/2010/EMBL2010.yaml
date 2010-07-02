@@ -19,5 +19,5 @@ tags:
 - intro
 - course
 - seattle
-description: The course covers data analysis of ChIP-Seq and RNA-Seq experiments: Alignment, data handling and visualisation, region identification, differential expression, data quality assessment, integrative bioinformatic and statistical analysis, using R/Bioconductor as well as other open source software tools.
+description: The course covers data analysis of ChIP-Seq and RNA-Seq experiments including Alignment, data handling and visualisation, region identification, differential expression, data quality assessment, integrative bioinformatic and statistical analysis, using R/Bioconductor as well as other open source software tools.
 end_date: 2010-06-09
