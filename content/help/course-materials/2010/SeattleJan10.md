@@ -25,4 +25,3 @@
     * [Finding RNA-seq Hot Spots](day3/FindingRNASeqHotSpots.pdf)
     * [Simple RNA-seq Expression Measures](day3/SimpleRNASeqExprs.pdf)
     * [ChIP-seq peak identification and analysis](day3/ChIPSeq.pdf)
-
