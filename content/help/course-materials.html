@@ -1,25 +1,24 @@
-<h1><img src="/images/icons/help.gif" alt="" />Bioconductor Courses and Materials</h1>
+<h1><img src="/images/icons/help.gif" alt="" />Courses</h1>
 
-<p>Check the <a href="/index.html">home page</a> for announcements of upcoming courses.</p>
+<p> Bioconductor holds training <a href="/events/">events</a> for researchers
+on computational and statistical methods for the analysis of genomic data. 
 
-<ul>
-<% course_materials.each do |item| %>
-<li><a href="<%= item.identifier %>"><%= item[:title] %></a></li>
-<% end %>
+<h2>Course materials</h2>
 
-</ul>
-
-<h2>Using the course materials</h2>
-
-<p>You are welcome to use these materials for instructional
+<p>You are welcome to use the course materials below for instructional
 purposes. However, you may not include these in separately published
 works (articles, books, websites).When using all or parts of the
 Bioconductor course materials (slides, vignettes, scripts) we would
 appreciate it if you would cite the authors and refer your audience to
 the Bioconductor website.</p>
 
+<ul>
+<% course_materials.each do |item| %>
+  <li><a href="<%= item.identifier %>"><%= item[:title] %></a></li>
+<% end %>
+</ul>
 
-<h2>Custom Workshops</h2>
+<h2>Custom workshops</h2>
 
 <p>The Bioconductor project can provide customized workshops on
 statistical methods and software for the analysis of genomic data for
