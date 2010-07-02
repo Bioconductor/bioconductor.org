@@ -1,4 +1,4 @@
-![](/images/icons/help.gif)Using Bioconductor for High-thoughtput Assays
+![](/images/icons/help.gif)Using Bioconductor for High-throughtput Assays
 ========================================================================
 
 Bioconductor includes packages for analysis of diverse areas of
