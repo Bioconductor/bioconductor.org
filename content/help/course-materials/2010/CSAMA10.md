@@ -19,7 +19,7 @@
 * [Basic R tutorial](R_intro.pdf)
 * [Lab 3: Reading and Manipulating Short Reads](Lab-3-ShortRead.pdf)
 * [Lab 4: An Introduction to Rsamtools](Lab-4-Rsamtools.pdf)
-* [Lab 7: A ChIP-Seq Workﬂow](Lab-7-ChIPSeq.pdf)
+* [Lab 7: A ChIP-Seq Workflow](Lab-7-ChIPSeq.pdf)
 * [Lab 8: RNA-seq Use Case](Lab-8-RNAseqUseCase.pdf)
 * [CSAMA10_0.0.3.tar.gz package](CSAMA10_0.0.3.tar.gz) - An R package
   containing slides and exercise material. Download, then install in R using
