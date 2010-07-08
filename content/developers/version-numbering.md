@@ -1,4 +1,4 @@
-Version Numbering
+![](/images/icons/magnifier.gif)Version Numbering
 =================
 
 All Bioconductor packages should have a version number like x.y.z.

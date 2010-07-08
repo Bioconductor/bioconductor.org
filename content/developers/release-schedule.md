@@ -1,4 +1,4 @@
-Bioconductor 2.6 Release Schedule
+![](/images/icons/magnifier.gif)Bioconductor 2.6 Release Schedule
 ==================================
 
 

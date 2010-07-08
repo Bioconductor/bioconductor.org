@@ -1,4 +1,4 @@
-Source Control
+![](/images/icons/magnifier.gif)Source Control
 ===============
 
 The Bioconductor project is maintained in a Subversion source control
