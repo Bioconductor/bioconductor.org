@@ -117,12 +117,12 @@ might introduce wrinkles that disrupt your workflow.
 <h2 id="guideline-using-bioc">Guidelines for using Bioconductor Materials</h2>
 
 You are welcome to use printed materials (course notes, vignettes etc) for
-instructional purposes. 
+**instructional purposes**. 
 
 All software has specific license conditions that you must agree to for
 use. All materials are copyright of their authors. 
 
-You may not include any materials in separately published works (articles,
+**You may not include any materials in separately published works** (articles,
 books, websites) without the express permission of the author. An exception is
 granted for any site mirroring all or part of the Bioconductor website. 
 
