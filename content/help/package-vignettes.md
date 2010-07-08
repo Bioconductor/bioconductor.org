@@ -42,7 +42,7 @@ the
 
 *Term of use for the vignettes*: You are welcome to use these
 materials for instructional purposes. However, you may not include
-these in separately published works (articles, books, websites).When
+these in separately published works (articles, books, websites). When
 using all or parts of the Bioconductor course materials (slides,
-vignettes, scripts) we would appreciate it if you would cite the
+vignettes, scripts), we would appreciate it if you would cite the
 authors and refer your audience to the Bioconductor website.
