@@ -1,5 +1,5 @@
 --- 
 title: Install
 subnav:
-  - include: /_workflows/
-  - include: /_course_materials/
+  - include: /_finding_bioc_packages/
+  - include: /_finding_bioc_devel_packages/
