@@ -7,7 +7,7 @@
       <div id="PageContent" class="PageContent">
         <h1><img src="/images/icons/help.gif" alt="" /><%=  @item[:title] %></h1>
         <p class="location"><%= @item[:location] %></p>
-        <p class="dates"><%= @item[:start_date] %> - <%= @item[:start_date] %></p>
+        <p class="dates"><%= @item[:start_date] %> ~ <%= @item[:end_date] %></p>
         <h2>Instructors</h2>
         <ul class="instructors">
           <% @item[:instructors].each do |t| %>
