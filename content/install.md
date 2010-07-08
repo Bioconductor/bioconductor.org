@@ -29,7 +29,7 @@ the main ones).
 
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
-Find a package
+[Find a package](http://www.bioconductor.org/packages/devel/BiocViews.html)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
