@@ -1,6 +1,5 @@
-![](/images/icons/magnifier.gif)Bioconductor 2.6 Release Schedule
+![](/images/icons/magnifier.gif)Bioconductor 2.6 Release Schedule, 2010
 ==================================
-
 
 March 25
 --------
