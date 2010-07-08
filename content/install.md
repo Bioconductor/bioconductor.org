@@ -5,7 +5,7 @@
 * [Find Bioconductor Packages](#find-bioconductor-packages)  
 * [Install Bioconductor Packages](#install-bioconductor-packages)  
 * [Update Bioconductor Packages](#update-bioconductor-packages)
-
+* [Guidelines for using Bioconductor Materials](#guideline-using-bioc)
 
 <h2 id="install-R">Install R</h2>
 
@@ -110,5 +110,24 @@ As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
 might introduce wrinkles that disrupt your workflow.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+<h2 id="guideline-using-bioc">Guidelines for using Bioconductor Materials</h2>
+
+You are welcome to use printed materials (course notes, vignettes etc) for
+instructional purposes. 
+
+All software has specific license conditions that you must agree to for
+use. All materials are copyright of their authors. 
+
+You may not include any materials in separately published works (articles,
+books, websites) without the express permission of the author. An exception is
+granted for any site mirroring all or part of the Bioconductor website. 
+
+When using all or parts of the Bioconductor course materials (slides,
+vignettes, scripts) we would appreciate it if you would cite the authors and
+refer your audience to the Bioconductor website. 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
