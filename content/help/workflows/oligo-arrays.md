@@ -70,6 +70,7 @@ annotation.
     37403_at  1.12    5.09 5.48 4.27e-07  1.08e-04  6.21
    
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="install-and-use">Installation and Use</h2>
 
@@ -97,6 +98,8 @@ To use the `affy` and `limma` packages, evaluate the commands
 
 These commands are required once in each R session.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
@@ -118,6 +121,7 @@ package functionality) in the `limma` package. Use
 
 to open a web page containing comprehensive help resources.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="pre-processing-resources">Pre-Processing Resources</h2>
 
@@ -214,3 +218,5 @@ and in Bioconductor [Books and monographs](/help/books/).
 
 * Requires beadarray-specific mapping and annotation packages (e.g.,
   `illuminaHumanv1BeadID.db` and `illuminaHumanV1.db`)
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

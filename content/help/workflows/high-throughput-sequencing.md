@@ -49,6 +49,8 @@ sequences that each occur many times.
 
 ![cumulative reads](/images/help/workflows/cumulative-reads.png)
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="install-and-use">Installation and Use</h2>
 
 Follow [installation instructions](/install/) to start using these
@@ -67,6 +69,8 @@ To use the `ShortRead` package, evaluate the command
     > library("ShortRead")
 
 This instruction is required once in each R session.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
@@ -89,6 +93,7 @@ package functionality) in the `ShortRead` package. Use
 
 to open a web page containing comprehensive help resources.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="sequencing-resources">Sequencing Resources</h2>
 
@@ -144,3 +149,5 @@ available; all are in the release version of Bioconductor.
   [DESeg](http://bioconductor.org/packages/release/bioc/html/DESeg.html),
   and
   [DEGseq](http://bioconductor.org/packages/release/bioc/html/DEGseq.html).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

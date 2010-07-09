@@ -73,7 +73,7 @@ semi-automatic gating and automatic clustering if desired. Details can be
 found in [flowWorkFlow.pdf](../flowcytometry/flowWorkFlow.pdf) or the
 vignettes of the [flow packages](/help/workflows/flow-cytometry/).
 
-
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="install-and-use">Installation and Use</h2>
 Follow [installation instructions](/install/) to start using these
@@ -92,6 +92,8 @@ To use the `flowCore` package, evaluate the command
     > library("flowCore")
 
 This instruction is required once in each R session.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
@@ -113,6 +115,8 @@ package functionality) in the `flowCore` package. Use
     > help.start()
 
 to open a web page containing comprehensive help resources.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="diverse-assays-resources">Diverse Assays Resources</h2>
 The following provide a brief overview of packages useful for analysis of
@@ -175,3 +179,5 @@ from quantitative real-time PCR data.
 
 * These packages provide framework for processing, visualization, and
   statistical analysis of mass spectral and proteomics data.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

@@ -69,6 +69,8 @@ they belong.
     GO:0007155                                                         cell adhesion
     GO:0007165                                                   signal transduction
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="install-and-use">Installation and Use</h2>
 
 Follow [installation instructions](/install/) to start using these
@@ -92,6 +94,8 @@ To use the `AnnotationDbi` and `GO.db` package, evaluate the commands
 
 These commands are required once in each R session.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
@@ -113,6 +117,8 @@ package functionality) in the `AnnotationDbi` package. Use
     > help.start()
 
 To open a web page containing comprehensive help resources.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="annotation-resources">Annotation Resources</h2>
 
@@ -196,3 +202,5 @@ provided.
   the following convention: "platformName"cdf and
   "platformName"probe. Where "platformName" is the name of the chip
   platform that these packages refer to.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
