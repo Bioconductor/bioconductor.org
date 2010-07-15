@@ -29,10 +29,11 @@ the main ones).
 
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
-[Find a package](http://www.bioconductor.org/packages/devel/BiocViews.html)
+Visit the [Workflows](/help/workflows/) help page and
+[BiocViews](http://www.bioconductor.org/packages/release/BiocViews.html)
+taxonomy to discover available software.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
 
 <h2 id="install-bioconductor-packages">Install Base Bioconductor Packages</h2>
 
@@ -61,7 +62,7 @@ The biocLite.R script has arguments that change the default behavior:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2>Install additional Bioconductor packages</h2>
+<h2>Install Additional Bioconductor Packages</h2>
 
 There are many Bioconductor and R packages in addition to those in the
 default installation of `biocLite`. A catalog of the Bioconductor
@@ -79,7 +80,7 @@ Install "pkg1" and "pkg2" with
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
-<h2 id="update-bioconductor-packages">Update installed Bioconductor packages</h2>
+<h2 id="update-bioconductor-packages">Update Installed Bioconductor Packages</h2>
 
 Bioconductor packages, especially those in the development branch, are
 updated fairly regularly. To identify packages requiring update, start
