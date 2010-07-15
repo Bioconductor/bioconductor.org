@@ -1,13 +1,9 @@
 <h1><img src="/images/icons/help.gif" alt="" />Course Materials for <%= @year[:title] %></h1>
 
 <div id="course_list">
-<ul>
-  <% @year.children.each do |course| %>
-  <li>
-    <h2><a href="<%= course.identifier %>"><%= course[:title]  %></a></h2>
-    <p><%= course[:start_date].strftime("%B") %>, <%= course[:location]  %></p>
-    <p><%= course[:description]  %></p>
-  </li>
-  <% end %>
-</ul>
+<% @year.children.each do |course| %>
+  <h2><a href="<%= course.identifier %>"><%= course[:title]  %></a></h2>
+  <p><%= course[:start_date].strftime("%B") %>, <%= course[:location]  %></p>
+  <p><%= course[:description]  %></p>
+<% end %>
 </div>
