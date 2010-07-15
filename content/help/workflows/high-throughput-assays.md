@@ -119,13 +119,19 @@ to open a web page containing comprehensive help resources.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="diverse-assays-resources">Diverse Assays Resources</h2>
-The following provide a brief overview of packages useful for analysis of
-high-throughput assays. More comprehensive workflows can be found in documentation
-(available from [package
-descriptions](http://bioconductor.org/packages/release/Software.html)) and in
-Bioconductor [Books and monographs](/help/books/). 
 
-### [Flow Cytometry](/help/workflows/flow-cytometry/) ###
+The following provide a brief overview of packages useful for analysis
+of high-throughput assays. More comprehensive workflows can be found
+in documentation (available from [package
+descriptions](http://bioconductor.org/packages/release/Software.html))
+and in Bioconductor [Books and monographs](/help/books/).
+
+### Flow Cytometry ###
+
+Thes packages use standard FCS files, including infrastructure,
+utilities, visualization and semi-autogating methods for the
+analysis of flow cytometry data.
+
 [flowCore](http://bioconductor.org/packages/release/bioc/html/flowCore.html),
 [flowViz](http://bioconductor.org/packages/release/bioc/html/flowViz.html),
 [flowQ](http://bioconductor.org/packages/release/bioc/html/flowQ.html),
@@ -135,41 +141,47 @@ Bioconductor [Books and monographs](/help/books/).
 [flowTrans](http://bioconductor.org/packages/release/bioc/html/flowTrans.html),
 [iFlow](http://bioconductor.org/packages/release/bioc/html/iFlow.html)
 
-* These packages provide infrastructure, utilities, visualization and
-  semi-autogating methods for the analysis of flow cytometry data.
-* Use standard FCS files.
+Algorithms for clustering flow cytometry data are found in these packages:
 
 [flowClust](http://bioconductor.org/packages/release/bioc/html/flowClust.html),
 [flowMeans](http://bioconductor.org/packages/release/bioc/html/flowMeans.html),
 [flowMerge](http://bioconductor.org/packages/release/bioc/html/flowMerge.html),
 [SamSPECTRAL](http://bioconductor.org/packages/release/bioc/html/SamSPECTRAL.html)
 
-* These packages provide algorithms for clustering flow cytometry data.
-
+A typical workflow using the packages flowCore, flowViz, flowQ and flowStats
+is described in detail in [flowWorkFlow.pdf](/help/workflows/flow-cytometry/flowWorkFlow.pdf).
+The data files used in the workflow can be downloaded from
+[here](/help/workflows/flow-cytometry/dataFiles.tar).
 
 ### Cell-based Assays ###
+
+These packages provide data structures and algorithms for cell-based
+high-throughput screens (HTS).
+
 [cellHTS](http://bioconductor.org/packages/release/bioc/html/cellHTS.html),
 [cellHTS2](http://bioconductor.org/packages/release/bioc/html/cellHTS2.html),
 [prada](http://bioconductor.org/packages/release/bioc/html/prada.html),
 [RNAither](http://bioconductor.org/packages/release/bioc/html/RNAither.html)
 
-* These packages provide data structures and algorithms for cell-based
-  high-throughput screens (HTS).
+This package supports the xCELLigence system which contains a series of
+real-time cell analyzer (RTCA).
 
 [RTCA](http://bioconductor.org/packages/release/bioc/html/RTCA.html)
 
-* This package supports the xCELLigence system which contains a series of
-  real-time cell analyzer (RTCA).
-
 ### High-throughput qPCR Assays ###
+
+These package provide algorithm for the analysis of cycle threshold
+(Ct) from quantitative real-time PCR data.
+
 [HTqPCR](http://bioconductor.org/packages/release/bioc/html/HTqPCR.html),
 [ddCt](http://bioconductor.org/packages/release/bioc/html/ddCt.html),
 [qpcrNorm](http://bioconductor.org/packages/release/bioc/html/qpcrNorm.html)
 
-* These package provide algorithm for the analysis of cycle threshold (Ct)
-from quantitative real-time PCR data.
-
 ### Mass Spectrometry and Proteomics data ###
+
+These packages provide framework for processing, visualization, and
+statistical analysis of mass spectral and proteomics data.
+
 [clippda](http://bioconductor.org/packages/release/bioc/html/clippda.html),
 [MassArray](http://bioconductor.org/packages/release/bioc/html/MassArray.html),
 [MassSpecWavelet](http://bioconductor.org/packages/release/bioc/html/MassSpecWavelet.html),
@@ -177,7 +189,5 @@ from quantitative real-time PCR data.
 [flagme](http://bioconductor.org/packages/release/bioc/html/flagme.html),
 [xcms](http://bioconductor.org/packages/release/bioc/html/xcms.html)
 
-* These packages provide framework for processing, visualization, and
-  statistical analysis of mass spectral and proteomics data.
-
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
