@@ -41,6 +41,8 @@ The source package resulting from running `R CMD build` should occupy less than
 2MB on disk. The package should require less than 5 minutes to run R CMD check.
 This includes the time required to build the Sweave vignette.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="name">Package Name</h2>
 
 Choose a descriptive name. An easy way to check whether your name is already
@@ -48,6 +50,8 @@ in use is to check that the following command fails
 
     source("http://bioconductor.org/biocLite.R")
     biocLite("mypackage")
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="license">License</h2>
 
@@ -60,6 +64,8 @@ Artistic-2.0. To specify a non-standard license, include a file named LICENSE
 in your package (containing the full terms of your license) and use the string
 "file LICENSE" (without the double quotes) in the "License:" field of your
 DESCRIPTION file.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="content">Package Content</h2>
 
@@ -91,6 +97,8 @@ Packages must
 * Not contain unnecessary files such as .DS_Store, .project, .svn, cache file,
   log files, etc.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="dependencies">Package Dependencies</h2>
 
 Reuse, rather than re-implement or duplicate, well-tested functionality from
@@ -110,6 +118,8 @@ as follows
 Packages should specify the R version on which they depend. This is usually the
 current development version.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="classes">S4 Classes and Methods</h2>
 
 We recommend the following structure/layout:
@@ -125,11 +135,15 @@ We recommend the following structure/layout:
 A Collates: field in the DESCRIPTION file may be necessary to order class and
 method definitions appropriately during package installation.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="vectorized">Vectorized Calculations</h2>
 
 Many R operations are performed on the whole object, not just the elements of
 the object (e.g., sum(x), not x[1] + x[2] + ...). In particular, relatively few
 situations require an explicit for loop.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="messages">End-User Messages</h2>
 
@@ -139,6 +153,8 @@ situations require an explicit for loop.
 * `stop()` indicates an error condition.
 * `cat()` or `print()` are used only when displaying an object to the user,
   e.g., in a `show` method.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="vignettes">The Sweave Vignette</h2>
 
@@ -158,12 +174,16 @@ benefit of vignettes.
 
 All packages are expected to have at least one Sweave vignette.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="citations">Citations</h2>
 
 Appropriate citations must be included in help pages (e.g., in the see also
 section) and vignettes; this aspect of documentation is no different from any
 scientific endeavor. The file inst/CITATION can be used to specify how a
 package is to be cited.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="versions">Version Numbering</h2>
 
@@ -176,6 +196,8 @@ apply:
 
 For more details, see
 [Version Numbering Standards](http://wiki.fhcrc.org/bioc/Version_Numbering_Standards)
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="c-code">C or Fortran code</h2>
 
@@ -201,11 +223,15 @@ already supported is strongly discouraged. In cases where the external library
 is complex the author may need to supply pre-built binary versions for some
 platforms.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="duplications">Duplication of Packages in CRAN and Bioconductor</h2>
 
 Authors are strongly discouraged from placing their package into both CRAN and
 Bioconductor. This avoids burdening the author with extra work and confusing
 the user.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="responsibilities">Package Maintainer Responsibilities</h2>
 
@@ -217,3 +243,5 @@ for package maintenance. These responsibilities include:
   posted on the bioconductor mailing list.
 * Package Maintenance through software release cycles, including prompt updates
   to software and documentation necessitated by underlying changes in R.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

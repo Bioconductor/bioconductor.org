@@ -55,6 +55,8 @@ Packages should also conform to the following:
 * Include an inst/NEWS file for providing users with information on package
   updates.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="support">Additional support</h2>
 
 We are eager to enhance the quality and interoperability of Bioconductor
@@ -65,7 +67,11 @@ structure, and critical assessment of package documentation and structure.
 Use the [bioc-devel](/help/mailing-list/) mailing list or the [Contact
 information](#contact-information) below to obtain additional support.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="contact-information">Contact information</h2>
 
 To submit a package or obtain additional support, contact Chao-Jen Wong
 (email: cwon2 NEAR fhcrc POINT org).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

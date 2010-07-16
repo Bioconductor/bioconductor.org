@@ -44,7 +44,7 @@ Example Changes
 
 Here is a table showing examples of the version bumping scheme:
 
-<table border="1">
+<table border="1" cellpadding="5" cellspacing="0">
 <thead valign="bottom">
 <tr>
   <th class="head">Release</th>
