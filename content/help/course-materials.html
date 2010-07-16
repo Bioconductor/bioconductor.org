@@ -1,18 +1,17 @@
 <h1><img src="/images/icons/help.gif" alt="" />Courses</h1>
 
-<p> Bioconductor holds training <a href="/events/">events</a> for researchers
+<p>Bioconductor holds training <a href="/events/">events</a> for researchers
 on computational and statistical methods for the analysis of genomic data. 
 
 <h2>Course materials</h2>
 
 <p>You are welcome to use the course materials below for instructional
 purposes. However, you may not include these in separately published
-works (articles, books, websites).When using all or parts of the
-Bioconductor course materials (slides, vignettes, scripts) we would
-appreciate it if you would cite the authors and refer your audience to
-the Bioconductor website.</p>
+works (articles, books, websites). When using all or parts of the
+Bioconductor course materials (slides, vignettes, scripts) please cite
+the authors and refer your audience to the Bioconductor website.</p>
 
-<ul>
+<ul class="inline_list">
 <% course_materials.each do |item| %>
   <li><a href="<%= item.identifier %>"><%= item[:title] %></a></li>
 <% end %>

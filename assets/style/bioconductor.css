@@ -503,6 +503,16 @@ ul.big_arrow_list li {
   background-image: none;
 }
 
+/* an inline list with no marker */
+ul.inline_list {
+  margin: 0;
+  padding: 0;
+  list-style-type:none;
+}
+ul.inline_list li {
+  display: inline;
+}
+
 /* home page has a few special styles */
 .hp_alert_box {
   border-top:1px #d8dcdd solid;
