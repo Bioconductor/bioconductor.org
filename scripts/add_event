@@ -27,7 +27,7 @@ end
 
 fname = ARGV[0]
 
-yamlfile = "content/events/#{fname}.yaml"
+yamlfile = "content/help/events/#{fname}.yaml"
 
 today = Time.now.strftime("%Y-%m-%d")
 

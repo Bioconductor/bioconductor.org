@@ -171,7 +171,7 @@ to the site using the following steps:
    website Subversion working copy
 1. Run =./scripts/add_event EVENT_NAME=
    This will create an EVENT_NAME.yaml file in the
-   =./content/evnets/= directory
+   =./content/help/events/= directory
 2. The default =EVENT_NAME.yaml= file will look like this:
    #+begin_src yaml
      title: TITLE FOR EVENT_NAME
