@@ -10,6 +10,7 @@
 * [S4 Classes and Methods](#classes)
 * [Vectorized Calculations](#vectorized)
 * [End-User Messages](#messages)
+* [Graphics Device](#graphical)
 * [The Sweave Vignette](#vignettes)
 * [Citations](#citations)
 * [Version Numbering](#versions)
@@ -153,6 +154,14 @@ situations require an explicit for loop.
 * `stop()` indicates an error condition.
 * `cat()` or `print()` are used only when displaying an object to the user,
   e.g., in a `show` method.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="graphical">Graphics Device</h2>
+
+Use `dev.new()` to start a graphics device if necessary. Avoid using `x11()`
+or `X11()` for it can only be called on machines that have access to an X
+server. 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
