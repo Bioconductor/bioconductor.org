@@ -1,11 +1,11 @@
 # ![](/images/icons/help.gif)Workflows #
 
-Bioconductor provides many software packages to help analyze diverse
-data. Common workflows in the Bioconductor project are:
+Bioconductor provides software to help analyze diverse high-throughput
+genomic data. Common workflows include:
 
 * [Oligonucleotide Arrays](oligo-arrays/)
-* [High-throughput Sequence Analysis](high-throughput-sequencing/)
-* [Accessing Annotation Data](annotation-data/)
+* [High-throughput Sequencing](high-throughput-sequencing/)
+* [Annotation](annotation-data/)
 * [Flow Cytometry](/help/workflows/high-throughput-assays/) and other
-  high throughput assays
+  assays
 
