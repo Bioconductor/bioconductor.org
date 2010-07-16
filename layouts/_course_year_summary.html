@@ -1,7 +1,7 @@
 <h1><img src="/images/icons/help.gif" alt="" />Course Materials for <%= @year[:title] %></h1>
 
 <div id="course_list">
-<% @year.children.each do |course| %>
+<% @year.children.sort{|a, b| b[:start_date] <=> a[:start_date]}.select do |course| %>
   <h2><a href="<%= course.identifier %>"><%= course[:title]  %></a></h2>
   <p><%= course[:start_date].strftime("%B") %>, <%= course[:location]  %></p>
   <p><%= course[:description]  %></p>
