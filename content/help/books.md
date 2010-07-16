@@ -1,10 +1,18 @@
 # ![](/images/icons/help.gif)Books #
 
-* [Bioinformatics and Computational Biology Solutions Using R and
-  Bioconductor][1]
-* [R Programming for Bioinformatics][2]
-* [Bioconductor Case Studies][3]
-
-[1]: bioinformatics-and-computational-biology-solutions/
-[2]: r-programming-for-bioinformatics/
-[3]: bioconductor-case-studies/
+<a
+href="/help/books/bioinformatics-and-computational-biology-solutions/"
+title="Landmark Bioconductor Book">
+<img src="/help/books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg" height="115"
+alt="Monograph" width="80" /></a>
+<a
+href="/help/books/r-programming-for-bioinformatics/"
+title="R Programming for Bioinformatics">
+<img
+src="/help/books/r-programming-for-bioinformatics/rbioinf-small.jpg"
+height="115" alt="R Programming for Bioinformatics" width="80" /></a>
+<a href="/help/books/bioconductor-case-studies/"
+title="Bioconductor Case Studies">
+<img
+src="/help/books/bioconductor-case-studies/case-studies-small.jpg"
+height="115" alt="Bioconductor Case Studies" width="80" /></a>
