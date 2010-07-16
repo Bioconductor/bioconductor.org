@@ -1,5 +1,7 @@
 <h1><img src="/images/icons/calendar.gif" alt=""/>Events</h1>
 
+<h2>Upcoming</h2>
 <%= render('/_upcoming_events/', :events => find_item(@items, '/events/')) %>
 
+<h2>Previous (this year)</h2>
 <%= render('/_previous_events/', :events => find_item(@items, '/events/')) %>

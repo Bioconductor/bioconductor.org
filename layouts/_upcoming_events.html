@@ -1,4 +1,3 @@
-<h2>Upcoming events</h2>
 <% upcoming_events(@events).each do |e| %>
   <p><a href="<%= e[:link][:url] %>"><b><%= e[:title] %></b></a><br/>
     <%= event_date(e) %> &mdash; <%= e[:location] %>
