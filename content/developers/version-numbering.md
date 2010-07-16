@@ -2,13 +2,7 @@
 =================
 
 All Bioconductor packages should have a version number like x.y.z.
-Here are some examples of **bad** version numbers:
-    
-    1.2-3
-    3.4
-    1-2.4
-
-And here are some examples of **good** version numbers:
+Here are examples of good version numbers:
 
     1.2.3
     0.0.1
