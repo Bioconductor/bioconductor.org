@@ -11,7 +11,7 @@
 Users are welcome to contribute new packages to Bioconductor. Packages
 must meet a [checklist](#checklist) of standards of functionality,
 documentation, and interoperability. See
-[Contact information](#contact-information) to obtain instructions for
+[Contact information](#contact-info) to obtain instructions for
 submitting new packages.
 
 Authors receive initial feedback in 1 to 3 weeks. Packages will be checked
@@ -69,7 +69,7 @@ information](#contact-information) below to obtain additional support.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="contact-information">Contact information</h2>
+<h2 id="contact-info">Contact information</h2>
 
 To submit a package or obtain additional support, contact Chao-Jen Wong
 (email: cwon2 NEAR fhcrc POINT org).
