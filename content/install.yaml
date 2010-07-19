@@ -1,6 +1,6 @@
 --- 
 title: Install
 subnav:
-  - include: /_finding_bioc_packages/
-  - include: /_finding_bioc_devel_packages/
-  - include: /_finding_bioc_older_packages/
+  - include: /_bioc_release_packages/
+  - include: /_bioc_devel_packages/
+  - include: /_bioc_older_packages/
