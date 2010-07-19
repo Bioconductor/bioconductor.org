@@ -3,8 +3,8 @@
 
 * [Introduction](#introduction)
 * [Checklist](#checklist)
-* [Additional support](#support)
-* [Contact information](#contact-info)
+* [Additional Support](#support)
+* [Contact Information](#contact-info)
 
 <h2 id="introduction">Introduction</h2>
 
@@ -57,7 +57,7 @@ Packages should also conform to the following:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="support">Additional support</h2>
+<h2 id="support">Additional Support</h2>
 
 We are eager to enhance the quality and interoperability of Bioconductor
 software and will provide additional support when requested by package
@@ -69,7 +69,7 @@ information](#contact-information) below to obtain additional support.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="contact-info">Contact information</h2>
+<h2 id="contact-info">Contact Information</h2>
 
 To submit a package or obtain additional support, contact Chao-Jen Wong
 (email: cwon2 NEAR fhcrc POINT org).
