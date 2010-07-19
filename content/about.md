@@ -1,48 +1,37 @@
-![](/images/icons/magnifier.gif)About Bioconductor
-==================================================
+# ![](/images/icons/magnifier.gif)About Bioconductor
 
-Bioconductor is an open source and open development software project
-to provide tools for the analysis and comprehension of genomic data.
+Bioconductor is an open source, open development software project to
+provide tools for the analysis and comprehension of high-throughput
+genomic data.  It is based primarily on the
+[R](http://www.r-project.org) programming language.
 
-Bioconductor is based primarily on the
-[R programming language](http://www.r-project.org), but does contain
-contributions in other programming languages. It has two releases each
-year that follow the semiannual releases of R. At any one time there is a
-[release version](http://www.bioconductor.org/packages/release/bioc/),
-which corresponds to the released version of R, and a
-[development version](http://www.bioconductor.org/packages/devel/bioc),
-which corresponds to the development version of R. Most users will find
-the release version appropriate for their needs. In addition there are
-a large number of
-[meta-data packages](http://www.bioconductor.org/packages/release/data/annotation/)
-available that are mainly, but not solely, oriented towards different
-types of microarrays.
+The Bioconductor [release
+version](http://www.bioconductor.org/packages/release/bioc/) is
+updated twice each year, and is appropriate for most users. There is
+also a [development
+version](http://www.bioconductor.org/packages/devel/bioc), to which
+new features and packages are added prior to incorporation in the
+release. A large number of [meta-data
+packages](http://www.bioconductor.org/packages/release/data/annotation/)
+provide pathway, organism, microarray and other annotations.
 
-The Bioconductor project was started in the Fall of 2001 and is
-overseen by the [Bioconductor core team](/about/core-team/), based
-primarily at the
-[Fred Hutchinson Cancer Research Center](http://www.fhcrc.org)
-with other members coming from various US and international institutions.
-It gained widespread exposure in the groundbreaking Genome Biology 2004 paper
-[Bioconductor: open software development for computational biology and
-bioinformatics](http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf).
-More project details are available online in the
-[Bioconductor annual reports](/about/annual-reports/).
+The Bioconductor project started in 2001 and is overseen by a [core
+team](/about/core-team/), based primarily at the [Fred Hutchinson
+Cancer Research Center](http://www.fhcrc.org), and by other members
+coming from US and international institutions.  It gained widespread
+exposure in a 2004 [Genome
+Biology](http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf)
+paper.
 
-Bioconductor Packages
----------------------
+## Bioconductor Packages
 
-Most Bioconductor components are distributed as
-[R packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages),
-which are add-on modules for R. Initially most of the
-[Bioconductor software packages](http://www.bioconductor.org/packages/release/bioc/)
-focused primarily on DNA microarray data analysis. As the project has
-matured, the functional scope of the software packages broadened to
-include the analysis of all types of genomic data, such as SAGE,
-sequence, or SNP data.
+Most Bioconductor components are distributed as [R
+packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages).
+The functional scope of [Bioconductor
+packages](http://www.bioconductor.org/packages/release/bioc/) includes
+the analysis DNA microarray, sequence, flow, SNP, and other data.
 
-Goals of the Bioconductor Project
----------------------------------
+## Project Goals
 
 The broad goals of the Bioconductor project are:
 
@@ -58,68 +47,63 @@ The broad goals of the Bioconductor project are:
 * To [train](/help/course-materials/) researchers on computational and
   statistical methods for the analysis of genomic data.
 
-Main Features of the Bioconductor Project
------------------------------------------
+## Main Project Features
 
-* **The R Project for Statistical Computing**. [R](http://www.r-project.org)
-  and the [R package system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
-  provide a broad range of advantages to the Bioconductor project including:
-  * It contains a high-level interpreted language in which one can easily
-    and quickly prototype new computational methods.
-  * It includes a well established system for packaging together software
-    components and documentation.
-  * It can address the diversity and complexity of computational biology
-    and bioinformatics problems in a common object-oriented framework.
-  * It provides on-line computational biology and bioinformatics data
-    sources.
-  * It supports a rich set of statistical simulation and modeling activities.
-  * It contains cutting edge data and model visualization capabilities.
-  * It has been the basis for path breaking research in parallel statistical
-    computing.
-  * It is under very active development by a dedicated team of researchers
-    with a strong commitment to good documentation and software design.
+* **The R Project for Statistical Computing**. Using
+  [R](http://www.r-project.org) provides a broad range of advantages
+  to the Bioconductor project, including:
+  * A high-level interpreted language to easily and quickly prototype
+    new computational methods.
+  * A well established system for packaging together software with
+    documentation.
+  * An object-oriented framework for addressing the diversity and
+    complexity of computational biology and bioinformatics problems.
+  * Access to on-line computational biology and bioinformatics data.
+  * Support for rich statistical simulation and modeling activities.
+  * Cutting edge data and model visualization capabilities.
+  * Active development by a dedicated team of researchers with a
+    strong commitment to good documentation and software design.
 
-* **Documentation and reproducible research**. Each
-  [Bioconductor package](http://www.bioconductor.org/packages/release/bioc/)
-  contains at least one [vignette](/help/package-vignettes/), which is
-  a document that provides a textual, task-oriented description of the
-  package's functionality. These vignettes come in several forms. Many
-  are simple "HowTo"s that are designed to demonstrate how a particular
-  task can be accomplished with that package's software. Others provide
-  a more thorough overview of the package or might even discuss general
-  issues related to the package. In the future, we are looking towards
-  providing vignettes that are not specifically tied to a package, but
-  rather are demonstrating more complex concepts. As with all aspects of
-  the Bioconductor project, users are encouraged to participate in this
-  effort.
+* **Documentation and reproducible research**. Each [Bioconductor
+  package](http://www.bioconductor.org/packages/release/bioc/)
+  contains one or more [vignettes](/help/package-vignettes/),
+  documents that provide a textual, task-oriented description of the
+  package's functionality. Vignettes come in several forms. Many are
+  "HowTo"s that demonstrate how a particular task can be accomplished
+  with that package's software. Others provide a more thorough
+  overview of the package or discuss general issues related to the
+  package.
 
-* **Statistical and graphical methods**. The Bioconductor project aims to
-  provide access to a wide range of powerful statistical and graphical
-  methods for the analysis of genomic data.
-  [Analysis packages](http://www.bioconductor.org/packages/release/bioc/)
-  are available for: pre-processing Affymetrix and cDNA array data;
-  identifying differentially expressed genes; graph theoretical analyses;
-  plotting genomic data. In addition, the
-  [R package system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
-  itself provides implementations for a broad range of state-of-the-art
-  statistical and graphical techniques, including linear and non-linear
-  modeling, cluster analysis, prediction, resampling, survival analysis,
-  and time-series analysis.
+* **Statistical and graphical methods**. The Bioconductor project
+  provides access to powerful statistical and graphical methods for
+  the analysis of genomic data.  [Analysis
+  packages](http://www.bioconductor.org/packages/release/bioc/)
+  address [workflows](/help/workflows) for analysis of oligonucleotide
+  arrays, sequence analysis, flow cytometry. and other
+  high-throughput genomic data.  The [R package
+  system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
+  itself provides implementations for a broad range of
+  state-of-the-art statistical and graphical techniques, including
+  linear and non-linear modeling, cluster analysis, prediction,
+  resampling, survival analysis, and time-series analysis.
 
-* **Annotation**. The Bioconductor project provides software for associating
-  microarray and other genomic data in real time to biological metadata
-  from web databases such as GenBank, Entrez genes and PubMed
-  ([annotate](http://www.bioconductor.org/packages/release/bioc/html/annotate.html) package).
-  Functions are also provided for incorporating the results of statistical
-  analysis in HTML reports with links to annotation WWW resources.
-  Software tools are available for assembling and processing genomic
-  annotation data, from databases such as GenBank, the Gene Ontology
-  Consortium, Entrez genes, UniGene, the UCSC Human Genome Project
-  ([AnnotationDbi](http://www.bioconductor.org/packages/release/bioc/html/AnnotationDbi.html) package).
-  [Annotation data packages](http://www.bioconductor.org/packages/release/AnnotationData.html)
-  are distributed to provide mappings between different probe identifiers
-  (e.g. Affy IDs, Entrez genes, PubMed). Customized annotation libraries
-  can also be assembled.
+* **Annotation**. The Bioconductor project provides software for
+  associating microarray and other genomic data in real time to
+  biological metadata from web databases such as GenBank, Entrez genes
+  and PubMed
+  ([annotate](http://www.bioconductor.org/packages/release/bioc/html/annotate.html)
+  package).  Functions are also provided for incorporating the results
+  of statistical analysis in HTML reports with links to annotation WWW
+  resources.  Software tools are available for assembling and
+  processing genomic annotation data, from databases such as GenBank,
+  the Gene Ontology Consortium, Entrez genes, UniGene, the UCSC Human
+  Genome Project
+  ([AnnotationDbi](http://www.bioconductor.org/packages/release/bioc/html/AnnotationDbi.html)
+  package).  [Annotation data
+  packages](http://www.bioconductor.org/packages/release/AnnotationData.html)
+  are distributed to provide mappings between different probe
+  identifiers (e.g. Affy IDs, Entrez genes, PubMed). Customized
+  annotation libraries can also be assembled.
 
 * **Bioconductor short courses**. The Bioconductor project has developed a
   program of [short courses](/help/course-materials/) on software and
@@ -127,15 +111,14 @@ Main Features of the Bioconductor Project
   given for audiences with backgrounds in either biology or statistics. All
   [course materials](/help/course-materials/) (lectures and computer labs)
   are available on this site.
-  [Customized short courses](/help/course-materials/) may also be designed
-  for interested parties.
 
-* **Open source**. The Bioconductor project has a commitment to full open
-  source discipline, with distribution via a SourceForge-like platform. All
-  contributions are expected to exist under an open source license such
-  as Artistic 2.0, GPL2, or BSD. There are many different reasons why
-  open source software is beneficial to the analysis of microarray data
-  and to computational biology in general. The reasons include:
+* **Open source**. The Bioconductor project has a commitment to full
+  open source discipline, with distribution via a public subversion
+  (version control) server. All contributions are exist under an open
+  source license such as Artistic 2.0, GPL2, or BSD. There are many
+  different reasons why open source software is beneficial to the
+  analysis of microarray data and to computational biology in
+  general. The reasons include:
   * To provide full access to algorithms and their implementation
   * To facilitate software improvements through bug fixing and software
     extension
@@ -157,7 +140,3 @@ Main Features of the Bioconductor Project
   or documentation. Additionally Bioconductor provides a mechanism for
   linking together different groups with common goals to foster
   collaboration on software, often at the level of shared development.
-
-* **New Users**. To see practical application of Bioconductor software,
-  you might consider buying
-  [Bioconductor Case Studies](/help/books/bioconductor-case-studies/).

@@ -80,7 +80,7 @@ def annual_reports
     Dir.glob("*").map do |f|
       {
         :href => f,
-        :name => f
+        :name => /[[:alpha:]]+([[:digit:]]+).pdf/.match(f)[1]
       }
     end
   end

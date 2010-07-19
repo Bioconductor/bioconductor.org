@@ -1,24 +1,17 @@
-![](/images/icons/magnifier.gif)Related Projects
-================================================
+# ![](/images/icons/magnifier.gif)Related Projects
 
-R Related Projects
-------------------
+## R Related Projects
 
 * [The R Project for Statistical Computing](http://www.r-project.org/)
 * [The Comprehensive R Archive Network (CRAN)](http://cran.r-project.org/)
 * [The Omega Project for Statistical Computing](http://www.omegahat.org/)
-* [R packages for analyzing gene expression data](http://astor.som.jhmi.edu/hex/pgiz.html)
-* [Paul Murrell's R Graphics Examples](http://www.stat.auckland.ac.nz/%7Epaul/RGraphics/rgraphics.html)
-* [The R Graph Gallery](http://addictedtor.free.fr/graphiques/)
 
-Other Related Projects
-----------------------
+## Other Related Projects
 
-* [Bayesian Analysis of Microarray](http://www.bioss.sari.ac.uk/%7Edirk/essays/GeneExpression/bayes_net.html)
 * [BioJava](http://biojava.org/)
 * [BioPerl](http://bio.perl.org/)
 * [BioPython](http://biopython.org/)
-* [Cancer Genomics](http://www.broad.mit.edu/cancer/), The Broad Institute/MIT
+* [Cancer Genomics](http://www.broad.mit.edu/cancer/), The Broad Institute / MIT
   Genome Center
 * [Cytoscape](http://www.cytoscape.org)
 * [DNA-Chip Analyzer (dChip)](http://www.dchip.org), Harvard School of Public
