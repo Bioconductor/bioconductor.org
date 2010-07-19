@@ -3,4 +3,4 @@ title: Install
 subnav:
   - include: /_finding_bioc_packages/
   - include: /_finding_bioc_devel_packages/
-  - include: /_finding_bioc_past_packages/
+  - include: /_finding_bioc_older_packages/
