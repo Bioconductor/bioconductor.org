@@ -1,0 +1,679 @@
+/* ----------- general page layout -----------*/
+
+
+body
+{
+  font-family:helvetica,arial,sans-serif;
+  margin-left:1%;
+  margin-right:1%;
+}
+
+
+body.nav
+{
+  font-family:helvetica,arial,sans-serif;
+  background-color:#c9d8e5;
+}
+
+
+a
+{
+ text-decoration:none;
+}
+
+a:link
+{
+  border:0px solid black;
+  /* color:transparent; */
+}
+
+a:hover
+{ 
+ color:orange;
+}
+
+/* --------- end general page layout ---------*/
+
+
+
+
+/* ---------- title banner and logo ----------*/
+
+/*bounding table*/
+table.banner
+{
+  border:1px solid #c9d8e5;
+  border-collapse:collapse;
+  border-spacing:0px;
+  width:100%;
+  padding:0px;
+  margin:0px;
+}
+
+/*banner table row*/
+tr.banner
+{
+  background-color:#c9d8e5;
+  border:1px solid #c9d8e5;
+  padding:0px;
+  margin:0px;
+  height:80px;
+}
+
+/*banner table column*/
+td.banner
+{
+  text-align:center;
+  padding:0px;
+  margin:0px;
+}
+
+/*title table column*/
+td#title
+{
+  border:1px solid #c9d8e5;
+  text-align:left;
+  vertical-align:middle;
+}
+
+/*logo table column*/
+td#logo
+{
+  width:80px;
+  vertical-align:middle;
+}
+
+/*topic selection column*/
+td#topic
+{
+  text-align:center;
+  width:22%;
+  vertical-align:middle;
+}
+
+/*buttons to select topic*/
+span.topic
+{ 
+  font:bold 13px helvetica,arial;
+  color:darkblue;
+  padding-left:5px;
+  padding-right:5px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+span.topicSel
+{
+  background: #7896b1;
+  font:bold 13px helvetica,arial;
+  padding-left:5px;
+  padding-right:5px;
+  margin-left:15px;
+  margin-right:15px;
+}
+
+span#booktitle
+{
+  font:bold 32px helvetica,arial;
+  margin-left:65px;
+  color:white;
+}
+
+div#bookauthors
+{ 
+  font:bold italic 17px helvetica,arial;
+  color:white;
+  margin-left:165px;
+  padding-top:3px;
+}
+
+img#logoimage
+{ 
+  vertical-align:middle;
+  margin:5px;
+  height:70px;
+  border:2px solid #c9d8e5;
+}
+
+img#biocimage
+{ 
+  vertical-align:middle;
+  margin:5px;
+  height:70px;
+  border:2px solid #c9d8e5;
+  float:left;
+}
+
+img#mainimage
+{ 
+  vertical-align:middle;
+  margin:5px;
+  border:none;
+}
+
+img#mainimage:hover
+{ 
+  border:2px solid orange;
+}
+
+img#biocimage:hover
+{ 
+  border:2px solid orange;
+}
+
+img#logoimage:hover
+{ 
+  border:2px solid orange;
+}
+
+
+/* -------- end title banner and logo --------*/
+
+
+
+
+/* -------- navigation and main window -------*/
+
+/*bounding table*/
+table.navigation
+{
+  border:1px solid #c9d8e5;
+  border-collapse:collapse;
+  border-spacing:0px;
+  width:100%;
+  height:900px;
+  padding:0px;
+  margin:0px;
+}
+
+/*main table rows*/
+tr.navigation
+{
+  padding:0px;
+  margin:0px;
+}
+
+/*main table columns*/
+td.navigation
+{
+  background-color:#c9d8e5;
+  border:1px solid #c9d8e5;
+  text-align:center;
+  padding:0px;
+  margin:0px;
+}
+
+/*navigation menu table column*/
+td#menu
+{ 
+  width:22%;
+  padding-left:20px;
+  padding-right:20px;
+  padding-top:20px;
+  padding-bottom:30px;
+  vertical-align:top;
+}
+
+/*navigation menu iframe*/
+iframe#menuFrame
+{
+  border:none;
+  margin:0px;
+  padding:0px;
+  width:100%;
+  height:100%;
+  min-height:700px;
+  text-indent:0px;
+  vertical-align:top;
+  background-color:#c9d8e5;
+}
+
+/*main screen table column*/
+td#main
+{ 
+  background-color:#ffffff;
+  float:none;
+  border:none;
+  text-align:center;
+  height:100%;
+  width:78%;
+  padding-top:15px;
+  padding-bottom:15px;
+  padding-left:40px;
+}
+
+/*main screen table column for solutions (no padding)*/
+td.mainNoPadding
+{  
+  padding:0px;
+}
+
+
+a.chapterList
+{
+  text-decoration:none;
+  font:bold 15px helvetica,arial;
+}
+
+
+/*main screen iframe*/
+iframe#mainFrame
+{
+  border:none;
+  margin:0px;
+  padding:0px;
+  width:100%;
+  height:100%;
+  text-indent:0px;
+}
+
+/*list of chapters*/
+ul.chapterList
+{
+  background: #c9d8e5;
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  text-indent:0px;
+}
+
+ul.chapterListNav
+{
+  background: #c9d8e5;
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  margin-bottom:20px;
+  padding-bottom:20px;
+  text-indent:0px;
+  border-bottom:3px solid white;
+}
+
+div#chapterList0
+{
+  margin-bottom:5px;
+}
+
+
+/*chapter list entry*/
+li.chapterList
+{
+  background: #c9d8e5;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-bottom:2px;
+  margin-top:4px;
+  margin-right:10px;
+  font:bold 13px helvetica,arial;
+  color:darkblue;
+}
+
+li.chapterListNav
+{
+  background: #c9d8e5;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-bottom:5px;
+  margin-top:4px;
+  margin-right:10px;
+  font:bold 15px helvetica,arial;
+  color:darkblue;
+}
+
+
+/*selected chapter list entry*/
+li.chapterListSel
+{
+  background: #7896b1;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-top:4px;
+  margin-bottom:2px;
+  font:bold 13px helvetica,arial;
+}
+
+li.chapterListNavSel
+{
+  background: #7896b1;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-bottom:2px;
+  margin-top:4px;
+  margin-right:10px;
+  font:bold 15px helvetica,arial;
+}
+
+
+
+/*chapter list entry footer*/
+div.chapterList
+{
+  padding-left:25px;
+  font:italic 11px helvetica,arial;
+  color:black;
+}
+
+/*highlighted items when mouseover*/
+li.chapterList:hover, li.chapterListNav:hover, li.figureList:hover, span.topic:hover, li.navList:hover
+{
+  background: #FFC233;
+  cursor:pointer;
+}
+
+
+/*list of figures*/
+ul.figureList
+{
+  background: #c9d8e5;
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  padding-left:20px;
+  display:none;
+}
+
+ul.navList
+{
+  background: #c9d8e5;
+  list-style-type:none;
+  margin:0px;
+  padding:0px;
+  padding-left:20px;
+}
+
+/*figure list entry*/
+li.figureList
+{
+  background: #c9d8e5;
+  margin:0px;
+  padding:0px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-bottom:1px;
+  font:12px helvetica,arial;
+  color:darkblue;
+}
+
+li.navList
+{
+  background: #c9d8e5;
+  margin:0px;
+  padding:0px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-bottom:3px;
+  font:bold 13px helvetica,arial;
+  color:darkblue;
+}
+
+
+/*selected figure list entry*/
+li.figureListSel
+{
+  background: #7896b1;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-bottom:1px;
+  font:bold 12px helvetica,arial;
+}
+
+li.navListSel
+{
+  background: #7896b1;
+  margin:0px;
+  padding:0px;
+  padding-right:10px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-bottom:3px;
+  font:bold 13px helvetica,arial;
+}
+
+/*empty figure list entry*/
+li.figureListNo
+{
+  background: #c9d8e5;
+  margin:0px;
+  padding:0px;
+  padding-left:10px;
+  margin-right:10px;
+  margin-bottom:1px;
+  font:12px helvetica,arial;
+}
+
+/* ------ end navigation and main window ------*/
+
+
+
+
+/* --------------- code chunks ----------------*/
+
+
+
+
+a.down
+{ 
+  color:darkblue;
+}
+
+
+a.down:hover
+{ 
+  color:orange;
+  cursor:pointer;
+}
+
+
+/*bounding table*/
+table.codeContainer
+{ 
+  border-spacing:0px;
+  width:700px;
+  padding:0px;
+  margin:0px;
+  margin-bottom:10px;
+  background-color:#DDDDDD;
+}
+
+table.hiddenCodeContainer
+{ 
+  border-spacing:0px;
+  width:700px;
+  padding:0px;
+  margin:0px;
+  margin-bottom:10px;
+  background-color:#FFFFFF;
+}
+
+table.highlightedCodeContainer
+{ 
+  border-spacing:0px;
+  width:700px;
+  padding:0px;
+  margin:0px;
+  margin-bottom:10px;
+  background-color:#b8b8b8;
+}
+
+/*container column for chunk control*/
+td.chunkControl
+{
+  padding-top:5px;
+  padding-bottom:5px;
+  vertical-align:bottom;
+}
+
+/*show collapsed chunk*/
+div.showChunk
+{  
+  float:left;
+  color:#b8b8b8;
+  margin-left:5px;
+  font:bold 11px helvetica,arial;
+  background-color: white;
+}
+
+div.showChunkSol
+{  
+  float:left;
+  color:#b8b8b8;
+  margin-left:5px;
+  font:bold 11px helvetica,arial;
+  background-color:#b8b8b8;
+}
+
+
+span.solChunk
+{  
+  color:#b8b8b8;
+  font:bold 10px helvetica,arial; 
+}
+
+div.showChunk:hover
+{
+  cursor:pointer;
+  background-color: orange;
+} 
+
+div.showChunkSol:hover
+{
+  cursor:pointer;
+  background-color: orange;
+} 
+
+
+/*plus sign*/
+img.showChunk
+{
+  vertical-align:middle;
+}
+
+
+/*collapse chunk*/
+div.hideChunk
+{
+  color:#FFFFFF;
+  padding-left:15px;
+  padding-right:5px;
+  font:bold 11px helvetica,arial;
+  letter-spacing:0.03em;
+  background-color: transparent;
+}
+
+/* div.hideChunk:hover
+{
+   cursor:pointer;
+   color: orange;
+}*/ 
+
+/*the chunk header*/
+span.header
+{
+  float:left;
+}
+
+/*minus sign*/
+span.control
+{
+  float:right;
+  background-color: white;
+  border:none;
+  margin-bottom:0px;
+  padding-bottom:0px;
+  width:12px;
+  height:12px;
+}
+
+img.cr
+{
+  margin-bottom:0px;
+  padding-bottom:0px;
+  width:12px;
+  height:12px;
+}
+
+
+span.control:hover
+{
+  cursor:pointer;
+  background-color: orange;
+} 
+
+/*chunk row*/
+tr.chunk
+{ 
+  padding-bottom:6px;
+  padding-left:15px;
+}
+
+/*chunk column*/
+td.chunk
+{ 
+  padding-bottom:6px;
+  padding-left:15px;
+  padding-right:15px;
+}
+
+/* ------------- end code chunks ---------------*/
+
+
+
+
+div.errHead
+{
+  font:bold 14px helvetica,arial;
+  padding-left:30px;
+  padding-right:30px;
+  margin-bottom:7px;
+}
+
+div.errBody
+{
+  padding-left:50px;
+  padding-right:30px;	
+  font:14px helvetica,arial;
+  margin-bottom:10px;
+  padding-bottom:10px;
+  border-bottom:2px solid darkblue;
+}
+
+table.err
+{
+  margin:30px;
+  margin-top:60px;
+}
+
+h1.err
+{
+  text-align:center;
+  padding-bottom:50px;
+  font:bold 34px helvetica,arial;
+  margin-top:40px;
+}
+
+
+img.info
+{
+  width:70px;
+  height:63px;
+  vertical-align:middle;
+}
+
+div.default
+{
+  font:20px helvetica,arial;
+  color:lightblue;
+  vertical-align:middle;
+}

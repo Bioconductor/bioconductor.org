@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <title>
+      Chapter vsn , Figure 8
+    </title>
+
+    <link rel='stylesheet' type='text/css' href='../../useRbook.css'>
+    <script src='../../useRbook.js' type='text/javascript'></script>
+  </head>
+  <body style='font-family: helvetica,arial,sans-serif;'>
+<table height='100%' width='100%' align='center'>
+  <tr>
+    <td>
+      <table border='0' width='504' align='center' class='figtable'>
+
+        <tr>
+	        <td align='center' class='fig'>
+	          <img src='vsn-vkidplot.jpg'>
+          </td>
+        </tr>
+        <tr>
+          <td colspan='1' class='figcapt'>
+            <b>
+              Figure 5.8:             </b>Robustness and the ``most genes not differentially expressed'' assumption. The three panels show results of using VSN on an (artificial) dataset with a high fraction of differentially expressed features. Data for 2334 features, shown in violet, have been computationally ``spiked-in'' as if their targets were strongly upregulated. The VSN algorithm was not aware of the distinction between the blue and violet data points. For lts.quantile=1, which corresponds to ordinary nonrobust least sum of squares regression, the fit is heavily affected by the violet outliers. For lts.quantile=0.5, which corresponds to least trimmed sum of squares regression with a trimming quantile q=50, the blue data points are distributed tightly around the M=0 line, and the algorithm has managed to disregard the outliers. The result for lts.quantile=0.8 is in between. Note how the outliers not only affect the estimation of the array scaling factors (k_j in Equation~( eq:vsnmodel )), but also of the background-correction offsets (b_j in Equation~( eq:vsnmodel )). This explains why the difference among the three panels is not just a shift in M-direction, but also a change in the shape of the distributions of the transformed data.
+          </td>
+        </tr>
+      </table>
+    </td>
+  </tr>
+</table>
+</body></html>

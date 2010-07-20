@@ -124,7 +124,7 @@ The following provide a brief overview of packages useful for analysis
 of high-throughput assays. More comprehensive workflows can be found
 in documentation (available from [package
 descriptions](http://bioconductor.org/packages/release/Software.html))
-and in Bioconductor [Books and monographs](/help/books/).
+and in Bioconductor [Books and monographs](/help/publications/).
 
 ### Flow Cytometry ###
 

@@ -48,7 +48,7 @@ arrays, and the `limma` package for assessing differential expression.
     
 A top table resulting from a more complete analysis, described in
 Chapter 7 of [Bioconductor Case
-Studies](/help/books/bioconductor-case-studies/), 
+Studies](/help/publications/books/bioconductor-case-studies/), 
 is shown below. The table enumerates Affymetrix probes, the log-fold
 difference between two experimental groups, the average expression
 across all samples, the t-statistic describing differential
@@ -129,7 +129,7 @@ The following provide a brief overview of packages useful for
 pre-processing. More comprehensive workflows can be found in
 documentation (available from
 [package descriptions](http://bioconductor.org/packages/release/Software.html))
-and in Bioconductor [Books and monographs](/help/books/).
+and in Bioconductor [Books and monographs](/help/publications/).
 
 ### Affymetrix 3'-biased Arrays ###
 

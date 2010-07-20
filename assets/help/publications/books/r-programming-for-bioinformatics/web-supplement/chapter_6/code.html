@@ -1,0 +1,141 @@
+<html>
+  <head>
+    <title>
+      Code examples for Chapter 6: 'Foreign Language Interfaces'
+    </title>
+
+    <link rel='stylesheet' type='text/css' href='../useRbook.css'>
+    <script src='../useRbook.js' type='text/javascript'></script>
+  </head>
+  <body style='font-family: helvetica,arial,sans-serif;'>
+<small>
+  <a class='down' href='RCinterface.R' target='_blank'>
+    download code
+  </a>
+</small>
+
+<div align='center'>  <table width='400' class='codeContainer'>
+
+<table class='codeContainer' id='chunkCont1'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk1' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk1'>
+        <span class='header'>
+          ## Chunk 1
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(1)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk1' onclick='highlightChunk(1)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+library("RBioinf")<br>
+x=matrix(1:6,&ensp;nc=2)<br>
+x<br>
+simplePVect(x)
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont2'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk2' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk2'>
+        <span class='header'>
+          ## Chunk 2
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(2)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk2' onclick='highlightChunk(2)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;getLoadedDLLs()
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont3'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk3' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk3'>
+        <span class='header'>
+          ## Chunk 3
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(3)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk3' onclick='highlightChunk(3)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;<br>
+##&ensp;&ensp;e1&ensp;=&ensp;new.env()<br>
+##&ensp;&ensp;e1$x&ensp;=&ensp;1:10<br>
+##&ensp;&ensp;.Call("evalExpr",&ensp;quote(sum(x)),&ensp;e1)<br>
+##&ensp;
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+<table class='codeContainer' id='chunkCont4'>
+  <tr class='chunkControl'>
+    <td class='chunkControl'>
+      <div class='showChunk', id='showChunk4' style='display:none;'>
+        <img src='../plusg.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+      </div>
+      <div class='hideChunk', id='hideChunk4'>
+        <span class='header'>
+          ## Chunk 4
+        </span>
+        <span class='control'>
+          <img class='cr' src='../minus.png' onclick='toggleChunk(4)' onMouseOver='hover(this)' onMouseOut='unhover(this)'>
+        </span>
+      </div>
+    </td>
+  </tr>
+  <tr class='chunk' id='chunk4' onclick='highlightChunk(4)'>
+    <td class='chunk' colspan='4'>
+      <code class='chunk'>
+
+##&ensp;available.packages(&ensp;contrib.url("http://www.omegahat.org/R",&ensp;<br>
+##&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;type&ensp;=&ensp;"source"))
+          </code>
+        </td>
+      </tr>
+      <tr class='spacer'>
+        <td class='spacer'>
+</td>
+</tr>
+  </table>
+</div>
+</body></html>
