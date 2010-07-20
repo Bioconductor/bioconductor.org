@@ -35,8 +35,7 @@ height="110" alt="Bioconductor Case Studies" width="85" /></a>
 
 * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&amp;DB=pubmed&amp;term=bioconductor)
 
-* [BEPress](http://www.bepress.com/cgi/query.cgi?field_1=full_text&amp;field_2=author&amp;value_1=bioconductor&amp;value_2=&amp;connector_3=and&amp;field_3=ancestor.link&amp;op_3=eq&amp;value_3=http%3A%2F%2F&amp;hidden_3=1&amp;x_force_carryover=&amp;format=cover_page&amp;query=Processing...)
-
+* [BEPress](http://www.bepress.com/cgi/query.cgi?x_force_carryover=&amp;connector_all=and&amp;context=http%3A%2F%2Fwww.bepress.com&amp;connector_1=and&amp;field_1=full_text&amp;op_1=eq&amp;value_1=bioconductor&amp;advanced=1&amp;connector_2=and&amp;field_2=full_text&amp;op_2=eq&amp;value_2=&amp;advanced=1&amp;connector_3=and&amp;field_3=ancestor.link&amp;op_3=in&amp;value_3=http%3A%2F%2Fwww.bepress.com%2Fjournals&amp;hidden_3=1&amp;connector_4=and&amp;field_4=peer_reviewed&amp;op_4=eq&amp;advanced=1&amp;format=cover_page&amp;query=Processing...)
 * [Biostatistics](http://biostatistics.oxfordjournals.org/cgi/search?fulltext=bioconductor&amp;x=0&amp;y=0)
 
 * [Bioinformatics](http://bioinformatics.oxfordjournals.org/cgi/search?fulltext=bioconductor&amp;x=0&amp;y=0)
