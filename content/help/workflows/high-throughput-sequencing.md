@@ -47,7 +47,7 @@ sequences that each occur many times.
              xlab="Number of Occurrences", 
              ylab="Cumulative Number of Reads")
 
-![cumulative reads](/images/help/workflows/cumulative-reads.png)
+![cumulative reads](cumulative-reads.png)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
