@@ -17,7 +17,7 @@
             <h2>2. Required data</h2>
 
             <p>The estrogen data set is required for this lab and
-            can be obtained from <a href="Data/estrogen.zip">Data/estrogen.zip</a>. You should
+            can be obtained from <a href="../Data/estrogen.zip">estrogen.zip</a>. You should
             create a clean directory, unpack this file into that
             directory, then set that directory as your working
             directory for your R session using setwd() or
@@ -112,7 +112,7 @@
             estimate four parameters in the linear model. There are
             many valid ways to choose a design matrix, but perhaps
             the simplest is to make each column correspond to a
-            particular treatment combination:.</p><img src="images-apoest/estrogenDesignMatrix.png" alt="estrogenDesignMatrix.png" /><br />
+            particular treatment combination:.</p><img src="../images-apoest/estrogenDesignMatrix.png" alt="estrogenDesignMatrix.png" /><br />
 
             <p>The four columns of the matrix correspond to
             <code>absent10</code>, <code>present10</code>,
@@ -157,11 +157,11 @@
             <p>The idea now is to use contrasts to make any
             comparisons of interest between the four treatment
             combination. Contrasts are linear combinations of
-            parameters from the linear model fit.</p><img src="images-apoest/Contrasts.png" alt="Contrasts.png" /><br />
+            parameters from the linear model fit.</p><img src="../images-apoest/Contrasts.png" alt="Contrasts.png" /><br />
 
-            <p>where <img src="images-apoest/beta.png" align="middle" alt="beta.png" /> is a vector of contrasts
-            for gene <img src="images-apoest/g.png" align="bottom" alt="g.png" />, <img src="images-apoest/C.png" align="bottom" alt="C.png" /> is the contrasts matrix, and
-            <img src="images-apoest/alpha.png" align="middle" alt="alpha.png" /> is a vector of coefficients
+            <p>where <img src="../images-apoest/beta.png" align="middle" alt="beta.png" /> is a vector of contrasts
+            for gene <img src="../images-apoest/g.png" align="bottom" alt="g.png" />, <img src="../images-apoest/C.png" align="bottom" alt="C.png" /> is the contrasts matrix, and
+            <img src="../images-apoest/alpha.png" align="middle" alt="alpha.png" /> is a vector of coefficients
             (estimated log fold changes), obtained from a linear
             model fit.</p>
 
@@ -171,7 +171,7 @@
             estrogen effect at time 48 hours and the third is the
             time effect in the absence of estrogen. These are not
             all the comparisons which might have been
-            made.</p><img src="images-apoest/estrogenContrastsMatrix.png" alt="estrogenContrastsMatrix.png" /><br />
+            made.</p><img src="../images-apoest/estrogenContrastsMatrix.png" alt="estrogenContrastsMatrix.png" /><br />
             <pre>
  cont.matrix &lt;- makeContrasts(E10="present10-absent10",E48="present48-absent48",Time="absent48-absent10",levels=design)
  cont.matrix
@@ -649,6 +649,4 @@ geneSetTest(geneSet,fit2$t[,1],"less")
 
             <p> </p>
 
-            <p><a href="">Return to list of
-            Exercises</a></p>
-          
+            <p><a href="">Return to list of Exercises</a></p>
