@@ -53,7 +53,7 @@ object can help to keep track of our progress.
                           transformationId = "asinh")
     > add(wf, tl)
 
-Next we use the lymphGate function to find the T-cells in the CD3/SSC
+Next we use the `lymphGate` function to find the T-cells in the CD3/SSC
 projection.
     
     ## Identify T-cells population
@@ -98,7 +98,7 @@ This instruction is required once in each R session.
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
-common use cases; the help pages and vignettes are available from
+common use cases. The help pages and vignettes are available from
 within R. After loading a package, use syntax like
 
     > help(package="flowCore")
