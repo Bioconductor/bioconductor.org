@@ -65,13 +65,13 @@ projection.
                    par.settings=list(gate=list(col="red", 
                    fill="red", alpha=0.3))))
     
-![lymphGate](/images/help/workflows/lymphGate.png)
+![lymphGate](lymphGate.png)
     
 A typical workflow for flow cytometry data analysis in Bioconductor flow
 packages include data transformation, normalization, filtering, manual gating,
 semi-automatic gating and automatic clustering if desired. Details can be
-found in [flowWorkFlow.pdf](../flowcytometry/flowWorkFlow.pdf) or the
-vignettes of the [flow packages](/help/workflows/flow-cytometry/).
+found in [flowWorkFlow.pdf](flowWorkFlow.pdf) or the vignettes of the
+[flow cytometry packages](#diverse-assays-resources).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -124,11 +124,11 @@ The following provide a brief overview of packages useful for analysis
 of high-throughput assays. More comprehensive workflows can be found
 in documentation (available from [package
 descriptions](http://bioconductor.org/packages/release/Software.html))
-and in Bioconductor [Books and monographs](/help/publications/).
+and in Bioconductor [publications](/help/publications/).
 
 ### Flow Cytometry ###
 
-Thes packages use standard FCS files, including infrastructure,
+These packages use standard FCS files, including infrastructure,
 utilities, visualization and semi-autogating methods for the
 analysis of flow cytometry data.
 
@@ -148,10 +148,10 @@ Algorithms for clustering flow cytometry data are found in these packages:
 [flowMerge](http://bioconductor.org/packages/release/bioc/html/flowMerge.html),
 [SamSPECTRAL](http://bioconductor.org/packages/release/bioc/html/SamSPECTRAL.html)
 
-A typical workflow using the packages flowCore, flowViz, flowQ and flowStats
-is described in detail in [flowWorkFlow.pdf](/help/workflows/flow-cytometry/flowWorkFlow.pdf).
+A typical workflow using the packages `flowCore`, `flowViz`, `flowQ` and
+`flowStats` is described in detail in [flowWorkFlow.pdf](flowWorkFlow.pdf).
 The data files used in the workflow can be downloaded from
-[here](/help/workflows/flow-cytometry/dataFiles.tar).
+[here](dataFiles.tar).
 
 ### Cell-based Assays ###
 
@@ -190,4 +190,3 @@ statistical analysis of mass spectral and proteomics data.
 [xcms](http://bioconductor.org/packages/release/bioc/html/xcms.html)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
