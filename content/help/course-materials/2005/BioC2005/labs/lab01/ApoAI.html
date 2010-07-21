@@ -15,7 +15,7 @@
             <h2>2. Required data</h2>
 
             <p>The ApoAI data set is required for this lab and can
-            be obtained from <a href="Data/apoai.zip">Data/apoai.zip</a>. You should create
+            be obtained from <a href="../Data/apoai.zip">apoai.zip</a>. You should create
             a clean directory, unpack this file into that
             directory, then set that directory as your working
             directory for your R session using setwd() or
@@ -82,7 +82,7 @@
             </div>
 
             <p>Diagrammatically, the experimental design
-            is:</p><img src="images-apoest/ApoAIdesign.png" alt="ApoAIdesign.png" /><br />
+            is:</p><img src="../images-apoest/ApoAIdesign.png" alt="ApoAIdesign.png" /><br />
             <br />
 
             <p>This is an example of a single comparison experiment
@@ -132,12 +132,12 @@
 
             <p>In order to construct a design matrix, let us remind
             ourselves of the linear model which we are fitting for
-            each gene:</p><img src="images-apoest/LinearModel.png" alt="LinearModel.png" /><br />
+            each gene:</p><img src="../images-apoest/LinearModel.png" alt="LinearModel.png" /><br />
 
-            <p>where <img src="images-apoest/y.png" align="middle" alt="y.png" /> is the vector of normalized log
-            ratios from the sixteen arrays, <img src="images-apoest/Ey.png" align="middle" alt="Ey.png" />
-            is the Expected Value of <img src="images-apoest/y.png" align="middle" alt="y.png" />, <img src="images-apoest/X.png" align="bottom" alt="X.png" /> is
-            the design matrix and <img src="images-apoest/alpha.png" align="middle" alt="alpha.png" /> is the vector of log ratios to estimate,
+            <p>where <img src="../images-apoest/y.png" align="middle" alt="y.png" /> is the vector of normalized log
+            ratios from the sixteen arrays, <img src="../images-apoest/Ey.png" align="middle" alt="Ey.png" />
+            is the Expected Value of <img src="../images-apoest/y.png" align="middle" alt="y.png" />, <img src="../images-apoest/X.png" align="bottom" alt="X.png" /> is
+            the design matrix and <img src="../images-apoest/alpha.png" align="middle" alt="alpha.png" /> is the vector of log ratios to estimate,
             corresponding to the "<b>M</b>" (fold change) column in
             the final list of differentially expressed genes given
             by <code>topTable()</code>. The estimated log ratios
@@ -150,7 +150,7 @@
             ratios in the linear model for each gene, i.e. we will
             estimate two parameters, so our design matrix should
             have two columns. In our case, the two parameters in
-            the <img src="images-apoest/alpha.png" align="middle" alt="alpha.png" /> vector are the log ratios which
+            the <img src="../images-apoest/alpha.png" align="middle" alt="alpha.png" /> vector are the log ratios which
             compare gene expression levels in <b>WT vs Ref</b> and
             <b>KO vs WT</b>. (There are other possible
             parameterizations which could have been chosen instead.
@@ -160,7 +160,7 @@
             as a contrast (i.e. a linear combination of parameters
             estimated from the linear model).</p>
 
-            <p>The design matrix we will use is:</p><img src="images-apoest/ApoAIdesignMatrix.png" alt="ApoAIdesignMatrix.png" /><br />
+            <p>The design matrix we will use is:</p><img src="../images-apoest/ApoAIdesignMatrix.png" alt="ApoAIdesignMatrix.png" /><br />
 
             <p>where the first column is for the "<b>WT vs Ref</b>"
             parameter and the second column is for the "<b>KO vs
@@ -331,6 +331,5 @@ arrays.
 
             <p> </p>
 
-            <p><a href="">Return to list of
-            Exercises</a></p>
+            <p><a href="">Return to list of Exercises</a></p>
           
