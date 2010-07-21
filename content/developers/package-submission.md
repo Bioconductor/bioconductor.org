@@ -17,7 +17,7 @@ submitting new packages.
 Authors receive initial feedback in 1 to 3 weeks. Packages will be checked
 for adherence to the Bioconductor package guidelines and the checklist below
 by a member of Bioconductor team. Package developers should consult the full
-Bioconductor [Package Guidelines](/developers/guidelines/). Submission
+Bioconductor [Package Guidelines](/developers/package-guidelines/). Submission
 implies commitment to package maintenance across multiple release cycles.
 
 <h2 id="checklist">Checklist</h2>
