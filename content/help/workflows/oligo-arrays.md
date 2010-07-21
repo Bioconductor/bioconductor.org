@@ -103,7 +103,7 @@ These commands are required once in each R session.
 <h2 id="exploring-package-content">Exploring Package Content</h2>
 
 Packages have extensive help pages, and include vignettes highlighting
-common use cases; the help pages and vignettes are available from
+common use cases. The help pages and vignettes are available from
 within R. After loading a package, use syntax like
 
     > help(package="limma")
