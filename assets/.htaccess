@@ -4,6 +4,13 @@ RewriteBase /
 
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
+## papers, slides, screen shots
+RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
+RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
+RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
+RewriteRule ^overview/screenshots.*$ /help/publications/ [R=301]
+RewriteRule ^pub/workingpapers.*$ /help/publications/ [R=301]
+
 ## workflows
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
 RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
@@ -48,13 +55,6 @@ RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
 RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports/relProjTR.pdf$1 [R=301]
 RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1 [R=301]
 RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1 [R=301]
-
-## papers, slides, screen shots
-RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
-RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
-RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
-RewriteRule ^overview/screenshots.*$ /help/publications/ [R=301]
-RewriteRule ^pub/workingpapers.*$ /help/publications/ [R=301]
 
 ## faq
 RewriteRule ^docs/faq.*$ /about/ [R=301]
