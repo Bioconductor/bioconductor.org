@@ -23,6 +23,7 @@ RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinfo
 
 RewriteRule ^docs/mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
 RewriteRule ^mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+RewriteRule ^bioconductor_book.jpg$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bioconductor_book.jpg [R=301]
 
 RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
 
