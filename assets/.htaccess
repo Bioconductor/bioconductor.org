@@ -12,8 +12,8 @@ RewriteRule ^docs/gettingHelp.html$ /help/ [R=301,L]
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
 RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
 RewriteRule ^docs/workflows/accessingAnnotData(.*)$ /help/workflows/annotation-data$1 [R=301]
-RewriteRule ^docs/workflows/flowcytometry(.*)$ /help/workflows/fhigh-throughput-assays$1 [R=301]
-RewriteRule ^docs/workflows/flowoverview.*$ /help/workflows/fhigh-throughput-assays/ [R=301]
+RewriteRule ^docs/workflows/flowcytometry(.*)$ /help/workflows/high-throughput-assays$1 [R=301]
+RewriteRule ^docs/workflows/flowoverview.*$ /help/workflows/high-throughput-assays/ [R=301]
 
 ## books
 RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
