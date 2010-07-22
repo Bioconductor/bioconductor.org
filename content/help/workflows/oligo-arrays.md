@@ -88,8 +88,7 @@ with the Affymetrix Human Genome U95A 2.0, use
     > biocLite("hgu95av2.db")
 
 Package installation is required only once per R installation. View a
-full list of
-[available packages](http://bioconductor.org/packages/release/Software.html).
+full list of [available packages](/packages/release/Software.html).
 
 To use the `affy` and `limma` packages, evaluate the commands
 
@@ -128,41 +127,41 @@ to open a web page containing comprehensive help resources.
 The following provide a brief overview of packages useful for
 pre-processing. More comprehensive workflows can be found in
 documentation (available from
-[package descriptions](http://bioconductor.org/packages/release/Software.html))
+[package descriptions](/packages/release/Software.html))
 and in Bioconductor [Books and monographs](/help/publications/).
 
 ### Affymetrix 3'-biased Arrays ###
 
-[affy](http://bioconductor.org/packages/release/bioc/html/affy.html),
-[gcrma](http://bioconductor.org/packages/release/bioc/html/gcrma.html),
-[affyPLM](http://bioconductor.org/packages/release/bioc/html/affyPLM.html)
+[affy](/packages/release/bioc/html/affy.html),
+[gcrma](/packages/release/bioc/html/gcrma.html),
+[affyPLM](/packages/release/bioc/html/affyPLM.html)
 
 * Require cdf package, probe package and annotation package
 * All these packages are available from Bioconductor via `biocLite()`
 
-[xps](http://bioconductor.org/packages/release/bioc/html/xps.html)
+[xps](/packages/release/bioc/html/xps.html)
 
 * Requires installation of [ROOT](http://root.cern.ch/)
 * Uses data files from Affymetrix (.CDF, .PGF, .CLF, .CSV) directly
 
 ### Affymetrix Exon ST Arrays ###
 
-[oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
+[oligo](/packages/release/bioc/html/oligo.html)
 
 * Requires a pdInfoPackage built using
-  [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
+  [pdInfoBuilder](/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation data together
 * These packages are available from Bioconductor via `biocLite()`
 * Most cases will require a 64-bit computer running Linux and &gt;= 8Gb RAM
 
-[exonmap](http://bioconductor.org/packages/release/bioc/html/exonmap.html)
+[exonmap](/packages/release/bioc/html/exonmap.html)
 
 * Requires installation of MySQL and Ensembl core database tables
 * Requires specially modified
   [cdf](http://xmap.picr.man.ac.uk/download/) and affy package
 * Requires a 64-bit computer running Linux and &gt;= 8 Gb RAM
 
-[xps](http://bioconductor.org/packages/release/bioc/html/xps.html)
+[xps](/packages/release/bioc/html/xps.html)
 
 * Requires installation of [ROOT](http://root.cern.ch/)
 * Uses data files from Affymetrix (.CDF, .PGF, .CLF, .CSV) directly
@@ -170,51 +169,51 @@ and in Bioconductor [Books and monographs](/help/publications/).
 
 ### Affymetrix Gene ST Arrays ###
 
-[oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
+[oligo](/packages/release/bioc/html/oligo.html)
 
 * Requires a pdInfoPackage built using
-  [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
+  [pdInfoBuilder](/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation data together
 * These packages are available from Bioconductor via `biocLite()`
 
-[xps](http://bioconductor.org/packages/release/bioc/html/xps.html)
+[xps](/packages/release/bioc/html/xps.html)
 
 * Requires installation of [ROOT](http://root.cern.ch/)
 * Uses data files from Affymetrix (.CDF, .PGF, .CLF, .CSV) directly
 
 ### Affymetrix SNP Arrays ###
 
-[oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
+[oligo](/packages/release/bioc/html/oligo.html)
 
 * Requires a pdInfoPackage built using
-  [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
+  [pdInfoBuilder](/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates cdf, probe, annotation and HapMap data
 * These packages are available from Bioconductor via `biocLite()`
 * Not yet capable of processing CNV regions in SNP5.0 and SNP6.0 </ul>
 
 ### Affymetrix Tiling Arrays ###
 
-[oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
+[oligo](/packages/release/bioc/html/oligo.html)
 
 * Requires a pdInfoPackage built using
-  [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
+  [pdInfoBuilder](/packages/release/bioc/html/pdInfoBuilder.html)
 * This package collates data from bpmap and cif files
 
 ### Nimblegen Arrays ###
 
-[oligo](http://bioconductor.org/packages/release/bioc/html/oligo.html)
+[oligo](/packages/release/bioc/html/oligo.html)
 
 * Requires a `pdInfoPackage` built using
-  [pdInfoBuilder](http://bioconductor.org/packages/release/bioc/html/pdInfoBuilder.html)
+  [pdInfoBuilder](/packages/release/bioc/html/pdInfoBuilder.html)
 
 ### Illumina Expression Microarrays ###
 
-[lumi](http://bioconductor.org/packages/release/bioc/html/lumi.html)
+[lumi](/packages/release/bioc/html/lumi.html)
 
 * Requires lumi-specific mapping and annotation packages (e.g.,
   `lumiHumanAll.db` and `lumiHumanIDMapping`)
 
-[beadarray](http://bioconductor.org/packages/release/bioc/html/beadarray.html)
+[beadarray](/packages/release/bioc/html/beadarray.html)
 
 * Requires beadarray-specific mapping and annotation packages (e.g.,
   `illuminaHumanv1BeadID.db` and `illuminaHumanV1.db`)

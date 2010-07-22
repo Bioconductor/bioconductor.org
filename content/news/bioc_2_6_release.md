@@ -52,82 +52,82 @@ differentially expressed genes in a gene set; PCA and CCA dependency modeling
 
 ### Packages in detail ###
 
-1. [affyILM](http://www.bioconductor.org/packages/2.6/bioc/html/affyILM.html) -
+1. [affyILM](/packages/2.6/bioc/html/affyILM.html) -
    Linear Model of background subtraction and the Langmuir isotherm
-1. [BayesPeak](http://www.bioconductor.org/packages/2.6/bioc/html/BayesPeak.html) -
+1. [BayesPeak](/packages/2.6/bioc/html/BayesPeak.html) -
    Bayesian Analysis of ChIP-seq Data
-1. [BeadDataPackR](http://www.bioconductor.org/packages/2.6/bioc/html/BeadDataPackR.html) -
+1. [BeadDataPackR](/packages/2.6/bioc/html/BeadDataPackR.html) -
    Compression of Illumina BeadArray data
-1. [charm](http://www.bioconductor.org/packages/2.6/bioc/html/charm.html) -
+1. [charm](/packages/2.6/bioc/html/charm.html) -
    Analysis of DNA methylation data from CHARM microarrays
-1. [ConsensusClusterPlus](http://www.bioconductor.org/packages/2.6/bioc/html/ConsensusClusterPlus.html) -
+1. [ConsensusClusterPlus](/packages/2.6/bioc/html/ConsensusClusterPlus.html) -
    Algorithm for determining cluster count and membership by stability evidence
    in unsupervised analysis
-1. [CSAR](http://www.bioconductor.org/packages/2.6/bioc/html/CSAR.html) -
+1. [CSAR](/packages/2.6/bioc/html/CSAR.html) -
    Statistical tools for the analysis of ChIP-seq data
-1. [DESeq](http://www.bioconductor.org/packages/2.6/bioc/html/DESeq.html) -
+1. [DESeq](/packages/2.6/bioc/html/DESeq.html) -
    Digital gene expresion analysis based on the negative binomial distribution
-1. [eisa](http://www.bioconductor.org/packages/2.6/bioc/html/eisa.html) -
+1. [eisa](/packages/2.6/bioc/html/eisa.html) -
    Expression data analysis via the Iterative Signature Algorithm
-1. [ExpressionView](http://www.bioconductor.org/packages/2.6/bioc/html/ExpressionView.html) -
+1. [ExpressionView](/packages/2.6/bioc/html/ExpressionView.html) -
    Visualize biclusters identified in gene expression data
-1. [flowMeans](http://www.bioconductor.org/packages/2.6/bioc/html/flowMeans.html) -
+1. [flowMeans](/packages/2.6/bioc/html/flowMeans.html) -
    Non-parametric Flow Cytometry Data Gating
-1. [flowTrans](http://www.bioconductor.org/packages/2.6/bioc/html/flowTrans.html) -
+1. [flowTrans](/packages/2.6/bioc/html/flowTrans.html) -
    Parameter Optimization for Flow Cytometry Data Transformation
-1. [frma](http://www.bioconductor.org/packages/2.6/bioc/html/frma.html) -
+1. [frma](/packages/2.6/bioc/html/frma.html) -
    Frozen RMA and Barcode
-1. [frmaTools](http://www.bioconductor.org/packages/2.6/bioc/html/frmaTools.html) -
+1. [frmaTools](/packages/2.6/bioc/html/frmaTools.html) -
    Frozen RMA Tools
-1. [genoCN](http://www.bioconductor.org/packages/2.6/bioc/html/genoCN.html) -
+1. [genoCN](/packages/2.6/bioc/html/genoCN.html) -
    genotyping and copy number study tools
-1. [genomes](http://www.bioconductor.org/packages/2.6/bioc/html/genomes.html) -
+1. [genomes](/packages/2.6/bioc/html/genomes.html) -
    Genome sequencing project metadata
-1. [GenomicRanges](http://www.bioconductor.org/packages/2.6/bioc/html/GenomicRanges.html) -
+1. [GenomicRanges](/packages/2.6/bioc/html/GenomicRanges.html) -
    Representation and manipulation of genomic intervals
-1. [GEOsubmission](http://www.bioconductor.org/packages/2.6/bioc/html/GEOsubmission.html) -
+1. [GEOsubmission](/packages/2.6/bioc/html/GEOsubmission.html) -
    Prepares microarray data for submission to GEO
-1. [girafe](http://www.bioconductor.org/packages/2.6/bioc/html/girafe.html) -
+1. [girafe](/packages/2.6/bioc/html/girafe.html) -
    Genome Intervals and Read Alignments for Functional Exploration
-1. [goseq](http://www.bioconductor.org/packages/2.6/bioc/html/goseq.html) -
+1. [goseq](/packages/2.6/bioc/html/goseq.html) -
    Gene Ontology analyser for RNA-seq and other length biased data
-1. [GSRI](http://www.bioconductor.org/packages/2.6/bioc/html/GSRI.html) -
+1. [GSRI](/packages/2.6/bioc/html/GSRI.html) -
    Gene Set Regulation Index
-1. [hyperdraw](http://www.bioconductor.org/packages/2.6/bioc/html/hyperdraw.html) -
+1. [hyperdraw](/packages/2.6/bioc/html/hyperdraw.html) -
    Visualizing Hypergaphs
-1. [iChip](http://www.bioconductor.org/packages/2.6/bioc/html/iChip.html) -
+1. [iChip](/packages/2.6/bioc/html/iChip.html) -
    Bayesian Modeling of ChIP-chip Data Through Hidden Ising Models
-1. [iFlow](http://www.bioconductor.org/packages/2.6/bioc/html/iFlow.html) -
+1. [iFlow](/packages/2.6/bioc/html/iFlow.html) -
    GUI based visualization for flow cytometry
-1. [keggorthology (replaces keggortho)](http://www.bioconductor.org/packages/2.6/bioc/html/keggorthology.html) -
+1. [keggorthology (replaces keggortho)](/packages/2.6/bioc/html/keggorthology.html) -
    graph support for KO, KEGG Orthology
-1. [MassArray](http://www.bioconductor.org/packages/2.6/bioc/html/MassArray.html) -
+1. [MassArray](/packages/2.6/bioc/html/MassArray.html) -
    Analytical Tools for MassArray Data
-1. [methVisual](http://www.bioconductor.org/packages/2.6/bioc/html/methVisual.html) -
+1. [methVisual](/packages/2.6/bioc/html/methVisual.html) -
    Methods for visualization and statistics on DNA methylation data
-1. [MotIV](http://www.bioconductor.org/packages/2.6/bioc/html/MotIV.html) -
+1. [MotIV](/packages/2.6/bioc/html/MotIV.html) -
    Motif Identification and Validation
-1. [PICS](http://www.bioconductor.org/packages/2.6/bioc/html/PICS.html) -
+1. [PICS](/packages/2.6/bioc/html/PICS.html) -
    Probabilistic inference of ChIP-seq
-1. [pint](http://www.bioconductor.org/packages/2.6/bioc/html/pint.html) -
+1. [pint](/packages/2.6/bioc/html/pint.html) -
    Pairwise INTegration of functional genomics data
-1. [PROMISE](http://www.bioconductor.org/packages/2.6/bioc/html/PROMISE.html) -
+1. [PROMISE](/packages/2.6/bioc/html/PROMISE.html) -
    PRojection Onto the Most Interesting Statistical Evidence
-1. [rGADEM](http://www.bioconductor.org/packages/2.6/bioc/html/rGADEM.html) -
+1. [rGADEM](/packages/2.6/bioc/html/rGADEM.html) -
    De novo motif discovery
-1. [Rsamtools](http://www.bioconductor.org/packages/2.6/bioc/html/Rsamtools.html) -
+1. [Rsamtools](/packages/2.6/bioc/html/Rsamtools.html) -
    Import aligned BAM file format sequences into R / Bioconductor
-1. [SamSPECTRAL](http://www.bioconductor.org/packages/2.6/bioc/html/SamSPECTRAL.html) -
+1. [SamSPECTRAL](/packages/2.6/bioc/html/SamSPECTRAL.html) -
    Identifies cell population in flow cytometry data
-1. [segmentSeq](http://www.bioconductor.org/packages/2.6/bioc/html/segmentSeq.html) -
+1. [segmentSeq](/packages/2.6/bioc/html/segmentSeq.html) -
    Takes high-throughput sequencing data and uses it to define segments of the
    genome to which a high density of reads align
-1. [SRAdb](http://www.bioconductor.org/packages/2.6/bioc/html/SRAdb.html) -
+1. [SRAdb](/packages/2.6/bioc/html/SRAdb.html) -
    A compilation of metadata from NCBI SRA and tools
-1. [tigre](http://www.bioconductor.org/packages/2.6/bioc/html/tigre.html) -
+1. [tigre](/packages/2.6/bioc/html/tigre.html) -
    Transcription factor Inference through Gaussian process Reconstruction of
    Expression
-1. [xmapcore](http://www.bioconductor.org/packages/2.6/bioc/html/xmapcore.html) -
+1. [xmapcore](/packages/2.6/bioc/html/xmapcore.html) -
    Core access to the xmap database (installed separately)
 
 ## Additional Software Package Changes ##

@@ -62,7 +62,7 @@ dependencies, evaluate the commands
 
 Package installation is required only once per R installation. View a
 full list of
-[available packages](http://bioconductor.org/packages/release/Software.html).
+[available packages](/packages/release/Software.html).
 
 To use the `ShortRead` package, evaluate the command
 
@@ -100,54 +100,54 @@ to open a web page containing comprehensive help resources.
 The following packages illustrate the diversity of functionality
 available; all are in the release version of Bioconductor.
 
-* [IRanges](http://bioconductor.org/packages/release/bioc/html/IRanges.html),
-  [GenomicRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
+* [IRanges](/packages/release/bioc/html/IRanges.html),
+  [GenomicRanges](/packages/release/bioc/html/GenomicRanges.html)
   and
-  [genomeIntervals](http://bioconductor.org/packages/release/bioc/html/genomeIntervals.html)
+  [genomeIntervals](/packages/release/bioc/html/genomeIntervals.html)
   for range-based (e.g., chromosomal regions) calculation, data
   manipulation, and general-purpose data
-  representation. [Biostrings](http://bioconductor.org/packages/release/bioc/html/Biostrings.html)
+  representation. [Biostrings](/packages/release/bioc/html/Biostrings.html)
   for alignment, pattern matching (e.g., primer removal), and data
   manipulation of large biological sequences or sets of
   sequences.
 
-* [ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html)
+* [ShortRead](/packages/release/bioc/html/ShortRead.html)
   and
-  [Rsamtools](http://bioconductor.org/packages/release/bioc/html/Rsamtools.html)
+  [Rsamtools](/packages/release/bioc/html/Rsamtools.html)
   for file I/O, quality assessment, and high-level, general purpose
   data summary.
-  [rtracklayer](http://bioconductor.org/packages/release/bioc/html/rtracklayer.html)
+  [rtracklayer](/packages/release/bioc/html/rtracklayer.html)
   for import and export of tracks on the UCSC genome browser.
 
-* [BSgenome](http://bioconductor.org/packages/release/bioc/html/BSgenome.html)
+* [BSgenome](/packages/release/bioc/html/BSgenome.html)
   for accessing and manipulating curated whole-genome representations.
-  [GenomicFeatures](http://bioconductor.org/packages/release/bioc/html/GenomicFeatures.html)
+  [GenomicFeatures](/packages/release/bioc/html/GenomicFeatures.html)
   for annotation of sequence features across common genomes,
-  [biomaRt](http://bioconductor.org/packages/release/bioc/html/biomaRt.html)
+  [biomaRt](/packages/release/bioc/html/biomaRt.html)
   for access to Biomart databases.
 
-* [SRAdb](http://bioconductor.org/packages/release/bioc/html/SRAdb.html)
+* [SRAdb](/packages/release/bioc/html/SRAdb.html)
   for querying and retrieving data from the Sequence Read Archive.
 
 * ChIP-seq and related (e.g., motif discovery, identification of
   high-coverage segments) activities are facilitated by packages such
   as
-  [CSAR](http://bioconductor.org/packages/release/bioc/html/CSAR.html),
-  [chipseq](http://bioconductor.org/packages/release/bioc/html/chipseq.html),
-  [ChIPseqR](http://bioconductor.org/packages/release/bioc/html/ChIPseqR.html),
-  [ChIPsim](http://bioconductor.org/packages/release/bioc/html/ChIPsim.html),
-  [ChIPpeakAnno](http://bioconductor.org/packages/release/bioc/html/ChIPpeakAnno.html),
-  [rGADEM](http://bioconductor.org/packages/release/bioc/html/rGADEM.html),
-  [segmentSeq](http://bioconductor.org/packages/release/bioc/html/segmentSeq.html),
-  [segmentSeq](http://bioconductor.org/packages/release/bioc/html/segmentSeq.html).
+  [CSAR](/packages/release/bioc/html/CSAR.html),
+  [chipseq](/packages/release/bioc/html/chipseq.html),
+  [ChIPseqR](/packages/release/bioc/html/ChIPseqR.html),
+  [ChIPsim](/packages/release/bioc/html/ChIPsim.html),
+  [ChIPpeakAnno](/packages/release/bioc/html/ChIPpeakAnno.html),
+  [rGADEM](/packages/release/bioc/html/rGADEM.html),
+  [segmentSeq](/packages/release/bioc/html/segmentSeq.html),
+  [segmentSeq](/packages/release/bioc/html/segmentSeq.html).
 
 * Differential expression and RNA-seq style analysis can be
   accomplished with
-  [Genominator](http://bioconductor.org/packages/release/bioc/html/Genominator.html),
-  [edgeR](http://bioconductor.org/packages/release/bioc/html/edgeR.html),
-  [baySeq](http://bioconductor.org/packages/release/bioc/html/baySeq.html),
-  [DESeg](http://bioconductor.org/packages/release/bioc/html/DESeg.html),
+  [Genominator](/packages/release/bioc/html/Genominator.html),
+  [edgeR](/packages/release/bioc/html/edgeR.html),
+  [baySeq](/packages/release/bioc/html/baySeq.html),
+  [DESeg](/packages/release/bioc/html/DESeg.html),
   and
-  [DEGseq](http://bioconductor.org/packages/release/bioc/html/DEGseq.html).
+  [DEGseq](/packages/release/bioc/html/DEGseq.html).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

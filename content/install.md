@@ -28,7 +28,7 @@ the main ones).
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
 Visit the [Workflows](/help/workflows/) help page and
-[BiocViews](http://www.bioconductor.org/packages/release/BiocViews.html)
+[BiocViews](/packages/release/BiocViews.html)
 taxonomy to discover available software.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
@@ -64,8 +64,7 @@ The biocLite.R script has arguments that change the default behavior:
 
 There are many Bioconductor and R packages in addition to those in the
 default installation of `biocLite`. A catalog of the Bioconductor
-packages is available at
-[BiocViews](http://www.bioconductor.org/packages/release/BiocViews.html).
+packages is available at [BiocViews](/packages/release/BiocViews.html).
 To install a new package, e.g., EBImage, use
 
     source("http://bioconductor.org/biocLite.R")
