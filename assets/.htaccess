@@ -10,6 +10,7 @@ RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
 RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
 RewriteRule ^overview/screenshots.*$ /help/publications/ [R=301]
 RewriteRule ^pub/workingpapers.*$ /help/publications/ [R=301]
+RewriteRule ^QA.*$ /help/publications/ [R=301]
 
 ## workflows
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
