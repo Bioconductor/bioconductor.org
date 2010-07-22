@@ -3,19 +3,33 @@ RewriteEngine On
 RewriteBase /
 
 RewriteRule (.*)/index_html$ $1/ [R=301]
-RewriteRule ^.*docs/mailList.html /help/mailing-list/ [R=301,L]
+RewriteRule ^.*docs/mailList.html$ /help/mailing-list/ [R=301,L]
 RewriteRule ^docs/vignettes.html$ /help/package-vignettes/ [R=301,L]
-RewriteRule ^docs/postingGuide.html /help/mailing-list/posting-guide/ [R=301,L]
-RewriteRule ^docs/gettingHelp.html /help/ [R=301,L]
-
-## FIXME: this doesn't capture the actual reports
-RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1
+RewriteRule ^docs/postingGuide.html$ /help/mailing-list/posting-guide/ [R=301,L]
+RewriteRule ^docs/gettingHelp.html$ /help/ [R=301,L]
 
 ## workflows
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
 RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
 RewriteRule ^docs/workflows/accessingAnnotData(.*)$ /help/workflows/annotation-data$1 [R=301]
 RewriteRule ^docs/workflows/flowoverview(.*)$ /help/workflows/fhigh-throughput-assays$1 [R=301]
+
+## books
+RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
+RewriteRule ^pub/biocases(.*)$ /help/publications/books/bioconductor-case-studies$1 [R=301]
+
+RewriteRule ^pub/RBioinf/websupp(.*)$ /help/publications/books/r-programming-for-bioinformatics/web-supplement$1 [R=301]
+RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinformatics$1 [R=301]
+
+RewriteRule ^docs/mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+RewriteRule ^mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+
+RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
+
+## technical reports
+RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports/relProjTR.pdf$1
+RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1
+RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1
 
 ## annual reports
 RewriteRule ^docs/annualreports(.*)$ /about/annual-reports$1 [R=301]
@@ -32,20 +46,10 @@ RewriteRule ^overview(.*)$ /about$1 [R=301]
 
 RewriteRule ^GettingStarted.*$ / [R=301]
 
-
+## workshops
 RewriteRule ^workshops(.*)$ /help/course-materials$1 [R=301]
-
-RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
-RewriteRule ^pub/biocases(.*)$ /help/publications/books/bioconductor-case-studies$1 [R=301]
-
-RewriteRule ^pub/RBioinf/websupp(.*)$ /help/publications/books/r-programming-for-bioinformatics/web-supplement$1 [R=301]
-RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinformatics$1 [R=301]
-
-
-RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
-
-RewriteRule ^docs/mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
-RewriteRule ^mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
+RewriteRule ^talks.*$ /help/course-materials/ [R=301]
+RewriteRule ^services.*$ /help/course-materials/ [R=301]
 
 RewriteCond %{REQUEST_FILENAME} (.*)\.html$
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -54,5 +58,11 @@ RewriteRule ^.*$ %1/ [R=301]
 
 RewriteRule ^docs/workflows/?$ /help/workflows/ [R=301]
 RewriteRule ^docs/?$ /help/ [R=301]
+RewriteRule ^docs/index.html$ /help/ [R=301]
 RewriteRule ^docs/install.*$ /install/ [R=301]
+
+## misc
+RewriteRule ^apptest.*$ / [R=301]
+RewriteRule ^bugs.*$ /help/mailing-list/posting-guide/ [R=301]
+RewriteRule ^slogan.*$ /about/ [R=301]
 </IfModule>
