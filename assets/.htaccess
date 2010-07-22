@@ -30,6 +30,8 @@ RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-cas
 RewriteRule ^pub/biocases(.*)$ /help/publications/books/bioconductor-case-studies$1 [R=301]
 RewriteRule ^pub/docs/BioconductorCaseStudies.*$ /help/publications/books/bioconductor-case-studies/ [R=301]
 
+RewriteRule ^pub/RBioinf/RProgrammingForBioinformatics$ /help/publications/books/r-programming-for-bioinformatics/rbioinf.jpg [R=301]
+RewriteRule ^pub/RBioinf/RProgrammingforBioinformaticsSmall$ /help/publications/books/r-programming-for-bioinformatics/rbioinf-small.jpg [R=301]
 RewriteRule ^pub/RBioinf/websupp(.*)$ /help/publications/books/r-programming-for-bioinformatics/web-supplement$1 [R=301]
 RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinformatics$1 [R=301]
 
