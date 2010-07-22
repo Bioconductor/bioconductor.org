@@ -12,7 +12,7 @@ RewriteRule ^docs/gettingHelp.html$ /help/ [R=301,L]
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
 RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
 RewriteRule ^docs/workflows/accessingAnnotData(.*)$ /help/workflows/annotation-data$1 [R=301]
-RewriteRule ^docs/workflows/flowoverview(.*)$ /help/workflows/fhigh-throughput-assays$1 [R=301]
+RewriteRule ^docs/workflows/flowcytometry(.*)$ /help/workflows/fhigh-throughput-assays$1 [R=301]
 
 ## books
 RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
@@ -24,15 +24,20 @@ RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinfo
 RewriteRule ^bioconductor_book.jpg$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bioconductor_book.jpg [R=301]
 RewriteRule ^docs/mogr/bc1view$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bc1view.jpg [R=301]
 RewriteRule ^docs/mogr/bcbook$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bcbook.jpg [R=301]
+RewriteRule ^docs/mogr/mogrtest.*$ /help/publications/books/bioinformatics-and-computational-biology-solutions/ [R=301]
 RewriteRule ^docs/mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
 RewriteRule ^mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
 
 RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
 
 ## technical reports
-RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports/relProjTR.pdf$1
-RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1
-RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1
+RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports/relProjTR.pdf$1 [R=301]
+RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1 [R=301]
+RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1 [R=301]
+
+## papers
+RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
+RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
 
 ## faq
 RewriteRule ^docs/faq.*$ /about/ [R=301]
