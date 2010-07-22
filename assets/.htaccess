@@ -23,6 +23,9 @@ RewriteRule ^docs/index.html$ /help/ [R=301]
 RewriteRule ^docs/?$ /help/ [R=301]
 
 ## books
+RewriteRule ^pub/biocases/BioconductorCaseStudiesSmall$ /help/publications/books/bioconductor-case-studies/case-studies-small.jpg [R=301]
+RewriteRule ^pub/biocases/BioconductorCaseStudies$ /help/publications/books/bioconductor-case-studies/case-studies.jpg [R=301]
+RewriteRule ^pub/biocases/BioconductorCaseStudiesLarge$ /help/publications/books/bioconductor-case-studies/case-studies-large.jpg [R=301]
 RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
 RewriteRule ^pub/biocases(.*)$ /help/publications/books/bioconductor-case-studies$1 [R=301]
 
@@ -43,9 +46,11 @@ RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports
 RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1 [R=301]
 RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1 [R=301]
 
-## papers
+## papers, slides, screen shots
 RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
 RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
+RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
+RewriteRule ^overview/screenshots.*$ /help/publications/ [R=301]
 
 ## faq
 RewriteRule ^docs/faq.*$ /about/ [R=301]
@@ -61,6 +66,7 @@ RewriteRule ^download/mirrors(.*)$ /about/mirrors$1 [R=301]
 RewriteRule ^overview/coredevs.*$ /about/core-team/ [R=301]
 RewriteRule ^overview/related.*$ /about/related-projects/ [R=301]
 RewriteRule ^overview/advisoryboard.*$ /about/advisory-board/ [R=301]
+RewriteRule ^overview/acks.html$ /about/ [R=301]
 RewriteRule ^overview(.*)$ /about$1 [R=301]
 
 ## workshops
