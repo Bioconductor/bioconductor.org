@@ -17,6 +17,9 @@ RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-s
 RewriteRule ^docs/workflows/accessingAnnotData(.*)$ /help/workflows/annotation-data$1 [R=301]
 RewriteRule ^docs/workflows/flowoverview(.*)$ /help/workflows/fhigh-throughput-assays$1 [R=301]
 
+## annual reports
+RewriteRule ^docs/annualreports(.*)$ /about/annual-reports$1 [R=301]
+
 ## mirrors
 RewriteRule ^download/mirrors/mirror-howto.html$ /about/mirrors/mirror-how-to/ [R=301] 
 RewriteRule ^download/mirrors(.*)$ /about/mirrors$1 [R=301] 
