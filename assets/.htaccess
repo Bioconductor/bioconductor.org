@@ -32,6 +32,9 @@ RewriteRule ^docs/techreports/TR1/relProjTR.pdf$ /help/publications/tech-reports
 RewriteRule ^docs/techreports/TR2/currProgTR.pdf$ /help/publications/tech-reports/currProgTR.pdf$1
 RewriteRule ^docs/techreports(.*)$ /help/publications/tech-reports$1
 
+## faq
+RewriteRule ^docs/faq.*$ /about/ [R=301]
+
 ## annual reports
 RewriteRule ^docs/annualreports(.*)$ /about/annual-reports$1 [R=301]
 
@@ -49,8 +52,9 @@ RewriteRule ^GettingStarted.*$ / [R=301]
 
 ## workshops
 RewriteRule ^workshops(.*)$ /help/course-materials$1 [R=301]
-RewriteRule ^talks.*$ /help/course-materials/ [R=301]
+RewriteRule ^docs/fairUse.html$ /help/course-materials/ [R=301]
 RewriteRule ^services.*$ /help/course-materials/ [R=301]
+RewriteRule ^talks.*$ /help/course-materials/ [R=301]
 
 RewriteCond %{REQUEST_FILENAME} (.*)\.html$
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -64,6 +68,9 @@ RewriteRule ^docs/install.*$ /install/ [R=301]
 
 ## misc
 RewriteRule ^apptest.*$ / [R=301]
+RewriteRule ^bioc1.7release$ /help/ [R=301]
 RewriteRule ^bugs.*$ /help/mailing-list/posting-guide/ [R=301]
+RewriteRule ^copy_of_index_html$ / [R=301]
+RewriteRule ^docs/bioclogo.*$ /images/logo_bioconductor.gif [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
 </IfModule>
