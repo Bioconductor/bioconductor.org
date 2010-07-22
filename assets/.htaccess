@@ -54,6 +54,7 @@ RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
 RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
 RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
 RewriteRule ^overview/screenshots.*$ /help/publications/ [R=301]
+RewriteRule ^pub/workingpapers.*$ /help/publications/ [R=301]
 
 ## faq
 RewriteRule ^docs/faq.*$ /about/ [R=301]
