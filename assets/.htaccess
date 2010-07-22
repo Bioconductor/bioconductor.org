@@ -21,9 +21,11 @@ RewriteRule ^pub/biocases(.*)$ /help/publications/books/bioconductor-case-studie
 RewriteRule ^pub/RBioinf/websupp(.*)$ /help/publications/books/r-programming-for-bioinformatics/web-supplement$1 [R=301]
 RewriteRule ^pub/RBioinf(.*)$ /help/publications/books/r-programming-for-bioinformatics$1 [R=301]
 
+RewriteRule ^bioconductor_book.jpg$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bioconductor_book.jpg [R=301]
+RewriteRule ^docs/mogr/bc1view$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bc1view.jpg [R=301]
+RewriteRule ^docs/mogr/bcbook$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bcbook.jpg [R=301]
 RewriteRule ^docs/mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
 RewriteRule ^mogr(.*)$ /help/publications/books/bioinformatics-and-computational-biology-solutions$1 [R=301]
-RewriteRule ^bioconductor_book.jpg$ /help/publications/books/bioinformatics-and-computational-biology-solutions/bioconductor_book.jpg [R=301]
 
 RewriteRule ^pub(.*)$ /help/publications$1 [R=301]
 
@@ -48,8 +50,6 @@ RewriteRule ^overview/related.*$ /about/related-projects/ [R=301]
 RewriteRule ^overview/advisoryboard.*$ /about/advisory-board/ [R=301]
 RewriteRule ^overview(.*)$ /about$1 [R=301]
 
-RewriteRule ^GettingStarted.*$ / [R=301]
-
 ## workshops
 RewriteRule ^workshops(.*)$ /help/course-materials$1 [R=301]
 RewriteRule ^docs/fairUse.html$ /help/course-materials/ [R=301]
@@ -72,5 +72,6 @@ RewriteRule ^bioc1.7release$ /help/ [R=301]
 RewriteRule ^bugs.*$ /help/mailing-list/posting-guide/ [R=301]
 RewriteRule ^copy_of_index_html$ / [R=301]
 RewriteRule ^docs/bioclogo.*$ /images/logo_bioconductor.gif [R=301]
+RewriteRule ^GettingStarted.*$ / [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
 </IfModule>
