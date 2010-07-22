@@ -2,11 +2,7 @@
 RewriteEngine On
 RewriteBase /
 
-RewriteRule (.*)/index_html$ $1/ [R=301]
-RewriteRule ^.*docs/mailList.html$ /help/mailing-list/ [R=301,L]
-RewriteRule ^docs/vignettes.html$ /help/package-vignettes/ [R=301,L]
-RewriteRule ^docs/postingGuide.html$ /help/mailing-list/posting-guide/ [R=301,L]
-RewriteRule ^docs/gettingHelp.html$ /help/ [R=301,L]
+RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
 ## workflows
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
@@ -16,6 +12,14 @@ RewriteRule ^docs/workflows/flowcytometry(.*)$ /help/workflows/high-throughput-a
 RewriteRule ^docs/workflows/flowoverview.*$ /help/workflows/high-throughput-assays/ [R=301]
 RewriteRule ^docs/workflows/index.html$ /help/workflows/ [R=301]
 RewriteRule ^docs/workflows/?$ /help/workflows/ [R=301]
+
+## general help
+RewriteRule ^docs/mailList.html$ /help/mailing-list/ [R=301,L]
+RewriteRule ^docs/vignettes.html$ /help/package-vignettes/ [R=301,L]
+RewriteRule ^docs/postingGuide.html$ /help/mailing-list/posting-guide/ [R=301,L]
+RewriteRule ^docs/gettingHelp.html$ /help/ [R=301,L]
+RewriteRule ^docs/index.html$ /help/ [R=301]
+RewriteRule ^docs/?$ /help/ [R=301]
 
 ## books
 RewriteRule ^pub/biocases/websupp(.*)$ /help/publications/books/bioconductor-case-studies/web-supplement$1 [R=301]
@@ -69,9 +73,9 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %1 -d
 RewriteRule ^.*$ %1/ [R=301]
 
-RewriteRule ^docs/?$ /help/ [R=301]
-RewriteRule ^docs/index.html$ /help/ [R=301]
+## general catch-alls
 RewriteRule ^docs/install.*$ /install/ [R=301]
+RewriteRule ^download.*$ /install/ [R=301]
 
 ## misc
 RewriteRule ^apptest.*$ / [R=301]
