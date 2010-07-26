@@ -103,7 +103,7 @@ EOF
     msg = <<EOF
 NEXT STEPS:
     - preview site with 'rake devserver'
-    - edit CREATED files to add descriptons for links
+    - edit CREATED files to add descriptions for links
     - if happy, run ./scripts/add_course sync
 EOF
     puts msg
@@ -245,5 +245,3 @@ end
 
 adder = AddCourse.new
 adder.run(ARGV)
-
-
