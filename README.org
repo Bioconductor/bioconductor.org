@@ -308,19 +308,18 @@ overview of the test site configuration:
 
 - Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
 
-*** Test site scheduled update
+*** Staging site scheduled update
 
 The biocadmin user's crontab on merlot2 is used to schedule site
 updates every ten minutes. Below are some details on how the test
 site is configured.
 
 The site source is located at
-=~biocadmin/bioc-test-web/bioconductor.org=. The
-=deploy_merlot2_local= Rake task deploys site content to the
-testing server root on merlot2.
+=~biocadmin/bioc-test-web/bioconductor.org=. The =deploy_staging=
+Rake task deploys site content to the staging server root on merlot2.
 
 #+begin_src ruby
-task :deploy_merlot2_local do
+task :deploy_staging do
   dst = '/loc/www/bioconductor.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
@@ -333,7 +332,7 @@ and deploys it using Rake.
 
 #+begin_src sh
     #!/bin/bash
-    svn update && rake real_clean default deploy_merlot2_local
+    svn update && rake real_clean default deploy_staging
 #+end_src
 
 We keep track of the output of in a local =cron.log= file and handle
@@ -360,7 +359,7 @@ deployment, and log rotation (biocadmin user):
   0    0 * * *  logrotate -s $HOME/bioc-test-web/logrotate.state $HOME/bioc-test-web/logrotate.conf
 #+end_example
 
-*** Test site SuSE Apache Configuration
+*** Staging site SuSE Apache Configuration
 
 A good resource is available [[http://en.opensuse.org/Apache_Quickstart_HOWTO][here]].
 
@@ -432,7 +431,7 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 
 *** Start apache using /etc/init.d/apache2 re
 
-*** Test site nginx installation
+*** Staging site nginx installation
 
 We will most likely deploy the test and production sites using
 Apache2. A first test setup was configured using nginx. The details
@@ -555,12 +554,12 @@ following changes:
    top-level directory. This should disable .htaccess files as it
    isn't enough just to remove the .htaccess file itself.
 
-*** Testing the site
+*** Testing the staging site
 
 **** Use a few days worth of access logs
 
 Extract paths from a few days of access logs (make sure to filter for
-200 responses) and "replay" these against the test site. This should
+200 responses) and "replay" these against the staging site. This should
 give a good idea of whether the redirects are doing enough and whether
 or not basic repository structure has been appropriately mirrored.
 
@@ -570,13 +569,13 @@ or not basic repository structure has been appropriately mirrored.
 wget -r -l 20 --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
 #+end_example
 
-**** Work with Dirk to make the test site available on the internet
+**** Work with Dirk to make the staging site available on the internet
 
 Then you can ask Wolfgang to do some tests to see how the site
 performs from Europe. You could also run some site performance
 analysis tools like YSlow to get some suggestions for improvements.
 
-**** Test site performance
+**** Staging site performance
 
 You might look into running some simple benchmarks with =ab= or
 =httperf=. Might be interesting to compare against the current

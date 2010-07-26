@@ -28,11 +28,18 @@ task :build => [ :compile, :copy_assets ]
 
 task :default => :build
 
-task :deploy_merlot2_local do
+task :deploy_staging do
   dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
   system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{output_dir}/ #{dst}"
+end
+
+task :deploy_production do
+  site_config = YAML.load_file("./config.yaml")
+  src = '/loc/www/bioconductor-test.fhcrc.org'
+  dst = site_config["production_deploy_root"]
+  system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
 end
 
 desc "Runs nanoc's dev server on localhost:3000"

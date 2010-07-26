@@ -113,7 +113,7 @@ EOF
     name = name.sub(/\/$/, "")
     course = YAML.load_file("#{name}/course_config.yaml")
     src = "#{name}"
-    deploy_root = @config["deploy_root"]
+    deploy_root = @config["staging_deploy_root"]
     host, path = deploy_root.split(":")
     yearpath = "/" + @course_dir + "/" + course_year(course)
     dst = deploy_root + yearpath
