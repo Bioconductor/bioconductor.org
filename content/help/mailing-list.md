@@ -3,12 +3,9 @@
 Please read the [posting guide][5] before sending mail to the
 Bioconductor mail lists.
 
-You might also be interested in [searching][3] the Bioconductor mail
-list.
-
 ## bioconductor ##
 
-Subscribe to or browse this list through the [web interface][4].
+[Subscribe to or browse][4] and [search][3] this list.
 
 This mailing list is for announcements about the development of
 Bioconductor and the availability of new code, questions and answers
@@ -29,7 +26,7 @@ which is sent when subscribing and in a monthly reminder.
 
 ## bioc-devel ##
 
-Subscribe to or browse this list through the [web interface][8].
+[Subscribe to or browse][8] this list.
 
 This list is for discussions about the active and future development
 of Bioconductor, and pre-testing of new versions. It is meant for
@@ -39,7 +36,7 @@ others who have an interest in keeping up to date with these matters.
 
 ## bioc-sig-sequencing ##
 
-Subscribe to or browse this list through the [web interface][9].
+[Subscribe to or browse][9] and [search][12] this list.
 
 This list is for discussion and development of Bioconductor packages
 for analysis of ultra-high throughput sequencing data. Ultra-high
@@ -50,8 +47,8 @@ package-level solution.
 
 ## Archives, Searches, and Tips ##
 
- - [Searchable mail archives][11] of the Bioconductor mail list are
-   provided by GMANE.
+ - Searchable archives provided by GMANE are available for the
+   [bioconductor][3] and [bioc-sig-seq][12] mailing lists
 
  - If you don't want to receive more than a daily message, you can
    subscribe and choose digests (in plain or MIME format). Use the web
@@ -65,4 +62,4 @@ package-level solution.
 [7]: mailto:bioconductor-request@stat.math.ethz.ch
 [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
 [9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
-[11]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
+[12]: http://dir.gmane.org/gmane.comp.lang.r.sequencing
