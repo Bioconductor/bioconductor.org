@@ -36,9 +36,8 @@
   Biostatistics, UC Berkeley, USA.
 * [Byron Ellis](http://biosun1.harvard.edu/~bellis), Harvard Department of
   Statistics, USA.
-* [Seth Falcon](mailto:sfalcon@fhcrc.org), Fred Hutchinson Cancer
-  Research Center, USA.
-* Laurent Gautier, France.
+* Seth Falcon, Opscode, USA.
+* Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
 * [Jeff Gentry](http://biowww.dfci.harvard.edu/~jgentry), Dana-Farber Cancer
   Institute, USA.
 * Florian Hahne, Fred Hutchinson Cancer Research Center, USA.
@@ -67,5 +66,3 @@
 * [Jean Yee Hwa Yang](mailto:jeany@maths.usyd.edu.au), Sydney, Australia.
 * [Jianhua (John) Zhang](http://biowww.dfci.harvard.edu/~jzhang), Dana-Farber
   Cancer Institute, USA.
-
-
