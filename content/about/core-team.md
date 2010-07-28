@@ -26,8 +26,7 @@
 
 * [Douglas Bates](http://www.stat.wisc.edu/~bates/), University of Wisconsin,
   USA.
-* [Ben Bolstad](http://stat-www.berkeley.edu/users/bolstad/), Division of
-  Biostatistics, UC Berkeley, USA.
+* Benjamin Bolstad, Affymetrix, USA.
 * [Tony Chiang](http://gentleman-lab.fhcrc.org/lab-members/tchiang),
   Fred Hutchinson Cancer Research Center, USA.
 * [Marcel Dettling](http://stat.ethz.ch/~dettling), Federal Inst. Technology,
