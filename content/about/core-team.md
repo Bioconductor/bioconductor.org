@@ -34,8 +34,7 @@
   Switzerland.
 * [Sandrine Dudoit](http://www.stat.berkeley.edu/~sandrine), Division of
   Biostatistics, UC Berkeley, USA.
-* [Byron Ellis](http://biosun1.harvard.edu/~bellis), Harvard Department of
-  Statistics, USA.
+* Byron Ellis, AdBrite, USA.
 * Seth Falcon, Opscode, USA.
 * Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
 * [Jeff Gentry](http://biowww.dfci.harvard.edu/~jgentry), Dana-Farber Cancer
