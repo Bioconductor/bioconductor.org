@@ -38,7 +38,7 @@
 * Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
 * [Jeff Gentry](http://biowww.dfci.harvard.edu/~jgentry), Dana-Farber Cancer
   Institute, USA.
-* Florian Hahne, Fred Hutchinson Cancer Research Center, USA.
+* Florian Hahne, Novartis Institute of Biomedical Research, Switzerland.
 * [Kurt Hornik](http://www.ci.tuwien.ac.at/~hornik), Wirtschafts Universitat
   Wien, Austria.
 * [Torsten Hothorn](http://www.imbe.med.uni-erlangen.de/~hothorn/hothorn.html),
@@ -46,7 +46,7 @@
 * [Stefano Iacus](mailto:stefano.iacus@unimi.it), Italy.
 * [Friedrich Leisch](http://www.ci.tuwien.ac.at/~leisch), Technische Universitat
   Wien, Austria.
-* Nianhua Li, Fred Hutchinson Cancer Research Center,  USA.
+* Nianhua Li
 * Ting-Yuan Liu
 * [Li Long](http://www.isb-sib.ch/index.htm) Swiss Institute of
   Bioinformatics, Switzerland.
