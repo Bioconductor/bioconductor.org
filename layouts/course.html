@@ -10,7 +10,7 @@
         <p class="location"><%= @item[:location] %></p>
         <p class="dates"><%= @item[:start_date] %> ~ <%= @item[:end_date] %></p>
         <h2>Instructors</h2>
-        <ul class="instructors">
+        <ul class="inline_list">
           <% @item[:instructors].each do |t| %>
           <li><%= t %></li>
           <% end %>
