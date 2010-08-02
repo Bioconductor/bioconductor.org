@@ -17,6 +17,10 @@ height="110" alt="R Programming for Bioinformatics" width="85" /></a>&nbsp;&nbsp
 src="books/bioconductor-case-studies/case-studies-small.jpg"
 height="110" alt="Bioconductor Case Studies" width="85" /></a>
 
+## Book chapters
+
+* [coming soon](book-chapters/)
+
 ## Papers
 
 * [Bioconductor Technical Reports](tech-reports/)
