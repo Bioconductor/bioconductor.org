@@ -158,9 +158,7 @@ The data files used in the workflow can be downloaded from
 These packages provide data structures and algorithms for cell-based
 high-throughput screens (HTS).
 
-[cellHTS](/packages/release/bioc/html/cellHTS.html),
 [cellHTS2](/packages/release/bioc/html/cellHTS2.html),
-[prada](/packages/release/bioc/html/prada.html),
 [RNAither](/packages/release/bioc/html/RNAither.html)
 
 This package supports the xCELLigence system which contains a series of
@@ -188,5 +186,11 @@ statistical analysis of mass spectral and proteomics data.
 [PROcess](/packages/release/bioc/html/PROcess.html),
 [flagme](/packages/release/bioc/html/flagme.html),
 [xcms](/packages/release/bioc/html/xcms.html)
+
+### Imaging Based Assays ###
+
+Theses packages provide infrastructure image-based phenotyping and automation of other image-related tasks:
+
+[EBImage](/packages/release/bioc/html/EBImage.html)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
