@@ -1,15 +1,13 @@
-![](/images/icons/magnifier.gif)Source Control
-===============
+# ![](/images/icons/magnifier.gif)Source Control
 
 The Bioconductor project is maintained in a Subversion source control
 system.
 
-Resources for learning about Subversion
----------------------------------------
+## Subversion Resources
 
-* The [Subversion Book][1] is *the* reference for using svn. The
-  [guided tour][2] is a recommended starting point.
-* [Subversion homepage][3]
+* The [Subversion Book][1] is a key reference; start with the [guided
+  tour][2].
+* Visit the [Subversion home page][3].
 * Read-only access to our svn repository is available with
 
   * user name: ``readonly``
@@ -19,49 +17,45 @@ Resources for learning about Subversion
 [2]: http://svnbook.red-bean.com/nightly/en/svn.intro.html
 [3]: http://subversion.tigris.org/
 
-Obtaining a working copy of all BioC software packages
-------------------------------------------------------
+## Software Packages
 
-The root of the Bioconductor svn repository is
-[https://hedgehog.fhcrc.org/bioconductor](https://hedgehog.fhcrc.org/bioconductor). 
-To checkout (co) all packages in the repository (~3 GB) use:
+To check out (co) all packages in the software repository (~3 GB) use:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks Rpacks-devel
     
-This will create a copy of all packages on your local machine.
-Note that you can specify any destination name if you want a top-level
-directory with a name different from "Rpacks-devel".
+This creates a copy of all packages on your local machine.  Specify a
+name other than "Rpacks-devel" if you want a top-level directory with
+different name.
 
-Here's the command to checkout the code for only the Biobase package:
+To check out the code for the Biobase package use:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/Biobase
 
-Note that the checkout command will default to the directory name in
-the repository if the destination name is not specified.
+The check out command uses the directory name in the repository if the
+destination name is not specified.
 
-Obtaining a working copy of a BioC experimental data package
-------------------------------------------------------------
+## Experiment Data Packages
 
-The root of the Bioconductor svn repository is
+The root of the Bioconductor experiment data svn repository is
 [https://hedgehog.fhcrc.org/bioc-data/trunk/experiment](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment).
-Data experiment packages are typically divided into two components: **pkgs**
-(containing all but the data files) and **data_store** (containing the data
-files). To obtain a specific experimental data package first check out the
-package infrastructure then fold the data in using the Python script
+Experiment data packages are divided into two components: **pkgs**
+(containing all but the data files) and **data_store** (containing the
+data files). To obtain a specific experiment data package first check
+out the package infrastructure then fold the data in using the Python
+script
 [https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py)
-on the exported package. Here's the set of commands to checkout the
+on the exported package. Here are the commands to check out the
 affydata package:
 
     svn export https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py
     svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
     ./add_data.py affydata
 
-Basic svn operations
---------------------
+## Basic svn Operations
 
 Primary commands:
 
-* `svn update` will update your checkout from the server to get any new
+* `svn update` will update your check out from the server to get any new
   changes.
 * `svn add` foo will add foo to the repository (note that unlike CVS this is
   a recursive add. Use the -N switch if you don't want this behavior).
@@ -81,21 +75,19 @@ Some other commands:
 * `svn revert` foo will bring you back to the server copy.
 * `svn log` foo will show the log history for that file.
 
-Many of these commands have extra possible arguments. You can get help on
-diff, for example, like this:
+Many of these commands have additional arguments. Get help on diff,
+for example, like this:
 
     svn help diff
 
-The [Subversion Book][1] will have more complete documentation and
-examples for all the commands and options.
+The [Subversion Book][1] has more complete documentation and examples
+for all the commands and options.
 
-Committing changes to the release branches
-------------------------------------------
+## Committing Changes to the Release Branch
 
-If you wish to have a change you made in the main devel branch (aka
-the trunk) also be pushed back into the current release branch you
-first need to take note of the revision number from your commit, for
-example,
+If you wish to have a change made in the devel branch (aka the trunk)
+also available in the current release branch, you first need to take
+note of the revision number from your commit, for example,
 
     $ svn commit -m"Sample commit"
     Adding         Rpacks\Biobase\DESCRIPTION
@@ -113,8 +105,8 @@ branch subdirectory:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_2_6/madman/Rpacks
 
-Change to the branch directory, merge your changes, check and fix any
-conflicts, and commit. So, from your branch directory
+Merge your changes from the trunk to the release branch, check and fix
+any conflicts, and commit. So, from your release branch directory
 (e.g. RELEASE_2_6/madman/Rpacks):
 
     svn merge -r 139:140 https://hedgehog.fhcrc.org/gentleman/bioconductor/trunk/madman/Rpacks
@@ -122,19 +114,18 @@ conflicts, and commit. So, from your branch directory
                  # fix conflicts... (remember to use svn resolve for each)
     svn commit -m "merged -r139:140 from trunk"
 
-Having problems?
-----------------
+## Having Problems?
 
 Here is a list of possible issues:
 
-unrecognized URL scheme:
-  If you see "unrecognizedURL scheme" when trying to access the
+* unrecognized URL scheme:
+  If you see "unrecognized URL scheme" when trying to access the
   repository, it may indicate that your svn client does not support
   HTTPS.  You can verify the supported "modes" by examinging the
   output of ``svn --version``.  If you do not see support for HTTPS,
   you will need to upgrade your client.
 
-Username or password not recognized:
+* Username or password not recognized:
   Most usernames we issue are in the form of an email address.  It may
   help to quote the user name: ``svn co
   --username="bob@internet.net"``.  Try double and single quotes.  
