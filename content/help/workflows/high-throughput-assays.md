@@ -189,7 +189,7 @@ statistical analysis of mass spectral and proteomics data.
 
 ### Imaging Based Assays ###
 
-Theses packages provide infrastructure image-based phenotyping and automation of other image-related tasks:
+These packages provide infrastructure for image-based phenotyping and automation of other image-related tasks:
 
 [EBImage](/packages/release/bioc/html/EBImage.html)
 
