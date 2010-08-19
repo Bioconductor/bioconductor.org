@@ -20,8 +20,8 @@
 
 <h2 id="introduction">Introduction</h2>
 
-The Bioconductor project strives to promote high-quality, well documented,
-and interoperable software. These guidelines help to achieve this object;
+The Bioconductor project promotes high-quality, well documented, and
+interoperable software. These guidelines help to achieve this objective;
 they are not meant to put undue burden on package authors, and authors
 having difficultly satisfying guidelines should seek advice on the
 [bioc-devel](/help/mailing-list/) mailing list.
@@ -30,6 +30,11 @@ Package maintainers are urged to follow these guidelines as closely as
 possible when developing Bioconductor packages.
 
 <h2 id="correctness">Correctness, Space and Time</h2>
+
+General instructions for producing packages can be found in the
+Writing R Extensions manual, available from within R
+(`RShowDoc("R-exts")`) or on the [R web
+site](http://cran.fhcrc.org/manuals.html).
 
 Bioconductor packages must pass `R CMD build` (or `R CMD INSTALL --build`)
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
