@@ -146,7 +146,7 @@ available; all are in the release version of Bioconductor.
   [Genominator](/packages/release/bioc/html/Genominator.html),
   [edgeR](/packages/release/bioc/html/edgeR.html),
   [baySeq](/packages/release/bioc/html/baySeq.html),
-  [DESeg](/packages/release/bioc/html/DESeg.html),
+  [DESeq](/packages/release/bioc/html/DESeq.html),
   and
   [DEGseq](/packages/release/bioc/html/DEGseq.html).
 
