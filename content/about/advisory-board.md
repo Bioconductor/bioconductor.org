@@ -8,4 +8,5 @@ participate for a flexible term. Current members are:
 * Duncan Temple Lang (University of California, Davis)
 * Paul Flicek (European Bioinformatics Institute)
 * Walter Ruzzo  (University of Washington)
+* Simon Urbanek (AT&amp;T Labs &ndash; Research)
 * Wolfgang Huber (European Bioinformatics Institute)
