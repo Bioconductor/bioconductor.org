@@ -1,9 +1,13 @@
 #!/usr/bin/env ruby
 
-fsevent_dir = "~/src/ruby-fsevent"
-$LOAD_PATH.unshift(fsevent_dir + '/lib')
-$LOAD_PATH.unshift(fsevent_dir + '/ext')
 
+# if the fsevent gem is properly installed, you should not need the following three lines:
+
+#fsevent_dir = "~/src/ruby-fsevent"
+#$LOAD_PATH.unshift(fsevent_dir + '/lib')
+#$LOAD_PATH.unshift(fsevent_dir + '/ext')
+
+require 'rubygems'
 require 'fsevent'
 
 class PrintChange < FSEvent
