@@ -185,7 +185,7 @@ to the site using the following steps:
        text: details and registration
        url: https://secure.bioconductor.org/EVENT_NAME
    #+end_src
-3. Edit the =EVENT_NAME.yaml= file
+3. Edit the =EVENT_NAME.yaml= file 
 4. Use svn to commit changes and additions by =add_event=
  
 ** How to add course material
