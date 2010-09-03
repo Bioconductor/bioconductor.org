@@ -187,7 +187,7 @@ to the site using the following steps:
    #+end_src
 3. Edit the =EVENT_NAME.yaml= file
 4. Use svn to commit changes and additions by =add_event=
-
+ 
 ** How to add course material
 
 You will use a helper script =./scripts/add_course= to add course
