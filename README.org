@@ -278,7 +278,7 @@ To add a course, you will typically perform the following steps
       :  dst: webadmin@cobra:/extra/www/bioc/help/course-notes/2010/
       : NEXT STEPS: svn add/checkin changes in contents
 
-5. Finally, add the new course index file that was generated in the
+5. Finally, "svn add" the new course index html and yaml files that were generated in the
    content directory and commit.
 
 *** Modifying an existing course
