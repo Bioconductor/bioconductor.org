@@ -17,6 +17,9 @@ height="110" alt="R Programming for Bioinformatics" width="85" /></a>&nbsp;&nbsp
 src="books/bioconductor-case-studies/case-studies-small.jpg"
 height="110" alt="Bioconductor Case Studies" width="85" /></a>
 
+## Book Chapters
+* [Analyzing biological data using R: methods for graphs and networks.](book-chapters/MiMB)
+
 ## Search
  
 * [PubMed](http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?CMD=search&DB=pubmed&term=bioconductor),
