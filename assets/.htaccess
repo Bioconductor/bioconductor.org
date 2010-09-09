@@ -30,6 +30,9 @@ RewriteRule ^docs/gettingHelp.html$ /help/ [R=301]
 RewriteRule ^docs/index.html$ /help/ [R=301]
 RewriteRule ^docs/?$ /help/ [R=301]
 
+## book chapters
+RewriteRule ^/pub/MiMB$ /help/publications/book-chapters/MiMB [R=301]
+
 ## books
 RewriteRule ^pub/biocases/BioconductorCaseStudiesSmall$ /help/publications/books/bioconductor-case-studies/case-studies-small.jpg [R=301]
 RewriteRule ^pub/biocases/BiocCaseStudies$ /help/publications/books/bioconductor-case-studies/case-studies.jpg [R=301]
