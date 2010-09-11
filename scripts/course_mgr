@@ -7,7 +7,7 @@
 # == Usage
 #
 #--create COURSENAME
-#    Create course content template directory named DIR in
+#    Create course content template directory named COURSENAME in
 #    the current working directory.
 #
 #--index COURSENAME
@@ -17,20 +17,26 @@
 #    to create the index.
 #
 #--push COURSENAME
-#    Performs an rsync of DIR to live bioconductor.org webserver, pushing
+#    Performs an rsync of COURSENAME to live bioconductor.org webserver, pushing
 #    local content to server.
 #
-#--list_courses [YEAR]
-#    Lists existing courses on live server. You may constrain the list
-#   by year; otherwise all courses are shown. Lines output from this 
+#--list [YEAR]
+#   Lists existing courses on live server. You may constrain the list
+#   by year; otherwise all courses are shown. Individual lines output from this 
 #   command may be used as COURSENAME when working with existing courses.
+#
+#--clean COURSENAME
+#    Removes the top-level directory COURSENAME and all its contents.
+#    This cannot be undone!
+#
+#--pull YEAR/COURSENAME
+#    Retrieves all course files from the remote server and puts them in
+#    COURSENAME in the current working directory.
 #
 #COURSENAME
 #    Name of the course in a format suitable for use as directory
-#    name and URL path element. When using --create and --index, COURSENAME
-#    should be an unadorned name like "seattle-intro"; otherwise it should 
-#    include the year, e.g.:
-#    "2010/seattle-intro"
+#    name and URL path element. COURSENAME should be an unadorned 
+#    name like "seattle-intro".
 
 
 
@@ -62,62 +68,63 @@ class CourseMgr
     if (ARGV.size == 0)
       RDoc::usage
     end
-
+    
+    
     @opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--create', GetoptLong::REQUIRED_ARGUMENT ],
           [ '--index', GetoptLong::REQUIRED_ARGUMENT ],
           [ '--push', GetoptLong::OPTIONAL_ARGUMENT ],
-          [ '--list_courses', GetoptLong::OPTIONAL_ARGUMENT ],
+          [ '--list', GetoptLong::OPTIONAL_ARGUMENT ],
+          ['--pull', GetoptLong::REQUIRED_ARGUMENT],
           [ '--list_content', GetoptLong::REQUIRED_ARGUMENT ],
           [ '--add_content', GetoptLong::REQUIRED_ARGUMENT ],
           [ '--remove_content', GetoptLong::REQUIRED_ARGUMENT ],
           [ '--checkin', GetoptLong::REQUIRED_ARGUMENT ],
-          ['--get_content', GetoptLong::REQUIRED_ARGUMENT]
+          ['--get_content', GetoptLong::REQUIRED_ARGUMENT],
+          ['--clean', GetoptLong::REQUIRED_ARGUMENT]
         )
-        
+    
+    optcount = 0
+
+
+    method = nil
+    argument = nil
+
+
     begin
       @opts.each do |opt, arg|
-        if (arg.nil?)
-          self.send(as_symbol(opt))
-        else
-          self.send(as_symbol(opt), arg)
-        end
+        optcount += 1
+        method = opt
+        argument = arg
       end
+    rescue GetoptLong::MissingArgument => ex
+      exit 1
     rescue GetoptLong::InvalidOption => ex
       exit 1
     end
+
+
+    if (optcount > 1)
+      begin
+        err = GetoptLong::Error.new("Only one option at a time may be used.")
+        raise err
+      rescue GetoptLong::Error => ex
+        puts ex.message
+        exit 1
+      end
+    end
+
+    if (argument.nil?)
+      self.send(as_symbol(method))
+    else
+      self.send(as_symbol(method), argument)
+    end
+    
+        
+    
   end
 
-USAGE = <<EOF
-Usage: #{$0} COMMAND DIR
-
-COMMAND can be one of:
-
-  sync
-      Performs an rsync of DIR to live bioconductor.org webserver.
-
-DIR
-    Name of the course in the format suitable for use as directory
-    name and URL path element.
-
-
-EOF
-
-COURSE_YAML = <<EOF
-layout: course
-title:
-  The title of the course goes here
-start_date: 2010-01-27
-end_date: 2010-01-29
-instructors: ["T. Cher", "Prof S. Or"]
-location: "Seattle, USA"
-url: COURSE_URL_HERE
-tags: ["intro", "seattle", "package"]
-description:
-  You can put some description text here.
-  Must be indented.
-EOF
 
   def test(name)
     #output = run_cmd_with_output("ls")
@@ -125,7 +132,20 @@ EOF
     #RDoc::usage
   end
   
+  def clean(name)
+    unless (Kernel.test(?d, name))
+      puts "Directory #{name} does not exist."
+      exit 1
+    end
+    FileUtils.rm_rf name
+    puts "removed directory #{name}"
+  end
+  
   def as_symbol(name)
+    if name.nil?
+      puts "invalid option, did you put '--' in front of it?"
+      exit 1
+    end
     name.gsub(/^--/,"").to_sym
   end
 
@@ -165,7 +185,7 @@ EOF
     ret.join("\n")
   end
 
-  def list_courses(year=nil)
+  def list(year=nil)
     if (year.nil? or year.empty?)
       puts raw_list
     else
@@ -174,6 +194,21 @@ EOF
   end
 
   def create(name)
+    course_yaml = <<EOF
+layout: course
+title:
+  The title of the course goes here
+start_date: 2010-01-27
+end_date: 2010-01-29
+instructors: ["T. Cher", "Prof S. Or"]
+location: "Seattle, USA"
+url: COURSE_URL_HERE
+tags: ["intro", "seattle", "package"]
+description:
+  You can put some description text here.
+  Must be indented.
+EOF
+    
     if File.exist?(name)
       $stderr.puts "#{name} already exists, aborting"
       exit 1
@@ -181,13 +216,13 @@ EOF
     FileUtils.mkdir(name)
     config = "#{name}/course_config.yaml"
     open(config, "w") do |f|
-      f.write(COURSE_YAML)
+      f.write(course_yaml)
     end
     msg = <<EOF
 Course directory created at: #{name}
 NEXT STEPS:
     - edit #{config}
-    - run ./scripts/course_mgr index #{name}
+    - run #{$0} --index #{name}
 EOF
     puts msg
   end
@@ -209,6 +244,7 @@ EOF
     rsync_src = "#{name}/"
     rsync_dst = @config["output_dir"] + "/" + @course_dir + "/" + course_path
     rsync_cmd = "rsync -a --exclude='*.yaml' #{rsync_src} #{rsync_dst}"
+    course_name = "#{name}/#{year}"
     msg = <<EOF
 COPYING for preview:
     src: #{rsync_src}
@@ -221,13 +257,16 @@ EOF
     msg = <<EOF
 NEXT STEPS:
     - preview site with 'rake devserver'
+    - Use URL: http://localhost:3000/help/course-materials/#{year}/#{name}/
     - edit CREATED files to add descriptions for links
-    - if happy, run ./scripts/course_mgr sync
+    - if happy, run #{$0} --push #{name}
 EOF
     puts msg
   end
+  
+  
 
-  def sync(name)
+  def push(name)
     name = name.sub(/\/$/, "")
     course = YAML.load_file("#{name}/course_config.yaml")
     src = "#{name}"
@@ -254,6 +293,29 @@ NEXT STEPS:
     - verify content on live site
 EOF
     puts msg
+  end
+  
+  def pull(arg)
+    year, name = arg.split("/")
+    if (name.nil?)
+      puts "Please supply a year and course name, e.g. 2010/seattle-intro."
+      exit 1
+    end
+    FileUtils.mkdir(name)
+    dst = "./#{name}"
+    content_dir = "content/help/course-materials/#{year}"
+    pwd = FileUtils.pwd()
+    FileUtils.cd(content_dir)
+    run_cmd("svn up")
+    FileUtils.cd(pwd)
+    run_cmd("cp #{content_dir}/#{name}* #{dst}")
+    deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
+    host, path = deploy_root.split(":")
+    
+    #cmd = "scp -R  #{deploy_root} #{dst}"
+    cmd = "rsync -v #{deploy_root} #{dst}"
+    puts cmd
+    run_cmd(cmd)
   end
 
   def get_course_dir(name)
@@ -336,20 +398,6 @@ EOF
     end
   end
 
-  def verify_args(cmd, course_dir)
-    if (!cmd || !CMDS.member?(cmd))
-      $stderr.puts USAGE
-      msg = cmd ? "unknown COMMAND: #{cmd}" : "missing COMMAND"
-      $stderr.puts msg
-      exit 1
-    end
-
-    if !course_dir
-      $stderr.puts USAGE
-      $stderr.puts "missing DIR" if !course_dir
-      exit 1
-    end
-  end
 
   def run_cmd(cmd)
     raise "command failed: #{cmd}" unless system(cmd)
@@ -360,15 +408,8 @@ EOF
     stdout.readlines.join
   end
 
-  def run(args)
-    verify_nanoc_dir()
-    cmd = args[0]
-    course_dir = args[1]
-    verify_args(cmd, course_dir)
-    self.send(cmd.to_sym, course_dir)
-  end
+
 end
 
 
 mgr = CourseMgr.new
-#mgr.run(ARGV)
