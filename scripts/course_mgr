@@ -301,8 +301,13 @@ EOF
       puts "Please supply a year and course name, e.g. 2010/seattle-intro."
       exit 1
     end
-    FileUtils.mkdir(name)
-    dst = "./#{name}"
+    if (Kernel.test(?e, name))
+      puts "INFO: Directory #{name} already exists."
+    else
+      FileUtils.mkdir(name)
+    end
+    
+    dst = "./#{name}/"
     content_dir = "content/help/course-materials/#{year}"
     pwd = FileUtils.pwd()
     FileUtils.cd(content_dir)
@@ -313,7 +318,7 @@ EOF
     host, path = deploy_root.split(":")
     
     #cmd = "scp -R  #{deploy_root} #{dst}"
-    cmd = "rsync -v #{deploy_root} #{dst}"
+    cmd = "rsync -v #{deploy_root}/ #{dst}"
     puts cmd
     run_cmd(cmd)
   end
