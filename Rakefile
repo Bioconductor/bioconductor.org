@@ -2,6 +2,9 @@ require 'nanoc3/tasks'
 require 'yaml'
 require 'fileutils'
 require 'lib/data_sources/gmane_list.rb'
+require 'lib/data_sources/bioc_views.rb'
+require 'scripts/search_indexer.rb'
+
 
 desc "copy assets to output directory"
 task :copy_assets do
@@ -40,6 +43,30 @@ task :deploy_production do
   src = '/loc/www/bioconductor-test.fhcrc.org'
   dst = site_config["production_deploy_root"]
   system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
+end
+
+desc "Re-index the site for the search engine"
+task :search_index do
+  if (SearchIndexer.is_solr_running?)
+    hostname = `hostname`.chomp
+    args = []
+    if (hostname =~ /^dhcp/i)
+      args = ['./output', './', './scripts']
+    elsif (hostname == 'merlot2')
+      args = ['/loc/www/bioconductor-test.fhcrc.org', '/home/biocadmin', '/home/biocadmin']
+    end
+    pwd = FileUtils.pwd
+    si = SearchIndexer.new(args)
+    FileUtils.cd pwd # just in case
+
+    chmod_cmd = "chmod o+x #{args.last}/index.sh"
+    system chmod_cmd
+    # we could run the indexer here but it could take a while, maybe better to fork it to a background task
+    result = `ls&`
+    puts result
+  else
+    puts "solr is not running, not re-indexing site."
+  end
 end
 
 desc "Runs nanoc's dev server on localhost:3000"
