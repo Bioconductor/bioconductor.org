@@ -188,11 +188,11 @@ to the site using the following steps:
  
 ** How to add course material
 
-You will use a helper script =./scripts/add_course= to add course
+You will use a helper script =./scripts/course_mgr= to add course
 material to the site. PDF files for labs and presentations as well
 as course-specific packages and data are *not* stored in svn. The
 index pages that describe the course and provide links to the
-materials *are* stored in svn. The =add_course= script will help
+materials *are* stored in svn. The =course_mgr= script will help
 with index file creation and data transfer.
 
 *** =add_course= workflow and important tips
@@ -200,19 +200,19 @@ with index file creation and data transfer.
 To add a course, you will typically perform the following steps
 (each described in detail below):
 
-0. Always run =./scripts/add_course= from the top-level of your
+0. Always run =./scripts/course_mgr= from the top-level of your
    website Subversion working copy.
-1. Run =./scripts/add_course create COURSE_NAME=
-2. Run =./scripts/add_course index ./COURSE_NAME=
+1. Run =./scripts/course_mgr --create COURSE_NAME=
+2. Run =./scripts/course_mgr --index COURSE_NAME=
 3. Build and preview site
-4. Run =./scripts/add_course sync ./COURSE_NAME=
-5. Use svn to commit changes and additions made by =add_course=
+4. Run =./scripts/course_mgr --push COURSE_NAME=
+5. Use svn to commit changes and additions made by =course_mgr=
 
-*** Using =add_course=
+*** Using =course_mgr=
 
 1. Generate a skeleton course directory structure.
 
-   : ./scripts/add_course create seattle-intro
+   : ./scripts/course_mgr --create seattle-intro
 
    This will create a =seattle-intro/= directory in the top-level
    of your website working copy -- do not add this directory or any
@@ -254,12 +254,17 @@ To add a course, you will typically perform the following steps
 
 3. Now you are ready to create the index files.
 
-     : ./scripts/add_course index ./seattle-intro
+     : ./scripts/course_mgr --index seattle-intro
      : CREATED: content/help/course-notes/2010/01/seattle-intro.(html|yaml)
      : COPIED for preview:
      :   src: ./seattle-intro/*
      :   dst: output/help/course-notes/2010/01/seattle-intro/
-     : NEXT STEPS: run 'rake devserver' and preview at http://localhost:3000/
+     : NEXT STEPS:
+     : - preview site with 'rake devserver'
+     :   - Use URL: http://localhost:3000/help/course-materials/2010/seattle-intro/
+     :   - edit CREATED files to add descriptions for links
+     :   - if happy, run ./scripts/course_mgr --push 2010/seattle-intro
+
 
    This will create a course index content item in content filed
    appropriately based on the metadata provided in
@@ -270,7 +275,7 @@ To add a course, you will typically perform the following steps
 4. If everything looks good, you can sync the data files to the web
    server:
 
-      : ./scripts/add_course sync ./seattle-intro
+      : ./scripts/add_course --push 2010/seattle-intro
       : SYNC:
       :  src: ./seattle-intro
       :  dst: webadmin@cobra:/extra/www/bioc/help/course-notes/2010/
@@ -282,11 +287,17 @@ To add a course, you will typically perform the following steps
 *** Modifying an existing course
 
 You can edit the pages for an existing course by editing the files in
-=./content=. If you need to add or modify data files, you will need to
-rerun =./scripts/add_course sync=. The sync performed by =add_course=
-will add new files and replace existing files, but *will not delete
-files already on the server*. To remove a file from a course, you will
-need to ssh to the remote server and remove manually.
+=./content=. If you need to add or modify data files, run:
+      : ./scripts/course_mgr --pull 2010/course_to_modify
+
+    This will create a top-level directory called "course_to_modify". You
+    can then add or modify course material. When finished, run
+      :./scripts/course_mgr --push 2010/course_to_modify
+
+    If you have changed the .md or .yaml files, do the following:
+      :cp course_to_modify/course_to_modify.* content/help/course_materials/2010
+      :svn commit -m "made changes" content/help/course-materials/2010/course_to_modify
+
 
 ** http://bioconductor-test.fhcrc.org test site
 

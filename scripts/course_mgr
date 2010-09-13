@@ -13,17 +13,19 @@
 #--index COURSENAME
 #    Add course to courses list and create a course index content
 #    page.  This modifies and creates files within the site's content
-#    directory.  Uses template file and file structure found in DIR
+#    directory.  Uses template file and file structure found in COURSENAME
 #    to create the index.
 #
-#--push COURSENAME
+#--sync COURSENAME
+#    Performs the initial creation of the course dante
+#
+#--push YEAR/COURSENAME
 #    Performs an rsync of COURSENAME to live bioconductor.org webserver, pushing
-#    local content to server.
+#    local content (from content/help/course-materials/YEAR/COURSENAME) to server.
 #
 #--list [YEAR]
 #   Lists existing courses on live server. You may constrain the list
-#   by year; otherwise all courses are shown. Individual lines output from this 
-#   command may be used as COURSENAME when working with existing courses.
+#   by year; otherwise all courses are shown. 
 #
 #--clean COURSENAME
 #    Removes the top-level directory COURSENAME and all its contents.
@@ -37,9 +39,42 @@
 #    Name of the course in a format suitable for use as directory
 #    name and URL path element. COURSENAME should be an unadorned 
 #    name like "seattle-intro".
-
-
-
+#
+# EXAMPLES OF USAGE
+#
+# Creating a new course:
+# 1) Create a new course:
+# ./scripts/course_mgr --create mycourse
+# 2) Edit ./mycourse/course_config.yaml (assume course takes place in 2010)
+# 3) Create index page for course:
+# ./scripts/course_mgr --index mycourse
+# 4) Edit content/help/course-materials/2010/mycourse.md to point to
+#    course materials. Place course materials in or below that directory.
+# 5) preview site with 'rake devserver'
+#    Use URL: http://localhost:3000/help/course-materials/2010/mycourse/
+# 6) Copy content to server:
+#    Step 1 (push course materials):
+#      ./scripts/course_mgr --sync mycourse
+#    Step 2: (push course metadata (.yaml) and template (.md) files):
+#      svn add content/help/course-materials/2010/mycourse.*
+#      svn commit -m "added mycourse" content/help/course-materials/2010/mycourse.*
+# You may remove the top-level "mycourse" directory at this point.
+#
+#
+# Working with an existing course:
+# 1) Pull the course materials to your local machine:
+# ./scripts/course_mgr --pull 2010/existing_course
+# (top-level directory "existing_course" is created)
+# 2) Modify/add course materials in top level "existing_course" directory.
+# 3) Push revised course materials to server:
+# ./scripts/course_mgr --push existing_course
+# 4) If you modified the .md or .yaml files, copy them to 
+#    content/help/course-materials/2010/existing_course
+#    and commit your changes to subversion:
+#      cp existing_course/existing_course.* content/help/course-materials/2010/
+#      svn commit -m "made changes" content/help/course/materials/2010/existing_course.*
+#
+# You may remove the top-level "existing_course" directory at this point.
 require 'rubygems'
 require 'yaml'
 require 'builder'
@@ -259,7 +294,7 @@ NEXT STEPS:
     - preview site with 'rake devserver'
     - Use URL: http://localhost:3000/help/course-materials/#{year}/#{name}/
     - edit CREATED files to add descriptions for links
-    - if happy, run #{$0} --push #{name}
+    - if happy, run #{$0} --push #{year}/#{name}
 EOF
     puts msg
   end
@@ -333,9 +368,17 @@ EOF
       exit 1
     end
     deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
-    cmd = "rsync -avzn --exclude='*.yaml' --exclude='*.md'./#{name} #{deploy_root}"
-    puts cmd
+    cmd = "rsync --exclude='*.yaml' --exclude='*.md' -avz ./#{name} #{deploy_root}"
+    #puts cmd
     run_cmd(cmd)
+        msg = <<EOF
+NEXT STEPS:
+    - svn add/commit changes in contents/
+    - wait 10 minutes for changes to propagate
+    - verify content on live site
+EOF
+        puts msg
+    
   end
 
   def get_course_dir(name)

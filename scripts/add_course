@@ -243,5 +243,7 @@ EOF
 end
 
 
-adder = AddCourse.new
-adder.run(ARGV)
+#adder = AddCourse.new
+#adder.run(ARGV)
+puts "./scripts/add_course has been deprecated and replaced with ./scripts/course_mgr."
+puts "run ./scripts/course_mgr for usage information."
