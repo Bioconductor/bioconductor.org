@@ -22,5 +22,14 @@ Norway
   
   URL: <http://bioconductor.uib.no>
 
+
+United Kingdom
+------
+
+* [European Bioinformatics Institute](http://www.ebi.ac.uk/)
+
+  URL: <http://mirrors.ebi.ac.uk/bioconductor/>
+
+
 If you are interested in maintaining a mirror of this site (for either
 public or private use) [read this](mirror-how-to/).
