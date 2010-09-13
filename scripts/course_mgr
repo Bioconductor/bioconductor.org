@@ -266,7 +266,7 @@ EOF
   
   
 
-  def push(name)
+  def sync(name)
     name = name.sub(/\/$/, "")
     course = YAML.load_file("#{name}/course_config.yaml")
     src = "#{name}"
@@ -275,7 +275,7 @@ EOF
     yearpath = "/" + @course_dir + "/" + course_year(course)
     dst = deploy_root + yearpath
     dir_cmd = "ssh #{host} mkdir -p #{path}#{yearpath}"
-    cmd = "rsync -avR --exclude='*.yaml' #{src} #{dst}"
+    cmd = "rsync -avR --exclude='*.yaml' --exclude='*.md' #{src} #{dst}"
     msg = <<EOF
 SYNC:
     src: #{src}
@@ -302,7 +302,7 @@ EOF
       exit 1
     end
     if (Kernel.test(?e, name))
-      puts "INFO: Directory #{name} already exists."
+      puts "INFO: Directory ./#{name} already exists."
     else
       FileUtils.mkdir(name)
     end
@@ -317,8 +317,23 @@ EOF
     deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
     host, path = deploy_root.split(":")
     
-    #cmd = "scp -R  #{deploy_root} #{dst}"
-    cmd = "rsync -v #{deploy_root}/ #{dst}"
+    cmd = "rsync -avz #{deploy_root}/ #{dst}"
+    #puts cmd
+    run_cmd(cmd)
+  end
+  
+  def push(arg)
+    year, name = arg.split("/")
+    if (name.nil?)
+      puts "Please supply a year and course name, e.g. 2010/seattle-intro."
+      exit 1
+    end
+    unless (Kernel.test(?e, name))
+      puts "Directory ./#{name} does not exist."
+      exit 1
+    end
+    deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
+    cmd = "rsync -avzn --exclude='*.yaml' --exclude='*.md'./#{name} #{deploy_root}"
     puts cmd
     run_cmd(cmd)
   end
