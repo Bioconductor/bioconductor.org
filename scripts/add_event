@@ -38,8 +38,6 @@ location: Seattle, WA, USA
 event_host: FHCRC
 start: #{today}
 end:   #{today}
-description:
-  BLURB FOR #{fname}
 link:
   text: details and registration
   url: https://secure.bioconductor.org/#{fname}
