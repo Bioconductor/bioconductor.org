@@ -21,7 +21,7 @@ class SearchIndexer
     
     
     script_file_name = "#{path_to_output_script}/index.sh"
-    FileUtils.rm script_file_name
+    FileUtils.rm_f script_file_name
     
     script_file = File.open(script_file_name, "w")
     
