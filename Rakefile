@@ -2,7 +2,7 @@ require 'nanoc3/tasks'
 require 'yaml'
 require 'fileutils'
 require 'lib/data_sources/gmane_list.rb'
-require 'lib/data_sources/bioc_views.rb'
+#require 'lib/data_sources/bioc_views.rb'
 require 'scripts/search_indexer.rb'
 
 
