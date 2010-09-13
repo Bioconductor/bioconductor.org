@@ -11,12 +11,27 @@ include Open3
 class SearchIndexer
 
   def self.is_solr_running?()
+    orig_stdout = STDOUT.clone
+    orig_stderr = STDERR.clone
+    
+    $stdout.reopen("/dev/null", "w")
+    $stderr.reopen("/dev/null", "w")
+    
+    
     cmd = "curl http://localhost:8983"
-    system(cmd)
+    result = system(cmd)
+    
+    $stdout.reopen orig_stdout
+    $stderr.reopen orig_stderr
+    result
   end
 
   def initialize(args)
     
+    unless args.size == 3
+      puts "invalid arguments!"
+      exit 1
+    end
     directory_to_index, path_to_cache_file, path_to_output_script = args
     
     
@@ -26,7 +41,7 @@ class SearchIndexer
     script_file = File.open(script_file_name, "w")
     
     java_home = ENV["JAVA_HOME"]
-    post_jar_home = "/Users/dante/apache-solr-1.4.1/example/exampledocs" #todo - customize for staging & production  
+    post_jar_home = "#{ENV["SOLR_HOME"]}/example/exampledocs"
     
     cache = {}
     cachecopy = {}
@@ -62,7 +77,7 @@ class SearchIndexer
 
     url = "http://localhost:8983/solr/update"
 
-    script_file.puts "#/bin/sh\n"
+    script_file.puts "#!/bin/sh\n"
     
     goodfiles.each do |file|
       cachecopy[file] = 1
@@ -97,21 +112,24 @@ class SearchIndexer
 
     end
 
+
+
     # deal with files that have been removed since last run
     if (cache_exists)
       a = cache.keys.sort
       b = cachecopy.keys.sort
       to_be_deleted = a - b 
-      return if to_be_deleted.empty?
-      script_file.puts "cd #{post_jar_home}" 
-      #puts "to be deleted:"
-      #puts to_be_deleted.join("\n")
-      for item in to_be_deleted
-        script_file.puts %Q(#{java_home}/bin/java -Ddata=args -Dcommit=no -jar ./post.jar "<delete><id>#{nice_name(item)}</id></delete>")
-        cache.delete(item)
+      unless to_be_deleted.empty?
+        script_file.puts "cd #{post_jar_home}" 
+        #puts "to be deleted:"
+        #puts to_be_deleted.join("\n")
+        for item in to_be_deleted
+          script_file.puts %Q(#{java_home}/bin/java -Ddata=args -Dcommit=no -jar ./post.jar "<delete><id>#{nice_name(item)}</id></delete>")
+          cache.delete(item)
+        end
+        script_file.puts %Q(#{java_home}/bin/java -jar ./post.jar) #commit
+        script_file.puts "cd #{pwd}"
       end
-      script_file.puts %Q(#{java_home}/bin/java -jar ./post.jar) #commit
-      script_file.puts "cd #{pwd}"
     end
     
 

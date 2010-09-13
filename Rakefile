@@ -4,6 +4,9 @@ require 'fileutils'
 require 'lib/data_sources/gmane_list.rb'
 #require 'lib/data_sources/bioc_views.rb'
 require 'scripts/search_indexer.rb'
+require 'open3'
+
+include Open3
 
 
 desc "copy assets to output directory"
@@ -49,21 +52,26 @@ desc "Re-index the site for the search engine"
 task :search_index do
   if (SearchIndexer.is_solr_running?)
     hostname = `hostname`.chomp
-    args = []
+    args = [] # directory to index, location of cache file, location of output shell script
     if (hostname =~ /^dhcp/i)
-      args = ['./output', './', './scripts']
+      args = ['./output', './', 'scripts'] 
     elsif (hostname == 'merlot2')
       args = ['/loc/www/bioconductor-test.fhcrc.org', '/home/biocadmin', '/home/biocadmin']
     end
     pwd = FileUtils.pwd
     si = SearchIndexer.new(args)
     FileUtils.cd pwd # just in case
+    cmd = "#{args.last}/index.sh"
 
-    chmod_cmd = "chmod o+x #{args.last}/index.sh"
+    chmod_cmd = "chmod u+x #{cmd}"
     system chmod_cmd
-    # we could run the indexer here but it could take a while, maybe better to fork it to a background task
-    result = `ls&`
-    puts result
+    # todo fork the indexer to a background task because it could take a while in some cases
+    #stdin, stdout, stderr = Open3.popen3("#{cmd}")
+    stdin, stdout, stderr = Open3.popen3("sh ./scripts/index.sh")
+    puts "running indexer, stdout = "
+    puts stdout.readlines
+    puts "stderr = "
+    puts stderr.readlines
   else
     puts "solr is not running, not re-indexing site."
   end
