@@ -179,8 +179,6 @@ to the site using the following steps:
      event_host: FHCRC
      start: 2010-06-29
      end:   2010-06-29
-     description:
-       BLURB FOR EVENT_NAME
      link:
        text: details and registration
        url: https://secure.bioconductor.org/EVENT_NAME
