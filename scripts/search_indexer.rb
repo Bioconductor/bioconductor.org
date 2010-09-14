@@ -82,7 +82,7 @@ class SearchIndexer
     goodfiles.each do |file|
       cachecopy[file] = 1
       cleanfile = file.gsub(/^\./,"")
-      mtime = File.stat(file).mtime().to_i()
+      mtime = File.lstat(file).mtime().to_i()
       if ( \
         (!cache_exists) \
         or \
