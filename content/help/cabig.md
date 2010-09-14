@@ -1,9 +1,9 @@
 # caBIG&reg;
 
 [caBIG](https://cabig.nci.nih.gov/)&reg; is a National Cancer Institute
-initiative to facilitate data sharing between members of the cancer community.
-[caGrid](http://cagrid.org/) is an infrastructure to support caGrid
-'services'.
+initiative to facilitate data sharing between members of the cancer research
+community.  [caGrid](http://cagrid.org/) is infrastructure to support
+data and analysis 'services'.
 
 ## Work flows
 
