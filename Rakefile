@@ -77,6 +77,14 @@ task :search_index do
   end
 end
 
+desc "Re-run search indexing on production"
+task :index_production do
+  system("scp scripts/search_indexer.rb webadmin@krait:~")
+  system("ssh webadmin@krait /home/webadmin/do_index.rb")
+  system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
+  system("ssh webadmin@krait /home/webadmin/index.sh")
+end
+
 desc "Runs nanoc's dev server on localhost:3000"
 task :devserver => [:build] do
   system "nanoc3 aco"
