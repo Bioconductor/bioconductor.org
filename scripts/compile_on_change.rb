@@ -5,7 +5,7 @@
 
 #fsevent_dir = "~/src/ruby-fsevent"
 #$LOAD_PATH.unshift(fsevent_dir + '/lib')
-#$LOAD_PATH.unshift(fsevent_dir + '/ext')
+#$LOAD_PATH.unshift(fsevent_dir + '/ext')  
 
 require 'rubygems'
 require 'fsevent'
@@ -13,7 +13,7 @@ require 'fsevent'
 class PrintChange < FSEvent
   def on_change(directories)
     puts "Detected change in: #{directories.inspect}"
-    system "nanoc3 compile"
+    system "nanoc compile"
   end
 
   def start

@@ -124,9 +124,11 @@ class SearchIndexer
         #puts "to be deleted:"
         #puts to_be_deleted.join("\n")
         for item in to_be_deleted
+          script_file.puts "echo 'deleting #{item}...'"
           script_file.puts %Q(#{java_home}/bin/java -Ddata=args -Dcommit=no -jar ./post.jar "<delete><id>#{nice_name(item)}</id></delete>")
           cache.delete(item)
         end
+        script_file.puts "echo 'committing deletions...'"
         script_file.puts %Q(#{java_home}/bin/java -jar ./post.jar) #commit
         script_file.puts "cd #{pwd}"
       end
@@ -136,6 +138,7 @@ class SearchIndexer
 
     cmd = "curl -s #{url} --data-binary '<commit/>' -H 'Content-type:text/xml; charset=utf-8'"
     #system(cmd)
+    script_file.puts "echo 'committing changes...'"
     script_file.puts cmd
     #`#{cmd}`
 

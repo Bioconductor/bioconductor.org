@@ -358,6 +358,7 @@ EOF
   end
   
   def push(arg)
+    # todo - explain/figure out how to delete course material
     year, name = arg.split("/")
     if (name.nil?)
       puts "Please supply a year and course name, e.g. 2010/seattle-intro."

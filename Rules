@@ -35,6 +35,7 @@ compile '*' do
   elsif !item.binary?
     layout 'default'
   end
+  filter :google_analytics unless item.binary?
 end
 
 # routing rules
