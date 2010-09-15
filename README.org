@@ -598,3 +598,103 @@ works when I try in a browser. This makes me worried that the
 wget-based snapshot may not be as complete as thought. Not sure if
 the issue is wget config options or Plone getting overwhelmed with
 requests and failing to respond.
+
+*** Site Search
+
+The site search contains several moving parts. The search is built on 
+Apache Solr, which is in turn built on top of Apache Lucene. 
+
+**** How to configure Solr
+The default SOLR installation works fine, with the exception of the file
+example/solr/conf/schema.xml which must be replaced with the version in
+this subversion repository at etc/solr.The changes in this file enable
+search query highlighting and snippets.
+
+Solr can be started up as follows (SOLR_HOME is assumed to be the location
+where the solr tarball has been expanded):
+   : cd $SOLR_HOME/example; java -jar start.jar
+
+
+**** How to ensure that Solr is started up at boot time (on merlot2 and krait)
+On both machines there is an /etc/rc.d/rc.local script (with symlink at
+/etc/rc.d/rclocal) which starts Solr as above. TODO: reboot (at least merlot2)
+and make sure this works.
+
+**** How to configure the Apache web server to work with Solr
+
+Using a2enmod, we added support for the "proxy" and "proxy_http" modules
+to the Apache web server. Then we added the following to 
+/etc/apache2/vhosts.d/bioconductor-test.conf (merlot2) or
+bioconductor.conf (krait):
+
+	ProxyRequests Off
+	<Proxy *>
+	 Order deny,allow
+	 Allow from all
+	</Proxy>
+	ProxyPass /solr http://localhost:8983/solr
+	ProxyPreserveHost On
+	ProxyStatus On
+
+This means that all requests starting with "/solr" will go to the
+solr server on port 8983. This allows us to make requests to the 
+search server without violating the "same-origin" policy.
+
+**** How the client-side portion of the search works
+
+The page /search/index.html includes some javascript (in the file
+js/search.html) which in turn uses jQuery. The code parses the 
+arguments in the URL and then makes an AJAX request to the SOLR
+server which returns a JSON string. The javascript code converts
+that to an object and then renders the search response page.
+
+**** How to rebuild the search index (on your own machine, merlot2, or krait)
+
+Note that you typically do not want to do this by hand as it is handled
+by cron jobs (see below). 
+
+On merlot2 (ssh to merlot2):
+   : cd ~/biocadmin/bioc-test-web/bioconductor.org
+   : rake search_index
+
+What this command does:
+- Runs a Ruby class which determines which files need to be (re)indexed.
+- This uses a cache file containing the names of each file and their modification times
+  as of the last time the script was run. If the cache file does not exist, all files 
+  are indexed. This class also handles new files and deletions.
+- The class actually does not do the indexing itself; it creates another script
+  (index.sh) which does the actual indexing, which is accomplished by using
+  curl to post files to the SOLR web app.
+
+To re-index files on krait, ssh to merlot2 (not krait) and do this:
+   : cd ~/biocadmin/bioc-test-web/bioconductor.org
+   : rake index_production
+
+
+**** Cron jobs for rebuilding the search index/why it is decoupled from site update
+
+Doing "crontab l" on merlot2 shows how the index us updated 
+on both merlot2 and krait. Here are the relevant lines:
+
+30 */1 * * * cd $HOME/bioc-test-web; ./index_staging.sh > $HOME/bioc-test-web/index_staging.log 2>&1
+30 */4 * * * cd $HOME/bioc-test-web; rake index_production > $HOME/bioc-test-web/production_index.log 2>&1
+
+Notice that the search indexing process is decoupled from the site building process
+(which takes place every 10 minutes). Site indexing can be a time-consuming 
+process (especially on krait) and the site rebuilding should be quick. So 
+the search indexing takes place every hour on merlot2 and every four hours on
+krait (where there are many more files to be indexed which originate from the build system).
+
+
+**** How to get search working on your own development machine
+You could set up apache as described above but I think that is overkill.
+I use pound (http://www.apsis.ch/pound/) as a simple front end to both
+adsf (serving static content built by nanoc on one port) and solr
+(java web app running on another). You can use "rake search_index"
+to build the search index. You need to define the shell variables
+SOLR_HOME and JAVA_HOME. The rake target may require slight modification
+to handle the hostname of your local machine.
+
+
+--todo: make sure people can't do anything bad as solr admin (change password?)
+See http://wiki.apache.org/solr/SolrSecurity
