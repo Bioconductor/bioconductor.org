@@ -94,11 +94,11 @@ task :search_index do
     system chmod_cmd
     # todo fork the indexer to a background task because it could take a while in some cases
 
-#    stdin, stdout, stderr = Open3.popen3("sh ./scripts/index.sh")
-#    puts "running indexer, stdout = "
-#    puts stdout.readlines
-#    puts "stderr = "
-#    puts stderr.readlines
+    stdin, stdout, stderr = Open3.popen3("sh ./scripts/index.sh")
+    puts "running indexer, stdout = "
+    puts stdout.readlines
+    puts "stderr = "
+    puts stderr.readlines
   else
     puts "solr is not running, not re-indexing site."
   end
