@@ -9,6 +9,13 @@ require 'open3'
 include Open3
 
 
+@clear_search_index_commands = [
+  "curl -s http://localhost:8983/solr/update --data-binary '<delete><query>*:*</query></delete>' -H 'Content-type:text/xml; charset=utf-8'",
+  "curl -s http://localhost:8983/solr/update --data-binary '<optimize/>' -H 'Content-type:text/xml; charset=utf-8'",
+  "curl -s  http://localhost:8983/solr/update --data-binary '<commit/>' -H 'Content-type:text/xml; charset=utf-8'"
+  ]
+
+
 desc "copy assets to output directory"
 task :copy_assets do
   site_config = YAML.load_file("./config.yaml")
@@ -48,30 +55,50 @@ task :deploy_production do
   system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
 end
 
+
+desc "Clear search index (and local cache)"
+task :clear_search_index do
+  for command in @clear_search_index_commands
+    puts command
+    system command
+  end
+  dir = (`hostname`.chomp == 'merlot2') ? "/home/biocadmin" : "."
+  
+  FileUtils.rm_f "#{dir}/search_indexer_cache.yaml"
+end
+
+desc "Clear search index (and local cache) on production. This will cause searches to fail until indexing is re-done!"
+task :clear_search_index_production do
+  for command in @clear_search_index_commands
+    system "ssh webadmin@krait #{command}"
+    system "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
+  end
+end
+
 desc "Re-index the site for the search engine"
 task :search_index do
   if (SearchIndexer.is_solr_running?)
     hostname = `hostname`.chomp
-    args = [] # directory to index, location of cache file, location of output shell script
-    if (hostname =~ /^dhcp/i)
-      args = ['./output', './', 'scripts'] 
+    args = [] # directory to index, location of cache file, location of output shell script, url of site
+    if (hostname =~ /^dhcp/i) # todo - don't test this, instead see if nanoc is installed
+      args = ['./output', './', 'scripts', 'http://localhost:3000'] 
     elsif (hostname == 'merlot2')
-      args = ['/loc/www/bioconductor-test.fhcrc.org', '/home/biocadmin', '/home/biocadmin']
+      args = ['/loc/www/bioconductor-test.fhcrc.org', '/home/biocadmin', '/home/biocadmin', 'http://bioconductor-test.fhcrc.org']
     end
     pwd = FileUtils.pwd
     si = SearchIndexer.new(args)
     FileUtils.cd pwd # just in case
-    cmd = "#{args.last}/index.sh"
+    cmd = "#{args[2]}/index.sh"
 
     chmod_cmd = "chmod u+x #{cmd}"
     system chmod_cmd
     # todo fork the indexer to a background task because it could take a while in some cases
-    #stdin, stdout, stderr = Open3.popen3("#{cmd}")
-    stdin, stdout, stderr = Open3.popen3("sh ./scripts/index.sh")
-    puts "running indexer, stdout = "
-    puts stdout.readlines
-    puts "stderr = "
-    puts stderr.readlines
+
+#    stdin, stdout, stderr = Open3.popen3("sh ./scripts/index.sh")
+#    puts "running indexer, stdout = "
+#    puts stdout.readlines
+#    puts "stderr = "
+#    puts stderr.readlines
   else
     puts "solr is not running, not re-indexing site."
   end
