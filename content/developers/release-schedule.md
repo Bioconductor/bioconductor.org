@@ -1,26 +1,22 @@
 ![](/images/icons/magnifier.gif)Bioconductor 2.7 Release Schedule
 ==================================
 
-R 2.12.0 is scheduled for October 15, 2010.
-We don''t have a detailed release schedule for it (in particular
-we don''t know exactly when it will turn alpha and beta) so
-our schedule for BioC 2.7 below is very approximate for now.
+R 2.12.0 is scheduled for Friday, October 15, 2010.
+As usual, we plan to release this new version of Bioconductor
+just a couple of days after.
  
 
-Somewhere between September 17-24
----------------------------------
+September 17
+------------
 
 **R:**
 
-* R Grand Feature Freeze (alpha).
+* R GRAND-FEATURE FREEZE (alpha).
 
 **BioC:**
 
 * All BioC package developers should start using R-devel alpha
   for testing their packages.
-
-* Release candidate of annotation packages built and posted to devel
-  annotation data repository.
 
 
 September 24
@@ -30,13 +26,16 @@ September 24
 
 * Deadline for new package submissions for release with BioC 2.7.
 
+* Release candidate of annotation packages built and posted to devel
+  annotation data repository.
 
-Somewhere between September 25 and October 4
---------------------------------------------
+
+October 1st
+-----------
 
 **R:**
 
-* R Feature Freeze (beta).
+* R FEATURE FREEZE (beta).
 
 **BioC:**
 
@@ -55,20 +54,20 @@ October 6
   without error.
 
 
-Somewhere between October 7-11 
-------------------------------
+October 8
+---------
 
 **R:**
 
-* R Code Freeze (release candidate).
+* R CODE FREEZE (release candidate).
 
 
-Somewhere between October 11-15
--------------------------------
+October 12
+----------
 
 **R:**
 
-* R Prerelease.
+* R PRERELEASE.
 
 **BioC:**
 
@@ -87,7 +86,7 @@ October 15
 
 **R:**
 
-* R 2.12.0 Release.
+* R 2.12.0 RELEASE.
 
 **BioC:**
 
@@ -105,7 +104,6 @@ October 18
 **BioC:**
 
 * BioC 2.7 release.
-
 
 
 External Resources
