@@ -1,6 +1,9 @@
 // search.js
 // don't use jQuery.noConflict(), it conflicts(!) with other document.ready functions
 
+// TODO: add previous and next buttons at top (as well as bottom)
+// TODO: change page title to include search term
+
 String.prototype.trim = function() {
 	return this.replace(/^\s+|\s+$/g,"");
 }
@@ -47,6 +50,7 @@ var initSearch = function() {
 	var startParam = getParameterByName("start");
 	var start = (startParam == "") ? 0 : parseInt(startParam);
 	
+	
 	var url = getSearchUrl(q, start);
 	jQuery.getJSON(url, function(data){
 		var numFound = data['response']['numFound'];
@@ -63,13 +67,20 @@ var initSearch = function() {
 				var outer = highlighting[doc.id];
 				var text = outer['text'];
 				var snippet = text[0]; // does this array ever contain more than one element?
+				var isHTML = /\/$|\.html/i.test(doc.id); 
+				var googleAnalytics = " onClick=\"javascript: pageTracker._trackPageview('" + doc.id + "'); \" ";
+            	
 				var isR = /\.R$/.test(doc.id);
 				var title = (""  + doc.title).trim();
 				if (title == "") {
 					title = "Untitled";
 				}
 				var stringToAppend = "";
-				stringToAppend += "<p><a href='" +
+				stringToAppend += "<p><a ";
+				if (!isHTML) {
+				    stringToAppend += googleAnalytics;
+				}
+				stringToAppend += "href='" +
 				  doc.id +
 				  "'>" +
 				  title +
