@@ -92,27 +92,51 @@ code { color:#87b13f; font-family: 'Lucida Console',monaco,monospace; }
   font-size:70%;
   border-bottom: 1px #c9c5c5 solid;
 }
-ul.masthead_nav {
+.SiteMastheadRight {
+  position:relative;
+  z-index:1;
+  height:125px;
+  width:600px;
+  padding-right:48px;
+  float:right;
+  background-color:#0092ac;
+}
+.SiteMastheadRightBackground {
   position:relative;
   z-index:2;
-  height:125px;
-  width:648px;
+  height:100%;
+  width:100%;
+  background-image:url(../images/masthead_nav_fade.gif);
+  background-position: top left;
+  background-repeat: repeat;
+}
+.site_search {
+  position:relative;
+  z-index:3;
+  height:52px;
+  width:240px;
+  margin-top:20px;
+  padding:0;
+  float:right;
+  text-align:center;
+  color:#ffffff;
+}
+ul.masthead_nav {
+  position:relative;
+  z-index:3;
+  height:53px;
+  width:600px;
   margin:0;
   padding:0;
   float:right;
   list-style-type:none;
-  background-color:#0092ac;
 } /* positioning in order to play nicely with the black vanity bar above
      the site logo (see logo_vanity_bar) */
 li.masthead_nav_element {
   float:left;
-  padding-top:72px;
   height:53px;
   text-align:center;
-  background-image:url(../images/masthead_nav_fade.gif);
-  background-position: top left;
-  background-repeat:no-repeat;
-} /* note that padding-top + height = 125px, the height of the
+} /* note that padding-top + height = 53px, the height of the
      ul.masthead_nav. */
 li.masthead_nav_element a {
   font-size:130%;

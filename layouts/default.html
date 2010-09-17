@@ -11,19 +11,6 @@
       <div id="PageContent" class="PageContent">
       <% end %>
       
-
-	<div id="SiteSearch class=SiteSearch">
-		  <a name="site-search"></a> <!-- accessibility anchor -->
-			<p align="right">
-				<form align="right" id="search_form" method="GET" action="/search/index.html">
-					<input id="q" name="q"/> 
-					<input type='image' src="/images/buttons/search.gif" style="vertical-align:bottom" alt="Search List" onmouseover="this.src='/images/buttons/search_active.gif'" onmouseout="this.src='/images/buttons/search.gif'"/> 
-
-				</form>
-				
-			</p>
-	</div>
-
         <% if (@item.identifier != '/')%>
           <%= render("/_crumbs/") %>
         <% end %>
