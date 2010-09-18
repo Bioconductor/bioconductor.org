@@ -1,5 +1,6 @@
 // search.js
-// don't use jQuery.noConflict(), it conflicts(!) with other document.ready functions
+// don't use jQuery.noConflict(), it conflicts(!) with other
+// document.ready functions
 
 // TODO: add previous and next buttons at top (as well as bottom)
 // TODO: change page title to include search term
@@ -101,14 +102,14 @@ var initSearch = function() {
 			
 			if (start >= rows) {
 				var nextStart = start - rows;
-				url = "/search/index.html?q=" + q + "&start=" + nextStart;
-				jQuery("#previous_search_page").html("<a href='"+url+"'>Previous</a>");
+				url = "/help/search/index.html?q=" + q + "&start=" + nextStart;
+				jQuery("#previous_search_page").html("<a href='"+url+"'>&lt; Previous</a>");
 			}
 			
 			if (numFound > (start + rows)) {
 				var prevStart = start + rows;
-				url = "/search/index.html?q=" + q + "&start=" + prevStart;
-				jQuery("#next_search_page").html("<a href='"+url+"'>Next</a>");
+				url = "/help/search/index.html?q=" + q + "&start=" + prevStart;
+				jQuery("#next_search_page").html("... <a href='"+url+"'>Next &gt;</a>");
 			}
 		}
 	});
