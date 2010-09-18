@@ -103,13 +103,13 @@ var initSearch = function() {
 			if (start >= rows) {
 				var nextStart = start - rows;
 				url = "/help/search/index.html?q=" + q + "&start=" + nextStart;
-				jQuery("#previous_search_page").html("<a href='"+url+"'>&lt; Previous</a>");
+				jQuery("#previous_search_page").html("&lt; <a href='"+url+"'>Previous</a> ");
 			}
 			
 			if (numFound > (start + rows)) {
 				var prevStart = start + rows;
 				url = "/help/search/index.html?q=" + q + "&start=" + prevStart;
-				jQuery("#next_search_page").html("... <a href='"+url+"'>Next &gt;</a>");
+				jQuery("#next_search_page").html(" <a href='"+url+"'>Next </a> &gt;");
 			}
 		}
 	});
