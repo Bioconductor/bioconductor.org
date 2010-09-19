@@ -43,7 +43,7 @@ arrays, and the `limma` package for assessing differential expression.
     > design <-                   # describe model to be fit
           model.matrix(~ Disease, pData(eset))
     > fit <- lmFit(eset, design)  # fit each probeset to model
-    > efit <- eBayes(efit)        # empirical Bayes adjustment
+    > efit <- eBayes(fit)        # empirical Bayes adjustment
     > topTable(efit, coef=2)      # table of differentially expressed probesets
     
 A top table resulting from a more complete analysis, described in
