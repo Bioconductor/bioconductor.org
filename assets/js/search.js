@@ -5,31 +5,12 @@
 // TODO: add previous and next buttons at top (as well as bottom)
 // TODO: change page title to include search term
 
-String.prototype.trim = function() {
-	return this.replace(/^\s+|\s+$/g,"");
-}
-String.prototype.ltrim = function() {
-	return this.replace(/^\s+/,"");
-}
-String.prototype.rtrim = function() {
-	return this.replace(/\s+$/,"");
-}
 
 
 jQuery(function() {
 	initSearch();
 });
 
-var getParameterByName = function ( name ) {
-  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-  var regexS = "[\\?&]"+name+"=([^&#]*)";
-  var regex = new RegExp( regexS );
-  var results = regex.exec( window.location.href );
-  if( results == null )
-    return "";
-  else
-    return decodeURIComponent(results[1].replace(/\+/g, " "));
-}
 
 var getSearchUrl = function(query, start) {
 	var url = "/solr/select?indent=on&version=2.2&q=" + query + 
@@ -63,6 +44,8 @@ var initSearch = function() {
 			var rows = parseInt(data['responseHeader']['params']['rows']);
 			var docs = data['response']['docs'];
 			var highlighting = data['highlighting'];
+			var stringToAppend = "";
+			stringToAppend += "<dl>\n";
 			for (var i = 0; i < docs.length; i++) {
 				var doc = docs[i];
 				var outer = highlighting[doc.id];
@@ -76,8 +59,7 @@ var initSearch = function() {
 				if (title == "") {
 					title = "Untitled";
 				}
-				var stringToAppend = "";
-				stringToAppend += "<p><a ";
+				stringToAppend += "<dt><a ";
 				if (!isHTML) {
 				    stringToAppend += googleAnalytics;
 				}
@@ -87,7 +69,7 @@ var initSearch = function() {
 				  title +
 				  "</a> - " +
 				  doc.id +
-				  "<blockquote>";
+				  "</dt><dd>";
 				if (isR) {
 					stringToAppend += "<pre>"
 				}
@@ -95,21 +77,23 @@ var initSearch = function() {
 				if (isR) {
 					stringToAppend += "</pre>";
 				}
-				stringToAppend += "</blockquote></p>\n";
+				stringToAppend += "</dd>\n";
 				
-				jQuery("#search_results").append(stringToAppend);
+				
 			}
+			stringToAppend += "</dl>\n";
+			jQuery("#search_results").html(stringToAppend);
 			
 			if (start >= rows) {
 				var nextStart = start - rows;
 				url = "/help/search/index.html?q=" + q + "&start=" + nextStart;
-				jQuery("#previous_search_page").html("&lt; <a href='"+url+"'>Previous</a> ");
+				jQuery(".previous_search_page").html("&lt; <a href='"+url+"'>Previous</a> ");
 			}
 			
 			if (numFound > (start + rows)) {
 				var prevStart = start + rows;
 				url = "/help/search/index.html?q=" + q + "&start=" + prevStart;
-				jQuery("#next_search_page").html(" <a href='"+url+"'>Next </a> &gt;");
+				jQuery(".next_search_page").html(" <a href='"+url+"'>Next </a> &gt;");
 			}
 		}
 	});
