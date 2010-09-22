@@ -7,33 +7,45 @@ This is the FAQ, currently under construction.
 
 <h2 id="install-packages">Package Installation</h2>
 
-* Trying to install a package fails.
+* Package XXX fails to install
 
-A common reason for packages to fail to install is that `R` or
-`Bioconductor` software dependencies are not satisfied.  Be sure to
-use `biocLite` to [install packages][2]; this ensures that you are
-installing the version of the package that is appropriate for your
-system, and that the necessary R dependendcies are also installed.  Be
-sure that your installed packages are up-to-date by following [update
-packages][1].
+A common reason for a package to fail to install is that `R` or
+`Bioconductor` software dependencies are not satisfied, as shown here
+from a user trying to install the `affyPLM` package:
 
-Less commonly, packages fail to install because third party libraries
-are not availble. This often happens during the `configure` part of
-the package installation process, as
+    ...
+    ** inst
+    ** preparing package for lazy loading
+    Error: package 'affy' required by 'affyPLM' could not be found
+    Execution halted
+    ERROR: lazy loading failed for package 'affyPLM'
+
+Be sure to use `biocLite` to [install packages][2] that are
+appropriate for your system and version of `R`.  Be sure that your
+installed packages are up-to-date by following [update packages][1].
+
+Less commonly, packages may install but then fail to load, as here
+with the `Rsamtools` package:
+
+    Error in dyn.load(file, DLLpath = DLLpath, ...) :
+    unable to load shared library 
+    '/usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so':
+      /usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so: undefined symbol: ecrc32
+
+This is likely a system configuration issue, e.g., a Windows `PATH`
+environment variable is not set correctly, or the Linux `ldconfig`
+program or `LD_LIBRARY_PATH` environment variable is incorrect.
+
+Packages may also fail to install because third party software is not
+available. This often happens during the `configure` part of the
+package installation process, as illustrated here with the `XML`
+package:
 
     * Installing *source* package 'XML' ...
     ...
     checking for xml2-config... no
     Cannot find xml2-config
     ERROR: configuration failed for package 'XML'
-
-
-or later, when the package is being loaded
-
-    Error in dyn.load(file, DLLpath = DLLpath, ...) :
-    unable to load shared library 
-    '/usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so':
-      /usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so: undefined symbol: ecrc32
 
 These types of errors can sometimes be easily solved (installing
 necessary libraries or other software, perhaps referenced on the
