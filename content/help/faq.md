@@ -52,10 +52,10 @@ address this. Generally, packages whose code you use in your own
 package should where ever possible be Import:'ed. Packages required
 for vignettes are often Suggest:'ed. Depends: is appropriate for
 packages that cannot be Import:'ed (e.g., because they do not have a
-NAMESPACE) or for packages that provide essential functionality for
-needed by the user of your package, e.g., your functions always return
-GRanges objects, so the user will necessarily need GenomicRanges on
-their search path.
+NAMESPACE) or for packages that provide essential functionality needed
+by the user of your package, e.g., your functions always return
+`GRanges` objects, so the user will necessarily need `GenomicRanges`
+on their search path.
 
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
