@@ -15,7 +15,7 @@ use `biocLite` to [install packages][2]; this ensures that you are
 installing the version of the package that is appropriate for your
 system, and that the necessary R dependendcies are also installed.  Be
 sure that your installed packages are up-to-date by following [update
-packages][1]
+packages][1].
 
 Less commonly, packages fail to install because third party libraries
 are not availble. This often happens during the `configure` part of
@@ -39,7 +39,7 @@ These types of errors can sometimes be easily solved (installing
 necessary libraries or other software, perhaps referenced on the
 [package home page][4]). It will often be necessary to understand your
 system more thoroughly than you'd like, perhaps with the assistance of
-the Bioconductor [mailing list][3]
+the Bioconductor [mailing list][3].
 
 <h2 id="developer-faq">Developing Packages</h2>
 
