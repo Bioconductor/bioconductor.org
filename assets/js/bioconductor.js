@@ -1,5 +1,55 @@
 // bioconductor.js
 
+// logging functions:
+var fb_lite = false;
+try {
+	if (firebug) {
+		fb_lite = true;  
+		firebug.d.console.cmd.log("initializing firebug logging");
+	}
+} catch(e) {
+	// do nothing
+}
+
+
+
+function log(message) {
+	if (fb_lite) {  
+		console.log(message);
+	} else {
+		if (window.console) {
+			console.log(message);
+		} 
+	}
+	if (window.dump) {
+	    dump(message + "\n");
+	}
+}
+
+// convenience functions
+String.prototype.trim = function() {
+	return this.replace(/^\s+|\s+$/g,"");
+}
+String.prototype.ltrim = function() {
+	return this.replace(/^\s+/,"");
+}
+String.prototype.rtrim = function() {
+	return this.replace(/\s+$/,"");
+}
+
+//utility functions
+var getParameterByName = function ( name ) {
+  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+  var regexS = "[\\?&]"+name+"=([^&#]*)";
+  var regex = new RegExp( regexS );
+  var results = regex.exec( window.location.href );
+  if( results == null )
+    return "";
+  else
+    return decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
+
 // general-use function to add handlers. use like this:
 //    if(document.getElementById('ehs.form')){
 //      addEvent(document.getElementById('ehs.form'), 'click', handleRadioClick);
@@ -63,4 +113,21 @@ function checkNav(){
   }}
 }
 addEvent(window,'load',checkNav);
+
+
+var getCorrectUrlForMirrors = function() {
+    url = window.location.href.replace(/^http:\/\//i, "");
+    segs = url.split("/");
+    host = segs[0];
+    var result;
+    if (segs[1] == "help") {
+        result = "bioconductor.org";
+    } else {
+        result = host + "/" + segs[1];
+    }
+    jQuery(".site_host").html(result);
+}
                                       
+jQuery(function() {
+    getCorrectUrlForMirrors();
+});

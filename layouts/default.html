@@ -10,10 +10,17 @@
       <% else %>
       <div id="PageContent" class="PageContent">
       <% end %>
-      
+
+        
         <% if (@item.identifier != '/')%>
           <%= render("/_crumbs/") %>
         <% end %>
+
+        <% # TODO - ameliorate this major hack%>
+        <% if @item.attributes.has_key?(:Package)%>
+            <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
+        <% end %>
+
         <%= yield %>
         <% if has_subnav?(@item) %>
           </div>

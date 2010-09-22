@@ -4,6 +4,7 @@ require 'fileutils'
 require 'lib/data_sources/gmane_list.rb'
 #require 'lib/data_sources/bioc_views.rb'
 require 'scripts/search_indexer.rb'
+require 'scripts/parse_bioc_views.rb'
 require 'open3'
 
 include Open3
@@ -15,6 +16,16 @@ include Open3
   "curl -s  http://localhost:8983/solr/update --data-binary '<commit/>' -H 'Content-type:text/xml; charset=utf-8'"
   ]
 
+
+
+desc "write version info to doc root for javascript to find"
+task :write_version_info do
+  site_config = YAML.load_file("./config.yaml")
+  js = %Q(var develVersion = "#{site_config["devel_version"]}";\nvar releaseVersion="#{site_config["release_version"]}";)
+  f = File.open("#{site_config["output_dir"]}/js/versions.js", "w")
+  f.puts js
+  f.close
+end
 
 desc "copy assets to output directory"
 task :copy_assets do
@@ -37,7 +48,7 @@ task :real_clean do
 end
 
 desc "Build the bioconductor.org site (default)"
-task :build => [ :compile, :copy_assets ]
+task :build => [ :compile, :copy_assets, :write_version_info ]
 
 task :default => :build
 
@@ -67,12 +78,16 @@ task :clear_search_index do
   FileUtils.rm_f "#{dir}/search_indexer_cache.yaml"
 end
 
+
+#todo fix this
 desc "Clear search index (and local cache) on production. This will cause searches to fail until indexing is re-done!"
 task :clear_search_index_production do
   for command in @clear_search_index_commands
-    system "ssh webadmin@krait #{command}"
-    system "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
+    puts %Q(ssh webadmin@krait "#{command}")
+    system %Q(ssh webadmin@krait "#{command}")
   end
+  puts "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
+  system "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
 end
 
 desc "Re-index the site for the search engine"
@@ -116,3 +131,20 @@ desc "Runs nanoc's dev server on localhost:3000"
 task :devserver => [:build] do
   system "nanoc3 aco"
 end
+
+desc "Get JSON files required for BiocViews pages"
+task :get_json do
+  json_dir = "assets/help/bioc_views/json"
+  #todo - nuke json_dir before starting?
+  FileUtils.mkdir_p json_dir
+  site_config = YAML.load_file("./config.yaml")
+  versions = [site_config["release_version"], site_config["devel_version"]]
+  version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
+  r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
+  system(r_cmd)
+  for version in versions
+    args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
+    ParseBiocViews.new(args)
+  end
+end
+

@@ -1,9 +1,5 @@
 #!/usr/bin/env ruby
 
-preprocess do 
-  add_missing_info 
-end 
-
 # compilation rules
 
 compile '/mailing-list-posts/' do
@@ -18,6 +14,7 @@ end
 compile '/sitemap/' do
   # nothing
 end
+
 
 compile '*' do
   case item[:extension]

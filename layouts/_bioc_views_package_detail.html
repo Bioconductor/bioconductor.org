@@ -1,0 +1,128 @@
+<h1><%=@package[:Package]%> - Detail View</h1>
+
+<%# this line doesn't work -- figure out how to change the title of the page %>
+<%# title = @package[:Package]%> 
+
+
+<%# package title - not to be confused with page title %>
+
+<h2><%= @package[:Title]%></h2> 
+
+<p>Bioconductor version: <%= @package[:bioc_version_str]%> (<%=@package[:bioc_version_num]%>)</p>
+
+<%# todo strip out email addresses from Author string %> 
+<p>Author: <%= @package[:Author]%> </p>
+<%# todo strip out email addresses from maintainer string %> 
+<p>Maintainer: <%= @package[:Maintainer]%> </p>
+
+<p>To install this package, start R and enter:</p>
+
+<pre>
+source("http://<span class="site_host"></span>/biocLite.R")
+biocLite("<%=@package[:Package]%>")    
+</pre>
+
+
+<h3>Documentation</h3>
+<ul>
+<li><a href="/packages/<%=@package[:bioc_version]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.pdf">PDF</a></li>
+<li><a href="/packages/<%=@package[:bioc_version]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.R">R Script</a></li>
+<li><a href="/packages/<%=@package[:bioc_version]%>/bioc/manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a></li>
+</ul>
+
+
+<h3>Details</h3>
+
+<table class="details">
+    <tr class="row_odd">
+        <td>biocViews</td>
+        <td><%= cjoin(@package[:biocViews],", ")%></td>
+    </tr>
+
+    <tr class="row_even">
+        <td>Depends</td>
+        <td><%= cjoin(@package[:Depends],", ")%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>Imports</td>
+        <td><%= cjoin(@package[:Imports],", ")%></td>
+    </tr>
+
+    <tr class="row_even">
+        <td>Suggests</td>
+        <td><%= cjoin(@package[:Suggests],", ")%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>depends</td>
+        <td><%= cjoin(@package[:Depends],", ")%></td>
+    </tr>
+
+
+    <tr class="row_even">
+        <td>System Requirements</td>
+        <td><%= @package[:SystemRequirements]%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>License</td>
+        <td><%= @package[:License]%></td>
+    </tr>
+
+    <tr class="row_even">
+        <td>URL</td>
+        <td><a href="<%=@package[:URL]%>"<%= @package[:URL]%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>Depends On Me</td>
+        <td><%= cjoin(@package[:dependsOnMe],", ")%></td>
+    </tr>
+
+    <tr class="row_even">
+        <td>Imports Me</td>
+        <td><%= cjoin(@package[:ImportsMe],", ")%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>Suggests Me</td>
+        <td><%= cjoin(@package[:suggestsMe],", ")%></td>
+    </tr>
+
+
+</table>
+
+<h3>Package Downloads</h3>
+
+<table>
+    <tr class="row_odd">
+        <td>Package Source</td>
+        <%# todo - the following line will break if we are in the Annotation or ExperimentData repo %>
+        <td><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/<%=@package[:"source.ver"]%>">
+            <%= base_filename(@package[:"source.ver"]) %></a></td>
+    </tr>
+    <tr class="row_even">
+        <td>Windows Binary</td>
+        <%# todo - the following line will break if we are in the Annotation or ExperimentData repo %>
+            <td><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/<%=windows_binary(@package)%>">
+                <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%></td>
+    </tr>
+    <tr class="row_odd">
+        <td>MacOS 10.5 (Leopard) binary</td>
+        <%# todo - the following line will break if we are in the Annotation or ExperimentData repo %>
+        <td><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/<%=@package[:"mac.binary.leopard.ver"]%>">
+            <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
+    </tr>
+    <tr class="row_even">
+        <td>Package Downloads Report</td>
+        <%# todo - the following line will break if we are in the Annotation or ExperimentData repo %>
+        <td><a href="/packages/stats/bioc/<%=@package[:Package]%>.html">Download Stats</a></td>
+    </tr>
+        
+</table>
+
+
+
+
+

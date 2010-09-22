@@ -3,6 +3,8 @@ include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Breadcrumbs
 include Nanoc3::Helpers::XMLSitemap
 
+
+
 require 'time'
 
 class Time
@@ -12,6 +14,7 @@ class Time
     nil
   end
 end
+
 
 class Date
   def to_time
@@ -26,6 +29,43 @@ def nav_link_unless_current(text, path)
   else
     %[<a href="#{path}">#{text}</a>]
   end
+end
+
+def base_filename(path)
+  #return nil if path.nil?
+  path.split("/").last
+end
+
+# show only one windows build - the 64-bit (if available) or the 32 (because we have fat (dual-arch) packages now)
+def windows_binary(package)
+  win32 = package[:"win.binary.ver"]
+  win64 = package[:"win64.binary.ver"]
+  # assuming that package has both keys
+  return win64 unless win64.nil?  or win64.empty?
+  win32
+end
+
+def win_format(package)
+  if windows_binary(package) =~ /64/
+    "(32- &amp; 64-bit)"
+  else
+    "(32-bit only)"
+  end
+end
+
+def cjoin(item, sep)
+  if (item.respond_to? :join)
+    item.join(sep)
+  else
+    item
+  end
+end
+
+# this method doesn't actually do anything but if people use it in place of hardcoding
+# the host name (where the host name must be used), then maybe at some point we can fix
+# the issue of mirrors having urls that point back to us.
+def site_host()
+  "bioconductor.org"
 end
 
 def find_item(items, identifier)

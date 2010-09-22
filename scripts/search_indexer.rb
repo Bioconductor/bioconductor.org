@@ -97,7 +97,7 @@ class SearchIndexer
         (cache_exists and !cache.has_key?(file)) \
       )
         nice_name = cleanfile.gsub(/index\.html$/,"")
-        puts "indexing #{nice_name}..."
+        puts "adding #{nice_name} to indexing script"
 
         script_file.puts %Q(echo "indexing #{nice_name}")
         cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false" -F "myfile=@#{directory_to_index}#{cleanfile}")

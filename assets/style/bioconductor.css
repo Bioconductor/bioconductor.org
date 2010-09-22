@@ -1,5 +1,7 @@
 /* css global styles for bioconductor */
 
+/* looks like sass stylesheet is not used */
+
 /* global styles defined at the topmost level.
    these will be overridden by subsequent selectors. */
  
@@ -582,3 +584,36 @@ ul.inline_list li {
 	 margin-bottom:1em !important;
   }
 }
+
+/* styles for displaying biocViews hierarchy */
+.biocViewsTree {
+ float:left;
+ width:33%;
+}
+
+.biocViewsTreePadding {
+    float:left;
+    width: 1%;
+}
+
+.biocViewsPackages {
+ float:left;
+ width:65%;
+}
+.biocViewsBelowTree {
+ clear:both;
+}
+
+
+/* styles for package detail pages: */
+
+tr.row_odd
+{
+    background-color: #FFF;
+}
+
+tr.row_even
+{
+    background-color: #DDD;
+}
+
