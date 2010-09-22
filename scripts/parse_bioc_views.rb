@@ -3,7 +3,6 @@
 require 'rubygems'
 require 'json'
 require 'pp'
-require 'rgl/adjacency'
 
 
 #class Item
