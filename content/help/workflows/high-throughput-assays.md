@@ -1,5 +1,4 @@
-![](/images/icons/help.gif)Using Bioconductor for High-throughtput Assays
-========================================================================
+# ![](/images/icons/help.gif)Using Bioconductor for High Throughput Assays
 
 Bioconductor includes packages for analysis of diverse areas of
 high-throughput assays such as flow cytometry, quantitative real-time PCR,
