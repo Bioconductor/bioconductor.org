@@ -8,12 +8,19 @@ var displayPackages = function(packageList) {
         return;
     }
     var html = "<h3>Packages</h3>\n";
-    html += "<ul class='inline_list'>\n"
+    html += "<ul class='inline_list'>\n";
+    
+    
     for (var i = 0; i < packageList.length; i++) {
         var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+
+        log("debug");
+
         
         var folder = (biocVersion == releaseVersion) ? "release" : "devel";
         var url = folder + "/" + packageList[i];
+
+
         
         html += "\t<li>\n"
         html += "\t\t<a href='" +
@@ -26,6 +33,8 @@ var displayPackages = function(packageList) {
           html += "\t</li>\n";
     }
     html += "</ul>\n"
+
+
 
     jQuery("#packages").html(html);
 }
@@ -61,6 +70,19 @@ var nodeSelected = function(event, data){
 
 
 var setBiocVersion = function() {
+    
+    
+    biocVersion = getParameterByName("version");
+    if (biocVersion == "") {
+        biocVersion = releaseVersion;
+    } else if (biocVersion.toLowerCase() == "release") {
+        biocVersion = releaseVersion;
+    } else if (biocVersion.toLowerCase() == "devel") {
+        biocVersion = develVersion;
+    }
+    log("biocVersion = " + biocVersion);
+    
+    
     var text;
     var switchText;
     var switchUrl;
@@ -100,31 +122,7 @@ var findParents = function (nodeId) {
     return ret;
 }
 
-jQuery(function () {
-    biocVersion = getParameterByName("version");
-    if (biocVersion == "") {
-        biocVersion = releaseVersion;
-    } else if (biocVersion.toLowerCase() == "release") {
-        biocVersion = releaseVersion;
-    } else if (biocVersion.toLowerCase() == "devel") {
-        biocVersion = develVersion;
-    }
-    log("biocVersion = " + biocVersion);
-
-
-    setBiocVersion()
-    
-    
-    jQuery.getJSON("json/" + biocVersion +  "/packages.json", function(data){
-        packageInfo = data;
-    });
-    
-
-/*
-"ui": {
-  "initially_select" : ["Visualization"]  
-},
-*/
+var init = function() {
     
     // todo add ajax failure method (possible?)
     jQuery("#tree").jstree({ 
@@ -182,6 +180,17 @@ jQuery(function () {
         }
     });
     
+    
+}
+
+//document ready function
+jQuery(function () {
+    setBiocVersion();
+    
+    jQuery.getJSON("json/" + biocVersion +  "/packages.json", function(data){
+        packageInfo = data;
+        init()
+    });
     
 
 
