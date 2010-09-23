@@ -147,7 +147,7 @@ task :get_json do
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     #args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
     args = [fullpaths , "#{json_dir}/#{version}/tree.json"]
-    ParseBiocViews.new(args)
+#    ParseBiocViews.new(args)
   end
 end
 
