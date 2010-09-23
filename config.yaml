@@ -9,18 +9,18 @@ data_sources:
     gmane_rss_url: 'http://rss.gmane.org/messages/excerpts/gmane.science.biology.informatics.conductor'
     cache_file: tmp/gmane_list_cache_file.yaml
     ttl: 10
-- items_root: /help/bioc_views/release
+- items_root: /help/bioc-views/release
   layouts_root: /
   type: bioc_views
   config:
-    json_file: "assets/help/bioc_views/json/2.6/packages.json"
+    json_file: "assets/help/bioc-views/json/2.6/packages.json"
     version_str: "release"
     version_num: "2.6"
-- items_root: /help/bioc_views/devel
+- items_root: /help/bioc-views/devel
   layouts_root: /
   type: bioc_views
   config:
-    json_file: "assets/help/bioc_views/json/2.7/packages.json"
+    json_file: "assets/help/bioc-views/json/2.7/packages.json"
     version_str: "devel"
     version_num: "2.7"
 

@@ -2,7 +2,6 @@ require 'nanoc3/tasks'
 require 'yaml'
 require 'fileutils'
 require 'lib/data_sources/gmane_list.rb'
-#require 'lib/data_sources/bioc_views.rb'
 require 'scripts/search_indexer.rb'
 require 'scripts/parse_bioc_views.rb'
 require 'open3'
@@ -134,7 +133,7 @@ end
 
 desc "Get JSON files required for BiocViews pages"
 task :get_json do
-  json_dir = "assets/help/bioc_views/json"
+  json_dir = "assets/help/bioc-views/json"
   #todo - nuke json_dir before starting?
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")

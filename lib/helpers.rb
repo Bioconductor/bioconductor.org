@@ -76,7 +76,7 @@ def bioc_views_links(package)
   
   bioc_views = to_a(package[:biocViews])
   bioc_views.each do |bioc_view|
-    links.push %Q(<a href="/help/bioc_views/?openNode=#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
+    links.push %Q(<a href="/help/bioc-views/?openNode=#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end
   
   links.join(", ")

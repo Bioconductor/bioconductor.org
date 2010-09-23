@@ -90,11 +90,11 @@ var setBiocVersion = function() {
     
     if (biocVersion == releaseVersion) {
         releaseText = "Release version (" + releaseVersion + ")";
-        url = "../bioc_views/?version=devel";
+        url = "../bioc-views/?version=devel";
         develText = "<a href='" + url + "'>" + "Development version (" + develVersion + ")</a>";
     } else {
         develText = "Development version (" + develVersion + ")";
-        url = "../bioc_views/";
+        url = "../bioc-views/";
         releaseText = "<a href='" + url + "'>" + "Release version (" + releaseVersion + ")</a>";
     }
     
