@@ -140,14 +140,14 @@ task :get_json do
   versions = [site_config["release_version"], site_config["devel_version"]]
   version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
-  system(r_cmd)
+  #system(r_cmd)
   repos = ["data/annotation", "data/experiment", "bioc"]
   
   for version in versions
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     #args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
     args = [fullpaths , "#{json_dir}/#{version}/tree.json"]
-#    ParseBiocViews.new(args)
+    ParseBiocViews.new(args)
   end
 end
 

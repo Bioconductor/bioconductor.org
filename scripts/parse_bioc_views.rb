@@ -7,16 +7,9 @@ require 'pp'
 
 
 class ParseBiocViews
-  def initialize(args)
-    inputfile, outputfile = args
-    f = File.open(inputfile)
-    
-    outfile = File.open(outputfile, "w")
-    
-    lines = f.readlines
-    json = lines.join("\n")
-    obj = JSON.parse(json)
-    
+  
+  
+  def get_subtree(obj, repo)
     clean_hash = {}
     obj.each_pair do |k,v|
       clean_hash[k] = clean(v)
@@ -64,7 +57,50 @@ class ParseBiocViews
     
     root = clean_hash['BiocViews']['children']
     
-    outfile.puts root.to_json
+    key = root.find{|i|i['data'] =~ /^#{repo}/}
+    
+    key
+ 
+  end
+  
+  
+  
+  def initialize(args)
+    inputfiles, outputfile = args
+    
+    @repos = {"/bioc/" => "Software", "/data/annotation/" => "AnnotationData", "/data/experiment/" => "ExperimentData"}
+    
+    obj = {}
+    
+    
+    top_level_tree = []
+    
+    
+    for inputfile in inputfiles
+      f = File.open(inputfile)
+      lines = f.readlines
+      json = lines.join("\n")
+      this_one = JSON.parse(json)
+      repo = ""
+      @repos.each_pair do |k,v|
+        repo = v if inputfile =~ /#{k}/
+      end
+      
+      
+      subtree = get_subtree(this_one, repo)
+      
+      top_level_tree.push subtree
+      
+    end
+    
+
+
+    
+    
+    
+    outfile = File.open(outputfile, "w")
+    
+    outfile.puts JSON.pretty_generate(top_level_tree)
     
     
   end
@@ -89,7 +125,11 @@ def clean(arg)
   item
 end
 
-
+if __FILE__ == $-
+#  puts "We are running directly as a script."
+else
+#  puts "We are not running directly as a script."
+end
 
 
 __END__

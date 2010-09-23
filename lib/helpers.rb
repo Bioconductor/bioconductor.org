@@ -71,6 +71,9 @@ def version_fragment(package)
   ""
 end
 
+def is_bioc_package?(package_name)
+end
+
 def bioc_views_links(package)
   links = []
   

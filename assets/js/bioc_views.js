@@ -12,7 +12,8 @@ var displayPackages = function(packageList) {
     
     
     for (var i = 0; i < packageList.length; i++) {
-        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+///////        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+        var title="placeholder";
 
         log("debug");
 
