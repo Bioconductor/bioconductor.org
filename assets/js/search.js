@@ -50,7 +50,10 @@ var initSearch = function() {
 				var doc = docs[i];
 				var outer = highlighting[doc.id];
 				var text = outer['text'];
-				var snippet = text[0]; // does this array ever contain more than one element?
+				var snippet = "&nbsp;";
+				if (text != undefined) {
+    				snippet = text[0]; // does this array ever contain more than one element?
+				}
 				var isHTML = /\/$|\.html/i.test(doc.id); 
 				var googleAnalytics = " onClick=\"javascript: pageTracker._trackPageview('" + doc.id + "'); \" ";
             	
