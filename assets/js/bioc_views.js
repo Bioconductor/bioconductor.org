@@ -40,6 +40,10 @@ var jumpToAnchor = function() {
 
 var nodeSelected = function(event, data){
     var nodeName = data['args'][0]['text'];
+    if (nodeName == undefined) {
+        nodeName = getParameterByName("openNode");
+    }
+    log("in nodeSelected, nodeName = " + nodeName);
     var tmp = nodeName.split(" ");
     nodeName = tmp[0];
     log("you clicked on: " + nodeName);
@@ -56,18 +60,71 @@ var nodeSelected = function(event, data){
 }
 
 
+var setBiocVersion = function() {
+    var text;
+    var switchText;
+    var switchUrl;
+    
+    if (biocVersion == releaseVersion) {
+        text = "Release version (" + releaseVersion + ")";
+        switchText = "Development version (" + develVersion + ")";
+        switchUrl = "../bioc_views/?version=devel";
+    } else {
+        text = "Development version (" + develVersion + ")";
+        switchText = "Release version (" + releaseVersion + ")";
+        switchUrl = "../bioc_views/";
+    }
+    
+    jQuery("#current_version").html(text);
+    jQuery("#swap_versions").html("<a href='" + switchUrl + "'>" + switchText + "</a>");
+//    jQuery("#swap_versions").html("hi");
+    
+    
+}
+
+
+var findParents = function (nodeId) {
+    log("hello from findParents, node id=" + nodeId);
+    var parents = jQuery("#" + nodeId).parentsUntil("#tree");
+    log("parents length = " + jQuery(parents).length);
+    var ret = [];
+    ret.push(nodeId);
+    jQuery.each(parents, function(index, value){
+        var id = jQuery(value).attr("id");
+        if (id.length > 0) {
+            log("hi, id = " + id);
+            ret.push(id);
+        }
+    });
+    ret.reverse();
+    return ret;
+}
+
 jQuery(function () {
     biocVersion = getParameterByName("version");
     if (biocVersion == "") {
         biocVersion = releaseVersion;
+    } else if (biocVersion.toLowerCase() == "release") {
+        biocVersion = releaseVersion;
+    } else if (biocVersion.toLowerCase() == "devel") {
+        biocVersion = develVersion;
     }
     log("biocVersion = " + biocVersion);
-    
+
+
+    setBiocVersion()
     
     
     jQuery.getJSON("json/" + biocVersion +  "/packages.json", function(data){
         packageInfo = data;
     });
+    
+
+/*
+"ui": {
+  "initially_select" : ["Visualization"]  
+},
+*/
     
     // todo add ajax failure method (possible?)
     jQuery("#tree").jstree({ 
@@ -102,10 +159,27 @@ jQuery(function () {
     jQuery("#tree").bind("before.jstree", function(event, data){
         if(data.func === "select_node") {
         	//log("stopping:" + data.args[0].attr("id"));
+        	
         	nodeSelected(event, data);
         	event.stopImmediatePropagation();
         	return false;
         } 
+    });
+    
+    jQuery("#tree").bind("loaded.jstree", function(event, data){
+        log("i got loaded!");
+        var initiallyOpen = [];
+        var openNode = getParameterByName("openNode");
+        log("openNode = " + openNode);
+        if (openNode != "") {
+            initiallyOpen = findParents(openNode);
+            log("io.length = " + initiallyOpen.length);
+            for(var i = 0; i < initiallyOpen.length; i++) {
+                log("item: " + initiallyOpen[i]);
+                jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
+            }
+            jQuery("#tree").jstree("select_node", "#" + openNode)
+        }
     });
     
     

@@ -61,6 +61,27 @@ def cjoin(item, sep)
   end
 end
 
+def to_a(item)
+  return item if item.respond_to? :join
+  return [item]
+end
+
+def version_fragment(package)
+  return "&version=#{package[:version_num]}&" if package[:bioc_version_str] == "devel"
+  ""
+end
+
+def bioc_views_links(package)
+  links = []
+  
+  bioc_views = to_a(package[:biocViews])
+  bioc_views.each do |bioc_view|
+    links.push %Q(<a href="/help/bioc_views/?openNode=#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
+  end
+  
+  links.join(", ")
+end
+
 # this method doesn't actually do anything but if people use it in place of hardcoding
 # the host name (where the host name must be used), then maybe at some point we can fix
 # the issue of mirrors having urls that point back to us.
