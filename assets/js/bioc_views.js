@@ -65,7 +65,7 @@ var nodeSelected = function(event, data){
       } else {
           displayPackages(null);
       }
-      jumpToAnchor();
+      //jumpToAnchor();
 }
 
 
@@ -83,25 +83,23 @@ var setBiocVersion = function() {
     log("biocVersion = " + biocVersion);
     
     
-    var text;
-    var switchText;
-    var switchUrl;
+    
+    var releaseText;
+    var develText;
+    var url;
     
     if (biocVersion == releaseVersion) {
-        text = "Release version (" + releaseVersion + ")";
-        switchText = "Development version (" + develVersion + ")";
-        switchUrl = "../bioc_views/?version=devel";
+        releaseText = "Release version (" + releaseVersion + ")";
+        url = "../bioc_views/?version=devel";
+        develText = "<a href='" + url + "'>" + "Development version (" + develVersion + ")</a>";
     } else {
-        text = "Development version (" + develVersion + ")";
-        switchText = "Release version (" + releaseVersion + ")";
-        switchUrl = "../bioc_views/";
+        develText = "Development version (" + develVersion + ")";
+        url = "../bioc_views/";
+        releaseText = "<a href='" + url + "'>" + "Release version (" + releaseVersion + ")</a>";
     }
     
-    jQuery("#current_version").html(text);
-    jQuery("#swap_versions").html("<a href='" + switchUrl + "'>" + switchText + "</a>");
-//    jQuery("#swap_versions").html("hi");
-    
-    
+    jQuery("#release_version").html(releaseText);
+    jQuery("#devel_version").html(develText);
 }
 
 
