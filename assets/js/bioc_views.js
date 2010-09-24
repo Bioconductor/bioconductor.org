@@ -14,25 +14,6 @@ var displayPackages = function(packageList) {
     for (var i = 0; i < packageList.length; i++) {
         var title = "unknown";
         var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
-        /*
-        for (var x = 0; x < packageInfo.length; x++) {
-            var tmp;
-            try {
-                tmp = packageInfo[x][packageList][i]["Description"];
-                log("i am good!");
-            } catch (err) {
-            }
-            debugger;
-            if (tmp != undefined) {
-                title = tmp.replace(/\n/g, " ");
-                break;
-            }
-        }
-        */
-//        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
-//        var title="placeholder";
-
-
         
         var folder = (biocVersion == releaseVersion) ? "release" : "devel";
         var url = folder + "/" + packageList[i];
@@ -59,8 +40,6 @@ var displayPackages = function(packageList) {
 
 var jumpToAnchor = function() {
     var tmp = ("" + window.location).split("#");
-    //alert("segs = " + tmp.length);
-    //window.location = tmp[0] + "#treeTop";
     document.getElementById('treeTop').scrollIntoView(true);
 }
 
@@ -140,7 +119,19 @@ var findParents = function (nodeId) {
 var init = function() {
     log("in init function");
     // todo add ajax failure method (possible?)
+    
+    var initiallySelected = [];
+    var nodeName = "";
+    nodeName = getParameterByName("openNode");
+    
+    if (nodeName != "") {
+        initiallySelected.push(nodeName);
+    }
+    
     jQuery("#tree").jstree({ 
+        "ui": {
+          "initially_select": initiallySelected
+        },
 	    "themes": {
 	        "theme": "apple",
 	        "dots": false,
@@ -168,15 +159,15 @@ var init = function() {
     })
     */
     
-    
-    jQuery("#tree").bind("before.jstree", function(event, data){
-        if(data.func === "select_node") {
+    jQuery("#tree").bind("select_node.jstree", function(event, data){
+        log("a node was selected");
+//        if(data.func === "select_node") {
         	//log("stopping:" + data.args[0].attr("id"));
         	
         	nodeSelected(event, data);
-        	event.stopImmediatePropagation();
-        	return false;
-        } 
+        	//event.stopImmediatePropagation();
+        	//return false;
+//        } 
     });
     
     jQuery("#tree").bind("loaded.jstree", function(event, data){
@@ -191,7 +182,7 @@ var init = function() {
                 log("item: " + initiallyOpen[i]);
                 jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
             }
-            jQuery("#tree").jstree("select_node", "#" + openNode)
+           // jQuery("#tree").jstree("select_node", "#" + openNode);
         }
     });
     
