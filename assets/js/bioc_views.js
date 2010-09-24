@@ -135,6 +135,9 @@ var init = function() {
     }
     
     jQuery("#tree").jstree({ 
+        "core": {
+            "animation": 0
+        },
         "ui": {
           "initially_select": initiallySelected
         },
@@ -156,7 +159,6 @@ var init = function() {
 	
 	// explicitly add biocViewsTree class because the widget strips it off
 	jQuery("#tree").addClass("biocViewsTree");
-	//jQuery("#tree").addClass("PageContent");
 	
 	
     /*
@@ -167,13 +169,7 @@ var init = function() {
     
     jQuery("#tree").bind("select_node.jstree", function(event, data){
         log("a node was selected");
-//        if(data.func === "select_node") {
-        	//log("stopping:" + data.args[0].attr("id"));
-        	
-        	nodeSelected(event, data);
-        	//event.stopImmediatePropagation();
-        	//return false;
-//        } 
+    	nodeSelected(event, data);
     });
     
     jQuery("#tree").bind("loaded.jstree", function(event, data){
@@ -188,7 +184,6 @@ var init = function() {
                 log("item: " + initiallyOpen[i]);
                 jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
             }
-           // jQuery("#tree").jstree("select_node", "#" + openNode);
         }
     });
     

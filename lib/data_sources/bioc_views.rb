@@ -44,11 +44,17 @@ class BiocViews < Nanoc3::DataSource
       packages = JSON.parse(json_file.readlines.join("\n"))
       for package in packages.keys
         repo = v
-        packages[package][:repo] = repo
-        packages[package][:bioc_version_str] = config[:version_str]
-        packages[package][:bioc_version_num] = config[:version_num]
-        packages[package][:title] = packages[package][:Package]
-        items.push Nanoc3::Item.new(nil, packages[package], package)
+        item = Nanoc3::Item.new(nil, packages[package], package)
+        item[:title] = "#{item[:Package]}"
+        item[:repo] = repo
+        item[:bioc_version_str] = config[:version_str]
+        item[:bioc_version_num] = config[:version_num]
+#        packages[package][:title] = packages[package][:Package]
+        #item[:layout] = "default"
+        rep = Nanoc3::ItemRep.new(item, :unique_name)
+        #rep.assigns()["title"] = "dan's title!"
+        #item.reps.push(rep)
+        items.push item
       end
     end
     items
