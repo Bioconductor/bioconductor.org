@@ -94,32 +94,44 @@ getItem <- function(y) {
 
 
 for (version in versions) {
-    reposUrl = paste("http://bioconductor.org/packages/", version, "/bioc", sep="")
     
-    biocViews <- getBiocViews(reposUrl, biocViewsVocab, "No View Provided")
-    outputDirectory <- paste(outdir, "/", version, sep="")
-    dir.create(outputDirectory, recursive=T)
-    
-    biocViewsFile <- paste(outputDirectory, "biocViews.json", sep="/")
-    count <- 1
-    all <- list()
-    result <- lapply(biocViews, getItem)
+    repos = c("bioc", "data/annotation", "data/experiment")
+    for (repo in repos) {
+        reposUrl = paste("http://bioconductor.org/packages/", version, "/", repo, sep="")
 
+            biocViews <- getBiocViews(reposUrl, biocViewsVocab, "No View Provided")
+            count <- 1
+            all <- list()
+            result <- lapply(biocViews, getItem)
+
+
+            outputDirectory <- paste(outdir, version, repo, sep="/")
+            dir.create(outputDirectory, recursive=T)
+
+            biocViewsFile <- paste(outputDirectory, "biocViews.json", sep="/")
+
+
+            conn <- file(biocViewsFile, "w")
+            json <- toJSON(result)
+            cat(json, file=conn)
+            close(conn)
+
+            packages <- new.env()
+        #    packages <- list()
+
+            lapply(biocViews, getPackages)
+            packagesFile <- paste(outputDirectory, "packages.json", sep="/")
+            conn <- file(packagesFile, "w")
+            json <- toJSON(packages)
+            cat(json, file=conn)
+            close(conn)
+
+
+        
+    }
     
-    conn <- file(biocViewsFile, "w")
-    json <- toJSON(result)
-    cat(json, file=conn)
-    close(conn)
     
-    packages <- new.env()
-#    packages <- list()
     
-    lapply(biocViews, getPackages)
-    packagesFile <- paste(outputDirectory, "packages.json", sep="/")
-    conn <- file(packagesFile, "w")
-    json <- toJSON(packages)
-    cat(json, file=conn)
-    close(conn)
     
     
     
