@@ -1,13 +1,19 @@
 var packageInfo = {};
 var biocVersion;
 
-var displayPackages = function(packageList) {
+var displayPackages = function(packageList, nodeName) {
     log("in displayPackages");
     if (packageList == null) {
         jQuery("#packages").empty();
         return;
     }
     var html = "<h3>Packages</h3>\n";
+    
+    html += "<p>";
+    html += findParents(nodeName).join(" &gt ");
+    html += "</p>\n";
+    
+    
     html += "<ul class='inline_list'>\n";
     
     
@@ -57,9 +63,9 @@ var nodeSelected = function(event, data){
       if (packageListStr) {
           var packageList = packageListStr.split(",");
           log("first = " + packageList[0]);
-          displayPackages(packageList);
+          displayPackages(packageList, nodeName);
       } else {
-          displayPackages(null);
+          displayPackages(null, nodeName);
       }
       //jumpToAnchor();
 }
