@@ -10,7 +10,6 @@ class BiocViews < Nanoc3::DataSource
   
   # todo - find out if there is a way to skip items() altogether if things are not found in up()
   def up
-    
     @repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
     
     @good_to_go = true
@@ -41,10 +40,19 @@ class BiocViews < Nanoc3::DataSource
       dir = "#{config[:json_dir]}/#{k}"
       json_file = File.open("#{dir}/packages.json")
       
+      
+
+    
+        
       packages = JSON.parse(json_file.readlines.join("\n"))
       for package in packages.keys
         repo = k
         item = Nanoc3::Item.new(nil, packages[package], package)
+        
+        item[:subnav] = []
+        item[:subnav].push({:include => "/_workflows/"})
+        item[:subnav].push({:include => "/_mailing_list/"})
+        
         item[:title] = "#{item[:Package]}"
         item[:repo] = repo
         item[:bioc_version_str] = config[:version_str]
