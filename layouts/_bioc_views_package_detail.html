@@ -11,6 +11,8 @@
 
 <p>Bioconductor version: <%= @package[:bioc_version_str]%> (<%=@package[:bioc_version_num]%>)</p>
 
+<p><%= @package[:Description]%></p>
+
 <%# todo strip out email addresses from Author string %> 
 <p>Author: <%= @package[:Author]%> </p>
 <%# todo strip out email addresses from maintainer string %> 
