@@ -99,22 +99,22 @@ biocLite("<%=@package[:Package]%>")
 <table>
     <tr class="row_odd">
         <td>Package Source</td>
-        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>/<%=@package[:"source.ver"]%>">
+        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"source.ver"]%>">
             <%= base_filename(@package[:"source.ver"]) %></a></td>
     </tr>
     <tr class="row_even">
         <td>Windows Binary</td>
-            <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>/<%=windows_binary(@package)%>">
+            <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
                 <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%></td>
     </tr>
     <tr class="row_odd">
         <td>MacOS 10.5 (Leopard) binary</td>
-        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>/<%=@package[:"mac.binary.leopard.ver"]%>">
+        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"mac.binary.leopard.ver"]%>">
             <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
     </tr>
     <tr class="row_even">
         <td>Package Downloads Report</td>
-        <td><a href="/packages/stats/<%=@package[:repo]%>/<%=@package[:Package]%>.html">Download Stats</a></td>
+        <td><a href="/packages/stats/<%=@package[:repo]%><%=@package[:Package]%>.html">Download Stats</a></td>
     </tr>
         
 </table>
