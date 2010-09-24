@@ -1,4 +1,4 @@
-var packageInfo;
+var packageInfo = {};
 var biocVersion;
 
 var displayPackages = function(packageList) {
@@ -12,10 +12,26 @@ var displayPackages = function(packageList) {
     
     
     for (var i = 0; i < packageList.length; i++) {
-///////        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
-        var title="placeholder";
+        var title = "unknown";
+        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+        /*
+        for (var x = 0; x < packageInfo.length; x++) {
+            var tmp;
+            try {
+                tmp = packageInfo[x][packageList][i]["Description"];
+                log("i am good!");
+            } catch (err) {
+            }
+            debugger;
+            if (tmp != undefined) {
+                title = tmp.replace(/\n/g, " ");
+                break;
+            }
+        }
+        */
+//        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+//        var title="placeholder";
 
-        log("debug");
 
         
         var folder = (biocVersion == releaseVersion) ? "release" : "devel";
@@ -122,7 +138,7 @@ var findParents = function (nodeId) {
 }
 
 var init = function() {
-    
+    log("in init function");
     // todo add ajax failure method (possible?)
     jQuery("#tree").jstree({ 
 	    "themes": {
@@ -186,10 +202,18 @@ var init = function() {
 jQuery(function () {
     setBiocVersion();
     
-    jQuery.getJSON("json/" + biocVersion +  "/packages.json", function(data){
-        packageInfo = data;
-        init()
-    });
+    var repos = ["bioc", "data/annotation", "data/experiment"];
+    var count = 0;
+    
+    for (var i = 0; i < repos.length; i++) {
+        jQuery.getJSON("json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
+            jQuery.extend(packageInfo, data);
+            if (count == 2) {
+                init();
+            }
+            count++;
+        });
+    }
     
 
 
