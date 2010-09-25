@@ -71,7 +71,22 @@ def version_fragment(package)
   ""
 end
 
-def is_bioc_package?(package_name)
+
+def linkify(sym, package)
+  items = package[sym]
+  key = "#{sym.to_s}_repo".to_sym
+  repos = package[key]
+  output = []
+  
+  items.each_with_index do |item, index|
+    repo = repos[index]
+    if (repo == false)
+      output.push item
+      next
+    end
+    output.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_str]}/#{item}">#{item}</a>)
+  end
+  output.join(", ")
 end
 
 def bioc_views_links(package)

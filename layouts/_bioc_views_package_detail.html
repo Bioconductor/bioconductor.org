@@ -44,53 +44,47 @@ biocLite("<%=@package[:Package]%>")
 
     <tr class="row_even">
         <td>Depends</td>
-        <td><%= cjoin(@package[:Depends],", ")%></td>
+        <td><%= linkify(:Depends, @package)%></td>
     </tr>
 
     <tr class="row_odd">
         <td>Imports</td>
-        <td><%= cjoin(@package[:Imports],", ")%></td>
+        <td><%= linkify(:Imports, @package)%></td>
     </tr>
 
     <tr class="row_even">
         <td>Suggests</td>
-        <td><%= cjoin(@package[:Suggests],", ")%></td>
+        <td><%= linkify(:Suggests, @package)%></td>
     </tr>
 
     <tr class="row_odd">
-        <td>depends</td>
-        <td><%= cjoin(@package[:Depends],", ")%></td>
-    </tr>
-
-
-    <tr class="row_even">
         <td>System Requirements</td>
         <td><%= @package[:SystemRequirements]%></td>
     </tr>
 
-    <tr class="row_odd">
+    <tr class="row_even">
         <td>License</td>
         <td><%= @package[:License]%></td>
     </tr>
 
-    <tr class="row_even">
+    <tr class="row_odd">
         <td>URL</td>
         <td><a href="<%=@package[:URL]%>"<%= @package[:URL]%></td>
     </tr>
 
-    <tr class="row_odd">
+    <tr class="row_even">
         <td>Depends On Me</td>
-        <td><%= cjoin(@package[:dependsOnMe],", ")%></td>
+        <td><%= linkify(:dependsOnMe, @package)%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>Imports Me</td>
+        <td><%= linkify(:importsMe, @package)%></td>
     </tr>
 
     <tr class="row_even">
-        <td>Imports Me</td>
-        <td><%= cjoin(@package[:ImportsMe],", ")%></td>
-    </tr>
-
-    <tr class="row_odd">
         <td>Suggests Me</td>
-        <td><%= cjoin(@package[:suggestsMe],", ")%></td>
+        <td><%= linkify(:suggestsMe, @package)%></td>
     </tr>
 
 
