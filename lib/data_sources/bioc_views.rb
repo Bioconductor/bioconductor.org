@@ -76,6 +76,41 @@ class BiocViews < Nanoc3::DataSource
   end
   # end remove
   
+  
+  def get_index_page(packages, repo)
+    item = Nanoc3::Item.new(nil, {}, "all-#{repo}")
+    rep = Nanoc3::ItemRep.new(item, :package_index_page)
+    #rep.layout("/_package_index/")
+    
+    
+    item[:package_index_page] = true
+    
+    info = []
+    
+    packages.each_pair do |k,v|
+      hsh = {}
+      hsh[:name] = k
+      hsh[:Maintainer] = v["Maintainer"]
+      hsh[:Title] = v["Title"]
+      info.push hsh
+    end
+
+    
+    item[:info] = info.sort{|a,b| a[:name].downcase <=> b[:name].downcase}
+    
+    item[:version_str] = config[:version_str]
+    item[:version_num] = config[:version_num]
+    item[:repo] = repo
+    item[:title] = "#{config[:version_num]} #{repo} Packages"
+    
+    item[:subnav] = []
+    item[:subnav].push({:include => "/_bioc_release_packages/"})
+    item[:subnav].push({:include => "/_bioc_devel_packages/"})
+    item[:subnav].push({:include => "/_bioc_older_packages/"})
+    
+    item
+  end
+  
   def items
     
     unless @good_to_go
@@ -91,15 +126,18 @@ class BiocViews < Nanoc3::DataSource
       dir = "#{config[:json_dir]}/#{k}"
       json_file = File.open("#{dir}/packages.json")
       
-      
-
     
         
       packages = JSON.parse(json_file.readlines.join("\n"))
+
+      items.push(get_index_page(packages, v))
+
       
       #todo remove
       packages = do_bad_stuff(packages,dir)
       # end remove
+      
+      
       
       
       for package in packages.keys
@@ -115,6 +153,8 @@ class BiocViews < Nanoc3::DataSource
         item[:bioc_version_str] = config[:version_str]
         item[:bioc_version_num] = config[:version_num]
         rep = Nanoc3::ItemRep.new(item, :unique_name)
+        #rep.layout("/_bioc_views_package_detail/")
+        #item.reps.push(rep)
         
         for sym in link_list
           new_sym = "#{sym.to_s}_repo".to_sym

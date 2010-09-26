@@ -1,0 +1,18 @@
+<h1>Bioconductor <%= @info[:version_num] %> <%= @info[:repo]%> Packages</h1>
+
+<table>
+    <tr> 
+         <th>Package</th> 
+         <th>Maintainer</th> 
+         <th>Title</th> 
+    </tr>        
+    <% @info[:info].each_with_index do |item, i|%>
+        <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
+        
+        <tr class="<%=style%>">
+            <td><a href="../<%=item[:name]%>"><%=item[:name]%></a></td>
+            <td><%=item[:Maintainer]%></td>
+            <td><%=item[:Title]%></td>
+        </tr>
+    <% end %>
+</table>

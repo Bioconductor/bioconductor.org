@@ -17,10 +17,14 @@
         <% end %>
 
         <% # TODO - ameliorate this major hack%>
+        <% if @item.attributes.has_key?(:package_index_page)%>
+            <%= render("/_pkg_idx/", :info => @item.attributes)%>
+        <% end %>
         <% if @item.attributes.has_key?(:Package)%>
             <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
         <% end %>
-
+        <%# end hack%>
+        
         <%= yield %>
         <% if has_subnav?(@item) %>
           </div>
