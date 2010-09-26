@@ -71,6 +71,10 @@ def version_fragment(package)
   ""
 end
 
+def filter_emails(str)
+  str.gsub(/<[^>]*>/,"").gsub("  "," ").gsub(" ,", ",")
+end
+
 
 def linkify(sym, package)
   items = package[sym]
@@ -92,31 +96,36 @@ end
 def doc_object(package)
   # return an array of hashes
   # [{:file => ..., :title => ..., :script => ...}]
+  
+  
+  
+  
   doc_obj = []
-  if (@package[:vignetteTitles].respond_to? :join)
-    @package[:vignetteTitles].each_with_index do |title, i|
+  if (package[:vignetteTitles].respond_to? :join)
+    
+    package[:vignetteTitles].each_with_index do |title, i|
       item = {}
-      if (@package.has_key? :vignetteFiles)
-        item[:file] = @package[:vignetteFiles][i]
+      if (package.has_key? :vignetteFiles)
+        item[:file] = (package[:vignetteFiles].respond_to? :join)  ? package[:vignetteFiles][i] : package[:vignetteFiles]
         item[:title] = title
       else
         item[:file] = item[:title] = title
       end
       
-      if (@package.has_key? :vignetteScripts and @package[:vignetteScripts][i] != "")
-        item[:script] = @package[:vignetteScripts][i]
+      if (package.has_key? :vignetteScripts and package[:vignetteScripts][i] != "")
+        item[:script] = package[:vignetteScripts][i]
       end
+
       doc_obj.push item
     end
+    
     return doc_obj
-  elsif @package[:vignetteTitles].is_a? String and @package[:vignetteTitles] != "NA"
+  elsif package[:vignetteTitles].is_a? String and package[:vignetteTitles] != "NA"
     item = {}
-    item[:file] = item[:title] = @package[:vignetteTitles]
+    item[:file] = item[:title] = package[:vignetteTitles]
     item[:script] = ""
     doc_obj.push item
   else
-#    item = {}
-#    item[:file] = 
     return [:file => "", :title => "", :script => ""]
   end
   doc_obj

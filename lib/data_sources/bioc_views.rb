@@ -54,18 +54,22 @@ class BiocViews < Nanoc3::DataSource
     vt = JSON.parse(json)
     
     obj.each_pair do |k,v|
+
       if (vt.has_key? k)
-        v[:vignetteTitles] = [] unless v.has_key? :vignetteTitles
+        
         
         if (vt[k].respond_to? :has_key?)
           v["vignetteFiles"] = v["vignetteTitles"]
-          v[:vignetteFiles] = v[:vignetteTitles]
+          v[:vignetteFiles] = v["vignetteTitles"]
+          
+          
           
           v["vignetteTitles"] = vt[k]["vignetteTitles"] unless vt[k]["vignetteTitles"].nil? or vt[k]["vignetteTitles"].empty?
           v["vignetteScripts"] = vt[k]["vignetteScripts"] unless vt[k]["vignetteScripts"].nil? or vt[k]["vignetteScripts"].empty?
           
           v[:vignetteTitles] = v["vignetteTitles"]
           v[:vignetteScripts] = v["vignetteScripts"]
+          
         end
         
         
