@@ -145,8 +145,22 @@ task :get_json do
   system(r_cmd)
   repos = ["data/annotation", "data/experiment", "bioc"]
   
+  #todo remove
+  system("scp scripts/get_vignette_titles.rb webadmin@krait:~")
+  #end remove
+  
+  
   for version in versions
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
+    
+    #todo remove
+    repos.each do |repo|
+      system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
+      system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
+      
+    end
+    #end remove
+    
     #args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
     args = [fullpaths , "#{json_dir}/#{version}/tree.json"]
     ParseBiocViews.new(args)

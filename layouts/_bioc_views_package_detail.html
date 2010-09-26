@@ -27,6 +27,29 @@ biocLite("<%=@package[:Package]%>")
 
 
 <h3>Documentation</h3>
+
+<table>
+    <% doc_obj = doc_object(@package)%>
+    <% if doc_obj.empty? %>
+        <tr><td>No vignettes available</td></tr>
+    <% else %>
+        <% doc_obj.each_with_index do |item, i|%>
+            <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
+            <tr class="<%=style%>">
+                <td align="right"><%= item[:title]%></td>
+                <td><a href="/packages/<%=@package[:bioc_version]%>/vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a></td>
+                <td><a href="/packages/<%=@package[:bioc_version]%>/vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a></td>
+            </tr>
+
+        <% end %>
+        <tr>
+            <td>
+                <a href="/packages/<%=package[:bioc_version]%>/<%=@package[:repo]%>/manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
+            </td>
+        </tr>
+    <% end %>
+</table>
+
 <ul>
 <li><a href="/packages/<%=@package[:bioc_version]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.pdf">PDF</a></li>
 <li><a href="/packages/<%=@package[:bioc_version]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.R">R Script</a></li>

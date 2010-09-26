@@ -89,6 +89,39 @@ def linkify(sym, package)
   output.join(", ")
 end
 
+def doc_object(package)
+  # return an array of hashes
+  # [{:file => ..., :title => ..., :script => ...}]
+  doc_obj = []
+  if (@package[:vignetteTitles].respond_to? :join)
+    @package[:vignetteTitles].each_with_index do |title, i|
+      item = {}
+      if (@package.has_key? :vignetteFiles)
+        item[:file] = @package[:vignetteFiles][i]
+        item[:title] = title
+      else
+        item[:file] = item[:title] = title
+      end
+      
+      if (@package.has_key? :vignetteScripts and @package[:vignetteScripts][i] != "")
+        item[:script] = @package[:vignetteScripts][i]
+      end
+      doc_obj.push item
+    end
+    return doc_obj
+  elsif @package[:vignetteTitles].is_a? String and @package[:vignetteTitles] != "NA"
+    item = {}
+    item[:file] = item[:title] = @package[:vignetteTitles]
+    item[:script] = ""
+    doc_obj.push item
+  else
+#    item = {}
+#    item[:file] = 
+    return [:file => "", :title => "", :script => ""]
+  end
+  doc_obj
+end
+
 def bioc_views_links(package)
   links = []
   
@@ -100,12 +133,6 @@ def bioc_views_links(package)
   links.join(", ")
 end
 
-# this method doesn't actually do anything but if people use it in place of hardcoding
-# the host name (where the host name must be used), then maybe at some point we can fix
-# the issue of mirrors having urls that point back to us.
-def site_host()
-  "bioconductor.org"
-end
 
 def find_item(items, identifier)
   items.find { |i| i.identifier == identifier }

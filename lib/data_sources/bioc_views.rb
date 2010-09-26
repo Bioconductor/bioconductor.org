@@ -20,6 +20,11 @@ class BiocViews < Nanoc3::DataSource
     @repos.each_pair do |k,v|
       dir = "#{config[:json_dir]}/#{k}"
       @good_to_go = false unless test(?f, "#{dir}/packages.json") 
+      
+      #todo remove
+      @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
+      
+      
     end
     
     @all_packages = {}
@@ -30,6 +35,8 @@ class BiocViews < Nanoc3::DataSource
         dir = "#{config[:json_dir]}/#{k}"
         json_file = File.open("#{dir}/packages.json")
         obj = JSON.parse(json_file.readlines.join("\n"))
+        
+        
         @all_packages[key] = obj
       end
     else
@@ -39,6 +46,35 @@ class BiocViews < Nanoc3::DataSource
       
   end
 
+  
+  #todo remove
+  def do_bad_stuff(obj, dir)
+    tf = File.open("#{dir}/vignette_titles.json")
+    json = tf.readlines.join("\n")
+    vt = JSON.parse(json)
+    
+    obj.each_pair do |k,v|
+      if (vt.has_key? k)
+        v[:vignetteTitles] = [] unless v.has_key? :vignetteTitles
+        
+        if (vt[k].respond_to? :has_key?)
+          v["vignetteFiles"] = v["vignetteTitles"]
+          v[:vignetteFiles] = v[:vignetteTitles]
+          
+          v["vignetteTitles"] = vt[k]["vignetteTitles"] unless vt[k]["vignetteTitles"].nil? or vt[k]["vignetteTitles"].empty?
+          v["vignetteScripts"] = vt[k]["vignetteScripts"] unless vt[k]["vignetteScripts"].nil? or vt[k]["vignetteScripts"].empty?
+          
+          v[:vignetteTitles] = v["vignetteTitles"]
+          v[:vignetteScripts] = v["vignetteScripts"]
+        end
+        
+        
+      end
+      
+    end
+    obj
+  end
+  # end remove
   
   def items
     
@@ -60,6 +96,12 @@ class BiocViews < Nanoc3::DataSource
     
         
       packages = JSON.parse(json_file.readlines.join("\n"))
+      
+      #todo remove
+      packages = do_bad_stuff(packages,dir)
+      # end remove
+      
+      
       for package in packages.keys
         repo = k
         item = Nanoc3::Item.new(nil, packages[package], package)
