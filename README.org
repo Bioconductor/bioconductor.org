@@ -712,6 +712,9 @@ This Rake target runs some R code which calls code in the BiocViews package, ext
 data in JSON format and putting it in assets/help/bioc-views/json. Then a ruby script
 is run which processes that JSON into a format usable by the javascript tree widget.
 
+If you want to run this target on your own machine, you need R available with the biocViews
+(Bioconductor) and rjson (CRAN) packages installed.
+
 **** Step 2: Build package detail pages
 This is done by nanoc and handled by the DataSource subclass BiocViews (found in
 lib/data_sources/bioc_views.rb). This data source uses the JSON files generated in the
