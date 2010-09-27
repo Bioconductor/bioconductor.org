@@ -39,7 +39,7 @@ biocLite("<%=@package[:Package]%>")
                 <td align="right"><%= item[:title]%></td>
                 <td>
                     <% if item[:file] and item[:file] != "" %>
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
+                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=package[:repo]%>/vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
                     <% end %>
                 </td>
                 <td>
