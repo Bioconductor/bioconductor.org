@@ -38,14 +38,19 @@ end
 
 # show only one windows build - the 64-bit (if available) or the 32 (because we have fat (dual-arch) packages now)
 def windows_binary(package)
+  return nil unless package.has_key? :"win.binary.ver" or package.has_key? :"win64.binary.ver"
+  return nil if package[:"win.binary.ver"] == "" and package[:"win64.binary.ver"] == ""
+  
   win32 = package[:"win.binary.ver"]
   win64 = package[:"win64.binary.ver"]
-  # assuming that package has both keys
+  
   return win64 unless win64.nil?  or win64.empty?
   win32
 end
 
 def win_format(package)
+  wb = windows_binary(package)
+  return nil if wb.nil?
   if windows_binary(package) =~ /64/
     "(32- &amp; 64-bit)"
   else

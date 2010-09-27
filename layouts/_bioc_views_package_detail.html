@@ -57,13 +57,7 @@ biocLite("<%=@package[:Package]%>")
     <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
     </p>
 
-<% if false%>    
-<ul>
-<li><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.pdf">PDF</a></li>
-<li><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/vignettes/<%=@package[:Package]%>/inst/doc/<%=@package[:Package]%>.R">R Script</a></li>
-<li><a href="/packages/<%=@package[:bioc_version_num]%>/bioc/manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a></li>
-</ul>
-<% end %>
+
 
 <h3>Details</h3>
 
@@ -129,11 +123,18 @@ biocLite("<%=@package[:Package]%>")
         <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"source.ver"]%>">
             <%= base_filename(@package[:"source.ver"]) %></a></td>
     </tr>
+
     <tr class="row_even">
         <td>Windows Binary</td>
-            <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
-                <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%></td>
+            <td>
+			 	<% wb = windows_binary(@package) %>
+				<% unless wb.nil?%>
+					<a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
+                		<%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%>
+				<% end %>
+			</td>
     </tr>
+
     <tr class="row_odd">
         <td>MacOS 10.5 (Leopard) binary</td>
         <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"mac.binary.leopard.ver"]%>">
