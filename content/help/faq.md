@@ -7,6 +7,33 @@ This is the FAQ, currently under construction.
 
 <h2 id="install-packages">Package Installation</h2>
 
+* biocLite warns that a package is not available 
+
+Most Bioconductor packages are available for Windows, Mac OS, and
+Linux operating systems. A few packages are not available on one or
+more platforms. This usually occurs because the package relies on
+additional software that is not available for the operating
+system. For instance, a user trying to install `GeneRfold` encountered
+this message:
+
+    > biocLite("GeneRfold")
+    Using R version 2.11.1, biocinstall version 2.6.8.
+    Installing Bioconductor version 2.6 packages:
+    [1] "GeneRfold"
+    Please wait...
+    Warning message:
+    In getDependencies(pkgs, dependencies, available, lib) :
+      package ‘GeneRfold’ is not available
+
+Visiting the list of [package home pages][home-pages]
+shows that the package was not available on Windows, the platform on
+which the user was trying to install the package. If the package
+Description does not indicate why the package is not available, please
+feel free to ask on the [Bioconductor][mailing-list] mailing list.
+
+It's useful to check that the package name is spelt correctly, with
+correct capitalization!
+
 * Package XXX fails to install
 
 A common reason for a package to fail to install is that `R` or
@@ -49,9 +76,9 @@ package:
 
 These types of errors can sometimes be easily solved (installing
 necessary libraries or other software, perhaps referenced on the
-[package home page][4]). It will often be necessary to understand your
-system more thoroughly than you'd like, perhaps with the assistance of
-the Bioconductor [mailing list][3].
+[package home page][home-pages]). It will often be necessary to
+understand your system more thoroughly than you'd like, perhaps with
+the assistance of the Bioconductor [mailing list][mailing-list].
 
 <h2 id="developer-faq">Developing Packages</h2>
 
@@ -71,5 +98,5 @@ on their search path.
 
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
-[3]: /help/mailing-list/
-[4]: /packages/release/bioc/
+[mailing-list]: /help/mailing-list/
+[home-pages]: http://bioconductor.org/help/bioc-views/release/all-Software/
