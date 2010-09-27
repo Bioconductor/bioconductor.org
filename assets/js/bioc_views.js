@@ -91,13 +91,13 @@ var setBiocVersion = function() {
     var url;
     
     if (biocVersion == releaseVersion) {
-        releaseText = "Release version (" + releaseVersion + ")";
+        releaseText = "Release (v. " + releaseVersion + ")";
         url = "../bioc-views/?version=devel";
-        develText = "<a href='" + url + "'>" + "Development version (" + develVersion + ")</a>";
+        develText = "<a href='" + url + "'>" + "Development (v. " + develVersion + ")</a>";
     } else {
-        develText = "Development version (" + develVersion + ")";
+        develText = "Development (v. " + develVersion + ")";
         url = "../bioc-views/";
-        releaseText = "<a href='" + url + "'>" + "Release version (" + releaseVersion + ")</a>";
+        releaseText = "<a href='" + url + "'>" + "Release (v. " + releaseVersion + ")</a>";
     }
     
     jQuery("#release_version").html(releaseText);
