@@ -9,7 +9,9 @@
 
 <h2><%= @package[:Title]%></h2> 
 
-<p>Bioconductor version: <%= @package[:bioc_version_str]%> (<%=@package[:bioc_version_num]%>)</p>
+<p class="biocVersion_<%=@package[:bioc_version_str]%>">
+	Bioconductor version: <%= @package[:bioc_version_str]%> (<%=@package[:bioc_version_num]%>)
+</p>
 
 <p><%= @package[:Description]%></p>
 

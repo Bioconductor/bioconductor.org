@@ -617,3 +617,10 @@ tr.row_even
     background-color: #DDD;
 }
 
+.biocVersion_release {
+	background-color: #B9B;
+}
+
+.biocVersion_devel {
+	background-color: #FF9;
+}
