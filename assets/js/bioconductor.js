@@ -119,13 +119,7 @@ var getCorrectUrlForMirrors = function() {
     url = window.location.href.replace(/^http:\/\//i, "");
     segs = url.split("/");
     host = segs[0];
-    var result;
-    if (segs[1] == "help") {
-        result = "bioconductor.org";
-    } else {
-        result = host + "/" + segs[1];
-    }
-    jQuery(".site_host").html(result);
+    jQuery(".site_host").html(host);
 }
                                       
 jQuery(function() {
