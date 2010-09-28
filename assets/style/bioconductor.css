@@ -622,7 +622,8 @@ tr.row_even
 	background-color: #B9B;
 }
 
-.biocVersion_2.6 {
+/* I don't think style names can have dots in them -- changing to underscore */
+.biocVersion_2_6 {
 	background-color: #B9B;
 }
 
@@ -630,7 +631,8 @@ tr.row_even
 	background-color: #FF9;
 }
 
-.biocVersion_2.7{
+/* I don't think style names can have dots in them -- changing to underscore */
+.biocVersion_2_7{
 	background-color: #FF9;
 }
 
