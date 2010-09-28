@@ -14,25 +14,25 @@ data_sources:
     cache_file: tmp/gmane_list_cache_file.yaml
     ttl: 10
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-- items_root: /help/bioc-views/2.6
-  layouts_root: /
-  type: bioc_views
-  config:
+#- items_root: /help/bioc-views/2.6
+#  layouts_root: /
+#  type: bioc_views
+#  config:
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-    json_dir: "assets/help/bioc-views/json/2.6"
-    version_str: "release"
+#    json_dir: "assets/help/bioc-views/json/2.6"
+#    version_str: "release"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-    version_num: "2.6"
+#    version_num: "2.6"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-- items_root: /help/bioc-views/2.7
-  layouts_root: /
-  type: bioc_views
-  config:
- ## CHANGE THIS WHEN WE RELEASE A VERSION:
-    json_dir: "assets/help/bioc-views/json/2.7"
-    version_str: "devel"
+#- items_root: /help/bioc-views/2.7
+#  layouts_root: /
+#  type: bioc_views
+#  config:
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-    version_num: "2.7"
+#    json_dir: "assets/help/bioc-views/json/2.7"
+#    version_str: "devel"
+## CHANGE THIS WHEN WE RELEASE A VERSION:
+#    version_num: "2.7"
 
 output_dir: output
 staging_deploy_root: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org
