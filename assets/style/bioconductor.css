@@ -592,12 +592,12 @@ ul.inline_list li {
 }
 
 .biocViewsTreePadding {
-    float:left;
-    width: 1%;
+/*    float:left; */
+/*    width: 1%; */
 }
 
 .biocViewsPackages {
- float:left;
+ float:right;
  width:65%;
 }
 .biocViewsBelowTree {
