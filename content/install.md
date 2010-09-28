@@ -64,7 +64,7 @@ The biocLite.R script has arguments that change the default behavior:
 
 There are many Bioconductor and R packages in addition to those in the
 default installation of `biocLite`. A catalog of the Bioconductor
-packages is available at [BiocViews](/packages/<%=config[:release_version]%>/BiocViews.html]).
+packages is available at [BiocViews](/packages/<%=config[:release_version]%>/BiocViews.html).
 To install a new package, e.g., EBImage, use
 
     source("http://bioconductor.org/biocLite.R")
