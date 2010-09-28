@@ -24,10 +24,6 @@ var displayPackages = function(packageList, nodeName) {
     
     
     for (var i = 0; i < packageList.length; i++) {
-	
-//right:		http://localhost:3000/packages/2.6/bioc/html/ABarray.html
-//wrong: 		http://localhost:3000/packages/2.6/release/ABarray
-		
         var title = "unknown";
         var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
         
