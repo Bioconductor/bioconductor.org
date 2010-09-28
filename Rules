@@ -2,6 +2,9 @@
 
 # compilation rules
 
+@@config = YAML.load_file("./config.yaml")
+
+
 compile '/mailing-list-posts/' do
   filter :erb
   ## no layout as this gets included in homepage '/'
@@ -19,6 +22,7 @@ end
 compile '*' do
   case item[:extension]
   when /md$/, /markdown$/
+    filter :erb
     filter :rdiscount
   when /haml$/
     filter :haml
@@ -52,6 +56,37 @@ end
 route '/style/*/' do
   item.identifier.chop + '.css'
 end
+
+# biocViews hierarchy
+route '/help/bioc-views' do
+  "/packages/#{config[:release_version]}/BiocViews.html"
+end
+
+# index pages (package lists)
+route /^\/help\/bioc-views\/#{@@config["release_version"]}\/all-|^\/help\/bioc-views\/#{@@config["devel_version"]}\/all-/ do # todo improve regex
+  long_repo_name = item.identifier.split("-").last.gsub("/", "")
+  repo_map = {"Software" => "bioc", "AnnotationData" => "data/annotation", "ExperimentData" => "data/experiment"}
+  version = nil
+  if item.identifier =~ /^\/help\/bioc-views\/#{config[:release_version]}/
+    version = config[:release_version]
+  elsif item.identifier =~ /^\/help\/bioc-views\/#{config[:devel_version]}/
+    version = config[:devel_version]
+  end
+  "/packages/#{version}/#{repo_map[long_repo_name]}/index.html"
+end
+
+# package detail pages
+route /^\/help\/bioc-views\/#{@@config["release_version"]}\/|^\/help\/bioc-views\/#{@@config["devel_version"]}\// do
+  pkg_name = item.identifier.split("/").last
+  version = nil
+  if item.identifier =~ /^\/help\/bioc-views\/#{config[:release_version]}/
+    version = config[:release_version]
+  elsif item.identifier =~ /^\/help\/bioc-views\/#{config[:devel_version]}/
+    version = config[:devel_version]
+  end
+  "/packages/#{version}/#{item[:repo]}html/#{pkg_name}.html"
+end
+
 
 route '*' do
   if item.binary?

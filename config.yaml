@@ -1,4 +1,8 @@
 --- 
+## Lines that must be updated when we release a new software version are indicated in comments below
+
+
+## ADD a new data source when we release a version (or configure a single data source to process multiple versions)
 data_sources: 
 - items_root: /
   layouts_root: /
@@ -9,24 +13,32 @@ data_sources:
     gmane_rss_url: 'http://rss.gmane.org/messages/excerpts/gmane.science.biology.informatics.conductor'
     cache_file: tmp/gmane_list_cache_file.yaml
     ttl: 10
-- items_root: /help/bioc-views/release
+## CHANGE THIS WHEN WE RELEASE A VERSION:
+- items_root: /help/bioc-views/2.6
   layouts_root: /
   type: bioc_views
   config:
+## CHANGE THIS WHEN WE RELEASE A VERSION:
     json_dir: "assets/help/bioc-views/json/2.6"
     version_str: "release"
+## CHANGE THIS WHEN WE RELEASE A VERSION:
     version_num: "2.6"
-- items_root: /help/bioc-views/devel
+## CHANGE THIS WHEN WE RELEASE A VERSION:
+- items_root: /help/bioc-views/2.7
   layouts_root: /
   type: bioc_views
   config:
+ ## CHANGE THIS WHEN WE RELEASE A VERSION:
     json_dir: "assets/help/bioc-views/json/2.7"
     version_str: "devel"
+## CHANGE THIS WHEN WE RELEASE A VERSION:
     version_num: "2.7"
 
 output_dir: output
 staging_deploy_root: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@krait:/extra/www/bioc
+## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "2.6"
+## CHANGE THIS WHEN WE RELEASE A VERSION:
 devel_version: "2.7"
 

@@ -9,8 +9,14 @@ var displayPackages = function(packageList, nodeName) {
     }
     var html = "<h3>Packages</h3>\n";
     
+	var parents = findParents(nodeName);
+	
+	var category = parents[0];
+	
+	var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
+	
     html += "<p>";
-    html += findParents(nodeName).join(" &gt ");
+    html += parents.join(" &gt ");
     html += "</p>\n";
     
     
@@ -18,12 +24,15 @@ var displayPackages = function(packageList, nodeName) {
     
     
     for (var i = 0; i < packageList.length; i++) {
+	
+//right:		http://localhost:3000/packages/2.6/bioc/html/ABarray.html
+//wrong: 		http://localhost:3000/packages/2.6/release/ABarray
+		
         var title = "unknown";
         var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
         
-        var folder = (biocVersion == releaseVersion) ? "release" : "devel";
-        var url = folder + "/" + packageList[i];
 
+		var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
 
         
         html += "\t<li>\n"
@@ -73,15 +82,19 @@ var nodeSelected = function(event, data){
 
 var setBiocVersion = function() {
     
+	var href = window.location.href;
+	
+	
+	if (href.match(new RegExp("/" + releaseVersion + "/"))) {
+		biocVersion = releaseVersion;
+	} else if (href.match(new RegExp("/" + develVersion + "/"))) {
+		biocVersion = develVersion;
+	} else if (href.toLowerCase().match(new RegExp("/release/"))) {
+		biocVersion = releaseVersion;
+	} else if (href.toLowerCase().match(new RegExp("/devel/"))) {
+		biocVersion = develVersion;
+	}
     
-    biocVersion = getParameterByName("version");
-    if (biocVersion == "") {
-        biocVersion = releaseVersion;
-    } else if (biocVersion.toLowerCase() == "release") {
-        biocVersion = releaseVersion;
-    } else if (biocVersion.toLowerCase() == "devel") {
-        biocVersion = develVersion;
-    }
     log("biocVersion = " + biocVersion);
     
     
@@ -92,11 +105,11 @@ var setBiocVersion = function() {
     
     if (biocVersion == releaseVersion) {
         releaseText = "Release (v. " + releaseVersion + ")";
-        url = "../bioc-views/?version=devel";
+		url = "/packages/" + develVersion + "/BiocViews.html"
         develText = "<a href='" + url + "'>" + "Development (v. " + develVersion + ")</a>";
     } else {
         develText = "Development (v. " + develVersion + ")";
-        url = "../bioc-views/";
+		url = "/packages/" + releaseVersion + "/BiocViews.html"
         releaseText = "<a href='" + url + "'>" + "Release (v. " + releaseVersion + ")</a>";
     }
     
@@ -148,7 +161,7 @@ var init = function() {
 	    },
 		"json_data" : {
 			"ajax" : {
-				"url" : "json/" + biocVersion + "/tree.json",
+				"url" : "/help/bioc-views/json/" + biocVersion + "/tree.json",
 				"data" : function (n) { 
 					return { id : n.attr ? n.attr("id") : 0 }; 
 				}
@@ -198,7 +211,7 @@ jQuery(function () {
     var count = 0;
     
     for (var i = 0; i < repos.length; i++) {
-        jQuery.getJSON("json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
+        jQuery.getJSON("/help/bioc-views/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
             jQuery.extend(packageInfo, data);
             if (count == 2) {
                 init();

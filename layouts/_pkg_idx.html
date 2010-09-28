@@ -1,5 +1,8 @@
 <h1>Bioconductor <%= @info[:version_num] %> <%= @info[:repo]%> Packages</h1>
 
+<%# todo - show a splash of color here to indicate release or devel (or older version) %>
+
+
 <table>
     <tr> 
          <th>Package</th> 
@@ -10,7 +13,7 @@
         <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
         
         <tr class="<%=style%>">
-            <td><a href="../<%=item[:name]%>"><%=item[:name]%></a></td>
+            <td><a href="html/<%=item[:name]%>.html"><%=item[:name]%></a></td>
             <td><%=item[:Maintainer]%></td>
             <td><%=item[:Title]%></td>
         </tr>
