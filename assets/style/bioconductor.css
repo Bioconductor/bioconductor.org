@@ -617,10 +617,20 @@ tr.row_even
     background-color: #DDD;
 }
 
+/* todo - add styles for future and past releases  */
 .biocVersion_release {
 	background-color: #B9B;
 }
 
-.biocVersion_devel {
+.biocVersion_2.6 {
+	background-color: #B9B;
+}
+
+.biocVersion_devel{
 	background-color: #FF9;
 }
+
+.biocVersion_2.7{
+	background-color: #FF9;
+}
+

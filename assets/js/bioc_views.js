@@ -104,10 +104,16 @@ var setBiocVersion = function() {
     var url;
     
     if (biocVersion == releaseVersion) {
+		jQuery("#release_version").addClass("biocVersion_release");
+		jQuery("#devel_version").removeClass("biocVersion_devel");	
+		
         releaseText = "Release (v. " + releaseVersion + ")";
 		url = "/packages/" + develVersion + "/BiocViews.html"
         develText = "<a href='" + url + "'>" + "Development (v. " + develVersion + ")</a>";
     } else {
+		jQuery("#devel_version").addClass("biocVersion_devel");
+		jQuery("#release_version").removeClass("biocVersion_release");
+
         develText = "Development (v. " + develVersion + ")";
 		url = "/packages/" + releaseVersion + "/BiocViews.html"
         releaseText = "<a href='" + url + "'>" + "Release (v. " + releaseVersion + ")</a>";
