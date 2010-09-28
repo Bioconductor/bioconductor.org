@@ -616,23 +616,3 @@ tr.row_even
 {
     background-color: #DDD;
 }
-
-/* todo - add styles for future and past releases  */
-.biocVersion_release {
-	background-color: #B9B;
-}
-
-/* I don't think style names can have dots in them -- changing to underscore */
-.biocVersion_2_6 {
-	background-color: #B9B;
-}
-
-.biocVersion_devel{
-	background-color: #FF9;
-}
-
-/* I don't think style names can have dots in them -- changing to underscore */
-.biocVersion_2_7{
-	background-color: #FF9;
-}
-
