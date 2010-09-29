@@ -58,9 +58,10 @@ route '/style/*/' do
 end
 
 # biocViews hierarchy
-route '/help/bioc-views' do
-  "/packages/#{config[:release_version]}/BiocViews.html"
-end
+##comment this out until mirror crisis is resolved
+#route '/help/bioc-views' do
+#  "/packages/#{config[:release_version]}/BiocViews.html"
+#end
 
 # index pages (package lists)
 route /^\/help\/bioc-views\/#{@@config["release_version"]}\/all-|^\/help\/bioc-views\/#{@@config["devel_version"]}\/all-/ do # todo improve regex
