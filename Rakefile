@@ -64,6 +64,7 @@ task :post_compile do
       puts ex.message
     end
   end
+  FileUtils.cd pwd
 end
 
 desc "Nuke output directory !! uses rm -rf !!"
