@@ -51,19 +51,12 @@ task :post_compile do
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
   cwd = FileUtils.pwd
   FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
-  begin
-    FileUtils.ln_s "./#{site_config["release_version"]}",
-      "./release"
-      FileUtils.ln_s "./#{site_config["devel_version"]}",
-        "./devel"
-    puts "Generated symlinks for release and devel"
-  rescue Exception => ex
-    if ex.message =~ /^File exists/
-      puts "symlinks already exist"
-    else
-      puts ex.message
-    end
-  end
+  
+  FileUtils.rm "devel"
+  FileUtils.rm "release"
+  FileUtils.ln_s "#{site_config["release_version"]}", "release"
+  FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
+  puts "Generated symlinks for release and devel"
   FileUtils.cd pwd
 end
 
