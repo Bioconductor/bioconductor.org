@@ -3,6 +3,7 @@
 This is the FAQ, currently under construction.
 
 * [Package Installation](#install-packages)
+* [Package Use](#use-packages)
 * [Developing Packages](#developer-faq)
 
 <h2 id="install-packages">Package Installation</h2>
@@ -80,6 +81,30 @@ necessary libraries or other software, perhaps referenced on the
 understand your system more thoroughly than you'd like, perhaps with
 the assistance of the Bioconductor [mailing list][mailing-list].
 
+<h2 id="use-packages">Package Use</h2>
+
+* How can I find information about using a package?
+
+There are three main steps to using a package. (1) Identify an
+appropriate package. Do this using [biocViews][bioc-views] to browse
+available software. (2) Explore overall package functionality and work
+flows. Do this by reading the package vignettes, listed on the page
+describing the package and available from biocViews. For instance,
+locate [IRanges vignettes][iranges-landing-page]. (3) Find help on
+particular functions, e.g.,
+
+    library(IRanges)
+    help(package="IRanges")  ## overview
+    ?findOverlaps            ## specific function
+
+For a more exploratory interface to the help system, try
+
+    help.start()
+
+If you are new to `R`, then it will help to enter into the process
+knowing that some basic R skills are assumed by the vignettes and help
+pages; spend some time learning `R` itself.
+
 <h2 id="developer-faq">Developing Packages</h2>
 
 * What packages belong in the Depends:, Imports:, or Suggests: fields?
@@ -99,4 +124,6 @@ on their search path.
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
 [mailing-list]: /help/mailing-list/
-[home-pages]: http://bioconductor.org/help/bioc-views/release/all-Software/
+[home-pages]: /help/bioc-views/release/all-Software/
+[bioc-views]: /help/bioc-views/release/BiocViews.html
+[iranges-landing-page]: /help/bioc-views/release/bioc/html/IRanges.html
