@@ -49,11 +49,13 @@ task :post_compile do
   FileUtils.cp(src, dest)
   puts "copied output/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/bioc-views/#{site_config["devel_version"]}/BiocViews.html"
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
+  cwd = FileUtils.pwd
+  FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
   begin
-    FileUtils.ln_s "#{site_config["output_dir"]}/help/bioc-views/#{site_config["release_version"]}",
-      "#{site_config["output_dir"]}/help/bioc-views/release"
-    FileUtils.ln_s "#{site_config["output_dir"]}/help/bioc-views/#{site_config["devel_version"]}",
-      "#{site_config["output_dir"]}/help/bioc-views/devel"
+    FileUtils.ln_s "./#{site_config["release_version"]}",
+      "./release"
+      FileUtils.ln_s "./#{site_config["devel_version"]}",
+        "./devel"
     puts "Generated symlinks for release and devel"
   rescue Exception => ex
     if ex.message =~ /^File exists/
