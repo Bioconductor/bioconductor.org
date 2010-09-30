@@ -4,55 +4,55 @@ The Bioconductor package repositories may be mirrored with `rsync`.  If
 you would like to become a mirror for package and data package
 repositories, please use the commands below.
 
-## BioC 2.6 repos ##
+## BioC <%= config[:release_version] %> repos ##
 
-If you want to mirror the Bioconductor **2.6** repos (the current
+If you want to mirror the Bioconductor **<%= config[:release_version] %>** repos (the current
 release version), please use the following commands:
 
-### All Bioconductor 2.6 repos ###
+### All Bioconductor <%= config[:release_version] %> repos ###
 
-    rsync -rtlv --delete bioconductor.org::2.6 /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %> /dest
 
-### Bioconductor 2.6 Software repo ###
+### Bioconductor <%= config[:release_version] %> Software repo ###
 
-    rsync -rtlv --delete bioconductor.org::2.6/bioc /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest
 
-### Bioconductor 2.6 Data repos ###
+### Bioconductor <%= config[:release_version] %> Data repos ###
 
-    rsync -rtlv --delete bioconductor.org::2.6/data /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest
 
-### Bioconductor 2.6 Extra repo ###
+### Bioconductor <%= config[:release_version] %> Extra repo ###
 
-    rsync -rtlv --delete bioconductor.org::2.6/extra /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest
 
 
-## BioC 2.7 repos ##
+## BioC <%= config[:devel_version] %> repos ##
 
-If you want to mirror the Bioconductor **2.7** repos (the current
+If you want to mirror the Bioconductor **<%= config[:devel_version] %>** repos (the current
 devel version), please use the following commands:
 
-### All Bioconductor 2.7 repos ###
+### All Bioconductor <%= config[:devel_version] %> repos ###
 
-    rsync -rtlv --delete bioconductor.org::2.7 /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest
 
-### Bioconductor 2.7 Software repo ###
+### Bioconductor <%= config[:devel_version] %> Software repo ###
 
-    rsync -rtlv --delete bioconductor.org::2.7/bioc /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest
 
-### Bioconductor 2.7 Data repos ###
+### Bioconductor <%= config[:devel_version] %> Data repos ###
 
-    rsync -rtlv --delete bioconductor.org::2.7/data /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest
 
 
-### Bioconductor 2.7 Extra repo ###
+### Bioconductor <%= config[:devel_version] %> Extra repo ###
 
-    rsync -rtlv --delete bioconductor.org::2.7/extra /dest
+    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest
 
 
 ## Additional information ##
 
-Bioconductor is big (> 64G for BioC 2.6). Please check the size of
-what will be transferred with e.g. `rsync -avn bioconductor.org::2.6`
+Bioconductor is big (> 64G for BioC <%= config[:release_version] %>). Please check the size of
+what will be transferred with e.g. `rsync -avn bioconductor.org::<%= config[:release_version] %>`
 and make sure you have enough room on your local disk before you
 start.
 
