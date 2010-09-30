@@ -1,5 +1,5 @@
 /*
- * timeago: a jQuery plugin, version: 0.8.0 (2009-10-25)
+ * timeago: a jQuery plugin, version: 0.9.2 (2010-09-14)
  * @requires jQuery v1.2.3 or later
  *
  * Timeago is a jQuery plugin that makes it easy to support automatically
@@ -11,7 +11,7 @@
  * Licensed under the MIT:
  * http://www.opensource.org/licenses/mit-license.php
  *
- * Copyright (c) 2008-2009, Ryan McGeary (ryanonjavascript -[at]- mcgeary [*dot*] org)
+ * Copyright (c) 2008-2010, Ryan McGeary (ryanonjavascript -[at]- mcgeary [*dot*] org)
  */
 (function($) {
   $.timeago = function(timestamp) {
@@ -30,8 +30,6 @@
         prefixFromNow: null,
         suffixAgo: "ago",
         suffixFromNow: "from now",
-        ago: null, // DEPRECATED, use suffixAgo
-        fromNow: null, // DEPRECATED, use suffixFromNow
         seconds: "less than a minute",
         minute: "about a minute",
         minutes: "%d minutes",
@@ -42,17 +40,18 @@
         month: "about a month",
         months: "%d months",
         year: "about a year",
-        years: "%d years"
+        years: "%d years",
+        numbers: []
       }
     },
     inWords: function(distanceMillis) {
       var $l = this.settings.strings;
       var prefix = $l.prefixAgo;
-      var suffix = $l.suffixAgo || $l.ago;
+      var suffix = $l.suffixAgo;
       if (this.settings.allowFuture) {
         if (distanceMillis < 0) {
           prefix = $l.prefixFromNow;
-          suffix = $l.suffixFromNow || $l.fromNow;
+          suffix = $l.suffixFromNow;
         }
         distanceMillis = Math.abs(distanceMillis);
       }
@@ -62,6 +61,12 @@
       var hours = minutes / 60;
       var days = hours / 24;
       var years = days / 365;
+
+      function substitute(stringOrFunction, number) {
+        var string = $.isFunction(stringOrFunction) ? stringOrFunction(number, distanceMillis) : stringOrFunction;
+        var value = ($l.numbers && $l.numbers[number]) || number;
+        return string.replace(/%d/i, value);
+      }
 
       var words = seconds < 45 && substitute($l.seconds, Math.round(seconds)) ||
         seconds < 90 && substitute($l.minute, 1) ||
@@ -79,13 +84,16 @@
     },
     parse: function(iso8601) {
       var s = $.trim(iso8601);
+      s = s.replace(/\.\d\d\d+/,""); // remove milliseconds
       s = s.replace(/-/,"/").replace(/-/,"/");
       s = s.replace(/T/," ").replace(/Z/," UTC");
       s = s.replace(/([\+-]\d\d)\:?(\d\d)/," $1$2"); // -04:00 -> -0400
       return new Date(s);
     },
     datetime: function(elem) {
-      var iso8601 = $(elem).is('time') ? $(elem).attr('datetime') : $(elem).attr('title');
+      // jQuery's `is()` doesn't play well with HTML5 in IE
+      var isTime = $(elem).get(0).tagName.toLowerCase() == "time"; // $(elem).is("time");
+      var iso8601 = isTime ? $(elem).attr("datetime") : $(elem).attr("title");
       return $t.parse(iso8601);
     }
   });
@@ -111,7 +119,7 @@
 
   function prepareData(element) {
     element = $(element);
-    if (element.data("timeago") === undefined) {
+    if (!element.data("timeago")) {
       element.data("timeago", { datetime: $t.datetime(element) });
       var text = $.trim(element.text());
       if (text.length > 0) element.attr("title", text);
@@ -127,12 +135,7 @@
     return (new Date().getTime() - date.getTime());
   }
 
-  function substitute(stringOrFunction, value) {
-    var string = $.isFunction(stringOrFunction) ? stringOrFunction(value) : stringOrFunction;
-    return string.replace(/%d/i, value);
-  }
-
   // fix for IE6 suckage
-  document.createElement('abbr');
-  document.createElement('time');
+  document.createElement("abbr");
+  document.createElement("time");
 })(jQuery);

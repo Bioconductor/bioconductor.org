@@ -121,7 +121,36 @@ var getCorrectUrlForMirrors = function() {
     host = segs[0];
     jQuery(".site_host").html(host);
 }
-                                      
+
+/*
+ * The little file server we use for development does not follow symlinks, so see if we are running 
+ * that server (assume we are if we are not on port 80) and change URLs tagged with the "symlink"
+ * class (e.g. containing "release" or "devel" to point to the actual file.
+ */
+var getHrefForSymlinks = function(href) {
+  if (window.location.port == 80) {
+    return href;
+  } else {
+    var releaseRegex = /\/release\//;
+    var develRegex  = /\/devel\//;
+    if (href.match(releaseRegex)) {
+      return href.replace(releaseRegex, "/" + releaseVersion + "/");
+    } else if (href.match(develRegex)) {
+      return href.replace(develRegex, "/" + develVersion + "/");
+    } else {
+      return href;
+    }
+  }
+}
+
+//document ready function                                      
 jQuery(function() {
     getCorrectUrlForMirrors();
+    
+    jQuery.each(jQuery(".symlink"), function(index, value){
+      var href = jQuery(value).attr("href");
+      jQuery(value).attr("href", getHrefForSymlinks(href));
+    });
+    
+    
 });
