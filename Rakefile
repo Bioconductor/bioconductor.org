@@ -43,12 +43,11 @@ end
 task :post_compile do
   puts "running post-compilation tasks..."
   site_config = YAML.load_file("./config.yaml")
-  src = "#{site_config["output_dir"]}/packages/#{site_config["release_version"]}/BiocViews.html"
-  dest = "#{site_config["output_dir"]}/packages/#{site_config["devel_version"]}"
-## commented out until mirror crisis passes
-##  FileUtils.mkdir_p dest
-##  FileUtils.cp(src, dest)
-##  puts "copied output/packages/#{site_config["release_version"]}/BiocViews.html to output/packages/#{site_config["devel_version"]}/BiocViews.html"
+  src = "#{site_config["output_dir"]}/help/bioc-views/#{site_config["release_version"]}/BiocViews.html"
+  dest = "#{site_config["output_dir"]}/help/bioc-views/#{site_config["devel_version"]}"
+  FileUtils.mkdir_p dest
+  FileUtils.cp(src, dest)
+  puts "copied output/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/bioc-views/#{site_config["devel_version"]}/BiocViews.html"
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
 end
 

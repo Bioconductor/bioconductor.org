@@ -28,7 +28,7 @@ var displayPackages = function(packageList, nodeName) {
         var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
         
 
-		var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
+		var url = "/help/bioc-views/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
 
         
         html += "\t<li>\n"
@@ -101,11 +101,11 @@ var setBiocVersion = function() {
     
     if (biocVersion == releaseVersion) {
         releaseText = "Release (v. " + releaseVersion + ")";
-		url = "/packages/" + develVersion + "/BiocViews.html"
+		url = "/help/bioc-views/" + develVersion + "/BiocViews.html"
         develText = "<a href='" + url + "'>" + "Development (v. " + develVersion + ")</a>";
     } else {
         develText = "Development (v. " + develVersion + ")";
-		url = "/packages/" + releaseVersion + "/BiocViews.html"
+		url = "/help/bioc-views/" + releaseVersion + "/BiocViews.html"
         releaseText = "<a href='" + url + "'>" + "Release (v. " + releaseVersion + ")</a>";
     }
     

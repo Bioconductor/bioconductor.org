@@ -93,7 +93,7 @@ def linkify(sym, package)
       output.push item
       next
     end
-    output.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_str]}/#{item}">#{item}</a>)
+    output.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
   end
   output.join(", ")
 end
@@ -141,7 +141,7 @@ def bioc_views_links(package)
   
   bioc_views = to_a(package[:biocViews])
   bioc_views.each do |bioc_view|
-    links.push %Q(<a href="/packages/#{package[:bioc_version_num]}/BiocViews.html?openNode=#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
+    links.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_num]}/BiocViews.html?openNode=#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end
   
   links.join(", ")

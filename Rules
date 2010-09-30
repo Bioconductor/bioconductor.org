@@ -58,10 +58,11 @@ route '/style/*/' do
 end
 
 # biocViews hierarchy
-##comment this out until mirror crisis is resolved
-#route '/help/bioc-views' do
-#  "/packages/#{config[:release_version]}/BiocViews.html"
-#end
+route '/help/bioc-views/' do
+  # note that we rely on the rake :post_compile task to create duplicate versions of this file
+  # for each bioC version for which the "new" style BiocViews tree is created.
+  "/help/bioc-views/#{config[:release_version]}/BiocViews.html"
+end
 
 # index pages (package lists)
 route /^\/help\/bioc-views\/#{@@config["release_version"]}\/all-|^\/help\/bioc-views\/#{@@config["devel_version"]}\/all-/ do # todo improve regex
@@ -73,7 +74,7 @@ route /^\/help\/bioc-views\/#{@@config["release_version"]}\/all-|^\/help\/bioc-v
   elsif item.identifier =~ /^\/help\/bioc-views\/#{config[:devel_version]}/
     version = config[:devel_version]
   end
-  "/packages/#{version}/#{repo_map[long_repo_name]}/index.html"
+  "/help/bioc-views/#{version}/#{repo_map[long_repo_name]}/index.html"
 end
 
 # package detail pages
@@ -85,7 +86,7 @@ route /^\/help\/bioc-views\/#{@@config["release_version"]}\/|^\/help\/bioc-views
   elsif item.identifier =~ /^\/help\/bioc-views\/#{config[:devel_version]}/
     version = config[:devel_version]
   end
-  "/packages/#{version}/#{item[:repo]}html/#{pkg_name}.html"
+  "/help/bioc-views/#{version}/#{item[:repo]}html/#{pkg_name}.html"
 end
 
 
