@@ -73,12 +73,12 @@ task :build => [ :compile, :copy_assets, :write_version_info ]
 
 task :default => :build
 
-desc "deploy (sync) to staging"
+desc "deploy (sync) to staging (run on merlot2)"
 task :deploy_staging do
   dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
-  system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{output_dir}/ #{dst}"
+  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.svn' #{output_dir}/ #{dst}"
 end
 
 desc "deploy (sync) to production"
@@ -86,7 +86,7 @@ task :deploy_production do
   site_config = YAML.load_file("./config.yaml")
   src = '/loc/www/bioconductor-test.fhcrc.org'
   dst = site_config["production_deploy_root"]
-  system "rsync -av --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
+  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
 end
 
 
