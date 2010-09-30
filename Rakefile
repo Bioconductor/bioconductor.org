@@ -51,13 +51,14 @@ task :post_compile do
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
   cwd = FileUtils.pwd
   FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
-  
-  FileUtils.rm "devel"
-  FileUtils.rm "release"
-  FileUtils.ln_s "#{site_config["release_version"]}", "release"
-  FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
-  puts "Generated symlinks for release and devel"
-  FileUtils.cd pwd
+
+## this is not working and breaking builds - fix and uncomemnt  
+##  FileUtils.rm "devel"
+##  FileUtils.rm "release"
+##  FileUtils.ln_s "#{site_config["release_version"]}", "release"
+##  FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
+##  puts "Generated symlinks for release and devel"
+##  FileUtils.cd pwd
 end
 
 desc "Nuke output directory !! uses rm -rf !!"
