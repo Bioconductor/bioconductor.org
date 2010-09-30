@@ -31,20 +31,20 @@ release version), please use the following commands:
 If you want to mirror the Bioconductor **2.7** repos (the current
 devel version), please use the following commands:
 
-### All Bioconductor 2.7 repos ### 
+### All Bioconductor 2.7 repos ###
 
     rsync -rtlv --delete bioconductor.org::2.7 /dest
 
-### Bioconductor 2.7 Software repo ### 
+### Bioconductor 2.7 Software repo ###
 
     rsync -rtlv --delete bioconductor.org::2.7/bioc /dest
 
-### Bioconductor 2.7 Data repos ### 
+### Bioconductor 2.7 Data repos ###
 
     rsync -rtlv --delete bioconductor.org::2.7/data /dest
 
 
-### Bioconductor 2.7 Extra repo ### 
+### Bioconductor 2.7 Extra repo ###
 
     rsync -rtlv --delete bioconductor.org::2.7/extra /dest
 
