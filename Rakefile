@@ -53,7 +53,7 @@ task :post_compile do
   FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
 
   FileUtils.rm_f "devel"
-  FileUtils.rm _f"release"
+  FileUtils.rm_f"release"
   FileUtils.ln_s "#{site_config["release_version"]}", "release"
   FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
   puts "Generated symlinks for release and devel"
