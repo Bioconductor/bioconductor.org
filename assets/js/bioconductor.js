@@ -128,7 +128,7 @@ var getCorrectUrlForMirrors = function() {
  * class (e.g. containing "release" or "devel" to point to the actual file.
  */
 var getHrefForSymlinks = function(href) {
-  if (window.location.port == 80) {
+  if (window.location.port == "") {
     return href;
   } else {
     var releaseRegex = /\/release\//;
