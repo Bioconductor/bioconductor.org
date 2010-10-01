@@ -106,6 +106,9 @@ def doc_object(package)
   
   
   doc_obj = []
+  
+  puts "version = #{@package[:bioc_version_num]}"
+  
   if (package[:vignetteTitles].respond_to? :join)
     
     package[:vignetteTitles].each_with_index do |title, i|
@@ -124,6 +127,8 @@ def doc_object(package)
       doc_obj.push item
     end
     
+    doc_obj.sort!{|a,b|a[:title].downcase <=> b[:title].downcase}
+    
     return doc_obj
   elsif package[:vignetteTitles].is_a? String and package[:vignetteTitles] != "NA"
     item = {}
@@ -131,8 +136,11 @@ def doc_object(package)
     item[:script] = ""
     doc_obj.push item
   else
+    
     return [:file => "", :title => "", :script => ""]
   end
+
+  doc_obj.sort!{|a,b|a[:title].downcase <=> b[:title].downcase}
   doc_obj
 end
 

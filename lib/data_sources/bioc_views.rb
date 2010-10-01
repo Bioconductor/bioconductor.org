@@ -49,6 +49,7 @@ class BiocViews < Nanoc3::DataSource
   
   #todo remove
   def do_bad_stuff(obj, dir)
+    
     tf = File.open("#{dir}/vignette_titles.json")
     json = tf.readlines.join("\n")
     vt = JSON.parse(json)
@@ -57,18 +58,18 @@ class BiocViews < Nanoc3::DataSource
 
       if (vt.has_key? k)
         
-        
-        if (vt[k].respond_to? :has_key?)
-          v["vignetteFiles"] = v["vignetteTitles"]
-          v[:vignetteFiles] = v["vignetteTitles"]
           
+        if (vt[k].respond_to? :has_key?)
           
           
           v["vignetteTitles"] = vt[k]["vignetteTitles"] unless vt[k]["vignetteTitles"].nil? or vt[k]["vignetteTitles"].empty?
           v["vignetteScripts"] = vt[k]["vignetteScripts"] unless vt[k]["vignetteScripts"].nil? or vt[k]["vignetteScripts"].empty?
+          v["vignetteFiles"] = vt[k]["vignetteFiles"] unless vt[k]["vignetteFiles"].nil? or vt[k]["vignetteFiles"].empty?
+
           
           v[:vignetteTitles] = v["vignetteTitles"]
           v[:vignetteScripts] = v["vignetteScripts"]
+          v[:vignetteFiles] = v["vignetteFiles"]
           
         end
         

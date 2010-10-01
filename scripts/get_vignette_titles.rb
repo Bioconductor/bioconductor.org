@@ -23,9 +23,9 @@ for file in files
   pkg_name = segs[segs.length - 4]
   segs.pop
   dir = segs.join("/")
+
   
-  
-  hsh[pkg_name] = {:vignetteTitles => [], :vignetteScripts => []} unless hsh.has_key?(pkg_name)
+  hsh[pkg_name] = {:vignetteTitles => [], :vignetteScripts => [], :vignetteFiles => []} unless hsh.has_key?(pkg_name)
   cmd = %Q(grep VignetteIndexEntry #{file})
   result = `#{cmd}`
   result =~ /\{([^}]*)\}/
@@ -35,6 +35,14 @@ for file in files
   next if title.nil?
   hsh[pkg_name][:vignetteTitles].push title
   rfile = base_file.sub(/\.pdf$/, ".R")
+  
+  if (test(?f, "#{dir}/#{base_file}"))
+      hsh[pkg_name][:vignetteFiles].push base_file
+    else
+      hsh[pkg_name][:vignetteFiles].push ""
+  end
+  
+  
   #puts "looking for #{dir}/#{rfile}"
   if (test(?f, "#{dir}/#{rfile}"))
     hsh[pkg_name][:vignetteScripts].push rfile
