@@ -57,7 +57,7 @@ task :post_compile do
   FileUtils.ln_s "#{site_config["release_version"]}", "release"
   FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
   puts "Generated symlinks for release and devel"
-  FileUtils.cd pwd
+  FileUtils.cd cwd
 end
 
 desc "Nuke output directory !! uses rm -rf !!"
