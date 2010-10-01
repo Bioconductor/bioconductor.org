@@ -5,8 +5,8 @@ RewriteBase /
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
 ## packages urls
-RewriteRule ^packages/release/BiocViews\.html$ /help/bioc-views/release/BiocViews.html [R=301]
-RewriteRule ^packages/devel/BiocViews\.html$ /help/bioc-views/devel/BiocViews.html [R=301]
+RewriteRule ^packages/release/BiocViews.html$ /help/bioc-views/release/BiocViews.html [R=301]
+RewriteRule ^packages/devel/BiocViews.html$ /help/bioc-views/devel/BiocViews.html [R=301]
 
 ## papers, slides, screen shots
 RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
