@@ -149,6 +149,6 @@ on their search path.
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
 [mailing-list]: /help/mailing-list/
-[home-pages]: /help/bioc-views/release/all-Software/
+[home-pages]: /help/bioc-views/release/bioc/
 [bioc-views]: /help/bioc-views/release/BiocViews.html
 [iranges-landing-page]: /help/bioc-views/release/bioc/html/IRanges.html
