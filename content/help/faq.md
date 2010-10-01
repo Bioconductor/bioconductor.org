@@ -2,20 +2,36 @@
 
 This is the FAQ, currently under construction.
 
-* [Package Installation](#install-packages)
-* [Package Use](#use-packages)
+* [Package Installation](#install-packages-faq)
+* [Package Use](#use-packages-faq)
 * [Developing Packages](#developer-faq)
 
-<h2 id="install-packages">Package Installation</h2>
+<!--
 
-* biocLite warns that a package is not available 
+   Add these above when first FAQ added
+
+* [Annotations](#annotation-faq)
+* [Package-Specific FAQs](#package-specific-faq)
+
+   Numbering scheme is meant to accomodate future changes in FAQ
+   without requiring existing FAQs to be renumbered. FAQs w/in the
+   first section are 100, 200, etc. New sections bisect current
+   sections, e.g., will be 50, 20, 10 if sections were to be
+   added always immediately after the original first
+   section.
+
+-->
+
+<h2 id="install-packages-faq">Package Installation</h2>
+
+<h3 class="faq" id="30">biocLite warns that a package is not available</h3>
 
 Most Bioconductor packages are available for Windows, Mac OS, and
 Linux operating systems. A few packages are not available on one or
 more platforms. This usually occurs because the package relies on
 additional software that is not available for the operating
-system. For instance, a user trying to install `GeneRfold` encountered
-this message:
+system. For instance, a user trying to install `GeneRfold`
+encountered this message:
 
     > biocLite("GeneRfold")
     Using R version 2.11.1, biocinstall version 2.6.8.
@@ -35,7 +51,7 @@ feel free to ask on the [Bioconductor][mailing-list] mailing list.
 It's useful to check that the package name is spelt correctly, with
 correct capitalization!
 
-* Package XXX fails to install
+<h3 class="faq" id="70">Package XXX fails to install</h3>
 
 A common reason for a package to fail to install is that `R` or
 `Bioconductor` software dependencies are not satisfied, as shown here
@@ -81,9 +97,9 @@ necessary libraries or other software, perhaps referenced on the
 understand your system more thoroughly than you'd like, perhaps with
 the assistance of the Bioconductor [mailing list][mailing-list].
 
-<h2 id="use-packages">Package Use</h2>
+<h2 id="use-packages-faq">Package Use</h2>
 
-* How can I find information about using a package?
+<h3 class="faq" id="50">How can I find information about using a package?</h3>
 
 There are three main steps to using a package. (1) Identify an
 appropriate package. Do this using [biocViews][bioc-views] to browse
@@ -105,9 +121,18 @@ If you are new to `R`, then it will help to enter into the process
 knowing that some basic R skills are assumed by the vignettes and help
 pages; spend some time learning `R` itself.
 
+<!--
+
+<h2 id="package-specific-faq">Package-specific questions</h2>
+
+<h2 id="annotation-faq">Annotations</h2>
+
+-->
+
 <h2 id="developer-faq">Developing Packages</h2>
 
-* What packages belong in the Depends:, Imports:, or Suggests: fields?
+<h3 class="faq" id="50">What packages belong in the Depends:,
+    Imports:, or Suggests: fields?</h3>
 
 Two relevant mailing list posts
 ([a](https://stat.ethz.ch/pipermail/r-devel/2008-December/051602.html),
