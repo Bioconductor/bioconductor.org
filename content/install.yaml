@@ -2,5 +2,4 @@
 title: Install
 subnav:
   - include: /_bioc_release_packages/
-  - include: /_bioc_devel_packages/
   - include: /_bioc_older_packages/

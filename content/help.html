@@ -11,6 +11,9 @@
         &nbsp; as the last line in each box.  if omitted and the box ends with a 
         <ul> element, the boxes won't line up correctly.  --> 
 
+<div style="width:33%;float:left;">
+<%= render("/_bioc_release_packages/") %>
+</div>
 
 <div style="width:33%;float:left;">
 <%= render("/_workflows/") %>
@@ -20,11 +23,11 @@
 <%= render("/_package_vignettes/") %>
 </div>
 
+<br clear="all"/>
+
 <div style="width:33%;float:left;">
 <%= render("/_faq/") %>
 </div>
-
-<br clear="all"/>
 
 <div style="width:33%;float:left;">
 <%= render("/_mailing_list/") %>
@@ -34,14 +37,10 @@
 <%= render("/_course_materials/") %>
 </div>
 
-<div style="width:33%;float:left;">
-<%= render("/_help_using_R/") %>
-</div>
-
 <br clear="all"/>
 
 <div style="width:33%;float:left;">
-<%= render("/_bioc_release_packages/") %>
+<%= render("/_help_using_R/") %>
 </div>
 
 <div style="width:33%;float:left;">
