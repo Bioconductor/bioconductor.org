@@ -31,8 +31,17 @@ def nav_link_unless_current(text, path)
   end
 end
 
+def verbose_bioc_version(package)
+	if (package.has_key? :bioc_version_str and !package[:bioc_version_str].nil?)
+	  "#{package[:bioc_version_str]} (#{package[:bioc_version_num]})"
+	else
+	  package[:bioc_version_num]
+	end
+end
+
 def base_filename(path)
   #return nil if path.nil?
+  return nil if path.is_a? Array
   path.split("/").last
 end
 
@@ -107,7 +116,6 @@ def doc_object(package)
   
   doc_obj = []
   
-  puts "version = #{@package[:bioc_version_num]}"
   
   if (package[:vignetteTitles].respond_to? :join)
     

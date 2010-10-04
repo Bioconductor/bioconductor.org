@@ -2,8 +2,8 @@
 # todo  - add code that makes sure biocViews and rjson are installed
 
 # run me like this:
-# R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c("2.6","2.7") outdir="directory/to/write/json"' scripts/getBiocViewsJSON.R log.txt
-# where versions are the RELEASE and DEVEL versions respectively
+# R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c("2.5","2.6","2.7") outdir="directory/to/write/json"' scripts/getBiocViewsJSON.R log.txt
+# where versions are all bioC versions for which we want to retrieve JSON.
 
 
 args <- (commandArgs(T))

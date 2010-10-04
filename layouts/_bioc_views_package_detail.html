@@ -6,7 +6,7 @@
 <h2><%= @package[:Title]%></h2> 
 
 <p>
-	Bioconductor version: <%= @package[:bioc_version_str]%> (<%=@package[:bioc_version_num]%>)
+	Bioconductor version: <%= verbose_bioc_version(@package) %>
 </p>
 
 <p><%= @package[:Description]%></p>

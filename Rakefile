@@ -20,7 +20,9 @@ include Open3
 desc "write version info to doc root for javascript to find"
 task :write_version_info do
   site_config = YAML.load_file("./config.yaml")
-  js = %Q(var develVersion = "#{site_config["devel_version"]}";\nvar releaseVersion="#{site_config["release_version"]}";)
+  js = %Q(var develVersion = "#{site_config["devel_version"]}";\nvar releaseVersion="#{site_config["release_version"]}";\n)
+  js += %Q(var versions = [")
+  js += site_config["versions"].join(%Q(",")) + %Q("];\n)
   f = File.open("#{site_config["output_dir"]}/js/versions.js", "w")
   f.puts js
   f.close
@@ -44,10 +46,13 @@ task :post_compile do
   puts "running post-compilation tasks..."
   site_config = YAML.load_file("./config.yaml")
   src = "#{site_config["output_dir"]}/help/bioc-views/#{site_config["release_version"]}/BiocViews.html"
-  dest = "#{site_config["output_dir"]}/help/bioc-views/#{site_config["devel_version"]}"
-  FileUtils.mkdir_p dest
-  FileUtils.cp(src, dest)
-  puts "copied output/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/bioc-views/#{site_config["devel_version"]}/BiocViews.html"
+  other_versions = site_config["versions"] - [site_config["release_version"]]
+  for version in other_versions
+    dest = "#{site_config["output_dir"]}/help/bioc-views/#{version}"
+    FileUtils.mkdir_p dest
+    FileUtils.cp(src, dest)
+    puts "copied output/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/bioc-views/#{version}/BiocViews.html"
+  end
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
   cwd = FileUtils.pwd
   FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
@@ -161,8 +166,9 @@ task :get_json do
   #todo - nuke json_dir before starting?
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")
-  versions = [site_config["release_version"], site_config["devel_version"]]
-  version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
+  versions = site_config["versions"]
+  #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
+  version_str = '"' + versions.join('","') + '"'
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
   system(r_cmd)
   repos = ["data/annotation", "data/experiment", "bioc"]

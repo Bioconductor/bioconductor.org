@@ -2,8 +2,16 @@
 
 <%# todo - show a splash of color here to indicate release or devel (or older version) %>
 
+
+<%
+#require 'pp'
+#pp @info
+#exit if true
+%>
+
+
 <p>
-	Bioconductor version: <%= @info[:version_str]%> (<%=@info[:version_num]%>)
+	Bioconductor version: <%= verbose_bioc_version(@info) %>
 </p>
 
 

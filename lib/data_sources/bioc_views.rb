@@ -10,34 +10,44 @@ class BiocViews < Nanoc3::DataSource
   
   # todo - find out if there is a way to skip items() altogether if things are not found in up()
   def up
+
     @repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
     
     @good_to_go = true
     
+    @site_config = YAML.load_file("./config.yaml")
     
     
-    
-    @repos.each_pair do |k,v|
-      dir = "#{config[:json_dir]}/#{k}"
-      @good_to_go = false unless test(?f, "#{dir}/packages.json") 
-      
-      #todo remove
-      @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
-      
-      
+    for version in @site_config["versions"]
+      @repos.each_pair do |k,v|
+        dir = "#{config[:json_dir]}/#{version}/#{k}"
+        @good_to_go = false unless test(?f, "#{dir}/packages.json") 
+
+        #todo remove
+        @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
+
+
+      end
     end
+    
+    
+    
+    
     
     @all_packages = {}
     
     if @good_to_go
-      @repos.each_pair do |k,v|
-        key = k.gsub(/\/$/, "")
-        dir = "#{config[:json_dir]}/#{k}"
-        json_file = File.open("#{dir}/packages.json")
-        obj = JSON.parse(json_file.readlines.join("\n"))
-        
-        
-        @all_packages[key] = obj
+      for version in @site_config["versions"]
+        hsh = {}
+        @repos.each_pair do |k,v|
+          key = k.gsub(/\/$/, "")
+          dir = "#{config[:json_dir]}/#{version}/#{k}"
+          json_file = File.open("#{dir}/packages.json")
+          obj = JSON.parse(json_file.readlines.join("\n"))
+          #@all_packages[key] = obj
+          hsh[key] = obj
+        end
+        @all_packages[version] = hsh
       end
     else
       puts "BiocViews data source: json files not present, skipping initialization"
@@ -82,7 +92,7 @@ class BiocViews < Nanoc3::DataSource
   # end remove
   
   
-  def get_index_page(packages, repo)
+  def get_index_page(packages, repo, version)
     item = Nanoc3::Item.new(nil, {}, "all-#{repo}")
     rep = Nanoc3::ItemRep.new(item, :package_index_page)
     #rep.layout("/_package_index/")
@@ -103,10 +113,19 @@ class BiocViews < Nanoc3::DataSource
     
     item[:info] = info.sort{|a,b| a[:name].downcase <=> b[:name].downcase}
     
-    item[:version_str] = config[:version_str]
-    item[:version_num] = config[:version_num]
+    
+    item[:bioc_version_num] = version
+    if (version == @site_config["release_version"])
+      item[:bioc_version_str] = "Release"
+    elsif (version == @site_config["devel_version"])
+      item[:bioc_version_str] = "Development"
+    else
+      item[:bioc_version_str] = nil
+    end
+    
+    
     item[:repo] = repo
-    item[:title] = "#{config[:version_num]} #{repo} Packages"
+    item[:title] = "#{version} #{repo} Packages"
     
     item[:subnav] = []
     item[:subnav].push({:include => "/_bioc_release_packages/"})
@@ -127,52 +146,61 @@ class BiocViews < Nanoc3::DataSource
     
     link_list = [:Depends, :Imports, :Suggests, :dependsOnMe, :importsMe, :suggestsMe]
     
-    @repos.each_pair do |k,v|
-      dir = "#{config[:json_dir]}/#{k}"
-      json_file = File.open("#{dir}/packages.json")
-      
-    
-        
-      packages = JSON.parse(json_file.readlines.join("\n"))
+    for version in @site_config["versions"]
+      @repos.each_pair do |k,v|
+        dir = "#{config[:json_dir]}/#{version}/#{k}"
+        json_file = File.open("#{dir}/packages.json")
 
-      items.push(get_index_page(packages, v))
 
-      
-      #todo remove
-      packages = do_bad_stuff(packages,dir)
-      # end remove
-      
-      
-      
-      
-      for package in packages.keys
-        repo = k
-        item = Nanoc3::Item.new(nil, packages[package], package)
-        
-        item[:subnav] = []
-        item[:subnav].push({:include => "/_workflows/"})
-        item[:subnav].push({:include => "/_mailing_list/"})
-        
-        item[:title] = "#{item[:Package]}"
-        item[:repo] = repo
-        item[:bioc_version_str] = config[:version_str]
-        item[:bioc_version_num] = config[:version_num]
-        rep = Nanoc3::ItemRep.new(item, :unique_name)
-        #rep.layout("/_bioc_views_package_detail/")
-        #item.reps.push(rep)
-        
-        for sym in link_list
-          new_sym = "#{sym.to_s}_repo".to_sym
-          item[new_sym] = []
-          for x in item[sym]
-            item[new_sym].push(is_bioc_package?(x))
+
+        packages = JSON.parse(json_file.readlines.join("\n"))
+
+        items.push(get_index_page(packages, v, version))
+
+
+        #todo remove
+        packages = do_bad_stuff(packages,dir)
+        # end remove
+
+
+
+
+        for package in packages.keys
+          repo = k
+          item = Nanoc3::Item.new(nil, packages[package], package)
+
+          item[:subnav] = []
+          item[:subnav].push({:include => "/_workflows/"})
+          item[:subnav].push({:include => "/_mailing_list/"})
+
+          item[:title] = "#{item[:Package]}"
+          item[:repo] = repo
+          item[:bioc_version_num] = version
+          if (version == @site_config["release_version"])
+            item[:bioc_version_str] = "Release"
+          elsif (version == @site_config["devel_version"])
+            item[:bioc_version_str] = "Development"
+          else
+            item[:bioc_version_str] = nil
           end
+          rep = Nanoc3::ItemRep.new(item, :unique_name)
+
+          for sym in link_list
+            new_sym = "#{sym.to_s}_repo".to_sym
+            item[new_sym] = []
+            for x in item[sym]
+              item[new_sym].push(is_bioc_package?(x))
+            end
+          end
+
+
+          items.push item
         end
-        
-        
-        items.push item
       end
     end
+    
+    
+    
     items
   end
   

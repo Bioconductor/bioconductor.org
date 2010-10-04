@@ -89,28 +89,30 @@ var setBiocVersion = function() {
 		biocVersion = releaseVersion;
 	} else if (href.toLowerCase().match(new RegExp("/devel/"))) {
 		biocVersion = develVersion;
+	} else if (href.match(/\/bioc-views\/([^/]*)\//)) {
+	  biocVersion = RegExp.$1;
 	}
     
     log("biocVersion = " + biocVersion);
     
     
-    
-    var releaseText;
-    var develText;
-    var url;
+    var versionText;
     
     if (biocVersion == releaseVersion) {
-        releaseText = "Release";
-		url = "/help/bioc-views/" + develVersion + "/BiocViews.html"
-        develText = "<a href='" + url + "'>Development</a>";
+        versionText = "Release"
+    } else if (biocVersion == develVersion) {
+        versionText = "Development";
     } else {
-        develText = "Development";
-		url = "/help/bioc-views/" + releaseVersion + "/BiocViews.html"
-        releaseText = "<a href='" + url + "'>Release</a>";
+      versionText ="";
     }
     
-    jQuery("#release_version").html(releaseText);
-    jQuery("#devel_version").html(develText);
+    var versionString = biocVersion;
+    if (versionText != "") {
+        versionString += " (" + versionText + ")";
+    }
+    
+    
+    jQuery("#bioc_version").html(versionString);
 }
 
 
