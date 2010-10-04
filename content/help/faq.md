@@ -4,16 +4,16 @@ This is the FAQ, currently under construction.
 
 * [Package Installation](#install-packages-faq)
 * [Package Use](#use-packages-faq)
+* [Annotations](#annotation-faq)
 * [Developing Packages](#developer-faq)
 
 <!--
 
    Add these above when first FAQ added
 
-* [Annotations](#annotation-faq)
 * [Package-Specific FAQs](#package-specific-faq)
 
-   Numbering scheme is meant to accomodate future changes in FAQ
+   Numbering scheme is meant to accommodate future changes in FAQ
    without requiring existing FAQs to be renumbered. FAQs w/in the
    first section are 100, 200, etc. New sections bisect current
    sections, e.g., will be 50, 20, 10 if sections were to be
@@ -125,9 +125,27 @@ pages; spend some time learning `R` itself.
 
 <h2 id="package-specific-faq">Package-specific questions</h2>
 
+-->
+
+
 <h2 id="annotation-faq">Annotations</h2>
 
--->
+<h3 class="fq" id="50">Different sources (e.g., annotation packages,
+biomaRt, manufacturer, UCSC, GO) disagree. Why?</h3>
+
+Different sources take different approaches to managing
+annotations. The annotation packages in Bioconductor are based on
+downloads obtained shortly before each Bioconductor release, and so
+can lag by six months (at the end of the release cycle) compared to
+on-line resources. The advantage of this approach is that the
+annotations do not change unexpectedly during development of an
+analysis, while the disadvantage is that the resource is not quite
+up-to-date with current understanding. To find out information about
+data sources used for each annotation package, try a command analogous
+to
+
+    library(org.Hs.eg.db)
+    org.Hs.eg_dbInfo()
 
 <h2 id="developer-faq">Developing Packages</h2>
 
