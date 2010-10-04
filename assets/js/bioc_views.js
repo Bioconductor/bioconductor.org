@@ -2,7 +2,6 @@ var packageInfo = {};
 var biocVersion;
 
 var displayPackages = function(packageList, nodeName) {
-    log("in displayPackages");
     if (packageList == null) {
         jQuery("#packages").empty();
         return;
@@ -24,27 +23,28 @@ var displayPackages = function(packageList, nodeName) {
     
     
     for (var i = 0; i < packageList.length; i++) {
-        var title = "unknown";
-        var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
+        //var title = "unknown";
+        //var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
         
 
 		var url = "/help/bioc-views/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
 
         
         html += "\t<li>\n"
-        html += "\t\t<a href='" +
+        html += "\t\t<a class='bioc_package' id='pkg_" +
+          packageList[i] +
+          "' " +
+          "href='" +
           url +
-          "' title=\"" +
-          title +
-          "\">" +
+          //"' title=\"" +
+          //title +
+          //"\"
+          "'>" +
           packageList[i] +
           "</a>\n";
           html += "\t</li>\n";
     }
     html += "</ul>\n"
-
-
-
     jQuery("#packages").html(html);
 }
 
@@ -59,15 +59,11 @@ var nodeSelected = function(event, data){
     if (nodeName == undefined) {
         nodeName = getParameterByName("openNode");
     }
-    log("in nodeSelected, nodeName = " + nodeName);
     var tmp = nodeName.split(" ");
     nodeName = tmp[0];
-    log("you clicked on: " + nodeName);
       var packageListStr = jQuery("#" + nodeName).attr("packageList");
-      //log("packageListStr = " + packageListStr);
       if (packageListStr) {
           var packageList = packageListStr.split(",");
-          log("first = " + packageList[0]);
           displayPackages(packageList, nodeName);
       } else {
           displayPackages(null, nodeName);
@@ -93,7 +89,6 @@ var setBiocVersion = function() {
 	  biocVersion = RegExp.$1;
 	}
     
-    log("biocVersion = " + biocVersion);
     
     
     var versionText;
@@ -117,15 +112,12 @@ var setBiocVersion = function() {
 
 
 var findParents = function (nodeId) {
-    log("hello from findParents, node id=" + nodeId);
     var parents = jQuery("#" + nodeId).parentsUntil("#tree");
-    log("parents length = " + jQuery(parents).length);
     var ret = [];
     ret.push(nodeId);
     jQuery.each(parents, function(index, value){
         var id = jQuery(value).attr("id");
         if (id.length > 0) {
-            log("hi, id = " + id);
             ret.push(id);
         }
     });
@@ -134,7 +126,6 @@ var findParents = function (nodeId) {
 }
 
 var init = function() {
-    log("in init function");
     // todo add ajax failure method (possible?)
     
     var initiallySelected = [];
@@ -179,20 +170,15 @@ var init = function() {
     */
     
     jQuery("#tree").bind("select_node.jstree", function(event, data){
-        log("a node was selected");
     	nodeSelected(event, data);
     });
     
     jQuery("#tree").bind("loaded.jstree", function(event, data){
-        log("i got loaded!");
         var initiallyOpen = [];
         var openNode = getParameterByName("openNode");
-        log("openNode = " + openNode);
         if (openNode != "") {
             initiallyOpen = findParents(openNode);
-            log("io.length = " + initiallyOpen.length);
             for(var i = 0; i < initiallyOpen.length; i++) {
-                log("item: " + initiallyOpen[i]);
                 jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
             }
         }
@@ -201,23 +187,37 @@ var init = function() {
     
 }
 
+
+var loadedPackageData = false;
+
+var loadPackageData = function() {
+  var repos = ["bioc", "data/annotation", "data/experiment"];
+  var count = 0;
+  
+  for (var i = 0; i < repos.length; i++) {
+      jQuery.getJSON("/help/bioc-views/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
+          jQuery.extend(packageInfo, data);
+          if (count == 2) {
+              loadedPackageData = true;
+          }
+          count++;
+      });
+  }
+  
+}
+
 //document ready function
 jQuery(function () {
     setBiocVersion();
-    
-    var repos = ["bioc", "data/annotation", "data/experiment"];
-    var count = 0;
-    
-    for (var i = 0; i < repos.length; i++) {
-        jQuery.getJSON("/help/bioc-views/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
-            jQuery.extend(packageInfo, data);
-            if (count == 2) {
-                init();
-            }
-            count++;
-        });
-    }
-    
-
-
+    loadPackageData();
+    init();
+    jQuery(".bioc_package").live("mouseover", function(){
+        var title = jQuery(this).attr("title");
+        if (title == "" && loadedPackageData) {
+            var tmp = jQuery(this).attr("id");
+            var id = tmp.replace("pkg_", "");
+            var title = packageInfo[id]["Description"].replace(/\n/g, " ");
+            jQuery(this).attr("title", title);
+        }
+    })
 });
