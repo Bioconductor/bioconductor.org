@@ -8,12 +8,12 @@ var displayPackages = function(packageList, nodeName) {
     }
     var html = "<h3>Packages</h3>\n";
     
-	var parents = findParents(nodeName);
-	
-	var category = parents[0];
-	
-	var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
-	
+    var parents = findParents(nodeName);
+
+    var category = parents[0];
+
+    var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
+
     html += "<p>";
     html += parents.join(" &gt ");
     html += "</p>\n";
@@ -23,12 +23,8 @@ var displayPackages = function(packageList, nodeName) {
     
     
     for (var i = 0; i < packageList.length; i++) {
-        //var title = "unknown";
-        //var title = packageInfo[packageList[i]]["Description"].replace(/\n/g, " ");
-        
 
-		var url = "/help/bioc-views/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
-
+        var url = "/help/bioc-views/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
         
         html += "\t<li>\n"
         html += "\t\t<a class='bioc_package' id='pkg_" +
@@ -36,9 +32,6 @@ var displayPackages = function(packageList, nodeName) {
           "' " +
           "href='" +
           url +
-          //"' title=\"" +
-          //title +
-          //"\"
           "'>" +
           packageList[i] +
           "</a>\n";
@@ -83,20 +76,20 @@ var nodeSelected = function(event, data){
 
 var setBiocVersion = function() {
     
-	var href = window.location.href;
-	
-	
-	if (href.match(new RegExp("/" + releaseVersion + "/"))) {
-		biocVersion = releaseVersion;
-	} else if (href.match(new RegExp("/" + develVersion + "/"))) {
-		biocVersion = develVersion;
-	} else if (href.toLowerCase().match(new RegExp("/release/"))) {
-		biocVersion = releaseVersion;
-	} else if (href.toLowerCase().match(new RegExp("/devel/"))) {
-		biocVersion = develVersion;
-	} else if (href.match(/\/bioc-views\/([^/]*)\//)) {
-	  biocVersion = RegExp.$1;
-	}
+    var href = window.location.href;
+
+
+    if (href.match(new RegExp("/" + releaseVersion + "/"))) {
+        biocVersion = releaseVersion;
+    } else if (href.match(new RegExp("/" + develVersion + "/"))) {
+        biocVersion = develVersion;
+    } else if (href.toLowerCase().match(new RegExp("/release/"))) {
+        biocVersion = releaseVersion;
+    } else if (href.toLowerCase().match(new RegExp("/devel/"))) {
+        biocVersion = develVersion;
+    } else if (href.match(/\/bioc-views\/([^/]*)\//)) {
+        biocVersion = RegExp.$1;
+    }
     
     
     
@@ -163,26 +156,25 @@ var init = function() {
         "ui": {
           "initially_select": initiallySelected
         },
-	    "themes": {
-	        "theme": "apple",
-	        "dots": false,
-	        "icons": false
-	    },
-		"json_data" : {
-			"ajax" : {
-				"url" : "/help/bioc-views/json/" + biocVersion + "/tree.json",
-				"data" : function (n) { 
-					return { id : n.attr ? n.attr("id") : 0 }; 
-				}
-			}
-		},
-		"plugins" : [ "themes", "json_data", "ui" ]
-	});
-	
-	// explicitly add biocViewsTree class because the widget strips it off
-	jQuery("#tree").addClass("biocViewsTree");
-	
-	
+            "themes": {
+                "theme": "apple",
+                "dots": false,
+                "icons": false
+            },
+            "json_data" : {
+                "ajax" : {
+                    "url" : "/help/bioc-views/json/" + biocVersion + "/tree.json",
+                    "data" : function (n) { 
+                        return { id : n.attr ? n.attr("id") : 0 }; 
+                    }
+                }
+            },
+            "plugins" : [ "themes", "json_data", "ui" ]
+        });
+
+        // explicitly add biocViewsTree class because the widget strips it off
+        jQuery("#tree").addClass("biocViewsTree");
+
     /*
     jQuery("#tree").bind("close_node.jstree dblclick.jstree delete_node.jstree deselect_node.jstree destroy.jstree drag_start.vakata drag_stop.vakata get_rollback.jstree init.jstree load_node.jstree loaded.jstree mousedown.jstree move_node.jstree open_node.jstree rename_node.jstree reopen.jstree select_node.jstree set_rollback.jstree ", function (event, data) {
         log("event name: " + event.type);
@@ -190,7 +182,7 @@ var init = function() {
     */
     
     jQuery("#tree").bind("select_node.jstree", function(event, data){
-    	nodeSelected(event, data);
+        nodeSelected(event, data);
     });
     
     jQuery("#tree").bind("loaded.jstree", function(event, data){
