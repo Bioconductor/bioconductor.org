@@ -56,9 +56,18 @@ var jumpToAnchor = function() {
 
 var nodeSelected = function(event, data){
     var nodeName = data['args'][0]['text'];
+    
     if (nodeName == undefined) {
-        nodeName = getParameterByName("openNode");
-    }
+        nodeName = getNodeName();
+    } 
+    
+    var bareNodeName = nodeName.split(" ")[0];
+    var wl = ("" + window.location.href).split("?")[0];
+    wl = wl.split("#")[0];
+
+    var newUrl = "" + wl + "#" + bareNodeName;
+    window.location.href = newUrl;
+    
     var tmp = nodeName.split(" ");
     nodeName = tmp[0];
       var packageListStr = jQuery("#" + nodeName).attr("packageList");
@@ -125,12 +134,23 @@ var findParents = function (nodeId) {
     return ret;
 }
 
+var getNodeName = function() {
+    var wlh = window.location.href;
+    var segs = [];
+    segs = wlh.split("#");
+    if (segs.length == 2) {
+        return segs[1];
+    } else {
+        return "";
+    }
+}
+
 var init = function() {
     // todo add ajax failure method (possible?)
     
     var initiallySelected = [];
     var nodeName = "";
-    nodeName = getParameterByName("openNode");
+    nodeName = getNodeName();
     
     if (nodeName != "") {
         initiallySelected.push(nodeName);
@@ -175,7 +195,8 @@ var init = function() {
     
     jQuery("#tree").bind("loaded.jstree", function(event, data){
         var initiallyOpen = [];
-        var openNode = getParameterByName("openNode");
+        var openNode = getNodeName();
+
         if (openNode != "") {
             initiallyOpen = findParents(openNode);
             for(var i = 0; i < initiallyOpen.length; i++) {
