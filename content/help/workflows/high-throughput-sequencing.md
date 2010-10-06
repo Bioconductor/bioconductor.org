@@ -38,7 +38,9 @@ sequences that each occur many times.
     
     ## Remove a PCR primer
     > pcrPrimer <- "GGACTACCVGGGTATCTAAT"
-    > trimmed <- trimLRPatterns(pcrPrimer, subject=sread(seq))
+    > trimmed <- trimLRPatterns(Lpattern=pcrPrimer,
+                                subject=sread(seq),
+                                Lfixed="subject")
     
     ## Calculate and plot cumulative reads vs. occurrences
     > tbl <- tables(trimmed)[[2]]
