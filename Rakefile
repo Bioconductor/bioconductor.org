@@ -171,6 +171,8 @@ task :get_json do
   version_str = '"' + versions.join('","') + '"'
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
   system(r_cmd)
+  
+  
   repos = ["data/annotation", "data/experiment", "bioc"]
   
   #todo remove
@@ -190,7 +192,18 @@ task :get_json do
     #end remove
     
     #args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
+    
+    
     args = [fullpaths , "#{json_dir}/#{version}/tree.json"]
+
+    
+    ########## TODO: REMOVE WHEN BUILD PIPLINE FOR 2.8 IS COMPLETE #########
+    if (version == "2.8")
+      args[0] = [args[0][2]]
+    end
+    ########## END TODO ####################################################
+
+ 
     ParseBiocViews.new(args)
   end
 end

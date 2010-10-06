@@ -20,6 +20,12 @@ class BiocViews < Nanoc3::DataSource
     
     for version in @site_config["versions"]
       @repos.each_pair do |k,v|
+        
+        
+        ### TODO - remove when 2.8 build pipeline is complete ###
+        next if version == "2.8"
+        ### end todo ###
+        
         dir = "#{config[:json_dir]}/#{version}/#{k}"
         @good_to_go = false unless test(?f, "#{dir}/packages.json") 
 
@@ -40,6 +46,13 @@ class BiocViews < Nanoc3::DataSource
       for version in @site_config["versions"]
         hsh = {}
         @repos.each_pair do |k,v|
+          
+          
+          ### TODO - remove when 2.8 build pipeline is complete ###
+          next if version == "2.8" and !(k =~ /bioc/)
+          ### end todo ###
+          
+          
           key = k.gsub(/\/$/, "")
           dir = "#{config[:json_dir]}/#{version}/#{k}"
           json_file = File.open("#{dir}/packages.json")
@@ -149,6 +162,13 @@ class BiocViews < Nanoc3::DataSource
     for version in @site_config["versions"]
       @repos.each_pair do |k,v|
         dir = "#{config[:json_dir]}/#{version}/#{k}"
+        
+        
+        ### TODO - remove when 2.8 build pipeline is complete ###
+        next if version == "2.8" and !(k =~ /bioc/)
+        ### end todo ###
+        
+        
         json_file = File.open("#{dir}/packages.json")
 
 
