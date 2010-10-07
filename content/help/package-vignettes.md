@@ -10,7 +10,7 @@ from inside R using the `browseVignettes` function.  For example, to
 view the vignettes in the Biostrings package enter the following at an
 R prompt:
 
-    browseVignette(package = "Biostrings")
+    browseVignettes(package = "Biostrings")
 
 This will open a web browser with links to the vignette PDF as well as
 a plain-text R file contained the code used in the vignette.
