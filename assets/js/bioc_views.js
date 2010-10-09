@@ -58,7 +58,7 @@ var nodeSelected = function(event, data){
     var wl = ("" + window.location.href).split("?")[0];
     wl = wl.split("#")[0];
 
-    var newUrl = "" + wl + "#" + bareNodeName;
+    var newUrl = "" + wl + "#" + "___" + bareNodeName;
     window.location.href = newUrl;
     
     var tmp = nodeName.split(" ");
@@ -132,7 +132,7 @@ var getNodeName = function() {
     var segs = [];
     segs = wlh.split("#");
     if (segs.length == 2) {
-        return segs[1];
+        return segs[1].replace("___", "");
     } else {
         return "";
     }
@@ -195,6 +195,8 @@ var init = function() {
                 jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
             }
         }
+        
+        
     });
     
     
