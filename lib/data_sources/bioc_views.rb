@@ -209,7 +209,7 @@ class BiocViews < Nanoc3::DataSource
             new_sym = "#{sym.to_s}_repo".to_sym
             item[new_sym] = []
             for x in item[sym]
-              item[new_sym].push(is_bioc_package?(x))
+              item[new_sym].push(is_bioc_package?(x, version))
             end
           end
 
@@ -225,8 +225,8 @@ class BiocViews < Nanoc3::DataSource
   end
   
   # if "packageName" is a bioC package, return its repo directory, otherwise return false
-  def is_bioc_package?(packageName)
-    @all_packages.each_pair do |k,v|
+  def is_bioc_package?(packageName, version)
+    @all_packages[version].each_pair do |k,v|
       return k if v.has_key?(packageName)
     end
     false

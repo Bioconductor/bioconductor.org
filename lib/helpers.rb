@@ -89,9 +89,11 @@ def filter_emails(str)
   str.gsub(/<[^>]*>/,"").gsub("  "," ").gsub(" ,", ",")
 end
 
-
+#todo - show links for stuff that is not necessarily a bioconductor package 
+#(e.g. CRAN or R)
 def linkify(sym, package)
   items = package[sym]
+  # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
   repos = package[key]
   output = []
