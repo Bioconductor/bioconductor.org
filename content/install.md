@@ -33,39 +33,35 @@ taxonomy to discover available software.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="install-bioconductor-packages">Install Base Bioconductor Packages</h2>
+<h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
-
-Install BioConductor packages using the biocLite.R installation
-script. In an R command window, type the following:
+Use the `biocLite.R` script to install a selection of core
+Bioconductor packages, or to install individual packages. To install
+core packages, type the following in an R command window:
 
     source("http://bioconductor.org/biocLite.R")
     biocLite()
 
-This installs the following packages: `affy`, `affydata`, `affyPLM`,
-`affyQCReport`, `annaffy`, `annotate`, `Biobase`, `biomaRt`, `Biostrings`,
-`DynDoc`, `gcrma`, `genefilter`, `geneplotter`, `GenomicRanges`,
-`hgu95av2.db`, `limma`, `marray`, `multtest`, `vsn`, and `xtable`.
-After downloading and installing these packages, the script prints
-"Installation complete" and TRUE.
+This installs the following packages and their dependencies: `affy`,
+`affydata`, `affyPLM`, `affyQCReport`, `annaffy`, `annotate`,
+`Biobase`, `biomaRt`, `Biostrings`, `DynDoc`, `gcrma`, `genefilter`,
+`geneplotter`, `GenomicRanges`, `hgu95av2.db`, `limma`, `marray`,
+`multtest`, `vsn`, and `xtable`.  After downloading and installing
+these packages, the script prints "Installation complete" and "TRUE".
 
-The biocLite.R script has arguments that change the default behavior:
+The `biocLite.R` script has arguments that change its default behavior:
 
     pkgs
-        Character vector of BioConductor packages to install.
+        Character vector of Bioconductor packages to install.
     destdir
         File system directory for downloaded packages.
     lib
         R library where packages are installed.
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-<h2>Install Additional Bioconductor Packages</h2>
-
-There are many Bioconductor and R packages in addition to those in the
-default installation of `biocLite`. A catalog of the Bioconductor
-packages is available at [BiocViews](/help/bioc-views/<%=config[:release_version]%>/BiocViews.html).
-To install a new package, e.g., EBImage, use
+[biocViews](/help/bioc-views/release/BiocViews.html) and the list of
+[software packages](/help/bioc-views/release/bioc/) are ways to
+discover Bioconductor packages.  To install a particular package,
+e.g., EBImage, use
 
     source("http://bioconductor.org/biocLite.R")
     biocLite("EBImage")
