@@ -615,3 +615,8 @@ tr.row_even
 {
     background-color: #DDD;
 }
+
+td.docFixedWidth
+{
+    width: 33%;
+}
