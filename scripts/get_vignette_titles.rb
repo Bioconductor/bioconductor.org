@@ -11,7 +11,7 @@ require 'pp'
 require 'rubygems'
 require 'json'
 
-file_str = `find #{ARGV.first.gsub(/\/$/,"")} |grep -i "\.Rnw$"`
+file_str = `find #{ARGV.first.gsub(/\/$/,"")} |grep -i "\.pdf$"`
 
 files = file_str.split("\n")
 
@@ -19,28 +19,35 @@ hsh = {}
 
 for file in files
   segs = file.split("/")
-  base_file = segs.last.gsub(/rnw$/i, "pdf")
+  
+  rnw_file = file.sub(/\.pdf$/i, ".Rnw")
+  
+  
+  base_file = segs.last#.gsub(/rnw$/i, "pdf")
+  rfile = base_file.sub(/\.pdf$/, ".R")
   pkg_name = segs[segs.length - 4]
   segs.pop
   dir = segs.join("/")
 
   
   hsh[pkg_name] = {:vignetteTitles => [], :vignetteScripts => [], :vignetteFiles => []} unless hsh.has_key?(pkg_name)
-  cmd = %Q(grep VignetteIndexEntry #{file})
-  result = `#{cmd}`
-  result =~ /\{([^}]*)\}/
-  title = $1
   
   
-  next if title.nil?
-  hsh[pkg_name][:vignetteTitles].push title
-  rfile = base_file.sub(/\.pdf$/, ".R")
-  
-  if (test(?f, "#{dir}/#{base_file}"))
-      hsh[pkg_name][:vignetteFiles].push base_file
-    else
-      hsh[pkg_name][:vignetteFiles].push ""
+  if (test(?f, rnw_file))
+    cmd = %Q(grep VignetteIndexEntry #{rnw_file})
+    result = `#{cmd}`
+    result =~ /\{([^}]*)\}/
+    title = $1
+
+    title = base_file if title.nil?
+    #next if title.nil?
+    hsh[pkg_name][:vignetteTitles].push title
+  else
+    hsh[pkg_name][:vignetteTitles].push base_file
   end
+  
+  
+  hsh[pkg_name][:vignetteFiles].push base_file
   
   
   #puts "looking for #{dir}/#{rfile}"
