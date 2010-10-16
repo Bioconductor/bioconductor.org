@@ -26,6 +26,7 @@ class BiocViews < Nanoc3::DataSource
         next if version == "2.8"
         ### end todo ###
         
+        
         dir = "#{config[:json_dir]}/#{version}/#{k}"
         @good_to_go = false unless test(?f, "#{dir}/packages.json") 
 
@@ -106,9 +107,8 @@ class BiocViews < Nanoc3::DataSource
   
   
   def get_index_page(packages, repo, version)
-    item = Nanoc3::Item.new(nil, {}, "all-#{repo}")
+    item = Nanoc3::Item.new(nil, {}, "all-#{repo}-#{version}")
     rep = Nanoc3::ItemRep.new(item, :package_index_page)
-    #rep.layout("/_package_index/")
     
     
     item[:package_index_page] = true

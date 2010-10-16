@@ -67,7 +67,9 @@ end
 
 # index pages (package lists)
 route /^\/help\/bioc-views\/package-pages\/all-/ do
-  long_repo_name = item.identifier.split("-").last.gsub("/", "")
+  segs = item.identifier.split("-")
+  version = segs.pop.gsub("/", "")
+  long_repo_name = segs.pop
   repo_map = {"Software" => "bioc", "AnnotationData" => "data/annotation", "ExperimentData" => "data/experiment"}
   version = item[:bioc_version_num]
   "/help/bioc-views/#{version}/#{repo_map[long_repo_name]}/index.html"
