@@ -51,7 +51,7 @@ task :post_compile do
     dest = "#{site_config["output_dir"]}/help/bioc-views/#{version}"
     FileUtils.mkdir_p dest
     FileUtils.cp(src, dest)
-    puts "copied output/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/bioc-views/#{version}/BiocViews.html"
+    puts "copied output/help/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/help/bioc-views/#{version}/BiocViews.html"
   end
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
   cwd = FileUtils.pwd
