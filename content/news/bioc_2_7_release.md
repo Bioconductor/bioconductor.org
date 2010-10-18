@@ -1,7 +1,7 @@
 Bioconductors:
 
-We are pleased to announce Bioconductor 2.7, consisting of 418
-software packages. There are 32 new packages, and many updates and
+We are pleased to announce Bioconductor 2.7, consisting of 419
+software packages. There are 34 new packages, and many updates and
 improvements to existing packages. Bioconductor 2.7 is compatible with
 R 2.12.0, and is supported on Linux, 32- and 64-bit Windows, and Mac
 OS.  Visit
