@@ -16,7 +16,7 @@
 * [Version Numbering](#versions)
 * [C or Fortran code](#c-code)
 * [Duplication of Packages in CRAN and Bioconductor](#duplications)
-* [Package Maintainer Responsibilities](#responsibilities)
+* [Package Author and Maintainer Responsibilities](#responsibilities)
 
 <h2 id="introduction">Introduction</h2>
 
@@ -250,15 +250,21 @@ the user.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="responsibilities">Package Maintainer Responsibilities</h2>
+<h2 id="responsibilities">Package Author and Maintainer Responsibilities</h2>
 
-Acceptance of packages into Bioconductor brings with it ongoing responsibility
-for package maintenance. These responsibilities include:
+Acceptance of packages into Bioconductor brings with it ongoing
+responsibility for package maintenance. These responsibilities
+include:
 
-* Subscription to the bioc-devel mailing list.
-* Response to bug reports and questions from users regarding your package, as
-  posted on the bioconductor mailing list.
-* Package Maintenance through software release cycles, including prompt updates
-  to software and documentation necessitated by underlying changes in R.
+* Subscription to the [bioc-devel](/help/mailing-list/) mailing list.
+* Response to bug reports and questions from users regarding your
+  package, as posted on the bioconductor mailing list.
+* Package maintenance through software release cycles, including
+  prompt updates to software and documentation necessitated by
+  underlying changes in R.
+
+All authors mentioned in the package DESCRIPTION file are entitled to
+modify package source code. Changes to package authorship require
+consent of all authors.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

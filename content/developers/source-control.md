@@ -118,7 +118,7 @@ any conflicts, and commit. So, from your release branch directory
 
 Here is a list of possible issues:
 
-* unrecognized URL scheme:
+* Unrecognized URL scheme:
   If you see "unrecognized URL scheme" when trying to access the
   repository, it may indicate that your svn client does not support
   HTTPS.  You can verify the supported "modes" by examinging the
@@ -129,3 +129,10 @@ Here is a list of possible issues:
   Most usernames we issue are in the form of an email address.  It may
   help to quote the user name: ``svn co
   --username="bob@internet.net"``.  Try double and single quotes.  
+
+* Need help arranging access to your package? Use [contact
+  information](/developers/package-submission/#contact-info) for new
+  package submission.
+
+* Still unresolved? Ask on the [bioc-devel](/help/mailing-list/)
+  mailing list.
