@@ -15,6 +15,7 @@
 
 <p>Maintainer: <%= @package[:Maintainer]%> </p>
 
+
 <p>To install this package, start R and enter:</p>
 
 <pre>
@@ -107,6 +108,11 @@ biocLite("<%=@package[:Package]%>")
     <tr class="row_even">
         <td>Suggests Me</td>
         <td><%= linkify(:suggestsMe, @package)%></td>
+    </tr>
+
+    <tr class="row_odd">
+        <td>Version</td>
+        <td><%= @package[:Version]%></td>
     </tr>
 
 
