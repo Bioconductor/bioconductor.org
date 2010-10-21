@@ -2,8 +2,6 @@
 
 ## Current
 
-* [Patrick Aboyoun](http://www.fhcrc.org/) Fred Hutchinson Cancer
-  Research Center, USA.
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Bringam &amp;
   Women's, Harvard Medical School, USA.
 * [Marc Carlson](http://www.fhcrc.org/) Fred Hutchinson Cancer
@@ -11,6 +9,8 @@
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), USA, National
   Cancer Institute.
 * Robert Gentleman, Genentech Research and Early Development, USA.
+* [Nishant Gopalakrishnan](http://www.fhcrc.org/), Fred Hutchinson Cancer
+  Research Center, USA.
 * [Wolfgang Huber](http://www.ebi.ac.uk/huber/) European
   Bioinformatics Institute, UK.
 * [Rafael Irizarry](http://biosun01.biostat.jhsph.edu/~ririzarr)
@@ -19,8 +19,14 @@
 * [James MacDonald](mailto:jmacdon@med.umich.edu), University of Michigan, USA.
 * [Martin Morgan](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
+* [Valerie Obenchain](http://www.fhcrc.org/), Fred Hutchinson Cancer
+  Research Center, USA.
 * [Herve Pages](http://gentleman-lab.fhcrc.org/lab-members/hpages),
   Fred Hutchinson Cancer Research Center, USA.
+* [Dan Tenenbaum](http://www.fhcrc.org/), Fred Hutchinson Cancer
+  Research Center, USA.
+* [Chao-Jen Wong](http://www.fhcrc.org/), Fred Hutchinson Cancer
+  Research Center, USA.
 
 ## Additional Participants
 
