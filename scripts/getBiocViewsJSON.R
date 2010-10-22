@@ -99,7 +99,7 @@ for (version in versions) {
     for (repo in repos) {
       
         ### TODO: TAKE OUT THE NEXT 3 LINES when the 2.8 build pipe is complete
-        if ((version == "2.8") && ((repo == "data/annotation") || (repo == "data/experiment"))) {
+        if ((version == "2.8") && (repo == "data/experiment")) {
           next
         }
         ### END TODO
