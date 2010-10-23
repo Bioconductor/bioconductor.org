@@ -23,7 +23,7 @@ class BiocViews < Nanoc3::DataSource
         
         
         ### TODO - remove when 2.8 build pipeline is complete ###
-        next if version == "2.8"
+        next if version == "2.8" and k == "data/experiment/"
         ### end todo ###
         
         
@@ -50,7 +50,7 @@ class BiocViews < Nanoc3::DataSource
           
           
           ### TODO - remove when 2.8 build pipeline is complete ###
-          next if version == "2.8" and !(k =~ /bioc/)
+          next if version == "2.8" and k == "data/experiment/"
           ### end todo ###
           
           
@@ -165,7 +165,7 @@ class BiocViews < Nanoc3::DataSource
         
         
         ### TODO - remove when 2.8 build pipeline is complete ###
-        next if version == "2.8" and !(k =~ /bioc/)
+        next if version == "2.8" and k == "data/experiment/"
         ### end todo ###
         
         

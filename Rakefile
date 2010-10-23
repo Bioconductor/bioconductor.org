@@ -170,7 +170,7 @@ task :get_json do
   #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
-  system(r_cmd)
+  ##system(r_cmd)
   
   
   repos = ["data/annotation", "data/experiment", "bioc"]
@@ -185,24 +185,22 @@ task :get_json do
     
     #todo remove
     repos.each do |repo|
-      system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
-      system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
-      
+      ##system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
+      ##system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
     end
     #end remove
     
-    #args = ["#{json_dir}/#{version}/biocViews.json", "#{json_dir}/#{version}/tree.json"]
     
     
     args = [fullpaths , "#{json_dir}/#{version}/tree.json"]
 
-    
+
     ########## TODO: REMOVE WHEN BUILD PIPLINE FOR 2.8 IS COMPLETE #########
     if (version == "2.8")
-      args[0] = [args[0][2]]
+      args[0] = [args[0][0], args[0][2]]
     end
     ########## END TODO ####################################################
-
+    
  
     ParseBiocViews.new(args)
   end
