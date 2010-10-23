@@ -170,7 +170,7 @@ task :get_json do
   #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
-  ##system(r_cmd)
+  system(r_cmd)
   
   
   repos = ["data/annotation", "data/experiment", "bioc"]
