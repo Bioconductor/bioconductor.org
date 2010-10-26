@@ -2,6 +2,7 @@
 ==================================================
 
 * [Introduction](#introduction)
+* [Types of Packages](#package-types)
 * [Correctness, Space and Time](#correctness)
 * [Package Name](#name)
 * [License](#license)
@@ -28,6 +29,30 @@ having difficultly satisfying guidelines should seek advice on the
 
 Package maintainers are urged to follow these guidelines as closely as
 possible when developing Bioconductor packages.
+
+<h2 id="package-types">Types of Packages</h2>
+
+Most packages contributed by users are [software][software-pkgs]
+packages that perform analytic calculations. Users also contribute
+[annotation][annotation-pkgs] and [experiment data][exptdata-pkgs]
+packages. Annotation packages are database-like packages that provide
+information linking identifiers (e.g., Entrez gene names or Affymetrix
+probe ids) to other information (e.g., chromosomal location, Gene
+Ontology category). Experiment data packages provide data sets that
+are used, often by software packages, to illustrate particular
+analyses. An excellent practice is to develop a software package, and
+to provide or use an existing experiment data package to give a
+comprehensive illustration of the methods in the software package. The
+guidelines below apply to all packages, but annotation and experiment
+data packages are not required to conform to the space limitations of
+software packages. Developers wishing to contribute annotation or
+experiment data packages should see the [contact information](contact)
+associated with package submission.
+
+[software-pkgs]: http://bioconductor.org/help/bioc-views/release/bioc/
+[annotation-pkgs]: http://www.bioconductor.org/help/bioc-views/release/data/annotation/
+[exptdata-pkgs]: http://www.bioconductor.org/help/bioc-views/release/data/experiment/
+[contact]: http://www.bioconductor.org/developers/package-submission/#contact-info
 
 <h2 id="correctness">Correctness, Space and Time</h2>
 
