@@ -46,13 +46,13 @@ comprehensive illustration of the methods in the software package. The
 guidelines below apply to all packages, but annotation and experiment
 data packages are not required to conform to the space limitations of
 software packages. Developers wishing to contribute annotation or
-experiment data packages should see the [contact information](contact)
+experiment data packages should seek [additional support][support]
 associated with package submission.
 
-[software-pkgs]: http://bioconductor.org/help/bioc-views/release/bioc/
-[annotation-pkgs]: http://www.bioconductor.org/help/bioc-views/release/data/annotation/
-[exptdata-pkgs]: http://www.bioconductor.org/help/bioc-views/release/data/experiment/
-[contact]: http://www.bioconductor.org/developers/package-submission/#contact-info
+[software-pkgs]: /help/bioc-views/release/bioc/
+[annotation-pkgs]: /help/bioc-views/release/data/annotation/
+[exptdata-pkgs]: /help/bioc-views/release/data/experiment/
+[support]: /developers/package-submission/#support
 
 <h2 id="correctness">Correctness, Space and Time</h2>
 
