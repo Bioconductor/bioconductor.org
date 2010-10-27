@@ -2,7 +2,7 @@
 
 ## Current
 
-* [Vince Carey](http://www.biostat.harvard.edu/~carey), Bringam &amp;
+* [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
 * [Marc Carlson](http://www.fhcrc.org/) Fred Hutchinson Cancer
   Research Center, USA.
@@ -21,7 +21,7 @@
   Research Center, USA.
 * [Valerie Obenchain](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
-* [Herve Pages](http://gentleman-lab.fhcrc.org/lab-members/hpages),
+* [Herv&eacute; Pag&egrave;s](http://gentleman-lab.fhcrc.org/lab-members/hpages),
   Fred Hutchinson Cancer Research Center, USA.
 * [Dan Tenenbaum](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
