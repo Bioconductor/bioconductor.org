@@ -123,6 +123,8 @@ Packages must
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
 * Contain only code that can be redistributed according to the package license.
+  Be aware of the licensing agreements for packages you are depending on in your package. 
+  Not all packages are open source even if they are publicly available.
   In particular, packages may not include any code from
   [Numerical Recipes](http://www.nr.com/).
 * Not contain unnecessary files such as .DS_Store, .project, .svn, cache file,
