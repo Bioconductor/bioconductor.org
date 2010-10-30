@@ -2,4 +2,5 @@
 title: Install
 subnav:
   - include: /_bioc_release_packages/
+  - include: /_workflows/
   - include: /_bioc_older_packages/
