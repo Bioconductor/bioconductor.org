@@ -147,6 +147,10 @@ to
     library(org.Hs.eg.db)
     org.Hs.eg_dbInfo()
 
+Bioconductor packages can help further investigate discrepancies,
+e.g., AnnotationDbi, rtracklayer, Biostrings, and BSgenome (e.g.,
+BSgenome.Hsapiens.UCSC.hg17).
+
 <h2 id="developer-faq">Developing Packages</h2>
 
 <h3 class="faq" id="50">What packages belong in the Depends:,
