@@ -239,7 +239,7 @@ apply:
 * z is incremented whenever committing changes to a package.
 
 For more details, see
-[Version Numbering Standards](http://wiki.fhcrc.org/bioc/Version_Numbering_Standards)
+[Version Numbering Standards](../version-numbering/)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
