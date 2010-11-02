@@ -98,12 +98,6 @@ for (version in versions) {
     repos = c("bioc", "data/annotation", "data/experiment")
     for (repo in repos) {
       
-        ### TODO: TAKE OUT THE NEXT 3 LINES when the 2.8 build pipe is complete
-        if ((version == "2.8") && (repo == "data/experiment")) {
-          next
-        }
-        ### END TODO
-        
         reposUrl = paste("http://bioconductor.org/packages/", version, "/", repo, sep="")
 
             biocViews <- getBiocViews(reposUrl, biocViewsVocab, "No View Provided")
