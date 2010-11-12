@@ -86,7 +86,7 @@ To update all installed packages that are out of date, start a new
 session of R and enter
 
     source("http://bioconductor.org/biocLite.R")
-    update.packages(repos=biocinstallRepos(), ask=FALSE)
+    update.packages(repos=biocinstallRepos(), ask=FALSE, checkBuilt=TRUE)
 
 Read the help page for `update.packages` for additional details.
 Recompiling installed Bioconductor packages
