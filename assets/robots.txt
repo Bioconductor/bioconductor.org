@@ -1,4 +1,5 @@
 User-agent: *
+Disallow: /packages/*.html$
 Disallow: /packages/submitted/
 Disallow: /packages/misc/
 Disallow: /packages/lindsey/
