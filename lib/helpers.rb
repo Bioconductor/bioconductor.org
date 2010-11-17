@@ -60,11 +60,31 @@ end
 def win_format(package)
   wb = windows_binary(package)
   return nil if wb.nil?
+  
+  both = "(32- &amp; 64-bit)"
+  _32only = "(32-bit only)"
+  _64only = "(64-bit only)"
+  ret = ""
+  
   if windows_binary(package) =~ /64/
-    "(32- &amp; 64-bit)"
+    ret = both
   else
-    "(32-bit only)"
+    ret = _32only
   end
+  
+  if (package.has_key?(:Archs) && !package[:Archs].empty?)
+    archs = package[:Archs]
+    if (archs =~ /i386/ && archs =~ /x64/)
+      ret = both
+    elsif (archs =~ /i386/)
+      ret = _32only
+    elsif (archs =~ /x64/)
+      ret = _64only
+    end
+  end
+  
+  
+  return ret
 end
 
 def cjoin(item, sep)
