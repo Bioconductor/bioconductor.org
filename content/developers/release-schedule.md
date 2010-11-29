@@ -1,94 +1,109 @@
-![](/images/icons/magnifier.gif)Bioconductor 2.7 Release Schedule
-==================================
+# ![](/images/icons/magnifier.gif)Bioconductor 2.7 Release Schedule
 
-R 2.12.0 is scheduled for Friday, October 15, 2010.
-As usual, we plan to release this new version of Bioconductor
-just a couple of days after.
+## Release objectives
+
+The next release of R is not yet scheduled, but is likely in early
+April, 2011. An emphasis in this release cycle is to bringing existing
+packages into conformance with Bioconductor [guidelines][guidelines]
+and marking as 'deprecated' packages that are no longer useful or
+whose functionality is better implemented elsewhere.
+
+The following schedule outlines major goals: 
+
+* March 4: identify packages for deprecation.
+
+* March 11: All packages conform to Bioconductor
+  [guidelines][guidelines]
+
+* March 18: and pass R CMD build / R CMD check without
+  errors.
+
+* March 25: All packages pass R CMD build / R CMD check without
+  warnings.
+
+[guidelines]: /developers/package-guidelines
+
+## Release template
+
+The following template will be filled in as the release approaches;
+dates are relative to the announced R release date:
  
+### -28 days
 
-September 17
-------------
+R:
 
-**R:**
+* R grand feature freeze (alpha).
 
-* R GRAND-FEATURE FREEZE (alpha).
+Bioconductor:
 
-**BioC:**
+* Packages for deprecation identified.
 
-* All BioC package developers should start using R-devel alpha
+* All Bioconductor package developers should start using R-devel alpha
   for testing their packages.
 
+### -21 days
 
-September 24
-------------
+Bioconductor:
 
-**BioC:**
-
-* Deadline for new package submissions for release with BioC 2.7.
+* Deadline for new package submissions.
 
 * Release candidate of annotation packages built and posted to devel
   annotation data repository.
 
+* All packages conform to Bioconductor [guidelines][guidelines].
 
-October 1st
------------
+### -14 days
 
-**R:**
+R:
 
 * R FEATURE FREEZE (beta).
 
-**BioC:**
+Bioconductor:
 
-* BioC Grand Feature Freeze (alpha):  no new packages added to BioC
+* Grand Feature Freeze (alpha):  no new packages added to BioC
   release roster.
 
-
-October 6
----------
-
-**BioC:**
-
-* BioC Feature Freeze (beta): no API changes to BioC.
-
-* Deadline for BioC packages passing ''R CMD build'' and ''R CMD check''
+* Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
 
+### -10 days
 
-October 8
----------
+Bioconductor:
 
-**R:**
+* Bioconductor Feature Freeze (beta): no API changes to BioC.
+
+### -7 days
+
+R:
 
 * R CODE FREEZE (release candidate).
 
-
-October 12
-----------
-
-**R:**
-
-* R PRERELEASE.
-
-**BioC:**
-
-* BioC release candidate 1.  Package maintainers should limit changes to
-  "show-stopper" bugs and documentation improvements.
+Bioconductor:
 
 * Deadline for packages passing R CMD build and check without warning.
   Some warnings will be accepted, clarification on the bioc-devel mailing
   list.
 
+### -3 days
+
+R:
+
+* R PRERELEASE.
+
+Bioconductor:
+
+* Bioconductor release candidate 1.  Package maintainers should limit
+  changes to "show-stopper" bugs and documentation improvements.
+
 * Annotation data packages finalized.
 
+### R Release
 
-October 15
-----------
-
-**R:**
+R:
 
 * R 2.12.0 RELEASE.
 
-**BioC:**
+Bioconductor:
 
 * Creation of the BioC 2.7 release branch. Development can resume on
   trunk, but changes will not be part of the release.
@@ -98,16 +113,11 @@ October 15
 * Test install scripts, GUI installation.
 
 
-October 18
-----------
+### +1 day
 
-**BioC:**
+* Bioconductor release.
 
-* BioC 2.7 release.
+## External Resources
 
-
-External Resources
-------------------
-
-For more information on the release details for R 2.12.0, visit
-the [R Developer Page](http://developer.r-project.org).
+For more information on the release details for R, visit the [R
+Developer Page](http://developer.r-project.org).
