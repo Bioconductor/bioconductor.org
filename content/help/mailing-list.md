@@ -16,10 +16,10 @@ Bioconductor community.
 
 Send mail to everyone subscribed to the bioconductor mail list by
 reading the [posting guide][5] and then sending an email to
-[bioconductor@stat.math.ethz.ch][6]
+[bioconductor@r-project.org][6]
 
 Obtain Information about the list by sending an email with 'info' as
-its contents to [bioconductor-request@stat.math.ethz.ch][7] . You can
+its contents to [bioconductor-request@r-project.org][7] . You can
 subscribe and unsubscribe by E-mail (instead of the web interface),
 however to unsubscribe you currently need the mailing list password
 which is sent when subscribing and in a monthly reminder.
@@ -58,8 +58,8 @@ package-level solution.
 [3]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
 [4]: https://stat.ethz.ch/mailman/listinfo/bioconductor
 [5]: /help/mailing-list/posting-guide/
-[6]: mailto:bioconductor@stat.math.ethz.ch
-[7]: mailto:bioconductor-request@stat.math.ethz.ch
+[6]: mailto:bioconductor@r-project.org
+[7]: mailto:bioconductor-request@r-project.org
 [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
 [9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
 [12]: http://dir.gmane.org/gmane.comp.lang.r.sequencing
