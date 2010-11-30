@@ -1,44 +1,70 @@
-[Bacterial Transcription](Bacterial-Collado.pdf)
+### Bioconductor News
 
-[BioNet - Functional analysis of biological networks](BioNet-Beisser.pdf)
+Martin Morgan - [New Developments in Bioconductor](BioconductorDevelopments-Morgan.pdf)
 
-[New Developments in Bioconductor](BioconductorDevelopments-Morgan.pdf)
 
-[Genotype and DNA Copy Number Estimation](DNAcopynumber-Ruczinski.pdf)
+### Visualization
 
-[DESeq and ExonSeq](ExonSeq-Anders.pdf)
+Michael Lawrence - [Qt and R](Qt-Lawrence.pdf)
 
-[Efficient R Programming](HighPerformanceR-Morgan.pdf)
+Wolfgang Huber - [Interactive reports with DHTML, SVG, Javascript](SVG-XHTML-Huber.pdf)
 
-[Mass Spectrometry and Proteomics/Metabolomics using R and Bioconductor](MSintro_LaurentGatto.pdf)
+### Sequencing
 
-[Labelled quantitative proteomics with MSnbase](MSnbase_LaurentGatto.pdf)
+Simon Anders - [DESeq for Alternative Splicing](ExonSeq-Anders.pdf)
 
-[Mass spectrometry Proteomics and MIAPE](Proteomics_MIAPE-bioCdevel_hdlbg-BreitwieserFlorian.pdf)
+Michal Okoniewski and Anna Lesniewska - [Lightweight RNAseq analysis with BioConductor](RNASeq-MichalAnna.pdf)
 
-[Network inference with qpgraph](QPgraph-Castelo.pdf)
+Oscar Reina Garcia [High-Throughput Sequencing data analysis with R and Bioconductor](htSeqTools-OscarReina.pdf)
 
-[Interactive Visualization of Genomic Data](Qt-Lawrence.pdf)
 
-[Lightweight RNAseq analysis with BioConductor](RNASeq-MichalAnna.pdf)
+### Genotyping
 
-[Reference Classes](ReferenceClasses-Morgan.pdf)
+Ingo Ruczinski [Genotype and DNA copy number estimation (SNPchip, VanillaICE)](DNAcopynumber-Ruczinski.pdf)
 
-[SSPA - Pilot data based sensitivity analysis for high-dimensional data](SSPA-vanIterson.pdf)
+David Clayton [Developments snpMatrix](snpMatrix2-Clayton.pdf)
 
-[Dynamic reports made from R, viewed anywhere](SVG-XHTML-Huber.pdf)
+### Statistics
 
-[digeR: a graphical user interface R package for analyzing 2D-DIGE (gel) data](digeR-YueFan.pdf)
+Robert Castelo [Network inference with 'qpgraph': recent developments and future challenges](QPgraph-Castelo.pdf)
 
-[gxTools: Automating Transcriptome Analysis ](gxTools-Raffelsberger.pdf)
+Maarten van Iterson - [SSPA - Pilot data based sensitivity analysis for high-dimensional data](SSPA-vanIterson.pdf)
 
-[High-Throughput Sequencing data analysis Tools (htSeqTools)](htSeqTools-OscarReina.pdf)
+### Proteomics and metabolomics
 
-[les: Loci of Enhanced Significance](les-Gehring.pdf)
+Laurent Gatto - [Mass Spectrometry and Proteomics/Metabolomics using R and Bioconductor](MSintro_LaurentGatto.pdf)
 
-[Sub-cellular localisation of proteins with pRoloc](pRoloc_LaurentGatto.pdf)
+Laurent Gatto - [Labelled quantitative proteomics with MSnbase](MSnbase_LaurentGatto.pdf)
 
-[phenoDist](phenoDist-XianZhang.pdf)
+Laurent Gatto - [Sub-cellular localisation of proteins with pRoloc](pRoloc_LaurentGatto.pdf)
 
-[Developments in the snpMatrix package](snpMatrix2-Clayton.pdf)
+Florian Breitwieser - [Mass spectrometry Proteomics and MIAPE](Proteomics_MIAPE-bioCdevel_hdlbg-BreitwieserFlorian.pdf)
+
+Yue Fan - [digeR: a graphical user interface R package for analyzing 2D-DIGE (gel) data](digeR-YueFan.pdf)
+
+### Arrays
+
+Wolfgang Raffelsberger - [gxTools: Automating Transcriptome Analysis ](gxTools-Raffelsberger.pdf)
+
+Julian Gehring - [dentifying Loci of Enhanced Significance in Tiling Microarray Data](les-Gehring.pdf)
+
+Leonardo Collado-Torres - [Transcription initiation mapping and transcription unit identification in E. coli](Bacterial-Collado.pdf)
+
+### GSEA
+
+Daniela Beisser - [BioNet - Routines for the functional analysis of biological networks](BioNet-Beisser.pdf)
+
+
+### Imaging
+
+Xian Zhang - [Phenotypic dissimilarity analysis for high-content screening](phenoDist-XianZhang.pdf)
+
+### Scalability and Performance
+
+Martin Morgan - [Efficient R Programming/Parallelization](HighPerformanceR-Morgan.pdf)
+
+
+### Other Talks
+
+Martin Morgan - [Reference Classes in R](ReferenceClasses-Morgan.pdf)
 
