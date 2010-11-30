@@ -17,7 +17,7 @@
 #    to create the index.
 #
 #--sync COURSENAME
-#    Performs the initial creation of the course dante
+#    Performs the initial creation of the course
 #
 #--push YEAR/COURSENAME
 #    Performs an rsync of COURSENAME to live bioconductor.org webserver, pushing
