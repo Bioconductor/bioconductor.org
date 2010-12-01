@@ -128,7 +128,7 @@ The broad goals of the Bioconductor project are:
 
 * **Open development**. Users are encouraged to become developers, either
   by contributing
-  [Bioconductor compliant packages](http://wiki.fhcrc.org/bioc/Package_Guidelines)
+  [Bioconductor compliant packages](/developers/package-guidelines/)
   or documentation. Additionally Bioconductor provides a mechanism for
   linking together different groups with common goals to foster
   collaboration on software, often at the level of shared development.
