@@ -25,7 +25,7 @@ paper.
 Most Bioconductor components are distributed as [R
 packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages).
 The functional scope of [Bioconductor packages](/packages/release/bioc/)
-includes the analysis DNA microarray, sequence, flow, SNP, and other data.
+includes the analysis of DNA microarray, sequence, flow, SNP, and other data.
 
 ## Project Goals
 
