@@ -46,7 +46,7 @@ Yue Fan - [digeR: a graphical user interface R package for analyzing 2D-DIGE (ge
 
 Wolfgang Raffelsberger - [gxTools: Automating Transcriptome Analysis ](gxTools-Raffelsberger.pdf)
 
-Julian Gehring - [dentifying Loci of Enhanced Significance in Tiling Microarray Data](les-Gehring.pdf)
+Julian Gehring - [Identifying Loci of Enhanced Significance in Tiling Microarray Data](les-Gehring.pdf)
 
 Leonardo Collado-Torres - [Transcription initiation mapping and transcription unit identification in E. coli](Bacterial-Collado.pdf)
 
