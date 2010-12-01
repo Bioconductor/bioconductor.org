@@ -13,7 +13,7 @@ R prompt:
     browseVignettes(package = "Biostrings")
 
 This will open a web browser with links to the vignette PDF as well as
-a plain-text R file contained the code used in the vignette.
+a plain-text R file containing the code used in the vignette.
     
 The vignette files, both the PDF and the Rnw sources document, are
 located in the `doc` directory of an installed package
