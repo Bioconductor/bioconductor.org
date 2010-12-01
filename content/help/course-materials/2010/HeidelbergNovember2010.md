@@ -15,18 +15,18 @@ Simon Anders - [DESeq for Alternative Splicing](ExonSeq-Anders.pdf)
 
 Michal Okoniewski and Anna Lesniewska - [Lightweight RNAseq analysis with BioConductor](RNASeq-MichalAnna.pdf)
 
-Oscar Reina Garcia [High-Throughput Sequencing data analysis with R and Bioconductor](htSeqTools-OscarReina.pdf)
+Oscar Reina Garcia - [High-Throughput Sequencing data analysis with R and Bioconductor](htSeqTools-OscarReina.pdf)
 
 
 ### Genotyping
 
-Ingo Ruczinski [Genotype and DNA copy number estimation (SNPchip, VanillaICE)](DNAcopynumber-Ruczinski.pdf)
+Ingo Ruczinski - [Genotype and DNA copy number estimation (SNPchip, VanillaICE)](DNAcopynumber-Ruczinski.pdf)
 
-David Clayton [Developments snpMatrix](snpMatrix2-Clayton.pdf)
+David Clayton - [Developments snpMatrix](snpMatrix2-Clayton.pdf)
 
 ### Statistics
 
-Robert Castelo [Network inference with 'qpgraph': recent developments and future challenges](QPgraph-Castelo.pdf)
+Robert Castelo - [Network inference with 'qpgraph': recent developments and future challenges](QPgraph-Castelo.pdf)
 
 Maarten van Iterson - [SSPA - Pilot data based sensitivity analysis for high-dimensional data](SSPA-vanIterson.pdf)
 
