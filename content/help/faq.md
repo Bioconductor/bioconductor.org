@@ -6,6 +6,7 @@ This is the FAQ, currently under construction.
 * [Package Use](#use-packages-faq)
 * [Annotations](#annotation-faq)
 * [Developing Packages](#developer-faq)
+* [Citation](#citation-faq)
 
 <!--
 
@@ -167,6 +168,18 @@ NAMESPACE) or for packages that provide essential functionality needed
 by the user of your package, e.g., your functions always return
 `GRanges` objects, so the user will necessarily need `GenomicRanges`
 on their search path.
+
+<h2 id="citation-faq">Citation</h2>
+
+<h3 class="faq">How do I cite Bioconductor?</h3>
+
+Many packages provide a citation available from within R. Try
+
+    citation('DESeq')
+
+for any installed package. To cite the project as a whole, use
+
+    citation('Biobase')
 
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
