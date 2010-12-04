@@ -10,13 +10,11 @@ instructors:
 - David Clayton
 - Leonardo Collado-Torres
 - Nicolas Delhomme
-- Zhihao Ding
 - Berger Fabrice
 - Yue Fan
 - Bernd Fischer
 - Laurent Gatto
 - Julian Gehring
-- Xiaowei Guan
 - Florian Hahne
 - Wolfgang Huber
 - Holger Höfling
@@ -26,12 +24,11 @@ instructors:
 - Michael Lawrence
 - Friedrich Leisch
 - Anna Lesniewska
-- abdelghafour MARFAK
 - Crispin Miller
 - Martin Morgan
 - Arne Mueller
 - Michal Okoniewski
-- Greg Pau
+- Gregoire Pau
 - Simon Perkins
 - Michal Piotrowski
 - Wolfgang Raffelsberger
@@ -62,5 +59,5 @@ tags:
 - developer
 - heidelberg
 - meeting
-description: This meeting is aimed at Bioconductor contributors and at users who want to become package developers. The goal of the meeting is exchange of technical experiences and new developments, and the coordination of related efforts.
+description: This meeting was aimed at Bioconductor contributors and at users who want to become package developers. The goal of the meeting was exchange of technical experiences and new developments, and the coordination of related efforts.
 end_date: 2010-11-18

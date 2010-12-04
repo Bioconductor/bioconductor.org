@@ -2,12 +2,15 @@
 
 Martin Morgan - [New Developments in Bioconductor](BioconductorDevelopments-Morgan.pdf)
 
+Vince Carey - [Selected developments in microarray processing and general annotation](vjcOverviewHeid.pdf)
 
 ### Visualization
 
 Michael Lawrence - [Qt and R](Qt-Lawrence.pdf)
 
 Wolfgang Huber - [Interactive reports with DHTML, SVG, Javascript](SVG-XHTML-Huber.pdf)
+
+Gregoire Pau - [Exploration of high-throughput image-based assays with imageHTS](101117-pau-imageHTS-bioc-1.pdf)
 
 ### Sequencing
 
@@ -28,7 +31,14 @@ David Clayton - [Developments snpMatrix](snpMatrix2-Clayton.pdf)
 
 Robert Castelo - [Network inference with 'qpgraph': recent developments and future challenges](QPgraph-Castelo.pdf)
 
+Jesper Ryge - [Circular statistics for eletrophysiology recordings](jesper-ryge.pdf)
+
 Maarten van Iterson - [SSPA - Pilot data based sensitivity analysis for high-dimensional data](SSPA-vanIterson.pdf)
+
+### Reproducible Research in Practice
+
+Vince Carey - [Experimental data packages](reproExpPack.pdf)
+
 
 ### Proteomics and metabolomics
 
