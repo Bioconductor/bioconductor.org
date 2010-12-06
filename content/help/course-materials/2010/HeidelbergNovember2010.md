@@ -1,3 +1,115 @@
+
+
+<h1><img src="/images/icons/help.gif" alt="" />Bioconductor Developer Meeting Europe</h1> 
+<p class="location">Heidelberg, Germany</p> 
+<p class="dates">2010-11-17 ~ 2010-11-18</p> 
+<h2>Participants</h2> 
+
+<ul class="inline_list"> 
+
+  <li>Simon Anders</li> 
+
+  <li>Daniela Beisser</li> 
+
+  <li>Florian Breitwieser</li> 
+
+  <li>Jonathan Cairns</li> 
+
+  <li>Vincent Carey</li> 
+
+  <li>Robert Castelo</li> 
+
+  <li>David Clayton</li> 
+
+  <li>Leonardo Collado-Torres</li> 
+
+  <li>Nicolas Delhomme</li> 
+
+  <li>Berger Fabrice</li> 
+
+  <li>Yue Fan</li> 
+
+  <li>Bernd Fischer</li> 
+
+  <li>Laurent Gatto</li> 
+
+  <li>Julian Gehring</li> 
+
+  <li>Florian Hahne</li> 
+
+  <li>Wolfgang Huber</li> 
+
+  <li>Holger Höfling</li> 
+
+  <li>Misha Kapushesky</li> 
+
+  <li>Georges Khazen</li> 
+
+  <li>Christian KOHLER</li> 
+
+  <li>Michael Lawrence</li> 
+
+  <li>Friedrich Leisch</li> 
+
+  <li>Anna Lesniewska</li> 
+
+  <li>Crispin Miller</li> 
+
+  <li>Martin Morgan</li> 
+
+  <li>Arne Mueller</li> 
+
+  <li>Michal Okoniewski</li> 
+
+  <li>Gregoire Pau</li> 
+
+  <li>Simon Perkins</li> 
+
+  <li>Michal Piotrowski</li> 
+
+  <li>Wolfgang Raffelsberger</li> 
+
+  <li>Oscar Reina Garcia</li> 
+
+  <li>Alejandro Reyes</li> 
+
+  <li>Charles Roosen</li> 
+
+  <li>Anthony Rossini</li> 
+
+  <li>Ingo Ruczinski</li> 
+
+  <li>Jesper Ryge</li> 
+
+  <li>Mike Smith</li> 
+
+  <li>Stefanie Tauber</li> 
+
+  <li>Martin Telefont</li> 
+
+  <li>Per Unneberg</li> 
+
+  <li>Simon Urbanek</li> 
+
+  <li>Maarten van Iterson</li> 
+
+  <li>Mireia Vilardell</li> 
+
+  <li>Xin Wang</li> 
+
+  <li>Kathi Zarnack</li> 
+
+  <li>Xian Zhang</li> 
+
+  <li>Ing. Rolf Čábelka</li> 
+
+</ul>
+
+<h2>Description</h2> 
+<p>This meeting was aimed at Bioconductor contributors and at users who want to become package developers. The goal of the meeting was exchange of technical experiences and new developments, and the coordination of related efforts.</p>
+
+<h2>Talks</h2>
+
 ### Bioconductor News
 
 Martin Morgan - [New Developments in Bioconductor](BioconductorDevelopments-Morgan.pdf)
