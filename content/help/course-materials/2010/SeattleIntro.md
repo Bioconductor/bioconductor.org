@@ -2,5 +2,5 @@
 
 Run the following code at an R prompt:
 
-	source("http://bioconductor.org/course-packages/install-SeattleIntro.R")
+	source("http://bioconductor.org/course-packages/install-SeattleIntro2010.R")
 
