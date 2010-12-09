@@ -82,9 +82,9 @@ Human Genome U95 V 2.0, and with Gene Ontology, use
 
 Package installation is required only once per R installation. View a
 full list of available
-[software](/packages/release/Software.html)
+[software](/help/bioc-views/release/bioc/)
 and 
-[annotation](/packages/release/AnnotationData.html)
+[annotation](/help/bioc-views/release/data/annotation/)
 packages.
 
 To use the `AnnotationDbi` and `GO.db` package, evaluate the commands
@@ -131,23 +131,23 @@ provided.
 ### Key Packages ###
 
 *
-  [AnnotationDbi](/packages/release/bioc/html/AnnotationDbi.html)
+  [AnnotationDbi](/help/bioc-views/release/bioc/html/AnnotationDbi.html)
   Almost all annotations require the `AnnotationDbi` package. This
   package will be automatically installed for you if you install
   another ".db" annotation package using biocLite(). It contains the code to
   allow annotation mapping objects to be made and manipulated as well
   as code to generate custom chip platforms.
-* [Category](/packages/release/bioc/html/Category.html)
+* [Category](/help/bioc-views/release/bioc/html/Category.html)
   This is the base level package for dealing with annotation questions
   that involve categorical data.
-* [GOstats](/packages/release/bioc/html/GOstats.html)
+* [GOstats](/help/bioc-views/release/bioc/html/GOstats.html)
   This builds on what is found in Category so that you can do
   hypergeometric testing using the Gene Ontology found in the GO.db
   package.
-* [annotate](/packages/release/bioc/html/annotate.html)
+* [annotate](/help/bioc-views/release/bioc/html/annotate.html)
   This package contains many helpful tools for making use of
   annotations.
-* [biomaRt](/packages/release/bioc/html/biomaRt.html)
+* [biomaRt](/help/bioc-views/release/bioc/html/biomaRt.html)
   This package is a great way to pull annotation data directly from
   web based annotation resources. Such data is extremely "current", so
   it is a good idea to save and locally manage the data that you pull
@@ -160,29 +160,29 @@ provided.
   org."Xx"."yy".db. Where "Xx" is the abbreviation for Genus and
   species. And "yy" is the source of the central ID that is used to
   tie all the data together. Some examples are:
-  [org.Hs.eg.db](/packages/release/data/annotation/html/org.Hs.eg.db.html)
+  [org.Hs.eg.db](/help/bioc-views/release/data/annotation/html/org.Hs.eg.db.html)
   which is for Homo sapiens and is based upon Entrez Gene IDs. And
-  [org.At.tair.db](/packages/release/data/annotation/html/org.At.tair.db.html)
+  [org.At.tair.db](/help/bioc-views/release/data/annotation/html/org.At.tair.db.html)
   which is for Arabidopsis thaliana and is based on the tair IDs.
 * There are also packages for questions about general systems biology
   data. Some examples of this are:
-  [KEGG.db](/packages/release/data/annotation/html/KEGG.db.html)
+  [KEGG.db](/help/bioc-views/release/data/annotation/html/KEGG.db.html)
   for accessing data that pertains to Kyoto Encyclopedia of Genes and
-  Genomes. [GO.db](/packages/release/data/annotation/html/GO.db.html) for
+  Genomes. [GO.db](/help/bioc-views/release/data/annotation/html/GO.db.html) for
   accessing data that pertains to the Gene
-  Ontology. [PFAM.db](/packages/release/data/annotation/html/PFAM.db.html)
+  Ontology. [PFAM.db](/help/bioc-views/release/data/annotation/html/PFAM.db.html)
   for accessing data that pertains to different protein family
   identifiers and how they relate to each other.
 * Chip annotation packages are for accessing only the data from one
   specific platform at a time. These packages are named like this:
   "platformName".db.  Where "platformName" is the name of the chip
   platform that these packages refer to. And example would be
-  [hgu95av2.db](/packages/release/data/annotation/html/hgu95av2.db.html)
+  [hgu95av2.db](/help/bioc-views/release/data/annotation/html/hgu95av2.db.html)
   which is for the hgu95av2 platform from Affymetrix.
 * Inparanoid homology packages are for accessing inparanoid
   data. hom."Xx".inp.db Where "Xx" is the abbreviation for Genus and
   species. An example is
-  [hom.Hs.inp.db](/packages/release/data/annotation/html/hom.Hs.inp.db.html)
+  [hom.Hs.inp.db](/help/bioc-views/release/data/annotation/html/hom.Hs.inp.db.html)
   which contains inparanoid based mapping data between genes for Homo
   sapiens and 35 other organisms.</li>
 * .db0 packages are for making custom platform specific
@@ -191,7 +191,7 @@ provided.
   available .db0 packages can be obtained by calling
   available.db0Pkgs(). There is one of these for each supported
   organism. An example would be
-  [human.db0](/packages/release/data/annotation/html/human.db0.html). Users
+  [human.db0](/help/bioc-views/release/data/annotation/html/human.db0.html). Users
   should not need these installed unless they plan to make custom chip
   packages according the guidelines in the SQLForge vignette that is
   included with the `AnnotationDbi` package.  These packages must be

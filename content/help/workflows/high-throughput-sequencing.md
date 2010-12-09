@@ -64,7 +64,7 @@ dependencies, evaluate the commands
 
 Package installation is required only once per R installation. View a
 full list of
-[available packages](/packages/release/Software.html).
+[available packages](/help/bioc-views/release/bioc/).
 
 To use the `ShortRead` package, evaluate the command
 
@@ -102,54 +102,54 @@ to open a web page containing comprehensive help resources.
 The following packages illustrate the diversity of functionality
 available; all are in the release version of Bioconductor.
 
-* [IRanges](/packages/release/bioc/html/IRanges.html),
-  [GenomicRanges](/packages/release/bioc/html/GenomicRanges.html)
+* [IRanges](/help/bioc-views/release/bioc/html/IRanges.html),
+  [GenomicRanges](/help/bioc-views/release/bioc/html/GenomicRanges.html)
   and
-  [genomeIntervals](/packages/release/bioc/html/genomeIntervals.html)
+  [genomeIntervals](/help/bioc-views/release/bioc/html/genomeIntervals.html)
   for range-based (e.g., chromosomal regions) calculation, data
   manipulation, and general-purpose data
-  representation. [Biostrings](/packages/release/bioc/html/Biostrings.html)
+  representation. [Biostrings](/help/bioc-views/release/bioc/html/Biostrings.html)
   for alignment, pattern matching (e.g., primer removal), and data
   manipulation of large biological sequences or sets of
   sequences.
 
-* [ShortRead](/packages/release/bioc/html/ShortRead.html)
+* [ShortRead](/help/bioc-views/release/bioc/html/ShortRead.html)
   and
-  [Rsamtools](/packages/release/bioc/html/Rsamtools.html)
+  [Rsamtools](/help/bioc-views/release/bioc/html/Rsamtools.html)
   for file I/O, quality assessment, and high-level, general purpose
   data summary.
-  [rtracklayer](/packages/release/bioc/html/rtracklayer.html)
+  [rtracklayer](/help/bioc-views/release/bioc/html/rtracklayer.html)
   for import and export of tracks on the UCSC genome browser.
 
-* [BSgenome](/packages/release/bioc/html/BSgenome.html)
+* [BSgenome](/help/bioc-views/release/bioc/html/BSgenome.html)
   for accessing and manipulating curated whole-genome representations.
-  [GenomicFeatures](/packages/release/bioc/html/GenomicFeatures.html)
+  [GenomicFeatures](/help/bioc-views/release/bioc/html/GenomicFeatures.html)
   for annotation of sequence features across common genomes,
-  [biomaRt](/packages/release/bioc/html/biomaRt.html)
+  [biomaRt](/help/bioc-views/release/bioc/html/biomaRt.html)
   for access to Biomart databases.
 
-* [SRAdb](/packages/release/bioc/html/SRAdb.html)
+* [SRAdb](/help/bioc-views/release/bioc/html/SRAdb.html)
   for querying and retrieving data from the Sequence Read Archive.
 
 * ChIP-seq and related (e.g., motif discovery, identification of
   high-coverage segments) activities are facilitated by packages such
   as
-  [CSAR](/packages/release/bioc/html/CSAR.html),
-  [chipseq](/packages/release/bioc/html/chipseq.html),
-  [ChIPseqR](/packages/release/bioc/html/ChIPseqR.html),
-  [ChIPsim](/packages/release/bioc/html/ChIPsim.html),
-  [ChIPpeakAnno](/packages/release/bioc/html/ChIPpeakAnno.html),
-  [rGADEM](/packages/release/bioc/html/rGADEM.html),
-  [segmentSeq](/packages/release/bioc/html/segmentSeq.html),
-  [segmentSeq](/packages/release/bioc/html/segmentSeq.html).
+  [CSAR](/help/bioc-views/release/bioc/html/CSAR.html),
+  [chipseq](/help/bioc-views/release/bioc/html/chipseq.html),
+  [ChIPseqR](/help/bioc-views/release/bioc/html/ChIPseqR.html),
+  [ChIPsim](/help/bioc-views/release/bioc/html/ChIPsim.html),
+  [ChIPpeakAnno](/help/bioc-views/release/bioc/html/ChIPpeakAnno.html),
+  [rGADEM](/help/bioc-views/release/bioc/html/rGADEM.html),
+  [segmentSeq](/help/bioc-views/release/bioc/html/segmentSeq.html),
+  [segmentSeq](/help/bioc-views/release/bioc/html/segmentSeq.html).
 
 * Differential expression and RNA-seq style analysis can be
   accomplished with
-  [Genominator](/packages/release/bioc/html/Genominator.html),
-  [edgeR](/packages/release/bioc/html/edgeR.html),
-  [baySeq](/packages/release/bioc/html/baySeq.html),
-  [DESeq](/packages/release/bioc/html/DESeq.html),
+  [Genominator](/help/bioc-views/release/bioc/html/Genominator.html),
+  [edgeR](/help/bioc-views/release/bioc/html/edgeR.html),
+  [baySeq](/help/bioc-views/release/bioc/html/baySeq.html),
+  [DESeq](/help/bioc-views/release/bioc/html/DESeq.html),
   and
-  [DEGseq](/packages/release/bioc/html/DEGseq.html).
+  [DEGseq](/help/bioc-views/release/bioc/html/DEGseq.html).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
