@@ -24,3 +24,9 @@ command into your R session:
 
 [Introduction to Bioconductor - Lab](Bioconductor-Introduction-lab.pdf)
 
+#### Thursday Afternoon: Microarray analysis
+
+[Microarray Analysis](MicroarrayAnalysis.pdf)
+
+[Microarray Analysis - Lab](MicroarrayAnalysis-lab.pdf)
+
