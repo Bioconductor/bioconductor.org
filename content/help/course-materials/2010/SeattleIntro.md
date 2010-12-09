@@ -11,3 +11,16 @@ command into your R session:
 
 	source("http://bioconductor.org/course-packages/install-SeattleIntro2010.R")
 
+
+### Talks
+
+#### Thursday Morning: Introduction to R and Bioconductor
+
+[Introduction to R](IntroToR_Slides.pdf)
+
+[Introduction to R - Lab](IntroToR_Lab.pdf)
+
+[Introduction to Bioconductor](Bioconductor-Introduction.pdf)
+
+[Introduction to Bioconductor - Lab](Bioconductor-Introduction-lab.pdf)
+
