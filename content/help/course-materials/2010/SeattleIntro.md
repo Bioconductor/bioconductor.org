@@ -39,3 +39,8 @@ command into your R session:
 [Sequence Analysis - Lab](SequenceAnalysis-lab.pdf)
 
 [Sequence Differential Representation](Differential-Representation-Workflow.pdf)
+
+#### Friday Afternoon
+
+[DNA Sequences and Ranges](DNAStringsAndRanges.pdf)
+
