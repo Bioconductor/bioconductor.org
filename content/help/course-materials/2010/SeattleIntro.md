@@ -14,7 +14,7 @@ command into your R session:
 
 ### Talks
 
-#### Thursday Morning: Introduction to R and Bioconductor
+#### Thursday Morning
 
 [Introduction to R](IntroToR_Slides.pdf)
 
@@ -24,9 +24,16 @@ command into your R session:
 
 [Introduction to Bioconductor - Lab](Bioconductor-Introduction-lab.pdf)
 
-#### Thursday Afternoon: Microarray analysis
+#### Thursday Afternoon
 
 [Microarray Analysis](MicroarrayAnalysis.pdf)
 
 [Microarray Analysis - Lab](MicroarrayAnalysis-lab.pdf)
 
+[Annotation](Annotation.pdf)
+
+#### Friday Morning
+
+[Sequence Analysis](SequenceAnalysis.pdf)
+
+[Sequence Analysis - Lab](SequenceAnalysis-lab.pdf)
