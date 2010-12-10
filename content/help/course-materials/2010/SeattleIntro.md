@@ -44,3 +44,7 @@ command into your R session:
 
 [DNA Sequences and Ranges](DNAStringsAndRanges.pdf)
 
+[Using the GenomicFeatures package](GenomicFeatures.pdf)
+
+
+
