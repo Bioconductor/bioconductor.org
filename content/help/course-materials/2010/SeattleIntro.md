@@ -37,3 +37,5 @@ command into your R session:
 [Sequence Analysis](SequenceAnalysis.pdf)
 
 [Sequence Analysis - Lab](SequenceAnalysis-lab.pdf)
+
+[Sequence Differential Representation](Differential-Representation-Workflow.pdf)
