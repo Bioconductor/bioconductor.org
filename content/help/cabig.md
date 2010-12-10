@@ -22,7 +22,7 @@ The code for the services is in
 [gforge](https://gforge.nci.nih.gov/scm/?group_id=175).
 
 The
-[RWebServices](http://bioconductor.org/packages/release/bioc/html/RWebServices.html)
+[RWebServices](/help/bioc-views/release/bioc/html/RWebServices.html)
 package has a vignette on enabling web services on additional packages,
 including how these are combined with the caGrid `introduce` infrastructure,
 to create custom caGrid services from Bioconductor scripts.
