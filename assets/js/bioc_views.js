@@ -2,6 +2,7 @@ var packageInfo = {};
 var biocVersion;
 
 var displayPackages = function(packageList, nodeName) {
+    log("in displayPackages");
     if (packageList == null) {
         jQuery("#packages").empty();
         return;
@@ -48,17 +49,30 @@ var jumpToAnchor = function() {
 }
 
 var nodeSelected = function(event, data){
-    var nodeName = data['args'][0]['text'];
+    var nodeName;
+    
+    // for IE
+    nodeName = data['args'][0]['innerText'];
+    
+    if (data['args'][0]['text'] != undefined) {
+        nodeName = data['args'][0]['text'];
+    }
+    
+    
+    log("at first, nodeName is " + nodeName);
     
     if (nodeName == undefined) {
         nodeName = getNodeName();
     } 
-    
+
+    log("nodeName == |" + nodeName + "|");
+    nodeName = nodeName.trim();
     var bareNodeName = nodeName.split(" ")[0];
     var wl = ("" + window.location.href).split("?")[0];
     wl = wl.split("#")[0];
 
     var newUrl = "" + wl + "#" + "___" + bareNodeName;
+    log("newUrl = " + newUrl);
     window.location.href = newUrl;
     
     var tmp = nodeName.split(" ");
