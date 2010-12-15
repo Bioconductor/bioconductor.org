@@ -7,7 +7,8 @@ files. Packages support common and advanced sequence manipulation
 operations such as trimming, transformation, and alignment.
 Domain-specific analyses include quality assessment, ChIP-seq,
 differential expression, RNA-seq, and other approaches. Bioconductor
-includes an interface to the Sequence Read Archive.
+includes an interface to the Sequence Read Archive (via the
+[SRAdb](/help/bioc-views/release/bioc/html/SRAdb.html) package).
 
 * [Sample Workflow](#sample-workflow)  
 * [Installation and Use](#install-and-use)
