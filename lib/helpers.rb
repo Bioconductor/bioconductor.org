@@ -45,7 +45,21 @@ def base_filename(path)
   path.split("/").last
 end
 
-# show only one windows build - the 64-bit (if available) or the 32 (because we have fat (dual-arch) packages now)
+# This function returns nil if there is no windows binary at all available for the package.
+# If there is a windows package available it will return the path to it. 
+# The path may have "windows" or "windows64" in it, but you can't draw
+# any conclusions from that, because windows64 is a symlink to windows. It does not
+# mean that the package is available only for a particular architecture. Use the Archs flag
+# to determine that. 
+#
+# The fields win.binary.ver and win64.binary.ver may have values or not. If neither of them
+# have values, the package is not available for Windows. If either of them have a value, the
+# package is available. 
+#
+# 20101215 - I'm changing the behavior of this function to return the "windows" path (if available) instead of
+# the "windows64" path. 
+# An ordinary 32-bit windows user might wonder why the download path has 64 in it, 
+# and there really isn't any good reason. The more generic "windows" is appropriate.
 def windows_binary(package)
   return nil unless package.has_key? :"win.binary.ver" or package.has_key? :"win64.binary.ver"
   return nil if (package[:"win.binary.ver"] == "" or package[:"win.binary.ver"] == [])\
@@ -54,8 +68,8 @@ def windows_binary(package)
   win32 = package[:"win.binary.ver"]
   win64 = package[:"win64.binary.ver"]
   
-  return win64 unless win64.nil?  or win64.empty?
-  win32
+  return win32 unless win32.nil?  or win32.empty?
+  win64
 end
 
 def win_format(package)
@@ -67,11 +81,13 @@ def win_format(package)
   _64only = "(64-bit only)"
   ret = ""
   
-  if windows_binary(package) =~ /64/
-    ret = both
-  else
-    ret = _32only
-  end
+  #if windows_binary(package) =~ /64/
+  #  ret = both
+  #else
+  #  ret = _32only
+  #end
+  
+  ret = both
   
   if (package.has_key?(:Archs) && !package[:Archs].empty?)
     archs = package[:Archs]
