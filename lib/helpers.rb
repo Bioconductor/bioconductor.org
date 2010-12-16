@@ -48,7 +48,8 @@ end
 # show only one windows build - the 64-bit (if available) or the 32 (because we have fat (dual-arch) packages now)
 def windows_binary(package)
   return nil unless package.has_key? :"win.binary.ver" or package.has_key? :"win64.binary.ver"
-  return nil if package[:"win.binary.ver"] == "" and package[:"win64.binary.ver"] == ""
+  return nil if (package[:"win.binary.ver"] == "" or package[:"win.binary.ver"] == [])\
+   and (package[:"win64.binary.ver"] == "" or package[:"win64.binary.ver"] == [])
   
   win32 = package[:"win.binary.ver"]
   win64 = package[:"win64.binary.ver"]
