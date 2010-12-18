@@ -145,7 +145,7 @@ biocLite("<%=@package[:Package]%>")
     </tr>
     <tr class="row_even">
         <td>Package Downloads Report</td>
-        <td><a href="/packages/stats/<%=@package[:repo]%><%=@package[:Package]%>.html">Download Stats</a></td>
+        <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
     </tr>
         
 </table>

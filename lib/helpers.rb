@@ -313,3 +313,12 @@ def subnav_items(anItem)
   rescue
     []
 end
+
+def get_stats_url(package)
+  if (package[:repo] == "data/annotation/")
+    repo = "dataann-stats/data-annotation/"
+  else
+    repo = package[:repo]
+  end
+  "/packages/stats/#{repo}#{package[:Package]}.html"
+end
