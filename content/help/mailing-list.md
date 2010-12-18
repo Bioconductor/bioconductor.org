@@ -1,3 +1,6 @@
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
 # ![](/images/icons/help.gif)Mailing Lists #
 
 Please read the [posting guide][5] before sending mail to the
@@ -6,10 +9,7 @@ Bioconductor mail lists.
 <a name="bioconductor"></a>
 ## bioconductor ##
 
-[Subscribe to or browse][4] and [search][3] this list.
-
 <div id="cse" style="width: 100%;">Loading</div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
@@ -18,34 +18,27 @@ Bioconductor mail lists.
     customSearchControl.draw('cse');
   }, true);
 </script>
-<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
-
-
-This mailing list is for announcements about the development of
-Bioconductor and the availability of new code, questions and answers
-about problems and solutions using Bioconductor, enhancements and
-patches to the source code and documentation of Bioconductor, as
-well as general discussions on topics of interest to the
-Bioconductor community.
+[Subscribe to or browse][4] this list. This mailing list is for
+announcements about the development of Bioconductor and the
+availability of new code, questions and answers about problems and
+solutions using Bioconductor, enhancements and patches to the source
+code and documentation of Bioconductor, as well as general discussions
+on topics of interest to the Bioconductor community.
 
 Send mail to everyone subscribed to the bioconductor mail list by
 reading the [posting guide][5] and then sending an email to
-[bioconductor@r-project.org][6]
-
-Obtain Information about the list by sending an email with 'info' as
-its contents to [bioconductor-request@r-project.org][7] . You can
-subscribe and unsubscribe by E-mail (instead of the web interface),
-however to unsubscribe you currently need the mailing list password
-which is sent when subscribing and in a monthly reminder.
+[bioconductor@r-project.org][6] Obtain Information about the list by
+sending an email with 'info' as its contents to
+[bioconductor-request@r-project.org][7] . You can subscribe and
+unsubscribe by E-mail (instead of the web interface), however to
+unsubscribe you currently need the mailing list password which is sent
+when subscribing and in a monthly reminder.
 
 <a name="bioc-devel"></a>
 ## bioc-devel ##
 
-[Subscribe to or browse][8] this list.
-
 <div id="cse1" style="width: 100%;">Loading</div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
@@ -55,21 +48,17 @@ which is sent when subscribing and in a monthly reminder.
   }, true);
 </script>
 
-
-
-This list is for discussions about the active and future development
-of Bioconductor, and pre-testing of new versions. It is meant for
-those who maintain active positions in the development of Bioconductor
-(members of Biocore and developers of contributed packages) as well as
-others who have an interest in keeping up to date with these matters.
+[Subscribe to or browse][8] this list.  This list is for discussions
+about the active and future development of Bioconductor, and
+pre-testing of new versions. It is meant for those who maintain active
+positions in the development of Bioconductor (members of Biocore and
+developers of contributed packages) as well as others who have an
+interest in keeping up to date with these matters.
 
 <a name="bioc-sig-sequencing"></a>
 ## bioc-sig-sequencing ##
 
-[Subscribe to or browse][9] and [search][12] this list.
-
 <div id="cse2" style="width: 100%;">Loading</div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
@@ -78,22 +67,19 @@ others who have an interest in keeping up to date with these matters.
     customSearchControl.draw('cse2');
   }, true);
 </script>
-<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
-This list is for discussion and development of Bioconductor packages
-for analysis of ultra-high throughput sequencing data. Ultra-high
-throughput data comes from Solexa, 454, and other similar
-technologies. The SIG focuses on development, but welcomes input from
-users facing statistical, analytic or other challenges that require a
-package-level solution.
+[Subscribe to or browse][9] and [search][12] this list.  This list is
+for discussion and development of Bioconductor packages for analysis
+of ultra-high throughput sequencing data. Ultra-high throughput data
+comes from Solexa, 454, and other similar technologies. The SIG
+focuses on development, but welcomes input from users facing
+statistical, analytic or other challenges that require a package-level
+solution.
 
 <a name="bioc-sig-proteomics"></a>
 ## bioc-sig-proteomics ##
 
-[Subscribe to or browse][13] and [search][14] this list.
-
 <div id="cse3" style="width: 100%;">Loading</div>
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
@@ -102,13 +88,10 @@ package-level solution.
     customSearchControl.draw('cse3');
   }, true);
 </script>
-<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
-
-
-This list is for discussion and development of Bioconductor packages
-for analysis of proteomics data.
-
+[Subscribe to or browse][13] and [search][14] this list.  This list is
+for discussion and development of Bioconductor packages for analysis
+of proteomics data.
 
 ## Archives, Searches, and Tips ##
 
