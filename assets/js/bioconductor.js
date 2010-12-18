@@ -151,6 +151,8 @@ jQuery(function() {
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));
     });
+
+    jQuery(".stats_404").hide();
     
     
 });
