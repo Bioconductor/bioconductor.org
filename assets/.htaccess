@@ -107,5 +107,5 @@ RewriteRule ^index_html$ / [R=301]
 RewriteRule ^index_html_old$ / [R=301]
 RewriteRule ^main.html$ / [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
-RewriteRule ^packages/stats/data/annotation$ /packages/dataann-stats/data-annotation [R=301]
+RewriteRule ^packages/stats/data/annotation/(.*)$ /packages/dataann-stats/data-annotation/$1 [R=301]
 </IfModule>
