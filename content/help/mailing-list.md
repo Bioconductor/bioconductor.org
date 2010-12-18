@@ -3,6 +3,7 @@
 Please read the [posting guide][5] before sending mail to the
 Bioconductor mail lists.
 
+<a name="bioconductor"></a>
 ## bioconductor ##
 
 [Subscribe to or browse][4] and [search][3] this list.
@@ -38,6 +39,7 @@ subscribe and unsubscribe by E-mail (instead of the web interface),
 however to unsubscribe you currently need the mailing list password
 which is sent when subscribing and in a monthly reminder.
 
+<a name="bioc-devel"></a>
 ## bioc-devel ##
 
 [Subscribe to or browse][8] this list.
@@ -61,6 +63,7 @@ those who maintain active positions in the development of Bioconductor
 (members of Biocore and developers of contributed packages) as well as
 others who have an interest in keeping up to date with these matters.
 
+<a name="bioc-sig-sequencing"></a>
 ## bioc-sig-sequencing ##
 
 [Subscribe to or browse][9] and [search][12] this list.
@@ -84,7 +87,7 @@ technologies. The SIG focuses on development, but welcomes input from
 users facing statistical, analytic or other challenges that require a
 package-level solution.
 
-
+<a name="bioc-sig-proteomics"></a>
 ## bioc-sig-proteomics ##
 
 [Subscribe to or browse][13] and [search][14] this list.
