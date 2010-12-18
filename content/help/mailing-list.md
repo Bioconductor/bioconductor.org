@@ -7,6 +7,20 @@ Bioconductor mail lists.
 
 [Subscribe to or browse][4] and [search][3] this list.
 
+<div id="cse" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:6ko94t64bqi');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+
+
 This mailing list is for announcements about the development of
 Bioconductor and the availability of new code, questions and answers
 about problems and solutions using Bioconductor, enhancements and
@@ -28,6 +42,19 @@ which is sent when subscribing and in a monthly reminder.
 
 [Subscribe to or browse][8] this list.
 
+<div id="cse1" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:xeuhyddyegs');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse1');
+  }, true);
+</script>
+
+
+
 This list is for discussions about the active and future development
 of Bioconductor, and pre-testing of new versions. It is meant for
 those who maintain active positions in the development of Bioconductor
@@ -37,6 +64,18 @@ others who have an interest in keeping up to date with these matters.
 ## bioc-sig-sequencing ##
 
 [Subscribe to or browse][9] and [search][12] this list.
+
+<div id="cse2" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:qi-wohkafso');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse2');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
 This list is for discussion and development of Bioconductor packages
 for analysis of ultra-high throughput sequencing data. Ultra-high
@@ -49,6 +88,20 @@ package-level solution.
 ## bioc-sig-proteomics ##
 
 [Subscribe to or browse][13] and [search][14] this list.
+
+<div id="cse3" style="width: 100%;">Loading</div>
+<script src="http://www.google.com/jsapi" type="text/javascript"></script>
+<script type="text/javascript">
+  google.load('search', '1', {language : 'en'});
+  google.setOnLoadCallback(function() {
+    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:ihbnj0t_f7k');
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
+    customSearchControl.draw('cse3');
+  }, true);
+</script>
+<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
+
+
 
 This list is for discussion and development of Bioconductor packages
 for analysis of proteomics data.
