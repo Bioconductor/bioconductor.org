@@ -98,7 +98,7 @@ You don't need to choose an Availability Zone unless you are using [EBS (Elastic
 
 Click the Continue button. On the next screen (Instance Details), you can accept all the defaults and click Continue again. The following 
 screen allows you to optionally set some metadata about this instance. For now, just click Continue (though if you share an AWS
-account with others, you may want to give your instance a name that will identify it as belonging to you.). On the Create Key pair screen, choose the Key Pair that you created when you first set up your AWS account. Click Continue. On the Configure Firewall screen, choose the "default" security group and click Continue. On the Review screen, make sure all your options look correct, then click Launch.
+account with others, you may want to give your instance a name that will identify it as belonging to you). On the Create Key pair screen, choose the Key Pair that you created when you first set up your AWS account. Click Continue. On the Configure Firewall screen, choose the "default" security group and click Continue. On the Review screen, make sure all your options look correct, then click Launch.
 Then click "View your instances on the Instances page".
 
 In a moment, you will see that your instance is running. You can then put a check box to the left of your running instance, and click on Instance Actions, then Connect. This will show you a dialog box containing a command line you can use to connect to your instance. 
@@ -218,8 +218,8 @@ When your instance is customized to your liking, use the [AWS Console](https://c
 to Stop your instance (**important note: do NOT "Terminate" your instance; use the Stop command (under Instance Actions) instead.**)
 
 Then choose "Create Image (EBS AMI)" under the Instance Actions menu. You will be prompted for a name for your AMI. After
-entering the name, your AMI will be created and given a unique AMI ID. You can then launch this AMI using the steps above, being 
-sure to substitute the ID of your own AMI. Your AMI will be private, accessible only to your AWS account, unless you decide
+entering the name, your AMI will be created and given a unique AMI ID. You can then launch instances of this AMI using the steps above,
+being sure to substitute the ID of your own AMI. Your AMI will be private, accessible only to your AWS account, unless you decide
 to make it more widely accessible.
 
 Now you should Terminate the Stopped instance of the Bioconductor AMI.
