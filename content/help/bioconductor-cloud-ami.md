@@ -49,7 +49,7 @@ The AMI comes pre-loaded with R 2.13, and the following Bioconductor (and CRAN) 
 	<li>SRAdb</li>
 </ul>
 
-All the org.\* and BSgenome.\* annotation packages are also loaded.
+All the org.\* and BSgenome.\* annotation packages are also installed.
 
 ## How To Use It
 
