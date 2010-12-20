@@ -49,6 +49,8 @@ The AMI comes pre-loaded with R 2.13, and the following Bioconductor packages (a
 	<li>splots</li>
 </ul>
 
+All the org.\* and BSgenome.\* annotation packages are also loaded.
+
 ## How To Use It
 
 ### First-time steps
