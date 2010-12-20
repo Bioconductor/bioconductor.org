@@ -17,36 +17,36 @@ The AMI comes pre-loaded with R 2.13, and the following Bioconductor packages (a
 
 <ul class="inline_list">
 	<li>BayesPeak</li>
-	<li>CSAR</li>
+	<li>baySeq</li>
 	<li>ChIPpeakAnno</li>
+	<li>chipseq</li>
 	<li>ChIPseqR</li>
 	<li>ChIPsim</li>
+	<li>CSAR</li>
 	<li>DEGseq</li>
 	<li>DESeq</li>
-	<li>GenomicFeatures</li>
-	<li>GenomicRanges</li>
-	<li>multicore</li>
-	<li>MEDIPS</li>
-	<li>MotIV</li>
-	<li>PICS</li>
-	<li>R453Plus1Toolbox</li>
-	<li>Rolexa</li>
-	<li>Rmpi</li>
-	<li>Rsamtools</li>
-	<li>SRAdb</li>
-	<li>ShortRead</li>
-	<li>baySeq</li>
-	<li>chipseq</li>
 	<li>edgeR</li>
 	<li>gage</li>
+	<li>GenomicFeatures</li>
+	<li>GenomicRanges</li>
 	<li>girafe</li>
 	<li>goseq</li>
+	<li>MEDIPS</li>
+	<li>MotIV</li>
+	<li>multicore</li>
 	<li>oneChannelGUI</li>
+	<li>PICS</li>
+	<li>R453Plus1Toolbox</li>
 	<li>rGADEM</li>
 	<li>Rgraphviz</li>
+	<li>Rmpi</li>
 	<li>rnaSeqMap</li>
+	<li>Rolexa</li>
+	<li>Rsamtools</li>
 	<li>segmentSeq</li>
+	<li>ShortRead</li>
 	<li>splots</li>
+	<li>SRAdb</li>
 </ul>
 
 All the org.\* and BSgenome.\* annotation packages are also loaded.
