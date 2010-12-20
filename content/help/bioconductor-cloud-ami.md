@@ -7,7 +7,7 @@ Here are a few reasons you could use it:
 
 * You do not want to install Bioconductor on your own machine.
 * You have a long-running task and you don't want it to tie up the CPU on your own machine.
-* You have a parallelizable task and would like to run it (either on multiple CPUs on a single machine, in a cluster of many machines).
+* You have a parallelizable task and would like to run it (either on multiple CPUs on a single machine, or in a cluster of many machines).
 
 See below for more specific scenarios.
 
