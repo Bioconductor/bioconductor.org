@@ -14,8 +14,7 @@ Bioconductor mail lists.
   google.load('search', '1', {language : 'en'});
   google.setOnLoadCallback(function() {
     var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:6ko94t64bqi');
-    //customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    customSearchControl.setResultSetSize(20);
+    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
     customSearchControl.draw('cse');
   }, true);
 </script>
