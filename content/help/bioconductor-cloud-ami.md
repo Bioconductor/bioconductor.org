@@ -13,7 +13,7 @@ See below for more specific scenarios.
 
 ## Preloaded AMI
 
-The AMI comes pre-loaded with R 2.13, and the following Bioconductor packages (and all their dependencies):
+The AMI comes pre-loaded with R 2.13, and the following Bioconductor (and CRAN) packages (and all their dependencies):
 
 <ul class="inline_list">
 	<li>BayesPeak</li>
