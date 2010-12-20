@@ -77,4 +77,13 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
 *Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI ID.*
 
+Click the Select button
+
+The AWS console will now take you through a wizard-like interface. 
+
+<img src="/images/ami/wizard1.jpg" border="0"/>
+
+This screen shows the [different types of instances available](http://aws.amazon.com/ec2/instance-types/). Prices for these
+instances vary, so please refer to [current pricing information](http://aws.amazon.com/ec2/pricing/) before launching your 
+instance.
 
