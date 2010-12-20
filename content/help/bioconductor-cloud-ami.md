@@ -150,7 +150,7 @@ Just type R at a command prompt:
 Note that the <code>biocLite()</code> function is automatically available, you do not have to <code>source()</code> a file first
 like you would have to on your R installation on your personal computer.
 
-### using Rgraphviz
+### Using Rgraphviz
 
 Make sure you have connected to your instance using the -X flag of the *ssh* command. Something like:
 
