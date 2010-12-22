@@ -497,7 +497,8 @@ Started nginx as: =sudo /usr/local/nginx/sbin/nginx=
 
 ** How to test for broken links
 
-You can run wget as shown below to get a report on 404s for the site.
+You can run wget as shown below to get a report on 404s for the site. Note
+that this runs against the staging site so will have a lot of false positives.
 
 #+begin_example
 wget -r --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
