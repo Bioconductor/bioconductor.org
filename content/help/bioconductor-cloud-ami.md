@@ -188,9 +188,8 @@ CPU-intensive code using functions in the [Rmpi](http://cran.r-project.org/web/p
 To configure an EC2-based MPI cluster, do not launch an EC2 instance as described above. Instead, download and build the
 <code>RCloudShortRead</code> package. On your own computer (not an EC2 instance), run the following commands:
 
-	svn co https://hedgehog.fhcrc.org/compbio/pilot/CloudShortRead/RCloudShortRead
+	svn co https://readonly:readonly@hedgehog.fhcrc.org/compbio/pilot/CloudShortRead/RCloudShortRead
 
-(When prompted, the username and password are both "readonly".)
 
 	R CMD build RCloudShortRead
 	R CMD install RCloudShortRead_0.99.0.tar.gz
