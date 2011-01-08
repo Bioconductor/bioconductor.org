@@ -6,9 +6,7 @@
 Please read the [posting guide][5] before sending mail to the
 Bioconductor mail lists.
 
-<a name="bioconductor"></a>
-## bioconductor ##
-
+### Search Mailing Lists
 <div id="cse" style="width: 100%;">Loading</div>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
@@ -18,6 +16,10 @@ Bioconductor mail lists.
     customSearchControl.draw('cse');
   }, true);
 </script>
+
+
+<a name="bioconductor"></a>
+## bioconductor ##
 
 [Subscribe to or browse][4] this list. This mailing list is for
 announcements about the development of Bioconductor and the
@@ -38,16 +40,6 @@ when subscribing and in a monthly reminder.
 <a name="bioc-devel"></a>
 ## bioc-devel ##
 
-<div id="cse1" style="width: 100%;">Loading</div>
-<script type="text/javascript">
-  google.load('search', '1', {language : 'en'});
-  google.setOnLoadCallback(function() {
-    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:xeuhyddyegs');
-    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    customSearchControl.draw('cse1');
-  }, true);
-</script>
-
 [Subscribe to or browse][8] this list.  This list is for discussions
 about the active and future development of Bioconductor, and
 pre-testing of new versions. It is meant for those who maintain active
@@ -57,16 +49,6 @@ interest in keeping up to date with these matters.
 
 <a name="bioc-sig-sequencing"></a>
 ## bioc-sig-sequencing ##
-
-<div id="cse2" style="width: 100%;">Loading</div>
-<script type="text/javascript">
-  google.load('search', '1', {language : 'en'});
-  google.setOnLoadCallback(function() {
-    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:qi-wohkafso');
-    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    customSearchControl.draw('cse2');
-  }, true);
-</script>
 
 [Subscribe to or browse][9] and [search][12] this list.  This list is
 for discussion and development of Bioconductor packages for analysis
@@ -78,16 +60,6 @@ solution.
 
 <a name="bioc-sig-proteomics"></a>
 ## bioc-sig-proteomics ##
-
-<div id="cse3" style="width: 100%;">Loading</div>
-<script type="text/javascript">
-  google.load('search', '1', {language : 'en'});
-  google.setOnLoadCallback(function() {
-    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:ihbnj0t_f7k');
-    customSearchControl.setResultSetSize(google.search.Search.FILTERED_CSE_RESULTSET);
-    customSearchControl.draw('cse3');
-  }, true);
-</script>
 
 [Subscribe to or browse][13] and [search][14] this list.  This list is
 for discussion and development of Bioconductor packages for analysis
