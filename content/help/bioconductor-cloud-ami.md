@@ -11,6 +11,9 @@ Here are a few reasons you could use it:
 
 See below for more specific scenarios.
 
+Note that you also have the option of using Amazon Elastic MapReduce for parallelization with Bioconductor. 
+Please see our [Elastic MapReduce/Bioconductor Tutorial](/help/elasticmapreduce) for more information.
+
 ## Preloaded AMI
 
 The AMI comes pre-loaded with R 2.13, and the following Bioconductor (and CRAN) packages (and all their dependencies):
