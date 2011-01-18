@@ -118,7 +118,7 @@ is reached). Here we are using the same bucket for both Streaming MapReduce outp
 
 Click "Continue". Your job flow summary should look something like this:
 
-<img src="/images/elasticmapreduce/screenshot4.jpg">
+<img src="/images/elasticmapreduce/screenshot5.jpg">
 
 If it all looks correct, click "Create Job Flow".
 
