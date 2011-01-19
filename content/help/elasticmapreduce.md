@@ -170,10 +170,11 @@ with the <code>--output</code> flag, which should not exist.
 
 ### How it works
 
-The critical part of our mapper is ShortRead's <code>qa()</code> function. While this function can handle multiple 
+The critical part of our [mapper](http://s3.amazonaws.com/bioconductor-mapreduce-example/mapper-emr.R) is ShortRead's <code>qa()</code>
+function. While this function can handle multiple 
 files, the best parallelization is achieved when each mapper handles just a single file.
 
-Our reducer is simply R's <code>rbind()</code> function. This requires that all intermediate results (the qa objects generated
+Our [reducer](http://s3.amazonaws.com/bioconductor-mapreduce-example/reducer-emr.R) is simply R's <code>rbind()</code> function. This requires that all intermediate results (the qa objects generated
 by each of the mappers) be in the same place. We specify a single reducer with the "--jobconf mapred.reduce.tasks=1" flag. 
 In the reducer, all 
 of the intermediate qa objects are read into a list, <code>rbind()</code> is called on the list, and the report is generated
