@@ -45,34 +45,34 @@
 # Creating a new course:
 # 1) Create a new course:
 # ./scripts/course_mgr --create mycourse
-# 2) Edit ./mycourse/course_config.yaml (assume course takes place in 2010)
+# 2) Edit ./mycourse/course_config.yaml (assume course takes place in 2011)
 # 3) Create index page for course:
 # ./scripts/course_mgr --index mycourse
-# 4) Edit content/help/course-materials/2010/mycourse.md to point to
+# 4) Edit content/help/course-materials/2011/mycourse.md to point to
 #    course materials. Place course materials in or below that directory.
 # 5) preview site with 'rake devserver'
-#    Use URL: http://localhost:3000/help/course-materials/2010/mycourse/
+#    Use URL: http://localhost:3000/help/course-materials/2011/mycourse/
 # 6) Copy content to server:
 #    Step 1 (push course materials):
-#      ./scripts/course_mgr --sync mycourse
+#      ./scripts/course_mgr --push mycourse
 #    Step 2: (push course metadata (.yaml) and template (.md) files):
-#      svn add content/help/course-materials/2010/mycourse.*
-#      svn commit -m "added mycourse" content/help/course-materials/2010/mycourse.*
+#      svn add content/help/course-materials/2011/mycourse.*
+#      svn commit -m "added mycourse" content/help/course-materials/2011/mycourse.*
 # You may remove the top-level "mycourse" directory at this point.
 #
 #
 # Working with an existing course:
 # 1) Pull the course materials to your local machine:
-# ./scripts/course_mgr --pull 2010/existing_course
+# ./scripts/course_mgr --pull 2011/existing_course
 # (top-level directory "existing_course" is created)
 # 2) Modify/add course materials in top level "existing_course" directory.
 # 3) Push revised course materials to server:
 # ./scripts/course_mgr --push existing_course
 # 4) If you modified the .md or .yaml files, copy them to 
-#    content/help/course-materials/2010/existing_course
+#    content/help/course-materials/2011/existing_course
 #    and commit your changes to subversion:
-#      cp existing_course/existing_course.* content/help/course-materials/2010/
-#      svn commit -m "made changes" content/help/course/materials/2010/existing_course.*
+#      cp existing_course/existing_course.* content/help/course-materials/2011/
+#      svn commit -m "made changes" content/help/course/materials/2011/existing_course.*
 #
 # You may remove the top-level "existing_course" directory at this point.
 require 'rubygems'
@@ -229,12 +229,13 @@ class CourseMgr
   end
 
   def create(name)
-    course_yaml = <<EOF
+    year = Time.now.year
+    course_yaml = <<"EOF"
 layout: course
 title:
   The title of the course goes here
-start_date: 2010-01-27
-end_date: 2010-01-29
+start_date: #{year}-01-27
+end_date: #{year}-01-29
 instructors: ["T. Cher", "Prof S. Or"]
 location: "Seattle, USA"
 url: COURSE_URL_HERE
@@ -332,8 +333,9 @@ EOF
   
   def pull(arg)
     year, name = arg.split("/")
+    current_year = Time.now.year
     if (name.nil?)
-      puts "Please supply a year and course name, e.g. 2010/seattle-intro."
+      puts "Please supply a year and course name, e.g. #{current_year}/seattle-intro."
       exit 1
     end
     if (Kernel.test(?e, name))
@@ -359,9 +361,10 @@ EOF
   
   def push(arg)
     # todo - explain/figure out how to delete course material
+    current_year = Time.now.year
     year, name = arg.split("/")
     if (name.nil?)
-      puts "Please supply a year and course name, e.g. 2010/seattle-intro."
+      puts "Please supply a year and course name, e.g. #{current_year}/seattle-intro."
       exit 1
     end
     unless (Kernel.test(?e, name))

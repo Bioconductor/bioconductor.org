@@ -195,7 +195,7 @@ index pages that describe the course and provide links to the
 materials *are* stored in svn. The =course_mgr= script will help
 with index file creation and data transfer.
 
-*** =add_course= workflow and important tips
+*** =course_mgr= workflow and important tips
 
 To add a course, you will typically perform the following steps
 (each described in detail below):
