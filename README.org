@@ -275,10 +275,10 @@ To add a course, you will typically perform the following steps
 4. If everything looks good, you can sync the data files to the web
    server:
 
-      : ./scripts/add_course --push 2010/seattle-intro
+      : ./scripts/course_mgr --push 2010/seattle-intro
       : SYNC:
       :  src: ./seattle-intro
-      :  dst: webadmin@cobra:/extra/www/bioc/help/course-notes/2010/
+      :  dst: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
       : NEXT STEPS: svn add/checkin changes in contents
 
 5. Finally, "svn add" the new course index html and yaml files that were generated in the
