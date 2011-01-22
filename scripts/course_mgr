@@ -372,7 +372,7 @@ EOF
       exit 1
     end
     deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
-    cmd = "rsync --exclude='*.yaml' --exclude='*.md' -avz ./#{name} #{deploy_root}"
+    cmd = "rsync --exclude='*.yaml' --exclude='*.md' -avz ./#{name}/ #{deploy_root}"
     #puts cmd
     run_cmd(cmd)
         msg = <<EOF
