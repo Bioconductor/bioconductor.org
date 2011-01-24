@@ -202,7 +202,7 @@ and then shared by the workers using NFS.
 We've provided a script that will create an EBS volume already populated with sample data. To use it, run the following
 command from your AMI instance:
 
-	create_sample_volume --access-key XXX --secret-key yyy
+	create_sample_volume --access-key-id XXX --secret-key yyy
 
 Where "xxx" is your Amazon Access Key ID and "yyy" is your Secret Key. The script will produce output like the following:
 
