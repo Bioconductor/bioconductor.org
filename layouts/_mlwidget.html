@@ -6,19 +6,6 @@
     <img src="/images/icons/email.gif" alt=""/><a href="help/mailing-list/">Mailing Lists</a>
 </h2>
 
-	<div id="cse" style="width: 100%;">Loading</div>
-	<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-	<script type="text/javascript">
-	  google.load('search', '1', {language : 'en'});
-	  google.setOnLoadCallback(function() {
-	    var customSearchControl = new google.search.CustomSearchControl('017744773928675644276:6ko94t64bqi');
-	    customSearchControl.setResultSetSize(google.search.Search.SMALL_RESULTSET);
-	    var options = new google.search.DrawOptions();
-	    options.setAutoComplete(true);
-	    customSearchControl.draw('cse', options);
-	  }, true);
-	</script>
-	<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
 
   <% @ml_item.children[0..4].each_with_index do |p, i| %>
