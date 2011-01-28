@@ -30,6 +30,7 @@
 
 ## Additional Participants
 
+* [Patrick Aboyoun](http://www.revolutionanalytics.com/), Revolution Analytics, USA.
 * [Douglas Bates](http://www.stat.wisc.edu/~bates/), University of Wisconsin,
   USA.
 * Benjamin Bolstad, Affymetrix, USA.
