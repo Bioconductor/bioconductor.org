@@ -142,7 +142,8 @@ available; all are in the release version of Bioconductor.
   [ChIPpeakAnno](/help/bioc-views/release/bioc/html/ChIPpeakAnno.html),
   [rGADEM](/help/bioc-views/release/bioc/html/rGADEM.html),
   [segmentSeq](/help/bioc-views/release/bioc/html/segmentSeq.html),
-  [segmentSeq](/help/bioc-views/release/bioc/html/segmentSeq.html).
+  [BayesPeak](/help/bioc-views/release/bioc/html/BayesPeak.html),
+  [PICS](/help/bioc-views/release/bioc/html/PICS.html).
 
 * Differential expression and RNA-seq style analysis can be
   accomplished with
