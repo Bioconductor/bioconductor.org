@@ -27,6 +27,12 @@ class SearchIndexer
     result
   end
 
+  def get_boost(url)
+    return 3 if url =~ /\/help\/bioc-views\/release/
+    return 2 if url =~ /\/help\/bioc-views\/devel/
+    return 1
+  end
+
   def initialize(args)
     
     unless args.size == 4
@@ -98,9 +104,10 @@ class SearchIndexer
       )
         nice_name = cleanfile.gsub(/index\.html$/,"")
         puts "adding #{nice_name} to indexing script"
-
+        boost = get_boost(nice_name)
+        boost_frag = (boost==1) ? "" : " -F boost.id=#{boost}"
         script_file.puts %Q(echo "indexing #{nice_name}")
-        cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false" -F "myfile=@#{directory_to_index}#{cleanfile}")
+        cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false" -F "myfile=@#{directory_to_index}#{cleanfile}#{boost_frag}")
         script_file.puts cmd
         #result = system(cmd)
         #{}`#{cmd}`
