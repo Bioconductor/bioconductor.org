@@ -9,4 +9,4 @@ participate for a flexible term. Current members are:
 * Paul Flicek (European Bioinformatics Institute)
 * Walter Ruzzo  (University of Washington)
 * Simon Urbanek (AT&amp;T Labs &ndash; Research)
-* Wolfgang Huber (European Bioinformatics Institute)
+* Wolfgang Huber (European Molecular Biology Laboratory)
