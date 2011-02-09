@@ -3,7 +3,11 @@
     <% breadcrumbs_trail.each_with_index do |crumb, i| %>
     <% next unless crumb %>
       <% if (i + 1 < breadcrumbs_trail.length) %>
-        <li><a href="<%= crumb.identifier %>"><%= crumb[:title] %></a></li>
+	  	<% 
+			crumb_id = crumb.identifier 
+			crumb_id = "/help/bioc-views/release/BiocViews.html" if crumb_id == "/help/bioc-views/"
+		%>
+        <li><a href="<%= crumb_id %>"><%= crumb[:title] %></a></li>
       <% else %>
         <li><%= crumb[:title] %></li>
       <% end %>

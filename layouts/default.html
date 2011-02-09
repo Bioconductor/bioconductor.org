@@ -16,7 +16,6 @@
           <%= render("/_crumbs/") %>
         <% end %>
 
-        <% # TODO - ameliorate this major hack%>
         <% if @item.attributes.has_key?(:package_index_page)%>
             <%= render("/_pkg_idx/", :info => @item.attributes)%>
         <% end %>

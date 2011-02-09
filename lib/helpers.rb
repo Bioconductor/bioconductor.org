@@ -122,6 +122,11 @@ def version_fragment(package)
   ""
 end
 
+
+## Should we really filter out maintainer email addresses from the package home page?
+## These emails are available publically in svn (although this requires a little more
+## work on the part of a spam-harvester, who would have to supply the appropriate
+## login credentials).
 def filter_emails(str)
   str.gsub(/<[^>]*>/,"").gsub("  "," ").gsub(" ,", ",")
 end
