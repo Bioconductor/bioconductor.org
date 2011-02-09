@@ -11,8 +11,8 @@
 * Robert Gentleman, Genentech Research and Early Development, USA.
 * [Nishant Gopalakrishnan](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
-* [Wolfgang Huber](http://www.ebi.ac.uk/huber/) European
-  Bioinformatics Institute, UK.
+* [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
+  European Molecular Biology Laboratory, Heidelberg, Germany.
 * [Rafael Irizarry](http://biosun01.biostat.jhsph.edu/~ririzarr)
   Department of Biostatistics, Johns Hopkins University
 * Michael Lawrence, Genentech Research and Early Development, USA.
