@@ -13,7 +13,7 @@
   Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
-* [Rafael Irizarry](http://biosun01.biostat.jhsph.edu/~ririzarr)
+* [Rafael Irizarry](http://rafalab.jhsph.edu/)
   Department of Biostatistics, Johns Hopkins University
 * Michael Lawrence, Genentech Research and Early Development, USA.
 * [James MacDonald](mailto:jmacdon@med.umich.edu), University of Michigan, USA.
