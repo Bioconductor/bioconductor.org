@@ -13,7 +13,7 @@ jQuery(function() {
 
 
 var getSearchUrl = function(query, start) {
-	var url = "/solr/select?indent=on&version=2.2&q=" + query + 
+	var url = "/solr/select?indent=on&version=2.2&q=text:" + query + 
 	"&fq=&start=" + start +  "&rows=10&fl=id,score,title&qt=standard&wt=json&explainOther=&hl=on&hl.fl=&hl.fragsize=200";
 	return url;
 }
