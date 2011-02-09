@@ -32,6 +32,22 @@ class SearchIndexer
     return 2 if url =~ /\/help\/bioc-views\/devel/
     return 1
   end
+  
+  
+  def throw_out_bad_files(file_list)
+    ret = []
+    for file in file_list
+       #e.g. /packages/release/bioc/html or /packages/2.6/Software.html
+      unless (file =~ /^\.\/packages/ && file =~ /\/html\/|\.html$/)
+        puts "KEEPING #{file}"
+        ret.push file
+      else
+        puts "THROWING OUT #{file}"
+      end
+    end
+    #file_list # todo fix
+    ret
+  end
 
   def initialize(args)
     
@@ -79,6 +95,9 @@ class SearchIndexer
     allfiles = get_list_of_files_to_index(directory_to_index, site_url)
 
     goodfiles = allfiles.grep(regex)
+    
+    goodfiles = throw_out_bad_files(goodfiles)
+    #exit if true
 
     url = "http://localhost:8983/solr/update"
 
@@ -105,9 +124,9 @@ class SearchIndexer
         nice_name = cleanfile.gsub(/index\.html$/,"")
         puts "adding #{nice_name} to indexing script"
         boost = get_boost(nice_name)
-        boost_frag = (boost==1) ? "" : " -F boost.id=#{boost}"
+        boost_frag = (boost==1) ? "" : "&boost.text=#{boost}"
         script_file.puts %Q(echo "indexing #{nice_name}")
-        cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false" -F "myfile=@#{directory_to_index}#{cleanfile}#{boost_frag}")
+        cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false#{boost_frag}" -F "myfile=@#{directory_to_index}#{cleanfile}")
         script_file.puts cmd
         #result = system(cmd)
         #{}`#{cmd}`
