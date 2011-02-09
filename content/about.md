@@ -82,11 +82,11 @@ The broad goals of the Bioconductor project are:
   resampling, survival analysis, and time-series analysis.
 
 * **Annotation**. The Bioconductor project provides software for
-  associating microarray and other genomic data in real time to
+  associating microarray and other genomic data in real time with
   biological metadata from web databases such as GenBank, Entrez genes
   and PubMed ([annotate](/help/bioc-views/release/bioc/html/annotate.html)
   package).  Functions are also provided for incorporating the results
-  of statistical analysis in HTML reports with links to annotation WWW
+  of statistical analysis in HTML reports with links to annotation web
   resources.  Software tools are available for assembling and
   processing genomic annotation data, from databases such as GenBank,
   the Gene Ontology Consortium, Entrez genes, UniGene, the UCSC Human
@@ -106,7 +106,7 @@ The broad goals of the Bioconductor project are:
 
 * **Open source**. The Bioconductor project has a commitment to full
   open source discipline, with distribution via a public subversion
-  (version control) server. All contributions are exist under an open
+  (version control) server. All contributions exist under an open
   source license such as Artistic 2.0, GPL2, or BSD. There are many
   different reasons why open source software is beneficial to the
   analysis of microarray data and to computational biology in
