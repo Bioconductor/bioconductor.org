@@ -126,7 +126,8 @@ The following guides the user through key annotation packages.  Users
 interested in how to create custom chip packages should see the
 vignettes in `AnnotationDbi` package. There is additional information
 in the annotate package for how to use some of the extra tools
-provided.
+provided. You can also refer to the 
+[complete list of annotation packages](/help/bioc-views/release/data/annotation/).
 
 ### Key Packages ###
 
