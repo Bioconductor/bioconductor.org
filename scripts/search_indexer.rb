@@ -173,6 +173,9 @@ class SearchIndexer
     #system(cmd)
     script_file.puts "echo 'committing changes...'"
     script_file.puts cmd
+    script_file.close()
+    File.chmod(0777, script_file_name)
+    
     #`#{cmd}`
 
     #FileUtils.cd(pwd)

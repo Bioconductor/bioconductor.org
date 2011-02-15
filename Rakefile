@@ -151,8 +151,15 @@ desc "Re-run search indexing on production"
 task :index_production do
   system("scp scripts/search_indexer.rb webadmin@krait:~")
   system("ssh webadmin@krait /home/webadmin/do_index.rb")
-  system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
+  #system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
   system("ssh webadmin@krait /home/webadmin/index.sh")
+end
+
+desc "Re-run search indexing cran package home pages on production"
+task :index_cran_production do
+  system("scp scripts/search_indexer.rb webadmin@krait:~")
+  system("ssh webadmin@krait /home/webadmin/do_index_cran.rb")
+  system("ssh webadmin@krait /home/webadmin/index_cran.sh")
 end
 
 desc "Runs nanoc's dev server on localhost:3000"
