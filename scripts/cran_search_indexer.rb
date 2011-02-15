@@ -9,7 +9,7 @@ require 'tempfile'
 include FileUtils
 include Open3
 
-class SearchIndexer
+class CranSearchIndexer
 
 
   def initialize(args)
@@ -66,6 +66,7 @@ class SearchIndexer
       )
         puts "adding #{file} to indexing script"
         cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{allurls[i]}&commit=false&boost.text=2" -F "myfile=@#{directory_to_index}#{file}")
+        script_file.puts "echo '#{file}'"
         script_file.puts cmd
       end
       cache[file] = mtime
@@ -119,10 +120,10 @@ class SearchIndexer
     while (line = index_file.gets)
       next unless line.start_with? %Q(<td><a href="../../web/packages/)
       pkg_name = line.gsub(%Q(<td><a href="../../web/packages/),"").split("/").first
-      urls.push = "http://cran.r-project.org/web/packages/#{pkgname}/"
+      urls.push  "http://cran.r-project.org/web/packages/#{pkg_name}/"
       files.push("/extra/www/cran-mirror/web/packages/#{pkg_name}/index.html")
     end
-    urls, files
+    return urls, files
   end
 
 
