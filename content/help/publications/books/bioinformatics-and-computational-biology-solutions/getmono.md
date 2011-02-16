@@ -5,5 +5,5 @@ and install all of the available data packages referenced in
 _[Bioinformatics and Computational Biology
 Solutions Using R and Bioconductor](../)_:
 
-    source("/getMonograph.R")
+    source("http://bioconductor.org/getMonograph.R")
     getMonograph()
