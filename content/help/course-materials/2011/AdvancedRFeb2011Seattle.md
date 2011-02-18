@@ -10,7 +10,7 @@ install these packages, start R and copy and paste the following
 command into your R session:
 
 	source("http://bioconductor.org/course-packages/courseInstall.R")
-	courseInstall("AdvancedR2011")
+	courseInstall(c("AdvancedR2011","StudentGWAS"))
 
 
 ### Talks
