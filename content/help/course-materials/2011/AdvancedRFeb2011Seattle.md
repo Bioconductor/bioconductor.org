@@ -21,7 +21,7 @@ command into your R session:
 
 [Efficient R Programming](EfficientR.pdf)
 
-[Efficient R - Lab](EfficientR-lab.pdf)
+[Efficient R Programming - Lab](EfficientR-lab.pdf)
 
 
 #### Thursday Afternoon
