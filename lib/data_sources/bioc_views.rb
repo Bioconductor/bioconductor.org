@@ -8,8 +8,11 @@ class BiocViews < Nanoc3::DataSource
   
   # todo - write an index page for each repo containing links to all packages
   
+  
+  
   # todo - find out if there is a way to skip items() altogether if things are not found in up()
   def up
+    @bad_packages = ["snpMatrix2"] # don't process these
 
     @repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
     
@@ -50,6 +53,9 @@ class BiocViews < Nanoc3::DataSource
           obj = JSON.parse(json_file.readlines.join("\n"))
           #@all_packages[key] = obj
           hsh[key] = obj
+          for bad in @bad_packages
+            hsh.delete(bad)
+          end
         end
         @all_packages[version] = hsh
       end
@@ -67,6 +73,9 @@ class BiocViews < Nanoc3::DataSource
     tf = File.open("#{dir}/vignette_titles.json")
     json = tf.readlines.join("\n")
     vt = JSON.parse(json)
+    for bad in @bad_packages
+      vt.delete(bad)
+    end
     
     obj.each_pair do |k,v|
 
@@ -159,6 +168,9 @@ class BiocViews < Nanoc3::DataSource
 
 
         packages = JSON.parse(json_file.readlines.join("\n"))
+        for bad in @bad_packages
+          packages.delete(bad)
+        end
 
         items.push(get_index_page(packages, v, version))
 
