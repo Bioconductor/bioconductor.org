@@ -73,8 +73,9 @@ getPackages <- function(y) {
 
 
 getPackageName <- function(packageDetail) {
-    if (packageDetail@package != "snpMatrix2")
-    packageDetail@Package
+    if (packageDetail@package != "snpMatrix2") {
+      return packageDetail@Package
+    }
 }
 
 
