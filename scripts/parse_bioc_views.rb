@@ -4,10 +4,10 @@ require 'rubygems'
 require 'json'
 require 'pp'
 
+BAD_PACKAGES = ["snpMatrix2"]
 
 
 class ParseBiocViews
-  
   
   def get_subtree(obj, repo)
     clean_hash = {}
@@ -88,7 +88,6 @@ class ParseBiocViews
       
       
       subtree = get_subtree(this_one, repo)
-      
       top_level_tree.push subtree
       
     end
@@ -117,6 +116,12 @@ def clean(arg)
   
   
   if (item.has_key?("packageList") && item["packageList"] != "" && !item["packageList"].empty?)
+    for bad in BAD_PACKAGES
+      item['packageList'].delete(bad)
+    end
+    
+    pp item['packageList']
+    
     item["attr"] = {"packageList" => item["packageList"].keys.sort{|a,b|a.downcase<=>b.downcase}.join(","), "id" => item['data']}
     item['data'] += " (#{item["packageList"].length})"
   end
