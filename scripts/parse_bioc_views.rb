@@ -120,8 +120,6 @@ def clean(arg)
       item['packageList'].delete(bad)
     end
     
-    pp item['packageList']
-    
     item["attr"] = {"packageList" => item["packageList"].keys.sort{|a,b|a.downcase<=>b.downcase}.join(","), "id" => item['data']}
     item['data'] += " (#{item["packageList"].length})"
   end
