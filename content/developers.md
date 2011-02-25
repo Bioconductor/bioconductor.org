@@ -1,5 +1,3 @@
-# ![](/images/icons/magnifier.gif)Developers
-
 Bioconductor is an open development project, meaning that all
 developers from the scientific community are able to contribute
 software. In order to foster coherence within the project, developers

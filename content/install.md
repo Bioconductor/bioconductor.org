@@ -1,5 +1,3 @@
-# ![](/images/icons/install.gif)Install
-
 * [Install R](#install-R)  
 * [Find Bioconductor Packages](#find-bioconductor-packages)  
 * [Install Bioconductor Packages](#install-bioconductor-packages)  
