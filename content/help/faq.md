@@ -98,6 +98,13 @@ necessary libraries or other software, perhaps referenced on the
 understand your system more thoroughly than you'd like, perhaps with
 the assistance of the Bioconductor [mailing list][mailing-list].
 
+<h3 class="faq" id="80">Installing packages from the development repository</h3>
+
+To install a package from the development version of the Bioconductor repository,
+install and use the development version of R. <code>biocLite()</code> will automatically
+download packages from the correct repository. Similarly, if using older versions
+of R, <code>biocLite()</code> will install the appropriate version of packages.
+
 <h2 id="use-packages-faq">Package Use</h2>
 
 <h3 class="faq" id="50">How can I find information about using a package?</h3>
