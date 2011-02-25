@@ -97,12 +97,13 @@ addEvent(window,'load',renderShadedBoxes);
 // e.g., the third element, /help/, which is index 3 (option base 1), matches masthead_nav_element_3 
 // we use one Array of matching patterns for each element in case one element needs to match more than one patten. 
 // examples are shown below, but adjust for your info architecture.
-var masthead_nav_elements = Array( Array('home.html'),Array('/install/','install.html'),Array('/help/'),Array('/developers/'),Array('/about/') );
+var masthead_nav_elements = Array( Array(/^\/$/, /^\/index\.html$/),Array(/\/install\//, /install\.html/),
+	Array(/\/help\//),Array(/\/developers\//),Array(/\/about/\/) );
 function checkNav(){
   for(var i=0; i<masthead_nav_elements.length; i++){
   for(var j=0; j<masthead_nav_elements[i].length; j++){
     if( masthead_nav_elements[i]&&masthead_nav_elements[i][j] ){ // skips elements that are blank
-      if( window.location.href.indexOf(masthead_nav_elements[i][j])>-1 ){
+	  if (window.location.pathname.match(masthead_nav_elements[i][j])) {
         // match at element i. make it olive
         if( document.getElementById('masthead_nav_element_'+(i+1)) ){
             document.getElementById('masthead_nav_element_'+(i+1)).className='masthead_nav_element masthead_nav_element_selected'; 
