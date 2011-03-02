@@ -1,7 +1,11 @@
-* [Install Bioconductor Packages](#install-bioconductor-packages)  
-* [Find Bioconductor Packages](#find-bioconductor-packages)  
-* [Update Bioconductor Packages](#update-bioconductor-packages)
-* [Install R](#install-R)  
+
+<ul class="inline_list">
+	<li><a href="#install-bioconductor-packages">Install Bioconductor Packages</a></li> 
+	<li><a href="#find-bioconductor-packages">Find Bioconductor Packages</a></li> 
+	<li><a href="#update-bioconductor-packages">Update Bioconductor Packages</a></li> 
+	<li><a href="#install-R">Install R</a></li> 
+</ul>
+
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
