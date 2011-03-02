@@ -80,7 +80,11 @@ Choose a descriptive name. An easy way to check whether your name is already
 in use is to check that the following command fails
 
     source("http://bioconductor.org/biocLite.R")
-    biocLite("mypackage")
+    biocLite("MyPackage")
+
+Avoid names that are easily confused with existing package names, or
+that imply a temporal (e.g., `ExistingPackage2`) or qualitative (e.g.,
+`ExistingPackagePlus`) relationship.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
