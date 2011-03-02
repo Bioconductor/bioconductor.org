@@ -98,7 +98,7 @@ addEvent(window,'load',renderShadedBoxes);
 // we use one Array of matching patterns for each element in case one element needs to match more than one patten. 
 // examples are shown below, but adjust for your info architecture.
 var masthead_nav_elements = Array( Array(/^\/$/, /^\/index\.html$/),Array(/\/install\//, /install\.html/),
-	Array(/\/help\//),Array(/\/developers\//),Array(/\/about/\/) );
+	Array(/\/help\//),Array(/\/developers\//),Array(/\/about\//) );
 function checkNav(){
   for(var i=0; i<masthead_nav_elements.length; i++){
   for(var j=0; j<masthead_nav_elements[i].length; j++){
