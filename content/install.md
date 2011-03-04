@@ -71,7 +71,8 @@ session of R and enter
     update.packages(repos=biocinstallRepos(), ask=FALSE, checkBuilt=TRUE)
 
 Read the help page for `update.packages` for additional details.
-Recompiling installed Bioconductor packages
+
+<h3>Recompiling installed Bioconductor packages</h3>
 
 Rarely, underlying changes in the operating system require ALL
 installed packages to be recompiled for source (C or Fortran)
