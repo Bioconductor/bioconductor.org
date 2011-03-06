@@ -1,22 +1,32 @@
 
 <ul class="inline_list">
-	<li><a href="#install-bioconductor-packages">Install Bioconductor Packages</a></li> 
-	<li><a href="#find-bioconductor-packages">Find Bioconductor Packages</a></li> 
-	<li><a href="#update-bioconductor-packages">Update Bioconductor Packages</a></li> 
+	<li><a href="#install-bioconductor-packages">Install Packages</a></li> 
+	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
+	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
 	<li><a href="#install-R">Install R</a></li> 
 </ul>
 
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
-Use the `biocLite.R` script to install a selection of core
-Bioconductor packages, or to install individual packages. To install
-core packages, type the following in an R command window:
+Use the `biocLite.R` script to install Bioconductor packages.  To
+install a particular package, e.g., limma, type the following in an R
+command window:
 
     source("http://bioconductor.org/biocLite.R")
+    biocLite("limma")
+
+After downloading and installing this package, the script prints
+"Installation complete" and "TRUE".  Install several packages, e.g.,
+"GenomicFeatures" and "AnnotationDbi", with
+
+    biocLite(c("GenomicFeatures", "AnnotationDbi"))
+
+To install a selection of core Bioconductor packages, use
+
     biocLite()
 
-This installs the following packages and their dependencies: `affy`,
+Packages and their dependencies installed by this usage are: `affy`,
 `affydata`, `affyPLM`, `affyQCReport`, `annaffy`, `annotate`,
 `Biobase`, `biomaRt`, `Biostrings`, `DynDoc`, `gcrma`, `genefilter`,
 `geneplotter`, `GenomicRanges`, `hgu95av2.db`, `limma`, `marray`,
@@ -32,26 +42,14 @@ The `biocLite.R` script has arguments that change its default behavior:
     lib
         R library where packages are installed.
 
-[biocViews](/help/bioc-views/release/BiocViews.html) and the list of
-[software packages](/help/bioc-views/release/bioc/) are ways to
-discover Bioconductor packages.  To install a particular package,
-e.g., EBImage, use
-
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("EBImage")
-
-Install "pkg1" and "pkg2" with
-
-    biocLite(c("pkg1", "pkg2"))
-
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
 
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
-Visit the [Workflows](/help/workflows/) help page and
+Visit the [Workflows](/help/workflows/) page,
 [BiocViews](/help/bioc-views/<%=config[:release_version]%>/BiocViews.html)
-taxonomy to discover available software.
+taxonomy, and [software package list](/help/bioc-views/release/bioc/)
+to discover available packages.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
