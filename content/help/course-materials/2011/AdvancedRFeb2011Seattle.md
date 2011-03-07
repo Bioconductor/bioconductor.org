@@ -17,47 +17,47 @@ command into your R session:
 
 #### Thursday Morning
 
-[Course Introduction](CourseIntroduction.pdf)
+Course Introduction ([PDF](CourseIntroduction.pdf)) ([R](CourseIntroduction.R))
 
-[Efficient R Programming](EfficientR.pdf)
+Efficient R Programming ([PDF](EfficientR.pdf)) ([R](EfficientR.R))
 
-[Efficient R Programming - Lab](EfficientR-lab.pdf)
+Efficient R Programming - Lab ([PDF](EfficientR-lab.pdf)) ([R](EfficientR-lab.R))
 
 
 #### Thursday Afternoon
 
-[Using Databases in R](UsingSQLiteInR.pdf)
+Using Databases in R ([PDF](UsingSQLiteInR.pdf)) ([R](UsingSQLiteInR.R))
 
-[Using Databases in R - lab](SQLiteInRExercises.pdf)
+Using Databases in R - lab ([PDF](SQLiteInRExercises.pdf)) ([R](SQLiteInRExercises.R))
 
-[Interfacing With Common Resources: NetCDF](NetCDFSlides.pdf)
+Interfacing With Common Resources: NetCDF ([PDF](NetCDFSlides.pdf)) ([PDF](NetCDFSlides.R))
 
-[Interfacing With Common Resources: NetCDF - lab](NetCDF-lab.pdf)
+Interfacing With Common Resources: NetCDF - lab ([PDF](NetCDF-lab.pdf)) ([R](NetCDF-lab.R))
 
 
 
 #### Friday Morning
 
-[A brief overview of the S4 class system](S4Overview-slides.pdf)
+A brief overview of the S4 class system ([PDF](S4Overview-slides.pdf)) ([R](S4Overview-slides.R))
 
-[A brief overview of the S4 class system - lab](ImplementingS4Objects-lab.pdf)
+A brief overview of the S4 class system - lab ([PDF](ImplementingS4Objects-lab.pdf)) ([R](ImplementingS4Objects-lab.R))
 
 
 #### Friday Afternoon
 
-[Foreign Language Interfaces](ForeignLanguage.pdf)
+Foreign Language Interfaces ([PDF](ForeignLanguage.pdf)) ([R](ForeignLanguage.R))
 
-[Foreign Language Interfaces - lab](ForeignLanguage-lab.pdf)
+Foreign Language Interfaces - lab ([PDF](ForeignLanguage-lab.pdf)) ([R](ForeignLanguage-lab.R))
 
-[R’s .Call interface](DotCallInterface.pdf)
+R’s .Call interface ([PDF](DotCallInterface.pdf)) ([R](DotCallInterface.R))
 
-[Integration](Integration-lab.pdf)
+Integration ([PDF](Integration-lab.pdf)) ([R](Integration-lab.R))
 
 #### Throughout
 
-[Building Packages](BuildPackage.pdf)
+Building Packages ([PDF](BuildPackage.pdf)) ([R](BuildPackage.R))
 
-[Building Packages - lab](BuildPackage-lab.pdf)
+Building Packages - lab ([PDF](BuildPackage-lab.pdf)) ([R](BuildPackage-lab.R))
 
 
 
