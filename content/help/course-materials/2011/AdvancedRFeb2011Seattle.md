@@ -30,7 +30,7 @@ Using Databases in R ([PDF](UsingSQLiteInR.pdf)) ([R](UsingSQLiteInR.R))
 
 Using Databases in R - lab ([PDF](SQLiteInRExercises.pdf)) ([R](SQLiteInRExercises.R))
 
-Interfacing With Common Resources: NetCDF ([PDF](NetCDFSlides.pdf)) ([PDF](NetCDFSlides.R))
+Interfacing With Common Resources: NetCDF ([PDF](NetCDFSlides.pdf)) ([R](NetCDFSlides.R))
 
 Interfacing With Common Resources: NetCDF - lab ([PDF](NetCDF-lab.pdf)) ([R](NetCDF-lab.R))
 
