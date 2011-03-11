@@ -2,23 +2,23 @@
 
 ## Release objectives
 
-The next release of R is not yet officially scheduled, but is likely in
-around mid-April, 2011. An emphasis in this release cycle is to bringing
+The next release of R is not yet officially scheduled, but is likely to
+happen around April 13, 2011. An emphasis in this release cycle is to bringing
 existing packages into conformance with Bioconductor [guidelines][guidelines]
 and marking as 'deprecated' packages that are no longer useful or
 whose functionality is better implemented elsewhere.
 
 The following schedule outlines major goals: 
 
-* March 4: identify packages for deprecation.
+* March 16: identify packages for deprecation.
 
-* March 11: All packages conform to Bioconductor
+* March 23: All packages conform to Bioconductor
   [guidelines][guidelines]
 
-* March 18: and pass R CMD build / R CMD check without
+* March 30: and pass R CMD build / R CMD check without
   errors.
 
-* March 25: All packages pass R CMD build / R CMD check without
+* April 6: All packages pass R CMD build / R CMD check without
   warnings.
 
 [guidelines]: /developers/package-guidelines
