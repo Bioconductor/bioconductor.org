@@ -1,10 +1,10 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.7 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 2.8 Release Schedule
 
 ## Release objectives
 
-The next release of R is not yet scheduled, but is likely in early
-April, 2011. An emphasis in this release cycle is to bringing existing
-packages into conformance with Bioconductor [guidelines][guidelines]
+The next release of R is not yet officially scheduled, but is likely in
+around mid-April, 2011. An emphasis in this release cycle is to bringing
+existing packages into conformance with Bioconductor [guidelines][guidelines]
 and marking as 'deprecated' packages that are no longer useful or
 whose functionality is better implemented elsewhere.
 
@@ -23,12 +23,9 @@ The following schedule outlines major goals:
 
 [guidelines]: /developers/package-guidelines
 
-## Release template
+## Tentative schedule
 
-The following template will be filled in as the release approaches;
-dates are relative to the announced R release date:
- 
-### -28 days
+### March 16
 
 R:
 
@@ -41,7 +38,7 @@ Bioconductor:
 * All Bioconductor package developers should start using R-devel alpha
   for testing their packages.
 
-### -21 days
+### March 23
 
 Bioconductor:
 
@@ -52,7 +49,7 @@ Bioconductor:
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
-### -14 days
+### March 30
 
 R:
 
@@ -66,13 +63,13 @@ Bioconductor:
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
 
-### -10 days
+### April 3
 
 Bioconductor:
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
-### -7 days
+### April 6
 
 R:
 
@@ -84,7 +81,7 @@ Bioconductor:
   Some warnings will be accepted, clarification on the bioc-devel mailing
   list.
 
-### -3 days
+### April 10
 
 R:
 
@@ -97,15 +94,15 @@ Bioconductor:
 
 * Annotation data packages finalized.
 
-### R Release
+### April 13
 
 R:
 
-* R 2.12.0 RELEASE.
+* R 2.13.0 RELEASE.
 
 Bioconductor:
 
-* Creation of the BioC 2.7 release branch. Development can resume on
+* Creation of the BioC 2.8 release branch. Development can resume on
   trunk, but changes will not be part of the release.
 
 * Build final release repositories.
@@ -113,7 +110,7 @@ Bioconductor:
 * Test install scripts, GUI installation.
 
 
-### +1 day
+### April 14
 
 * Bioconductor release.
 
