@@ -28,8 +28,8 @@ class SearchIndexer
   end
 
   def get_boost(url)
-    return 3 if url =~ /\/help\/bioc-views\/release/
-    return 2 if url =~ /\/help\/bioc-views\/devel/
+    return 3 if url =~ /\/packages\/release/
+    return 2 if url =~ /\/packages\/devel/
     return 1
   end
   

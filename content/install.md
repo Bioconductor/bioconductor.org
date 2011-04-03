@@ -47,8 +47,8 @@ The `biocLite.R` script has arguments that change its default behavior:
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
 Visit the [Workflows](/help/workflows/) page,
-[BiocViews](/help/bioc-views/<%=config[:release_version]%>/BiocViews.html)
-taxonomy, and [software package list](/help/bioc-views/release/bioc/)
+/packages[BiocViews](/packages/<%=config[:release_version]%>/BiocViews.html)
+taxonomy, and [software package list](/packages/release/bioc/)
 to discover available packages.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

@@ -3,11 +3,11 @@ provide tools for the analysis and comprehension of high-throughput
 genomic data.  It is based primarily on the
 [R](http://www.r-project.org) programming language.
 
-The Bioconductor [release version](/help/bioc-views/release/bioc/) is updated
+The Bioconductor [release version](/packages/release/bioc/) is updated
 twice each year, and is appropriate for most users. There is also a
-[development version](/help/bioc-views/devel/bioc), to which new features and
+[development version](/packages/devel/bioc), to which new features and
 packages are added prior to incorporation in the release. A large number
-of [meta-data packages](/help/bioc-views/release/data/annotation) provide
+of [meta-data packages](/packages/release/data/annotation) provide
 pathway, organism, microarray and other annotations.
 
 The Bioconductor project started in 2001 and is overseen by a [core
@@ -22,7 +22,7 @@ paper.
 
 Most Bioconductor components are distributed as [R
 packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages).
-The functional scope of [Bioconductor packages](/help/bioc-views/release/bioc/)
+The functional scope of [Bioconductor packages](/packages/release/bioc/)
 includes the analysis of DNA microarray, sequence, flow, SNP, and other data.
 
 ## Project Goals
@@ -59,7 +59,7 @@ The broad goals of the Bioconductor project are:
     strong commitment to good documentation and software design.
 
 * **Documentation and reproducible research**. Each [Bioconductor
-  package](/help/bioc-views/release/bioc/) contains one or more
+  package](/packages/release/bioc/) contains one or more
   [vignettes](/help/package-vignettes/), documents that provide a
   textual, task-oriented description of the package's functionality.
   Vignettes come in several forms. Many are "HowTo"s that demonstrate
@@ -69,7 +69,7 @@ The broad goals of the Bioconductor project are:
 
 * **Statistical and graphical methods**. The Bioconductor project
   provides access to powerful statistical and graphical methods for
-  the analysis of genomic data.  [Analysis packages](/help/bioc-views/release/bioc/)
+  the analysis of genomic data.  [Analysis packages](/packages/release/bioc/)
   address [workflows](/help/workflows) for analysis of oligonucleotide
   arrays, sequence analysis, flow cytometry. and other
   high-throughput genomic data.  The [R package
@@ -82,15 +82,15 @@ The broad goals of the Bioconductor project are:
 * **Annotation**. The Bioconductor project provides software for
   associating microarray and other genomic data in real time with
   biological metadata from web databases such as GenBank, Entrez genes
-  and PubMed ([annotate](/help/bioc-views/release/bioc/html/annotate.html)
+  and PubMed ([annotate](/packages/release/bioc/html/annotate.html)
   package).  Functions are also provided for incorporating the results
   of statistical analysis in HTML reports with links to annotation web
   resources.  Software tools are available for assembling and
   processing genomic annotation data, from databases such as GenBank,
   the Gene Ontology Consortium, Entrez genes, UniGene, the UCSC Human
   Genome Project
-  ([AnnotationDbi](/help/bioc-views/release/bioc/html/AnnotationDbi.html)
-  package).  [Annotation data packages](/help/bioc-views/release/data/annotation/)
+  ([AnnotationDbi](/packages/release/bioc/html/AnnotationDbi.html)
+  package).  [Annotation data packages](/packages/release/data/annotation/)
   are distributed to provide mappings between different probe
   identifiers (e.g. Affy IDs, Entrez genes, PubMed). Customized
   annotation libraries can also be assembled.

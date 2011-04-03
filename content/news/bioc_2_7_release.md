@@ -190,6 +190,6 @@ users and package developers, in addition to information on package
 installation. One particularly useful feature in navigating the large
 numbers of available packages is the updated biocViews widget
 
-<http://bioconductor.org/help/bioc-views/release/BiocViews.html>
+<http://bioconductor.org/packages/release/BiocViews.html>
 
 

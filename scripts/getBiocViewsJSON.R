@@ -126,18 +126,17 @@ for (version in versions) {
             json <- toJSON(packages)
             cat(json, file=conn)
             close(conn)
-
+            warnings()
 
         
     }
     
     
     
-    
-    
+warnings()    
     
 }
 
 
-
-
+print("-------")
+warnings()

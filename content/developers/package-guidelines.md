@@ -49,9 +49,9 @@ software packages. Developers wishing to contribute annotation or
 experiment data packages should seek [additional support][support]
 associated with package submission.
 
-[software-pkgs]: /help/bioc-views/release/bioc/
-[annotation-pkgs]: /help/bioc-views/release/data/annotation/
-[exptdata-pkgs]: /help/bioc-views/release/data/experiment/
+[software-pkgs]: /packages/release/bioc/
+[annotation-pkgs]: /packages/release/data/annotation/
+[exptdata-pkgs]: /packages/release/data/experiment/
 [support]: /developers/package-submission/#support
 
 <h2 id="correctness">Correctness, Space and Time</h2>

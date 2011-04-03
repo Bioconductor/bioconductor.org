@@ -2,6 +2,27 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en-us" />
   <meta name="robots" content="all" />
+  
+  <%
+    if (item[:identifier]  =~ /BiocViews\.html$/)
+        item[:rebase] = true
+    end
+   %>
+  
+  <% if !item[:rebase].nil? && item[:rebase]%>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (!window.location.href.match(/bioconductor\.org|\/\/localhost/i)) {
+            var mirror = true;
+            document.write('<base href="http://www.bioconductor.org"/>\n');
+        } 
+    </script>
+  <% else %>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+  <% end %>
+  
   <% 
 	title = " - #{@item[:title]}"
 	title = "" if @item[:title].nil? or @item[:title].strip.empty?
@@ -10,11 +31,10 @@
   <link rel="stylesheet" type="text/css" href="/style/bioconductor.css" media="screen" />
   <link rel="SHORTCUT ICON" type="image/x-icon" href="/favicon.ico" />
   <link rel="ICON" type="image/x-icon" href="/favicon.ico" />
-  <script type="text/javascript" src="/js/jquery.js"></script>
+  <script type="text/javascript" src="/js/bioconductor.js"></script>
   <script type="text/javascript" src="/js/jquery.corner.js"></script>
   <script type="text/javascript" src="/js/jquery.timeago.js"></script>
   <script type="text/javascript" src="/js/bioc-style.js"></script>
-  <script type="text/javascript" src="/js/bioconductor.js"></script>
   <script type="text/javascript" src="/js/versions.js"></script>
 
   <!-- Google Analytics script -->

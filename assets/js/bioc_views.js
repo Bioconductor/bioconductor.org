@@ -25,7 +25,7 @@ var displayPackages = function(packageList, nodeName) {
     
     for (var i = 0; i < packageList.length; i++) {
 
-        var url = "/help/bioc-views/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
+        var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
         
         html += "\t<li>\n"
         html += "\t\t<a class='bioc_package' id='pkg_" +
@@ -101,7 +101,7 @@ var setBiocVersion = function() {
         biocVersion = releaseVersion;
     } else if (href.toLowerCase().match(new RegExp("/devel/"))) {
         biocVersion = develVersion;
-    } else if (href.match(/\/bioc-views\/([^/]*)\//)) {
+    } else if (href.match(/\/packages\/([^/]*)\//)) {
         biocVersion = RegExp.$1;
     }
     
@@ -177,7 +177,7 @@ var init = function() {
             },
             "json_data" : {
                 "ajax" : {
-                    "url" : "/help/bioc-views/json/" + biocVersion + "/tree.json",
+                    "url" : "/packages/json/" + biocVersion + "/tree.json",
                     "data" : function (n) { 
                         return { id : n.attr ? n.attr("id") : 0 }; 
                     }
@@ -224,7 +224,7 @@ var loadPackageData = function() {
   var count = 0;
   
   for (var i = 0; i < repos.length; i++) {
-      jQuery.getJSON("/help/bioc-views/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
+      jQuery.getJSON("/packages/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
           jQuery.extend(packageInfo, data);
           if (count == 2) {
               loadedPackageData = true;

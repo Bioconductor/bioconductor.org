@@ -5,7 +5,9 @@
       <% if (i + 1 < breadcrumbs_trail.length) %>
 	  	<% 
 			crumb_id = crumb.identifier 
-			crumb_id = "/help/bioc-views/release/BiocViews.html" if crumb_id == "/help/bioc-views/"
+			#crumb_id = "/help/bioc-views/release/BiocViews.html" if crumb_id == "/help/bioc-views/"
+			# is this still needed?
+			crumb_id = "/packages/release/BiocViews.html" if crumb_id == "/packages/"
 		%>
         <li><a href="<%= crumb_id %>"><%= crumb[:title] %></a></li>
       <% else %>

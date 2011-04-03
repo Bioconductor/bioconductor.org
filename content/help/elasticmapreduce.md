@@ -37,7 +37,7 @@ as S3 "buckets".
 
 This paradigm is ideal for tasks in which the input and output data are textual. In our case, the data we want to examine are
 BAM files (though we could use any file type supported by the <code>qa()</code> function--see the [ShortRead 
-documentation](/help/bioc-views/devel/bioc/html/ShortRead.html)),
+documentation](/packages/devel/bioc/html/ShortRead.html)),
 and the output data is a QA report (a compressed tar file containing html, jpg, and pdf files). 
 So we cheat a little bit by specifying lists of BAM files as our input data, and then let our mapper download the actual BAM files
 from S3. Our input files are [here](http://bioconductor-mapreduce-example-inputdir.s3.amazonaws.com/file1) and 

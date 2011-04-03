@@ -110,7 +110,7 @@ of R, <code>biocLite()</code> will install the appropriate version of packages.
 <h3 class="faq" id="50">How can I find information about using a package?</h3>
 
 There are three main steps to using a package. (1) Identify an
-appropriate package. Do this using [biocViews][bioc-views] to browse
+appropriate package. Do this using [biocViews][/packages/release/BiocViews.html] to browse
 available software. (2) Explore overall package functionality and work
 flows. Do this by reading the package vignettes, listed on the page
 describing the package and available from biocViews. For instance,
@@ -191,6 +191,6 @@ for any installed package. To cite the project as a whole, use
 [1]: /install/index.html#update-bioconductor-packages
 [2]: /install/index.html#install-bioconductor-packages
 [mailing-list]: /help/mailing-list/
-[home-pages]: /help/bioc-views/release/bioc/
-[bioc-views]: /help/bioc-views/release/BiocViews.html
-[iranges-landing-page]: /help/bioc-views/release/bioc/html/IRanges.html
+[home-pages]: /packages/release/bioc/
+[bioc-views]: /packages/release/BiocViews.html
+[iranges-landing-page]: /packages/release/bioc/html/IRanges.html

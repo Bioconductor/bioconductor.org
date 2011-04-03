@@ -45,17 +45,17 @@ end
 task :post_compile do
   puts "running post-compilation tasks..."
   site_config = YAML.load_file("./config.yaml")
-  src = "#{site_config["output_dir"]}/help/bioc-views/#{site_config["release_version"]}/BiocViews.html"
+  src = "#{site_config["output_dir"]}/packages/#{site_config["release_version"]}/BiocViews.html"
   other_versions = site_config["versions"] - [site_config["release_version"]]
   for version in other_versions
-    dest = "#{site_config["output_dir"]}/help/bioc-views/#{version}"
+    dest = "#{site_config["output_dir"]}/packages/#{version}"
     FileUtils.mkdir_p dest
     FileUtils.cp(src, dest)
-    puts "copied output/help/bioc-views/#{site_config["release_version"]}/BiocViews.html to output/help/bioc-views/#{version}/BiocViews.html"
+    puts "copied output/packages/#{site_config["release_version"]}/BiocViews.html to output/packages/#{version}/BiocViews.html"
   end
   # todo - do we need to create /packages/release and /packages/devel symlinks here?
   cwd = FileUtils.pwd
-  FileUtils.cd "#{site_config["output_dir"]}/help/bioc-views"
+  FileUtils.cd "#{site_config["output_dir"]}/packages"
 
   FileUtils.rm_f "devel"
   FileUtils.rm_f"release"
@@ -169,7 +169,7 @@ end
 
 desc "Get JSON files required for BiocViews pages"
 task :get_json do
-  json_dir = "assets/help/bioc-views/json"
+  json_dir = "assets/packages/json"
   #todo - nuke json_dir before starting?
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")

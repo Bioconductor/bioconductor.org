@@ -37,7 +37,7 @@ session so that you can work the examples in the vignette yourself.
 
 You can also download the vignette for a package that isn't installed
 on your system by visiting the package's description page linked from
-the [list of Bioconductor packages](/help/bioc-views/release/bioc/)
+the [list of Bioconductor packages](/packages/release/bioc/)
 
 *Term of use for the vignettes*: You are welcome to use these
 materials for instructional purposes. However, you may not include

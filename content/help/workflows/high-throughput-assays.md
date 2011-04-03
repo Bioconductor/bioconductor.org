@@ -84,7 +84,7 @@ dependencies, evaluate the commands
 
 Package installation is required only once per R installation. View a
 full list of
-[available packages](/help/bioc-views/release/bioc/).
+[available packages](/packages/release/bioc/).
 
 To use the `flowCore` package, evaluate the command
 
@@ -122,7 +122,7 @@ to open a web page containing comprehensive help resources.
 The following provide a brief overview of packages useful for analysis
 of high-throughput assays. More comprehensive workflows can be found
 in documentation (available from [package
-descriptions](/help/bioc-views/release/bioc/))
+descriptions](/packages/release/bioc/))
 and in Bioconductor [publications](/help/publications/).
 
 ### Flow Cytometry ###
@@ -131,21 +131,21 @@ These packages use standard FCS files, including infrastructure,
 utilities, visualization and semi-autogating methods for the
 analysis of flow cytometry data.
 
-[flowCore](/help/bioc-views/release/bioc/html/flowCore.html),
-[flowViz](/help/bioc-views/release/bioc/html/flowViz.html),
-[flowQ](/help/bioc-views/release/bioc/html/flowQ.html),
-[flowStats](/help/bioc-views/release/bioc/html/flowStats.html),
-[flowUtils](/help/bioc-views/release/bioc/html/flowUtils.html),
-[flowFP](/help/bioc-views/release/bioc/html/flowFP.html),
-[flowTrans](/help/bioc-views/release/bioc/html/flowTrans.html),
-[iFlow](/help/bioc-views/release/bioc/html/iFlow.html)
+[flowCore](/packages/release/bioc/html/flowCore.html),
+[flowViz](/packages/release/bioc/html/flowViz.html),
+[flowQ](/packages/release/bioc/html/flowQ.html),
+[flowStats](/packages/release/bioc/html/flowStats.html),
+[flowUtils](/packages/release/bioc/html/flowUtils.html),
+[flowFP](/packages/release/bioc/html/flowFP.html),
+[flowTrans](/packages/release/bioc/html/flowTrans.html),
+[iFlow](/packages/release/bioc/html/iFlow.html)
 
 Algorithms for clustering flow cytometry data are found in these packages:
 
-[flowClust](/help/bioc-views/release/bioc/html/flowClust.html),
-[flowMeans](/help/bioc-views/release/bioc/html/flowMeans.html),
-[flowMerge](/help/bioc-views/release/bioc/html/flowMerge.html),
-[SamSPECTRAL](/help/bioc-views/release/bioc/html/SamSPECTRAL.html)
+[flowClust](/packages/release/bioc/html/flowClust.html),
+[flowMeans](/packages/release/bioc/html/flowMeans.html),
+[flowMerge](/packages/release/bioc/html/flowMerge.html),
+[SamSPECTRAL](/packages/release/bioc/html/SamSPECTRAL.html)
 
 A typical workflow using the packages `flowCore`, `flowViz`, `flowQ` and
 `flowStats` is described in detail in [flowWorkFlow.pdf](flowWorkFlow.pdf).
@@ -157,39 +157,39 @@ The data files used in the workflow can be downloaded from
 These packages provide data structures and algorithms for cell-based
 high-throughput screens (HTS).
 
-[cellHTS2](/help/bioc-views/release/bioc/html/cellHTS2.html),
-[RNAither](/help/bioc-views/release/bioc/html/RNAither.html)
+[cellHTS2](/packages/release/bioc/html/cellHTS2.html),
+[RNAither](/packages/release/bioc/html/RNAither.html)
 
 This package supports the xCELLigence system which contains a series of
 real-time cell analyzer (RTCA).
 
-[RTCA](/help/bioc-views/release/bioc/html/RTCA.html)
+[RTCA](/packages/release/bioc/html/RTCA.html)
 
 ### High-throughput qPCR Assays ###
 
 These package provide algorithm for the analysis of cycle threshold
 (Ct) from quantitative real-time PCR data.
 
-[HTqPCR](/help/bioc-views/release/bioc/html/HTqPCR.html),
-[ddCt](/help/bioc-views/release/bioc/html/ddCt.html),
-[qpcrNorm](/help/bioc-views/release/bioc/html/qpcrNorm.html)
+[HTqPCR](/packages/release/bioc/html/HTqPCR.html),
+[ddCt](/packages/release/bioc/html/ddCt.html),
+[qpcrNorm](/packages/release/bioc/html/qpcrNorm.html)
 
 ### Mass Spectrometry and Proteomics data ###
 
 These packages provide framework for processing, visualization, and
 statistical analysis of mass spectral and proteomics data.
 
-[clippda](/help/bioc-views/release/bioc/html/clippda.html),
-[MassArray](/help/bioc-views/release/bioc/html/MassArray.html),
-[MassSpecWavelet](/help/bioc-views/release/bioc/html/MassSpecWavelet.html),
-[PROcess](/help/bioc-views/release/bioc/html/PROcess.html),
-[flagme](/help/bioc-views/release/bioc/html/flagme.html),
-[xcms](/help/bioc-views/release/bioc/html/xcms.html)
+[clippda](/packages/release/bioc/html/clippda.html),
+[MassArray](/packages/release/bioc/html/MassArray.html),
+[MassSpecWavelet](/packages/release/bioc/html/MassSpecWavelet.html),
+[PROcess](/packages/release/bioc/html/PROcess.html),
+[flagme](/packages/release/bioc/html/flagme.html),
+[xcms](/packages/release/bioc/html/xcms.html)
 
 ### Imaging Based Assays ###
 
 These packages provide infrastructure for image-based phenotyping and automation of other image-related tasks:
 
-[EBImage](/help/bioc-views/release/bioc/html/EBImage.html)
+[EBImage](/packages/release/bioc/html/EBImage.html)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

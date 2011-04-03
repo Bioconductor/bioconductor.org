@@ -123,6 +123,27 @@ var getCorrectUrlForMirrors = function() {
     jQuery(".site_host").html(host);
 }
 
+
+var unRebaseMirrors = function() {
+    if (!(window.mirror === undefined) && mirror == true) {
+        var wlh = window.location.href;
+        var segs = wlh.split("/");
+        var host = wlh.replace(/^http:\/\//i, "").split("/")[0];
+        segs.pop();
+        var url = segs.join("/");
+        jQuery.each(jQuery(".do_not_rebase a"), function(index, value){
+            var href = jQuery(value).attr("href");
+            if (!href.match(/^http:/i)) {
+                if (href.match(/^\//)) {
+                    jQuery(value).attr("href", "http://" + host + href);
+                } else {
+                    jQuery(value).attr("href", url + href);
+                }
+            }
+        });
+    } 
+}
+
 /*
  * The little file server we use for development does not follow symlinks, so see if we are running 
  * that server (assume we are if we are not on port 80) and change URLs tagged with the "symlink"
@@ -144,10 +165,13 @@ var getHrefForSymlinks = function(href) {
   }
 }
 
+
+log("hiiii");
 //document ready function                                      
 jQuery(function() {
     getCorrectUrlForMirrors();
-    
+    log("blah");
+    unRebaseMirrors();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));

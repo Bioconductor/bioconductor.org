@@ -146,7 +146,7 @@ def linkify(sym, package)
       output.push item
       next
     end
-    output.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
+    output.push %Q(<a href="/packages/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
   end
   output.join(", ")
 end
@@ -201,7 +201,7 @@ def bioc_views_links(package)
   
   bioc_views = to_a(package[:biocViews])
   bioc_views.each do |bioc_view|
-    links.push %Q(<a href="/help/bioc-views/#{package[:bioc_version_num]}/BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
+    links.push %Q(<a href="/packages/#{package[:bioc_version_num]}/BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end
   
   links.join(", ")
@@ -325,5 +325,5 @@ def get_stats_url(package)
   else
     repo = "stats/#{package[:repo]}"
   end
-  "/packages/#{repo}#{package[:Package]}.html"
+  "http://bioconductor.org/packages/#{repo}#{package[:Package]}.html"
 end

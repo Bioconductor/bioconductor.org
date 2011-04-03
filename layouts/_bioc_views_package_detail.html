@@ -1,155 +1,156 @@
-<h1><%=@package[:Package]%></h1>
+<div class="do_not_rebase">
+        <h1><%=@package[:Package]%></h1>
 
 
-<%# package title - not to be confused with page title %>
+    <%# package title - not to be confused with page title %>
 
-<h2><%= @package[:Title]%></h2> 
+    <h2><%= @package[:Title]%></h2> 
 
-<p>
-	Bioconductor version: <%= verbose_bioc_version(@package) %>
-</p>
+    <p>
+        Bioconductor version: <%= verbose_bioc_version(@package) %>
+    </p>
 
-<p><%= @package[:Description]%></p>
+    <p><%= @package[:Description]%></p>
 
-<p>Author: <%= filter_emails(@package[:Author])%> </p>
+    <p>Author: <%= filter_emails(@package[:Author])%> </p>
 
-<p>Maintainer: <%= @package[:Maintainer]%> </p>
-
-
-<p>To install this package, start R and enter:</p>
-
-<pre>
-source("http://<span class="site_host"></span>/biocLite.R")
-biocLite("<%=@package[:Package]%>")    
-</pre>
+    <p>Maintainer: <%= @package[:Maintainer]%> </p>
 
 
-<h3>Documentation</h3>
+    <p>To install this package, start R and enter:</p>
 
-<table>
-    <% doc_obj = doc_object(@package)%>
-    <% if doc_obj.empty? %>
+    <pre>
+        source("http://<span class="site_host"></span>/biocLite.R")
+        biocLite("<%=@package[:Package]%>")    
+    </pre>
+
+
+    <h3>Documentation</h3>
+
+    <table>
+        <% doc_obj = doc_object(@package)%>
+        <% if doc_obj.empty? %>
         <tr><td>No vignettes available</td></tr>
-    <% else %>
+        <% else %>
         <% doc_obj.each_with_index do |item, i|%>
-            <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
-            <tr class="<%=style%>">
-                <td class="docFixedWidth">
-                    <% if item[:file] and item[:file] != "" %>
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
-                    <% end %>
-                </td>
-                <td class="docFixedWidth">
-                    <% if item[:script] and item[:script] != "" %>
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
-                    <% end %>
-                </td>
-                <td><%= item[:title]%></td>
-            </tr>
+        <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
+        <tr class="<%=style%>">
+            <td class="docFixedWidth">
+                <% if item[:file] and item[:file] != "" %>
+                <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
+                <% end %>
+            </td>
+            <td class="docFixedWidth">
+                <% if item[:script] and item[:script] != "" %>
+                <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
+                <% end %>
+            </td>
+            <td><%= item[:title]%></td>
+        </tr>
 
         <% end %>
-    <% end %>
-</table>
+        <% end %>
+    </table>
 
-<p>
-    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
+    <p>
+        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
     </p>
 
 
 
-<h3>Details</h3>
+    <h3>Details</h3>
 
-<table class="details">
-    <tr class="row_odd">
-        <td>biocViews</td>
-        <td><%= bioc_views_links @package %></td>
-    </tr>
+    <table class="details">
+        <tr class="row_odd">
+            <td>biocViews</td>
+            <td><%= bioc_views_links @package %></td>
+        </tr>
 
-    <tr class="row_even">
-        <td>Depends</td>
-        <td><%= linkify(:Depends, @package)%></td>
-    </tr>
+        <tr class="row_even">
+            <td>Depends</td>
+            <td><%= linkify(:Depends, @package)%></td>
+        </tr>
 
-    <tr class="row_odd">
-        <td>Imports</td>
-        <td><%= linkify(:Imports, @package)%></td>
-    </tr>
+        <tr class="row_odd">
+            <td>Imports</td>
+            <td><%= linkify(:Imports, @package)%></td>
+        </tr>
 
-    <tr class="row_even">
-        <td>Suggests</td>
-        <td><%= linkify(:Suggests, @package)%></td>
-    </tr>
+        <tr class="row_even">
+            <td>Suggests</td>
+            <td><%= linkify(:Suggests, @package)%></td>
+        </tr>
 
-    <tr class="row_odd">
-        <td>System Requirements</td>
-        <td><%= @package[:SystemRequirements]%></td>
-    </tr>
+        <tr class="row_odd">
+            <td>System Requirements</td>
+            <td><%= @package[:SystemRequirements]%></td>
+        </tr>
 
-    <tr class="row_even">
-        <td>License</td>
-        <td><%= @package[:License]%></td>
-    </tr>
+        <tr class="row_even">
+            <td>License</td>
+            <td><%= @package[:License]%></td>
+        </tr>
 
-    <tr class="row_odd">
-        <td>URL</td>
-        <td><a href="<%=@package[:URL]%>"><%= @package[:URL]%></a></td>
-    </tr>
+        <tr class="row_odd">
+            <td>URL</td>
+            <td><a href="<%=@package[:URL]%>"><%= @package[:URL]%></a></td>
+        </tr>
 
-    <tr class="row_even">
-        <td>Depends On Me</td>
-        <td><%= linkify(:dependsOnMe, @package)%></td>
-    </tr>
+        <tr class="row_even">
+            <td>Depends On Me</td>
+            <td><%= linkify(:dependsOnMe, @package)%></td>
+        </tr>
 
-    <tr class="row_odd">
-        <td>Imports Me</td>
-        <td><%= linkify(:importsMe, @package)%></td>
-    </tr>
+        <tr class="row_odd">
+            <td>Imports Me</td>
+            <td><%= linkify(:importsMe, @package)%></td>
+        </tr>
 
-    <tr class="row_even">
-        <td>Suggests Me</td>
-        <td><%= linkify(:suggestsMe, @package)%></td>
-    </tr>
+        <tr class="row_even">
+            <td>Suggests Me</td>
+            <td><%= linkify(:suggestsMe, @package)%></td>
+        </tr>
 
-    <tr class="row_odd">
-        <td>Version</td>
-        <td><%= @package[:Version]%></td>
-    </tr>
+        <tr class="row_odd">
+            <td>Version</td>
+            <td><%= @package[:Version]%></td>
+        </tr>
 
 
-</table>
+    </table>
 
-<h3>Package Downloads</h3>
+    <h3>Package Downloads</h3>
 
-<table>
-    <tr class="row_odd">
-        <td>Package Source</td>
-        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"source.ver"]%>">
-            <%= base_filename(@package[:"source.ver"]) %></a></td>
-    </tr>
+    <table>
+        <tr class="row_odd">
+            <td>Package Source</td>
+            <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"source.ver"]%>">
+                <%= base_filename(@package[:"source.ver"]) %></a></td>
+            </tr>
 
-    <tr class="row_even">
-        <td>Windows Binary</td>
-            <td>
-			 	<% wb = windows_binary(@package) %>
-				<% unless wb.nil?%>
-					<a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
-                		<%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%>
-				<% end %>
-			</td>
-    </tr>
+            <tr class="row_even">
+                <td>Windows Binary</td>
+                <td>
+                    <% wb = windows_binary(@package) %>
+                    <% unless wb.nil?%>
+                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
+                        <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%>
+                        <% end %>
+                    </td>
+                </tr>
 
-    <tr class="row_odd">
-        <td>MacOS 10.5 (Leopard) binary</td>
-        <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"mac.binary.leopard.ver"]%>">
-            <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
-    </tr>
-    <tr class="row_even">
-        <td>Package Downloads Report</td>
-        <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
-    </tr>
-        
-</table>
+                <tr class="row_odd">
+                    <td>MacOS 10.5 (Leopard) binary</td>
+                    <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"mac.binary.leopard.ver"]%>">
+                        <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
+                    </tr>
+                    <tr class="row_even">
+                        <td>Package Downloads Report</td>
+                        <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
+                    </tr>
 
+                </table>
+</div>
 
 
 
