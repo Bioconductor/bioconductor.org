@@ -64,6 +64,12 @@ We suggest that the name be a combination of "bioconductor", your first name, an
 (this will avoid conflicts with other people who share your AWS account, or possibly your own account on another machine).
 For example, if your name is Bob and your personal computer is named "mylaptop", your key pair name could be "bioconductor-bob-mylaptop".
 
+If you want to use RStudio Server, you'll need to make a change to the default security group.
+Click on "Security Groups" in the left side of the browser window, click on Default, and then on the Inbound tab.
+Create a Custom TCP Rule, with Port Range set to 8787 and Source set to 0.0.0.0/0. Click Add Rule, then Apply Rule Changes.
+
+<img src="/images/ami/tcprule.jpg" border="0"/>
+
 Now you will be prompted to download the key pair file you have created. (This is actually an RSA private key).
 The suffix ".pem" will be appended to the key pair name you chose earlier.
 Be sure and copy this file to a safe place on your hard drive. On Mac and Unix systems at least, you will also need to set
@@ -77,7 +83,7 @@ Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Lau
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
-	ami-9242b2fb
+	ami-646a970d
 
 *Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI ID.*
@@ -149,6 +155,19 @@ Just type R at a command prompt:
 	
 Note that the <code>biocLite()</code> function is automatically available, you do not have to <code>source()</code> a file first
 like you would have to on your R installation on your personal computer.
+
+### Using RStudio Server
+
+In the [AWS Console](https://console.aws.amazon.com/ec2/home), click on Instances in the left side of the
+browser window, then click on your running instance. In the Description pane at lower right, copy the host
+name next to "Public DNS" to your clipboard. Paste this into your browser address bar with "http://" in front
+and ":8787" at the end, so you end up with something like this:
+
+    http://ec2-174-129-127-19.compute-1.amazonaws.com:8787
+
+Log in as username "ubuntu" with password "bioc". Refer to the
+[RStudio documentation](http://www.rstudio.org/) for more information.
+ 
 
 ### Using Rgraphviz
 
@@ -268,6 +287,8 @@ This will run an R script which should produce some output like this:
 	> mpi.quit()
 
 This output shows that there is a master and three worker nodes running, each with distinct IP addresses.
+You may see the same IP address repeated multiple times, once for every processor core available on 
+a machine.
 
 Now, to do some actual work with your MPI cluster, run the following command:
 
