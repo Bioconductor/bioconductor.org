@@ -730,5 +730,5 @@ The relevant Javascript file is assets/js/bioc_views.js. The automatically gener
 
 *** Updating the site during a release
 
-Take a look at the config.yml file in the root of the bioconductor.org working copy.
+Take a look at the config.yaml file in the root of the bioconductor.org working copy.
 This should be the only place you need to make changes.
