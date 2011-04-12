@@ -26,10 +26,14 @@ class BiocViews < Nanoc3::DataSource
         
         
         dir = "#{config[:json_dir]}/#{version}/#{k}"
-        @good_to_go = false unless test(?f, "#{dir}/packages.json") 
+        
+        # todo remove conditional when all 2.9 repos are present
+        if (version == "2.9" and k == "bioc/")
+          @good_to_go = false unless test(?f, "#{dir}/packages.json") 
 
-        #todo remove
-        @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
+          #todo remove
+          @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
+        end
 
 
       end
@@ -45,7 +49,8 @@ class BiocViews < Nanoc3::DataSource
       for version in @site_config["versions"]
         hsh = {}
         @repos.each_pair do |k,v|
-          
+          # todo remove this when all 2.9 repos are present
+          next if version == "2.9" and k != "bioc/"
           
           key = k.gsub(/\/$/, "")
           dir = "#{config[:json_dir]}/#{version}/#{k}"
@@ -161,6 +166,8 @@ class BiocViews < Nanoc3::DataSource
     
     for version in @site_config["versions"]
       @repos.each_pair do |k,v|
+        # todo remove this when all 2.9 repos are present
+        next if version == "2.9" and k != "bioc/"
         dir = "#{config[:json_dir]}/#{version}/#{k}"
         
         
