@@ -727,3 +727,8 @@ At http://bioconductor.org/packages.
 This page uses javascript to build the tree, reading in data generated in step 1.
 The relevant Javascript file is assets/js/bioc_views.js. The automatically generated 
 (by rake) file output/js/versions.js is also sourced.
+
+*** Updating the site during a release
+
+Take a look at the config.yml file in the root of the bioconductor.org working copy.
+This should be the only place you need to make changes.
