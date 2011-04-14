@@ -8,7 +8,7 @@ version have been removed. Bioconductor 2.8 is compatible with
 R 2.13.0, and is supported on Linux, 32- and 64-bit Windows, and Mac
 OS.  Visit
 
-http://bioconductor.org
+[http://bioconductor.org](http://bioconductor.org)
 
 for details and downloads.
 
@@ -29,7 +29,7 @@ this version of R.
 
 2. Follow the instructions here:
 
-http://bioconductor.org/install/
+[http://bioconductor.org/install/](http://bioconductor.org/install/)
 
 Please visit http://bioconductor.org for details and downloads.
 
@@ -246,4 +246,4 @@ parallelizable tasks on MPI clusters, run R from within
 your web browser using RStudio Server, and more. No
 installation required. Information available at:
 
-http://bioconductor.org/help/bioconductor-cloud-ami/
+[http://bioconductor.org/help/bioconductor-cloud-ami/](http://bioconductor.org/help/bioconductor-cloud-ami/)
