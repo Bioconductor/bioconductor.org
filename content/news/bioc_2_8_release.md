@@ -40,200 +40,200 @@ There are 48 new packages in this release of Bioconductor.
 
 a4
 
- Automated Affymetrix Array Analysis Umbrella Package
+> Automated Affymetrix Array Analysis Umbrella Package
 
 a4Base
 
- Automated Affymetrix Array Analysis Base Package
+> Automated Affymetrix Array Analysis Base Package
 
 a4Classif
 
- Automated Affymetrix Array Analysis Classification Package
+> Automated Affymetrix Array Analysis Classification Package
 
 a4Core
 
- Automated Affymetrix Array Analysis Core Package
+> Automated Affymetrix Array Analysis Core Package
 
 a4Preproc
 
- Automated Affymetrix Array Analysis Preprocessing Package
+> Automated Affymetrix Array Analysis Preprocessing Package
 
 a4Reporting
 
- Automated Affymetrix Array Analysis Reporting Package
+> Automated Affymetrix Array Analysis Reporting Package
 
 AnnotationFuncs
 
- Annotation translation functions
+> Annotation translation functions
 
 anota
 
- ANalysis Of Translational Activity
+> ANalysis Of Translational Activity
 
 chopsticks
 
- The snp.matrix and X.snp.matrix classes
+> The snp.matrix and X.snp.matrix classes
 
 Clonality
 
- Clonality testing
+> Clonality testing
 
 clst
 
- Classification by local similarity threshold
+> Classification by local similarity threshold
 
 clstutils
 
- Tools for performing taxonomic assignment
+> Tools for performing taxonomic assignment
 
 clusterProfiler
 
- statistical analysis and visulization of
- functional profiles for genes and gene clusters
+> statistical analysis and visulization of
+> functional profiles for genes and gene clusters
 
 cn.farms
 
- Factor Analysis for copy number estimation
+> Factor Analysis for copy number estimation
 
 ENVISIONQuery
 
- Retrieval from the ENVISION bioinformatics data portal into R
+> Retrieval from the ENVISION bioinformatics data portal into R
 
 ExiMiR
 
- R functions for the normalization of Exiqon miRNA array data
+> R functions for the normalization of Exiqon miRNA array data
 
 flowPhyto
 
- Methods for Continuous Flow Cytometry
+> Methods for Continuous Flow Cytometry
 
 flowPlots
 
- analysis plots and data class for gated flow cytometry data
+> analysis plots and data class for gated flow cytometry data
 
 gaia
 
- An R package for genomic analysis of significant
- chromosomal aberrations
+> An R package for genomic analysis of significant
+> chromosomal aberrations
 
 genefu
 
- Relevant Functions for Gene Expression Analysis,
- Especially in Breast Cancer
+> Relevant Functions for Gene Expression Analysis,
+> Especially in Breast Cancer
 
 genoset
 
- Provides classes similar to ExpressionSet for copy number analysis
+> Provides classes similar to ExpressionSet for copy number analysis
 
 GSVA
 
- Gene Set Variation Analysis
+> Gene Set Variation Analysis
 
 ibh
 
- Interaction Based Homogeneity for Evaluating Gene Lists
+> Interaction Based Homogeneity for Evaluating Gene Lists
 
 inveRsion
 
- Inversions in genotype data
+> Inversions in genotype data
 
 IPPD
 
- Isotopic peak pattern deconvolution for Protein Mass
- Spectrometry by template matching
+> Isotopic peak pattern deconvolution for Protein Mass
+> Spectrometry by template matching
 
 joda
 
- JODA algorithm for quantifying gene deregulation using knowledge
+> JODA algorithm for quantifying gene deregulation using knowledge
 
 lol
 
- Lots Of Lasso
+> Lots Of Lasso
 
 mcaGUI
 
- Microbial Community Analysis GUI
+> Microbial Community Analysis GUI
 
 mgsa
 
- Model-based gene set analysis
+> Model-based gene set analysis
 
 MLP
 
- Mean Log P Analysis
+> Mean Log P Analysis
 
 mosaics
 
- MOdel-based one and two Sample Analysis and Inference for ChIP-Seq
+> MOdel-based one and two Sample Analysis and Inference for ChIP-Seq
 
 MSnbase
 
- Base Functions and Classes for MS-based Proteomics
+> Base Functions and Classes for MS-based Proteomics
 
 NCIgraph
 
- Pathways from the NCI Pathways Database
+> Pathways from the NCI Pathways Database
 
 phenoDist
 
- Phenotypic distance measures
+> Phenotypic distance measures
 
 phenoTest
 
- Tools to test correlation between gene expression and phenotype
+> Tools to test correlation between gene expression and phenotype
 
 procoil
 
- Prediction of Oligomerization of Coiled Coil Proteins
+> Prediction of Oligomerization of Coiled Coil Proteins
 
 pvac
 
- PCA-based gene filtering for Affymetrix arrays
+> PCA-based gene filtering for Affymetrix arrays
 
 qrqc
 
- Quick Read Quality Control
+> Quick Read Quality Control
 
 RNAinteract
 
- Estimate Pairwise Interactions from multidimensional features
+> Estimate Pairwise Interactions from multidimensional features
 
 Rsubread
 
- a super fast, sensitive and accurate read aligner for mapping
- next-generation sequencing reads
+> a super fast, sensitive and accurate read aligner for mapping
+> next-generation sequencing reads
 
 seqbias
 
- Estimation of per-position bias in high-throughput sequencing data
+> Estimation of per-position bias in high-throughput sequencing data
 
 snm
 
- Supervised Normalization of Microarrays
+> Supervised Normalization of Microarrays
 
 snpStats
 
- SnpMatrix and XSnpMatrix classes and methods
+> SnpMatrix and XSnpMatrix classes and methods
 
 survcomp
 
- Performance Assessment and Comparison for Survival Analysis
+> Performance Assessment and Comparison for Survival Analysis
 
 TDARACNE
 
- Network reverse engineering from time course data
+> Network reverse engineering from time course data
 
 TEQC
 
- Quality control for target capture experiments
+> Quality control for target capture experiments
 
 TurboNorm
 
- A fast scatterplot smoother suitable for microarray normalization
+> A fast scatterplot smoother suitable for microarray normalization
 
 Vega
 
- An R package for copy number data segmentation
+> An R package for copy number data segmentation
 
 
 Using Bioconductor in the cloud
