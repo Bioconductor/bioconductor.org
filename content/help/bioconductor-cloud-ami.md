@@ -8,6 +8,7 @@ Here are a few reasons you could use it:
 * You do not want to install Bioconductor on your own machine.
 * You have a long-running task and you don't want it to tie up the CPU on your own machine.
 * You have a parallelizable task and would like to run it (either on multiple CPUs on a single machine, or in a cluster of many machines).
+* You want to run R in your web browser (using RStudio Server).
 
 See below for more specific scenarios.
 
@@ -83,7 +84,7 @@ Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Lau
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
-	ami-569d613f
+	ami-f88a7691
 
 *Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI ID.*
@@ -157,6 +158,9 @@ Note that the <code>biocLite()</code> function is automatically available, you d
 like you would have to on your R installation on your personal computer.
 
 ### Using RStudio Server
+
+To use RStudio Server, it's not necesssary to connect to the remote instance with SSH.
+Just use the following steps.
 
 In the [AWS Console](https://console.aws.amazon.com/ec2/home), click on Instances in the left side of the
 browser window, then click on your running instance. In the Description pane at lower right, copy the host
@@ -268,7 +272,8 @@ Make the following substitutions:
 This command will mount your EBS volume, launch three worker instances, share the EBS volume with
 them using NFS, and do some other housekeeping tasks.
 
-You can verify that your cluster is working with the following command:
+You can verify that your cluster is working with the following command. You may need to wait a few moments 
+before all the workers are up and running, but then this command will work:
 
 	mpirun -np 1 --hostfile /usr/local/Rmpi/hostfile R --no-save -f /usr/local/Rmpi/mpiTest.R --args 3
 	
