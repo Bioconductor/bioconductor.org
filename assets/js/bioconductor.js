@@ -131,9 +131,11 @@ var unRebaseMirrors = function() {
         var host = wlh.replace(/^http:\/\//i, "").split("/")[0];
         segs.pop();
         var url = segs.join("/");
+        /*
         if (segs[0] != "packages") {
             url += "/" + segs[0];
         }
+        */
         jQuery.each(jQuery(".do_not_rebase a"), function(index, value){
             var href = jQuery(value).attr("href");
             if (!href.match(/^http:/i)) {
