@@ -137,7 +137,7 @@ var unRebaseMirrors = function() {
                 if (href.match(/^\//)) {
                     jQuery(value).attr("href", "http://" + host + href);
                 } else {
-                    jQuery(value).attr("href", url + href);
+                    jQuery(value).attr("href", url + "/" + href);
                 }
             }
         });
@@ -166,11 +166,9 @@ var getHrefForSymlinks = function(href) {
 }
 
 
-log("hiiii");
 //document ready function                                      
 jQuery(function() {
     getCorrectUrlForMirrors();
-    log("blah");
     unRebaseMirrors();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
