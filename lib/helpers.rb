@@ -2,7 +2,7 @@ include Nanoc3::Helpers::Text
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Breadcrumbs
 include Nanoc3::Helpers::XMLSitemap
-
+include Nanoc3::Helpers::HTMLEscape
 
 
 require 'time'
@@ -38,6 +38,9 @@ def verbose_bioc_version(package)
 	  package[:bioc_version_num]
 	end
 end
+
+
+
 
 def base_filename(path)
   #return nil if path.nil?

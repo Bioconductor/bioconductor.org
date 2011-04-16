@@ -26,7 +26,7 @@
 
         <tr class="<%=style%>">
             <td><a href="html/<%=item[:name]%>.html"><%=item[:name]%></a></td>
-            <td><%=item[:Maintainer]%></td>
+            <td><%=h(item[:Maintainer])%></td>
             <td><%=item[:Title]%></td>
         </tr>
         <% end %>
