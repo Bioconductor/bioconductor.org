@@ -65,8 +65,19 @@ We suggest that the name be a combination of "bioconductor", your first name, an
 (this will avoid conflicts with other people who share your AWS account, or possibly your own account on another machine).
 For example, if your name is Bob and your personal computer is named "mylaptop", your key pair name could be "bioconductor-bob-mylaptop".
 
-If you want to use RStudio Server, you'll need to make a change to the default security group.
-Click on "Security Groups" in the left side of the browser window, click on Default, and then on the Inbound tab.
+You will need to modify the default security group. Click on 
+[Security Groups](https://console.aws.amazon.com/ec2/home#s=SecurityGroups)
+in the lower-left hand corner of the AWS Console.
+
+Click on the Default group. You'll see information about the group in the lower pane, including the group ID, a string that starts with "sg-". Copy this string to your clipboard. 
+
+Set your security group up as follows but substitute your own security group ID for the one shown:
+
+<img src="/images/ami/securitygroup.jpg" border="0"/>
+
+
+If you want to use RStudio Server, you'll need to make an additional change to the default security group.
+
 Create a Custom TCP Rule, with Port Range set to 8787 and Source set to 0.0.0.0/0. Click Add Rule, then Apply Rule Changes.
 
 <img src="/images/ami/tcprule.jpg" border="0"/>
@@ -84,7 +95,7 @@ Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Lau
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
-	ami-f88a7691
+	ami-0a36ca63
 
 *Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI ID.*
