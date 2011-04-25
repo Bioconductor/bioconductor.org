@@ -95,7 +95,7 @@ Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Lau
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
-	ami-0a36ca63
+	ami-7e4fb317
 
 *Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI ID.*
