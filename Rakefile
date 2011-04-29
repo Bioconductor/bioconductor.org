@@ -188,23 +188,13 @@ system(r_cmd)
   #end remove
   
   for version in versions
-    # todo - remove conditional when all 2.9 repos are up.
-    if version == "2.9"
-      fullpaths = ["bioc"].map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
-    else
-      fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
-    end
+
+    fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     
     #todo remove
     repos.each do |repo|
-      # todo remove conditionals when all 2.9 repos are up
-      if (version == "2.9")
-        unless repo == "data/annotation" or repo == "data/experiment"
-          #puts "repo = #{repo}, version = #{version}"
-          system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
-          system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
-        end
-      end
+      system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
+      system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
     end
     #end remove
     
@@ -213,11 +203,7 @@ system(r_cmd)
     args = [fullpaths, "#{json_dir}/#{version}/tree.json"]
     #pp args
     
-    # todo - remove conditionals when all 2.9 repos are up
-    if (version == "2.9")
-      #puts "version = #{version}"
-      ParseBiocViews.new(args)
-    end
+    ParseBiocViews.new(args)
   end
 end
 
