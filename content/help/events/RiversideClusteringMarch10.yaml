@@ -1,0 +1,17 @@
+---
+title: Clustering and Data Mining in R
+location: Riverside, CA, USA
+event_host: UCR
+start: 2010-03-06
+end:   2010-03-06
+description:
+  R contains a comprehensive set of functions and libraries for clustering
+  large multidimensional data sets. This course will provide an overview on
+  the usage of the most common clustering techniques in R, such as
+  hierarchical clustering with bootstrap, K-means, PAM, fuzzy clustering, QT,
+  SOM, principal component analysis, multidimensional scaling, biclustering,
+  etc. Knowledge of the R software, as introduced in the previous tutorial
+  "Introduction into R", will be required for attending this workshop. 
+link:
+  text: details and registration
+  url: http://facility.bioinformatics.ucr.edu/home/workshops#TOC-Clustering-and-Data-Mining-in-R-Mar

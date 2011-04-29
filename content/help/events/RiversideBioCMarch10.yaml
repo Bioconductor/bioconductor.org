@@ -1,0 +1,22 @@
+---
+title: Searching and Clustering Drug-like Compounds in R and BioC 
+location: Riverside, CA, USA
+event_host: UCR
+start: 2010-03-06
+end:   2010-03-06
+description:
+  This workshop introduces the ChemmineR package for mining drug-like compound
+  and screening data sets. The R package contains functions for structural
+  similarity searching, clustering of compound libraries with a wide spectrum
+  of algorithms and utilities for managing complex compound data sets. In
+  addition, it offers visualization functions for compound clusters and
+  chemical structures. The package is well integrated with the online ChemMine
+  database and allows bidirectional communications between the two
+  services. The integration of chemoinformatic tools with the R programming
+  environment has many advantages, such as easy access to a wide spectrum of
+  statistical methods, machine learning algorithms and graphic
+  utilities. Knowledge of the R software, as introduced in the "Introduction
+  into R" course, will be required for attending this workshop.  
+link:
+  text: details and registration
+  url: http://facility.bioinformatics.ucr.edu/home/workshops#TOC-Clustering-and-Data-Mining-in-R-Mar

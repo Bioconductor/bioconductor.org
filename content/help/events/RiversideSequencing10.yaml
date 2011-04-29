@@ -1,0 +1,12 @@
+---
+title: Analysis of HT Sequencing Data with R and Bioconductor
+location: Riverside, CA, USA
+event_host: UCR
+start: 2010-02-26
+end:   2010-02-26
+description:
+  R and Bioconductor provide extensive utilities for analyzing high-throughput
+  sequencing data from next generation technologies, such as Illumina (Solexa).
+link:
+  text: details and registration
+  url: http://facility.bioinformatics.ucr.edu/home/workshops#TOC-Analysis-of-HT-Sequencing-Data-with
