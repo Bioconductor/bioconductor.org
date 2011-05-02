@@ -11,19 +11,19 @@ release version), please use the following commands:
 
 ### All Bioconductor <%= config[:release_version] %> repos ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %> /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %> /dest
 
 ### Bioconductor <%= config[:release_version] %> Software repo ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest
 
 ### Bioconductor <%= config[:release_version] %> Data repos ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest
 
 ### Bioconductor <%= config[:release_version] %> Extra repo ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest
 
 
 ## BioC <%= config[:devel_version] %> repos ##
@@ -33,20 +33,20 @@ devel version), please use the following commands:
 
 ### All Bioconductor <%= config[:devel_version] %> repos ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest
 
 ### Bioconductor <%= config[:devel_version] %> Software repo ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest
 
 ### Bioconductor <%= config[:devel_version] %> Data repos ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest
 
 
 ### Bioconductor <%= config[:devel_version] %> Extra repo ###
 
-    rsync -rtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest
 
 
 ## Additional information ##
