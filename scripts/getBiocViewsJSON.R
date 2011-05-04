@@ -97,13 +97,13 @@ for (version in versions) {
     
     repos = c("bioc", "data/annotation", "data/experiment")
     for (repo in repos) {
-        #if (repo == "bioc") defaultView = "Software"
-        #if (repo == "data/annotation") defaultView = "AnnotationData"
-        #if (repo == "data/experiment") defaultView = "ExperimentData"
+        if (repo == "bioc") defaultView = "Software"
+        if (repo == "data/annotation") defaultView = "AnnotationData"
+        if (repo == "data/experiment") defaultView = "ExperimentData"
       
         reposUrl = paste("http://bioconductor.org/packages/", version, "/", repo, sep="")
 
-            biocViews <- getBiocViews(reposUrl, biocViewsVocab, "No View Provided")
+            biocViews <- getBiocViews(reposUrl, biocViewsVocab, defaultView)
             count <- 1
             all <- list()
             result <- lapply(biocViews, getItem)
