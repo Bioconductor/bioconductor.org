@@ -38,7 +38,7 @@ class SearchIndexer
     ret = []
     for file in file_list
        #e.g. /packages/release/bioc/html or /packages/2.6/Software.html
-      unless (file =~ /^\.\/packages/ && file =~ /\/html\/|\.html$/)
+      if (file =~ /^\.\/packages/ && file =~ /\/html\/|\.html$/)
         puts "KEEPING #{file}"
         ret.push file
       else
