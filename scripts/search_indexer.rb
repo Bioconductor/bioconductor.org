@@ -28,8 +28,8 @@ class SearchIndexer
   end
 
   def get_boost(url)
-    return 3 if url =~ /\/packages\/release/
-    return 2 if url =~ /\/packages\/devel/
+    return 3 if url =~ /\/packages\/release/ or url =~ /\/packages\/#{@release_version}/
+    return 2 if url =~ /\/packages\/devel/ or url =~ /\/packages\/#{@devel_version}/
     return 1
   end
   
@@ -50,6 +50,10 @@ class SearchIndexer
   end
 
   def initialize(args)
+    
+    site_config = YAML.load_file("./config.yaml")
+    @release_version = site_config["release_version"]
+    @devel_version = site_config["devel_version"]
     
     unless args.size == 4
       puts "invalid arguments!"

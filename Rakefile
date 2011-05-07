@@ -148,6 +148,7 @@ end
 
 desc "Re-run search indexing on production"
 task :index_production do
+  system("scp config.yaml webadmin@krait~")
   system("scp scripts/search_indexer.rb webadmin@krait:~")
   system("ssh webadmin@krait /home/webadmin/do_index.rb")
   #system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
