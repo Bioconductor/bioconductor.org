@@ -6,6 +6,9 @@ include Nanoc3::Helpers::HTMLEscape
 
 
 require 'time'
+require 'rubygems'
+require 'httparty'
+
 
 class Time
   def to_date
@@ -21,6 +24,38 @@ class Date
     Time.local(year, month, day)
   end
 end
+
+def myfunc()
+  puts "in myfunc"
+  "this is the output of myfunc() " + Date.new.to_s
+end
+
+def get_cran_packages()
+  puts "Grabbing list of CRAN packages..."
+  ## Is there a non-web-scraping way to get a list of CRAN packages?
+  cran_packages = []
+  data = begin
+           HTTParty.get("http://cran.fhcrc.org/web/packages/",
+                        :timeout => 6)
+         rescue Timeout::Error
+           puts "Timeout grabbing list of CRAN packages..."
+           return []
+         rescue TCPSocket::SocketError
+           puts "Socket error grabbing list of CRAN packages..."
+           return []
+         end
+  html = data.to_s
+  lines = html.split("\n")
+  for line in lines
+    next unless line =~ /^<td><a href="/
+    if line =~ /<a href="[^"]*">([^<]*)<\/a>/
+      cran_packages.push $1
+    end
+  end
+  cran_packages
+end
+
+$cran_packages = get_cran_packages()
 
 def nav_link_unless_current(text, path)
   if @item_rep && @item_rep.path && ((@item_rep.path == path) ||
@@ -134,8 +169,6 @@ def filter_emails(str)
   str.gsub(/<[^>]*>/,"").gsub("  "," ").gsub(" ,", ",")
 end
 
-#todo - show links for stuff that is not necessarily a bioconductor package 
-#(e.g. CRAN or R)
 def linkify(sym, package)
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
@@ -145,10 +178,18 @@ def linkify(sym, package)
   
   items.each_with_index do |item, index|
     repo = repos[index]
+
+
+
     if (repo == false)
-      output.push item
+      if ($cran_packages.include?(item))
+        output.push %Q(<a class="cran_package" href="http://cran.fhcrc.org/web/packages/#{item}/index.html">#{item}</a>)
+      else
+        output.push item
+      end
       next
     end
+
     output.push %Q(<a href="/packages/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
   end
   output.join(", ")
