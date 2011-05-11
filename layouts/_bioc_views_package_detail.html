@@ -14,7 +14,7 @@
 
     <p>Author: <%= filter_emails(@package[:Author])%> </p>
 
-    <p>Maintainer: <%= h(@package[:Maintainer])%> </p>
+    <p>Maintainer: <%= h(filter_emails(@package[:Maintainer]))%> </p>
 
 
     <p>To install this package, start R and enter:</p>
