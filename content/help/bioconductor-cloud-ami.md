@@ -138,7 +138,7 @@ key pair file.
 **Windows Users**: You will need to install a version of the *ssh* and *scp* commands. Graphical programs like
 [PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) and [WinSCP](http://winscp.net/eng/index.php) will work. 
 Our examples, however, will use the command-line versions of these programs, which you can obtain by installing 
-[Cygwin](http://www.cygwin.com/) (be sure and install the *ssh* package).
+[Cygwin](http://www.cygwin.com/) (be sure and install the *openssh* package).
 
 Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
 to your Amazon EC2 instance. 
