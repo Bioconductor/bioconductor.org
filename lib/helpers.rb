@@ -371,3 +371,26 @@ def get_stats_url(package)
   end
   "http://bioconductor.org/packages/#{repo}#{package[:Package]}.html"
 end
+
+def get_updated_breadcrumbs(old_breadcrumbs, item)
+  return old_breadcrumbs unless (old_breadcrumbs.last.identifier =~ /package-pages/)
+  index_page = false
+  index_page = true if item.identifier =~ /\/package-pages\/all-/
+  last_crumb = old_breadcrumbs.last
+  home_crumb = old_breadcrumbs.first
+  path = item.path
+  segs = path.split("/")
+  ver = segs[2]
+  repo = ["Software", "bioc"] if path =~ /\/bioc\//
+  repo = ["Annotation", "data/annotation"] if path =~ /\/data\/annotation\//
+  repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
+  crumbs = []
+  crumbs.push home_crumb
+  ver_crumb = Nanoc3::Item.new(nil, {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
+  crumbs.push ver_crumb
+  repo_crumb = Nanoc3::Item.new(nil, {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
+  crumbs.push repo_crumb unless index_page
+  crumbs.push last_crumb
+  crumbs
+end
+

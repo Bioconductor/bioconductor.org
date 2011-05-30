@@ -1,13 +1,13 @@
 <div id="PageBreadcrumbs" class="PageBreadcrumbs">
   <ul>
-    <% breadcrumbs_trail.each_with_index do |crumb, i| %>
+    <% crumbs = get_updated_breadcrumbs(breadcrumbs_trail, item) %>
+    <% crumbs.each_with_index do |crumb, i| %>
     <% next unless crumb %>
-      <% if (i + 1 < breadcrumbs_trail.length) %>
+      <% if (i + 1 < crumbs.length) %>
 	  	<% 
 			crumb_id = crumb.identifier 
-			#crumb_id = "/help/bioc-views/release/BiocViews.html" if crumb_id == "/help/bioc-views/"
-			# is this still needed?
 			crumb_id = "/packages/release/BiocViews.html" if crumb_id == "/packages/"
+			crumb_id.sub!(/BiocViews\.html\/$/, "BiocViews.html")
 		%>
         <li><a href="<%= crumb_id %>"><%= crumb[:title] %></a></li>
       <% else %>
