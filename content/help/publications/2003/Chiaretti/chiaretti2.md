@@ -8,3 +8,4 @@
 * [B-cell ALL CEL files](B95.tgz)
 * [T-cell ALL CEL files](T33.tgz)
 
+Published in [Clinical Cancer Research](http://clincancerres.aacrjournals.org/current.shtml).
