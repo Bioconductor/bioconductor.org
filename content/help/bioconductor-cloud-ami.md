@@ -385,12 +385,12 @@ To copy a file from your computer to a running Bioconductor AMI instance:
 	
 	
 <span style="display:none">Hidden</span>
-	scp -i bioconductor-bob-mylaptop.pem /path/to/myfile root@ec2-50-16-120-30.compute-1.amazonaws.com/root
+	scp -i bioconductor-bob-mylaptop.pem /path/to/myfile root@ec2-50-16-120-30.compute-1.amazonaws.com:/root
 	
 That will copy the file at "/path/to/myfile" on your local computer to the /root directory on the remote instance. To copy a file from a 
 running instance to your local computer, do something like this (still at your local computer):
 
-	scp -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com/root/myfile /some/directory
+	scp -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com:/root/myfile /some/directory
 
 That will copy the file /root/myfile from the running instance to /some/directory on your local machine.
 
