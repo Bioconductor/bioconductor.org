@@ -5,7 +5,7 @@
     <% next unless crumb %>
       <% if (i + 1 < crumbs.length) %>
 	  	<% 
-			crumb_id = crumb.identifier 
+			crumb_id = crumb.identifier.dup
 			crumb_id = "/packages/release/BiocViews.html" if crumb_id == "/packages/"
 			crumb_id.sub!(/BiocViews\.html\/$/, "BiocViews.html")
 		%>
