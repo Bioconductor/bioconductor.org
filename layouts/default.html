@@ -24,7 +24,7 @@
         <% end %>
         <%# end hack%>
         
-        <%= yield %>
+        <%= yield if block_given? %>
         <% if has_subnav?(@item) %>
           </div>
           <div id="RightRail" class="RightRail">
