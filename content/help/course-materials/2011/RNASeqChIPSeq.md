@@ -12,3 +12,5 @@
     * [Marioni_ChIPseq_course.pdf](Lectures/Marioni_ChIPseq_course.pdf)
     * [RNASeq-DifferentialExpression-SimonAnders.pdf](Lectures/RNASeq-DifferentialExpression-SimonAnders.pdf)
     * [Annotation-slides.pdf](Lectures/Annotation-slides.pdf)
+* Packages
+    * [EMBL2011_0.2.0.tar.gz](Package/EMBL2011_0.2.0.tar.gz) An R package containing slides and exercise material. Download, then install in R using install.packages("EMBL2011.0.2.0.tar.gz", repos=NULL, type="source")
