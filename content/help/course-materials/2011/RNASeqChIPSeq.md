@@ -7,7 +7,7 @@
 * Lectures
     * [GeneCore-MPS-June2011.pdf](Lectures/GeneCore-MPS-June2011.pdf)
     * [SequenceAnalysis-slides.pdf](Lectures/SequenceAnalysis-slides.pdf)
-    * [Nicolas-Delhomme_EMBL-Advanced-Course-RNA-Seq-ChIP-Seq-Data-Analysis_June-2011.pdf](/Lectures/Nicolas-Delhomme_EMBL-Advanced-Course-RNA-Seq-ChIP-Seq-Data-Analysis_June-2011.pdf)
+    * [Nicolas-Delhomme_EMBL-Advanced-Course-RNA-Seq-ChIP-Seq-Data-Analysis_June-2011.pdf](Lectures/Nicolas-Delhomme_EMBL-Advanced-Course-RNA-Seq-ChIP-Seq-Data-Analysis_June-2011.pdf)
     * [QA-slides.pdf](Lectures/QA-slides.pdf)
     * [Marioni_ChIPseq_course.pdf](Lectures/Marioni_ChIPseq_course.pdf)
     * [RNASeq-DifferentialExpression-SimonAnders.pdf](Lectures/RNASeq-DifferentialExpression-SimonAnders.pdf)
