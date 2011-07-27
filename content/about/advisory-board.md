@@ -5,7 +5,7 @@ statistical analysis of high-throughput genomic data. Board members
 participate for a flexible term. Current members are:
 
 * Simon Tavare (Advisory Board chair; University of Southern California)
+* Robert Gentleman (Genentech)
 * Paul Flicek (European Bioinformatics Institute)
-* Walter Ruzzo  (University of Washington)
 * Simon Urbanek (AT&amp;T Labs &ndash; Research)
 * Wolfgang Huber (European Molecular Biology Laboratory)
