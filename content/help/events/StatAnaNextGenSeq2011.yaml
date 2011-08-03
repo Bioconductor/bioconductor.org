@@ -1,9 +1,9 @@
 ---
-title: TITLE FOR StatAnaNextGenSeq2011
-location: Seattle, WA, USA
-event_host: FHCRC
-start: 2011-08-03
-end:   2011-08-03
+title:     Statistical Analyses for Next Generation Sequencing
+location: Birmingham, AL, USA
+event_host: The University of Alabama at Birmingham
+start: 2011-09-26
+end:   2011-09-27
 link:
   text: details and registration
   url: https://secure.bioconductor.org/StatAnaNextGenSeq2011
