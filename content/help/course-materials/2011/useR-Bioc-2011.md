@@ -8,8 +8,7 @@ Welcome!
 
       source("http://bioconductor.org/biocLite.R")
       biocLite(c("GenomicFeatures", "ShortRead", "edgeR",
-                 "goseq", "org.Dm.eg.db",
-                 "BSgenome.Dmelanogaster.UCSC.dm3"))
+                 "org.Dm.eg.db", "BSgenome.Dmelanogaster.UCSC.dm3"))
 
 * The workshop uses moderately sized data; your laptop (Mac, Windows,
   or Linux) should have 2 Gb or more of memory and ample disk space.
