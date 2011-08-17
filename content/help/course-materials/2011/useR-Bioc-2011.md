@@ -16,6 +16,10 @@ Welcome!
 * Additional material will be posted to this site immediately before
   the tutorial.
 
+#### useR2011 Package:
+* [Source Package](useR2011_0.1.0.tar.gz)
+* [Windows Package](useR2011_0.1.0.zip)
+
 If you have questions, please do not hesitate to contact me, mtmorgan
 at fhcrc dot org.
 
