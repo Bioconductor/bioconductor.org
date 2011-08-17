@@ -8,7 +8,11 @@ include Nanoc3::Helpers::HTMLEscape
 require 'time'
 require 'rubygems'
 require 'httparty'
+require 'yaml'
+require 'pp'
+require 'rexml/document'
 
+include REXML
 
 class Time
   def to_date
@@ -394,3 +398,56 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   crumbs
 end
 
+def recent_packages()
+  config = YAML.load_file("./config.yaml")
+  devel_version = config["devel_version"]
+  manifest_url = \
+    "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/bioc_#{devel_version}.manifest"
+  begin
+    raw_manifest = `curl -s -u readonly:readonly #{manifest_url}`
+    manifest = raw_manifest.split("\n").reject{|i| i =~ /#/ or i.empty?}.reverse
+    manifest = manifest.map{|i| i.gsub(/^Package: /, "")}
+    new_packages = manifest[0..5]
+    # todo  - make sure pkg home pages actually exist
+    #puts;pp new_packages;puts
+    return new_packages
+  rescue Exception => ex
+    return []
+  end
+end
+
+def get_svn_commits()
+  begin
+    cmd = "svn --xml --username readonly --password readonly log -v --limit 10 " +
+      "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
+    raw_xml = `#{cmd}`
+    doc = REXML::Document.new(raw_xml)
+    entries = []
+    doc.elements.each("log/logentry") {|i| entries.push i}
+    ret = []
+    for entry in entries
+      h = {}
+      entry.elements.each('author'){|i| h[:author] = i.text}
+      h[:revision] = entry.attributes["revision"]
+      entry.elements.each('date'){|i| h[:date] = i.text}
+      # todo convert date...
+      entry.elements.each('msg'){|i| h[:msg] = i.text}
+      paths = []
+      entry.elements.each('paths/path') do |item|
+        path = {}
+        path[:action] = item.attributes['action']
+        path[:path] = item.text
+        path[:copyfrom_path] = item.attributes['copyfrom-path']
+        path[:copyfrom_rev] = item.attributes['copyfrom-rev']
+        paths.push path
+      end
+      h[:paths] = paths
+      ret.push h
+    end
+    return ret
+  rescue Exception => ex
+    puts "caught exception trying to get svn log"
+    pp ex
+    return []
+  end
+end
