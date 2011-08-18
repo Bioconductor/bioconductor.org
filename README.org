@@ -15,7 +15,7 @@
 * Site Maintainer README for bioconductor.org 
 ** Unix-ish Developer Required Software
 
-*** Required software
+*** Required software 
 
 **** Ruby
 
