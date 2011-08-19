@@ -42,6 +42,3 @@ of Bioconductor.
 The [wiki how to](http://wiki.fhcrc.org/bioc/HowTo) page explains how
 to do many common things.
 
-<div>
-  <%= render('/_svnlog/', :svn_items => get_svn_commits()) %>
-</div>
