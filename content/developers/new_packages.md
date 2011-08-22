@@ -1,6 +1,6 @@
 ### New packages in [the development version](/packages/devel/bioc) of Bioconductor:
 
-<!--[RSS Feed]()-->
+[RSS Feed](/rss/new_packages.rss)
 
 <ul>
   <% for package in recent_packages() %>
