@@ -93,5 +93,6 @@ for desc in descs
   elem.add_element item
 end
 
-
-doc.write($stdout, 2)
+# for some reason, indentation breaks on merlot2
+#doc.write($stdout, 2)
+doc.write($stdout)
