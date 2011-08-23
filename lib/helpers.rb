@@ -398,6 +398,8 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   crumbs
 end
 
+
+# todo - change this to use RSS feed
 def recent_packages()
   config = YAML.load_file("./config.yaml")
   devel_version = config["devel_version"]
