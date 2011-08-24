@@ -1,6 +1,6 @@
-### New packages in [the development version](/packages/devel/bioc) of Bioconductor:
-
-[RSS Feed](/rss/new_packages.rss)
+This is a list of the last 100 packages added to Bioconductor and available in the
+[development version](/packages/devel/bioc) of Bioconductor. The list is also available
+as an [RSS Feed](/rss/new_packages.rss).
 
 <ul>
   <% for package in recent_packages() %>
