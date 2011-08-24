@@ -398,25 +398,32 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   crumbs
 end
 
-
-# todo - change this to use RSS feed
 def recent_packages()
-  config = YAML.load_file("./config.yaml")
-  devel_version = config["devel_version"]
-  manifest_url = \
-    "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/bioc_#{devel_version}.manifest"
   begin
-    raw_manifest = `curl -s -u readonly:readonly #{manifest_url}`
-    manifest = raw_manifest.split("\n").reject{|i| i =~ /#/ or i.empty?}.reverse
-    manifest = manifest.map{|i| i.gsub(/^Package: /, "")}
-    new_packages = manifest[0..5]
-    # todo  - make sure pkg home pages actually exist
-    #puts;pp new_packages;puts
-    return new_packages
+    xml = `curl -s http://bioconductor.org/rss/new_packages.rss`
+    doc = Document.new xml
+    items = []
+    doc.elements.each("rss/channel/item") {|i| items.push i}
+    ret = []
+    for item in items.reverse
+      h = {}
+      title = nil
+      item.elements.each("title") {|i|title = i.text}
+      description  = nil
+      item.elements.each("description") {|i|description = i.text}
+      pkg, pkgtitle = title.split(" - ")
+      desc = description.split("<br/").first
+      h[:package] = pkg
+      h[:title] = pkgtitle
+      h[:description] = desc
+      ret.push h
+    end
+    return ret
   rescue Exception => ex
     return []
   end
 end
+
 
 def get_svn_commits()
   begin

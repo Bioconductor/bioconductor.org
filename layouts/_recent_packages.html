@@ -2,11 +2,13 @@
   <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
   <p class="box_header">Latest Packages
   <span class="olive">&raquo;</span></p>
-    <ul>
       <% for package in recent_packages() %>
-        <li><a class="symlink" href="/packages/devel/bioc/html/<%=package%>.html"><%=package%></a></li>
+        <p><a class="symlink" href="/packages/devel/bioc/html/<%=package[:package]%>.html"><%=package[:package]%></a>
+	  <%= package[:title]%>
+	  </p>
+		<blockquote>
+			<%= package[:description]%>
+		</blockquote>
       <% end %>
-    </ul>
   <br/>
-  <p><a href="/packages/devel/bioc/">(Development Version)</a></p>
 </div>
