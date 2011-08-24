@@ -4,13 +4,11 @@
 	Subversion Logs
 </h2>
 
-<p><a href="/rss/svnlog.rss">RSS feed</a></p>
+<p>This is a list of recent commits to <a href="https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/">the development branch</a>
+of the Bioconductor Subversion repository. </p>
 
-<p><a href="/packages/devel/bioc/">(Development Version)</a></p>
+<p>This list is also available as an <a href="/rss/svnlog.rss">RSS feed</a>.</p>
 
-<p>Recent commits to <a href="https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/">
-	https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/</a>:
-</p>
 
 
   <% @svn_items.each_with_index do |p, i| %>
@@ -19,14 +17,7 @@
       Author: <%= p[:author] %><br/>
       Date: <%= p[:date] %><br/>
       Paths:<br/>
-		<% for path in p[:paths]%>
-			<%= path[:action]%>
-			<a href="https://hedgehog.fhcrc.org/bioconductor<%=path[:path]%>"><%= path[:path]%></a>
-			<% if path[:copyfrom_path] and path[:copyfrom_rev]%>
-			 from <%= path[:copyfrom_path]%>:<%=path[:copyfrom_rev]%>
-			<% end %>
-			<br/>
-		<% end %>
+	  <%= p[:table] %>
 		<pre style="background-color: <%= i % 2 == 0 ? "#e6e8e7" : "#ffffff" %>;"><%=p[:msg]%></pre>
     </div>
   <% end %>

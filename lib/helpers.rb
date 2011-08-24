@@ -12,6 +12,7 @@ require 'yaml'
 require 'pp'
 require 'rexml/document'
 
+
 include REXML
 
 class Time
@@ -424,39 +425,41 @@ def recent_packages()
   end
 end
 
-
 def get_svn_commits()
   begin
-    cmd = "svn --xml --username readonly --password readonly log -v --limit 10 " +
-      "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
-    raw_xml = `#{cmd}`
-    doc = REXML::Document.new(raw_xml)
-    entries = []
-    doc.elements.each("log/logentry") {|i| entries.push i}
+    xml = `curl -s http://bioconductor.org/rss/svnlog.rss`
+    doc = Document.new xml
+    items = []
+    doc.elements.each("rss/channel/item") {|i| items.push i}
     ret = []
-    for entry in entries
+    for item in items
+      next if item.nil?
+      next if item.elements.nil?
+      next unless item.elements.respond_to? :each
       h = {}
-      entry.elements.each('author'){|i| h[:author] = i.text}
-      h[:revision] = entry.attributes["revision"]
-      entry.elements.each('date'){|i| h[:date] = i.text}
-      # todo convert date...
-      entry.elements.each('msg'){|i| h[:msg] = i.text}
+      revision = title = date = author = description = nil
       paths = []
-      entry.elements.each('paths/path') do |item|
-        path = {}
-        path[:action] = item.attributes['action']
-        path[:path] = item.text
-        path[:copyfrom_path] = item.attributes['copyfrom-path']
-        path[:copyfrom_rev] = item.attributes['copyfrom-rev']
-        paths.push path
-      end
-      h[:paths] = paths
+      item.elements.each("title") {|i| title = i.text}
+      item.elements.each("pubDate") {|i| date = i.text}
+      item.elements.each("author") {|i| author = i.text}
+      item.elements.each("description") {|i| description = i.text}
+      
+      msg = description.gsub(/<div style="white-space:pre">/,"")
+      msg = msg.split("</div>").first
+      table = "<table>" + description.split("<table>").last
+      
+      
+      
+      h[:revision] = title.split(" ")[1]
+      h[:date] = date
+      h[:author] = author
+      h[:msg] = msg
+      h[:table] = table
       ret.push h
     end
     return ret
   rescue Exception => ex
-    puts "caught exception trying to get svn log"
-    pp ex
     return []
   end
 end
+
