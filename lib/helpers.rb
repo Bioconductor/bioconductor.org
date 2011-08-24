@@ -432,7 +432,7 @@ def get_svn_commits()
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
     ret = []
-    for item in items
+    for item in items 
       next if item.nil?
       next if item.elements.nil?
       next unless item.elements.respond_to? :each
