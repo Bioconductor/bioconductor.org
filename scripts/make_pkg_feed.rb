@@ -38,6 +38,7 @@ for pkg in pkgs
   first_line  = raw_result.split("\n").first
   if (first_line =~ /200/) # is there a pkg homepage?
     description = `curl -s -u readonly:readonly #{rpacks_url}#{pkg}/DESCRIPTION`
+    3.times {|i| description.gsub!(/\r\n/, "")}
     dcs = Dcf.parse(description).first
     descs.push dcs
     break if descs.size == pkg_limit
