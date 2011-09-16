@@ -286,9 +286,9 @@ class SearchIndexer
 
 end  
 
-#unless (ARGV.length == 3)
-#  puts "usage: #{$0} [directory-to-index] [path-to-cache-file] [path-to-output-script] [site-url]"
-#  exit 1
-#end
+unless (ARGV.length == 3)
+  puts "usage: #{$0} [directory-to-index] [path-to-cache-file] [path-to-output-script] [site-url]"
+  exit 1
+end
 
-#si = SearchIndexer.new(ARGV)
+si = SearchIndexer.new(ARGV)
