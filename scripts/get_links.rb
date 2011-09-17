@@ -41,7 +41,10 @@ def get_links(filename)
     next if link.nil? or link.empty?
     #next unless link.attributes.has_key? "href"
     href = link.attributes["href"]
+    href = link.attributes["HREF"] if href.nil?
     next if href.nil? or href.empty?
+    href.sub!(/^http:\/\/bioconductor\.org\//i, "")
+    href.sub!(/^http:\/\/www\.bioconductor\.org\//i, "")
     next if href =~ /:\/\//
     next if href =~ /^#/
     if href =~ /#/
@@ -50,11 +53,22 @@ def get_links(filename)
     if href =~ /\/$/
       href = href + "index.html"
     end
-    href = "/#{href}" unless href =~ /^\//
+    #href = "/#{href}" unless href =~ /^\//
+    unless href =~ /^\//
+      # take the filename,
+      # remove the root from it,
+      # remove the last segment
+      # add href
+      temp = filename.sub(@rootdir, "")
+      segs = temp.split "/"
+      segs.pop
+      segs.push href
+      href = segs.join("/")
+    end
 #    puts "href = #{href}, text = #{link.inner_text}"
     if (href =~ /\.html$/)
       get_links(href) unless @link_map.has_key? href
-    elsif (href.downcase() =~ /\.r$|\.pdf$/)
+    elsif (href =~ /\.r$|\.pdf$/i)
       @link_map[href] = 1
     end
   end
