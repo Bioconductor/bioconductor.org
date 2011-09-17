@@ -14,6 +14,7 @@ end
 
 
 @rootdir = ARGV.first
+@rootdir.gsub!(/\/$/, "")
 startfile = "index.html"
 
 @link_map = {}
