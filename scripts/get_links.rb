@@ -13,7 +13,7 @@ if (ARGV.size != 1)
 end
 
 
-@rootdir = ARGV.first
+@rootdir = ARGV.first.dup
 @rootdir.gsub!(/\/$/, "")
 startfile = "index.html"
 
