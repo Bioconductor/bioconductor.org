@@ -198,7 +198,17 @@ class SearchIndexer
     name.gsub(/^\./,"").gsub(/index\.html$/,"")
   end
   
+  
   def get_list_of_files_to_index(directory_to_index, site_url)
+    f = File.open("links.txt")
+    lines = f.readlines
+    for line in lines
+      line.chomp!
+    end
+    lines
+  end
+  
+  def get_list_of_files_to_index_old(directory_to_index, site_url)
     spider_tmpfile = Tempfile.new("spider_tmpfile")
     spider_output_file = spider_tmpfile.path()
     spider_tmpfile.close()
