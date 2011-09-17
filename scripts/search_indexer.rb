@@ -271,6 +271,7 @@ class SearchIndexer
     
     
     
+    
     non_orphans
     
     
