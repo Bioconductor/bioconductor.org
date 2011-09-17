@@ -5,7 +5,15 @@ require "rubygems"
 require "hpricot"
 require "pp"
 
-@rootdir = "/Users/dante/dev/bioconductor.org/output"
+
+
+if (ARGV.size != 1)
+  puts "supply the root directory"
+  exit 1
+end
+
+
+@rootdir = ARGV.first
 startfile = "index.html"
 
 @link_map = {}
