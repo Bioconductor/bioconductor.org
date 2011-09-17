@@ -67,3 +67,9 @@ get_links(startfile)
 for item in @link_map.keys.sort
   puts item
 end
+
+$stderr.puts "# files not found:"
+for item in @fnf.keys.sort
+  $stderr.puts item
+end
+
