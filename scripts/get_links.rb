@@ -72,7 +72,7 @@ def get_links(filename)
 #    puts "href = #{href}, text = #{link.inner_text}"
     if (href =~ /\.html$/)
       get_links(href) unless @link_map.has_key? href
-    elsif (href =~ /\.r$|\.pdf$/i)
+    elsif (href =~ /\.r$|\.pdf$|\.doc$/i)
       @link_map[href] = 1
     end
   end
@@ -118,7 +118,7 @@ cleanup(true)
 cleanup(false)
 
 for item in @link_map.keys.sort
-  puts item
+  puts ".#{item}"
 end
 
 $stderr.puts "# files not found:"
