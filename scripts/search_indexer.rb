@@ -116,7 +116,14 @@ class SearchIndexer
       
       cachecopy[file] = 1
       cleanfile = file.gsub(/^\./,"")
-      mtime = File.lstat(file).mtime().to_i()
+      bail = false
+      begin
+        bail = false
+        mtime = File.lstat(file).mtime().to_i()
+      rescue Exception => ex # TODO, make a note of files that don't exist
+        bail = true
+      end
+      next if bail
       if ( \
         (!cache_exists) \
         or \

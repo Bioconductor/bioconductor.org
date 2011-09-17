@@ -153,7 +153,6 @@ task :index_production do
   system("scp config.yaml webadmin@krait~")
   system("scp scripts/search_indexer.rb webadmin@krait:~")
   system("scp scripts/get_links.rb webadmin@krait:~")
-  system(%Q(ssh webadmin@krait "cd /home/webadmin && /home/webadmin/get_links.rb /extra/www/bioc > /home/webadmin/links.txt"))
   system(%Q(ssh webadmin@krait "cd /home/webadmin && /home/webadmin/do_index.rb"))
   #system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
   system(%Q(ssh webadmin@krait "/bin/sh /home/webadmin/index.sh"))
