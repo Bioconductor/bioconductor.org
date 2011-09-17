@@ -45,7 +45,6 @@ class SearchIndexer
         puts "THROWING OUT #{file}"
       end
     end
-    #file_list # todo fix
     ret
   end
 
@@ -100,7 +99,7 @@ class SearchIndexer
 
     goodfiles = allfiles.grep(regex)
     
-    goodfiles = throw_out_bad_files(goodfiles)
+    ###goodfiles = throw_out_bad_files(goodfiles)
     #exit if true
 
     url = "http://localhost:8983/solr/update"
