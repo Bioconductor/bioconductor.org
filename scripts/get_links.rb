@@ -46,6 +46,8 @@ def get_links(filename)
     href.sub!(/^http:\/\/bioconductor\.org\//i, "")
     href.sub!(/^http:\/\/www\.bioconductor\.org\//i, "")
     next if href =~ /:\/\//
+    next if href =~ /^mailto:/i
+    next if href =~ /\.\./ # TODO: deal with this later
     next if href =~ /^#/
     if href =~ /#/
       href = href.split("#").first
@@ -64,6 +66,7 @@ def get_links(filename)
       segs.pop
       segs.push href
       href = segs.join("/")
+      #puts "RELATIVE LINK = #{href}"
     end
 #    puts "href = #{href}, text = #{link.inner_text}"
     if (href =~ /\.html$/)
