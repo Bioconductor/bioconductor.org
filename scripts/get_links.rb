@@ -4,7 +4,7 @@
 require "rubygems"
 require "hpricot"
 require "pp"
-
+require "yaml"
 
 
 if (ARGV.size != 1)
@@ -61,6 +61,7 @@ def get_links(filename)
       # remove the root from it,
       # remove the last segment
       # add href
+      href = href.split("/").last
       temp = filename.sub(@rootdir, "")
       segs = temp.split "/"
       segs.pop
@@ -80,6 +81,41 @@ end
 
 
 get_links(startfile)
+
+
+# TODO - add something that knows that if devel == 2.9,
+# then /packages/devel/... and /packages/2.9/... are the same,
+# and remove duplicates. (same with release). Remove numbers instead
+# of words, so users are taken to latest devel (or release).
+
+def cleanup(release)
+  site_config = YAML.load_file("./config.yaml")
+  release_version = site_config["release_version"]
+  devel_version = site_config["devel_version"]
+
+  if (release)
+    num = release_version
+    str = "release"
+  else
+    num = devel_version
+    str = "devel"
+  end
+
+  keys_to_delete = []
+  @link_map.keys.each do |k|
+    if k =~ /packages\/#{num}/
+      newkey = k.sub "packages/#{num}", "packages/#{str}"
+      @link_map[newkey] = 1
+      keys_to_delete.push k
+    end
+  end
+  for key in keys_to_delete
+    @link_map.delete key
+  end
+end
+
+cleanup(true)
+cleanup(false)
 
 for item in @link_map.keys.sort
   puts item
