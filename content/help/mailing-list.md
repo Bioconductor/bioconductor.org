@@ -58,17 +58,11 @@ focuses on development, but welcomes input from users facing
 statistical, analytic or other challenges that require a package-level
 solution.
 
-<a name="bioc-sig-proteomics"></a>
-## bioc-sig-proteomics ##
-
-[Subscribe to or browse][13] and [search][14] this list.  This list is
-for discussion and development of Bioconductor packages for analysis
-of proteomics data.
 
 ## Archives, Searches, and Tips ##
 
  - Searchable archives provided by GMANE are available for the
-   [bioconductor][3], [bioc-sig-seq][12], and [bioc-sig-proteomics][14] mailing lists.
+   [bioconductor][3] and [bioc-sig-seq][12] mailing lists.
 
  - If you don't want to receive more than a daily message, you can
    subscribe and choose digests (in plain or MIME format). Use the web
@@ -83,5 +77,4 @@ of proteomics data.
 [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
 [9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
 [12]: http://dir.gmane.org/gmane.comp.lang.r.sequencing
-[13]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-proteomics
 [14]: https://stat.ethz.ch/pipermail/bioc-sig-proteomics/
