@@ -48,6 +48,7 @@ for file in files
   next if files_to_delete.empty?
 
   for item in files_to_delete
+    next if item == "package-detail.css"
     deletion_list.push "#{dir}/#{item}.html"
   end
   
