@@ -3,7 +3,8 @@
 
 ## Release objectives
 
-The next release of R will be on November 1st, 2011.
+The next release of Bioconductor will be BioC 2.9 and is scheduled for
+Tuesday, November 1st, 2011.
 
 The following schedule outlines major goals: 
 
