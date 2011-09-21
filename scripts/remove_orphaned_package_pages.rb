@@ -14,7 +14,7 @@ require 'fileutils'
 
 json_root = "#{webroot}/packages/json"
 
-file_list = `find #{json_root}|grep "packages\\.json"`
+file_list = `find #{json_root}|grep "packages\\.json$"`
 files = file_list.split("\n")
 
 deletion_list = []
