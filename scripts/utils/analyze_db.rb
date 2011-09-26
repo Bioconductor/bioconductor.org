@@ -48,6 +48,7 @@ lines = f.readlines
 manifest = []
 for line in lines
   next if line.chomp.empty?
+  next if line =~ /^#/
   manifest.push line.sub("Package: ", "").chomp
 end
 
