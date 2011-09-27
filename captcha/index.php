@@ -50,6 +50,8 @@ if (empty($_POST)) { ?>
             they will respond this way, so you should watch 
             <a href="https://stat.ethz.ch/pipermail/bioconductor/">the online list
                 archive</a> for responses.</p>
+        
+        <p><a href="http://bioconductor.org">[Return to Bioconductor web site]</a></p>
 
 
 <form name="mailform" method="POST" onsubmit="return validateForm()">
