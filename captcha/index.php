@@ -26,7 +26,7 @@ if (empty($_POST)) { ?>
         function validateForm()
         {
             var ret = valid("name") && valid("email") && valid("subject") 
-              valid("body") && valid("code");
+              valid("body") && valid("code") && valid("sessioninfo");
             if (ret == false) alert("Please fill out all form items.");
             return ret;
         }
@@ -43,6 +43,13 @@ if (empty($_POST)) { ?>
         <p>Please read our <a href="http://bioconductor.org/help/mailing-list/posting-guide/">
             posting guide</a> before posting. It's especially important
             to include the output of <i>sessionInfo()</i> when reporting a problem.</p>
+            
+        <p>We do not keep your email address. Your email address will be added to the
+            "To:" line in the email that is sent, which means that people who respond
+            may "Reply All" and you will get their responses. There is no guarantee 
+            they will respond this way, so you should watch 
+            <a href="https://stat.ethz.ch/pipermail/bioconductor/">the online list
+                archive</a> for responses.</p>
 
 
 <form name="mailform" method="POST" onsubmit="return validateForm()">
@@ -55,6 +62,9 @@ Subject:<br/>
 
 Email:<br/>
 <textarea cols="80" rows="10" name="body"></textarea><br/><br/>
+
+Output of <i>sessionInfo()</i>:<br/>
+<textarea cols="80" rows="5" name="sessioninfo"></textarea><br/><br/>
 
 
 <div style="width: 430px; float: left; height: 90px">
@@ -101,7 +111,10 @@ Code:<br/>
     $mailheaders = "From: " . $sender . "\n";
     $to = $listemail . ", " . $_POST['email'];
     $subject = $_POST['subject'];
-    $body = $_POST['body'] . "\n\n--\nSent via the guest posting facility at bioconductor.org.";
+    $body = $_POST['body'] .
+     "\n\n -- output of sessionInfo(): \n\n" .
+     $_POST['sessioninfo'] .
+     "\n\n--\nSent via the guest posting facility at bioconductor.org.";
     $result = mail($to, $subject, $body, $mailheaders);
     
   } else {
