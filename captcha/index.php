@@ -25,7 +25,7 @@ if (empty($_POST)) { ?>
         
         function validateForm()
         {
-            var ret = valid("name") && valid("email") && valid("subject") 
+            var ret = valid("name") && valid("email") && valid("subject") &&
               valid("body") && valid("code") && valid("sessioninfo");
             if (ret == false) alert("Please fill out all form items.");
             return ret;
