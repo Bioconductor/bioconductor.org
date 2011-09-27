@@ -4,7 +4,7 @@
 
 * Good questions attract good responses.
 
-* Formulating good questions can help to solve the problem itself.
+* Formulating a good question can help point to the answer.
 
 * Good questions help avoid embarrassment.
 
