@@ -113,7 +113,7 @@ Code:<br/>
     } else {
         echo "<center>Thank you. Your email will be posted.</center>\n";
         echo "<center><a href='http://bioconductor.org'>Return to Bioconductor Site</a></center>\n";
-        $listemail =  "bioconductor@r-project.org";
+        $listemail =  "dtenenba@fhcrc.org"; //"bioconductor@r-project.org";
         $guestemail = "guest@bioconductor.org";
         $sender = $_POST['name'] . " [guest] <" . $guestemail . ">";
         $mailheaders = "From: " . $sender . "\n";
