@@ -21,7 +21,11 @@ Bioconductor mail lists.
 <a name="bioconductor"></a>
 ## bioconductor ##
 
-[Subscribe to or browse][4] this list. This mailing list is for
+[Subscribe to or browse][4] this list. 
+
+[Post to list without subscribing](https://secure.bioconductor.org/mailform/).
+
+This mailing list is for
 announcements about the development of Bioconductor and the
 availability of new code, questions and answers about problems and
 solutions using Bioconductor, enhancements and patches to the source
