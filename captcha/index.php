@@ -106,9 +106,8 @@ Code:<br/>
     //echo "<center>Thanks, you entered the correct code.<br/>Click <a href=\"{$_SERVER['PHP_SELF']}\">here</a> to go back.</center>";
     echo "<center>Thank you. Your email will be posted.</center>\n";
     echo "<center><a href='http://bioconductor.org'>Return to Bioconductor Site</a></center>\n";
-    $listemail = "dtenenba@fhcrc.org"; // change to bioconductor@r-project.org
-    $guestemail = "guest@bioconductor.org"; // change to guest@bioconductor.org
-    #$from = "Bioconductor Guest <guest@bioconductor.org>";
+    $listemail = "bioconductor@r-project.org";
+    $guestemail = "guest@bioconductor.org";
     $sender = $_POST['name'] . " [guest] <" . $guestemail . ">";
     $mailheaders = "From: " . $sender . "\n";
     $to = $listemail . ", " . $_POST['email'];
