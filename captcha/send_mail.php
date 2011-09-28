@@ -14,8 +14,9 @@ if (empty($_POST)) {
               $_POST['body'] == "" || 
               $_POST['code'] == "" || 
               $_POST['sessioninfo'] == "") {
-          echo "<center>Please fill in all form items.  <a href=\"javascript:history.go(-1)\">Go back</a> to try again.</center>";
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items")
       } else {
+          
           echo "<center>Thank you. Your email will be posted.</center>\n";
           echo "<center><a href='http://bioconductor.org'>Return to Bioconductor Site</a></center>\n";
           $listemail =  "dtenenba@fhcrc.org"; //"bioconductor@r-project.org";
@@ -29,9 +30,10 @@ if (empty($_POST)) {
            $_POST['sessioninfo'] .
            "\n\n--\nSent via the guest posting facility at bioconductor.org.";
           $result = mail($to, $subject, $body, $mailheaders);
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/ok")
       }
     } else {
-      echo "<center>Sorry, the code you entered was invalid.  <a href=\"javascript:history.go(-1)\">Go back</a> to try again.</center>";
+        header("Location: http://bioconductor.org/help/mailing-list/mailform/badcaptcha")
     }
 }
 ?>
