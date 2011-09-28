@@ -23,8 +23,6 @@ Bioconductor mail lists.
 
 [Subscribe to or browse][4] this list. 
 
-[Post to list without subscribing](https://secure.bioconductor.org/mailform/).
-
 This mailing list is for
 announcements about the development of Bioconductor and the
 availability of new code, questions and answers about problems and
