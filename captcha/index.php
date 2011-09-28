@@ -103,8 +103,12 @@ Code:<br/>
   $valid = $img->check($_POST['code']);
 
   if($valid == true) {
-    //echo "<center>Thanks, you entered the correct code.<br/>Click <a href=\"{$_SERVER['PHP_SELF']}\">here</a> to go back.</center>";
-    if ($_POST['subject'] == "") {
+    if ($_POST['subject'] == "" ||
+            $_POST['name'] == "" || 
+            $_POST['email'] == "" ||
+            $_POST['body'] == "" || 
+            $_POST['code'] == "" || 
+            $_POST['sessioninfo'] == "") {
         echo "<center>Please fill in all form items.  <a href=\"javascript:history.go(-1)\">Go back</a> to try again.</center>";
     } else {
         echo "<center>Thank you. Your email will be posted.</center>\n";
