@@ -14,7 +14,7 @@ if (empty($_POST)) {
               $_POST['body'] == "" || 
               $_POST['code'] == "" || 
               $_POST['sessioninfo'] == "") {
-          header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items")
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items");
       } else {
           
           echo "<center>Thank you. Your email will be posted.</center>\n";
@@ -30,10 +30,10 @@ if (empty($_POST)) {
            $_POST['sessioninfo'] .
            "\n\n--\nSent via the guest posting facility at bioconductor.org.";
           $result = mail($to, $subject, $body, $mailheaders);
-          header("Location: http://bioconductor.org/help/mailing-list/mailform/ok")
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/ok");
       }
     } else {
-        header("Location: http://bioconductor.org/help/mailing-list/mailform/badcaptcha")
+        header("Location: http://bioconductor.org/help/mailing-list/mailform/badcaptcha");
     }
 }
 ?>
