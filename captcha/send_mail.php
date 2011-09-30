@@ -16,7 +16,7 @@ if (empty($_POST)) {
               $_POST['sessioninfo'] == "") {
           header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items");
       } else {
-          $listemail =  "dtenenba@fhcrc.org"; //"bioconductor@r-project.org";
+          $listemail =  "bioconductor@r-project.org";
           $guestemail = "guest@bioconductor.org";
           $sender = $_POST['name'] . " [guest] <" . $guestemail . ">";
           $mailheaders = "From: " . $sender . "\n";
