@@ -52,22 +52,12 @@ positions in the development of Bioconductor (members of Biocore and
 developers of contributed packages) as well as others who have an
 interest in keeping up to date with these matters.
 
-<a name="bioc-sig-sequencing"></a>
-## bioc-sig-sequencing ##
-
-[Subscribe to or browse][9] and [search][12] this list.  This list is
-for discussion and development of Bioconductor packages for analysis
-of ultra-high throughput sequencing data. Ultra-high throughput data
-comes from Solexa, 454, and other similar technologies. The SIG
-focuses on development, but welcomes input from users facing
-statistical, analytic or other challenges that require a package-level
-solution.
 
 
 ## Archives, Searches, and Tips ##
 
- - Searchable archives provided by GMANE are available for the
-   [bioconductor][3] and [bioc-sig-seq][12] mailing lists.
+ - Searchable archives provided by GMANE is available for the
+   [bioconductor][3] mailing list.
 
  - If you don't want to receive more than a daily message, you can
    subscribe and choose digests (in plain or MIME format). Use the web
@@ -80,6 +70,3 @@ solution.
 [6]: mailto:bioconductor@r-project.org
 [7]: mailto:bioconductor-request@r-project.org
 [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
-[9]: https://stat.ethz.ch/mailman/listinfo/bioc-sig-sequencing
-[12]: http://dir.gmane.org/gmane.comp.lang.r.sequencing
-[14]: https://stat.ethz.ch/pipermail/bioc-sig-proteomics/
