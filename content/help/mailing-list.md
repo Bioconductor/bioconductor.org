@@ -51,6 +51,11 @@ those who maintain active positions in the development of Bioconductor
 (members of Biocore and developers of contributed packages) as well as
 others who have an interest in keeping up to date with these matters.
 
+#### Note ####
+The defunct list "bioc-sig-sequencing" has searchable
+[archives](https://mailman.stat.ethz.ch/pipermail/bioc-sig-sequencing/)
+and is also searched when you use the search box above.
+
 ## Tips ##
 
  - Read the [posting guide][5].
