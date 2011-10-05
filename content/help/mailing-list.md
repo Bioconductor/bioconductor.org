@@ -3,10 +3,14 @@
 
 # ![](/images/icons/help.gif)Mailing Lists #
 
-Please read the [posting guide][5] before sending mail to the
-Bioconductor mail lists.
+- Read the [posting guide][5] before sending mail.
 
-### Search Mailing Lists
+- [Post](mailform) to the Bioconductor list without subscribing.
+
+- Browse or subscribe to the [Bioconductor][4] or [Bioc-devel][8] list.
+
+- Search the mailing lists
+
 <div id="cse" style="width: 100%;">Loading</div>
 <script type="text/javascript">
   google.load('search', '1', {language : 'en'});
@@ -17,21 +21,17 @@ Bioconductor mail lists.
   }, true);
 </script>
 
+## Lists ##
 
 <a name="bioconductor"></a>
-## bioconductor ##
+### bioconductor ###
 
-### Post to Bioconductor list
-[Post to Bioconductor list](mailform) without needing to subscribe.
-
-[Subscribe to or browse][4] this list. 
-
-This mailing list is for
-announcements about the development of Bioconductor and the
-availability of new code, questions and answers about problems and
-solutions using Bioconductor, enhancements and patches to the source
-code and documentation of Bioconductor, as well as general discussions
-on topics of interest to the Bioconductor community.
+This mailing list is for announcements about the development of
+Bioconductor and the availability of new code, questions and answers
+about problems and solutions using Bioconductor, enhancements and
+patches to the source code and documentation of Bioconductor, as well
+as general discussions on topics of interest to the Bioconductor
+community.
 
 Send mail to everyone subscribed to the bioconductor mail list by
 reading the [posting guide][5] and then sending an email to
@@ -43,18 +43,17 @@ unsubscribe you currently need the mailing list password which is sent
 when subscribing and in a monthly reminder.
 
 <a name="bioc-devel"></a>
-## bioc-devel ##
+### bioc-devel ###
 
-[Subscribe to or browse][8] this list.  This list is for discussions
-about the active and future development of Bioconductor, and
-pre-testing of new versions. It is meant for those who maintain active
-positions in the development of Bioconductor (members of Biocore and
-developers of contributed packages) as well as others who have an
-interest in keeping up to date with these matters.
+This list is for discussions about the active and future development
+of Bioconductor, and pre-testing of new versions. It is meant for
+those who maintain active positions in the development of Bioconductor
+(members of Biocore and developers of contributed packages) as well as
+others who have an interest in keeping up to date with these matters.
 
+## Tips ##
 
-
-## Archives, Searches, and Tips ##
+ - Read the [posting guide][5].
 
  - Searchable archives provided by GMANE is available for the
    [bioconductor][3] mailing list.
@@ -62,7 +61,6 @@ interest in keeping up to date with these matters.
  - If you don't want to receive more than a daily message, you can
    subscribe and choose digests (in plain or MIME format). Use the web
    interface for the lists, given above.
-
 
 [3]: http://dir.gmane.org/gmane.science.biology.informatics.conductor
 [4]: https://stat.ethz.ch/mailman/listinfo/bioconductor
