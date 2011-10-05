@@ -61,16 +61,20 @@ Writing R Extensions manual, available from within R
 (`RShowDoc("R-exts")`) or on the [R web
 site](http://cran.fhcrc.org/manuals.html).
 
-Bioconductor packages must pass `R CMD build` (or `R CMD INSTALL --build`)
+Bioconductor packages must pass `R CMD build` (or 
+<code>R CMD INSTALL &#8209;&#8209;build</code>)
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
 Authors should also try to address all notes that arise during build or check.
 
 Do not use filenames that differ only in case, as not all file systems are
 case sensitive.
 
-The source package resulting from running `R CMD build` should occupy less than
-2MB on disk. The package should require less than 5 minutes to run R CMD check.
-This includes the time required to build the Sweave vignette.
+The source package resulting from running `R CMD build` should occupy 
+less than 2MB on disk. The package should require less than 5 minutes to run
+<code>R CMD check &#8209;no&#8209;rebuild&#8209;vignettes</code>. 
+Using the <code>&#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>
+option ensures that the Sweave vignette is built only once.
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
