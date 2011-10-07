@@ -33,8 +33,9 @@ patches to the source code and documentation of Bioconductor, as well
 as general discussions on topics of interest to the Bioconductor
 community.
 
-Send mail to everyone subscribed to the bioconductor mail list by
-reading the [posting guide][5] and then sending an email to
+You may browse or subscribe to the [Bioconductor][4] list.  Send mail
+to everyone subscribed to the bioconductor mail list by reading the
+[posting guide][5] and then sending an email to
 [bioconductor@r-project.org][6] Obtain Information about the list by
 sending an email with 'info' as its contents to
 [bioconductor-request@r-project.org][7] . You can subscribe and
@@ -51,10 +52,20 @@ those who maintain active positions in the development of Bioconductor
 (members of Biocore and developers of contributed packages) as well as
 others who have an interest in keeping up to date with these matters.
 
+You may browse or subscribe to the [Bioc-devel][8] list.  Email
+everyone subscribed to the bioc-devel list by sending an email to
+[bioc-devel@r-project.org][9] Obtain Information about the list by
+sending an email with 'info' as its contents to
+[bioc-devel-request@r-project.org][10] . You can subscribe and
+unsubscribe by E-mail (instead of the web interface), however to
+unsubscribe you currently need the mailing list password which is sent
+when subscribing and in a monthly reminder.
+
 #### Note ####
+
 The defunct list "bioc-sig-sequencing" has searchable
-[archives](https://mailman.stat.ethz.ch/pipermail/bioc-sig-sequencing/)
-and is also searched when you use the search box above.
+[archives](https://mailman.stat.ethz.ch/pipermail/bioc-sig-sequencing/).
+The search box above includes the archive.
 
 ## Tips ##
 
@@ -73,3 +84,5 @@ and is also searched when you use the search box above.
 [6]: mailto:bioconductor@r-project.org
 [7]: mailto:bioconductor-request@r-project.org
 [8]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
+[9]: mailto:bioc-devel@r-project.org
+[10]: mailto:bioc-devel-request@r-project.org
