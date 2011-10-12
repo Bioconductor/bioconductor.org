@@ -26,10 +26,10 @@ if (empty($_POST)) {
           $mailheaders = "From: " . $sender . "\n";
           $to = $listemail . ", " . $_POST['email'];
           $subject = $_POST['subject'];
-          $body = $_POST['body'] .
+          $body = stripslashes($_POST['body'] .
            "\n\n -- output of sessionInfo(): \n\n" .
            $_POST['sessioninfo'] .
-           "\n\n--\nSent via the guest posting facility at bioconductor.org.";
+           "\n\n--\nSent via the guest posting facility at bioconductor.org.");
           $result = mail($to, $subject, $body, $mailheaders);
           header("Location: http://bioconductor.org/help/mailing-list/mailform/ok");
       }
