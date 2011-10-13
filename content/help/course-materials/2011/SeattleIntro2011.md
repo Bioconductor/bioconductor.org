@@ -1,6 +1,6 @@
 ##### Installing the course package on your computer
 
-We will use R version 2.14. To install this version of R, visit (<a
+We will use R version 2.14 alpha. To install this version of R, visit (<a
 href="http://cran.fhcrc.org/bin/windows/base/rtest.html">Windows</a>, <a
 href="http://r.research.att.com/">Mac OS</a>, install from <a
 href="http://cran.fhcrc.org/src/base-prerelease/">source</a> 
