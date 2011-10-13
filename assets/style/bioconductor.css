@@ -622,3 +622,27 @@ td.docFixedWidth
     width: 56px;
 }
 
+/* tooltip styling */
+.tooltip {
+	display:none;
+	background-color: white;
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	height:200px;
+	padding:40px 30px 10px 30px;
+	width:320px;
+	font-size:11px;
+}
+
+/* a .label element inside tooltip */
+.tooltip .label {
+	color:yellow;
+	width:35px;
+}
+
+.tooltip a {
+	color:#ad4;
+	font-size:11px;
+	font-weight:bold;
+}

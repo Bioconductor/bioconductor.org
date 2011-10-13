@@ -177,6 +177,5 @@ jQuery(function() {
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));
     });
-
-    
+    $("#whatisthis").tooltip({ effect: 'slide'});
 });
