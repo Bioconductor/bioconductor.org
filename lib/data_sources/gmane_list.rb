@@ -74,7 +74,12 @@ class GmaneList < Nanoc3::DataSource
       puts "GMANE error: HTTP #{data.code}"
       return nil
     end
-    entries = data["rdf:RDF"]["item"].map do |item|
+    if (data["rdf:RDF"].nil?)
+      parent = "RDF"
+    else
+      parent = "rdf:RDF"
+    end
+    entries = data[parent]["item"].map do |item|
       attributes = {
         :title => item["title"],
         :date => fix_date(item),
