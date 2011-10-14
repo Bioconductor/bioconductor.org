@@ -40,7 +40,7 @@ def get_cran_packages()
   ## Is there a non-web-scraping way to get a list of CRAN packages?
   cran_packages = []
   data = begin
-           HTTParty.get("http://cran.fhcrc.org/web/packages/",
+           HTTParty.get("http://cran.fhcrc.org/web/packages/available_packages_by_name.html",
                         :timeout => 6)
          rescue Timeout::Error
            puts "Timeout grabbing list of CRAN packages..."
