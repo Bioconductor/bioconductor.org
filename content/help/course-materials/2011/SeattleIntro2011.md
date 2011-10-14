@@ -19,7 +19,7 @@ command into your R session:
     sudo apt-get install -y make libc6-dev gfortran gfortran-4.3 build-essential \
       libreadline5-dev libx11-dev libxt-dev libcurl4-openssl-dev libxml2-dev \
       texlive-full tcl8.5-dev tk8.5-dev libxss-dev libpng12-dev libjpeg62-dev \
-      libcairo2-dev gcj gcj-4.2
+      libcairo2-dev gcj
     curl -O http://cran.fhcrc.org/src/base-prerelease/R-latest.tar.gz
     tar zxf R-latest.tar.gz
     cd R-alpha
