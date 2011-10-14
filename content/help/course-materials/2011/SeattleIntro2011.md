@@ -1,3 +1,19 @@
+##### Provisional agenda
+
+<table>
+  <tr><td colspan="2">Monday</td><tr>
+  <tr><td>9-11</td><td>Introduction to <em>R</em> and
+      <em>Bioconductor</em></td></tr>
+  <tr><td>11-12, 1-2</td><td>Working with sequences, ranges and
+      annotations</td></tr>
+  <tr><td>2-4</td><td>Exploring sequences</td></tr>
+  <tr><td colspan="2">Tuesday</td><tr>
+  <tr><td>9-11:15</td><td>RNA-seq differential
+      representation</td></tr>
+  <tr><td>11:15-12, 1-2:30</td><td>Approaches to ChIP-seq</td></tr>
+  <tr><td>2:30-4</td><td>Gene-centric annotation</td></tr>
+</table>
+
 ##### Installing the course package on your computer
 
 We will use R version 2.14 alpha. To install this version of R, visit (<a
