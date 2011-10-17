@@ -60,7 +60,7 @@ from the ROOT directory.
 Install the gems used by the website as follows:
 
   :  sudo gem install nanoc rdiscount rack mime-types haml json \
-  :                   rack-cache httparty rake
+  :                   rack-cache httparty rake sass kramdown
 
 ** Windows Developer Required Software
 
