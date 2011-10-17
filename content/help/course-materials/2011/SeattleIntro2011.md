@@ -14,6 +14,9 @@
   <tr><td>2:30-4</td><td>Gene-centric annotation</td></tr>
 </table>
 
+
+## [Course Vignette (PDF)](Bioconductor-tutorial.pdf)
+
 ##### Installing the course package on your computer
 
 We will use R version 2.14 alpha. To install this version of R, visit (<a
