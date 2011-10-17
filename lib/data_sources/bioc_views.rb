@@ -209,7 +209,7 @@ class BiocViews < Nanoc3::DataSource
           for sym in link_list
             new_sym = "#{sym.to_s}_repo".to_sym
             item[new_sym] = []
-            for x in item[sym]
+            for x in to_array(item[sym])
               item[new_sym].push(is_bioc_package?(x, version))
             end
           end

@@ -2,9 +2,9 @@ require 'rubygems'
 require 'nanoc3/tasks'
 require 'yaml'
 require 'fileutils'
-require 'lib/data_sources/gmane_list.rb'
-require 'scripts/search_indexer.rb'
-require 'scripts/parse_bioc_views.rb'
+require './lib/data_sources/gmane_list.rb'
+require './scripts/search_indexer.rb'
+require './scripts/parse_bioc_views.rb'
 require 'open3'
 
 include Open3

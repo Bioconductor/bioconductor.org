@@ -22,6 +22,7 @@ class GoogleAnalyticsFilter < Nanoc3::Filter
       num = Integer(segs.last)
       return link
     rescue ArgumentError => ex
+    rescue TypeError => te # ruby 1.9.2
     end
       
     if segs.length > 1 and segs.last.downcase != "html"

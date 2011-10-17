@@ -155,7 +155,7 @@ def cjoin(item, sep)
   end
 end
 
-def to_a(item)
+def to_array(item) # todo - determine if used
   return item if item.respond_to? :join
   return [item]
 end
@@ -181,7 +181,7 @@ def linkify(sym, package)
   repos = package[key]
   output = []
   
-  items.each_with_index do |item, index|
+  to_array(items).each_with_index do |item, index|
     repo = repos[index]
 
 
@@ -248,7 +248,7 @@ end
 def bioc_views_links(package)
   links = []
   
-  bioc_views = to_a(package[:biocViews])
+  bioc_views = to_array(package[:biocViews])
   bioc_views.each do |bioc_view|
     links.push %Q(<a href="/packages/#{package[:bioc_version_num]}/BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end

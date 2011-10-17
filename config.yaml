@@ -18,6 +18,13 @@ versions:
 - "2.7"
 - "2.8"
 - "2.9"
+## CHANGE THIS as various parts of the new devel version become available.
+## set to "[]" if none are available.
+devel_repos:
+- "bioc"
+- "data/annotation"
+- "data/experiment"
+
 
 data_sources: 
 - items_root: /
