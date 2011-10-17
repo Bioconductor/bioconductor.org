@@ -16,6 +16,7 @@
 
 
 ## [Course Vignette (PDF)](Bioconductor-tutorial.pdf)
+## [Annotation Slides (PDF)](AnnotationSlides.pdf)
 
 ##### Installing the course package on your computer
 
