@@ -29,7 +29,7 @@ install these packages, start R and copy and paste the following
 command into your R session:
 
 	source("http://bioconductor.org/scratch-repos/pkgInstall.R")
-	pkgInstall("SeattleIntro2011")
+	pkgInstall("SeattleIntro2011", type="source")
 
 
 ###### Installing R from Source on Ubuntu Linux
