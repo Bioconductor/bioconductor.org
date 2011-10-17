@@ -38,7 +38,7 @@ command into your R session:
       libcairo2-dev gcj
     curl -O http://cran.fhcrc.org/src/base-prerelease/R-latest.tar.gz
     tar zxf R-latest.tar.gz
-    cd R-alpha # or r-beta if this does not work
+    cd R-alpha # or R-beta if this does not work
     ./configure
     make
     sudo make install
