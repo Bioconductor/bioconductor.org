@@ -158,6 +158,10 @@ as follows
 * **Enhances**: is for packages such as Rmpi or multicore that enhance
     the performance of the current package, but are not strictly
     needed for its functionality.
+* **SystemRequirements**: is for listing any external software which 
+   is required, but not automatically installed by the normal package
+   installation process. If the installation process is non-trivial,
+   a top-level README file should be included to document the process.
 
 Packages should specify the R version on which they depend. This is usually the
 current development version.
