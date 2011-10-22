@@ -64,6 +64,9 @@ Here is a table showing examples of the version bumping scheme:
 <tr>
   <td>1.4.0</td><td>1.5.0</td><td>1.99.3</td><td>2.0.0</td><td>2.1.0</td>
 </tr>
+<tr>
+  <td>1.8.0</td><td>1.9.0</td><td>1.9.1</td><td>1.10.0</td><td>1.11.0</td>
+</tr>
 </tbody>
 </table>
 
