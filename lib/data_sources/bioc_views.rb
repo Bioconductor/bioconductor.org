@@ -108,7 +108,7 @@ class BiocViews < Nanoc3::DataSource
   
   
   def get_index_page(packages, repo, version)
-    item = Nanoc3::Item.new(nil, {}, "all-#{repo}-#{version}")
+    item = Nanoc3::Item.new("", {}, "all-#{repo}-#{version}")
     item[:rebase] = true
     rep = Nanoc3::ItemRep.new(item, :package_index_page)
     
@@ -187,7 +187,7 @@ class BiocViews < Nanoc3::DataSource
 
         for package in packages.keys
           repo = k
-          item = Nanoc3::Item.new(nil, packages[package], package)
+          item = Nanoc3::Item.new("", packages[package], package)
           
           item[:rebase] = true
           item[:subnav] = []

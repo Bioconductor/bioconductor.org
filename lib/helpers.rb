@@ -391,9 +391,9 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
   crumbs = []
   crumbs.push home_crumb
-  ver_crumb = Nanoc3::Item.new(nil, {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
+  ver_crumb = Nanoc3::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
   crumbs.push ver_crumb
-  repo_crumb = Nanoc3::Item.new(nil, {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
+  repo_crumb = Nanoc3::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
   crumbs.push repo_crumb unless index_page
   crumbs.push last_crumb
   crumbs
@@ -438,7 +438,6 @@ def get_svn_commits()
       next unless item.elements.respond_to? :each
       h = {}
       revision = title = date = author = description = nil
-      paths = []
       item.elements.each("title") {|i| title = i.text}
       item.elements.each("pubDate") {|i| date = i.text}
       item.elements.each("author") {|i| author = i.text}
