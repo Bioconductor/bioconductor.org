@@ -396,7 +396,7 @@ to make it more widely accessible.
 Now you should Terminate the Stopped instance of the Bioconductor AMI.
 
 <a name="movingdata"></a>
-## Moving data to and from your Biocondctor AMI instance
+## Moving data to and from your Bioconductor AMI instance
 
 The *scp* command is the most efficient way to move data to and from your EC2 instances.
 
