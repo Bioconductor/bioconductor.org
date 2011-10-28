@@ -26,7 +26,7 @@ Given a package with version number x.y.z,
 * In devel, y should be an odd number.
 * In release, y should be an even number.  At the beginning of the
   release, z should be zero.
-* As part of the release packages that will become the new devel line
+* As part of the release, packages that will become the new devel line
   will have their y incremented yet again to get back to an odd
   number.
 * If a package has not changed in devel, the version number will not
