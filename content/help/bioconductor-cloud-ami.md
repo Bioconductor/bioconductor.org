@@ -14,7 +14,8 @@ See below for more specific scenarios.
 
 ## Preloaded AMI
 
-The AMI comes pre-loaded with R 2.13, and the following Bioconductor (and CRAN) packages (and all their dependencies):
+The AMI comes pre-loaded with the latest release version of R, 
+and the following Bioconductor (and CRAN) packages (and all their dependencies):
 
 <ul class="inline_list">
 	<li>BayesPeak</li>
@@ -95,10 +96,33 @@ Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Lau
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
-	ami-4b2fee22
+<table border="1" cellpadding="5" cellspacing="0">
+  <thead valign="bottom">
+    <tr>
+        <th>Bioconductor Version</th>
+        <th>R Version</th>
+        <th>AMI ID</th>
+    </tr>
+   </thead>
+  <tbody valign="top">
+      <!--
+      <tr>
+          <td>2.9</td>
+          <td>2.14</td>
+          <td>ami-xxxxxxxx</td>
+      </tr>
+      -->
+    <tr>
+        <td>2.8</td>
+        <td>2.13</td>
+        <td>ami-4b2fee22</td>
+    </tr>
+  </tbody>
+</table>
 
-*Please note that this AMI ID may change over time as we update the underlying AMI. Refer to this page for the most
-current AMI ID.*
+<br/>
+*Please note that AMI IDs may change over time as we update the underlying AMI. Refer to this page for the most
+current AMI IDs.*
 
 Click the Select button
 
