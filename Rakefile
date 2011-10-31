@@ -178,13 +178,16 @@ task :get_json do
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")
   versions = site_config["versions"]
+  devel_version = site_config["devel_version"]
+  devel_repos = site_config["devel_repos"]
   #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
+  # todo - make sure destination directories exist
   r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
 system(r_cmd)
   
   
-  repos = ["data/annotation", "data/experiment", "bioc"]
+#  repos = ["data/annotation", "data/experiment", "bioc"]
   
   
   #todo remove
@@ -192,7 +195,12 @@ system(r_cmd)
   #end remove
   
   for version in versions
-
+    if version == devel_version
+      repos = devel_repos
+    else
+      repos = ["data/annotation", "data/experiment", "bioc"]
+    end
+    
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     
     #todo remove

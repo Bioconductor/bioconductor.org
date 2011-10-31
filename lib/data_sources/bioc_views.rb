@@ -6,8 +6,18 @@ class BiocViews < Nanoc3::DataSource
   
   identifier :bioc_views
   
-  # todo - write an index page for each repo containing links to all packages
   
+
+  def get_repos(version, repos)
+    return repos unless version == @site_config["devel_version"]
+    h = {}
+    
+    for repo in @site_config["devel_repos"]
+      key = "#{repo}/"
+      h[key] = repos[key]
+    end
+    h
+  end
   
   
   # todo - find out if there is a way to skip items() altogether if things are not found in up()
@@ -16,12 +26,14 @@ class BiocViews < Nanoc3::DataSource
 
     @repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
     
+    
     @good_to_go = true
     
     @site_config = YAML.load_file("./config.yaml")
     
     
     for version in @site_config["versions"]
+      @repos = get_repos(version, @repos)
       @repos.each_pair do |k,v|
         
         
@@ -37,17 +49,21 @@ class BiocViews < Nanoc3::DataSource
     end
     
     
-    
-    
-    
     @all_packages = {}
+
+
+
     
     if @good_to_go
       for version in @site_config["versions"]
         hsh = {}
+        
+        @repos = get_repos(version, @repos)
+        
+        
         @repos.each_pair do |k,v|
           # todo remove this when all 2.9 repos are present
-          next if version == "2.9" and k != "bioc/"
+          # next if version == "2.9" and k != "bioc/"
           
           key = k.gsub(/\/$/, "")
           dir = "#{config[:json_dir]}/#{version}/#{k}"
@@ -162,6 +178,7 @@ class BiocViews < Nanoc3::DataSource
     link_list = [:Depends, :Imports, :Suggests, :dependsOnMe, :importsMe, :suggestsMe]
     
     for version in @site_config["versions"]
+      @repos = get_repos(version, @repos)
       @repos.each_pair do |k,v|
         dir = "#{config[:json_dir]}/#{version}/#{k}"
         

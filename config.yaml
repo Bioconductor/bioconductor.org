@@ -22,9 +22,8 @@ versions:
 ## set to "[]" if none are available.
 devel_repos:
 - "bioc"
-- "data/annotation"
 - "data/experiment"
-
+- "data/annotation"
 
 data_sources: 
 - items_root: /
