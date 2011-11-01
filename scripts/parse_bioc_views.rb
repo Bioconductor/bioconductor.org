@@ -23,9 +23,12 @@ class ParseBiocViews
       
       if (v['subViews'] != "")
         v['children'] = []
-        
-        for subview in v['subViews']
-          v['children'].push clean_hash[subview]
+
+        #puts v['subViews'] if v['subViews'] == "qPCR"
+        if (v['subViews'].respond_to? :each)
+          for subview in v['subViews']
+            v['children'].push clean_hash[subview]
+          end
         end
         v['children'].sort!{|a,b|a['data'].downcase<=>b['data'].downcase}
       end
