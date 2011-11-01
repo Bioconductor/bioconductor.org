@@ -2,7 +2,7 @@ Bioconductors:
 
 We are pleased to announce Bioconductor 2.9, consisting of 517
 software packages and more than 500 up-to-date annotation packages.
-There are 58 new software packages, and many updates and improvements
+There are 60 new software packages, and many updates and improvements
 to existing packages; 10 packages have been removed from this
 release. Bioconductor 2.9 is compatible with R 2.14.0, and is
 supported on Linux, 32- and 64-bit Windows, and Mac OS.  This release
@@ -30,7 +30,7 @@ this version of R.
 New Software Packages
 =====================
 
-There are 58 new packages in this release of Bioconductor.
+There are 60 new packages in this release of Bioconductor.
 
 - AGDEX: Agreement of Differential Expression Analysis
 
@@ -43,6 +43,8 @@ There are 58 new packages in this release of Bioconductor.
 
 - CNAnorm: A normalization method for Copy Number Aberration in
   cancer samples.
+
+- cn.mops: Mixture of Poisson for CNV detection in NGS data
 
 - Cormotif: Correlation Motif Fit
 
