@@ -1,6 +1,6 @@
 Bioconductors:
 
-We are pleased to announce Bioconductor 2.9, consisting of 516
+We are pleased to announce Bioconductor 2.9, consisting of 517
 software packages and more than 500 up-to-date annotation packages.
 There are 58 new software packages, and many updates and improvements
 to existing packages; 10 packages have been removed from this
