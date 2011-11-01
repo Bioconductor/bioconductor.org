@@ -182,8 +182,9 @@ task :get_json do
   devel_repos = site_config["devel_repos"]
   #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
+  devel_repos_str = '"' + devel_repos.join('","') + '"'
   # todo - make sure destination directories exist
-  r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}) outdir="#{json_dir}"' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
+  r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}); outdir="#{json_dir}"; devel_repos=c(#{devel_repos_str}); devel_version="#{devel_version}";' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
 system(r_cmd)
   
   

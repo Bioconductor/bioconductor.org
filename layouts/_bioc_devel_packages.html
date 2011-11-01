@@ -4,9 +4,16 @@
   <p>Bioconductor packages under development:</p>
   <ul>
     <li><a class="symlink" href="/packages/devel/BiocViews.html">BiocViews</a> package discovery</li>
-    <li><a class="symlink" href="/packages/devel/bioc/">Software</a></li>    
-    <li><a class="symlink" href="/packages/devel/data/annotation/">Metadata</a> (Annotation, CDF and Probe)</li>
-    <li><a class="symlink" href="/packages/devel/data/experiment/">Experiment Data</a></li>
+    <% devel_repos = config[:devel_repos] %>
+    <% if devel_repos.include? "bioc" %>
+        <li><a class="symlink" href="/packages/devel/bioc/">Software</a></li>    
+    <% end %>
+    <% if devel_repos.include? "data/annotation" %>
+        <li><a class="symlink" href="/packages/devel/data/annotation/">Metadata</a> (Annotation, CDF and Probe)</li>
+    <% end %>
+    <% if devel_repos.include? "data/experiment" %>
+        <li><a class="symlink" href="/packages/devel/data/experiment/">Experiment Data</a></li>
+    <% end %>
   </ul>
 
 <br/>

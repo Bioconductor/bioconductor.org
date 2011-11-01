@@ -2,7 +2,9 @@
 # todo  - add code that makes sure biocViews and rjson are installed
 
 # run me like this:
-# R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c("2.5","2.6","2.7") outdir="directory/to/write/json"' scripts/getBiocViewsJSON.R log.txt
+# R CMD BATCH -q --vanilla --no-save --no-restore \
+# '--args versions=c("2.5","2.6","2.7"); outdir="directory/to/write/json"; devel_repos=(c("bioc", "data/experiment", "data/anotation")); devel_version=2.7;' \
+# scripts/getBiocViewsJSON.R log.txt
 # where versions are all bioC versions for which we want to retrieve JSON.
 
 
@@ -12,12 +14,16 @@ if (length(args) == 0) {
     q("no")
 }
 
-for (i in 1:length(args)) {
-    eval(parse(text=args[[i]]))
+cmds = args[1:4] # modify if # of args changes
+
+for (i in 1:length(cmds)) {
+    eval(parse(text=cmds[i]))
 }
 
-if (!exists("versions") && !exists("outdir")) {
-    print("'outdir' and 'versions' arguments required")
+
+if (!exists("versions") && !exists("outdir") && !exists("devel_repos")
+  && !exists("devel_version")) {
+    print("'outdir', 'versions', 'devel_repos', and 'devel_version' arguments required")
     q("no")
 }
 
@@ -96,6 +102,9 @@ getItem <- function(y) {
 for (version in versions) {
     
     repos = c("bioc", "data/annotation", "data/experiment")
+    if (version == devel_version)
+        repos <- devel_repos
+        
     for (repo in repos) {
         if (repo == "bioc") defaultView = "Software"
         if (repo == "data/annotation") defaultView = "AnnotationData"
