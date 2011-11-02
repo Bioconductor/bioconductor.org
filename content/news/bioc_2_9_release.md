@@ -2857,7 +2857,7 @@ Packages removed from the release
 
 The following packages are no longer in the release: GeneSpring,
 GeneTraffic, makePlatformDesign, Rdbi, RdbiPgSQL, rflowcyt, Rredland,
-RTools4TB, Ruuid, simulatorAPMS.
+Ruuid, simulatorAPMS.
 
 [bioc]: http://bioconductor.org
 [install]: http://bioconductor.org/install/
