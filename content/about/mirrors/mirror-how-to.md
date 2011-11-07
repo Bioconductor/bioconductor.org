@@ -11,19 +11,19 @@ release version), please use the following commands:
 
 ### All Bioconductor <%= config[:release_version] %> repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %> /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %> /dest/bioc_<%= config[:release_version] %>
 
 ### Bioconductor <%= config[:release_version] %> Software repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest/bioc_<%= config[:release_version] %>/bioc
 
 ### Bioconductor <%= config[:release_version] %> Data repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest/bioc_<%= config[:release_version] %>/data
 
 ### Bioconductor <%= config[:release_version] %> Extra repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest/bioc_<%= config[:release_version] %>/extra
 
 
 ## BioC <%= config[:devel_version] %> repos ##
@@ -33,20 +33,20 @@ devel version), please use the following commands:
 
 ### All Bioconductor <%= config[:devel_version] %> repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest/bioc_<%= config[:devel_version] %>
 
 ### Bioconductor <%= config[:devel_version] %> Software repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest/bioc_<%= config[:devel_version] %>/bioc
 
 ### Bioconductor <%= config[:devel_version] %> Data repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest/bioc_<%= config[:devel_version] %>/data
 
 
 ### Bioconductor <%= config[:devel_version] %> Extra repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest
+    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest/bioc_<%= config[:devel_version] %>/extra
 
 
 ## Additional information ##
