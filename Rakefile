@@ -5,6 +5,7 @@ require 'fileutils'
 require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
+require './scripts/add_readmes.rb'
 require 'open3'
 
 include Open3
@@ -113,11 +114,11 @@ end
 desc "Clear search index (and local cache) on production. This will cause searches to fail until indexing is re-done!"
 task :clear_search_index_production do
   for command in @clear_search_index_commands
-    puts %Q(ssh webadmin@krait "#{command}")
-    system %Q(ssh webadmin@krait "#{command}")
+    puts %Q(ssh webadmin@bioconductor.org "#{command}")
+    system %Q(ssh webadmin@bioconductor.org "#{command}")
   end
-  puts "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
-  system "ssh webadmin@krait rm -f /home/webadmin/search_indexer_cache.yaml"
+  puts "ssh webadmin@bioconductor.org rm -f /home/webadmin/search_indexer_cache.yaml"
+  system "ssh webadmin@bioconductor.org rm -f /home/webadmin/search_indexer_cache.yaml"
 end
 
 desc "Re-index the site for the search engine"
@@ -151,19 +152,19 @@ end
 
 desc "Re-run search indexing on production"
 task :index_production do
-  system("scp config.yaml webadmin@krait~")
-  system("scp scripts/search_indexer.rb webadmin@krait:~")
-  system("scp scripts/get_links.rb webadmin@krait:~")
-  system(%Q(ssh webadmin@krait "cd /home/webadmin && /home/webadmin/do_index.rb"))
-  #system("ssh webadmin@krait chmod +x /home/webadmin/index.sh")
-  system(%Q(ssh webadmin@krait "/bin/sh /home/webadmin/index.sh"))
+  system("scp config.yaml webadmin@bioconductor.org~")
+  system("scp scripts/search_indexer.rb webadmin@bioconductor.org:~")
+  system("scp scripts/get_links.rb webadmin@bioconductor.org:~")
+  system(%Q(ssh webadmin@bioconductor.org "cd /home/webadmin && /home/webadmin/do_index.rb"))
+  #system("ssh webadmin@bioconductor.org chmod +x /home/webadmin/index.sh")
+  system(%Q(ssh webadmin@bioconductor.org "/bin/sh /home/webadmin/index.sh"))
 end
 
 desc "Re-run search indexing cran package home pages on production"
 task :index_cran_production do
-  system("scp scripts/cran_search_indexer.rb webadmin@krait:~")
-  system("ssh webadmin@krait /home/webadmin/do_index_cran.rb")
-  system("ssh webadmin@krait /home/webadmin/index_cran.sh")
+  system("scp scripts/cran_search_indexer.rb webadmin@bioconductor.org:~")
+  system("ssh webadmin@bioconductor.org /home/webadmin/do_index_cran.rb")
+  system("ssh webadmin@bioconductor.org /home/webadmin/index_cran.sh")
 end
 
 desc "Runs nanoc's dev server on localhost:3000"
@@ -192,7 +193,7 @@ system(r_cmd)
   
   
   #todo remove
-  system("scp scripts/get_vignette_titles.rb webadmin@krait:~")
+  system("scp scripts/get_vignette_titles.rb webadmin@bioconductor.org:~")
   #end remove
   
   for version in versions
@@ -202,12 +203,14 @@ system(r_cmd)
       repos = ["data/annotation", "data/experiment", "bioc"]
     end
     
+    add_readmes(json_dir, version, "bioc")
+    
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     
     #todo remove
     repos.each do |repo|
-      system %Q(ssh webadmin@krait "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
-      system("scp webadmin@krait:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
+      system %Q(ssh webadmin@bioconductor.org "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
+      system("scp webadmin@bioconductor.org:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
     end
     #end remove
     
