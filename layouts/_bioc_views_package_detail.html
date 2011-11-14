@@ -51,15 +51,32 @@
         <% end %>
     </table>
 
-    <p>
-        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
-    </p>
-<% if @package.has_key? :hasREADME and @package[:hasREADME] == true %>
-    <p>
-        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">README</a>
-    </p>
+    <br/>
+    <table>
+        <tr>
+            <td class="row_odd">
+                <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
+            </td>
+        </tr>
+        <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
+            <% next_row_class = "row_odd"%>
+            <tr class="row_even">
+                <td class="docFixedWidth">
+                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">README</a>
+                </td>
+            </tr>
+        <% else %>
+            <% next_row_class = "row_even"%>
+        <% end %>
+        <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
+            <tr class="<%= next_row_class %>">
+                <td class="docFixedWidth">
+                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>news/<%=@package[:Package]%>/NEWS">NEWS</a>
+                </td>
+            </tr>
+        <% end %>
+    </table>
 
-<% end %>
 
 
 

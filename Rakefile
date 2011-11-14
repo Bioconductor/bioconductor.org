@@ -5,7 +5,7 @@ require 'fileutils'
 require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
-require './scripts/add_readmes.rb'
+require './scripts/add_readmes_and_news.rb'
 require 'open3'
 
 include Open3
@@ -204,6 +204,7 @@ system(r_cmd)
     end
     
     add_readmes(json_dir, version, "bioc")
+    add_news(json_dir, version, "bioc")
     
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     
