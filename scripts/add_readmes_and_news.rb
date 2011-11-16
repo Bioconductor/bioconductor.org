@@ -18,6 +18,12 @@ def add_extra_files(json_dir, version, repo, type)
     file = "news.txt"
     jsonkey = 'hasNEWS'
     pattern = /NEWS/
+  elsif type == :install
+    what = "INSTALL"
+    dir = "install"
+    file = "install.txt"
+    jsonkey = 'hasINSTALL'
+    pattern = /INSTALL/
   end
   puts "getting #{what} for #{repo} version #{version}..."
   system %Q(ssh webadmin@bioconductor.org "find /extra/www/bioc/packages/#{version}/bioc/#{dir}" > #{working_dir}/#{file})
@@ -58,4 +64,8 @@ end
 
 def add_news(json_dir, version, repo)
   add_extra_files(json_dir, version, repo, :news)
+end
+
+def add_install(json_dir, version, repo)
+  add_extra_files(json_dir, version, repo, :install)
 end

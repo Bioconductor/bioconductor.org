@@ -205,6 +205,7 @@ system(r_cmd)
     
     add_readmes(json_dir, version, "bioc")
     add_news(json_dir, version, "bioc")
+    add_install(json_dir, version, "bioc")
     
     fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
     
