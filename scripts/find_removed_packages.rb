@@ -26,9 +26,15 @@ end
 lines = result.split("\n")
 manifest_pkgs = []
 
+
 for line in lines
   next unless line =~ /^Package: /
   manifest_pkgs.push line.chomp.strip().gsub(/^Package: /, "")
+end
+
+if manifest_pkgs.empty?
+  puts "nothing in manifest? Bailing..."
+  exit
 end
 
 find_output = `ssh biocadmin@#{host} find "~/PACKAGES/#{biocVer}/bioc"`
