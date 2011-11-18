@@ -51,7 +51,8 @@ for line in lines
     pkgName = fullPkg.split("_").first
     if (!manifest_pkgs.include? pkgName)
       puts "BAD PACKAGE! removing #{fullPkg}"
-      result = `ssh biocadmin@#{host} rm #{line}`
+      puts "to delete it, edit this script."
+      ##result = `ssh biocadmin@#{host} rm #{line}` # uncomment this line to activate deletion
     end
     
   end
