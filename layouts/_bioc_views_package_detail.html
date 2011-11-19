@@ -27,11 +27,13 @@
     <h3>Documentation</h3>
 
     <table>
+        <% rowindex = 0 %>
         <% doc_obj = doc_object(@package)%>
         <% if doc_obj.empty? %>
             <tr><td>No vignettes available</td></tr>
         <% else %>
             <% doc_obj.each_with_index do |item, i|%>
+                <% rowindex = i %>
                 <% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
                 <tr class="<%=style%>">
                     <td class="docFixedWidth">
@@ -49,48 +51,61 @@
 
             <% end %>
         <% end %>
+        
+
+            <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+            <tr class="<%= row_class %>">
+                <td class="docFixedWidth">
+                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
+                </td>
+                <td class="docFixedWidth">&nbsp;</td>
+                <td class="docFixedWidth">Reference Manual</td>
+                <% rowindex += 1 %>
+            </tr>
+
+
+            <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
+            <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+            <tr class="<%= row_class %>">
+                    <td class="docFixedWidth">
+                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">Text</a>
+                    </td>
+                    <td class="docFixedWidth">&nbsp;</td>
+                    <td class="docFixedWidth">README</td>
+            </tr>
+            <% rowindex += 1 %>
+            <% end %>
+
+            <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
+                <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+                <tr class="<%= row_class %>">
+                    <td class="docFixedWidth">
+                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>news/<%=@package[:Package]%>/NEWS">Text</a>
+                    </td>
+                    <td class="docFixedWidth">&nbsp;</td>
+                    <td class="docFixedWidth">NEWS</td>
+                    
+                </tr>
+                <% rowindex += 1 %>
+            <% end %>
+
+
+            <% if @package.has_key? :hasINSTALL and @package[:hasINSTALL] == true%>
+                <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+                <tr class="<%= row_class %>">
+                    <td class="docFixedWidth">
+                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>install/<%=@package[:Package]%>/INSTALL">Text</a>
+                    </td>
+                    <td class="docFixedWidth">&nbsp;</td>
+                    <td class="docFixedWidth">INSTALL</td>
+                    
+                </tr>
+                <% rowindex += 1 %>
+            <% end %>
+
+
+        
     </table>
-
-    <br/>
-    <% rowindex = 1 %>
-    <table>
-        <tr>
-            <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
-            <tr class="<%= row_class %>">
-                <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">Reference Manual</a>
-            </td>
-            <% rowindex += 1 %>
-        </tr>
-        <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
-        <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
-        <tr class="<%= row_class %>">
-                <td class="docFixedWidth">
-                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">README</a>
-                </td>
-            </tr>
-            <% rowindex += 1 %>
-        <% end %>
-        <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
-            <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
-            <tr class="<%= row_class %>">
-                <td class="docFixedWidth">
-                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>news/<%=@package[:Package]%>/NEWS">NEWS</a>
-                </td>
-            </tr>
-            <% rowindex += 1 %>
-        <% end %>
-        <% if @package.has_key? :hasINSTALL and @package[:hasINSTALL] == true%>
-            <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
-            <tr class="<%= row_class %>">
-                <td class="docFixedWidth">
-                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>install/<%=@package[:Package]%>/INSTALL">INSTALL</a>
-                </td>
-            </tr>
-        <% end %>
-
-    </table>
-
-
 
 
     <h3>Details</h3>
