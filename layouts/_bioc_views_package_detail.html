@@ -59,7 +59,7 @@
                     <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
                 </td>
                 <td class="docFixedWidth">&nbsp;</td>
-                <td class="docFixedWidth">Reference Manual</td>
+                <td>Reference Manual</td>
                 <% rowindex += 1 %>
             </tr>
 
@@ -71,10 +71,11 @@
                         <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
-                    <td class="docFixedWidth">README</td>
+                    <td>README</td>
             </tr>
             <% rowindex += 1 %>
             <% end %>
+
 
             <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
                 <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
@@ -83,8 +84,7 @@
                         <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>news/<%=@package[:Package]%>/NEWS">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
-                    <td class="docFixedWidth">NEWS</td>
-                    
+                    <td>NEWS</td>
                 </tr>
                 <% rowindex += 1 %>
             <% end %>
@@ -97,8 +97,7 @@
                         <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>install/<%=@package[:Package]%>/INSTALL">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
-                    <td class="docFixedWidth">INSTALL</td>
-                    
+                    <td>INSTALL</td>
                 </tr>
                 <% rowindex += 1 %>
             <% end %>
