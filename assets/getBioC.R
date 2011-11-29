@@ -6,11 +6,6 @@ sourceBiocinstallScript <- function()
     biocVers <-
         tryCatch(tools:::.BioC_version_associated_with_R_version,
                  error=function(...) numeric_version(0.0))
-    if (vers > "2.13" && biocVers > "2.8") {
-        message <- paste("You have an outdated biocLite() function.",
-        "Run 'rm(biocLite)' and try again.")
-        stop(message)
-    }
     
     stopifnot(require("utils"))
     REQUIRED_R_VERSION <- "2.1.0"
@@ -36,6 +31,10 @@ sourceBiocinstallScript <- function()
                        "installScripts",
                        choppedRVer,
                        "biocinstall.R", sep="/")
+    if (vers > "2.13" && biocVers > "2.8") {
+        scriptUrl <- "http://bioconductor.org/fixBiocLite.R"
+    }
+    
     ## Don't add any arg to the safeSource() function and don't define any local
     ## variable in it. This is the only way to make sure the call to ls() only
     ## returns the list of symbols that result from the call to source().
