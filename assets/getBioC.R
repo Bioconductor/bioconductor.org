@@ -1,5 +1,17 @@
 sourceBiocinstallScript <- function()
 {
+    ## Make sure we didn't get here by mistake 
+    ## e.g.(old biocLite function stored in global environment).
+    vers <- getRversion()
+    biocVers <-
+        tryCatch(tools:::.BioC_version_associated_with_R_version,
+                 error=function(...) numeric_version(0.0))
+    if (vers > "2.13" && biocVers > "2.8") {
+        message <- paste("You have an outdated biocLite() function.",
+        "Run 'rm(biocLite)' and try again.")
+        stop(message)
+    }
+    
     stopifnot(require("utils"))
     REQUIRED_R_VERSION <- "2.1.0"
     CURRENT_R_DEVEL_VERSION <- "2.14.0"
