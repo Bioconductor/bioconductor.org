@@ -2,6 +2,7 @@ from HTMLParser import HTMLParser
 import time
 import sys
 import subprocess
+import os
 
 global data_dict
 data_dict = {}
@@ -38,7 +39,7 @@ if __name__ == "__main__":
     ts = time.localtime()
     secs = int(time.mktime(ts))
 
-    cookiefile = "/tmp/upl_cookies_%d.txt" % secs
+    cookiefile = "/tmp/upl_%d_cookies.txt" % secs
     
     parser = MyHTMLParser()
     
@@ -76,16 +77,25 @@ if __name__ == "__main__":
     #print data_dict
 
     
-    cmd = "curl -s --cookie %s " % cookiefile
+    cmd = "curl -s -o /dev/null --cookie %s " % cookiefile
 
     for key, value in data_dict.items():
-        filename = "/tmp/upl_%d_%s.txt" % (secs, key)
-        f = open(filename, 'w')
         if key == 'accept_these_nonmembers':
-            value += "\n%s" % email
+            value = value.strip()
+            filename = "/tmp/upl_%d_%s.txt" % (secs, key)
+            f = open(filename, 'w')
             f.write(value)
-        f.close
-        cmd += '-F "%s=<%s" ' % (key, filename)
+            emails = value.split("\n")
+            if email in emails:
+                print "%s is already permitted to post." % email
+                sys.exit(0)
+            f.write("\n%s" % email)
+            cmd += '-F "%s=<%s" ' % (key, filename)
+            f.close()
+            if ((not os.path.exists(filename)) \
+              or (os.stat(filename).st_size == 0)):
+                print ("Error: file of email addresses is empty or missing.")
+                sys.exit(1)
 
     #cmd += " http://localhost/~dtenenba/test.cgi"
     cmd += " https://stat.ethz.ch/mailman/admin/bioconductor/privacy/sender"
@@ -93,6 +103,9 @@ if __name__ == "__main__":
     #print cmd
     
     ## TODO - cleanup /tmp/upl* files when done
+
+
+    
     
     retcode = subprocess.call(cmd, shell=True)
     
