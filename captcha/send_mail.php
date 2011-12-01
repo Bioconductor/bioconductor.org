@@ -33,7 +33,7 @@ if (empty($_POST)) {
           $result = mail($to, $subject, $body, $mailheaders);
           // add sender to list of people who can post to list without being subscribed
           $cmd = '/home/webadmin/python/bin/python /extra/www/event_reg/mailform/update_posters_list.py ' . $_POST['email'];
-          $last_line = system($cmd, $retval);
+          #$last_line = system($cmd, $retval);
           header("Location: http://bioconductor.org/help/mailing-list/mailform/ok");
       }
     } else {
