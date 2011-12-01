@@ -88,8 +88,8 @@ if __name__ == "__main__":
             filename = "/tmp/upl_%d_%s.txt" % (secs, key)
             f = open(filename, 'w')
             f.write(value)
-            emails = value.split("\n")
-            if email in emails:
+            emails = value.lower().split("\n")
+            if email.lower() in emails:
                 print "%s is already permitted to post." % email
                 sys.exit(0)
             f.write("\n%s" % email)
