@@ -47,7 +47,8 @@ if __name__ == "__main__":
     url = "https://stat.ethz.ch/mailman/admin/bioconductor"
     #url = "http://localhost/~dtenenba/test.cgi"
     
-    pwf = open("wordfile")
+    path = os.path.abspath(os.path.dirname(sys.argv[0]))
+    pwf = open("%s/wordfile" % path)
     encoded = pwf.read().strip()
     decoded = base64.b64decode(encoded)
     pw = decoded.replace("saltillo", "")
