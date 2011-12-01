@@ -54,7 +54,7 @@ if __name__ == "__main__":
     pw = decoded.replace("saltillo", "")
     pwf.close
     
-    cmd = 'curl -s -o /dev/null --cookie-jar %s  -F "adminpw=%s" %s'\
+    cmd = 'curl -k -s -o /dev/null --cookie-jar %s  -F "adminpw=%s" %s'\
       % (cookiefile, pw, url)
     #print cmd
     retcode = subprocess.call(cmd, shell=True)
@@ -63,7 +63,7 @@ if __name__ == "__main__":
         sys.exit(retcode)
     
     htmlfile = "/tmp/upl_%d_forminfo.html" % secs
-    cmd = "curl -s --cookie %s -o %s https://stat.ethz.ch/mailman/admin/bioconductor/privacy/sender" \
+    cmd = "curl -k -s --cookie %s -o %s https://stat.ethz.ch/mailman/admin/bioconductor/privacy/sender" \
       % (cookiefile, htmlfile)
     #print cmd
     retcode = subprocess.call(cmd, shell=True)
@@ -81,7 +81,7 @@ if __name__ == "__main__":
     #print data_dict
 
     
-    cmd = "curl -s -o /dev/null --cookie %s " % cookiefile
+    cmd = "curl -k -s -o /dev/null --cookie %s " % cookiefile
 
     for key, value in data_dict.items():
         if key == 'accept_these_nonmembers':
