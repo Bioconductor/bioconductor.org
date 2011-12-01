@@ -3,6 +3,7 @@ import time
 import sys
 import subprocess
 import os
+import base64
 
 global data_dict
 data_dict = {}
@@ -47,7 +48,9 @@ if __name__ == "__main__":
     #url = "http://localhost/~dtenenba/test.cgi"
     
     pwf = open("wordfile")
-    pw = pwf.read().strip()
+    encoded = pwf.read().strip()
+    decoded = base64.b64decode(encoded)
+    pw = decoded.replace("saltillo", "")
     pwf.close
     
     cmd = 'curl -s -o /dev/null --cookie-jar %s  -F "adminpw=%s" %s'\
