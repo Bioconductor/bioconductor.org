@@ -25,7 +25,7 @@ versions:
 devel_repos:
 - "bioc"
 - "data/experiment"
-#- "data/annotation"
+- "data/annotation"
 
 data_sources: 
 - items_root: /

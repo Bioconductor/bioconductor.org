@@ -75,7 +75,7 @@ session of R and enter
     source("http://bioconductor.org/biocLite.R")
     biocLite(character(), ask=FALSE)
 
-Read the help page for `biocLite()` for additional details.
+Read the help page for `?biocLite` for additional details.
 
 <h3>Recompiling installed Bioconductor packages</h3>
 
