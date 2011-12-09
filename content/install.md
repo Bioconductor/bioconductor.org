@@ -1,11 +1,20 @@
 
 <ul class="inline_list">
+    <li><a href="#bioc-version">Getting The Latest Version of Bioconductor</a></li>
 	<li><a href="#install-bioconductor-packages">Install Packages</a></li> 
 	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
 	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
 	<li><a href="#install-R">Install R</a></li> 
 </ul>
 
+
+<h2 id="bioc-version">Getting The Latest Version of Bioconductor</h2>
+
+If you have installed the latest release of R, you will automatically
+get packages from the latest version of Bioconductor by following the steps
+below. The current release version of R is
+<%= config[:r_version_associated_with_release]%>, and the currently
+released Bioconductor version is <%= config[:release_version] %>.
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
@@ -16,9 +25,7 @@ command window:
     source("http://bioconductor.org/biocLite.R")
     biocLite("limma")
 
-After downloading and installing this package, the script prints
-"Installation complete" and "TRUE".  Install several packages, e.g.,
-"GenomicFeatures" and "AnnotationDbi", with
+Install several packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
 
     biocLite(c("GenomicFeatures", "AnnotationDbi"))
 
@@ -26,12 +33,9 @@ To install a selection of core Bioconductor packages, use
 
     biocLite()
 
-Packages and their dependencies installed by this usage are: `affy`,
-`affydata`, `affyPLM`, `affyQCReport`, `annaffy`, `annotate`,
-`Biobase`, `biomaRt`, `Biostrings`, `DynDoc`, `gcrma`, `genefilter`,
-`geneplotter`, `GenomicRanges`, `hgu95av2.db`, `limma`, `marray`,
-`multtest`, `vsn`, and `xtable`.  After downloading and installing
-these packages, the script prints "Installation complete" and "TRUE".
+Packages and their dependencies installed by this usage are: 
+`Biobase`, `IRanges`, and `AnnotationDbi`.
+
 
 The `biocLite.R` script has arguments that change its default behavior:
 
@@ -41,6 +45,9 @@ The `biocLite.R` script has arguments that change its default behavior:
         File system directory for downloaded packages.
     lib
         R library where packages are installed.
+
+
+You can type `?biocLite` for further installation help.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -66,9 +73,9 @@ To update all installed packages that are out of date, start a new
 session of R and enter
 
     source("http://bioconductor.org/biocLite.R")
-    update.packages(repos=biocinstallRepos(), ask=FALSE, checkBuilt=TRUE)
+    biocLite(character(), ask=FALSE)
 
-Read the help page for `update.packages` for additional details.
+Read the help page for `biocLite()` for additional details.
 
 <h3>Recompiling installed Bioconductor packages</h3>
 
