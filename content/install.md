@@ -37,7 +37,8 @@ Packages and their dependencies installed by this usage are:
 `Biobase`, `IRanges`, and `AnnotationDbi`.
 
 
-The `biocLite.R` script has arguments that change its default behavior:
+The BiocInstaller package (installed by the`biocLite.R` script)
+has arguments that change its default behavior:
 
     pkgs
         Character vector of Bioconductor packages to install.
