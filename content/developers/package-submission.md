@@ -71,8 +71,8 @@ information](#contact-information) below to obtain additional support.
 
 <h2 id="contact-info">Contact Information</h2>
 
-To submit a package or obtain additional support, contact Nishant
-Gopalakrishnan (email: ngopalak NEAR fhcrc POINT org)
+To submit a package or obtain additional support, contact Marc
+Carlson (email: mcarlson NEAR fhcrc POINT org)
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
