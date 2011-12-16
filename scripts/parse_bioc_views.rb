@@ -98,7 +98,15 @@ class ParseBiocViews
 
 
     
-    
+    top_level_tree.sort! do |a, b|
+      if a['data'] =~ /^Software/
+        -1
+      elsif b['data'] =~ /^Software/
+        1
+      else
+        a['data'] <=> b['data']
+      end
+    end
     
     outfile = File.open(outputfile, "w")
     
