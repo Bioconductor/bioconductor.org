@@ -18,80 +18,80 @@ The AMI comes pre-loaded with the latest release version of R,
 and the following Bioconductor packages (and all their CRAN dependencies):
 
 <ul class="inline_list">
-    <li>AnnotationDbi</li>
-    <li>BSgenome</li>
-    <li>BayesPeak</li>
-    <li>Biobase</li>
-    <li>BiocInstaller</li>
-    <li>Biostrings</li>
-    <li>CSAR</li>
-    <li>Category</li>
-    <li>ChIPpeakAnno</li>
-    <li>ChIPseqR</li>
-    <li>ChIPsim</li>
-    <li>DESeq</li>
-    <li>DEXSeq</li>
-    <li>DNAcopy</li>
-    <li>DiffBind</li>
-    <li>DynDoc</li>
-    <li>EDASeq</li>
-    <li>GEOquery</li>
-    <li>GGBase</li>
-    <li>GGtools</li>
-    <li>GOstats</li>
-    <li>GSEABase</li>
-    <li>GenomeGraphs</li>
-    <li>GenomicFeatures</li>
-    <li>GenomicRanges</li>
-    <li>Genominator</li>
-    <li>HilbertVis</li>
-    <li>IRanges</li>
-    <li>MEDIPS</li>
-    <li>PAnnBuilder</li>
-    <li>R453Plus1Toolbox</li>
-    <li>RBGL</li>
-    <li>Repitools</li>
-    <li>Rgraphviz</li>
-    <li>Ringo</li>
-    <li>Rolexa</li>
-    <li>Rsamtools</li>
-    <li>Rsubread</li>
-    <li>SRAdb</li>
-    <li>ShortRead</li>
-    <li>VariantAnnotation</li>
     <li>affxparser</li>
     <li>affy</li>
     <li>affyio</li>
     <li>affylmGUI</li>
     <li>annaffy</li>
     <li>annotate</li>
+    <li>AnnotationDbi</li>
     <li>aroma.light</li>
+    <li>BayesPeak</li>
     <li>baySeq</li>
+    <li>Biobase</li>
+    <li>BiocInstaller</li>
     <li>biomaRt</li>
+    <li>Biostrings</li>
+    <li>BSgenome</li>
+    <li>Category</li>
+    <li>ChIPpeakAnno</li>
     <li>chipseq</li>
+    <li>ChIPseqR</li>
+    <li>ChIPsim</li>
+    <li>CSAR</li>
     <li>cummeRbund</li>
+    <li>DESeq</li>
+    <li>DEXSeq</li>
+    <li>DiffBind</li>
+    <li>DNAcopy</li>
+    <li>DynDoc</li>
+    <li>EDASeq</li>
     <li>edgeR</li>
     <li>gage</li>
     <li>genefilter</li>
     <li>geneplotter</li>
+    <li>GenomeGraphs</li>
     <li>genomeIntervals</li>
+    <li>GenomicFeatures</li>
+    <li>GenomicRanges</li>
+    <li>Genominator</li>
+    <li>GEOquery</li>
+    <li>GGBase</li>
+    <li>GGtools</li>
     <li>girafe</li>
     <li>goseq</li>
+    <li>GOstats</li>
     <li>graph</li>
+    <li>GSEABase</li>
+    <li>HilbertVis</li>
     <li>impute</li>
+    <li>IRanges</li>
     <li>limma</li>
+    <li>MEDIPS</li>
     <li>multtest</li>
     <li>oneChannelGUI</li>
+    <li>PAnnBuilder</li>
     <li>preprocessCore</li>
     <li>qrqc</li>
+    <li>R453Plus1Toolbox</li>
+    <li>RBGL</li>
+    <li>Repitools</li>
     <li>rGADEM</li>
+    <li>Rgraphviz</li>
+    <li>Ringo</li>
+    <li>Rolexa</li>
+    <li>Rsamtools</li>
+    <li>Rsubread</li>
     <li>rtracklayer</li>
     <li>segmentSeq</li>
-    <li>seqLogo</li>
     <li>seqbias</li>
+    <li>seqLogo</li>
+    <li>ShortRead</li>
     <li>snpStats</li>
     <li>splots</li>
+    <li>SRAdb</li>
     <li>tkWidgets</li>
+    <li>VariantAnnotation</li>
     <li>vsn</li>
     <li>widgetTools</li>
     <li>zlibbioc</li>
