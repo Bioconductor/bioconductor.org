@@ -19,27 +19,27 @@ var displayPackages = function(packageList, nodeName) {
     html += parents.join(" &gt ");
     html += "</p>\n";
     
+    html += "<table><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr>\n";
     
-    html += "<ul class='inline_list'>\n";
     
-    
+    var tableData = "";
     for (var i = 0; i < packageList.length; i++) {
-
-        var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + packageList[i] + ".html"
+        var pkg = packageList[i];
+        var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
+        tableData += '<tr class="bioc_package" id="pkg_' + pkg + '">\n';
+        tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
+        //var title = packageInfo[id]["Description"].replace(/\n/g, " ");
         
-        html += "\t<li>\n"
-        html += "\t\t<a class='bioc_package' id='pkg_" +
-          packageList[i] +
-          "' " +
-          "href='" +
-          url +
-          "'>" +
-          packageList[i] +
-          "</a>\n";
-          html += "\t</li>\n";
+        tableData += '\t<td>'+packageInfo[pkg]["Maintainer"]+'</td>\n';
+        tableData += '\t<td>'+packageInfo[pkg]["Title"]+'</td>\n';
+        tableData += "</tr>\n";
     }
-    html += "</ul>\n"
+    html += tableData;
+    
+    html += "</table>\n";
+    
     jQuery("#packages").html(html);
+    
 }
 
 
@@ -240,6 +240,7 @@ jQuery(function () {
     setBiocVersion();
     loadPackageData();
     init();
+    /* disable mouseover for now...
     jQuery(".bioc_package").live("mouseover", function(){
         var title = jQuery(this).attr("title");
         if (title == "" && loadedPackageData) {
@@ -249,4 +250,5 @@ jQuery(function () {
             jQuery(this).attr("title", title);
         }
     })
+    */
 });
