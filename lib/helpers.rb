@@ -462,3 +462,39 @@ def get_svn_commits()
   end
 end
 
+def since(package)
+  for key in config[:manifest_keys]
+    if config[:manifests][key].include? package
+      return key
+    end
+  end
+  nil
+end
+
+def r_ver_for_bioc_ver(bioc_ver)
+  # todo - add to this over time as futureproofing (below) can't be trusted
+  hsh = {"1.6" => "2.1",
+    "1.7" => "2.2",
+    "1.8" => "2.3",
+    "1.9" => "2.4",
+    "2.0" => "2.5",
+    "2.1" => "2.6",
+    "2.2" => "2.7",
+    "2.3" => "2.8",
+    "2.4" => "2.9",
+    "2.5" => "2.10",
+    "2.6" => "2.11",
+    "2.7" => "2.12",
+    "2.8" => "2.13",
+    "2.9" => "2.14",
+    "2.10" => "2.15",
+    "2.11" => "2.16",
+    "2.12" => "2.17"}
+  if hsh.has_key? bioc_ver
+    return hsh[bioc_ver]
+  end
+  maj, min = bioc_ver.split(".")
+  maj = Integer(maj)
+  min = Integer(min)
+  return "#{maj}.#{min + 5}"
+end

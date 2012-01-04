@@ -170,6 +170,16 @@
             <td>Version</td>
             <td><%= @package[:Version]%></td>
         </tr>
+        
+        <%
+        since = since(@package[:Package])
+        if not since.nil?
+        %>
+            <tr class="row_even">
+                <td>Since</td>
+                <td>Bioconductor <%= since %> (R-<%= r_ver_for_bioc_ver(since)%>)</td>
+            </tr>
+        <% end %>
 
 
     </table>

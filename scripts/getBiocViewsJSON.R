@@ -29,12 +29,12 @@ if (!exists("versions") && !exists("outdir") && !exists("devel_repos")
 
 if (!require(biocViews)) {
     source("http://bioconductor.org/biocLite.R")
-    biocLite("biocViews")
+    biocLite("biocViews", type="source")
 } 
 
 if (!require(rjson)) {
     source("http://bioconductor.org/biocLite.R")
-    biocLite("rjson")
+    biocLite("rjson", type="source")
 }
 
 

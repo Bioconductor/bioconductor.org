@@ -98,3 +98,43 @@ end
 # layouting rules
 
 layout '*', :erb
+
+
+preprocess do #todo - skip this gracefully if no internet connection
+  unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
+    puts "Getting manifest information..."
+    url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
+    page = `curl -s -u readonly:readonly #{url}`
+    manifests = {}
+    for line in page.split("\n")
+      if line =~ /bioc_([0123456789.]+)\.manifest/
+        ver = $1
+        #puts "manifest #{ver}..."
+        manifests[ver] = []
+        manifest = `curl -s -u readonly:readonly #{url}bioc_#{ver}.manifest`
+        for l in manifest.split("\n")
+          next unless l =~ /^Package: /
+          manifests[ver].push l.chomp.sub(/^Package: /, "")
+        end
+      end
+    end
+    config[:manifests] = manifests
+    
+    config[:manifest_keys] = manifests.keys.sort do |a,b|
+      amaj, amin = a.split(".")
+      bmaj, bmin = b.split(".")
+      amaj = Integer(amaj)
+      amin = Integer(amin)
+      bmaj = Integer(bmaj)
+      bmin = Integer(bmin)
+      if amaj == bmaj
+        amin <=> bmin
+      else
+        amaj <=> bmaj
+      end
+    end
+    
+    
+    puts "Processing site pages..."
+  end
+end
