@@ -24,9 +24,10 @@ var displayPackages = function(packageList, nodeName) {
     
     var tableData = "";
     for (var i = 0; i < packageList.length; i++) {
+        var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
         var pkg = packageList[i];
         var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
-        tableData += '<tr class="bioc_package" id="pkg_' + pkg + '">\n';
+        tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         //var title = packageInfo[id]["Description"].replace(/\n/g, " ");
         
