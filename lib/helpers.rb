@@ -492,7 +492,7 @@ def r_ver_for_bioc_ver(bioc_ver)
     "2.12" => "2.16",
     "2.13" => "2.16",
     "2.14" => "2.17",
-    "2.15" => "2.18"}
+    "2.15" => "2.17"}
   if hsh.has_key? bioc_ver
     return hsh[bioc_ver]
   end
