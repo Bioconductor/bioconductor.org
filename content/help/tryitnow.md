@@ -11,13 +11,14 @@ Click the button below to get a username, password, and a link.
 <div id="try_it_now_button_goes_here"><button type="button" id="try_it_now_button">Try It Now</button></div>
 
 
+<div  id="loading"></div>
 <div class="initially_hidden">
     <pre>
     <code>
         Username: <span id="try_it_now_username"></span>
         Password: <span id="try_it_now_password"></span>
     </code>
-    <pre>
+    </pre>
     <p>Link: <a target="try_it_now" href="http://cloud.bioconductor.org:8787">http://cloud.bioconductor.org:8787</a></p>
     
 Using the username and password above, you can log into an

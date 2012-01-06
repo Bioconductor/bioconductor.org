@@ -184,6 +184,8 @@ jQuery(function(){
     if (jQuery("#tryitnow_script_here").length > 0){
         jQuery(".initially_hidden").hide();
         jQuery("#try_it_now_button").click(function() {
+            jQuery("#try_it_now_button_goes_here").hide();
+            jQuery("#loading").html("Loading...");
             s = '<script type="text/javascript" src="http://cloud.bioconductor.org'+
               ':2112/cgi-bin/auth.cgi"></script>'; 
             jQuery("#tryitnow_script_here").html(s);
@@ -194,8 +196,8 @@ jQuery(function(){
 
 //upon receipt of login data from cloud server:
 var processResults = function(data) {
+    jQuery("#loading").html("");
     jQuery(".initially_hidden").show();
-    jQuery("#try_it_now_button_goes_here").hide();
     jQuery("#try_it_now_username").html(data['username']);
     jQuery("#try_it_now_password").html(data['password']);
 }
