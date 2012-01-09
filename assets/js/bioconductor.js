@@ -169,6 +169,7 @@ var getHrefForSymlinks = function(href) {
 }
 
 
+
 //document ready function                                      
 jQuery(function() {
     getCorrectUrlForMirrors();
@@ -181,35 +182,60 @@ jQuery(function() {
 
 // another document ready function, for try-it-now
 jQuery(function(){
-    jQuery("#hide_this_stuff").hide();
 
     if (jQuery("#tryitnow_script_here").length > 0){
-	    jQuery("#encrypt_js").html('<script type="text/javascript" src="http://cloud.bioconductor.org:8787/js/encrypt.min.js"></script>');	
+        jQuery("#initially_hidden").hide();
+        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://cloud.bioconductor.org:8787/js/encrypt.min.js"></script>');
+        
         jQuery("#try_it_now_button").click(function() {
-            jQuery("#try_it_now_button_goes_here").hide();
+            jQuery("#try_it_now_button_goes_here").html("");
             jQuery("#loading").html("<p>Loading...</p>");
             s = '<script type="text/javascript" src="http://cloud.bioconductor.org'+
               ':2112/cgi-bin/auth.cgi"></script>'; 
             jQuery("#tryitnow_script_here").html(s);
         });
     }
+    
+    if (jQuery("#launch_tryitnow").length > 0) {
+        jQuery("#hide_this_stuff").hide();
+        var username = getParameterByName("username");
+        var password = getParameterByName("password");
+        var encrypted = getParameterByName("encrypted");
+        document.getElementById("username").value = username;
+        document.getElementById("password").value = password;
+        //todo change this:
+        document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
+        document.getElementById('clientPath').value = window.location.pathname;
+        log("before...")
+        document.getElementById('package').value = encrypted;
+        document.realform.submit();
+        var t = setTimeout("redirectToRstudio()", 5000);
+        log("after...")
+        
+    }
+    
 });
-
 
 //upon receipt of login data from cloud server:
 var processResults = function(data) {
-    jQuery("#loading").html("");
-	var payload = data['username'] + "\n" + data['password'];
-	var authPublicKey = data['auth_public_key'];
-	var chunks = authPublicKey.split(':', 2);
-    var exp = chunks[0];
-    var mod = chunks[1];
-    document.getElementById("username").value = data['username'];
-	document.getElementById("password").value = data['password'];
-	//todo change this:
-	document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
-    document.getElementById('clientPath').value = window.location.pathname;
+    var payload, exp, mod;
+    payload = data['username'] + "\n" + data['password'];
+    var chunks = data['auth_public_key'].split(':', 2);
+    exp = chunks[0];
+    mod = chunks[1];
     var encrypted = encrypt(payload, exp, mod);
-    document.getElementById('package').value = encrypted;
-    document.realform.submit();
+	log("encrypted is " + encrypted);
+    
+    jQuery("#loading").html("");
+    var s = '<a href="/help/tryitnow/launch/?username=' + data['username'];
+    s += "&password=" + data['password'] + "&encrypted=";
+    s += encrypted;
+    s += '" target="RStudio">[Launch Rstudio Server]</a>'
+    jQuery("#try_it_now_button_goes_here").html(s);
+    jQuery("#initially_hidden").show();
+    jQuery("#tryitnow_username").html(data['username']);
+    jQuery("#tryitnow_password").html(data['password']);
+    
+    
+    
 }
