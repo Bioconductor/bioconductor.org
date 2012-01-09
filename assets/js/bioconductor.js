@@ -206,11 +206,8 @@ jQuery(function(){
         //todo change this:
         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
         document.getElementById('clientPath').value = window.location.pathname;
-        log("before...")
         document.getElementById('package').value = encrypted;
         document.realform.submit();
-        var t = setTimeout("redirectToRstudio()", 5000);
-        log("after...")
         
     }
     
@@ -224,7 +221,6 @@ var processResults = function(data) {
     exp = chunks[0];
     mod = chunks[1];
     var encrypted = encrypt(payload, exp, mod);
-	log("encrypted is " + encrypted);
     
     jQuery("#loading").html("");
     var s = '<a href="/help/tryitnow/launch/?username=' + data['username'];
