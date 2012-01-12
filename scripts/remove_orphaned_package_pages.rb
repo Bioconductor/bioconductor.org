@@ -36,6 +36,9 @@ for file in files
   next if packages.empty? # for safety
   
   dir = "#{webroot}/packages/#{version}/#{repo}/html"
+  
+  next unless (File.exists? dir and File.directory? dir)
+  
   existing_files = `ls -1 #{dir}`.split("\n")
   
   existing_packages = []
