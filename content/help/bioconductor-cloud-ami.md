@@ -175,7 +175,7 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
 
 <br/>
 *Please note that AMI IDs may change over time as we update the underlying AMI. Refer to this page for the most
-current AMI IDs.*
+current AMI IDs. These AMIs live in the US-East-1 region.*
 
 Click the Select button
 
