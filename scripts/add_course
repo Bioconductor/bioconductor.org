@@ -2,7 +2,7 @@
 
 require 'rubygems'
 require 'yaml'
-require 'builder'
+#require 'builder'
 require 'fileutils'
 
 class AddCourse
