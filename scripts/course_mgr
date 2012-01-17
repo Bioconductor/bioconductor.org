@@ -1,86 +1,86 @@
 #!/usr/bin/env ruby
 
-# == Synopsis
-#
-# course_mgr: manages Bioconductor course information
-#
-# == Usage
-#
-#--create COURSENAME
-#    Create course content template directory named COURSENAME in
-#    the current working directory.
-#
-#--index COURSENAME
-#    Add course to courses list and create a course index content
-#    page.  This modifies and creates files within the site's content
-#    directory.  Uses template file and file structure found in COURSENAME
-#    to create the index.
-#
-#--sync COURSENAME
-#    Performs the initial creation of the course
-#
-#--push YEAR/COURSENAME
-#    Performs an rsync of COURSENAME to live bioconductor.org webserver, pushing
-#    local content (from content/help/course-materials/YEAR/COURSENAME) to server.
-#
-#--list [YEAR]
-#   Lists existing courses on live server. You may constrain the list
-#   by year; otherwise all courses are shown. 
-#
-#--clean COURSENAME
-#    Removes the top-level directory COURSENAME and all its contents.
-#    This cannot be undone!
-#
-#--pull YEAR/COURSENAME
-#    Retrieves all course files from the remote server and puts them in
-#    COURSENAME in the current working directory.
-#
-#COURSENAME
-#    Name of the course in a format suitable for use as directory
-#    name and URL path element. COURSENAME should be an unadorned 
-#    name like "seattle-intro".
-#
-# EXAMPLES OF USAGE
-#
-# Creating a new course:
-# 1) Create a new course:
-# ./scripts/course_mgr --create mycourse
-# 2) Edit ./mycourse/course_config.yaml (assume course takes place in 2011)
-# 3) Create index page for course:
-# ./scripts/course_mgr --index mycourse
-# 4) Edit content/help/course-materials/2011/mycourse.md to point to
-#    course materials. Place course materials in or below that directory.
-# 5) preview site with 'rake devserver'
-#    Use URL: http://localhost:3000/help/course-materials/2011/mycourse/
-# 6) Copy content to server:
-#    Step 1 (push course materials):
-#      ./scripts/course_mgr --push mycourse
-#    Step 2: (push course metadata (.yaml) and template (.md) files):
-#      svn add content/help/course-materials/2011/mycourse.*
-#      svn commit -m "added mycourse" content/help/course-materials/2011/mycourse.*
-# You may remove the top-level "mycourse" directory at this point.
-#
-#
-# Working with an existing course:
-# 1) Pull the course materials to your local machine:
-# ./scripts/course_mgr --pull 2011/existing_course
-# (top-level directory "existing_course" is created)
-# 2) Modify/add course materials in top level "existing_course" directory.
-# 3) Push revised course materials to server:
-# ./scripts/course_mgr --push existing_course
-# 4) If you modified the .md or .yaml files, copy them to 
-#    content/help/course-materials/2011/existing_course
-#    and commit your changes to subversion:
-#      cp existing_course/existing_course.* content/help/course-materials/2011/
-#      svn commit -m "made changes" content/help/course/materials/2011/existing_course.*
-#
-# You may remove the top-level "existing_course" directory at this point.
+@usage = <<EOF
+
+ course_mgr: manages Bioconductor course information
+
+--create COURSENAME
+    Create course content template directory named COURSENAME in
+    the current working directory.
+
+--index COURSENAME
+    Add course to courses list and create a course index content
+    page.  This modifies and creates files within the site's content
+    directory.  Uses template file and file structure found in COURSENAME
+    to create the index.
+
+--sync COURSENAME
+    Performs the initial creation of the course
+
+--push YEAR/COURSENAME
+    Performs an rsync of COURSENAME to live bioconductor.org webserver, pushing
+    local content (from content/help/course-materials/YEAR/COURSENAME) to server.
+
+--list [YEAR]
+   Lists existing courses on live server. You may constrain the list
+   by year; otherwise all courses are shown. 
+
+--clean COURSENAME
+    Removes the top-level directory COURSENAME and all its contents.
+    This cannot be undone!
+
+--pull YEAR/COURSENAME
+    Retrieves all course files from the remote server and puts them in
+    COURSENAME in the current working directory.
+
+COURSENAME
+    Name of the course in a format suitable for use as directory
+    name and URL path element. COURSENAME should be an unadorned 
+    name like "seattle-intro".
+
+ EXAMPLES OF USAGE
+
+ Creating a new course:
+ 1) Create a new course:
+ ./scripts/course_mgr --create mycourse
+ 2) Edit ./mycourse/course_config.yaml (assume course takes place in 2011)
+ 3) Create index page for course:
+ ./scripts/course_mgr --index mycourse
+ 4) Edit content/help/course-materials/2011/mycourse.md to point to
+    course materials. Place course materials in or below that directory.
+ 5) preview site with 'rake devserver'
+    Use URL: http://localhost:3000/help/course-materials/2011/mycourse/
+ 6) Copy content to server:
+    Step 1 (push course materials):
+      ./scripts/course_mgr --push mycourse
+    Step 2: (push course metadata (.yaml) and template (.md) files):
+      svn add content/help/course-materials/2011/mycourse.*
+      svn commit -m "added mycourse" content/help/course-materials/2011/mycourse.*
+ You may remove the top-level "mycourse" directory at this point.
+
+
+ Working with an existing course:
+ 1) Pull the course materials to your local machine:
+ ./scripts/course_mgr --pull 2011/existing_course
+ (top-level directory "existing_course" is created)
+ 2) Modify/add course materials in top level "existing_course" directory.
+ 3) Push revised course materials to server:
+ ./scripts/course_mgr --push existing_course
+ 4) If you modified the .md or .yaml files, copy them to 
+    content/help/course-materials/2011/existing_course
+    and commit your changes to subversion:
+      cp existing_course/existing_course.* content/help/course-materials/2011/
+      svn commit -m "made changes" content/help/course/materials/2011/existing_course.*
+
+ You may remove the top-level "existing_course" directory at this point.
+
+EOF
+
 require 'rubygems'
 require 'yaml'
-require 'builder'
+#require 'builder'
 require 'fileutils'
 require 'getoptlong'
-require 'rdoc/usage'
 require 'open3'
 include Open3
 
@@ -100,11 +100,6 @@ class CourseMgr
   end
   
   def process_options()
-    if (ARGV.size == 0)
-      RDoc::usage
-    end
-    
-    
     @opts = GetoptLong.new(
           [ '--help', '-h', GetoptLong::NO_ARGUMENT ],
           [ '--create', GetoptLong::REQUIRED_ARGUMENT ],
@@ -478,5 +473,9 @@ EOF
 
 end
 
+if ARGV.empty?
+  print @usage
+  exit
+end
 
 mgr = CourseMgr.new
