@@ -31,7 +31,8 @@ This session will run on a shared virtual machine
 <a href="http://aws.amazon.com/ec2/instance-types/#micro-instances">t1.micro
 </a> instance).
 
-Your session will be ended after 12 hours. If you want to continue using
+Your session will be ended after 12 hours (though it is possible your session
+may be ended at any time). If you want to continue using
 Bioconductor without being interrupted, you can 
 <a href="http://bioconductor.org/install/">install Bioconductor</a> on your
 own machine, or launch your own instance of the 

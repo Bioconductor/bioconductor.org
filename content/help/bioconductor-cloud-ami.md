@@ -110,6 +110,9 @@ Plus the following categories of annotation package:
 
 ## How To Use It
 
+The simplest way is just to [try it now](/help/cloud). This will launch R in a web browser.
+For more control over your own cloud instances, follow the instructions below.
+
 ### First-time steps
 
 First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. (This will require that you provide credit card information).
