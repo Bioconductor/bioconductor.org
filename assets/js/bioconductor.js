@@ -223,7 +223,7 @@ var processResults = function(data) {
     var encrypted = encrypt(payload, exp, mod);
     
     jQuery("#loading").html("");
-    var s = '<a href="/help/tryitnow/launch/?username=' + data['username'];
+    var s = '<a href="/help/cloud/launch/?username=' + data['username'];
     s += "&password=" + data['password'] + "&encrypted=";
     s += encrypted;
     s += '" target="RStudio">[Launch Rstudio Server]</a>'
