@@ -114,15 +114,15 @@ Plus the following categories of annotation package:
 
 First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. (This will require that you provide credit card information).
 
-Now launch the [AWS Console](https://console.aws.amazon.com/ec2/home). 
-Click on the [Key Pairs](https://console.aws.amazon.com/ec2/home#s=KeyPairs)
+Now launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1). 
+Click on the [Key Pairs](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)
 link in the lower left-hand corner of the page. Click the "Create Key Pair" button. When prompted, supply a name.
 We suggest that the name be a combination of "bioconductor", your first name, and your machine name
 (this will avoid conflicts with other people who share your AWS account, or possibly your own account on another machine).
 For example, if your name is Bob and your personal computer is named "mylaptop", your key pair name could be "bioconductor-bob-mylaptop".
 
 You will need to modify the default security group. Click on 
-[Security Groups](https://console.aws.amazon.com/ec2/home#s=SecurityGroups)
+[Security Groups](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=SecurityGroups)
 in the lower-left hand corner of the AWS Console.
 
 Click on the Default group. You'll see information about the group in the lower pane, including the group ID, a string that starts with "sg-". Copy this string to your clipboard. 
@@ -147,7 +147,7 @@ restrictive permissions on the keypair file, as follows:
 
 ## Launching the AMI
 
-Using the [AWS Console](https://console.aws.amazon.com/ec2/home), click the "Launch Instance" button.
+Using the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1), click the "Launch Instance" button.
 
 Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
 
@@ -221,7 +221,7 @@ Once you have pasted this command into your Terminal or Command Prompt window (a
 to your Amazon EC2 instance. 
 
 **Important Note**: Be sure and shut down your instance when you no longer need it, or charges will
-continue to accrue. You can shut down your instance from the [AWS Console](https://console.aws.amazon.com/ec2/home#s=Instances)
+continue to accrue. You can shut down your instance from the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)
 by clicking on Instance Actions, then Terminate.
 
 The following section assumes that you are connected to your EC2 instance. 
@@ -250,7 +250,7 @@ like you would have to on your R installation on your personal computer.
 To use RStudio Server, it's not necesssary to connect to the remote instance with SSH.
 Just use the following steps.
 
-In the [AWS Console](https://console.aws.amazon.com/ec2/home), click on Instances in the left side of the
+In the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1), click on Instances in the left side of the
 browser window, then click on your running instance. In the Description pane at lower right, copy the host
 name next to "Public DNS" to your clipboard. Paste this into your browser address bar with "http://" in front
 and ":8787" at the end, so you end up with something like this:
@@ -320,12 +320,12 @@ Where "xxx" is your Amazon Access Key ID and "yyy" is your Secret Key. The scrip
 	Created volume vol-dec646b6 in availability zone us-east-1c.
 
 Make a note of the volume ID and the availability zone (you can also find this information in the
-[Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home#s=Volumes)). 
+[Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Volumes)). 
 
 *Note*: Currently, your master node and your EBS volume are in the same availability zone, so you don't
 need to do anything special. Later, if you want to mount this EBS volume, you'll need to explicitly 
 launch your EC2 instance in the same availability zone as the volume. You do this in the 
-[Launch Instances Wizard](https://console.aws.amazon.com/ec2/home#s=LaunchInstanceWizard) of the EC2 console.
+[Launch Instances Wizard](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=LaunchInstanceWizard) of the EC2 console.
 
 Now you're ready to spin up an MPI cluster. Use the <code>mpiutil</code> script. Invoked without arguments, 
 <code>mpiutil</code> produces the following:
@@ -417,7 +417,7 @@ Make the following substitutions:
 
 **Note**: As always when working with EC2, be sure to shut down all running instances when you are done with them,
 to avoid unnecessary charges. You can quickly check instance status on the 
-[Instances Page](https://console.aws.amazon.com/ec2/home#s=Instances) of the AWS Console.
+[Instances Page](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances) of the AWS Console.
 
 ### Creating a custom version of the Bioconductor AMI
 
@@ -438,7 +438,7 @@ When your instance is customized to your liking, issue the following commands (a
 
 This will remove unneeded files from your AMI, clear your shell history, and log you out of your instance.
 
-Now use the [AWS Console](https://console.aws.amazon.com/ec2/home#s=Instances)
+Now use the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)
 to Stop your instance (**important note: do NOT "Terminate" your instance; use the Stop command (under Instance Actions) instead.**)
 
 Then choose "Create Image (EBS AMI)" under the Instance Actions menu. You will be prompted for a name for your AMI. After
@@ -457,7 +457,7 @@ To copy a file from your computer to a running Bioconductor AMI instance:
 
 * Open a Terminal or Command Prompt window on your computer
 * Using "cd", change to the directory where your key pair (.pem) file lives
-* Issue a command like the following (your key pair name and the hostname of the AMI instance will be different; you can determine the correct values by clicking on your running instance in the [AWS Console](https://console.aws.amazon.com/ec2/home#s=Instances)):
+* Issue a command like the following (your key pair name and the hostname of the AMI instance will be different; you can determine the correct values by clicking on your running instance in the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)):
 
 	
 	
