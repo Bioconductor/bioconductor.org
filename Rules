@@ -104,14 +104,19 @@ preprocess do #todo - skip this gracefully if no internet connection
   unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
     puts "Getting manifest information..."
     url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
+    branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
     page = `curl -s -u readonly:readonly #{url}`
     manifests = {}
     for line in page.split("\n")
       if line =~ /bioc_([0123456789.]+)\.manifest/
         ver = $1
-        #puts "manifest #{ver}..."
         manifests[ver] = []
-        manifest = `curl -s -u readonly:readonly #{url}bioc_#{ver}.manifest`
+        if ver == config[:devel_version]
+          manifest_url = "#{url}bioc_#{ver}.manifest"
+        else
+          manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
+        end
+        manifest = `curl -s -u readonly:readonly #{manifest_url}`
         for l in manifest.split("\n")
           next unless l =~ /^Package: /
           manifests[ver].push l.chomp.sub(/^Package: /, "")
@@ -133,7 +138,6 @@ preprocess do #todo - skip this gracefully if no internet connection
         amaj <=> bmaj
       end
     end
-    
     
     puts "Processing site pages..."
   end
