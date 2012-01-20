@@ -110,8 +110,6 @@ Plus the following categories of annotation package:
 
 ## How To Use It
 
-The simplest way is just to [try it now](/help/cloud). This will launch R in a web browser.
-For more control over your own cloud instances, follow the instructions below.
 
 ### First-time steps
 
