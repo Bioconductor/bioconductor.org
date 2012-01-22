@@ -164,7 +164,7 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
       <tr>
           <td>2.9</td>
           <td>2.14</td>
-          <td>ami-e9c01680</td>
+          <td>ami-5f33e536</td>
       </tr>
     <tr>
         <td>2.8</td>
