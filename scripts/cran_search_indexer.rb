@@ -116,7 +116,7 @@ class CranSearchIndexer
   def get_list_of_files_to_index()
     urls = []
     files = []
-    index_file = File.open("/extra/www/cran-mirror/web/packages/index.html")
+    index_file = File.open("/extra/www/cran-mirror/web/packages/available_packages_by_name.html")
     while (line = index_file.gets)
       next unless line.start_with? %Q(<td><a href="../../web/packages/)
       pkg_name = line.gsub(%Q(<td><a href="../../web/packages/),"").split("/").first
