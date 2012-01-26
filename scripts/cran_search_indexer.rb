@@ -102,7 +102,7 @@ class CranSearchIndexer
     script_file.puts cmd
     script_file.close()
     File.chmod(0777, script_file_name)
-    
+    sleep 1
     
     
     File.open(cachefilename, "w") do |cachefile|
