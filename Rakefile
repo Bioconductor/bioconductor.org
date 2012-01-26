@@ -164,7 +164,7 @@ desc "Re-run search indexing cran package home pages on production"
 task :index_cran_production do
   system("scp scripts/cran_search_indexer.rb webadmin@bioconductor.org:~")
   system("ssh webadmin@bioconductor.org /home/webadmin/do_index_cran.rb")
-  system("ssh webadmin@bioconductor.org /home/webadmin/index_cran.sh")
+  system("ssh webadmin@bioconductor.org /bin/sh /home/webadmin/index_cran.sh")
 end
 
 desc "Runs nanoc's dev server on localhost:3000"
