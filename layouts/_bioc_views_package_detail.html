@@ -44,12 +44,12 @@
                 <tr class="<%=style%>">
                     <td class="docFixedWidth">
                         <% if item[:file] and item[:file] != "" %>
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
+                        <a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>">PDF</a>
                         <% end %>
                     </td>
                     <td class="docFixedWidth">
                         <% if item[:script] and item[:script] != "" %>
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
+                        <a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
                         <% end %>
                     </td>
                     <td><%= item[:title]%></td>
@@ -62,7 +62,7 @@
             <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
             <tr class="<%= row_class %>">
                 <td class="docFixedWidth">
-                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
+                    <a href="../manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
                 </td>
                 <td class="docFixedWidth">&nbsp;</td>
                 <td>Reference Manual</td>
@@ -74,7 +74,7 @@
             <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
             <tr class="<%= row_class %>">
                     <td class="docFixedWidth">
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>readmes/<%=@package[:Package]%>/README">Text</a>
+                        <a href="../readmes/<%=@package[:Package]%>/README">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
                     <td>README</td>
@@ -87,7 +87,7 @@
                 <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
                 <tr class="<%= row_class %>">
                     <td class="docFixedWidth">
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>news/<%=@package[:Package]%>/NEWS">Text</a>
+                        <a href="../news/<%=@package[:Package]%>/NEWS">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
                     <td>NEWS</td>
@@ -100,7 +100,7 @@
                 <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
                 <tr class="<%= row_class %>">
                     <td class="docFixedWidth">
-                        <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%>install/<%=@package[:Package]%>/INSTALL">Text</a>
+                        <a href="../install/<%=@package[:Package]%>/INSTALL">Text</a>
                     </td>
                     <td class="docFixedWidth">&nbsp;</td>
                     <td>INSTALL</td>
@@ -191,7 +191,7 @@
     <table>
         <tr class="row_odd">
             <td>Package Source</td>
-            <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"source.ver"]%>">
+            <td><a href="../<%=@package[:"source.ver"]%>">
                 <%= base_filename(@package[:"source.ver"]) %></a></td>
             </tr>
 
@@ -200,7 +200,7 @@
                 <td>
                     <% wb = windows_binary(@package) %>
                     <% unless wb.nil?%>
-                    <a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=windows_binary(@package)%>">
+                    <a href="../<%=windows_binary(@package)%>">
                         <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%>
                         <% end %>
                     </td>
@@ -208,7 +208,7 @@
 
                 <tr class="row_odd">
                     <td>MacOS 10.5 (Leopard) binary</td>
-                    <td><a href="/packages/<%=@package[:bioc_version_num]%>/<%=@package[:repo]%><%=@package[:"mac.binary.leopard.ver"]%>">
+                    <td><a href="../<%=@package[:"mac.binary.leopard.ver"]%>">
                         <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
                     </tr>
                     <tr class="row_even">

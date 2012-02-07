@@ -194,8 +194,7 @@ def linkify(sym, package)
       end
       next
     end
-
-    output.push %Q(<a href="/packages/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
+    output.push %Q(<a href="../../../#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
   end
   output.join(", ")
 end
