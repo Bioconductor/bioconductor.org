@@ -178,7 +178,7 @@ var init = function() {
             },
             "json_data" : {
                 "ajax" : {
-                    "url" : "/packages/json/" + biocVersion + "/tree.json",
+                    "url" : getJSONUrl() + "/json/" + biocVersion + "/tree.json",
                     "data" : function (n) { 
                         return { id : n.attr ? n.attr("id") : 0 }; 
                     }
@@ -220,12 +220,23 @@ var init = function() {
 
 var loadedPackageData = false;
 
+var getJSONUrl = function() {
+    var url = window.location.href;
+    var segs = url.split("/");
+    segs.pop();
+    segs.pop();
+    url = segs.join("/");
+    return(url);
+}
+
 var loadPackageData = function() {
   var repos = ["bioc", "data/annotation", "data/experiment"];
   var count = 0;
   
   for (var i = 0; i < repos.length; i++) {
-      jQuery.getJSON("/packages/json/" + biocVersion + "/" + repos[i] +  "/packages.json", function(data){
+      var url = getJSONUrl();
+      url += "/json/" + biocVersion + "/" + repos[i] +  "/packages.json";
+      jQuery.getJSON(url, function(data){
           jQuery.extend(packageInfo, data);
           if (count == 2) {
               loadedPackageData = true;
