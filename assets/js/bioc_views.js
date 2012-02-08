@@ -25,7 +25,7 @@ var displayPackages = function(packageList, nodeName) {
     for (var i = 0; i < packageList.length; i++) {
         var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
         var pkg = packageList[i];
-        var url = "/packages/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
+        var url = getHostUrl() + "/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         //var title = packageInfo[id]["Description"].replace(/\n/g, " ");
@@ -174,7 +174,7 @@ var init = function() {
             },
             "json_data" : {
                 "ajax" : {
-                    "url" : getJSONUrl() + "/json/" + biocVersion + "/tree.json",
+                    "url" : getHostUrl() + "/json/" + biocVersion + "/tree.json",
                     "data" : function (n) { 
                         return { id : n.attr ? n.attr("id") : 0 }; 
                     }
@@ -216,7 +216,7 @@ var init = function() {
 
 var loadedPackageData = false;
 
-var getJSONUrl = function() {
+var getHostUrl = function() {
     var url = window.location.href;
     var segs = url.split("/");
     segs.pop();
@@ -230,7 +230,7 @@ var loadPackageData = function() {
   var count = 0;
   
   for (var i = 0; i < repos.length; i++) {
-      var url = getJSONUrl();
+      var url = getHostUrl();
       url += "/json/" + biocVersion + "/" + repos[i] +  "/packages.json";
       jQuery.getJSON(url, function(data){
           jQuery.extend(packageInfo, data);
