@@ -2,7 +2,6 @@ var packageInfo = {};
 var biocVersion;
 
 var displayPackages = function(packageList, nodeName) {
-    log("in displayPackages");
     if (packageList == null) {
         jQuery("#packages").empty();
         return;
@@ -30,8 +29,8 @@ var displayPackages = function(packageList, nodeName) {
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         //var title = packageInfo[id]["Description"].replace(/\n/g, " ");
-        
-        tableData += '\t<td>'+packageInfo[pkg]["Maintainer"]+'</td>\n';
+        var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/<[^>]*>/, "");
+        tableData += '\t<td>'+cleanMaintainer+'</td>\n';
         tableData += '\t<td>'+packageInfo[pkg]["Title"]+'</td>\n';
         tableData += "</tr>\n";
     }
@@ -60,20 +59,17 @@ var nodeSelected = function(event, data){
     }
     
     
-    log("at first, nodeName is " + nodeName);
     
     if (nodeName == undefined) {
         nodeName = getNodeName();
     } 
 
-    log("nodeName == |" + nodeName + "|");
     nodeName = nodeName.trim();
     var bareNodeName = nodeName.split(" ")[0];
     var wl = ("" + window.location.href).split("?")[0];
     wl = wl.split("#")[0];
 
     var newUrl = "" + wl + "#" + "___" + bareNodeName;
-    log("newUrl = " + newUrl);
     window.location.href = newUrl;
     
     var tmp = nodeName.split(" ");
