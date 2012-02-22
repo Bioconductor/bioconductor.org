@@ -116,14 +116,6 @@ function checkNav(){
 addEvent(window,'load',checkNav);
 
 
-var getCorrectUrlForMirrors = function() {
-    url = window.location.href.replace(/^http:\/\//i, "");
-    segs = url.split("/");
-    host = segs[0];
-    jQuery(".site_host").html(host);
-}
-
-
 var unRebaseMirrors = function() {
     if (!(window.mirror === undefined) && mirror == true) {
         var wlh = window.location.href;
@@ -172,7 +164,6 @@ var getHrefForSymlinks = function(href) {
 
 //document ready function                                      
 jQuery(function() {
-    getCorrectUrlForMirrors();
     unRebaseMirrors();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
