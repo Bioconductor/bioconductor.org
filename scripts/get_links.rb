@@ -55,8 +55,8 @@ def get_links(filename)
     if href =~ /\/$/
       href = href + "index.html"
     end
-    #href = "/#{href}" unless href =~ /^\//
     unless href =~ /^\//
+      #puts "got relative link: #{href}"
       # take the filename,
       # remove the root from it,
       # remove the last segment
@@ -64,7 +64,12 @@ def get_links(filename)
       href = href.split("/").last
       temp = filename.sub(@rootdir, "")
       segs = temp.split "/"
-      segs.pop
+      segs.pop 
+      if href =~ /\.html$/
+        unless segs.last == "html"
+          segs.push "html"
+        end
+      end
       segs.push href
       href = segs.join("/")
       #puts "RELATIVE LINK = #{href}"
