@@ -1,20 +1,20 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.9 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 2.10 Release Schedule
 
 
 ## Release objectives
 
-The next release of Bioconductor will be BioC 2.9 and is scheduled for
-Tuesday, November 1st, 2011.
+The next release of Bioconductor will be BioC 2.10 and is scheduled for
+Monday, April 2nd, 2012.
 
 The following schedule outlines major goals: 
 
-* October 10: All packages conform to Bioconductor
+* March 9: All packages conform to Bioconductor
   [guidelines][guidelines]...
 
-* October 17: ... and pass R CMD build / R CMD check without
+* March 16: ... and pass R CMD build / R CMD check without
   errors.
 
-* October 24: All packages pass R CMD build / R CMD check without
+* March 23: All packages pass R CMD build / R CMD check without
   warnings.
 
 [guidelines]: /developers/package-guidelines
@@ -22,11 +22,11 @@ The following schedule outlines major goals:
 
 ## Tentative schedule
 
-### October 3
+### March 2
 
 R:
 
-* R grand feature freeze (alpha).
+* R GRAND-FEATURE FREEZE (alpha).
 
 Bioconductor:
 
@@ -35,7 +35,7 @@ Bioconductor:
 * All Bioconductor package developers should start using R-devel alpha
   for testing their packages.
 
-### October 10
+### March 9
 
 Bioconductor:
 
@@ -46,7 +46,7 @@ Bioconductor:
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
-### October 17
+### March 16
 
 R:
 
@@ -60,13 +60,13 @@ Bioconductor:
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
 
-### October 20
+### March 20
 
 Bioconductor:
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
-### October 24
+### March 23
 
 R:
 
@@ -78,7 +78,7 @@ Bioconductor:
   Some warnings will be accepted, clarification on the bioc-devel mailing
   list.
 
-### October 26
+### March 26
 
 Bioconductor:
 
@@ -87,28 +87,28 @@ Bioconductor:
 
 * Annotation data packages finalized.
 
-### October 28
+### March 27
 
 R:
 
 * R PRERELEASE.
 
-### October 31
+### March 30
 
 R:
 
-* R 2.14.0 RELEASE.
+* R 2.15.0 RELEASE.
 
 Bioconductor:
 
-* Creation of the BioC 2.9 release branch. Development can resume on
+* Creation of the BioC 2.10 release branch. Development can resume on
   trunk, but changes will not be part of the release.
 
 * Build final release repositories.
 
 * Test install scripts, GUI installation.
 
-### November 1st
+### April 2
 
 * Bioconductor release.
 
