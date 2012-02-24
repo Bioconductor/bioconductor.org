@@ -26,7 +26,10 @@ devel_repos:
 - "bioc"
 - "data/experiment"
 - "data/annotation"
-
+## CHANGE these as AMI IDS change
+ami_ids:
+ bioc2_8: ami-4b2fee22
+ bioc2_9: ami-5f33e536
 data_sources: 
 - items_root: /
   layouts_root: /

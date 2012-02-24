@@ -173,7 +173,24 @@ jQuery(function() {
 
 // another document ready function, for try-it-now
 jQuery(function(){
-
+    if (jQuery("#tryitnow_instance_started".length > 0)) {
+        jQuery("#initially_hidden").hide();
+        var dnsName = getParameterByName("dns");
+        var url = "http://" + dnsName + ":8787";
+        var auth_url = url + "/auth-public-key";
+        var action = url + "/auth-do-sign-in";
+        jQuery("#encrypt_js").html('<script type="text/javascript" src="'+url+'/js/encrypt.min.js"></script>');
+        var link = "../launch?username=ubuntu&password=bioc&url=" + url;
+        link += "&encrypted=";
+        jQuery("#ami_link").attr("href", link);
+        jQuery("#instance_url").html(url);
+        s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
+          '/mailform/get_auth_string.php?url=' + auth_url + '"></script>'; 
+        jQuery("#get_auth_script_here").html(s);
+        
+    }
+    
+    
     if (jQuery("#tryitnow_script_here").length > 0){
         jQuery("#initially_hidden").hide();
         jQuery("#encrypt_js").html('<script type="text/javascript" src="http://cloud.bioconductor.org:8787/js/encrypt.min.js"></script>');
@@ -181,8 +198,8 @@ jQuery(function(){
         jQuery("#try_it_now_button").click(function() {
             jQuery("#try_it_now_button_goes_here").html("");
             jQuery("#loading").html("<p>Loading...</p>");
-            s = '<script type="text/javascript" src="http://cloud.bioconductor.org'+
-              ':2112/cgi-bin/auth.cgi"></script>'; 
+            s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
+              '/mailform/get_auth_string.php?url="></script>'; 
             jQuery("#tryitnow_script_here").html(s);
         });
     }
@@ -192,6 +209,8 @@ jQuery(function(){
         var username = getParameterByName("username");
         var password = getParameterByName("password");
         var encrypted = getParameterByName("encrypted");
+        var action = getParameterByName("action");
+        jQuery(jQuery(realform).get(0)).attr('action', action); 
         document.getElementById("username").value = username;
         document.getElementById("password").value = password;
         //todo change this:
@@ -205,23 +224,30 @@ jQuery(function(){
 });
 
 //upon receipt of login data from cloud server:
-var processResults = function(data) {
+var processResults = function(auth_public_key) {
     var payload, exp, mod;
-    payload = data['username'] + "\n" + data['password'];
-    var chunks = data['auth_public_key'].split(':', 2);
+    payload = "ubuntu\nbioc";
+    var chunks = auth_public_key.split(':', 2);
     exp = chunks[0];
     mod = chunks[1];
     var encrypted = encrypt(payload, exp, mod);
     
-    jQuery("#loading").html("");
-    var s = '<a href="/help/cloud/launch/?username=' + data['username'];
-    s += "&password=" + data['password'] + "&encrypted=";
-    s += encrypted;
-    s += '" target="RStudio">[Launch Rstudio Server]</a>'
-    jQuery("#try_it_now_button_goes_here").html(s);
+    var link = jQuery("#ami_link").attr("href");
+    jQuery("#ami_link").attr("href", link + encrypted);
+    jQuery("#instance_loading").html("");
     jQuery("#initially_hidden").show();
-    jQuery("#tryitnow_username").html(data['username']);
-    jQuery("#tryitnow_password").html(data['password']);
+    
+    
+    
+    //jQuery("#loading").html("");
+    //var s = '<a href="/help/cloud/launch/?username=ubuntu';
+    //s += "&password=bioc" + "&encrypted=";
+    //s += encrypted;
+    //s += '" target="RStudio">[Launch Rstudio Server]</a>'
+    //jQuery("#try_it_now_button_goes_here").html(s);
+    //jQuery("#initially_hidden").show();
+    //jQuery("#tryitnow_username").html(data['username']);
+    //jQuery("#tryitnow_password").html(data['password']);
     
     
     

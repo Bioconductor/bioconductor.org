@@ -1,0 +1,48 @@
+
+<div id="tryitnow_script_here"></div>
+
+<h1>Try It Now</h1>
+
+<div id="encrypt_js"></div>
+
+
+<p>You can try out Bioconductor yourself, in your web browser, without installing anything.</p>
+
+<p>Just enter the code below and click "Try It Now."</p>
+
+<form name="mailform" method="POST"action="https://secure.bioconductor.org/mailform/start_instance.php">
+    <p>Which version of Bioconductor do you want to try out?</p>
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>">
+     Bioconductor 2.9 (R-2.14)<br/>
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_8]%>">
+     Bioconductor 2.8 (R-2.13)<br/>
+     </p>
+    <div style="width: 430px; float: left; height: 90px">
+          <img id="siimage" align="left" style="padding-right: 5px; border: 0" src="https://secure.bioconductor.org/mailform/securimage_show.php?sid=a07792a88bc82f80278de3cda120be0c" />
+    <!--
+            <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="19" height="19" id="SecurImage_as3" align="middle">
+    			    <param name="allowScriptAccess" value="sameDomain" />
+    			    <param name="allowFullScreen" value="false" />
+    			    <param name="movie" value="securimage_play.swf?audio=https://secure.bioconductor.org/mailform/securimage_play.php&bgColor1=#777&bgColor2=#fff&iconColor=#000&roundedCorner=5" />
+    			    <param name="quality" value="high" />
+
+    			    <param name="bgcolor" value="#ffffff" />
+    			    <embed src="securimage_play.swf?audio=securimage_play.php&bgColor1=#777&bgColor2=#fff&iconColor=#000&roundedCorner=5" quality="high" bgcolor="#ffffff" width="19" height="19" name="SecurImage_as3" align="middle" allowScriptAccess="sameDomain" allowFullScreen="false" type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+    			  </object>
+    -->
+            <br/>
+
+            <!-- pass a session id to the query string of the script to prevent ie caching -->
+            <a tabindex="-1" style="border-style: none" href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = 'https://secure.bioconductor.org/mailform/securimage_show.php?sid=' + Math.random(); return false"><img src="images/refresh.gif" alt="Reload Image" border="0" onclick="this.blur()" align="bottom" /></a>
+    </div>
+    <div style="clear: both"></div>
+    Code:<br/>
+
+    <!-- NOTE: the "name" attribute is "code" so that $img->check($_POST['code']) will check the submitted form field -->
+    <input type="text" name="code" size="12" /><br/><br/>
+
+    <input type="submit" value="Try It Now" />
+
+</form>
+
+
