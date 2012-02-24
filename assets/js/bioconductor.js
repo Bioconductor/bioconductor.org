@@ -231,7 +231,11 @@ jQuery(function(){
 
 var checkForEncryptJs = function(payload, exp, mod) {
     log("in function called at intervals");
+    log("payload is " + payload);
+    log("exp = " + exp);
+    log("mod = " + mod);
     if (jQuery("#encrypt_js").html() != "") {
+        log("seems like we're ready");
         clearInterval(checkForEncryptInterval);
         var encrypted = encrypt(payload, exp, mod);
 
