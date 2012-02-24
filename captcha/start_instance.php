@@ -11,7 +11,7 @@ if (empty($_POST)) {
     if($valid == true) {
         $output = "";
         $result_code = -1;
-        $last_line = exec("/home/webadmin/python/bin/python /extra/www/event_reg/mailform/" + $ami_id, $output, $result_code);
+        $last_line = exec("/home/webadmin/python/bin/python /extra/www/event_reg/mailform/start_instance.py" + $ami_id, $output, $result_code);
         header("Location: http://bioconductor.org/help/cloud/started?dns=" + $last_line);
     } else {
         header("Location: http://bioconductor.org/help/cloud/badcaptcha");
