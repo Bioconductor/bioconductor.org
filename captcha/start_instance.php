@@ -1,7 +1,7 @@
 <?php
 session_start();  // Start the session where the code will be stored.
 if (empty($_POST)) {
-    # don't do anything
+    header("Location: http://bioconductor.org/help/cloud/badcaptcha");
 } else {
     include("securimage.php");
     $img = new Securimage();
