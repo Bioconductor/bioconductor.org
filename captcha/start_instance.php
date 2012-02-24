@@ -17,7 +17,10 @@ if (empty($_POST)) {
         echo("cmd = " . $cmd . "\n<br/>");
         $last_line = exec($cmd, $output, $result_code);
         echo("last_line = " . $last_line . "\n<br/>");
-        echo("output = " . $output . "\n<br/>");
+//        echo("output = " . $output . "\n<br/>");
+        foreach ($output as $item) {
+            echo("output item = " . $item . "\n<br/>");
+        }
         echo("result_code = " . $result_code . "\n<br/>");
         //header("Location: http://bioconductor.org/help/cloud/started?dns=" . $last_line);
     } else {
