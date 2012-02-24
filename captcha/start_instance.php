@@ -17,7 +17,7 @@ if (empty($_POST)) {
         echo("cmd = " . $cmd . "\n<br/>");
         $last_line = exec($cmd, $output, $result_code);
         echo("last_line = " . $last_line . "\n<br/>");
-//        echo("output = " . $output . "\n<br/>");
+        echo("output size = " . count($output) . "\n<br/>");
         foreach ($output as $item) {
             echo("output item = " . $item . "\n<br/>");
         }
