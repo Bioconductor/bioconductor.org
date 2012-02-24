@@ -1,5 +1,10 @@
 // bioconductor.js
 
+
+// global variables
+var checkForEncryptInterval;
+var checkIntervalIsCleared = false;
+
 // logging functions:
 var fb_lite = false;
 try {
@@ -224,10 +229,17 @@ jQuery(function(){
 });
 
 
-var checkForEncryptJs = function(interval) {
+var checkForEncryptJs = function() {
     log("in function called at intervals");
     if (jQuery("#encrypt_js").html() != "") {
-        clearInterval(interval);
+        clearInterval(checkForEncryptInterval);
+        var encrypted = encrypt(payload, exp, mod);
+
+        var link = jQuery("#ami_link").attr("href");
+        jQuery("#ami_link").attr("href", link + encrypted);
+        jQuery("#instance_loading").html("");
+        jQuery("#initially_hidden").show();
+        
     }
 }
 
@@ -240,15 +252,9 @@ var processResults = function(auth_public_key) {
     exp = chunks[0];
     mod = chunks[1];
     log("before setting interval");
-    var interval = setInterval("checkForEncryptJs(interval)", 250);
+    checkForEncryptInterval = setInterval("checkForEncryptJs(payload, exp, mod)", 250);
     log("after interval");
     
-    var encrypted = encrypt(payload, exp, mod);
-    
-    var link = jQuery("#ami_link").attr("href");
-    jQuery("#ami_link").attr("href", link + encrypted);
-    jQuery("#instance_loading").html("");
-    jQuery("#initially_hidden").show();
     
     
     
