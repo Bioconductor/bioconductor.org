@@ -12,7 +12,7 @@
 
 <form name="mailform" method="POST"action="https://secure.bioconductor.org/mailform/start_instance.php">
     <p>Which version of Bioconductor do you want to try out?</p>
-    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>">
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>" checked>
      Bioconductor 2.9 (R-2.14)<br/>
     <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_8]%>">
      Bioconductor 2.8 (R-2.13)<br/>
