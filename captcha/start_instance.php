@@ -14,9 +14,9 @@ if (empty($_POST)) {
         $py = "/home/webadmin/python/bin/python";
         $script = "/extra/www/event_reg/mailform/start_instance.py";
         $cmd = $py . " " . $script . " " . $ami_id;
-        echo("$cmd = " . $cmd);
+        echo("cmd = " . $cmd);
         $last_line = exec($cmd, $output, $result_code);
-        echo("$last_line = " . $last_line);
+        echo("last_line = " . $last_line);
         //header("Location: http://bioconductor.org/help/cloud/started?dns=" . $last_line);
     } else {
         header("Location: http://bioconductor.org/help/cloud/badcaptcha");
