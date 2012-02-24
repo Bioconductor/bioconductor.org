@@ -10,8 +10,7 @@ if (empty($_POST)) {
 
     if($valid == true) {
         $py = "/home/webadmin/python/bin/python";
-        //$script = "/extra/www/event_reg/mailform/start_instance.py";
-        $script = "/extra/www/event_reg/mailform/test.py";
+        $script = "/extra/www/event_reg/mailform/start_instance.py";
         $cmd = $py . " " . $script . " " . $ami_id;
         echo("cmd = " . $cmd . "\n<br/>");
         $last_line = exec($cmd, $output, $result_code);
