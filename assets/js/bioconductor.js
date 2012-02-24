@@ -3,7 +3,9 @@
 
 // global variables
 var checkForEncryptInterval;
-var checkIntervalIsCleared = false;
+var gPayload;
+var gMod;
+var gExp;
 
 // logging functions:
 var fb_lite = false;
@@ -229,15 +231,15 @@ jQuery(function(){
 });
 
 
-var checkForEncryptJs = function(payload, exp, mod) {
+var checkForEncryptJs = function() {
     log("in function called at intervals");
-    log("payload is " + payload);
-    log("exp = " + exp);
-    log("mod = " + mod);
+    log("gPayload is " + gPayload);
+    log("gExp = " + gExp);
+    log("gMod = " + gMod);
     if (jQuery("#encrypt_js").html() != "") {
         log("seems like we're ready");
         clearInterval(checkForEncryptInterval);
-        var encrypted = encrypt(payload, exp, mod);
+        var encrypted = encrypt(gPayload, gExp, gMod);
 
         var link = jQuery("#ami_link").attr("href");
         jQuery("#ami_link").attr("href", link + encrypted);
@@ -256,7 +258,10 @@ var processResults = function(auth_public_key) {
     exp = chunks[0];
     mod = chunks[1];
     log("before setting interval");
-    checkForEncryptInterval = setInterval("checkForEncryptJs(payload, exp, mod)", 250);
+    gPayload = payload;
+    gExp = exp;
+    gMod = mod;
+    checkForEncryptInterval = setInterval("checkForEncryptJs()", 250);
     log("after interval");
     
     
