@@ -223,6 +223,15 @@ jQuery(function(){
     
 });
 
+
+var checkForEncryptJs = function(interval) {
+    log("in function called at intervals");
+    if (jQuery("#encrypt_js").html() != "") {
+        clearInterval(interval);
+    }
+}
+
+
 //upon receipt of login data from cloud server:
 var processResults = function(auth_public_key) {
     var payload, exp, mod;
@@ -230,6 +239,10 @@ var processResults = function(auth_public_key) {
     var chunks = auth_public_key.split(':', 2);
     exp = chunks[0];
     mod = chunks[1];
+    log("before setting interval");
+    var interval = setInterval("checkForEncryptJs(interval)", 250);
+    log("after interval");
+    
     var encrypted = encrypt(payload, exp, mod);
     
     var link = jQuery("#ami_link").attr("href");
