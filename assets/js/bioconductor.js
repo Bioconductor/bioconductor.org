@@ -229,7 +229,7 @@ jQuery(function(){
 });
 
 
-var checkForEncryptJs = function() {
+var checkForEncryptJs = function(payload, exp, mod) {
     log("in function called at intervals");
     if (jQuery("#encrypt_js").html() != "") {
         clearInterval(checkForEncryptInterval);
