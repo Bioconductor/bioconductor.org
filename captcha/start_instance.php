@@ -9,8 +9,6 @@ if (empty($_POST)) {
     $ami_id = $_POST['ami_id'];
 
     if($valid == true) {
-        $output = "";
-        $result_code = -1;
         $py = "/home/webadmin/python/bin/python";
         $script = "/extra/www/event_reg/mailform/start_instance.py";
         $cmd = $py . " " . $script . " " . $ami_id;
