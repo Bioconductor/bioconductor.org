@@ -52,7 +52,7 @@ print("got ip: %s" % ip)
 while True:
     try:
         print("attempt...")
-        f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip, timeout=2)
+        f = urllib2.urlopen("http://%s:8787/auth-public-key" % ip, timeout=2)
         break
     except urllib2.URLError:
         print("exception...")
