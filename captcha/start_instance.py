@@ -61,6 +61,10 @@ while True:
         # pass...
     else:
         print("no exception")
+        break
+    finally:
+        print("get out of here")
+        break
         
 auth = f.read().strip()
 f.close()
