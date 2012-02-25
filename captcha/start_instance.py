@@ -31,6 +31,7 @@ reservation = conn.run_instances(ami_id,
     security_groups=['rstudio-only'])
     
 instance = reservation.instances[0]
+print("instance DNS: %s" % instance.public_dns_name)
 
 instance.add_tag("Name", "tryitnow")
 
