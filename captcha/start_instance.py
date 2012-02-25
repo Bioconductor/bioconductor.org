@@ -41,6 +41,7 @@ while True:
         desc = conn.get_all_instances([instance.id])
         if desc[0].instances[0].state == "running":
             ip = desc[0].instances[0].public_dns_name
+            print "got ip: %s" % ip
             break
         time.sleep(1)
 
