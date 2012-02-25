@@ -199,7 +199,7 @@ jQuery(function(){
         
     }
     
-    
+    /*
     if (jQuery("#tryitnow_script_here").length > 0){
         jQuery("#initially_hidden").hide();
         jQuery("#encrypt_js").html('<script type="text/javascript" src="http://cloud.bioconductor.org:8787/js/encrypt.min.js"></script>');
@@ -212,6 +212,7 @@ jQuery(function(){
             jQuery("#tryitnow_script_here").html(s);
         });
     }
+    */
     
     if (jQuery("#launch_tryitnow").length > 0) {
         jQuery("#hide_this_stuff").hide();
