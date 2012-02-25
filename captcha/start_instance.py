@@ -47,6 +47,7 @@ while True:
 
 
 print ("ladida")
+print(ip)
 
 f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip)
 auth = f.read().strip()
