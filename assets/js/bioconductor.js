@@ -252,6 +252,7 @@ var checkForEncryptJs = function() {
 
 //upon receipt of login data from cloud server:
 var processResults = function(auth_public_key) {
+    log("result of ajax call: " + auth_public_key);
     var payload, exp, mod;
     payload = "ubuntu\nbioc";
     var chunks = auth_public_key.split(':', 2);
