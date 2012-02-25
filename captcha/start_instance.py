@@ -46,10 +46,14 @@ while True:
         time.sleep(1)
 
 
-print ("ladida")
-print(ip)
+while True:
+    try:
+        print("attempt...")
+        f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip, timeout=1)
+        break
+    except urllib2.URLError:
+        pass
 
-f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip)
 auth = f.read().strip()
 f.close()
 print ("%s;%s" % (ip, auth))
