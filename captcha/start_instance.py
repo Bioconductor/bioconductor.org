@@ -45,6 +45,9 @@ while True:
             break
         time.sleep(1)
 
+
+print ("ladida")
+
 f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip)
 auth = f.read().strip()
 f.close()
