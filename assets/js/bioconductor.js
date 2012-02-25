@@ -181,6 +181,7 @@ jQuery(function() {
 // another document ready function, for try-it-now
 jQuery(function(){
     if (jQuery("#tryitnow_instance_started".length > 0)) {
+        log("in special tryitnow document ready function");
         jQuery("#initially_hidden").hide();
         var dnsName = getParameterByName("dns");
         var url = "http://" + dnsName + ":8787";
@@ -193,6 +194,7 @@ jQuery(function(){
         jQuery("#instance_url").html(url);
         s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
           '/mailform/get_auth_string.php?url=' + auth_url + '"></script>'; 
+        log("getting auth info");
         jQuery("#get_auth_script_here").html(s);
         
     }
@@ -236,7 +238,7 @@ var checkForEncryptJs = function() {
     log("gPayload is " + gPayload);
     log("gExp = " + gExp);
     log("gMod = " + gMod);
-    if (jQuery("#encrypt_js").html() != "") {
+    if (typeof encrypt == 'function') { // or use window.encrypt?
         log("seems like we're ready");
         clearInterval(checkForEncryptInterval);
         var encrypted = encrypt(gPayload, gExp, gMod);
