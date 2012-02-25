@@ -59,6 +59,8 @@ while True:
     except urllib2.URLError:
         print("exception...")
         # pass...
+    else:
+        print("no exception")
         
 auth = f.read().strip()
 f.close()
