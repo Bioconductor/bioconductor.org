@@ -31,7 +31,6 @@ reservation = conn.run_instances(ami_id,
     security_groups=['rstudio-only'])
     
 instance = reservation.instances[0]
-print("instance DNS: %s" % instance.public_dns_name)
 
 instance.add_tag("Name", "tryitnow")
 
@@ -42,17 +41,20 @@ while True:
         desc = conn.get_all_instances([instance.id])
         if desc[0].instances[0].state == "running":
             ip = desc[0].instances[0].public_dns_name
-            print "got ip: %s" % ip
             break
         time.sleep(1)
 
 
 print("got ip: %s" % ip)
 
+url = "http://%s:8787/auth-public-key" % ip
+print("url = %s" % url)
+
 while True:
     try:
         print("attempt...")
-        f = urllib2.urlopen("http://%s:8787/auth-public-key" % ip, timeout=2)
+        f = urllib2.urlopen(url, timeout=1)
+        print("got it")
         break
     except urllib2.URLError:
         print("exception...")
