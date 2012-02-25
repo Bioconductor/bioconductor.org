@@ -187,7 +187,7 @@ jQuery(function(){
         var url = "http://" + dnsName + ":8787";
         var auth_url = url + "/auth-public-key";
         var action = url + "/auth-do-sign-in";
-        jQuery("#encrypt_js").html('<script type="text/javascript" src="'+url+'/js/encrypt.min.js"></script>');
+        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.oreg/js/encrypt.min.js"></script>');
         var link = "../launch?username=ubuntu&password=bioc&url=" + url;
         link += "&encrypted=";
         jQuery("#ami_link").attr("href", link);
