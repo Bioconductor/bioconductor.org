@@ -13,6 +13,7 @@ ami_id = sys.argv[1]
 import time
 import ConfigParser
 from boto.ec2.connection import EC2Connection
+import urllib2
 
 config_file = "%s/credentials.cfg" % sys.path[0]
 
@@ -33,12 +34,18 @@ instance = reservation.instances[0]
 
 instance.add_tag("Name", "tryitnow")
 
+ip = None
+
+
 while True:
         desc = conn.get_all_instances([instance.id])
         if desc[0].instances[0].state == "running":
             ip = desc[0].instances[0].public_dns_name
-            print(ip)
-            sys.exit(0)
+            break
         time.sleep(1)
 
+f = urllib2.urlopen("http://%s:8787/auth-sign-in" % ip)
+auth = f.read().strip()
+f.close()
+print ("%s;%s" % (ip, auth))
 
