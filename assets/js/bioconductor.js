@@ -180,7 +180,7 @@ jQuery(function() {
 
 // another document ready function, for try-it-now
 jQuery(function(){
-    if (jQuery("#tryitnow_instance_started".length > 0)) {
+    if (jQuery("#tryitnow_instance_started").length > 0) {
         log("in special tryitnow document ready function");
         jQuery("#initially_hidden").hide();
         var dnsName = getParameterByName("dns");
