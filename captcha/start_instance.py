@@ -53,8 +53,7 @@ print("url = %s" % url)
 
 while True:
     print("attempt...")
-    proc = subprocess.Popen(["curl",  "-m", "1",  "--retry", "200", "--retry-delay", "1", url], stdout=subprocess.PIPE, shell=True)
-    (out, err) = proc.communicate()
+    out = subprocess.call(["curl",  "-m", "1",  "--retry", "200", "--retry-delay", "1", url], stdout=subprocess.PIPE, shell=True)
     print "program output:", out
         
 auth = out.strip()
