@@ -56,8 +56,6 @@ while True:
     proc = subprocess.Popen(["curl",  "-m", "1",  "--retry", "200", "--retry-delay", "1", url], stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     print "program output:", out
-    print("got it")
-    break
         
 auth = out.strip()
 print ("%s;%s" % (ip, auth))
