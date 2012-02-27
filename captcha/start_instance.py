@@ -2,7 +2,6 @@
 
 
 import sys
-import subprocess
 
 argc = len(sys.argv)
 if argc != 2:
@@ -14,7 +13,7 @@ ami_id = sys.argv[1]
 import time
 import ConfigParser
 from boto.ec2.connection import EC2Connection
-import urllib2
+import subprocess
 
 config_file = "%s/credentials.cfg" % sys.path[0]
 
@@ -54,7 +53,6 @@ print("url = %s" % url)
 
 while True:
     print("attempt...")
-    f = urllib2.urlopen(url, timeout=1)
     proc = subprocess.Popen(["curl",  "-m", "1",  "--retry", "200", "--retry-delay", "1", url], stdout=subprocess.PIPE, shell=True)
     (out, err) = proc.communicate()
     print "program output:", out
