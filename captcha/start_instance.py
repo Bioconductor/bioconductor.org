@@ -2,6 +2,7 @@
 
 
 import sys
+import subprocess
 
 argc = len(sys.argv)
 if argc != 2:
@@ -49,22 +50,16 @@ print("got ip: %s" % ip)
 
 url = "http://%s:8787/auth-public-key" % ip
 print("url = %s" % url)
+#curl -m 1 --retry 200 --retry-dela-178.compute-1.amazonaws.com:8787/auth-public-key
 
 while True:
-    try:
-        print("attempt...")
-        f = urllib2.urlopen(url, timeout=1)
-        print("got it")
-        break
-    except urllib2.URLError:
-        print("exception...")
-        # pass...
-    else:
-        print("no exception")
-        break
-    finally:
-        print("get out of here")
-        break
+    print("attempt...")
+    f = urllib2.urlopen(url, timeout=1)
+    proc = subprocess.Popen(["curl",  "-m", "1",  "--retry", "200", "--retry-delay", "1", url], stdout=subprocess.PIPE, shell=True)
+    (out, err) = proc.communicate()
+    print "program output:", out
+    print("got it")
+    break
         
 auth = f.read().strip()
 f.close()
