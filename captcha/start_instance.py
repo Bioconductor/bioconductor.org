@@ -59,7 +59,6 @@ while True:
     print("got it")
     break
         
-auth = f.read().strip()
-f.close()
+auth = out.strip()
 print ("%s;%s" % (ip, auth))
 
