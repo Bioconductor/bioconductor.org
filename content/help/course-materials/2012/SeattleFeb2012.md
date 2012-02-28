@@ -13,6 +13,10 @@
 
 [Slides](careyGenet.pdf)
 
+### Machine Learning for Next-Generation Sequence Analysis
+
+[Slides](https://github.com/lianos/BiocSeqSVM)
+
 ### Biclustering and Analysis of Large Gene Sets
 
 [Slides](http://bcb.dfci.harvard.edu/~aedin/courses/Seattle2012/)
