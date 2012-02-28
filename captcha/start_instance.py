@@ -49,8 +49,7 @@ print("got ip: %s" % ip)
 
 url = "http://%s:8787/auth-public-key" % ip
 print("url = %s" % url)
-#curl -m 1 --retry 200 --retry-dela-178.compute-1.amazonaws.com:8787/auth-public-key
-cmd = "curl -m 1 --retry 200 --retry-delay 1 %s" % url
+cmd = "/usr/bin/curl -m 1 %s" % url
 cmdsegs = cmd.split(" ")
 
 while True:
