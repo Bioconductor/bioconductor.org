@@ -54,6 +54,7 @@ cmdsegs = cmd.split(" ")
 
 while True:
     print("attempt...")
+    print(cmd)
     out = subprocess.call(cmdsegs, stdout=subprocess.PIPE, shell=True)
     print "program output:", out
         
