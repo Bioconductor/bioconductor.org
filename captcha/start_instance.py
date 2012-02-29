@@ -46,14 +46,17 @@ while True:
         time.sleep(1)
 
 
-print("got ip: %s" % ip)
 
 url = "http://%s:8787/auth-public-key" % ip
+cgi_url = "http://wilson1/cgi-bin/get_auth_key?host=%s" % host
+
+print("got ip: %s" % ip)
 print("url = %s" % url)
+
 
 while True:
     try:
-        print("attempt")
+        print("attempt to hit %s" cgi_url)
         f = urllib2.urlopen("http://wilson1/cgi-bin/get_auth_key.cgi?host=%s" % ip, timeout=1)
         key = f.read()
         print("%s;%s" % (ip, key))
