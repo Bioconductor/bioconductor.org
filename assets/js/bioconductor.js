@@ -184,35 +184,32 @@ jQuery(function(){
         log("in special tryitnow document ready function");
         jQuery("#initially_hidden").hide();
         var dnsName = getParameterByName("dns");
+        var key = getParameterByName("key");
         var url = "http://" + dnsName + ":8787";
-        var auth_url = url + "/auth-public-key";
         var action = url + "/auth-do-sign-in";
-        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.oreg/js/encrypt.min.js"></script>');
+        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.org/js/encrypt.min.js"></script>');
         var link = "../launch?username=ubuntu&password=bioc&url=" + url;
         link += "&encrypted=";
         jQuery("#ami_link").attr("href", link);
         jQuery("#instance_url").html(url);
-        s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
-          '/mailform/get_auth_string.php?url=' + auth_url + '"></script>'; 
-        log("getting auth info");
-        jQuery("#get_auth_script_here").html(s);
+        //s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
+        //  '/mailform/get_auth_string.php?url=' + auth_url + '"></script>'; 
+        //log("getting auth info");
+        //jQuery("#get_auth_script_here").html(s);
         
+        var payload, exp, mod;
+        payload = "ubuntu\nbioc";
+        var chunks = key.split(':', 2);
+        exp = chunks[0];
+        mod = chunks[1];
+        log("before setting interval");
+        gPayload = payload;
+        gExp = exp;
+        gMod = mod;
+        checkForEncryptInterval = setInterval("checkForEncryptJs()", 250);
+        log("after interval");
     }
     
-    /*
-    if (jQuery("#tryitnow_script_here").length > 0){
-        jQuery("#initially_hidden").hide();
-        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://cloud.bioconductor.org:8787/js/encrypt.min.js"></script>');
-        
-        jQuery("#try_it_now_button").click(function() {
-            jQuery("#try_it_now_button_goes_here").html("");
-            jQuery("#loading").html("<p>Loading...</p>");
-            s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
-              '/mailform/get_auth_string.php?url="></script>'; 
-            jQuery("#tryitnow_script_here").html(s);
-        });
-    }
-    */
     
     if (jQuery("#launch_tryitnow").length > 0) {
         jQuery("#hide_this_stuff").hide();
@@ -252,7 +249,7 @@ var checkForEncryptJs = function() {
     }
 }
 
-
+/*
 //upon receipt of login data from cloud server:
 var processResults = function(auth_public_key) {
     log("result of ajax call: " + auth_public_key);
@@ -284,3 +281,4 @@ var processResults = function(auth_public_key) {
     
     
 }
+*/

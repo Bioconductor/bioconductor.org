@@ -13,7 +13,10 @@ if (empty($_POST)) {
         $script = "/extra/www/event_reg/mailform/start_instance.py";
         $cmd = $py . " " . $script . " " . $ami_id;
         $last_line = exec($cmd, $output, $result_code);
-        header("Location: http://bioconductor.org/help/cloud/started?dns=" . $last_line);
+        $segs = explode(";", $last_line);
+        $dns = $segs[0];
+        $key = $segs[1];
+        header("Location: http://bioconductor.org/help/cloud/started?dns=" . $dns ."&key=" . $key);
     } else {
         header("Location: http://bioconductor.org/help/cloud/badcaptcha");
     }
