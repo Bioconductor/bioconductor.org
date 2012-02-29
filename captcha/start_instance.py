@@ -38,12 +38,12 @@ instance.add_tag("Name", "tryitnow")
 ip = None
 
 
-#while True:
-desc = conn.get_all_instances([instance.id])
-#if desc[0].instances[0].state == "running":
-ip = desc[0].instances[0].public_dns_name
-#            break
-#        time.sleep(1)
+while True:
+    desc = conn.get_all_instances([instance.id])
+    if desc[0].instances[0].state == "running":
+        ip = desc[0].instances[0].public_dns_name
+        break
+        time.sleep(1)
 
 
 print("got ip: %s" % ip)
@@ -51,5 +51,15 @@ print("got ip: %s" % ip)
 url = "http://%s:8787/auth-public-key" % ip
 print("url = %s" % url)
 
-
+while True:
+    try:
+        print("attempt")
+        f = urllib2.urlopen("http://wilson1/cgi-bin/get_auth_key.cgi?host=%s" % ip)
+        key = f.read()
+        print("%s;%s" % (ip, key))
+        f.close()
+        break
+    except urllib2.URLError:
+        print("exception")
+        #pass
 
