@@ -54,7 +54,7 @@ print("url = %s" % url)
 while True:
     try:
         print("attempt")
-        f = urllib2.urlopen("http://wilson1/cgi-bin/get_auth_key.cgi?host=%s" % ip)
+        f = urllib2.urlopen("http://wilson1/cgi-bin/get_auth_key.cgi?host=%s" % ip, timeout=1)
         key = f.read()
         print("%s;%s" % (ip, key))
         f.close()
