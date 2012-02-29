@@ -53,15 +53,3 @@ print("url = %s" % url)
 
 
 
-cmd = "/usr/bin/curl -m 1 %s" % url
-cmdsegs = cmd.split(" ")
-
-while True:
-    print("attempt...")
-    print(cmd)
-    out = subprocess.call(cmdsegs, stdout=subprocess.PIPE, shell=True)
-    print "program output:", out
-        
-auth = out.strip()
-print ("%s;%s" % (ip, auth))
-
