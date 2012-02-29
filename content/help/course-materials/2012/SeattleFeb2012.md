@@ -1,3 +1,21 @@
+### Data Structures and Packages for Reproducible High-throughput Analysis
+
+
+#### 1. Introduction
+[Slides](Introduction)
+
+#### 2. A Generalized Interface for Annotations
+[Slides](Annotation.pdf)
+
+#### 3. High-level S4 Containers for HTS Data
+[Slides](GenomicRanges_slides.pdf)
+
+#### 4. Annotation of Genetic Variants
+
+[Slides](VariantAnnotation_Slides.pdf)
+[Exercises](VariantAnnotation_Exercises.pdf)
+
+
 ### ChIP-Seq Analysis with R and Bioconductor
 
 [Slides](http://faculty.ucr.edu/~tgirke/HTML_Presentations/Manuals/Rngsapps/chipseqBioc2012/Rchipseq.pdf)
@@ -12,6 +30,11 @@
 ### Genetics of Expression and the Implementation of Very High Throughput Statistical Test Procedures
 
 [Slides](careyGenet.pdf)
+
+### Accomplishing Exome Sequencing Data Tasks with Bioconductor
+[Slides](BiocExomeData.pdf)
+[Website](http://watson.nci.nih.gov/~sdavis/tutorials/)
+
 
 ### Machine Learning for Next-Generation Sequence Analysis
 
