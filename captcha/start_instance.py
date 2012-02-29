@@ -58,7 +58,7 @@ print("url = %s" % url)
 while True:
     try:
         print("attempt to hit %s" % cgi_url)
-        f = urllib2.urlopen(cgi_url % ip, timeout=1)
+        f = urllib2.urlopen(cgi_url, timeout=1)
         key = f.read()
         print("%s;%s" % (ip, key))
         f.close()
