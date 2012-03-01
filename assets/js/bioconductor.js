@@ -222,7 +222,7 @@ jQuery(function(){
         var encrypted = getParameterByName("encrypted");
         encrypted = encrypted.replace(/ /g, "+");
         var url = getParameterByName("url");
-        var action = url + "/auth-sign-in";
+        var action = url + "/auth-do-sign-in";
         //jQuery(jQuery(realform).get(0)).attr('action', action); 
         //jQuery("#realform").attr("action", action);
         jQuery("form").get(1).setAttribute("action", action);
@@ -230,10 +230,10 @@ jQuery(function(){
         document.getElementById("password").value = password;
         //todo change this:
         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
-        //document.getElementById('clientPath').value = window.location.pathname;
-        document.getElementById('clientPath').value = "/auth-sign-in";
+        document.getElementById('clientPath').value = window.location.pathname;
+        //document.getElementById('clientPath').value = "/auth-sign-in";
         document.getElementById('package').value = encrypted;
-        //document.realform.submit();
+        document.realform.submit();
     }
     
 });

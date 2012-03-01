@@ -33,7 +33,7 @@ RStudio is loading...
 	</tbody></table>
 	</form>
 
-	<form action="" name="realform" method="POST">
+	<form action="" name="realform" id="realform" method="POST">
 	   <input type="hidden" name="persist" id="persist" value="">
 	   <input type="hidden" name="appUri" value="">
 	   <input type="hidden" name="clientPath" id="clientPath" value="">
