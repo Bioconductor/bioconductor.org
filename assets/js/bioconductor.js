@@ -230,7 +230,8 @@ jQuery(function(){
         document.getElementById("password").value = password;
         //todo change this:
         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
-        document.getElementById('clientPath').value = window.location.pathname;
+        //document.getElementById('clientPath').value = window.location.pathname;
+        document.getElementById('clientPath').value = "/auth-sign-in";
         document.getElementById('package').value = encrypted;
         //document.realform.submit();
     }
