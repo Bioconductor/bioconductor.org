@@ -1,6 +1,6 @@
 
-$('document').ready(function () {
-    $('.box1').corner("5px")
-    $('abbr.timeago').timeago()
-    $('ul#uses li').corner("5px")
+jQuery('document').ready(function () {
+    jQuery('.box1').corner("5px")
+    jQuery('abbr.timeago').timeago()
+    jQuery('ul#uses li').corner("5px")
 })
