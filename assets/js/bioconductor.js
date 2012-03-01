@@ -187,7 +187,7 @@ jQuery(function(){
         var key = getParameterByName("key");
         var url = "http://" + dnsName + ":8787";
         var action = url + "/auth-do-sign-in";
-        jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.org/js/encrypt.min.js"></script>');
+        //jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.org/js/encrypt.min.js"></script>');
         var link = "../launch?username=ubuntu&password=bioc&url=" + url;
         link += "&encrypted=";
         jQuery("#ami_link").attr("href", link);
@@ -204,12 +204,13 @@ jQuery(function(){
         mod = chunks[1];
         
         
-        log("before setting interval");
-        gPayload = payload;
-        gExp = exp;
-        gMod = mod;
-        checkForEncryptInterval = setInterval("checkForEncryptJs()", 250);
-        log("after interval");
+        var encrypted = encrypt(payload, exp, mod);
+        log("called encrypt() function");
+
+        var link = jQuery("#ami_link").attr("href");
+        jQuery("#ami_link").attr("href", link + encrypted);
+        jQuery("#instance_loading").html("");
+        jQuery("#initially_hidden").show();
     }
     
     
@@ -291,5 +292,5 @@ var submit_tryitnow = function() {
     log("user clicked Try It Now button...");
     jQuery("#tryitnow_button").attr("disabled", "disabled");
     jQuery("#tryitnow_button").attr("value", "Please wait...");
-    return(true);
+    return(true);   
 }
