@@ -21,6 +21,9 @@ if (empty($_POST)) {
         echo("output = " . $output . "<br>\n");
         echo("dns = " . $dns . "<br>\n");
         echo("key = " . $key . "<br>\n");
+        foreach ($output as $item) {
+            echo("array item: " . $item . "<br>\n");
+        }
         
         //header("Location: http://bioconductor.org/help/cloud/started?dns=" . $dns ."&key=" . $key);
     } else {

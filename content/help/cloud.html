@@ -10,7 +10,8 @@
 
 <p>Just enter the code below and click "Try It Now."</p>
 
-<form name="mailform" method="POST"action="https://secure.bioconductor.org/mailform/start_instance.php">
+<form name="mailform" method="POST"action="https://secure.bioconductor.org/mailform/start_instance.php"
+onsubmit="submit_tryitnow()">
     <p>Which version of Bioconductor do you want to try out?</p>
     <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>" checked>
      Bioconductor 2.9 (R-2.14)<br/>
@@ -41,7 +42,7 @@
     <!-- NOTE: the "name" attribute is "code" so that $img->check($_POST['code']) will check the submitted form field -->
     <input type="text" name="code" size="12" /><br/><br/>
 
-    <input type="submit" value="Try It Now" />
+    <input type="submit" value="Try It Now" id="tryitnow_button"/>
 
 </form>
 
