@@ -214,13 +214,16 @@ jQuery(function(){
     }
     
     
-    if (jQuery("#launch_tryitnow").length > 0) {
+    if (jQuery("#launch_tryitnow").length > 0) { // is this launch.md?
         jQuery("#hide_this_stuff").hide();
+        log("here we are on launch.md...");
         var username = getParameterByName("username");
         var password = getParameterByName("password");
         var encrypted = getParameterByName("encrypted");
-        var action = getParameterByName("action");
-        jQuery(jQuery(realform).get(0)).attr('action', action); 
+        var url = getParameterByName("url");
+        var action = url + "/auth-sign-in";
+        //jQuery(jQuery(realform).get(0)).attr('action', action); 
+        jQuery("#realform").attr("action", action);
         document.getElementById("username").value = username;
         document.getElementById("password").value = password;
         //todo change this:
