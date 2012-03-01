@@ -16,7 +16,12 @@ if (empty($_POST)) {
         $segs = explode(";", $last_line);
         $dns = $segs[0];
         $key = $segs[1];
-        header("Location: http://bioconductor.org/help/cloud/started?dns=" . $dns ."&key=" . $key);
+        echo("last_line = " . $last_line . "<br>\n");
+        echo("output = " . $output . "<br>\n");
+        echo("dns = " . $dns . "<br>\n");
+        echo("key = " . $key . "<br>\n");
+        
+        //header("Location: http://bioconductor.org/help/cloud/started?dns=" . $dns ."&key=" . $key);
     } else {
         header("Location: http://bioconductor.org/help/cloud/badcaptcha");
     }
