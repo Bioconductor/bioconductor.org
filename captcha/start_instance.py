@@ -49,6 +49,7 @@ while True:
 
 url = "http://%s:8787/auth-public-key" % ip
 
+# this is a workaround until mamba can contact hosts on port 8787
 cgi_url = "http://dandante.com/cgi-bin/get_auth_key?host=%s&temporaryworkaround=true" % ip
 
 #print("got ip: %s" % ip)
