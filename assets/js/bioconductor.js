@@ -289,7 +289,6 @@ var processResults = function(auth_public_key) {
 */
 
 var submit_tryitnow = function() {
-    log("user clicked Try It Now button...");
     jQuery("#tryitnow_button").attr("disabled", "disabled");
     jQuery("#tryitnow_button").attr("value", "Please wait...");
     return(true);   
