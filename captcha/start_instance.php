@@ -16,6 +16,7 @@ if (empty($_POST)) {
         $segs = explode(";", $last_line);
         $dns = $segs[0];
         $key = $segs[1];
+        echo("size of output: " . count($output) . "<br>\n");
         echo("last_line = " . $last_line . "<br>\n");
         echo("output = " . $output . "<br>\n");
         echo("dns = " . $dns . "<br>\n");
