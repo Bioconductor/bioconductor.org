@@ -181,21 +181,15 @@ jQuery(function() {
 // another document ready function, for try-it-now
 jQuery(function(){
     if (jQuery("#tryitnow_instance_started").length > 0) {
-        log("in special tryitnow document ready function");
         jQuery("#initially_hidden").hide();
         var dnsName = getParameterByName("dns");
         var key = getParameterByName("key");
         var url = "http://" + dnsName + ":8787";
         var action = url + "/auth-do-sign-in";
-        //jQuery("#encrypt_js").html('<script type="text/javascript" src="http://bioconductor.org/js/encrypt.min.js"></script>');
         var link = "../launch?username=ubuntu&password=bioc&url=" + url;
         link += "&encrypted=";
         jQuery("#ami_link").attr("href", link);
         jQuery("#instance_url").html(url);
-        //s = '<script type="text/javascript" src="https://secure.bioconductor.org'+
-        //  '/mailform/get_auth_string.php?url=' + auth_url + '"></script>'; 
-        //log("getting auth info");
-        //jQuery("#get_auth_script_here").html(s);
         
         var payload, exp, mod;
         payload = "ubuntu\nbioc";
@@ -203,9 +197,7 @@ jQuery(function(){
         exp = chunks[0];
         mod = chunks[1];
         
-        
         var encrypted = encrypt(payload, exp, mod);
-        log("called encrypt() function");
 
         var link = jQuery("#ami_link").attr("href");
         jQuery("#ami_link").attr("href", link + encrypted);
@@ -216,82 +208,23 @@ jQuery(function(){
     
     if (jQuery("#launch_tryitnow").length > 0) { // is this launch.md?
         jQuery("#hide_this_stuff").hide();
-        log("here we are on launch.md...");
         var username = getParameterByName("username");
         var password = getParameterByName("password");
         var encrypted = getParameterByName("encrypted");
         encrypted = encrypted.replace(/ /g, "+");
         var url = getParameterByName("url");
         var action = url + "/auth-do-sign-in";
-        //jQuery(jQuery(realform).get(0)).attr('action', action); 
-        //jQuery("#realform").attr("action", action);
         jQuery("form").get(1).setAttribute("action", action);
         document.getElementById("username").value = username;
         document.getElementById("password").value = password;
         //todo change this:
         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
         document.getElementById('clientPath').value = window.location.pathname;
-        //document.getElementById('clientPath').value = "/auth-sign-in";
         document.getElementById('package').value = encrypted;
         document.realform.submit();
     }
     
 });
-
-
-var checkForEncryptJs = function() {
-    log("in function called at intervals");
-    log("gPayload is " + gPayload);
-    log("gExp = " + gExp);
-    log("gMod = " + gMod);
-    if (typeof encrypt == 'function') { // or use window.encrypt?
-        log("seems like we're ready");
-        clearInterval(checkForEncryptInterval);
-        log("cleared interval");
-        var encrypted = encrypt(gPayload, gExp, gMod);
-        log("called encrypt() function");
-
-        var link = jQuery("#ami_link").attr("href");
-        jQuery("#ami_link").attr("href", link + encrypted);
-        jQuery("#instance_loading").html("");
-        jQuery("#initially_hidden").show();
-        
-    }
-}
-
-/*
-//upon receipt of login data from cloud server:
-var processResults = function(auth_public_key) {
-    log("result of ajax call: " + auth_public_key);
-    var payload, exp, mod;
-    payload = "ubuntu\nbioc";
-    var chunks = auth_public_key.split(':', 2);
-    exp = chunks[0];
-    mod = chunks[1];
-    log("before setting interval");
-    gPayload = payload;
-    gExp = exp;
-    gMod = mod;
-    checkForEncryptInterval = setInterval("checkForEncryptJs()", 250);
-    log("after interval");
-    
-    
-    
-    
-    //jQuery("#loading").html("");
-    //var s = '<a href="/help/cloud/launch/?username=ubuntu';
-    //s += "&password=bioc" + "&encrypted=";
-    //s += encrypted;
-    //s += '" target="RStudio">[Launch Rstudio Server]</a>'
-    //jQuery("#try_it_now_button_goes_here").html(s);
-    //jQuery("#initially_hidden").show();
-    //jQuery("#tryitnow_username").html(data['username']);
-    //jQuery("#tryitnow_password").html(data['password']);
-    
-    
-    
-}
-*/
 
 var submit_tryitnow = function() {
     jQuery("#tryitnow_button").attr("disabled", "disabled");
