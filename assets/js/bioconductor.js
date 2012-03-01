@@ -230,7 +230,7 @@ jQuery(function(){
         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
         document.getElementById('clientPath').value = window.location.pathname;
         document.getElementById('package').value = encrypted;
-        document.realform.submit();
+        //document.realform.submit();
         
     }
     
