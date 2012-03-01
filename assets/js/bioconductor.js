@@ -239,7 +239,9 @@ var checkForEncryptJs = function() {
     if (typeof encrypt == 'function') { // or use window.encrypt?
         log("seems like we're ready");
         clearInterval(checkForEncryptInterval);
+        log("cleared interval");
         var encrypted = encrypt(gPayload, gExp, gMod);
+        log("called encrypt() function");
 
         var link = jQuery("#ami_link").attr("href");
         jQuery("#ami_link").attr("href", link + encrypted);
