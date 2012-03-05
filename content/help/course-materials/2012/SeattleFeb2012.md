@@ -26,6 +26,13 @@
 ### Isoform-specific RNA-seq
 
 [Slides](tutorial.pdf)
+[R Code](tutorial.R)
+[Package](isoformExprTutorial_0.0.5.tar.gz)
+
+Run the following R code to install the dependencies for this package:
+
+    source("http://www.tengfei.name/projects/ggbio/utils/installer.R")
+    
 
 ### Genetics of Expression and the Implementation of Very High Throughput Statistical Test Procedures
 
