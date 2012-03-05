@@ -30,7 +30,7 @@ for i in instances:
     if d['tags']['Name'] == 'tryitnow':
         # figure out how long it has been running
         lts = d['launch_time'] #format: 2009-10-27T17:10:22.000Z
-        lts = lts.sub(pat, "UTC", lts)
+        lts = lts.encode('utf-8').sub(pat, "UTC", lts)
         lt = time.strptime(t, "%Y-%m-%dT%H:%M:%S.%Z")
         now = time.gmtime()
         nowsecs = calendar.timegm(now)
