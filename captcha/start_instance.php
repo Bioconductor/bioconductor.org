@@ -26,7 +26,7 @@ if (empty($_POST)) {
             echo("array item: " . $item . "<br>\n");
         }
         */
-        echo "<meta http-equiv='refresh' content='0;url=http://biocondcutor.org/help/cloud/started?dns='" . $dns . "&key=" . $key . "'>\n";
+        echo "<meta http-equiv='refresh' content='0;url=http://bioconductor.org/help/cloud/started?dns='" . $dns . "&key=" . $key . "'>\n"; 
         //header("Location: http://bioconductor.org/help/cloud/started?dns=" . $dns ."&key=" . $key);
     } else {
         header("Location: http://bioconductor.org/help/cloud/badcaptcha");
