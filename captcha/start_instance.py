@@ -49,8 +49,6 @@ while True:
 
 url = "http://%s:8787/auth-public-key" % ip
 
-# this is a workaround until mamba can contact hosts on port 8787
-cgi_url = "http://dandante.com/cgi-bin/get_auth_key?host=%s&temporaryworkaround=true" % ip
 
 #print("got ip: %s" % ip)
 #print("url = %s" % url)
@@ -58,8 +56,7 @@ cgi_url = "http://dandante.com/cgi-bin/get_auth_key?host=%s&temporaryworkaround=
 
 while True:
     try:
-        #print("attempt to hit %s" % cgi_url)
-        f = urllib2.urlopen(cgi_url, timeout=1)
+        f = urllib2.urlopen(url, timeout=1)
         key = f.read()
         print("%s;%s" % (ip, key))
         f.close()
