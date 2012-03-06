@@ -17,9 +17,8 @@ database packages.
 
 This workflow walks through the annotation of variants located 
 in the Transient Receptor Potential Vanilloid (TRPV) gene family. 
-The VCF file is available in the cgdv17 data package
-and contains Complete Genomics data for chromosome 17 from population
-type CEU.
+The VCF file is available in the cgdv17 data package and contains 
+Complete Genomics data for chromosome 17 from population type CEU.
 
     > library(VariantAnnotation)
     > library(cgdv17)
@@ -58,9 +57,9 @@ TxDb.Hsapiens.UCSC.hg19.knownGene annotations. The annotaions
 are used to define the TRPV ranges that will be extracted from
 the VCF file.
 
+    > ## get entrez ids from gene symbols
     > library(org.Hs.eg.db)
     > genesym <- c("TRPV1", "TRPV2", "TRPV3")
-    > ## get entrez ids from gene symbols
     > geneid <- select(org.Hs.eg.db, keys=genesym, keytype="SYMBOL",
     +                  cols="ENTREZID")
     > geneid
@@ -143,10 +142,10 @@ a tabix index file must exist for the VCF. See ?indexTabix for details.
     SimpleList of length 2
     names(2): cPd GT
      
-To find the structural location of the variants we use the locateVariants 
-function with the TxDb.Hsapiens.UCSC.hg19.knownGene package we loaded 
-eariler. The variants in our VCF object have chromosome name "17" while 
-the annotation has "chr17". Adjust the seqlevels (chromosome names) of 
+To find the structural location of the variants, use the locateVariants 
+function with the TxDb.Hsapiens.UCSC.hg19.knownGene package that was
+loaded eariler. The variants in the VCF object have chromosome name "17" 
+while the annotation has "chr17". Adjust the seqlevels (chromosome names) of 
 the VCF object to match that of the annotation.
 
     > seqlevels(vcf)
@@ -164,17 +163,17 @@ the VCF object to match that of the annotation.
     ## call locateVariants
     > loc <- locateVariants(vcf_mod, txdb)
      
-    > ## For the 387 variants in vcf_mod 
+    > ## for the 387 variants in vcf_mod 
     > dim(vcf_mod)
     [1] 387   1
      
-    > ## we have 2514 rows of output
+    > ## there are 2514 rows of output
     > dim(loc)
     [1] 2514    7
      
 Each row in loc represents a variant-transcript match. To 
-answer gene-centric questions we summarize the data by gene
-reguardless of transcript.
+answer gene-centric questions data will be summarized by
+gene reguardless of transcript.
      
     > ## Did any variants match more than one gene
     > table(sapply(split(loc$geneID, loc$queryID), function(x)
@@ -202,9 +201,10 @@ reguardless of transcript.
     coding                 6     0     3    8     0
     intergenic             0     0     0    0     0
      
-Amino acid coding for non-synonymous variants :
-Load the BSgenome.Hsapiens.UCSC.hg19 package and call predictCoding
-on the VCF object with modified seqlevels.
+Amino acid coding for non-synonymous variants can be computed
+with the function predictCoding. The BSgenome.Hsapiens.UCSC.hg19 
+package is used as the source of the reference alleles. Variant 
+alleles are provided by the user.
 
     > library(BSgenome.Hsapiens.UCSC.hg19)
     > aa <- predictCoding(vcf_mod, txdb, Hsapiens)
