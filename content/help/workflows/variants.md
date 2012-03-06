@@ -1,11 +1,11 @@
-![](/images/icons/help.gif)Using Bioconductor for Annotation
-============================================================
+# ![](/images/icons/help.gif)Using Bioconductor to Annotate Genetic Variants 
+
 The VariantAnnotation package has facilities for reading
 in all or portions of Variant Call Format (VCF) files. Structural 
-locatation information as well as amino acid coding changes for 
-the non-synonymous variants. Potential consequences of the coding 
-changes can be investigated with the SIFT and PolyPhen database
-packages.
+locatation information can be determined as well as amino acid 
+coding changes for the non-synonymous variants. Consequences of 
+the coding changes can be investigated with the SIFT and PolyPhen 
+database packages.
 
 
 * [Sample Workflow](#sample-workflow)  
@@ -53,10 +53,11 @@ type CEU.
     rCov             1       Float                   relative Coverage
     cPd              1      String                called Ploidy(level)
      
-    ## Convert the gene symbols to gene ids compatible with the 
-    ## TxDb.Hsapiens.UCSC.hg19.knownGene annotations. The annotaions 
-    ## are used to define the TRPV ranges that will be extracted from
-    ## the VCF file.
+Convert the gene symbols to gene ids compatible with the 
+TxDb.Hsapiens.UCSC.hg19.knownGene annotations. The annotaions 
+are used to define the TRPV ranges that will be extracted from
+the VCF file.
+
     > library(org.Hs.eg.db)
     > genesym <- c("TRPV1", "TRPV2", "TRPV3")
     > ## get entrez ids from gene symbols
@@ -68,14 +69,16 @@ type CEU.
     12054  TRPV2    51393
     19699  TRPV3   162514
      
-    ## Load the annotation package and create a list of transcripts
-    ## by gene
+Load the annotation package and create a list of transcripts
+by gene.
+
     > library(TxDb.Hsapiens.UCSC.hg19.knownGene)
     > txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
     > txbygene = transcriptsBy(txdb, "gene")
      
-    ## Subset the annotations on chromosome 17 and adjust the seqlevels 
-    ## to match those in the VCF file.
+Subset the annotations on chromosome 17 and adjust the seqlevels 
+to match those in the VCF file.
+
     > tx_chr17 <- keepSeqlevels(txbygene, "chr17")
     > tx_17 <- renameSeqlevels(tx_chr17, c(chr17="17"))
      
@@ -84,10 +87,11 @@ type CEU.
     > rngs <- unlist(tx_17[names(tx_17) %in% geneid$ENTREZID], use.names=FALSE)
     > gnrng <- reduce(rngs)
      
-    ## To retrieve a subset of data from a VCF file we create a ScanVcfParam
-    ## object. In this object one can specify genomic coordinates (ranges) or 
-    ## individual VCF elements to be extracted. When ranges are extracted, a tabix 
-    ## index file must exist for the VCF. See ?indexTabix for details.
+To retrieve a subset of data from a VCF file, create a ScanVcfParam
+object. This object can specify genomic coordinates (ranges) or 
+individual VCF elements to be extracted. When ranges are extracted, 
+a tabix index file must exist for the VCF. See ?indexTabix for details.
+
     > param <- ScanVcfParam(which = gnrng, info = "DP", geno = c("GT", "cPd"))
     > param
     class: ScanVcfParam 
@@ -139,12 +143,12 @@ type CEU.
     SimpleList of length 2
     names(2): cPd GT
      
-    ## To find the structural location of the variants we use the
-    ## locateVariants function with the TxDb.Hsapiens.UCSC.hg19.knownGene
-    ## package we loaded eariler. The variants in our VCF object
-    ## have chromosome name "17" while the annotation has "chr17".
-    ## Adjust the seqlevels (chromosome names) of the VCF object
-    ## to match that of the annotation.
+To find the structural location of the variants we use the locateVariants 
+function with the TxDb.Hsapiens.UCSC.hg19.knownGene package we loaded 
+eariler. The variants in our VCF object have chromosome name "17" while 
+the annotation has "chr17". Adjust the seqlevels (chromosome names) of 
+the VCF object to match that of the annotation.
+
     > seqlevels(vcf)
     [1] "17"
     > head(seqlevels(txdb))
@@ -168,9 +172,9 @@ type CEU.
     > dim(loc)
     [1] 2514    7
      
-    > ## Each row in loc represents a variant-transcript match. To 
-    > ## answer gene-centric questions we summarize the data by gene
-    > ## reguardless of transcript.
+Each row in loc represents a variant-transcript match. To 
+answer gene-centric questions we summarize the data by gene
+reguardless of transcript.
      
     > ## Did any variants match more than one gene
     > table(sapply(split(loc$geneID, loc$queryID), function(x)
@@ -198,9 +202,10 @@ type CEU.
     coding                 6     0     3    8     0
     intergenic             0     0     0    0     0
      
-    ## Amino acid coding for non-synonymous variants :
-    ## Load the BSgenome.Hsapiens.UCSC.hg19 package and call predictCoding
-    ## on the VCF object with modified seqlevels.
+Amino acid coding for non-synonymous variants :
+Load the BSgenome.Hsapiens.UCSC.hg19 package and call predictCoding
+on the VCF object with modified seqlevels.
+
     > library(BSgenome.Hsapiens.UCSC.hg19)
     > aa <- predictCoding(vcf_mod, txdb, Hsapiens)
     Warning messages:
@@ -209,10 +214,10 @@ type CEU.
     2: In predictCoding(query = rdf, subject = subject, seqSource = seqSource,  :
       varAllele values containing 'N' will not be translated
      
-    ## As with locateVariants, the output from predictCoding has one row per 
-    ## variant-transcript match. Recall that predictCoding returns results for 
-    ## coding variants only so the variant per gene numbers are reduced from what 
-    ## was seen locateVariants.
+As with locateVariants, the output from predictCoding has one row per 
+variant-transcript match. Recall that predictCoding returns results for 
+coding variants only so the variant per gene numbers are reduced from what 
+was seen locateVariants.
      
     ## Did any variants match more than one gene
     > table(sapply(split(aa$geneID, aa$queryID), function(x)
@@ -237,9 +242,9 @@ type CEU.
     nonsynonymous      3     0    2
     synonymous         2     3    1
     
-    ## The SIFT.Hsapiens.dbSNP132 and PolyPhen.Hsapiens.dbSNP131 packages 
-    ## provide predictions of how damaging amino acid coding changes may
-    ## be on protein structure and function. Both packages search on rsid.
+The SIFT.Hsapiens.dbSNP132 and PolyPhen.Hsapiens.dbSNP131 packages 
+provide predictions of how damaging amino acid coding changes may
+be on protein structure and function. Both packages search on rsid.
     
     ## Load the PolyPhen package and explore the available keys and columns
     > library(PolyPhen.Hsapiens.dbSNP131)
