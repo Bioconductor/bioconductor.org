@@ -3,7 +3,7 @@
 <h1>Try It Now</h1>
 
 <div id="encrypt_js"></div>
-
+<div id="captcha_js"></div>
 
 <p>You can try out Bioconductor yourself, in your web browser, without installing anything.</p>
 
@@ -18,19 +18,13 @@ onsubmit="submit_tryitnow()">
      Bioconductor 2.8 (R-2.13)<br/>
      </p>
 
-     <script type="text/javascript"
-        src="http://api.recaptcha.net/challenge?k=6Lcpmc4SAAAAANmUcTGQbyvYzIPQKNM7XZ1iZ2Q8">
-     </script>
-
-     <noscript>
-        <iframe src="http://api.recaptcha.net/noscript?k=<your_public_key>"
-            height="300" width="500" frameborder="0"></iframe><br>
-        <textarea name="recaptcha_challenge_field" rows="3" cols="40">
-        </textarea>
-        <input type="hidden" name="recaptcha_response_field" 
-            value="manual_challenge">
-     </noscript>
-     <p>&nbsp;</p>
+     <p><img id="captcha_img"></img></p>
+     
+     <p>Please enter the word above:</p>
+     <p><input name="captcha_guess" id="captcha_guess"></input></p>
+     
+     <input type="hidden" name="captchaKey" id="captchaKey"></input>
+     <input type="hidden" name="factoryFilename" id="factoryFilename">
 
     <input type="submit" value="Try It Now" id="tryitnow_button"/>
     <span id="tryitnow_loading"></span>

@@ -224,10 +224,24 @@ jQuery(function(){
         document.realform.submit();
     }
     
+    if (jQuery("#captcha_js").length > 0)) {
+        jQuery("#captcha_js").html("<script type='text/javascript' src='http://cloud.bioconductor.org:2112/cgi-bin/get_captcha.js'></script>")
+    }
+    
 });
 
 var submit_tryitnow = function() {
     jQuery("#tryitnow_button").attr("disabled", "disabled");
     jQuery("#tryitnow_button").attr("value", "Please wait...");
     return(true);   
+}
+
+var processCaptchaResults = function(factoryFilename, captchaKey) {
+    var s = "http://cloud.bioconductor.org:2112/cgi-bin/display_captcha.jpg?factoryFilename=";
+    s += factoryFilename;
+    s += "&captchaKey=";
+    s += captchaKey;
+    jQuery("#captcha_img").attr("src", s);
+    jQuery("#captchaKey").attr("value", captchaKey);
+    jQuery("#factoryFilename").attr("value", factoryFilename);
 }
