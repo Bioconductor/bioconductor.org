@@ -9,7 +9,7 @@
 
 <p>Just enter the code below and click "Try It Now."</p>
 
-<form name="mailform" method="POST"action="http://cloud.bioconductor.org:2112/cgi-bin/start_instance.py"
+<form name="mailform" method="POST"action="http://cloud.bioconductor.org:2112/cgi-bin/start_instance.cgi"
 onsubmit="submit_tryitnow()">
     <p>Which version of Bioconductor do you want to try out?</p>
     <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>" checked>
