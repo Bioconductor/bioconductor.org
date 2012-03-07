@@ -224,7 +224,7 @@ jQuery(function(){
         document.realform.submit();
     }
     
-    if (jQuery("#captcha_js").length > 0)) {
+    if (jQuery("#captcha_js").length > 0) {
         jQuery("#captcha_js").html("<script type='text/javascript' src='http://cloud.bioconductor.org:2112/cgi-bin/get_captcha.js'></script>")
     }
     
