@@ -9,6 +9,7 @@
 
 #### 3. High-level S4 Containers for HTS Data
 [Slides](GenomicRanges_slides.pdf)
+[Solutions to exercises](GenomicRanges_solutions.pdf)
 
 #### 4. Annotation of Genetic Variants
 
