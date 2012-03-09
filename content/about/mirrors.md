@@ -38,6 +38,14 @@ United Kingdom
 
   Contact: Misha Kapushesky &lt;ostolop@ebi.ac.uk&gt;
 
+Japan
+------
 
+* [RIKEN Center for Developmental Biology](http://www.cdb.riken.jp/en/index.html)
+
+  URL: <http://bioconductor.jp/>
+  
+  Contact: Itoshi NIKAIDO, Ph.D. &lt;dritoshi@gmail.com&gt;
+  
 If you are interested in maintaining a mirror of this site (for either
 public or private use) [read this](mirror-how-to/).
