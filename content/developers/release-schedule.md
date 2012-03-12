@@ -77,6 +77,8 @@ Bioconductor:
 * Deadline for packages passing R CMD build and check without warning.
   Some warnings will be accepted, clarification on the bioc-devel mailing
   list.
+  
+* Stop release (BioC 2.9) builds. Commits to this branch will be disabled.
 
 ### March 26
 
