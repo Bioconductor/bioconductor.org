@@ -31,7 +31,12 @@ for file in files
   
   f = File.open(file)
   json = f.readlines.join("\n")
-  obj = JSON.parse(json)
+  begin
+    obj = JSON.parse(json)
+  rescue JSON::ParserError => ex
+    puts("failed to parse JSON in #{file}, skipping...")
+    next
+  end
   packages = obj.keys
   next if packages.empty? # for safety
   
