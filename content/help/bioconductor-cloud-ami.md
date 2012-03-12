@@ -12,6 +12,12 @@ Here are a few reasons you could use it:
 
 See below for more specific scenarios.
 
+
+## Try It Now
+
+You can [launch the AMI instantly](/help/cloud) and use it for free for up to
+two hours.
+
 ## Preloaded AMI
 
 The AMI comes pre-loaded with the latest release version of R, 

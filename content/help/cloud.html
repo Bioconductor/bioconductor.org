@@ -7,6 +7,11 @@
 
 <p>You can try out Bioconductor yourself, in your web browser, without installing anything.</p>
 
+<p>If you find it useful, you can install Bioconductor yourself, either by 
+    <a href="/install">installing</a> R and Bioconductor on your computer, or 
+    by using our <a href="/help/bioconductor-cloud-ami">Cloud AMI</a> with your
+    own <a href="http://aws.amazon.com/">Amazon Web Services</a> account.</p>
+
 <p>Just enter the code below and click "Try It Now."</p>
 
 <form name="mailform" method="POST"action="http://cloud.bioconductor.org:2112/cgi-bin/start_instance.cgi"
@@ -25,6 +30,10 @@ onsubmit="submit_tryitnow()">
      
      <input type="hidden" name="captchaKey" id="captchaKey"></input>
      <input type="hidden" name="factoryFilename" id="factoryFilename">
+
+
+     <p>NOTE: It will take 2-3 minutes for your Bioconductor instance
+         to be ready after you click this button.</p>
 
     <input type="submit" value="Try It Now" id="tryitnow_button"/>
     <span id="tryitnow_loading"></span>
