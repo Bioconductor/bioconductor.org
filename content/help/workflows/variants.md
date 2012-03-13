@@ -2,23 +2,25 @@
 
 The VariantAnnotation package has facilities for reading
 in all or portions of Variant Call Format (VCF) files. Structural 
-locatation information can be determined as well as amino acid 
+location information can be determined as well as amino acid 
 coding changes for the non-synonymous variants. Consequences of 
 the coding changes can be investigated with the SIFT and PolyPhen 
 database packages.
 
 
-* [Sample Workflow](#sample-workflow)  
+* [Sample Workflow](#sample-workflow) 
 * [Installation and Use](#install-and-use)
 * [Exploring Package Content](#exploring-package-content)
 * [Resources](#resources)
 
 <h2 id="sample-workflow">Sample Workflow</h2>
 
-This workflow walks through the annotation of variants located 
-in the Transient Receptor Potential Vanilloid (TRPV) gene family. 
-The VCF file is available in the cgdv17 data package and contains 
-Complete Genomics data for chromosome 17 from population type CEU.
+Performed with Bioconductor 2.10 and R >= 2.15.
+
+This workflow annotates variants found in the Transient Receptor Potential 
+Vanilloid (TRPV) gene family on chromosome 17. The VCF file is available in 
+the cgdv17 data package and contains Complete Genomics data for population 
+type CEU.
 
     > library(VariantAnnotation)
     > library(cgdv17)
