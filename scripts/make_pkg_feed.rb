@@ -15,9 +15,25 @@ list =  `svn --non-interactive --no-auth-cache --username readonly --password re
 
 lines = list.split("\n")
 mfs = lines.find_all{|i| i =~ /^bioc/ && i =~ /\.manifest$/}
-mf = mfs.last # todo need better sorting here
-manifest = `curl -s -u readonly:readonly #{rpacks_url}#{mf}
-`
+
+
+
+sorted_manifests = mfs.sort do |a, b|
+  a = a.gsub(/bioc_/, "").gsub(/\.manifest/, "")
+  b = b.gsub(/bioc_/, "").gsub(/\.manifest/, "")
+  major_a, minor_a = a.split(".")
+  major_b, minor_b = b.split(".")
+  if major_a == major_b
+    Integer(minor_a) <=> Integer(minor_b)
+  else
+    Integer(major_a) <=> Integer(major_b)
+  end
+    
+end
+
+mf = sorted_manifests.last
+
+manifest = `curl -s -u readonly:readonly #{rpacks_url}#{mf}`
 
 lines = manifest.split("\n")
 
