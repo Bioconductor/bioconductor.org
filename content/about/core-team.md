@@ -9,8 +9,6 @@
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), USA, National
   Cancer Institute.
 * Robert Gentleman, Genentech Research and Early Development, USA.
-* [Nishant Gopalakrishnan](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
 * [Rafael Irizarry](http://rafalab.jhsph.edu/)
@@ -23,9 +21,9 @@
   Research Center, USA.
 * [Herv&eacute; Pag&egrave;s](http://gentleman-lab.fhcrc.org/lab-members/hpages),
   Fred Hutchinson Cancer Research Center, USA.
-* [Dan Tenenbaum](http://www.fhcrc.org/), Fred Hutchinson Cancer
+* [Paul Shannon](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
-* [Chao-Jen Wong](http://www.fhcrc.org/), Fred Hutchinson Cancer
+* [Dan Tenenbaum](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
 
 ## Additional Participants
