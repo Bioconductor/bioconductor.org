@@ -4,36 +4,29 @@ require "pp"
 require "rubygems"
 require "dcf"
 require "rexml/document"
+require "yaml"
 
 include REXML
+
+
+nanoc_path = File.expand_path($0)
+segs = nanoc_path.split("/")
+segs.pop
+segs.pop
+nanoc_path = segs.join("/")
 
 pkg_limit = 100
 
 rpacks_url = 'https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/'
 
-list =  `svn --non-interactive --no-auth-cache --username readonly --password readonly list #{rpacks_url}`
-
-lines = list.split("\n")
-mfs = lines.find_all{|i| i =~ /^bioc/ && i =~ /\.manifest$/}
 
 
+site_config = YAML.load_file("#{nanoc_path}/config.yaml")
 
-sorted_manifests = mfs.sort do |a, b|
-  a = a.gsub(/bioc_/, "").gsub(/\.manifest/, "")
-  b = b.gsub(/bioc_/, "").gsub(/\.manifest/, "")
-  major_a, minor_a = a.split(".")
-  major_b, minor_b = b.split(".")
-  if major_a == major_b
-    Integer(minor_a) <=> Integer(minor_b)
-  else
-    Integer(major_a) <=> Integer(major_b)
-  end
-    
-end
+devel_version = site_config["devel_version"]
 
-mf = sorted_manifests.last
 
-manifest = `curl -s -u readonly:readonly #{rpacks_url}#{mf}`
+manifest = `curl -s -u readonly:readonly #{rpacks_url}bioc_#{devel_version}.manifest`
 
 lines = manifest.split("\n")
 
