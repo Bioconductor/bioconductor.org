@@ -57,6 +57,7 @@ for file in files
 
   for item in files_to_delete
     next if item == "package-detail.css"
+    next if item =~ "PAN\.html"
     deletion_list.push "#{dir}/#{item}.html"
   end
   
