@@ -194,10 +194,10 @@ def linkify(sym, package)
       end
       next
     end
-    if repo == "bioc"
-      jumpup = "../../../.."
-    else
+    if package[:repo] == "bioc/"
       jumpup = "../../.."
+    else
+      jumpup = "../../../.."
     end
     output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
   end
