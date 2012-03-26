@@ -27,7 +27,7 @@ reservations = ec2conn.get_all_instances()
 instances = [i for r in reservations for i in r.instances]
 for i in instances:
     d = i.__dict__
-    if d['tags']['Name'] == 'tryitnow':
+    if 'Name' in d['tags'] and d['tags']['Name'] == 'tryitnow':
         # figure out how long it has been running
         lts = d['launch_time'] #format: 2009-10-27T17:10:22.000Z
         lts = re.sub(pat, "UTC", lts)
