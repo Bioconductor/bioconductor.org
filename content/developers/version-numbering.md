@@ -32,6 +32,7 @@ Given a package with version number x.y.z,
 * If a package has not changed in devel, the version number will not
   be bumped in the release.
 
+The Bioconductor team will bump y as part of the release process.
 
 Example Changes
 ---------------
