@@ -27,10 +27,8 @@ if (!exists("versions") && !exists("outdir") && !exists("devel_repos")
     q("no")
 }
 
-if (!require(biocViews)) {
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("biocViews", type="source")
-} 
+source("http://bioconductor.org/biocLite.R")
+biocLite("biocViews", type="source")
 
 if (!require(rjson)) {
     source("http://bioconductor.org/biocLite.R")
