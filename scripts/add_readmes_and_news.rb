@@ -40,6 +40,7 @@ def add_extra_files(json_dir, version, repo, type)
   end
   
   pkg_file = "#{working_dir}/packages.json"
+  return unless (test(?s, pkg_file))
   f = File.open(pkg_file)
   lines = f.readlines
   f.close()
