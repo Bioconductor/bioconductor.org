@@ -138,6 +138,7 @@ Package maintainers can add NEWS files describing changes to their
 packages. The following package NEWS is available:
 
 
+
 a4Base
 ------
 
@@ -658,25 +659,50 @@ Changes in version 2007-10-12:
 categoryCompare
 ---------------
 
- Version Date Category Text
- 0.99.0  <NA> <NA>         
- 0.7.8   <NA> <NA>         
- 0.7.4   <NA> <NA>         
- 0.7.3   <NA> <NA>         
+Changes in version 0.99.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- First review in Bioconductor
+
+Changes in version 0.7.8:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Updated the vignette. Removed long lines, added links to figures,
+  fixed some errors
+
+Changes in version 0.7.4:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- changed category in ccCompare to categoryName for
+  GENccEnrichResults-class
+
+Changes in version 0.7.3:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- First commit
 
 cellGrowth
 ----------
 
- Version Date Category                                                     
- 0.99.0  <NA> no dontrun in examples                                       
- 0.99.0  <NA> use system.file() instead of installed.packages() in examples
- 0.99.0  <NA> renamed the example_files directory to extdata               
- 0.4.0   <NA> first submission                                             
- Text
-     
-     
-     
-     
+Changes in version 0.99.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- no dontrun in examples
+
+- use system.file() instead of installed.packages() in examples
+
+- renamed the example_files directory to extdata
+
+Changes in version 0.4.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- first submission
 
 clusterProfiler
 ---------------
@@ -791,24 +817,73 @@ Changes in version 1.3.1:
 CNAnorm
 -------
 
- Version Date Category
- 1.1.8   <NA> <NA>    
- 1.1.7   <NA> <NA>    
- 1.1.6   <NA> <NA>    
- 1.1.5   <NA> <NA>    
- 1.1.4   <NA> <NA>    
- 1.1.3   <NA> <NA>    
- 1.1.2   <NA> <NA>    
- 1.1.1   <NA> <NA>    
- Text                                                                                                                                                                                                                                                                                                                   
- if there are no points in a certain area.                                                                                                                                                                                                                                                                              
- values used in peakPloidy Added option fixVAxes to plotGenome to fix\nvertical axes to maxRatio and minRatio Fixed plotGenome so that the\nline from superimpose = "DNACopy" is actually a line and not a series\nof dots If plotting only one chromosome, instead of plotting chr\nname, it plots chromosome position.
- Fixed the 'mode' method Internal tiding                                                                                                                                                                                                                                                                                
-                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                        
-                                                                                                                                                                                                                                                                                                                        
+Changes in version 1.1.8:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Fixed plotGenome so that, when fixVaxes = TRUE horizontal lines are
+  drawn even if there are no points in a certain area.
+
+Changes in version 1.1.7:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Removed arguments 'adjust' and 'n' from plotPeaks as it needs to
+  retrieve the same values used in peakPloidy
+
+- Added option fixVAxes to plotGenome to fix vertical axes to maxRatio
+  and minRatio
+
+- Fixed plotGenome so that the line from superimpose = "DNACopy" is
+  actually a line and not a series of dots
+
+- If plotting only one chromosome, instead of plotting chr name, it
+  plots chromosome position.
+
+Changes in version 1.1.6:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added method 'closest' to function peakPloidy for a "standard"
+  normalisation
+
+- Fixed the 'mode' method
+
+- Internal tiding
+
+Changes in version 1.1.5:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added methods 'median' and 'mode' to to function peakPloidy for a
+  "standard" normalisation
+
+Changes in version 1.1.4:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Fixed an error in exportTable which was providing a meaningless value
+  for SegMean
+
+Changes in version 1.1.3:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Changed the provided data (LS041 and CN) to match what bam2windows.pl
+  version 0.3.4
+
+Changes in version 1.1.2:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added an option to plot more colorful genome plots
+
+Changes in version 1.1.1:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Corrected a bug in exportTable that crashed if smoothed ratio was not
+  available.
 
 codelink
 --------
@@ -852,80 +927,281 @@ Changes in version 1.0.1:
 cummeRbund
 ----------
 
- Version Date Category
- 1.1.5   <NA> <NA>    
- 1.1.4   <NA> <NA>    
- 1.1.3   <NA> <NA>    
- 1.1.1   <NA> <NA>    
- Text                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
- Bugfixes: - Fixed minor bug in database setup that caused instability\nwith cuffdiff --no-diff argument.  - Fixed bug in csDendro method for\nCuffData objects.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
- New Features: - Added MAplot() method to CuffData objects.  Bugfixes:\n- Finished abrupt migration to reshape2. As a result fixed a bug in\nwhich 'cast' was still required for several functions and could not\nbe found. Now appropriately using 'dcast' or 'acast'.  - Fixed minor\nbug in CuffFeature::fpkmMatrix                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
- New Features: - getSig() has been split into two functions: getSig()\nnow returns a vector of ids (no longer a list of vectors), and\ngetSigTable() returns a 'testTable' of binary values indicating\nwhether or not a gene was significant in a particular comparison.  -\nAdded ability in getSig() to limit retrieval of significant genes to\ntwo provided conditions (arguments x & y). (reduces time for function\ncall if you have a specific comparison in mind a priori) * When you\nspecify x & y with getSig(), q-values are recalculated from just\nthose selected tests to reduce impact of multiple testing correction.\n* If you do not specificy x & y getSig() will return a vector of\ntracking_ids for all comparisons (with appropriate MTC).  - You can\nnow specify an 'alpha' for getSig() and getSigTable() [ 0.05 by\ndefault to match cuffdiff default ] by which to filter the resulting\nsignificance calls.  - Added csSpecificity() method: This method\nreturns a feature-X-condition matrix (same shape as fpkmMatrix) that\nprovides a 'condition-specificity' score * defined as 1-(JSdist(p,q))\nwhere p is is the density of expression (probability vector of\nlog(FPKM+1)) of a given gene across all conditions, and q is the unit\nvector for that condition (ie. perfect expression in that particular\ncondition) * specificity = 1.0 if the feature is expressed\nexclusively in that condition - Created csDendro() method: This\nmethod returns a object of class 'dendrogram' (and plots using grid)\nof JS distances between conditions for all genes in a CuffData,\nCuffGeneSet, or CuffFeatureSet object.  * Useful for identifying\nrelationships between conditions for subsets of features - New visual\ncues in several plot types that indicates the quantification status\n('quant_stat' field) of a particular gene:condition. This information\nis useful to indicate whether or not to trust the expression values\nfor a given gene under a specific condition, and may provide insight\ninto outlier expression values.  * This feature can be disabled by\nsetting showStatus=F.  - csDensity() is now available for\nCuffFeatureSet and CuffGeneSet objects Bugfixes: - Fixed bug in\ngetGenes that may have resulted in long query lag for retrieving\npromoter diffData. As a result all calls to getGenes should be\nsignificanly faster.  - CuffData fpkm argument 'features' now returns\nappropriate data.frame (includes previously un-reported data fields).\n- Replaced all instances of 'ln_fold_change' with the actual\n'log2_fold_change'.  Values were previously log2 fold change but\ndatabase headers were not updated to reflect this.  - Fixed bug that\ncould cause readCufflinks() to die with error when using\nreshape2::melt instead of reshape::melt.  Notes: - ***The structure\nof the underlying database has changed in this version.  As a\nconsequence, you must rebuild you cuffData.db file to use new\nversion. readCufflinks(rebuild=T)*** - Updated vignette - A\n'fullnames' logical argument was added to fpkmMatrix. If True,\nrownames for fpkmMatrix will be a concatenation of gene_short_name\nand tracking_id.  This has the added benefit of making row labels in\ncsHeatmap easier to read, as well as preserving uniqueness.  - Slight\nspeed improvements to JSdist (noticeable when using csCluster on\nlarge feature sets).  - 'testTable' argument to getSig() has been\ndropped in lieu of new getSigTable() method.
- Bugfixes: - fixed issue in which there was no graceful error handling\nof missing CDS or TSS data in cuffdiff output.  - Fixed issue in\nwhich distribution test data (promoters, splicing, relCDS) were not\nappropriately added to objects on creation.  - Fixed bug that would\nsometimes cause csBoxplot() to throw an error when log-transforming\nfpkm data. Also added pseudocount argument.  - Fixed bug that would\ncause diffData() to return a filtered subset of results by default.\n- Adjusted indexing of tables to improve performance on large\ndatasets.  - Fixed bug that caused diffData method to not be\nregistered with CuffFeature and CuffGene objects.  - Fixed bug that\nsometimes caused over-plotting of axis labels in csBarplots.  New\nFeatures: - added getSig method to CuffSet class for rapid retrieval\nof significant features from all pairwise tests (as a list of IDs).\nBy default the level is 'genes' but any feature level can be queried.\n- csCluster now uses Jensen-Shannon distance by default (as opposed\nto Euclidean) - Added 'xlimits' argument to csVolcano to constrain\nplot dimensions.  - Enforced requirement in csVolcano for x and y\narguments (as sample names).  Notes: - Changed dependency 'reshape'\nto 'reshape2' - Changed the default orientation of\nexpressionBarplot() for CuffFeatureSet objects.  - Changed output of\ncsCluster to a list format that includes clustering information. As a\nresult, I created the function csClusterPlot to replace the previous\ndefault drawing behavior of csCluster.  This allows for stable\ncluster analysis.  - For consistency, the 'testId' slot for CuffDist\nobjects was renamed to 'idField'.  This brings the CuffDist class in\nline with the CuffData class.  - CuffGene and CuffGeneSet now include\nslots for promoter, splicing, and relCDS distribution test results.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
+Changes in version 1.1.5:
+
+BUG FIXES
+
+- Fixed minor bug in database setup that caused instability with
+  cuffdiff --no-diff argument. oFixed bug in csDendro method for
+  CuffData objects.
+
+Changes in version 1.1.4:
+
+NEW FEATURES
+
+- Added MAplot() method to CuffData objects.
+
+BUG FIXES
+
+- Finished abrupt migration to reshape2. As a result fixed a bug in
+  which 'cast' was still required for several functions and could not
+  be found. Now appropriately using 'dcast' or 'acast'.
+
+- Fixed minor bug in CuffFeature::fpkmMatrix
+
+Changes in version 1.1.3:
+
+NEW FEATURES
+
+- getSig() has been split into two functions: getSig() now returns a
+  vector of ids (no longer a list of vectors), and getSigTable()
+  returns a 'testTable' of
+
+- binary values indicating whether or not a gene was significant in a
+  particular comparison.
+
+- Added ability in getSig() to limit retrieval of significant genes to
+  two provided conditions (arguments x & y). (reduces time for function
+  call if you have a specific comparison in mind a priori)
+
+- When you specify x & y with getSig(), q-values are recalculated from
+  just those selected tests to reduce impact of multiple testing
+  correction.
+
+- If you do not specificy x & y getSig() will return a vector of
+  tracking_ids for all comparisons (with appropriate MTC).
+
+- You can now specify an 'alpha' for getSig() and getSigTable() [ 0.05
+  by default to match cuffdiff default ] by which to filter the
+  resulting significance calls.
+
+- Added csSpecificity() method: This method returns a
+  feature-X-condition matrix (same shape as fpkmMatrix) that provides a
+  'condition-specificity' score defined as 1-(JSdist(p,q)) where p is
+  is the density of expression (probability vector of log(FPKM+1)) of a
+  given gene across all conditions, and q is the unit vector for that
+  condition (ie. perfect expression in that particular condition)
+
+- specificity = 1.0 if the feature is expressed exclusively in that
+  condition
+
+- Created csDendro() method: This method returns a object of class
+  'dendrogram' (and plots using grid) of JS distances between
+  conditions for all genes in a CuffData, CuffGeneSet, or
+  CuffFeatureSet object.
+
+- Useful for identifying relationships between conditions for subsets
+  of features
+
+- New visual cues in several plot types that indicates the
+  quantification status ('quant_stat' field) of a particular
+  gene:condition. This information is useful to indicate whether or not
+  to trust the expression values for a given gene under a specific
+  condition, and may provide insight into outlier expression values.
+  This feature can be disabled by setting showStatus=F.
+
+- csDensity() is now available for CuffFeatureSet and CuffGeneSet
+  objects
+
+BUG FIXES
+
+- Fixed bug in getGenes that may have resulted in long query lag for
+  retrieving promoter diffData. As a result all calls to getGenes
+  should be significantly faster.
+
+- CuffData fpkm argument 'features' now returns appropriate data.frame
+  (includes previously un-reported data fields).
+
+- Replaced all instances of 'ln_fold_change' with the actual
+  'log2_fold_change'.  Values were previously log2 fold change but
+  database headers were not updated to reflect this.
+
+- Fixed bug that could cause readCufflinks() to die with error when
+  using reshape2::melt instead of reshape::melt.
+
+NOTES
+
+- ***The structure of the underlying database has changed in this
+  version.  As a consequence, you must rebuild you cuffData.db file to
+  use new version. readCufflinks(rebuild=T)***
+
+- Updated vignette
+
+- 'fullnames' logical argument was added to fpkmMatrix. If True,
+  rownames for fpkmMatrix will be a concatenation of gene_short_name
+  and tracking_id. This has the added benefit of making row labels in
+  csHeatmap easier to read, as well as preserving uniqueness.
+
+- Slight speed improvements to JSdist (noticeable when using csCluster
+  on large feature sets).
+
+- 'testTable' argument to getSig() has been dropped in lieu of new
+  getSigTable() method.
+
+Changes in version 1.1.1:
+
+BUG FIXES
+
+- fixed issue in which there was no graceful error handling of missing
+  CDS or TSS data in cuffdiff output.
+
+- Fixed issue in which distribution test data (promoters, splicing,
+  relCDS) were not appropriately added to objects on creation. oFixed
+  bug that would sometimes cause csBoxplot() to throw an error when
+  log-transforming fpkm data. Also added pseudocount argument.
+
+- Fixed bug that would cause diffData() to return a filtered subset of
+  results by default.
+
+- Adjusted indexing of tables to improve performance on large datasets.
+
+- Fixed bug that caused diffData method to not be registered with
+  CuffFeature and CuffGene objects.
+
+- Fixed bug that sometimes caused over-plotting of axis labels in
+  csBarplots.
+
+NEW FEATURES
+
+- added getSig method to CuffSet class for rapid retrieval of
+  significant features from all pairwise tests (as a list of IDs).
+
+- By default the level is 'genes' but any feature level can be queried.
+
+- csCluster now uses Jensen-Shannon distance by default (as opposed to
+  Euclidean)
+
+- Added 'xlimits' argument to csVolcano to constrain plot dimensions.
+
+- Enforced requirement in csVolcano for x and y arguments (as sample
+  names).
+
+NOTES
+
+- Changed dependency 'reshape' to 'reshape2'
+
+- Changed the default orientation of expressionBarplot() for
+  CuffFeatureSet objects.
+
+- Changed output of csCluster to a list format that includes clustering
+  information. As a result, I created the function csClusterPlot to
+  replace the previous default drawing behavior of csCluster.  This
+  allows for stable cluster analysis.
+
+- For consistency, the 'testId' slot for CuffDist objects was renamed
+  to 'idField'.  This brings the CuffDist class in line with the
+  CuffData class.
+
+- CuffGene and CuffGeneSet now include slots for promoter, splicing,
+  and relCDS distribution test results.
 
 deepSNV
 -------
 
- Version Date       Category      
- 1.0.0   2012-03-29 Updates       
- 1.0.0   2012-03-29 Updates       
- 1.0.0   2012-03-29 Updates       
- 0.99.3  <NA>       Bugfixes      
- 0.99.3  <NA>       Bugfixes      
- 0.99.2  2012-01-20 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.1  2012-01-06 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.99.0  2011-12-21 Updates       
- 0.9.5   <NA>       Updates       
- 0.9.5   <NA>       Bugfixes      
- 0.9.4   <NA>       Updates       
- 0.9.4   <NA>       Updates       
- 0.9.3   <NA>       <NA>          
- 0.9.3   <NA>       <NA>          
- 0.9.3   <NA>       <NA>          
- 0.9.2   <NA>       <NA>          
- 0.9.1   <NA>       Minor bugfixes
- 0.9.0   <NA>       Pre-release   
- Text                                                                     
- Added CITATION file                                                      
- Made NEWS (this file) R-readable                                         
- Changed Vignette                                                         
- Fixed error in summary() when there were no significant SNVs.            
- Some fixes if only a single column of the alignment is selected          
- Changed plot to S3 method (to avoid warning in R-devel)                  
- Added small .bam example files test.bam, control.bam with 100\npositions.
- Modified man pages for bam2R()                                           
- Modified man page for coordinates()                                      
- Corrected example of consensusSequence()                                 
- Compressed .RData files with tools::resaveRdaFiles                       
- Changed vignette to attach data, rather than load remotely.              
- Argument "regions" of deepSNV can be a GRanges object.                   
- Added BiocViews field                                                    
- Added HIVmix data                                                        
- Added new examples                                                       
- Registered bam2R with R_registerRoutines                                 
- New accessor functions "test", "control", "p.val", and "coordinates"     
- Updated vignette                                                         
- "summary" now reports additional columns from regions slot.              
- drop=FALSE in subsetting and summary.                                    
- Directly link to static samtools library provided by Rsamtools           
- Load example .bam files over http                                        
- Added beta-binomial model                                                
- Extended documentation                                                   
- Use summary instead of significantSNV                                    
- Minor bugfixes                                                           
-                                                                          
-                                                                          
+Changes in version 1.1.4:
+
+BUG FIXES
+
+- Fixed error in summary() when there were no significant SNVs.
+
+- Some fixes if only a single column of the alignment is selected
+
+Changes in version 1.0.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added CITATION file
+
+- Made NEWS (this file) R-readable
+
+- Changed Vignette
+
+Changes in version 0.99.2:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Changed plot to S3 method (to avoid warning in R-devel)
+
+Changes in version 0.99.1:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added small .bam example files test.bam, control.bam with 100
+  positions.
+
+- Modified man pages for bam2R()
+
+- Modified man page for coordinates()
+
+- Corrected example of consensusSequence()
+
+- Compressed .RData files with tools::resaveRdaFiles
+
+- Changed vignette to attach data, rather than load remotely.
+
+- Argument "regions" of deepSNV can be a GRanges object.
+
+Changes in version 0.99.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added BiocViews field
+
+- Added HIVmix data
+
+- Added new examples
+
+- Registered bam2R with R_registerRoutines
+
+- New accessor functions "test", "control", "p.val", and "coordinates"
+
+- Updated vignette
+
+Changes in version 0.9.5:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- "summary" now reports additional columns from regions slot.
+
+BUG FIXES
+
+- drop=FALSE in subsetting and summary.
+
+Changes in version 0.9.4:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Directly link to static samtools library provided by Rsamtools
+
+- Load example .bam files over http
+
+Changes in version 0.9.3:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Added beta-binomial model
+
+- Extended documentation
+
+- Use summary instead of significantSNV
+
+Changes in version 0.9.2:
+
+BUG FIXES
+
+- Minor bugfixes
+
+Changes in version 0.9.1:
+
+BUG FIXES
+
+- Minor bugfixes
+
+Changes in version 0.9.0:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Pre-release
 
 DESeq
 -----
@@ -1316,18 +1592,24 @@ Changes in version 1.2.0 (2012-02-26):
 flowCore
 --------
 
- Version Date
- 1.21.1  <NA>
- 1.21.1  <NA>
- 1.21.5  <NA>
- Category                                                                                                                     
- add TEXT segment parser in readFCStext function for FCS3 when the delimiter characters existing inside of                    
- keyword values. Note this parser require all keywords and their values to be non-empty, which conforms to FCS3 standard      
- add .readFCSdataRaw routine to read FCS containing bit-packed integer data (with odd-bitwidth like 9,11 instead of 8,16,32,64
- Text                                                                                                                       
-                                                                                                                            
-                                                                                                                            
- .Currently the bit-wise manipulation is done within R,it can be moved\nto C if speed issue becomes a problem in the future.
+Changes in version 1.21.5:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- add .readFCSdataRaw routine to read FCS containing bit-packed integer
+  data (with odd-bitwidth like 9,11 instead of 8,16,32,64)
+
+- Currently the bit-wise manipulation is done within R,it can be moved
+  to C if speed issue becomes a problem in the future.
+
+Changes in version 1.21.1:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- add TEXT segment parser in readFCStext function for FCS3 when the
+  delimiter characters existing inside of keyword values. Note this
+  parser require all keywords and their values to be non-empty, which
+  conforms to FCS3 standard
 
 GeneGroupAnalysis
 -----------------
@@ -1442,18 +1724,6 @@ Changes in version 2006-03-16:
   Version 0.1
 
 - Initial version # NEWS ends here
-
-genoCN
-------
-
- Version Date Category
- 1.07    <NA> Updates 
- 1.08    <NA> Updates 
- 1.09    <NA> Updates 
- Text                                                                                                                                                                                                                                                                                                                                                                            
- (1) Fixed a bug in initializing the default transition probability.\nIn version 1.06, loh=FALSE cannot completely eliminate LOH state\nbecause the default transition probability to LOH state is not set as\n0.                                                                                                                                                                
- (1) Change the default output of SNP information, now output the\nposterior probabilities of all copy number and genotype states for\nall the SNPs. Note, for one SNP, the posterior probability for\ndifferent copy number states (genotype states) may not add up to 1.\nThis is because the uniform component in the mixture distribution\ntakes the remaining probabilities.
- (1) Change the plotCN function so that by default it plots LRR and\nBAF, without copy number calls. (2) Add a simulated data for human\nchromosome 22 and information of the SNPs for chromosome 22.                                                                                                                                                                            
 
 GenomicFeatures
 ---------------
@@ -1578,18 +1848,31 @@ BUG FIXES
 genoset
 -------
 
- Version Date
- 1.4.9   <NA>
- 1.4.10  <NA>
- 1.4.19  <NA>
- Category                                                                                                                                                                                                         
- <NA>                                                                                                                                                                                                             
- segTable for Rle now optionally takes chrIndices table, start and stop from locData for speed. segTable for DataFrame uses this trick. Much faster.  About 95% time reduction for a large dataset on a large chip
- <NA>                                                                                                                                                                                                             
- Text                                                                                                                                                                                                                                                                                                                                                  
- *** API Changes *** segTable on a DataFrame of Rle now has a "stack"\nargument to rbind the resulting list of data.frames of per-sample\nsegments into on giant data.frame.  A "Sample" column will be added\nto separate samples.  The list of individual data.frames no longer\nhas an "ID" column.  Also, some refactoring to speed up this method.
-                                                                                                                                                                                                                                                                                                                                                       
- *Minor API change* Rarely used (by me) method, orderedChrs, gone.\nIt's just chrOrder(chrNames(x)) anyway. 'names' on GenoSet\ndepricated.  chrNames gives universal way to get chromosome names\n(i.e. names, seqlevels) for GenoSet, RangedData, GRanges.                                                                                           
+Changes in version 1.4.19:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- *Minor API change* Rarely used (by me) method, orderedChrs, gone.
+  It's just chrOrder(chrNames(x)) anyway. 'names' on GenoSet
+  depricated.  chrNames gives universal way to get chromosome names
+  (i.e. names, seqlevels) for GenoSet, RangedData, GRanges.
+
+Changes in version 1.4.10:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- segTable for Rle now optionally takes chrIndices table, start and
+  stop from locData for speed. segTable for DataFrame uses this trick.
+  Much faster.  About 95% time reduction for a large dataset on a large
+  chip.
+
+Changes in version 1.4.9:
+
+- *** API Changes *** segTable on a DataFrame of Rle now has a "stack"
+  argument to rbind the resulting list of data.frames of per-sample
+  segments into on giant data.frame.  A "Sample" column will be added
+  to separate samples.  The list of individual data.frames no longer
+  has an "ID" column.  Also, some refactoring to speed up this method.
 
 ggbio
 -----
@@ -1885,14 +2168,6 @@ Changes in version 1.1.1:
 
 - Added option to compute Spearman correlations in cmds
 
-IPPD
-----
-
- Version    Date Category Text
- 09-29-2010 <NA> <NA>         
- 01-12-2011 <NA> <NA>         
- 01-17-2012 <NA> <NA>         
-
 IRanges
 -------
 
@@ -2041,25 +2316,12 @@ NEW FEATURES
 KEGGgraph
 ---------
 
- Version    Date       Category Text
- 2011-12-14 2011-12-14 <NA>         
- 1.11.1     <NA>       <NA>         
- 2011-08-23 2011-08-23 <NA>         
- 2011-08-23 2011-08-23 <NA>         
- 2010-09-23 2010-09-23 <NA>         
- 2009-12-15 2009-12-15 <NA>         
- 2009-11-23 2009-11-23 <NA>         
- 2009-10-18 2009-10-18 <NA>         
- 2009-10-01 2009-10-01 <NA>         
- 2009-06-28 2009-06-28 <NA>         
- 2009-04-27 2009-04-27 <NA>         
- 2008-12-11 2008-12-11 <NA>         
- 2008-12-11 2008-12-11 <NA>         
- 2008-10-28 2008-10-28 <NA>         
- 2008-10-28 2008-10-28 <NA>         
- 2008-10-27 2008-10-27 <NA>         
- 2008-10-27 2008-10-27 <NA>         
- 2008-10-24 2008-10-24 <NA>         
+Changes in version 1.11.1:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- The colorectalcancerSPIA dataset has been compressed with R CMD build
+  --resave-data
 
 limma
 -----
@@ -2512,14 +2774,53 @@ Changes in version 1.3.0:
 ncdfFlow
 --------
 
- Version Date Category    
- 1.1.1   <NA> FEATURES    
- 1.1.1   <NA> KNOWN ISSUES
- 1.1.2   <NA> <NA>        
- Text                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 
- -netCDF support for large data sets. -centralized storage of flow\ndata in 3-D matrix (sample*channel*event) -fast data\naccessing,subsetting and splitting -support all the related methods\nfor flowSet                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
- write meta data - ncdfFlow allows user to save the entire ncdfFlowSet\nobject in ncdf file.  Currently the meta data is first serialized in\nR and stored as raw vector in cdf. It can fail when the meta data\nsize exceeds the limit of serialization function.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
- 1.Using temporary directory instead of working directory to store cdf\nfile in creating ncdfFlowSet from flowSet 2.allow for user specified\npath in ncdfFlowSet_sync method to save the cdf in different location\nother than original one 3.clone.ncdfFlowSet function: -change\nargument name to avoid confusion:sNewNcFile-->isNew\n;newNcFile-->fileName -avoid copying the entire cdf repository when\nclone subsetted ncdfFlowSet -fix the bug of inconsistent dimensions\n(sample*colnames) when create the new cdf file 4.check whether source\nfile exist in read.ncdfFlowSet 5..writeSlice: -allow for either\nflowFrame or matrix to be added by -add sample name to the error\nmessage to help troubleshoot the problematic FCS file especially for\nloading large datasets 6.add isNew=FALSE to split method to allow for\nsplitting into multipe cdf files for the sake of parallel computing\n7.set compress=FALSE to disable compression mode of CDF
+Changes in version 1.1.2:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Using temporary directory instead of working directory to store cdf
+  file in creating ncdfFlowSet from flowSet
+
+- allow for user specified path in ncdfFlowSet_sync method to save the
+  cdf in different location other than original one
+
+- clone.ncdfFlowSet function: - change argument name to avoid
+  confusion:sNewNcFile-->isNew ;newNcFile-->fileName -avoid copying the
+  entire cdf repository when clone subsetted ncdfFlowSet -fix the bug
+  of inconsistent dimensions (sample*colnames) when create the new cdf
+  file
+
+- check whether source file exist in read.ncdfFlowSet
+
+- .writeSlice: -allow for either flowFrame or matrix to be added by
+  -add sample name to the error message to help troubleshoot the
+  problematic FCS file especially for loading large datasets
+
+- add isNew=FALSE to split method to allow for splitting into multipe
+  cdf files for the sake of parallel computing
+
+- set compress=FALSE to disable compression mode of CDF
+
+Changes in version 1.1.1:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- netCDF support for large data sets.
+
+- centralized storage of flow data in 3-D matrix (sample*channel*event)
+
+- fast data accessing,subsetting and splitting
+
+- support all the related methods for flowSet
+
+KNOWN ISSUES
+
+- write meta data - ncdfFlow allows user to save the entire ncdfFlowSet
+  object in ncdf file.
+
+- Currently the meta data is first serialized in R and stored as raw
+  vector in cdf. It can fail when the meta data size exceeds the limit
+  of serialization function.
 
 netresponse
 -----------
@@ -2632,8 +2933,11 @@ BUG FIXES
 oneChannelGUI
 -------------
 
- Version Date Category                           Text
- 1.21.11 <NA> adding interface to EDASeq package     
+Changes in version 1.21.11:
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- adding interface to EDASeq package
 
 pdInfoBuilder
 -------------
@@ -2750,14 +3054,6 @@ Changes in version 1.5.2:
 
 - Added new graphical components, options and annotations to the
   plotVariants function.
-
-RchyOptimyx
------------
-
- Version Date Category Text
- 0.99.1  <NA> <NA>         
- 0.99.4  <NA> <NA>         
- 0.99.5  <NA> <NA>         
 
 RCytoscape
 ----------
@@ -2879,8 +3175,32 @@ Changes in version 0.1.0:
 RedeR
 -----
 
- Version    Date Category Text
- 2011-03-23 <NA> <NA>         
+Changes in version 1.1.16:
+
+NEW FEATURES
+
+- Loading performance, xml serialization, data packing and post
+  formats.
+
+- Server/client connection.
+
+- Control over the app main features from R.
+
+- Node-container assignment options.
+
+BUG FIXES
+
+- Correction/fine-tune of dynamic layout function under
+  zoom-in/zoom-out requests.
+
+- Merge out-edge function is fixed to rescale with node size.
+
+- Legend function is fixed for node/edge shape attributes.
+
+- Legend color is fixed for two-palette option.
+
+- The method 'addGraph' is fixed to load/convert directed graphs from
+  igraph to RedeR.
 
 ReQON
 -----
