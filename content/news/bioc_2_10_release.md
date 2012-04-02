@@ -3690,7 +3690,7 @@ Packages removed from the release
 =================================
 
 The following packages are no longer in the release: 
-edd, RMAGEML, ontoTools, GeneR, RTools4TB
+edd, ontoTools, GeneR, RMAGEML, RTools4TB
 
 
 [bioc]: http://bioconductor.org
