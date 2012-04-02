@@ -167,11 +167,16 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
     </tr>
    </thead>
   <tbody valign="top">
-      <tr>
-          <td>2.9</td>
-          <td>2.14</td>
-          <td><%= config[:ami_ids][:bioc2_9]%></td>
-      </tr>
+    <tr>
+        <td>2.10</td>
+        <td>2.15</td>
+        <td><%= config[:ami_ids][:bioc2_10]%></td>
+    </tr>
+    <tr>
+        <td>2.9</td>
+        <td>2.14</td>
+        <td><%= config[:ami_ids][:bioc2_9]%></td>
+    </tr>
     <tr>
         <td>2.8</td>
         <td>2.13</td>
