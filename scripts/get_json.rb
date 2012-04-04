@@ -9,6 +9,25 @@ require 'net/http'
 require 'uri'
 require 'pp'
 
+class RGL::DirectedAdjacencyGraph
+  def children(parent)
+    children = []
+    for edge in self.edges
+      children.push edge.target if edge.source == parent
+    end
+    children
+  end
+  
+  def parents(child)
+    parents = []
+    for edge in self.edges
+      parents.push edge.source if edge.target == child
+    end
+    parents
+  end
+end
+
+
 class GetJson
   
   
@@ -46,7 +65,7 @@ class GetJson
   
   
   def clean_dcfs(dcfs)
-    ret = []
+    ret = {}
     plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews"]
     for dcf in dcfs
       obj = dcf.first
@@ -57,25 +76,52 @@ class GetJson
           obj[key] = ary
         end
       end
-      ret.push obj
+      key = obj["Package"]
+      ret[key] = obj
     end
     ret
   end
   
-  def initialize(repo, version, outdir)
+  
+  
+  
+  
+  def get_bioc_views(dcfs, repo)
+    default_view = "Software" if repo == "bioc"
+    default_view = "AnnotationData" if repo == "data/annotation"
+    default_view = "ExperimentData" if repo == "data/experiment"
+    
     dbfile = `R --vanilla --slave -e "cat(system.file('extdata','biocViewsVocab.sqlite',package='biocViews'))"`
     db = SQLite3::Database.new(dbfile)
     rows = db.execute("select * from biocViews")
-    @g = RGL::DirectedAdjacencyGraph.new()
+    g = RGL::DirectedAdjacencyGraph.new()
     for row in rows
-      @g.add_edge(row.first, row.last)
+      g.add_edge(row.first, row.last)
     end
+    dcfs.each_pair do |key, value|
+      if value.has_key? "biocViews"
+        for view in value["biocViews"]
+          if g.has_vertex? (view)
+            g.add_edge(view, )
+          else
+            print "[WARNING] non-existent biocView #{view} in package #{key}."
+          end
+        end
+      else
+        print "[WARNING] Package #{key} has no biocViews."
+        # deal with default_view
+      end
+    end
+  end
+  
+  def initialize(repo, version, outdir)
     dcfs = get_dcfs(repo, version)
     #pp dcfs
-    json = JSON.pretty_generate(dcfs.first)
+    json = JSON.pretty_generate(dcfs)
     pkgs_file = File.open("#{outdir}/packages.json", "w")
     pkgs_file.print(json)
     pkgs_file.close
+    bioc_views = get_bioc_views(dcfs, repo)
   end
 end
 
