@@ -95,8 +95,10 @@ class GetJson
     db = SQLite3::Database.new(dbfile)
     rows = db.execute("select * from biocViews")
     g = RGL::DirectedAdjacencyGraph.new()
+    sort_order = []
     for row in rows
       g.add_edge(row.first, row.last)
+      sort_order.push row.first
     end
     dcfs.each_pair do |key, value|
       if value.has_key? "biocViews"
