@@ -6,6 +6,7 @@ require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
 require './scripts/add_readmes_and_news.rb'
+require './scripts/get_json.rb'
 require 'open3'
 
 include Open3
@@ -185,12 +186,25 @@ task :get_json do
   #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
   devel_repos_str = '"' + devel_repos.join('","') + '"'
-  # todo - make sure destination directories exist
-  r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}); outdir="#{json_dir}"; devel_repos=c(#{devel_repos_str}); devel_version="#{devel_version}";' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
-system(r_cmd)
+  ###r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}); outdir="#{json_dir}"; devel_repos=c(#{devel_repos_str}); devel_version="#{devel_version}";' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
+  ###system(r_cmd)
   
   
-#  repos = ["data/annotation", "data/experiment", "bioc"]
+  #repos = ["data/annotation", "data/experiment", "bioc"]
+
+
+  for version in versions
+    if version == devel_version
+      repos = devel_repos
+    else
+      repos = ["data/annotation", "data/experiment", "bioc"]
+    end
+   
+    for repo in repos
+      GetJson.new(repo, version, "assets/packages/json/#{version}/#{repo}")
+      
+    end
+  end
   
   
   #todo remove
@@ -203,6 +217,7 @@ system(r_cmd)
     else
       repos = ["data/annotation", "data/experiment", "bioc"]
     end
+   
     
     add_readmes(json_dir, version, "bioc")
     add_news(json_dir, version, "bioc")

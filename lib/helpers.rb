@@ -83,7 +83,8 @@ end
 
 
 def base_filename(path)
-  #return nil if path.nil?
+  #puts path
+  return nil if path.nil?
   return nil if path.is_a? Array
   path.split("/").last
 end
@@ -175,6 +176,11 @@ def filter_emails(str)
 end
 
 def linkify(sym, package)
+  #if package[:Package] == "topGO"
+  #  puts sym
+  #  pp package
+  #  exit if true
+  #end
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
@@ -182,13 +188,14 @@ def linkify(sym, package)
   output = []
   
   to_array(items).each_with_index do |item, index|
+    next if item.nil?
+    linkable, remainder = item.split(" ", 2)
+    remainder = "" if remainder.nil?
     repo = repos[index]
 
-
-
     if (repo == false)
-      if ($cran_packages.include?(item))
-        output.push %Q(<a class="cran_package" href="http://cran.fhcrc.org/web/packages/#{item}/index.html">#{item}</a>)
+      if ($cran_packages.include?(linkable))
+        output.push %Q(<a class="cran_package" href="http://cran.fhcrc.org/web/packages/#{linkable}/index.html">#{linkable}</a>#{remainder})
       else
         output.push item
       end
@@ -199,7 +206,7 @@ def linkify(sym, package)
     else
       jumpup = "../../../.."
     end
-    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{item}.html">#{item}</a>)
+    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{linkable}.html">#{linkable}</a> #{remainder})
   end
   output.join(", ")
 end

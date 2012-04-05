@@ -120,7 +120,8 @@ end
 
 
 def clean(arg)
-  item = arg.first
+  item = arg
+#  item = arg.first
   item['data'] = item['name']
   item.delete("name")
   item.delete("parentViews")
@@ -131,7 +132,7 @@ def clean(arg)
       item['packageList'].delete(bad)
     end
     
-    item["attr"] = {"packageList" => item["packageList"].keys.sort{|a,b|a.downcase<=>b.downcase}.join(","), "id" => item['data']}
+    item["attr"] = {"packageList" => item["packageList"].sort{|a,b|a.downcase<=>b.downcase}.join(","), "id" => item['data']}
     item['data'] += " (#{item["packageList"].length})"
   end
   item.delete("packageList")

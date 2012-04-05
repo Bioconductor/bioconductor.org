@@ -64,6 +64,7 @@ class GetJson
     view_lines = views.split("\n")
     dcf = ""
     view_lines.each_with_index do |line, i| 
+      line = line.force_encoding("UTF-8")
       if i == (view_lines.length() -1)
         if !line.empty?
           dcf = dcf + "\n" + line
@@ -145,6 +146,7 @@ class GetJson
     ret = {}
     for node in g.vertices
       h = {}
+      h["name"] = node
       h["parentViews"] = g.parents(node)
       h["subViews"] = g.children(node)
       if (node_attrs.has_key? node)
