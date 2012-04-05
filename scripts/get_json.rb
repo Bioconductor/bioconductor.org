@@ -159,6 +159,7 @@ class GetJson
   end
   
   def initialize(repo, version, outdir)
+    FileUtils.mkdir_p outdir unless Kernel.test(?d, outdir)
     dcfs = get_dcfs(repo, version)
     json = JSON.pretty_generate(dcfs)
     pkgs_file = File.open("#{outdir}/packages.json", "w")
@@ -173,5 +174,4 @@ class GetJson
 end
 
 
-j = GetJson.new("bioc", "2.11", "#{ENV['HOME']}/tmp")
 
