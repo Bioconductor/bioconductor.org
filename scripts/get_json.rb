@@ -53,7 +53,6 @@ end
 
 class GetJson
   
-  
   def get_dcfs(repo, version)
     url = URI.parse("http://bioconductor.org/packages/#{version}/#{repo}/VIEWS")
     req = Net::HTTP::Get.new(url.path)
@@ -83,7 +82,6 @@ class GetJson
         end
       end
     end
-    puts 1
     return clean_dcfs(view_dcfs)
   end
   
@@ -104,9 +102,6 @@ class GetJson
     end
     ret
   end
-  
-  
-  
   
   
   def get_bioc_views(dcfs, repo, version)
@@ -147,7 +142,20 @@ class GetJson
         end
       end
     end
-    #pp node_attrs
+    ret = {}
+    for node in g.vertices
+      h = {}
+      h["parentViews"] = g.parents(node)
+      h["subViews"] = g.children(node)
+      if (node_attrs.has_key? node)
+        h["packageList"] = node_attrs[node]['packageList']
+      else
+        h['packageList'] = []
+      end
+    
+      ret[node] = h
+    end
+    ret
   end
   
   def initialize(repo, version, outdir)
@@ -157,6 +165,10 @@ class GetJson
     pkgs_file.print(json)
     pkgs_file.close
     bioc_views = get_bioc_views(dcfs, repo, version)
+    json = JSON.pretty_generate(bioc_views)
+    views_file = File.open("#{outdir}/biocViews.json", "w")
+    views_file.print(json)
+    views_file.close
   end
 end
 
