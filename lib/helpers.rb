@@ -167,12 +167,25 @@ def version_fragment(package)
 end
 
 
-## Should we really filter out maintainer email addresses from the package home page?
-## These emails are available publically in svn (although this requires a little more
-## work on the part of a spam-harvester, who would have to supply the appropriate
-## login credentials).
+def munge_email(email)
+  ret = ""
+  email.gsub(/@/, " at ").each_byte do |b|
+    ret += "&#x#{b.to_s(16)};"
+  end
+  ret
+end
+
+
 def filter_emails(str)
-  str.gsub(/<[^>]*>/,"").gsub("  "," ").gsub(" ,", ",")
+  emails = str.scan( /(<[^>]*>)/).flatten
+  for email in emails
+    str = str.gsub(email, munge_email(email))
+  end
+  str
+end
+
+def remove_emails(str)
+  str.gsub(/<([^>]*)>/,"").gsub("  "," ").gsub(" ,", ",")
 end
 
 def linkify(sym, package)
