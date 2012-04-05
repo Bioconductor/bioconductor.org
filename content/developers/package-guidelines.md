@@ -125,8 +125,8 @@ Packages must
 * Contain (literature) references to the methods used as well as to other
   similar or related packages.
 * Make use of appropriate existing packages (e.g., biomaRt, AnnotationDbi,
-  Biostrings) and classes (e.g., ExpressionSet, AnnotatedDataFrame, RangedData,
-  RLE, DNAStringSet), and avoid duplication of functionality available in other
+  Biostrings) and classes (e.g., ExpressionSet, AnnotatedDataFrame, GRanges,
+  Rle, DNAStringSet), and avoid duplication of functionality available in other
   Bioconductor packages.
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
