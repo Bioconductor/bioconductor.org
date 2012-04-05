@@ -272,9 +272,17 @@ end
 def bioc_views_links(package)
   links = []
   
+  
+  if package[:repo] == "bioc/"
+    jumpup = "../.."
+  else
+    jumpup = "../../.."
+  end
+  
+  
   bioc_views = to_array(package[:biocViews])
   bioc_views.each do |bioc_view|
-    links.push %Q(<a href="../../BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
+    links.push %Q(<a href="#{jumpup}/BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end
   
   links.join(", ")
