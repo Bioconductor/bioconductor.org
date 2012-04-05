@@ -64,7 +64,7 @@ class GetJson
     view_lines = views.split("\n")
     dcf = ""
     view_lines.each_with_index do |line, i| 
-      line = line.force_encoding("UTF-8")
+      line = line.force_encoding("UTF-8") if line.respond_to? :force_encoding
       if i == (view_lines.length() -1)
         if !line.empty?
           dcf = dcf + "\n" + line
