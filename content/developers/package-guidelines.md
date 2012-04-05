@@ -250,6 +250,7 @@ apply:
 * y is even for packages in release, and odd for packages in devel.
 * z is incremented whenever committing changes to a package.
 
+When first submitted to Bioconductor, a package usually has version 0.99.0.
 For more details, see
 [Version Numbering Standards](../version-numbering/)
 
