@@ -21,7 +21,7 @@ module Dcf
     lines = input.split("\n")
     key = nil
     for line in lines
-      if !line =~ /^\s+/
+      if !(line =~ /^\s+/)
         key, val = line.split(":", 2)
         ret[key] = val.strip
       else
@@ -30,7 +30,6 @@ module Dcf
     end
     ret
   end
-  
 end
 
 class RGL::DirectedAdjacencyGraph
