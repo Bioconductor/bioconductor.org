@@ -6,10 +6,12 @@ class BiocViews < Nanoc3::DataSource
   
   identifier :bioc_views
   
-  
+  def hard_coded_repos()
+    {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
+  end
 
   def get_repos(version, repos)
-    return repos unless version == @site_config["devel_version"]
+    return hard_coded_repos() unless version == @site_config["devel_version"]
     h = {}
     
     for repo in @site_config["devel_repos"]
@@ -24,8 +26,8 @@ class BiocViews < Nanoc3::DataSource
   def up
     @bad_packages = ["snpMatrix2"] # don't process these
 
-    @repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
-    
+    #@repos = {"bioc/" => "Software", "data/annotation/" => "AnnotationData", "data/experiment/" => "ExperimentData"}
+    @repos = hard_coded_repos()
     
     @good_to_go = true
     

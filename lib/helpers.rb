@@ -177,6 +177,7 @@ end
 
 
 def filter_emails(str)
+  return str if str.nil?
   emails = str.scan( /(<[^>]*>)/).flatten
   for email in emails
     str = str.gsub(email, munge_email(email))
