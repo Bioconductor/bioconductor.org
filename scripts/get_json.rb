@@ -4,10 +4,34 @@ require 'rubygems'
 require 'rgl/adjacency'
 require 'sqlite3'
 require 'json'
-require 'dcf'
+## this DCF parser is slow. Here's a faster one:
+## http://gist.github.com/117293
+## but it does not like unescaped colons in values,
+## and also requires spaces after field names (and colons, presumably)
+## so we write our own below, based on python code from BBS.
+#require 'dcf'
 require 'net/http'
 require 'uri'
 require 'pp'
+
+
+module Dcf
+  def self.parse(input)
+    ret = {}
+    lines = input.split("\n")
+    key = nil
+    for line in lines
+      if !line =~ /^\s+/
+        key, val = line.split(":", 2)
+        ret[key] = val.strip
+      else
+        ret[key] += " " + line.strip
+      end
+    end
+    ret
+  end
+  
+end
 
 class RGL::DirectedAdjacencyGraph
   def children(parent)
@@ -49,10 +73,6 @@ class GetJson
         end
       end
       if line.empty?
-        ## this DCF parser is slow. Here's a faster one:
-        ## http://gist.github.com/117293
-        ## but it does not like unescaped colons in values,
-        ## and also requires spaces after field names (and colons, presumably)
         pdcf = Dcf.parse(dcf) 
         view_dcfs.push pdcf
         dcf = ""
@@ -73,16 +93,15 @@ class GetJson
     ret = {}
     plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews"]
     for dcf in dcfs
-      obj = dcf.first
-      for key in obj.keys
+      for key in dcf.keys
         if plural_fields.include? key
-          ary = obj[key].split(",")
+          ary = dcf[key].split(",")
           ary = ary.map{|i| i.gsub(/^\s*|\s$/, "")}
-          obj[key] = ary
+          dcf[key] = ary
         end
       end
-      key = obj["Package"]
-      ret[key] = obj
+      key = dcf["Package"]
+      ret[key] = dcf
     end
     ret
   end
