@@ -25,7 +25,7 @@ versions:
 ## set to "[]" if none are available.
 devel_repos:
 - "bioc"
-#- "data/experiment"
+- "data/experiment"
 #- "data/annotation"
 ## CHANGE these as AMI IDS change
 ami_ids:
