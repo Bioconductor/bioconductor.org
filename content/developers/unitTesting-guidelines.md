@@ -19,10 +19,13 @@ how to run them, and how they are woven into the standard Biocondcutor build pro
 a standard part of your software development, and an integral part of your Bioconductor package.
 <p><br>
 
-We use the <a href="http://cran.r-project.org/web/packages/RUnit/index.html">RUnit</a> package from CRAN to write unit tests &mdash;
+We use and recommend the <a href="http://cran.r-project.org/web/packages/RUnit/index.html">RUnit</a> package from CRAN to write unit tests &mdash;
 an <b><i>R</i></b> implementation of the <a href="http://en.wikipedia.org/wiki/Agile_software_development">agile</a>
 software development 'XUnit' </i></b> tools  (see also <a href="http://www.junit.org">JUnit</a>, <a href="http://pyunit.sourceforge.net">PyUnit</a>)
 each of which tries to encourage, in their respective language,  the rapid development of robust useful software.
+
+(<p>An alternative approach, used by some Bioconductor packages, is Hadley Wickham's 
+<a href="http://cran.r-project.org/web/packages/testthat/index.html">'testthat'</a> package.)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -100,7 +103,7 @@ handling of edge cases.
 <p>
 
 <code>test_dividesBy</code> illustrates all the crucial features of a good test function.  It uses the
-simple RUnit <b><i>check</i></b> functions.s.  It makes sure that reasonable values are returned across a range
+simple RUnit <b><i>check</i></b> functions.  It makes sure that reasonable values are returned across a range
 of normal and pathological conditions.  Its name begins with <code>test_</code> so that it is recognized and run by the
 Bioc build process.  It would reside (more about this below) in the <code>inst/unitTests</code> directory.
 
@@ -166,25 +169,17 @@ take some pains here to describe exactly how things should be set up, and what i
 
      <li> Create the file  'MyPackage/tests/runTests.R' with these contents:
 
-<code><pre>require("MyPackage") || stop("unable to load MyPackage")
-MyPackage:::.test()</pre></code>
-
-     <li> Then create 'MyPackage/R/testPackage.R' with one line only, after making sure that BiocGenerics is listed in the
-     Depends line of the MyPackage/DESCRIPTION file:
-
-<code><pre>.test <- function() BiocGenerics:::testPackage("MyPackage")</pre></code>
+   require("MyPackage") || stop("unable to load MyPackage")
+   BiocGenerics:::testPackage("MyPackage")
 
      <li> Create any number of files in MyPackage/inst/unitTests/ for your unit test functions.  You can put your tests
-        all in one file in that directory, or distributed  among multiple files.  In either case, all files in that directory will be
-        evaluated and and all functions run, as long as they begin with 'test_'.  For example, in MyPackage/inst/unitTests/myTests.R, you might have
+        all in one file in that directory, or distributed  among multiple files.  In either case, all files must follow the nameing convention specified in this regular expression:
+  <code><pre>pattern="^test_.*\\.R$"</pre></code>
 
-<code><pre>test_divideBy <- function () { 
-  checkEquals (divideBy (4, 2), 2)
-  }
- </pre></code>
+Thus, for our example, a good choice would be:
 
-This file (myTests.R) and any other files in the <code>inst/unitTests</code> directory will be found through the steps outlined above.  The divideBy test (and any similarly named)
-functions will all be run.  
+  <code><pre>MyPackage/inst/unitTests/test_divideBy.R</pre></code>
+
    </ol>
 
 
@@ -229,10 +224,10 @@ MyPackage:::.test()</code></pre>
 
 <h4> MyPackage/inst/unitTests/myTests.R</h4>
 <pre><code>test_divideBy <- function () {
-  checkEquals (divideBy (4, 2), 2)
-  checkTrue   (is.na (divideBy (4, 0)))
-  checkEqualsNumeric (divideBy (4, 1.2345), 3.24, tolerance=1.0e-4)
-  }
+    checkEquals(divideBy (4, 2), 2)
+    checkTrue(is.na (divideBy (4, 0)))
+    checkEqualsNumeric(divideBy (4, 1.2345), 3.24, tolerance=1.0e-4)
+}
 </code></pre>
 
 
