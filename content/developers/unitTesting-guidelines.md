@@ -192,13 +192,14 @@ or if the <code>dividesBy</code> function was one of several home-brewed arithme
 <h2 id="duringDeveloment">Using Tests During Development</h2>
 
 <pre><code>R CMD check <b>MyPackage</b></code></pre> will run all of your tests.  But when developing a class, or
-debugging a method or function, you will probably want to run just one test at a time, and to do so before the package
-is complete.  Assuming you have followed the directory structure and naming conventions recommended above, here is what
-you would do:
+debugging a method or function, you will probably want to run just one test at a time, and to do so when an earlier version of the package 
+is installed, against which you are making local exploratory changes. Assuming you have followed the directory structure and naming conventions
+recommended above, that your current working directory is inst, here is what you would do:
 <pre><code>library (RUnit)
 library (MyPackage)
 
-source ('MyPackage/inst/unitTests/myTests.R')
+source ('../R/divideBy.R')
+source ('unitTests/test_divideBy.R')
 test_divideBy ()
  [1] TRUE
 </code></pre>
@@ -221,10 +222,7 @@ Suggests: RUnit</code></pre>
 
 <h4> MyPackage/tests/runTests.R </h4>
 <pre><code>require("MyPackage") || stop("unable to load MyPackage")
-MyPackage:::.test()</code></pre>
-
-<h4> MyPackage/R/testPackage.R </h4>
-<pre><code>.test <- function() BiocGenerics:::testPackage("MyPackage")</code></pre>
+BiocGenerics:::testPackage("MyPackage")</code></pre>
 
 <h4> MyPackage/inst/unitTests/myTests.R</h4>
 <pre><code>test_divideBy <- function () {
