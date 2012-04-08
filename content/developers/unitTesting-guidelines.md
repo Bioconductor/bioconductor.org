@@ -130,14 +130,14 @@ Steps two and three are explained in <a href=#conventions>conventions for the bu
 
 These are the  <b>RUnit</b> check methods:
 
-<pre><code>checkEquals (expression-A, expression-B)
-checkTrue (condition)
-checkEqualsNumeric (a, b, tolerance)
+<pre><code>checkEquals(expression-A, expression-B)
+checkTrue(condition)
+checkEqualsNumeric(a, b, tolerance)
 </code></pre>
 
 Less commonly used, but recommended if your code throws exceptions:
 
-<pre><code>checkException (expr, msg)
+<pre><code>checkException(expr, msg)
 </code></pre>
 
 In a typical test function, as you can see in <code>test_divideBy</code>, you invoke one of your program's functions or methods, then call an 
