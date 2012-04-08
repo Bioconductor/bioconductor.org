@@ -34,7 +34,7 @@ type CEU.
        <character> <character>                 <character>
     NS           1     Integer Number of Samples With Data
     DP           1     Integer                 Total Depth
-    DB           0        Flag dbSNP membership, build 131
+    DB           0     Flag    dbSNP membership, build 131
      
     > geno(hdr) 
     DataFrame with 12 rows and 3 columns
@@ -276,8 +276,8 @@ be to protein structure and function. Both packages search on rsid.
     2   rs224534    T469I  ALL HITS DELETERIOUS
     3   rs224534    T469I  ALL HITS   TOLERATED
     4   rs222748     <NA>      <NA>        <NA>
-    5 rs11078458     <NA>      <NA>        <NA>
-    6  rs1039519     <NA>      <NA>        <NA>
+    5   rs11078458   <NA>      <NA>        <NA>
+    6   rs1039519    <NA>      <NA>        <NA>
     7   rs322965     I25V BEST HITS   TOLERATED
     8   rs322965     I25V  ALL HITS   TOLERATED
     Warning message:
