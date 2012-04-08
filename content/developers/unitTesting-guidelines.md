@@ -37,11 +37,11 @@ Why bother with unit testing?
 Imagine that you need a function <code>divideBy</code> taking two arguments, which you might define like this:
 
 <code><pre>
-divideBy <- function (dividend, divisor) { 
-  if (divisor==0) 
-    return (NA)
-  return (dividend/divisor) 
-  }
+divideBy <- function(dividend, divisor) { 
+    if(divisor==0) 
+       return(NA)
+    return(dividend/divisor) 
+}
 </pre></code>
 
 As you develop this function you would very likely test it out in a variety of ways, using different arguments, checking
@@ -66,11 +66,11 @@ A far better approach, we propose, is to use <b>lightweight, formalized</b> unit
 Here is such a unit test for <code>divideBy</code>:
 
 <code><pre>
-test_divideBy <- function () {
-  checkEquals (divideBy (4, 2), 2)
-  checkTrue   (is.na (divideBy (4, 0)))
-  checkEqualsNumeric (divideBy (4, 1.2345), 3.24, tolerance=1.0e-4)
-  }
+test_divideBy <- function() {
+    checkEquals(divideBy(4, 2), 2)
+    checkTrue(is.na(divideBy(4, 0)))
+    checkEqualsNumeric(divideBy(4, 1.2345), 3.24, tolerance=1.0e-4)
+}
 </pre></code>
 
 Adopting these practices will cost you very little.  Most developers find that these practices simplify and shorten
