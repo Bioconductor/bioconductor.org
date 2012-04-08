@@ -156,29 +156,33 @@ take some pains here to describe exactly how things should be set up, and what i
 <ul>
 
  <li> The standard command <code>R CMD check MyPackage</code> sources and runs all R files found in your MyPackage/tests/  directory.
-
- <li> Historically, and sometimes still, R package developers placed test code of their own invention and style into one or more files in this 'tests' directory.
-
+ <br><br>
+ <li> Historically, and sometimes still, R package developers place test code of their own invention and style into one or more files in this 'tests' directory.
+ <br><br>
  <li> RUnit support was added to this already-existing structure and practice about 2005, and the additions can be confusing,
     beginning with the indirect way in which your test functions are found and executed. (But follow these steps and all
     should be well.  Post to bioc-devel if you run into any difficulty.) 
 
-    There are three steps:<br><br>
+    There are two steps:<br><br>
 
    </ul>  <ol>
 
      <li> Create the file  'MyPackage/tests/runTests.R' with these contents:
 
-   require("MyPackage") || stop("unable to load MyPackage")
+<code><pre>   require("MyPackage") || stop("unable to load MyPackage")
    BiocGenerics:::testPackage("MyPackage")
+</pre></code>
 
      <li> Create any number of files in MyPackage/inst/unitTests/ for your unit test functions.  You can put your tests
-        all in one file in that directory, or distributed  among multiple files.  In either case, all files must follow the nameing convention specified in this regular expression:
+        all in one file in that directory, or distributed  among multiple files.  All files must follow the naming convention specified in this regular expression:
   <code><pre>pattern="^test_.*\\.R$"</pre></code>
 
-Thus, for our example, a good choice would be:
+For our example, therefore, a good choice would be:
 
   <code><pre>MyPackage/inst/unitTests/test_divideBy.R</pre></code>
+
+or if the <code>dividesBy</code> function was one of several home-brewed arithmetic functions you wrote, and for which you provide tests, a more descriptive filename (a practice we always recommend) might be:
+  <code><pre>MyPackage/inst/unitTests/test_homeBrewArithmetic.R</pre></code>
 
    </ol>
 
