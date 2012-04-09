@@ -211,27 +211,25 @@ A failed test is reported like this:
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="fileSummary">Summary: the minimal setup</h2>
-A minimal Bioconductor <b>unitTest</b> setup requires two additions to the <code>MyPackage/DESCRIPTION</code> file, then three specific files, each residing in a 
-different directory.  (You can use other names for the three <b><i>R</i></b> source files shown below if you wish.)
+A minimal Bioconductor <b>unitTest</b> setup requires two additions to the <code>MyPackage/DESCRIPTION</code> file
 
 <h4>MyPackage/DESCRIPTION</h4>
 <pre><code>Imports: BiocGenerics 
 Suggests: RUnit</code></pre>
 
-
+and two  files, one in <b>MyPackage/tests</b> and one in <b>MyPackage/inst/unitTests</b>:
 
 <h4> MyPackage/tests/runTests.R </h4>
 <pre><code>require("MyPackage") || stop("unable to load MyPackage")
 BiocGenerics:::testPackage("MyPackage")</code></pre>
 
-<h4> MyPackage/inst/unitTests/myTests.R</h4>
+<h4> MyPackage/inst/unitTests/test_divideBy.R</h4>
 <pre><code>test_divideBy <- function () {
     checkEquals(divideBy (4, 2), 2)
     checkTrue(is.na (divideBy (4, 0)))
     checkEqualsNumeric(divideBy (4, 1.2345), 3.24, tolerance=1.0e-4)
 }
 </code></pre>
-
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
