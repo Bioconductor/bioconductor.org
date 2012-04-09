@@ -149,7 +149,7 @@ appropriate RUNit check function to make sure that the result is correct.   RUni
 
 Though writing unit tests is easy, and though they make software development much easier than doing without, it can be
 quite confusing to set up your Bioconductor package properly so that 
-<pre><code>R CMD check <b>YOURPACKAGE</b></code></pre> finds and run your tests.  For that reason,  we
+<pre><code>R CMD check <b>MyPackage</b></code></pre> finds and run your tests.  For that reason,  we
 take some pains here to describe exactly how things should be set up, and what is going on behind the scenes.  (See the
 <a href='#duringDeveloment'>next section</a> for the much simpler technique to use when you want to test only a small part of your code.)
 <br><br>
