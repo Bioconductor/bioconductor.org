@@ -195,12 +195,12 @@ or if the <code>dividesBy</code> function was one of several home-brewed arithme
 debugging a method or function, you will probably want to run just one test at a time, and to do so when an earlier version of the package 
 is installed, against which you are making local exploratory changes. Assuming you have followed the directory structure and naming conventions
 recommended above, that your current working directory is inst, here is what you would do:
-<pre><code>library (RUnit)
-library (MyPackage)
+<pre><code>library(RUnit)
+library(MyPackage)
 
-source ('../R/divideBy.R')
-source ('unitTests/test_divideBy.R')
-test_divideBy ()
+source('../R/divideBy.R')
+source('unitTests/test_divideBy.R')
+test_divideBy()
  [1] TRUE
 </code></pre>
 A failed test is reported like this:
@@ -224,12 +224,13 @@ and two  files, one in <b>MyPackage/tests</b> and one in <b>MyPackage/inst/unitT
 BiocGenerics:::testPackage("MyPackage")</code></pre>
 
 <h4> MyPackage/inst/unitTests/test_divideBy.R</h4>
-<pre><code>test_divideBy <- function () {
-    checkEquals(divideBy (4, 2), 2)
-    checkTrue(is.na (divideBy (4, 0)))
-    checkEqualsNumeric(divideBy (4, 1.2345), 3.24, tolerance=1.0e-4)
+<pre><code>test_divideBy <- function() {
+    checkEquals(divideBy(4, 2), 2)
+    checkTrue(is.na(divideBy(4, 0)))
+    checkEqualsNumeric(divideBy(4, 1.2345), 3.24, tolerance=1.0e-4)
 }
 </code></pre>
+Remember that your unitTests/test_XXXX.R file, or files, can have any name(s), as long as they start with <b>test_</b>.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
