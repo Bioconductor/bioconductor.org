@@ -177,20 +177,13 @@ end
 desc "Get JSON files required for BiocViews pages"
 task :get_json do
   json_dir = "assets/packages/json"
-  #todo - nuke json_dir before starting?
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")
   versions = site_config["versions"]
   devel_version = site_config["devel_version"]
   devel_repos = site_config["devel_repos"]
-  #version_str = %Q("#{site_config["release_version"]}","#{site_config["devel_version"]}")
   version_str = '"' + versions.join('","') + '"'
   devel_repos_str = '"' + devel_repos.join('","') + '"'
-  ###r_cmd = %Q(R CMD BATCH -q --vanilla --no-save --no-restore '--args versions=c(#{version_str}); outdir="#{json_dir}"; devel_repos=c(#{devel_repos_str}); devel_version="#{devel_version}";' scripts/getBiocViewsJSON.R getBiocViewsJSON.log)
-  ###system(r_cmd)
-  
-  
-  #repos = ["data/annotation", "data/experiment", "bioc"]
 
 
   for version in versions
@@ -232,10 +225,7 @@ task :get_json do
     end
     #end remove
     
-    
-    
     args = [fullpaths, "#{json_dir}/#{version}/tree.json"]
-    #pp args
     
     ParseBiocViews.new(args)
   end
