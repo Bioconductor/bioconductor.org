@@ -38,7 +38,7 @@ which should be used in place of the old function. Example:
     myOldFunc <- function()
     {
         .Deprecated("myNewFunc")
-        ## remainder of myOldFunc goes here
+        ## use new function, or remainder of myOldFunc
     }
 
 This causes a warning to be emitted whenever a user calls 
