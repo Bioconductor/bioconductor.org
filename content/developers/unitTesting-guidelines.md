@@ -187,16 +187,12 @@ There are two steps:
 
        pattern="^test_.*\\.R$"
 
-   For our example, therefore, a good choice would be:
-
-       MyPackage/inst/unitTests/test_divideBy.R
-
-   or if the `dividesBy` function was one of several home-brewed
-   arithmetic functions you wrote, and for which you provide tests, a
-   more descriptive filename (a practice we always recommend) might
-   be:
-
-       MyPackage/inst/unitTests/test_homeBrewArithmetic.R
+   For our example, therefore, a good choice would be
+   `MyPackage/inst/unitTests/test_divideBy.R` or if the `dividesBy`
+   function was one of several home-brewed arithmetic functions you
+   wrote, and for which you provide tests, a more descriptive filename
+   (a practice we always recommend) might be
+   `MyPackage/inst/unitTests/test_homeBrewArithmetic.R`
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
