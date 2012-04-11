@@ -40,7 +40,7 @@ class ParseBiocViews
         else
           keep = []
           for child in v['children']
-            keep.push child if (!child['subViews'].empty?) or child.has_key? "attr"
+            keep.push child if (!child['subViews'].nil? and !child['subViews'].empty?) or child.has_key? "attr"
           end
           v['children'] = keep
         end
