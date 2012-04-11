@@ -23,14 +23,9 @@ development, and an integral part of your Bioconductor package.
 
 We recommend the [RUnit] package from CRAN to write unit tests &mdash;
 an _R_ implementation of the [agile] software development 'XUnit'
-</i></b> tools (see also [JUnit], [PyUnit]) each of which tries to
-encourage, in their respective language, the rapid development of
-robust useful software.
-
-[RUnit]: http://cran.r-project.org/web/packages/RUnit/index.html
-[agile]: http://en.wikipedia.org/wiki/Agile_software_development
-[JUnit]: http://www.junit.org
-[PyUnit]: http://pyunit.sourceforge.net
+tools (see also [JUnit], [PyUnit]) each of which tries to encourage,
+in their respective language, the rapid development of robust useful
+software.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -61,7 +56,7 @@ formalized** unit testing.  This requires only a very few conventions
 and practices:
 
 * Store the test functions in a standard directory.
-* Use simple functions from the RUnit package to check your results.
+* Use simple functions from the *RUnit* package to check your results.
 * Run the tests as a routine part of your development process.
 
 Here is such a unit test for `divideBy`:
@@ -110,7 +105,7 @@ clean design, the 'separation of concerns', and sensible handling of
 edge cases.
 
 `test_dividesBy` illustrates all the crucial features of a good test
-function.  It uses the simple RUnit **check** functions.  It makes
+function.  It uses the simple *RUnit* **check** functions.  It makes
 sure that reasonable values are returned across a range of normal and
 pathological conditions.  Its name begins with `test_` so that it is
 recognized and run by the Bioconductor build process.  It would reside
@@ -131,15 +126,15 @@ complete set of tests.
 Three things are required:
 
 1. Create a file containing functions in the style of `test_dividesBy`
-   for each function you want to test, using RUnit-provided check
+   for each function you want to test, using *RUnit*-provided check
    functions.
 2. Add a few small (and idiosyncratic) files in other directories.
-3. Make sure the RUnit and BiocGenerics packages are available.
+3. Make sure the *RUnit* and [BiocGenerics] packages are available.
 
 Steps two and three are explained in [conventions for the build
 process](#conventions).
 
-These are the RUnit check methods:
+These are the *RUnit* check methods:
 
     checkEquals(expression-A, expression-B)
     checkTrue(condition)
@@ -151,40 +146,35 @@ Less commonly used, but recommended if your code throws exceptions:
 
 In a typical test function, as you can see in `test_divideBy`, you
 invoke one of your program's functions or methods, then call an
-appropriate RUnit check function to make sure that the result is
-correct.  RUnit reports failures, if there are any, with enough
+appropriate *RUnit* check function to make sure that the result is
+correct.  *RUnit* reports failures, if there are any, with enough
 context to track down the error.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="conventions">Conventions for the Build Process</h2>
 
-Though writing unit tests is easy, and though they make software
-development much easier than doing without, it can be quite confusing
-to set up your Bioconductor package properly so that
+Writing unit tests is easy, though your Bioconductor package must be
+set up properly so that `R CMD check MyPackage` finds and run your
+tests.  We take some pains to describe exactly how things should be
+set up, and what is going on behind the scenes.  (See the [next
+section](#duringDeveloment) for the simple technique to use when you
+want to test only a small part of your code).
 
-    R CMD check MyPackage
+The standard command `R CMD check MyPackage` sources and runs all R
+files found in your `MyPackage/tests/` directory.  Historically, and
+sometimes still, *R* package developers place test code of their own
+invention and style into one or more files in this `tests` directory.
 
-finds and run your tests.  For that reason, we take some pains here to
-describe exactly how things should be set up, and what is going on
-behind the scenes.  (See the [next section](#duringDeveloment) for the
-much simpler technique to use when you want to test only a small part
-of your code).
-
-1. The standard command `R CMD check MyPackage` sources and runs all R
-   files found in your `MyPackage/tests/ directory`.
-2. Historically, and sometimes still, R package developers place test
-   code of their own invention and style into one or more files in
-   this 'tests' directory.
-3. RUnit support was added to this already-existing structure and
-   practice about 2005, and the additions can be confusing, beginning
-   with the indirect way in which your test functions are found and
-   executed. (But follow these steps and all should be well.  Post to
-   bioc-devel if you run into any difficulty.)
+*RUnit* was added to this already-existing structure and practice
+about 2005, and the additions can be confusing, beginning with the
+indirect way in which your test functions are found and executed. (But
+follow these steps and all should be well.  Post to [bioc-devel] if
+you run into any difficulty.)
 
 There are two steps:
 
-1. Create the file  'MyPackage/tests/runTests.R' with these contents:
+1. Create the file `MyPackage/tests/runTests.R` with these contents:
 
        require("MyPackage") || stop("unable to load MyPackage")
        BiocGenerics:::testPackage("MyPackage")
@@ -271,6 +261,13 @@ Some web resources worth reading:
 * [Test-driven development][tdd]
 * [Agile software development][agile]
 
+
+[BiocGenerics]: http://bioconductor.org/packages/release/bioc/html/BiocGenerics.html
+[RUnit]: http://cran.r-project.org/web/packages/RUnit/index.html
+[agile]: http://en.wikipedia.org/wiki/Agile_software_development
+[JUnit]: http://www.junit.org
+[PyUnit]: http://pyunit.sourceforge.net
 [tdd]: http://en.wikipedia.org/wiki/Test-driven_development
+[bioc-devel]: http://bioconductor.org/help/mailing-list/#bioc-devel
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
