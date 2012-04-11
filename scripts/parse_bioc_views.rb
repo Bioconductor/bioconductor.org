@@ -39,8 +39,11 @@ class ParseBiocViews
           keys_to_delete.push k
         else
           keep = []
+
           for child in v['children']
-            keep.push child if (!child['subViews'].nil? and !child['subViews'].empty?) or child.has_key? "attr"
+            if (child.has_key? 'children' and !child['children'].empty?) or child.has_key? "attr"
+              keep.push child 
+            end
           end
           v['children'] = keep
         end
