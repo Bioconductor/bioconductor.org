@@ -1,4 +1,4 @@
-![](/images/icons/magnifier.gif)How To: Function Deprecation
+![](/images/icons/magnifier.gif)Function Deprecation Guidelines
 ==================================================
 
 ** About Deprecation **
