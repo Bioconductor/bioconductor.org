@@ -1,4 +1,4 @@
-![](/images/icons/magnifier.gif)Guidelines for Deprecation of Functions
+![](/images/icons/magnifier.gif)How To: Function Deprecation
 ==================================================
 
 ** About Deprecation **
@@ -54,7 +54,10 @@ Ensure that if the user enters:
 
     help("myOldFunc-deprecated")
     
-that they are shown a manual page that directs them to the new function. 
+that they are shown the manual page for the original old function,
+which should mention that the function is deprecated and point users towards
+the replacement function.
+
 Additionally, a man page reachable by
 
     help("myPackageName-deprecated")
