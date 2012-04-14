@@ -205,6 +205,7 @@ def linkify(sym, package)
     next if item.nil?
     linkable, remainder = item.split(" ", 2)
     remainder = "" if remainder.nil?
+    remainder = " " + remainder unless remainder.empty?
     repo = repos[index]
 
     if (repo == false)
@@ -220,7 +221,7 @@ def linkify(sym, package)
     else
       jumpup = "../../../.."
     end
-    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{linkable}.html">#{linkable}</a> #{remainder.strip})
+    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{linkable}.html">#{linkable}</a>#{remainder.strip})
   end
   output.join(", ")
 end
