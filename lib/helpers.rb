@@ -211,7 +211,7 @@ def linkify(sym, package)
       if ($cran_packages.include?(linkable))
         output.push %Q(<a class="cran_package" href="http://cran.fhcrc.org/web/packages/#{linkable}/index.html">#{linkable}</a>#{remainder})
       else
-        output.push item
+        output.push item.strip
       end
       next
     end
@@ -220,7 +220,7 @@ def linkify(sym, package)
     else
       jumpup = "../../../.."
     end
-    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{linkable}.html">#{linkable}</a> #{remainder})
+    output.push %Q(<a href="#{jumpup}/#{package[:bioc_version_num]}/#{repo}/html/#{linkable}.html">#{linkable}</a> #{remainder.strip})
   end
   output.join(", ")
 end

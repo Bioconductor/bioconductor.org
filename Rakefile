@@ -193,12 +193,17 @@ task :get_json do
       repos = ["data/annotation", "data/experiment", "bioc"]
     end
    
+    reverse_depends = {"Suggests" => {}, "Depends" => {}, "Imports" => {}}
+
     for repo in repos
-      GetJson.new(repo, version, "assets/packages/json/#{version}/#{repo}")
-      
+      gj = GetJson.new(repo, version, "assets/packages/json/#{version}/#{repo}")
+      reverse_depends = GetJson.add_reverse_dependencies(reverse_depends, gj.packages)
+    end
+    
+    for repo in repos
+      GetJson.write_reverse_depends(reverse_depends, "assets/packages/json/#{version}/#{repo}")
     end
   end
-  
   
   #todo remove
   system("scp scripts/get_vignette_titles.rb webadmin@bioconductor.org:~")

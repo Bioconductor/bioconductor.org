@@ -53,6 +53,47 @@ end
 
 class GetJson
   
+  attr_reader :packages
+  
+  
+  def self.add_reverse_dependencies(reverse_deps, pkgs)
+    fields = ["Suggests", "Depends", "Imports"]
+    pkgs.each_pair do |k, v|
+      for field in fields
+        next unless v.has_key? field and !v[field].empty?
+        items = v[field].map{|i| i.split(" ").first}
+        for item in items
+          reverse_deps[field][item] = [] unless reverse_deps[field].has_key? item
+          reverse_deps[field][item].push k
+        end
+      end
+    end
+    reverse_deps
+  end
+  
+  def self.write_reverse_depends(reverse_deps, json_dir)
+    fields = {"Suggests" => "suggestsMe", "Depends" => "dependsOnMe", "Imports" => "importsMe"}
+    f = File.open("#{json_dir}/packages.json")
+    json = f.readlines.join
+    f.close
+    obj = JSON.parse json
+    obj.each_pair do |k, v|
+      fields.each_pair do |fk, fv|
+        if reverse_deps[fk].has_key? k
+          rdeps = reverse_deps[fk][k]
+          rdeps.sort! do |a, b|
+            a.downcase <=> b.downcase
+          end
+          obj[k][fv] = rdeps
+        end
+      end
+    end
+    f = File.open("#{json_dir}/packages.json", "w")
+    json = JSON.pretty_generate(obj)
+    f.print(json)
+    f.close
+  end
+  
   def get_dcfs(repo, version)
     url = URI.parse("http://bioconductor.org/packages/#{version}/#{repo}/VIEWS")
     req = Net::HTTP::Get.new(url.path)
@@ -163,6 +204,7 @@ class GetJson
   def initialize(repo, version, outdir)
     FileUtils.mkdir_p outdir unless Kernel.test(?d, outdir)
     dcfs = get_dcfs(repo, version)
+    @packages = dcfs
     json = JSON.pretty_generate(dcfs)
     pkgs_file = File.open("#{outdir}/packages.json", "w")
     pkgs_file.print(json)
