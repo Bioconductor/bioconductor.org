@@ -176,6 +176,9 @@ var init = function() {
                 "ajax" : {
                     "url" : getHostUrl() + "/json/" + biocVersion + "/tree.json",
                     "data" : function (n) { 
+                        var foo = n.attr ? n.attr("id") : 0;
+                        log("foo = " + foo);
+                        log("n = " + n);
                         return { id : n.attr ? n.attr("id") : 0 }; 
                     }
                 }
