@@ -7,11 +7,23 @@
             return true;
         }
         
+        
+        function validateEmail(email) {
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!filter.test(email)) {
+                return false;
+            }
+            return true;
+        }
+        
         function validateForm()
         {
             var ret = valid("name") && valid("email") && valid("subject") &&
-              valid("body") && valid("code") && valid("sessioninfo");
-            if (ret == false) alert("Please fill out all form items.");
+              valid("body") && valid("code") && valid("sessioninfo") &&
+              validateEmail(document.forms["mailform"]["email"]);
+              
+            if (ret == false)
+                alert("Please fill out all form items with valid values.");
             return ret;
         }
         </script>
