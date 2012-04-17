@@ -185,6 +185,17 @@ class GetJson
       end
     end
     ret = {}
+
+    
+    for node in g.vertices
+      if !node_attrs.has_key? node
+        if (g.children(node).empty?)
+          g.remove_vertex node
+        end
+      end
+    end
+    
+    
     for node in g.vertices
       h = {}
       h["name"] = node
