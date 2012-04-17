@@ -13,7 +13,6 @@ if (empty($_POST)) {
               $_POST['email'] == "" ||
               $_POST['body'] == "" || 
               $_POST['code'] == "" || 
-              filter_var($_POST['email'], FILTER_VALIDATE_EMAIL) == false ||
               $_POST['sessioninfo'] == "") {
           header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items");
       } else {
