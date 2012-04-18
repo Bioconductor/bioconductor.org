@@ -589,6 +589,8 @@ ul.inline_list li {
 /* styles for displaying biocViews hierarchy */
 .biocViewsTree {
  float:left;
+ height:300px;
+ overflow:auto;
 }
 
 .biocViewsTreePadding {
