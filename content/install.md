@@ -4,7 +4,7 @@
 	<li><a href="#install-bioconductor-packages">Install Packages</a></li> 
 	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
 	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
-	<li><a href="#install-R">Install R</a></li> 
+	<li><a href="#install-R">Install&nbsp;R</a></li> 
 </ul>
 
 
@@ -54,9 +54,8 @@ You can type `?biocLite` for further installation help.
 
 <h2 id="find-bioconductor-packages">Find Bioconductor Packages</h2>
 
-Visit the [Workflows](/help/workflows/) page,
-/packages[BiocViews](/packages/<%=config[:release_version]%>/BiocViews.html)
-taxonomy, and [software package list](/packages/release/bioc/)
+Visit the [Workflows](/help/workflows/) page
+and [software package list](/packages/release/BiocViews.html#___Software)
 to discover available packages.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

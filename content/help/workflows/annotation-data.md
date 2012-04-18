@@ -127,8 +127,7 @@ interested in how to create custom chip packages should see the
 vignettes in `AnnotationDbi` package. There is additional information
 in the annotate package for how to use some of the extra tools
 provided. You can also refer to the 
-[complete list of annotation packages](/packages/release/data/annotation/),
-optionally [broken down by category](/packages/release/BiocViews.html#___AnnotationData).
+[complete list of annotation packages](/packages/release/BiocViews.html#___AnnotationData).
 
 ### Key Packages ###
 
