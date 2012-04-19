@@ -52,7 +52,7 @@ Windows:
     
     C:\Users\YOUR_USER_NAME\Documents\R\win-library\2.15-bioc-devel
     
-    (change YOUR_USER_NAME to your user name)
+(change YOUR_USER_NAME to your user name)
     
 
 You can then invoke "R for bioc-devel" or "R for bioc-release" from
