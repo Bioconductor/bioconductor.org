@@ -440,7 +440,7 @@ def recent_packages()
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
     ret = []
-    for item in items.reverse
+    for item in items#.reverse
       h = {}
       title = nil
       item.elements.each("title") {|i|title = i.text}
