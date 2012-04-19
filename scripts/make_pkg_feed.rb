@@ -88,7 +88,7 @@ for desc in descs
   title = Element.new "title"
   title.text = "#{desc["Package"]} - #{desc["Title"]}"
   pubdate = Element.new "pubdate"
-  pubdate.text = "2011-01-01"
+  pubdate.text =  "Sat, 1 Jan 2012 00:00:00 GMT"  #"2011-01-01"
   author = Element.new "author"
   author.text = desc["Author"]
   description  = Element.new "description"
