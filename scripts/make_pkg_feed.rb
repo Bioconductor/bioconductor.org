@@ -37,7 +37,7 @@ for line in lines
   pkgs.push line.gsub(/^Package: /, "")
 end
 
-#pkgs.reverse!
+pkgs.reverse!
 
 descs = []
 
@@ -60,7 +60,7 @@ end
 
 
 
-descs.reverse!
+#descs.reverse!
 
 startxml = <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
