@@ -84,9 +84,11 @@ doc.elements.each("rss/channel") {|i| elem = i}
 
 
 for desc in descs
+  url = "http://bioconductor.org/packages/#{devel_version}/bioc/html/#{desc["Package"]}.html"
+
   item = Element.new "item"
   title = Element.new "title"
-  title.text = "#{desc["Package"]} - #{desc["Title"]}"
+  title.text = "#{url} #{desc["Package"]} #{desc["Title"]}"
   pubdate = Element.new "pubdate"
   pubdate.text =  "Sat, 1 Jan 2012 00:00:00 GMT"  #"2011-01-01"
   author = Element.new "author"
@@ -96,7 +98,7 @@ for desc in descs
   
   # attr?
   
-  link = %Q(\n<br/><a href="http://bioconductor.org/packages/devel/bioc/html/#{desc["Package"]}.html">link</a>)
+  link = %Q(\n<br/><a href="#{url}">link</a>)
   
   description.text = "#{desc["Description"]}#{link}"
   

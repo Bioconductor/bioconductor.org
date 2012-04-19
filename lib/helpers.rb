@@ -446,7 +446,10 @@ def recent_packages()
       item.elements.each("title") {|i|title = i.text}
       description  = nil
       item.elements.each("description") {|i|description = i.text}
-      pkg, pkgtitle = title.split(" - ")
+      title_segs = title.split(" ")
+      title_segs.shift # get rid of url
+      pkg = title_segs.shift # get pkg name
+      pkgtitle = title_segs.join " "
       desc = description.split("<br/").first
       h[:package] = pkg
       h[:title] = pkgtitle
