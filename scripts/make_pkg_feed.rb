@@ -37,7 +37,7 @@ for line in lines
   pkgs.push line.gsub(/^Package: /, "")
 end
 
-pkgs.reverse!
+#pkgs.reverse!
 
 descs = []
 
