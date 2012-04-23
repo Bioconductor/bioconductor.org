@@ -508,6 +508,42 @@ def since(package)
   nil
 end
 
+
+def get_version_from_item_id(item)
+  segs = item.identifier.split "/"
+  segs.pop
+  version = segs.pop
+  version
+end
+
+def script_tag_for_package_data(item)
+  # todo - something sensible if get_json hasn't been run
+  segs = item.identifier.split "/"
+  segs.pop
+  version = segs.pop
+  repos = ["bioc", "data/annotation", "data/experiment"]
+  if version == config[:devel_version]
+    repos = config[:devel_repos]
+  end
+  s = ""
+  for repo in repos
+    #<script type="text/javascript" src="/packages/json/<%=get_version_from_item_id(@item)%>/tree.json">
+    s += %Q(<script type="text/javascript" src="/packages/json/#{version}/#{repo}/packages.js"></script>\n)
+  end
+  s
+end
+
+def get_tree(item)
+  # todo - something sensible if get_json hasn't been run
+  segs = item.identifier.split "/"
+  segs.pop
+  version = segs.pop
+  f = File.open "assets/packages/json/#{version}/tree.js"
+  json = f.readlines.join("")
+  f.close
+  return json.strip
+end
+
 def r_ver_for_bioc_ver(bioc_ver)
   # todo - add to this over time as futureproofing (below) can't be trusted
   hsh = {"1.6" => "2.1",

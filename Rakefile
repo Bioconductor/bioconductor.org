@@ -8,6 +8,8 @@ require './scripts/parse_bioc_views.rb'
 require './scripts/add_readmes_and_news.rb'
 require './scripts/get_json.rb'
 require 'open3'
+require 'find'
+require 'pathname'
 
 include Open3
 
@@ -39,7 +41,26 @@ task :copy_assets do
 end
 
 desc "Run nanoc3 compile"
-task :compile => [ :real_compile, :post_compile]
+task :compile => [:pre_compile, :real_compile, :post_compile]
+
+desc "Pre-compilation tasks"
+task :pre_compile do
+  FileUtils.mkdir_p "content/packages"
+  site_config = YAML.load_file("./config.yaml")
+  for version in site_config["versions"]
+    destdir = "content/packages/#{version}"
+    FileUtils.mkdir_p destdir
+    puts "copying bioc_views.html to #{destdir}/BiocViews.html"
+    FileUtils.rm_f "#{destdir}/BiocViews.html"
+    FileUtils.rm_f "output/packages/#{version}/BiocViews.html"
+    FileUtils.mkdir_p "output/packages/#{version}/BiocViews"
+    unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
+      FileUtils.cp "assets/help/bioc-views.html", "#{destdir}/BiocViews.html", {:preserve => false}
+      FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", {:preserve => false}
+    end
+  end
+  
+end
 
 task :real_compile do
   system "nanoc3 co"
@@ -50,12 +71,6 @@ task :post_compile do
   site_config = YAML.load_file("./config.yaml")
   src = "#{site_config["output_dir"]}/packages/#{site_config["release_version"]}/BiocViews.html"
   other_versions = site_config["versions"] - [site_config["release_version"]]
-  for version in other_versions
-    dest = "#{site_config["output_dir"]}/packages/#{version}"
-    FileUtils.mkdir_p dest
-    FileUtils.cp(src, dest)
-    puts "copied output/packages/#{site_config["release_version"]}/BiocViews.html to output/packages/#{version}/BiocViews.html"
-  end
   cwd = FileUtils.pwd
   FileUtils.cd "#{site_config["output_dir"]}/packages"
 
@@ -174,8 +189,52 @@ task :devserver => [:build] do
   system "nanoc3 aco"
 end
 
+
+task :get_json => [:prepare_json, :json2js]
+
+task :json2js do
+  # convert json to javascript expression suitable for inclusion via a script tag
+  Find.find "assets/packages/json" do |file|
+    next unless file =~ /\.json$/
+    dir = Pathname.new(file).basename.to_s
+    fn = file.split("/").last
+    jsfile = file.sub(/\.json$/, ".js")
+    if fn == "tree.json"
+      f = File.open(file)
+      lines = f.readlines
+      f.close
+      json = lines.join
+      obj = JSON.parse json
+      hsh = {"data" => obj}
+      json = hsh.to_json
+      s = "var dataTree = #{json};"
+      outf = File.open(jsfile, "w")
+      outf.print s
+      outf.close
+    elsif fn == "packages.json"
+      var = nil
+      if file =~ /\/bioc\//
+        var = "bioc_packages"
+      elsif file =~ /\/data\/annotation/
+        var = "data_annotation_packages"
+      elsif file =~ /\/data\/experiment/
+        var = "data_experiment_packages"
+      end
+      unless var.nil?
+        f = File.open(file)
+        lines = f.readlines
+        json = lines.join.strip
+        outf = File.open(jsfile, "w")
+        outf.print("var #{var} = #{json};")
+        outf.close
+      end
+    end
+  end
+end
+
+
 desc "Get JSON files required for BiocViews pages"
-task :get_json do
+task :prepare_json do
   json_dir = "assets/packages/json"
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")

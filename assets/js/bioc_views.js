@@ -172,14 +172,7 @@ var init = function() {
                 "dots": false,
                 "icons": false
             },
-            "json_data" : {
-                "ajax" : {
-                    "url" : getHostUrl() + "/json/" + biocVersion + "/tree.json",
-                    "data" : function (n) { 
-                        return { id : n.attr ? n.attr("id") : 0 }; 
-                    }
-                }
-            },
+            "json_data": dataTree,
             "plugins" : [ "themes", "json_data", "ui" ]
         });
 
@@ -214,7 +207,6 @@ var init = function() {
 }
 
 
-var loadedPackageData = false;
 
 var getHostUrl = function() {
     var url = window.location.href;
@@ -225,38 +217,20 @@ var getHostUrl = function() {
     return(url);
 }
 
+
 var loadPackageData = function() {
-  var repos = ["bioc", "data/annotation", "data/experiment"];
-  var count = 0;
-  
-  for (var i = 0; i < repos.length; i++) {
-      var url = getHostUrl();
-      url += "/json/" + biocVersion + "/" + repos[i] +  "/packages.json";
-      jQuery.getJSON(url, function(data){
-          jQuery.extend(packageInfo, data);
-          if (count == 2) {
-              loadedPackageData = true;
-          }
-          count++;
-      });
-  }
-  
+    if (typeof bioc_packages != "undefined")
+        jQuery.extend(packageInfo, bioc_packages)
+    if (typeof data_annotation_packages != "undefined")
+        jQuery.extend(packageInfo, data_annotation_packages)
+    if (typeof data_experiment_packages != "undefined")
+        jQuery.extend(packageInfo, data_experiment_packages)
 }
+
 
 //document ready function
 jQuery(function () {
     setBiocVersion();
     loadPackageData();
     init();
-    /* disable mouseover for now...
-    jQuery(".bioc_package").live("mouseover", function(){
-        var title = jQuery(this).attr("title");
-        if (title == "" && loadedPackageData) {
-            var tmp = jQuery(this).attr("id");
-            var id = tmp.replace("pkg_", "");
-            var title = packageInfo[id]["Description"].replace(/\n/g, " ");
-            jQuery(this).attr("title", title);
-        }
-    })
-    */
 });

@@ -58,14 +58,16 @@ route '/style/*/' do
 end
 
 # biocViews hierarchy
-route '/help/bioc-views/' do
-  # note that we rely on the rake :post_compile task to create duplicate versions of this file
+route /BiocViews/ do
+  segs = item.identifier.split "/"
+  segs.pop
+  version = segs.pop
+  # note that we rely on the rake :pre_compile task to create duplicate versions of this file
   # for each bioC version for which the "new" style BiocViews tree is created.
   #"/help/bioc-views/#{config[:release_version]}/BiocViews.html"
   item[:rebase] = true
-  "/packages/#{config[:release_version]}/BiocViews.html"
+  "/packages/#{version}/BiocViews.html"
 end
-
 
 # index pages (package lists)
 route /^\/help\/bioc-views\/package-pages\/all-/ do
@@ -100,8 +102,9 @@ end
 layout '*', :erb
 
 
-preprocess do #todo - skip this gracefully if no internet connection
+preprocess do 
   unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
+    #todo - skip this gracefully if no internet connection
     puts "Getting manifest information..."
     url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
     branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
