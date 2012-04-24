@@ -590,6 +590,7 @@ ul.inline_list li {
 .biocViewsTree {
  float:left;
  height:300px;
+ width:33%;
  overflow:scroll;
 }
 
