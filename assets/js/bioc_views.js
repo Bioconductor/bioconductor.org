@@ -28,7 +28,7 @@ var displayPackages = function(packageList, nodeName) {
         var url = getHostUrl() + "/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
-        var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ +<[^>]*>/g, "");
+        var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
         tableData += '\t<td>'+cleanMaintainer+'</td>\n';
         tableData += '\t<td>'+packageInfo[pkg]["Title"]+'</td>\n';
         tableData += "</tr>\n";
