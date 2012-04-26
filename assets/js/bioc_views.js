@@ -14,10 +14,6 @@ var displayPackages = function(packageList, nodeName) {
 
     var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
 
-    html += "<p>";
-    html += parents.join(" &gt ");
-    html += "</p>\n";
-    
     html += "<table><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr>\n";
     
     
