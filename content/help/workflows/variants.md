@@ -14,7 +14,8 @@ PolyPhen database packages.
 
 <h2 id="sample-workflow">Sample Workflow</h2>
 
-Performed with Bioconductor 2.10 and R >= 2.15.
+Performed with Bioconductor 2.11 and R >= 2.15; 
+VariantAnnotation 1.3.9 in the devel branch.
 
 This workflow annotates variants found in the Transient Receptor Potential 
 Vanilloid (TRPV) gene family on chromosome 17. The VCF file is available in 
@@ -175,14 +176,14 @@ per variant are possible. If we are interested in gene-centric questions
 the data can be summarized by gene reguardless of transcript.
      
     > ## Did any variants match more than one gene
-    > table(sapply(split(values(all)[["geneID"]], values(all)[["queryID"]]), 
+    > table(sapply(split(values(all)[["GENEID"]], values(all)[["QUERYID"]]), 
               function(x)
                   length(unique(x)) > 1))
     FALSE  TRUE 
       379     8 
      
     > ## Summarize the number of variants by gene
-    > idx <- sapply(split(values(all)[["queryID"]], values(all)[["geneID"]]), 
+    > idx <- sapply(split(values(all)[["QUERYID"]], values(all)[["GENEID"]]), 
                unique)
     > sapply(idx, length)
     162514  23729  51393   7442  84690 
@@ -191,8 +192,8 @@ the data can be summarized by gene reguardless of transcript.
     > ## Summarize variant location by gene
     > sapply(names(idx), 
           function(nm) {
-              d <- all[values(all)[["geneID"]] %in% nm, c("queryID", "location")]
-              table(values(d)[["location"]][duplicated(d) == FALSE])
+              d <- all[values(all)[["GENEID"]] %in% nm, c("QUERYID", "LOCATION")]
+              table(values(d)[["LOCATION"]][duplicated(d) == FALSE])
           })
                162514 23729 51393 7442 84690
     spliceSite      2     0     0    1     0
@@ -220,14 +221,14 @@ locateVariants, the output has one row per variant-transcript match
 so multiple rows per variant are possible.
      
     ## Did any variants match more than one gene
-    > table(sapply(split(values(aa)[["geneID"]], values(aa)[["queryID"]]), 
+    > table(sapply(split(values(aa)[["GENEID"]], values(aa)[["QUERYID"]]), 
               function(x)
                   length(unique(x)) > 1))
     FALSE 
        17 
     
     > ## Summarize the number of variants by gene
-    > idx <- sapply(split(values(aa)[["queryID"]], values(aa)[["geneID"]], 
+    > idx <- sapply(split(values(aa)[["QUERYID"]], values(aa)[["GENEID"]], 
                     drop=TRUE), unique)
     > sapply(idx, length)
     162514  51393   7442 
@@ -236,13 +237,13 @@ so multiple rows per variant are possible.
     > ## Summarize variant consequence by gene
     > sapply(names(idx), 
              function(nm) {
-                 d <- aa[values(aa)[["geneID"]] %in% nm, c("queryID", "consequence")]
-                 table(values(d)[["consequence"]][duplicated(d) == FALSE])
+                 d <- aa[values(aa)[["GENEID"]] %in% nm, c("QUERYID","CONSEQUENCE")]
+                 table(values(d)[["CONSEQUENCE"]][duplicated(d) == FALSE])
              })
                    162514 51393 7442
-    nonsynonymous       3     0    2
+    nonsynonymous       2     1    1
     not translated      1     0    5
-    synonymous          2     3    1
+    synonymous          3     2    2
     
 The variants 'not translated' are explained by the warnings thrown when
 predictCoding was called. Variants that have a missing varAllele or have an
@@ -254,38 +255,47 @@ The SIFT.Hsapiens.dbSNP132 and PolyPhen.Hsapiens.dbSNP131 packages
 provide predictions of how damaging amino acid coding changes may
 be to protein structure and function. Both packages search on rsid.
     
-    ## Load the SIFT package and explore the available keys and columns
-    > library(SIFT.Hsapiens.dbSNP132)
-    > keys <- keys(SIFT.Hsapiens.dbSNP132)
-    > cols <- cols(SIFT.Hsapiens.dbSNP132)
-    ## column descriptions are found at ?SIFTDbColumns
-    > cols(SIFT.Hsapiens.dbSNP132)
-    [1] "RSID"        "PROTEINID"   "AACHANGE"    "METHOD"      "AA" 
-    [6] "PREDICTION"  "SCORE"       "MEDIAN"      "POSTIONSEQS" "TOTALSEQS" 
+    ## Load the PolyPhen package and explore the available keys and columns
+    > library(PolyPhen.Hsapiens.dbSNP131)
+    > keys <- keys(PolyPhen.Hsapiens.dbSNP131)
+    > cols <- cols(PolyPhen.Hsapiens.dbSNP131)
+    ## column descriptions are found at ?PolyPhenDbColumns
+    > cols(PolyPhen.Hsapiens.dbSNP131)
+     [1] "RSID"        "TRAININGSET" "OSNPID"      "OACC"        "OPOS"       
+     [6] "OAA1"        "OAA2"        "SNPID"       "ACC"         "POS"        
+    [11] "AA1"         "AA2"         "NT1"         "NT2"         "PREDICTION" 
+    [16] "BASEDON"     "EFFECT"      "PPH2CLASS"   "PPH2PROB"    "PPH2FPR"    
+    [21] "PPH2TPR"     "PPH2FDR"     "SITE"        "REGION"      "PHAT"       
+    [26] "DSCORE"      "SCORE1"      "SCORE2"      "NOBS"        "NSTRUCT"    
+    [31] "NFILT"       "PDBID"       "PDBPOS"      "PDBCH"       "IDENT"      
+    [36] "LENGTH"      "NORMACC"     "SECSTR"      "MAPREG"      "DVOL"       
+    [41] "DPROP"       "BFACT"       "HBONDS"      "AVENHET"     "MINDHET"    
+    [46] "AVENINT"     "MINDINT"     "AVENSIT"     "MINDSIT"     "TRANSV"     
+    [51] "CODPOS"      "CPG"         "MINDJNC"     "PFAMHIT"     "IDPMAX"     
+    [56] "IDPSNP"      "IDQMIN"      "COMMENTS"
     
     ## Get the rsids for the non-synonymous variants from the
     ## predictCoding results
-    > rsid <- unique(names(aa)[values(aa)[["consequence"]] == "nonsynonymous"]) 
+    > rsid <- unique(names(aa)[values(aa)[["CONSEQUENCE"]] == "nonsynonymous"]) 
     
-    ## Retrieve predictions for non-synonymous variants. Three variants are 
-    ## not found in the SIFT database. 
-    > select(SIFT.Hsapiens.dbSNP132, keys=rsid, 
-             cols=c("AACHANGE", "PREDICTION", "METHOD"))
-            RSID AACHANGE    METHOD  PREDICTION
-    1   rs224534    T469I BEST HITS   TOLERATED
-    2   rs224534    T469I  ALL HITS DELETERIOUS
-    3   rs224534    T469I  ALL HITS   TOLERATED
-    4   rs222748     <NA>      <NA>        <NA>
-    5   rs11078458   <NA>      <NA>        <NA>
-    6   rs1039519    <NA>      <NA>        <NA>
-    7   rs322965     I25V BEST HITS   TOLERATED
-    8   rs322965     I25V  ALL HITS   TOLERATED
+    ## Retrieve predictions for non-synonymous variants. Two of the six variants 
+    ## are found in the PolyPhen database. 
+    > select(PolyPhen.Hsapiens.dbSNP131, keys=rsid, 
+             cols=c("AA1", "AA2", "PREDICTION"))
+            RSID  AA1  AA2 PREDICTION
+    1   rs222747    M    I     benign
+    2   rs222748 <NA> <NA>       <NA>
+    3  rs1129235 <NA> <NA>       <NA>
+    4 rs11078458 <NA> <NA>       <NA>
+    5  rs1039519 <NA> <NA>       <NA>
+    6   rs322965    I    V     benign
     Warning message:
-    In .formatSIFTDbSelect(raw, keys, cols) :
+    In .formatPPDbSelect(raw, keys) : 
     key not found in database : rs222748
+    key not found in database : rs1129235
     key not found in database : rs11078458
     key not found in database : rs1039519
-    
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
