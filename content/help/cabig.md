@@ -31,5 +31,5 @@ to create custom caGrid services from Bioconductor scripts.
 
 caGrid services are SOAP-based, and are most easily accessed through a
 java-based client built using caGrid `introduce` infrastructure. Each service
-in gforge contains a demonstration client. The SOAP interface for deployed
-services is available at our local instance, [http://cabig.bioconductor.org](http://cabig.bioconductor.org/wsrf/share/).
+in gforge contains a demonstration client. Our local instance is no longer
+available.
