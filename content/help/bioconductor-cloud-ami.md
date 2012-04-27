@@ -271,7 +271,7 @@ and ":8787" at the end, so you end up with something like this:
 
 Log in as username "ubuntu" with password "bioc". Refer to the
 [RStudio documentation](http://www.rstudio.org/) for more information.
- 
+
 
 ### Using Rgraphviz
 
@@ -449,6 +449,12 @@ When your instance is customized to your liking, issue the following commands (a
 	exit
 
 This will remove unneeded files from your AMI, clear your shell history, and log you out of your instance.
+You may also want to change the password of the "ubuntu" user (because the default password
+is publicly known, in order to run RStudio Server) with the command:
+
+	passwd ubuntu
+	
+
 
 Now use the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)
 to Stop your instance (**important note: do NOT "Terminate" your instance; use the Stop command (under Instance Actions) instead.**)
