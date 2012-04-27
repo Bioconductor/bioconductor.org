@@ -2,6 +2,7 @@
 
 require 'rubygems'
 require 'rgl/adjacency'
+require 'rgl/traversal'
 require 'sqlite3'
 require 'json'
 ## this DCF parser is slow. Here's a faster one:
@@ -49,7 +50,7 @@ class RGL::DirectedAdjacencyGraph
     parents
   end
 end
-
+  
 
 class GetJson
   
@@ -197,12 +198,30 @@ class GetJson
     
     
     for node in g.vertices
+      #puts "node: #{node}"
+      pkgs = []
+      g.depth_first_visit(node) do |n|
+        #node_attrs[n] = {} unless node_attrs.has_key? n
+        #puts "\tchild: #{n}"
+        #puts "\t\tpkgs: #{node_attrs[n]['packageList']}"
+        pkgs += node_attrs[n]['packageList'] if node_attrs.has_key? n and \
+          node_attrs[n].has_key? 'packageList'
+      end
+      node_attrs[node] = {} unless node_attrs.has_key? node
+      #node_attrs[node]['packageList'] = [] unless node_attrs[node].has_key? 'packageList'
+
+      node_attrs[node]['childnum'] = pkgs.uniq.length
+    end
+    
+    
+    for node in g.vertices
       h = {}
       h["name"] = node
       h["parentViews"] = g.parents(node)
       h["subViews"] = g.children(node)
       if (node_attrs.has_key? node)
         h["packageList"] = node_attrs[node]['packageList']
+        h["childnum"] = node_attrs[node]['childnum']
       else
         h['packageList'] = []
       end

@@ -56,6 +56,8 @@ class ParseBiocViews
     
     key = root.find{|i|i['data'] =~ /^#{repo}/}
     
+    
+    
     key
  
   end
@@ -120,14 +122,21 @@ def clean(arg)
   item.delete("name")
   item.delete("parentViews")
   
+  if (item.has_key? "childnum" and (!item['childnum'].nil?) and item['childnum'] > 0)
+    item["data"] += " (#{item['childnum']})"
+    item.delete('childnum')
+  end
+
+
   
-  if (item.has_key?("packageList") && item["packageList"] != "" && !item["packageList"].empty?)
+  if (item.has_key?("packageList") && !item['packageList'].nil? &&item["packageList"] != "" && !item["packageList"].empty?)
     for bad in BAD_PACKAGES
       item['packageList'].delete(bad)
     end
     
-    item["attr"] = {"packageList" => item["packageList"].sort{|a,b|a.downcase<=>b.downcase}.join(","), "id" => item['data']}
-    item['data'] += " (#{item["packageList"].length})"
+    item["attr"] = {"packageList" => item["packageList"].sort{|a,b|a.downcase<=>b.downcase}.join(","),
+      "id" => item['data'].split(" ").first}
+    
   end
   item.delete("packageList")
 
