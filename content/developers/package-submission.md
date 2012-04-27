@@ -48,6 +48,10 @@ Packages must satisfy the following checklist:
   files with invalid names (e.g., differing only in case), or code that
   cannot be distributed under the license specified by the author.
 * Packages must not already be available on CRAN.
+* Packages should have a descriptive name that is not already in use.
+  See if it is by running <code>biocLite("myPackageName")</code>. You
+  cannot have a package name that is case-insensitively equal to
+  an existing package name in CRAN or Bioconductor.
 
 Packages should also conform to the following:
 
