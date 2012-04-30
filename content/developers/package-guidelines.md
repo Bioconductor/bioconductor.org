@@ -117,7 +117,7 @@ Packages must
 * Include examples in all
   [man pages](http://cran.fhcrc.org/doc/manuals/R-exts.html#Rd-format).
 * Specify one or more
-  [biocViews categories](http://wiki.fhcrc.org/bioc/biocViews_categories).
+  [biocViews categories](/packages/release/BiocViews.html#___Software).
 * Contain a
   [NAMESPACE](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-name-spaces)
   file to define the functions, classes, and methods that are imported into the
