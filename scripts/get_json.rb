@@ -187,29 +187,32 @@ class GetJson
     end
     ret = {}
 
-    
+    nodes_to_delete = []
     for node in g.vertices
-      if !node_attrs.has_key? node
-        if (g.children(node).empty?)
-          g.remove_vertex node
+      delete_parent = true
+      g.depth_first_visit(node) do |n|
+        if node_attrs.has_key? n
+          delete_parent = false
+          break
         end
       end
+      nodes_to_delete.push node if delete_parent
+      
+    end
+    
+    for node_to_delete in nodes_to_delete.uniq
+      g.remove_vertex node_to_delete
     end
     
     
+    
     for node in g.vertices
-      #puts "node: #{node}"
       pkgs = []
       g.depth_first_visit(node) do |n|
-        #node_attrs[n] = {} unless node_attrs.has_key? n
-        #puts "\tchild: #{n}"
-        #puts "\t\tpkgs: #{node_attrs[n]['packageList']}"
         pkgs += node_attrs[n]['packageList'] if node_attrs.has_key? n and \
           node_attrs[n].has_key? 'packageList'
       end
       node_attrs[node] = {} unless node_attrs.has_key? node
-      #node_attrs[node]['packageList'] = [] unless node_attrs[node].has_key? 'packageList'
-
       node_attrs[node]['childnum'] = pkgs.uniq.length
     end
     
