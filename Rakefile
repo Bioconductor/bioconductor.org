@@ -252,46 +252,7 @@ task :prepare_json do
       repos = ["data/annotation", "data/experiment", "bioc"]
     end
    
-    reverse_depends = {"Suggests" => {}, "Depends" => {}, "Imports" => {}}
-
-    for repo in repos
-      gj = GetJson.new(repo, version, "assets/packages/json/#{version}/#{repo}")
-      reverse_depends = GetJson.add_reverse_dependencies(reverse_depends, gj.packages)
-    end
-    
-    for repo in repos
-      GetJson.write_reverse_depends(reverse_depends, "assets/packages/json/#{version}/#{repo}")
-    end
-  end
-  
-  #todo remove
-  system("scp scripts/get_vignette_titles.rb webadmin@bioconductor.org:~")
-  #end remove
-  
-  for version in versions
-    if version == devel_version
-      repos = devel_repos
-    else
-      repos = ["data/annotation", "data/experiment", "bioc"]
-    end
-   
-    
-    add_readmes(json_dir, version, "bioc")
-    add_news(json_dir, version, "bioc")
-    add_install(json_dir, version, "bioc")
-    
-    fullpaths = repos.map{|i| "#{json_dir}/#{version}/#{i}/biocViews.json"}
-    
-    #todo remove
-    repos.each do |repo|
-      system %Q(ssh webadmin@bioconductor.org "ruby ./get_vignette_titles.rb /extra/www/bioc/packages/#{version}/#{repo} > ~/vignette_titles.json")
-      system("scp webadmin@bioconductor.org:~/vignette_titles.json #{json_dir}/#{version}/#{repo}")
-    end
-    #end remove
-    
-    args = [fullpaths, "#{json_dir}/#{version}/tree.json"]
-    
-    ParseBiocViews.new(args)
+    gj = GetJson.new(version, "assets/packages/json")
   end
 end
 

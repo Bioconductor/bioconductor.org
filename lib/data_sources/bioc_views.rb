@@ -87,43 +87,6 @@ class BiocViews < Nanoc3::DataSource
   end
 
   
-  #todo remove
-  def do_bad_stuff(obj, dir)
-    
-    tf = File.open("#{dir}/vignette_titles.json")
-    json = tf.readlines.join("\n")
-    vt = JSON.parse(json)
-    for bad in @bad_packages
-      vt.delete(bad)
-    end
-    
-    obj.each_pair do |k,v|
-
-      if (vt.has_key? k)
-        
-          
-        if (vt[k].respond_to? :has_key?)
-          
-          
-          v["vignetteTitles"] = vt[k]["vignetteTitles"] unless vt[k]["vignetteTitles"].nil? or vt[k]["vignetteTitles"].empty?
-          v["vignetteScripts"] = vt[k]["vignetteScripts"] unless vt[k]["vignetteScripts"].nil? or vt[k]["vignetteScripts"].empty?
-          v["vignetteFiles"] = vt[k]["vignetteFiles"] unless vt[k]["vignetteFiles"].nil? or vt[k]["vignetteFiles"].empty?
-
-          
-          v[:vignetteTitles] = v["vignetteTitles"]
-          v[:vignetteScripts] = v["vignetteScripts"]
-          v[:vignetteFiles] = v["vignetteFiles"]
-          
-        end
-        
-        
-      end
-      
-    end
-    obj
-  end
-  # end remove
-  
   
   def get_index_page(packages, repo, version)
     item = Nanoc3::Item.new("", {}, "all-#{repo}-#{version}")
@@ -195,13 +158,6 @@ class BiocViews < Nanoc3::DataSource
         end
 
         items.push(get_index_page(packages, v, version))
-
-
-        #todo remove
-        packages = do_bad_stuff(packages,dir)
-        # end remove
-
-
 
 
         for package in packages.keys

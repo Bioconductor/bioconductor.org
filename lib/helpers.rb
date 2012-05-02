@@ -229,44 +229,18 @@ end
 def doc_object(package)
   # return an array of hashes
   # [{:file => ..., :title => ..., :script => ...}]
-  
-  
-  
-  
+  return [:file => "", :title => "", :script => ""] \
+    unless package.has_key? :vignettes and package.has_key? :vignetteTitles
   doc_obj = []
-  
-  
-  if (package[:vignetteTitles].respond_to? :join)
-    
-    package[:vignetteTitles].each_with_index do |title, i|
-      item = {}
-      if (package.has_key? :vignetteFiles)
-        item[:file] = (package[:vignetteFiles].respond_to? :join)  ? package[:vignetteFiles][i] : package[:vignetteFiles]
-        item[:title] = title
-      else
-        item[:file] = item[:title] = title
-      end
-      
-      if (package.has_key? :vignetteScripts and package[:vignetteScripts][i] != "")
-        item[:script] = package[:vignetteScripts][i]
-      end
-
-      doc_obj.push item
-    end
-    
-    doc_obj.sort!{|a,b|a[:title].downcase <=> b[:title].downcase}
-    
-    return doc_obj
-  elsif package[:vignetteTitles].is_a? String and package[:vignetteTitles] != "NA"
-    item = {}
-    item[:file] = item[:title] = package[:vignetteTitles]
-    item[:script] = ""
-    doc_obj.push item
-  else
-    
-    return [:file => "", :title => "", :script => ""]
+  package[:vignettes].each_with_index do |vignette, i|
+    hsh = {}
+    hsh[:file] = vignette
+    # TODO: don't fake it that there is an R script, collect
+    # the names of R scripts on the biocViews side. (?)
+    hsh[:script] = vignette.sub(/\.pdf/i, ".R")
+    hsh[:title] = package[:vignetteTitles][i]
+    doc_obj.push hsh
   end
-
   doc_obj.sort!{|a,b|a[:title].downcase <=> b[:title].downcase}
   doc_obj
 end

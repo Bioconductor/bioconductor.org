@@ -5,16 +5,18 @@ require 'rgl/adjacency'
 require 'rgl/traversal'
 require 'sqlite3'
 require 'json'
-## this DCF parser is slow. Here's a faster one:
-## http://gist.github.com/117293
-## but it does not like unescaped colons in values,
-## and also requires spaces after field names (and colons, presumably)
-## so we write our own below, based on python code from BBS.
-#require 'dcf'
 require 'net/http'
 require 'uri'
 require 'pp'
+require 'yaml'
 
+class String
+  def to_boolean()
+    return true if self.downcase == "true"
+    return false if self.downcase =="false"
+    return self # maybe return nil?
+  end
+end
 
 module Dcf
   def self.parse(input)
@@ -29,8 +31,25 @@ module Dcf
         ret[key] += " " + line.strip
       end
     end
+    ret.each_pair do |k,v|
+      if v == "TRUE" or v == "FALSE"
+        ret[k] = v.to_boolean
+      end
+    end
     ret
   end
+  
+  def self.get_value_as_array(value, remove_version_specifiers=false)
+    return [] if value.empty? or value.nil? 
+    segs = value.split(", ")
+    segs = segs.map{|i| i.gsub(",,", ",")}
+    segs = segs.map{|i| i.gsub(/^\s*|\s*$/, "")}
+    if remove_version_specifiers
+      segs = segs.map{|i| i.split(" ").first}
+    end
+    segs
+  end
+  
 end
 
 class RGL::DirectedAdjacencyGraph
@@ -54,46 +73,6 @@ end
 
 class GetJson
   
-  attr_reader :packages
-  
-  
-  def self.add_reverse_dependencies(reverse_deps, pkgs)
-    fields = ["Suggests", "Depends", "Imports"]
-    pkgs.each_pair do |k, v|
-      for field in fields
-        next unless v.has_key? field and !v[field].empty?
-        items = v[field].map{|i| i.split(" ").first}
-        for item in items
-          reverse_deps[field][item] = [] unless reverse_deps[field].has_key? item
-          reverse_deps[field][item].push k
-        end
-      end
-    end
-    reverse_deps
-  end
-  
-  def self.write_reverse_depends(reverse_deps, json_dir)
-    fields = {"Suggests" => "suggestsMe", "Depends" => "dependsOnMe", "Imports" => "importsMe"}
-    f = File.open("#{json_dir}/packages.json")
-    json = f.readlines.join
-    f.close
-    obj = JSON.parse json
-    obj.each_pair do |k, v|
-      fields.each_pair do |fk, fv|
-        if reverse_deps[fk].has_key? k
-          rdeps = reverse_deps[fk][k]
-          rdeps.sort! do |a, b|
-            a.downcase <=> b.downcase
-          end
-          obj[k][fv] = rdeps
-        end
-      end
-    end
-    f = File.open("#{json_dir}/packages.json", "w")
-    json = JSON.pretty_generate(obj)
-    f.print(json)
-    f.close
-  end
   
   def get_dcfs(repo, version)
     url = URI.parse("http://bioconductor.org/packages/#{version}/#{repo}/VIEWS")
@@ -114,7 +93,7 @@ class GetJson
         end
       end
       if line.empty?
-        pdcf = Dcf.parse(dcf) 
+        pdcf = Dcf.parse(dcf)
         view_dcfs.push pdcf
         dcf = ""
       else
@@ -131,13 +110,12 @@ class GetJson
   
   def clean_dcfs(dcfs)
     ret = {}
-    plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews"]
+    plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews",
+      "vignettes", "vignetteTitles"]
     for dcf in dcfs
       for key in dcf.keys
         if plural_fields.include? key
-          ary = dcf[key].split(",")
-          ary = ary.map{|i| i.gsub(/^\s*|\s$/, "")}
-          dcf[key] = ary
+          dcf[key] = Dcf.get_value_as_array(dcf[key])
         end
       end
       key = dcf["Package"]
@@ -200,6 +178,9 @@ class GetJson
       
     end
     
+    
+    # todo - better way to delete nodes-- build up a nodeList from the 
+    # biocViews of packages, uniq it, then delete all nodes not in that list.
     for node_to_delete in nodes_to_delete.uniq
       g.remove_vertex node_to_delete
     end
@@ -234,19 +215,99 @@ class GetJson
     ret
   end
   
-  def initialize(repo, version, outdir)
-    FileUtils.mkdir_p outdir unless Kernel.test(?d, outdir)
-    dcfs = get_dcfs(repo, version)
-    @packages = dcfs
-    json = JSON.pretty_generate(dcfs)
-    pkgs_file = File.open("#{outdir}/packages.json", "w")
+  
+  def initialize(version, outdir)
+    nanoc_dir = File.expand_path $0
+    segs = nanoc_dir.split "/"
+    2.times {segs.pop}
+    nanoc_dir = segs.join("/")
+    config = YAML.load_file("./config.yaml")
+    repos = ["bioc", "data/experiment", "data/annotation"]
+    repos = config["devel_repos"] if version == config["devel_version"]
+    packages_data = []
+    biocviews_data = []
+    for repo in repos
+      p, b = handle_repo(repo, version, outdir)
+      packages_data.push p
+      biocviews_data.push b
+    end
+    
+    packages_data = get_reverse_dependencies(packages_data)
+    
+    repos.each_with_index do |repo, i|
+      write_packages_file(packages_data[i], version, repo, outdir)
+    end
+    
+    write_tree_file(repos, biocviews_data, version, outdir)
+    
+  end
+  
+  def write_tree_file(repos, data, version, outdir)
+    args = [repos, data, "#{outdir}/#{version}/tree.json"]
+  end
+  
+  
+  def write_packages_file(data, version, repo, outdir)
+    fulloutdir = "#{outdir}/#{version}/#{repo}"
+    json = JSON.pretty_generate(data)
+    pkgs_file = File.open("#{fulloutdir}/packages.json", "w")
     pkgs_file.print(json)
     pkgs_file.close
+  end
+  
+  
+  # the biocViews packages builds reverse dependencies, but
+  # not across repositories, so we handle that here
+  def get_reverse_dependencies(data)
+    fields = ["Suggests", "Depends", "Imports"]
+    reverse_deps = {"Suggests" => {}, "Depends" => {}, "Imports" => {}}
+    for datum in data
+      datum.each_pair do |k,v|
+        for field in fields
+          next unless v.has_key? field and !v[field].empty?
+          items = v[field].map{|i| i.split(" ").first}
+          for item in items
+            reverse_deps[field][item] = [] unless reverse_deps[field].has_key? item
+            reverse_deps[field][item].push k
+          end
+        end
+      end
+    end
+    
+    
+    fields = {"Suggests" => "suggestsMe", "Depends" => "dependsOnMe", "Imports" => "importsMe"}
+    ret = []
+    for datum in data
+      datum.each_pair do |k, v|
+        fields.each_pair do |fk, fv|
+          if reverse_deps[fk].has_key? k
+            rdeps = reverse_deps[fk][k]
+            rdeps.sort! do |a, b|
+              a.downcase <=> b.downcase
+            end
+            datum[k][fv] = rdeps
+          end
+        end
+      end
+      ret.push datum
+    end
+    ret
+  end
+  
+  
+  def handle_repo(repo, version, outdir)
+    fulloutdir = "#{outdir}/#{version}/#{repo}"
+    FileUtils.mkdir_p fulloutdir unless Kernel.test(?d, fulloutdir)
+    dcfs = get_dcfs(repo, version)
     bioc_views = get_bioc_views(dcfs, repo, version)
+    
+    ## todo - remove this
     json = JSON.pretty_generate(bioc_views)
-    views_file = File.open("#{outdir}/biocViews.json", "w")
+    views_file = File.open("#{fulloutdir}/biocViews.json", "w")
     views_file.print(json)
     views_file.close
+    ## end of todo: remove this
+    [dcfs, bioc_views]
   end
 end
 

@@ -65,30 +65,21 @@ class ParseBiocViews
   
   
   def initialize(args)
-    inputfiles, outputfile = args
+    reposlist, inputdata, outputfile = args
+    #inputfiles, outputfile = args
     
-    @repos = {"/bioc/" => "Software", "/data/annotation/" => "AnnotationData", "/data/experiment/" => "ExperimentData"}
+    #repos = {"bioc" => "Software", "data/annotation" => "AnnotationData", "data/experiment" => "ExperimentData"}
     
     obj = {}
     
     
     top_level_tree = []
-    
-    
-    for inputfile in inputfiles
-      f = File.open(inputfile)
-      lines = f.readlines
-      json = lines.join("\n")
-      this_one = JSON.parse(json)
-      repo = ""
-      @repos.each_pair do |k,v|
-        repo = v if inputfile =~ /#{k}/
-      end
-      
+
+    inputdata.each_with_index do |this_one, i|
+      repo = reposlist[i]
       
       subtree = get_subtree(this_one, repo)
       top_level_tree.push subtree
-      
     end
     
 
