@@ -14,11 +14,6 @@ devel_version: "2.11"
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
 versions:
-- "2.5"
-- "2.6"
-- "2.7"
-- "2.8"
-- "2.9"
 - "2.10"
 - "2.11"
 ## CHANGE THIS as various parts of the new devel version become available.
