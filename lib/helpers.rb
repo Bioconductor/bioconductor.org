@@ -237,7 +237,7 @@ def doc_object(package)
     hsh[:file] = vignette.split("/").last
     # TODO: don't fake it that there is an R script, collect
     # the names of R scripts on the biocViews side. (?)
-    hsh[:script] = vignette.sub(/\.pdf/i, ".R")
+    hsh[:script] = vignette.split("/").last.sub(/\.pdf/i, ".R")
     hsh[:title] = package[:vignetteTitles][i]
     doc_obj.push hsh
   end

@@ -14,6 +14,9 @@ devel_version: "2.11"
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
 versions:
+## if old versions (no older than 2.5) need to be rebuilt for any reason,
+## add them here, but in most cases this should just contain the
+## release and devel versions:
 - "2.10"
 - "2.11"
 ## CHANGE THIS as various parts of the new devel version become available.
