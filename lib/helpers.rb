@@ -234,7 +234,7 @@ def doc_object(package)
   doc_obj = []
   package[:vignettes].each_with_index do |vignette, i|
     hsh = {}
-    hsh[:file] = vignette
+    hsh[:file] = vignette.split("/").last
     # TODO: don't fake it that there is an R script, collect
     # the names of R scripts on the biocViews side. (?)
     hsh[:script] = vignette.sub(/\.pdf/i, ".R")
