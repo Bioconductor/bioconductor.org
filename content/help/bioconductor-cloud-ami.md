@@ -3,7 +3,6 @@
 
 ## Contents
 * <a href="#overview">Overview</a>
-* <a href="#tryitnow">Try It Now</a>
 * <a href="#preloaded_ami_">Preloaded AMI</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rstudio">Using RStudio Server</a>
@@ -28,12 +27,6 @@ Here are a few reasons you could use it:
 * You want to run R in your web browser (using RStudio Server).
 
 See below for more specific scenarios.
-
-<a name="tryitnow"></a>
-## Try It Now
-
-You can [launch the AMI instantly](/help/cloud) and use it for free for up to
-two hours.
 
 <a name="preloaded_ami"></a>
 ## Preloaded AMI
