@@ -20,7 +20,7 @@
         {
             var ret = valid("name") && valid("email") && valid("subject") &&
               valid("body") && valid("code") && valid("sessioninfo") &&
-              validateEmail(document.forms["mailform"]["email"]);
+              validateEmail(document.forms["mailform"]["email"].value);
               
             if (ret == false)
                 alert("Please fill out all form items with valid values.");
