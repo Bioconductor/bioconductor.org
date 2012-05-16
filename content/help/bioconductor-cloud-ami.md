@@ -328,7 +328,7 @@ Here we present a tutorial for using <code>ShortRead</code> with an EC2-based MP
 
 To configure an EC2-based MPI cluster, launch single EC2 instance as described above, if you haven't already.
 This will be the master node of your cluster. Consider which [instance type](http://aws.amazon.com/ec2/instance-types/)
-you want your cluster to consist of. Note that the master and worker nodes will be of the same instance type.
+you want your cluster to consist of. Note that the master and worker nodes must be of the same instance type.
 
 In most cases, you'll want all of your cluster nodes to have access to the same data files. We accomplish this by 
 creating an [EBS Volume](http://aws.amazon.com/ebs/) holding our data. This volume is attached to the master node 
