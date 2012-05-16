@@ -4,6 +4,7 @@
 ## Contents
 * <a href="#overview">Overview</a>
 * <a href="#preloaded_ami_">Preloaded AMI</a>
+* <a href="#launching">Launching The AMI</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rstudio">Using RStudio Server</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
@@ -163,6 +164,7 @@ restrictive permissions on the keypair file, as follows:
 
 	chmod 400 bioconductor-bob-mylaptop.pem
 
+<a name="launching"></a>
 ## Launching the AMI
 
 Using the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1), click the "Launch Instance" button.
@@ -179,7 +181,12 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
    </thead>
   <tbody valign="top">
     <tr>
-        <td>2.10</td>
+        <td>2.11 (devel)</td>
+        <td>2.15</td>
+        <td><%= config[:ami_ids][:bioc2_11]%></td>
+    </tr>
+    <tr>
+        <td>2.10 (release, recommended)</td>
         <td>2.15</td>
         <td><%= config[:ami_ids][:bioc2_10]%></td>
     </tr>
