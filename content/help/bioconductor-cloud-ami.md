@@ -4,6 +4,7 @@
 ## Contents
 * <a href="#overview">Overview</a>
 * <a href="#preloaded_ami_">Preloaded AMI</a>
+* <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rstudio">Using RStudio Server</a>
@@ -129,6 +130,7 @@ Plus the following categories of annotation package:
 ## How To Use It
 
 
+<a name="first-time-steps"></a>
 ### First-time steps
 
 First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. (This will require that you provide credit card information).
