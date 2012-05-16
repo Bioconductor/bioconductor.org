@@ -3,7 +3,7 @@
 
 ## Contents
 * <a href="#overview">Overview</a>
-* <a href="#preloaded_ami_">Preloaded AMI</a>
+* <a href="#preloaded_ami">Preloaded AMI</a>
 * <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
