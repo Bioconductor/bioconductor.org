@@ -347,7 +347,7 @@ Where "xxx" is your Amazon Access Key ID and "yyy" is your Secret Key. The scrip
 	Created volume vol-dec646b6 in availability zone us-east-1c.
 
 Make a note of the volume ID and the availability zone (you can also find this information in the
-[Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Volumes)). 
+[Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Volumes)). This step is not necessary if cluster nodes do not need to share a disk.
 
 *Note*: Currently, your master node and your EBS volume are in the same availability zone, so you don't
 need to do anything special. Later, if you want to mount this EBS volume, you'll need to explicitly 
