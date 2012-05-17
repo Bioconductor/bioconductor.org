@@ -68,8 +68,17 @@
             "Value" :  { "Fn::Join" : [ "", [ "http://", 
                 { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}, ":8787"]]}
           },
-        "Username": "ubuntu",
-        "Password": "bioc",
-        "Info": "URL will be valid in a few seconds. Shut down all resources when done to avoid charges."
+        "Username": {
+            "Description": "Log in with this username",
+            "Value": "ubuntu"
+        },
+        "Password": {
+            "Description": "Log in with this password",
+            "Value": "bioc"
+        },
+        "Info": {
+            "Description": "Message",
+            "Value": "URL will be valid in a few seconds. Shut down all resources when done to avoid charges."
+        }
   }
 }
