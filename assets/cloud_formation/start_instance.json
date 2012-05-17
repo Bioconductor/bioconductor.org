@@ -78,7 +78,7 @@
         },
         "Info": {
             "Description": "Message",
-            "Value": "URL will be valid in a few seconds. Shut down all resources when done to avoid charges."
+            "Value": "URL will be valid in a few seconds. Delete stack when done to avoid charges."
         }
   }
 }
