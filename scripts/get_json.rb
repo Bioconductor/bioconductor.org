@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+  #!/usr/bin/env ruby
 
 require 'rubygems'
 require 'rgl/adjacency'
@@ -32,6 +32,7 @@ module Dcf
       end
     end
     ret.each_pair do |k,v|
+      ret[k] = v.strip
       if v == "TRUE" or v == "FALSE"
         ret[k] = v.to_boolean
       end
