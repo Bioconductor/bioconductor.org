@@ -261,7 +261,7 @@ task :generate_cf_templates do
   dir = Dir.new("cloud_formation")
   for file in dir
     next unless file =~ /_with_symbols.json$/
-    outname = file.gsub(/with_symbols/, "")
+    outname = file.gsub(/_with_symbols/, "")
     f = File.open("cloud_formation/#{file}")
     lines = f.readlines
     str = lines.join()
@@ -269,9 +269,9 @@ task :generate_cf_templates do
       s = s.gsub("<%=", "").gsub("%>", "").strip()
       eval(s)
     end
+    outfile = File.open("cloud_formation/#{outname}", "w")
+    outfile.write(repl)
+    outfile.close
   end
-  outfile = File.open("cloud_formation/#{outname}", "w")
-  outfile.write(repl)
-  outfile.close
   puts "Don't forget to copy templates to S3 and mark them as public!"
 end

@@ -6,8 +6,9 @@
 * <a href="#preloaded_ami">Preloaded AMI</a>
 * <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
+* <a href="#connecting_ssh">Connecting to your AMI using SSH</a>
+* <a href="#ami_ids_">AMI IDs</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
-* <a href="#rstudio">Using RStudio Server</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
 * <a href="#mpi">Configuring an MPI cluster in the cloud</a>
@@ -133,45 +134,119 @@ Plus the following categories of annotation package:
 <a name="first-time-steps"></a>
 ### First-time steps
 
-First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. (This will require that you provide credit card information).
+First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. This will require that you provide credit
+card information; however, you will only be charged for services used.
+[Some AWS services](http://aws.amazon.com/free/) are free.
 
-Now launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1). 
+
+That's all that is required if you want to use RStudio Server
+to connect to your AMI with a web browser.
+If you also want to connect to it with SSH, create a keypair as follows:
+
+Launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1). 
 Click on the [Key Pairs](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)
 link in the lower left-hand corner of the page. Click the "Create Key Pair" button. When prompted, supply a name.
 We suggest that the name be a combination of "bioconductor", your first name, and your machine name
 (this will avoid conflicts with other people who share your AWS account, or possibly your own account on another machine).
-For example, if your name is Bob and your personal computer is named "mylaptop", your key pair name could be "bioconductor-bob-mylaptop".
+For example, if your name is Bob and your personal computer is named "mylaptop", your key pair name could be "bioconductor-bob-mylaptop". Download the resulting .pem file and keep it in a safe
+place.
 
-You will need to modify the default security group. Click on 
-[Security Groups](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=SecurityGroups)
-in the lower-left hand corner of the AWS Console.
-
-Click on the Default group. You'll see information about the group in the lower pane, including the group ID, a string that starts with "sg-". Copy this string to your clipboard. 
-
-Set your security group up as follows but substitute your own security group ID for the one shown:
-
-<img src="/images/ami/securitygroup.jpg" border="0"/>
-
-
-If you want to use RStudio Server, you'll need to make an additional change to the default security group.
-
-Create a Custom TCP Rule, with Port Range set to 8787 and Source set to 0.0.0.0/0. Click Add Rule, then Apply Rule Changes.
-
-<img src="/images/ami/tcprule.jpg" border="0"/>
-
-Now you will be prompted to download the key pair file you have created. (This is actually an RSA private key).
-The suffix ".pem" will be appended to the key pair name you chose earlier.
-Be sure and copy this file to a safe place on your hard drive. On Mac and Unix systems at least, you will also need to set
-restrictive permissions on the keypair file, as follows:
-
-	chmod 400 bioconductor-bob-mylaptop.pem
 
 <a name="launching"></a>
 ## Launching the AMI
 
-Using the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1), click the "Launch Instance" button.
+Once you have [created an AWS account](#first-time-steps), you can launch the AMI simply by clicking on this link:
 
-Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioconductor AMI:
+<b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">Start AMI</a></b>
+
+
+You'll see the following screen:
+
+<img src="/images/ami/stack1.jpg"/>
+
+Click "continue".
+
+<img src="/images/ami/stack2.jpg"/>
+
+
+On this screen, you can choose which version of Bioconductor you want to run.
+If you are not sure, use the version that is already filled in.
+You can also choose an EC2 [instance type](http://aws.amazon.com/ec2/instance-types/).
+The default, t1.micro, is free to use under AWS's 
+[free usage tier](http://aws.amazon.com/free/) if you use it for less than 750
+hours a month.
+After choosing Bioconductor version and instance type, click Continue.
+
+<img src="/images/ami/stack3.jpg"/>
+
+Click Continue here to launch the AMI. If you like, you can click Cost
+to see how much it will cost to run the AMI with the selected instance type
+(if you have selected the t1.micro instance type, be sure and click
+the "FREE USAGE TIER" box in the page that comes up).
+
+
+You'll see the following screen:
+
+<img src="/images/ami/stack4.jpg"/>
+
+Click Close.
+
+In a few moments, the AMI will be ready (when Status changes to
+CREATE_COMPLETE). You can then click on the Outputs tab to get
+the URL and login information for your instance:
+
+<img src="/images/ami/stack5.jpg"/>
+
+Click on the link shown in the Stack Outputs table under URL.
+You can then log in to
+RStudio server using the username and password shown.
+
+**Important Note**: When you are finished using the AMI, be sure and
+shut it down to avoid incurring extra charges. Shut it down by
+going to the
+[CloudFormation Console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1)
+and checking the box next to StartBioconductorAMI.
+Then click "Delete Stack" and confirm by clicking "Yes, Delete":
+
+<img src="/images/ami/stack6.jpg">
+
+<a name="connecting_ssh"></a>
+## Connecting to your AMI using SSH
+
+Use the following URL to start your AMI:
+
+<b><a target="start_ami_with_ssh" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMIWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a></b>
+
+Follow the same steps as [above](#launching), but give AWS the name
+of a key-pair that you created in the [first-time steps](#first-time-steps).
+(A list of your keypairs is available 
+[here](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)).
+
+The Outputs tab will display the ssh command you should use to connect
+to your instance.
+
+You can vary this command. If you want to use programs or R packages that use X11, be sure and add a -X flag, to make the command something like this:
+
+	ssh -X -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
+
+If you do not want to log in as root, you can change "root" to "ubuntu".
+
+Now you can paste your command line into a terminal or Command Prompt. Make sure you are in the same directory as your
+key pair file. 
+
+**Windows Users**: You will need to install a version of the *ssh* and *scp* commands. Graphical programs like
+[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) and [WinSCP](http://winscp.net/eng/index.php) will work. 
+Our examples, however, will use the command-line versions of these programs, which you can obtain by installing 
+[Cygwin](http://www.cygwin.com/) (be sure and install the *openssh* package).
+
+Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
+to your Amazon EC2 instance. 
+
+
+<a name="ami_ids"></a>
+## AMI IDs
+
+Our AMIs have the following IDs.
 
 <table border="1" cellpadding="5" cellspacing="0">
   <thead valign="bottom">
@@ -209,91 +284,9 @@ Choose the Community AMIs tab. In the text box, paste in the AMI ID of the Bioco
 *Please note that AMI IDs may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI IDs. These AMIs live in the US-East-1 region.*
 
-Click the Select button
-
-The AWS console will now take you through a wizard-like interface: 
-
-<img src="/images/ami/wizard1.jpg" border="0"/>
-
-This screen shows the [different types of instances available](http://aws.amazon.com/ec2/instance-types/). Prices for these
-instances vary, so please refer to [current pricing information](http://aws.amazon.com/ec2/pricing/) before launching your 
-instance.
-
-Choose an instance type that is appropriate for your task. If you require a lot of memory, choose a high-memory instance type. If your task is CPU-intensive, choose a high-CPU instance type (but be aware that to take advantage of multiple processors, you must explicitly parallelize your CPU-intensive code with the *multicore* or *Rmpi* packages). If you are not concerned about performance, or are just looking around, choose the Micro instance type.
-
-You don't need to choose an Availability Zone unless you are using [EBS (Elastic Block Store) volumes](http://aws.amazon.com/ebs/).
-
-Click the Continue button. On the next screen (Instance Details), you can accept all the defaults and click Continue again. The following 
-screen allows you to optionally set some metadata about this instance. For now, just click Continue (though if you share an AWS
-account with others, you may want to give your instance a name that will identify it as belonging to you). On the Create Key pair screen, choose the Key Pair that you created when you first set up your AWS account. Click Continue. On the Configure Firewall screen, choose the "default" security group and click Continue. On the Review screen, make sure all your options look correct, then click Launch.
-Then click "View your instances on the Instances page".
-
-In a moment, you will see that your instance is running. You can then put a check box to the left of your running instance, and click on Instance Actions, then Connect. This will show you a dialog box containing a command line you can use to connect to your instance. 
-Copy this command line to your clipboard. It will look something like this:
-
-	ssh -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
-
-*Note* that both the keypair name and machine name here are examples. Your actual command line will look different.
-
-You can vary this command. If you want to use programs or R packages that use X11, be sure and add a -X flag:
-
-	ssh -X -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
-
-If you do not want to log in as root, you can change "root" to "ubuntu".
-
-Now you can paste your command line into a terminal or Command Prompt. Make sure you are in the same directory as your
-key pair file. 
-
-**Windows Users**: You will need to install a version of the *ssh* and *scp* commands. Graphical programs like
-[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) and [WinSCP](http://winscp.net/eng/index.php) will work. 
-Our examples, however, will use the command-line versions of these programs, which you can obtain by installing 
-[Cygwin](http://www.cygwin.com/) (be sure and install the *openssh* package).
-
-Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
-to your Amazon EC2 instance. 
-
-**Important Note**: Be sure and shut down your instance when you no longer need it, or charges will
-continue to accrue. You can shut down your instance from the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)
-by clicking on Instance Actions, then Terminate.
-
-The following section assumes that you are connected to your EC2 instance. 
 
 <a name="scenarios"></a>
 ## Scenarios for using your Bioconductor instance
-
-### Launching R
-
-Just type R at a command prompt:
-
-	root@ip-10-117-35-246:~# R
-
-	R version 2.13.0 Under development (unstable) (2010-12-17 r53867)
-	[...]
-
-	Loading required package: utils
-	BioC_mirror = http://www.bioconductor.org
-	Change using chooseBioCmirror().
-	> 
-	
-Note that the <code>biocLite()</code> function is automatically available, you do not have to <code>source()</code> a file first
-like you would have to on your R installation on your personal computer.
-
-<a name="rstudio"></a>
-### Using RStudio Server
-
-To use RStudio Server, it's not necesssary to connect to the remote instance with SSH.
-Just use the following steps.
-
-In the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1), click on Instances in the left side of the
-browser window, then click on your running instance. In the Description pane at lower right, copy the host
-name next to "Public DNS" to your clipboard. Paste this into your browser address bar with "http://" in front
-and ":8787" at the end, so you end up with something like this:
-
-    http://ec2-174-129-127-19.compute-1.amazonaws.com:8787
-
-Log in as username "ubuntu" with password "bioc". Refer to the
-[RStudio documentation](http://www.rstudio.org/) for more information.
-
 
 <a name="rgraphviz"></a>
 ### Using Rgraphviz
@@ -328,6 +321,9 @@ This trivial example runs the <code>rnorm()</code> function, but any function wo
 <a name="mpi"></a>
 ### Configuring an MPI cluster in the cloud
 
+(This section assumes you have [started up your AMI and connected to it
+with ssh](#connecting_ssh))
+
 You can launch multiple EC2 instances and set them up as an [MPI](http://en.wikipedia.org/wiki/Message_Passing_Interface)
 cluster, to parallelize and shorten long-running CPU-intensive jobs. You must explicitly parallelize your
 CPU-intensive code using functions in the [Rmpi](http://cran.r-project.org/web/packages/Rmpi/index.html) package. 
@@ -357,11 +353,6 @@ Where "xxx" is your Amazon Access Key ID and "yyy" is your Secret Key. The scrip
 
 Make a note of the volume ID and the availability zone (you can also find this information in the
 [Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Volumes)). This step is not necessary if cluster nodes do not need to share a disk.
-
-*Note*: Currently, your master node and your EBS volume are in the same availability zone, so you don't
-need to do anything special. Later, if you want to mount this EBS volume, you'll need to explicitly 
-launch your EC2 instance in the same availability zone as the volume. You do this in the 
-[Launch Instances Wizard](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=LaunchInstanceWizard) of the EC2 console.
 
 Now you're ready to spin up an MPI cluster. Use the <code>mpiutil</code> script. Invoked without arguments, 
 <code>mpiutil</code> produces the following:
@@ -495,7 +486,11 @@ Now you should Terminate the Stopped instance of the Bioconductor AMI.
 <a name="movingdata"></a>
 ## Moving data to and from your Bioconductor AMI instance
 
-The *scp* command is the most efficient way to move data to and from your EC2 instances.
+If you are using RStudio Server, you can upload and download files 
+from the Files pane in RStudio server.
+
+If you are connected via ssh,
+the *scp* command is the most efficient way to move data to and from your EC2 instances.
 
 To copy a file from your computer to a running Bioconductor AMI instance:
 
