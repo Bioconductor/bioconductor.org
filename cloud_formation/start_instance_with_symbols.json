@@ -23,16 +23,16 @@
   "Mappings" : {
     "BiocAMIMap" : {
       "2.8" : {
-          "AMI" : "ami-4b2fee22"
+          "AMI" : "<%=config['ami_ids']['bioc2_8']%>"
       },
       "2.9" : {
-          "AMI" : "ami-5f33e536"
+          "AMI" : "<%=config['ami_ids']['bioc2_9']%>"
       },
       "2.10" : {
-          "AMI" : "ami-0c0da865"
+          "AMI" : "<%=config['ami_ids']['bioc2_10']%>"
       },
       "2.11" : {
-          "AMI" : "ami-6263c40b"
+          "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
       }
     }
   },

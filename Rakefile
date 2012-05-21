@@ -255,3 +255,23 @@ task :prepare_json do
   end
 end
 
+desc "Create CloudFormation templates"
+task :generate_cf_templates do
+  config = YAML.load_file("./config.yaml")
+  dir = Dir.new("cloud_formation")
+  for file in dir
+    next unless file =~ /_with_symbols.json$/
+    outname = file.gsub(/with_symbols/, "")
+    f = File.open("cloud_formation/#{file}")
+    lines = f.readlines
+    str = lines.join()
+    repl = str.gsub(/<%=[^%]*%>/) do |s|
+      s = s.gsub("<%=", "").gsub("%>", "").strip()
+      eval(s)
+    end
+  end
+  outfile = File.open("cloud_formation/#{outname}", "w")
+  outfile.write(repl)
+  outfile.close
+  puts "Don't forget to copy templates to S3 and mark them as public!"
+end
