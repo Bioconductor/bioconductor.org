@@ -1,6 +1,11 @@
 # Bioconductor in the cloud
 <a name="top"></a>
 
+[Obtain](#first-time-steps) an Amazon Web Services account and 
+<b><a target="start_ami"
+href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">start
+the AMI</a></b>. Additional instructions below.
+
 ## Contents
 * <a href="#overview">Overview</a>
 * <a href="#preloaded_ami">Preloaded AMI</a>
