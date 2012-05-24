@@ -149,9 +149,7 @@ as follows
 * **Imports**: is for packages that provide functions, methods, or classes
   that are used inside your package name space. Most dependencies are listed
   here.
-* **Depends**: is appropriate when the package whose functionality you are
-  using does not have a name space. In this case, use fully qualified variables
-  (pkg::variable). Depends: is also appropriate when a package is used in the
+* **Depends**: is appropriate when a package is used in the
   example section of a man page. It is very unusual for a package to list more
   than three packages as 'Depends:'.
 * **Suggests**: is appropriate for packages used in your vignette.
