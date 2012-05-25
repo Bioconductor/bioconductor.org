@@ -197,7 +197,9 @@ You'll see the following screen:
 Click Close.
 
 In a few moments, the AMI will be ready (when Status changes to
-CREATE_COMPLETE). You can then click on the Outputs tab to get
+CREATE_COMPLETE). You may need to click the Refresh button in the
+upper right-hand corner of the screen (not your browser's refresh button).
+You can then click on the Outputs tab to get
 the URL and login information for your instance:
 
 <img src="/images/ami/stack5.jpg"/>
