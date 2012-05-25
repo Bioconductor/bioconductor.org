@@ -70,10 +70,21 @@
             "ToPort": "22",
             "CidrIp": "0.0.0.0/0"
         }
-        
         ]
       }
+    },
+    
+    "InstanceSecurityGroupIngress": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties": {
+            "GroupName": { "Ref": "InstanceSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
+            "ToPort": "65535",
+            "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+        }
     }
+    
   },
 
   "Outputs" : {
@@ -96,8 +107,9 @@
         },
         "SSHCommand": {
             "Description": "SSH Command",
-            "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref" : "KeyName" }, ".pem root@",
+            "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
                 { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}]]}
+            
         }
   }
 }

@@ -59,7 +59,19 @@
           "CidrIp" : "0.0.0.0/0"
         } ]
       }
+    },
+    
+    "InstanceSecurityGroupIngress": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties": {
+            "GroupName": { "Ref": "InstanceSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
+            "ToPort": "65535",
+            "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+        }
     }
+    
   },
 
   "Outputs" : {
