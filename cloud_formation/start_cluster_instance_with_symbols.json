@@ -7,21 +7,22 @@
     "BiocVersion" : {
       "Description" : "Bioconductor Version. 2.11 (devel) is recommended.",
       "Type" : "String",
-      "Default": "2.10",
+      "Default": "2.11",
       "AllowedValues": ["2.11"],
       "ConstraintDescription": "Must be 2.11"
     },
     "InstanceType" : {
       "Description" : "Type of EC2 instance to launch - see http://aws.amazon.com/ec2/instance-types/",
       "Type" : "String",
-      "Default" : "m1.xlarge",
+      "Default" : "t1.micro",
       "AllowedValues": ["t1.micro", "m1.small", "m1.medium", "m1.large",
         "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge"],
       "ConstraintDescription": "Choose a valid EC2 instance type from http://aws.amazon.com/ec2/instance-types/"
       },
       "KeyName": {
           "Description": "Name of a Key Pair to use to SSH to your instance (remove this).",
-          "Type": "String"
+          "Type": "String",
+          "Default": "bioc-default"
       }
   },
   "Mappings" : {
@@ -49,10 +50,33 @@
         "KeyName" : { "Ref" : "KeyName" },
         "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
         "InstanceType": {"Ref": "InstanceType"},
-        "Tags": [{"Key": "Name", "Value": "Bioconductor AMI Started From Template (with ssh)"}]
+        "Tags": [{"Key": "Name", "Value": "Bioconductor Cluster Master AMI Started From Template (with ssh)"}],
+        "UserData": {"Fn::Base64": {"Fn::Join": ["", [
+        "#!/bin/bash -ex", "\n",
+        "mpiutil -a xxx -s yyy -w 1 -n mpiworker1 -t t1.micro", "\n",
+        "curl -X PUT -H 'Content-Type:' --data-binary '{\"Status\" : \"SUCCESS\",",
+                                                                   "\"Reason\" : \"The application myapp is ready\",",
+                                                                   "\"UniqueId\" : \"myapp\",",
+                                                                   "\"Data\" : \"Done\"}' ",
+                          "\"", {"Ref" : "WaitForInstanceWaitHandle"},"\"\n"]]}}
       }
     },
-
+    
+    "WaitForInstanceWaitHandle" : {
+         "Type" : "AWS::CloudFormation::WaitConditionHandle",
+         "Properties" : {
+         }
+       },
+       
+       "WaitForInstance" : {
+           "Type" : "AWS::CloudFormation::WaitCondition",
+           "DependsOn" : "Ec2Instance",
+           "Properties" : {
+             "Handle" : {"Ref" : "WaitForInstanceWaitHandle"},
+             "Timeout" : "120"
+           }
+         },
+    
     "InstanceSecurityGroup" : {
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
@@ -86,6 +110,39 @@
     }
     
   },
+
+
+  "mygroup" : {
+       "Type" : "AWS::IAM::Group",
+       "Properties" : {
+            "Path": "/myapplication/",
+            "Policies": [
+              {
+                 "PolicyName": "myapppolicy",
+                 "PolicyDocument": {
+                   "Statement": [
+                     {
+                       "Sid": "Stmt1337107457363",
+                       "Action": [
+                         "ec2:AttachVolume",
+                         "ec2:CreateTags",
+                         "ec2:DescribeInstances",
+                         "ec2:DescribeVolumes",
+                         "ec2:DetachVolume",
+                         "ec2:RunInstances",
+                         "ec2:TerminateInstances"
+                       ],
+                       "Effect": "Allow",
+                       "Resource": [
+                         "*"
+                       ]
+                     }
+                   ]
+                 }
+              }
+            ]
+        }
+  }
 
   "Outputs" : {
         "URL" : {
