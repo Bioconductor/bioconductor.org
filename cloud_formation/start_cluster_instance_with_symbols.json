@@ -53,6 +53,7 @@
         "Tags": [{"Key": "Name", "Value": "Bioconductor Cluster Master AMI Started From Template (with ssh)"}],
         "UserData": {"Fn::Base64": {"Fn::Join": ["", [
         "#!/bin/bash -ex", "\n",
+        "bootstrap_cluster_master --access-key --secret-key --waithandle --instance-type --num-instances",
         "mpiutil -a xxx -s yyy -w 1 -n mpiworker1 -t t1.micro", "\n",
         "curl -X PUT -H 'Content-Type:' --data-binary '{\"Status\" : \"SUCCESS\",",
                                                                    "\"Reason\" : \"The application myapp is ready\",",
@@ -112,37 +113,6 @@
   },
 
 
-  "mygroup" : {
-       "Type" : "AWS::IAM::Group",
-       "Properties" : {
-            "Path": "/myapplication/",
-            "Policies": [
-              {
-                 "PolicyName": "myapppolicy",
-                 "PolicyDocument": {
-                   "Statement": [
-                     {
-                       "Sid": "Stmt1337107457363",
-                       "Action": [
-                         "ec2:AttachVolume",
-                         "ec2:CreateTags",
-                         "ec2:DescribeInstances",
-                         "ec2:DescribeVolumes",
-                         "ec2:DetachVolume",
-                         "ec2:RunInstances",
-                         "ec2:TerminateInstances"
-                       ],
-                       "Effect": "Allow",
-                       "Resource": [
-                         "*"
-                       ]
-                     }
-                   ]
-                 }
-              }
-            ]
-        }
-  }
 
   "Outputs" : {
         "URL" : {

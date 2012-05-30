@@ -1,0 +1,222 @@
+{
+   "AWSTemplateFormatVersion":"2010-09-09",
+   "Description":"Install a WordPress deployment using an Amazon RDS database instance for storage. This template demonstrates using the AWS CloudFormation bootstrap scripts to install Chef Solo and then Chef Solo is used to install a simple WordPress recipe. **WARNING** This template creates an Amazon EC2 instance and an RDS database. You will be billed for the AWS resources used if you create a stack from this template.",
+   "Parameters":{
+       "BiocVersion" : {
+         "Description" : "Bioconductor Version. 2.11 is recommended.",
+         "Type" : "String",
+         "Default": "2.11",
+         "AllowedValues": ["2.11"],
+         "ConstraintDescription": "Must be 2.11"
+       },
+      
+      "KeyName":{
+         "Description":"Name of an existing EC2 KeyPair to enable SSH access to the instances",
+         "Default": "bioc-default",
+         "Type":"String"
+      },
+      "FrontendType":{
+         "Description":"Frontend EC2 instance type",
+         "Type":"String",
+         "Default":"t1.micro",
+         "AllowedValues":[
+            "t1.micro",
+            "m1.small",
+            "m1.medium",
+            "m1.large",
+            "m1.xlarge",
+            "m2.xlarge",
+            "m2.2xlarge",
+            "m2.4xlarge",
+            "c1.medium",
+            "c1.xlarge",
+            "cc1.4xlarge",
+            "cc2.8xlarge",
+            "cg1.4xlarge"
+         ],
+         "ConstraintDescription":"must be a valid EC2 instance type."
+      },
+      "MaxSize":{
+         "Default":"2",
+         "Description":"The maximum number of EC2 instances for the frontend",
+         "Type":"Number"
+      }
+   },
+
+
+   "Mappings" : {
+     "BiocAMIMap" : {
+       "2.8" : {
+           "AMI" : "ami-4b2fee22"
+       },
+       "2.9" : {
+           "AMI" : "ami-5f33e536"
+       },
+       "2.10" : {
+           "AMI" : "ami-0c0da865"
+       },
+       "2.11" : {
+           "AMI" : "ami-3af75653"
+       }
+     }
+   },
+
+
+   "Resources":{
+      "CfnUser":{
+         "Type":"AWS::IAM::User",
+         "Properties":{
+            "Path":"/",
+            "Policies":[
+               {
+                  "PolicyName":"root",
+                  "PolicyDocument":{
+                     "Statement":[
+                        {
+                           "Effect":"Allow",
+                           "Action":["cloudformation:DescribeStackResource", "ec2:DescribeInstances"],
+                           "Resource":"*"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      },
+      "HostKeys":{
+         "Type":"AWS::IAM::AccessKey",
+         "Properties":{
+            "UserName":{
+               "Ref":"CfnUser"
+            }
+         }
+      },
+      "WebServerGroup":{
+         "Type":"AWS::AutoScaling::AutoScalingGroup",
+         "Properties":{
+             "Tags" : [
+                   { "Key" : "Name", 
+                   "Value" : "Bioconductor Cluster Worker",
+                   "PropagateAtLaunch" : "true" }],
+            "LaunchConfigurationName":{
+               "Ref":"LaunchConfig"
+            },
+            "AvailabilityZones":{
+               "Fn::GetAZs":{
+                  "Ref":"AWS::Region"
+               }
+            },
+            "MinSize":"0",
+            "MaxSize":{
+               "Ref":"MaxSize"
+            },
+            "DesiredCapacity":{
+               "Ref":"MaxSize"
+            }
+         }
+      },
+      "LaunchConfig":{
+         "Type":"AWS::AutoScaling::LaunchConfiguration",
+         "Properties":{
+            "InstanceType":{
+               "Ref":"FrontendType"
+            },
+            "SecurityGroups":[
+               {
+                  "Ref":"InstanceSecurityGroup"
+               }
+            ],
+            "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
+            "KeyName":{
+               "Ref":"KeyName"
+            },
+            "UserData":{
+               "Fn::Base64":{
+                  "Fn::Join":[
+                     "",
+                     [
+                        "#!/bin/bash\n",
+                        "rm -rf /usr/local/bioc_cloud ",
+                        " && ",
+                        " svn co --no-auth-cache --non-interactive --username readonly --password readonly https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/BiocCloud/inst/CloudFormation/ /usr/local/bioc_cloud",
+                        " && ",
+                        "/usr/local/bioc_cloud/bootstrap.rb",
+                        " --secret-key ",
+                        {
+                           "Fn::GetAtt":[
+                              "HostKeys",
+                              "SecretAccessKey"
+                           ]
+                        },
+                        " --region ",
+                        { "Ref": "AWS::Region"},
+                        " --stack-name ",
+                        { "Ref": "AWS::StackName"},
+                        " --cluster-size ",
+                        { "Ref": "MaxSize"},
+                        " --access-key ",
+                        { "Ref": "HostKeys"},
+                        " --wait-handle ",
+                        { "Ref": "WaitHandle"},
+                        " > /root/startup.log 2>&1 ",
+                        "\n"
+                     ]
+                  ]
+               }
+            }
+         }
+      },
+      "WaitHandle":{
+         "Type":"AWS::CloudFormation::WaitConditionHandle"
+      },
+      "WaitCondition":{
+         "Type":"AWS::CloudFormation::WaitCondition",
+         "Properties":{
+            "Handle":{
+               "Ref":"WaitHandle"
+            },
+            "Count": "0",
+            "Timeout":"0"
+         }
+      },
+      
+      
+      "InstanceSecurityGroup" : {
+        "Type" : "AWS::EC2::SecurityGroup",
+        "Properties" : {
+          "GroupDescription" : "Enable HTTP access via port 8787",
+          "SecurityGroupIngress" : [
+           {
+            "IpProtocol" : "tcp",
+            "FromPort" : "8787",
+            "ToPort" : "8787",
+            "CidrIp" : "0.0.0.0/0"
+          } ,
+          {
+              "IpProtocol": "tcp",
+              "FromPort": "22",
+              "ToPort": "22",
+              "CidrIp": "0.0.0.0/0"
+          }
+          ]
+        }
+      },
+
+      "InstanceSecurityGroupIngress": {
+          "Type": "AWS::EC2::SecurityGroupIngress",
+          "Properties": {
+              "GroupName": { "Ref": "InstanceSecurityGroup" },
+              "IpProtocol": "tcp",
+              "FromPort": "0",
+              "ToPort": "65535",
+              "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+          }
+      }
+   },
+   "Outputs":{
+       "WaitConditionData" : {
+                  "Value" : { "Fn::GetAtt" : [ "WaitCondition", "Data" ]},
+                  "Description" : "The data passed back as part of signalling the WaitCondition"
+              }
+   }
+}
