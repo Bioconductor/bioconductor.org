@@ -1,6 +1,6 @@
 {
    "AWSTemplateFormatVersion":"2010-09-09",
-   "Description":"Install a WordPress deployment using an Amazon RDS database instance for storage. This template demonstrates using the AWS CloudFormation bootstrap scripts to install Chef Solo and then Chef Solo is used to install a simple WordPress recipe. **WARNING** This template creates an Amazon EC2 instance and an RDS database. You will be billed for the AWS resources used if you create a stack from this template.",
+   "Description":"Start up a Bioconductor cluster. **WARNING** This template creates an Amazon EC2 instance and an RDS database. You will be billed for the AWS resources used if you create a stack from this template.",
    "Parameters":{
        "BiocVersion" : {
          "Description" : "Bioconductor Version. 2.11 is recommended.",
@@ -15,8 +15,8 @@
          "Default": "bioc-default",
          "Type":"String"
       },
-      "FrontendType":{
-         "Description":"Frontend EC2 instance type",
+      "ClusterInstanceType":{
+         "Description":"EC2 instance type for cluster",
          "Type":"String",
          "Default":"t1.micro",
          "AllowedValues":[
@@ -38,7 +38,7 @@
       },
       "MaxSize":{
          "Default":"2",
-         "Description":"The maximum number of EC2 instances for the frontend",
+         "Description":"Number of instances in cluster (including master)",
          "Type":"Number"
       }
    },
@@ -74,7 +74,8 @@
                      "Statement":[
                         {
                            "Effect":"Allow",
-                           "Action":["cloudformation:DescribeStackResource", "ec2:DescribeInstances"],
+                           "Action":["cloudformation:DescribeStackResource", "ec2:DescribeInstances",
+                            "ec2:CreateTags"],
                            "Resource":"*"
                         }
                      ]
@@ -119,7 +120,7 @@
          "Type":"AWS::AutoScaling::LaunchConfiguration",
          "Properties":{
             "InstanceType":{
-               "Ref":"FrontendType"
+               "Ref":"ClusterInstanceType"
             },
             "SecurityGroups":[
                {
@@ -214,9 +215,9 @@
       }
    },
    "Outputs":{
-       "WaitConditionData" : {
+       "URL" : {
                   "Value" : { "Fn::GetAtt" : [ "WaitCondition", "Data" ]},
-                  "Description" : "The data passed back as part of signalling the WaitCondition"
+                  "Description" : "URL to cluster master"
               }
    }
 }
