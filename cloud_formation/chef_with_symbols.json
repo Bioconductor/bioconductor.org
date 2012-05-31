@@ -18,7 +18,7 @@
       "ClusterInstanceType":{
          "Description":"EC2 instance type for cluster",
          "Type":"String",
-         "Default":"t1.micro",
+         "Default":"m1.xlarge",
          "AllowedValues":[
             "t1.micro",
             "m1.small",
