@@ -1,0 +1,79 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "For Bioconductor useR2012.",
+
+  "Mappings" : {
+    "BiocAMIMap" : {
+      "2.8" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_8']%>"
+      },
+      "2.9" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_9']%>"
+      },
+      "2.10" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_10']%>"
+      },
+      "2.11" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
+      }
+    }
+  },
+
+  "Resources" : {
+    "Ec2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+        "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", "2.10", "AMI" ]},
+        "InstanceType": "m1.large",
+        "Tags": [{"Key": "Name", "Value": "Bioconductor AMI Started From Template"}]
+      }
+    },
+
+    "InstanceSecurityGroup" : {
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Enable HTTP access via port 8787",
+        "SecurityGroupIngress" : [ {
+          "IpProtocol" : "tcp",
+          "FromPort" : "8787",
+          "ToPort" : "8787",
+          "CidrIp" : "0.0.0.0/0"
+        } ]
+      }
+    },
+    
+    "InstanceSecurityGroupIngress": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties": {
+            "GroupName": { "Ref": "InstanceSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
+            "ToPort": "65535",
+            "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+        }
+    }
+    
+  },
+
+  "Outputs" : {
+        "URL" : {
+            "Description" : "URL of RStudio Server",
+            "Value" :  { "Fn::Join" : [ "", [ "http://", 
+                { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}, ":8787"]]}
+          },
+        "Username": {
+            "Description": "Log in with this username",
+            "Value": "ubuntu"
+        },
+        "Password": {
+            "Description": "Log in with this password",
+            "Value": "bioc"
+        },
+        "Info": {
+            "Description": "Message",
+            "Value": "URL will be valid in a few seconds. Delete stack when done to avoid charges."
+        }
+  }
+}
