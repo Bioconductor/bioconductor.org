@@ -95,10 +95,6 @@
       "WebServerGroup":{
          "Type":"AWS::AutoScaling::AutoScalingGroup",
          "Properties":{
-             "Tags" : [
-                   { "Key" : "Name", 
-                   "Value" : "Bioconductor Cluster Worker",
-                   "PropagateAtLaunch" : "true" }],
             "LaunchConfigurationName":{
                "Ref":"LaunchConfig"
             },
