@@ -245,6 +245,7 @@ class GetJson
   
   def write_tree_file(repos, data, version, outdir)
     args = [repos, data, "#{outdir}/#{version}/tree.json"]
+    p = ParseBiocViews.new(args)
   end
   
   

@@ -14,6 +14,7 @@ class ParseBiocViews
     obj.each_pair do |k,v|
       clean_hash[k] = clean(v)
     end
+
  
     keys_to_delete = []
  
@@ -51,11 +52,13 @@ class ParseBiocViews
     for key_to_delete in keys_to_delete
       clean_hash.delete(key_to_delete)
     end
+
     
     root = clean_hash['BiocViews']['children']
+
+    repos = {"bioc" => "Software", "data/annotation" => "AnnotationData", "data/experiment" => "ExperimentData"}
     
-    key = root.find{|i|i['data'] =~ /^#{repo}/}
-    
+    key = root.find{|i|i['data'] =~ /^#{repos[repo]}/}
     
     
     key
@@ -68,7 +71,6 @@ class ParseBiocViews
     reposlist, inputdata, outputfile = args
     #inputfiles, outputfile = args
     
-    #repos = {"bioc" => "Software", "data/annotation" => "AnnotationData", "data/experiment" => "ExperimentData"}
     
     obj = {}
     
@@ -82,7 +84,6 @@ class ParseBiocViews
       top_level_tree.push subtree
     end
     
-
 
     
     top_level_tree.sort! do |a, b|
