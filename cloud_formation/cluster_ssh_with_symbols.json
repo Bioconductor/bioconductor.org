@@ -153,7 +153,9 @@
                         " --access-key ",
                         { "Ref": "HostKeys"},
                         " --wait-handle ",
+                        "\"",
                         { "Ref": "WaitHandle"},
+                        "\"",
                         " > /root/startup.log 2>&1 ",
                         "\n"
                      ]
