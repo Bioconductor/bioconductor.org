@@ -144,12 +144,12 @@ class GetJson
     dcfs.each_pair do |key, value|
       if value.has_key? "biocViews"
         if value["biocViews"].nil? or value["biocViews"].empty?
-          bioc_views = []
+          bioc_views = [default_view]
         else
           bioc_views = value["biocViews"] << default_view
         end
       else
-        bioc_views = []
+        bioc_views = [default_view]
       end
       bioc_views.uniq!
       bioc_views.sort!
