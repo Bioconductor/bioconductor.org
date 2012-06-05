@@ -35,7 +35,7 @@
          ],
          "ConstraintDescription":"must be a valid EC2 instance type."
       },
-      "MaxSize":{
+      "ClusterSize":{
          "Default":"2",
          "Description":"Number of worker instances in cluster",
          "Type":"Number"
@@ -123,7 +123,7 @@
                       " --stack-name ",
                       { "Ref": "AWS::StackName"},
                       " --cluster-size ",
-                      { "Ref": "MaxSize"},
+                      { "Ref": "ClusterSize"},
                       " --access-key ",
                       { "Ref": "HostKeys"},
                       " --wait-handle ",
@@ -154,11 +154,11 @@
                }
             },
             "MinSize":"0",
-            "MaxSize":{
-               "Ref":"MaxSize"
+            "ClusterSize":{
+               "Ref":"ClusterSize"
             },
             "DesiredCapacity":{
-               "Ref":"MaxSize"
+               "Ref":"ClusterSize"
             }
          }
       },
@@ -200,7 +200,7 @@
                         " --stack-name ",
                         { "Ref": "AWS::StackName"},
                         " --cluster-size ",
-                        { "Ref": "MaxSize"},
+                        { "Ref": "ClusterSize"},
                         " --access-key ",
                         { "Ref": "HostKeys"},
                         " --wait-handle ",
