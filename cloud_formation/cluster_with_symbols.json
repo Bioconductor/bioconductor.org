@@ -32,7 +32,7 @@
       },
       "MaxSize":{
          "Default":"2",
-         "Description":"Number of instances in cluster (including master)",
+         "Description":"Number of worker instances in cluster",
          "Type":"Number"
       }
    },
