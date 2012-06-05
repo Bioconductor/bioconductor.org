@@ -1,6 +1,6 @@
 {
    "AWSTemplateFormatVersion":"2010-09-09",
-   "Description":"Start up a Bioconductor cluster with ssh access. **WARNING** This template creates Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
+   "Description":"Start up a Bioconductor cluster. **WARNING** This template creates Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
    "Parameters":{
        "BiocVersion" : {
          "Description" : "Bioconductor Version. 2.11 is recommended.",
@@ -9,11 +9,6 @@
          "AllowedValues": ["2.11"],
          "ConstraintDescription": "Must be 2.11"
        },
-      
-      "KeyName":{
-         "Description":"Name of an existing EC2 KeyPair to enable SSH access to the instances",
-         "Type":"String"
-      },
       "ClusterInstanceType":{
          "Description":"EC2 instance type for cluster",
          "Type":"String",
@@ -97,7 +92,6 @@
         "Type" : "AWS::EC2::Instance",
         "Properties" : {
           "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-          "KeyName" : { "Ref" : "KeyName" },
           "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
           "InstanceType": {"Ref": "ClusterInstanceType"},
           "UserData":{
@@ -174,9 +168,6 @@
                }
             ],
             "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
-            "KeyName":{
-               "Ref":"KeyName"
-            },
             "UserData":{
                "Fn::Base64":{
                   "Fn::Join":[
@@ -242,12 +233,6 @@
             "FromPort" : "8787",
             "ToPort" : "8787",
             "CidrIp" : "0.0.0.0/0"
-          } ,
-          {
-              "IpProtocol": "tcp",
-              "FromPort": "22",
-              "ToPort": "22",
-              "CidrIp": "0.0.0.0/0"
           }
           ]
         }
@@ -281,12 +266,6 @@
        "Info": {
            "Description": "Message",
            "Value": "Delete stack when done to avoid charges."
-       },
-       "SSHCommand": {
-           "Description": "SSH Command",
-           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
-               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
-           
        }
    }
 }
