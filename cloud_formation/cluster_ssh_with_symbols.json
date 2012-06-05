@@ -91,6 +91,57 @@
             }
          }
       },
+      
+      
+      "MasterInstance" : {
+        "Type" : "AWS::EC2::Instance",
+        "Properties" : {
+          "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+          "KeyName" : { "Ref" : "KeyName" },
+          "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
+          "InstanceType": {"Ref": "ClusterInstanceType"},
+          "UserData":{
+             "Fn::Base64":{
+                "Fn::Join":[
+                   "",
+                   [
+                      "#!/bin/bash\n",
+                      "rm -rf /usr/local/bioc_cloud ",
+                      " && ",
+                      " svn co --no-auth-cache --non-interactive --username readonly --password readonly https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/BiocCloud/inst/CloudFormation/ /usr/local/bioc_cloud",
+                      " && ",
+                      "/usr/local/bioc_cloud/bootstrap.rb",
+                      " --secret-key ",
+                      {
+                         "Fn::GetAtt":[
+                            "HostKeys",
+                            "SecretAccessKey"
+                         ]
+                      },
+                      " --region ",
+                      { "Ref": "AWS::Region"},
+                      " --stack-name ",
+                      { "Ref": "AWS::StackName"},
+                      " --cluster-size ",
+                      { "Ref": "MaxSize"},
+                      " --access-key ",
+                      { "Ref": "HostKeys"},
+                      " --wait-handle ",
+                      "\"",
+                      { "Ref": "WaitHandle"},
+                      "\"",
+                      " --master ",
+                      " > /root/startup.log 2>&1 ",
+                      "\n"
+                   ]
+                ]
+             }
+          }
+        } 
+    },
+      
+      
+      
       "WebServerGroup":{
          "Type":"AWS::AutoScaling::AutoScalingGroup",
          "Properties":{
@@ -156,6 +207,7 @@
                         "\"",
                         { "Ref": "WaitHandle"},
                         "\"",
+                        " --workers ",
                         " > /root/startup.log 2>&1 ",
                         "\n"
                      ]
@@ -169,7 +221,7 @@
       },
       "WaitCondition":{
          "Type":"AWS::CloudFormation::WaitCondition",
-         "DependsOn":"WebServerGroup",
+         "DependsOn":"MasterInstance",
          "Properties":{
             "Handle":{
                "Ref":"WaitHandle"
@@ -214,8 +266,27 @@
    },
    "Outputs":{
        "URL" : {
-                  "Value" : { "Fn::GetAtt" : [ "WaitCondition", "Data" ]},
-                  "Description" : "URL to cluster master"
-              }
+           "Description" : "URL of RStudio Server",
+           "Value" :  { "Fn::Join" : [ "", [ "http://", 
+               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}, ":8787"]]}
+         },
+       "Username": {
+           "Description": "Log in with this username",
+           "Value": "ubuntu"
+       },
+       "Password": {
+           "Description": "Log in with this password",
+           "Value": "bioc"
+       },
+       "Info": {
+           "Description": "Message",
+           "Value": "Delete stack when done to avoid charges."
+       },
+       "SSHCommand": {
+           "Description": "SSH Command",
+           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
+               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
+           
+       }
    }
 }
