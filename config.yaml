@@ -29,7 +29,7 @@ devel_repos:
 ami_ids:
  bioc2_8: ami-4b2fee22
  bioc2_9: ami-5f33e536
- bioc2_10: ami-761bba1f
+ bioc2_10: ami-d2a000bb
  bioc2_11: ami-aec262c7
 data_sources: 
 - items_root: /
