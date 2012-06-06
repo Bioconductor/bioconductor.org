@@ -147,8 +147,10 @@
                   "Ref":"AWS::Region"
                }
             },
-            "MinSize":"0",
-            "NumClusterInstances":{
+            "MinSize": {
+                "Ref": "NumClusterInstances"
+            },
+            "MaxSize":{
                "Ref":"NumClusterInstances"
             },
             "DesiredCapacity":{
