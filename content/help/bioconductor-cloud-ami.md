@@ -16,7 +16,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
-* <a href="#mpi">Configuring an MPI cluster in the cloud</a>
+* <a href="#mpi">Using an MPI cluster in the cloud</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
 * <a href="#questions">Questions</a>
@@ -326,21 +326,72 @@ This trivial example runs the <code>rnorm()</code> function, but any function wo
 	mclapply(1:30, rnorm)
 
 <a name="mpi"></a>
-### Configuring an MPI cluster in the cloud
-
-(This section assumes you have [started up your AMI and connected to it
-with ssh](#connecting_ssh))
+### Using an MPI cluster in the cloud
 
 You can launch multiple EC2 instances and set them up as an [MPI](http://en.wikipedia.org/wiki/Message_Passing_Interface)
 cluster, to parallelize and shorten long-running CPU-intensive jobs. You must explicitly parallelize your
 CPU-intensive code using functions in the [Rmpi](http://cran.r-project.org/web/packages/Rmpi/index.html) package. 
 
-You can also use existing Bioconductor packages which take advantage of <code>Rmpi</code>, such as <code>ShortRead</code>. 
-Here we present a tutorial for using <code>ShortRead</code> with an EC2-based MPI cluster.
+The simplest way to start up a cluster is to just click on this URL:
 
-To configure an EC2-based MPI cluster, launch single EC2 instance as described above, if you haven't already.
+<b><a target="start_ami"
+href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCMPICluster|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/cluster.json">Start MPI Cluster</a></b>
+
+That will start an MPI cluster which you can access via you web browser using RStudio Server.
+
+If you also want to be able to access your cluster via ssh, use this URL instead (you'll
+need to provide the name of an ssh keypair that you have <a href="#first-time-steps">
+previously set up</a>):
+
+<b><a target="start_ami"
+href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCMPIClusterWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/cluster_ssh.json">Start MPI Cluster with ssh access</a></b>
+
+
+The startup procedure is similar to <a href="#launch">the launch
+procedure</a> discussed earlier, except that you are alsxo asked
+how many worker instances you want to start. The 
+[EC2 instance types](http://aws.amazon.com/ec2/instance-types/) page
+tells you how many cores are available with each instance type.
+So if you wanted to start a cluster with 40 workers, you could
+choose a NumClusterWorkers of 10 and a ClusterInstanceType of m1.xlarge.
+Ten machines with four cores each gives you a cluster with 40 
+workers. An additional master node will also be started up.
+
+Once you have logged into the RStudio Server using the
+link provided by the above step, you'll be able to access
+your cluster as follows:
+
+	library(Rmpi)
+	mpi.spawn.Rslaves()
+
+You can then run some code on each worker, for example:
+
+	mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
+
+This performs a simple calculation on each worker and returns the 
+results as a list. For more complex examples, read on
+or consult the 
+[Rmpi documentation](http://cran.r-project.org/web/packages/Rmpi/index.html).
+
+Be sure and delete your stack when you are finished using it, 
+in order to stop accruing charges.
+
+The above procedure can handle many parallel processing tasks.
+
+If you want your cluster nodes to have a shared disk, follow
+the steps below. (This procedure will soon be replaced by 
+a simpler one-click procedure like those above.)
+
+This section assumes you have [started up your AMI and connected to it
+with ssh](#connecting_ssh).
+
+Here we present a tutorial for using the Bioconductor package
+<code>ShortRead</code> with an EC2-based MPI cluster.
+
+To configure an EC2-based MPI cluster, launch single EC2 instance as described 
+<a href="#connecting_ssh">above</a>, if you haven't already.
 This will be the master node of your cluster. Consider which [instance type](http://aws.amazon.com/ec2/instance-types/)
-you want your cluster to consist of. Note that the master and worker nodes must be of the same instance type.
+you want your cluster to consist of. Note that the master and worker nodes will be of the same instance type.
 
 In most cases, you'll want all of your cluster nodes to have access to the same data files. We accomplish this by 
 creating an [EBS Volume](http://aws.amazon.com/ebs/) holding our data. This volume is attached to the master node 
