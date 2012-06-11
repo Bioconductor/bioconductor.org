@@ -57,6 +57,13 @@ Email address:<br/>
 <input style="width: 80%" type="text" name="email" /><br/><br/>
 Subject:<br/>
 <input style="width: 80%" type="text" name="subject" /><br/><br/>
+Optionally Cc: Maintainer of Bioconductor package:<br/>
+<select name="cc">
+	<option value="">None</option>
+	<% for i in get_package_maintainers()%>
+		<option value="<%= i.last%>"><%=i.first%></option>
+	<% end %>
+</select><br/><br/>
 
 Question:<br/>
 <textarea style="width: 80%" rows="10" name="body"></textarea><br/><br/>

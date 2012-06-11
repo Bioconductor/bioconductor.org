@@ -11,7 +11,7 @@ require 'httparty'
 require 'yaml'
 require 'pp'
 require 'rexml/document'
-
+require 'json'
 
 include REXML
 
@@ -547,4 +547,32 @@ def r_ver_for_bioc_ver(bioc_ver)
   maj = Integer(maj)
   min = Integer(min)
   return "#{maj}.#{min + 5}"
+end
+
+def get_package_maintainers()
+  ret = []
+  json_file \
+    = "assets/packages/json/#{config[:release_version]}/bioc/packages.json"
+  return ret unless test(?f, json_file)
+  f = File.open(json_file)
+  json = f.readlines.join
+  f.close
+  hsh = JSON.parse(json)
+  hsh.each_pair do |k, v|
+    row = []
+    row.push k
+    maintainer \
+      = v["Maintainer"].gsub(/^[^<]*/,"").gsub(/<|>/, "").gsub("@", " at ")
+    ## there should not be more than one maintainer, but if there is,
+    ## just pick the first one
+    maintainer = maintainer.split(",").first.strip
+    
+    maintainer = "#{k} Maintainer <#{maintainer}>"
+    row.push maintainer
+    ret.push row
+  end
+  ret.sort! do |a, b|
+    a.first.downcase <=> b.first.downcase
+  end
+  ret
 end
