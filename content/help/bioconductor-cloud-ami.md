@@ -298,7 +298,8 @@ current AMI IDs. These AMIs live in the US-East-1 region.*
 <a name="rgraphviz"></a>
 ### Using Rgraphviz
 
-Make sure you have connected to your instance using the -X flag of the *ssh* command. Something like:
+Make sure you have connected to your instance either with a web browser, or
+using the -X flag of the *ssh* command. Something like:
 
 	ssh -X -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
 
@@ -348,7 +349,7 @@ href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack
 
 
 The startup procedure is similar to <a href="#launch">the launch
-procedure</a> discussed earlier, except that you are alsxo asked
+procedure</a> discussed earlier, except that you are also asked
 how many worker instances you want to start. The 
 [EC2 instance types](http://aws.amazon.com/ec2/instance-types/) page
 tells you how many cores are available with each instance type.
