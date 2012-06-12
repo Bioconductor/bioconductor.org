@@ -110,7 +110,7 @@ any conflicts, and commit. So, from your release branch directory
 (e.g. RELEASE_2_6/madman/Rpacks):
 
     svn merge -r 139:140 https://hedgehog.fhcrc.org/gentleman/bioconductor/trunk/madman/Rpacks
-    svn status   # Look or C, indicating a conflict
+    svn status   # Look for C, indicating a conflict
                  # fix conflicts... (remember to use svn resolve for each)
     svn commit -m "merged -r139:140 from trunk"
 
