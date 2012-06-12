@@ -121,7 +121,7 @@ Here is a list of possible issues:
 * Unrecognized URL scheme:
   If you see "unrecognized URL scheme" when trying to access the
   repository, it may indicate that your svn client does not support
-  HTTPS.  You can verify the supported "modes" by examinging the
+  HTTPS.  You can verify the supported "modes" by examining the
   output of ``svn --version``.  If you do not see support for HTTPS,
   you will need to upgrade your client.
 
