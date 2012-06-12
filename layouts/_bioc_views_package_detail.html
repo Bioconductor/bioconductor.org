@@ -109,6 +109,18 @@
             <% end %>
 
 
+            <% if @package.has_key? :hasLICENSE and @package[:hasLICENSE] == true%>
+                <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+                <tr class="<%= row_class %>">
+                    <td class="docFixedWidth">
+                        <a href="../licenses/<%=@package[:Package]%>/LICENSE">Text</a>
+                    </td>
+                    <td class="docFixedWidth">&nbsp;</td>
+                    <td>INSTALL</td>
+                </tr>
+                <% rowindex += 1 %>
+            <% end %>
+
         
     </table>
 
