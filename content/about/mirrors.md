@@ -10,6 +10,17 @@ United States
 
   Contact: Sean Davis &lt;sdavis2 at mail.nih.gov&gt;
 
+
+Brazil/Latin America
+------
+
+* [Department of Genetics, Medical School of Ribeirao Preto, University of Sao Paulo](http://rge.fmrp.usp.br/)
+
+  URL: http://bioconductor.fmrp.usp.br
+
+  Contact: Houtan Noushmehr <houtan at usp.br>
+
+
 Germany
 -------
 
