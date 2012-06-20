@@ -18,7 +18,7 @@ Brazil/Latin America
 
   URL: <http://bioconductor.fmrp.usp.br>
 
-  Contact: Houtan Noushmehr <houtan at usp.br>
+  Contact: Houtan Noushmehr &lt;houtan at usp.br&gt;
 
 
 Germany
