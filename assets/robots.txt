@@ -3,7 +3,6 @@ User-agent: *
 Disallow: /packages/submitted/
 Disallow: /packages/misc/
 Disallow: /packages/lindsey/
-Disallow: /packages/devel/
 Disallow: /packages/omegahat/
 Disallow: /packages/1.8/
 Disallow: /packages/1.9/
