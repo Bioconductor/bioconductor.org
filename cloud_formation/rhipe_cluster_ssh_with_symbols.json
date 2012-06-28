@@ -1,0 +1,312 @@
+{
+   "AWSTemplateFormatVersion":"2010-09-09",
+   "Description":"Start up an Rhipe cluster with ssh access. **WARNING** This template creates Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
+   "Parameters":{
+       "BiocVersion" : {
+         "Description" : "Bioconductor Version. 2.11 is recommended.",
+         "Type" : "String",
+         "Default": "2.11",
+         "AllowedValues": ["2.11"],
+         "ConstraintDescription": "Must be 2.11"
+       },
+      
+      "KeyName":{
+         "Description":"Name of an existing EC2 KeyPair to enable SSH access to the instances",
+         "Type":"String"
+      },
+      "ClusterInstanceType":{
+         "Description":"EC2 instance type for cluster",
+         "Type":"String",
+         "Default":"m1.large",
+         "AllowedValues":[
+            "t1.micro",
+            "m1.small",
+            "m1.medium",
+            "m1.large",
+            "m1.xlarge",
+            "m2.xlarge",
+            "m2.2xlarge",
+            "m2.4xlarge",
+            "c1.medium",
+            "c1.xlarge",
+            "cc1.4xlarge",
+            "cc2.8xlarge",
+            "cg1.4xlarge"
+         ],
+         "ConstraintDescription":"must be a valid EC2 instance type."
+      },
+      "NumClusterInstances":{
+         "Default":"2",
+         "Description":"Number of worker instances in cluster",
+         "Type":"Number"
+      }
+   },
+
+
+   "Mappings" : {
+     "BiocAMIMap" : {
+       "2.8" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_8']%>"
+       },
+       "2.9" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_9']%>"
+       },
+       "2.10" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_10']%>"
+       },
+       "2.11" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
+       }
+     }
+   },
+
+
+   "Resources":{
+      "CfnUser":{
+         "Type":"AWS::IAM::User",
+         "Properties":{
+            "Path":"/",
+            "Policies":[
+               {
+                  "PolicyName":"root",
+                  "PolicyDocument":{
+                     "Statement":[
+                        {
+                           "Effect":"Allow",
+                           "Action":["cloudformation:DescribeStackResource", "ec2:DescribeInstances",
+                            "ec2:CreateTags"],
+                           "Resource":"*"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      },
+      "HostKeys":{
+         "Type":"AWS::IAM::AccessKey",
+         "Properties":{
+            "UserName":{
+               "Ref":"CfnUser"
+            }
+         }
+      },
+      
+      
+      "MasterInstance" : {
+        "Type" : "AWS::EC2::Instance",
+        "Properties" : {
+          "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+          "KeyName" : { "Ref" : "KeyName" },
+          "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
+          "InstanceType": {"Ref": "ClusterInstanceType"},
+          "UserData":{
+             "Fn::Base64":{
+                "Fn::Join":[
+                   "",
+                   [
+                      "#!/bin/bash\n",
+                      "rm -rf /usr/local/bioc_cloud ",
+                      " && ",
+                      " svn co --no-auth-cache --non-interactive --username readonly --password readonly https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/BiocCloud/inst/CloudFormation/ /usr/local/bioc_cloud",
+                      " && ",
+                      "/usr/local/bioc_cloud/bootstrap_rhipe.rb",
+                      " --secret-key ",
+                      {
+                         "Fn::GetAtt":[
+                            "HostKeys",
+                            "SecretAccessKey"
+                         ]
+                      },
+                      " --region ",
+                      { "Ref": "AWS::Region"},
+                      " --stack-name ",
+                      { "Ref": "AWS::StackName"},
+                      " --cluster-size ",
+                      { "Ref": "NumClusterInstances"},
+                      " --access-key ",
+                      { "Ref": "HostKeys"},
+                      " --wait-handle ",
+                      "\"",
+                      { "Ref": "WaitHandle"},
+                      "\"",
+                      " --master ",
+                      " > /root/startup.log 2>&1 ",
+                      "\n"
+                   ]
+                ]
+             }
+          }
+        } 
+    },
+      
+      
+      
+      "WebServerGroup":{
+         "Type":"AWS::AutoScaling::AutoScalingGroup",
+         "Properties":{
+            "LaunchConfigurationName":{
+               "Ref":"LaunchConfig"
+            },
+            "AvailabilityZones":{
+               "Fn::GetAZs":{
+                  "Ref":"AWS::Region"
+               }
+            },
+            "MinSize": {
+                "Ref": "NumClusterInstances"
+            },
+            "MaxSize":{
+               "Ref":"NumClusterInstances"
+            },
+            "DesiredCapacity":{
+               "Ref":"NumClusterInstances"
+            }
+         }
+      },
+      "LaunchConfig":{
+         "Type":"AWS::AutoScaling::LaunchConfiguration",
+         "Properties":{
+            "InstanceType":{
+               "Ref":"ClusterInstanceType"
+            },
+            "SecurityGroups":[
+               {
+                  "Ref":"InstanceSecurityGroup"
+               }
+            ],
+            "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
+            "KeyName":{
+               "Ref":"KeyName"
+            },
+            "UserData":{
+               "Fn::Base64":{
+                  "Fn::Join":[
+                     "",
+                     [
+                        "#!/bin/bash\n",
+                        "rm -rf /usr/local/bioc_cloud ",
+                        " && ",
+                        " svn co --no-auth-cache --non-interactive --username readonly --password readonly https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/BiocCloud/inst/CloudFormation/ /usr/local/bioc_cloud",
+                        " && ",
+                        "/usr/local/bioc_cloud/bootstrap_rhipe.rb",
+                        " --secret-key ",
+                        {
+                           "Fn::GetAtt":[
+                              "HostKeys",
+                              "SecretAccessKey"
+                           ]
+                        },
+                        " --region ",
+                        { "Ref": "AWS::Region"},
+                        " --stack-name ",
+                        { "Ref": "AWS::StackName"},
+                        " --cluster-size ",
+                        { "Ref": "NumClusterInstances"},
+                        " --access-key ",
+                        { "Ref": "HostKeys"},
+                        " --wait-handle ",
+                        "\"",
+                        { "Ref": "WaitHandle"},
+                        "\"",
+                        " --workers ",
+                        " > /root/startup.log 2>&1 ",
+                        "\n"
+                     ]
+                  ]
+               }
+            }
+         }
+      },
+      "WaitHandle":{
+         "Type":"AWS::CloudFormation::WaitConditionHandle"
+      },
+      "WaitCondition":{
+         "Type":"AWS::CloudFormation::WaitCondition",
+         "DependsOn":"MasterInstance",
+         "Properties":{
+            "Handle":{
+               "Ref":"WaitHandle"
+            },
+            "Count": "1",
+            "Timeout":"240"
+         }
+      },
+      
+      
+      "InstanceSecurityGroup" : {
+        "Type" : "AWS::EC2::SecurityGroup",
+        "Properties" : {
+          "GroupDescription" : "Enable HTTP access via port 8787",
+          "SecurityGroupIngress" : [
+           {
+            "IpProtocol" : "tcp",
+            "FromPort" : "8787",
+            "ToPort" : "8787",
+            "CidrIp" : "0.0.0.0/0"
+          } ,
+          {
+            "IpProtocol" : "tcp",
+            "FromPort" : "50030",
+            "ToPort" : "50030",
+            "CidrIp" : "0.0.0.0/0"
+          } ,
+          {
+            "IpProtocol" : "tcp",
+            "FromPort" : "50060",
+            "ToPort" : "50060",
+            "CidrIp" : "0.0.0.0/0"
+          } ,
+          {
+            "IpProtocol" : "tcp",
+            "FromPort" : "50070",
+            "ToPort" : "50070",
+            "CidrIp" : "0.0.0.0/0"
+          } ,
+          {
+              "IpProtocol": "tcp",
+              "FromPort": "22",
+              "ToPort": "22",
+              "CidrIp": "0.0.0.0/0"
+          }
+          ]
+        }
+      },
+
+      "InstanceSecurityGroupIngress": {
+          "Type": "AWS::EC2::SecurityGroupIngress",
+          "Properties": {
+              "GroupName": { "Ref": "InstanceSecurityGroup" },
+              "IpProtocol": "tcp",
+              "FromPort": "0",
+              "ToPort": "65535",
+              "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+          }
+      }
+   },
+   "Outputs":{
+       "URL" : {
+           "Description" : "URL of RStudio Server",
+           "Value" :  { "Fn::Join" : [ "", [ "http://", 
+               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}, ":8787"]]}
+         },
+       "Username": {
+           "Description": "Log in with this username",
+           "Value": "ubuntu"
+       },
+       "Password": {
+           "Description": "Log in with this password",
+           "Value": "bioc"
+       },
+       "Info": {
+           "Description": "Message",
+           "Value": "Delete stack when done to avoid charges."
+       },
+       "SSHCommand": {
+           "Description": "SSH Command",
+           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
+               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
+           
+       }
+   }
+}
