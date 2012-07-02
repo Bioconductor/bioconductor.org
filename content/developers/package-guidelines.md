@@ -30,6 +30,11 @@ having difficultly satisfying guidelines should seek advice on the
 Package maintainers are urged to follow these guidelines as closely as
 possible when developing Bioconductor packages.
 
+General instructions for producing packages can be found in the
+[Writing R Extensions](http://cran.r-project.org/doc/manuals/R-exts.html)
+manual, available from within R (`RShowDoc("R-exts")`) or on the [R web
+site](http://cran.fhcrc.org/manuals.html).
+
 <h2 id="package-types">Types of Packages</h2>
 
 Most packages contributed by users are [software][software-pkgs]
@@ -55,11 +60,6 @@ associated with package submission.
 [support]: /developers/package-submission/#support
 
 <h2 id="correctness">Correctness, Space and Time</h2>
-
-General instructions for producing packages can be found in the
-Writing R Extensions manual, available from within R
-(`RShowDoc("R-exts")`) or on the [R web
-site](http://cran.fhcrc.org/manuals.html).
 
 Bioconductor packages must pass `R CMD build` (or 
 <code>R CMD INSTALL &#8209;&#8209;build</code>)
