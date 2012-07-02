@@ -1,3 +1,5 @@
+<h1><img src="/images/icons/help.gif" alt="" />Community Contributed Help Resources</h1>
+
 A small selection of the many resources available for learning Bioconductor,
 contributed by members of the Bioconductor community.
 

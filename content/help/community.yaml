@@ -1,3 +1,5 @@
 --- 
 title: Community Contributed Help Resources
-subnav: true
+subnav:
+  - include: /_workflows/
+  - include: /_bioc_release_packages/
