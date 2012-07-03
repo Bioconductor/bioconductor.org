@@ -223,8 +223,9 @@ task :json2js do
         f = File.open(file)
         lines = f.readlines
         json = lines.join.strip
+        obj = JSON.parse json
         outf = File.open(jsfile, "w")
-        outf.print("var #{var} = #{json};")
+        outf.print("var #{var} = #{obj.to_json};")
         outf.close
       end
     end
