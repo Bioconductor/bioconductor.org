@@ -12,7 +12,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
 * <a href="#connecting_ssh">Connecting to your AMI using SSH</a>
-* <a href="#ami_ids_">AMI IDs</a>
+* <a href="#ami_ids">AMI IDs</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
