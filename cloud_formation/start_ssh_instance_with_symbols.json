@@ -18,6 +18,10 @@
       "AllowedValues": ["t1.micro", "m1.small", "m1.medium", "m1.large",
         "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge"],
       "ConstraintDescription": "Choose a valid EC2 instance type from http://aws.amazon.com/ec2/instance-types/"
+      },
+      "KeyName": {
+          "Description": "Name of a Key Pair to use to SSH to your instance.",
+          "Type": "String"
       }
   },
   "Mappings" : {
@@ -42,9 +46,10 @@
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+        "KeyName" : { "Ref" : "KeyName" },
         "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
         "InstanceType": {"Ref": "InstanceType"},
-        "Tags": [{"Key": "Name", "Value": "Bioconductor AMI Started From Template"}]
+        "Tags": [{"Key": "Name", "Value": "Bioconductor AMI Started From Template (with ssh)"}]
       }
     },
 
@@ -52,12 +57,20 @@
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
         "GroupDescription" : "Enable HTTP access via port 8787",
-        "SecurityGroupIngress" : [ {
+        "SecurityGroupIngress" : [
+         {
           "IpProtocol" : "tcp",
           "FromPort" : "8787",
           "ToPort" : "8787",
           "CidrIp" : "0.0.0.0/0"
-        } ]
+        } ,
+        {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": "0.0.0.0/0"
+        }
+        ]
       }
     },
     
@@ -91,6 +104,12 @@
         "Info": {
             "Description": "Message",
             "Value": "URL will be valid in a few seconds. Delete stack when done to avoid charges."
+        },
+        "SSHCommand": {
+            "Description": "SSH Command",
+            "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
+                { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}]]}
+            
         }
   }
 }
