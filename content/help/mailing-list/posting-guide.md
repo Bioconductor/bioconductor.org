@@ -55,7 +55,8 @@
 * Use plain text instead of HTML; it is smaller in size and easier to
   read.
 
-* Avoid attachments; if specific data or images are essential, post
+* The following attachment types are accepted: png, pdf, rda/Rdata. Total 
+  message size cannot exceed 1MB. If larger attachments are essential, post
   them to a publicly accessible location and include the link in
   your email.
 
