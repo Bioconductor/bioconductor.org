@@ -1,8 +1,3 @@
-Install the course package, using R-2.15, as follows:
-
-	source("http://bioconductor.org/scratch-repos/pkgInstall.R")
-	pkgInstall("ReadsAlignmentsVariantsLab")
-
 Slides
 ------
 
@@ -26,3 +21,9 @@ Slides
 * [2012-07-06-Morgan-splice-graphs.pdf](2012-07-06-Morgan-splice-graphs.pdf)
 * [BioCOverview2012.ppt](BioCOverview2012.ppt)
 * [Statistics101.ppt](Statistics101.ppt)
+
+Install the package for Friday's lab, using R-2.15, as follows:
+
+	source("http://bioconductor.org/scratch-repos/pkgInstall.R")
+	pkgInstall("ReadsAlignmentsVariantsLab")
+
