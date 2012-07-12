@@ -304,7 +304,7 @@
        },
        "SSHCommand": {
            "Description": "SSH Command",
-           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
+           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem ubuntu@",
                { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
            
        }
