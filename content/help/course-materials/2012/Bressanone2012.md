@@ -21,6 +21,8 @@ Slides
 * [2012-07-06-Morgan-splice-graphs.pdf](2012-07-06-Morgan-splice-graphs.pdf)
 * [BioCOverview2012.ppt](BioCOverview2012.ppt)
 * [Statistics101.ppt](Statistics101.ppt)
+* [EpigenomicsBrixen_Computational.pptx.pdf](EpigenomicsBrixen_Computational.pptx.pdf)
+* [EpigenomicsBrixen_Intro.pptx.pdf](EpigenomicsBrixen_Intro.pptx.pdf)
 
 Install the package for Friday's lab, using R-2.15, as follows:
 
