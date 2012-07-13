@@ -550,6 +550,7 @@ def r_ver_for_bioc_ver(bioc_ver)
 end
 
 def get_package_maintainers()
+  exclude_these_packages = ["limma", "edgeR"]
   ret = []
   json_file \
     = "assets/packages/json/#{config[:release_version]}/bioc/packages.json"
@@ -568,7 +569,11 @@ def get_package_maintainers()
     maintainer = maintainer.split(",").first.strip
     
     maintainer = "#{k} Maintainer <#{maintainer}>"
-    row.push maintainer
+    if exclude_these_packages.include? k
+      row.push ""
+    else
+      row.push maintainer
+    end
     ret.push row
   end
   ret.sort! do |a, b|
