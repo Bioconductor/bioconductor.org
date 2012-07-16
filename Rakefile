@@ -68,8 +68,15 @@ end
 task :post_compile do
   puts "running post-compilation tasks..."
   site_config = YAML.load_file("./config.yaml")
-  src = "#{site_config["output_dir"]}/packages/#{site_config["release_version"]}/BiocViews.html"
-  other_versions = site_config["versions"] - [site_config["release_version"]]
+  for entry in Dir.entries("#{site_config["output_dir"]}/packages")
+    next if entry =~ /^\./
+    next unless entry =~ /^[0-9]/
+    entry = "#{site_config["output_dir"]}/packages/#{entry}"
+    next unless Kernel.test(?d, entry)
+    puts "copying index.html to #{entry}..."
+    FileUtils.cp("assets/extra/index.html", 
+      "#{entry}/index.html")
+  end
   cwd = FileUtils.pwd
   FileUtils.cd "#{site_config["output_dir"]}/packages"
 
