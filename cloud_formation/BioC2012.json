@@ -1,0 +1,73 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "Start a virtual machine instance for the BioC2012 course",
+
+  "Parameters" : {
+    "InstanceType" : {
+      "Description" : "Type of EC2 instance to launch - see http://aws.amazon.com/ec2/instance-types/",
+      "Type" : "String",
+      "Default" : "m1.large",
+      "AllowedValues": ["t1.micro", "m1.small", "m1.medium", "m1.large",
+        "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge"],
+      "ConstraintDescription": "Choose a valid EC2 instance type from http://aws.amazon.com/ec2/instance-types/"
+      }
+  },
+
+  "Resources" : {
+    "Ec2Instance" : {
+      "Type" : "AWS::EC2::Instance",
+      "Properties" : {
+        "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
+        "ImageId" : "ami-4b2fee22",
+        "InstanceType": {"Ref": "InstanceType"},
+        "Tags": [{"Key": "Name", "Value": "BioC2012 AMI"}]
+      }
+    },
+
+    "InstanceSecurityGroup" : {
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Enable HTTP access via port 8787",
+        "SecurityGroupIngress" : [ {
+          "IpProtocol" : "tcp",
+          "FromPort" : "8787",
+          "ToPort" : "8787",
+          "CidrIp" : "0.0.0.0/0"
+        } ]
+      }
+    },
+    
+    "InstanceSecurityGroupIngress": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties": {
+            "GroupName": { "Ref": "InstanceSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
+            "ToPort": "65535",
+            "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+        }
+    }
+    
+  },
+
+  "Outputs" : {
+        "URL" : {
+            "Description" : "URL of RStudio Server",
+            "Value" :  { "Fn::Join" : [ "", [ "http://", 
+                { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}, ":8787"]]}
+          },
+        "Username": {
+            "Description": "Log in with this username",
+            "Value": "workshop"
+        },
+        "Password": {
+            "Description": "Log in with this password",
+            "Value": "bioc"
+        },
+        "Info": {
+            "Description": "Message",
+            "Value": "URL will be valid in a few seconds. Delete stack when done to avoid charges!"
+        }
+  }
+}
