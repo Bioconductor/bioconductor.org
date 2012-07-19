@@ -176,7 +176,7 @@ Confirm the deletion by clicking "Yes, Delete".
 
 If you do not do this step, **your credit card will be charged.**
 
-BioC2012_setup_guideAfter deletion, all files that were on your virtual machine will
+After deletion, all files that were on your virtual machine will
 be lost. If there are files you want to keep, use RStudio's
 Download button to download them before shutting down
 your virtual machine.
