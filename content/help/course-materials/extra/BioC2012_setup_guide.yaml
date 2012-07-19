@@ -1,2 +1,5 @@
 --- 
 title: BioC2012 Setup Guide
+subnav:
+  - include: /_bioc_release_packages/
+
