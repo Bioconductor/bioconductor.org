@@ -255,6 +255,12 @@ The SIFT.Hsapiens.dbSNP132 and PolyPhen.Hsapiens.dbSNP131 packages
 provide predictions of how damaging amino acid coding changes may
 be to protein structure and function. Both packages search on rsid.
     
+It is important to remember that the pre-computed predictions in the
+SIFT and PolyPhen packages are based on specific gene models. SIFT is
+based on Ensembl and PolyPhen on UCSC Known Gene. The TranscriptDb
+we used to identify coding variants was from UCSC Known Gene so we
+will use PolyPhen for predictions.
+    
     ## Load the PolyPhen package and explore the available keys and columns
     > library(PolyPhen.Hsapiens.dbSNP131)
     > keys <- keys(PolyPhen.Hsapiens.dbSNP131)
