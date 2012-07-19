@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "Start a virtual machine instance for the BioC2012 course",
+  "Description" : "Start a virtual machine instance for the BioC2012 conference",
 
   "Parameters" : {
     "InstanceType" : {
