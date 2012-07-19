@@ -118,13 +118,24 @@ Then click on the Outputs tab at the bottom of the page:
 
 <img src="outputs.jpg">
 
-You will see a URL for RStudio Server. Click this URL. You can use the
-supplied login and password to log in to RStudio Server. (If you are a 
-workshop presenter, you may also use the login you received via email).
+You will see a URL for RStudio Server. Click this URL. 
+
 
 RStudio Server takes a few moments to come up after the stack creation
 is complete. You may need to refresh the page after a few seconds.
 
+
+
+
+When Rstudio is up, you'll see a login form:
+
+<img src="rstudiosignin.jpg"/>
+
+You can use the
+supplied login and password (*workshop* and *bioc*)
+to log in to RStudio Server. (If you are a 
+workshop presenter, you may also use the login
+you received via email).
 
 
 
