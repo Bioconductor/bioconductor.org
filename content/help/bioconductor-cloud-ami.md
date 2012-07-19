@@ -34,6 +34,8 @@ Here are a few reasons you could use it:
 * You have a long-running task and you don't want it to tie up the CPU on your own machine.
 * You have a parallelizable task and would like to run it (either on multiple CPUs on a single machine, or in a cluster of many machines).
 * You want to run R in your web browser (using RStudio Server).
+* The AMI contains many packages (such as RGraphviz) which can be very
+  difficult to install and configure.
 
 See below for more specific scenarios.
 
