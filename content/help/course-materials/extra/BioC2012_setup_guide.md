@@ -157,7 +157,7 @@ you received via email).
 * Tools/Shell will open a Unix command shell. This is useful for
   running commands like `R CMD check`.
 * To navigate the File pane to a specific directory, click the
-  triple-dot button in in the top right corner of the File Pane:
+  triple-dot button in the top right corner of the File Pane:
 
 <img src="threedots.jpg"/>
 
