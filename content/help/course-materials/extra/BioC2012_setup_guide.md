@@ -29,7 +29,7 @@ Conference proceedings begin:
 ### Links
 
 * [BioC2012 Page](https://secure.bioconductor.org/BioC2012/)
-* [BioC2012 Wiki](http://wiki.fhcrc.org/bioc/Seattle_Dev_Meeting_2012)
+* [BioC2012 Developer Day wiki](http://wiki.fhcrc.org/bioc/Seattle_Dev_Meeting_2012)
 
 
 ## Amazon Web Services Virtual Machine
