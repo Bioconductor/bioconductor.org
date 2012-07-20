@@ -64,7 +64,7 @@
         "URL" : {
             "Description" : "URL of RStudio Server",
             "Value" :  { "Fn::Join" : [ "", [ "http://", 
-                { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}, ":8787"]]}
+                { "Fn::GetAtt" : [ "Ec2Instance", "PublicDnsName" ]}]]}
           },
         "Username": {
             "Description": "Log in with this username",

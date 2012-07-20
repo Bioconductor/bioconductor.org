@@ -159,8 +159,8 @@ You will see a URL for RStudio Server. Click this URL.
 
 
 RStudio Server takes a few moments to come up after the stack creation
-is complete. You may need to refresh the page after a few seconds.
-
+is complete. You may need to refresh the page after a few seconds. (You
+may see an error message before RStudio is ready).
 
 
 
@@ -179,8 +179,6 @@ you received via email).
 ## RStudio Server tips
 * *Browser tip:* RStudio Server does not work well with Internet Explorer.
   We recommend using Firefox, Chrome, or Safari. 
-  Also, some configurations do not allow URLs with non-standard
-  port numbers (e.g. the :8787 in the RStudio URL)
 * You can edit a file by clicking on it in the File pane at lower right,
   or by using the `file.edit()` command.
 * When a file is in the edit window, you can execute the current line
