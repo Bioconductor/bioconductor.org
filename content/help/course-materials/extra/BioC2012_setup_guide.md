@@ -158,12 +158,6 @@ Then click on the Outputs tab at the bottom of the page:
 You will see a URL for RStudio Server. Click this URL. 
 
 
-RStudio Server takes a few moments to come up after the stack creation
-is complete. You may need to refresh the page after a few seconds. (You
-may see an error message before RStudio is ready).
-
-
-
 When Rstudio is up, you'll see a login form:
 
 <img src="rstudiosignin.jpg"/>
