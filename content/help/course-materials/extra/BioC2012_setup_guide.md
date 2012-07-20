@@ -13,6 +13,14 @@ Limited parking (15 spots) is available in spots marked "Visitor Parking". Check
 in with reception when you arrive or you may receive a ticket. 
 On-street metered parking is also available.
 
+### Wi-Fi
+
+Wireless access will be available through the network "FHCRC Guest".
+The wireless username and password will be written on all conference
+whiteboards. When you use your browser after connecting to this 
+network you should be prompted to enter this username and password.
+
+
 ### Schedule
 
 A full schedule is in your participant packet which you will
