@@ -19,10 +19,26 @@
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-        "ImageId" : "ami-4b2fee22",
+        "ImageId" : "ami-a11ab4c8",
         "InstanceType": {"Ref": "InstanceType"},
         "Tags": [{"Key": "Name", "Value": "BioC2012 AMI"}]
       }
+    },
+    
+    "myWaitHandle" : {
+         "Type" : "AWS::CloudFormation::WaitConditionHandle",
+         "Properties" : {
+         }
+    },
+    
+    "myWaitCondition" : {
+        "Type" : "AWS::CloudFormation::WaitCondition",
+        "DependsOn" : "Ec2Instance",
+        "Properties" : {
+            "Handle" : { "Ref" : "myWaitHandle" },
+             "Timeout" : "45",
+             "Count" : "0"
+        }
     },
 
     "InstanceSecurityGroup" : {
