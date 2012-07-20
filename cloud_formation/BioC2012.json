@@ -1,7 +1,7 @@
 {
   "AWSTemplateFormatVersion" : "2010-09-09",
 
-  "Description" : "Start a virtual machine instance for the BioC2012 conference",
+  "Description" : "Launch BioC2012 AMI",
 
   "Parameters" : {
     "InstanceType" : {
@@ -19,49 +19,73 @@
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
         "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-        "ImageId" : "ami-a11ab4c8",
+        "ImageId" : "ami-99ec45f0",
         "InstanceType": {"Ref": "InstanceType"},
-        "Tags": [{"Key": "Name", "Value": "BioC2012 AMI"}]
+        "Tags": [{"Key": "Name", "Value": "BioC2012 AMI"}],
+        "UserData":{
+           "Fn::Base64":{
+              "Fn::Join":[
+                 "",
+                 [
+                    "#!/bin/bash\n",
+                    "rm -rf /usr/local/bioc_cloud ",
+                    " && ",
+                    " svn co --no-auth-cache --non-interactive --username readonly --password readonly https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/BiocCloud/inst/CloudFormation/ /usr/local/bioc_cloud",
+                    " && ",
+                    "/usr/local/bioc_cloud/bootstrap_bioc2012.rb",
+                    " --wait-handle ",
+                    "\"",
+                    { "Ref": "WaitHandle"},
+                    "\"",
+                    " > /root/startup.log 2>&1 ",
+                    "\n"
+                 ]
+              ]
+           }
+        }
+        
       }
     },
     
-    "myWaitHandle" : {
-         "Type" : "AWS::CloudFormation::WaitConditionHandle",
-         "Properties" : {
-         }
-    },
-    
-    "myWaitCondition" : {
-        "Type" : "AWS::CloudFormation::WaitCondition",
-        "DependsOn" : "Ec2Instance",
-        "Properties" : {
-            "Handle" : { "Ref" : "myWaitHandle" },
-             "Timeout" : "45",
-             "Count" : "0"
-        }
-    },
-
-    "InstanceSecurityGroup" : {
-      "Type" : "AWS::EC2::SecurityGroup",
-      "Properties" : {
-        "GroupDescription" : "Enable HTTP access via port 8787",
-        "SecurityGroupIngress" : [ {
-          "IpProtocol" : "tcp",
-          "FromPort" : "8787",
-          "ToPort" : "8787",
-          "CidrIp" : "0.0.0.0/0"
+    "WaitHandle" : {
+             "Type" : "AWS::CloudFormation::WaitConditionHandle",
+             "Properties" : {
+             }
         },
-        {
-            "IpProtocol": "tcp",
-            "FromPort": "80",
-            "ToPort": "80",
-            "CidrIp": "0.0.0.0/0"
-        }
         
         
-         ]
-      }
-    },
+        "myWaitCondition" : {
+             "Type" : "AWS::CloudFormation::WaitCondition",
+             "DependsOn" : "Ec2Instance",
+             "Properties" : {
+                 "Handle" : { "Ref" : "WaitHandle" },
+                  "Timeout" : "600",
+                  "Count" : "1"
+             }
+         },
+
+         "InstanceSecurityGroup" : {
+              "Type" : "AWS::EC2::SecurityGroup",
+              "Properties" : {
+                "GroupDescription" : "Enable HTTP access via port 8787",
+                "SecurityGroupIngress" : [ {
+                  "IpProtocol" : "tcp",
+                  "FromPort" : "8787",
+                  "ToPort" : "8787",
+                  "CidrIp" : "0.0.0.0/0"
+                },
+                {
+                    "IpProtocol": "tcp",
+                    "FromPort": "80",
+                    "ToPort": "80",
+                    "CidrIp": "0.0.0.0/0"
+                }
+
+
+                 ]
+              }
+            },
+  
     
     "InstanceSecurityGroupIngress": {
         "Type": "AWS::EC2::SecurityGroupIngress",
@@ -84,7 +108,7 @@
           },
         "Username": {
             "Description": "Log in with this username",
-            "Value": "workshop"
+            "Value": "ubuntu"
         },
         "Password": {
             "Description": "Log in with this password",
@@ -92,7 +116,7 @@
         },
         "Info": {
             "Description": "Message",
-            "Value": "URL will be valid in a few seconds. Delete stack when done to avoid charges!"
+            "Value": "Delete stack when done to avoid charges."
         }
   }
 }
