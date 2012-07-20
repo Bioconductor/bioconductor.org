@@ -4,6 +4,33 @@ Please read this carefully. In order to participate in workshops at the
 conference, you'll need to follow some steps which take a few moments.
 It's best if you can do this before the conference begins.
 
+## Logistics
+
+You will receive a participant packet when you arrive that contains
+complete information about BioC2012.
+
+Limited parking (15 spots) is available in spots marked "Visitor Parking". Check
+in with reception when you arrive or you may receive a ticket. 
+On-street metered parking is also available.
+
+### Schedule
+
+A full schedule is in your participant packet which you will
+receive upon arrival.
+
+Conference proceedings begin:
+
+* Monday (Developer Day) at 9:00 AM in M1 A303-307 (Arnold Building)
+* Tuesday at 8:45 AM in Pelton Auditorium (Weintraub Building)
+* Wednesday at 8:45 AM in M1 A303-307 (Arnold Building)
+
+[FHCRC Campus Map](http://www.fhcrc.org/en/contact-us/visit-us.html)
+
+### Links
+
+* [BioC2012 Page](https://secure.bioconductor.org/BioC2012/)
+* [BioC2012 Wiki](http://wiki.fhcrc.org/bioc/Seattle_Dev_Meeting_2012)
+
 
 ## Amazon Web Services Virtual Machine
 
@@ -24,11 +51,21 @@ will be charged! This is unlikely to happen, but it is possible if you forget
 to turn off any AWS resources (instances, stacks, etc.) that you have turned
 on. 
 
+For example, leaving an m1.large instance on for five days (120 hours)
+will cost $38.40.
+
 We will discuss how to do that both in this guide, in person at the conference,
 and in a followup email to be sent after the conference. 
 
 Provided that you turn off all resources when done with them, and do not
 exceed $100 in charges, your AWS usage during the conference will be *free*.
+
+After you have used up the initial $100 from your coupon, you
+are free to continue using Amazon Web Services at your own expense.
+
+* [AWS EC2 Pricing Guide](http://aws.amazon.com/ec2/pricing/)
+* [AWS Pricing Calculator](http://calculator.s3.amazonaws.com/calc5.html)
+
 
 ## Creating an AWS account
 
