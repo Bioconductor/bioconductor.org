@@ -51,9 +51,6 @@ will be charged! This is unlikely to happen, but it is possible if you forget
 to turn off any AWS resources (instances, stacks, etc.) that you have turned
 on. 
 
-For example, leaving an m1.large instance on for five days (120 hours)
-will cost $38.40.
-
 We will discuss how to do that both in this guide, in person at the conference,
 and in a followup email to be sent after the conference. 
 
@@ -62,6 +59,9 @@ exceed $100 in charges, your AWS usage during the conference will be *free*.
 
 After you have used up the initial $100 from your coupon, you
 are free to continue using Amazon Web Services at your own expense.
+
+To give an example of costs, leaving an m1.large instance on for
+five days (120 hours) will cost $38.40.
 
 * [AWS EC2 Pricing Guide](http://aws.amazon.com/ec2/pricing/)
 * [AWS Pricing Calculator](http://calculator.s3.amazonaws.com/calc5.html)
