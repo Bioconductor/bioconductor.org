@@ -144,7 +144,7 @@
           },
         "Username": {
             "Description": "Log in with this username",
-            "Value": "ubuntu"
+            "Value": "workshop"
         },
         "Password": {
             "Description": "Log in with this password",
