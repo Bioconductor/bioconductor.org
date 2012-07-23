@@ -130,7 +130,10 @@ and that should be adequate for most needs during the conference.
 Refer to [the complete list of instance types](http://aws.amazon.com/ec2/instance-types/)
 to see what other types are available.
 
-<img src="createstack2.jpg"/>
+Be sure and check the box that says "I acknowledge that this template
+may create IAM resources."
+
+<img src="ack_iam.jpg"/>
 
 Click "Continue". 
 
