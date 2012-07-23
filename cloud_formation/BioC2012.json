@@ -15,6 +15,38 @@
   },
 
   "Resources" : {
+      
+      "CfnUser":{
+         "Type":"AWS::IAM::User",
+         "Properties":{
+            "Path":"/",
+            "Policies":[
+               {
+                  "PolicyName":"root",
+                  "PolicyDocument":{
+                     "Statement":[
+                        {
+                           "Effect":"Allow",
+                           "Action":["cloudformation:DescribeStackResource", "ec2:DescribeInstances",
+                            "ec2:CreateTags"],
+                           "Resource":"*"
+                        }
+                     ]
+                  }
+               }
+            ]
+         }
+      },
+      "HostKeys":{
+         "Type":"AWS::IAM::AccessKey",
+         "Properties":{
+            "UserName":{
+               "Ref":"CfnUser"
+            }
+         }
+      },
+     
+      
     "Ec2Instance" : {
       "Type" : "AWS::EC2::Instance",
       "Properties" : {
@@ -46,6 +78,10 @@
         
       }
     },
+    
+    
+    
+    
     
     "WaitHandle" : {
              "Type" : "AWS::CloudFormation::WaitConditionHandle",
@@ -108,7 +144,7 @@
           },
         "Username": {
             "Description": "Log in with this username",
-            "Value": "workshop"
+            "Value": "ubuntu"
         },
         "Password": {
             "Description": "Log in with this password",
