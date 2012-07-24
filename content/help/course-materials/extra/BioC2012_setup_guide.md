@@ -29,8 +29,8 @@ receive upon arrival.
 Conference proceedings begin:
 
 * Monday (Developer Day) at 9:00 AM in M1 A303-307 (Arnold Building)
-* Tuesday at 8:45 AM in Pelton Auditorium (Weintraub Building)
-* Wednesday at 8:45 AM in M1 A303-307 (Arnold Building)
+* Tuesday at 8:15 AM in Pelton Auditorium (Weintraub Building)
+* Wednesday at 8:30 AM in M1 A303-307 (Arnold Building)
 
 [FHCRC Campus Map](http://www.fhcrc.org/en/contact-us/visit-us.html)
 
