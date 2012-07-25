@@ -201,6 +201,7 @@ you received via email).
 
 <img src="threedots.jpg"/>
 
+<a name="deletion"></a>
 ## Turning off your AWS resources
 
 When you are finished using RStudio, you should delete your 
