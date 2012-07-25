@@ -64,7 +64,7 @@ semi-annual snapshots available, as used here.
     gnModel <- exonsBy(txdb, "gene")
 
 There are different ways to count, some of which are implemented in
-`GenomicRanges::countFeatures` (available with R >= 2.14). Here is a
+`GenomicRanges::summarizeOverlaps` (available with R >= 2.15). Here is a
 simple function that counts any kind of overlap between known genes as
 a 'hit', and that discards a read hitting more than one gene. This is
 not always satisfactory, but illustrates the flexibility available.
