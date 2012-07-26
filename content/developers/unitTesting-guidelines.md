@@ -224,11 +224,10 @@ A failed test is reported like this:
 
 <h2 id="fileSummary">Summary: the minimal setup</h2>
 
-A minimal Bioconductor **unitTest** setup requires two additions to
+A minimal Bioconductor **unitTest** setup requires only this one-line addition to
 the `MyPackage/DESCRIPTION` file
 
-    Imports: BiocGenerics 
-    Suggests: RUnit
+    Suggests: RUnit, BiocGenerics 
 
 and two files, `MyPackage/tests/runTests.R`:
 
