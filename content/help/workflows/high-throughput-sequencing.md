@@ -59,7 +59,7 @@ package. These can be saved to disk as sqlite data bases for future
 use or to be shared with lab mates. With R >= 2.14.0, there are
 semi-annual snapshots available, as used here.
 
-    library(TxDb.Scerevisiae.UCSC.sacCer2.ensGene)
+    library(TxDb.Scerevisiae.UCSC.sacCer2.sgdGene)
     txdb <- Scerevisiae_UCSC_sacCer2_ensGene_TxDb
     gnModel <- exonsBy(txdb, "gene")
 
