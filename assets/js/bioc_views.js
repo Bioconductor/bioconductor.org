@@ -212,14 +212,26 @@ var getHostUrl = function() {
     return(url);
 }
 
+var addToPackageInfo = function(data) {
+    var ret = {};
+    var content = data['content'];
+    for (var i = 0; i < content.length; i++) {
+        var pkg = content[i][0];
+        var maintainer = content[i][1];
+        var title = content[i][2];
+        ret[pkg] = {"Maintainer": maintainer, "Title": title};
+    }
+    return(ret);
+}
+
 
 var loadPackageData = function() {
     if (typeof bioc_packages != "undefined")
-        jQuery.extend(packageInfo, bioc_packages)
+        jQuery.extend(packageInfo, addToPackageInfo(bioc_packages));
     if (typeof data_annotation_packages != "undefined")
-        jQuery.extend(packageInfo, data_annotation_packages)
+        jQuery.extend(packageInfo, addToPackageInfo(data_annotation_packages));
     if (typeof data_experiment_packages != "undefined")
-        jQuery.extend(packageInfo, data_experiment_packages)
+        jQuery.extend(packageInfo, addToPackageInfo(data_experiment_packages));
 }
 
 

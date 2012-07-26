@@ -231,8 +231,19 @@ task :json2js do
         lines = f.readlines
         json = lines.join.strip
         obj = JSON.parse json
+        
+        ret = []
+        obj.values.each do |v|
+          line = []
+          line.push v['Package']
+          line.push v['Maintainer']
+          line.push v['Title']
+          ret.push line
+        end
+        
+        holder = {"content" => ret}
         outf = File.open(jsfile, "w")
-        outf.print("var #{var} = #{obj.to_json};")
+        outf.print("var #{var} = #{holder.to_json};")
         outf.close
       end
     end
