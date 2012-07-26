@@ -213,7 +213,7 @@ available; all are in the release version of Bioconductor.
   [ChIPsim](/packages/release/bioc/html/ChIPsim.html),
   [ChIPpeakAnno](/packages/release/bioc/html/ChIPpeakAnno.html),
   [DiffBind](/packages/release/bioc/html/DiffBind.html),
-  [iSeq](/packages/release/bioc/html/iSeq),
+  [iSeq](/packages/release/bioc/html/iSeq.html),
   [rGADEM](/packages/release/bioc/html/rGADEM.html),
   [segmentSeq](/packages/release/bioc/html/segmentSeq.html),
   [BayesPeak](/packages/release/bioc/html/BayesPeak.html),
