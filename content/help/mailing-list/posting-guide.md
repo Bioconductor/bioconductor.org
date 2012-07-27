@@ -21,10 +21,14 @@
   and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
   similar posts. Try a [Google](http://www.google.com/) search.
   
-* Simplify code to a minimal, self-contained example. If reporting an
+* Please include the R code that is causing the problem and enough data
+  for someone else to run the code and get the same problem.
+  Simplify code to a minimal, self-contained example. If reporting an
   error, be sure to reproduce the error in a new R session, started
   with the `--vanilla` option to avoid loading .Rprofile or .RData
-  files.
+  files. 
+  
+
   
 * Ensure that your installed packages are [up-to-date](/install/).
 
