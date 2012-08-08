@@ -194,14 +194,6 @@ class GetJson
         pkgs += node_attrs[n]['packageList'] if node_attrs.has_key? n and \
           node_attrs[n].has_key? 'packageList'
       end
-      if node == "AssayDomains!!!" ## remove this
-        puts "wjoo[s]"
-        #pp pkgs
-        puts pkgs.size
-        puts version
-        puts repo
-        exit
-      end
       
       node_attrs[node] = {} unless node_attrs.has_key? node
       node_attrs[node]['packageList'] = \
