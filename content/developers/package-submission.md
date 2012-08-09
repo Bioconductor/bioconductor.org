@@ -31,6 +31,10 @@ Packages must satisfy the following checklist:
 * Contain a DESCRIPTION file with valid contact information, an informative
   title and description, correct license specification, appropriate biocViews
   terms, valid version number.
+* Set Version to 0.99.0 in the DESCRIPTION.  Subsequent versions created 
+  during the review process will be numbered 0.99.1, 0.99.2, etc.  When 
+  released, your package's version number will be automatically incremented 
+  to 1.0.0.
 * Contain a NAMESPACE that imports all symbols used in the package, and
   exports just those symbols the package author identifies as appropriate.
   Use of a NAMESPACE implies that appropriate packages are mentioned in the
