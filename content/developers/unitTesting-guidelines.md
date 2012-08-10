@@ -196,7 +196,7 @@ There are two steps:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="duringDeveloment">Using Tests During Development</h2>
+<h2 id="duringDevelopment">Using Tests During Development</h2>
 
     R CMD check MyPackage
 
