@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.10 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 2.11 Release Schedule
 
 
 ## Release objectives
