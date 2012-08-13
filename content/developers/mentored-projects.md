@@ -18,7 +18,7 @@ Listed below you will find a list of our current ideas.  We welcome other sugges
 to the structure of a mentored project.
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
-See <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>
+See the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>.
 
 <blockquote>
 Galaxy is a scientific workflow, data integration, and data and
@@ -31,8 +31,19 @@ now used as a general bioinformatics workflow management system.
 The new BioC <a href=http://www.bioconductor.org/packages/devel/bioc/html/RGalaxy.html">RGalaxy</a>
  package makes it possible to place any abritrary R script into a Galaxy workflow.  
 
+Project attributes and estimates:
+
+* Difficulty:  Moderate
+* Length
+* Skills needed:  
+* Mentor:
+
+
 
 <h2 id="vcf">New Variant Call Format (VCF) Class Methods</h2>
+
+The VCF class is part of the <a href=http://www.bioconductor.org/packages/2.10/bioc/html/VariantAnnotation.html>Variant Annotation</a> package. 
+These new capabilities are needed:
 
 * Compute allele frequency (from the 'geno' slot
 
@@ -40,9 +51,19 @@ The new BioC <a href=http://www.bioconductor.org/packages/devel/bioc/html/RGalax
 
 * Create (?) a SNP matrix for phased and unphased genotypes
 
-<h2 id='panther'> Create an AnnotationDbi Package for PAHTER</h2>
+Project attributes and estimates:
 
-PANTHER (http://www.pantherdb.org/) 
+* Difficulty:  Moderate
+* Length
+* Skills needed:  
+* Mentor:
+
+
+
+<h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
+
+PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized
+at that website thus:
 <blockquote>
 
 The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
@@ -51,6 +72,13 @@ their functions, using published scientific experimental evidence and
 evolutionary relationships to predict function even in the absence of
 direct experimental evidence.  "classifies genes by their function"
 </blockquote>
+
+Project attributes and estimates:
+
+* Difficulty:  Moderate
+* Length
+* Skills needed:  
+* Mentor:
 
 We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
 package.
