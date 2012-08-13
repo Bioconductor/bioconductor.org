@@ -27,8 +27,9 @@ have computer programming experience. Although it was initially
 developed for genomics research, it is largely domain agnostic and is
 now used as a general bioinformatics workflow management system.
 </blockquote>
-The new BioC <a href=http://www.bioconductor.org/packages/devel/bioc/html/RGalaxy.html">RGalaxy</a>
- package makes it possible to place any abritrary R script into a Galaxy workflow.  
+The new Bioconductor <a href="packages/devel/bioc/html/RGalaxy.html">RGalaxy</a>
+ simplifies the process of exposing an R function in Galaxy so that a user
+can run the function using nothing more than a web browser.
 
 This project would involve taking an existing workflow (or conceiving a new workflow)
 and exposing it in Galaxy.
