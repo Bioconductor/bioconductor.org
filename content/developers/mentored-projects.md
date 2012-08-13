@@ -8,17 +8,16 @@
 
 <h2 id="introduction">Introduction</h2>
 
-The Bioconductor project welcomes code developers who wish to apply their skills, and refine and extending their skills, to
+The Bioconductor project welcomes code developers who wish to apply, refine and extend their skills, working on
 tasks and small projects we have identified as important, but which we have not had the time to tackle ourselves.   We will
 offer technical support and advice to those working on any of these projects.   We predict that contributors, users, and established
 Bioconductor developers will all benefit.
 
 
-Listed below you will find a list of our current ideas.  We welcome other suggestions, as well, and will assess them for a good fit
-to the structure of a mentored project.
+Below you will find a list of proposed projects.  We welcome other suggestions as well.
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
-See the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>.
+From the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>:
 
 <blockquote>
 Galaxy is a scientific workflow, data integration, and data and
@@ -33,7 +32,7 @@ The new BioC <a href=http://www.bioconductor.org/packages/devel/bioc/html/RGalax
 
 Project attributes and estimates:
 
-* Difficulty:  Moderate
+* Difficulty:
 * Length
 * Skills needed:  
 * Mentor:
@@ -53,7 +52,7 @@ These new capabilities are needed:
 
 Project attributes and estimates:
 
-* Difficulty:  Moderate
+* Difficulty:
 * Length
 * Skills needed:  
 * Mentor:
@@ -62,8 +61,7 @@ Project attributes and estimates:
 
 <h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
 
-PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized
-at that website thus:
+PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized:
 <blockquote>
 
 The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
@@ -75,7 +73,7 @@ direct experimental evidence.  "classifies genes by their function"
 
 Project attributes and estimates:
 
-* Difficulty:  Moderate
+* Difficulty:
 * Length
 * Skills needed:  
 * Mentor:
