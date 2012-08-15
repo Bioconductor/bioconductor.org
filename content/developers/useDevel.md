@@ -83,9 +83,9 @@ If you launch R in this way and then invoke <code>.libPaths()</code>,
 you'll see that the first item is your special release or
 devel directory. Packages will be installed to that directory and that
 is the first place that <code>library()</code> will look for them. 
-<code>biocLite()</code>, <code>install.packages()</code>,
-<code>update.packages()</code> and friends all respect this
-setting.
+<code>biocLite()</code> and <code>install.packages()</code>
+respect this setting; <code>update.packages()</code> attempts to update
+packages in the directory where the current package is installed.
 
 
 On Linux and Mac OS X, you can create a bash alias to save typing. Add the
