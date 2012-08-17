@@ -64,6 +64,8 @@ Project attributes and estimates:
 * Mentor:
 
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
 
@@ -87,7 +89,9 @@ Project attributes and estimates:
 We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
 package.
 
-<h2 id="contact">Interessted?</h2>
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="contact">Interested?</h2>
 
 Please send mail to pshannon AT fhcrc DOT org if you would like to help out on any of these projects, or have an idea of your own which you
 wish to propose.
