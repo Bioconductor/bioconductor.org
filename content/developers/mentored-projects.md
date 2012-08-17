@@ -1,10 +1,12 @@
 ![](/images/icons/magnifier.gif)Mentored Projects
 ==================================================
 
-
 * [Introduction](#introduction)
-* [Vignettes Which Need Revisions and Updates](#vignettes)
-* [Additional Resources](#resources)
+* [Galaxy-ification of Useful Scripts](#galaxy)
+* [New Variant Call Format (VCF) Class Methods](#vcf)
+* [Create an AnnotationDbi Package for PANTHER](#panther)
+* [Interested?](#contact)
+
 
 <h2 id="introduction">Introduction</h2>
 
@@ -84,6 +86,11 @@ Project attributes and estimates:
 
 We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
 package.
+
+<h2 id="contact">Interessted?</h2>
+
+Please send mail to pshannon AT fhcrc DOT org if you would like to help out on any of these projects, or have an idea of your own which you
+wish to propose.
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
