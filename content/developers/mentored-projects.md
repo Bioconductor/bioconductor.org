@@ -58,12 +58,12 @@ a VCF class and compute the allele frequency.
 
 <blockquote>
 Project attributes and estimates:
-
-* Difficulty: Easy
-* Length: 1-2 weeks
-* Skills needed: R programming
-* Mentor: Valerie Obenchain
-* Parse data in the 'alt' slot 
+<ul>
+<li>* Difficulty: Easy</li>
+<li>* Length: 1-2 weeks</li>
+<li>* Skills needed: R programming</li>
+<li>* Mentor: Valerie Obenchain</li>
+</ul>
 </blockquote>
 
 Further development of writeVcf() :
@@ -76,11 +76,12 @@ as matrices, DataFrames or lists.
 
 <blockquote>
 Project attributes and estimates:
-
-* Difficulty: Medium
-* Length: 4-6 weeks
-* Skills needed: R programming
-* Mentor: Valerie Obenchain 
+<ul>
+<li>* Difficulty: Medium</li>
+<li>* Length: 4-6 weeks</li>
+<li>* Skills needed: R programming</li>
+<li>* Mentor: Valerie Obenchain</li> 
+</ul>
 </blockquote>
 
 Convert genotypes to probability-based SnpMatrix encoding :
@@ -96,11 +97,12 @@ genotypes to the probability-based SnpMatrix encoding.
 
 <blockquote>
 Project attributes and estimates:
-
-* Difficulty: Medium
-* Length: 6-8 weeks
-* Skills needed: R programming
-* Mentor: Valerie Obenchain 
+<ul>
+<li>* Difficulty: Medium</li>
+<li>* Length: 6-8 weeks</li>
+<li>* Skills needed: R programming</li>
+<li>* Mentor: Valerie Obenchain</li>
+</ul>
 </blockquote>
 
 
