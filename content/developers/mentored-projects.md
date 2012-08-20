@@ -51,12 +51,14 @@ Several opportunities are available to develop new functionality
 and expand existing methods.
 
 Compute genotype allele frequency :
-
 <blockquote>
 Write a function to parse the genotype data in 
 a VCF class and compute the allele frequency.
+</blockquote>
 
+<blockquote>
 Project attributes and estimates:
+
 * Difficulty: Easy
 * Length: 1-2 weeks
 * Skills needed: R programming
@@ -65,14 +67,16 @@ Project attributes and estimates:
 </blockquote>
 
 Further development of writeVcf() :
-
 <blockquote>
 The current writeVcf() function writes a VCF file from data
 stored in a VCF-class object. We would like to expand this 
 function to write data from more general structures such 
 as matrices, DataFrames or lists.
+</blockquote>
 
+<blockquote>
 Project attributes and estimates:
+
 * Difficulty: Medium
 * Length: 4-6 weeks
 * Skills needed: R programming
@@ -80,7 +84,6 @@ Project attributes and estimates:
 </blockquote>
 
 Convert genotypes to probability-based SnpMatrix encoding :
-
 <blockquote>
 The MatrixToSnpMatrix() function in the VariantAnnotation
 package converts genotype data in a VCF-class object
@@ -89,8 +92,11 @@ calls into consideration. This project involves modifying
 MatrixToSmpMatrix() to use, when available, genotype 
 uncertainty and likelihood information to convert 
 genotypes to the probability-based SnpMatrix encoding.
+</blockquote>
 
+<blockquote>
 Project attributes and estimates:
+
 * Difficulty: Medium
 * Length: 6-8 weeks
 * Skills needed: R programming
