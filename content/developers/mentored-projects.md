@@ -43,25 +43,59 @@ Project attributes and estimates:
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
 
-
-
 <h2 id="vcf">New Variant Call Format (VCF) Class Methods</h2>
 
-The VCF class is part of the <a href=http://www.bioconductor.org/packages/2.10/bioc/html/VariantAnnotation.html>Variant Annotation</a> package. 
-These new capabilities are needed:
+The <a href=http://www.bioconductor.org/packages/2.10/bioc/html/VariantAnnotation.html>VariantAnnotation</a> package
+provides functions to read data from a VCF file and annotate the variants. 
+Several opportunities are available to develop new functionality 
+and expand existing methods.
 
-* Compute allele frequency (from the 'geno' slot
+Compute genotype allele frequency :
 
-* Parse data in the 'alt' slot 
-
-* Create (?) a SNP matrix for phased and unphased genotypes
+<blockquote>
+Write a function to parse the genotype data in 
+a VCF class and compute the allele frequency.
 
 Project attributes and estimates:
+* Difficulty: Easy
+* Length: 1-2 weeks
+* Skills needed: R programming
+* Mentor: Valerie Obenchain
+* Parse data in the 'alt' slot 
+</blockquote>
 
-* Difficulty:
-* Length
-* Skills needed:  
-* Mentor:
+Further development of writeVcf() :
+
+<blockquote>
+The current writeVcf() function writes a VCF file from data
+stored in a VCF-class object. We would like to expand this 
+function to write data from more general structures such 
+as matrices, DataFrames or lists.
+
+Project attributes and estimates:
+* Difficulty: Medium
+* Length: 4-6 weeks
+* Skills needed: R programming
+* Mentor: Valerie Obenchain 
+</blockquote>
+
+Convert genotypes to probability-based SnpMatrix encoding :
+
+<blockquote>
+The MatrixToSnpMatrix() function in the VariantAnnotation
+package converts genotype data in a VCF-class object
+into a SnpMatrix object without taking uncertain genotype 
+calls into consideration. This project involves modifying
+MatrixToSmpMatrix() to use, when available, genotype 
+uncertainty and likelihood information to convert 
+genotypes to the probability-based SnpMatrix encoding.
+
+Project attributes and estimates:
+* Difficulty: Medium
+* Length: 6-8 weeks
+* Skills needed: R programming
+* Mentor: Valerie Obenchain 
+</blockquote>
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
