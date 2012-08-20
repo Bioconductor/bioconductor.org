@@ -59,10 +59,10 @@ a VCF class and compute the allele frequency.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>* Difficulty: Easy</li>
-<li>* Length: 1-2 weeks</li>
-<li>* Skills needed: R programming</li>
-<li>* Mentor: Valerie Obenchain</li>
+<li>Difficulty: Easy</li>
+<li>Length: 1-2 weeks</li>
+<li>Skills needed: R programming</li>
+<li>Mentor: Valerie Obenchain</li>
 </ul>
 </blockquote>
 
@@ -77,10 +77,10 @@ as matrices, DataFrames or lists.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>* Difficulty: Medium</li>
-<li>* Length: 4-6 weeks</li>
-<li>* Skills needed: R programming</li>
-<li>* Mentor: Valerie Obenchain</li> 
+<li>Difficulty: Medium</li>
+<li>Length: 4-6 weeks</li>
+<li>Skills needed: R programming</li>
+<li>Mentor: Valerie Obenchain</li> 
 </ul>
 </blockquote>
 
@@ -98,10 +98,10 @@ genotypes to the probability-based SnpMatrix encoding.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>* Difficulty: Medium</li>
-<li>* Length: 6-8 weeks</li>
-<li>* Skills needed: R programming</li>
-<li>* Mentor: Valerie Obenchain</li>
+<li>Difficulty: Medium</li>
+<li>Length: 6-8 weeks</li>
+<li>Skills needed: R programming</li>
+<li>Mentor: Valerie Obenchain</li>
 </ul>
 </blockquote>
 
