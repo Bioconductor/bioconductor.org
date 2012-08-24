@@ -61,7 +61,7 @@ Project attributes and estimates:
 <ul>
 <li>Difficulty: Easy</li>
 <li>Length: 1-2 weeks</li>
-<li>Skills needed: R programming</li>
+<li>Skills needed: R programming, familiarity with S4 classes</li>
 <li>Mentor: Valerie Obenchain</li>
 </ul>
 </blockquote>
@@ -79,7 +79,7 @@ Project attributes and estimates:
 <ul>
 <li>Difficulty: Medium</li>
 <li>Length: 4-6 weeks</li>
-<li>Skills needed: R programming</li>
+<li>Skills needed: R programming, familiarity with S4 classes</li>
 <li>Mentor: Valerie Obenchain</li> 
 </ul>
 </blockquote>
@@ -100,7 +100,7 @@ Project attributes and estimates:
 <ul>
 <li>Difficulty: Medium</li>
 <li>Length: 6-8 weeks</li>
-<li>Skills needed: R programming</li>
+<li>Skills needed: R programming, familiarity with S4 classes, statistics</li>
 <li>Mentor: Valerie Obenchain</li>
 </ul>
 </blockquote>
