@@ -17,7 +17,6 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
 * <a href="#mpi">Using an MPI cluster in the cloud</a>
-* <a href="#rhipe">Using an Rhipe cluster in the cloud</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
 * <a href="#questions">Questions</a>
@@ -100,6 +99,7 @@ and the following Bioconductor packages (and all their CRAN dependencies):
     <li>oneChannelGUI</li>
     <li>PAnnBuilder</li>
     <li>preprocessCore</li>
+    <li>qpgraph</li>
     <li>qrqc</li>
     <li>R453Plus1Toolbox</li>
     <li>RBGL</li>
@@ -508,34 +508,6 @@ Make the following substitutions:
 **Note**: As always when working with EC2, be sure to shut down all running instances when you are done with them,
 to avoid unnecessary charges. You can quickly check instance status on the 
 [Instances Page](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances) of the AWS Console.
-
-<a name="rhipe"></a>
-### Using an Rhipe cluster in the cloud
-
-
-You can also set up an <a href="http://rhipe.org">Rhipe</a> cluster.
-
-The simplest way to start up a cluster is to just click on this URL:
-
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCRhipeCluster|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/rhipe_cluster.json">Start Rhipe Cluster</a></b>
-
-That will start an Rhipe cluster which you can access via you web browser using RStudio Server.
-
-If you also want to be able to access your cluster via ssh, use this URL instead (you'll
-need to provide the name of an ssh keypair that you have <a href="#first-time-steps">
-previously set up</a>):
-
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCRhipeClusterWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/rhipe_cluster_ssh.json">Start Rhipe Cluster with ssh access</a></b>
-
-
-The startup procedure is similar to <a href="#launch">the launch
-procedure</a> discussed earlier, except that you are also asked
-how many worker instances you want to start. 
-
-Consult the <a href="http://www.datadr.org/getpack.html">Rhipe documentation</a>
-for further information.
 
 
 <a name="custom"></a>
