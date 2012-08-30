@@ -10,11 +10,14 @@
 
 <h2 id="introduction">Introduction</h2>
 
-The Bioconductor project welcomes code developers who wish to apply, refine and extend their skills, working on
-tasks and small projects we have identified as important, but which we have not had the time to tackle ourselves.   We will
-offer technical support and advice to those working on any of these projects.   We predict that contributors, users, and established
-Bioconductor developers will all benefit.
-
+Developers new to Bioconductor may find mentored projects a
+useful way to apply, refine and extend their skills.
+Projects are identified by experienced Bioconductor
+developers.  The projects involve important but manageable
+programming tasks.  Experienced developers act as mentors,
+providing guidance and oversight.  Successful mentored
+projects will be incorporated into relevant packages to
+benefit contributors, users, and the Bioconductor project.
 
 Below you will find a list of proposed projects.  We welcome other suggestions as well.
 
