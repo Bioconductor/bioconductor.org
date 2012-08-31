@@ -114,8 +114,13 @@ Project attributes and estimates:
 
 <h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
 
+We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
+package.
+
 PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized:
+
 <blockquote>
+
 
 The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
 Classification System is a unique resource that classifies genes by
@@ -126,13 +131,11 @@ direct experimental evidence.  "classifies genes by their function"
 
 Project attributes and estimates:
 
-* Difficulty:
-* Length
-* Skills needed:  
-* Mentor:
+* Difficulty: medium
+* Length: 6-8 weeks, part-time
+* Skills needed:  Familiarity with R, SQL and Panther.
+* Mentor: Marc Carlson
 
-We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
-package.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
