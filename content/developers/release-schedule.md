@@ -28,14 +28,17 @@ The following schedule outlines major goals:
 
 ### September 10
 
-* Deadline for new package submissions.
-
 * Release candidate of annotation packages built and posted to devel
    annotation data repository.
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
 * Deadline for .db0 packages to be available for developers.
+
+### September 12
+
+* Deadline for new package submissions.
+
 
 ### September 17
 
