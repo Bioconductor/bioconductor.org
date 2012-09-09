@@ -1,10 +1,11 @@
-![](/images/icons/magnifier.gif)Mentored Projects
-==================================================
+# ![](/images/icons/magnifier.gif)Mentored Projects
 
 * [Introduction](#introduction)
 * [Galaxy-ification of Useful Scripts](#galaxy)
 * [New Variant Call Format (VCF) Class Methods](#vcf)
 * [Create an AnnotationDbi Package for PANTHER](#panther)
+* [Finish your own package](#your-package)
+* [Add constructors to the 'graph' package](#graph)
 * [Interested?](#contact)
 
 
@@ -19,7 +20,8 @@ providing guidance and oversight.  Successful mentored
 projects will be incorporated into relevant packages to
 benefit contributors, users, and the Bioconductor project.
 
-Below you will find a list of proposed projects.  We welcome other suggestions as well.
+Below you will find a list of proposed projects.  We welcome other
+suggestions as well.
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
 From the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>:
@@ -120,8 +122,6 @@ package.
 PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized:
 
 <blockquote>
-
-
 The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
 Classification System is a unique resource that classifies genes by
 their functions, using published scientific experimental evidence and
@@ -136,13 +136,55 @@ Project attributes and estimates:
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
 
+## <a id="your-package">Finish your own package</a>
+
+Package authors sometimes have excellent statistical and bioinformatic
+ideas, but are not fully confident in their ability to produce a
+robust software package suitable for inclusion in Bioconductor. This
+mentored project pairs the package developer with an experienced
+programmer to produce quality software. Participants are expected to
+have a working version of their package, with the major ideas and
+preliminary implementation complete.
+
+Project attributes and estimates:
+
+* Difficulty: medium
+* Length: 6-8 weeks
+* Skills needed: intermediate R programming; some familiarity with R
+  packages and S4 classes.
+* Mentor: Various
+* Deliverables: A finished package, submitted to Bioconductor.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+## <a id="graph">Add 'contructors' for key classes in the graph package</a>
+
+The [graph package] was developed when users created objects with
+calls like `new("graphNEL")`, but there are advantages to hiding this
+level of implementation from the user and instead creating a new
+instance with `graphNEL()`. The project modernizes this aspects of the
+graph package.
+
+* Difficulty: easy
+* Length: 1 week
+* Skills needed: basic R programming, some familiarity with package
+  structure and documentation.
+* Mentor: Martin Morgan
+* Deliverables: Unit tests, code, and revised documentation for
+  constructors `graphNEL()` and `graphAM()`; constructors for
+  additional classes may also be provided, e.g., `attrData()`,
+  `clusterGraph()`, `distGraph()`, `edgeSet()`, `edgeSetAM()`,
+  `edgeSetNEL()`, `renderInfo()`, `simpleEdge()`.
+
+[graph package]: http://bioconductor.org/packages/devel/bioc/html/graph.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="contact">Interested?</h2>
 
-Please send mail to pshannon AT fhcrc DOT org if you would like to help out on any of these projects, or have an idea of your own which you
-wish to propose.
+Please send mail to pshannon AT fhcrc DOT org if you would like to
+help out on any of these projects, or have an idea of your own which
+you wish to propose.
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
