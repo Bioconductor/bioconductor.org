@@ -65,8 +65,9 @@ a VCF class and compute the allele frequency.
 Project attributes and estimates:
 <ul>
 <li>Difficulty: Easy</li>
-<li>Length: 1-2 weeks</li>
+<li>Length: 2 weeks</li>
 <li>Skills needed: R programming, familiarity with S4 classes</li>
+<li>Deliverables: Implement, test and document alleleFrequency,VCF</li>
 <li>Mentor: Valerie Obenchain</li>
 </ul>
 </blockquote>
@@ -83,28 +84,29 @@ as matrices, DataFrames or lists.
 Project attributes and estimates:
 <ul>
 <li>Difficulty: Medium</li>
-<li>Length: 4-6 weeks</li>
+<li>Length: 6 weeks</li>
 <li>Skills needed: R programming, familiarity with S4 classes</li>
+<li>Deliverables: Implement, test and document writeVCF,GRanges</li>
 <li>Mentor: Valerie Obenchain</li> 
 </ul>
 </blockquote>
 
 Convert genotypes to probability-based SnpMatrix encoding :
 <blockquote>
-The MatrixToSnpMatrix() function in the VariantAnnotation
-package converts genotype data in a VCF-class object
-into a SnpMatrix object without taking uncertain genotype 
-calls into consideration. This project involves modifying
-MatrixToSmpMatrix() to use, when available, genotype 
-uncertainty and likelihood information to convert 
-genotypes to the probability-based SnpMatrix encoding.
+MatrixToSnpMatrix() in the VariantAnnotation package
+converts the genotype data in a VCF object into a SnpMatrix 
+object. Currently this is done without taking uncertain
+uncertain genotype calls into consideration. This project 
+involves modifying MatrixToSnpMatrix() to use, when available, 
+genotype uncertainty and likelihood information to convert 
+genotypes to probability-based SnpMatrix encodings.
 </blockquote>
 
 <blockquote>
 Project attributes and estimates:
 <ul>
 <li>Difficulty: Medium</li>
-<li>Length: 6-8 weeks</li>
+<li>Length: 8 weeks</li>
 <li>Skills needed: R programming, familiarity with S4 classes, statistics</li>
 <li>Mentor: Valerie Obenchain</li>
 </ul>
