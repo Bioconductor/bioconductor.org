@@ -11,10 +11,10 @@ The following schedule outlines major goals:
 * September 14: All packages conform to Bioconductor
    [guidelines][guidelines]...
 
-* September 21: ... and pass R CMD build / R CMD check without
+* September 17: ... and pass R CMD build / R CMD check without
    errors.
 
-* September 28: All packages pass R CMD build / R CMD check without
+* September 24: All packages pass R CMD build / R CMD check without
    warnings.
 
 [guidelines]: /developers/package-guidelines
@@ -39,20 +39,19 @@ The following schedule outlines major goals:
 
 * Deadline for new package submissions.
 
-
 ### September 17
 
-* Grand Feature Freeze (alpha):  no new packages added to BioC
-   release roster.
-
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
-   without error.
+  without error.
    
 ### September 21
 
-* Bioconductor Feature Freeze (beta): no API changes to BioC.
+* Grand Feature Freeze (alpha):  no new packages added to BioC
+  release roster.
 
 ### September 24
+
+* Bioconductor Feature Freeze (beta): no API changes to BioC.
 
 * Deadline for packages passing R CMD build and check without warning.
    Some warnings will be accepted, clarification on the bioc-devel mailing
@@ -61,7 +60,7 @@ The following schedule outlines major goals:
 * Stop release (BioC 2.10) builds. Commits to this branch will be disabled.
 
 * Deadline for contributed annotation package authors to get working 
-packages
+  packages
 
 ### September 27
 
