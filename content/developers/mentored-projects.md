@@ -5,11 +5,11 @@
 * [New Variant Call Format (VCF) Class Methods](#vcf)
 * [Create an AnnotationDbi Package for PANTHER](#panther)
 * [Finish your own package](#your-package)
-* [Add constructors to the 'graph' package](#graph)
 * [Interested?](#contact)
+* [Completed projects](#completed)
 
 
-<h2 id="introduction">Introduction</h2>
+## <a id="introduction">Introduction</a>
 
 Developers new to Bioconductor may find mentored projects a
 useful way to apply, refine and extend their skills.
@@ -138,7 +138,7 @@ Project attributes and estimates:
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
 
-## <a id="your-package">Finish your own package</a>
+## <a id="your-package"></a>Finish your own package
 
 Package authors sometimes have excellent statistical and bioinformatic
 ideas, but are not fully confident in their ability to produce a
@@ -159,7 +159,20 @@ Project attributes and estimates:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-## <a id="graph">Add 'contructors' for key classes in the graph package</a>
+<h2 id="contact">Interested?</h2>
+
+Please send mail to pshannon AT fhcrc DOT org if you would like to
+help out on any of these projects, or have an idea of your own which
+you wish to propose.
+
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+## <a id="completed"></a>Completed projects
+
+* [Add constructors to the 'graph' package](#graph)
+
+### <a id="graph"></a>Add 'contructors' for key classes in the graph package
 
 The [graph package] was developed when users created objects with
 calls like `new("graphNEL")`, but there are advantages to hiding this
@@ -179,14 +192,5 @@ graph package.
   `edgeSetNEL()`, `renderInfo()`, `simpleEdge()`.
 
 [graph package]: http://bioconductor.org/packages/devel/bioc/html/graph.html
-
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-<h2 id="contact">Interested?</h2>
-
-Please send mail to pshannon AT fhcrc DOT org if you would like to
-help out on any of these projects, or have an idea of your own which
-you wish to propose.
-
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
