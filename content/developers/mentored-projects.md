@@ -20,8 +20,7 @@ providing guidance and oversight.  Successful mentored
 projects will be incorporated into relevant packages to
 benefit contributors, users, and the Bioconductor project.
 
-Below you will find a list of proposed projects.  We welcome other
-suggestions as well.
+Below you will find a list of proposed projects.  We invite your participation.  We welcome your suggestions.
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
 From the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>:
