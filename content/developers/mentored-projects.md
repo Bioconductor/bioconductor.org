@@ -11,14 +11,14 @@
 
 ## <a id="introduction">Introduction</a>
 
-Developers new to Bioconductor may find mentored projects a
-useful way to apply, refine and extend their skills.
-Projects are identified by experienced Bioconductor
-developers.  The projects involve important but manageable
-programming tasks.  Experienced developers act as mentors,
-providing guidance and oversight.  Successful mentored
-projects will be incorporated into relevant packages to
-benefit contributors, users, and the Bioconductor project.
+Developers new to Bioconductor may find mentored projects a useful way
+to apply, refine and extend their skills.  Projects are identified by
+experienced Bioconductor developers.  The projects involve important
+but manageable programming tasks.  Experienced developers act as
+mentors, providing guidance and oversight.  Successful mentored
+projects will be incorporated into the appropriate packages, and
+contributors will receive full credit for their work.  Users,
+contributors and mentors will all benefit.
 
 Below you will find a list of proposed projects.  We invite your participation.  We welcome your suggestions.
 
