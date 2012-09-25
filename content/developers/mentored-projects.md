@@ -21,6 +21,24 @@ projects will be incorporated into the appropriate packages, and
 contributors will receive full credit for their work.  Users,
 contributors and mentors will all benefit.
 
+
+We anticipate that mentored projects will usually be run by one or two
+experienced Bioconductor-savvy programmers who provide guidance, usually
+remotely, to one or more less-experienced programmers.  All the tools
+of 'social coding' -- from email and svn to github and skype -- can be
+used, at the discretion of the participants.  Except in unusual
+circumstances, we expect that participants will have their own
+independent funding, most likely as the result of a good fit between the
+mentored project and their current employment or academic studies.
+
+A paragraph explaining what a mentored project is and what
+participating involves would be helpful.  Full time work?  Travel to
+Seattle?  For a group or an individual?  Those things aren't clear to
+me from the current page.
+
+
+
+
 Below you will find a list of proposed projects.  We invite your participation.  We welcome your suggestions.
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
