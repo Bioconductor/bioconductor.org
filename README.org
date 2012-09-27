@@ -59,8 +59,9 @@ from the ROOT directory.
 
 Install the gems used by the website as follows:
 
-  :  sudo gem install nanoc rdiscount rack mime-types haml json \
-  :                   rack-cache httparty rake sass kramdown
+  :  sudo gem install nanoc rdiscount rack mime-types haml json
+  :  sudo gem install rack-cache httparty rake sass kramdown
+  :  sudo gem install rgl sqlite3 adsf
 
 ** Windows Developer Required Software
 
@@ -98,9 +99,21 @@ Install the gems used by the website as follows:
    : cd bioconductor.org
    : rake
 
-*** Run the built-in development server
+One step in the build process runs 'nanoc',  "a Ruby web publishing system  
+for building small to medium-sized websites"; it is one of the 
+gems you installed above.  If you ever need to run nanoc explicitly: 
 
-   : nanoc3 aco
+   : nanoc compile
+
+Whether run by hand or by rake, the compiled html files are all found in 
+and below output/, an immediate subdirectory of the bioconductor.org/ directory
+you have been working in.  
+
+*** Start the built-in development server, 'adsf' "A dead-simple file" server:
+
+   : cd output
+   : adsf
+
 
 *** Test in a browser by going to http://localhost:3000/
 
