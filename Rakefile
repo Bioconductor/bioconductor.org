@@ -62,7 +62,7 @@ task :pre_compile do
 end
 
 task :real_compile do
-  system "nanoc3 co"
+  system "nanoc co"
 end
 
 task :post_compile do
