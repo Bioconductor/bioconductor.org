@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'nanoc3/tasks'
+require 'nanoc/tasks'
 require 'yaml'
 require 'fileutils'
 require './lib/data_sources/gmane_list.rb'
@@ -39,7 +39,7 @@ task :copy_assets do
   system "rsync -gprt --partial --exclude='.svn' assets/ #{output_dir}"
 end
 
-desc "Run nanoc3 compile"
+desc "Run nanoc compile"
 task :compile => [:pre_compile, :real_compile, :post_compile]
 
 desc "Pre-compilation tasks"
@@ -192,7 +192,7 @@ end
 
 desc "Runs nanoc's dev server on localhost:3000"
 task :devserver => [:build] do
-  system "nanoc3 aco"
+  system "nanoc aco"
 end
 
 
