@@ -7,6 +7,7 @@
 * [msGUI](#msGUI)
 * [Finish your own package](#your-package)
 * [Interested?](#contact)
+* [Projects In Progerss](#inProgress)
 * [Completed projects](#completed)
 
 
@@ -58,6 +59,7 @@ Project attributes and estimates:
 * Length: 1-2 weeks
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
+* Status: Open
 
 <h2 id="vcf">New Variant Call Format (VCF) Class Methods</h2>
 
@@ -80,6 +82,7 @@ Project attributes and estimates:
 <li>Skills needed: R programming, familiarity with S4 classes</li>
 <li>Deliverables: Implement, test and document alleleFrequency,VCF</li>
 <li>Mentor: Valerie Obenchain</li>
+<li>Status: Open</li>
 </ul>
 </blockquote>
 
@@ -99,6 +102,7 @@ Project attributes and estimates:
 <li>Skills needed: R programming, familiarity with S4 classes</li>
 <li>Deliverables: Implement, test and document writeVCF,GRanges</li>
 <li>Mentor: Valerie Obenchain</li> 
+<li>Status: Open</li>
 </ul>
 </blockquote>
 
@@ -120,6 +124,8 @@ Project attributes and estimates:
 <li>Length: 8 weeks</li>
 <li>Skills needed: R programming, familiarity with S4 classes, statistics</li>
 <li>Mentor: Valerie Obenchain</li>
+<li>Status: In progress
+<li>Mentee: Stephanie Gogarten</li>
 </ul>
 </blockquote>
 
@@ -148,7 +154,7 @@ Project attributes and estimates:
 * Length: 6-8 weeks, part-time
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
-
+* Status: Open
 
 ## <a id="msGUI"></a>msGUI - an interactive mass spectrometry data browser
 
@@ -169,6 +175,8 @@ Project attributes and estimates:
 * Skills needed: intermediate R programming, experience with GUI  programming is a major advantage, knowledge of package development helpful, but not essential.
 * Deliverable: msGUI package
 * Mentors: Laurent Gatto and Michael Lawrence
+* Status: In progress
+* Mentee: Andrius Druzinis
 * References: mzR and MSnbase packages, Programming Graphical User Interfaces in R book.
 * More information: <a href='https://github.com/lgatto/msGUI'>msGUI github page</a> and <a href='https://github.com/lgatto/msGUI/wiki'>wiki</a>.
 
@@ -225,6 +233,8 @@ graph package.
   additional classes may also be provided, e.g., `attrData()`,
   `clusterGraph()`, `distGraph()`, `edgeSet()`, `edgeSetAM()`,
   `edgeSetNEL()`, `renderInfo()`, `simpleEdge()`.
+* Mentee: Paul Shannon
+* Status: Complete
 
 [graph package]: http://bioconductor.org/packages/devel/bioc/html/graph.html
 
