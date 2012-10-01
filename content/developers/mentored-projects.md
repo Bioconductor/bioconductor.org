@@ -77,12 +77,12 @@ a VCF class and compute the allele frequency.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>Difficulty: Easy</li>
-<li>Length: 2 weeks</li>
-<li>Skills needed: R programming, familiarity with S4 classes</li>
-<li>Deliverables: Implement, test and document alleleFrequency,VCF</li>
-<li>Mentor: Valerie Obenchain</li>
-<li>Status: Open</li>
+<li> Difficulty: Easy </li>
+<li> Length: 2 weeks </li>
+<li> Skills needed: R programming, familiarity with S4 classes </li>
+<li> Deliverables: Implement, test and document alleleFrequency,VCF-method </li>
+<li> Mentor: Valerie Obenchain </li>
+<li> Status: Open </li>
 </ul>
 </blockquote>
 
@@ -97,12 +97,12 @@ as matrices, DataFrames or lists.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>Difficulty: Medium</li>
-<li>Length: 6 weeks</li>
-<li>Skills needed: R programming, familiarity with S4 classes</li>
-<li>Deliverables: Implement, test and document writeVCF,GRanges</li>
-<li>Mentor: Valerie Obenchain</li> 
-<li>Status: Open</li>
+<li> Difficulty: Medium </li>
+<li> Length: 6 weeks </li>
+<li> Skills needed: R programming, familiarity with S4 classes </li>
+<li> Deliverables: Implement, test and document writeVCF,GRanges </li>
+<li> Mentor: Valerie Obenchain </li> 
+<li> Status: Open </li>
 </ul>
 </blockquote>
 
@@ -120,12 +120,14 @@ genotypes to probability-based SnpMatrix encodings.
 <blockquote>
 Project attributes and estimates:
 <ul>
-<li>Difficulty: Medium</li>
-<li>Length: 8 weeks</li>
-<li>Skills needed: R programming, familiarity with S4 classes, statistics</li>
-<li>Mentor: Valerie Obenchain</li>
-<li>Status: In progress
-<li>Mentee: Stephanie Gogarten</li>
+<li> Difficulty: Medium </li>
+<li> Length: 8 weeks </li>
+<li> Skills needed: R programming, familiarity with S4 classes, statistics </li>
+<li> Deliverables: Implement, test and document a modified version of
+MatrixToSnpMatrix(). </li>
+<li> Mentors: Valerie Obenchain and Vince Carey </li>
+<li> Status: In progress </li>
+<li> Mentee: Stephanie Gogarten </li>
 </ul>
 </blockquote>
 
