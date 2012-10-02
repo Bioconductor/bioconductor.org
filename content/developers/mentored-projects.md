@@ -128,6 +128,10 @@ MatrixToSnpMatrix(). </li>
 <li> Mentors: Valerie Obenchain and Vince Carey </li>
 <li> Status: In progress </li>
 <li> Mentee: Stephanie Gogarten </li>
+<li> More information: <a
+href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding'>VCF_probabilityBasedSnpEncoding github page</a> and <a
+href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding/wiki'>wiki</a>.
+</li>
 </ul>
 </blockquote>
 
