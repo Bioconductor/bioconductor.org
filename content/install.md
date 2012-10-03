@@ -16,6 +16,13 @@ below. The current release version of R is
 <%= config[:r_version_associated_with_release]%>, and the currently
 released Bioconductor version is <%= config[:release_version] %>.
 
+*NEW*: Upgrading from Bioconductor 2.10 to 2.11: R-2.15 users can simply 
+run these commands:
+
+    source("http://bioconductor.org/biocLite.R")
+    biocLite("BiocUpgrade")
+
+
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
 Use the `biocLite.R` script to install Bioconductor packages.  To
@@ -35,6 +42,11 @@ To install a selection of core Bioconductor packages, use
 
 Packages and their dependencies installed by this usage are: 
 `Biobase`, `IRanges`, and `AnnotationDbi`.
+
+To update all your installed packages, use:
+
+    biocLite(character())
+
 
 
 The biocLite() function (in the BiocInstaller package installed
