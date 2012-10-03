@@ -44,7 +44,7 @@ class BiocViews < Nanoc3::DataSource
         @good_to_go = false unless test(?f, "#{dir}/packages.json") 
 
         #todo remove
-        @good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
+        #@good_to_go = false unless test(?f, "#{dir}/vignette_titles.json") 
 
 
       end
