@@ -5,8 +5,10 @@ software packages and more than 650 up-to-date annotation packages.
 There are 58 new software packages, and many updates and improvements
 to existing packages; Bioconductor 2.11 is compatible with R 2.15.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS.  This
-release includes an updated Bioconductor [Amazon Machine Image][ami].
-Visit [http://bioconductor.org][bioc] for details and downloads.
+release includes an updated Bioconductor
+[Amazon Machine Image](http://bioconductor.org/help/bioconductor-cloud-ami/).
+Visit [http://bioconductor.org](http://bioconductor.org)
+for details and downloads.
 
 Contents
 --------
@@ -24,7 +26,8 @@ To install Bioconductor 2.11:
 1. Install R 2.15.1.  Bioconductor 2.11 has been designed expressly
    for this version of R.
 
-2. Follow the instructions at [http://bioconductor.org/install/][install].
+2. Follow the instructions at
+[http://bioconductor.org/install/](http://bioconductor.org/install/).
 
 3. If you have already been using Bioconductor 2.10 (with R-2.15), you
    can upgrade as follows:
