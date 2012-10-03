@@ -3693,6 +3693,9 @@ BUG FIXES
 Rsamtools
 ---------
 
+Rsamtools
+---------
+
 Changes in version 1.10.0:
 
 NEW FEATURES
@@ -3702,6 +3705,21 @@ NEW FEATURES
   readBamGappedAlignments, VariantAnnotation::readVcf automatically
   gain support for yield'ing through files.
 
+- Add getDumpedAlignments(), countDumpedAlignments(), and
+  flushDumpedAlignments() low-level utilities for manipulating
+  alignments dumped by findMateAlignment().
+
+- Add quickBamCounts() utility for classifying the records in a BAM
+  file according to a set of predefined groups (based on the flag bits)
+  and for counting the nb of records in each group.
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- scanBamFlag isValidVendorRead deprecated in favor of
+  isNotPassingQualityControls
+
+- Rename makeGappedAlignmentPairs() arg 'keep.colnames' -> 'use.mcols'.
+
 BUG FIXES
 
 - close razip, bgzip files when done
@@ -3710,10 +3728,14 @@ BUG FIXES
 
 - scanBcfHeader works on remote files
 
-- scanBamFlag isValidVendorRead deprecated in favor of
-  isNotPassingQualityControls
-
 - allow asBam to work without warnings on header-only SAM files
+
+- some bug fixes and and small performance improvements to
+  findMateAlignment()
+
+- fix bug in readBamGappedAlignmentPairs() where fields and tags
+  specified by the user were not propagated to the returned
+  GappedAlignmentPairs object
 
 Rsubread
 --------
