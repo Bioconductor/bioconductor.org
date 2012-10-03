@@ -56,7 +56,7 @@ and exposing it in Galaxy.
 Project attributes and estimates:
 
 * Difficulty: Medium
-* Length: 1-2 weeks
+* Length: 3-4 weeks
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
 * Status: Open
