@@ -3690,8 +3690,6 @@ BUG FIXES
 
 - fixed load.batches bug in summarize.batches
 
-Rsamtools
----------
 
 Rsamtools
 ---------
