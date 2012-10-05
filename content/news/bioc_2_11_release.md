@@ -32,8 +32,11 @@ To install Bioconductor 2.11:
 3. If you have already been using Bioconductor 2.10 (with R-2.15), you
    can upgrade as follows:
 
-    source("http://bioconductor.org")
+    source("http://bioconductor.org/biocLite.R")
+    
     biocLite("BiocUpgrade")
+
+
 
 
 New Software Packages
