@@ -61,52 +61,26 @@ Project attributes and estimates:
 * Mentor: Dan Tenenbaum
 * Status: Open
 
-<h2 id="vcf">New Variant Call Format (VCF) Class Methods</h2>
+<h2 id="VCF_alleleFrequency">Genotype Allele Frequencies</h2>
 
-The <a href=http://www.bioconductor.org/packages/2.10/bioc/html/VariantAnnotation.html>VariantAnnotation</a> package
-provides functions to read data from a VCF file and annotate the variants. 
-Several opportunities are available to develop new functionality 
-and expand existing methods.
-
-Compute genotype allele frequency :
 <blockquote>
-Write a function to parse the genotype data in 
-a VCF class and compute the allele frequency.
+Write a function for the VariantAnnotation package to compute the
+the allele frequency of the genotype data.
 </blockquote>
 
-<blockquote>
 Project attributes and estimates:
-<ul>
-<li> Difficulty: Easy </li>
-<li> Length: 2 weeks </li>
-<li> Skills needed: R programming, familiarity with S4 classes </li>
-<li> Deliverables: Implement, test and document alleleFrequency,VCF-method </li>
-<li> Mentor: Valerie Obenchain </li>
-<li> Status: Open </li>
-</ul>
-</blockquote>
 
-Further development of writeVcf() :
-<blockquote>
-The current writeVcf() function writes a VCF file from data
-stored in a VCF-class object. We would like to expand this 
-function to write data from more general structures such 
-as matrices, DataFrames or lists.
-</blockquote>
+* Difficulty: Easy
+* Length: 2 weeks
+* Skills needed: R programming, familiarity with S4 classes
+* Deliverables: Implement, test and document alleleFrequency,VCF-method
+* Mentor: Valerie Obenchain
+* Mentee: Chris Wallace
+* Status: In progress
 
-<blockquote>
-Project attributes and estimates:
-<ul>
-<li> Difficulty: Medium </li>
-<li> Length: 6 weeks </li>
-<li> Skills needed: R programming, familiarity with S4 classes </li>
-<li> Deliverables: Implement, test and document writeVCF,GRanges </li>
-<li> Mentor: Valerie Obenchain </li> 
-<li> Status: Open </li>
-</ul>
-</blockquote>
+<h2 id="VCF_probabilityBasedSnpEncoding">Probability-Based SNP Encoding of
+Genotypes</h2>
 
-Convert genotypes to probability-based SnpMatrix encoding :
 <blockquote>
 MatrixToSnpMatrix() in the VariantAnnotation package
 converts the genotype data in a VCF object into a SnpMatrix 
@@ -117,24 +91,18 @@ genotype uncertainty and likelihood information to convert
 genotypes to probability-based SnpMatrix encodings.
 </blockquote>
 
-<blockquote>
 Project attributes and estimates:
-<ul>
-<li> Difficulty: Medium </li>
-<li> Length: 8 weeks </li>
-<li> Skills needed: R programming, familiarity with S4 classes, statistics </li>
-<li> Deliverables: Implement, test and document a modified version of
-MatrixToSnpMatrix(). </li>
-<li> Mentors: Valerie Obenchain and Vince Carey </li>
-<li> Status: In progress </li>
-<li> Mentee: Stephanie Gogarten </li>
-<li> github: <a
+
+* Difficulty: Medium
+* Length: 8 weeks
+* Skills needed: R programming, familiarity with S4 classes, statistics
+* Deliverables: Implement, test and document a modified version of MatrixToSnpMatrix()
+* Mentors: Valerie Obenchain and Vince Carey
+* Status: In progress
+* Mentee: Stephanie Gogarten
+* github: <a
 href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding'>VCF_probabilityBasedSnpEncoding page</a> and <a
 href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding/wiki'>wiki</a>.
-</li>
-</ul>
-</blockquote>
-
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
