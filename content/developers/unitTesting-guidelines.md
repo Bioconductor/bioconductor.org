@@ -176,7 +176,6 @@ There are two steps:
 
 1. Create the file `MyPackage/tests/runTests.R` with these contents:
 
-       require("MyPackage") || stop("unable to load MyPackage")
        BiocGenerics:::testPackage("MyPackage")
 
 2. Create any number of files in `MyPackage/inst/unitTests/` for your
@@ -231,7 +230,6 @@ the `MyPackage/DESCRIPTION` file
 
 and two files, `MyPackage/tests/runTests.R`:
 
-    require("MyPackage") || stop("unable to load MyPackage")
     BiocGenerics:::testPackage("MyPackage")
 
 and `MyPackage/inst/unitTests/test_divideBy.R`:
