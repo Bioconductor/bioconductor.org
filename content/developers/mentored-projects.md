@@ -63,10 +63,8 @@ Project attributes and estimates:
 
 <h2 id="VCF_alleleFrequency">Genotype Allele Frequencies</h2>
 
-<blockquote>
-Write a function for the VariantAnnotation package to compute the
-the allele frequency of the genotype data.
-</blockquote>
+The VariantAnnotation package needs a function to compute the
+the allele frequency of the genotypes.
 
 Project attributes and estimates:
 
@@ -81,7 +79,6 @@ Project attributes and estimates:
 <h2 id="VCF_probabilityBasedSnpEncoding">Probability-Based SNP Encoding of
 Genotypes</h2>
 
-<blockquote>
 MatrixToSnpMatrix() in the VariantAnnotation package
 converts the genotype data in a VCF object into a SnpMatrix 
 object. Currently this is done without taking uncertain
@@ -89,7 +86,6 @@ uncertain genotype calls into consideration. This project
 involves modifying MatrixToSnpMatrix() to use, when available, 
 genotype uncertainty and likelihood information to convert 
 genotypes to probability-based SnpMatrix encodings.
-</blockquote>
 
 Project attributes and estimates:
 
