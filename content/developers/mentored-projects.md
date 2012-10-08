@@ -2,7 +2,8 @@
 
 * [Introduction](#introduction)
 * [Galaxy-ification of Useful Scripts](#galaxy)
-* [New Variant Call Format (VCF) Class Methods](#vcf)
+* [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
+* [VCF Allele Frequencies of Genotypes](#VCF_alleleFrequency)
 * [Create an AnnotationDbi Package for PANTHER](#panther)
 * [msGUI](#msGUI)
 * [Finish your own package](#your-package)
@@ -60,21 +61,7 @@ Project attributes and estimates:
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
 * Status: Open
-
-<h2 id="VCF_alleleFrequency">Genotype Allele Frequencies</h2>
-
-The VariantAnnotation package needs a function to compute the
-the allele frequency of the genotypes.
-
-Project attributes and estimates:
-
-* Difficulty: Easy
-* Length: 2 weeks
-* Skills needed: R programming, familiarity with S4 classes
-* Deliverables: Implement, test and document alleleFrequency,VCF-method
-* Mentor: Valerie Obenchain
-* Mentee: Chris Wallace
-* Status: In progress
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="VCF_probabilityBasedSnpEncoding">Probability-Based SNP Encoding of
 Genotypes</h2>
@@ -99,7 +86,22 @@ Project attributes and estimates:
 * github: <a
 href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding'>VCF_probabilityBasedSnpEncoding page</a> and <a
 href='https://github.com/Bioconductor/VCF_probabilityBasedSnpEncoding/wiki'>wiki</a>.
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+<h2 id="VCF_alleleFrequency">Genotype Allele Frequencies</h2>
+
+The VariantAnnotation package needs a function to compute the
+the allele frequency of the genotypes.
+
+Project attributes and estimates:
+
+* Difficulty: Easy
+* Length: 2 weeks
+* Skills needed: R programming, familiarity with S4 classes
+* Deliverables: Implement, test and document alleleFrequency,VCF-method
+* Mentor: Valerie Obenchain
+* Mentee: Chris Wallace
+* Status: In progress
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
@@ -125,6 +127,7 @@ Project attributes and estimates:
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
 * Status: Open
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 ## <a id="msGUI"></a>msGUI - an interactive mass spectrometry data browser
 
@@ -149,6 +152,7 @@ Project attributes and estimates:
 * Mentee: Andrius Druzinis
 * References: mzR and MSnbase packages, Programming Graphical User Interfaces in R book.
 * More information: <a href='https://github.com/lgatto/msGUI'>msGUI github page</a> and <a href='https://github.com/lgatto/msGUI/wiki'>wiki</a>.
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
 ## <a id="your-package"></a>Finish your own package
