@@ -9,4 +9,5 @@ genomic data. Common workflows include:
 * [Accessing Annotation Data](annotation-data/)
 * [High Throughput Assays](/help/workflows/high-throughput-assays/): 
   flow cytometry and other technologies.
+* [Finding Candidate Binding Sites for Known Transcription Factors via Sequence Matching](/help/workflows/gene-regulation-tfbs/)
 
