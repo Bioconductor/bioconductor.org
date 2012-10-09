@@ -170,12 +170,14 @@ two questions:
   * For a given TF, what DNA sequence pattern/s does it preferentially bind to?
   * Are these patterns present in the promoter region of some gene X?
 
-A gene's <i>promoter region</i> is traditionally (if loosely) defined with
-respect to its transcription start site (TSS): 1000-3000 base pairs upstream,
-and 100-300 basepairs downstream.  For the purposes of this workflow, we will
-focus only on these cis-regulatory regions, ignoring enhancer regions, which are
-also protein/DNA binding sites, but typically at a much greater distance from
-the TSS. 
+A gene's <i>promoter region</i> is traditionally (if loosely) defined
+with respect to its transcription start site (TSS): 1000-3000 base
+pairs upstream, and 100-300 basepairs downstream.  An alternative, 
+more inclusive "proximal regulatory region" may be appropriate
+for metazoans: 5000 base pairs up- and down stream of the TSS. For the
+purposes of this workflow, we will focus only on these cis-regulatory
+regions, ignoring enhancer regions, which are also protein/DNA binding
+sites, but typically at a much greater distance from the TSS.
 
 Promoter length statistics for yeast are available from  <a
 href="http://www.ncbi.nlm.nih.gov/pubmed?term=19258451">Kristiansson et al</a>, 2009:
@@ -274,7 +276,7 @@ plot both motifs together.  First, create instances of the <code>pfm</code> clas
                             name="DAL80-JASPAR")
     pfm.dal80.scertf <- new("pfm", mat=query(MotifDb, "dal80")[[2]], 
                             name="DAL80-ScerTF")
-    plotMotifLogoStack(c(pfm.dal80.scertf, pfm.dal80.jaspar))
+    plotMotifLogoStack(DNAmotifAlignment(c(pfm.dal80.scertf, pfm.dal80.jaspar)))
 
 <br>
 <center>
@@ -311,7 +313,7 @@ Plot the three together:
                            name="GAT1-ScerTF")
     pfm.gat1.uniprobe = new("pfm", mat=query(MotifDb, "gat1")[[3]], 
                            name="GAT1-UniPROBE")
-    plotMotifLogoStack(c(pfm.gat1.uniprobe, pfm.gat1.scertf, pfm.gat1.jaspar))
+    plotMotifLogoStack(DNAmotifAlignment(c(pfm.gat1.uniprobe, pfm.gat1.scertf, pfm.gat1.jaspar)))
 
 <br>
 <center>
@@ -321,12 +323,8 @@ Plot the three together:
 
 The GAT1/JASPAR motif is very similar to DAL80's GATAA motif, and thus consistent
 with the Georis claim that GAT1 and DAL80 compete for binding. The JASPAR and
-UniPROBE motifs are similar, but differ in length.  But the other two, each
-from eminently reliable sources, show a very different motif.  The <a
-href="http://www.yeastgenome.org/cgi-bin/locus.fpl?dbid=S000001873">
-Saccharomyces Genome Database</a> lists both of these, and two additional motifs
-as well.  We will use JASPAR and ScerTF for our search.  The differences between
-these two motifs is puzzling.
+UniPROBE motifs are similar, but differ in length.  They are reverse
+complements of the canonical <b>GATAA</b> motif.
 
 To match motifs in a promoter, these steps are required:
 
