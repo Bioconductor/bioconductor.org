@@ -63,7 +63,7 @@ Project attributes and estimates:
 * Status: Open
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="VCF_probabilityBasedSnpEncoding">Probability-Based SNP Encoding of
+<h2 id="VCF_probabilityBasedSnpEncoding">VCF Probability-Based SNP Encoding of
 Genotypes</h2>
 
 MatrixToSnpMatrix() in the VariantAnnotation package
@@ -88,7 +88,7 @@ href='https://github.com/Bioconductor/VCF/projects'>VCF_probabilityBasedSnpEncod
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="VCF_alleleFrequency">Genotype Allele Frequencies</h2>
+<h2 id="VCF_alleleFrequency">VCF Allele Frequencies</h2>
 
 The VariantAnnotation package needs a function to compute the
 the allele frequency of the genotypes.
