@@ -321,9 +321,9 @@ Plot the three together:
 </center>
 <br>
 
-The GAT1/JASPAR motif is very similar to DAL80's GATAA motif, and thus consistent
-with the Georis claim that GAT1 and DAL80 compete for binding. The JASPAR and
-UniPROBE motifs are similar, but differ in length.  They are reverse
+The GAT1-JASPAR motif is very similar to DAL80's GATAA motif, and thus consistent
+with the Georis claim that GAT1 and DAL80 compete for binding. The GAT1-ScerTF and
+GAT1-UniPROBE motifs are similar, but differ in length.  They are reverse
 complements of the canonical <b>GATAA</b> motif.
 
 To match motifs in a promoter, these steps are required:
