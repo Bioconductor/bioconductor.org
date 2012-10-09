@@ -84,7 +84,7 @@ Project attributes and estimates:
 * Status: In progress
 * Mentee: Stephanie Gogarten
 * github: <a
-href='https://github.com/Bioconductor/VCF/projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
+href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -103,7 +103,7 @@ Project attributes and estimates:
 * Mentee: Chris Wallace
 * Status: In progress
 * github: <a
-href='https://github.com/Bioconductor/VCF/projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
+href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
