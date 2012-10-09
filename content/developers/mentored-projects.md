@@ -3,7 +3,7 @@
 * [Introduction](#introduction)
 * [Galaxy-ification of Useful Scripts](#galaxy)
 * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
-* [VCF Allele Frequencies of Genotypes](#VCF_alleleFrequency)
+* [VCF Allele Frequency](#VCF_alleleFrequency)
 * [Create an AnnotationDbi Package for PANTHER](#panther)
 * [msGUI](#msGUI)
 * [Finish your own package](#your-package)
