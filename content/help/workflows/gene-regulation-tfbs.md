@@ -313,7 +313,7 @@ Plot the three together:
                            name="GAT1-ScerTF")
     pfm.gat1.uniprobe = new("pfm", mat=query(MotifDb, "gat1")[[3]], 
                            name="GAT1-UniPROBE")
-    plotMotifLogoStack(DNAmotifAlignment(c(pfm.gat1.uniprobe, pfm.gat1.scertf, pfm.gat1.jaspar)))
+    plotMotifLogoStack(c(pfm.gat1.uniprobe, pfm.gat1.scertf, pfm.gat1.jaspar))
 
 <br>
 <center>
