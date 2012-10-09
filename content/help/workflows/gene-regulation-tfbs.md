@@ -172,12 +172,12 @@ two questions:
 
 A gene's <i>promoter region</i> is traditionally (if loosely) defined
 with respect to its transcription start site (TSS): 1000-3000 base
-pairs upstream, and 100-300 basepairs downstream.  An alternative, 
-more inclusive "proximal regulatory region" may be appropriate
-for metazoans: 5000 base pairs up- and down stream of the TSS. For the
+pairs upstream, and 100-300 basepairs downstream. For the
 purposes of this workflow, we will focus only on these cis-regulatory
 regions, ignoring enhancer regions, which are also protein/DNA binding
 sites, but typically at a much greater distance from the TSS.
+An alternative and more inclusive "proximal regulatory region" may be appropriate
+for metazoans: 5000 base pairs up- and down stream of the TSS. 
 
 Promoter length statistics for yeast are available from  <a
 href="http://www.ncbi.nlm.nih.gov/pubmed?term=19258451">Kristiansson et al</a>, 2009:
