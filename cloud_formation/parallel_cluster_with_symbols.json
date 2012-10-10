@@ -10,10 +10,6 @@
          "ConstraintDescription": "Must be 2.11"
        },
       
-      "KeyName":{
-         "Description":"Name of an existing EC2 KeyPair to enable SSH access to the instances",
-         "Type":"String"
-      },
       "ClusterInstanceType":{
          "Description":"EC2 instance type for cluster",
          "Type":"String",
@@ -97,7 +93,6 @@
         "Type" : "AWS::EC2::Instance",
         "Properties" : {
           "SecurityGroups" : [ { "Ref" : "InstanceSecurityGroup" } ],
-          "KeyName" : { "Ref" : "KeyName" },
           "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
           "InstanceType": {"Ref": "ClusterInstanceType"},
           "UserData":{
@@ -176,9 +171,6 @@
                }
             ],
             "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]},
-            "KeyName":{
-               "Ref":"KeyName"
-            },
             "UserData":{
                "Fn::Base64":{
                   "Fn::Join":[
@@ -283,12 +275,6 @@
        "Info": {
            "Description": "Message",
            "Value": "Delete stack when done to avoid charges."
-       },
-       "SSHCommand": {
-           "Description": "SSH Command",
-           "Value" :  { "Fn::Join" : [ "", [ "ssh -i ", { "Ref": "KeyName"}, ".pem root@",
-               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
-           
        }
    }
 }

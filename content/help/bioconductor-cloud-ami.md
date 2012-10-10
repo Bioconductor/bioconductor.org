@@ -17,6 +17,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
 * <a href="#mpi">Using an MPI cluster in the cloud</a>
+* <a href="#parallel">Using a parallel cluster in the cloud</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
 * <a href="#questions">Questions</a>
@@ -508,6 +509,63 @@ Make the following substitutions:
 **Note**: As always when working with EC2, be sure to shut down all running instances when you are done with them,
 to avoid unnecessary charges. You can quickly check instance status on the 
 [Instances Page](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances) of the AWS Console.
+
+
+<a name="parallel"></a>
+### Using a parallel cluster in the cloud
+
+You can create easily create a socket cluster of multiple machines
+using R's `parallel` package. 
+
+<b><a target="start_ami"
+href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCParallelCluster|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/parallel_cluster.json">Start parallel Cluster</a></b>
+
+You can also start a parallel cluster with SSH access enabled:
+
+<b><a target="start_ami"
+href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCParallelClusterWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/parallel_cluster_ssh.json">Start parallel Cluster with ssh access</a></b>
+
+These links prompt you for instance type and number of workers. For information
+about instance types, refer to
+[Amazon's Instance Type Page](http://aws.amazon.com/ec2/instance-types/).
+"Virtual cores" is the number that tells us how many cores are available
+for parallel computation on each instance.
+
+Choosing 2 for "number of workers" results in a cluster of 3 machines: 2
+workers plus one master. If the instance type chosen is m1.xlarge, then
+you will be starting up a cluster of 12 cores (3 machines times 4 cores
+each).
+
+After starting the above stack, you'll see a URL in the Outputs tab
+where you can log into R on the master node.
+
+A file `/usr/local/Rmpi/hostfile.plain` describes the machines in this 
+cluster and how many cores are on each. It might look like this:
+
+    10.68.155.37 4
+    10.50.213.89 4
+    10.29.191.43 4
+
+So you can do a parallel operation as follows:
+
+    library(parallel)
+    lines <- readLines("/usr/local/Rmpi/hostfile.plain")
+    hosts <- character()
+    for (line in lines)
+    {
+        x <- (strsplit(line[[1]], " "))
+        hosts <-
+            c(hosts, rep.int(x[[1]][1], as.integer(x[[1]][2])))
+    }
+    cl <- makePSOCKcluster(hosts)
+    system.time(clusterCall(cl, Sys.sleep, 1))
+
+We know this was done in parallel because it took just over one
+second:
+
+    user  system elapsed 
+    0.004   0.000   1.005 
+
 
 
 <a name="custom"></a>
