@@ -122,6 +122,39 @@ function checkNav(){
 }
 addEvent(window,'load',checkNav);
 
+Object.size = function(obj) {
+    var size = 0, key;
+    for (key in obj) {
+        if (obj.hasOwnProperty(key)) size++;
+    }
+    return size;
+};
+
+
+var tidyWorkflows = function() {
+  if (jQuery('#workflows').length > 0) {
+    var workflows = [];
+    jQuery(".workflow").each(function(index) {
+      workflows.push(jQuery(this).html());
+    });
+    jQuery("#workflows_left").html("");
+    jQuery("#workflows_right").html("");
+    var rands = {};
+    while(Object.size(rands) < 4) {
+      var rand = Math.floor(Math.random()* workflows.length);
+      rands[rand] = -1;
+    }
+    var i = 0;
+    var keys = Object.keys(rands);
+    keys = keys.sort();
+    for (var key in keys.sort()) {
+      var id = (i < 2) ? "#workflows_left" : "#workflows_right";
+      html = jQuery(id).html();
+      jQuery(id).html(html + "<li>" + workflows[parseInt(keys[i])] + "</li>");
+      i++;
+    }
+  }
+}
 
 var unRebaseMirrors = function() {
     if (!(window.mirror === undefined) && mirror == true) {
@@ -172,6 +205,7 @@ var getHrefForSymlinks = function(href) {
 //document ready function                                      
 jQuery(function() {
     unRebaseMirrors();
+    tidyWorkflows();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));
