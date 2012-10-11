@@ -14,6 +14,10 @@
 
 ## <a id="introduction">Introduction</a>
 
+A mentored Bioconductor software development project is one in which
+experienced programmers work with volunteers to develop new capabilities
+needed by the community.
+
 Developers new to Bioconductor may find mentored projects a useful way
 to apply, refine and extend their skills.  Projects are identified by
 experienced Bioconductor developers.  The projects involve important
@@ -22,7 +26,6 @@ mentors, providing guidance and oversight.  Successful mentored
 projects will be incorporated into the appropriate packages, and
 contributors will receive full credit for their work.  Users,
 contributors and mentors will all benefit.
-
 
 We anticipate that mentored projects will usually be run by one or two
 experienced Bioconductor-savvy programmers who provide guidance, usually
