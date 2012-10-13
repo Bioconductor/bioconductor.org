@@ -132,13 +132,6 @@ There are 58 new packages in this release of Bioconductor.
   other Graphical Modelling (Bayesian Network) packages for
   distinguishing direct and indirect interactions.
 
-- DDiGGER: DDiGGER is a data-driven grouping method for significant
-  gene and gene pair selection. It uses information from microarray
-  intensities and patient survival, and identifies survival significant
-  genes based on Data-driven Grouping (DDG) model. DDiGGER also
-  includes voting procedure to select the best representative group of
-  genes to define a gene signature.
-
 - DeconRNASeq: DeconSeq is an R package for deconvolution of
   heterogeneous tissues based on mRNA-Seq data. It modeled expression
   levels from heterogeneous cell populations in mRNA-Seq as the
@@ -1093,13 +1086,6 @@ Changes in version 1.0.1:
 Changes in version 1.0.0:
 
 - Initial release of the package
-
-DDiGGER
--------
-
-Changes in version 0.9.0:
-
-- initial development release
 
 deepSNV
 -------
