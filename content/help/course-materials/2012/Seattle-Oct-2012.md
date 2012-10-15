@@ -1,11 +1,8 @@
 
-<!-- uncomment me when package is ready
-#### Slides
-[PDF](AdvancedR.pdf) [R](AdvancedR.R) [Rnw](AdvancedR.Rnw)
+[Course PDF](AdvancedR.pdf) 
 
 To install this package enter the following at an R prompt:
 
 	source("http://bioconductor.org/scratch-repos/pkgInstall.R")
 	pkgInstall("AdvancedR")
 
--->
