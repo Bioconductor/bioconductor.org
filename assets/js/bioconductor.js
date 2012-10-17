@@ -131,6 +131,17 @@ Object.size = function(obj) {
 };
 
 
+if (!Object.keys) {
+  Object.keys = Object.keys || function(o) {
+    var result = [];
+    for(var name in o) {
+        if (o.hasOwnProperty(name))
+          result.push(name);
+    }
+    return result;
+  };
+}
+
 var tidyWorkflows = function() {
   if (jQuery('#workflows').length > 0) {
     var workflows = [];
