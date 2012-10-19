@@ -61,7 +61,8 @@ dependencies, evaluate the commands
     source("http://bioconductor.org/biocLite.R")
     biocLite(c("MotifDb",  "GenomicFeatures", 
                "TxDb.Scerevisiae.UCSC.sacCer3.sgdGene",
-               "org.Sc.sgd.db", "BSgenome.Scerevisiae.UCSC.sacCer3"))
+               "org.Sc.sgd.db", "BSgenome.Scerevisiae.UCSC.sacCer3",
+               "motifStack", "seqLogo"))
               
 
 Package installation is required only once per R installation.  When
