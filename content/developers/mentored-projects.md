@@ -93,15 +93,17 @@ href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpE
 
 <h2 id="VCF_alleleFrequency">VCF Allele Frequencies</h2>
 
-The VariantAnnotation package needs a function to compute the
-the allele frequency of the genotypes.
+The VariantAnnotation package needs a function that computes allele frequency, 
+minor allele frequency, genotype frequency and Hardy-Weinberg estimates from 
+the genotype data in a VCF class. This project, computing allele frequency, 
+is a first step in that direction.
 
 Project attributes and estimates:
 
 * Difficulty: Easy
 * Length: 2 weeks
 * Skills needed: R programming, familiarity with S4 classes
-* Deliverables: Implement, test and document alleleFrequency,VCF-method
+* Deliverables: Implement, test and document snpSummary,CollapsedVCF-method
 * Mentor: Valerie Obenchain
 * Mentee: Chris Wallace
 * Status: In progress
