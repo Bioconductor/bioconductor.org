@@ -7,6 +7,7 @@
 * [Create an AnnotationDbi Package for PANTHER](#panther)
 * [msGUI](#msGUI)
 * [Finish your own package](#your-package)
+* [Take Over an 'Orphaned' Package](#orphaned-package)
 * [Interested?](#contact)
 * [Projects In Progerss](#inProgress)
 * [Completed projects](#completed)
@@ -184,6 +185,32 @@ Project attributes and estimates:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+
+## <a id="orphaned-package"></a>Take Over an 'Orphaned' Package
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+Sometimes the maintainer of an older Bioconductor package
+is no longer able to perform that job.  These older packages
+remain useful, but occasionally need a bug fix or a small change.  We are looking
+for volunteers to maintain such packages -- which would otherwise be 
+abandonded.  Not much work is required, the original author will be available to answer questions,
+and the Bioconductor community will benefit.
+
+<a href="http://bioconductor.org/packages/2.10/bioc/html/cosmo.html">cosmo</a> and
+<a href="http://bioconductor.org/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a>
+
+* Difficulty: easy
+* Length: ongoing, small time committment
+* Skills needed:  intermediate R programming; some familiarity with R
+  packages and S4 classes.
+* Mentor: Oliver Benbom
+* Deliverables: Occasional bug fixes and perhaps minor improvements
+* Status: open
+
+
+
+
 <h2 id="contact">Interested?</h2>
 
 Please send mail to pshannon AT fhcrc DOT org if you would like to
@@ -192,6 +219,11 @@ you wish to propose.
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+
+
+
 
 ## <a id="completed"></a>Completed projects
 
