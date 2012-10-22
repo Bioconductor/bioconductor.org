@@ -190,12 +190,16 @@ Project attributes and estimates:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-Sometimes the maintainer of an older Bioconductor package
-is no longer able to perform that job.  These older packages
-remain useful, but occasionally need a bug fix or a small change.  We are looking
-for volunteers to maintain such packages -- which would otherwise be 
-abandonded.  Not much work is required, the original author will be available to answer questions,
+Sometimes the maintainer of an older Bioconductor package is no longer
+able to perform that job.  These older packages remain useful but
+occasionally need a bug fix or a small change.  We are looking for
+volunteers to maintain such packages -- which would otherwise be
+abandonded.  Relatively little work is required, the original author
+will be available to answer questions, the Bioconductor core team can help,
 and the Bioconductor community will benefit.
+
+Current orphans are listed below.
+<br>
 
 <a href="http://bioconductor.org/packages/2.10/bioc/html/cosmo.html">cosmo</a> and
 <a href="http://bioconductor.org/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a>
