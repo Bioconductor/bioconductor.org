@@ -26,7 +26,7 @@
 <a name="bioconductor"></a>
 ### bioconductor ###
 
-This mailing list is for announcements about the development of
+This mailing list is for announcements about 
 Bioconductor and the availability of new code, questions and answers
 about problems and solutions using Bioconductor, enhancements and
 patches to the source code and documentation of Bioconductor, as well
