@@ -80,10 +80,10 @@ genotypes to probability-based SnpMatrix encodings.
 
 Project attributes and estimates:
 
-* Difficulty: Medium
-* Length: 8 weeks
+* Difficulty: Advanced 
+* Length: 12 weeks
 * Skills needed: R programming, familiarity with S4 classes, statistics
-* Deliverables: Implement, test and document a modified version of MatrixToSnpMatrix()
+* Deliverables: See wiki page for details 
 * Mentors: Valerie Obenchain and Vince Carey
 * Status: In progress
 * Mentee: Stephanie Gogarten
