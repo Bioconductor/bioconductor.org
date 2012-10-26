@@ -204,9 +204,9 @@ Current orphans are listed below.
 <a href="http://bioconductor.org/packages/2.10/bioc/html/cosmo.html">cosmo</a> and
 <a href="http://bioconductor.org/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a>
 
-* Difficulty: easy
+* Difficulty: intermediate
 * Length: ongoing, small time committment
-* Skills needed:  intermediate R programming; some familiarity with R
+* Skills needed:  intermediate R and C programming; some familiarity with R
   packages and S4 classes.
 * Mentor: Oliver Benbom
 * Deliverables: Occasional bug fixes and perhaps minor improvements
