@@ -64,7 +64,8 @@ Project attributes and estimates:
 * Length: 3-4 weeks
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
-* Status: Open
+* Status: One project is ongoing, but there is room for more.
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="VCF_probabilityBasedSnpEncoding">VCF Probability-Based SNP Encoding of
