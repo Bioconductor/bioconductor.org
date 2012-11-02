@@ -30,22 +30,40 @@
   
 
   
-* Ensure that your installed packages are [up-to-date](/install/).
+* Ensure that you are using the latest Bioconductor release and that
+  your installed packages are [up-to-date](/install/).
 
 ## Composing ##
 
-* Start a new email message instead of replying to an existing email
-  and changing the subject.
-  
-* Use an informative subject line.  This will help attract responders
-  and also helps others in the future when they search the archives.
+* You may reply to an existing email if you are elaborating on or
+  answering a previous question.  However, if you are asking a new
+  question, then start a new email message with a new subject line.
+  Don't simply add a new question on a different topic as part of a
+  reply to an existing thread.
+
+* Use an informative subject line that is as specific as
+  possible. This will help attract responders and also helps others in
+  the future when they search the archives.  For example, a subject
+  line "time course experiment using limma" might be better than just
+  "limma".
 
 * Identify yourself. Anonymous postings are much less likely to get
   responses.
 
-* Include a simple and reproducible example along with the output of
-  `sessionInfo()`. If the example produces an error, provide the error
-  message and the output of `traceback()`.
+* If you are asking for advice as to how to use a particular function
+  or package, then explain fully what documentation you have already
+  read and why this hasn't yet fully answered your question.  This
+  allows a responder to answer your specific question instead of
+  simply referring you to the existing documentation.
+
+* If you are reporting a code problem, then include a simple and
+  reproducible example along with the output of `sessionInfo()`. The
+  example should be reproducible by others, meaning that someone else
+  reading your post should be able to run the code themselves and get
+  the same output as you did.  If the example produces an error,
+  provide the error message and the output of `traceback()`.  Provide
+  giving actual output to demonstrate what you mean when you wish to
+  indicate that the code does not work as expected.
 
 * Send email to the appropriate list.  Use the Bioconductor mailing
   list for questions about specific package, or conceptual
@@ -63,6 +81,11 @@
   message size cannot exceed 1MB. If larger attachments are essential, post
   them to a publicly accessible location and include the link in
   your email.
+
+* Package developers always appreciate being alerted to possible bugs,
+  but be very sure that you have used the package correctly.  In most
+  cases, best practice is (i) to double-check the documentation and
+  then (ii) report the behavior that was unexpected to you.
 
 * Read over your mail. Is it polite and easy to understand? Remember
   that responses on the Bioconductor mailing list are from volunteers.
