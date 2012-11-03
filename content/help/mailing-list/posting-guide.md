@@ -47,8 +47,10 @@
   line "time course experiment using limma" might be better than just
   "limma".
 
-* Identify yourself. Anonymous postings are much less likely to get
-  responses.
+* Identify yourself.  If you are using a non-professional email
+  account, like gmail or hotmail, or the guest posting facility, then
+  give your full name and professional affiliation.  Anonymous
+  postings are much less likely to get responses.
 
 * If you are asking for advice as to how to use a particular function
   or package, then explain fully what documentation you have already
