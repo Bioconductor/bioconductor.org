@@ -12,7 +12,7 @@ RewriteRule ^Docs/Papers/2003/Chiaretti$ /help/publications/2003/Chiaretti/chiar
 
 RewriteRule ^help/bioc-views/(.*)$ /packages/$1 [R=301]
 
-RewriteRule ^mailList.html$ /help/mailist-list/ [R=301]
+RewriteRule ^mailList.html$ /help/mailing-list/ [R=301]
 
 
 ## papers, slides, screen shots
