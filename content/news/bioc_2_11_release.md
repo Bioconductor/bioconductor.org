@@ -1,3 +1,5 @@
+October 3, 2012
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 2.11, consisting of 610

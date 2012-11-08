@@ -1,3 +1,5 @@
+November 1, 2011
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 2.9, consisting of 517

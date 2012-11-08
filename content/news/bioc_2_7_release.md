@@ -1,3 +1,5 @@
+October 18, 2010
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 2.7, consisting of 419
