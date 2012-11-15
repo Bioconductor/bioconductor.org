@@ -35,6 +35,15 @@ def myfunc()
   "this is the output of myfunc() " + Date.new.to_s
 end
 
+class RowIndexer
+  @@rownum = 0
+  def rowclass()
+    @@rownum += 1
+    (@@rownum % 2 == 1) ? "row_odd" : "row_even"
+  end
+
+end
+
 def get_cran_packages()
   puts "Grabbing list of CRAN packages..."
   ## Is there a non-web-scraping way to get a list of CRAN packages?
