@@ -127,7 +127,11 @@ Packages must
 * Make use of appropriate existing packages (e.g., biomaRt, AnnotationDbi,
   Biostrings) and classes (e.g., ExpressionSet, AnnotatedDataFrame, GRanges,
   Rle, DNAStringSet), and avoid duplication of functionality available in other
-  Bioconductor packages.
+  Bioconductor packages. Note that, starting with BioC 2.12, the use of
+  RangedData or RangedDataList objects (those classes are defined in the
+  IRanges package) is discouraged so new contributed packages should use
+  GRanges/GRangesList objects instead (those classes are defined in the
+  GenomicRanges package).
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
 * Contain only code that can be redistributed according to the package license.
