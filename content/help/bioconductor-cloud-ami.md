@@ -557,7 +557,8 @@ So you can do a parallel operation as follows:
         hosts <-
             c(hosts, rep.int(x[[1]][1], as.integer(x[[1]][2])))
     }
-    cl <- makePSOCKcluster(hosts)
+    cl <- makePSOCKcluster(hosts,
+        master=system("hostname -i", intern=TRUE))
     system.time(clusterCall(cl, Sys.sleep, 1))
 
 We know this was done in parallel because it took just over one
