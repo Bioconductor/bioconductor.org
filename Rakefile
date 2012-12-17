@@ -196,6 +196,8 @@ task :devserver => [:build] do
 end
 
 
+## If this doesn't work, do:
+##   rake prepare_json && rake json2js
 task :get_json => [:prepare_json, :json2js]
 
 task :json2js do
