@@ -108,7 +108,7 @@ Project attributes and estimates:
 * Deliverables: Implement, test and document snpSummary,CollapsedVCF-method
 * Mentor: Valerie Obenchain
 * Mentee: Chris Wallace
-* Status: In progress
+* Status: Complete 
 * github: <a
 href='https://github.com/Bioconductor/VCF_projects'>VCF_alleleFrequency page</a> and <a
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wiki</a>.
