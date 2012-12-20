@@ -93,27 +93,6 @@ href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncod
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="VCF_alleleFrequency">VCF Allele Frequencies</h2>
-
-The VariantAnnotation package needs a function that computes allele frequency, 
-minor allele frequency, genotype frequency and Hardy-Weinberg estimates from 
-the genotype data in a VCF class. This project, computing allele frequency, 
-is a first step in that direction.
-
-Project attributes and estimates:
-
-* Difficulty: Easy
-* Length: 2 weeks
-* Skills needed: R programming, familiarity with S4 classes
-* Deliverables: Implement, test and document snpSummary,CollapsedVCF-method
-* Mentor: Valerie Obenchain
-* Mentee: Chris Wallace
-* Status: Complete 
-* github: <a
-href='https://github.com/Bioconductor/VCF_projects'>VCF_alleleFrequency page</a> and <a
-href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wiki</a>.
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
 
 <h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
 
@@ -233,6 +212,7 @@ you wish to propose.
 ## <a id="completed"></a>Completed projects
 
 * [Add constructors to the 'graph' package](#graph)
+* [VCF Allele Frequencies](#VCF_alleleFrequency)
 
 ### <a id="graph"></a>Add 'contructors' for key classes in the graph package
 
@@ -256,5 +236,26 @@ graph package.
 * Status: Complete
 
 [graph package]: http://bioconductor.org/packages/devel/bioc/html/graph.html
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a id="VCF_alleleFrequency"></a>VCF Allele Frequencies
+
+The VariantAnnotation package needed a function to compute genotype counts, 
+allele frequencies and Hardy-Weinberg estimates from the genotype data in a 
+VCF class. 
+
+Project attributes and estimates:
+
+* Difficulty: Easy
+* Length: 2 weeks
+* Skills needed: R programming, familiarity with S4 classes
+* Deliverables: Implement, test and document snpSummary,CollapsedVCF-method
+* Mentor: Valerie Obenchain
+* Mentee: Chris Wallace
+* Status: Complete 
+* github: <a
+href='https://github.com/Bioconductor/VCF_projects'>VCF_alleleFrequency page</a> and <a
+href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wiki</a>.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
