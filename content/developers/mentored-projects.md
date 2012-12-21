@@ -239,7 +239,7 @@ graph package.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-## <a id="VCF_alleleFrequency"></a>VCF Allele Frequencies
+### <a id="VCF_alleleFrequency"></a>VCF Allele Frequencies
 
 The VariantAnnotation package needed a function to compute genotype counts, 
 allele frequencies and Hardy-Weinberg estimates from the genotype data in a 
