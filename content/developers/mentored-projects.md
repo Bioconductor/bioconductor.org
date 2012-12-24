@@ -23,7 +23,7 @@ needed by the community. <a href=#introduction>More...</a>
 
 
 ## Completed Projects
-  * [Add constructors to the `graph` package](#graph)
+  * [Add constructors to the graph package](#graph)
   * [VCF Allele Frequencies](#VCF_alleleFrequency)
 
 <a name="introduction"></a>
