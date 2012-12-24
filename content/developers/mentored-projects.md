@@ -23,7 +23,7 @@ needed by the community. <a href=#introduction>More...</a>
 
 
 ## Completed Projects
-  * [Add constructors to the `graph`' package](#graph)
+  * [Add constructors to the `graph` package](#graph)
   * [VCF Allele Frequencies](#VCF_alleleFrequency)
 
 <a name="introduction"></a>
@@ -179,7 +179,7 @@ Project attributes and estimates:
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
-## <a id="your-package"></a>Finish your own package
+## <a id="your-package"></a>Get Help With Your Package
 
 Package authors sometimes have excellent statistical and bioinformatic
 ideas, but are not fully confident in their ability to produce a
