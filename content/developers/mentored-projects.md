@@ -1,19 +1,33 @@
 # ![](/images/icons/magnifier.gif)Mentored Projects
 
-* [Introduction](#introduction)
-* [Galaxy-ification of Useful Scripts](#galaxy)
-* [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
-* [VCF Allele Frequency](#VCF_alleleFrequency)
-* [Create an AnnotationDbi Package for PANTHER](#panther)
-* [msGUI](#msGUI)
-* [Finish your own package](#your-package)
-* [Take Over an 'Orphaned' Package](#orphaned-package)
-* [Interested?](#contact)
-* [Projects In Progerss](#inProgress)
-* [Completed projects](#completed)
+A mentored Bioconductor software development project is one in which
+experienced programmers work with volunteers to develop new capabilities
+needed by the community. <a href=#introduction>More...</a>
 
 
-## <a id="introduction">Introduction</a>
+## Projects Needing Volunteers
+  * [Extending mzR](#extendingMZR)
+  * [Create an AnnotationDbi Package for PANTHER](#panther)
+  * [Take over maintenance of cosmo and/or cosmoGUI](#cosmo)
+
+## Projects in Progress
+  * [Galaxy-ification of Useful Scripts](#galaxy)
+  * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
+  * [msGUI](#msGUI)
+
+## Get Help With Your Own Project
+  * [Finish your own package](#your-package)
+
+## Contact Us
+  * [Interested in Helping or in Receiving Help?](#contact)
+
+
+## Completed Projects
+  * [Add constructors to the `graph`' package](#graph)
+  * [VCF Allele Frequencies](#VCF_alleleFrequency)
+
+<a name="introduction"></a>
+## Introduction
 
 A mentored Bioconductor software development project is one in which
 experienced programmers work with volunteers to develop new capabilities
@@ -39,6 +53,27 @@ mentored project and their current employment or academic studies.
 
 
 Below you will find a list of proposed projects.  We invite your participation.  We welcome your suggestions.
+
+<h2 id='extendingMZR'>Extending mzR</h2>
+The `mzR` R/Bioconductor package provides a unified API to the common open and community-driven file formats and parsers available for mass spectrometry data, namely `mzXML`, `mzML` and `mzData` (see [vignette](http://bioconductor.org/packages/devel/bioc/vignettes/mzR/inst/doc/mzR.pdf) for details). It uses `C` and `C++` code from other third party open-source projects and heavily relies on the [`Rcpp`](http://dirk.eddelbuettel.com/code/rcpp.html) package to, notably, provide a direct mapping from `R` to `C++` infrastructure.
+Currently, `mzR` provides two actual backends to read Mass Spectrometry raw data:
+
+1. `netCDF` which reads, as the name implies, `netCDF` data
+2. `RAMP` to read `mzData` and `mzXML` via the ISB `RAMP` parser. This backend can also read `mzML` through the proteowizard `RAMPadapter` around the proteowizard infrastructure, but this interface is limited to the lowest common denominator between the `mzXML`/`mzData`/`mzML` formats.
+
+This project is intended to add several related backends to `mzR`, by providing a direct wrapper around -- and full access to -- the proteowizard `msdata` object. The candidate will interact closely with [Laurent Gatto](https://github.com/lgatto) and [Steffen Neumann](https://github.com/sneumann), and the [proteowizard](http://www.ncbi.nlm.nih.gov/pubmed/23051804)  and `Rcpp` communities.
+
+Project attributes and estimates:
+
+
+* Difficulty: medium to difficult, depending on experience and `C++` fluency.
+* Length: 3 months.
+* Skills needed: intermediate R programming, knowledge of package development helpful, good knowledge of `C` and especially `C++` essential. The candidate will have to familiarise herself with the mass-spectrometry data, the respective data formats and the [proteowizard code base](http://proteowizard.sourceforge.net/dox/index.html).
+* Deliverable: pwiz and identificaiton backends to be added to the `mzR` package.
+* Mentors: Laurent Gatto and Steffen Neuman, with additional Rcpp support from Dirk Eddelbuettel.
+* More information:   <a href="https://github.com/sneumann/mzR/wiki/Extending-mzR">github wiki</a>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
 From the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>:
@@ -181,6 +216,7 @@ and the Bioconductor community will benefit.
 Current orphans are listed below.
 <br>
 
+## <a id="cosmo"></a>cosmo &amp; cosmoGUI
 <a href="http://bioconductor.org/packages/2.10/bioc/html/cosmo.html">cosmo</a> and
 <a href="http://bioconductor.org/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a>
 
@@ -211,10 +247,7 @@ you wish to propose.
 
 ## <a id="completed"></a>Completed projects
 
-* [Add constructors to the 'graph' package](#graph)
-* [VCF Allele Frequencies](#VCF_alleleFrequency)
-
-### <a id="graph"></a>Add 'contructors' for key classes in the graph package
+### <a id="graph"></a>Add contructors for key classes in the graph package
 
 The [graph package] was developed when users created objects with
 calls like `new("graphNEL")`, but there are advantages to hiding this
