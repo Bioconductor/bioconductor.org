@@ -28,7 +28,7 @@ devel_repos:
 ## CHANGE these as AMI IDS change
 ami_ids:
  bioc2_8: ami-4b2fee22
- bioc2_9: ami-5f33e536
+ bioc2_9: ami-755ed11c
  bioc2_10: ami-9f5fd0f6
  bioc2_11: ami-a55fd0cc
 data_sources: 
