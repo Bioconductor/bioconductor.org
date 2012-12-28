@@ -268,8 +268,8 @@ href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wik
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-## <a id="VCF_probabilityBasedSnpEncoding">VCF Probability-Based SNP Encoding of
-Genotypes</a>
+### <a id="VCF_probabilityBasedSnpEncoding"></a>VCF Probability-Based SNP Encoding of
+Genotypes
 
 MatrixToSnpMatrix() in the VariantAnnotation package
 converts the genotype data in a VCF object into a SnpMatrix 
