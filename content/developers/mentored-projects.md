@@ -12,7 +12,6 @@ needed by the community. <a href=#introduction>More...</a>
 
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
-  * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
   * [msGUI](#msGUI)
 
 ## Get Help With Your Own Project
@@ -25,6 +24,7 @@ needed by the community. <a href=#introduction>More...</a>
 ## Completed Projects
   * [Add constructors to the graph package](#graph)
   * [VCF Allele Frequencies](#VCF_alleleFrequency)
+  * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
 
 <a name="introduction"></a>
 ## Introduction
@@ -101,31 +101,6 @@ Project attributes and estimates:
 * Mentor: Dan Tenenbaum
 * Status: One project is ongoing, but there is room for more.
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-<h2 id="VCF_probabilityBasedSnpEncoding">VCF Probability-Based SNP Encoding of
-Genotypes</h2>
-
-MatrixToSnpMatrix() in the VariantAnnotation package
-converts the genotype data in a VCF object into a SnpMatrix 
-object. Currently this is done without taking uncertain
-uncertain genotype calls into consideration. This project 
-involves modifying MatrixToSnpMatrix() to use, when available, 
-genotype uncertainty and likelihood information to convert 
-genotypes to probability-based SnpMatrix encodings.
-
-Project attributes and estimates:
-
-* Difficulty: Advanced 
-* Length: 12 weeks
-* Skills needed: R programming, familiarity with S4 classes, statistics
-* Deliverables: See wiki page for details 
-* Mentors: Valerie Obenchain and Vince Carey
-* Status: In progress
-* Mentee: Stephanie Gogarten
-* github: <a
-href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
-href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
@@ -292,3 +267,30 @@ href='https://github.com/Bioconductor/VCF_projects'>VCF_alleleFrequency page</a>
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_alleleFrequency'>wiki</a>.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+## <a id="VCF_probabilityBasedSnpEncoding">VCF Probability-Based SNP Encoding of
+Genotypes</a>
+
+MatrixToSnpMatrix() in the VariantAnnotation package
+converts the genotype data in a VCF object into a SnpMatrix 
+object. Currently this is done without taking uncertain
+uncertain genotype calls into consideration. This project 
+involves modifying MatrixToSnpMatrix() to use, when available, 
+genotype uncertainty and likelihood information to convert 
+genotypes to probability-based SnpMatrix encodings.
+
+Project attributes and estimates:
+
+* Difficulty: Advanced 
+* Length: 12 weeks
+* Skills needed: R programming, familiarity with S4 classes, statistics
+* Deliverables: See wiki page for details 
+* Mentors: Valerie Obenchain and Vince Carey
+* Status: Complete 
+* Mentee: Stephanie Gogarten
+* github: <a
+href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
+href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
