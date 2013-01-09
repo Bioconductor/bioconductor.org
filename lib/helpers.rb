@@ -250,7 +250,12 @@ def doc_object(package)
     hsh[:title] = package[:vignetteTitles][i]
     doc_obj.push hsh
   end
-  doc_obj.sort!{|a,b|a[:title].downcase <=> b[:title].downcase}
+
+  doc_obj.sort! do |a,b|
+    a[:title] = "" if (a[:title].nil?)
+    b[:title] = "" if (b[:title].nil?)
+    a[:title].downcase <=> b[:title].downcase
+  end
   doc_obj
 end
 
