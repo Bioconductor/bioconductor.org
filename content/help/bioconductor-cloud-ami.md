@@ -269,12 +269,12 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
-        <td>2.11 (devel)</td>
+        <td>2.11 (release, recommended)</td>
         <td>2.15</td>
         <td><%= config[:ami_ids][:bioc2_11]%></td>
     </tr>
     <tr>
-        <td>2.10 (release, recommended)</td>
+        <td>2.10</td>
         <td>2.15</td>
         <td><%= config[:ami_ids][:bioc2_10]%></td>
     </tr>
