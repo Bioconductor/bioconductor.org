@@ -37,7 +37,7 @@
 
 [Visualizing genomic features with the Gviz package](GvizEuropeanBioc2012.pdf) - Florian Hahne
 
-[A brief introduction to TransView](Julius_Müller_bioconductor_meeting_12_12.pdf) - Julius M&#x00FC;ller
+[A brief introduction to TransView](Julius_Muller_bioconductor_meeting_12_12.pdf) - Julius M&#x00FC;ller
 
 [SparseData](Michael_Love_sparsedata.pdf) - Michael Love
 
