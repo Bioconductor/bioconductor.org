@@ -27,7 +27,7 @@
 
 [reactome.db](willem_ligtenberg_reactome.pdf) - Willem Ligtenberg
 
-[rnaSeqMap library in use](Anna_Leśniewska_BioC2012.pdf) - Anna_Le&#x015B;niewska
+[rnaSeqMap library in use](rnaSeqMap.pdf) - Anna_Le&#x015B;niewska
 
 [aroma.seq: Bringing sequence analysis to the Aroma Framework](BengtssonH_20121214-aroma.seq,BiocDevel2012.pdf) - Henrik Bengtsson
 
