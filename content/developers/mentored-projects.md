@@ -164,7 +164,7 @@ DNaseI hypersensitivity regions (DHSs), short regions of protected
 nucleotides known as footprints can be detected, indicating
 transcription factor binding ocuppancy events.
 
-The aim of this project is to build an algorithm able to efficiently
+The aim of this project is to build an algorithm to efficiently
 detect protein binding footprints in DNase-seq data from reads in 
 BAM/SAM standard aligment format.
 
