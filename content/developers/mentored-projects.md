@@ -13,6 +13,7 @@ needed by the community. <a href=#introduction>More...</a>
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
   * [msGUI](#msGUI)
+  * [DNaseR - DNase I footprinting analysis of DNase-seq data](#dnaser)
 
 ## Get Help With Your Own Project
   * [Finish your own package](#your-package)
@@ -152,6 +153,36 @@ Project attributes and estimates:
 * References: mzR and MSnbase packages, Programming Graphical User Interfaces in R book.
 * More information: <a href='https://github.com/lgatto/msGUI'>msGUI github page</a> and <a href='https://github.com/lgatto/msGUI/wiki'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+## <a id="dnaser"></a>DNaseR - DNase I footprinting analysis of DNase-seq data
+
+The combination of DNase I digestion and high-throughput sequencing
+(DNase-seq) has been used recently to map chromatin accessibility in a
+given tissue or cell type on a genome-wide scale. In addition to these
+DNaseI hypersensitivity regions (DHSs), short regions of protected
+nucleotides known as footprints can be detected, indicating
+transcription factor binding ocuppancy events.
+
+The aim of this project is to build an algorithm able to efficiently
+detect protein binding footprints in DNase-seq data from reads in 
+BAM/SAM standard aligment format.
+
+Project attributes and estimates:
+
+* Difficulty: medium/advanced
+* Length: 15 weeks, part-time
+* Skills needed: intermediate R programming; some familiarity with R packages and S4 classes. Familiarity with next generation sequencing 
+* Deliverables: A finished package, submitted to Bioconductor.
+* Funding: This work is supported by the FP7 Marie-Curie ITN SYSFLO (agreement number 237909).
+* Mentee: Pedro Madrigal
+* Mentor: Paul Shannon
+* Status: imminent (January 2013)
+* More information: github repo coming soon
+
+<p class="back_to_top"> [ <a href="#top">Back to top</a> ]</p>
+
+
 
 
 ## <a id="your-package"></a>Get Help With Your Package
