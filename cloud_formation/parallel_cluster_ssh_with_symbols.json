@@ -6,8 +6,8 @@
          "Description" : "Bioconductor Version. 2.11 is recommended.",
          "Type" : "String",
          "Default": "2.11",
-         "AllowedValues": ["2.11"],
-         "ConstraintDescription": "Must be 2.11"
+         "AllowedValues": ["2.11", "2.12"],
+         "ConstraintDescription": "Must be 2.11 or 2.12"
        },
       
       "KeyName":{
@@ -56,7 +56,11 @@
        },
        "2.11" : {
            "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
+       },
+       "2.12" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_12']%>"
        }
+
      }
    },
 

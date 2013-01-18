@@ -8,8 +8,8 @@
       "Description" : "Bioconductor Version. <%=config['release_version']%> (release) is recommended.",
       "Type" : "String",
       "Default": "<%=config['release_version']%>",
-      "AllowedValues": ["2.8", "2.9", "2.10", "2.11"],
-      "ConstraintDescription": "Must be 2.8, 2.9, 2.10, or 2.11"
+      "AllowedValues": ["2.8", "2.9", "2.10", "2.11", "2.12"],
+      "ConstraintDescription": "Must be 2.8, 2.9, 2.10, 2.11, or 2.12"
     },
     "InstanceType" : {
       "Description" : "Type of EC2 instance to launch - see http://aws.amazon.com/ec2/instance-types/",
@@ -33,7 +33,11 @@
       },
       "2.11" : {
           "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
-      }
+      },
+      "2.12" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_12']%>"
+       }
+
     }
   },
 
