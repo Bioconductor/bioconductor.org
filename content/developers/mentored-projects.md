@@ -14,6 +14,7 @@ needed by the community. <a href=#introduction>More...</a>
   * [Galaxy-ification of Useful Scripts](#galaxy)
   * [msGUI](#msGUI)
   * [DNaseR - DNase I footprinting analysis of DNase-seq data](#dnaser)
+  * [Add DEXSeq Functionality to easyRNASeq](#easyrnaseq)
 
 ## Get Help With Your Own Project
   * [Finish your own package](#your-package)
@@ -181,6 +182,32 @@ Project attributes and estimates:
 * More information: github repo coming soon
 
 <p class="back_to_top"> [ <a href="#top">Back to top</a> ]</p>
+
+
+## <a id="easyrnaseq"></a>Add DEXSeq Functionality to easyRNASeq
+
+The easyRNASeq package facilitates and expedites the processing and
+filtering of large RNA-seq datasets for subsequent analysis by
+Bioconductor packages edgeR and DESseq, which are concerned with
+gene-expression and alternative splicing, respectively.  We propose to
+add an output format compatible with DEXSeq, a package for exon-level
+differential expression analysis.
+
+Project attributes and estimates:
+
+ * Difficulty: medium/advanced
+ * Length: 25 weeks, part-time
+ * Skills needed: intermediate R programming; some familiarity with R packages and S4 classes. Familiarity with next generation sequencing and the core RNA-seq codes in Bioconductor
+ *  Deliverables: An updated, upgraded package, submitted to Bioconductor.
+ *  Funding: Self-funded
+ *  Mentee: Vincent Zimmern
+ *  Mentor: Nicolas Delhomme
+ *  Status: imminent (January 2013)
+ *  More information: github repo coming soon
+
+<p class="back_to_top"> [ <a href="#top">Back to top</a> ]</p>
+
+
 
 
 
