@@ -3,7 +3,7 @@ Using The Devel Version of Bioconductor
 
 Beginning on October 2, 2012, with the release of Bioconductor 2.11, the
 way to use the development (devel) version of Bioconductor (2.12) is to install
-R-devel (R-2.16). Packages can then be installed normally; for example, this will install the devel version of IRanges and its dependencies:
+R-devel (R-3.0). Packages can then be installed normally; for example, this will install the devel version of IRanges and its dependencies:
 
     source("http://bioconductor.org/biocLite.R")
     biocLite("IRanges")
