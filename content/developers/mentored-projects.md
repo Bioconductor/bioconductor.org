@@ -12,7 +12,6 @@ needed by the community. <a href=#introduction>More...</a>
 
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
-  * [msGUI](#msGUI)
   * [DNaseR - DNase I footprinting analysis of DNase-seq data](#dnaser)
   * [Add DEXSeq Functionality to easyRNASeq](#easyrnaseq)
 
@@ -27,6 +26,7 @@ needed by the community. <a href=#introduction>More...</a>
   * [Add constructors to the graph package](#graph)
   * [VCF Allele Frequencies](#VCF_alleleFrequency)
   * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
+  * [msGUI](#msGUI)
 
 <a name="introduction"></a>
 ## Introduction
@@ -128,31 +128,6 @@ Project attributes and estimates:
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
 * Status: Open
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-## <a id="msGUI"></a>msGUI - an interactive mass spectrometry data browser
-
-
-The aim of this project is to build a simple GUI to navigate raw mass
-spectrometry data files. Data input functionality and relevant data
-structures are available in the mzR and MSnbase packages. The final
-deliverable would be a new R package, that will be submitted to
-Bioconductor, implementing the GUI allowing users to directly browse
-raw data files as well as MSnExp raw data instances. The overall goal
-being to complement programmatic data access with interactive
-visualisation.
-
-Project attributes and estimates:
-
-* Difficulty: Easy to medium, depending on experience
-* Length: 4 - 6 weeks
-* Skills needed: intermediate R programming, experience with GUI  programming is a major advantage, knowledge of package development helpful, but not essential.
-* Deliverable: msGUI package
-* Mentors: Laurent Gatto and Michael Lawrence
-* Status: In progress
-* Mentee: Andrius Druzinis
-* References: mzR and MSnbase packages, Programming Graphical User Interfaces in R book.
-* More information: <a href='https://github.com/lgatto/msGUI'>msGUI github page</a> and <a href='https://github.com/lgatto/msGUI/wiki'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
@@ -350,5 +325,29 @@ Project attributes and estimates:
 href='https://github.com/Bioconductor/VCF_projects'>VCF_probabilityBasedSnpEncoding page</a> and <a
 href='https://github.com/Bioconductor/VCF_projects/wiki/VCF_probabilityBasedSnpEncoding'>wiki</a>.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+## <a id="msGUI"></a>msGUI - an interactive mass spectrometry data browser
+
+The aim of this project is to build a simple GUI to navigate raw mass
+spectrometry data files. Data input functionality and relevant data
+structures are available in the mzR and MSnbase packages. The final
+deliverable would be a new R package, that will be submitted to
+Bioconductor, implementing the GUI allowing users to directly browse
+raw data files as well as MSnExp raw data instances. The overall goal
+being to complement programmatic data access with interactive
+visualisation.
+
+Project attributes and estimates:
+
+* Difficulty: Easy to medium, depending on experience
+* Length: 4 - 6 weeks
+* Skills needed: intermediate R programming, experience with GUI  programming is a major advantage, knowledge of package development helpful, but not essential.
+* Deliverable: msGUI package
+* Mentors: Laurent Gatto and Michael Lawrence
+* Status: Complete
+* Mentee: Andrius Druzinis
+* References: mzR and MSnbase packages, Programming Graphical User Interfaces in R book.
+* More information: <a href='https://github.com/lgatto/msGUI'>msGUI github page</a> and <a href='https://github.com/lgatto/msGUI/wiki'>wiki</a>.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
