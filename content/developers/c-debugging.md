@@ -1,6 +1,6 @@
 # Debugging C code
 
-Creation Date: 8 Feb 2012
+Creation Date: 8 Feb 2012;
 Last Edit Date: 10 Feb 2012
 
 The following applies to non-Windows operating systems.  This is not
@@ -89,10 +89,11 @@ was that the bug could be produced by running part of the code that
 uses RCurl, followed by a call to the garbage collector, `gc()`. The
 role of the garbage collector suggests again memory corruption of some
 sort, and in particular that perhaps RCurl is allocating (at the C
-level) an R object but not properly PROTECT'ing it. We suspect RCurl
-rather than R or libcurl (other possible players) because it is the
-least tested of the code. We could be wrong, of course... After many
-iterations, my colleague arrived at buggy24.R:
+level) an R object but not properly PROTECT'ing it from garbage
+collection. We suspect RCurl rather than R or libcurl (other possible
+players) because it is the least tested of the code. We could be
+wrong, of course... After many iterations, my colleague arrived at
+buggy24.R:
 
     library(RCurl)
     
@@ -214,7 +215,7 @@ object, not a C variable. Looking at the surrounding code, that `i %
 n` doesn't look right -- it's probably meant to recycle `isProtected`
 in the case where a shorter logical variable is provided than the
 vector of elements requiring protection, but the value of `n` is not
-necessarily the lenght of `isProtected`. Let's have a look at what
+necessarily the length of `isProtected`. Let's have a look at what
 we've got, using a C-level R function `Rf_PrintValue` to print R
 values (SEXP's) in an R fashion
 
