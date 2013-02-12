@@ -69,7 +69,7 @@ which are a common source of faults in C code. Start `R` with
     R -d valgrind -f buggy.R
 
 This runs quite slowly, and will flag invalid memory read and write
-locations. The former typically contribute to bad data, the later to
+locations. The former typically contribute to bad data, the latter to
 memory corruption and spectacular failures. The output will require C
 familiarity to interpret. Again it is helpful to run the buggy code
 with a package that has been installed without compiler
