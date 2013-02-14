@@ -6,8 +6,16 @@ lines from within RStudio:
     pkgInstall("IntermediateSequenceAnalysis2013")
 
 There may be a message saying that the package was not found, but that can be
-ignored. Feel free to explore the package vignette, from the panel to the
-right of the console. This package will be available for non-AMI users
+ignored. Feel free to explore the package vignette, by typing
+
+    help(package="IntermediateSequenceAnalysis2013")
+
+and then clicking "Overview of user guides and package vignettes"
+in the lower right hand panel. Then click on 
+"IntermediateSequenceAnalysis2013::IntermediateSequenceAnalysis2013".
+You may need to disable pop-up blockers in your browser.
+
+This package will be available for non-AMI users
 in due course.
 
 [Preliminary Content](IntermediateSequenceAnalysis2013-content.pdf)
