@@ -59,7 +59,9 @@ Packages must satisfy the following checklist:
 
 Packages should also conform to the following:
 
-* Use S4 classes and methods.
+* Use existing S4 classes and generic functions; see the
+  [Package Guidelines](/developers/package-guidelines) for details on
+  appropriate use.
 * Include an inst/NEWS file for providing users with information on package
   updates.
 

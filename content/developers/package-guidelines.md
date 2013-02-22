@@ -172,6 +172,15 @@ current development version.
 
 <h2 id="classes">S4 Classes and Methods</h2>
 
+Re-use existing S4 classes and generics where possible. This
+encourages interoperability and simplifies your own package
+development. If your data requires a new representation or function,
+carefully design an S4 class or generic so that other package
+developers with similar needs will be able to re-use your hard work,
+and so that users of related packages will be able to seamlessly use
+your data structures. Do not hesitate to ask on the Bioc-devel mailing
+list for advice.
+
 We recommend the following structure/layout:
 
 * All class definitions in R/AllClasses.R
