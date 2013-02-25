@@ -7,11 +7,9 @@ others to use and extend the software. New software is added to the
 project through a [package submission
 process](/developers/package-submission/).
 
-<h2 id="wiki">Developer Wiki and Mailing List</h2>
+<h2 id="mailing_list">Mailing List</h2>
 
-The [Developer Wiki](http://wiki.fhcrc.org/bioc/DeveloperPage/)
-provides information on the current direction of the core team. The
-[developer mailing
+The [developer mailing
 list](https://stat.ethz.ch/mailman/listinfo/bioc-devel) facilitates
 communication amongst Bioconductor developers.
 
@@ -37,8 +35,4 @@ package in the release and development branches can be built via
 pass these checks will regretfully be dropped from the next release
 of Bioconductor.
 
-<h2 id="howto">&quot;How To&quot; Wiki Page</h2>
-
-The [wiki how to](http://wiki.fhcrc.org/bioc/HowTo) page explains how
-to do many common things.
 
