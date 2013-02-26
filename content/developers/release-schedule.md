@@ -1,55 +1,42 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.11 Release Schedule
-
-
-## Release objectives
-
-The next release of Bioconductor will be BioC 2.11 and is scheduled for
-Tuesday, October 2nd, 2012.
-
-The following schedule outlines major goals:
-
-* September 14: All packages conform to Bioconductor
-   [guidelines][guidelines]...
-
-* September 17: ... and pass R CMD build / R CMD check without
-   errors.
-
-* September 24: All packages pass R CMD build / R CMD check without
-   warnings.
-
-[guidelines]: /developers/package-guidelines
-
+# ![](/images/icons/magnifier.gif)Bioconductor 2.12 Release Schedule
 
 ## Tentative schedule
 
-### September 3
+### March 4, 2013
 
 * Packages for deprecation identified.
 
-### September 10
-
-* Release candidate of annotation packages built and posted to devel
-   annotation data repository.
+### March 11
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
 * Deadline for .db0 packages to be available for developers.
 
-### September 12
+[guidelines]: /developers/package-guidelines
+
+
+### March 13
 
 * Deadline for new package submissions.
 
-### September 17
+
+### March 15
+
+* Release candidate of annotation packages built and posted to devel
+  annotation data repository.
+
+
+### March 18
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
    
-### September 21
+### March 22
 
 * Grand Feature Freeze (alpha):  no new packages added to BioC
   release roster.
 
-### September 24
+### March 25
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
@@ -57,27 +44,30 @@ The following schedule outlines major goals:
    Some warnings will be accepted, clarification on the bioc-devel mailing
    list.
 
-* Stop release (BioC 2.10) builds. Commits to this branch will be disabled.
+* Stop release (BioC 2.11) builds. Commits to this branch will be disabled.
 
-* Deadline for contributed annotation package authors to get working 
-  packages
+* Deadline for annotation package contributors to upload updated packages.
 
-### September 27
 
-* Bioconductor release candidate 1.  Package maintainers should limit
+### March 28
+
+* Bioconductor release candidate.  Package maintainers should limit
    changes to "show-stopper" bugs and documentation improvements.
 
 * Annotation data packages finalized.
 
-### October 1
+* Package NEWS files updated. Latest NEWS will be collated and included
+  in release announcement.
 
-* Creation of the BioC 2.11 release branch. Development can resume on
+### April 3
+
+* Creation of the BioC 2.12 release branch. Development can resume on
    trunk, but changes will not be part of the release.
 
 * Build final release repositories.
 
 * Test install scripts, GUI installation.
 
-### October 2
+### April 4
 
 * Bioconductor release.
