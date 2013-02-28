@@ -51,6 +51,10 @@ devel version), please use the following commands:
 
 ## Additional information ##
 
+Sync the above directories to a directory called `packages` on your
+system, and make sure the directory above `packages` is served by
+a web server. 
+
 Bioconductor is big (> 64G for BioC <%= config[:release_version] %>). Please check the size of
 what will be transferred with e.g. `rsync -avn bioconductor.org::<%= config[:release_version] %>`
 and make sure you have enough room on your local disk before you
