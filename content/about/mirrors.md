@@ -30,14 +30,6 @@ Germany
 
   Contact: Uwe Ligges &lt;ligges at statistik.tu-dortmund.de&gt;
 
-Norway
-------
-
-* [University of Bergen](http://www.uib.no)
-  
-  URL: <http://bioconductor.uib.no>
-
-
 
 
 United Kingdom
