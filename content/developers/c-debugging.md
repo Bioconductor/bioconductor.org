@@ -16,7 +16,7 @@ optimizations, e.g., by following
 
 section 6.3.3. setting for instance
 
-    CFLAGS="-g -O0"
+    CFLAGS=-g -O0
 
 in .R/Makevars.
 
