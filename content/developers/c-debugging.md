@@ -1,7 +1,7 @@
 # Debugging C code
 
 Creation Date: 8 Feb 2012;
-Last Edit Date: 10 Feb 2012
+Last Edit Date: 27 Feb 2012
 
 The following applies to non-Windows operating systems.  This is not
 for the faint of heart, and requires some C-level familiarity.
