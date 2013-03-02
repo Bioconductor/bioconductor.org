@@ -50,6 +50,19 @@ Japan
   
   Contact: Itoshi NIKAIDO, Ph.D. &lt;dritoshi at gmail.com&gt;
 
+
+China
+-----
+
+* [University of Science and Technology of China](http://en.ustc.edu.cn/)
+
+  URL: <http://mirrors.ustc.edu.cn/bioc/>
+  
+  Contact: Mirror maintainer &lt;mirrors@ustc.edu.cn&gt;, or Tengfei Yin &lt;yintengfei@gmail.com&gt;
+
+
+
+
 Australia
 ---------
 
