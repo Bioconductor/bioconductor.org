@@ -8,7 +8,6 @@ needed by the community. <a href=#introduction>More...</a>
 ## Projects Needing Volunteers
   * [Extending mzR](#extendingMZR)
   * [Create an AnnotationDbi Package for PANTHER](#panther)
-  * [Take over maintenance of cosmo and/or cosmoGUI](#cosmo)
 
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
@@ -224,19 +223,7 @@ and the Bioconductor community will benefit.
 Current orphans are listed below.
 <br>
 
-## <a id="cosmo"></a>cosmo &amp; cosmoGUI
-<a href="http://bioconductor.org/packages/2.10/bioc/html/cosmo.html">cosmo</a> and
-<a href="http://bioconductor.org/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a>
-
-* Difficulty: intermediate
-* Length: ongoing, small time committment
-* Skills needed:  intermediate R and C programming; some familiarity with R
-  packages and S4 classes.
-* Mentor: Oliver Benbom
-* Deliverables: Occasional bug fixes and perhaps minor improvements
-* Status: open
-
-
+(No orphans at this time)
 
 
 <h2 id="contact">Interested?</h2>
