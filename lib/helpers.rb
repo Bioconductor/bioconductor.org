@@ -246,7 +246,7 @@ def doc_object(package)
     hsh[:file] = vignette.split("/").last
     script = vignette.sub(/\.pdf$/, ".R")
     if (package.has_key? :Rfiles and package[:Rfiles].include? script)
-      hsh[:script] = script
+      hsh[:script] = script.split("/").last
     end
     hsh[:title] = package[:vignetteTitles][i]
     doc_obj.push hsh
