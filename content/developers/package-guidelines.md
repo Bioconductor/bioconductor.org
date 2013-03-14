@@ -70,7 +70,7 @@ Do not use filenames that differ only in case, as not all file systems are
 case sensitive.
 
 The source package resulting from running `R CMD build` should occupy 
-less than 2MB on disk. The package should require less than 5 minutes to run
+less than 4MB on disk. The package should require less than 5 minutes to run
 <code>R CMD check &#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>. 
 Using the <code>&#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>
 option ensures that the Sweave vignette is built only once.
