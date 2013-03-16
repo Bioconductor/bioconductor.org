@@ -112,7 +112,7 @@ class GetJson
   def clean_dcfs(dcfs)
     ret = {}
     plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews",
-      "vignettes", "vignetteTitles", "Rfiles"]
+      "vignettes", "vignetteTitles", "Rfiles", "htmlDocs", "htmlTitles"]
     for dcf in dcfs
       for key in dcf.keys
         if plural_fields.include? key
