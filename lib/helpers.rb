@@ -236,26 +236,64 @@ def linkify(sym, package)
 end
 
 def doc_object(package)
+
   # return an array of hashes
   # [{:file => ..., :title => ..., :script => ...}]
-  return [:file => "", :title => "", :script => ""] \
-    unless package.has_key? :vignettes and package.has_key? :vignetteTitles
+
+
   doc_obj = []
-  package[:vignettes].each_with_index do |vignette, i|
-    hsh = {}
-    hsh[:file] = vignette.split("/").last
-    # TODO: don't fake it that there is an R script, collect
-    # the names of R scripts on the biocViews side. (?)
-    hsh[:script] = vignette.split("/").last.sub(/\.pdf/i, ".R")
-    hsh[:title] = package[:vignetteTitles][i]
-    doc_obj.push hsh
+  if package.has_key? :vignettes
+    package[:vignettes].each_with_index do |vignette, i|
+      next if vignette !~ /\.pdf$/i ## FIX this on BiocViews side
+      hsh = {}
+      hsh[:type] = "PDF"
+      hsh[:file] = vignette.split("/").last
+      script = vignette.sub(/\.pdf$/, ".R")
+      if (package.has_key? :Rfiles and package[:Rfiles].include? script)
+        hsh[:script] = script.split("/").last
+      end
+      if package.has_key? :vignetteTitles
+        hsh[:title] = package[:vignetteTitles][i]
+      else
+        hsh[:title] = hsh[:file]
+      end
+      doc_obj.push hsh
+    end
   end
+
+  if package.has_key? :htmlDocs
+    package[:htmlDocs].each_with_index do |htmlDoc, i|
+      hsh = {}
+      hsh[:type] = "HTML"
+      hsh[:file] = htmlDoc.split("/").last
+      script = htmlDoc.sub(/\.html$/i, ".R")
+      if (package.has_key? :Rfiles and package[:Rfiles].include? script)
+        hsh[:script] = script.split("/").last
+      end
+      if package.has_key? :htmlTitles
+        hsh[:title] = package[:htmlTitles][i].gsub(/^"/, "").gsub(/"$/, "").gsub(/""/, '"')
+      else
+        hsh[:title] = htmlDoc.split("/").last
+      end
+      doc_obj.push hsh
+    end
+  end
+
 
   doc_obj.sort! do |a,b|
     a[:title] = "" if (a[:title].nil?)
     b[:title] = "" if (b[:title].nil?)
-    a[:title].downcase <=> b[:title].downcase
+    if a[:type] != b[:type]
+      b[:type] <=> a[:type]
+    else
+      a[:title].downcase <=> b[:title].downcase
+    end
   end
+
+  if doc_obj.empty?
+    return [:file => "", :title => "", :script => "", :type => ""]
+  end
+
   doc_obj
 end
 
