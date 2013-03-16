@@ -244,10 +244,9 @@ def doc_object(package)
   package[:vignettes].each_with_index do |vignette, i|
     hsh = {}
     hsh[:file] = vignette.split("/").last
-    script = vignette.sub(/\.pdf$/, ".R")
-    if (package.has_key? :Rfiles and package[:Rfiles].include? script)
-      hsh[:script] = script.split("/").last
-    end
+    # TODO: don't fake it that there is an R script, collect
+    # the names of R scripts on the biocViews side. (?)
+    hsh[:script] = vignette.split("/").last.sub(/\.pdf/i, ".R")
     hsh[:title] = package[:vignetteTitles][i]
     doc_obj.push hsh
   end
