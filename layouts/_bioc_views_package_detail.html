@@ -228,9 +228,9 @@
                 </tr>
 
                 <tr class="<%=ri.rowclass%>">
-                    <td>MacOS 10.5 (Leopard) binary</td>
-                    <td><a href="../<%=@package[:"mac.binary.leopard.ver"]%>">
-                        <%= base_filename(@package[:"mac.binary.leopard.ver"])%></td>
+                    <td><%= mac_os(@package)%></td>
+                    <td><a href="../<%=mac_ver_key(@package)%>">
+                        <%= base_filename(mac_ver_key(@package))%></td>
                     </tr>
                     <tr class="<%=ri.rowclass%>">
                         <td>Package Downloads Report</td>

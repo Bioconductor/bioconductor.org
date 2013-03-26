@@ -633,3 +633,23 @@ def get_package_maintainers()
   end
   ret
 end
+
+
+def mac_os(pkg)
+  if pkg.has_key? :"mac.binary.ver"
+    return "MacOS 10.6 (Snow Leopard)"
+  elsif pkg.has_key? :"mac.binary.leopard.ver"
+    return "MacOS 10.5 (Leopard)"
+  end
+  return nil
+end
+
+
+def mac_ver_key(pkg)
+  if pkg.has_key? :"mac.binary.ver"
+    return pkg[:"mac.binary.ver"]
+  elsif pkg.has_key? :"mac.binary.leopard.ver"
+    return pkg[:"mac.binary.leopard.ver"]
+  end
+  return nil
+end
