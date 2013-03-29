@@ -385,9 +385,19 @@ def course_materials
 end
 
 def upcoming_events(events)
-  events.children.sort{|a, b| a[:start] <=> b[:start]}.select do |e|
+  sorted = events.children.sort do |a, b|
+      a[:start] <=> b[:start]
+  end
+  step2 = sorted.select do |e|
     e[:end] >= Time.now.to_date
   end
+  ## Make upcoming BioC sticky at top
+  bioc = step2.find{|i| i[:title] =~ /^BioC2/} 
+  unless bioc.nil?
+    step2 = step2.reject{|i| i == bioc}
+    step2 = step2.unshift(bioc)
+  end
+  step2
 end
 
 def previous_events(events)
