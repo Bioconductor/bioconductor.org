@@ -29,10 +29,6 @@ Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
 
     biocLite(c("GenomicFeatures", "AnnotationDbi"))
 
-To update all your installed packages, use:
-
-    biocLite(character())
-
 The `biocLite()` function (in the BiocInstaller package installed by
 the`biocLite.R` script) has arguments that change its default
 behavior; type `?biocLite` for further help.
@@ -75,7 +71,7 @@ session and enter
 As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
-might introduce wrinkles that disrupt your workflow.
+might introduce wrinkles that disrupt your work flow.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -88,7 +84,8 @@ Use the commands
 
 to flag packages that are either out-of-date or too new for your
 version of Bioconductor. The output suggests ways to solve identified
-problems.
+problems, and the help page `?biocValid` lists arguments influencing
+the behavior of the function.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
