@@ -11,11 +11,11 @@
 
 <h2 id="bioc-version">Getting The Latest Version of Bioconductor</h2>
 
-After installing the latest release of R, get packages from the latest
-version of Bioconductor by following the steps below. The current
-release version of R is <%=
-config[:r_version_associated_with_release]%>, and the currently
-released Bioconductor version is <%= config[:release_version] %>.
+Install the latest release of R, then get the latest version of
+Bioconductor by following the steps below. The current release version
+of R is <%= config[:r_version_associated_with_release]%>, and the
+currently released Bioconductor version is <%=
+config[:release_version] %>.
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
@@ -30,7 +30,7 @@ Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
     biocLite(c("GenomicFeatures", "AnnotationDbi"))
 
 The `biocLite()` function (in the BiocInstaller package installed by
-the`biocLite.R` script) has arguments that change its default
+the `biocLite.R` script) has arguments that change its default
 behavior; type `?biocLite` for further help.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
