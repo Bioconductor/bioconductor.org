@@ -4,63 +4,38 @@
 	<li><a href="#install-bioconductor-packages">Install Packages</a></li> 
 	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
 	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
+	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot Package Installations</a></li> 
 	<li><a href="#install-R">Install&nbsp;R</a></li> 
 </ul>
 
 
 <h2 id="bioc-version">Getting The Latest Version of Bioconductor</h2>
 
-If you have installed the latest release of R, you will automatically
-get packages from the latest version of Bioconductor by following the steps
-below. The current release version of R is
-<%= config[:r_version_associated_with_release]%>, and the currently
+After installing the latest release of R, get packages from the latest
+version of Bioconductor by following the steps below. The current
+release version of R is <%=
+config[:r_version_associated_with_release]%>, and the currently
 released Bioconductor version is <%= config[:release_version] %>.
-
-*NEW*: Upgrading from Bioconductor 2.10 to 2.11: R-2.15 users can simply 
-run these commands:
-
-    source("http://bioconductor.org/biocLite.R")
-    biocLite("BiocUpgrade")
-
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 
-Use the `biocLite.R` script to install Bioconductor packages.  To
-install a particular package, e.g., limma, type the following in an R
-command window:
+Use the `biocLite.R` script to install Bioconductor packages. To
+install core packages, type the following in an R command window:
 
     source("http://bioconductor.org/biocLite.R")
-    biocLite("limma")
-
-Install several packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
-
-    biocLite(c("GenomicFeatures", "AnnotationDbi"))
-
-To install a selection of core Bioconductor packages, use
-
     biocLite()
 
-Packages and their dependencies installed by this usage are: 
-`Biobase`, `IRanges`, and `AnnotationDbi`.
+Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
+
+    biocLite(c("GenomicFeatures", "AnnotationDbi"))
 
 To update all your installed packages, use:
 
     biocLite(character())
 
-
-
-The biocLite() function (in the BiocInstaller package installed
-by the`biocLite.R` script) has arguments that change its default behavior:
-
-    pkgs
-        Character vector of Bioconductor packages to install.
-    destdir
-        File system directory for downloaded packages.
-    lib
-        R library where packages are installed.
-
-
-You can type `?biocLite` for further installation help.
+The `biocLite()` function (in the BiocInstaller package installed by
+the`biocLite.R` script) has arguments that change its default
+behavior; type `?biocLite` for further help.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -79,15 +54,12 @@ updated fairly regularly. To identify packages requiring update, start
 a new session of R and enter
 
     source("http://bioconductor.org/biocLite.R")
-    old.packages(repos=biocinstallRepos())
+	biocLite()              ## R version 3.0 or later
 
-To update all installed packages that are out of date, start a new
-session of R and enter
-
-    source("http://bioconductor.org/biocLite.R")
-    biocLite(character(), ask=FALSE)
-
-Read the help page for `?biocLite` for additional details.
+Use the argument `ask=FALSE` to update old packages without being
+prompted.  For older versions of `R`, use the command
+`biocLite(NULL)`.  Read the help page for `?biocLite` for additional
+details.
 
 <h3>Recompiling installed Bioconductor packages</h3>
 
@@ -104,6 +76,19 @@ As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
 time. All packages are implicitly updated, and the cumulative effect
 might introduce wrinkles that disrupt your workflow.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="troubleshoot-bioconductor-packages">Troubleshoot Package Installations</h2>
+
+Use the commands
+
+    library(BiocInstaller)
+	biocValid()             ## R version 3.0 or later
+
+to flag packages that are either out-of-date or too new for your
+version of Bioconductor. The output suggests ways to solve identified
+problems.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
