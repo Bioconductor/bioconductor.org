@@ -31,383 +31,450 @@ for this version of R.
 2. Follow the instructions at
 [http://bioconductor.org/install/](http://bioconductor.org/install/).
 
-
 New Software Packages
 =====================
 
 There are 65 new packages in this release of Bioconductor.
 
-- AnnotationHub: A client for retrieving data from the Bioconductor
-AnnotationHub online services.
+- [AnnotationHub](http://bioconductor.org/packages/release/bioc/html/AnnotationHub.html):
+A client for retrieving data from the Bioconductor AnnotationHub
+online services.
 
-- antiProfiles: Implements gene expression anti-profiles as described in
-Corrada Bravo et al., BMC Bioinformatics 2012,
-13:272 doi:10.1186/1471-2105-13-272.
+- [antiProfiles](http://bioconductor.org/packages/release/bioc/html/antiProfiles.html):
+Implements gene expression anti-profiles as described in Corrada Bravo
+et al., BMC Bioinformatics 2012, 13:272 doi:10.1186/1471-2105-13-272.
 
-- ARRmNormalization: Perform the Adaptive Robust Regression method (ARRm)
-for the normalization of methylation data from the Illumina Infinium
+- [ARRmNormalization](http://bioconductor.org/packages/release/bioc/html/ARRmNormalization.html):
+Perform the Adaptive Robust Regression method (ARRm) for the
+normalization of methylation data from the Illumina Infinium
 HumanMethylation 450k assay.
 
-- BaseSpaceR: A rich R interface to Illumina's BaseSpace cloud computing
+- [BaseSpaceR](http://bioconductor.org/packages/release/bioc/html/BaseSpaceR.html):
+A rich R interface to Illumina's BaseSpace cloud computing
 environment, enabling the fast development of data analysis and
 visualisation tools.
 
-- biomvRCNS: In this package, a Hidden Semi Markov Model and one homogeneous
-segmentation model are designed and implemented for segmentation genomic
-data, with the aim of assisting in transcripts detection using high
-throughput technology like RNA-seq or tiling array, and copy number analysis
-using aCGH or sequencing.
+- [biomvRCNS](http://bioconductor.org/packages/release/bioc/html/biomvRCNS.html):
+In this package, a Hidden Semi Markov Model and one homogeneous
+segmentation model are designed and implemented for segmentation
+genomic data, with the aim of assisting in transcripts detection using
+high throughput technology like RNA-seq or tiling array, and copy
+number analysis using aCGH or sequencing.
 
-- BiSeq: The BiSeq package provides useful classes and functions to handle
-and analyze targeted bisulfite sequencing (BS) data such as reduced-
+- [BiSeq](http://bioconductor.org/packages/release/bioc/html/BiSeq.html):
+The BiSeq package provides useful classes and functions to handle and
+analyze targeted bisulfite sequencing (BS) data such as reduced-
 representation bisulfite sequencing (RRBS) data. In particular, it
-implements an algorithm to detect differentially methylated regions (DMRs).
-The package takes already aligned BS data from one or multiple samples.
+implements an algorithm to detect differentially methylated regions
+(DMRs).  The package takes already aligned BS data from one or
+multiple samples.
 
-- bumphunter: Tools for finding bumps in genomic data
+- [bumphunter](http://bioconductor.org/packages/release/bioc/html/bumphunter.html):
+Tools for finding bumps in genomic data
 
-- CAGEr: Preprocessing of CAGE sequencing data, identification and
+- [CAGEr](http://bioconductor.org/packages/release/bioc/html/CAGEr.html):
+Preprocessing of CAGE sequencing data, identification and
 normalization of transcription start sites and downstream analysis of
 transcription start sites clusters (promoters).
 
-- casper: Infer alternative splicing from paired-end RNA-seq data. The model
-is based on counting paths across exons, rather than pairwise exon
-connections, and estimates the fragment size and start distributions non-
-parametrically, which improves estimation precision.
+- [casper](http://bioconductor.org/packages/release/bioc/html/casper.html):
+Infer alternative splicing from paired-end RNA-seq data. The model is
+based on counting paths across exons, rather than pairwise exon
+connections, and estimates the fragment size and start distributions
+non- parametrically, which improves estimation precision.
 
-- chimera: This package facilitates the characterisation of fusion products
-events. It allows to import fusion data results from the following fusion
-finders:  bellerophontes, deFuse, FusionFinder, FusionHunter, mapSplice,
-tophat-fusion, FusionMap
+- [chimera](http://bioconductor.org/packages/release/bioc/html/chimera.html):
+This package facilitates the characterisation of fusion products
+events. It allows to import fusion data results from the following
+fusion finders: bellerophontes, deFuse, FusionFinder, FusionHunter,
+mapSplice, tophat-fusion, FusionMap
 
-- cisPath: cisPath is an R package for identification and visualization of
-the shortest functional paths between proteins in the protein-protein
+- [cisPath](http://bioconductor.org/packages/release/bioc/html/cisPath.html):
+cisPath is an R package for identification and visualization of the
+shortest functional paths between proteins in the protein-protein
 interaction network.
 
-- clipper: clipper is a package for topological gene set analysis. It
-implements a two-step empirical approach based on the exploitation of graph
-decomposition into a junction tree to reconstruct the most relevant signal
-path. In the first step clipper selects significant pathways according to
-statistical tests on the means and the concentration matrices of the graphs
-derived from pathway topologies. Then, it "clips" the whole pathway
-identifying  the signal paths having the greatest association with a
-specific phenotype.
+- [clipper](http://bioconductor.org/packages/release/bioc/html/clipper.html):
+clipper is a package for topological gene set analysis. It implements
+a two-step empirical approach based on the exploitation of graph
+decomposition into a junction tree to reconstruct the most relevant
+signal path. In the first step clipper selects significant pathways
+according to statistical tests on the means and the concentration
+matrices of the graphs derived from pathway topologies. Then, it
+"clips" the whole pathway identifying the signal paths having the
+greatest association with a specific phenotype.
 
-- CNORfeeder: This package integrates literature-constrained and data-driven
-methods to infer signalling networks from perturbation experiments. It
-permits to extends a given network with links derived from the data via
-various inference methods, and uses information on physical interactions of
-proteins to guide and validate the integration of links.
+- [CNORfeeder](http://bioconductor.org/packages/release/bioc/html/CNORfeeder.html):
+This package integrates literature-constrained and data-driven methods
+to infer signalling networks from perturbation experiments. It permits
+to extends a given network with links derived from the data via
+various inference methods, and uses information on physical
+interactions of proteins to guide and validate the integration of
+links.
 
-- copynumber: Penalized least squares regression is applied to fit piecewise
-constant curves to copy number data to locate genomic regions of constant
-copy number. Procedures are available for individual segmentation of each
-sample, joint segmentation of several samples and joint segmentation of the
-two data tracks from SNP-arrays. Several plotting functions are available
-for visualization of the data and the segmentation results.
+- [copynumber](http://bioconductor.org/packages/release/bioc/html/copynumber.html):
+Penalized least squares regression is applied to fit piecewise
+constant curves to copy number data to locate genomic regions of
+constant copy number. Procedures are available for individual
+segmentation of each sample, joint segmentation of several samples and
+joint segmentation of the two data tracks from SNP-arrays. Several
+plotting functions are available for visualization of the data and the
+segmentation results.
 
-- DASiR: R package for programmatic retrieval of information from DAS servers
+- [DASiR](http://bioconductor.org/packages/release/bioc/html/DASiR.html):
+R package for programmatic retrieval of information from DAS servers
 
-- deltaGseg: Identifying distinct subpopulations through multiscale time
-series analysis
+- [deltaGseg](http://bioconductor.org/packages/release/bioc/html/deltaGseg.html):
+Identifying distinct subpopulations through multiscale time series
+analysis
 
-- DESeq2: Estimate variance-mean dependence in count data from
-high-throughput sequencing assays and test for differential expression
-based on a model using the negative binomial distribution
+- [DESeq2](http://bioconductor.org/packages/release/bioc/html/DESeq2.html):
+Estimate variance-mean dependence in count data from high-throughput
+sequencing assays and test for differential expression based on a
+model using the negative binomial distribution
 
-- dexus: DEXUS identifies differentially expressed genes in RNA-Seq data
-under all possible study designs such as studies without replicates,
-without sample groups, and with unknown conditions. DEXUS works also for
-known conditions, for example for RNA-Seq data with two or multiple
-conditions. RNA-Seq read count data can be provided both by the S4 class
-Count Data Set and by read count matrices. Differentially expressed
-transcripts can be visualized by heatmaps, in which unknown conditions,
-replicates, and samples groups are also indicated. This software is fast
-since the core algorithm is written in C. For very large data sets, a
-parallel version of DEXUS is provided in this package. DEXUS is a
-statistical model that is selected in a Bayesian framework by an EM
-algorithm. DEXUS does not need replicates to detect differentially expressed
-transcripts, since the replicates (or conditions) are estimated by the EM
-method for each transcript. The method provides an
-informative/non-informative value to extract differentially expressed
-transcripts at a desired significance level or power.
+- [dexus](http://bioconductor.org/packages/release/bioc/html/dexus.html):
+DEXUS identifies differentially expressed genes in RNA-Seq data under
+all possible study designs such as studies without replicates, without
+sample groups, and with unknown conditions. DEXUS works also for known
+conditions, for example for RNA-Seq data with two or multiple
+conditions. RNA-Seq read count data can be provided both by the S4
+class Count Data Set and by read count matrices. Differentially
+expressed transcripts can be visualized by heatmaps, in which unknown
+conditions, replicates, and samples groups are also indicated. This
+software is fast since the core algorithm is written in C. For very
+large data sets, a parallel version of DEXUS is provided in this
+package. DEXUS is a statistical model that is selected in a Bayesian
+framework by an EM algorithm. DEXUS does not need replicates to detect
+differentially expressed transcripts, since the replicates (or
+conditions) are estimated by the EM method for each transcript. The
+method provides an informative/non-informative value to extract
+differentially expressed transcripts at a desired significance level
+or power.
 
-- DriverNet: DriverNet is a package to predict functional important driver
-genes in cancer by integrating genome data (mutation and copy number
-variation data) and transcriptome data (gene expression data). The different
+- [DriverNet](http://bioconductor.org/packages/release/bioc/html/DriverNet.html):
+DriverNet is a package to predict functional important driver genes in
+cancer by integrating genome data (mutation and copy number variation
+data) and transcriptome data (gene expression data). The different
 kinds of data are combined by an influence graph, which is a gene-gene
-interaction network deduced from pathway data. A greedy algorithm is used to
-find the possible driver genes, which may mutated in a larger number of
-patients and these mutations will push the gene expression values of the
-connected genes to some extreme values.
+interaction network deduced from pathway data. A greedy algorithm is
+used to find the possible driver genes, which may mutated in a larger
+number of patients and these mutations will push the gene expression
+values of the connected genes to some extreme values.
 
-- DrugVsDisease: This package generates ranked lists of differential gene
-expression for either disease or drug profiles. Input data can be downloaded
-from Array Express or GEO, or from local CEL files. Ranked lists of
-differential expression and associated p-values are calculated using Limma.
-Enrichment scores (Subramanian et al. PNAS 2005) are calculated to a
-reference set of default drug or disease profiles, or a set of custom data
-supplied by the user. Network visualisation of significant scores are output
-in Cytoscape format.
+- [DrugVsDisease](http://bioconductor.org/packages/release/bioc/html/DrugVsDisease.html):
+This package generates ranked lists of differential gene expression
+for either disease or drug profiles. Input data can be downloaded from
+Array Express or GEO, or from local CEL files. Ranked lists of
+differential expression and associated p-values are calculated using
+Limma.  Enrichment scores (Subramanian et al. PNAS 2005) are
+calculated to a reference set of default drug or disease profiles, or
+a set of custom data supplied by the user. Network visualisation of
+significant scores are output in Cytoscape format.
 
-- eiR: The eiR package provides utilities for accelerated structure
+- [eiR](http://bioconductor.org/packages/release/bioc/html/eiR.html):
+The eiR package provides utilities for accelerated structure
 similarity searching of very large small molecule data sets using an
 embedding and indexing approach.
 
-- ensemblVEP: Query the Ensembl Variant Effect Predictor via the perl API
+- [ensemblVEP](http://bioconductor.org/packages/release/bioc/html/ensemblVEP.html):
+Query the Ensembl Variant Effect Predictor via the perl API
 
-- epigenomix: A package for the integrative analysis of microarray based gene
-expression and histone modification data obtained by ChIP-seq. The package
-provides methods for data preprocessing and matching as well as methods
-for fitting bayesian mixture models in order to detect genes with
-differences in both data types.
+- [epigenomix](http://bioconductor.org/packages/release/bioc/html/epigenomix.html):
+A package for the integrative analysis of microarray based gene
+expression and histone modification data obtained by ChIP-seq. The
+package provides methods for data preprocessing and matching as well
+as methods for fitting bayesian mixture models in order to detect
+genes with differences in both data types.
 
-- gCMAPWeb: The gCMAPWeb R package provides a graphical user
-interface for the gCMAP package. gCMAPWeb uses the Rook package and
-can be used either on a local machine, leveraging R's internal web
-server, or run on a dedicated rApache web server installation.
-gCMAPWeb allows users to search their own data sources and
-instructions to generate reference datasets from public repositories
-are included with the package. The package supports three common types
-of analyses, specifically queries with 1. one or two sets of query
-gene identifiers, whose members are expected to show changes in gene
-expression in a consistent direction. For example, an up-regulated
-gene set might contain genes activated by a transcription factor, a
-down-regulated geneset targets repressed by the same factor. 2. a
-single set of query gene identifiers, whose members are expected to
-show divergent differential expression (non-directional query). For
-example, members of a particular signaling pathway, some of which may
-be up- some down-regulated in response to a stimulus. 3. a query with
-the complete results of a differential expression profiling
-experiment. For example, gene identifiers and z-scores from a previous
-perturbation experiment. gCMAPWeb accepts three types of identifiers:
-EntreIds, gene Symbols and microarray probe ids and can be configured
-to work with any species supported by Bioconductor. For each query
-submission, significantly similar reference datasets will be
-identified and reported in graphical and tabular form.
+- [gCMAPWeb](http://bioconductor.org/packages/release/bioc/html/gCMAPWeb.html):
+The gCMAPWeb R package provides a graphical user interface for the
+gCMAP package. gCMAPWeb uses the Rook package and can be used either
+on a local machine, leveraging R's internal web server, or run on a
+dedicated rApache web server installation.  gCMAPWeb allows users to
+search their own data sources and instructions to generate reference
+datasets from public repositories are included with the package. The
+package supports three common types of analyses, specifically queries
+with 1. one or two sets of query gene identifiers, whose members are
+expected to show changes in gene expression in a consistent
+direction. For example, an up-regulated gene set might contain genes
+activated by a transcription factor, a down-regulated geneset targets
+repressed by the same factor. 2. a single set of query gene
+identifiers, whose members are expected to show divergent differential
+expression (non-directional query). For example, members of a
+particular signaling pathway, some of which may be up- some
+down-regulated in response to a stimulus. 3. a query with the complete
+results of a differential expression profiling experiment. For
+example, gene identifiers and z-scores from a previous perturbation
+experiment. gCMAPWeb accepts three types of identifiers: EntreIds,
+gene Symbols and microarray probe ids and can be configured to work
+with any species supported by Bioconductor. For each query submission,
+significantly similar reference datasets will be identified and
+reported in graphical and tabular form.
 
-- GENE.E: Interactive exploration of matrices in GENE-E.
+- [GENE.E](http://bioconductor.org/packages/release/bioc/html/GENE.E.html): Interactive exploration of matrices in GENE-E.
 
-- geNetClassifier: Comprehensive package to automatically train a multi-
-class SVM classifier based on gene expression data. Provides transparent
-selection of gene markers, their coexpression networks, and an interface to
-query the classifier.
+- [geNetClassifier](http://bioconductor.org/packages/release/bioc/html/geNetClassifier.html):
+Comprehensive package to automatically train a multi- class SVM
+classifier based on gene expression data. Provides transparent
+selection of gene markers, their coexpression networks, and an
+interface to query the classifier.
 
-- GraphPAC: Identifies mutational clusters of amino acids in a protein while
-utilizing the proteins tertiary structure via a graph theoretical model.
+- [GraphPAC](http://bioconductor.org/packages/release/bioc/html/GraphPAC.html):
+Identifies mutational clusters of amino acids in a protein while
+utilizing the proteins tertiary structure via a graph theoretical
+model.
 
-- HCsnip: Decompose given hierarchical clustering tree into non-overlapping
-clusters in a semi-supervised way by using available patients follow-up
-information as guidance. Contains functions for snipping HC tree, various
-cluster quality evaluation criteria, assigning new patients to one of the
-two given HC trees, testing the significance of clusters with permutation
-argument and clusters visualization using sample's molecular entropy.
+- [HCsnip](http://bioconductor.org/packages/release/bioc/html/HCsnip.html):
+Decompose given hierarchical clustering tree into non-overlapping
+clusters in a semi-supervised way by using available patients
+follow-up information as guidance. Contains functions for snipping HC
+tree, various cluster quality evaluation criteria, assigning new
+patients to one of the two given HC trees, testing the significance of
+clusters with permutation argument and clusters visualization using
+sample's molecular entropy.
 
-- HTSFilter: This package implements a filtering procedure for replicated
-transcriptome sequencing data based on a global Jaccard similarity index in
-order to identify genes with low, constant levels of expression across one
-or more experimental conditions.
+- [HTSFilter](http://bioconductor.org/packages/release/bioc/html/HTSFilter.html):
+This package implements a filtering procedure for replicated
+transcriptome sequencing data based on a global Jaccard similarity
+index in order to identify genes with low, constant levels of
+expression across one or more experimental conditions.
 
-- iBMQ: integrated Bayesian Modeling of eQTL data
+- [iBMQ](http://bioconductor.org/packages/release/bioc/html/iBMQ.html):
+integrated Bayesian Modeling of eQTL data
 
-- illuminaio: Tools for parsing Illumina's microarray output files,
-including IDAT.
+- [illuminaio](http://bioconductor.org/packages/release/bioc/html/illuminaio.html):
+Tools for parsing Illumina's microarray output files, including IDAT.
 
-- jmosaics: jmosaics detects enriched regions of ChIP-seq data sets jointly.
+- [jmosaics](http://bioconductor.org/packages/release/bioc/html/jmosaics.html):
+jmosaics detects enriched regions of ChIP-seq data sets jointly.
 
-- KEGGREST: A package that provides a client interface to the KEGG
-REST server. Based on KEGGSOAP by J. Zhang, R. Gentleman,
-and Marc Carlson, and KEGG (python package) by Aurelien Mazurie.
+- [KEGGREST](http://bioconductor.org/packages/release/bioc/html/KEGGREST.html):
+A package that provides a client interface to the KEGG REST
+server. Based on KEGGSOAP by J. Zhang, R. Gentleman, and Marc Carlson,
+and KEGG (python package) by Aurelien Mazurie.
 
-- lpNet: lpNet takes perturbation data as input and generates an LP model
-which allows the inference of signaling networks. For parameter
-identification either leave-one-out cross-validation or stratified n-fold
-cross-validation can be used.
+- [lpNet](http://bioconductor.org/packages/release/bioc/html/lpNet.html):
+lpNet takes perturbation data as input and generates an LP model which
+allows the inference of signaling networks. For parameter
+identification either leave-one-out cross-validation or stratified
+n-fold cross-validation can be used.
 
-- metagenomeSeq: metagenomeSeq is designed to determine features (be it
-Operational Taxanomic Unit (OTU), species, etc.) that are differentially
-abundant between two or more groups of multiple samples. metagenomeSeq is
-designed to address the effects of both normalization and under-sampling of
-microbial communities on disease association detection and the testing of
-feature correlations.
+- [metagenomeSeq](http://bioconductor.org/packages/release/bioc/html/metagenomeSeq.html):
+metagenomeSeq is designed to determine features (be it Operational
+Taxanomic Unit (OTU), species, etc.) that are differentially abundant
+between two or more groups of multiple samples. metagenomeSeq is
+designed to address the effects of both normalization and
+under-sampling of microbial communities on disease association
+detection and the testing of feature correlations.
 
-- MethylSeekR: This is a package for the discovery of regulatory regions
-from Bis-seq data
+- [MethylSeekR](http://bioconductor.org/packages/release/bioc/html/MethylSeekR.html):
+This is a package for the discovery of regulatory regions from Bis-seq
+data
 
-- MineICA: The goal of MineICA is to make easier the interpretation of the
+- [MineICA](http://bioconductor.org/packages/release/bioc/html/MineICA.html):
+The goal of MineICA is to make easier the interpretation of the
 interpretation of a decomposition obtained by Independent Component
-Analysis on transcriptomic data. It helps the biological interpretation of
-the components by studying their association with variables (e.g sample
-annotations) and gene sets, and enables the comparison of components from
-different datasets using correlation-based graph.
+Analysis on transcriptomic data. It helps the biological
+interpretation of the components by studying their association with
+variables (e.g sample annotations) and gene sets, and enables the
+comparison of components from different datasets using
+correlation-based graph.
 
-- MMDiff: This package detects statistically significant
-difference between read enrichment profiles in different ChIP-Seq samples. To
-take advantage of shape differences it uses Kernel methods (Maximum Mean
-Discrepancy, MMD).
+- [MMDiff](http://bioconductor.org/packages/release/bioc/html/MMDiff.html):
+This package detects statistically significant difference between read
+enrichment profiles in different ChIP-Seq samples. To take advantage
+of shape differences it uses Kernel methods (Maximum Mean Discrepancy,
+MMD).
 
-- PAPi: The Pathway Activity Profiling - PAPi - is an R package for
-predicting the activity of metabolic pathways based solely on a metabolomics
-data set containing a list of metabolites identified and their respective
-abundances in different biological samples. PAPi generates hypothesis that
-improves the final biological interpretation. See Aggio, R.B.M; Ruggiero, K.
-and Villas-Boas, S.G. (2010) - Pathway Activity Profiling (PAPi): from
-metabolite profile to metabolic pathway activity. Bioinformatics.
+- [PAPi](http://bioconductor.org/packages/release/bioc/html/PAPi.html):
+The Pathway Activity Profiling - PAPi - is an R package for predicting
+the activity of metabolic pathways based solely on a metabolomics data
+set containing a list of metabolites identified and their respective
+abundances in different biological samples. PAPi generates hypothesis
+that improves the final biological interpretation. See Aggio, R.B.M;
+Ruggiero, K.  and Villas-Boas, S.G. (2010) - Pathway Activity
+Profiling (PAPi): from metabolite profile to metabolic pathway
+activity. Bioinformatics.
 
-- PathNet: PathNet uses topological information present in pathways and
-differential expression levels of genes (obtained from microarray experiment)
-to identify pathways that are 1) significantly enriched and 2) associated
-with each other in the context of differential expression. The algorithm is
-described in: PathNet: A tool for pathway analysis using topological
-information. Dutta B, Wallqvist A, and Reifman J. Source Code for
-Biology and Medicine 2012 Sep 24;7(1):10.
+- [PathNet](http://bioconductor.org/packages/release/bioc/html/PathNet.html):
+PathNet uses topological information present in pathways and
+differential expression levels of genes (obtained from microarray
+experiment) to identify pathways that are 1) significantly enriched
+and 2) associated with each other in the context of differential
+expression. The algorithm is described in: PathNet: A tool for pathway
+analysis using topological information. Dutta B, Wallqvist A, and
+Reifman J. Source Code for Biology and Medicine 2012 Sep 24;7(1):10.
 
-- pathview: Pathview is a tool set for pathway based data integration
-and visualization. It maps and renders a wide variety of
-biological data on relevant pathway graphs. All users need is
-to supply their data and specify the target pathway. Pathview
-automatically downloads the pathway graph data, parses the data
-file, maps user data to the pathway, and render pathway graph
-with the mapped data. In addition, Pathview also seamlessly
-integrates with pathway and gene set analysis tools for
-large-scale and fully automated analysis.
+- [pathview](http://bioconductor.org/packages/release/bioc/html/pathview.html):
+Pathview is a tool set for pathway based data integration and
+visualization. It maps and renders a wide variety of biological data
+on relevant pathway graphs. All users need is to supply their data and
+specify the target pathway. Pathview automatically downloads the
+pathway graph data, parses the data file, maps user data to the
+pathway, and render pathway graph with the mapped data. In addition,
+Pathview also seamlessly integrates with pathway and gene set analysis
+tools for large-scale and fully automated analysis.
 
-- piano: Piano performs gene set analysis using various statistical methods,
-from different gene level statistics and a wide range of gene-set collections
-. Futhermore, the Piano package contains functions for combining the results
-of multiple runs of gene set analyses.
+- [piano](http://bioconductor.org/packages/release/bioc/html/piano.html):
+Piano performs gene set analysis using various statistical methods,
+from different gene level statistics and a wide range of gene-set
+collections . Futhermore, the Piano package contains functions for
+combining the results of multiple runs of gene set analyses.
 
-- plrs: The present package implements a flexible framework for
-modeling the relationship between DNA copy number and gene
-expression data using Piecewise Linear Regression Splines (PLRS).
+- [plrs](http://bioconductor.org/packages/release/bioc/html/plrs.html):
+The present package implements a flexible framework for modeling the
+relationship between DNA copy number and gene expression data using
+Piecewise Linear Regression Splines (PLRS).
 
-- prebs: The prebs package aims at making RNA-sequencing (RNA-seq)
-data more comparable to microarray data. The comparability is achieved
-by summarizing sequencing-based expressions of probe regions using
-a modified version of RMA algorithm. The pipeline takes mapped reads
-in BAM format as an input and produces either gene expressions or
+- [prebs](http://bioconductor.org/packages/release/bioc/html/prebs.html):
+The prebs package aims at making RNA-sequencing (RNA-seq) data more
+comparable to microarray data. The comparability is achieved by
+summarizing sequencing-based expressions of probe regions using a
+modified version of RMA algorithm. The pipeline takes mapped reads in
+BAM format as an input and produces either gene expressions or
 original microarray probe set expressions as an output.
 
-- pRoloc: This package implements pattern recognition
-techniques on quantitiative mass spectrometry data to
-infer protein sub-cellular localisation.
+- [pRoloc](http://bioconductor.org/packages/release/bioc/html/pRoloc.html):
+This package implements pattern recognition techniques on
+quantitiative mass spectrometry data to infer protein sub-cellular
+localisation.
 
-- proteinProfiles: Significance assessment for distance measures of time-
-course protein profiles
+- [proteinProfiles](http://bioconductor.org/packages/release/bioc/html/proteinProfiles.html):
+Significance assessment for distance measures of time- course protein
+profiles
 
-- pvca: This package contains the function to assess the batch sources by
-fitting all "sources" as random effects including two-way interaction terms
-in the Mixed Model(depends on lme4 package) to selected principal
-components, which were obtained from the original data correlation matrix.
-This package accompanies the book "Batch Effects and Noise in Microarray
-Experiements, chapter 12.
+- [pvca](http://bioconductor.org/packages/release/bioc/html/pvca.html):
+This package contains the function to assess the batch sources by
+fitting all "sources" as random effects including two-way interaction
+terms in the Mixed Model(depends on lme4 package) to selected
+principal components, which were obtained from the original data
+correlation matrix.  This package accompanies the book "Batch Effects
+and Noise in Microarray Experiements, chapter 12.
 
-- QuasR: This package provides a framework for the quantification and
-analysis of Short Reads. It covers a complete workflow starting from raw
-sequence reads, over creation of alignments and quality control plots, to
-the quantification of genomic regions of interest.
+- [QuasR](http://bioconductor.org/packages/release/bioc/html/QuasR.html):
+This package provides a framework for the quantification and analysis
+of Short Reads. It covers a complete workflow starting from raw
+sequence reads, over creation of alignments and quality control plots,
+to the quantification of genomic regions of interest.
 
-- rBiopaxParser: Parses BioPAX files and represents them in R, at the moment
-BioPAX level 2 and level 3 are supported.
+- [rBiopaxParser](http://bioconductor.org/packages/release/bioc/html/rBiopaxParser.html):
+Parses BioPAX files and represents them in R, at the moment BioPAX
+level 2 and level 3 are supported.
 
-- Rbowtie: This package provides an R wrapper around the popular bowtie
-short read aligner and around SpliceMap, a de novo splice junction discovery
-and alignment tool. The package is used by the QuasR bioconductor package.
-We recommend to use the QuasR package instead of using Rbowtie directly.
+- [Rbowtie](http://bioconductor.org/packages/release/bioc/html/Rbowtie.html):
+This package provides an R wrapper around the popular bowtie short
+read aligner and around SpliceMap, a de novo splice junction discovery
+and alignment tool. The package is used by the QuasR bioconductor
+package.  We recommend to use the QuasR package instead of using
+Rbowtie directly.
 
-- RIPSeeker: Infer and discriminate RIP peaks from RIP-seq alignments using
-two-state HMM with negative binomial emission probability. While RIPSeeker
-is specifically tailored for RIP-seq data analysis, it also provides a suite
-of bioinformatics tools integrated within this self-contained software
-package comprehensively addressing issues ranging from post-alignments
-processing to visualization and annotation.
+- [RIPSeeker](http://bioconductor.org/packages/release/bioc/html/RIPSeeker.html):
+Infer and discriminate RIP peaks from RIP-seq alignments using
+two-state HMM with negative binomial emission probability. While
+RIPSeeker is specifically tailored for RIP-seq data analysis, it also
+provides a suite of bioinformatics tools integrated within this
+self-contained software package comprehensively addressing issues
+ranging from post-alignments processing to visualization and
+annotation.
 
-- RNASeqPower: RNA-seq, sample size
+- [RNASeqPower](http://bioconductor.org/packages/release/bioc/html/RNASeqPower.html):
+RNA-seq, sample size
 
-- ROntoTools: Suite of tools for functional analysis
+- [ROntoTools](http://bioconductor.org/packages/release/bioc/html/ROntoTools.html):
+Suite of tools for functional analysis
 
-- RSVSim: RSVSim is a package for the simulation of deletions, insertions,
-inversion, tandem-duplications and translocations of various sizes in any
-genome available as FASTA-file or BSgenome data package. SV breakpoints can
-be placed uniformly accross the whole genome, with a bias towards repeat
-regions and regions of high homology (for hg19) or at user-supplied
-coordinates.
+- [RSVSim](http://bioconductor.org/packages/release/bioc/html/RSVSim.html):
+RSVSim is a package for the simulation of deletions, insertions,
+inversion, tandem-duplications and translocations of various sizes in
+any genome available as FASTA-file or BSgenome data package. SV
+breakpoints can be placed uniformly accross the whole genome, with a
+bias towards repeat regions and regions of high homology (for hg19) or
+at user-supplied coordinates.
 
-- rTANDEM: This package encapsulate X!Tandem in R. In its most basic
-functionality, this package allows to call tandem(input) from R, just as
-tandem.exe /path/to/input.xml would be used to run X!Tandem from the command
-line. Classes are also provided for taxonomy and parameters objects and
-methods are provided to convert xml files to R objects and vice versa. This
-package is the first step in an attempt to provide a reliable worflow for
-proteomics analysis in R.
+- [rTANDEM](http://bioconductor.org/packages/release/bioc/html/rTANDEM.html):
+This package encapsulate X!Tandem in R. In its most basic
+functionality, this package allows to call tandem(input) from R, just
+as tandem.exe /path/to/input.xml would be used to run X!Tandem from
+the command line. Classes are also provided for taxonomy and
+parameters objects and methods are provided to convert xml files to R
+objects and vice versa. This package is the first step in an attempt
+to provide a reliable worflow for proteomics analysis in R.
 
-- SANTA: This package provides methods for measuring the strength of
-association between a network and a phenotype. It does this by measuring
-clustering of the phenotype across the network. Vertices can also be
-individually ranked by their strength of association with high-weight
-vertices.
+- [SANTA](http://bioconductor.org/packages/release/bioc/html/SANTA.html):
+This package provides methods for measuring the strength of
+association between a network and a phenotype. It does this by
+measuring clustering of the phenotype across the network. Vertices can
+also be individually ranked by their strength of association with
+high-weight vertices.
 
-- SeqArray: Big data management of genome-wide variants using the CoreArray
+- [SeqArray](http://bioconductor.org/packages/release/bioc/html/SeqArray.html):
+Big data management of genome-wide variants using the CoreArray
 library, where genotypic data and annotations are stored in an array-
-oriented manner, offering efficient access of genetic variants using the R
-language.
+oriented manner, offering efficient access of genetic variants using
+the R language.
 
-- SeqGSEA: Gene set enrichment analysis of high-throughput RNA-Seq data by
-integrating differential expression and splicing. Using negative binomial
-distribution to model read count data, which accounts for sequencing biases
-and biological variation. Based on permutation, significance analysis can
-also be done regarding each gene's differential expression and splicing,
-respectively.
+- [SeqGSEA](http://bioconductor.org/packages/release/bioc/html/SeqGSEA.html):
+Gene set enrichment analysis of high-throughput RNA-Seq data by
+integrating differential expression and splicing. Using negative
+binomial distribution to model read count data, which accounts for
+sequencing biases and biological variation. Based on permutation,
+significance analysis can also be done regarding each gene's
+differential expression and splicing, respectively.
 
-- SNAGEE: Signal-to-Noise applied to Gene Expression Experiments.
+- [SNAGEE](http://bioconductor.org/packages/release/bioc/html/SNAGEE.html):
+Signal-to-Noise applied to Gene Expression Experiments.
 Signal-to-noise ratios can be used as a proxy for quality of gene
-expression  studies and samples. The SNRs can be calculated on any
-gene expression data set as long as gene IDs are available, no access
-to the raw data files is necessary. This allows to flag problematic
+expression studies and samples. The SNRs can be calculated on any gene
+expression data set as long as gene IDs are available, no access to
+the raw data files is necessary. This allows to flag problematic
 studies and samples in any public data set.
 
-- SomatiCA:  SomatiCA is a software suite that is capable of
-identifying, characterizing, and quantifying somatic CNAs from cancer
-genome sequencing. First, it uses read depths and lesser allele
-frequencies (LAF) from mapped short sequence reads to segment the
-genome and identify candidate CNAs. Second, SomatiCA estimates the
-admixture rate from the relative copy-number profile of tumor-normal
-pair by a Bayesian finite mixture model. Third, SomatiCA quantifies
-absolute somatic copy-number and subclonality for each genomic segment
-to guide its characterization. Results from SomatiCA can be further
-integrated with single nucleotide variations (SNVs) to get a better
-understanding of the tumor evolution.
+- [SomatiCA](http://bioconductor.org/packages/release/bioc/html/SomatiCA.html):
+SomatiCA is a software suite that is capable of identifying,
+characterizing, and quantifying somatic CNAs from cancer genome
+sequencing. First, it uses read depths and lesser allele frequencies
+(LAF) from mapped short sequence reads to segment the genome and
+identify candidate CNAs. Second, SomatiCA estimates the admixture rate
+from the relative copy-number profile of tumor-normal pair by a
+Bayesian finite mixture model. Third, SomatiCA quantifies absolute
+somatic copy-number and subclonality for each genomic segment to guide
+its characterization. Results from SomatiCA can be further integrated
+with single nucleotide variations (SNVs) to get a better understanding
+of the tumor evolution.
 
-- SPEM: This package can optimize the parameter in S-system models given
-time series data
+- [SPEM](http://bioconductor.org/packages/release/bioc/html/SPEM.html):
+This package can optimize the parameter in S-system models given time
+series data
 
-- SplicingGraphs: This package allows the user to create, manipulate,
-and  visualize splicing graphs and their bubbles based on a gene model
-for a given organism. Additionally it allows the user to assign RNA-
-seq reads to the edges of a set of splicing graphs, and to summarize
-them.
+- [SplicingGraphs](http://bioconductor.org/packages/release/bioc/html/SplicingGraphs.html):
+This package allows the user to create, manipulate, and visualize
+splicing graphs and their bubbles based on a gene model for a given
+organism. Additionally it allows the user to assign RNA- seq reads to
+the edges of a set of splicing graphs, and to summarize them.
 
-- triplex: This package provides functions for identification and
-visualization of potential intramolecular triplex patterns in DNA sequence.
-The main functionality is to detect the positions of subsequences capable of
-folding into an intramolecular triplex (H-DNA) in a much larger sequence.
-The potential H-DNA (triplexes) should be made of as many canonical
-nucleotide triplets as possible. The package includes visualization showing
-the exact base-pairing in 1D, 2D or 3D.
+- [triplex](http://bioconductor.org/packages/release/bioc/html/triplex.html):
+This package provides functions for identification and visualization
+of potential intramolecular triplex patterns in DNA sequence.  The
+main functionality is to detect the positions of subsequences capable
+of folding into an intramolecular triplex (H-DNA) in a much larger
+sequence.  The potential H-DNA (triplexes) should be made of as many
+canonical nucleotide triplets as possible. The package includes
+visualization showing the exact base-pairing in 1D, 2D or 3D.
 
-- UniProt.ws: A collection of functions for retrieving, processing and
-repackaging the Uniprot web services.
+- [UniProt.ws](http://bioconductor.org/packages/release/bioc/html/UniProt.ws.html):
+A collection of functions for retrieving, processing and repackaging
+the Uniprot web services.
 
-- wateRmelon: 15 flavours of betas and three performance metrics, with
-methods for objects produced by methylumi, minfi and IMA packages.
-
+- [wateRmelon](http://bioconductor.org/packages/release/bioc/html/wateRmelon.html):
+15 flavours of betas and three performance metrics, with methods for
+objects produced by methylumi, minfi and IMA packages.
 
 NEWS from new and existing packages
 ===================================
 
 Package maintainers can add NEWS files describing changes to their
 packages. The following package NEWS is available:
-
 
 ADaCGH2
 -------
@@ -1285,7 +1352,6 @@ NEW FEATURES
 
 - Package released
 
-
 genomeIntervals
 ---------------
 
@@ -1969,14 +2035,12 @@ Changes in version 3.9.0:
 
 - strict copy from 3.8.0
 
-
 htSeqTools
 ----------
 
 Changes in version 1.5.1:
 
 - Fixed bug in enrichedRegions method for RangedDataList objects
-
 
 iPAC
 ----
@@ -1995,7 +2059,6 @@ Changes in version 1.1.2:
 
 - You can now specify the title of your choice to the
   "Plot.Protein.Linear" function.
-
 
 IRanges
 -------
@@ -2217,7 +2280,6 @@ Changes in version 1.5:
 - Report generation
 
 - Import PhosphoSitePlus or neXtProt information on modification sites
-
 
 KEGGREST
 --------
@@ -2921,7 +2983,6 @@ Changes in version 1.0.0:
   kegg.species.code, mol.sum, sim.mol.data; -Viewer: keggview.native,
   keggview.graph, node.color, col.key, wordwrap, strfit
 
-
 piano
 -----
 
@@ -3548,7 +3609,6 @@ Changes in version 1.3.1:
 
 - bug fixed of ALLEXTID. <2013-03-1, Fri>
 
-
 ReportingTools
 --------------
 
@@ -3724,7 +3784,6 @@ Changes in version 1.1.0:
 
 - version bump for next devel <2012-10-01 Mon>
 
-
 RPA
 ---
 
@@ -3779,7 +3838,6 @@ BUG FIXES
 - scanBcfHeader provides informative error message when header line
   ('#CHROM POS ...') is missing
 
-
 Rsubread
 --------
 
@@ -3793,7 +3851,6 @@ NEW FEATURES
 
 - Major updates to the function 'featureCounts', a general-purpose read
   summarization function.
-
 
 RTCA
 ----
@@ -4323,7 +4380,6 @@ VERSION xps-1.19.1
   against tabs in Affymetrix annotation files
 
 - update script4schemes.R to include schemes with annotation na33
-
 
 Packages removed from the release
 =================================
