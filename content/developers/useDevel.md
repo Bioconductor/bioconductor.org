@@ -1,142 +1,102 @@
-Using The Devel Version of Bioconductor
-=======================================
+Using the `devel` Version of Bioconductor
+=========================================
 
 In this release cycle, the same version of R (3.0) can be used with
 two different versions of Bioconductor (2.12, `release`, and 2.13,
-`devel`).  When BiocInstaller is first installed on R-3.0, it is set
-up to download `release` packages.
-    
-To change this, run the <code>useDevel()</code> function. With
-argument <code>TRUE</code> (the default), it will download the `devel`
-version of BiocInstaller and subsequently all packages downloaded with
-<code>biocLite()</code> will be from the `devel` repository. You should
-run <code>useDevel()</code> only once.
-
-Note: The information on this page can also be accessed from within R
-as follows:
+`devel`).  When BiocInstaller is first installed on R-3.0, it
+downloads `release` packages.  To change this, run the `useDevel()`
+function. 
 
     library(BiocInstaller)
-    ?useDevel
+    useDevel()
+
+With argument `TRUE` (the default), this downloads the `devel` version
+of BiocInstaller and subsequently all packages downloaded with
+`biocLite()` are from the `devel` repository. Run `useDevel()` only
+once. See `?useDevel` for more information.
     
-It is best to keep Bioconductor `release` and `devel` libraries separate,
-within the same installation of R.  To do this use, the
-<code>R_LIBS_USER</code> environment variable.  First, create two
-separate directories for your BioC `release` and `devel`
-packages. Suggested directory names are as follows:
-    
-Linux:
+Separate libraries
+------------------
+
+It is best to keep Bioconductor `release` and `devel` packages in
+separate libraries.
+
+An easy way to do this is to have two separate installation of R-3.0.
+
+A more complicated way is to use the `R_LIBS_USER` environment
+variable.  First, create two separate directories. Suggested directory
+names are Linux:
     
     ~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-release
-    
     ~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-devel
 
 Mac OS:
     
     ~/Library/R/3.0-bioc-release/library
-    
     ~/Library/R/3.0-bioc-devel/library
 
-Windows:
+and Windows:
     
-    C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-release
+    C:\Users\YOUR_NAME\Documents\R\win-library\3.0-bioc-release
+    C:\Users\YOUR_NAME\Documents\R\win-library\3.0-bioc-devel
     
-    C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-devel
+(change `YOUR_NAME` to your user name)
     
-(change YOUR_USER_NAME to your user name)
-    
-
-You can then invoke "R for bioc-devel" or "R for bioc-release" from
-the command line as follows:
-
-Linux:
+Invoke "R for bioc-devel" or "R for bioc-release" from the command
+line on Linux:
     
     R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-release R
-    
     R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-devel R
-    
     
 Mac OS X:
     
     R_LIBS_USER=~~/Library/R/3.0-bioc-release/library R
     R_LIBS_USER=~~/Library/R/3.0-bioc-devel/library R
 
-Windows:
+and Windows (assuming that R.exe is in PATH):
     
     cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-release &&  R"
-    
     cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
     
-(Note: this assumes that R.exe is in your PATH.)
+When correctly configured, R's `.libPaths()` function will return the
+`release` or `devel` directory as its first entry. Packages are
+installed to that directory, and that is the first place that
+`library()` looks for them.  <code>biocLite()</code> and
+<code>install.packages()</code> respect this setting;
+<code>update.packages()</code> attempts to update packages in the
+directory where the current package is installed.
 
-If you launch R in this way and then invoke <code>.libPaths()</code>,
-you'll see that the first item is your special `release` or `devel`
-directory. Packages will be installed to that directory and that is
-the first place that <code>library()</code> will look for them.
-<code>biocLite()</code> and <code>install.packages()</code> respect
-this setting; <code>update.packages()</code> attempts to update
-packages in the directory where the current package is installed.
-
+Aliases
+-------
 
 On Linux and Mac OS X, you can create a bash alias to save typing. Add the
-following to your ~/bash_profile:
-    
-
-Linux
+following to your ~/bash_profile on Linux:
     
     alias Rdevel='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-devel R'
     alias Rrelease='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.0-bioc-release R'
     
-Mac OS X
+or Mac OS X
     
     alias Rdevel='R_LIBS_USER=~/Library/R/3.0-bioc-devel/library R'
     alias Rrelease='R_LIBS_USER=~/Library/R/3.0-bioc-release/library R'
+    
+Invoke R from the command line as `Rdevel` or `Rrelease`.
 
-    
-You can then invoke these from the command line as
-    
-    Rdevel
-    
-...and...
-    
-    Rrelease
+On Windows, create two shortcuts, one for `release` and one for
+`devel`. For `devel` (do similar steps for `release`) go to My
+Computer and navigate to a directory that is in your PATH. Then
+right-click and choose New->Shortcut.  In the "type the location of
+the item" box, put:
 
-
-On Windows, you can create two shortcuts, one for `release` and one for
-`devel`. Go to My Computer and navigate to a directory that is in your
-PATH. Then right-click and choose New->Shortcut.
-    
-in the "type the location of the item" box, put:
-    
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-release &&  R"
-    
-...for release and
-    
     cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
 
-...for devel.
-
-(again, it's assumed R.exe is in your PATH)
-
-Click "Next".
-
-In the "Type a name for this shortcut" box, type
+(again, it's assumed R.exe is in your PATH) Click "Next", and in the
+"Type a name for this shortcut" box, type
 
     Rdevel
-
-or
-
-    Rrelease
     
-You can invoke these from the command line as
+Invoke these from the command line as `Rdevel.lnk`.
     
-    Rdevel.lnk
-    
-...and...
-    
-    Rrelease.lnk
-    
-(You must type in the .lnk extension.)
-    
-Because <code>R_LIBS_USER</code> is an environment variable, its value should be
+Because `R_LIBS_USER` is an environment variable, its value should be
 inherited by any subprocesses started by R, so they should do the
 right thing as well.
