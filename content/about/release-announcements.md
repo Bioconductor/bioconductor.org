@@ -1,5 +1,6 @@
 ## Bioconductor Release Announcements
 
+* [Bioconductor 2.12](/news/bioc_2_12_release) April 4, 2013
 * [Bioconductor 2.11](/news/bioc_2_11_release) October 3, 2012
 * [Bioconductor 2.10](/news/bioc_2_10_release) April 2, 2012
 * [Bioconductor 2.9](/news/bioc_2_9_release) November 1, 2011

@@ -17,7 +17,9 @@
 <form name="mailform" method="POST"action="http://cloud.bioconductor.org:2112/cgi-bin/start_instance.cgi"
 onsubmit="submit_tryitnow()">
     <p>Which version of Bioconductor do you want to try out?</p>
-    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_10]%>" checked>
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_12]%>" checked>
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_11]%>">
+    <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_10]%>">
      Bioconductor 2.10 (R-2.15). Current Bioconductor release.<br/>
     <input type="radio" name="ami_id" value="<%=config[:ami_ids][:bioc2_9]%>">
      Bioconductor 2.9 (R-2.14).<br/>

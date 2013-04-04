@@ -6,10 +6,10 @@ output_dir: output
 staging_deploy_root: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@krait:/extra/www/bioc
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "2.11"
-r_version_associated_with_release: "2.15"
+release_version: "2.12"
+r_version_associated_with_release: "3.0"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "2.12"
+devel_version: "2.13"
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
@@ -17,8 +17,8 @@ versions:
 ## if old versions (no older than 2.5) need to be rebuilt for any reason,
 ## add them here, but in most cases this should just contain the
 ## release and devel versions:
-- "2.11"
 - "2.12"
+- "2.13"
 ## CHANGE THIS as various parts of the new devel version become available.
 ## set to "[]" if none are available.
 devel_repos:
@@ -31,7 +31,7 @@ ami_ids:
  bioc2_9: ami-755ed11c
  bioc2_10: ami-9f5fd0f6
  bioc2_11: ami-910c83f8
- bioc_2_12: ami-528de83b
+ bioc2_12: ami-c0d0b5a9
 data_sources: 
 - items_root: /
   layouts_root: /
