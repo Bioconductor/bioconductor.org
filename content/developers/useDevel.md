@@ -55,8 +55,8 @@ Mac OS X:
 
 and Windows (assuming that R.exe is in PATH):
     
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-release &&  R"
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.0-bioc-release &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
     
 When correctly configured, R's `.libPaths()` function will return the
 `release` or `devel` directory as its first entry. Packages are
@@ -88,7 +88,7 @@ Computer and navigate to a directory that is in your PATH. Then
 right-click and choose New->Shortcut.  In the "type the location of
 the item" box, put:
 
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_USER_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.0-bioc-devel &&  R"
 
 (again, it's assumed R.exe is in your PATH) Click "Next", and in the
 "Type a name for this shortcut" box, type
