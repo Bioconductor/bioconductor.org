@@ -9,7 +9,7 @@
 
 - Browse or subscribe to the [Bioconductor][4] or [Bioc-devel][8] list.
 
-- Search the mailing lists.
+ <h3>Search the mailing lists:</h3>
 
 <div id="cse" style="width: 100%;">Loading</div>
 <script type="text/javascript">
