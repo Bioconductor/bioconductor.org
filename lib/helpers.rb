@@ -598,10 +598,10 @@ def r_ver_for_bioc_ver(bioc_ver)
     "2.9" => "2.14",
     "2.10" => "2.15", 
     "2.11" => "2.15", # R switching to yearly releases, BioC remaining the same
-    "2.12" => "2.16",
-    "2.13" => "2.16",
-    "2.14" => "2.17",
-    "2.15" => "2.17"}
+    "2.12" => "3.0",
+    "2.13" => "3.0",
+    "2.14" => "3.1",
+    "2.15" => "3.1"}
   if hsh.has_key? bioc_ver
     return hsh[bioc_ver]
   end
