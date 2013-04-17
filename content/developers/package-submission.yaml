@@ -1,2 +1,5 @@
 ---
-title: "How To: New Package Submission"
+title: "Packages: New Submissions"
+subnav:
+  - include: /_package_build_reports_and_svn/
+  - include: /_bioc_devel_packages/
