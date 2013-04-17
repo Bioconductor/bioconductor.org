@@ -42,7 +42,8 @@ module Dcf
   
   def self.get_value_as_array(value, remove_version_specifiers=false)
     return [] if value.empty? or value.nil? 
-    segs = value.split(", ")
+    value.gsub!(", ", ",")
+    segs = value.split(",")
     segs = segs.map{|i| i.gsub(",,", ",")}
     segs = segs.map{|i| i.gsub(/^\s*|\s*$/, "")}
     if remove_version_specifiers
