@@ -105,6 +105,10 @@ gems you installed above.  If you ever need to run nanoc explicitly:
 
    : nanoc compile
 
+To run an abbreviated compile, which does not attempt to build all package pages:
+
+   : QUICK_NANOC_COMPILE=true nanoc co
+
 Whether run by hand or by rake, the compiled html files are all found in 
 and below output/, an immediate subdirectory of the bioconductor.org/ directory
 you have been working in.  
