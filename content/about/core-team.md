@@ -19,7 +19,7 @@
   Research Center, USA.
 * [Valerie Obenchain](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
-* [Herv&eacute; Pag&egrave;s](http://gentleman-lab.fhcrc.org/lab-members/hpages),
+* [Herv&eacute; Pag&egrave;s](http://www.fhcrc.org),
   Fred Hutchinson Cancer Research Center, USA.
 * [Paul Shannon](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
@@ -32,14 +32,14 @@
 * [Douglas Bates](http://www.stat.wisc.edu/~bates/), University of Wisconsin,
   USA.
 * Benjamin Bolstad, Affymetrix, USA.
-* [Tony Chiang](http://gentleman-lab.fhcrc.org/lab-members/tchiang),
-  Fred Hutchinson Cancer Research Center, USA.
+* Tony Chiang.
 * [Marcel Dettling](http://stat.ethz.ch/~dettling), Federal Inst. Technology,
   Switzerland.
 * [Sandrine Dudoit](http://www.stat.berkeley.edu/~sandrine), Division of
   Biostatistics, UC Berkeley, USA.
 * Byron Ellis, AdBrite, USA.
 * Seth Falcon, Opscode, USA.
+* [Laurent Gatto](http://proteome.sysbiol.cam.ac.uk/lgatto/), University of Cambridge, UK.
 * Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
 * [Jeff Gentry](http://biowww.dfci.harvard.edu/~jgentry), Dana-Farber Cancer
   Institute, USA.
