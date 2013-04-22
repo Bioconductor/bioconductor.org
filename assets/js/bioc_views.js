@@ -21,7 +21,14 @@ var displayPackages = function(packageList, nodeName) {
     for (var i = 0; i < packageList.length; i++) {
         var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
         var pkg = packageList[i];
-        var url = getHostUrl() + "/" + biocVersion + "/" + map[category] + "/html/" + pkg + ".html"
+        var friendlyVersion;
+        if (releaseVersion == biocVersion)
+            friendlyVersion = "release";
+        else if (develVersion == biocVersion)
+            friendlyVersion = "devel";
+        else
+            friendlyVersion = biocVersion;
+        var url = getHostUrl() + "/" + friendlyVersion + "/" + map[category] + "/html/" + pkg + ".html"
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
