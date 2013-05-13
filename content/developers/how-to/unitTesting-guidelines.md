@@ -140,15 +140,24 @@ These are the *RUnit* check methods:
     checkTrue(condition)
     checkEqualsNumeric(a, b, tolerance)
 
-Less commonly used, but recommended if your code throws exceptions:
-
-    checkException(expr, msg)
-
 In a typical test function, as you can see in `test_divideBy`, you
 invoke one of your program's functions or methods, then call an
 appropriate *RUnit* check function to make sure that the result is
 correct.  *RUnit* reports failures, if there are any, with enough
 context to track down the error.
+
+*RUnit* can test that an exception (error) occurs with
+
+    checkException(expr, msg)
+	
+but it is often convenient to test specific exceptions, e.g., that a
+warning "unusual condition" is generated in the function `f <- function()
+{ warning("unusual condition"); 1 }` with
+
+    obs <- tryCatch(f(), warning=conditionMessage)
+	checkIdentical("unusual condition", obs)
+
+use `error=...` to test for specific errors.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
