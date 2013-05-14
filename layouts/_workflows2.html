@@ -1,0 +1,13 @@
+<div class="shaded_box">
+  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
+  <p class="box_header">About This Document <span class="olive">&raquo;</span></p>
+  Package: <%= @item[:package] %><br/>
+  Built with R: <%= @item[:built_with_R]%><br/>
+  Built with Bioconductor: <%= @item[:built_with_bioc]%><br/>
+  <a href="<%=@item[:source_tarball]%>">Source Package</a><br/>
+  <a href="<%=@item[:mac_pkg]%>">Mac Binary</a><br/>
+  <a href="<%=@item[:win_pkg]%>">Windows Binary</a><br/>
+  <a href="<%=@item[:r_source]%>">R Source Code</a><br/>
+  Last Built At: <%= @item[:built_at]%><br/>
+
+</div>
