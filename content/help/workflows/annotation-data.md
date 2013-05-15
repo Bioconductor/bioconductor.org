@@ -34,40 +34,56 @@ they belong.
     ## load libraries as sources of annotation
     > library("hgu95av2.db")
     
-    ## map probe ids to ENTREZ gene ids...
-    > entrez <- hgu95av2ENTREZID[ids]
-    > toTable(entrez)
-      probe_id gene_id
-    1  1635_at      25
-    2  1674_at    7525
-    3 39730_at      25
-    4 40202_at     687
-    5 40504_at    5445
-    ## ... and to GENENAME
-    > genename <- hgu95av2GENENAME[ids]
-    ## ... and merge results
-    > merge(toTable(entrez), toTable(genename))
-      probe_id gene_id                                          gene_name
-    1  1635_at      25         c-abl oncogene 1, receptor tyrosine kinase
-    2  1674_at    7525 v-yes-1 Yamaguchi sarcoma viral oncogene homolog 1
-    3 39730_at      25         c-abl oncogene 1, receptor tyrosine kinase
-    4 40202_at     687                              Kruppel-like factor 9
-    5 40504_at    5445                                      paraoxonase 2
+    ## To list the kinds of things that can be retrieved, use the cols method.
+    > cols(hgu95av2.db)
+    
+    ## To list the kinds of things that can be used as keys 
+    ## use the keytypes method
+    > keytypes(hgu95av2.db)
+
+    ## To extract viable keys of a particular kind, use the keys method.
+    > head(keys(hgu95av2.db, keytype="ENTREZID"))
+    
+    ## the select method allows you to mao probe ids to ENTREZ gene ids...
+    > select(hgu95av2.db, ids, "ENTREZID", "PROBEID")
+       PROBEID ENTREZID
+    1 39730_at       25
+    2  1635_at       25
+    3  1674_at     7525
+    4 40504_at     5445
+    5 40202_at      687
+
+    ## ... and to GENENAME etc.
+    > select(hgu95av2.db, ids, c("ENTREZID","GENENAME"), "PROBEID")
+       PROBEID ENTREZID                                           GENENAME
+    1 39730_at       25     c-abl oncogene 1, non-receptor tyrosine kinase
+    2  1635_at       25     c-abl oncogene 1, non-receptor tyrosine kinase
+    3  1674_at     7525 v-yes-1 Yamaguchi sarcoma viral oncogene homolog 1
+    4 40504_at     5445                                      paraoxonase 2
+    5 40202_at      687                              Kruppel-like factor 9
     
     ## find and extract the GO ids associated with the first id
-    > goIds <- mappedRkeys(hgu95av2GO[ids[1]])
+    > res <- select(hgu95av2.db, ids[1], "GO", "PROBEID")
+    > head(res)
+       PROBEID         GO EVIDENCE ONTOLOGY
+    1 39730_at GO:0000115      TAS       BP
+    2 39730_at GO:0000287      IDA       MF
+    3 39730_at GO:0003677      NAS       MF
+    4 39730_at GO:0003785      TAS       MF
+    5 39730_at GO:0004515      TAS       MF
+    6 39730_at GO:0004713      IDA       MF
 
-    ## use GO.db to find the Terms associated with the goIds, displaying
-    ## the head (first six entries) of the result as a data frame
+    ## use GO.db to find the Terms associated with those GOIDs
     > library("GO.db")
-    > head(as.data.frame(Term(goIds)))
-                                                                         Term(goIds)
-    GO:0000115 regulation of transcription involved in S-phase of mitotic cell cycle
-    GO:0006298                                                       mismatch repair
-    GO:0006355                            regulation of transcription, DNA-dependent
-    GO:0006464                                          protein modification process
-    GO:0007155                                                         cell adhesion
-    GO:0007165                                                   signal transduction
+    > head(select(GO.db, res$GO, "TERM", "GOID"))
+        GOID                                                                   TERM
+1 GO:0000115  regulation of transcription involved in S phase of mitotic cell cycle
+2 GO:0000287                                                  magnesium ion binding
+3 GO:0003677                                                            DNA binding
+4 GO:0003785                                                  actin monomer binding
+5 GO:0004515                     nicotinate-nucleotide adenylyltransferase activity
+6 GO:0004713                                       protein tyrosine kinase activity
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -103,10 +119,10 @@ common use cases. The help pages and vignettes are available from
 within R. After loading a package, use syntax like
 
     > help(package="GO.db")
-    > ?GOTERM
+    > ?select
 
-to obtain an overview of help on the `GO.db` package, and the `GOTERM`
-mapping.  The `AnnotationDbi` package is used by most `.db`
+to obtain an overview of help on the `GO.db` package, and the `select`
+method.  The `AnnotationDbi` package is used by most `.db`
 packages. View the vignettes in the `AnnotationDbi` package with
 
     > browseVignettes(package="AnnotationDbi")
@@ -124,20 +140,37 @@ To open a web page containing comprehensive help resources.
 
 The following guides the user through key annotation packages.  Users
 interested in how to create custom chip packages should see the
-vignettes in `AnnotationDbi` package. There is additional information
-in the annotate package for how to use some of the extra tools
-provided. You can also refer to the 
-[complete list of annotation packages](/packages/release/BiocViews.html#___AnnotationData).
+vignettes in the `AnnotationForge` package. There is additional
+information in the `AnnotationDbi`, `OrganismDbi` and
+`GenomicFeatures` packages for how to use some of the extra tools
+provided. You can also refer to the [complete list of annotation
+packages](/packages/release/BiocViews.html#___AnnotationData).
 
 ### Key Packages ###
 
-*
-  [AnnotationDbi](/packages/release/bioc/html/AnnotationDbi.html)
+* [AnnotationDbi](/packages/release/bioc/html/AnnotationDbi.html)
   Almost all annotations require the `AnnotationDbi` package. This
   package will be automatically installed for you if you install
-  another ".db" annotation package using biocLite(). It contains the code to
-  allow annotation mapping objects to be made and manipulated as well
-  as code to generate custom chip platforms.
+  another ".db" annotation package using biocLite(). It contains the
+  code to allow annotation mapping objects to be made and manipulated
+  as well as code to use the select methods etc..
+* [OrganismDbi](/packages/release/bioc/html/.html)\\\
+  OrganismDbi allows meta packages that enable the user to access
+  resources from several different packages as if they were coming
+  from one place.  So for example the Homo.sapiens package is enabled
+  by OrganismDbi and allows the user to get access to GO.db, the
+  associated organism package IDs and the related transcript data for
+  the hg19 build of the human genome all as if it were contained in a
+  single convenient object.
+* [GenomicFeatures](/packages/release/bioc/html/.html)
+  GenomicFeatures allows the existance of TranscriptDb objects and
+  allows convenient representation of ranges from Transcritomes.
+  There are accessors for things like exons, transcripts as well as
+  the select method for retrieving data from packages supported by
+  GenomicFeatures.
+* [AnnotationForge](/packages/release/bioc/html/.html)
+  AnnotationForge documents and assists in the creation of some kinds
+  of custom annotation packages. 
 * [Category](/packages/release/bioc/html/Category.html)
   This is the base level package for dealing with annotation questions
   that involve categorical data.
@@ -156,7 +189,7 @@ provided. You can also refer to the
 
 ### Types of Annotation Packages ###
 
-* Organism annotation packages contain all the gene data for an entire
+* Organism annotation packages contain all the gene based data for an entire
   organism. All Organism packages are named like this:
   org."Xx"."yy".db. Where "Xx" is the abbreviation for Genus and
   species. And "yy" is the source of the central ID that is used to
@@ -165,6 +198,23 @@ provided. You can also refer to the
   which is for Homo sapiens and is based upon Entrez Gene IDs. And
   [org.At.tair.db](/packages/release/data/annotation/html/org.At.tair.db.html)
   which is for Arabidopsis thaliana and is based on the tair IDs.
+* TransriptDb packages contain range and chromosome information for
+  specific transcriptomes.  These are based on a particular genome
+  build and are are the place to look for where a
+  gene/transcripts/exon coordinate information is relative to a
+  genome.  These are also named in a way that tells you about where
+  the data came from and can be generated with functions contained in
+  the GenomicFeatures package.
+* OrganismDb packages are named for the species they represent (such
+  as the Homo.sapiens package).  These packages contain references to
+  other key annotations packages and can thus represent all the
+  underlying data as if it were coming from one place.  So for
+  example, the Homo.sapiens package can allow you to retrieve data
+  about the ranges of a genes transcripts at the same time that you
+  extract it's gene name because it represents both a the
+  transcriptome and the relevant org package for Homo sapiens.  These
+  can be generated using functions in the OrganismDbi package if you
+  have specific packages that you want to link together.
 * There are also packages for questions about general systems biology
   data. Some examples of this are:
   [KEGG.db](/packages/release/data/annotation/html/KEGG.db.html)
