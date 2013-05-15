@@ -669,20 +669,16 @@ def workflow_helper(item)
   id = item.identifier.sub(/\/$/, "")
   pkg = id.split("/").last
   x = "content#{item.identifier}"
-  puts "looking for #{x}"
   segs = item.identifier.split "/"
   3.times {segs.shift}
   multivig = (segs.length > 1)
-  puts "multivig is #{multivig}"
   if multivig
-    ["source_tarball", "mac_pkg", "win_pkg"].each do |pkg|
-      puts "!!!! #{w[pkg.to_sym]}"
-      w[pkg.to_sym] = "../#{w[pkg.to_sym]}"
+    ["source_tarball", "mac_pkg", "win_pkg"].each do |pkgtype|
+      w[pkgtype.to_sym] = "../#{w[pkgtype.to_sym]}"
     end
   else
     w["r_source".to_sym] = "#{pkg}.R"
   end
-  #pp w
   w
 
 end
