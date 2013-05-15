@@ -296,3 +296,55 @@ task :generate_cf_templates do
   end
   puts "Don't forget to copy templates to S3 and mark them as public!"
 end
+
+desc "Get Docbuilder Workflows"
+task :get_workflows do
+  # FIXME TODO - autogenerate some kind of workflow index page
+  home = Dir.pwd
+  FileUtils.rm_rf "workflows_tmp"
+  FileUtils.mkdir "workflows_tmp"
+  dest_dir = "help/workflows2" # eventually this will change to help/workflows
+  ## You must have the appropriate private key in order for this to work.
+  system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+  dir = Dir.new("workflows_tmp")
+  for entry in dir.entries
+    next if entry =~ /^\./
+    # TODO - honor the manifest file. For now just skip it.
+    next if entry == "manifest.txt"
+    fullpath = "workflows_tmp/#{entry}"
+    if test ?d, fullpath # if it exists and is a directory
+      asset_dir = "assets/#{dest_dir}/#{entry}"
+      md_dir = "content/#{dest_dir}/#{entry}"
+      FileUtils.rm_rf asset_dir
+      FileUtils.rm_rf md_dir
+      FileUtils.mkdir_p asset_dir
+      FileUtils.mkdir_p md_dir
+      dir2 = Dir.new(fullpath)
+      vignettes = dir2.entries.find_all {|i| i =~ /\.md$/i}
+      for vignette in vignettes
+        vigname = vignette.gsub(/\.md$/i, "")
+        FileUtils.mkdir_p "#{asset_dir}/#{vigname}"
+        FileUtils.mv "#{fullpath}/#{vigname}.R", "#{asset_dir}/#{vigname}"
+        ["md", "yaml"].each do |suffix|
+          FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", md_dir
+        end
+        ["tar.gz", "tgz", "zip"].each do |suffix|
+          file = Dir.glob("#{fullpath}/*.#{suffix}").first
+          next if file.nil?
+          FileUtils.mv "#{file}", asset_dir
+        end
+        FileUtils.rm "#{fullpath}/#{vigname}.Rmd"
+      end
+      dir = Dir.new(fullpath)
+      for entry in dir.entries
+        next if entry =~ /^\./
+        for vig in vignettes
+          vigname = vig.gsub(/\.md$/i, "")
+          puts "trying to copy #{fullpath}/#{entry}"
+          FileUtils.cp_r "#{fullpath}/#{entry}", "#{asset_dir}/#{vigname}"
+        end
+      end
+    end
+  end
+  FileUtils.rm_rf "workflows_tmp"
+end
