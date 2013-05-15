@@ -318,15 +318,29 @@ task :get_workflows do
       FileUtils.rm_rf asset_dir
       FileUtils.rm_rf md_dir
       FileUtils.mkdir_p asset_dir
-      FileUtils.mkdir_p md_dir
       dir2 = Dir.new(fullpath)
       vignettes = dir2.entries.find_all {|i| i =~ /\.md$/i}
+      multivig = false
+      multivig = true if vignettes.length() > 1
+      FileUtils.mkdir_p md_dir if multivig
       for vignette in vignettes
         vigname = vignette.gsub(/\.md$/i, "")
-        FileUtils.mkdir_p "#{asset_dir}/#{vigname}"
-        FileUtils.mv "#{fullpath}/#{vigname}.R", "#{asset_dir}/#{vigname}"
+        FileUtils.mkdir_p "#{asset_dir}/#{vigname}" if multivig
+        if multivig
+          dest = "#{asset_dir}/#{vigname}"
+          md_dest = md_dir
+        else
+          dest = "#{asset_dir}/#{entry}.R"
+          md_dest = "content/#{dest_dir}"
+        end
+        FileUtils.mv "#{fullpath}/#{vigname}.R", dest
         ["md", "yaml"].each do |suffix|
-          FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", md_dir
+          if multivig
+            FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", md_dest
+          else
+            FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", \
+              "#{md_dest}/#{entry}.#{suffix}"
+          end
         end
         ["tar.gz", "tgz", "zip"].each do |suffix|
           file = Dir.glob("#{fullpath}/*.#{suffix}").first
@@ -340,8 +354,12 @@ task :get_workflows do
         next if entry =~ /^\./
         for vig in vignettes
           vigname = vig.gsub(/\.md$/i, "")
-          puts "trying to copy #{fullpath}/#{entry}"
-          FileUtils.cp_r "#{fullpath}/#{entry}", "#{asset_dir}/#{vigname}"
+          if multivig
+            dest = "#{asset_dir}/#{vigname}"
+          else
+            dest = asset_dir
+          end
+          FileUtils.cp_r "#{fullpath}/#{entry}", dest
         end
       end
     end
