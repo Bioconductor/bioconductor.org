@@ -668,7 +668,6 @@ def workflow_helper(item)
   w = item.attributes.dup
   id = item.identifier.sub(/\/$/, "")
   pkg = id.split("/").last
-  x = "content#{item.identifier}"
   segs = item.identifier.split "/"
   3.times {segs.shift}
   multivig = (segs.length > 1)
