@@ -304,6 +304,11 @@ task :get_workflows do
   FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir "workflows_tmp"
   dest_dir = "help/workflows2" # eventually this will change to help/workflows
+  f = File.open("content/#{dest_dir}.yaml", "w")
+  f.puts "---"
+  f.puts "title: Workflows"
+  f.close
+  indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
   system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
   dir = Dir.new("workflows_tmp")
@@ -313,6 +318,9 @@ task :get_workflows do
     next if entry == "manifest.txt"
     fullpath = "workflows_tmp/#{entry}"
     if test ?d, fullpath # if it exists and is a directory
+      indexfile.puts
+      indexfile.puts "## Workflows in #{entry.capitalize}:"
+      indexfile.puts
       asset_dir = "assets/#{dest_dir}/#{entry}"
       md_dir = "content/#{dest_dir}/#{entry}"
       FileUtils.rm_rf asset_dir
@@ -333,6 +341,7 @@ task :get_workflows do
           dest = "#{asset_dir}/#{entry}.R"
           md_dest = "content/#{dest_dir}"
         end
+        yaml = YAML::load(File.open("#{fullpath}/#{vigname}.yaml"))
         FileUtils.mv "#{fullpath}/#{vigname}.R", dest
         ["md", "yaml"].each do |suffix|
           if multivig
@@ -342,6 +351,13 @@ task :get_workflows do
               "#{md_dest}/#{entry}.#{suffix}"
           end
         end
+
+        if multivig
+          indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry}/#{vigname})"
+        else
+          indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry})"
+        end
+
         ["tar.gz", "tgz", "zip"].each do |suffix|
           file = Dir.glob("#{fullpath}/*.#{suffix}").first
           next if file.nil?
@@ -364,5 +380,6 @@ task :get_workflows do
       end
     end
   end
+  indexfile.close
   FileUtils.rm_rf "workflows_tmp"
 end
