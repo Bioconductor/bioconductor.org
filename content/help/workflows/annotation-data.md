@@ -76,14 +76,14 @@ they belong.
     ## use GO.db to find the Terms associated with those GOIDs
     > library("GO.db")
     > head(select(GO.db, res$GO, "TERM", "GOID"))
-        GOID                                                                   TERM
-1 GO:0000115  regulation of transcription involved in S phase of mitotic cell cycle
-2 GO:0000287                                                  magnesium ion binding
-3 GO:0003677                                                            DNA binding
-4 GO:0003785                                                  actin monomer binding
-5 GO:0004515                     nicotinate-nucleotide adenylyltransferase activity
-6 GO:0004713                                       protein tyrosine kinase activity
-
+            GOID                                                                   TERM
+    1 GO:0000115  regulation of transcription involved in S phase of mitotic cell cycle
+    2 GO:0000287                                                  magnesium ion binding
+    3 GO:0003677                                                            DNA binding
+    4 GO:0003785                                                  actin monomer binding
+    5 GO:0004515                     nicotinate-nucleotide adenylyltransferase activity
+    6 GO:0004713                                       protein tyrosine kinase activity
+    
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
