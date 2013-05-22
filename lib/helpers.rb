@@ -440,7 +440,9 @@ end
 
 def get_stats_url(package)
   if (package[:repo] == "data/annotation/")
-    repo = "dataann-stats/data-annotation/"
+    repo = "stats/data-annotation/"
+  elsif (package[:repo] == "data/experiment/")
+    repo = "stats/data-experiment/"
   else
     repo = "stats/#{package[:repo]}"
   end
