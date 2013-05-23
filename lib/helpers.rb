@@ -680,6 +680,11 @@ def workflow_helper(item)
   else
     w["r_source".to_sym] = "#{pkg}.R"
   end
+  ["mac_pkg", "win_pkg"].each do |binpkg|
+    if w[binpkg.to_sym] == "NOT_SUPPORTED"
+      w.delete binpkg.to_sym
+    end
+  end
   w
 
 end

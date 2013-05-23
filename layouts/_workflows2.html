@@ -9,8 +9,16 @@
   Built with R: <%= w[:built_with_R]%><br/>
   Built with Bioconductor: <%= w[:built_with_bioc]%><br/>
   <a href="<%=w[:source_tarball]%>">Source Package</a><br/>
-  <a href="<%=w[:mac_pkg]%>">Mac Binary</a><br/>
-  <a href="<%=w[:win_pkg]%>">Windows Binary</a><br/>
+  <% if w.has_key? :mac_pkg %>
+    <a href="<%=w[:mac_pkg]%>">Mac Binary</a><br/>
+  <% else %>
+    Not supported on mac.<br/>
+  <% end %>
+  <% if w.has_key? :win_pkg %>
+    <a href="<%=w[:win_pkg]%>">Windows Binary</a><br/>
+  <% else %>
+    Not supported on windows.<br/>
+  <% end %>
   <a href="<%=w[:r_source]%>">R Source Code</a><br/>
   Last Built At: <%= w[:built_at]%><br/>
 
