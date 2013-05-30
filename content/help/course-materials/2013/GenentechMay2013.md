@@ -1,6 +1,6 @@
 
 ### Package Vignette
 
-[R](GenentechMay2013.R) | [PDF](GenentechMay2013.pdf)
+[R](Genentech2013.R) | [PDF](Genentech2013.pdf)
 
 
