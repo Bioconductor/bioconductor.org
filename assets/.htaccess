@@ -25,7 +25,7 @@ RewriteRule ^QA.*$ /help/publications/ [R=301]
 
 ## workflows
 RewriteRule ^docs/workflows/oligoarrays(.*)$ /help/workflows/oligo-arrays$1 [R=301]
-RewriteRule ^docs/workflows/htpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
+RewriteRule ^docs/workflows/htmlpsequencing(.*)$ /help/workflows/high-throughput-sequencing$1 [R=301]
 RewriteRule ^docs/workflows/accessingAnnotData(.*)$ /help/workflows/annotation-data$1 [R=301]
 RewriteRule ^docs/workflows/flowcytometry(.*)$ /help/workflows/high-throughput-assays$1 [R=301]
 RewriteRule ^docs/workflows/flowoverview.*$ /help/workflows/high-throughput-assays/ [R=301]
@@ -116,3 +116,5 @@ RewriteRule ^main.html$ / [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
 RewriteRule ^developers/deprecatio.*$ /developers/how-to/deprecation
 </IfModule>
+
+Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
