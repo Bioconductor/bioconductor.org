@@ -15,7 +15,9 @@ Install the latest release of R, then get the latest version of
 Bioconductor by following the steps below. The current release version
 of R is <%= config[:r_version_associated_with_release]%>, and the
 currently released Bioconductor version is <%=
-config[:release_version] %>.
+config[:release_version] %>. If you want to use the 
+"devel" version of Bioconductor (<%=config[:devel_version]%>),
+read [these instructions](/developers/how-to/useDevel/).
 
 <h2 id="install-bioconductor-packages">Install Bioconductor Packages</h2>
 

@@ -299,28 +299,37 @@ end
 
 desc "Get Docbuilder Workflows"
 task :get_workflows do
-  # FIXME TODO - autogenerate some kind of workflow index page
   home = Dir.pwd
   FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir "workflows_tmp"
-  dest_dir = "help/workflows2" # eventually this will change to help/workflows
+  dest_dir = "help/workflows" # eventually this will change to help/workflows
   f = File.open("content/#{dest_dir}.yaml", "w")
   f.puts "---"
   f.puts "title: Workflows"
   f.close
-  indexfile = File.open("content/#{dest_dir}.md", "w")
+  ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
   system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+  manifest = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/website_workflows/manifest.txt`
+  manifest_lines = manifest.split("\n")
+
   dir = Dir.new("workflows_tmp")
   for entry in dir.entries
     next if entry =~ /^\./
-    # TODO - honor the manifest file. For now just skip it.
-    next if entry == "manifest.txt"
+    next if ["CRANrepo", "manifest.txt"].include? entry
+
+    pkgline = manifest_lines.find{|i| i =~ /^#{entry}:/}
+
+    unless pkgline.nil?
+      tmp = pkgline.sub(/^#{entry}:/, "")
+      next unless tmp =~ /web/
+    end
+
     fullpath = "workflows_tmp/#{entry}"
     if test ?d, fullpath # if it exists and is a directory
-      indexfile.puts
-      indexfile.puts "## Workflows in #{entry.capitalize}:"
-      indexfile.puts
+      # indexfile.puts
+      # indexfile.puts "## Workflows in #{entry.capitalize}:"
+      # indexfile.puts
       asset_dir = "assets/#{dest_dir}/#{entry}"
       md_dir = "content/#{dest_dir}/#{entry}"
       FileUtils.rm_rf asset_dir
@@ -352,11 +361,11 @@ task :get_workflows do
           end
         end
 
-        if multivig
-          indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry}/#{vigname})"
-        else
-          indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry})"
-        end
+        # if multivig
+        #   indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry}/#{vigname})"
+        # else
+        #   indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry})"
+        # end
 
         ["tar.gz", "tgz", "zip"].each do |suffix|
           file = Dir.glob("#{fullpath}/*.#{suffix}").first
@@ -380,6 +389,6 @@ task :get_workflows do
       end
     end
   end
-  indexfile.close
+  #indexfile.close
   FileUtils.rm_rf "workflows_tmp"
 end

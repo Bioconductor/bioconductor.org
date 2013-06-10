@@ -6,20 +6,37 @@
   <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
   <p class="box_header">About This Document <span class="olive">&raquo;</span></p>
   Package: <%= w[:package] %><br/>
-  Built with R: <%= w[:built_with_R]%><br/>
-  Built with Bioconductor: <%= w[:built_with_bioc]%><br/>
-  <a href="<%=w[:source_tarball]%>">Source Package</a><br/>
-  <% if w.has_key? :mac_pkg %>
-    <a href="<%=w[:mac_pkg]%>">Mac Binary</a><br/>
-  <% else %>
-    Not supported on mac.<br/>
-  <% end %>
-  <% if w.has_key? :win_pkg %>
-    <a href="<%=w[:win_pkg]%>">Windows Binary</a><br/>
-  <% else %>
-    Not supported on windows.<br/>
-  <% end %>
-  <a href="<%=w[:r_source]%>">R Source Code</a><br/>
-  Last Built At: <%= w[:built_at]%><br/>
+  Built with Bioconductor (R): <%= w[:built_with_bioc]%>  (<%= w[:built_with_R]%>)<br/>
+  <table>
+    <tbody>
+      <tr class="row_odd">
+        <td>Source Package</td>
+        <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a><br/></td>
+      </tr>
+      <tr class="row_even">
+        <td>Windows Binary</td>
+        <td>
+          <% if w.has_key? :win_pkg %>
+            <a href="<%=w[:win_pkg]%>"><%=w[:win_pkg]%></a><br/>
+          <% end %>
+        </td>
+      </tr>
+      <tr class="row_odd">
+        <td>Mac OS 10.6 (Snow Leopard)</td>
+        <td>
+          <% if w.has_key? :mac_pkg %>
+            <a href="<%=w[:mac_pkg]%>"><%=w[:mac_pkg]%></a><br/>
+          <% end %>
+        </td>    
+      </tr>
 
+    </tbody>
+  </table>
+  <a href="<%=w[:r_source]%>">R Script</a><br/>
+  Last Built At: <%= w[:built_at]%><br/>
+  Install with (under BioC 2.13):<br/>
+  <code><pre>
+source("http://bioconductor.org/workflows.R")
+workflowInstall("<%=w[:package]%>")
+  </pre></code>
 </div>

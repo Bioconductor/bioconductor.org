@@ -1,0 +1,14 @@
+---
+package: variants
+title: Using Bioconductor to Annotate Genetic Variants
+file: variants.Rmd
+built_with_R: 3.0
+built_with_bioc: 2.13
+built_at: "Fri Jun  7 13:30:17 PDT 2013"
+source_tarball: variants_0.1.tar.gz
+mac_pkg: variants_0.1.tgz
+win_pkg: variants_0.1.zip
+r_source: variants.R
+last_commit: "2013-06-07 12:54:49 -0700 "
+subnav:
+  - include: /_workflows2/
