@@ -13,14 +13,30 @@ other sources.
 * [Exploring Package Content](#exploring-package-content)
 * [Annotation Resources](#annotation-resources)
 
-<h2 id="sample-workflow">Sample Workflow</h2>
+<h2 id="package-type">Package Types</h2>
+Bioconductor contains many different types of annotation packages.
+You can browse the currently available types here using web page:
+[http://www.bioconductor.org/packages/release/BiocViews.html#___PackageType].
+
+You will see that there are packages that contain annotation data
+about a particular microarray platform (ChipDb), there are packages
+that contain gene centered data about an organism (OrgDb), packages
+that contain genome centered data about an organisms transcriptome
+(TranscriptDb), and even packages that contain the sequence
+information for a particular genome build (BSgenome).  This document
+will talk about typical uses for most of these more popular kinds of
+annotation package.  As well as describe a newer meta package that
+wraps access to several different kinds of packages (OrganismDb).
+
+
+<h2 id="sample-workflow-ChipDb">Sample ChipDb Workflow</h2>
 
 The following psuedo-code illustrates a typical R / Bioconductor
-session. It continues the
-[differential expression](/help/workflows/oligo-arrays/) workflow,
-taking a 'top table' of differentially expressed probesets and
-discovering the genes probed, and the Gene Ontology pathways to which
-they belong.
+session using a ChipDb style package for information about a specific
+type of microarray. It continues the [differential
+expression](/help/workflows/oligo-arrays/) workflow, taking a 'top
+table' of differentially expressed probesets and discovering the genes
+probed, and the Gene Ontology pathways to which they belong.
 
     ## Affymetrix U133 2.0 array IDs of interest; these might be
     ## obtained from
@@ -84,6 +100,10 @@ they belong.
     5 GO:0004515                     nicotinate-nucleotide adenylyltransferase activity
     6 GO:0004713                                       protein tyrosine kinase activity
     
+
+
+
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
