@@ -20,13 +20,12 @@ You can browse the currently available types here using web page:
 
 You will see that there are packages that contain annotation data
 about a particular microarray platform (ChipDb), there are packages
-that contain gene centered data about an organism (OrgDb), packages
-that contain genome centered data about an organisms transcriptome
-(TranscriptDb), and even packages that contain the sequence
-information for a particular genome build (BSgenome).  This document
-will talk about typical uses for most of these more popular kinds of
-annotation package.  As well as describe a newer meta package that
-wraps access to several different kinds of packages (OrganismDb).
+that contain gene centered data about an organism (OrgDb), and even
+packages that contain genome centered data about an organisms
+transcriptome (TranscriptDb).  This document will talk about typical
+uses for most of these more popular kinds of annotation package.  As
+well as describe a newer meta package that wraps access to several
+different kinds of packages (OrganismDb).
 
 
 <h2 id="sample-workflow-ChipDb">Sample ChipDb Workflow</h2>
@@ -100,12 +99,33 @@ probed, and the Gene Ontology pathways to which they belong.
     5 GO:0004515                     nicotinate-nucleotide adenylyltransferase activity
     6 GO:0004713                                       protein tyrosine kinase activity
     
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
 
-
+<h2 id="sample-workflow-OrgDb">Sample OrgDb Workflow</h2>
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+
+<h2 id="sample-workflow-TranscriptDb">Sample TranscriptDb Workflow</h2>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+
+<h2 id="sample-workflow-OrganismDb">Sample OrganismDb Workflow</h2>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+
+<h2 id="sample-workflow-AnnotationHub">Sample AnnotationHub Workflow</h2>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
 
 <h2 id="install-and-use">Installation and Use</h2>
 
