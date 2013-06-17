@@ -13,10 +13,11 @@ other sources.
 * [Exploring Package Content](#exploring-package-content)
 * [Annotation Resources](#annotation-resources)
 
-<h2 id="package-type">Package Types</h2>
-Bioconductor contains many different types of annotation packages.
-You can browse the currently available types here using web page:
-[http://www.bioconductor.org/packages/release/BiocViews.html#___PackageType].
+<h2 id="package-type">Package Types</h2> Bioconductor contains many
+different types of annotation packages.  You can browse the currently
+available types here
+[here](http://www.bioconductor.org/packages/release/BiocViews.html#___PackageType)
+by simply using the bioconductor web site.
 
 You will see that there are packages that contain annotation data
 about a particular microarray platform (ChipDb), there are packages
@@ -30,7 +31,7 @@ different kinds of packages (OrganismDb).
 
 <h2 id="sample-workflow-ChipDb">Sample ChipDb Workflow</h2>
 
-The following psuedo-code illustrates a typical R / Bioconductor
+The following examples illustrates a typical R / Bioconductor
 session using a ChipDb style package for information about a specific
 type of microarray. It continues the [differential
 expression](/help/workflows/oligo-arrays/) workflow, taking a 'top
