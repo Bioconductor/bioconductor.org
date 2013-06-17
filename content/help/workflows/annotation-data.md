@@ -105,6 +105,20 @@ probed, and the Gene Ontology pathways to which they belong.
 
 
 <h2 id="sample-workflow-OrgDb">Sample OrgDb Workflow</h2>
+The organism wide gene centered packages (OrgDb packages) all contain
+gene centered data for an organism.  These packages are accessed in
+much the same way as the platform based (ChipDb) packages previously
+discussed.  But because they are general, they don't contain
+infromation like probe IDs that would relate to any specific platform.
+
+But the important thing to understand is that the same methods apply.
+So for example you can look up information in this way:
+
+    > library(org.Hs.eg.db)
+    > keys <- head(keys(org.Hs.eg.db), n=2)
+    > cols <- c("PFAM","GO", "SYMBOL")
+    > select(org.Hs.eg.db, keys, cols, keytype="ENTREZID")
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
