@@ -9,6 +9,7 @@ require './scripts/get_json.rb'
 require 'open3'
 require 'find'
 require 'pathname'
+require 'json'
 
 include Open3
 
@@ -310,19 +311,16 @@ task :get_workflows do
   ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
   system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
-  manifest = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.txt`
-  manifest_lines = manifest.split("\n")
+  json = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json`
+  manifest = JSON.parse(json)  
 
   dir = Dir.new("workflows_tmp")
   for entry in dir.entries
     next if entry =~ /^\./
     next if ["CRANrepo", "manifest.txt"].include? entry
 
-    pkgline = manifest_lines.find{|i| i =~ /^#{entry}:/}
-
-    unless pkgline.nil?
-      tmp = pkgline.sub(/^#{entry}:/, "")
-      next unless tmp =~ /web/
+    unless manifest.keys.include? entry and manifest[entry].include? "web"
+      next
     end
 
     fullpath = "workflows_tmp/#{entry}"
