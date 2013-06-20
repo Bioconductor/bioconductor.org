@@ -310,7 +310,7 @@ task :get_workflows do
   ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
   system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
-  manifest = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/website_workflows/manifest.txt`
+  manifest = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.txt`
   manifest_lines = manifest.split("\n")
 
   dir = Dir.new("workflows_tmp")
