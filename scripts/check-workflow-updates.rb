@@ -24,7 +24,7 @@ msg = q.receive_message
 unless msg.nil?
     if msg.body == "build complete"
         Dir.chdir("/home/biocadmin/bioc-test-web/bioconductor.org") do
-            system("rake get_workflows >> /home/biocadmin/bioc-test-web/cron.log 2>&1")
+            system("rake get_workflows >> /home/biocadmin/bioc-test-web/get_workflows.log 2>&1")
         end
     end
 end
