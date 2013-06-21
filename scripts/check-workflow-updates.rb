@@ -4,7 +4,7 @@
 
 # checks to see if there is a message saying
 # that a docbuilder build has completed. If so, runs
-# rake get_workflows
+# rake get_workflows 
 
 require 'rubygems'
 require 'aws-sdk'
