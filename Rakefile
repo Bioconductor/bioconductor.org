@@ -98,7 +98,8 @@ task :real_clean do
 end
 
 desc "Build the bioconductor.org site (default)"
-task :build => [ :compile, :copy_assets, :write_version_info ]
+task :build => [ :compile, :copy_assets, 
+    :write_version_info, :write_version_number ]
 
 task :default => :build
 
@@ -389,4 +390,11 @@ task :get_workflows do
   end
   #indexfile.close
   FileUtils.rm_rf "workflows_tmp"
+end
+
+desc "write version number to endpoint"
+task :write_version_number do
+    config = YAML.load_file("./config.yaml")
+    f = File.open("assets/bioc-version", "w")
+    f.print(config["release_version"])
 end
