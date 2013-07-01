@@ -16,10 +16,12 @@ Morning
   AnnotationHub [Marc].
   
   New and emerging directions: Better paired end input [Valerie].
-  Cloud-aided computation [e.g., ensemblVEP; AnnotationHub]).
+  Cloud-aided computation [e.g., ensemblVEP; AnnotationHub]). Shallow
+  copies?
   
   Favorite features: `showHeadLines`, `showTailLines`
-  [Valerie]. BiocGenerics functionality.
+  [Valerie]. BiocGenerics functionality [Herve]. `sequenceLayer`
+  [Herve].
   
   Google Summer of Code: displayR [Marc / Shawn]; BiocParallel.
 
