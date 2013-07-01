@@ -41,4 +41,4 @@ Afternoon
 
 - Developer workshops
 
-- Developer Day address: JJ Alaire / RStudio
+- Developer Day address: Joe Cheng / RStudio
