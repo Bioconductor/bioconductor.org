@@ -21,7 +21,8 @@ Morning
   
   Favorite features: `showHeadLines`, `showTailLines`
   [Valerie]. BiocGenerics functionality [Herve]. `sequenceLayer`
-  [Herve].
+  [Herve]. `keys`, `cols`, and ranges in the `select` interface of
+  *Db packages [Marc].
   
   Google Summer of Code: displayR [Marc / Shawn]; BiocParallel.
 
