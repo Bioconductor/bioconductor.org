@@ -9,13 +9,26 @@ Developer Day is part of the Bioconductor
 
 Morning
 
-- Core team project highlights: major developments this year; new and
-  emerging directions; Google Summer of Code.
+- Core team project highlights.
 
-- Group team-building activities
+  Major developments this year: VariantAnnotation input and
+  performance improvements; `filterVcf` [Valerie]. Managing seqlevels,
+  AnnotationHub [Marc].
+  
+  New and emerging directions: Better paired end input [Valerie].
+  Cloud-aided computation [e.g., ensemblVEP; AnnotationHub]).
+  
+  Favorite features: `showHeadLines`, `showTailLines`
+  [Valerie]. BiocGenerics functionality.
+  
+  Google Summer of Code: displayR [Marc / Shawn]; BiocParallel.
+
+- Group team-building activities. Possible ideas: _Quick Fix_ --
+  implement, in small groups, a missing but generally useful feature
+  to be shared by Bioconductor packages.
 
 - Directions and Needs Discussion. Topics to be determined, including:
-  approaches to variants.
+  approaches to variants (need for `tally` variants).
 
 Afternoon
 
