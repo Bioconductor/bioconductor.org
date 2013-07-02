@@ -81,11 +81,11 @@ Only *bug fixes* should be back-ported to the release branch. This is
 so that users of the release branch have a stable environment in which
 to get their work done.
 
-If you wish to have a bug-fix made in the devel branch (aka the trunk)
-also available in the current release branch, you first need to take
-note of the revision number from your commit, for example,
+If you wish to have a bug-fix made in the devel branch also available
+in the current release branch, you first need to take note of the
+revision number from your commit, for example,
 
-    $ svn commit -m"Sample commit"
+    $ svn commit -m "Sample commit"
     Adding         Rpacks\Biobase\DESCRIPTION
     Sending        Rpacks\Biobase\DESCRIPTION
     Transmitting file data ..
