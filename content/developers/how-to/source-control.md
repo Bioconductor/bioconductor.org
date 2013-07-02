@@ -34,23 +34,6 @@ To check out the code for the Biobase package use:
 The check out command uses the directory name in the repository if the
 destination name is not specified.
 
-## Experiment Data Packages
-
-The root of the Bioconductor experiment data svn repository is
-[https://hedgehog.fhcrc.org/bioc-data/trunk/experiment](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment).
-Experiment data packages are divided into two components: **pkgs**
-(containing all but the data files) and **data_store** (containing the
-data files). To obtain a specific experiment data package first check
-out the package infrastructure then fold the data in using the Python
-script
-[https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py)
-on the exported package. Here are the commands to check out the
-affydata package:
-
-    svn export https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py
-    svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
-    ./add_data.py affydata
-
 ## Basic svn Operations
 
 Primary commands:
@@ -83,9 +66,22 @@ for example, like this:
 The [Subversion Book][1] has more complete documentation and examples
 for all the commands and options.
 
-## Committing Changes to the Release Branch
+## Where to Commit Changes
 
-If you wish to have a change made in the devel branch (aka the trunk)
+Almost all development is on the trunk ('devel') branch of the SVN
+repository, as indicated by the 'trunk' part of the URL in the
+examples above. All bug fixes, new features and major changes are
+introduced in devel. Each commit should include a bump in the `z`
+portion of the `x.y.z` package
+[versioning scheme](/developers/how-to/version-numbering/).
+
+### Committing Changes to the Release Branch
+
+Only *bug fixes* should be back-ported to the release branch. This is
+so that users of the release branch have a stable environment in which
+to get their work done.
+
+If you wish to have a bug-fix made in the devel branch (aka the trunk)
 also available in the current release branch, you first need to take
 note of the revision number from your commit, for example,
 
@@ -95,8 +91,7 @@ note of the revision number from your commit, for example,
     Transmitting file data ..
     Committed revision 140.
 
-was revision 140. The changeset you want is -r 139:140, i.e. the changes
-between r139 and r140.
+was revision 140. The changeset you want is `-c140`.
 
 You'll need to have checked out the branches subdirectory, which is
 separate from trunk. If you have only checked out the madman
@@ -109,10 +104,27 @@ Merge your changes from the trunk to the release branch, check and fix
 any conflicts, and commit. So, from your release branch directory
 (e.g. RELEASE_2_6/madman/Rpacks):
 
-    svn merge -r 139:140 https://hedgehog.fhcrc.org/gentleman/bioconductor/trunk/madman/Rpacks
+    svn merge -c140 https://hedgehog.fhcrc.org/gentleman/bioconductor/trunk/madman/Rpacks
     svn status   # Look for C, indicating a conflict
                  # fix conflicts... (remember to use svn resolve for each)
-    svn commit -m "merged -r139:140 from trunk"
+    svn commit -m "merged r140 from trunk"
+
+## Experiment Data Packages
+
+The root of the Bioconductor experiment data svn repository is
+[https://hedgehog.fhcrc.org/bioc-data/trunk/experiment](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment).
+Experiment data packages are divided into two components: **pkgs**
+(containing all but the data files) and **data_store** (containing the
+data files). To obtain a specific experiment data package first check
+out the package infrastructure then fold the data in using the Python
+script
+[https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py](https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py)
+on the exported package. Here are the commands to check out the
+affydata package:
+
+    svn export https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py
+    svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
+    ./add_data.py affydata
 
 ## Having Problems?
 
