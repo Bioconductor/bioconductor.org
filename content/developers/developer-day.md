@@ -15,9 +15,9 @@ Morning
   performance improvements; `filterVcf` [Valerie]. Managing seqlevels,
   AnnotationHub [Marc].
   
-  New and emerging directions: Better paired end input [Valerie].
-  Cloud-aided computation [e.g., ensemblVEP; AnnotationHub]). Shallow
-  copies?
+  New and emerging directions: Work flows. Github integration. Better
+  paired end input [Valerie].  Cloud-aided computation
+  [e.g., ensemblVEP; AnnotationHub]). Shallow copies?
   
   Favorite features: `showHeadLines`, `showTailLines`
   [Valerie]. BiocGenerics functionality [Herve]. `sequenceLayer`
