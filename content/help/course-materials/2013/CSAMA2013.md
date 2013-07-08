@@ -12,46 +12,46 @@ Download, and install as follows:
 
 ## Morning
 
-[130624-brixen-microarrays-huber.key](130624-brixen-microarrays-huber.key)
+[130624-brixen-microarrays-huber.key](monday/morning/130624-brixen-microarrays-huber.key)
 
-[130624-brixen-microarrays-huber.pdf](130624-brixen-microarrays-huber.pdf)
+[130624-brixen-microarrays-huber.pdf](monday/morning/130624-brixen-microarrays-huber.pdf)
 
-[130624-gentleman-statistics-intro.pdf](130624-gentleman-statistics-intro.pdf)
+[130624-gentleman-statistics-intro.pdf](monday/morning/130624-gentleman-statistics-intro.pdf)
 
-[Anders__Alignment_Basics.odp](Anders__Alignment_Basics.odp)
+[Anders__Alignment_Basics.odp](monday/morning/Anders__Alignment_Basics.odp)
 
-[Anders__Alignment_Basics.pdf](Anders__Alignment_Basics.pdf)
+[Anders__Alignment_Basics.pdf](monday/morning/Anders__Alignment_Basics.pdf)
 
-[morgan-r-bioconductor-intro.pdf](morgan-r-bioconductor-intro.pdf)
+[morgan-r-bioconductor-intro.pdf](monday/morning/morgan-r-bioconductor-intro.pdf)
 
 
 ## Afternoon
 
-[A1_SequenceAnalysis.R](A1_SequenceAnalysis.R)
+[A1_SequenceAnalysis.R](monday/afternoon/A1_SequenceAnalysis.R)
 
-[A2_ReadsAndStrings.R](A2_ReadsAndStrings.R)
+[A2_ReadsAndStrings.R](monday/afternoon/A2_ReadsAndStrings.R)
 
-[A3_AlignmentsAndRanges.R](A3_AlignmentsAndRanges.R)
+[A3_AlignmentsAndRanges.R](monday/afternoon/A3_AlignmentsAndRanges.R)
 
-[A4_LargeData.R](A4_LargeData.R)
+[A4_LargeData.R](monday/afternoon/A4_LargeData.R)
 
-[BigData.zip](BigData.zip)
+[BigData.zip](monday/afternoon/BigData.zip)
 
-[Data/](Data/)
+[Data/data.csv](monday/afternoon/Data/.csv)
 
-[R-Basics.R](R-Basics.R)
+[R-Basics.R](monday/afternoon/R-Basics.R)
 
-[R-Basics.pdf](R-Basics.pdf)
+[R-Basics.pdf](monday/afternoon/R-Basics.pdf)
 
-[README](README)
+[README](monday/afternoon/README)
 
-[RefCards/Rrefcard.pdf](RefCards/Rrefcard.pdf)
+[RefCards/Rrefcard.pdf](monday/afternoon/RefCards/Rrefcard.pdf)
 
-[RefCards/Short-refcard.pdf](RefCards/Short-refcard.pdf)
+[RefCards/Short-refcard.pdf](monday/afternoon/RefCards/Short-refcard.pdf)
 
-[protocol/protocol.pdf](protocol/protocol.pdf)
+[protocol/protocol.pdf](monday/afternoon/protocol/protocol.pdf)
 
-[sequences-reads-ranges-alignments.pdf](sequences-reads-ranges-alignments.pdf)
+[sequences-reads-ranges-alignments.pdf](monday/afternoon/sequences-reads-ranges-alignments.pdf)
 
 
 
@@ -59,137 +59,137 @@ Download, and install as follows:
 
 ## Morning
 
-[Anders__DESeq_DEXSeq.pdf](Anders__DESeq_DEXSeq.pdf)
+[Anders__DESeq_DEXSeq.pdf](tuesday/morning/Anders__DESeq_DEXSeq.pdf)
 
-[brixvis2013.Rnw](brixvis2013.Rnw)
+[brixvis2013.Rnw](tuesday/morning/brixvis2013.Rnw)
 
-[bvis.bib](bvis.bib)
+[bvis.bib](tuesday/morning/bvis.bib)
 
-[geneSeg.pdf](geneSeg.pdf)
+[geneSeg.pdf](tuesday/morning/geneSeg.pdf)
 
-[karchHilb.pdf](karchHilb.pdf)
+[karchHilb.pdf](tuesday/morning/karchHilb.pdf)
 
-[morgan-sequences-reads-ranges-alignments-suppl.txt](morgan-sequences-reads-ranges-alignments-suppl.txt)
+[morgan-sequences-reads-ranges-alignments-suppl.txt](tuesday/morning/morgan-sequences-reads-ranges-alignments-suppl.txt)
 
-[morgan-sequences-reads-ranges-alignments.pdf](morgan-sequences-reads-ranges-alignments.pdf)
+[morgan-sequences-reads-ranges-alignments.pdf](tuesday/morning/morgan-sequences-reads-ranges-alignments.pdf)
 
-[vislec.pdf](vislec.pdf)
+[vislec.pdf](tuesday/morning/vislec.pdf)
 
 
 ## Afternoon
 
-[DESeq2_parathyroid.R](DESeq2_parathyroid.R)
+[DESeq2_parathyroid.R](tuesday/afternoon/DESeq2_parathyroid.R)
 
-[DESeq2_parathyroid.Rnw](DESeq2_parathyroid.Rnw)
+[DESeq2_parathyroid.Rnw](tuesday/afternoon/DESeq2_parathyroid.Rnw)
 
-[DESeq2_parathyroid.pdf](DESeq2_parathyroid.pdf)
+[DESeq2_parathyroid.pdf](tuesday/afternoon/DESeq2_parathyroid.pdf)
 
-[DESeq_protocol.pdf](DESeq_protocol.pdf)
+[DESeq_protocol.pdf](tuesday/afternoon/DESeq_protocol.pdf)
 
-[library.bib](library.bib)
+[library.bib](tuesday/afternoon/library.bib)
 
-[localUcscTable.csv](localUcscTable.csv)
+[localUcscTable.csv](tuesday/afternoon/localUcscTable.csv)
 
 
 # Wednesday
 
 ## Morning
 
-[130626-brixen-machinelearn-huber.key](130626-brixen-machinelearn-huber.key)
+[130626-brixen-machinelearn-huber.key](wednesday/morning/130626-brixen-machinelearn-huber.key)
 
-[130626-brixen-machinelearn-huber.pdf](130626-brixen-machinelearn-huber.pdf)
+[130626-brixen-machinelearn-huber.pdf](wednesday/morning/130626-brixen-machinelearn-huber.pdf)
 
-[Epigenomics_Lecture1.pdf](Epigenomics_Lecture1.pdf)
+[Epigenomics_Lecture1.pdf](wednesday/morning/Epigenomics_Lecture1.pdf)
 
-[Epigenomics_Lecture2.pdf](Epigenomics_Lecture2.pdf)
+[Epigenomics_Lecture2.pdf](wednesday/morning/Epigenomics_Lecture2.pdf)
 
 
 # Thursday
 
 ## Morning
 
-[130627-multtestindepfilt-huber.key](130627-multtestindepfilt-huber.key)
+[130627-multtestindepfilt-huber.key](thursday/morning/130627-multtestindepfilt-huber.key)
 
-[130627-multtestindepfilt-huber.pdf](130627-multtestindepfilt-huber.pdf)
+[130627-multtestindepfilt-huber.pdf](thursday/morning/130627-multtestindepfilt-huber.pdf)
 
-[integr.pdf](integr.pdf)
+[integr.pdf](thursday/morning/integr.pdf)
 
-[morgan-annotation.pdf](morgan-annotation.pdf)
+[morgan-annotation.pdf](thursday/morning/morgan-annotation.pdf)
 
-[morgan-big-data.pdf](morgan-big-data.pdf)
+[morgan-big-data.pdf](thursday/morning/morgan-big-data.pdf)
 
 
 ## Afternoon
 
-[DEXSeq.R](DEXSeq.R)
+[DEXSeq.R](thursday/afternoon/DEXSeq.R)
 
-[DEXSeq.pdf](DEXSeq.pdf)
+[DEXSeq.pdf](thursday/afternoon/DEXSeq.pdf)
 
-[anno.Rdata](anno.Rdata)
+[anno.Rdata](thursday/afternoon/anno.Rdata)
 
-[chipseq_thurs_pm.R](chipseq_thurs_pm.R)
+[chipseq_thurs_pm.R](thursday/afternoon/chipseq_thurs_pm.R)
 
-[chipseq_thurs_pm.pdf](chipseq_thurs_pm.pdf)
+[chipseq_thurs_pm.pdf](thursday/afternoon/chipseq_thurs_pm.pdf)
 
-[d.Rdata](d.Rdata)
+[d.Rdata](thursday/afternoon/d.Rdata)
 
-[expr.Rdata](expr.Rdata)
+[expr.Rdata](thursday/afternoon/expr.Rdata)
 
-[methGR.Rdata](methGR.Rdata)
+[methGR.Rdata](thursday/afternoon/methGR.Rdata)
 
 
 # Friday
 
 ## Morning
 
-[130628-brixen-imagephenotyping-huber.pdf](130628-brixen-imagephenotyping-huber.pdf)
+[130628-brixen-imagephenotyping-huber.pdf](friday/morning/130628-brixen-imagephenotyping-huber.pdf)
 
-[GSEA2011.pdf](GSEA2011.pdf)
+[GSEA2011.pdf](friday/morning/GSEA2011.pdf)
 
-[RGCSAMA.pdf](RGCSAMA.pdf)
+[RGCSAMA.pdf](friday/morning/RGCSAMA.pdf)
 
-[morgan-pwms.pdf](morgan-pwms.pdf)
+[morgan-pwms.pdf](friday/morning/morgan-pwms.pdf)
 
-[reproEmerg.pdf](reproEmerg.pdf)
+[reproEmerg.pdf](friday/morning/reproEmerg.pdf)
 
 
 ## Afternoon
 
-[D1_GeneAnnotations.R](D1_GeneAnnotations.R)
+[D1_GeneAnnotations.R](friday/afternoon/D1_GeneAnnotations.R)
 
-[D2_GenomicAnnotations.R](D2_GenomicAnnotations.R)
+[D2_GenomicAnnotations.R](friday/afternoon/D2_GenomicAnnotations.R)
 
-[D3_Visualization.R](D3_Visualization.R)
+[D3_Visualization.R](friday/afternoon/D3_Visualization.R)
 
-[D4_CalledVariants.R](D4_CalledVariants.R)
+[D4_CalledVariants.R](friday/afternoon/D4_CalledVariants.R)
 
-[D5_StructuralVariants.R](D5_StructuralVariants.R)
+[D5_StructuralVariants.R](friday/afternoon/D5_StructuralVariants.R)
 
-[D6_RegulatoryVariants.R](D6_RegulatoryVariants.R)
+[D6_RegulatoryVariants.R](friday/afternoon/D6_RegulatoryVariants.R)
 
-[Morgan2013_0.9.0.tar.gz](Morgan2013_0.9.0.tar.gz)
+[Morgan2013_0.9.0.tar.gz](friday/afternoon/Morgan2013_0.9.0.tar.gz)
 
-[QuickPackage.pdf](QuickPackage.pdf)
+[QuickPackage.pdf](friday/afternoon/QuickPackage.pdf)
 
-[QuickPackage_1.0.tar.gz](QuickPackage_1.0.tar.gz)
+[QuickPackage_1.0.tar.gz](friday/afternoon/QuickPackage_1.0.tar.gz)
 
-[R-programming.R](R-programming.R)
+[R-programming.R](friday/afternoon/R-programming.R)
 
-[R-programming.pdf](R-programming.pdf)
+[R-programming.pdf](friday/afternoon/R-programming.pdf)
 
-[README](README)
+[README](friday/afternoon/README)
 
-[S4-tutorial.R](S4-tutorial.R)
+[S4-tutorial.R](friday/afternoon/S4-tutorial.R)
 
-[S4-tutorial.pdf](S4-tutorial.pdf)
+[S4-tutorial.pdf](friday/afternoon/S4-tutorial.pdf)
 
-[annotation-visualization-variants.pdf](annotation-visualization-variants.pdf)
+[annotation-visualization-variants.pdf](friday/afternoon/annotation-visualization-variants.pdf)
 
-[src/parallel.R](src/parallel.R)
+[src/parallel.R](friday/afternoon/src/parallel.R)
 
-[src/parallel_bioc.R](src/parallel_bioc.R)
+[src/parallel_bioc.R](friday/afternoon/src/parallel_bioc.R)
 
-[src/parallel_export_sympols.R](src/parallel_export_sympols.R)
+[src/parallel_export_sympols.R](friday/afternoon/src/parallel_export_sympols.R)
 
 
 
