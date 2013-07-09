@@ -15,7 +15,7 @@ Morning
   performance improvements; `filterVcf` [Valerie]. Managing seqlevels,
   AnnotationHub [Marc].
   
-  New and emerging directions: Work flows. Github integration. Better
+  New and emerging directions: Work flows [Dan]. Github integration [Dan]. Better
   paired end input [Valerie].  Cloud-aided computation
   [e.g., ensemblVEP; AnnotationHub]). Shallow copies?
   
