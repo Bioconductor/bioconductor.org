@@ -26,7 +26,7 @@ Packages must satisfy the following checklist:
 
 * Pass `R CMD build` and `R CMD check` on all supported platforms (Windows,
   Macintosh, Linux) with no errors or warnings, using a recent R-devel.
-  The result of `R CMD build` must be less than 2MB; `R CMD check` must
+  The result of `R CMD build` must be less than 4MB; `R CMD check` must
   complete within 5 minutes.
 * Contain a DESCRIPTION file with valid contact information, an informative
   title and description, correct license specification, appropriate biocViews
