@@ -13,5 +13,17 @@ tags:
 - intro
 - seattle
 - package
-description: "DNA sequence analysis generates large volumes of data presenting challenging bioinformatic and statistical problems. This tutorial introduces Bioconductor packages and work flows for the analysis of sequence data. We learn about approaches for efficiently manipulating sequences and alignments, and introduce common work flows and the unique statistical challenges associated with `RNA\xE2\x80\x90 seq', variant annotation, and other experiments. The emphasis is on exploratory analysis, and the analysis of designed experiments.The workshop emphasizes orientation within the Bioconductor milieu; we will touch on the Biostrings, ShortRead, GenomicRanges, edgeR, and VariantAnnotation, and other packages, with short exercises to illustrate the functionality of each package."
+description: DNA sequence analysis generates large volumes of data
+  presenting challenging bioinformatic and statistical problems. This
+  tutorial introduces Bioconductor packages and work flows for the
+  analysis of sequence data. We learn about approaches for efficiently
+  manipulating sequences and alignments, and introduce common work
+  flows and the unique statistical challenges associated with
+  RNA-seq, variant annotation, and other experiments. The emphasis
+  is on exploratory analysis, and the analysis of designed
+  experiments.The workshop emphasizes orientation within the
+  Bioconductor milieu; we will touch on the Biostrings, ShortRead,
+  GenomicRanges, edgeR, and VariantAnnotation, and other packages,
+  with short exercises to illustrate the functionality of each
+  package.
 location: Albacete, Spain
