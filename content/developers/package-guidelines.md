@@ -157,7 +157,7 @@ as follows
   example section of a man page. It is very unusual for a package to list more
   than three packages as 'Depends:'.
 * **Suggests**: is appropriate for packages used in your vignette.
-* **Enhances**: is for packages such as Rmpi or multicore that enhance
+* **Enhances**: is for packages such as Rmpi or parallel that enhance
     the performance of the current package, but are not strictly
     needed for its functionality.
 * **SystemRequirements**: is for listing any external software which 
