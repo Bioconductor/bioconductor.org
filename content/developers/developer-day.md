@@ -7,7 +7,9 @@ Developer Day is part of the Bioconductor
 
 ## Tentative schedule
 
-Morning
+8:45 - 12:00 Morning
+
+- Welcome and orientation
 
 - Core team project highlights.
 
@@ -30,16 +32,29 @@ Morning
   implement, in small groups, a missing but generally useful feature
   to be shared by Bioconductor packages.
 
-- Directions and Needs Discussion. Topics to be determined, including:
-  approaches to variants (need for `tally` variants).
+- 10:30 Break
 
-Afternoon
+- Variants: Presentation by Paul Pyl, EMBL, rhdf5-supported variant
+  calling; Additional presentations and open discussion on variant
+  calling and down-stream analysis.
+
+12:00 - 1:00 Lunch
+
+1:00 - 5:00 Afternoon
 
 - Participant flashlight presentations (short talks). Title submission
   optional; spur-of-the-moment talks welcome. Current presentations:
-  Paul Pyl, EMBL, rhdf5-supported variant calling; Adrian Alexa, Illumina,
-  BaseSpaceR; Davide Rambaldi, flowFit for use in stem cell research.
+  Adrian Alexa, Illumina, BaseSpaceR; Davide Rambaldi, flowFit for use
+  in stem cell research.
 
-- Developer workshops
+- Developer workshop
 
-- Developer Day address: Joe Cheng / RStudio
+- Featured talk: Simon Urbanek
+
+- 3:00 break
+
+- Developer workshop
+
+- Directions and Needs Discussion. Topics to be determined.
+
+- 4:30 - 5:00: Developer Day address: Joe Cheng / RStudio
