@@ -1,14 +1,3 @@
-# Course Package:
-
-[Morgan2013_1.0.1.tar.gz](Morgan2013_1.0.1.tar.gz)
-
-Download, and install as follows:
-
-    install.packages("Morgan2013_1.0.1.tar.gz", repos=NULL, type="source")
-
-<hr>
-
-
 # Monday
 
 ## Morning
@@ -27,6 +16,22 @@ Download, and install as follows:
 
 
 ## Afternoon
+
+For Monday / Friday labs, download
+[Morgan2013_1.0.1.tar.gz](Morgan2013_1.0.1.tar.gz) and install as
+follows:
+
+    biocLite(c("Biostrings", "ShortRead", "Rsamtools",
+        "GenomicRanges", "rtracklayer", "RNAseqData.HNRNPC.bam.chr14",
+        "org.Hs.eg.db", "BSgenome.Hsapiens.UCSC.hg19",
+        "TxDb.Hsapiens.UCSC.hg19.knownGene", "Homo.sapiens",
+        "TxDb.Dmelanogaster.UCSC.dm3.ensGene", "GO.db", "MotifDb",
+        "seqnames.db", "SNPlocs.Hsapiens.dbSNP.20120608",
+        "GenomicFeatures", "biomaRt", "AnnotationHub",
+        "VariantAnnotation", "ensemblVEP", "VariantTools", "gmapR",
+        "LungCancerLines", "Gviz", "shiny", "parallel", "lattice",
+        "edgeR"))
+    install.packages("Morgan2013_1.0.1.tar.gz", repos=NULL, type="source")
 
 [A1_SequenceAnalysis.R](monday/afternoon/A1_SequenceAnalysis.R)
 
