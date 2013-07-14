@@ -225,13 +225,15 @@ server.
 
 <h2 id="vignettes">The Sweave Vignette</h2>
 
-A vignette demonstrates how to accomplish non-trivial tasks embodying the core
-functionality of your package. A Sweave vignette is an .Rnw file that contains
-LaTeX and chunks of R code. The R code chunk starts with a line <<>>=, and ends
-with @. Each chunk is evaluated during `R CMD build`, prior to LaTeX
-compilation. Refer to
+A vignette demonstrates how to accomplish non-trivial tasks embodying
+the core functionality of your package. A Sweave vignette is an .Rnw
+file that contains LaTeX and chunks of R code. The R code chunk starts
+with a line <<>>=, and ends with @. Each chunk is evaluated during `R
+CMD build`, prior to LaTeX compilation. Refer to
 [Writing package vignettes](http://cran.fhcrc.org/doc/manuals/R-exts.html#Writing-package-vignettes)
-for technical details.
+for technical details. See the
+[BiocStyle](/packages/devel/bioc/html/BiocStyle.html) package for a
+convenient way to use common macros and a standard style.
 
 A vignette provides reproducibility: the vignette produces the same results as
 copying the corresponding commands into an R session. It is therefore essential
