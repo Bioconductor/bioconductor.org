@@ -9,34 +9,42 @@ Developer Day is part of the Bioconductor
 
 8:45 - 12:00 Morning
 
-- Welcome and orientation
+- 8:45 - 9:00 Welcome and orientation
 
-- Core team project highlights.
+- 9:00 - 9:45 Core team project highlights.
 
-  Major developments this year: VariantAnnotation input and
-  performance improvements; `filterVcf` [Valerie]. Managing seqlevels,
-  AnnotationHub [Marc].
-  
-  New and emerging directions: Work flows [Dan]. Github integration [Dan]. Better
-  paired end input [Valerie].  Cloud-aided computation
-  [e.g., ensemblVEP; AnnotationHub]). Shallow copies?
-  
-  Favorite features: `showHeadLines`, `showTailLines`
-  [Valerie]. BiocGenerics functionality [Herve]. `sequenceLayer`
-  [Herve]. `keys`, `cols`, and ranges in the `select` interface of
-  *Db packages [Marc].
-  
-  Google Summer of Code: displayR [Marc / Shawn]; BiocParallel.
+   VariantAnnotation light-weight functions and performance
+  improvements; `filterVcf`, `showHeadLines`, `showTailLines`, better
+  paired end input [Valerie]
 
-- Group team-building activities. Possible ideas: _Quick Fix_ --
-  implement, in small groups, a missing but generally useful feature
-  to be shared by Bioconductor packages.
+  `keys`, `cols`, and ranges in the `select` interface of *Db packages.
+  AnnotationHub. [Marc]
+  
+  Single Package Builder; package reviews [Marc, Dan, Laurent].
+
+  Work flows, BiocStyle. Github integration [Dan, Martin].
+  
+  BiocGenerics. `sequenceLayer` [Herve].   
+
+  Cloud-aided computation, e.g., ensemblVEP; AnnotationHub [Martin]
+  
+  Google Summer of Code: displayR [Marc / Shawn]; BiocParallel [Michel, Michael, Martin].
+  Mentored projects [Laurent, Valerie]
+
+- 9:45 - 10:30 Small group team-building activities. 
+
+  _Quick fix_ -- Brainstorm about and implement a missing but useful
+  feature to be shared by Bioconductor packages. [Martin, Valerie, Herve]
+  
+  _Unit tests coming and going_ -- Brainstorm and implement **tests**
+  describing a new feature; fix buggy code with
+  test. [Paul, Laurent, Dan, Marc]
 
 - 10:30 Break
 
-- Variants: Presentation by Paul Pyl, EMBL, rhdf5-supported variant
-  calling; Additional presentations and open discussion on variant
-  calling and down-stream analysis.
+- 10:50 - 12:00 Variants: Presentation by Paul Pyl, EMBL,
+  rhdf5-supported variant calling; Additional presentations and open
+  discussion on variant calling and down-stream analysis.
 
 12:00 - 1:00 Lunch
 
@@ -45,16 +53,28 @@ Developer Day is part of the Bioconductor
 - Participant flashlight presentations (short talks). Title submission
   optional; spur-of-the-moment talks welcome. Current presentations:
   Adrian Alexa, Illumina, BaseSpaceR; Davide Rambaldi, flowFit for use
-  in stem cell research.
+  in stem cell research. ?Michael Lawrence, Shallow Copies
 
-- Developer workshop
+- 1:50 - 2:30 Developer workshops -- Suggestions: 
 
-- Featured talk: Simon Urbanek
+  Spontaneous suggestions [any / all];
+  Writing work flows for domain experts [Marc, Dan];
+  knitr, incl. for package vignettes [Yihui];
+  Packages, incl. DESCRIPTION [Paul, Laurent];
+  S4 classes, methods, NAMESPACEs, BiocGenerics, and documentation [Val, Herve];
+  roxygen2 for (non-S4) documentation [Laurent?];
+  Profiling and debugging R code [Dan, Martin];
+  Profiling and debugging C code [Martin];
+  Elements of parallel programming [Martin];
+  Rcpp [Laurent, Val].
+
+- 2:30 - 3:00 Featured talk: Simon Urbanek
 
 - 3:00 break
 
-- Developer workshop
+- 3:20 - 4:00 Developer workshops
 
-- Directions and Needs Discussion. Topics to be determined.
+- 4:00 - 4:30 Directions and Needs Discussion. Topics to be
+  determined.
 
 - 4:30 - 5:00: Developer Day address: Joe Cheng / RStudio
