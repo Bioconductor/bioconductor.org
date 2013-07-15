@@ -42,9 +42,11 @@ Developer Day is part of the Bioconductor
 
 - 10:30 Break
 
-- 10:50 - 12:00 Variants: Presentation by Paul Pyl, EMBL,
-  rhdf5-supported variant calling; Additional presentations and open
-  discussion on variant calling and down-stream analysis.
+- 10:50 - 12:00 Variants: 
+
+  Presentation by Paul Pyl, EMBL, rhdf5-supported variant calling;
+  Additional presentations and open discussion on variant calling and
+  down-stream analysis.
 
 12:00 - 1:00 Lunch
 
