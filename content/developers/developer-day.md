@@ -55,7 +55,7 @@ Developer Day is part of the Bioconductor
   Adrian Alexa, Illumina, BaseSpaceR; Davide Rambaldi, flowFit for use
   in stem cell research. ?Michael Lawrence, Shallow Copies
 
-- 1:50 - 2:30 Developer workshops -- Suggestions: 
+- 1:50 - 2:40 Developer workshops -- Suggestions: 
 
   Spontaneous suggestions [any / all];
   Writing work flows for domain experts [Marc, Dan];
@@ -68,7 +68,7 @@ Developer Day is part of the Bioconductor
   Elements of parallel programming [Martin];
   Rcpp [Laurent, Val].
 
-- 2:30 - 3:00 Featured talk: Simon Urbanek
+- 2:40 - 3:00 Featured talk: Simon Urbanek
 
 - 3:00 break
 
