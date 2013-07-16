@@ -8,6 +8,7 @@ genomic data. Common workflows include:
 * [Oligonucleotide Arrays](arrays/)
 * [Variants](variants/)
 * [Accessing Annotation Data](annotation/)
+* [Annotating Ranges](annotation/AnnotatingRanges)
 * [High Throughput Assays](/help/workflows/highthroughputassays/): 
   flow cytometry and other technologies.
 * [Finding Candidate Binding Sites for Known Transcription Factors via Sequence Matching](/help/workflows/generegulation/)
