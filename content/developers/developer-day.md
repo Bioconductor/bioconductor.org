@@ -55,15 +55,17 @@ Developer Day is part of the Bioconductor
 - 1:00 - 1:50 Participant flashlight presentations (short talks). 
 
   Title submission optional; spur-of-the-moment talks welcome. Current
-  presentations: Adrian Alexa, Illumina, BaseSpaceR; Davide Rambaldi,
-  flowFit for use in stem cell research. ?Michael Lawrence, Shallow
-  Copies
+  presentations: 
+  Adrian Alexa, Illumina, BaseSpaceR; 
+  Davide Rambaldi, flowFit for use in stem cell research. 
+  
+  ?Michael Lawrence, Shallow Copies
 
 - 1:50 - 2:40 Developer workshops -- Suggestions: 
 
+  knitr, incl. for package vignettes [Yihui];
   Spontaneous suggestions [any / all];
   Writing work flows for domain experts [Marc, Dan];
-  knitr, incl. for package vignettes [Yihui];
   Packages, incl. DESCRIPTION [Paul, Laurent];
   S4 classes, methods, NAMESPACEs, BiocGenerics, and documentation [Val, Herve];
   roxygen2 for (non-S4) documentation [Laurent?];
@@ -72,7 +74,9 @@ Developer Day is part of the Bioconductor
   Elements of parallel programming [Martin];
   Rcpp [Laurent, Val].
 
-- 2:40 - 3:00 Featured talk: Simon Urbanek
+- 2:40 - 3:00 Featured talk: Simon Urbanek, Tackling Big Data with R:
+  new features and concepts for handling large and streaming data in
+  practice
 
 - 3:00 break
 
