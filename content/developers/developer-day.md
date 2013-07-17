@@ -58,8 +58,6 @@ Developer Day is part of the Bioconductor
   Davide Rambaldi, flowFit for use in stem cell research;
   Tengfei Yin, Updates on ggbio; Bioc Asia;
   Brian Bot, Synapse.
-  
-  ?Michael Lawrence, Shallow Copies
 
 - 1:50 - 2:40 Developer workshops -- Suggestions: 
 
