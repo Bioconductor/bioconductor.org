@@ -61,26 +61,22 @@ Developer Day is part of the Bioconductor
 
 - 1:50 - 2:40 Developer workshops -- Suggestions: 
 
-  knitr, incl. for package vignettes [Yihui];
-  Spontaneous suggestions [any / all];
-  Writing work flows for domain experts [Marc, Dan];
+  knitr [Yihui];
   Packages, incl. DESCRIPTION [Paul, Laurent];
-  S4 classes, methods, NAMESPACEs, BiocGenerics, and documentation [Val, Herve];
-  roxygen2 for (non-S4) documentation [Laurent?];
-  Profiling and debugging R code [Dan, Martin];
-  Profiling and debugging C code [Martin];
-  Elements of parallel programming [Martin];
-  Rcpp [Laurent, Val].
-
-- 2:40 - 3:00 Featured talk: Simon Urbanek, Tackling Big Data with R:
-  new features and concepts for handling large and streaming data in
-  practice
+  S4 classes, methods, NAMESPACEs, BiocGenerics, documentation [Val, Herve];
+  h5vc [Paul];
 
 - 3:00 break
 
-- 3:20 - 4:00 Developer workshops
+- 3:20 - 4:00 Tackling Big Data with R:
+  new features and concepts for handling large and streaming data in
+  practice
 
-- 4:00 - 4:30 Directions and Needs Discussion. Topics to be
-  determined.
+- 4:00 - 4:40 Developer workshops
 
-- 4:30 - 5:00: Developer Day address: Joe Cheng / RStudio
+  Writing work flows for domain experts [Marc, Dan];
+  Profiling and debugging R, C code [Dan, Martin];
+  Elements of parallel programming [Simon];
+  Rcpp [Laurent, Val].
+
+- 4:40 - 5:10: Developer Day address: Joe Cheng / RStudio
