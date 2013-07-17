@@ -13,14 +13,14 @@ Developer Day is part of the Bioconductor
 
 - 9:00 - 9:45 Core team project highlights.
 
-   VariantAnnotation light-weight functions and performance
+  VariantAnnotation light-weight functions and performance
   improvements; `filterVcf`, `showHeadLines`, `showTailLines`, better
   paired end input [Valerie]
 
   `keys`, `cols`, and ranges in the `select` interface of *Db packages.
   AnnotationHub. [Marc]
   
-  Single Package Builder; package reviews [Marc, Dan, Laurent].
+  Single Package Builder; package reviews [Marc, Dan, L].
 
   Work flows, BiocStyle. Github integration [Dan, Martin].
   
@@ -28,9 +28,9 @@ Developer Day is part of the Bioconductor
 
   Cloud-aided computation, e.g., ensemblVEP; AnnotationHub [Martin]
   
+  Mentored projects [L, Valerie].
   Google Summer of Code: displayR [Marc / Shawn]; BiocParallel [Michel, Michael, Martin].
-  Mentored projects [Laurent, Valerie]
-
+  
 - 9:45 - 10:30 Small group team-building activities. 
 
   _Quick fix_ -- Brainstorm about and implement a missing but useful
