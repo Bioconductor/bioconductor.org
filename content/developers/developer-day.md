@@ -54,10 +54,10 @@ Developer Day is part of the Bioconductor
 
 - 1:00 - 1:50 Participant flashlight presentations (short talks). 
 
-  Title submission optional; spur-of-the-moment talks welcome. Current
-  presentations: 
   Adrian Alexa, Illumina, BaseSpaceR; 
-  Davide Rambaldi, flowFit for use in stem cell research. 
+  Davide Rambaldi, flowFit for use in stem cell research;
+  Tengfei Yin, Updates on ggbio; Bioc Asia;
+  Brian Bot, Synapse.
   
   ?Michael Lawrence, Shallow Copies
 
