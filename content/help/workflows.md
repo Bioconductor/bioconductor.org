@@ -7,7 +7,7 @@ genomic data. Common workflows include:
 * [RNAseq Differential Expression](/packages/release/data/experiment/html/parathyroidSE.html) Counting and other common tasks.
 * [Oligonucleotide Arrays](arrays/)
 * [Variants](variants/)
-* [Accessing Annotation Data](annotation/)
+* [Accessing Annotation Data](annotation/annotation/)
 * [Annotating Ranges](annotation/AnnotatingRanges)
 * [High Throughput Assays](/help/workflows/highthroughputassays/): 
   flow cytometry and other technologies.
