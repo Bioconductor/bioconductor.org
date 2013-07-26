@@ -398,3 +398,22 @@ task :write_version_number do
     f = File.open("assets/bioc-version", "w")
     f.print(config["release_version"])
 end
+
+desc "Get build result summaries to build RSS feeds" 
+# requires connection to internal hutch network 
+task :get_build_result_dcfs do
+    config = YAML.load_file("./config.yaml")
+    FileUtils.mkdir_p "tmp/build_dcfs"
+    ary = []
+    for version in ["release", "devel"]
+        if version == "release"
+            machine = config["master_release_builder"]
+            biocversion = config["release_version"]
+        else
+            machine = config["master_devel_builder"]
+            biocversion = config["devel_version"]
+        end
+        cmd = (%Q(rsync --dry-run --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/bioc/nodes tmp/build_dcfs/#{version}))
+        system(cmd)
+    end
+end
