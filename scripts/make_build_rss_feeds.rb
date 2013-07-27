@@ -34,7 +34,8 @@ def runit()
             node =  segs[3]
             version = segs[1]
             phase = segs[4]
-            pkglist[pkg].push({:version => version, :node => node, :phase => phase, :status => status})
+            pkglist[pkg].push({:version => version, :node => node,
+                :phase => phase, :status => status})
         end
     end
 
