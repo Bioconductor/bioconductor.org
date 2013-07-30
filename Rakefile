@@ -413,7 +413,7 @@ task :get_build_result_dcfs do
             machine = config["master_devel_builder"]
             biocversion = config["devel_version"]
         end
-        cmd = (%Q(rsync --dry-run --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/bioc/nodes tmp/build_dcfs/#{version}))
+        cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/bioc/nodes tmp/build_dcfs/#{version}))
         system(cmd)
     end
 end
