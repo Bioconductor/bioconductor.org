@@ -57,7 +57,7 @@ def make_individual_feed(pkglist, config)
         bad = pkglist[key].find_all {|i| i[:status] != "OK"}
         rss = RSS::Maker.make("atom") do |maker|
             maker.channel.author = "Bioconductor Build System"
-            maker.channel.title = "Build Problems for #{key}"
+            maker.channel.title = "#{key} Build Problems"
             maker.channel.updated = Time.now.to_s
             ## FIXME: add content here:
             maker.channel.about = "http://bioconductor.org/rss/build"
