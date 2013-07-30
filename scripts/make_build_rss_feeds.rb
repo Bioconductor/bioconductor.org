@@ -64,7 +64,12 @@ def make_individual_feed(pkglist, config)
 
             if bad.empty? and not file_exists
                 maker.items.new_item do |item|
-                    item.link = "#{BASEURL}/release/bioc-LATEST/#{key}/"
+                    if pkglist[key].find {|i| i[:version] == "release"}
+                        version = "release"
+                    else
+                        version = "devel"
+                    end
+                    item.link = "#{BASEURL}/#{version}/bioc-LATEST/#{key}/"
                     item.updated = Time.now.to_s
                     item.title = "No build problems for #{key}."
                 end
