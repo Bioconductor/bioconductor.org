@@ -117,6 +117,7 @@ def runit()
         "problems.rss")
     make_problem_feed(pkglist, config, ["ERROR", "TIMEOUT"], "errors.rss")
     make_individual_feed(pkglist, config)
+    puts "Done at #{Time.now.to_s}"
     pkglist
 end
 
