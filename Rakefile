@@ -302,8 +302,8 @@ end
 desc "Get Docbuilder Workflows"
 task :get_workflows do
   home = Dir.pwd
-  FileUtils.rm_rf "workflows_tmp"
-  FileUtils.mkdir "workflows_tmp"
+  #FileUtils.rm_rf "workflows_tmp"
+  FileUtils.mkdir_p "workflows_tmp"
   dest_dir = "help/workflows" # eventually this will change to help/workflows
   f = File.open("content/#{dest_dir}.yaml", "w")
   f.puts "---"
@@ -311,7 +311,7 @@ task :get_workflows do
   f.close
   ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
-  system(%Q(rsync -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+  system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
   json = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json`
   manifest = JSON.parse(json)  
 
@@ -389,7 +389,7 @@ task :get_workflows do
     end
   end
   #indexfile.close
-  FileUtils.rm_rf "workflows_tmp"
+  #FileUtils.rm_rf "workflows_tmp"
 end
 
 desc "write version number to endpoint"
