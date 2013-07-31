@@ -32,7 +32,11 @@
 
     </tbody>
   </table>
-  <a href="<%=w[:r_source]%>">R Script</a><br/>
+  <a href="<%=w[:r_source]%>">R Script</a>
+  <% if w.has_key? :output_file and w[:output_file] =~ /\.pdf$/i %>
+    | <a href="<%=w[:output_file]%>">PDF Vignette</a>
+  <% end %>
+  <br/>
   Last Built At: <%= w[:built_at]%><br/>
   SVN Revision: <%= w[:svn_revision] %></br/>
   Install with (under BioC 2.13):<br/>

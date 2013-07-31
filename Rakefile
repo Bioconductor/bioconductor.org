@@ -311,7 +311,9 @@ task :get_workflows do
   f.close
   ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
-  system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+  unless ENV["SKIP_WORKFLOW_RSYNC"] == "true"
+    system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+  end    
   json = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json`
   manifest = JSON.parse(json)  
 
@@ -320,8 +322,12 @@ task :get_workflows do
     next if entry =~ /^\./
     next if ["CRANrepo", "manifest.txt"].include? entry
 
-    unless manifest.keys.include? entry and manifest[entry].include? "web"
-      next
+    unless ENV["IGNORE_WORKFLOW_MANIFEST"] == "true"
+      unless manifest.keys.include? entry and manifest[entry].include? "web"
+        next
+      end
+    else
+      puts "ignoring workflow manifest"
     end
 
     fullpath = "workflows_tmp/#{entry}"
@@ -341,6 +347,7 @@ task :get_workflows do
       FileUtils.mkdir_p md_dir if multivig
       for vignette in vignettes
         vigname = vignette.gsub(/\.md$/i, "")
+        pdf = "#{vigname}.pdf"
         FileUtils.mkdir_p "#{asset_dir}/#{vigname}" if multivig
         if multivig
           dest = "#{asset_dir}/#{vigname}"
@@ -371,7 +378,7 @@ task :get_workflows do
           next if file.nil?
           FileUtils.mv "#{file}", asset_dir
         end
-        FileUtils.rm "#{fullpath}/#{vigname}.Rmd"
+        FileUtils.rm_f "#{fullpath}/#{vigname}.Rmd"
       end
       dir = Dir.new(fullpath)
       for entry in dir.entries
