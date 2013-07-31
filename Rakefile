@@ -407,10 +407,10 @@ task :get_build_result_dcfs do
     ary = []
     for version in ["release", "devel"]
         if version == "release"
-            machine = config["master_release_builder"]
+            machine = config["active_release_builders"]["linux"]
             biocversion = config["release_version"]
         else
-            machine = config["master_devel_builder"]
+            machine = config["active_devel_builders"]["linux"]
             biocversion = config["devel_version"]
         end
         cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/bioc/nodes tmp/build_dcfs/#{version}))
