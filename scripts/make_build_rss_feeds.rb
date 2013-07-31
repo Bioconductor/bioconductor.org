@@ -74,13 +74,42 @@ def make_individual_feed(pkglist, config)
                     item.title = "No build problems for #{key}."
                 end
             else
-                for b in bad
+                relprobs = bad.find_all {|i| i[:version] == "release"}
+                devprobs = bad.find_all {|i| i[:version] == "devel"}
+                os = {"linux" => 1, "windows" => 2, "mac" => 3}
+                for ary in [relprobs, devprobs]
+                    machines = ary == relprobs ? config["active_release_builders"] : config["active_devel_builders"]
+                    ary.sort! do |a, b|
+                        nodea = a[:node]
+                        nodeb = b[:node]
+                        osa = machines.find{|k,v| v == nodea}.first
+                        osb = machines.find{|k,v| v == nodeb}.first
+                        if (os[osa] > os[osb])
+                            1
+                        elsif os[osa] < os[osb]
+                            -1
+                        else
+                            0
+                        end
+                    end                    
+                    next if ary.empty?
+                    version = ary.first[:version]
+                    probs = ary.collect{|i| i[:status]}
+                    nodes = ary.collect{|i| i[:node]}
                     maker.items.new_item do |item|
-                        item.link = "#{BASEURL}/#{b[:version]}/bioc-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
-                        item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
+                        item.link = "#{BASEURL}/#{version}/bioc-LATEST/#{key}/"
+                        item.title = "#{key} #{probs.join "/"} in #{version} on nodes #{nodes.join "/"}"
                         item.updated = Time.now.to_s
                     end
                 end
+                # for b in bad
+                #     maker.items.new_item do |item|
+                #         #item.link = "#{BASEURL}/#{b[:version]}/bioc-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
+                #         item.link = "#{BASEURL}/#{version}/bioc-LATEST/#{key}/"
+                #         item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
+                #         item.updated = Time.now.to_s
+                #     end
+                # end
             end
 
         end

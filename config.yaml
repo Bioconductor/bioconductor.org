@@ -26,16 +26,14 @@ devel_repos:
 - "data/experiment"
 - "data/annotation"
 ## CHANGE this when the build machines change:
-master_devel_builder: zin1
 active_devel_builders:
-- "zin1"
-- "moscato1"
-- "perceval"
-master_release_builder: george2
+  linux: "zin1"
+  windows: "moscato1"
+  mac: "perceval"
 active_release_builders:
-- "george2"
-- "moscato2"
-- "petty"
+  linux: "george2"
+  windows: "moscato2"
+  mac: "petty"
 ## CHANGE these as AMI IDS change
 ami_ids:
  bioc2_8: ami-4b2fee22
