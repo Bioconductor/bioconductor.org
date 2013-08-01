@@ -79,6 +79,7 @@ def make_individual_feed(pkglist, config)
                 os = {"linux" => 1, "windows" => 2, "mac" => 3}
                 for ary in [relprobs, devprobs]
                     machines = ary == relprobs ? config["active_release_builders"] : config["active_devel_builders"]
+                    ary = ary.collect{|i| machines.include? i[:node]}
                     ary.sort! do |a, b|
                         nodea = a[:node]
                         nodeb = b[:node]
