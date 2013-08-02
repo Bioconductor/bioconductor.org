@@ -30,7 +30,7 @@ def tweak(rss, outfile)
     xml.elements.each("feed") do |e|
         hub_link = e.add_element("link")
         hub_link.attributes["rel"] = "hub"
-        hub_link.attributes["href"] = "http://bioconductor.superfeedr.com/"
+        hub_link.attributes["href"] = $hub_url
         self_link = e.add_element("link")
         self_link.attributes["rel"] = "self"
         self_link.attributes["href"] = url
@@ -152,7 +152,7 @@ def runit()
     pkglist = {}
 
     config = YAML.load_file("./config.yaml")
-
+    $hub_url = config["rss_hub_url"]
     Dir.chdir DCFDIR do
         Find.find "." do |path|
             next unless path =~ /\.dcf$/

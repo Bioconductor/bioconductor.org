@@ -34,6 +34,7 @@ active_release_builders:
   linux: "george2"
   windows: "moscato2"
   mac: "petty"
+rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
 ami_ids:
  bioc2_8: ami-4b2fee22
