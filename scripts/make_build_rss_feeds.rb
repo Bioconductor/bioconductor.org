@@ -5,10 +5,14 @@ require 'rss'
 require 'pp'
 require 'yaml'
 require 'fileutils'
+require 'rexml/document'
+include REXML
 
 DCFDIR="tmp/build_dcfs"
 OUTDIR="assets/rss/build"
 BASEURL="http://bioconductor.org/checkResults"
+
+$urls = []
 
 def get_status(path)
     f = File.open(path)
@@ -17,6 +21,25 @@ def get_status(path)
     statusline = statusline.chomp.sub(/^Status: /, "")
     statusline
 end
+
+def tweak(rss, outfile)
+    outfile.gsub! /#{OUTDIR}/, ""
+    outfile.gsub! /^\//, ""
+    url = "http://bioconductor.org/rss/build/#{outfile}"
+    xml = Document.new rss.to_s
+    xml.elements.each("feed") do |e|
+        hub_link = e.add_element("link")
+        hub_link.attributes["rel"] = "hub"
+        hub_link.attributes["href"] = "http://bioconductor.superfeedr.com/"
+        self_link = e.add_element("link")
+        self_link.attributes["rel"] = "self"
+        self_link.attributes["href"] = url
+        self_link.attributes["type"] = "application/atom+xml"
+        $urls.push url
+        return xml.to_s
+    end
+end
+
 
 def make_problem_feed(pkglist, config, problems, outfile)
     rss = RSS::Maker.make("atom") do |maker|
@@ -44,7 +67,8 @@ def make_problem_feed(pkglist, config, problems, outfile)
     end
     FileUtils.mkdir_p OUTDIR
     f = File.open("#{OUTDIR}/#{outfile}", "w")
-    f.puts rss
+    tweaked = tweak(rss, outfile)
+    f.puts tweaked # rss
     f.close
 end
 
@@ -116,7 +140,9 @@ def make_individual_feed(pkglist, config)
         end
         if (not bad.empty?) or (not file_exists)
             f = File.open(filename, "w")
-            f.puts rss
+            #puts filename
+            tweaked = tweak(rss, filename)
+            f.puts tweaked #rss 
             f.close
         end
     end
@@ -148,6 +174,12 @@ def runit()
     make_problem_feed(pkglist, config, ["ERROR", "TIMEOUT"], "errors.rss")
     make_individual_feed(pkglist, config)
     puts "Done at #{Time.now.to_s}"
+    FileUtils.rm_f "tmp/rss_urls.txt"
+    urlfile = File.open("tmp/rss_urls.txt", "w")
+    for url in $urls
+        urlfile.puts url
+    end
+    urlfile.close
     pkglist
 end
 
