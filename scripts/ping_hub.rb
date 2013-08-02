@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'rubygems'
+require 'yaml'
 require './scripts/PubSubHubbub-master/lib/pubsubhubbub'
 
 unless File.exists?("tmp/rss_urls.txt")
