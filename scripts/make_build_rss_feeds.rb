@@ -23,21 +23,30 @@ def get_status(path)
 end
 
 def tweak(rss, outfile)
+    #return rss.to_s if true
     outfile.gsub! /#{OUTDIR}/, ""
     outfile.gsub! /^\//, ""
     url = "http://bioconductor.org/rss/build/#{outfile}"
     xml = Document.new rss.to_s
-    xml.elements.each("feed") do |e|
-        hub_link = e.add_element("link")
-        hub_link.attributes["rel"] = "hub"
-        hub_link.attributes["href"] = $hub_url
-        self_link = e.add_element("link")
-        self_link.attributes["rel"] = "self"
-        self_link.attributes["href"] = url
-        self_link.attributes["type"] = "application/atom+xml"
-        $urls.push url
-        return xml.to_s
+    hub_link =  Element.new "link" #e.add_element("link")
+    hub_link.attributes["rel"] = "hub"
+    hub_link.attributes["href"] = $hub_url
+    self_link = Element.new "link" #e.add_element("link")
+    self_link.attributes["rel"] = "self"
+    self_link.attributes["href"] = url
+    self_link.attributes["type"] = "application/atom+xml"
+    $urls.push url
+
+    xml.root.insert_after "//feed/updated", self_link
+    xml.root.insert_after "//feed/updated", hub_link
+    #xml.root.elements["entry"].add Text.new("Bioconductor Build Information")
+    tmp = XPath.match xml, "//entry"
+    for thing in tmp
+        date = XPath.first(thing, "dc:date")
+        thing.delete date
     end
+
+    return xml.to_s
 end
 
 
@@ -60,6 +69,7 @@ def make_problem_feed(pkglist, config, problems, outfile)
                 maker.items.new_item do |item|
                     item.link = "#{BASEURL}/#{b[:version]}/bioc-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
                     item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
+                    item.summary = item.title
                     item.updated = Time.now.to_s
                 end
             end
@@ -96,6 +106,7 @@ def make_individual_feed(pkglist, config)
                     item.link = "#{BASEURL}/#{version}/bioc-LATEST/#{key}/"
                     item.updated = Time.now.to_s
                     item.title = "No build problems for #{key}."
+                    item.summary = item.title
                 end
             else
                 relprobs = bad.find_all {|i| i[:version] == "release"}
@@ -124,6 +135,7 @@ def make_individual_feed(pkglist, config)
                     maker.items.new_item do |item|
                         item.link = "#{BASEURL}/#{version}/bioc-LATEST/#{key}/"
                         item.title = "#{key} #{probs.join "/"} in #{version} on nodes #{nodes.join "/"}"
+                        item.summary = item.title
                         item.updated = Time.now.to_s
                     end
                 end
