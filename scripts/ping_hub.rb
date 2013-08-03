@@ -19,21 +19,24 @@ feeds = lines.map{|i| i.chomp}
 
 
 CHUNKSIZE = 100
-
+DELAY = 1
 
 def handle_chunk(chunk)
     EventMachine.run {
       pub = EventMachine::PubSubHubbub.new($hub_url).publish chunk
       pub.callback {
       puts "Successfully notified hub." 
-    EventMachine.stop
+      EventMachine.stop
+      sleep DELAY
   }
   pub.errback  { puts "Uh oh, something broke: #{pub.response}" }
 }
 end
 
-
+chunk_num = 0
 feeds.each_slice(CHUNKSIZE) do |chunk|
+    puts "handling chunk #{chunk_num}..."
+    chunk_num += 1
     handle_chunk(feeds)
 end
 
