@@ -43,7 +43,7 @@ script to do this for you.
 
 ## About the Feeds
 
-The RSS feeds contain a link to the daily build report which contains
+The RSS feeds contain a link to your package's daily build report which contains
 clickable icons labeled with the build status (OK, ERROR, WARNINGS, TIMEOUT),
 that look something like this:
 
