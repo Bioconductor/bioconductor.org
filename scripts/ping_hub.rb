@@ -18,8 +18,8 @@ lines = File.readlines "tmp/rss_urls.txt"
 feeds = lines.map{|i| i.chomp}
 
 
-CHUNKSIZE = 100
-DELAY = 1
+CHUNKSIZE = 80
+DELAY = 3
 
 def handle_chunk(chunk)
     EventMachine.run {
