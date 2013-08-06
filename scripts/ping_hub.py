@@ -13,6 +13,7 @@ f.close()
 
 try:
     publish('http://pubsubhubbub.appspot.com', urls)
+    print("Done.")
 except PublishError, e:
     print("Caught Exception!!")
 
