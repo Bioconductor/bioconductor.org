@@ -183,7 +183,10 @@ def runit()
         Find.find "." do |path|
             next unless path =~ /\.dcf$/
             segs = path.split("/")
-            pkg = segs.last.split(".").first
+            segs2 = segs.last.split(".")
+            segs2.pop
+            segs2.pop
+            pkg = segs2.join(".")
             status = get_status(path)
             pkglist[pkg] = [] unless pkglist.has_key? pkg
             segs = path.split("/")
