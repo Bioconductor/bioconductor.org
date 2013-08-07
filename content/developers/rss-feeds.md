@@ -7,11 +7,17 @@ build, in both release and devel.
 Package maintainers are encouraged to subscribe to 
 these feeds to be notified immediately if there are any build problems.
 
-There is a separate RSS URL for each package. The feed URL for Biobase is:
+There is a separate RSS URL for each package. The feed URLs take this form:
 
-    http://bioconductor.org/rss/build/packages/Biobase.rss
+*Software Packages*:
 
-To get the feed URL for your package, replace "Biobase" with the name of
+    http://bioconductor.org/rss/build/packages/PACKAGENAME.rss
+
+*Experiment Data Packages*:
+
+    http://bioconductor.org/rss/build/data/packages/PACKAGENAME.rss
+
+To get the feed URL for your package, replace "PACKAGENAME" with the name of
 your package. Feed URLs can be pasted into any RSS reader (they are
 not meant to be viewed by web browsers). 
 
