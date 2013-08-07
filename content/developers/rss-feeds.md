@@ -24,7 +24,8 @@ not meant to be viewed by web browsers).
 (Note that these are actually Atom feeds, but will work in any modern
 RSS reader.)
 
-At present, feeds are updated daily at approximately 10:30AM Seattle time.
+At present, feeds for software packages are updated daily at approximately 10:30AM Seattle time. Feeds for experiment data packages are updated
+at about 5:30PM.
 
 The feeds support PubSubHubbub (also known as PuSH) which means updates
 will be pushed immediately to PuSH-enabled readers, eliminating the need to poll
