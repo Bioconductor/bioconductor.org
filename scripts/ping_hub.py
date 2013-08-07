@@ -1,9 +1,23 @@
 #!/usr/bin/env python
 
 from pubsubhubbub_publish import *
+import sys
 
+if (len(sys.argv) == 1):
+    repo = "bioc"
+else:
+    if sys.argv[1] == "bioc" or sys.argv[1] == "data-experiment":
+        repo = sys.argv[1]
+    else:
+        print("Argument must be 'bioc' or 'data-experiment'.")
+        exit(1)
 
-f = open("tmp/rss_urls.txt", "r")
+if repo == "bioc":
+    filename = "tmp/rss_urls.txt"
+else:
+    filename = "tmp/data_rss_urls.txt"
+
+f = open(filename, "r")
 
 urls = []
 for line in f:

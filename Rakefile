@@ -10,6 +10,7 @@ require 'open3'
 require 'find'
 require 'pathname'
 require 'json'
+require 'pp'
 
 include Open3
 
@@ -406,11 +407,33 @@ task :write_version_number do
     f.print(config["release_version"])
 end
 
-desc "Get build result summaries to build RSS feeds" 
+task :my_task, :arg1 do |t, args|
+  hargs = args.to_hash
+  puts "hargs were:"
+  pp hargs
+  puts "is it nil? #{hargs.nil?}"
+  puts hargs.class
+  puts "is it empty? #{hargs.empty?}"
+  puts "keys:"
+  pp hargs.keys()
+end
+
+desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)" 
 # requires connection to internal hutch network 
-task :get_build_result_dcfs do
+task :get_build_result_dcfs, :repo do |t, args|
+    hargs = args.to_hash
+    if hargs.empty? or !hargs.has_key? :repo
+      repo = "bioc"
+    else
+      repo = hargs[:repo]
+    end
+    unless ["bioc", "data-experiment"].include? repo
+      puts "Argument must be either 'bioc' or 'data-experiment'."
+      next
+    end
     config = YAML.load_file("./config.yaml")
-    FileUtils.mkdir_p "tmp/build_dcfs"
+    tmpdir = repo=="bioc" ? "tmp/build_dcfs" : "tmp/data_build_dcfs"
+    FileUtils.mkdir_p tmpdir
     ary = []
     for version in ["release", "devel"]
         if version == "release"
@@ -420,7 +443,7 @@ task :get_build_result_dcfs do
             machine = config["active_devel_builders"]["linux"]
             biocversion = config["devel_version"]
         end
-        cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/bioc/nodes tmp/build_dcfs/#{version}))
+        cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
         system(cmd)
     end
 end
