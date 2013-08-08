@@ -156,7 +156,8 @@ def make_individual_feed(pkglist, config)
                     nodes = ary.collect{|i| i[:node]}
                     maker.items.new_item do |item|
                         item.link = "#{BASEURL}/#{version}/#{@repo}-LATEST/#{key}/"
-                        item.title = "#{key} #{probs.join "/"} in #{version} on nodes #{nodes.join "/"}"
+                        nword = (nodes.length > 1) ? "nodes" : "node"
+                        item.title = "#{key} #{probs.join "/"} in #{version} on #{nword} #{nodes.join "/"}"
                         item.summary = item.title
                         item.updated = Time.now.to_s
                     end
