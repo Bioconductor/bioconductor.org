@@ -23,7 +23,7 @@ else
     end
 end
 
-@uuid = UUID.new
+$uuid = UUID.new
 BASEURL="http://bioconductor.org/checkResults"
 
 if @repo == "bioc"
@@ -97,7 +97,7 @@ def make_problem_feed(pkglist, config, problems, outfile)
                     item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
                     item.summary = item.title
                     item.updated = Time.now.to_s
-                    item.id = "#{item.link}?id=#{Time.now.to_i}_#{@uuid.generate}"
+                    item.id = "#{item.link}?id=#{Time.now.to_i}_#{$uuid.generate}"
                 end
             end
         end
@@ -134,7 +134,7 @@ def make_individual_feed(pkglist, config)
                     item.updated = Time.now.to_s
                     item.title = "No build problems for #{key}."
                     item.summary = item.title
-                    item.id = "#{item.link}?id=#{Time.now.to_i}_#{@uuid.generate}"
+                    item.id = "#{item.link}?id=#{Time.now.to_i}_#{$uuid.generate}"
                 end
             else
                 relprobs = bad.find_all {|i| i[:version] == "release"}
@@ -166,7 +166,7 @@ def make_individual_feed(pkglist, config)
                         item.title = "#{key} #{probs.join "/"} in #{version} on #{nword} #{nodes.join "/"}"
                         item.summary = item.title
                         item.updated = Time.now.to_s
-                        item.id = "#{item.link}?id=#{Time.now.to_i}_#{@uuid.generate}"
+                        item.id = "#{item.link}?id=#{Time.now.to_i}_#{$uuid.generate}"
 
                     end
                 end
