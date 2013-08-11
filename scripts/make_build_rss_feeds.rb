@@ -13,20 +13,20 @@ include REXML
 
 
 if ARGV.empty?
-    @repo = "bioc"
+    $repo = "bioc"
 else
     unless ["bioc", "data-experiment"].include? ARGV.first
         puts "argument must be 'bioc' or 'data-experiment'"
         exit 1
     else
-        @repo = ARGV.first
+        $repo = ARGV.first
     end
 end
 
 $uuid = UUID.new
 BASEURL="http://bioconductor.org/checkResults"
 
-if @repo == "bioc"
+if $repo == "bioc"
     DCFDIR="tmp/build_dcfs"
     OUTDIR="assets/rss/build"
 else
@@ -51,7 +51,7 @@ def tweak(rss, outfile)
     #return rss.to_s if true
     outfile.gsub! /#{OUTDIR}/, ""
     outfile.gsub! /^\//, ""
-    spec = (@repo=="bioc") ? "" : "/data"
+    spec = ($repo=="bioc") ? "" : "/data"
     url = "http://bioconductor.org/rss/build#{spec}/#{outfile}"
     xml = Document.new rss.to_s
     hub_link =  Element.new "link" #e.add_element("link")
@@ -93,7 +93,7 @@ def make_problem_feed(pkglist, config, problems, outfile)
             bad = pkglist[key].find_all {|i| problems.include? i[:status] }
             for b in bad
                 maker.items.new_item do |item|
-                    item.link = "#{BASEURL}/#{b[:version]}/#{@repo}-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
+                    item.link = "#{BASEURL}/#{b[:version]}/#{$repo}-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
                     item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
                     item.summary = item.title
                     item.updated = Time.now.to_s
@@ -130,7 +130,7 @@ def make_individual_feed(pkglist, config)
                     else
                         version = "devel"
                     end
-                    item.link = "#{BASEURL}/#{version}/#{@repo}-LATEST/#{key}/"
+                    item.link = "#{BASEURL}/#{version}/#{$repo}-LATEST/#{key}/"
                     item.updated = Time.now.to_s
                     item.title = "No build problems for #{key}."
                     item.summary = item.title
@@ -161,7 +161,7 @@ def make_individual_feed(pkglist, config)
                     probs = ary.collect{|i| i[:status]}
                     nodes = ary.collect{|i| i[:node]}
                     maker.items.new_item do |item|
-                        item.link = "#{BASEURL}/#{version}/#{@repo}-LATEST/#{key}/"
+                        item.link = "#{BASEURL}/#{version}/#{$repo}-LATEST/#{key}/"
                         nword = (nodes.length > 1) ? "nodes" : "node"
                         item.title = "#{key} #{probs.join "/"} in #{version} on #{nword} #{nodes.join "/"}"
                         item.summary = item.title
@@ -213,7 +213,7 @@ def runit()
         "errors.rss")
     make_individual_feed(pkglist, config)
     puts "Done at #{Time.now.to_s}"
-    rssfile = (@repo == "bioc") ? "tmp/rss_urls.txt" : "tmp/data_rss_urls.txt"
+    rssfile = ($repo == "bioc") ? "tmp/rss_urls.txt" : "tmp/data_rss_urls.txt"
     FileUtils.rm_f rssfile
     urlfile = File.open(rssfile, "w")
     for url in $urls
