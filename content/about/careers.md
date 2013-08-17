@@ -8,6 +8,9 @@ for more information
 
 <h2 id="SAPII" />SYSTEMS ANALYST PROGRAMMER  II</h2>
 
+This opportunity is also
+[posted online][https://careers-fhcrc.icims.com/jobs/2964/systems-analyst-programmer-ii%2c-bioconductor/job]
+
 The [Bioconductor][] project seeks a creative
 and motivated individual to join our bioinformatics team. Bioconductor
 develops and distributes open-source, open-development software for
@@ -19,27 +22,28 @@ developed internally and by our vibrant user community.
 SCOPE OF RESPONSIBILITIES
 
 This unique opportunity emphasizes scientific computing software
-development. The applicant will work under immediate technical
-direction. The applicant will develop and maintain algorithms and data
-representations for use by our vibrant user community. The applicant
-will become and maintain familiarity with the bioinformatic needs of
-our users. The applicant will have responsibility for implementing
-software packages in specific domains of application, and will share
-responsibility with other team members for routine maintenance of our
-large base of existing and user-contributed packages.
+development. The successful candidate will work under immediate
+technical direction. The successful candidate will develop and
+maintain algorithms and data representations for use by our vibrant
+user community. The successful candidate will become familiar with the
+bioinformatic needs of our users. The successful candidate will have
+responsibility for implementing software packages in specific domains
+of application, and will share responsibility with other team members
+for routine maintenance of our large base of existing and
+user-contributed packages.
 
 MAJOR DUTIES
 
 This position involves software development, primarily related to
 annotation and analysis of high-throughput sequence data using R /
-Bioconductor tools. The applicant will write robust R code for
-efficiently organizing and processing large volumes of sequence and
-annotation data. The applicant will have responsibility for
-implementing cloud-based data management solutions that integrate with
-the R environment. The applicant will participate in our Agile-like
-development process. The applicant will also participate in
-Bioconductor activities involved with user interaction: technical
-support contact through our mailing list; evaluation of new
+Bioconductor tools. The successful candidate will write robust R code
+for efficiently organizing and processing large volumes of sequence
+and annotation data. The successful candidate will have responsibility
+for implementing cloud-based data management solutions that integrate
+with the R environment. The successful candidate will participate in
+our Agile-like development process. The successful candidate will also
+participate in Bioconductor activities involved with user interaction:
+technical support contact through our mailing list; evaluation of new
 user-contributed packages; and training courses / annual conferences.
 
 MINIMUM QUALIFICATIONS
@@ -66,6 +70,8 @@ Recommended qualifications include:
 
 <h2 id="SAPIV">SYSTEMS ANALYST PROGRAMMER  IV</h2>
 
+This opportunity is not yet posted online.
+
 The [Bioconductor] project seeks a creative and motivated individual
 to join our bioinformatics team. Bioconductor develops and distributes
 open-source, open-development software for analysis and comprehension
@@ -77,31 +83,32 @@ and by our vibrant user community.
 SCOPE OF RESPONSIBILITIES
 
 This unique opportunity emphasizes scientific computing software
-engineering. The applicant will work under immediate technical
-direction. The applicant will develop and maintain algorithms and data
-representations for use by our vibrant user community. The applicant
-will become and maintain familiarity with the bioinformatic needs of
-our users. The applicant will have responsibility for overall design
-and implementation of software packages in specific domains of
-application, and will share responsibility with other team members for
-routine maintenance of our large base of existing and user-contributed
-packages.
+engineering. The successful candidate will work under immediate
+technical direction. The successful candidate will develop and
+maintain algorithms and data representations for use by our vibrant
+user community. The successful candidate will become familiar with the
+bioinformatic needs of our users. The successful candidate will have
+responsibility for overall design and implementation of software
+packages in specific domains of application, and will share
+responsibility with other team members for routine maintenance of our
+large base of existing and user-contributed packages.
 
 MAJOR DUTIES
 
 This position involves software development, primarily related to
 analysis of high-throughput sequence data using R / Bioconductor
-tools. The applicant will write advanced and robust R code for
-efficiently organizing and processing large volumes of sequence
-data. The applicant will write performant C / C++ code in support of
-advanced functionality, and to interface with third party
-libraries. Depending on qualifications or expertise, the applicant
-will have responsibility for cloud-based and high-performance
-computing development tasks. The applicant will participate in our
-Agile-like development process. The applicant will also participate in
-Bioconductor activities involved with user interaction: technical
-support contact through our mailing list; evaluation of new
-user-contributed packages; and training courses / annual conferences.
+tools. The successful candidate will write advanced and robust R code
+for efficiently organizing and processing large volumes of sequence
+data. The successful candidate will write performant C / C++ code in
+support of advanced functionality, and to interface with third party
+libraries. Depending on qualifications or expertise, the successful
+candidate will have responsibility for cloud-based and
+high-performance computing development tasks. The successful candidate
+will participate in our Agile-like development process. The successful
+candidate will also participate in Bioconductor activities involved
+with user interaction: technical support contact through our mailing
+list; evaluation of new user-contributed packages; and training
+courses / annual conferences.
 
 MINIMUM QUALIFICATIONS
 
