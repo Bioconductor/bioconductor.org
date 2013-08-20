@@ -3,13 +3,14 @@
 * [Systems Analyst / Programmer II](#SAPII)  
 * [Systems Analyst / Programmer IV](#SAPIV)
 
-Contact mtmorgan at fhcrc.org or visit the FHCRC [careers][] web site
+Contact mtmorgan at fhcrc.org or visit the FHCRC 
+[careers](https://careers-fhcrc.icims.com) web site
 for more information
 
 <h2 id="SAPII" />SYSTEMS ANALYST PROGRAMMER  II</h2>
 
 This opportunity is also
-[posted online](https://careers-fhcrc.icims.com/jobs/2964/systems-analyst-programmer-ii%2c-bioconductor/job)
+[posted online](https://careers-fhcrc.icims.com/jobs/2964/systems-analyst-programmer-ii%2c-bioconductor/job).
 
 The [Bioconductor](/) project seeks a creative
 and motivated individual to join our bioinformatics team. Bioconductor
@@ -70,7 +71,8 @@ Recommended qualifications include:
 
 <h2 id="SAPIV">SYSTEMS ANALYST PROGRAMMER  IV</h2>
 
-This opportunity is not yet posted online.
+This opportunity is also 
+[posted online](https://careers-fhcrc.icims.com/jobs/2965/systems-analyst-programmer-iv%2c-bioconductor/job).
 
 The [Bioconductor] project seeks a creative and motivated individual
 to join our bioinformatics team. Bioconductor develops and distributes
