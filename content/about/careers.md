@@ -9,7 +9,7 @@ for more information
 <h2 id="SAPII" />SYSTEMS ANALYST PROGRAMMER  II</h2>
 
 This opportunity is also
-[posted online][(https://careers-fhcrc.icims.com/jobs/2964/systems-analyst-programmer-ii%2c-bioconductor/job)
+[posted online](https://careers-fhcrc.icims.com/jobs/2964/systems-analyst-programmer-ii%2c-bioconductor/job)
 
 The [Bioconductor](/) project seeks a creative
 and motivated individual to join our bioinformatics team. Bioconductor
