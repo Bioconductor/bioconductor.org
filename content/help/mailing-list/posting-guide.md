@@ -1,5 +1,7 @@
 # ![](/images/icons/magnifier.gif)Posting guide #
 
+Revised: 23 August, 2013
+
 ## Why? ##
 
 * Good questions attract good responses.
@@ -8,73 +10,60 @@
 
 * Good questions help avoid embarrassment.
 
+## Key points ##
+
+* Use the latest Bioconductor release (or 'devel') version. Ensure
+  that your packages are [up-to-date](/install/).
+
+* Provide a minimal, self-contained example (data and code) that
+  someone else can cut-and-paste into a new R session to reproduce
+  your problem.
+
+* Include the output of `sessionInfo()`. If the example produces an
+  error, provide the output of `traceback()` after the error occurs.
+
+* Include the maintainer of the package in the email, e.g.,
+  `packageDescription('GenomicRanges')$Maintainer`.
+
 ## Preparing ##
 
 * Read the relevant R documentation.  Use `help.start()` to start the
   HTML search engine. If you are having trouble with function
   `somefunc`, try `?somefunc`. If you are searching for a function,
   try `help.search("somefunc")`. Read the vignette(s) for the
-  package(s) using `browseVignettes(package="somepkg")`
+  package(s) using `vignette(package="somepkg")`
 
 * Search the [FAQ](http://bioconductor.org/docs/faq/) and
   [Bioconductor](http://dir.gmane.org/gmane.science.biology.informatics.conductor)
   and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
   similar posts. Try a [Google](http://www.google.com/) search.
-  
-* Please include the R code that is causing the problem and enough data
-  for someone else to run the code and get the same problem.
-  Simplify code to a minimal, self-contained example. If reporting an
-  error, be sure to reproduce the error in a new R session, started
-  with the `--vanilla` option to avoid loading .Rprofile or .RData
-  files. 
-  
-
-  
-* Ensure that you are using the latest Bioconductor release and that
-  your installed packages are [up-to-date](/install/).
 
 ## Composing ##
 
-* You may reply to an existing email if you are elaborating on or
-  answering a previous question.  However, if you are asking a new
-  question, then start a new email message with a new subject line.
-  Don't simply add a new question on a different topic as part of a
-  reply to an existing thread.
+* Compose a new email message with a new subject line; only reply to
+  an existing email if you are elaborating on or answering a previous
+  question.
 
-* Use an informative subject line that is as specific as
-  possible. This will help attract responders and also helps others in
-  the future when they search the archives.  For example, a subject
-  line "time course experiment using limma" might be better than just
-  "limma".
+* Use an informative subject line. This will help attract responders
+  and helps others when they search the archives.  For example, a
+  subject line "time course experiment using limma" is better than
+  just "limma".
 
 * Identify yourself.  If you are using a non-professional email
   account, like gmail or hotmail, or the guest posting facility, then
-  give your full name and professional affiliation.  Anonymous
-  postings are much less likely to get responses.
+  give your full name and professional affiliation.
 
-* If you are asking for advice as to how to use a particular function
-  or package, then explain fully what documentation you have already
-  read and why this hasn't yet fully answered your question.  This
-  allows a responder to answer your specific question instead of
-  simply referring you to the existing documentation.
-
-* If you are reporting a code problem, then include a simple and
-  reproducible example along with the output of `sessionInfo()`. The
-  example should be reproducible by others, meaning that someone else
-  reading your post should be able to run the code themselves and get
-  the same output as you did.  If the example produces an error,
-  provide the error message and the output of `traceback()`.  Provide
-  giving actual output to demonstrate what you mean when you wish to
-  indicate that the code does not work as expected.
+* If you are asking for advice on how to use a particular function or
+  package, then explain fully what documentation you have already read
+  and why this hasn't yet fully answered your question.  This allows a
+  responder to answer your specific question instead of simply
+  referring you to the existing documentation.
 
 * Send email to the appropriate list.  Use the Bioconductor mailing
   list for questions about specific package, or conceptual
   questions. The R-help mailing list is for questions about the
   underlying R program. The Bioc-devel and R-devel lists are for
   discussing code development and other technical issues.
-
-* Ensure that your code is readable, and can be cut and pasted into an
-  R session.
 
 * Use plain text instead of HTML; it is smaller in size and easier to
   read.
@@ -102,17 +91,16 @@
   profiles.
 
 * When answering a question, consider including some explanation of
-  how you arrived at your solution (rather than just writing a
-  solution). This way, you help people not only to solve their problem
-  at hand, but also to help themselves in the future.
+  how you arrived at your solution. This way, you help people not only
+  to solve their problem at hand, but also to help themselves in the
+  future.
 
 * Rudeness and ad hominem comments are not acceptable.
 
-* Brevity is OK. Consider, though, that information that is obvious
-  and not worth mentioning to you may be very helpful to others.
+* Brevity is OK. Consider, though, that information that is obvious to
+  you may be very helpful to others.
 
-* If you believe the issue has been discussed before, please give the
-  URL of the relevant thread or web site.
+* Provide URLs to other relevant threads or web sites.
 
 ## Acknowledgments ##
 
