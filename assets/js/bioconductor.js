@@ -215,7 +215,7 @@ var getHrefForSymlinks = function(href) {
 
 //document ready function                                      
 jQuery(function() {
-    unRebaseMirrors();
+    //unRebaseMirrors();
     tidyWorkflows();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
