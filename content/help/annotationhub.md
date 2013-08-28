@@ -24,6 +24,6 @@ As an example, the following lines discover and retrieve an ENCODE
 
 _AnnotationHub_ is currently (27 January, 2013) available from the
 Bioconductor subversion
-[repository](http://bioconductor.org/developers/source-control/) for
+[repository](/developers/source-control/) for
 use with the development version of [R](http://r-project.org); our
 intention is to include _AnnotationHub_ in Bioconductor 2.12.

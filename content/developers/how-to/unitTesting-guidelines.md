@@ -264,12 +264,12 @@ Some web resources worth reading:
 * [Agile software development][agile]
 
 
-[BiocGenerics]: http://bioconductor.org/packages/release/bioc/html/BiocGenerics.html
+[BiocGenerics]: /packages/release/bioc/html/BiocGenerics.html
 [RUnit]: http://cran.r-project.org/web/packages/RUnit/index.html
 [agile]: http://en.wikipedia.org/wiki/Agile_software_development
 [JUnit]: http://www.junit.org
 [PyUnit]: http://pyunit.sourceforge.net
 [tdd]: http://en.wikipedia.org/wiki/Test-driven_development
-[bioc-devel]: http://bioconductor.org/help/mailing-list/#bioc-devel
+[bioc-devel]: /help/mailing-list/#bioc-devel
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

@@ -56,7 +56,7 @@ mentored project and their current employment or academic studies.
 Below you will find a list of proposed projects.  We invite your participation.  We welcome your suggestions.
 
 <h2 id='extendingMZR'>Extending mzR</h2>
-The `mzR` R/Bioconductor package provides a unified API to the common open and community-driven file formats and parsers available for mass spectrometry data, namely `mzXML`, `mzML` and `mzData` (see [vignette](http://bioconductor.org/packages/devel/bioc/vignettes/mzR/inst/doc/mzR.pdf) for details). It uses `C` and `C++` code from other third party open-source projects and heavily relies on the [`Rcpp`](http://dirk.eddelbuettel.com/code/rcpp.html) package to, notably, provide a direct mapping from `R` to `C++` infrastructure.
+The `mzR` R/Bioconductor package provides a unified API to the common open and community-driven file formats and parsers available for mass spectrometry data, namely `mzXML`, `mzML` and `mzData` (see [vignette](/packages/devel/bioc/vignettes/mzR/inst/doc/mzR.pdf) for details). It uses `C` and `C++` code from other third party open-source projects and heavily relies on the [`Rcpp`](http://dirk.eddelbuettel.com/code/rcpp.html) package to, notably, provide a direct mapping from `R` to `C++` infrastructure.
 Currently, `mzR` provides two actual backends to read Mass Spectrometry raw data:
 
 1. `netCDF` which reads, as the name implies, `netCDF` data
@@ -263,7 +263,7 @@ graph package.
 * Mentee: Paul Shannon
 * Status: Complete
 
-[graph package]: http://bioconductor.org/packages/devel/bioc/html/graph.html
+[graph package]: /packages/devel/bioc/html/graph.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 

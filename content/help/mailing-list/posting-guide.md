@@ -33,7 +33,7 @@ Revised: 23 August, 2013
   try `help.search("somefunc")`. Read the vignette(s) for the
   package(s) using `vignette(package="somepkg")`
 
-* Search the [FAQ](http://bioconductor.org/docs/faq/) and
+* Search the [FAQ](/docs/faq/) and
   [Bioconductor](http://dir.gmane.org/gmane.science.biology.informatics.conductor)
   and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
   similar posts. Try a [Google](http://www.google.com/) search.
