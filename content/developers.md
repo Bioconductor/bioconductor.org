@@ -29,7 +29,7 @@ Changes in R and Bioconductor could result in the malfunction of
 software packages. Therefore, package maintainers should periodically
 check their packages to ensure that they are still working as
 expected. To facilitate this, Bioconductor maintains a [daily build
-system](http://bioconductor.org/checkResults/) to check that every
+system](/checkResults/) to check that every
 package in the release and development branches can be built via
 `R CMD build` and checked via `R CMD check`. Packages that fail to
 pass these checks will regretfully be dropped from the next release
