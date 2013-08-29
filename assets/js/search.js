@@ -93,6 +93,7 @@ var initSearch = function() {
 	if (q == "") {
 		jQuery("#q").focus();
 	} else {
+		$("#search_results").html("Searching....");
 		jQuery("#q").val(q);
 	}
 	
