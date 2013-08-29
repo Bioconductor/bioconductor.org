@@ -5,7 +5,7 @@
 
 - Read the [posting guide][5] before sending mail.
 
-- [Post](mailform) to the Bioconductor list without subscribing.
+- [Post](mailform/) to the Bioconductor list without subscribing.
 
 - Browse or subscribe to the [Bioconductor][4] or [Bioc-devel][8] list.
 
