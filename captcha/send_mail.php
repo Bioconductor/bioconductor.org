@@ -87,7 +87,7 @@ if (empty($_POST)) {
               $_POST['code'] == "" || 
               $_POST['sessioninfo'] == "" ||
               !validEmail($_POST['email'])) {
-          header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items");
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/missing_items/");
       } else {
           $body = stripslashes($_POST['body'] .
            "\n\n -- output of sessionInfo(): \n\n" .
@@ -116,10 +116,10 @@ if (empty($_POST)) {
           $cmd = '/home/webadmin/python/bin/python /extra/www/event_reg/mailform/update_posters_list.py ' . $_POST['email'];
           $last_line = exec($cmd, $output, $result);
           // TODO - we may want to check the value of $result and see if there was an error.
-          header("Location: http://bioconductor.org/help/mailing-list/mailform/ok");
+          header("Location: http://bioconductor.org/help/mailing-list/mailform/ok/");
       }
     } else {
-        header("Location: http://bioconductor.org/help/mailing-list/mailform/badcaptcha");
+        header("Location: http://bioconductor.org/help/mailing-list/mailform/badcaptcha/");
     }
 }
 ?>
