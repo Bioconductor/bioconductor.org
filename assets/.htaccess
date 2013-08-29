@@ -1,3 +1,9 @@
+## handle cache expiration times
+ExpiresActive On
+ExpiresByType text/html A600
+ExpiresByType text/javascript A3600
+
+
 <IfModule mod_rewrite.c>
 RewriteEngine On
 RewriteBase /
