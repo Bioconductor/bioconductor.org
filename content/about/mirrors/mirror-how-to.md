@@ -11,19 +11,19 @@ release version), please use the following commands:
 
 ### All Bioconductor <%= config[:release_version] %> repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %> /dest/bioc_<%= config[:release_version] %>
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %> /dest/bioc_<%= config[:release_version] %>
 
 ### Bioconductor <%= config[:release_version] %> Software repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/bioc /dest/bioc_<%= config[:release_version] %>/bioc
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/bioc /dest/bioc_<%= config[:release_version] %>/bioc
 
 ### Bioconductor <%= config[:release_version] %> Data repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/data /dest/bioc_<%= config[:release_version] %>/data
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/data /dest/bioc_<%= config[:release_version] %>/data
 
 ### Bioconductor <%= config[:release_version] %> Extra repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:release_version] %>/extra /dest/bioc_<%= config[:release_version] %>/extra
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/extra /dest/bioc_<%= config[:release_version] %>/extra
 
 
 ## BioC <%= config[:devel_version] %> repos ##
@@ -33,20 +33,20 @@ devel version), please use the following commands:
 
 ### All Bioconductor <%= config[:devel_version] %> repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %> /dest/bioc_<%= config[:devel_version] %>
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %> /dest/bioc_<%= config[:devel_version] %>
 
 ### Bioconductor <%= config[:devel_version] %> Software repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/bioc /dest/bioc_<%= config[:devel_version] %>/bioc
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/bioc /dest/bioc_<%= config[:devel_version] %>/bioc
 
 ### Bioconductor <%= config[:devel_version] %> Data repos ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/data /dest/bioc_<%= config[:devel_version] %>/data
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/data /dest/bioc_<%= config[:devel_version] %>/data
 
 
 ### Bioconductor <%= config[:devel_version] %> Extra repo ###
 
-    rsync -zrtlv --delete bioconductor.org::<%= config[:devel_version] %>/extra /dest/bioc_<%= config[:devel_version] %>/extra
+    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/extra /dest/bioc_<%= config[:devel_version] %>/extra
 
 
 ## Additional information ##
@@ -56,7 +56,7 @@ system, and make sure the directory above `packages` is served by
 a web server. 
 
 Bioconductor is big (> 64G for BioC <%= config[:release_version] %>). Please check the size of
-what will be transferred with e.g. `rsync -avn bioconductor.org::<%= config[:release_version] %>`
+what will be transferred with e.g. `rsync -avn master.bioconductor.org::<%= config[:release_version] %>`
 and make sure you have enough room on your local disk before you
 start.
 
@@ -67,7 +67,7 @@ scheduled with cron.
 your webserver. See the **"contriburl"** option to
 **install.packages()** (utils) for more information.
 
-**Finally**, [contact us](mailto:webmaster@bioconductor.org) if you
+**Finally**, [contact us](mailto:webmaster@master.bioconductor.org) if you
 would like to have your mirror listed on 
 [our mirror page](/about/mirrors/) and in R's
 <code>chooseBioCmirror()</code> function.
