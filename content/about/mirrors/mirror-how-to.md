@@ -67,7 +67,7 @@ scheduled with cron.
 your webserver. See the **"contriburl"** option to
 **install.packages()** (utils) for more information.
 
-**Finally**, [contact us](mailto:webmaster@master.bioconductor.org) if you
+**Finally**, [contact us](mailto:webmaster@bioconductor.org) if you
 would like to have your mirror listed on 
 [our mirror page](/about/mirrors/) and in R's
 <code>chooseBioCmirror()</code> function.
