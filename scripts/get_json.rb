@@ -78,7 +78,7 @@ class GetJson
   
   
   def get_dcfs(repo, version)
-    url = URI.parse("http://bioconductor.org/packages/#{version}/#{repo}/VIEWS")
+    url = URI.parse("http://master.bioconductor.org/packages/#{version}/#{repo}/VIEWS")
     req = Net::HTTP::Get.new(url.path)
     res = Net::HTTP.start(url.host, url.port) {|http|
       http.request(req)
