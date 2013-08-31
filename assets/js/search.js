@@ -26,6 +26,10 @@ var searchResponse = function(data) {
 		jQuery("#search_query").html(q);
 		jQuery("#if_search_results_present").show();
 		
+		if (numFound == 0)
+			$("#search_results").html("");
+
+
 		if (numFound > 0) {
 			var rows = parseInt(data['responseHeader']['params']['rows']);
 			var docs = data['response']['docs'];
