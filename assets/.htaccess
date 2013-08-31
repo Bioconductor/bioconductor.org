@@ -1,7 +1,7 @@
 ## handle cache expiration times
 ExpiresActive On
 ExpiresByType text/html A600
-ExpiresByType text/javascript A3600
+ExpiresByType text/javascript A600
 
 <ifModule mod_headers.c>
 <FilesMatch "PACKAGES$|PACKAGES\.gz$|VIEWS">
