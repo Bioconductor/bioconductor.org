@@ -10,7 +10,7 @@ Header set Cache-Control "max-age=3600"
 <FilesMatch "\.json$|\.js$|\.rss$">
 Header set Cache-Control "max-age=600"
 </FilesMatch>
-<FilesMatch "^biocLite.R$">
+<FilesMatch "^biocLite\.R$">
 Header set Cache-Control "max-age=60"
 </FilesMatch>
 </ifModule>
