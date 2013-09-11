@@ -281,11 +281,11 @@ end
 
 desc "Create CloudFormation templates"
 task :generate_cf_templates do
+  FileUtils.mkdir_p "cloud_formation/output"
   config = YAML.load_file("./config.yaml")
   dir = Dir.new("cloud_formation")
   for file in dir
-    next unless file =~ /_with_symbols.json$/
-    outname = file.gsub(/_with_symbols/, "")
+    next unless file =~ /\.json$/
     f = File.open("cloud_formation/#{file}")
     lines = f.readlines
     str = lines.join()
@@ -293,11 +293,12 @@ task :generate_cf_templates do
       s = s.gsub("<%=", "").gsub("%>", "").strip()
       eval(s)
     end
-    outfile = File.open("cloud_formation/#{outname}", "w")
+    outfile = File.open("cloud_formation/output/#{file}", "w")
     outfile.write(repl)
     outfile.close
   end
-  puts "Don't forget to copy templates to S3 and mark them as public!"
+  puts "Don't forget to copy templates (in cloudformation/output)"
+  puts "to S3 and mark them as public!"
 end
 
 desc "Get Docbuilder Workflows"
