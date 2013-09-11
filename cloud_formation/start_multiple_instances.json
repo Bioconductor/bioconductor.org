@@ -1,0 +1,128 @@
+{
+  "AWSTemplateFormatVersion" : "2010-09-09",
+
+  "Description" : "Create one or more instances of the Bioconductor AMI, which you can then access through a web browser using RStudio Server. **WARNING** This template creates Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
+
+  "Parameters" : {
+    "BiocVersion" : {
+      "Description" : "Bioconductor Version. <%=config['release_version']%> (release) is recommended.",
+      "Type" : "String",
+      "Default": "<%=config['release_version']%>",
+      "AllowedValues": ["2.8", "2.9", "2.10", "2.11", "2.12"],
+      "ConstraintDescription": "Must be 2.8, 2.9, 2.10, 2.11, or 2.12"
+    },
+    "InstanceType" : {
+      "Description" : "Type of EC2 instance to launch - see http://aws.amazon.com/ec2/instance-types/",
+      "Type" : "String",
+      "Default" : "t1.micro",
+      "AllowedValues": ["t1.micro", "m1.small", "m1.medium", "m1.large",
+        "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge"],
+      "ConstraintDescription": "Choose a valid EC2 instance type from http://aws.amazon.com/ec2/instance-types/"
+      },
+      "NumInstances":{
+         "Default":"1",
+         "Description":"Number of instances to start",
+         "Type":"Number"
+      }
+  },
+  "Mappings" : {
+    "BiocAMIMap" : {
+      "2.8" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_8']%>"
+      },
+      "2.9" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_9']%>"
+      },
+      "2.10" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_10']%>"
+      },
+      "2.11" : {
+          "AMI" : "<%=config['ami_ids']['bioc2_11']%>"
+      },
+      "2.12" : {
+           "AMI" : "<%=config['ami_ids']['bioc2_12']%>"
+       }
+
+    }
+  },
+
+
+
+
+  "Resources" : {
+      "WebServerGroup":{
+         "Type":"AWS::AutoScaling::AutoScalingGroup",
+         "Properties":{
+            "LaunchConfigurationName":{
+               "Ref":"LaunchConfig"
+            },
+            "AvailabilityZones":{
+               "Fn::GetAZs":{
+                  "Ref":"AWS::Region"
+               }
+            },
+            "MinSize": {
+                "Ref": "NumInstances"
+            },
+            "MaxSize":{
+               "Ref":"NumInstances"
+            },
+            "DesiredCapacity":{
+               "Ref":"NumInstances"
+            }
+         }
+      },
+
+
+
+      "LaunchConfig":{
+         "Type":"AWS::AutoScaling::LaunchConfiguration",
+         "Properties":{
+            "InstanceType":{
+               "Ref":"InstanceType"
+            },
+            "SecurityGroups":[
+               {
+                  "Ref":"InstanceSecurityGroup"
+               }
+            ],
+            "ImageId" : { "Fn::FindInMap" : [ "BiocAMIMap", { "Ref" : "BiocVersion" }, "AMI" ]}
+          }
+      },
+
+
+
+    "InstanceSecurityGroup" : {
+      "Type" : "AWS::EC2::SecurityGroup",
+      "Properties" : {
+        "GroupDescription" : "Enable HTTP access via port 8787",
+        "SecurityGroupIngress" : [ {
+          "IpProtocol" : "tcp",
+          "FromPort" : "8787",
+          "ToPort" : "8787",
+          "CidrIp" : "0.0.0.0/0"
+        } ]
+      }
+    },
+    
+    "InstanceSecurityGroupIngress": {
+        "Type": "AWS::EC2::SecurityGroupIngress",
+        "Properties": {
+            "GroupName": { "Ref": "InstanceSecurityGroup" },
+            "IpProtocol": "tcp",
+            "FromPort": "0",
+            "ToPort": "65535",
+            "SourceSecurityGroupName": { "Ref": "InstanceSecurityGroup" }
+        }
+    }
+    
+  },
+
+    "Outputs" : {
+        "Info": {
+            "Description": "Get instance info at this URL",
+            "Value": "https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances"
+        }
+  }
+
+}
