@@ -96,12 +96,19 @@
       "Type" : "AWS::EC2::SecurityGroup",
       "Properties" : {
         "GroupDescription" : "Enable HTTP access via port 8787",
-        "SecurityGroupIngress" : [ {
-          "IpProtocol" : "tcp",
-          "FromPort" : "8787",
-          "ToPort" : "8787",
-          "CidrIp" : "0.0.0.0/0"
-        } ]
+        "SecurityGroupIngress" : [ 
+          {
+            "IpProtocol" : "tcp",
+            "FromPort" : "8787",
+            "ToPort" : "8787",
+            "CidrIp" : "0.0.0.0/0"
+          },
+          {
+            "IpProtocol": "tcp",
+            "FromPort": "22",
+            "ToPort": "22",
+            "CidrIp": "0.0.0.0/0"
+        }]
       }
     },
     
