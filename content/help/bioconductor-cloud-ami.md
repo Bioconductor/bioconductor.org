@@ -12,6 +12,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
 * <a href="#connecting_ssh">Connecting to your AMI using SSH</a>
+* <a href="#multiple">Starting Up Multiple Instances</a>
 * <a href="#ami_ids">AMI IDs</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
@@ -168,6 +169,12 @@ Once you have [created an AWS account](#first-time-steps), you can launch the AM
 
 <b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">Start AMI</a></b>
 
+Alternative links:
+
+* <a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a>
+* <a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_multiple_instances.json">Start Multiple Instances</a>
+* <a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_multiple_ssh_instances.json">Start Multiple Instances with SSH</a>
+
 
 You'll see the following screen:
 
@@ -252,6 +259,23 @@ Our examples, however, will use the command-line versions of these programs, whi
 
 Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
 to your Amazon EC2 instance. 
+
+<a name="multiple"></a>
+## Starting Up Multiple Instances
+
+Use the following URL to start your AMI:
+
+<b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_multiple_instances.json">Start Multiple Instances</a></b>
+
+To start multiple instances with ssh, use this link:
+
+<b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_multiple_ssh_instances.json">Start Multiple Instances with SSH</a></b>
+
+The procedure is similar to the one described [above](#launching), except
+you enter the number of instances you want to start. Also, you will not find the 
+instance hostnames in the Outputs panel of the CloudFormation console. You can
+find this information in the 
+[EC2 Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances).
 
 
 <a name="ami_ids"></a>
