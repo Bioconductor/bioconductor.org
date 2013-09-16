@@ -1,5 +1,8 @@
 # ![](/images/icons/magnifier.gif)Bioconductor 2.13 Release Schedule
 
+This release will use R-3.0.2 (Frisbee Sailing) pre-release (to become
+R-3.0.2 on September 25 2013).
+
 ## Tentative schedule
 
 ### September 17, 2013
