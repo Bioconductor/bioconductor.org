@@ -38,6 +38,9 @@
   <% end %>
   <br/>
   Last Built At: <%= w[:built_at]%><br/>
+  <% if w.has_key? :first_committed %>
+  First Committed: <%= w[:first_committed]%><br/>
+  <% end %>
   SVN Revision: <%= w[:svn_revision] %></br/>
   Install with (under BioC 2.13):<br/>
   <code><pre>
