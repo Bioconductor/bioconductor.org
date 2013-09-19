@@ -12,7 +12,7 @@
 * [Vectorized Calculations](#vectorized)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
-* [The Sweave Vignette](#vignettes)
+* [The Vignette](#vignettes)
 * [Citations](#citations)
 * [Version Numbering](#versions)
 * [C or Fortran code](#c-code)
@@ -73,7 +73,7 @@ The source package resulting from running `R CMD build` should occupy
 less than 4MB on disk. The package should require less than 5 minutes to run
 <code>R CMD check &#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>. 
 Using the <code>&#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>
-option ensures that the Sweave vignette is built only once.
+option ensures that the vignette is built only once.
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
@@ -110,7 +110,7 @@ DESCRIPTION file.
 
 Packages must
 
-* Contain a Sweave-style
+* Contain a 
   [vignette](http://cran.fhcrc.org/doc/manuals/R-exts.html#Writing-package-vignettes)
   that demonstrates how to use the package to accomplish a task (more on this
   below).
@@ -223,25 +223,32 @@ server.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="vignettes">The Sweave Vignette</h2>
+<h2 id="vignettes">The Vignette</h2>
 
 A vignette demonstrates how to accomplish non-trivial tasks embodying
-the core functionality of your package. A Sweave vignette is an .Rnw
-file that contains LaTeX and chunks of R code. The R code chunk starts
-with a line <<>>=, and ends with @. Each chunk is evaluated during `R
-CMD build`, prior to LaTeX compilation. Refer to
+the core functionality of your package. There are two common types of
+vignettes. A _Sweave_ vignette is an .Rnw file that contains LaTeX and
+chunks of R code. The R code chunk starts with a line <<>>=, and ends
+with @. Each chunk is evaluated during `R CMD build`, prior to LaTeX
+compilation to a PDF document. An _R markdown_ vignette is similar to
+a Sweave vignette, but uses
+[markdown](http://daringfireball.net/projects/markdown/) instead of
+LaTeX for structuring text sections and resulting in HTML output. The
+[knitr](http://yihui.name/knitr/) package can process most Sweave and
+all R markdown vignettes, producing pleasing output. Refer to
 [Writing package vignettes](http://cran.fhcrc.org/doc/manuals/R-exts.html#Writing-package-vignettes)
 for technical details. See the
 [BiocStyle](/packages/devel/bioc/html/BiocStyle.html) package for a
 convenient way to use common macros and a standard style.
 
-A vignette provides reproducibility: the vignette produces the same results as
-copying the corresponding commands into an R session. It is therefore essential
-that the vignette embed R code between <<>>= and @; short-cuts (e.g., using a
-LaTeX verbatim environment, or using the Sweave eval=FALSE flag) undermine the
-benefit of vignettes.
+A vignette provides reproducibility: the vignette produces the same
+results as copying the corresponding commands into an R session. It is
+therefore essential that the vignette embed R code between <<>>= and
+@; short-cuts (e.g., using a LaTeX verbatim environment, or using the
+Sweave eval=FALSE flag, or equivalent tricks in markdown) undermine
+the benefit of vignettes.
 
-All packages are expected to have at least one Sweave vignette.
+All packages are expected to have at least one vignette.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
