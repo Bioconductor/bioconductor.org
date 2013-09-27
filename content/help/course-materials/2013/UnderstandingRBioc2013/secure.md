@@ -45,4 +45,4 @@ yours can interrupt other participants' sessions.
 
 [extra 1](http://fakeurl)
 
-[extra 2](http://fakeurl)]
+[extra 2](http://fakeurl)
