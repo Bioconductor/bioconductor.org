@@ -248,3 +248,36 @@ jQuery(function () {
     loadPackageData();
     init();
 });
+
+
+var foo = function(data, query) {
+    debugger;
+    if ('data' in data) {
+        var tag = data['data'];
+        var biocView = tag.split(" ")[0];
+        console.log(biocView);
+        if (biocView == query) {
+            alert("helo!");
+            return(data);
+
+        }
+        for (var i = 0; i < data['children'].length; i++) {
+            var child = data['children'][i];
+            var res = foo(child, query);
+            if (res != "") return(res);
+        }
+    } else {
+        return "";
+    }
+}
+
+var bar = function() {
+    var views = [];
+    var query = "AssayDomains";
+    for (var i =0; i < dataTree['data'].length; i++) {
+        obj = dataTree['data'][i];
+        console.log("**" + obj['data'] + "**");
+        var res = foo(obj, query);
+//            if (res != "") return(res);
+    }
+}
