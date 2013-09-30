@@ -78,6 +78,7 @@ var nodeSelected = function(event, data){
     nodeName = tmp[0];
       var packageListStr = jQuery("#" + nodeName).attr("packageList");
       if (packageListStr) {
+         console.log("packageListStr=" + packageListStr);
           var packageList = packageListStr.split(",");
           displayPackages(packageList, nodeName);
       } else {
