@@ -76,14 +76,12 @@ var nodeSelected = function(event, data){
     
     var tmp = nodeName.split(" ");
     nodeName = tmp[0];
-      var packageListStr = jQuery("#" + nodeName).attr("packageList");
-      if (packageListStr) {
-         console.log("packageListStr=" + packageListStr);
-          var packageList = packageListStr.split(",");
-          displayPackages(packageList, nodeName);
-      } else {
-          displayPackages(null, nodeName);
-      }
+    var packageList = getAllPackages(nodeName);
+    if (packageList.length > 0) {
+        displayPackages(packageList, nodeName);
+    } else {
+        displayPackages(null, nodeName);
+    }
       //jumpToAnchor();
 }
 
@@ -248,37 +246,149 @@ jQuery(function () {
     setBiocVersion();
     loadPackageData();
     init();
+    start();
 });
 
 
-var foo = function(data, query) {
-    debugger;
+var G = new jsnx.DiGraph();
+
+var visitNode = function(data, f) {
+    //debugger;
     if ('data' in data) {
         var tag = data['data'];
         var biocView = tag.split(" ")[0];
-        console.log(biocView);
+        //G.add_node(biocView);
+        f(data);
+        //console.log(biocView);
+        /*
         if (biocView == query) {
             alert("helo!");
             return(data);
 
         }
+        */
         for (var i = 0; i < data['children'].length; i++) {
             var child = data['children'][i];
-            var res = foo(child, query);
-            if (res != "") return(res);
+            var res = visitNode(child, f);
+            //if (res != "") return(res);
         }
     } else {
         return "";
     }
 }
 
-var bar = function() {
+var traverseTree = function(f) {
     var views = [];
     var query = "AssayDomains";
     for (var i =0; i < dataTree['data'].length; i++) {
         obj = dataTree['data'][i];
-        console.log("**" + obj['data'] + "**");
-        var res = foo(obj, query);
-//            if (res != "") return(res);
+        var res = visitNode(obj, f);
     }
+}
+
+var eff = function(data) {
+    if ('data' in data) {
+        var tag = data['data'];
+        var biocView = tag.split(" ")[0];
+        G.add_node(biocView);
+    }
+}
+
+
+var eff2 = function(data) {
+    var biocView;
+    if ('data' in data) {
+        var tag = data['data'];
+        var biocView = tag.split(" ")[0];
+    } else {
+        console.log("this is unexpected!");
+    }
+    if ('attr' in data) {
+        var attr = data['attr'];
+        if ('packageList' in attr) {
+            var packageList = attr['packageList'];
+            var pkgs = packageList.split(",");
+            G.node.get(biocView).pkgs = pkgs;
+        }
+    }
+    if ('children' in data) {
+        for (var i =0; i < data['children'].length; i++) {
+            var child = data['children'][i];
+            if(('attr' in child) && ('id' in child['attr']))
+                G.add_edge(biocView, child['attr']['id']);
+        }
+    }
+}
+
+var bla;
+var nodes;
+var nodeIdx = {};
+
+var getNode = function(name, full) {
+    var res = nodes[nodeIdx[name]];
+    if (full)
+        return(res)
+    return(res[0]);
+}
+
+var start = function()
+{
+    traverseTree(eff);
+    traverseTree(eff2);
+
+    nodes = G.nodes(true);
+
+    for (var i =0; i < nodes.length; i++) {
+
+        var node = nodes[i];
+        var name = node[0];
+        nodeIdx[name] = i;
+
+    }
+}
+
+var rf = function(node) {
+    var successorList = G.successors(node);
+    var l = successorList.length;
+    for (var i = 0; i < l; i++) {
+        successorList = successorList.concat(rf(getNode(successorList[i])));
+    }
+    return(successorList);
+}
+
+var getAllSuccessors = function(startName) {
+    var startNode = getNode(startName);
+    return(rf(startNode));
+}
+
+getAllPackages = function(startPkg) {
+    var succ = getAllSuccessors(startPkg);
+    var node = getNode(startPkg, true)[1];
+    var res = {};
+    if ('pkgs' in node && node['pkgs'].length > 0) {
+        for (var i = 0; i < node['pkgs'].length; i++) {
+            res[node['pkgs'][i]] = 1;
+        }
+    }
+    for (var i = 0; i < succ.length; i++) {
+        var item = succ[i];
+        var node = getNode(item, true);
+        var obj = node[1];
+        if ('pkgs' in obj) {
+            for (var j = 0; j < obj['pkgs'].length; j++) {
+                var pkg = obj['pkgs'][j];
+                res[pkg] = 1;
+            }
+        }
+    }
+    var keys = Object.keys(res);
+    //console.log("got " + keys.length + " packages for " + startPkg);
+    return(keys.sort(
+        function(a, b) {
+            if (a.toLowerCase() < b.toLowerCase()) return -1;
+            if (a.toLowerCase() > b.toLowerCase()) return 1;
+            return 0;
+        }
+    ));
+
 }
