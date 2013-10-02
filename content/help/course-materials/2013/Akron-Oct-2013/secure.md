@@ -2,6 +2,8 @@
 
 Each participant in this course will have their own instance of RStudio, accessible via a web browser. You'll have your own URL. Find your email address below and click on it. If your email address does not appear below, *ask the course instructors what you should do*. Clicking on a URL that is not yours can interrupt other participants' sessions.
 
+Log in with the username **ubuntu** and the password **bioc**.
+
 
 [gchang@ysu.edu](http://fakeurl:8787)
 
