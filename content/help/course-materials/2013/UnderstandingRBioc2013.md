@@ -4,7 +4,7 @@
 
 ## Course Vignettes
 
-A: Introduction [[HTML](A_Introduction.html)] [[R](A_introduction.R)] [[Vignette Source](A_Introduction.Rmd)]
+A: Introduction [[HTML](A_Introduction.html)] [[Vignette Source](A_Introduction.Rmd)]
 
 
 B1: Efficient R -- The R Language [[HTML](B1_RLanguage.html)] [[R](B1_RLanguage.R)] [[Vignette Source](B1_RLanguage.Rmd)]
@@ -37,7 +37,7 @@ E2: XML [[HTML](E2_XML.Rmd)] [[R](E2_XML.R)] [[Vignette Source](E2_XML.Rmd)]
 E3: Shiny [[HTML](E3_shiny.Rmd)] [[R](E3_shiny.R)] [[Vignette Source](E3_shiny.Rmd)]
 
 
-F: Summary [[HTML](F_Summary.Rmd)] [[R](F_Summary.R)] [[Vignette Source](F_Summary.Rmd)]
+F: Summary [[HTML](F_Summary.Rmd)]  [[Vignette Source](F_Summary.Rmd)]
 
 
 
