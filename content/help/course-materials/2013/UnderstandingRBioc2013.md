@@ -14,14 +14,14 @@ B2: Efficient R -- Common Pitfalls [[HTML](B2_CommonPitfalls.html)] [[R](B2_Comm
 
 B3: Efficient R -- Parallel Processing [[HTML](B3_Parallel.html)] [[R](B3_Parallel.R)] [[Vignette Source](B3_Parallel.Rmd)]
 
-C: Objects [[HTML](C1_Objects.Rmd)] [[R](C1_Objects.R)] [[Vignette Source](C1_Objects.Rmd)]
+C: Objects [[HTML](C1_Objects.html)] [[R](C1_Objects.R)] [[Vignette Source](C1_Objects.Rmd)]
 
-C: S4 Objects [[HTML](C2_S4Objects.Rmd)] [[R](C2_S4Objects.R)] [[Vignette Source](C2_S4Objects.Rmd)]
+C: S4 Objects [[HTML](C2_S4Objects.html)] [[R](C2_S4Objects.R)] [[Vignette Source](C2_S4Objects.Rmd)]
 
 C: S4 Objects in Bioconductor [[HTML](C3_S4InBioc.html)] [[R](C3_S4InBioc.R)] [[Vignette Source](C3_S4InBioc.Rmd)]
 
 
-D0: C Interface [[HTML](D0_CInterface.Rmd)] [[R](D0_CInterface.R)] [[Vignette Source](D0_CInterface.Rmd)]
+D0: C Interface [[HTML](D0_CInterface.html)] [[R](D0_CInterface.R)] [[Vignette Source](D0_CInterface.Rmd)]
 
 D3: C Interface -- Rcpp [[HTML](D3_CInterface_Rcpp.html)] [[R](D3_CInterface_Rcpp.R)] [[Vignette Source](D3_CInterface_Rcpp.Rmd)]
 
