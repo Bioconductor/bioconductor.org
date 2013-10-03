@@ -5,50 +5,50 @@ Each participant in this course will have their own instance of RStudio, accessi
 Log in with the username **ubuntu** and the password **bioc**.
 
 
-[gchang@ysu.edu](http://fakeurl:8787)
+[gchang@ysu.edu](http://fakeurl)
 
-[zxc30@case.edu](http://fakeurl:8787)
+[zxc30@case.edu](http://fakeurl)
 
-[rdcirillo@gmail.com](http://fakeurl:8787)
+[rdcirillo@gmail.com](http://fakeurl)
 
-[stephen.ganocy@case.edu](http://fakeurl:8787)
+[stephen.ganocy@case.edu](http://fakeurl)
 
-[bnewton@fontbonne.edu](http://fakeurl:8787)
+[bnewton@fontbonne.edu](http://fakeurl)
 
-[marepalli.rao@uc.edu](http://fakeurl:8787)
+[marepalli.rao@uc.edu](http://fakeurl)
 
-[soumi.ray@gmail.com](http://fakeurl:8787)
+[soumi.ray@gmail.com](http://fakeurl)
 
-[sattar@case.edu](http://fakeurl:8787)
+[sattar@case.edu](http://fakeurl)
 
-[schnell.dj@pg.com](http://fakeurl:8787)
+[schnell.dj@pg.com](http://fakeurl)
 
-[tshort@jcu.edu](http://fakeurl:8787)
+[tshort@jcu.edu](http://fakeurl)
 
-[sinha@math.carleton.ca](http://fakeurl:8787)
+[sinha@math.carleton.ca](http://fakeurl)
 
-[amber@cypress-research.com](http://fakeurl:8787)
+[amber@cypress-research.com](http://fakeurl)
 
-[sd85@uakron.edu](http://fakeurl:8787)
+[sd85@uakron.edu](http://fakeurl)
 
-[dh52@uakron.edu](http://fakeurl:8787)
+[dh52@uakron.edu](http://fakeurl)
 
-[zjia@uakron.edu](http://fakeurl:8787)
+[zjia@uakron.edu](http://fakeurl)
 
-[jye1@uakron.edu](http://fakeurl:8787)
+[jye1@uakron.edu](http://fakeurl)
 
-[mtmorgan@fhcrc.org](http://fakeurl:8787)
+[mtmorgan@fhcrc.org](http://fakeurl)
 
-[hpages@fhcrc.org](http://fakeurl:8787)
+[hpages@fhcrc.org](http://fakeurl)
 
-[dtenenba@fhcrc.org](http://fakeurl:8787)
+[dtenenba@fhcrc.org](http://fakeurl)
 
-[extra1](http://fakeurl:8787)
+[extra1](http://fakeurl)
 
-[extra2](http://fakeurl:8787)
+[extra2](http://fakeurl)
 
-[extra3](http://fakeurl:8787)
+[extra3](http://fakeurl)
 
-[extra4](http://fakeurl:8787)
+[extra4](http://fakeurl)
 
-[extra5](http://fakeurl:8787)
+[extra5](http://fakeurl)
