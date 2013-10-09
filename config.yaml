@@ -31,10 +31,10 @@ active_devel_builders:
   linux: "zin1"
   windows: "moscato1"
   mac: "perceval"
-active_release_builders:
-  linux: "george2"
-  windows: "moscato2"
-  mac: "petty"
+active_release_builders: []
+#  linux: "george2"
+#  windows: "moscato2"
+#  mac: "petty"
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
 ami_ids:
