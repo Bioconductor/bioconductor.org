@@ -5,6 +5,7 @@ require 'fileutils'
 require 'yaml'
 require 'open3'
 require 'tempfile'
+require 'find'
 
 include FileUtils
 include Open3
@@ -99,9 +100,9 @@ class SearchIndexer
 
     #allfiles = allfilestr.split("\n")
 
-    allfiles = get_list_of_files_to_index(directory_to_index, site_url)
+    allfiles = get_list_of_files_to_index(directory_to_index, site_url, regex)
 
-    goodfiles = allfiles.grep(regex)
+    ##goodfiles = allfiles.grep(regex)
     
     ###goodfiles = throw_out_bad_files(goodfiles)
     #exit if true
@@ -208,8 +209,16 @@ class SearchIndexer
     name.gsub(/^\./,"").gsub(/index\.html$/,"")
   end
   
+  def get_list_of_files_to_index(directory_to_index, site_url, regex)
+    files = []
+    Find.find(directory_to_index) do |path|
+      files.push path
+    end
+    pp files
+    files
+  end
   
-  def get_list_of_files_to_index(directory_to_index, site_url)
+  def get_list_of_files_to_index_notsoold(directory_to_index, site_url)
     f = File.open("links.txt")
     lines = f.readlines
     for line in lines
