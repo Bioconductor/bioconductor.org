@@ -179,8 +179,8 @@ desc "Re-run search indexing on production"
 task :index_production do
   system("scp config.yaml webadmin@bioconductor.org:~")
   system("scp scripts/search_indexer.rb webadmin@bioconductor.org:~")
-  system("scp scripts/get_links.rb webadmin@bioconductor.org:~")
-  system(%Q(ssh webadmin@bioconductor.org "cd /home/webadmin && ./get_links.rb > links.txt 2>not_found.txt"))
+  #system("scp scripts/get_links.rb webadmin@bioconductor.org:~")
+  #system(%Q(ssh webadmin@bioconductor.org "cd /home/webadmin && ./get_links.rb > links.txt 2>not_found.txt"))
   system(%Q(ssh webadmin@bioconductor.org "cd /home/webadmin && /home/webadmin/do_index.rb"))
   #system("ssh webadmin@bioconductor.org chmod +x /home/webadmin/index.sh")
   system(%Q(ssh webadmin@bioconductor.org "/bin/sh /home/webadmin/index.sh"))
