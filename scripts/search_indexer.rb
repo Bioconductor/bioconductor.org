@@ -103,6 +103,7 @@ class SearchIndexer
     allfiles = get_list_of_files_to_index(directory_to_index, site_url, regex)
 
     ##goodfiles = allfiles.grep(regex)
+    goodfiles = allfiles
     
     ###goodfiles = throw_out_bad_files(goodfiles)
     #exit if true
@@ -212,7 +213,7 @@ class SearchIndexer
   def get_list_of_files_to_index(directory_to_index, site_url, regex)
     files = []
     Find.find(directory_to_index) do |path|
-      files.push path
+      files.push path if path =~ regex
     end
     pp files
     files
