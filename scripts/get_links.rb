@@ -131,6 +131,8 @@ Dir.chdir(@rootdir) do
   Find.find(".") do |path|
     next unless path =~ ok
     next unless path =~ exts
+    path = path.gsub(/^\.\/packages\/#{@release_version}\//, "./packages/release/")
+    path = path.gsub(/^\.\/packages\/#{@devel_version}\//, "./packages/devel/")
     key = path.gsub(/^\./, "")
     @link_map[key] = 1
   end
