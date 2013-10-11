@@ -5,12 +5,17 @@ require "rubygems"
 require "hpricot"
 require "pp"
 require "yaml"
+require 'find'
 
 
 if (ARGV.size != 1)
   puts "supply the root directory"
   exit 1
 end
+
+@site_config = YAML.load_file("./config.yaml")
+@release_version = @site_config["release_version"]
+@devel_version = @site_config["devel_version"]
 
 
 @rootdir = ARGV.first.dup
@@ -94,15 +99,12 @@ get_links(startfile)
 # of words, so users are taken to latest devel (or release).
 
 def cleanup(release)
-  site_config = YAML.load_file("./config.yaml")
-  release_version = site_config["release_version"]
-  devel_version = site_config["devel_version"]
 
   if (release)
-    num = release_version
+    num = @release_version
     str = "release"
   else
-    num = devel_version
+    num = @devel_version
     str = "devel"
   end
 
@@ -121,6 +123,19 @@ end
 
 cleanup(true)
 cleanup(false)
+
+ok = Regexp::new("^\.\/packages\/#{@release_version}\/|^\.\/packages\/#{@devel_version}\/")
+exts = Regexp::new("\.html$|\.R$|\.pdf$|\.doc$")
+
+Dir.chdir(@rootdir) do
+  Find.find(".") do |path|
+    next unless path =~ ok
+    next unless path =~ exts
+    key = path.gsub(/^\./, "")
+    @link_map[key] = 1
+  end
+end
+
 
 for item in @link_map.keys.sort
   puts ".#{item}"
