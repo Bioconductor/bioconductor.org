@@ -125,7 +125,7 @@ cleanup(true)
 cleanup(false)
 
 ok = Regexp::new("^\.\/packages\/#{@release_version}\/|^\.\/packages\/#{@devel_version}\/")
-exts = Regexp::new("\.html$|\.R$|\.pdf$|\.doc$")
+exts = Regexp::new(/\.html$|\.R$|\.pdf$|\.doc$/i)
 
 Dir.chdir(@rootdir) do
   Find.find(".") do |path|
