@@ -75,7 +75,7 @@ see <http://bioconductor.org/developers/how-to/unitTesting-guidelines/>.
     
     test_isExactIn()
 
-# If conditions with lenght > 1
+# If conditions with length > 1
 
 ## The buggy function
 

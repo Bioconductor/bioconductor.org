@@ -19,7 +19,7 @@ following
 
 section 6.3.3. setting for instance
 
-    CFLAGS=-g -O0
+    CFLAGS=-ggdb -O0
 
 in .R/Makevars.
 
