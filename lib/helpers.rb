@@ -583,30 +583,11 @@ def get_tree(item)
 end
 
 def r_ver_for_bioc_ver(bioc_ver)
-  # todo - add to this over time as futureproofing (below) can't be trusted
-  hsh = {"1.6" => "2.1",
-    "1.7" => "2.2",
-    "1.8" => "2.3",
-    "1.9" => "2.4",
-    "2.0" => "2.5",
-    "2.1" => "2.6",
-    "2.2" => "2.7",
-    "2.3" => "2.8",
-    "2.4" => "2.9",
-    "2.5" => "2.10",
-    "2.6" => "2.11",
-    "2.7" => "2.12",
-    "2.8" => "2.13",
-    "2.9" => "2.14",
-    "2.10" => "2.15", 
-    "2.11" => "2.15", # R switching to yearly releases, BioC remaining the same
-    "2.12" => "3.0",
-    "2.13" => "3.0",
-    "2.14" => "3.1",
-    "2.15" => "3.1"}
+  hsh = config[:r_ver_for_bioc_ver]
   if hsh.has_key? bioc_ver
     return hsh[bioc_ver]
   end
+  # unreliable guessing follows (would have worked before R's yearly release schedule)
   maj, min = bioc_ver.split(".")
   maj = Integer(maj)
   min = Integer(min)
