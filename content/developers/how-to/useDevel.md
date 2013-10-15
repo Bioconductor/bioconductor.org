@@ -1,26 +1,20 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
-In this release cycle, the same version of R (3.0) can be used with
-two different versions of Bioconductor (2.12, `release`, and 2.13,
-`devel`).  When BiocInstaller is first installed on R-3.0, it
-downloads `release` packages.  To change this, run the `useDevel()`
-function. 
+In this release cycle, use R-devel with Bioconductor 2.14
+(`devel`). From within R-devel, simply invoke
 
-    library(BiocInstaller)
-    useDevel()
-
-With argument `TRUE` (the default), this downloads the `devel` version
-of BiocInstaller and subsequently all packages downloaded with
-`biocLite()` are from the `devel` repository. Run `useDevel()` only
-once. See `?useDevel` for more information.
+    source("http://bioconductor.org/biocLite.R")
+    biocLite()
     
 Separate libraries
 ------------------
 
 It is best to keep Bioconductor `release` and `devel` packages in
-separate libraries.
+separate libraries. This is the default when using R-3.0.2 for
+Bioc-2.13 (`release`), and R-devel for Bioc-2.14 (`devel`).
 
+<!--
 An easy way to do this is to have two separate installation of R-3.0.
 
 A more complicated way is to use the `R_LIBS_USER` environment
@@ -100,3 +94,4 @@ Invoke these from the command line as `Rdevel.lnk`.
 Because `R_LIBS_USER` is an environment variable, its value should be
 inherited by any subprocesses started by R, so they should do the
 right thing as well.
+-->
