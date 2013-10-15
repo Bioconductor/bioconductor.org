@@ -38,596 +38,596 @@ New Software Packages
 There are 84 new packages in this release of Bioconductor.
 
 AllelicImbalance: Provides a framework for allelic specific
-    expression investigation using RNA-seq data
+expression investigation using RNA-seq data
 
 
 ampliQueso: The package provides tools and reports for the analysis
-    of amplicon sequencing panels, such as AmpliSeq
+of amplicon sequencing panels, such as AmpliSeq
 
 
 ArrayTV: Wave correction for genotyping and copy number arrays
 
 
 ASSET: An R package for subset-based analysis of heterogeneous traits
-    and subtypes
+and subtypes
 
 
 BADER: For RNA sequencing count data, BADER fits a Bayesian
-    hierarchical model. The algorithm returns the posterior
-    probability of differential expression for each gene between two
-    groups A and B. The joint posterior distribution of the variables
-    in the model can be returned in the form of posterior samples,
-    which can be used for further down-stream analyses such as gene
-    set enrichment.
+hierarchical model. The algorithm returns the posterior
+probability of differential expression for each gene between two
+groups A and B. The joint posterior distribution of the variables
+in the model can be returned in the form of posterior samples,
+which can be used for further down-stream analyses such as gene
+set enrichment.
 
 
 BAGS: R package providing functions to perform geneset significance
-    analysis over simple cross-sectional data between 2 and 5
-    phenotypes of interest.
+analysis over simple cross-sectional data between 2 and 5
+phenotypes of interest.
 
 
 BiGGR: This package provides an interface to simulate metabolic
-    reconstruction from the BiGG database(http://bigg.ucsd.edu/) and
-    other metabolic reconstruction databases. The package aids in
-    performing flux balance analysis (FBA). Metabolic networks and
-    estimated fluxes can be visualized using hypergraphs.
+reconstruction from the BiGG database(http://bigg.ucsd.edu/) and
+other metabolic reconstruction databases. The package aids in
+performing flux balance analysis (FBA). Metabolic networks and
+estimated fluxes can be visualized using hypergraphs.
 
 
 bioassayR: bioassayR provides tools for statistical analysis of small
-    molecule bioactivity data
+molecule bioactivity data
 
 
 BiocParallel: This package provides modified versions and novel
-    implementation of functions for parallel evaluation, tailored to
-    use with Bioconductor objects.
+implementation of functions for parallel evaluation, tailored to
+use with Bioconductor objects.
 
 
 BiocStyle: Provides standard formatting styles for Bioconductor
-    documents. The vignette illustrates use and functionality.
+documents. The vignette illustrates use and functionality.
 
 
 BiRewire: Fast functions for bipartite network rewiring through N
-    consecutive switching steps (See References) and for the
-    computation of the minimal number of switching steps to be
-    performed in order to maximise the dissimilarity with respect to
-    the original network. Includes function for the analysis of the
-    introduced randomness across the switching and several other
-    routines to analyse the resulting networks and their natural
-    projections. Extension to undirected networks (not bipartite) is
-    also provided.
+consecutive switching steps (See References) and for the
+computation of the minimal number of switching steps to be
+performed in order to maximise the dissimilarity with respect to
+the original network. Includes function for the analysis of the
+introduced randomness across the switching and several other
+routines to analyse the resulting networks and their natural
+projections. Extension to undirected networks (not bipartite) is
+also provided.
 
 
 CexoR: Strand specific peak-pair calling in ChIP-exo replicates. The
-    cumulative Skellam distribution function (package 'skellam') is
-    used to detect significant normalized count differences of
-    opposed sign at each DNA strand (peak-pairs). Irreproducible
-    discovery rate for overlapping peak-pairs across biological
-    replicates is estimated using the package 'idr'.
+cumulative Skellam distribution function (package 'skellam') is
+used to detect significant normalized count differences of
+opposed sign at each DNA strand (peak-pairs). Irreproducible
+discovery rate for overlapping peak-pairs across biological
+replicates is estimated using the package 'idr'.
 
 
 ChAMP: The package includes quality control metrics, a selection of
-    normalization methods and novel methods to identify
-    differentially methylated regions and to highlight copy number
-    aberrations.
+normalization methods and novel methods to identify
+differentially methylated regions and to highlight copy number
+aberrations.
 
 
 ChemmineOB: ChemmineOB provides an R interface to a subset of
-    cheminformatics functionalities implemented by the OpelBabel C++
-    project. OpenBabel is an open source cheminformatics toolbox that
-    includes utilities for structure format interconversions,
-    descriptor calculations, compound similarity searching and mor.
-    ChemineOB aims to make a subset of these utilities available from
-    within R. For non-developers, ChemineOB is primarily intended to
-    be used from ChemmineR as an add-on package rather than used
-    directly.
+cheminformatics functionalities implemented by the OpelBabel C++
+project. OpenBabel is an open source cheminformatics toolbox that
+includes utilities for structure format interconversions,
+descriptor calculations, compound similarity searching and mor.
+ChemineOB aims to make a subset of these utilities available from
+within R. For non-developers, ChemineOB is primarily intended to
+be used from ChemmineR as an add-on package rather than used
+directly.
 
 
 chipenrich: ChIP-Enrich performs gene set enrichment testing using
-    peaks called from a ChIP-seq experiment. The method empirically
-    corrects for confounding factors such as the length of genes, and
-    the mappability of the sequence surrounding genes.
+peaks called from a ChIP-seq experiment. The method empirically
+corrects for confounding factors such as the length of genes, and
+the mappability of the sequence surrounding genes.
 
 
 cleanUpdTSeq: This package uses the Naive Bayes classifier (from
-    e1071) to assign probability values to putative polyadenylation
-    sites (pA sites) based on training data from zebrafish. This will
-    allow the user to separate true, biologically relevant pA sites
-    from false, oligodT primed pA sites.
+e1071) to assign probability values to putative polyadenylation
+sites (pA sites) based on training data from zebrafish. This will
+allow the user to separate true, biologically relevant pA sites
+from false, oligodT primed pA sites.
 
 
 cleaver: In-silico cleavage of polypeptide sequences. The cleavage
-    rules are taken from:
-    http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
+rules are taken from:
+http://web.expasy.org/peptide_cutter/peptidecutter_enzymes.html
 
 
 clonotypeR: High throughput analysis of T cell antigen receptor
-    sequences The genes encoding T cell receptors are created by
-    somatic recombination, generating an immense combination of V,
-    (D) and J segments.  Additional processes during the
-    recombination create extra sequence diversity between the V an J
-    segments.  Collectively, this hyper-variable region is called the
-    CDR3 loop.
+sequences The genes encoding T cell receptors are created by
+somatic recombination, generating an immense combination of V,
+(D) and J segments.  Additional processes during the
+recombination create extra sequence diversity between the V an J
+segments.  Collectively, this hyper-variable region is called the
+CDR3 loop.
 
 The purpose of this package is to process and quantitatively analyse
-    millions of V-CDR3-J combination, called clonotypes, from
-    multiple sequence libraries.
+millions of V-CDR3-J combination, called clonotypes, from
+multiple sequence libraries.
 
 
 cobindR: Finding and analysing co-occuring motifs of transcription
-    factor binding sites in groups of genes
+factor binding sites in groups of genes
 
 
 CSSP: Power computation for ChIP-Seq data based on Bayesian
-    estimation for local poisson counting process.
+estimation for local poisson counting process.
 
 
 customProDB: Generate customized protein sequence database from
-    RNA-Seq data for proteomics search
+RNA-Seq data for proteomics search
 
 
 dagLogo: Visualize significant conserved amino acid sequence pattern
-    in groups based on probability theory
+in groups based on probability theory
 
 
 DNaseR: Strand-specific digital genomic footprinting in DNase-seq
-    data. The cumulative Skellam distribution function (package
-    'skellam') is used to detect significant normalized count
-    differences of opposed sign at each DNA strand. This is done in
-    order to determine the protein-binding footprint flanks.
-    Preprocessing of the mapped reads is recommended before running
-    DNaseR (e.g., quality checking and removal of sequence-specific
-    bias).
+data. The cumulative Skellam distribution function (package
+'skellam') is used to detect significant normalized count
+differences of opposed sign at each DNA strand. This is done in
+order to determine the protein-binding footprint flanks.
+Preprocessing of the mapped reads is recommended before running
+DNaseR (e.g., quality checking and removal of sequence-specific
+bias).
 
 
 EBSeq: Differential Expression analysis at both gene and isoform
-    level using RNA-seq data
+level using RNA-seq data
 
 
 epivizr: This package provides Websocket communication to the epiviz
-    web app (http://epiviz.cbcb.umd.edu) for interactive
-    visualization of genomic data. Objects in R/bioc interactive
-    sessions can be displayed in genome browser tracks or plots to be
-    explored by navigation through genomic regions. Fundamental
-    Bioconductor data structures are supported (e.g., GenomicRanges
-    and SummarizedExperiment objects), while providing an easy
-    mechanism to support other data structures. Visualizations (using
-    d3.js) can be easily added to the web app as well.
+web app (http://epiviz.cbcb.umd.edu) for interactive
+visualization of genomic data. Objects in R/bioc interactive
+sessions can be displayed in genome browser tracks or plots to be
+explored by navigation through genomic regions. Fundamental
+Bioconductor data structures are supported (e.g., GenomicRanges
+and SummarizedExperiment objects), while providing an easy
+mechanism to support other data structures. Visualizations (using
+d3.js) can be easily added to the web app as well.
 
 
 exomePeak: The package is developed for the analysis of
-    affinity-based epitranscriptome shortgun sequencing data from
-    MeRIP-seq (maA-seq). It was built on the basis of the exomePeak
-    MATLAB package (Meng, Jia, et al. "Exome-based analysis for RNA
-    epigenome sequencing data." Bioinformatics 29.12 (2013):
-    1565-1567.) with new functions for differential analysis of two
-    experimental conditions to unveil the dynamics in
-    post-transcriptional regulation of the RNA methylome. The
-    exomePeak R-package accepts and statistically supports multiple
-    biological replicates, internally removes PCR artifacts and
-    multi-mapping reads, outputs exome-based binding sites (RNA
-    methylation sites) and detects differential post-transcriptional
-    RNA modification sites between two experimental conditions in
-    term of percentage rather the absolute amount. The package is
-    still under active development, and we welcome all biology and
-    computation scientist for all kinds of collaborations and
-    communications. Please feel free to contact Dr. Jia Meng
-    <jia.meng@hotmail.com> if you have any questions.
+affinity-based epitranscriptome shortgun sequencing data from
+MeRIP-seq (maA-seq). It was built on the basis of the exomePeak
+MATLAB package (Meng, Jia, et al. "Exome-based analysis for RNA
+epigenome sequencing data." Bioinformatics 29.12 (2013):
+1565-1567.) with new functions for differential analysis of two
+experimental conditions to unveil the dynamics in
+post-transcriptional regulation of the RNA methylome. The
+exomePeak R-package accepts and statistically supports multiple
+biological replicates, internally removes PCR artifacts and
+multi-mapping reads, outputs exome-based binding sites (RNA
+methylation sites) and detects differential post-transcriptional
+RNA modification sites between two experimental conditions in
+term of percentage rather the absolute amount. The package is
+still under active development, and we welcome all biology and
+computation scientist for all kinds of collaborations and
+communications. Please feel free to contact Dr. Jia Meng
+<jia.meng@hotmail.com> if you have any questions.
 
 
 FGNet: Build and visualize functional gene networks from clustering
-    of enrichment analyses in multiple annotation spaces. The package
-    includes an interface to perform the analysis through David and
-    GeneTerm Linker.
+of enrichment analyses in multiple annotation spaces. The package
+includes an interface to perform the analysis through David and
+GeneTerm Linker.
 
 
 flipflop: Flipflop discovers which isoforms of a gene are expressed
-    in a given sample together with their abundances, based on
-    RNA-Seq read data.
+in a given sample together with their abundances, based on
+RNA-Seq read data.
 
 
 flowBeads: This package extends flowCore to provide functionality
-    specific to bead data. One of the goals of this package is to
-    automate analysis of bead data for the purpose of normalisation.
+specific to bead data. One of the goals of this package is to
+automate analysis of bead data for the purpose of normalisation.
 
 
 flowFit: This package estimate the proliferation of a cell population
-    in cell-tracking dye studies. The package uses an R
-    implementation of the Levenberg-Marquardt algorithm (minpack.lm)
-    to fit a set of peaks (corresponding to different generations of
-    cells) over the proliferation-tracking dye distribution in a FACS
-    experiment.
+in cell-tracking dye studies. The package uses an R
+implementation of the Levenberg-Marquardt algorithm (minpack.lm)
+to fit a set of peaks (corresponding to different generations of
+cells) over the proliferation-tracking dye distribution in a FACS
+experiment.
 
 
 flowMap: This package provides an algorithm to compare and match cell
-    populations across multiple flow cytometry samples. The method is
-    based on the Friedman-Rafsky test, a nonparametric multivariate
-    statistical test, where two cell distributions match if they
-    occupy a similar feature space. The algorithm allows the users to
-    specify a reference sample for comparison or to construct a
-    reference sample from the available data. The output of the
-    algorithm is a set of text files where the cell population labels
-    are replaced by a metaset of population labels, generated from
-    the matching process.
+populations across multiple flow cytometry samples. The method is
+based on the Friedman-Rafsky test, a nonparametric multivariate
+statistical test, where two cell distributions match if they
+occupy a similar feature space. The algorithm allows the users to
+specify a reference sample for comparison or to construct a
+reference sample from the available data. The output of the
+algorithm is a set of text files where the cell population labels
+are replaced by a metaset of population labels, generated from
+the matching process.
 
 
 GOSim: This package implements several functions useful for computing
-    similarities between GO terms and gene products based on their GO
-    annotation. Moreover it allows for computing a GO enrichment
-    analysis
+similarities between GO terms and gene products based on their GO
+annotation. Moreover it allows for computing a GO enrichment
+analysis
 
 
 h5vc: This package contains functions to interact with tally data
-    from NGS experiments that is stored in HDF5 files. For detail see
-    the webpage at http://www.ebi.ac.uk/~pyl/h5vc.
+from NGS experiments that is stored in HDF5 files. For detail see
+the webpage at http://www.ebi.ac.uk/~pyl/h5vc.
 
 
 intansv: This package provides efficient tools to read and integrate
-    structural variations predicted by popular softwares. Annotation
-    and visulation of structural variations are also implemented in
-    the package.
+structural variations predicted by popular softwares. Annotation
+and visulation of structural variations are also implemented in
+the package.
 
 
 interactiveDisplay: The interactiveDisplay package contains the
-    methods needed to generate interactive Shiny based display
-    methods for Bioconductor objects.
+methods needed to generate interactive Shiny based display
+methods for Bioconductor objects.
 
 
 maPredictDSC: This package implements the classification pipeline of
-    the best overall team (Team221) in the IMPROVER Diagnostic
-    Signature Challenge. Additional functionality is added to compare
-    27 combinations of data preprocessing, feature selection and
-    classifier types.
+the best overall team (Team221) in the IMPROVER Diagnostic
+Signature Challenge. Additional functionality is added to compare
+27 combinations of data preprocessing, feature selection and
+classifier types.
 
 
 metaSeq: The probabilities by one-sided NOISeq are combined by
-    Fisher's method or Stouffer's method
+Fisher's method or Stouffer's method
 
 
 methylMnM: To give the exactly p-value and q-value of MeDIP-seq and
-    MRE-seq data for different samples comparation.
+MRE-seq data for different samples comparation.
 
 
 mitoODE: The package contains the methods to fit a cell-cycle model
-    on cell count data and the code to reproduce the results shown in
-    the paper "Dynamical modelling of phenotypes in a genome-wide
-    RNAi live-cell imaging assay" (submitted).
+on cell count data and the code to reproduce the results shown in
+the paper "Dynamical modelling of phenotypes in a genome-wide
+RNAi live-cell imaging assay" (submitted).
 
 
 msmsEDA: Exploratory data analysis to assess the quality of a set of
-    LC-MS/MS experiments, and visualize de influence of the involved
-    factors.
+LC-MS/MS experiments, and visualize de influence of the involved
+factors.
 
 
 msmsTests: Statistical tests for label-free LC-MS/MS data by spectral
-    counts, to discover differentially expressed proteins between two
-    biological conditions. Three tests are available: Poisson GLM
-    regression, quasi-likelihood GLM regression, and the negative
-    binomial of the edgeR package.The three models admit blocking
-    factors to control for nuissance variables.To assure a good level
-    of reproducibility a post-test filter is available, where we may
-    set the minimum effect size considered biologicaly relevant, and
-    the minimum expression of the most abundant condition.
+counts, to discover differentially expressed proteins between two
+biological conditions. Three tests are available: Poisson GLM
+regression, quasi-likelihood GLM regression, and the negative
+binomial of the edgeR package.The three models admit blocking
+factors to control for nuissance variables.To assure a good level
+of reproducibility a post-test filter is available, where we may
+set the minimum effect size considered biologicaly relevant, and
+the minimum expression of the most abundant condition.
 
 
 MSstats: A set of tools for protein significance analysis in
-    label-free or LC-MS, SRM and DIA experiments.
+label-free or LC-MS, SRM and DIA experiments.
 
 
 mzID: A parser for mzIdentML files implemented using the XML package.
-    The parser tries to be general and able to handle all types of
-    mzIdentML files with the drawback of having less 'pretty' output
-    than a vendor specific parser. Please contact the maintainer with
-    any problems and supply an mzIdentML file so the problems can be
-    fixed quick.
+The parser tries to be general and able to handle all types of
+mzIdentML files with the drawback of having less 'pretty' output
+than a vendor specific parser. Please contact the maintainer with
+any problems and supply an mzIdentML file so the problems can be
+fixed quick.
 
 
 neaGUI: neaGUI is an easy to use R package developed to perform the
-    network enrichment analysis (NEA) proposed by Alexeyenko et al.
-    (2012). The NEA method extends the overlap statistics in GSEA to
-    network links between genes in the experimental set and those in
-    the functional categories by exploiting biological information in
-    terms of gene interaction network. The neaGUI requires the
-    following R packages: tcltk, KEGG.db, GO.db, reactome.db,
-    org.Hs.eg.db, AnnotationDbi, and hwriter.
+network enrichment analysis (NEA) proposed by Alexeyenko et al.
+(2012). The NEA method extends the overlap statistics in GSEA to
+network links between genes in the experimental set and those in
+the functional categories by exploiting biological information in
+terms of gene interaction network. The neaGUI requires the
+following R packages: tcltk, KEGG.db, GO.db, reactome.db,
+org.Hs.eg.db, AnnotationDbi, and hwriter.
 
 
 NetSAM: The NetSAM (Network Seriation and Modularization) package
-    takes an edge-list representation of a network as an input,
-    performs network seriation and modularization analysis, and
-    generates as files that can be used as an input for the
-    one-dimensional network visualization tool NetGestalt
-    (http://www.netgestalt.org) or other network analysis.
+takes an edge-list representation of a network as an input,
+performs network seriation and modularization analysis, and
+generates as files that can be used as an input for the
+one-dimensional network visualization tool NetGestalt
+(http://www.netgestalt.org) or other network analysis.
 
 
 omicade4: Multiple co-inertia analysis of omics datasets
 
 
 OmicCircos: OmicCircos is an R application and package for generating
-    high-quality circular maps for omic data
+high-quality circular maps for omic data
 
 
 openCyto: This package is designed to facilitate the automated gating
-    methods in sequential way to mimic the manual gating strategy.
+methods in sequential way to mimic the manual gating strategy.
 
 
 paircompviz: This package provides visualization of the results from
-    the multiple (i.e. pairwise) comparison tests such as
-    pairwise.t.test, pairwise.prop.test or pairwise.wilcox.test. The
-    groups being compared are visualized as nodes in Hasse diagram.
-    Such approach enables very clear and vivid depiction of which
-    group is significantly greater than which others, especially if
-    comparing a large number of groups.
+the multiple (i.e. pairwise) comparison tests such as
+pairwise.t.test, pairwise.prop.test or pairwise.wilcox.test. The
+groups being compared are visualized as nodes in Hasse diagram.
+Such approach enables very clear and vivid depiction of which
+group is significantly greater than which others, especially if
+comparing a large number of groups.
 
 
 pathifier: Pathifier is an algorithm that infers pathway deregulation
-    scores for each tumor sample on the basis of expression data.
-    This score is determined, in a context-specific manner, for every
-    particular dataset and type of cancer that is being investigated.
-    The algorithm transforms gene-level information into
-    pathway-level information, generating a compact and biologically
-    relevant representation of each sample.
+scores for each tumor sample on the basis of expression data.
+This score is determined, in a context-specific manner, for every
+particular dataset and type of cancer that is being investigated.
+The algorithm transforms gene-level information into
+pathway-level information, generating a compact and biologically
+relevant representation of each sample.
 
 
 plethy: This package provides the infrastructure and tools to import,
-    query and perform basic analysis of whole body plethysmography
-    and metabolism data.  Currently support is limited to data
-    derived from Buxco respirometry instruments as exported by their
-    FinePointe software.
+query and perform basic analysis of whole body plethysmography
+and metabolism data.  Currently support is limited to data
+derived from Buxco respirometry instruments as exported by their
+FinePointe software.
 
 
 ProCoNA: Protein co-expression network construction using peptide
-    level data, with statisical analysis. (Journal of Clinical
-    Bioinformatics 2013, 3:11 doi:10.1186/2043-9113-3-11)
+level data, with statisical analysis. (Journal of Clinical
+Bioinformatics 2013, 3:11 doi:10.1186/2043-9113-3-11)
 
 
 prot2D: The purpose of this package is to analyze (i.e. Normalize and
-    select significant spots) data issued from 2D GEl experiments
+select significant spots) data issued from 2D GEl experiments
 
 
 PSICQUIC: PSICQUIC is a project within the HUPO Proteomics Standard
-    Initiative (HUPO-PSI).  It standardises programmatic access to
-    molecular interaction databases.
+Initiative (HUPO-PSI).  It standardises programmatic access to
+molecular interaction databases.
 
 
 qcmetrics: The package provides a framework for generic quality
-    control of data. It permits to create, manage and visualise
-    individual or sets of quality control metrics and generate
-    quality control reports in various formats.
+control of data. It permits to create, manage and visualise
+individual or sets of quality control metrics and generate
+quality control reports in various formats.
 
 
 qusage: This package is an implementation the Quantitative Set
-    Analysis for Gene Expression (QuSAGE) method described in (Yaari
-    G. et al, Nucl Acids Res, 2013). This is a novel Gene Set
-    Enrichment-type test, which is designed to provide a faster, more
-    accurate, and easier to understand test for gene expression
-    studies. qusage accounts for inter-gene correlations using the
-    Variance Inflation Factor technique proposed by Wu et al.
-    (Nucleic Acids Res, 2012). In addition, rather than simply
-    evaluating the deviation from a null hypothesis with a single
-    number (a P value), qusage quantifies gene set activity with a
-    complete probability density function (PDF). From this PDF, P
-    values and confidence intervals can be easily extracted.
-    Preserving the PDF also allows for post-hoc analysis (e.g.,
-    pair-wise comparisons of gene set activity) while maintaining
-    statistical traceability. Finally, while qusage is compatible
-    with individual gene statistics from existing methods (e.g.,
-    LIMMA), a Welch-based method is implemented that is shown to
-    improve specificity. For questions, contact Chris Bolen
-    (cbolen1@gmail.com) or Steven Kleinstein
-    (steven.kleinstein@yale.edu)
+Analysis for Gene Expression (QuSAGE) method described in (Yaari
+G. et al, Nucl Acids Res, 2013). This is a novel Gene Set
+Enrichment-type test, which is designed to provide a faster, more
+accurate, and easier to understand test for gene expression
+studies. qusage accounts for inter-gene correlations using the
+Variance Inflation Factor technique proposed by Wu et al.
+(Nucleic Acids Res, 2012). In addition, rather than simply
+evaluating the deviation from a null hypothesis with a single
+number (a P value), qusage quantifies gene set activity with a
+complete probability density function (PDF). From this PDF, P
+values and confidence intervals can be easily extracted.
+Preserving the PDF also allows for post-hoc analysis (e.g.,
+pair-wise comparisons of gene set activity) while maintaining
+statistical traceability. Finally, while qusage is compatible
+with individual gene statistics from existing methods (e.g.,
+LIMMA), a Welch-based method is implemented that is shown to
+improve specificity. For questions, contact Chris Bolen
+(cbolen1@gmail.com) or Steven Kleinstein
+(steven.kleinstein@yale.edu)
 
 
 Rchemcpp: The Rchemcpp package implements the marginalized graph
-    kernel and extensions, Tanimoto kernels, graph kernels,
-    pharmacophore and 3D kernels suggested for measuring the
-    similarity of molecules.
+kernel and extensions, Tanimoto kernels, graph kernels,
+pharmacophore and 3D kernels suggested for measuring the
+similarity of molecules.
 
 
 RDAVIDWebService: Tools for retrieving data from the Database for
-    Annotation, Visualization and Integrated Discovery (DAVID) using
-    Web Services into R objects. This package offers the main
-    functionalities of DAVID website including: i) user friendly
-    connectivity to upload gene/background list/s, change
-    gene/background position, select current specie/s, select
-    annotations, etc. ii) Reports of the submitted Gene List,
-    Annotation Category Summary, Gene/Term Clusters, Functional
-    Annotation Chart, Functional Annotation Table
+Annotation, Visualization and Integrated Discovery (DAVID) using
+Web Services into R objects. This package offers the main
+functionalities of DAVID website including: i) user friendly
+connectivity to upload gene/background list/s, change
+gene/background position, select current specie/s, select
+annotations, etc. ii) Reports of the submitted Gene List,
+Annotation Category Summary, Gene/Term Clusters, Functional
+Annotation Chart, Functional Annotation Table
 
 
 rfPred: Based on external numerous data files where rfPred scores are
-    pre-calculated on all genomic positions of the human exome, the
-    package gives rfPred scores to missense variants identified by
-    the chromosome, the position (hg19 version), the referent and
-    alternative nucleotids and the uniprot identifier of the protein.
-    Note that for using the package, the user has to be connected on
-    the Internet or to download the TabixFile and index
-    (approximately 3.3 Go).
+pre-calculated on all genomic positions of the human exome, the
+package gives rfPred scores to missense variants identified by
+the chromosome, the position (hg19 version), the referent and
+alternative nucleotids and the uniprot identifier of the protein.
+Note that for using the package, the user has to be connected on
+the Internet or to download the TabixFile and index
+(approximately 3.3 Go).
 
 
 Roleswitch: Infer Probabilities of MiRNA-mRNA Interaction Signature
-    (ProMISe) using paired expression data from a single sample.
-    Roleswitch operates in two phases by inferring the probability of
-    mRNA (miRNA) being the targets ("targets") of miRNA (mRNA),
-    taking into account the expression of all of the mRNAs (miRNAs)
-    due to their potential competition for the same miRNA (mRNA). Due
-    to dynamic miRNA repression in the cell, Roleswitch assumes that
-    the total transcribed mRNA levels are higher than the observed
-    (equilibrium) mRNA levels and iteratively updates the total
-    transcription of each mRNA targets based on the above inference.
+(ProMISe) using paired expression data from a single sample.
+Roleswitch operates in two phases by inferring the probability of
+mRNA (miRNA) being the targets ("targets") of miRNA (mRNA),
+taking into account the expression of all of the mRNAs (miRNAs)
+due to their potential competition for the same miRNA (mRNA). Due
+to dynamic miRNA repression in the cell, Roleswitch assumes that
+the total transcribed mRNA levels are higher than the observed
+(equilibrium) mRNA levels and iteratively updates the total
+transcription of each mRNA targets based on the above inference.
 
 
 RRHO: The package is aimed at inference on the amount of agreement in
-    two sorted lists using the Rank-Rank Hypergeometric Overlap test.
+two sorted lists using the Rank-Rank Hypergeometric Overlap test.
 
 
 RTN: This package provides classes and methods for transcriptional
-    network inference and analysis. Modulators of transcription
-    factor activity are assessed by conditional mutual information,
-    and master regulators are mapped to phenotypes using different
-    strategies, e.g., gene set enrichment, shadow and synergy
-    analyses.
+network inference and analysis. Modulators of transcription
+factor activity are assessed by conditional mutual information,
+and master regulators are mapped to phenotypes using different
+strategies, e.g., gene set enrichment, shadow and synergy
+analyses.
 
 
 rTRM: rTRM identifies transcriptional regulatory modules (TRMs) from
-    protein-protein interaction networks.
+protein-protein interaction networks.
 
 
 rTRMui: This package provides a web interface to compute
-    transcriptional regulatory modules with rTRM.
+transcriptional regulatory modules with rTRM.
 
 
 seqCNA: Copy number analysis of high-throughput sequencing cancer
-    data with fast summarization, extensive filtering and improved
-    normalization
+data with fast summarization, extensive filtering and improved
+normalization
 
 
 SeqVarTools: An interface to the fast-access storage format for VCF
-    data provided in SeqArray, with tools for common operations and
-    analysis.
+data provided in SeqArray, with tools for common operations and
+analysis.
 
 
 shinyTANDEM: This package provides a GUI interface for rTANDEM. The
-    GUI is primarily designed to visualize rTANDEM result object or
-    result xml files. But it also provides an interface for creating
-    parameter objects, launching searches or performing conversions
-    between R objects and xml files.
+GUI is primarily designed to visualize rTANDEM result object or
+result xml files. But it also provides an interface for creating
+parameter objects, launching searches or performing conversions
+between R objects and xml files.
 
 
 SigFuge: Algorithm for testing significance of clustering in RNA-seq
-    data.
+data.
 
 
 SimBindProfiles: SimBindProfiles identifies common and unique binding
-    regions in genome tiling array data. This package does not rely
-    on peak calling, but directly compares binding profiles processed
-    on the same array platform. It implements a simple threshold
-    approach, thus allowing retrieval of commonly and differentially
-    bound regions between datasets as well as events of compensation
-    and increased binding.
+regions in genome tiling array data. This package does not rely
+on peak calling, but directly compares binding profiles processed
+on the same array platform. It implements a simple threshold
+approach, thus allowing retrieval of commonly and differentially
+bound regions between datasets as well as events of compensation
+and increased binding.
 
 
 SpacePAC: Identifies clustering of somatic mutations in proteins via
-    a simulation approach while considering the protein's tertiary
-    structure.
+a simulation approach while considering the protein's tertiary
+structure.
 
 
 spliceR: An R package for classification of alternative splicing and
-    prediction of coding potential from RNA-seq data.
+prediction of coding potential from RNA-seq data.
 
 
 spliceSites: Align gap positions from RNA-seq data
 
 
 sRAP: This package provides a pipeline for gene expression analysis
-    (primarily for RNA-Seq data).  The normalization function is
-    specific for RNA-Seq analysis, but all other functions (Quality
-    Control Figures, Differential Expression and Visualization, and
-    Functional Enrichment via BD-Func) will work with any type of
-    gene expression data.
+(primarily for RNA-Seq data).  The normalization function is
+specific for RNA-Seq analysis, but all other functions (Quality
+Control Figures, Differential Expression and Visualization, and
+Functional Enrichment via BD-Func) will work with any type of
+gene expression data.
 
 
 sSeq: The purpose of this package is to discover the genes that are
-    differentially expressed between two conditions in RNA-seq
-    experiments. Gene expression is measured in counts of transcripts
-    and modeled with the Negative Binomial (NB) distribution using a
-    shrinkage approach for dispersion estimation. The method of
-    moment (MM) estimates for dispersion are shrunk towards an
-    estimated target, which minimizes the average squared difference
-    between the shrinkage estimates and the initial estimates. The
-    exact per-gene probability under the NB model is calculated, and
-    used to test the hypothesis that the expected expression of a
-    gene in two conditions identically follow a NB distribution.
+differentially expressed between two conditions in RNA-seq
+experiments. Gene expression is measured in counts of transcripts
+and modeled with the Negative Binomial (NB) distribution using a
+shrinkage approach for dispersion estimation. The method of
+moment (MM) estimates for dispersion are shrunk towards an
+estimated target, which minimizes the average squared difference
+between the shrinkage estimates and the initial estimates. The
+exact per-gene probability under the NB model is calculated, and
+used to test the hypothesis that the expected expression of a
+gene in two conditions identically follow a NB distribution.
 
 
 STRINGdb: The STRINGdb package provides a user-friendly interface to
-    the STRING protein-protein interactions database (
-    http://www.string-db.org ).
+the STRING protein-protein interactions database (
+http://www.string-db.org ).
 
 
 supraHex: A supra-hexagonal map is a giant hexagon on a 2-dimensional
-    grid seamlessly consisting of smaller hexagons. It is supposed to
-    train, analyse and visualise a high-dimensional omics data. The
-    supraHex is able to carray out gene/meta-gene clustering and
-    sample correlation, plus intuitive visualisations to facilitate
-    exploratory analysis. Uniquely to this package, users can
-    simultaneously understand their own omics data in a
-    sample-specific fashion but without loss of information on large
-    genes.
+grid seamlessly consisting of smaller hexagons. It is supposed to
+train, analyse and visualise a high-dimensional omics data. The
+supraHex is able to carray out gene/meta-gene clustering and
+sample correlation, plus intuitive visualisations to facilitate
+exploratory analysis. Uniquely to this package, users can
+simultaneously understand their own omics data in a
+sample-specific fashion but without loss of information on large
+genes.
 
 
 SwimR: SwimR is an R-based suite that calculates, analyses, and plots
-    the frequency of C. elegans swimming behavior over time.  It
-    places a particular emphasis on identifying paralysis and
-    quantifying the kinetic elements of paralysis during swimming.
-    Data is input to SwipR from a custom built program that fits a 5
-    point morphometric spine to videos of single worms swimming in a
-    buffer called Worm Tracker.
+the frequency of C. elegans swimming behavior over time.  It
+places a particular emphasis on identifying paralysis and
+quantifying the kinetic elements of paralysis during swimming.
+Data is input to SwipR from a custom built program that fits a 5
+point morphometric spine to videos of single worms swimming in a
+buffer called Worm Tracker.
 
 
 TargetScore: Infer the posterior distributions of microRNA targets by
-    probabilistically modelling the likelihood
-    microRNA-overexpression fold-changes and sequence-based scores.
-    Variaitonal Bayesian Gaussian mixture model (VB-GMM) is applied
-    to log fold-changes and sequence scores to obtain the posteriors
-    of latent variable being the miRNA targets. The final targetScore
-    is computed as the sigmoid-transformed fold-change weighted by
-    the averaged posteriors of target components over all of the
-    features.
+probabilistically modelling the likelihood
+microRNA-overexpression fold-changes and sequence-based scores.
+Variaitonal Bayesian Gaussian mixture model (VB-GMM) is applied
+to log fold-changes and sequence scores to obtain the posteriors
+of latent variable being the miRNA targets. The final targetScore
+is computed as the sigmoid-transformed fold-change weighted by
+the averaged posteriors of target components over all of the
+features.
 
 
 TCC: This package provides a series of functions for performing
-    differential expression analysis from RNA-seq count data using
-    robust normalization strategy (called DEGES). The basic idea of
-    DEGES is that potential differentially expressed genes or
-    transcripts (DEGs) among compared samples should be removed
-    before data normalization to obtain a well-ranked gene list where
-    true DEGs are top-ranked and non-DEGs are bottom ranked. This can
-    be done by performing a multi-step normalization strategy (called
-    DEGES for DEG elimination strategy). A major characteristic of
-    TCC is to provide the robust normalization methods for several
-    kinds of count data (two-group with or without replicates,
-    multi-group/multi-factor, and so on) by virtue of the use of
-    combinations of functions in other sophisticated packages
-    (especially edgeR, DESeq, and baySeq).
+differential expression analysis from RNA-seq count data using
+robust normalization strategy (called DEGES). The basic idea of
+DEGES is that potential differentially expressed genes or
+transcripts (DEGs) among compared samples should be removed
+before data normalization to obtain a well-ranked gene list where
+true DEGs are top-ranked and non-DEGs are bottom ranked. This can
+be done by performing a multi-step normalization strategy (called
+DEGES for DEG elimination strategy). A major characteristic of
+TCC is to provide the robust normalization methods for several
+kinds of count data (two-group with or without replicates,
+multi-group/multi-factor, and so on) by virtue of the use of
+combinations of functions in other sophisticated packages
+(especially edgeR, DESeq, and baySeq).
 
 
 TFBSTools: Software package for TFBS.
 
 
 tRanslatome: Detection of differentially expressed genes (DEGs) from
-    the comparison of two biological conditions (treated vs.
-    untreated, diseased vs. normal, mutant vs. wild-type) among
-    different levels of gene expression (transcriptome ,translatome,
-    proteome), using several statistical methods: Rank Product,
-    t-test, SAM, Limma, ANOTA, DESeq, edgeR. Possibility to plot the
-    results with scatterplots, histograms, MA plots, standard
-    deviation (SD) plots, coefficient of variation (CV) plots.
-    Detection of significantly enriched post-transcriptional
-    regulatory factors (RBPs, miRNAs, etc) and Gene Ontology terms in
-    the lists of DEGs previously identified for the two expression
-    levels. Comparison of GO terms enriched only in one of the levels
-    or in both. Calculation of the semantic similarity score between
-    the lists of enriched GO terms coming from the two expression
-    levels. Visual examination and comparison of the enriched terms
-    with heatmaps, radar plots and barplots.
+the comparison of two biological conditions (treated vs.
+untreated, diseased vs. normal, mutant vs. wild-type) among
+different levels of gene expression (transcriptome ,translatome,
+proteome), using several statistical methods: Rank Product,
+t-test, SAM, Limma, ANOTA, DESeq, edgeR. Possibility to plot the
+results with scatterplots, histograms, MA plots, standard
+deviation (SD) plots, coefficient of variation (CV) plots.
+Detection of significantly enriched post-transcriptional
+regulatory factors (RBPs, miRNAs, etc) and Gene Ontology terms in
+the lists of DEGs previously identified for the two expression
+levels. Comparison of GO terms enriched only in one of the levels
+or in both. Calculation of the semantic similarity score between
+the lists of enriched GO terms coming from the two expression
+levels. Visual examination and comparison of the enriched terms
+with heatmaps, radar plots and barplots.
 
 
 trio: Testing SNPs and SNP interactions with a genotypic TDT. This
-    package furthermore contains functions for computing pairwise
-    values of LD measures and for identifying LD blocks, as well as
-    functions for setting up matched case pseudo-control genotype
-    data for case-parent trios in order to run trio logic regression,
-    for imputing missing genotypes in trios, for simulating
-    case-parent trios with disease risk dependent on SNP interaction,
-    and for power and sample size calculation in trio data.
+package furthermore contains functions for computing pairwise
+values of LD measures and for identifying LD blocks, as well as
+functions for setting up matched case pseudo-control genotype
+data for case-parent trios in order to run trio logic regression,
+for imputing missing genotypes in trios, for simulating
+case-parent trios with disease risk dependent on SNP interaction,
+and for power and sample size calculation in trio data.
 
 
 vtpnet: variant-transcription factor-phenotype networks, inspired by
-    Maurano et al., Science (2012), PMID 22955828
+Maurano et al., Science (2012), PMID 22955828
 
 
 XVector: Memory efficient S4 classes for storing sequences
-    "externally" (behind an R external pointer, or on disk).
+"externally" (behind an R external pointer, or on disk).
 
 
 
