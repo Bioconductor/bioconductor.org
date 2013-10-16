@@ -71,7 +71,7 @@ case sensitive.
 
 The source package resulting from running `R CMD build` should occupy 
 less than 4MB on disk. The package should require less than 5 minutes to run
-<code>R CMD check &#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>. 
+<code>R CMD check &#8209;&#8209;no&#8209;build&#8209;vignettes</code>. 
 Using the <code>&#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>
 option ensures that the vignette is built only once.
 
