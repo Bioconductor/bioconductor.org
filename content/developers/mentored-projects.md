@@ -7,7 +7,6 @@ needed by the community. <a href=#introduction>More...</a>
 
 ## Projects Needing Volunteers
   * [Extending mzR](#extendingMZR)
-  * [Create an AnnotationDbi Package for PANTHER](#panther)
 
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
@@ -26,6 +25,8 @@ needed by the community. <a href=#introduction>More...</a>
   * [VCF Allele Frequencies](#VCF_alleleFrequency)
   * [VCF Genotypes to Probability-Based SNP Encoding](#VCF_probabilityBasedSnpEncoding)
   * [msGUI](#msGUI)
+  * [Create an AnnotationDbi Package for PANTHER](#panther)
+
 
 <a name="introduction"></a>
 ## Introduction
@@ -102,31 +103,6 @@ Project attributes and estimates:
 * Mentor: Dan Tenenbaum
 * Status: One project is ongoing, but there is room for more.
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-
-<h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
-
-We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
-package.
-
-PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized:
-
-<blockquote>
-The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
-Classification System is a unique resource that classifies genes by
-their functions, using published scientific experimental evidence and
-evolutionary relationships to predict function even in the absence of
-direct experimental evidence.  "classifies genes by their function"
-</blockquote>
-
-Project attributes and estimates:
-
-* Difficulty: medium
-* Length: 6-8 weeks, part-time
-* Skills needed:  Familiarity with R, SQL and Panther.
-* Mentor: Marc Carlson
-* Status: Open
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
@@ -241,6 +217,31 @@ you wish to propose.
 
 
 ## <a id="completed"></a>Completed projects
+
+<h2 id='panther'> Create an AnnotationDbi Package for PANTHER</h2>
+
+We would like to see PANTHER annotation contained in a Bioconductor AnnotationDbi
+package.
+
+PANTHER is found <a href=http://www.pantherdb.org/>here</a>, and summarized:
+
+<blockquote>
+The PANTHER (Protein ANalysis THrough Evolutionary Relationships)
+Classification System is a unique resource that classifies genes by
+their functions, using published scientific experimental evidence and
+evolutionary relationships to predict function even in the absence of
+direct experimental evidence.  "classifies genes by their function"
+</blockquote>
+
+Project attributes and estimates:
+
+* Difficulty: medium
+* Length: 6-8 weeks, part-time
+* Skills needed:  Familiarity with R, SQL and Panther.
+* Mentor: Marc Carlson
+* Status: Open
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 ### <a id="graph"></a>Add contructors for key classes in the graph package
 
