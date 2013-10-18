@@ -239,7 +239,7 @@ Project attributes and estimates:
 * Length: 6-8 weeks, part-time
 * Skills needed:  Familiarity with R, SQL and Panther.
 * Mentor: Marc Carlson
-* Status: Open
+* Status: Complete
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
