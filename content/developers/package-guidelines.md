@@ -249,6 +249,7 @@ Sweave eval=FALSE flag, or equivalent tricks in markdown) undermine
 the benefit of vignettes.
 
 All packages are expected to have at least one vignette.
+Vignettes go in the `vignettes` directory of the package.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
