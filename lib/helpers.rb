@@ -669,3 +669,8 @@ def workflow_helper(item)
   w
 
 end
+
+def release_branch
+  config[:release_version].sub(".", "_")
+end
+

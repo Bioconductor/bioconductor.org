@@ -21,7 +21,7 @@ repository](https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks).
 Contributing developers are then provided with password protected
 write access to their portion of the codebase. Anonymous access to
 this repository is also available; the [source
-control](/developers/source-control) page provides more information.
+control](/developers/how-to/source-control) page provides more information.
 
 <h2 id="maintenance">Package Maintenance</h2>
 
