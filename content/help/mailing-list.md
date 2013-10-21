@@ -36,7 +36,9 @@ community.
 You may browse or subscribe to the [Bioconductor][4] list.  Send mail
 to everyone subscribed to the bioconductor mail list by reading the
 [posting guide][5] and then sending an email to
-[bioconductor@r-project.org][6] Obtain Information about the list by
+[bioconductor@r-project.org][6], or
+[post without subscribing](mailform/).
+ Obtain Information about the list by
 sending an email with 'info' as its contents to
 [bioconductor-request@r-project.org][7] . You can subscribe and
 unsubscribe by E-mail (instead of the web interface), however to
