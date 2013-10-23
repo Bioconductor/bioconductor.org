@@ -122,7 +122,7 @@ preprocess do
         manifest = `curl -s -u readonly:readonly #{manifest_url}`
         for l in manifest.split("\n")
           next unless l =~ /^Package: /
-          manifests[ver].push l.chomp.sub(/^Package: /, "")
+          manifests[ver].push l.chomp.sub(/^Package: /, "").strip
         end
       end
     end
