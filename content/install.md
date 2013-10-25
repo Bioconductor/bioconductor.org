@@ -23,10 +23,11 @@ Bioconductor by starting R and entering the commands
     source("http://bioconductor.org/biocLite.R")
     biocLite()
 
-Additional details, including instructions for installing
-[additional packages](#install-bioconductor-packages"), are provided
-below.  A [devel](/developers/how-to/useDevel/) version of
-Bioconductor is available.
+Details, including instructions to
+[install additional packages](#install-bioconductor-packages") and
+[update packages](#update-bioconductor-packages"), are provided below.
+A [devel](/developers/how-to/useDevel/) version of Bioconductor is
+available.
 
 <h2 id="install-R">Install R</h2>
 
@@ -78,16 +79,28 @@ to discover available packages.
 <h2 id="update-bioconductor-packages">Update Installed <em>Bioconductor</em> Packages</h2>
 
 Bioconductor packages, especially those in the development branch, are
-updated fairly regularly. To identify packages requiring update, start
-a new session of R and enter
+updated fairly regularly. To identify packages requiring update within
+your version of Bioconductor, start a new session of R and enter
 
     source("http://bioconductor.org/biocLite.R")
-	biocLite()              ## R version 3.0 or later
+	biocLite()                  ## R version 3.0 or later
 
 Use the argument `ask=FALSE` to update old packages without being
 prompted.  For older versions of `R`, use the command
 `biocLite(NULL)`.  Read the help page for `?biocLite` for additional
 details.
+
+<h3>Upgrading installed <em>Bioconductor</em> packages</h3>
+
+Some versions of R support more than one version of Bioconductor. To
+use the latest version of Bioconductor for your version of R, enter
+
+    source("http://bioconductor.org/biocLite.R")
+	biocLite("BiocUpgrade")     ## R version 2.15 or later
+
+Read the help page for `?BiocUpgrade` for additional details. Remember
+that more recent versions of Bioconductor may be available if your
+version of R is out-of-date.
 
 <h3>Recompiling installed <em>Bioconductor</em> packages</h3>
 
