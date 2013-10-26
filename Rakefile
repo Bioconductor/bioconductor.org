@@ -315,6 +315,7 @@ task :get_workflows do
   ## You must have the appropriate private key in order for this to work.
   unless ENV["SKIP_WORKFLOW_RSYNC"] == "true"
     system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
+    system(%Q(chmod -R a+r workflows_tmp))
   end    
   json = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json`
   manifest = JSON.parse(json)  
