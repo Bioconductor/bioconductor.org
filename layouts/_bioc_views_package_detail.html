@@ -143,13 +143,15 @@
         
         <%
         since = since(@package[:Package])
-        if not since.nil?
+        r = nil
+        r = r_ver_for_bioc_ver(since) unless since.nil?
+        if not (since.nil? or r.nil?)
             or_earlier = ""
             or_earlier = " or earlier" if since == "1.6"
         %>
             <tr class="<%=ri.rowclass%>">
                 <td>In Bioconductor since</td>
-                <td>BioC <%= since %> (R-<%= r_ver_for_bioc_ver(since)%>)<%=or_earlier%></td>
+                <td>BioC <%= since %> (R-<%= r %>)<%=or_earlier%></td>
             </tr>
         <% end %>
 

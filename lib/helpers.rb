@@ -584,14 +584,8 @@ end
 
 def r_ver_for_bioc_ver(bioc_ver)
   hsh = config[:r_ver_for_bioc_ver]
-  if hsh.has_key? bioc_ver
-    return hsh[bioc_ver]
-  end
-  # unreliable guessing follows (would have worked before R's yearly release schedule)
-  maj, min = bioc_ver.split(".")
-  maj = Integer(maj)
-  min = Integer(min)
-  return "#{maj}.#{min + 5}"
+  ret = hsh[bioc_ver.to_sym]
+  return ret
 end
 
 def get_package_maintainers()
