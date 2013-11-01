@@ -152,6 +152,9 @@ The purpose of this package is to process and quantitatively analyse
 millions of V-CDR3-J combination, called clonotypes, from
 multiple sequence libraries.
 
+CNVrd2: CNVrd2 uses next-generation sequencing data to measure human
+gene copy number for multiple samples, identify SNPs tagging copy number
+variants and detect copy number polymorphic genomic regions.
 
 cobindR: Finding and analysing co-occuring motifs of transcription
 factor binding sites in groups of genes
