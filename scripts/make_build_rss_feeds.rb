@@ -190,7 +190,7 @@ def runit()
     $hub_url = config["rss_hub_url"]
     Dir.chdir DCFDIR do
         Find.find "." do |path|
-            next unless path =~ /\.dcf$/
+            next unless path =~ /-summary\.dcf$/
             segs = path.split("/")
             segs2 = segs.last.split(".")
             segs2.pop
