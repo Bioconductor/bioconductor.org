@@ -1,5 +1,7 @@
 [Course Package](StatisticalComputing2013_0.3.1.tar.gz)
 
+[Supplemental data package](SequenceAnalysisData_0.1.4.tar.gz)
+
 [Package Vignette](StatisticalComputing.pdf)
 
 
