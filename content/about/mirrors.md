@@ -34,7 +34,7 @@ Germany
 Belgium
 --------
 
-* [Openanalytics](http://www.openanalytics.eu/)
+* [OpenAnalytics](http://www.openanalytics.eu/)
 
   URL: <http://bioc.openanalytics.eu/>
 
