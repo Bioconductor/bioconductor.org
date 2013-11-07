@@ -169,7 +169,6 @@ var tidyWorkflows = function() {
 
 var unRebaseMirrors = function() {
     if (!(window.mirror === undefined) && mirror == true) {
-        console.log("in unrebasemirrors")
         var wlh = window.location.href;
         var segs = wlh.split("/");
         var host = wlh.replace(/^http:\/\//i, "").split("/")[0];
@@ -216,7 +215,7 @@ var getHrefForSymlinks = function(href) {
 
 //document ready function                                      
 jQuery(function() {
-    unRebaseMirrors();
+    //unRebaseMirrors();
     tidyWorkflows();
     jQuery.each(jQuery(".symlink"), function(index, value){
       var href = jQuery(value).attr("href");
