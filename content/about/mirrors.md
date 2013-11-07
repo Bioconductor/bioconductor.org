@@ -31,6 +31,15 @@ Germany
   Contact: Uwe Ligges &lt;ligges at statistik.tu-dortmund.de&gt;
 
 
+Belgium
+--------
+
+* [Openanalytics](http://www.openanalytics.eu/)
+
+  URL: <http://bioc.openanalytics.eu/>
+
+  Contact: Willem Ligtenberg &lt;willem.ligtenberg at openanalytics.eu&gt;
+
 
 United Kingdom
 ------
