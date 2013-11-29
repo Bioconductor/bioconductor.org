@@ -1,3 +1,10 @@
+Course package (Morgan) [EMBOBGI_0.0.2.tar.gz](EMBOBGI_0.0.2.tar.gz)
+Download and install as follows in R-3.0, starting R in the directory
+where you downloaded the file:
+
+    biocLite(c("ggplot2", "Biostrings", "ShortRead"))
+    install.packages("EMBOBGI_0.0.2.tar.gz", repos=NULL, type="source")
+
 Day 2
 
 - NGS Challenges (Rustici) [pdf](NGS_challenges_Rustici.pdf)
