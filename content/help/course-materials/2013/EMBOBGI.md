@@ -45,5 +45,5 @@ Day 5
 Day 6
 
 - Visualization (Huber) [pdf](130612-csda-viz-huber.pdf)
-- Reproducible Research (Morgan) [pdf](reproducible-research.pdf) [work flow](reproducible-workflow)
+- Reproducible Research (Morgan) [pdf](reproducible-research.pdf) [work flow](reproducible-research.Rmd)
 - Machine Learning (Chen) [zip](2013-EMBO-Machine_Learning-GangChen.zip)
