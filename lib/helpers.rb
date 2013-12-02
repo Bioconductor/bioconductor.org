@@ -393,7 +393,7 @@ def upcoming_events(events)
   end
 
   ## Make upcoming BioC sticky at top, if sticky == true
-  sticky = true
+  sticky = false
   if sticky
     bioc = step2.find{|i| i[:title] =~ /^BioC2/} 
     unless bioc.nil?
