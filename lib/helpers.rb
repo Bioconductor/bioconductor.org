@@ -391,11 +391,15 @@ def upcoming_events(events)
   step2 = sorted.select do |e|
     e[:end] >= Time.now.to_date
   end
-  ## Make upcoming BioC sticky at top
-  bioc = step2.find{|i| i[:title] =~ /^BioC2/} 
-  unless bioc.nil?
-    step2 = step2.reject{|i| i == bioc}
-    step2 = step2.unshift(bioc)
+
+  ## Make upcoming BioC sticky at top, if sticky == true
+  sticky = true
+  if sticky
+    bioc = step2.find{|i| i[:title] =~ /^BioC2/} 
+    unless bioc.nil?
+      step2 = step2.reject{|i| i == bioc}
+      step2 = step2.unshift(bioc)
+    end
   end
   step2
 end
