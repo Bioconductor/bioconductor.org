@@ -75,6 +75,14 @@ introduced in devel. Each commit should include a bump in the `z`
 portion of the `x.y.z` package
 [versioning scheme](/developers/how-to/version-numbering/).
 
+<!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
+
+If you commit to trunk before 5:00 PM Seattle time, your changes will build
+overnight and be reflected in the next day's 
+[build report](http://bioconductor.org/checkResults/devel/bioc-LATEST/)
+which should appear around 10:00 AM Seattle time.
+
+
 ### Committing Changes to the Release Branch
 
 Only *bug fixes* should be back-ported to the release branch. This is
