@@ -184,7 +184,7 @@
 
         <tr class="<%=ri.rowclass%>">
             <td>URL</td>
-            <td><a href="<%=@package[:URL]%>"><%= @package[:URL]%></a></td>
+            <td><%=make_package_url_links(@package[:URL])%></td>
         </tr>
 
         <tr class="<%=ri.rowclass%>">

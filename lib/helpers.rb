@@ -672,3 +672,22 @@ def release_branch
   config[:release_version].sub(".", "_")
 end
 
+# call me with @package[:URL]
+def make_package_url_links(url)
+    out = ""
+    segs = nil
+
+    url = url.gsub /\s+/, "" if url =~ /,\s/
+
+    if url =~ /\s/
+        segs = url.split(/\s+/)
+    elsif url =~ /,/
+        segs = url.split(",")
+    else
+        segs = [url]
+    end
+    for seg in segs
+        out += %Q(<a href="#{seg}">#{seg}</a> )
+    end
+    out
+end
