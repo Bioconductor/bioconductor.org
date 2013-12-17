@@ -7,6 +7,7 @@ needed by the community. <a href=#introduction>More...</a>
 
 ## Projects Needing Volunteers
   * [Extending mzR](#extendingMZR)
+  * [Expanding MotifDb](#expandingMotifDb)
 
 ## Projects in Progress
   * [Galaxy-ification of Useful Scripts](#galaxy)
@@ -76,6 +77,25 @@ Project attributes and estimates:
 * More information:   <a href="https://github.com/sneumann/mzR/wiki/Extending-mzR">github wiki</a>
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+
+<h2 id='expandingMotifDb'>Expanding MotifDb</h2>
+The `MotifDb` R/Bioconductor package provides unified access to (currently) seven transcription
+factor binding site motif collections, covering 22 organisms.  We wish to expand its holdings by
+adding <b>JASPAR 2014</b> and <b>HOCOMOCO</b>, and improving the annotation we offer for 
+<b>stamlab</b>.
+
+Project attributes and estimates:
+
+* Difficulty: medium.
+* Length: 1-6 weeks if full-time
+* Skills needed: intermediate R programming, basics of gene regulation (or willingness to learn)
+* Deliverable: new import scripts producing serialized data files for the package
+* Mentors: Paul Shannon
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <h2 id="galaxy">Galaxy-ification of Useful Scripts</h2>
 From the <a href="http://en.wikipedia.org/wiki/Galaxy_%28computational_biology%29">Wikipedia entry for Galaxy</a>:
