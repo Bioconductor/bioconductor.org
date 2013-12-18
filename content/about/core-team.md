@@ -2,6 +2,8 @@
 
 ## Current
 
+* [Sonali Arora](http://www.fhcrc.org/), Fred Hutchinson Cancer
+  Research Center, USA.
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
 * [Marc Carlson](http://www.fhcrc.org/) Fred Hutchinson Cancer
@@ -9,6 +11,8 @@
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), USA, National
   Cancer Institute.
 * Robert Gentleman, Genentech Research and Early Development, USA.
+* [Nate Hayden](http://www.fhcrc.org/), Fred Hutchinson Cancer 
+  Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
 * [Rafael Irizarry](http://rafalab.jhsph.edu/)
