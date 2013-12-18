@@ -15,10 +15,10 @@
   Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
-* [Rafael Irizarry](http://rafalab.jhsph.edu/)
-  Department of Biostatistics, Johns Hopkins University
+* [Rafael Irizarry](http://rafalab.jhsph.edu/) Dana-Farber Cancer
+  Institute, USA
 * Michael Lawrence, Genentech Research and Early Development, USA.
-* [James MacDonald](mailto:jmacdon@med.umich.edu), University of Michigan, USA.
+* [James MacDonald](mailto:jmacdon@uw.edu), University of Washington, USA.
 * [Martin Morgan](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
 * [Valerie Obenchain](http://www.fhcrc.org/), Fred Hutchinson Cancer
