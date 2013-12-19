@@ -15,9 +15,9 @@
   Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
-* [Rafael Irizarry](http://rafalab.jhsph.edu/) Dana-Farber Cancer
+* [Rafael Irizarry](http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281) Dana-Farber Cancer
   Institute, USA
-* Michael Lawrence, Genentech Research and Early Development, USA.
+* [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech Research and Early Development, USA.
 * [James MacDonald](mailto:jmacdon@uw.edu), University of Washington, USA.
 * [Martin Morgan](http://www.fhcrc.org/), Fred Hutchinson Cancer
   Research Center, USA.
