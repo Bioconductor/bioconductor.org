@@ -9,7 +9,7 @@ that this process is minimally disruptive to your users.
 
 ** What to Deprecate **
 
-Any function or method that is no longer used.
+Any function, method, or data that is no longer used.
 
 ** When to Follow These Guidelines **
 
@@ -44,37 +44,38 @@ which should be used in place of the old function. Example:
 This causes a warning to be emitted whenever a user calls 
 <code>myOldFunc()</code>. See <code>?.Deprecated</code> for more information.
 
-Indicate in the man page of the old function that it has been deprecated, and
-suggest a replacement function. Be sure the old function is not called in 
-man page examples or vignette code chunks; <code>R CMD check</code> should
-report this.
+Replace the documentation of the function with a stub that points to
+the replacement function. Do this by (1) removing the man page of the
+deprecated function (or references to the function on man pages
+documenting several functions) and (2) creating or adding to a man
+page listing functions to be deprecated, e.g.
 
+    \name{pkg-deprecated}
+    \alias{myOldFunc}
+    \title{Deprecated functions in package \sQuote{pkg}}
 
-Ensure that if the user enters:
+    \description{
+      These functions are provided for compatibility with older versions
+      of \sQuote{pkg} only, and will be defunct at the next release.
+    }
 
-    help("myOldFunc-deprecated")
+    \details{
     
-that they are shown the manual page for the original old function,
-which should mention that the function is deprecated and point users towards
-the replacement function.
-
-Additionally, a man page reachable by
-
-    help("myPackageName-deprecated")
+      The following functions are deprecated and will be made defunct; use
+      the replacement indicated below:
+      \itemize{
     
-should list the functions in your package that are deprecated and
-discuss the appropriate replacement functions. See 
-
-    help("base-deprecated")
+        \item{myOldFunc: \code{\link{newFunc}}}
     
-for an example.
-
+      }
+    }
+    
 *** Step 2: Mark the function as defunct ***
 
-In the next release cycle, after your function has been deprecated,
-it must be made defunct in the devel branch.
-This means a call to the old function will
-return an informative error but not run any additional code. Example:
+In the next release cycle, after your function has been deprecated, it
+must be made defunct in the devel branch.  This means a call to the
+old function will return an informative error but not run any
+additional code. Example:
 
     myOldFunc <- function()
     {
@@ -83,20 +84,22 @@ return an informative error but not run any additional code. Example:
 
 See <code>?Defunct</code> for more information.
 
-Additionally, ensure that a call to:
+Move the documentation of the defunct function to a man page such as
+the following:
 
-    help("myPackageName-defunct")
-    
-shows a manual page that lists the defunct functions in your package, 
-and discusses the appropriate replacements. See
+    \name{pkg-defunct}
+    \alias{myOldFunc}
+    \title{Defunct functions in package \sQuote{pkg}}
 
-    help("base-defunct")
-    
-for an example. Make sure that 
+    \description{
+      These functions are defunct and no longer available.
+    }
 
-    help("myPackageName-deprecated")
+    \details{
     
-<b>no longer</b> lists your function.
+      Defunct functions are: \code{myOldFunc}
+
+    }
 
 *** Step 3: Remove the function ***
 
