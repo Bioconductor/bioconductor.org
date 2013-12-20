@@ -8,9 +8,9 @@ needed by the community. <a href=#introduction>More...</a>
 ## Projects Needing Volunteers
   * [Extending mzR](#extendingMZR)
   * [Expanding MotifDb](#expandingMotifDb)
+  * [Galaxy-ification of Useful Scripts](#galaxy)
 
 ## Projects in Progress
-  * [Galaxy-ification of Useful Scripts](#galaxy)
   * [DNaseR - DNase I footprinting analysis of DNase-seq data](#dnaser)
   * [Add DEXSeq Functionality to easyRNASeq](#easyrnaseq)
 
@@ -121,7 +121,7 @@ Project attributes and estimates:
 * Length: 3-4 weeks
 * Skills needed: R programming
 * Mentor: Dan Tenenbaum
-* Status: One project is ongoing, but there is room for more.
+* Status: Awaiting volunteers
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
