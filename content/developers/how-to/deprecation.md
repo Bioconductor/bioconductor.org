@@ -48,15 +48,15 @@ Replace the documentation of the function with a stub that points to
 the replacement function. Do this by (1) removing the man page of the
 deprecated function (or references to the function on man pages
 documenting several functions) and (2) creating or adding to a man
-page listing functions to be deprecated, e.g.
+page listing functions to be deprecated in the `MyPkg` package, e.g.
 
-    \name{pkg-deprecated}
+    \name{MyPkg-deprecated}
     \alias{myOldFunc}
-    \title{Deprecated functions in package \sQuote{pkg}}
+    \title{Deprecated functions in package \sQuote{MyPkg}}
 
     \description{
       These functions are provided for compatibility with older versions
-      of \sQuote{pkg} only, and will be defunct at the next release.
+      of \sQuote{MyPkg} only, and will be defunct at the next release.
     }
 
     \details{
@@ -87,7 +87,7 @@ See <code>?Defunct</code> for more information.
 Move the documentation of the defunct function to a man page such as
 the following:
 
-    \name{pkg-defunct}
+    \name{MyPkg-defunct}
     \alias{myOldFunc}
     \title{Defunct functions in package \sQuote{pkg}}
 
@@ -109,7 +109,7 @@ branch. Also remove any man page content that documents the function.
 
 Leave the man page from the previous step in place so that 
 
-    help("myPackageName-defunct")
+    help(MyPkg-defunct")
     
 still shows the list of defunct functions and their appropriate replacements.
 
