@@ -44,14 +44,13 @@ which should be used in place of the old function. Example:
 This causes a warning to be emitted whenever a user calls 
 <code>myOldFunc()</code>. See <code>?.Deprecated</code> for more information.
 
-Replace the documentation of the function with a stub that points to
-the replacement function. Do this by (1) removing the man page of the
-deprecated function (or references to the function on man pages
-documenting several functions) and (2) creating or adding to a man
-page listing functions to be deprecated in the `MyPkg` package, e.g.
+Indicate in the man page of the old function that it has been
+deprecated, and suggest a replacement function. Be sure the old
+function is not called in man page examples or vignette code chunks; R
+CMD check should report this.
 
     \name{MyPkg-deprecated}
-    \alias{myOldFunc}
+    \alias{MyPkg-deprecated}
     \title{Deprecated functions in package \sQuote{MyPkg}}
 
     \description{
@@ -84,21 +83,16 @@ additional code. Example:
 
 See <code>?Defunct</code> for more information.
 
-Move the documentation of the defunct function to a man page such as
-the following:
+Remove the documentation of the defunct function, and add to a man
+page such as the following:
 
     \name{MyPkg-defunct}
     \alias{myOldFunc}
     \title{Defunct functions in package \sQuote{pkg}}
-
-    \description{
-      These functions are defunct and no longer available.
-    }
+    \description{These functions are defunct and no longer available.}
 
     \details{
-    
       Defunct functions are: \code{myOldFunc}
-
     }
 
 *** Step 3: Remove the function ***
@@ -109,7 +103,7 @@ branch. Also remove any man page content that documents the function.
 
 Leave the man page from the previous step in place so that 
 
-    help(MyPkg-defunct")
+    help("MyPkg-defunct")
     
 still shows the list of defunct functions and their appropriate replacements.
 
