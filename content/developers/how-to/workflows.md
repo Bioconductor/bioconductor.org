@@ -49,6 +49,8 @@ Anyone who is a bioinformatics domain expert.
   Bioconductor web site, contact "maintainer at bioconductor dot org"
   and we will allow the workflow to propagate to our web site where it
   will be listed alongside [the other workflows](/help/workflows/).
+  It will be updated every time there is an SVN commit and 
+  a successful build.
 
 If you have any questions, please ask on the bioc-devel
 [mailing list](/help/mailing-list).
