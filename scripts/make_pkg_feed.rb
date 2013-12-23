@@ -5,6 +5,7 @@ require "rubygems"
 require "dcf"
 require "rexml/document"
 require "yaml"
+require 'nokogiri'
 
 include REXML
 
@@ -76,7 +77,7 @@ startxml = <<EOF
 </rss>
 EOF
 
-doc = Document.new startxml
+doc = REXML::Document.new startxml
 
 elem = nil
 doc.elements.each("rss/channel") {|i| elem = i}
@@ -90,7 +91,13 @@ for desc in descs
   title = Element.new "title"
   title.text = "#{url} #{desc["Package"]} #{desc["Title"]}"
   pubdate = Element.new "pubdate"
-  pubdate.text =  "Sat, 1 Jan 2012 00:00:00 GMT"  #"2011-01-01"
+  xml = `svn log --xml --username readonly --password readonly --no-auth-cache --non-interactive -v  --limit 1 -r HEAD:1 https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/#{desc['Package']}`
+
+  xdoc = Document.new xml
+  pubdate.text = xdoc.elements["log/logentry/date"].text
+
+  #puts "Package: #{desc['Package']}, pubdate.text: #{pubdate.text}"
+  #pubdate.text =  "Sat, 1 Jan 2012 00:00:00 GMT"  #"2011-01-01"
   author = Element.new "author"
   author.text = desc["Author"]
   description  = Element.new "description"
