@@ -11,7 +11,6 @@ needed by the community. <a href=#introduction>More...</a>
   * [Galaxy-ification of Useful Scripts](#galaxy)
 
 ## Projects in Progress
-  * [DNaseR - DNase I footprinting analysis of DNase-seq data](#dnaser)
   * [Add DEXSeq Functionality to easyRNASeq](#easyrnaseq)
 
 ## Get Help With Your Own Project
@@ -125,33 +124,6 @@ Project attributes and estimates:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-
-## <a id="dnaser"></a>DNaseR - DNase I footprinting analysis of DNase-seq data
-
-The combination of DNase I digestion and high-throughput sequencing
-(DNase-seq) has been used recently to map chromatin accessibility in a
-given tissue or cell type on a genome-wide scale. In addition to these
-DNaseI hypersensitivity regions (DHSs), short regions of protected
-nucleotides known as footprints can be detected, indicating
-transcription factor binding ocuppancy events.
-
-The aim of this project is to build an algorithm to efficiently
-detect protein binding footprints in DNase-seq data from reads in 
-BAM/SAM standard aligment format.
-
-Project attributes and estimates:
-
-* Difficulty: medium/advanced
-* Length: 15 weeks, part-time
-* Skills needed: intermediate R programming; some familiarity with R packages and S4 classes. Familiarity with next generation sequencing 
-* Deliverables: A finished package, submitted to Bioconductor.
-* Funding: This work is supported by the FP7 Marie-Curie ITN SYSFLO (agreement number 237909).
-* Mentee: Pedro Madrigal
-* Mentor: Paul Shannon
-* Status: imminent (January 2013)
-* More information: github repo coming soon
-
-<p class="back_to_top"> [ <a href="#top">Back to top</a> ]</p>
 
 
 ## <a id="easyrnaseq"></a>Add DEXSeq Functionality to easyRNASeq
