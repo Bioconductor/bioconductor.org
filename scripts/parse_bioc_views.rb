@@ -135,7 +135,7 @@ def clean(arg)
   item
 end
 
-if __FILE__ == $-
+if __FILE__ == $0
 #  puts "We are running directly as a script."
 else
 #  puts "We are not running directly as a script."
