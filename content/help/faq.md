@@ -41,7 +41,7 @@ encountered this message:
     Please wait...
     Warning message:
     In getDependencies(pkgs, dependencies, available, lib) :
-      package ‘GeneRfold’ is not available
+      package 'GeneRfold' is not available
 
 Visiting the list of [package home pages][home-pages]
 shows that the package was not available on Windows, the platform on
