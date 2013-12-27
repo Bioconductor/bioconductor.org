@@ -12,6 +12,8 @@ require 'yaml'
 require 'pp'
 require 'rexml/document'
 require 'json'
+require 'open-uri'
+require 'nokogiri'
 
 include REXML
 
@@ -690,4 +692,38 @@ def make_package_url_links(url)
         out += %Q(<a href="#{seg}">#{seg}</a> )
     end
     out
+end
+
+def get_build_summary(version, repo)
+    url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST"
+    css_url = "#{url}/report.css"
+    html = open(url)
+    doc = Nokogiri::HTML(html.read)
+    doc.encoding = "ascii"
+    dateline = doc.css %Q(p[style="text-align: center;"])
+    dateline = dateline.children[1].text
+    dateline.sub!(/^This page was generated on /, "")
+    dateline = dateline.split("(").first.strip
+
+    rows = doc.css("table.mainrep tr.summary")
+
+    htmlfrag=<<-EOT
+        <p><i>Build report generated at #{dateline}</i></p>
+        <LINK rel="stylesheet" href="#{css_url}" type="text/css">
+        <table>
+            #{rows.to_html}
+        </table>
+    EOT
+    File.open("output/dashboard/build_#{version}_#{repo}.html", "w") do |f|
+        f.puts htmlfrag
+    end
+    ret=<<-EOT
+    <iframe src="/dashboard/build_#{version}_#{repo}.html" width="80%"></iframe>
+    EOT
+    ret
+end
+
+def get_new_packages_in_tracker()
+    cfg = YAML::load(File.open("tracker.yaml"))
+    cmd=%Q(curl -s --cookie-jar cookies.txt -d  "__login_name=#{cfg['username']}&__login_password=#{cfg['password']}&__came_from=http://tracker.fhcrc.org/roundup/bioc_submit/&@action=login" http://tracker.fhcrc.org/roundup/bioc_submit/)
 end
