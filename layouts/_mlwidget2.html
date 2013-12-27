@@ -1,0 +1,20 @@
+
+<div style="padding:0 12px 0 0">
+  <h2 style="min-height:40px;">
+    <a href="https://stat.ethz.ch/mailman/listinfo/bioconductor"></a>
+      <img src="/images/icons/email.gif" alt=""/><a href="help/mailing-list/">Mailing Lists</a>
+</h2>
+<p align="right"><a href="help/mailing-list/mailform/">Search / post</a></p>
+
+
+  <% @ml_item.children[0..4].each_with_index do |p, i| %>
+    <div class="<%= "#{i % 2 == 0 ? 'grey_box' : 'white_box'}" %>">
+      <a href="<%= p[:link] %>" title="<%= p[:title] %>">
+        <b><%= excerptize(p[:title], :length => 40) %></b></a><br/>
+      <abbr class="timeago" title="<%= "#{p[:date].iso8601}" %>">
+        <%= p[:date].iso8601.to_s %></abbr>
+    </div>
+  <% end %>
+  <br/>
+
+</div>
