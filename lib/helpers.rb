@@ -14,6 +14,7 @@ require 'rexml/document'
 require 'json'
 require 'open-uri'
 require 'nokogiri'
+require 'fileutils'
 
 include REXML
 
@@ -714,6 +715,7 @@ def get_build_summary(version, repo)
             #{rows.to_html}
         </table>
     EOT
+    FileUtils.mkdir_p "output/dashboard"
     File.open("output/dashboard/build_#{version}_#{repo}.html", "w") do |f|
         f.puts htmlfrag
     end
