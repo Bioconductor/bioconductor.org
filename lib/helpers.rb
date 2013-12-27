@@ -748,13 +748,6 @@ def get_new_packages_in_tracker()
     for i in 2..12
         nr.push rows[i]
     end
-    # s=<<-"EOT"
-    # <head>
-    # <base href="#{url}">
-    # </head>
-    # <body>
-    # <table>
-    #EOT
     s = "<table>\n"
     nr.each do |i|
         html = i.to_html.sub(%Q(a href="),
@@ -763,12 +756,6 @@ def get_new_packages_in_tracker()
     end
     s += "</table></body>"
     s
-
-    # cmd=%Q(curl -s --cookie-jar cookies.txt -d  "__login_name=#{cfg['username']}&__login_password=#{cfg['password']}&__came_from=http://tracker.fhcrc.org/roundup/bioc_submit/&@action=login" http://tracker.fhcrc.org/roundup/bioc_submit/)
-    # res= `#{cmd}`
-    # cmd=%Q(curl -O -s --cookie cookies.txt http://tracker.fhcrc.org/roundup/bioc_submit/)
-    # res = `#{cmd}`
-    # res
 end
 
 def get_mailing_list_link(devel=false)

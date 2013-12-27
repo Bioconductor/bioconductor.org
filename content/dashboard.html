@@ -43,9 +43,8 @@
   <div style="float:left;width:100%;">
       <!--<div style="padding:0 0 0 12px">-->
       <div style="padding:0 12px 0 0">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="/checkResults/">New Packages</a></h2>
+      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="http://tracker.fhcrc.org/roundup/bioc_submit/">New Packages</a></h2>
     </div>
-    <p>Top 10 entries in <a href="http://tracker.fhcrc.org/roundup/bioc_submit/">tracker</a></p>
     <%=get_new_packages_in_tracker()%>
   </div>
 
@@ -79,23 +78,12 @@
         color: #DDD;
     }
     </style>
-    <p>
+    <p>Legend: 
         <span class="TIMEOUT">&nbsp;TIMEOUT&nbsp;</span>
         <span class="ERROR">&nbsp;ERROR&nbsp;</span>
         <span class="WARNINGS">&nbsp;WARNINGS&nbsp;</span>
         <span class="OK">&nbsp;OK&nbsp;</span>
     </p>
-       <div>
-            <p><a href="/checkResults/devel/bioc-LATEST">Devel, Software</a></p>
-            <%= get_build_summary("devel", "bioc") %>
-            <p>&nbsp;</p>
-      </div>
-
-       <div>
-            <p><a href="/checkResults/devel/data-experiment-LATEST">Devel, Experiment Data</a></p>
-            <%= get_build_summary("devel", "data-experiment") %>
-            <p>&nbsp;</p>
-      </div>
 
 
        <div>
@@ -107,6 +95,18 @@
        <div>
             <p><a href="/checkResults/release/data-experiment-LATEST">Release, Experiment Data</a></p>
             <%= get_build_summary("release", "data-experiment") %>
+            <p>&nbsp;</p>
+      </div>
+
+       <div>
+            <p><a href="/checkResults/devel/bioc-LATEST">Devel, Software</a></p>
+            <%= get_build_summary("devel", "bioc") %>
+            <p>&nbsp;</p>
+      </div>
+
+       <div>
+            <p><a href="/checkResults/devel/data-experiment-LATEST">Devel, Experiment Data</a></p>
+            <%= get_build_summary("devel", "data-experiment") %>
       </div>
 
 
