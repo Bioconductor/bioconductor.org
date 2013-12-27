@@ -4,7 +4,10 @@
     <a href="https://stat.ethz.ch/mailman/listinfo/bioconductor"></a>
       <img src="/images/icons/email.gif" alt=""/><a href="help/mailing-list/">Mailing Lists</a>
 </h2>
-<p align="right"><a href="help/mailing-list/mailform/">Search / post</a></p>
+<p align="right"><a href="<%=get_mailing_list_link()%>">This month's posts on Bioconductor</a></p>
+<p align="right"><a href="<%=get_mailing_list_link(true)%>">This month's posts on Bioc-Devel</a></p>
+
+
 
 
   <% @ml_item.children[0..4].each_with_index do |p, i| %>

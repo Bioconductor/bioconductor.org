@@ -6,6 +6,7 @@ include Nanoc3::Helpers::HTMLEscape
 
 
 require 'time'
+require 'date'
 require 'rubygems'
 require 'httparty'
 require 'yaml'
@@ -15,6 +16,7 @@ require 'json'
 require 'open-uri'
 require 'nokogiri'
 require 'fileutils'
+require 'mechanize'
 
 include REXML
 
@@ -696,7 +698,7 @@ def make_package_url_links(url)
 end
 
 def get_build_summary(version, repo)
-    url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST"
+    url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
     css_url = "#{url}/report.css"
     html = open(url)
     doc = Nokogiri::HTML(html.read)
@@ -708,12 +710,17 @@ def get_build_summary(version, repo)
 
     rows = doc.css("table.mainrep tr.summary")
 
-    htmlfrag=<<-EOT
+    htmlfrag=<<-"EOT"
+        <head>
+        <base href="#{url}" target="_blank">
+        </head
+        <body>
         <p><i>Build report generated at #{dateline}</i></p>
         <LINK rel="stylesheet" href="#{css_url}" type="text/css">
         <table>
             #{rows.to_html}
         </table>
+        </body>
     EOT
     FileUtils.mkdir_p "output/dashboard"
     File.open("output/dashboard/build_#{version}_#{repo}.html", "w") do |f|
@@ -726,6 +733,52 @@ def get_build_summary(version, repo)
 end
 
 def get_new_packages_in_tracker()
+    url = "http://tracker.fhcrc.org/roundup/bioc_submit/"
     cfg = YAML::load(File.open("tracker.yaml"))
-    cmd=%Q(curl -s --cookie-jar cookies.txt -d  "__login_name=#{cfg['username']}&__login_password=#{cfg['password']}&__came_from=http://tracker.fhcrc.org/roundup/bioc_submit/&@action=login" http://tracker.fhcrc.org/roundup/bioc_submit/)
+    @agent = Mechanize.new
+    page = @agent.post(url, {
+        "__login_name" => cfg['username'],
+        "__login_password" => cfg['password'], 
+        "__came_from" => url,
+        "@action" => "login"
+    })
+    rows = page.search("table.list tr")
+    nr = []
+    nr.push rows.first
+    for i in 2..12
+        nr.push rows[i]
+    end
+    # s=<<-"EOT"
+    # <head>
+    # <base href="#{url}">
+    # </head>
+    # <body>
+    # <table>
+    #EOT
+    s = "<table>\n"
+    nr.each do |i|
+        html = i.to_html.sub(%Q(a href="),
+                %Q(a href="http://tracker.fhcrc.org/roundup/bioc_submit/))
+        s += html
+    end
+    s += "</table></body>"
+    s
+
+    # cmd=%Q(curl -s --cookie-jar cookies.txt -d  "__login_name=#{cfg['username']}&__login_password=#{cfg['password']}&__came_from=http://tracker.fhcrc.org/roundup/bioc_submit/&@action=login" http://tracker.fhcrc.org/roundup/bioc_submit/)
+    # res= `#{cmd}`
+    # cmd=%Q(curl -O -s --cookie cookies.txt http://tracker.fhcrc.org/roundup/bioc_submit/)
+    # res = `#{cmd}`
+    # res
+end
+
+def get_mailing_list_link(devel=false)
+    if devel
+        list = "bioc-devel"
+    else
+        list = "bioconductor"
+    end
+    d = DateTime.now
+    month = d.strftime("%B")
+    year = d.strftime("%Y")
+    "https://stat.ethz.ch/pipermail/#{list}/#{year}-#{month}/date.html"
 end
