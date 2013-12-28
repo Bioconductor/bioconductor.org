@@ -59,9 +59,9 @@ from the ROOT directory.
 
 Install the gems used by the website as follows:
 
-  :  sudo gem install nanoc rdiscount rack mime-types haml json
-  :  sudo gem install rack-cache httparty rake sass kramdown
-  :  sudo gem install rgl sqlite3 adsf
+  :  sudo gem install --no-ri --no-doc nanoc rdiscount rack mime-types haml \
+  :  rack-cache httparty rake sass kramdown mechanize json nokogiri \
+  :  rgl sqlite3 adsf twitter aws-sdk hpricot uuid 
 
 ** Windows Developer Required Software
 
