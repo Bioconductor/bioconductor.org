@@ -19,14 +19,19 @@
 
 <div class="hp_options_box">
 
-  <div style="float:left;width:50%;">
+  <div style="float:left;width:33%;">
     <%= render('/_mlwidget2/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
   </div>
 
+  <div style="float:left;width:33%;">
+          <h2><img src="/images/icons/buildicon.gif" alt=""/>
+            Analytics</h2>
+    <p>Top search terms:</p>
+    <%= get_search_terms()%>
+  </div>
 
 
-
-  <div style="float:right;width:50%;">
+  <div style="float:right;width:33%;">
     <div style="padding:0 0 0 12px">
 
 

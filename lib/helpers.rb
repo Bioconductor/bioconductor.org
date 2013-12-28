@@ -769,3 +769,30 @@ def get_mailing_list_link(devel=false)
     year = d.strftime("%Y")
     "https://stat.ethz.ch/pipermail/#{list}/#{year}-#{month}/date.html"
 end
+
+def get_search_terms()
+    res = nil
+    Dir.chdir("analytics_py") do
+        res = `python search_terms.py`
+    end
+    tbl=<<-"EOT"
+    <table>
+        <tr>
+            <th>Engine</th>
+            <th>Term</th>
+            <th>Hits</th>
+        </tr>
+    EOT
+    lines = res.split "\n"
+    lines.shift
+    lines.each_with_index do |item, idx|
+        tbl += "<tr>\n"
+        for thing in item.split("\t")
+            tbl += "<td>#{thing}</td>\n"
+        end
+        tbl += "</tr>\n"
+        break if idx > 5
+    end
+    tbl += "</table>"
+    tbl
+end
