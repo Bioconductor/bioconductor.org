@@ -138,7 +138,7 @@ def get_top_keywords(service, profile_id):
       sort='-ga:visits',
       filters='ga:medium==organic',
       start_index='1',
-      max_results='25').execute()
+      max_results='6').execute() # was 25
 
 
 def print_results(results):
@@ -159,11 +159,13 @@ def print_results(results):
   output = []
   for header in results.get('columnHeaders'):
     output.append('%s' % header.get('name'))
-  print '\t'.join(output)
+  #print '\t'.join(output)
 
   # Print data table.
   if results.get('rows', []):
     for row in results.get('rows'):
+      if (row[1] == "(not provided)"):
+        continue
       output = []
       for cell in row:
         output.append('%s' % cell)

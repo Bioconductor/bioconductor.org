@@ -697,6 +697,7 @@ def make_package_url_links(url)
     out
 end
 
+#FIXME  should gracefully fail (and allow flow to continue) if no internet access
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
     css_url = "#{url}/report.css"
@@ -732,7 +733,9 @@ def get_build_summary(version, repo)
     ret
 end
 
+# FIXME gracefully fail w/o internet access
 def get_new_packages_in_tracker()
+    return "" unless File.exists?("tracker.yaml")
     url = "http://tracker.fhcrc.org/roundup/bioc_submit/"
     cfg = YAML::load(File.open("tracker.yaml"))
     @agent = Mechanize.new
@@ -771,6 +774,7 @@ def get_mailing_list_link(devel=false)
 end
 
 def get_search_terms()
+    return "" unless File.exists? "analytics_py/client_secrets.json"
     res = nil
     Dir.chdir("analytics_py") do
         res = `python search_terms.py`
@@ -791,7 +795,6 @@ def get_search_terms()
             tbl += "<td>#{thing}</td>\n"
         end
         tbl += "</tr>\n"
-        break if idx > 5
     end
     tbl += "</table>"
     tbl
