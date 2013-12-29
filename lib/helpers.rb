@@ -776,26 +776,58 @@ end
 def get_search_terms()
     return "" unless File.exists? "analytics_py/client_secrets.json"
     res = nil
+    FileUtils.mkdir_p "output/dashboard"
+
     Dir.chdir("analytics_py") do
-        res = `python search_terms.py`
+        res = `python search_terms.py > ../output/dashboard/search_terms.tsv`
     end
-    tbl=<<-"EOT"
-    <table>
-        <tr>
-            <th>Engine</th>
-            <th>Term</th>
-            <th>Hits</th>
-        </tr>
+    html=<<-"EOT"
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<div id="search_terms_chart"></div>
+<script src="/js/search_terms.js"></script>
     EOT
-    lines = res.split "\n"
-    lines.shift
-    lines.each_with_index do |item, idx|
-        tbl += "<tr>\n"
-        for thing in item.split("\t")
-            tbl += "<td>#{thing}</td>\n"
-        end
-        tbl += "</tr>\n"
+    html
+end
+
+def get_hits()
+    return "" unless File.exists? "analytics_py/client_secrets.json"
+    FileUtils.mkdir_p "output/dashboard"
+    Dir.chdir("analytics_py") do
+        res = `python hits.py > ../output/dashboard/hits.tsv`
     end
-    tbl += "</table>"
-    tbl
+    html=<<-"EOT"
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript" src="/js/hits.js"></script>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+    EOT
+    html
 end
