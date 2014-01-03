@@ -204,11 +204,6 @@ def remove_emails(str)
 end
 
 def linkify(sym, package)
-  #if package[:Package] == "topGO"
-  #  puts sym
-  #  pp package
-  #  exit if true
-  #end
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
@@ -217,6 +212,7 @@ def linkify(sym, package)
   
   to_array(items).each_with_index do |item, index|
     next if item.nil?
+    item=item.gsub("(", " (").gsub("  (", " (")
     linkable, remainder = item.split(" ", 2)
     remainder = "" if remainder.nil?
     remainder = " " + remainder unless remainder.empty?

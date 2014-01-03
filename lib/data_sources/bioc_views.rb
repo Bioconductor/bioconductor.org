@@ -204,7 +204,7 @@ class BiocViews < Nanoc3::DataSource
   def is_bioc_package?(packageName, version)
     #puts "packageName = #{packageName}" 
     return false if packageName.nil?
-    packageName = packageName.split(" ").first
+    packageName = packageName.split(/[ |(]/).first
     @all_packages[version].each_pair do |k,v|
       return k if v.has_key?(packageName)
     end
