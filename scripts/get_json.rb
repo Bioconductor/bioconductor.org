@@ -275,7 +275,7 @@ class GetJson
       datum.each_pair do |k,v|
         for field in fields
           next unless v.has_key? field and !v[field].empty?
-          items = v[field].map{|i| i.split(" ").first}
+          items = v[field].map{|i| i.split(/ |\(/).first}
           for item in items
             reverse_deps[field][item] = [] unless reverse_deps[field].has_key? item
             reverse_deps[field][item].push k
