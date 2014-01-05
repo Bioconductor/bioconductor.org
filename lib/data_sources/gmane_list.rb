@@ -100,7 +100,12 @@ class GmaneList < Nanoc3::DataSource
   end
 
   def fix_date(rss_item)
-    Time.parse(rss_item["dc:date"] + " GMT").utc
+    key = nil
+    for cand in ["dc_date", "date"]
+      key = cand if rss_item.has_key? cand
+    end
+
+    Time.parse(rss_item[key] + " GMT").utc
   rescue
     Time.new.utc
   end
