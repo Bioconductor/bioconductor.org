@@ -11,7 +11,6 @@ var bollox;
       var arr = [];              // Handler for .ready() called.
       $.get("hits.tsv", function (data){
           bollox = data;
-          //console.log("data == " + data);
           var lines = data.split("\n");
           for (var i = 0;i < lines.length; i++) {
             line = lines[i];
@@ -24,7 +23,6 @@ var bollox;
             arr.push(segs);
           }
 
-        console.log(arr);
 
         var data = google.visualization.arrayToDataTable([
           ['Date', 'Last Year', 'This Year'],
@@ -45,7 +43,6 @@ var bollox;
       });
 
 
-        console.log("hi");
 
         /*
         var data = google.visualization.arrayToDataTable([

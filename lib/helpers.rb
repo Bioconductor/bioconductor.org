@@ -827,3 +827,7 @@ def get_hits()
     EOT
     html
 end
+
+def get_current_time
+  Time.now.utc.iso8601
+end

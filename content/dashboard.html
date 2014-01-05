@@ -19,6 +19,13 @@
 
 <div class="hp_options_box">
 
+
+<div>
+<% page_build_time = get_current_time() %>
+<p>This page was built <abbr class="timeago" title="<%=page_build_time%>">
+        <%=page_build_time%></abbr>.</p>
+</div>
+
   <div style="float:left;width:50%;">
     <%= render('/_mlwidget2/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
   </div>
