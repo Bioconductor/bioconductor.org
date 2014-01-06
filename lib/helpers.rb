@@ -831,3 +831,10 @@ end
 def get_current_time
   Time.now.utc.iso8601
 end
+
+def recent_spb_builds
+    # FIXME - make sure this fails gracefully if user is not in hutch
+    # network (or connected to internet at all)
+    `curl -s http://merlot2.fhcrc.org:8000/recent_builds`
+end
+
