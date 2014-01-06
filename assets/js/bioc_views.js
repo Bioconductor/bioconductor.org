@@ -21,14 +21,7 @@ var displayPackages = function(packageList, nodeName) {
     for (var i = 0; i < packageList.length; i++) {
         var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
         var pkg = packageList[i];
-        var friendlyVersion;
-        if (releaseVersion == biocVersion)
-            friendlyVersion = "release";
-        else if (develVersion == biocVersion)
-            friendlyVersion = "devel";
-        else
-            friendlyVersion = biocVersion;
-        var url = getHostUrl() + "/" + friendlyVersion + "/" + map[category] + "/html/" + pkg + ".html"
+        var url = getHostUrl() + "/" + map[category] + "/html/" + pkg + ".html"
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
@@ -212,7 +205,6 @@ var init = function() {
 var getHostUrl = function() {
     var url = window.location.href;
     var segs = url.split("/");
-    segs.pop();
     segs.pop();
     url = segs.join("/");
     return(url);
