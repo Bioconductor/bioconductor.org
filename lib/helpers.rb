@@ -528,7 +528,9 @@ def get_svn_commits()
       table = "<table>" + description.split("<table>").last
       
       
-      
+      rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
+      date = %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
+
       h[:revision] = title.split(" ")[1]
       h[:date] = date
       h[:author] = author
