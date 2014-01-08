@@ -16,6 +16,7 @@
 * [Citations](#citations)
 * [Version Numbering](#versions)
 * [C or Fortran code](#c-code)
+* [Unit tests](#unitTests)
 * [Duplication of Packages in CRAN and Bioconductor](#duplications)
 * [Package Author and Maintainer Responsibilities](#responsibilities)
 
@@ -304,6 +305,16 @@ is complex the author may need to supply pre-built binary versions for some
 platforms.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="unitTests">Unit Tests</h2>
+
+Unit tests are highly recommended.  We find them indispensable for 
+both package  and maintenance.  Examples and explanations are provided 
+[here](http://www.bioconductor.org/developers/unitTesting-guidelines).
+
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <h2 id="duplications">Duplication of Packages in CRAN and Bioconductor</h2>
 
