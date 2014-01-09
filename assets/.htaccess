@@ -139,6 +139,9 @@ RewriteRule ^developers/useDeve.*$ /developers/how-to/useDevel
 RewriteRule ^developers/source-contro.*$ /developers/how-to/source-control
 RewriteRule ^developers/unitTesting-guideline.*$ /developers/how-to/unitTesting-guidelines
 RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
+RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
+RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
+
 </IfModule>
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
