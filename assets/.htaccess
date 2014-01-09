@@ -137,6 +137,7 @@ RewriteRule ^slogan.*$ /about/ [R=301]
 RewriteRule ^developers/deprecatio.*$ /developers/how-to/deprecation
 RewriteRule ^developers/useDeve.*$ /developers/how-to/useDevel
 RewriteRule ^developers/source-contro.*$ /developers/how-to/source-control
+RewriteRule ^developers/unitTesting-guideline.*$ /developers/how-to/unitTesting-guidelines
 </IfModule>
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
