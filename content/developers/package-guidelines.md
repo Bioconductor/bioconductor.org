@@ -309,7 +309,7 @@ platforms.
 <h2 id="unitTests">Unit Tests</h2>
 
 Unit tests are highly recommended.  We find them indispensable for 
-both package  and maintenance.  Examples and explanations are provided 
+both package development and maintenance.  Examples and explanations are provided 
 [here](http://www.bioconductor.org/developers/unitTesting-guidelines).
 
 
