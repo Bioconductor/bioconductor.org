@@ -768,7 +768,7 @@ def get_mailing_list_link(devel=false)
     d = DateTime.now
     month = d.strftime("%B")
     year = d.strftime("%Y")
-    "https://stat.ethz.ch/pipermail/#{list}/#{year}-#{month}/date.html"
+    "https://stat.ethz.ch/pipermail/#{list}/#{year}-#{month}/thread.html"
 end
 
 def get_search_terms()
