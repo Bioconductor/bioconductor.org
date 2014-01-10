@@ -35,7 +35,7 @@ Anyone who is a bioinformatics domain expert.
  * Go to the [DocBuilder Web App](https://docbuilder.bioconductor.org/app/).
    Log in with your SVN username and password.
 
-* Click on [Create New Jenkins Project](https://docbuilder.bioconductor.org/app/newproject). 
+* Click on "Create New Jenkins Project".
   Fill in the directory name from the first step above, and your email address.
 
 * The workflow builder will now try and build your vignette on Mac, Windows, and Linux.
