@@ -840,3 +840,14 @@ def recent_spb_builds
     `curl -s http://merlot2.fhcrc.org:8000/recent_builds`
 end
 
+def get_last_svn_commit_time()
+    xml = `curl -s http://bioconductor.org/rss/svnlog.rss`
+    doc = Document.new xml
+    items = []
+    doc.elements.each("rss/channel/item") {|i| items.push i}
+    date = nil
+    item = items.first
+    item.elements.each("pubDate") {|i| date = i.text}
+    rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
+    %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
+end

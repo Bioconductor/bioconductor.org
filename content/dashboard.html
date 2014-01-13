@@ -1,21 +1,5 @@
-
-<!--
-<div class="hp_alert_box">
-  <img src="/images/icons/conference.gif" align="left" alt="" style="margin-right:12px;"/>
-  <span style="font-size:larger"><b><a href="https://secure.bioconductor.org/BioC2010/">Bioc 2010</a>: Where Software and Biology Connect</b></span><br/>
-  The annual Bioconductor conference is July 28 (developer day), 29, and 30.<br clear="all"/>
-</div>
--->
 <h1>Dashboard</h1>
 
-<!--
-<h4>TODO:</h4>
-<ul>
-    <li>google analytics</li>
-    <li>new packages</li>
-    <li>single package builder(?)</li>
-</ul>
--->
 
 <div class="hp_options_box">
 
@@ -25,6 +9,12 @@
 <p>This page was built <abbr class="timeago" title="<%=page_build_time%>">
         <%=page_build_time%></abbr>.</p>
 </div>
+
+
+  <div>
+    <p>Last SVN commit to Rpacks devel was  <%= get_last_svn_commit_time() %></p>
+  </div>
+
 
   <div style="float:left;width:50%;">
     <%= render('/_mlwidget2/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
