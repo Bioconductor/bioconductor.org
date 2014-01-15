@@ -63,7 +63,7 @@ associated with package submission.
 <h2 id="correctness">Correctness, Space and Time</h2>
 
 Bioconductor packages must pass `R CMD build` (or 
-<code>R CMD INSTALL &#8209;&#8209;build</code>)
+<code>R CMD INSTALL &#45;&#45;build</code>)
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
 Authors should also try to address all notes that arise during build or check.
 
@@ -72,8 +72,8 @@ case sensitive.
 
 The source package resulting from running `R CMD build` should occupy 
 less than 4MB on disk. The package should require less than 5 minutes to run
-<code>R CMD check &#8209;&#8209;no&#8209;build&#8209;vignettes</code>. 
-Using the <code>&#8209;&#8209;no&#8209;rebuild&#8209;vignettes</code>
+<code>R CMD check &#45;&#45;no&#45;build&#45;vignettes</code>. 
+Using the <code>&#45;&#45;no&#45;build&#45;vignettes</code>
 option ensures that the vignette is built only once.
 
 Vignette and man page examples should not use more than 2GB of memory
