@@ -1,3 +1,7 @@
+<script type="text/javascript"
+  src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
 # Creating Workflow Vignettes
 
 ## What is a workflow vignette?
@@ -51,6 +55,22 @@ Anyone who is a bioinformatics domain expert.
   will be listed alongside [the other workflows](/help/workflows/).
   It will be updated every time there is an SVN commit and 
   a successful build.
+
+## Using Math Symbols in a Markdown workflow vignette
+
+If you want to include math symbols in a workflow vignette, put the following 
+snippet at the beginning of your .Rmd file:
+
+    <script type="text/javascript"
+      src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+
+Then you can use math the same way you would in `LaTeX`, except the symbols for escaping it 
+are different. For inline formulae, use <span>\\</span>\\(N\\<span>\\)</span>, and for displayed 
+equations, use <span>$</span>$N<span>$</span>$.
+
+The first will render as \\(N\\) and the second as $$N$$.
+
 
 If you have any questions, please ask on the bioc-devel
 [mailing list](/help/mailing-list).
