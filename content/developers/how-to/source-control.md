@@ -1,7 +1,8 @@
 # ![](/images/icons/magnifier.gif)Source Control
 
 The Bioconductor project is maintained in a Subversion source control
-system.
+system. Maintainers can also access their packages through git and
+Github using the [Bioconductor Git-SVN bridge](../git-svn/).
 
 ## Subversion Resources
 
