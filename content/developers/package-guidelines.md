@@ -122,7 +122,7 @@ Packages must
 * Specify one or more
   [biocViews categories](/packages/release/BiocViews.html#___Software).
 * Contain a
-  [NAMESPACE](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-name-spaces)
+  [NAMESPACE](http://cran.fhcrc.org/doc/manuals/R-exts.html#Package-namespaces)
   file to define the functions, classes, and methods that are imported into the
   name space, and exported for users.
 * Contain (literature) references to the methods used as well as to other
