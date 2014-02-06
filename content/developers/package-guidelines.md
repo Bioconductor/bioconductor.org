@@ -168,9 +168,6 @@ as follows
    installation process. If the installation process is non-trivial,
    a top-level README file should be included to document the process.
 
-Packages should specify the R version on which they depend. This is usually the
-current development version.
-
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="classes">S4 Classes and Methods</h2>
