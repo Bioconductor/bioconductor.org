@@ -10,7 +10,7 @@ In this release cycle, use R-devel with Bioconductor 2.14
 Separate libraries
 ------------------
 
-It is best to keep Bioconductor `release` and `devel` packages in
+Keep Bioconductor `release` and `devel` packages in
 separate libraries. This is the default when using R-3.0.2 for
 Bioc-2.13 (`release`), and R-devel for Bioc-2.14 (`devel`).
 
