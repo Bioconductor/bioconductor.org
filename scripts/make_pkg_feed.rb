@@ -85,7 +85,7 @@ doc.elements.each("rss/channel") {|i| elem = i}
 
 
 for desc in descs
-  url = "http://bioconductor.org/packages/devel/bioc/html/#{desc["Package"]}.html"
+  url = "http://bioconductor.org/packages/#{devel_version}/bioc/html/#{desc["Package"]}.html"
 
   item = Element.new "item"
   title = Element.new "title"
