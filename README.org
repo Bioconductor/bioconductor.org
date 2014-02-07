@@ -23,11 +23,36 @@ We've tested the site with Ruby 1.8.7, but expect that more recent
 versions of Ruby will also work. Ruby comes standard on OS X and most
 Linux distributions.
 
-***** updating Ruby to 1.9.1 (if needed)
+***** updating Ruby to >= 1.9.1 (if needed)
 
-The Ruby 1.9.1 interpreter is not yet available for Linux. You will need
-to compile from source archive:
-  :cd ruby-1.9.1-XXX.tar.gz
+****** Ubuntu 12.04.3 LTS users:
+Ubuntu 12.04.3 comes with Ruby 1.8 by default. Trying to install the necessary
+gems with this version of Ruby will result in complaints that you need Ruby 1.9.2
+or .3. If you don't otherwise use Ruby for development and just want to build and
+test the website, the easiest route may be to completely uninstall Ruby 1.8 and
+start afresh. (Avoids use of RVM.)
+
+Here's how to completely uninstall Ruby 1.8 and gems:
+1. Uninstall all gems with
+  : gem1.8 list | cut -d" " -f1 | xargs sudo gem1.8 uninstall -aIx
+2. Remove ruby packages with apt
+  : sudo apt-get remove libruby1.8 ruby1.8 ruby1.8-dev rubygems1.8
+3. Check all rubyness has been expunged
+  : dpkg --get-selections | grep ruby
+
+And install ruby 1.9 with (as of February 2014 these commands will install
+1.9.3-p0):
+  : sudo apt-get update
+  : sudo apt-get install ruby1.9.1 ruby1.9.1-dev rubygems1.9.1 irb1.9.1 ri1.9.1 rdoc1.9.1 build-essential libopenssl-ruby1.9.1 libssl-dev zlib1g-dev
+  : ruby --version
+
+Sources: [[http://leonard.io/blog/2011/12/installing-ruby-1-9-2-on-ubuntu-11-10-oneric-ocelot-without-using-rvm/#uninstall][Completely uninstall 1.8]],
+[[http://leonard.io/blog/2012/05/installing-ruby-1-9-3-on-ubuntu-12-04-precise-pengolin/][Installing Ruby 1.9.3 on Ubuntu 12.04 (without RVM)]]
+
+****** Installing Ruby 1.9.x from source (without package managers)
+The Ruby 1.9.x interpreter is available for Linux. To compile from source
+archive:
+  :cd ruby-1.9.x-XXX.tar.gz
   :./configure
   :make
   :make test
