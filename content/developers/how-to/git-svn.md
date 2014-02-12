@@ -65,15 +65,23 @@ Then click the **Add** button. This allows the Git-SVN bridge to make changes to
 <a name="step-1c"></a>
 ### Step 1c: Add Push Hook
 
-Again in the nav bar at left, click on "Service Hooks".
-Then click on "WebHook URLs". (there may be a number next to the link).
-In the URL box, enter:
+Again in the nav bar at left, click on "Webhooks & Services".
+Then click on "Add webhook". You may need to confirm your password 
+here.
+
+
+In the Payload URL box, enter:
 
     http://gitsvn.bioconductor.org/git-push-hook
 
 **Important Note**: This url must start with `http`, **not** `https`.
 
-Then click the **Update Settings** button.
+Leave "Payload version" alone (it should be 
+"application/vnd.github-v3+form")
+
+Under "Which events", choose "Just the `push` event". Make sure
+the "Active" box is checked. Then click "Update webhook".
+
 This step lets Bioconductor know when there has been a push to 
 your Github repository.
 
