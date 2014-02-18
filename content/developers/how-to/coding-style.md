@@ -1,7 +1,7 @@
 # Coding Style
 
 Creation Date: Antiquity.
-Last Edit Date: 2 Apr 2013.
+Last Edit Date: 18 Feb 2014.
 
 Using similar coding style helps people understand code.  These
 guidelines are really just preferences; they are not enforced. 
