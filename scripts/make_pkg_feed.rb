@@ -51,7 +51,7 @@ for pkg in pkgs
 #    3.times {|i| description.gsub!(/\r\n/, "")}
     description.gsub!(/\r\n?/, "\n")
     description.gsub!(/\n{2,}/, "\n")
-    description = description.gsub(/\n+/, "")
+    description = description.gsub(/^\n+/, "")
     parse_result = Dcf.parse(description)
     dcs = parse_result.first
     descs.push dcs
