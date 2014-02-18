@@ -4,8 +4,7 @@ Creation Date: Antiquity.
 Last Edit Date: 2 Apr 2013.
 
 Using similar coding style helps people understand code.  These
-guidelines are really just preferences; they are not enforced. The
-`IRanges` package provides a model for coding style and organization.
+guidelines are really just preferences; they are not enforced. 
 
 * See also: [package guidelines](/developers/package-guidelines).
 
