@@ -1,15 +1,14 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.13 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 2.14 Release Schedule
 
-This release will use R-3.0.2 (Frisbee Sailing) pre-release (to become
-R-3.0.2 on September 25 2013).
+This release will use R-3.1.0 (Spring Dance). 
 
 ## Tentative schedule
 
-### September 17, 2013
+### March 11, 2014
 
 * Packages for deprecation identified.
 
-### September 24
+### March 18
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
@@ -18,28 +17,28 @@ R-3.0.2 on September 25 2013).
 [guidelines]: /developers/package-guidelines
 
 
-### September 26
+### March 20
 
 * Deadline for new package submissions.
 
 
-### September 30
+### March 24
 
 * Release candidate of annotation packages built and posted to devel
   annotation data repository.
 
 
-### October 2
+### March 26
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
    
-### October 7
+### April 1
 
 * Grand Feature Freeze (alpha):  no new packages added to BioC
   release roster.
 
-### October 9
+### April 3
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
@@ -47,12 +46,12 @@ R-3.0.2 on September 25 2013).
    Some warnings will be accepted, clarification on the bioc-devel mailing
    list.
 
-* Stop release (BioC 2.12) builds. Commits to this branch will be disabled.
+* Stop release (BioC 2.13) builds. Commits to this branch will be disabled.
 
 * Deadline for annotation package contributors to upload updated packages.
 
 
-### October 11
+### April 7
 
 * Bioconductor release candidate.  Package maintainers should limit
    changes to "show-stopper" bugs and documentation improvements.
@@ -62,15 +61,15 @@ R-3.0.2 on September 25 2013).
 * Package NEWS files updated. Latest NEWS will be collated and included
   in release announcement.
 
-### October 14
+### April 11
 
-* Creation of the BioC 2.13 release branch. Development can resume on
+* Creation of the BioC 2.14 release branch. Development can resume on
    trunk, but changes will not be part of the release.
 
 * Build final release repositories.
 
 * Test install scripts, GUI installation.
 
-### October 15
+### April 14
 
 * Bioconductor release.
