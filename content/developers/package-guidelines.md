@@ -71,12 +71,12 @@ associated with package submission.
 <h2 id="version">Version of Bioconductor and R</h2>
 
 Package developers should always use the 
-[devel version](/packages/devel/BiocViews.html#___Software) of
-Bioconductor when developing and testing packages to be contributed.
+[devel version of Bioconductor](/packages/devel/BiocViews.html#___Software) when developing and testing packages to be contributed.
 
-This may or may not involve also using the devel version of
-R, see the [devel version](/developers/how-to/useDevel/) page for
-more information.
+Depending on the R release cycle, using Bioconductor devel may or may
+not involve also using the devel version of R. See the how-to on
+[using devel version of Bioconductor](/developers/how-to/useDevel/)
+for up-to-date information.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
