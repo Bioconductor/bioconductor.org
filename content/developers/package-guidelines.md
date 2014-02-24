@@ -1,5 +1,6 @@
 ![](/images/icons/magnifier.gif)Package Guidelines
 ==================================================
+<a name="top"></a>
 
 * [Introduction](#introduction)
 * [Types of Packages](#package-types)
@@ -37,6 +38,9 @@ General instructions for producing packages can be found in the
 manual, available from within R (`RShowDoc("R-exts")`) or on the [R web
 site](http://cran.fhcrc.org/manuals.html).
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
 <h2 id="package-types">Types of Packages</h2>
 
 Most packages contributed by users are [software][software-pkgs]
@@ -61,6 +65,8 @@ associated with package submission.
 [exptdata-pkgs]: /packages/release/data/experiment/
 [support]: /developers/package-submission/#support
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <h2 id="version">Version of Bioconductor and R</h2>
 
@@ -71,6 +77,8 @@ Bioconductor when developing and testing packages to be contributed.
 This may or may not involve also using the devel version of
 R, see the [devel version](/developers/how-to/useDevel/) page for
 more information.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
 <h2 id="correctness">Correctness, Space and Time</h2>
