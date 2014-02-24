@@ -3,6 +3,7 @@
 
 * [Introduction](#introduction)
 * [Types of Packages](#package-types)
+* [Version of Bioconductor and R](version)
 * [Correctness, Space and Time](#correctness)
 * [Package Name](#name)
 * [License](#license)
@@ -59,6 +60,18 @@ associated with package submission.
 [annotation-pkgs]: /packages/release/data/annotation/
 [exptdata-pkgs]: /packages/release/data/experiment/
 [support]: /developers/package-submission/#support
+
+
+<h2 id="version">Version of Bioconductor and R</h2>
+
+Package developers should always use the 
+[devel version](/packages/devel/BiocViews.html#___Software) of
+Bioconductor when developing and testing packages to be contributed.
+
+This may or may not involve also using the devel version of
+R, see the [devel version](/developers/how-to/useDevel/) page for
+more information.
+
 
 <h2 id="correctness">Correctness, Space and Time</h2>
 
