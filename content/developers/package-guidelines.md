@@ -3,7 +3,7 @@
 
 * [Introduction](#introduction)
 * [Types of Packages](#package-types)
-* [Version of Bioconductor and R](version)
+* [Version of Bioconductor and R](#version)
 * [Correctness, Space and Time](#correctness)
 * [Package Name](#name)
 * [License](#license)
