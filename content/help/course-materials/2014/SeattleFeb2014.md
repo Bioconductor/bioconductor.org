@@ -35,7 +35,7 @@ RNA-Seq
 
 * [pdf](RNASeq.pdf), [R](RNASeq.R), [Rnw](RNASeq.Rnw) RNASeq Analysis 
 
-Annotation and visualizaiton
+Annotation and visualization
 
 * [pdf](Annotation_slides.pdf), [R](Annotation_slides.R), [Rnw](Annotation_slides.Rnw) Slides 
 * [pdf](Annotation.pdf), [R](Annotation.R), [Rnw](Annotation.Rnw) Working with Annotations
