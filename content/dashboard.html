@@ -16,51 +16,6 @@
   </div>
 
 
-  <div style="float:left;width:50%;">
-    <%= render('/_mlwidget2/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
-  </div>
-
-
-
-  <div style="float:right;width:50%;">
-    <div style="padding:0 0 0 12px">
-
-
-<a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-    </div>
-  </div>
-
-</div>
-
-
-  <div style="float:left;width:100%;">
-          <h2><img src="/images/icons/buildicon.gif" alt=""/>
-            Analytics</h2>
-    <p>Top search terms for past month:</p>
-    <%= get_search_terms()%>
-
-    <%= get_hits() %>
-
-  </div>
-
-
-  <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>
-        Single Package Builder</h2>
-    <%=recent_spb_builds()%>
-  </div>
-
-
-
-  <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="http://tracker.fhcrc.org/roundup/bioc_submit/">New Packages</a></h2>
-    <%=get_new_packages_in_tracker()%>
-  </div>
-
-
 
 
 <div>
@@ -124,6 +79,57 @@
     </div>
 
 </div>
+
+  <div style="float:left;width:100%;">
+      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="http://tracker.fhcrc.org/roundup/bioc_submit/">New Packages</a></h2>
+    <%=get_new_packages_in_tracker()%>
+  </div>
+
+
+  <div style="float:left;width:100%;">
+      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>
+        Single Package Builder</h2>
+    <%=recent_spb_builds()%>
+  </div>
+
+
+
+  <div style="float:left;width:50%;">
+    <%= render('/_mlwidget2/', :ml_item => find_item(@items, '/mailing-list-posts/')) %>
+  </div>
+
+
+
+  <div style="float:right;width:50%;">
+    <div style="padding:0 0 0 12px">
+
+
+<a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+    </div>
+  </div>
+
+</div>
+
+
+  <div style="float:left;width:100%;">
+          <h2><img src="/images/icons/buildicon.gif" alt=""/>
+            Analytics</h2>
+    <p>Top search terms for past month:</p>
+    <%= get_search_terms()%>
+
+    <%= get_hits() %>
+
+  </div>
+
+
+
+
+
+
+
 
 
 <br clear="all"/>
