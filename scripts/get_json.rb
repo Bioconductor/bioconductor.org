@@ -1,6 +1,8 @@
-  #!/usr/bin/env ruby
+#!/usr/bin/env ruby
+
 
 require 'rubygems'
+require 'tmpdir'
 require 'rgl/adjacency'
 require 'rgl/traversal'
 require 'sqlite3'
@@ -132,10 +134,23 @@ class GetJson
     default_view = "Software" if repo == "bioc"
     default_view = "AnnotationData" if repo == "data/annotation"
     default_view = "ExperimentData" if repo == "data/experiment"
-    
-    dbfile = `R --vanilla --slave -e "cat(system.file('extdata','biocViewsVocab.sqlite',package='biocViews'))"`
-    db = SQLite3::Database.new(dbfile)
-    rows = db.execute("select * from biocViews")
+    rows = nil
+    Dir.mktmpdir do |dir|
+      if version == @config["devel_version"]
+        branch = "trunk"
+      else
+        branch = "branches/RELEASE_#{version.gsub(".", "_")}"
+      end
+      url = "https://hedgehog.fhcrc.org/bioconductor/#{branch}/madman/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite"
+      puts url
+      `curl -s -u  readonly:readonly #{url} > #{dir}/biocViewsVocab.sqlite`
+      dbfile = "#{dir}/biocViewsVocab.sqlite"      
+      db = SQLite3::Database.new(dbfile)
+      rows = db.execute("select * from biocViews")
+    end
+    #dbfile = `R --vanilla --slave -e "cat(system.file('extdata','biocViewsVocab.sqlite',package='biocViews'))"`
+    #db = SQLite3::Database.new(dbfile)
+    #rows = db.execute("select * from biocViews")
     g = RGL::DirectedAdjacencyGraph.new()
     sort_order = []
     for row in rows
@@ -231,6 +246,7 @@ class GetJson
     2.times {segs.pop}
     nanoc_dir = segs.join("/")
     config = YAML.load_file("./config.yaml")
+    @config = config
     repos = ["bioc", "data/experiment", "data/annotation"]
     repos = config["devel_repos"] if version == config["devel_version"]
     packages_data = []
