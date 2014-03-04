@@ -142,7 +142,6 @@ class GetJson
         branch = "branches/RELEASE_#{version.gsub(".", "_")}"
       end
       url = "https://hedgehog.fhcrc.org/bioconductor/#{branch}/madman/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite"
-      puts url
       `curl -s -u  readonly:readonly #{url} > #{dir}/biocViewsVocab.sqlite`
       dbfile = "#{dir}/biocViewsVocab.sqlite"      
       db = SQLite3::Database.new(dbfile)
