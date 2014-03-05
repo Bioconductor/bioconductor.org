@@ -199,7 +199,9 @@ class GetJson
     # todo - better way to delete nodes-- build up a nodeList from the 
     # biocViews of packages, uniq it, then delete all nodes not in that list.
     for node_to_delete in nodes_to_delete.uniq
-      g.remove_vertex node_to_delete
+      # disabling deletion, because we want to include orphan nodes
+      # let javascript handle filtering them out
+  #####    g.remove_vertex node_to_delete
     end
     
     

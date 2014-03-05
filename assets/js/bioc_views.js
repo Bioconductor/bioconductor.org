@@ -6,8 +6,9 @@ var displayPackages = function(packageList, nodeName) {
         jQuery("#packages").empty();
         return;
     }
-    var html = "<h3>Packages</h3>\n";
-    
+    jQuery(".jstree li:not([id])").hide(); // hide orphans
+
+    var html = "<h3>Packages found under " + nodeName + ":</h3>\n";
     var parents = findParents(nodeName);
 
     var category = parents[0];
@@ -45,7 +46,6 @@ var jumpToAnchor = function() {
 
 var nodeSelected = function(event, data){
     var nodeName;
-    
     // for IE
     nodeName = data['args'][0]['innerText'];
     
@@ -59,7 +59,9 @@ var nodeSelected = function(event, data){
         nodeName = getNodeName();
     } 
 
+
     nodeName = nodeName.trim();
+
     var bareNodeName = nodeName.split(" ")[0];
     var wl = ("" + window.location.href).split("?")[0];
     wl = wl.split("#")[0];
@@ -170,8 +172,10 @@ var init = function() {
             "plugins" : [ "themes", "json_data", "ui" ]
         });
 
+
         // explicitly add biocViewsTree class because the widget strips it off
         jQuery("#tree").addClass("biocViewsTree");
+
 
     /*
     jQuery("#tree").bind("close_node.jstree dblclick.jstree delete_node.jstree deselect_node.jstree destroy.jstree drag_start.vakata drag_stop.vakata get_rollback.jstree init.jstree load_node.jstree loaded.jstree mousedown.jstree move_node.jstree open_node.jstree rename_node.jstree reopen.jstree select_node.jstree set_rollback.jstree ", function (event, data) {
@@ -193,9 +197,14 @@ var init = function() {
                 jQuery("#tree").jstree("open_node", "#" + initiallyOpen[i]);
             }
         }
-        
-        
     });
+
+
+    jQuery("#tree-toggler").click(function(){
+        jQuery(".jstree li:not([id])").toggle();
+    });
+
+
     
     
 }
@@ -236,10 +245,20 @@ var loadPackageData = function() {
 //document ready function
 jQuery(function () {
     setBiocVersion();
+    if (biocVersion == releaseVersion) {
+        jQuery("#tree-toggler-div").hide();
+    }
+
+    //do this in displayPackages instead:
+    //jQuery(".jstree li:not([id])").hide(); 
+
     loadPackageData();
     init();
     start();
+
+
 });
+
 
 
 var G = new jsnx.DiGraph();
@@ -337,6 +356,7 @@ var start = function()
         nodeIdx[name] = i;
 
     }
+
 }
 
 var rf = function(node) {
