@@ -6,7 +6,7 @@ var displayPackages = function(packageList, nodeName) {
         jQuery("#packages").empty();
         return;
     }
-    jQuery(".jstree li:not([id])").hide(); // hide orphans
+    jQuery(".jstree li:not([id])").hide(); // hide childless views
 
     var html = "<h3>Packages found under " + nodeName + ":</h3>\n";
     var parents = findParents(nodeName);
