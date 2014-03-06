@@ -1,5 +1,6 @@
 var packageInfo = {};
 var biocVersion;
+var timeoutId;
 
 var displayPackages = function(packageList, nodeName) {
     if (packageList == null) {
@@ -126,8 +127,12 @@ var findParents = function (nodeId) {
     ret.push(nodeId);
     jQuery.each(parents, function(index, value){
         var id = jQuery(value).attr("id");
-        if (id.length > 0) {
-            ret.push(id);
+        if (typeof id === "undefined") {
+            // ignore items w/o id attr
+        } else {
+            if (id.length > 0) {
+                ret.push(id);
+            }
         }
     });
     ret.reverse();
@@ -199,6 +204,23 @@ var init = function() {
         }
     });
 
+
+    // This exists because the tree would disappear if the selected
+    // node was collapsed (only if the selected node was >1 level in
+    // and matched what was in the url bar). For some reason this fixes it.
+    jQuery("#tree").bind("close_node.jstree", function(event, data){
+        timeoutId = window.setTimeout(onTimeout, 1);
+
+        function onTimeout() {
+            var vis;
+            do {
+                jQuery("#tree").toggle();
+                vis = jQuery("#tree").is(":visible");
+            } while(vis == false);
+        }
+
+
+    });
 
     jQuery("#tree-toggler").click(function(){
         jQuery(".jstree li:not([id])").toggle();
