@@ -1122,20 +1122,21 @@ AnnotationData, ExperimentData).</li>
 <p>The Bioconductor Build System (BBS) is our nightly build system and it has
 certain requirements. Packages which don&#39;t meet these requirements can
 be silently skipped by BBS, so it&#39;s important to make sure
-that every package meets the requirements.</p>
+that every package meets the requirements. All of the following items
+are <code>REQUIRED</code>.</p>
 
 <ul>
 <li>Checks to make sure there are no blank lines in the 
-DESCRIPTION file (<code>REQUIRED</code>).</li>
+DESCRIPTION file.</li>
 <li>Checks to make sure there is no whitespace in DESCRIPTION
-file field names (<code>REQUIRED</code>).</li>
+file field names.</li>
 <li>Checks to make sure that <code>Package</code> field of DESCRIPTION file
-matches directory or tarball name (<code>REQUIRED</code>).</li>
+matches directory or tarball name.</li>
 <li>Checks to make sure a <code>Version</code> field is present in
-the DESCRIPTION file. (<code>REQUIRED</code>).</li>
+the DESCRIPTION file.</li>
 <li>Checks to make sure the DESCRIPTION file has either a <code>Maintainer</code>
 field, or a valid <code>Authors@R</code> field which resolves to a valid
-<code>Maintainer field</code>, which consists of (the following are all <code>REQUIRED</code>):
+<code>Maintainer</code>, which consists of:
 
 <ul>
 <li>A valid R object of class <code>person</code>.</li>
@@ -1179,7 +1180,7 @@ available via <code>biocLite()</code>. It is available from
 <p>Output of codetoolsBioC is printed to the screen but <code>BiocCheck</code>
  does not label it REQUIRED, RECOMMENDED, or CONSIDER.</p>
 
-<p>## Deprecated Package Checks</p>
+<h2>Deprecated Package Checks</h2>
 
 <p>At present, this just looks to see whether your package has a
  dependency on the <code>multicore</code> package, and if so, <code>REQUIRE</code>s you 
@@ -1241,7 +1242,8 @@ there is no <code>examples</code> section or because its examples are tagged
 with <code>dontrun</code>). It&#39;s <code>REQUIRED</code> that at least 80% of these man
 pages have runnable examples. If more than 80% of these pages 
 have runnable examples, but some are still missing, <code>BiocCheck</code>
-asks you to <code>CONSIDER</code> adding more runnable examples.</p>
+lists the missing ones and asks you to <code>CONSIDER</code> adding more runnable
+examples to them.</p>
 
 <p>Runnable examples are a key part of literate programming and
 help ensure that your code does what you say it does.</p>
@@ -1271,10 +1273,10 @@ style guides, and these checks adhere to
 <p>We ask only that you <code>CONSIDER</code> adhering to this guide.</p>
 
 <p>In particular, we think it&#39;s important to avoid very long lines in code.
-Note that some text editors do not wrap lines automatically, requiring
+Note that some text editors do not wrap text automatically, requiring
 horizontal scrolling in order to read it. Also note that R syntax
 is very flexible and whitespace can be inserted almost anywhere in
-an expression.</p>
+an expression, making it easy to break up long lines.</p>
 
 <p>These checks are run against not just R code, but the DESCRIPTION 
 and NAMESPACE files as well as man pages and vignette source files. 
