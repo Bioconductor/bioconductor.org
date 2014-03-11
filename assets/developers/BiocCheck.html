@@ -991,10 +991,7 @@ BiocCheck("packageDirOrTarball")
 <pre><code>R CMD BiocCheck --help
 </code></pre>
 
-<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="message"><pre class="knitr r">## Loading required package: methods
-</pre></div>
-
-<div class="output"><pre class="knitr r">## Usage: R CMD BiocCheck [options] package
+<div class="chunk" id="unnamed-chunk-2"><div class="rcode"><div class="output"><pre class="knitr r">## Usage: R CMD BiocCheck [options] package
 ## 
 ## 
 ## Options:
@@ -1111,7 +1108,7 @@ which might be useful when checking non-Bioconductor packages
 (<code>RECOMMENDED</code>).</li>
 <li>Checks for valid views and displays invalid ones. (<code>RECOMMENDED</code>)</li>
 <li>Checks that all views come from the same parent (one of Software,
-AnnotationData, ExperimentData).</li>
+AnnotationData, ExperimentData) (<code>RECOMMENDED</code>).</li>
 </ul>
 
 <p>More information about biocViews is available in the
@@ -1192,7 +1189,7 @@ available via <code>biocLite()</code>. It is available from
  meaning there is no gain from parallelizing code. Socket clusters
  work on all operating systems.</p>
 
-<p>## Code Parsing Checks</p>
+<h2>Code Parsing Checks</h2>
 
 <p><code>BiocCheck</code> parses the code in your package&#39;s R directory, 
  and in evaluated man page and vignette examples to look for various
