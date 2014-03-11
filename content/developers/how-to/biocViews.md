@@ -103,9 +103,10 @@ We check the following for biocViews:
 3. Package contributor has added biocViews from only one of the categories. 
 
 
-If you recieve a "REQUIRED" direction for any of these biocViews after you have
-submitted your package, you can try correcting them on your own following the 
-directions given here or ask your package reviewer for more information. 
+If you recieve a "RECOMMENDED" direction for any of these biocViews
+after you have submitted your package, you can try correcting them on
+your own following the  directions given here or ask your package
+reviewer for more information.
 
 
 
