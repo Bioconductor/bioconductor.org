@@ -40,7 +40,7 @@ var displayPackages = function(packageList, nodeName) {
     jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
     jQuery("#packages").html(html);
     jQuery("#biocViews_package_table").dataTable({
-        "iDisplayLength": 50
+        "iDisplayLength": 5000
     });
 
 }
