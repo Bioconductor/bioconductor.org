@@ -15,8 +15,12 @@
 <script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
 
 
-<h1>All Packages</h1>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!--<link rel="stylesheet" href="/resources/demos/style.css">-->
 
+
+<h1>All Packages</h1>
 
 
 
@@ -27,6 +31,12 @@
     <div class="do_not_rebase">
         <div style="float:left;width:33%;">
             <h3>Bioconductor version <span id="bioc_version"></span></h3>
+            <div class="ui-widget">
+                <label for="autocompleter">Autocomplete text search:</label>
+                <input id="autocompleter" size="35"/>
+                <p>&nbsp;</p>
+            </div>
+
             <div id="tree"></div>
             <div id="tree-toggler-div">
                 <p>&nbsp;</p>

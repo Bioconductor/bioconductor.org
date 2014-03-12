@@ -2,6 +2,18 @@ var packageInfo = {};
 var biocVersion;
 var timeoutId;
 
+function hasOwnProperty(obj, prop) {
+    var proto = obj.__proto__ || obj.constructor.prototype;
+    return (prop in obj) &&
+        (!(prop in proto) || proto[prop] !== obj[prop]);
+}
+
+if ( Object.prototype.hasOwnProperty ) {
+    var hasOwnProperty = function(obj, prop) {
+        return obj.hasOwnProperty(prop);
+    }
+}
+
 var displayPackages = function(packageList, nodeName) {
     if (packageList == null) {
         jQuery("#packages").empty();
@@ -57,21 +69,32 @@ var jumpToAnchor = function() {
 
 var nodeSelected = function(event, data){
     var nodeName;
-    // for IE
-    nodeName = data['args'][0]['innerText'];
-    
-    if (data['args'][0]['text'] != undefined) {
-        nodeName = data['args'][0]['text'];
+    if (typeof data == 'string' || data instanceof String) {
+        // we got here from the autocomplete box
+
+        nodeName = data;
+    } else {
+        // we got here from clicking on a tree node, 
+        // so clear the autocompleter
+        jQuery("#autocompleter").val("");
+
+
+        // for IE
+        nodeName = data['args'][0]['innerText'];
+        
+        if (data['args'][0]['text'] != undefined) {
+            nodeName = data['args'][0]['text'];
+        }
+        
+        
+        
+        if (nodeName == undefined) {
+            nodeName = getNodeName();
+        } 
+
+
+        nodeName = nodeName.trim();
     }
-    
-    
-    
-    if (nodeName == undefined) {
-        nodeName = getNodeName();
-    } 
-
-
-    nodeName = nodeName.trim();
 
     var bareNodeName = nodeName.split(" ")[0];
     var wl = ("" + window.location.href).split("?")[0];
@@ -287,11 +310,50 @@ jQuery(function () {
     loadPackageData();
     init();
     start();
-
-
+    setupAutoCompleter();
 });
 
+var setupAutoCompleter = function()
+{
+    var hash = {};
 
+    function recursiveFunction(key, val) {
+        if (key=="data") {
+            if (val.indexOf(" ") > -1) {
+                var hashkey = val.split(" ")[0];
+                hash[hashkey] = val;
+            }
+        }
+        if (key=="children") {
+            for (var i = 0; i < val.length; i++) {
+                var value = val[i];
+                if (value instanceof Object) {
+                    jQuery.each(value, function(key, val) {
+                        recursiveFunction(key, val);
+                    });
+                }
+            }
+        }
+    }
+
+    for (var i = 0; i < dataTree['data'].length; i++) {
+        var obj = dataTree['data'][i];
+        jQuery.each(obj, function(key, val) {recursiveFunction(key, val)});
+    }
+
+    var biocViewsNames = Object.keys(hash);
+    biocViewsNames.sort();
+    jQuery("#autocompleter").autocomplete({
+        "source": biocViewsNames,
+        "select": function(event, ui) {
+            console.log("you selected " + ui.item.value);
+            console.log("so i will click on " + hash[ui.item.value]);
+            console.log("type is " + typeof hash[ui.item.value]);
+            console.log("instanceof String? " + hash[ui.item.value] instanceof String);
+            nodeSelected(null, hash[ui.item.value]);
+        }
+    });
+}
 
 var G = new jsnx.DiGraph();
 
