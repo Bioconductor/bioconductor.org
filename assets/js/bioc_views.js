@@ -24,8 +24,8 @@ var displayPackages = function(packageList, nodeName) {
         var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
         var pkg = packageList[i];
         var url = getHostUrl() + "/" + map[category] + "/html/" + pkg + ".html"
-        tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
-        //tableData += '<tr id="pkg_' + pkg + '">\n';
+        //tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
+        tableData += '<tr id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
         tableData += '\t<td>'+cleanMaintainer+'</td>\n';
