@@ -38,7 +38,7 @@ Devel and Release branch of biocViews
 
 The biocViews for the release branch of Bioconductor can be used to search for 
 packages that belong to the current release of Bioconductor Project and can be
-viewed at:[Release](bioconductor.org/packages/release/BiocViews.html#___Software)
+viewed at:[Release](http://bioconductor.org/packages/release/BiocViews.html#___Software)
 
 
 The devel branch of biocViews contains the latest biocViews and can be used
