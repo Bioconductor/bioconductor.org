@@ -16,7 +16,7 @@ var displayPackages = function(packageList, nodeName) {
 
     var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
 
-    html += "<table><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr>\n";
+    html += "<table id='biocViews_package_table'><thead><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr></thead><tbody>\n";
     
     
     var tableData = "";
@@ -25,6 +25,7 @@ var displayPackages = function(packageList, nodeName) {
         var pkg = packageList[i];
         var url = getHostUrl() + "/" + map[category] + "/html/" + pkg + ".html"
         tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
+        //tableData += '<tr id="pkg_' + pkg + '">\n';
         tableData += '\t<td><a href="'+url+'">'+pkg+'</a></td>\n';
         var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
         tableData += '\t<td>'+cleanMaintainer+'</td>\n';
@@ -33,10 +34,15 @@ var displayPackages = function(packageList, nodeName) {
     }
     html += tableData;
     
-    html += "</table>\n";
+    html += "</tbody></table>\n";
     
+    jQuery.fn.dataTableExt.oStdClasses.sStripeOdd = "row_odd";
+    jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
     jQuery("#packages").html(html);
-    
+    jQuery("#biocViews_package_table").dataTable({
+        "iDisplayLength": 50
+    });
+
 }
 
 
