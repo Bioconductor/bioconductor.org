@@ -1073,6 +1073,10 @@ initialized (<code>CONSIDER</code>).</li>
 
 <p>Can be disabled with <code>--no-check-vignettes</code>.</p>
 
+<p>Only run if your package is a software package (as
+determined by your <a href="#biocViews_Checks">biocViews</a>), or if
+package type cannot be determined.</p>
+
 <ul>
 <li>Checks that <code>vignettes</code> directory exists. (<code>REQUIRED</code>)</li>
 <li>Checks that it contains vignette sources (*.Rmd, *.Rnw, *.Rrst)
@@ -1239,7 +1243,7 @@ there is no <code>examples</code> section or because its examples are tagged
 with <code>dontrun</code>). It&#39;s <code>REQUIRED</code> that at least 80% of these man
 pages have runnable examples. If more than 80% of these pages 
 have runnable examples, but some are still missing, <code>BiocCheck</code>
-lists the missing ones and asks you to <code>CONSIDER</code> adding more runnable
+lists the missing ones and asks you to <code>CONSIDER</code> adding runnable
 examples to them.</p>
 
 <p>Runnable examples are a key part of literate programming and
