@@ -31,13 +31,6 @@
     <div class="do_not_rebase">
         <div style="float:left;width:33%;">
             <h3>Bioconductor version <span id="bioc_version"></span></h3>
-            <div class="ui-widget">
-                <label for="autocompleter">Autocomplete text search:</label>
-                <input id="autocompleter" size="35"/>
-                <p>&nbsp;</p>
-            </div>
-
-            <div id="tree"></div>
             <div id="tree-toggler-div">
                 <p>&nbsp;</p>
                 <p>
@@ -46,6 +39,14 @@
                     to toggle the visibility of childless biocViews.
                 </p>
             </div>
+
+            <div class="ui-widget">
+                <label for="autocompleter">Autocomplete biocViews search:</label>
+                <input id="autocompleter" size="35"/>
+                <p>&nbsp;</p>
+            </div>
+
+            <div id="tree"></div>
         </div>
         <div id="packages" class="biocViewsPackages"></div>
         <div id="below_tree" class="biocViewsBelowTree"></div>

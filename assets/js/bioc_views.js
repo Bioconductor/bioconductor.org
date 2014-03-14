@@ -56,7 +56,10 @@ var displayPackages = function(packageList, nodeName) {
          [-1, 10, 25, 50, 100],
          ["All", 10, 25, 50, 100]
      ],
-     "iDisplayLength": -1
+     "iDisplayLength": -1,
+     "oLanguage": {
+        "sSearch": "Search table:"
+     }
     });
 
 }
@@ -92,7 +95,7 @@ var nodeSelected = function(event, data){
             nodeName = getNodeName();
         } 
 
-
+        console.log("nodeName is " + nodeName);
         nodeName = nodeName.trim();
     }
 
@@ -316,12 +319,14 @@ jQuery(function () {
 var setupAutoCompleter = function()
 {
     var hash = {};
+    var lowerHash = {};
 
     function recursiveFunction(key, val) {
         if (key=="data") {
             if (val.indexOf(" ") > -1) {
                 var hashkey = val.split(" ")[0];
                 hash[hashkey] = val;
+                lowerHash[hashkey.toLowerCase()] = hashkey;
             }
         }
         if (key=="children") {
@@ -346,11 +351,34 @@ var setupAutoCompleter = function()
     jQuery("#autocompleter").autocomplete({
         "source": biocViewsNames,
         "select": function(event, ui) {
-            console.log("you selected " + ui.item.value);
-            console.log("so i will click on " + hash[ui.item.value]);
-            console.log("type is " + typeof hash[ui.item.value]);
-            console.log("instanceof String? " + hash[ui.item.value] instanceof String);
+            var selector = "#" + ui.item.value;
+            try {
+                jQuery("#tree").jstree("select_node", jQuery(selector));
+            } catch(err) {
+            }
+
             nodeSelected(null, hash[ui.item.value]);
+
+        }
+    }).keypress(function(e){
+        if (e.keyCode === 13) {
+            var value = jQuery("#autocompleter").val().toLowerCase();
+            console.log("value is " + value);
+            if (Object.keys(lowerHash).indexOf(value) > -1) {
+                value = lowerHash[value];
+                console.log("now value is " + value);
+                jQuery("#tree").jstree("deselect_all");
+                jQuery("#tree").jstree("close_all");
+                var selector = "#" + value;
+                try {
+                    jQuery("#tree").jstree("select_node", jQuery(selector));
+                } catch(err) {
+                }
+                var node = hash[value];
+                jQuery(".ui-menu-item").hide();
+                nodeSelected(null, node);
+                jQuery("#autocompleter").val(value);
+            }
         }
     });
 }
