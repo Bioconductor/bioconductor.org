@@ -1,7 +1,7 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
-In this release cycle, use R-devel with Bioconductor 2.14
+In this release cycle, use R-alpha with Bioconductor 2.14
 (`devel`). From within R-alpha, simply invoke
 
     source("http://bioconductor.org/biocLite.R")
