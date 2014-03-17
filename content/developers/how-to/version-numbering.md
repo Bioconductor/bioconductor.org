@@ -78,7 +78,7 @@ The Importance of Incrementing Version Numbers
 Developers should get into the habit of bumping the `z` portion of 
 their version number every time they commit changes to their package.
 
-If you don't bump the version, the other changes you made to your
+If you don't bump the version, the changes you made to your
 package **will not propagate** to the Bioconductor web site and
 package repository. This means, for example, that if you fix a bug
 and commit a bug fix, but don't bump the version, users who download
