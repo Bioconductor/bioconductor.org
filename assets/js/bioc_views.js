@@ -351,6 +351,9 @@ var setupAutoCompleter = function()
     jQuery("#autocompleter").autocomplete({
         "source": biocViewsNames,
         "select": function(event, ui) {
+            jQuery("#tree").jstree("deselect_all");
+            jQuery("#tree").jstree("close_all");
+
             var selector = "#" + ui.item.value;
             try {
                 jQuery("#tree").jstree("select_node", jQuery(selector));
