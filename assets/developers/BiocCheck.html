@@ -1110,7 +1110,8 @@ which might be useful when checking non-Bioconductor packages
 <ul>
 <li>Checks that a <code>biocViews</code> field is present in the DESCRIPTION file.
 (<code>RECOMMENDED</code>).</li>
-<li>Checks for valid views and displays invalid ones. (<code>RECOMMENDED</code>)</li>
+<li>Checks for valid views and displays invalid ones. Note that biocViews
+are case-sensitive. (<code>RECOMMENDED</code>)</li>
 <li>Checks that all views come from the same parent (one of Software,
 AnnotationData, ExperimentData) (<code>RECOMMENDED</code>).</li>
 </ul>
@@ -1292,6 +1293,20 @@ RStudio. These skeletons contain comments that look like this:</p>
 </code></pre>
 
 <p><code>BiocCheck</code> asks you to <code>CONSIDER</code> removing such comments.</p>
+
+<h2>bioc-devel Subscription Check</h2>
+
+<p>This usually only applies if <code>BiocCheck</code> is run on the
+Bioconductor build machines, because this step requires
+special authorization.</p>
+
+<p>If this authorization is present, <code>BiocCheck</code> will 
+check to see if the email address in the Maintainer
+(or Authors@R) field is subscribed to the bioc-devel
+mailing list, and if not, <code>RECOMMEND</code>s that you
+subscribe. All maintainers should subscribe to this list.
+You can subscribe
+<a href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">here</a>.</p>
 
 </body>
 
