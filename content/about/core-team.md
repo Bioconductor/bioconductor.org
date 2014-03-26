@@ -11,6 +11,8 @@
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), USA, National
   Cancer Institute.
 * Robert Gentleman, Genentech Research and Early Development, USA.
+* [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
+  Bloomberg School of Public Health, Johns Hopkins University.
 * [Nate Hayden](http://www.fhcrc.org/), Fred Hutchinson Cancer 
   Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
