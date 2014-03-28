@@ -19,7 +19,6 @@ compile '/sitemap/' do
 end
 
 
-# FIXME - make this rule apply to ALL newsletters
 compile '/about/*ewsletter/' do
     filter :erb
     filter :kramdown
