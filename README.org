@@ -1,3 +1,5 @@
+TODO - port this to markdown (org formatting is probably already broken)
+
 #+TITLE:     README.org
 #+AUTHOR:    Seth Falcon
 #+EMAIL:     sfalcon@fhcrc.org
@@ -84,7 +86,7 @@ from the ROOT directory.
 
 Install the gems used by the website as follows:
 
-  :  sudo gem install --no-ri --no-doc nanoc rdiscount rack mime-types haml \
+  :  sudo gem install --no-ri --no-rdoc nanoc nanoc3 rdiscount rack mime-types haml \
   :  rack-cache httparty rake sass kramdown mechanize json nokogiri \
   :  rgl sqlite3 adsf twitter aws-sdk hpricot uuid 
 
