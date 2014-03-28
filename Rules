@@ -19,6 +19,14 @@ compile '/sitemap/' do
 end
 
 
+# FIXME - make this rule apply to ALL newsletters
+compile '/about/*ewsletter/' do
+    filter :erb
+    filter :kramdown
+    layout 'default'
+end
+
+
 compile '*' do
   case item[:extension]
   when /md$/, /markdown$/
@@ -38,6 +46,7 @@ compile '*' do
   end
   filter :google_analytics unless item.binary?
 end
+
 
 # routing rules
 
