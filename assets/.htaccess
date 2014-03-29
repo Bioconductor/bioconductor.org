@@ -142,7 +142,7 @@ RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
 RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
 RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
 
-RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html#Interpreting_BiocCheck_output [R=301]
+RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
 
 </IfModule>
 
