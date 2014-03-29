@@ -142,6 +142,8 @@ RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
 RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
 RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
 
+RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html#Interpreting_BiocCheck_output
+
 </IfModule>
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
