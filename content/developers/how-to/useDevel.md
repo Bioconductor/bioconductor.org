@@ -1,8 +1,8 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
-In this release cycle, use R-alpha with Bioconductor 2.14
-(`devel`). From within R-alpha, simply invoke
+In this release cycle, use R-beta with Bioconductor 2.14
+(`devel`). From within R-beta, simply invoke
 
     source("http://bioconductor.org/biocLite.R")
     biocLite()
@@ -12,7 +12,7 @@ Separate libraries
 
 Keep Bioconductor `release` and `devel` packages in
 separate libraries. This is the default when using R-3.0.2 for
-Bioc-2.13 (`release`), and R-alpha for Bioc-2.14 (`devel`).
+Bioc-2.13 (`release`), and R-beta for Bioc-2.14 (`devel`).
 
 <!--
 An easy way to do this is to have two separate installation of R-3.0.
