@@ -19,7 +19,7 @@ compile '/sitemap/' do
 end
 
 
-compile '/help/*ewsletter/' do
+compile '/help/newsletters/*' do
     filter :erb
     filter :kramdown
     layout 'default'
