@@ -745,13 +745,31 @@ def get_new_packages_in_tracker()
     })
     rows = page.search("table.list tr")
     nr = []
-    nr.push rows.first
+    #nr.push rows.first
+    header = <<-"EOT"
+    <tr>
+  <th>ID</th>
+   
+   <th>Activity</th>
+   
+   
+   <th>Title</th>
+   <th>Status</th>
+  </tr>
+<tr>
+EOT
+    nr.push header
     for i in 2..12
-        nr.push rows[i]
+      t = rows[i].to_s
+      t.gsub!(/<td>[^<]+<\/td>\s+<td>[^<]+<\/td>\s+<\/tr>/, "</tr>")
+
+      puts t
+        nr.push t
     end
     s = "<table>\n"
     nr.each do |i|
-        html = i.to_html.sub(%Q(a href="),
+        #puts i.to_s
+        html = i.to_s.sub(%Q(a href="), # i.to_html.sub
                 %Q(a href="http://tracker.fhcrc.org/roundup/bioc_submit/))
         s += html
     end
