@@ -18,7 +18,7 @@ the website.
 # *Bioconductor* Newsletter
 {:.no_toc}
 
-posted by Valerie Obenchain, April 2014
+posted by [Valerie Obenchain](vobencha@fhcrc.org), April 2014
 
 ## Contents
 {:.no_toc}
@@ -35,8 +35,9 @@ infrastructure reorganizations, new packages and features,
 conferences, and other areas of interest.
 
 The newsletter will be on a quarterly schedule with the intent
-of summarizing major developments of the past 3 months. Ideas, 
-comments and suggested topics are welcome (send to vobencha@fhcrc.org).
+of summarizing major developments of the past 3 months. Comments 
+and suggestions are welcome, please send to Valerie at 
+[vobencha@fhcrc.org](vobencha@fhcrc.org).
 
 
 ## Infrastructure
@@ -125,32 +126,35 @@ Sonali, Marc, Herv&eacute; and Martin have all contributed to this work.
 
 Currently 9 organisms are supported:
 
-
-    library(GenomeInfoDb)
-    names(genomeStyles())
-
-    ## [1] "Arabidopsis_thaliana"     "Caenorhabditis_elegans"  
-    ## [3] "Cyanidioschyzon_merolae"  "Drosophila_melanogaster" 
-    ## [5] "Homo_sapiens"             "Oryza_sativa"            
-    ## [7] "Populus_trichocarpa"      "Saccharomyces_cerevisiae"
-    ## [9] "Zea_mays"
+<div class="chunk" id="GenomeInfoDb1"><div class="rcode"><div class="source"><pre class="knitr r">library(GenomeInfoDb)
+names(genomeStyles())
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] "Arabidopsis_thaliana"     "Caenorhabditis_elegans"  
+## [3] "Cyanidioschyzon_merolae"  "Drosophila_melanogaster" 
+## [5] "Homo_sapiens"             "Oryza_sativa"            
+## [7] "Populus_trichocarpa"      "Saccharomyces_cerevisiae"
+## [9] "Zea_mays"
+</pre></div>
+</div></div>
 
 
 There are methods for style discovery,
 
-
-    seqlevelsStyle("chr3")
-
-    ## [1] "UCSC"
+<div class="chunk" id="GenomeInfoDb2"><div class="rcode"><div class="source"><pre class="knitr r">seqlevelsStyle("chr3")
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] "UCSC"
+</pre></div>
+</div></div>
 
 
 and for converting between styles. Here we map from UCSC to NCBI:
 
-
-    mapSeqlevels(c("chrII", "chrIII", "chrM"), "NCBI")
-
-    ##  chrII chrIII   chrM 
-    ##   "II"  "III"   "MT"
+<div class="chunk" id="GenomeInfoDb3"><div class="rcode"><div class="source"><pre class="knitr r">mapSeqlevels(c("chrII", "chrIII", "chrM"), "NCBI")
+</pre></div>
+<div class="output"><pre class="knitr r">##  chrII chrIII   chrM 
+##   "II"  "III"   "MT"
+</pre></div>
+</div></div>
 
 
 
@@ -242,132 +246,140 @@ Here we use `Hits` to identify and remove the "shared" regions in a
 set of ranges. The shared region in the original set is positions 5 to 10.
 Range 3 is completely within this shared range.
 
-
-    library(GenomicRanges)
-    gr1 <- GRanges("A", IRanges(c(1, 5, 5), c(10, 15, 10)))
-    gr1
-
-    ## GRanges with 3 ranges and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]        A   [1, 10]      *
-    ##   [2]        A   [5, 15]      *
-    ##   [3]        A   [5, 10]      *
-    ##   ---
-    ##   seqlengths:
-    ##     A
-    ##    NA
+<div class="chunk" id="Hits1"><div class="rcode"><div class="source"><pre class="knitr r">library(GenomicRanges)
+gr1 <- GRanges("A", IRanges(c(1, 5, 5), c(10, 15, 10)))
+gr1
+</pre></div>
+<div class="output"><pre class="knitr r">## GRanges with 3 ranges and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]        A   [1, 10]      *
+##   [2]        A   [5, 15]      *
+##   [3]        A   [5, 10]      *
+##   ---
+##   seqlengths:
+##     A
+##    NA
+</pre></div>
+</div></div>
 
 
 First we disjoin the ranges and perform `findOverlaps` which
 will give us a `Hits` object:
 
-
-    gr2 <- disjoin(gr1)
-    ov <- findOverlaps(gr1, gr2)
-    ov
-
-    ## Hits of length 5
-    ## queryLength: 3
-    ## subjectLength: 3
-    ##   queryHits subjectHits 
-    ##    <integer>   <integer> 
-    ##  1         1           1 
-    ##  2         1           2 
-    ##  3         2           2 
-    ##  4         2           3 
-    ##  5         3           2
+<div class="chunk" id="Hits2"><div class="rcode"><div class="source"><pre class="knitr r">gr2 <- disjoin(gr1)
+ov <- findOverlaps(gr1, gr2)
+ov
+</pre></div>
+<div class="output"><pre class="knitr r">## Hits of length 5
+## queryLength: 3
+## subjectLength: 3
+##   queryHits subjectHits 
+##    <integer>   <integer> 
+##  1         1           1 
+##  2         1           2 
+##  3         2           2 
+##  4         2           3 
+##  5         3           2
+</pre></div>
+</div></div>
 
 
 Convenience functions `countQueryHits' and `countSubjectHits'
 summarize the number of times each record in the `query` or
 `subject` was hit. 
 
-
-    countSubjectHits(ov)
-
-    ## [1] 1 3 1
+<div class="chunk" id="Hits3"><div class="rcode"><div class="source"><pre class="knitr r">countSubjectHits(ov)
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 1 3 1
+</pre></div>
+</div></div>
 
 
 The regions that are not shared between the ranges will be
 counted only once (self-hit).
 
-
-    keep_idx <- which(countSubjectHits(ov) == 1L)
+<div class="chunk" id="Hits4"><div class="rcode"><div class="source"><pre class="knitr r">keep_idx <- which(countSubjectHits(ov) == 1L)
+</pre></div>
+</div></div>
 
 
 Accessors `queryHits` and `subjectHits` extract the corresponding
 columns from the `Hits` object:
 
-
-    subjectHits(ov)
-
-    ## [1] 1 2 2 3 2
+<div class="chunk" id="Hits5"><div class="rcode"><div class="source"><pre class="knitr r">subjectHits(ov)
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 1 2 2 3 2
+</pre></div>
+</div></div>
 
 
 The extracted `subjectHits` can be used in a matching operation
 to subset the `Hits` object containing just the "unshared" regions:
 
-
-    ov <- ov[subjectHits(ov) %in% keep_idx]
-    ov
-
-    ## Hits of length 2
-    ## queryLength: 3
-    ## subjectLength: 3
-    ##   queryHits subjectHits 
-    ##    <integer>   <integer> 
-    ##  1         1           1 
-    ##  2         2           3
+<div class="chunk" id="Hits6"><div class="rcode"><div class="source"><pre class="knitr r">ov <- ov[subjectHits(ov) %in% keep_idx]
+ov
+</pre></div>
+<div class="output"><pre class="knitr r">## Hits of length 2
+## queryLength: 3
+## subjectLength: 3
+##   queryHits subjectHits 
+##    <integer>   <integer> 
+##  1         1           1 
+##  2         2           3
+</pre></div>
+</div></div>
 
 
 Again `subjectHits` are extracted but this time from the subset
 `Hits` object. We use this index to subset the disjoined original
 ranges leaving only the "unshared" regions:
 
-
-    ans_regions <- gr2[subjectHits(ov)]
-    ans_regions
-
-    ## GRanges with 2 ranges and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]        A  [ 1,  4]      *
-    ##   [2]        A  [11, 15]      *
-    ##   ---
-    ##   seqlengths:
-    ##     A
-    ##    NA
+<div class="chunk" id="Hits7"><div class="rcode"><div class="source"><pre class="knitr r">ans_regions <- gr2[subjectHits(ov)]
+ans_regions
+</pre></div>
+<div class="output"><pre class="knitr r">## GRanges with 2 ranges and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]        A  [ 1,  4]      *
+##   [2]        A  [11, 15]      *
+##   ---
+##   seqlengths:
+##     A
+##    NA
+</pre></div>
+</div></div>
 
 
 To finish this off we make a `GRangesList` of the unshared regions.
 The list is length 3 corresponding the the 3 ranges in `gr1':
 
-
-    ans_eltlens <- countQueryHits(ov)
-    ans_skeleton <- PartitioningByEnd(cumsum(ans_eltlens))
-    relist(ans_regions, ans_skeleton)
-
-    ## GRangesList of length 3:
-    ## [[1]] 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]        A    [1, 4]      *
-    ## 
-    ## [[2]] 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames   ranges strand
-    ##   [1]        A [11, 15]      *
-    ## 
-    ## [[3]] 
-    ## GRanges with 0 ranges and 0 metadata columns:
-    ##      seqnames ranges strand
-    ## 
-    ## ---
-    ## seqlengths:
-    ##   A
-    ##  NA
+<div class="chunk" id="Hits8"><div class="rcode"><div class="source"><pre class="knitr r">ans_eltlens <- countQueryHits(ov)
+ans_skeleton <- PartitioningByEnd(cumsum(ans_eltlens))
+relist(ans_regions, ans_skeleton)
+</pre></div>
+<div class="output"><pre class="knitr r">## GRangesList of length 3:
+## [[1]] 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]        A    [1, 4]      *
+## 
+## [[2]] 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames   ranges strand
+##   [1]        A [11, 15]      *
+## 
+## [[3]] 
+## GRanges with 0 ranges and 0 metadata columns:
+##      seqnames ranges strand
+## 
+## ---
+## seqlengths:
+##   A
+##  NA
+</pre></div>
+</div></div>
 
 
 Thanks to Michael and Herv&eacute; for the work on the `Hits` class.
@@ -381,9 +393,10 @@ sharing.
 
 The problem boils down to converting the 'group1' vector to 'group2':
 
-
-    group1 <- c(3, 1, 2, 2)
-    group2 <- c(1, 2, 3, 3)
+<div class="chunk" id="self-match1"><div class="rcode"><div class="source"><pre class="knitr r">group1 <- c(3, 1, 2, 2)
+group2 <- c(1, 2, 3, 3)
+</pre></div>
+</div></div>
 
 
 The motivating use case was to split a GRanges based on the 
@@ -391,51 +404,53 @@ groups in `group1` but not the implied order.
 
 When we split this GRanges
 
-
-    x <- GRanges(c(rep("chr2", 2), rep("chr19", 2)), IRanges(1:4, width = 1))
-    x
-
-    ## GRanges with 4 ranges and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]     chr2    [1, 1]      *
-    ##   [2]     chr2    [2, 2]      *
-    ##   [3]    chr19    [3, 3]      *
-    ##   [4]    chr19    [4, 4]      *
-    ##   ---
-    ##   seqlengths:
-    ##    chr19  chr2
-    ##       NA    NA
+<div class="chunk" id="self-match2"><div class="rcode"><div class="source"><pre class="knitr r">x <- GRanges(c(rep("chr2", 2), rep("chr19", 2)), IRanges(1:4, width=1))
+x
+</pre></div>
+<div class="output"><pre class="knitr r">## GRanges with 4 ranges and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]     chr2    [1, 1]      *
+##   [2]     chr2    [2, 2]      *
+##   [3]    chr19    [3, 3]      *
+##   [4]    chr19    [4, 4]      *
+##   ---
+##   seqlengths:
+##    chr19  chr2
+##       NA    NA
+</pre></div>
+</div></div>
 
 
 by `group1` the object is re-ordered to match the priority
 in `group1`.
 
-
-    split(x, group1)
-
-    ## GRangesList of length 3:
-    ## $1 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]     chr2    [2, 2]      *
-    ## 
-    ## $2 
-    ## GRanges with 2 ranges and 0 metadata columns:
-    ##       seqnames ranges strand
-    ##   [1]    chr19 [3, 3]      *
-    ##   [2]    chr19 [4, 4]      *
-    ## 
-    ## $3 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames ranges strand
-    ##   [1]     chr2 [1, 1]      *
-    ## 
-    ## ---
-    ## seqlengths:
-    ##  chr19  chr2
-    ##     NA    NA
+<div class="chunk" id="self-match3"><div class="rcode"><div class="source"><pre class="knitr r">split(x, group1)
+</pre></div>
+<div class="output"><pre class="knitr r">## GRangesList of length 3:
+## $1 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]     chr2    [2, 2]      *
+## 
+## $2 
+## GRanges with 2 ranges and 0 metadata columns:
+##       seqnames ranges strand
+##   [1]    chr19 [3, 3]      *
+##   [2]    chr19 [4, 4]      *
+## 
+## $3 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames ranges strand
+##   [1]     chr2 [1, 1]      *
+## 
+## ---
+## seqlengths:
+##  chr19  chr2
+##     NA    NA
+</pre></div>
+</div></div>
 
 
 This is expected behavior but wasn't exactly the result I was
@@ -443,31 +458,32 @@ after. I wanted to respect the grouping in `group1` but not the order.
 Essentially I wanted to turn `group1` in to `group2` so
 I would get this result:
 
-
-    split(x, group2)
-
-    ## GRangesList of length 3:
-    ## $1 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames    ranges strand
-    ##          <Rle> <IRanges>  <Rle>
-    ##   [1]     chr2    [1, 1]      *
-    ## 
-    ## $2 
-    ## GRanges with 1 range and 0 metadata columns:
-    ##       seqnames ranges strand
-    ##   [1]     chr2 [2, 2]      *
-    ## 
-    ## $3 
-    ## GRanges with 2 ranges and 0 metadata columns:
-    ##       seqnames ranges strand
-    ##   [1]    chr19 [3, 3]      *
-    ##   [2]    chr19 [4, 4]      *
-    ## 
-    ## ---
-    ## seqlengths:
-    ##  chr19  chr2
-    ##     NA    NA
+<div class="chunk" id="self-match4"><div class="rcode"><div class="source"><pre class="knitr r">split(x, group2)
+</pre></div>
+<div class="output"><pre class="knitr r">## GRangesList of length 3:
+## $1 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames    ranges strand
+##          <Rle> <IRanges>  <Rle>
+##   [1]     chr2    [1, 1]      *
+## 
+## $2 
+## GRanges with 1 range and 0 metadata columns:
+##       seqnames ranges strand
+##   [1]     chr2 [2, 2]      *
+## 
+## $3 
+## GRanges with 2 ranges and 0 metadata columns:
+##       seqnames ranges strand
+##   [1]    chr19 [3, 3]      *
+##   [2]    chr19 [4, 4]      *
+## 
+## ---
+## seqlengths:
+##  chr19  chr2
+##     NA    NA
+</pre></div>
+</div></div>
 
 
 Solution:
@@ -475,19 +491,21 @@ Solution:
 One straight-forward solution is to re-order the GRangesList object 
 once created. 
 
-
-    grl <- split(x, group1)
-    grl[as.character(unique(group1))]
+<div class="chunk" id="unnamed-chunk-1"><div class="rcode"><div class="source"><pre class="knitr r">grl <- split(x, group1)
+grl[as.character(unique(group1))] 
+</pre></div>
+</div></div>
 
 
 However the data were large so I was hoping to solve the ordering 
 problem before creating the list. The second solution was to
 transform `group1` with a "self-match". 
 
-
-    match(group1, group1)
-
-    ## [1] 1 2 3 3
+<div class="chunk" id="self-match5"><div class="rcode"><div class="source"><pre class="knitr r">match(group1, group1)
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 1 2 3 3
+</pre></div>
+</div></div>
 
 
 A "self match" on any vector-like object 'x' is an easy and
@@ -496,23 +514,25 @@ Also the mapping from unique values in 'x' and ids is guaranteed
 to be strictly increasing, which is what I needed for my use
 case.
 
-
-    xx <- c("Z", "B", "C", "C", "A", "B")
-    ids <- match(xx, xx)
-    ids
-
-    ## [1] 1 2 3 3 5 2
-
-    ids[!duplicated(xx)]  # always strictly increasing
-
-    ## [1] 1 2 3 5
+<div class="chunk" id="self-match6"><div class="rcode"><div class="source"><pre class="knitr r">xx <- c("Z", "B", "C", "C", "A", "B")
+ids <- match(xx, xx)
+ids
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 1 2 3 3 5 2
+</pre></div>
+<div class="source"><pre class="knitr r">ids[!duplicated(xx)]  # always strictly increasing
+</pre></div>
+<div class="output"><pre class="knitr r">## [1] 1 2 3 5
+</pre></div>
+</div></div>
 
 
 Herv&eacute;'s 2 line solution to my splitting problem:
 
-
-    grl2 <- split(x, match(group1, group1))
-    names(grl2) <- unique(group1)
+<div class="chunk" id="self-match7"><div class="rcode"><div class="source"><pre class="knitr r">grl2 <- split(x, match(group1, group1))
+names(grl2) <- unique(group1)
+</pre></div>
+</div></div>
 
 
 More detail on the `Hits` class can be found on the man page:
