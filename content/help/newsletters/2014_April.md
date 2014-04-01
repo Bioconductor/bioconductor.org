@@ -15,6 +15,8 @@ will be rendered by nanoc, the tool that produces
 the website.
 -->
 
+{::options parse_block_html="true" /}
+
 # *Bioconductor* Newsletter
 {:.no_toc}
 
@@ -26,6 +28,8 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), April 2014
 * Table of contents will replace this text.
 {:toc}
 
+</div>
+
 ## Introduction
 
 Welcome to the first *Bioconductor* newsletter! In this space 
@@ -35,8 +39,9 @@ infrastructure reorganizations, new packages and features,
 conferences, and other areas of interest.
 
 The newsletter will be on a quarterly schedule with the intent
-of summarizing major developments of the past 3 months. Ideas, 
-comments and suggested topics are welcome (send to vobencha@fhcrc.org).
+of summarizing major developments of the past 3 months. Comments 
+and suggestions are welcome, please send to Valerie at 
+[vobencha@fhcrc.org](vobencha@fhcrc.org).
 
 
 ## Infrastructure
@@ -173,17 +178,15 @@ Marc, Dan and Paul have led this effort.
 
 ### `RefNet` package 
 
-A new package to watch for in the Spring release is 
-[RefNet](http://www.bioconductor.org/packages/devel/bioc/html/RefNet.html). 
+A new package to watch for in the Spring release is `RefNet`. 
 This package offers access to molecular interaction data in computable 
 form and is the first of its kind in *Bioconductor*. The package offers
 access to 2 transcription factor networks and Recon 2 (consensus 
 metabolic reconstruction compiled from 5 resources). Queries are
 made using the 
 [PSICQUIC](http://www.bioconductor.org/packages/devel/bioc/html/PSICQUIC.html) 
-or 
-[RefNet.db](http://www.bioconductor.org/packages/devel/bioc/html/RefNet.db.html) 
-packages.
+or `RefNet.db` packages. (Note: `RefNet` and `RefNet.db` will be
+available in BioC 2.14.)
 
 These data can be used to curate or study experiment-specific pathways,
 explore the function and relationships of differentially expressed genes,
