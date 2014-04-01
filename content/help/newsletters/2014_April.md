@@ -28,7 +28,6 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), April 2014
 * Table of contents will replace this text.
 {:toc}
 
-</div>
 
 ## Introduction
 
