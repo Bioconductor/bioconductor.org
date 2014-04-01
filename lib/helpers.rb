@@ -763,7 +763,6 @@ EOT
       t = rows[i].to_s
       t.gsub!(/<td>[^<]+<\/td>\s+<td>[^<]+<\/td>\s+<\/tr>/, "</tr>")
 
-      puts t
         nr.push t
     end
     s = "<table>\n"
