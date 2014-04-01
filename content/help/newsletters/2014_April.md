@@ -18,7 +18,7 @@ the website.
 # *Bioconductor* Newsletter
 {:.no_toc}
 
-posted by [Valerie Obenchain](vobencha@fhcrc.org), April 2014
+posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), April 2014
 
 ## Contents
 {:.no_toc}
