@@ -7,7 +7,7 @@ require 'yaml'
 require 'fileutils'
 require 'nokogiri'
 require 'open-uri'
-require 'date'
+#require 'date'
 
 class PipermailList < Nanoc3::DataSource
     identifier :pipermail_list
@@ -21,11 +21,15 @@ class PipermailList < Nanoc3::DataSource
         url = "#{baseurl}/#{this_year}-#{this_month}/date.html"
         # TODO ensure url exists?
         # why is the certificate not valid from dan's home laptop?
-        doc = Nokogiri::HTML(open(url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+        doc = nil
+        begin
+            doc = Nokogiri::HTML(open(url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+        rescue
+            return []
+        end
         uls = doc.css("ul")
         return [] if uls.empty?
         msgul = uls[1]
-        return [] if msgul.empty?
         a = msgul.css("a")
         return [] if a.empty?
         num_wanted = 5
@@ -42,13 +46,30 @@ class PipermailList < Nanoc3::DataSource
             href = x.attr('href')
             subject = x.text.strip.sub(/^\[BioC\] /, "")
             msg_url = url.sub("date.html", href)
-            msg_doc = Nokogiri::HTML(open(msg_url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+            msg_doc = nil
+            begin
+                msg_doc = Nokogiri::HTML(open(msg_url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+            rescue
+                return []
+            end
             datestamp = msg_doc.css("i").first.text#.gsub(/[ ]{2,}/," ")
-            dt = DateTime.strptime(datestamp, "%a %b %e %H:%M:%S %Z %Y")
-            isodate = dt.iso8601
-            puts i
-            puts a[i]
+            datestamp.sub!("CEST", "+0200")
+            datestamp.sub!("CET", "+0100")
+            dt = Time.strptime(datestamp, "%a %b %e %H:%M:%S %z %Y")
+            isodate = dt
+            #isodate = Time.parse(datestamp)#.utc#.iso8601
+            attributes = {
+                :title => subject,
+                :date => isodate,
+                :link => msg_url,
+                :author => "unused"
+            }
+            content = "unused"
+            identifier = "/#{href.gsub(/\.html/, "")}/"
+            mtime = nil
+            ret.push Nanoc3::Item.new(content, attributes, identifier, mtime)
         end
+        ret.reverse
     end
 
 
