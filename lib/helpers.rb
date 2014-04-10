@@ -871,7 +871,7 @@ end
 
 def get_mac_packs(package)
     res = []
-    os =  ["Mac OS 10.6 (Snow Leopard)", "Mac OS 10.9 (Mavericks)"]
+    os =  ["Mac OS X 10.6 (Snow Leopard)", "Mac OS X 10.9 (Mavericks)"]
     osvers = ["mac.binary.ver", "mac.binary.mavericks.ver"]
     for i in 0..1
         h = {}
