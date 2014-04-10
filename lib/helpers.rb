@@ -868,3 +868,19 @@ def get_last_svn_commit_time()
     rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
     %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
 end
+
+def get_mac_packs(package)
+    res = []
+    os =  ["Mac OS 10.6 (Snow Leopard)", "Mac OS 10.9 (Mavericks)"]
+    osvers = ["mac.binary.ver", "mac.binary.mavericks.ver"]
+    for i in 0..1
+        h = {}
+        h[:os] = os[i]
+        if package.has_key? osvers[i].to_sym
+            h[:url] = "../#{package[osvers[i].to_sym]}"
+            h[:basename] = package[osvers[i].to_sym].split("/").last
+        end
+        res.push h
+    end
+    res
+end

@@ -229,11 +229,20 @@
                     </td>
                 </tr>
 
-                <tr class="<%=ri.rowclass%>">
-                    <td><%= mac_os(@package)%></td>
-                    <td><a href="../<%=mac_ver_key(@package)%>">
-                        <%= base_filename(mac_ver_key(@package))%></td>
+
+                <% for h in get_mac_packs(@package) %>
+
+
+                    <tr class="<%=ri.rowclass%>">
+                        <td><%= h[:os] %></td>
+                        <td><a href="<%=h[:url]%>">
+                            <%=h[:basename]%></td>
                     </tr>
+
+
+                <% end %>
+
+
                     <tr class="<%=ri.rowclass%>">
                         <td>Package Downloads Report</td>
                         <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
