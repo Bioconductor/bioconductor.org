@@ -4,7 +4,7 @@ We are pleased to announce Bioconductor 2.14, consisting of 824
 software packages, 200 experiment data packages, and more than 860
 up-to-date annotation packages. 
 
-There are 74 new software packages, and many updates and improvements
+There are 77 new software packages, and many updates and improvements
 to existing packages; Bioconductor 2.14 is compatible with R 3.1.0,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release includes an updated Bioconductor [Amazon Machine Image]
