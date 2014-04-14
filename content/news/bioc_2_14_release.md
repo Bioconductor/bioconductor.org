@@ -939,6 +939,15 @@ Changes in version 0.99.1:
 - CAFE can now be used with species other than human It is no longer limited to 22 autologous
   chromosomes
 
+CAMERA
+------
+
+CHANGES IN VERSION 1.19.1
+
+  * Fixed bug in the generateRules function, where in the negative mode
+    rules with polycharged positve ions are not created
+
+
 CellNOptR
 ---------
 
