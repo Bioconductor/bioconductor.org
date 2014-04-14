@@ -35,7 +35,7 @@ for this version of R.
 New Software Packages
 =====================
 
-There are 74 new packages in this release of Bioconductor.
+There are 77 new packages in this release of Bioconductor.
 
 ABSSeq - Inferring differential expression genes by absolute
 expression differences between two groups, utilizing
