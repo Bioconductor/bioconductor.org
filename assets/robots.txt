@@ -20,6 +20,7 @@ Disallow: /packages/2.11/
 Disallow: /packages/2.12/
 Disallow: /packages/2.13/
 Disallow: /packages/2.14/
+Disallow: /packages/3.0/
 Disallow: /packages/bioc/
 Disallow: /packages/data/
 Disallow: /repository/

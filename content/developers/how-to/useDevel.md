@@ -1,18 +1,21 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
-In this release cycle, use R-beta with Bioconductor 2.14
-(`devel`). From within R-beta, simply invoke
 
-    source("http://bioconductor.org/biocLite.R")
-    biocLite()
-    
-Separate libraries
-------------------
+In order to use the `devel` version of Bioconductor, simply call
+the function `useDevel()` (from the `BiocInstaller`) package:
 
-Keep Bioconductor `release` and `devel` packages in
-separate libraries. This is the default when using R-3.0.2 for
-Bioc-2.13 (`release`), and R-beta for Bioc-2.14 (`devel`).
+    ## In R-3.1.0
+    library(BiocInstaller) 
+    useDevel()
+
+After doing this, all packages will be installed from the `devel`
+(BioC 3.0) repository.
+
+If you also want to work with the `release` version of Bioconductor
+(2.14), we recommend maintaining two separate installations of R
+3.1.0, one to be used with Bioconductor 2.14 (BioC-release) and
+the other to be used with Bioconductor 3.0 (BioC-devel). Run `useDevel()` as described above in this latter installation.
 
 <!--
 An easy way to do this is to have two separate installation of R-3.0.
