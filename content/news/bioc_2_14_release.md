@@ -574,19 +574,6 @@ Changes in version 1.35.0 (2013-10-14):
 
 - The version number was bumped for the Bioconductor devel version.
 
-Changes in version 1.34.2 (2014-02-28):
-
-- CLEANUP: Removed unnecessary usage of ':::'.
-
-Changes in version 1.34.1 (2014-02-27):
-
-- BUG FIX: readCelUnits() could throw 'Error in vector("double", nbrOfCells * nbrOfArrays) : vector
-  size cannot be NA.  In addition: Warning message: In nbrOfCells * nbrOfArrays : NAs produced by
-  integer overflow' when reading from a large number of arrays and/or a large number of units.
-  Previously the limit of nbrOfCells*nbrOfArrays was .Machine$integer.max (=2147483647), whereas now
-  it is .Machine$double.xmax (=1.797693e+308).  Thanks to Damian Plichta at the Technical University
-  of Denmark for reporting on this.
-
 AllelicImbalance
 ----------------
 
