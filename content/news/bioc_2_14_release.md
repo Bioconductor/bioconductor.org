@@ -722,31 +722,6 @@ Changes in version 1.99.3 (2014-03-31):
 
 - Bumped the version such that the next release will be 2.0.0.
 
-Changes in version 1.33.3 (2014-03-30):
-
-- Added pairedAlleleSpecificCopyNumbers().
-
-- Argument 'preserveScale' for normalizeTumorBoost() is now required. The goal with this is to in a
-  future version migrate to use preserveScale=FALSE as the default (was preserveScale=TRUE) in order
-  to avoid introducing a a global bias in the tumor allele B fraction of heterozygous SNPs.  The
-  examples use preserveScale=FALSE now.
-
-Changes in version 1.33.2 (2014-03-25):
-
-- Now plotDensity() supports weights via argument 'W'.
-
-Changes in version 1.33.1 (2014-03-25):
-
-- Now plotDensity() also supports density() objects.
-
-- CLEANUP: robustSmoothSpline() no longer uses DUP=FALSE in an internal .Fortran() call.
-
-- Bumped up package dependencies.
-
-Changes in version 1.33.0 (2013-10-14):
-
-- The version number was bumped for the Bioc devel version.
-
 BaseSpaceR
 ----------
 
@@ -4715,37 +4690,6 @@ REQUIRED CHANGES
 
 - Moved inst/doc to vignettes
 
-xps
----
-
-Changes in version 3.00:
-
-VERSION xps-1.21.5
-
-- add QualTreeSet methods NUSE() and RLE() to get stats and values
-
-- update man export.Rd
-
-VERSION xps-1.21.4
-
-- update xpsQAReport.R for R-3.x
-
-VERSION xps-1.21.3
-
-- update XPSSchemes.cxx to replace error with warning for missing annotation header
-  '%netaffx-annotation-'
-
-VERSION xps-1.21.2
-
-- update XPSNormalizer.cxx to correct for uninitialized variables
-
-VERSION xps-1.21.1
-
-- update README
-
-- update Makefile to set include path (for ~/.R/Makevars)
-
-- update XPSUtils.cxx to eliminate warning with clang
 
 yaqcaffy
 --------
