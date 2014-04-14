@@ -553,11 +553,6 @@ Changes in version 2.3.0 (2013-10-20):
 affxparser
 ----------
 
-Changes in version 1.37.0 (2014-04-11):
-
-- The version number was bumped for the Bioconductor devel version, which is now BioC v2.15 for R
-  (>= 3.1.0).
-
 Changes in version 1.36.0 (2014-04-11):
 
 - The version number was bumped for the Bioconductor release version, which is now BioC v2.14 for R
@@ -697,12 +692,6 @@ BUG FIXES AND CODE MAINTENANCE
 AnnotationHub
 -------------
 
-Changes in version 1.6.0:
-
-NEW FEATURES
-
-- add query and subset,AnnotationHub=methods
-
 Changes in version 1.4.0:
 
 NEW FEATURES
@@ -723,11 +712,6 @@ BUG FIXES
 
 aroma.light
 -----------
-
-Changes in version 2.1.0 (2014-04-11):
-
-- The version number was bumped for the Bioconductor devel version, which is now BioC v2.15 for R
-  (>= 3.1.0).
 
 Changes in version 2.0.0 (2014-04-11):
 
@@ -2943,11 +2927,6 @@ Changes in version 1.2.1:
 illuminaio
 ----------
 
-Changes in version 0.7.0 (2014-04-11):
-
-- The version number was bumped for the Bioconductor devel version, which is now BioC v2.15 for R
-  (>= 3.1.0).
-
 Changes in version 0.6.0 (2014-04-11):
 
 - The version number was bumped for the Bioconductor release version, which is now BioC v2.14 for R
@@ -4742,14 +4721,6 @@ Changes in version 2.7:
 rhdf5
 -----
 
-Changes in version 2.10.0:
-
-NEW FEATURES
-
-- New function h5version implemented.
-
-- New low level general library functions H5Lcreate_external implemented.
-
 Changes in version 2.8.0:
 
 NEW FEATURES
@@ -6047,6 +6018,7 @@ yaqcaffy
 Changes in version 1.23.1:
 
 - moved inst/doc to vignettes [2013-10-19 Sat]
+
 
 
 Packages removed from the release
