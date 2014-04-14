@@ -1,7 +1,7 @@
 Bioconductors:
 
 We are pleased to announce Bioconductor 2.14, consisting of 824
-software packages, 202 experiment data packages, and more than 860
+software packages, 200 experiment data packages, and more than 860
 up-to-date annotation packages. 
 
 There are 74 new software packages, and many updates and improvements
