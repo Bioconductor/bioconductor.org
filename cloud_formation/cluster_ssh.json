@@ -6,8 +6,8 @@
          "Description" : "Bioconductor Version. 2.11 is recommended.",
          "Type" : "String",
          "Default": "<%=config['release_version']%>",
-         "AllowedValues": ["2.11", "2.12", "2.13"],
-         "ConstraintDescription": "Must be 2.11, 2.12 or 2.13"
+         "AllowedValues": ["2.11", "2.12", "2.13", "2.14", "3.0"],
+         "ConstraintDescription": "Must be 2.11, 2.12, 2.13, 2.14 or 3.0"
        },
       
       "KeyName":{
