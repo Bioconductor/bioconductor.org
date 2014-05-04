@@ -31,8 +31,8 @@
             "c1.xlarge",
             "cc1.4xlarge",
             "cc2.8xlarge",
-            "cg1.4xlarge"
-         ],
+            "cg1.4xlarge",
+                    "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge"],
          "ConstraintDescription":"must be a valid EC2 instance type."
       },
       "NumClusterInstances":{
