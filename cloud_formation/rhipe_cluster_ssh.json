@@ -62,7 +62,21 @@
        },
       "2.13" : {
            "AMI" : "<%=config['ami_ids']['bioc2_13']%>"
+       },
+       "2.14": {
+           "AMI" : "<%=config['ami_ids']['bioc2_14']%>"
+       },
+       "3.0": {
+           "AMI" : "<%=config['ami_ids']['bioc3_0']%>"
+       },
+       "2.14": {
+           "AMI" : "<%=config['ami_ids']['bioc2_14']%>"
+       },
+       "3.0": {
+           "AMI" : "<%=config['ami_ids']['bioc3_0']%>"
        }
+       
+       
      }
    },
 
