@@ -66,7 +66,7 @@
 
 
 <form name="mailform" method="POST" onsubmit="return validateForm()"
-action="https://secure.bioconductor.org/mailform/send_mail.php">
+action="https://register.bioconductor.org/mailform/send_mail.php">
 Name:<br/>
 <input style="width: 80%" type="text" name="name" /><br/>
 Email address:<br/>
@@ -108,7 +108,7 @@ jQuery(document).ready(function() {
 
 
 <div style="width: 430px; float: left; height: 90px">
-      <img id="siimage" align="left" style="padding-right: 5px; border: 0" src="https://secure.bioconductor.org/mailform/securimage_show.php?sid=a07792a88bc82f80278de3cda120be0c" />
+      <img id="siimage" align="left" style="padding-right: 5px; border: 0" src="https://register.bioconductor.org/mailform/securimage_show.php?sid=a07792a88bc82f80278de3cda120be0c" />
 <!--
         <object classid="clsid:d27cdb6e-ae6d-11cf-96b8-444553540000" codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=9,0,0,0" width="19" height="19" id="SecurImage_as3" align="middle">
 			    <param name="allowScriptAccess" value="sameDomain" />
@@ -123,7 +123,7 @@ jQuery(document).ready(function() {
         <br/>
         
         <!-- pass a session id to the query string of the script to prevent ie caching -->
-        <a tabindex="-1" style="border-style: none" href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = 'https://secure.bioconductor.org/mailform/securimage_show.php?sid=' + Math.random(); return false"><img src="images/refresh.gif" alt="Reload Image" border="0" onclick="this.blur()" align="bottom" /></a>
+        <a tabindex="-1" style="border-style: none" href="#" title="Refresh Image" onclick="document.getElementById('siimage').src = 'https://register.bioconductor.org/mailform/securimage_show.php?sid=' + Math.random(); return false"><img src="https://register.bioconductor.org/mailform/images/refresh.gif" alt="Reload Image" border="0" onclick="this.blur()" align="bottom" /></a>
 </div>
 <div style="clear: both"></div>
 Code:<br/>
