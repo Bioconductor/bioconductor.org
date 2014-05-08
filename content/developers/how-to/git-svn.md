@@ -117,28 +117,48 @@ in [step 1](#step1), e.g.
 
     https://github.com/username/MyPackage
 
-Decide how you want to handle initial merge conflicts. 
-If you are starting with a **completely** empty Github repository
-(which does not even have a README file in it), then it does not matter
-how you answer this question.
+<a name="who-wins"></a>
+### Deciding which repository takes precedence
 
-If both your Subversion and your Github repositories have contents, 
-decide **carefully** how you want to proceed:
+<h1 style="color: red;">DANGER ZONE: READ CAREFULLY</h1>
 
-* Choosing "SVN wins unconditionally" means that if there are any
-  conflicts when merging the two repositories together, the SVN
-  version will overwrite the Github version.
-  You will not have the opportunity
-  to manually merge conflicting files. You will still have access
-  to the previous versions of
-  files that were changed, via git's commit history.
+When initially creating the bridge, the process that
+takes place is not a "merge" like you may be accustomed
+to from `git` or `svn`. It's really more like an `rsync` 
+with the `--delete` option. 
 
-* Choosing "Git wins unconditionally" means the opposite--
-  any merge conflicts will be resolved in Git's favor,
-  and this will then **propagate to the
-  Bioconductor build system**. You will have access to
-  earlier versions of files
-  that were changed, but only via svn.
+What this means is, you decide who is going to "win", (git or svn)
+and if you choose git, then all conflicts will be resolved 
+in git's favor. Specifically, the following is what will happen:
+
+* If a file has differing contents in svn and in git, 
+  the version that's in git will end up in both git and svn
+  (bridge creation is a one-way process; changes are only made
+  in one repository based on the contents of the other). 
+* If a file has differing contents, it doesn't matter which
+  one is the most recent or whether the two could easily
+  be merged by git or svn. All that matters is whether
+  you selected git or svn as the 'winner'.
+* If a file exists in svn but not git, it will be deleted from svn.
+* Conversely, if a file exists in git but not svn, that 
+  file will be added to the svn repository.
+
+If you picked "svn wins", the above is true, but with git and svn
+reversed.
+
+
+* If your git repository is completely empty (i.e., you haven't
+  even added a README file, or any files) and you specified
+  "git wins," the bridge will override that and declare svn
+  the winner. <span style="color: red;">HOWEVER</span>, if you
+  have even a single file in your git repos, and you choose
+  "git wins," <span style="color: red;">everything in your svn
+  repos will be deleted</span>.
+* Of course, nothing is ever deleted in git or svn, so you can
+  go back in and retrieve files, but it's best to avoid this
+  situation in the first place.
+
+
 
 You now need to check two boxes: the first confirms that you have 
 configured your Github repository as described in [Step 1](#step1),
