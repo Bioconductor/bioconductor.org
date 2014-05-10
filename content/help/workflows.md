@@ -3,13 +3,57 @@
 Bioconductor provides software to help analyze diverse high-throughput
 genomic data. Common workflows include:
 
-* [Sequence Analysis](high-throughput-sequencing/)
-* [RNAseq Differential Expression](/packages/release/data/experiment/html/parathyroidSE.html) Counting and other common tasks.
-* [Oligonucleotide Arrays](arrays/)
-* [Variants](variants/)
-* [Accessing Annotation Data](annotation/annotation/)
-* [Annotating Ranges](annotation/AnnotatingRanges)
-* [High Throughput Assays](/help/workflows/highthroughputassays/): 
-  flow cytometry and other technologies.
-* [Finding Candidate Binding Sites for Known Transcription Factors via Sequence Matching](/help/workflows/generegulation/)
+* [Sequence Analysis](high-throughput-sequencing/)  
+  Import fasta, fastq, BAM, gff, bed, wig, and other sequence formats.
+  Trim, transform, align, and manipulate sequences. Perform quality
+  assessment, ChIP-seq, differential expression, RNA-seq, and other
+  workflows.  Access the Sequence Read Archive.
 
+* [RNAseq Differential Expression](/packages/release/data/experiment/html/parathyroidSE.html)  
+  Use the <em>parathyroidSE</em> ExperimentData package and vignette
+  to learn how to count reads and perform other common operations
+  required for differential expression analysis.
+
+* [Oligonucleotide Arrays](arrays/)  
+  Import Affymetrix, Illumina, Nimblegen, Agilent, and other
+  platforms.  Perform quality assessment, normalization, differential
+  expression, clustering, classification, gene set enrichment,
+  genetical genomics and other workflows for expression, exon, copy
+  number, SNP, methylation and other assays.  Access GEO,
+  ArrayExpress, Biomart, UCSC, and other community resources.
+
+* [Variants](variants/)  
+  Read and write VCF files. Identify structural location of variants
+  and compute amino acid coding changes for non-synonymous
+  variants. Use SIFT and PolyPhen database packages to predict
+  consequence of amino acid coding changes.
+
+* [Accessing Annotation Data](annotation/annotation/)  
+  Use microarray probe, gene, pathway, gene ontology, homology and
+  other annotations.  Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
+  and other sources.
+
+* [Annotating Ranges](annotation/AnnotatingRanges)  
+  Represent common sequence data types (e.g., from BAM, gff, bed, and
+  wig files) as genomic ranges for simple and advanced range-based
+  queries.
+
+* [High Throughput Assays](/help/workflows/highthroughputassays/)  
+  Import, transform, edit, analyze and visualize flow cytometric, mass
+  spec, HTqPCR, cell-based, and other assays.
+
+* [Transcription Factor Binding](/help/workflows/generegulation/)  
+  Finding Candidate Binding Sites for Known Transcription Factors via
+  Sequence Matching.
+
+* [Cloud-enabled cis-eQTL search and annotation](/help/workflows/eQTL/)  
+  Bioconductor can be used to perform detailed analyses of
+  relationships between DNA variants and mRNA abundance.  Genotype
+  (potentially imputed) and expression data are organized in packages
+  prior to analysis, using very concise representations.  SNP and
+  probe filters can be specified at run time. Transcriptome-wide
+  testing can be carried out using multiple levels of concurrency
+  (chromosomes to nodes, genes to cores is a common approach).
+  Default outputs of the cloud-oriented interface ciseqByCluster
+  include FDR for all SNP-gene pairs in cis, along with locus-specific
+  annotations of genetic and genomic contexts.

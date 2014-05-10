@@ -17,129 +17,38 @@
 
       </td>
       <td style="padding-left:35px">
-        <p class="olive" style="font-size:large">Use Bioconductor for...</p>
-        <!-- 
-          The javascript function tidyWorkflows() ensures only
-          4 of these show up.
-        -->
-        <div id="workflows">
-          <ul class="big_arrow_list" id="workflows_left" style="float:left;width:43%;">
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/arrays/">Microarrays</a></span>
-              <p>
-                Import Affymetrix, Illumina, Nimblegen, Agilent, and
-                other platforms.  Perform quality assessment,
-                normalization, differential expression, clustering,
-                classification, gene set enrichment, genetical genomics
-                and other workflows for expression, exon, copy number,
-                SNP, methylation and other assays.  Access GEO,
-                ArrayExpress, Biomart, UCSC, and other community
-                resources.
-              </p>
-            </li>
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/variants/">Variants</a></span>
-              <p>
-  	      Read and write VCF files. Identify structural location of
-  	      variants and compute amino acid coding changes for
-  	      non-synonymous variants. Use SIFT and PolyPhen database
-  	      packages to predict consequence of amino acid coding
-  	      changes.
-              </p>
-            </li>
 
-          </ul>
-          <ul class="big_arrow_list" id="workflows_right" style="float:right;width:43%;">
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/high-throughput-sequencing/">
-              Sequence Data</a></span>
-              <p>
-                Import fasta, fastq, ELAND, MAQ, BWA, Bowtie, BAM, gff,
-                bed, wig, and other sequence formats.  Trim, transform,
-                align, and manipulate sequences. Perform quality
-                assessment, ChIP-seq, differential expression, RNA-seq,
-                and other workflows.  Access the Sequence Read Archive.
-              </p>
-            </li>
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/annotation/annotation/">Annotation</a></span>
-              <p>
-                Use microarray probe, gene, pathway, gene ontology,
-                homology and other annotations.  Access GO, KEGG, NCBI,
-                Biomart, UCSC, vendor, and other sources.
-              </p>
-            </li>
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/highthroughputassays/">
-              High Throughput Assays</a></span>
-              <p>
-                Import, transform, edit, analyze and visualize flow
-                cytometric, mass spec, HTqPCR, cell-based, and other
-                assays.
-              </p>
-             </li>
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/generegulation/">
-              Transcription Factors</a></span>
-              <p>
-                Find candidate binding sites for known transcription factors via sequence matching.
-              </p>
-             </li>
-             <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/workflows/eQTL/">Cloud-enabled cis-eQTL search and annotation</a></span>
-              <p>
-                Bioconductor can be used to perform detailed analyses of relationships between
-DNA variants and mRNA abundance.  Genotype (potentially imputed) and expression data are organized in packages prior to analysis, using very concise representations.  SNP and probe filters can be specified at run time. Transcriptome-wide testing can be carried out using multiple levels of concurrency (chromosomes to nodes, genes to cores is a common approach).  Default outputs of the cloud-oriented interface ciseqByCluster include FDR for all SNP-gene pairs in cis, along with locus-specific annotations of genetic and genomic contexts.
+        <p class="box_header"
+              style="line-height:1.5em"><a href="https://register.bioconductor.org/BioC2014/"
+              style="color:#1881c2; text-decoration:underline;">Register for BioC 2014</a>
+              July 30 - Aug 1, 2014 Dana-Farber Cancer Institute,
+              Boston, MA
+        </p>
 
-              </p>
-
-
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-              <a href="/help/course-materials/">
-		Recent Courses</a></span>
-              <p>
-                Explore material from courses in 
-                <a href="help/course-materials/2013/">2013</a> and
-                <a href="help/course-materials/2014/">2014</a>.
-              </p>
-             </li>
-
-            <li class="workflow"><span style="font-size:120%;font-weight:bold">
-		<a href="/packages/release/data/experiment/html/parathyroidSE.html">Counting Reads for Differential Expression</a></span>
-              <p>
-                The <a href="/packages/release/data/experiment/html/parathyroidSE.html">parathyroidSE</a>
-                ExperimentData package and vignette illustrates how to
-                count reads and perform other common operations
-                required for differential expression analysis.
-              </p>
-             </li>
-
-          </ul>
+        <div style="width:50%;float:left;">
+          <%= render("/_install/") %>
         </div>
-        <!--
-        <ul>
-             <li><a href="/help/workflows">More Workflows</a></li>
-             <li><a href="/help/course-materials/2012/CSC2012/">
-              Sequence Analysis</a></li>
-             <li><a href="/help/course-materials/2012/SeattleFeb2012/">
-                Advanced R/Bioconductor for High-Throughput Sequence Analysis</a></li>
-             <li><a href="http://bioconductor.org/help/course-materials/">
-                More Course Materials</a></li>
 
-        </ul>
-      -->
+        <div style="width:50%;float:left;">
+          <%= render("/_learn/") %>
+        </div>
+
+        <br clear="all">
+
+        <div style="width:50%;float:left;">
+          <%= render("/_use/") %>
+        </div>
+
+        <div style="width:50%;float:left;">
+          <%= render("/_develop/") %>
+        </div>
+
       </td>
-
     </tr>
   </table>
+
 </div>
-<!--
-<div class="hp_alert_box">
-  <img src="/images/icons/conference.gif" align="left" alt="" style="margin-right:12px;"/>
-  <span style="font-size:larger"><b><a href="https://secure.bioconductor.org/BioC2010/">Bioc 2010</a>: Where Software and Biology Connect</b></span><br/>
-  The annual Bioconductor conference is July 28 (developer day), 29, and 30.<br clear="all"/>
-</div>
--->
+
 <div class="hp_options_box">
 
   <div style="float:left;width:33%;">
