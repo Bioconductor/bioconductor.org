@@ -5,6 +5,8 @@ include Nanoc3::Helpers::XMLSitemap
 include Nanoc3::Helpers::HTMLEscape
 
 
+# coding: utf-8
+require 'htmlentities'
 require 'time'
 require 'date'
 require 'rubygems'
@@ -19,6 +21,7 @@ require 'fileutils'
 require 'mechanize'
 
 include REXML
+
 
 class Time
   def to_date
@@ -182,9 +185,14 @@ end
 
 
 def munge_email(email)
+  @coder = HTMLEntities.new unless defined? @coder
   ret = ""
-  email.gsub(/@/, " at ").each_byte do |b|
-    ret += "&#x#{b.to_s(16)};"
+  email.gsub(/@/, " at ").split("").each do |char|
+    if char.ord > 128 # ?
+      ret += @coder.encode(char, :hexadecimal)
+    else
+      ret += "&#x#{char.bytes.first.to_s(16)};"
+    end
   end
   ret
 end
