@@ -6,7 +6,7 @@
 	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
 	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
 	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot Package Installations</a></li> 
-	<li><a href="#why-biocLite">Why `biocLite()`?</a></li> 
+	<li><a href="#why-biocLite">Why biocLite()?</a></li> 
 </ul>
 
 
@@ -140,7 +140,7 @@ the behavior of the function.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="why-biocLite">Why Use `biocLite()`?</h2>
+<h2 id="why-biocLite">Why Use biocLite()?</h2>
 
 `biocLite()` is the recommended way to install Bioconductor
 packages. There are several reasons for preferring this to the
@@ -206,7 +206,7 @@ wrapper around `install.packages`, but with the repository chosen
 according to the version of Bioconductor in use, rather than to the
 version relevant at the time of the release of R.
 
-biocLite also nudges users to remain current within a release, by
+`biocLite()` also nudges users to remain current within a release, by
 default checking for out-of-date packages and asking if the user would
 like to update
 
