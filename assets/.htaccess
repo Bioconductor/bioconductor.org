@@ -147,3 +147,6 @@ RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocChec
 </IfModule>
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
+Redirect /help/course-materials/2014/ https://register.bioconductor.org/BioC2014/
+Redirect /help/course-materials/2014/BioC2014 https://register.bioconductor.org/BioC2014/
+
