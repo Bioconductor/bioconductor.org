@@ -212,6 +212,36 @@ var getHrefForSymlinks = function(href) {
 }
 
 
+var handleCitations = function()
+{
+    console.log("handling citations, yo");
+    if (jQuery("#bioc_citation").length ) {
+        console.log("oh yes");
+        jQuery("#bioc_citation_outer").hide();
+        var url = window.location.href;
+        url = url.replace("html","citations");
+        var segs = url.split("/");
+        var pkg = segs.pop();
+        pkg = pkg.replace(".html", "")
+        segs.push(pkg);
+        segs.push("citation.html");
+        url = segs.join("/");
+        console.log("url = " + url);
+        jQuery.ajax({url: url, dataType: "html", 
+            success: function(data,textStatus,jqXHR){
+                // working around possible R bug?
+                data = data.replace(/}. /g, "");
+                console.log("success!, data is " + data);
+                console.log("boo");
+                jQuery("#bioc_citation").html(data);
+                jQuery("#bioc_citation_outer").show();
+            }, error: function(data, textStatus, jqXHR){
+                console.log("error!");
+            }
+        });
+    }
+
+}
 
 //document ready function                                      
 jQuery(function() {
@@ -221,6 +251,7 @@ jQuery(function() {
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));
     });
+    handleCitations();
 });
 
 // another document ready function, for try-it-now
