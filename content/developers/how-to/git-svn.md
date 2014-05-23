@@ -275,6 +275,7 @@ maintained by the web app.
 
 [[Back To Top]](#top)
 
+<a name="advertise"></a>
 ##### How do I advertise my bridge?
 
 Add the Github URL of your repository to the URL: field 
