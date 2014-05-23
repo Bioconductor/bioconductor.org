@@ -214,9 +214,7 @@ var getHrefForSymlinks = function(href) {
 
 var handleCitations = function()
 {
-    console.log("handling citations, yo");
     if (jQuery("#bioc_citation").length ) {
-        console.log("oh yes");
         jQuery("#bioc_citation_outer").hide();
         var url = window.location.href;
         url = url.replace("html","citations");
@@ -226,13 +224,11 @@ var handleCitations = function()
         segs.push(pkg);
         segs.push("citation.html");
         url = segs.join("/");
-        console.log("url = " + url);
         jQuery.ajax({url: url, dataType: "html", 
             success: function(data,textStatus,jqXHR){
                 // working around possible R bug?
                 data = data.replace(/}. /g, "");
-                console.log("success!, data is " + data);
-                console.log("boo");
+                data = data.replace(' (????)', "");
                 jQuery("#bioc_citation").html(data);
                 jQuery("#bioc_citation_outer").show();
             }, error: function(data, textStatus, jqXHR){
