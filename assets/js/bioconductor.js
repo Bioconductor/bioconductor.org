@@ -228,6 +228,8 @@ var handleCitations = function()
             success: function(data,textStatus,jqXHR){
                 // working around possible R bug?
                 data = data.replace(/}. /g, "");
+                data = data.replace(/}.</g, '<');
+
                 data = data.replace(' (????)', "");
                 jQuery("#bioc_citation").html(data);
                 jQuery("#bioc_citation_outer").show();
