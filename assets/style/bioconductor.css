@@ -475,6 +475,10 @@ li.footer_nav_list_element { float:left; }
   white-space:pre;
 }
 
+.bioc_citation {
+  padding-left: 1em;
+}
+
 pre {
   background-color: #e3e3e3;
   padding:1em;
