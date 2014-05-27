@@ -350,7 +350,10 @@ include:
 
 * Subscription to the [bioc-devel](/help/mailing-list/) mailing list.
 * Response to bug reports and questions from users regarding your
-  package, as posted on the bioconductor mailing list.
+  package, as posted on the Bioconductor mailing list or directly to
+  developers. Add a `BugReports:` field to the DESCRIPTION file if
+  reports should be directed to a particular web page rather than the
+  package maintainer.
 * Package maintenance through software release cycles, including
   prompt updates to software and documentation necessitated by
   underlying changes in R.
