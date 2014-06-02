@@ -17,7 +17,9 @@
       "Default" : "t1.micro",
       "AllowedValues": ["t1.micro", "m1.small", "m1.medium", "m1.large",
         "m1.xlarge", "m2.xlarge", "m2.2xlarge", "m2.4xlarge", "c1.xlarge",
-        "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge"],
+        "m3.medium", "m3.large", "m3.xlarge", "m3.2xlarge", 
+        "c3.large", "c3.xlarge", "c3.2xlarge", "c3.4xlarge", "c3.8xlarge",
+        "h1.4xlarge", "hs1.8xlarge"],
       "ConstraintDescription": "Choose a valid EC2 instance type from http://aws.amazon.com/ec2/instance-types/"
       },
       "NumInstances":{
