@@ -42,7 +42,7 @@
   First Committed: <%= w[:first_committed]%><br/>
   <% end %>
   SVN Revision: <%= w[:svn_revision] %></br/>
-  Install with (under BioC 2.13):<br/>
+  Install with (under BioC <%= @config[:release_version] %>):<br/>
   <code><pre>
 source("http://bioconductor.org/workflows.R")
 workflowInstall("<%=w[:package]%>")
