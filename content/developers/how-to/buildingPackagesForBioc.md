@@ -297,7 +297,7 @@ Finally you must add the following lines to your DESCRIPTION file:
 These are needed because knitr is needed to support non-Sweave based markdown files as vignettes and knitr is not part of base R.
 
 
-You now have the beginnings of a vignette.  Now there are really two things that a vignette must always do: 1) it must explain sufficient background information so that new users can determine if a package is going to help them solve a problem or not (even if they are new to the topic) and 2) it must demonstrate how to use the various functions from the package in the expected way.  In order to do the latter you will sometimes need to repeat examples that you may have already shown in the example sections of your manual pages.  Running these examples twice can be inneficient.  How can you avoid this problem?  Well you can alway mark your code chunks as eval=FALSE.  Here is an example of a markdown code chunk that is marked to not be evaluated:
+You now have the beginnings of a vignette.  Now there are really two things that a vignette must always do: 1) it must explain sufficient background information so that new users can determine if a package is going to help them solve a problem or not (even if they are new to the topic) and 2) it must demonstrate how to use the various functions from the package in the expected way.  In order to do the latter you will sometimes need to repeat examples that you may have already shown in the example sections of your manual pages.  Running these examples twice can be inefficient.  How can you avoid this problem?  Well you can always mark your code chunks as eval=FALSE.  Here is an example of a markdown code chunk that is marked to not be evaluated:
 
 
 <pre>
@@ -377,11 +377,14 @@ Entire books have been written about good coding practices.  But here are just a
 * Write live examples for your manual pages and vignettes.  This may sometimes means taking a minute to make sure that your code will run fast enough to get through check in less than five minutes.  But it is worth it to have your code checked when the package is checked.
 * Use toy data sets.  Unless your data is abnormally small, genomic data tends to be large.  This means that using 'real' data in your examples will likely take too long.  Instead we recommend that you use 'toy' data sets.  It doesn't matter if the data is real as long as it allows you to demonstrate that the function still works and to show someone else how to use it.
 * Write unit tests that quickly test internal steps or to verify important functionality in your code.  We have an entire [workflow](http://www.bioconductor.org/developers/how-to/unitTesting-guidelines/) written about how to implement unit tests.  It is well worth your time to read it.  Using unit tests is a great way to make sure that your code is robust and continues to do what it initially advertised.  Later on, when some upstream change breaks your code, unit tests will allow you to quickly and easily identify and fix the problem.
+* Choose a good package name.  Make sure that your package name is not already in use and try to make sure that it gives the end user some idea about what the package will actually do for them.
+* Make sure that your package idea is actually new.  A lot of packages get written that provide functionality that either already exists or is only marginally different from an existing package.  Before you spend a lot of time on a package look at the existing [website](http://www.bioconductor.org/packages/release/BiocViews.html#___Software) to make sure that someone has not already done all this work for you.  Your contribution will be appreciated by the community much more if it builds on and extends the existing work rather than reinventing the wheel.
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
-<h2 id="exercise-answeres">Answers for exercises:</h2> 
+<h2 id="exercise-answers">Answers for exercises:</h2> 
 
 <h3>Exercise 1: </h3>
 You should have created a function that looks like this:
