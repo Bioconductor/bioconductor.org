@@ -313,9 +313,28 @@ section of the Writing R Extensions manual. In particular:
   may not terminate for certain parameter settings or when their run time
   exceeds 10 seconds with typical parameter settings, and the method is
   intended for interactive use.
-* Make judicious use of Makevars and Makefile. These are often not required at
-  all (See the
-  [Configure and cleanup](http://cran.fhcrc.org/doc/manuals/R-exts.html#Configure-and-cleanup)).
+* Make judicious use of Makevars and Makefile within a package. These
+  are often not required at all (See the [Configure and
+  cleanup](http://cran.fhcrc.org/doc/manuals/R-exts.html#Configure-and-cleanup)).
+* During package development, enable all warnings and disable
+  optimizations. The easiest way to enforce this is to use a
+  user-level Makevars file (called 'Makevars', placed in a user's home
+  directory in a sub-directory called '.R'). See examples below for
+  flags for common toolchains. Consult the Writing R Extensions Manual
+  for [details about Makevars
+  files](http://cran.r-project.org/doc/manuals/R-exts.html#Using-Makevars).
+
+  - Example for gcc/g++
+
+        CFLAGS=-Wall -Wextra -pedantic -O0
+        CXXFLAGS=-Wall -Wextra -pedantic -O0
+        FFLAGS=-Wall -Wextra -pedantic -O0
+
+  - Example for clang/clang++
+
+        CFLAGS=-Weverything -O0
+        CXXFLAGS=-Weverything -O0
+        FFLAGS=-Wall -Wextra -pedantic -O0
 
 Use of external libraries whose functionality is redundant with libraries
 already supported is strongly discouraged. In cases where the external library
