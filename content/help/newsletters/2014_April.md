@@ -375,7 +375,7 @@ The list is length 3 corresponding the the 3 ranges in `gr1':
 Thanks to Michael and Herv&eacute; for the work on the `Hits` class.
 
 
-## Self-matching
+### Self-matching
 
 Recently I had a question about splitting on groups/factors. I
 thought the solution Herv&eacute; came up with was quite elegant and worth 
