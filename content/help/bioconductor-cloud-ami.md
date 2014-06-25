@@ -17,9 +17,18 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
 * <a href="#multicore">Parallelization using multicore</a>
+* <a href="#using_cluster">Using the AMI as a cluster</a>
+* <a href="#installing_starcluster">Installing StarCluster</a>
+* <a href="#configuring_starcluster">Configuring StarCluster</a>
+* <a href="#starting_cluster">Starting a Cluster</a>
+* <a href="#connecting_cluster">Connecting to a Cluster</a>
+* <a href="#terminate_cluster">Terminating the Cluster</a>
+* <a href="#cluster_scenarios">Cluster Scenarios</a>
 * <a href="#mpi">Using an MPI cluster in the cloud</a>
-* <a href="#parallel">Using a parallel cluster in the cloud</a>
+* <a href="#BiocParallel">Using BiocParallel with Sun Grid Engine</a>
+* <a href="#ssh_backend">Using SSH as the back end</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
+* <a href="#provisioning">Provisioning a virtual or physical machine for use with Bioconductor</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
 * <a href="#questions">Questions</a>
 
@@ -35,7 +44,7 @@ Here are a few reasons you could use it:
 * You have a long-running task and you don't want it to tie up the CPU on your own machine.
 * You have a parallelizable task and would like to run it (either on multiple CPUs on a single machine, or in a cluster of many machines).
 * You want to run R in your web browser (using RStudio Server).
-* The AMI contains many packages (such as RGraphviz) which can be very
+* The AMI contains many packages which can be very
   difficult to install and configure.
 
 See below for more specific scenarios.
@@ -153,6 +162,8 @@ That's all that is required if you want to use RStudio Server
 to connect to your AMI with a web browser.
 If you also want to connect to it with SSH, create a keypair as follows:
 
+#### Creating a Key Pair
+<a name="keypairs"></a>
 Launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1). 
 Click on the [Key Pairs](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)
 link in the lower left-hand corner of the page. Click the "Create Key Pair" button. When prompted, supply a name.
@@ -293,6 +304,11 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
+        <td>3.0 (devel)</td>
+        <td>3.1.0</td>
+        <td><%= config[:ami_ids][:bioc3_0]%></td>
+    </tr>
+    <tr>
         <td>2.14 (release, <b>recommended</b>)</td>
         <td>3.1.0</td>
         <td><%= config[:ami_ids][:bioc2_14]%></td>
@@ -366,245 +382,339 @@ This works best if you have selected a high-CPU instance type to run.
 This trivial example runs the <code>rnorm()</code> function, but any function would work. Consult the 
 [multicore](http://cran.r-project.org/web/packages/multicore/index.html) documentation for more information.
 
-	library(multicore)
-	mclapply(1:30, rnorm)
+    library(multicore)
+    mclapply(1:30, rnorm)
+
+<a name="using_cluster"></a>
+## Using the AMI as a cluster
+
+You can also use the AMI as a cluster, wherein the machines communicate
+with each other via one of the following mechanisms:
+
+* SSH
+* MPI
+* Sun Grid Engine
+
+In order to use the Bioconductor AMI in one of these scenarios,
+you need to install [StarCluster](http://star.mit.edu/cluster/),
+which is a software package  designed to automate and simplify
+the process of building, configuring, and managing clusters of
+virtual machines on Amazon’s EC2 cloud.
+
+StarCluster takes care of the details of making sure that the
+machines can communicate with each other, including:
+
+* Passwordless SSH
+* Shared disk space (using NFS)
+* Convenient aliases for host names (such as master and node001)
+* Configuration of job scheduler (Sun Grid Engine)
+
+
+**Note**: Using the Bioconductor AMI for cluster-related tasks
+is only supported for the Bioconductor AMI version 2.14 and higher.
+
+
+<a name="installing_starcluster"></a>
+### Installing StarCluster
+
+Install StarCluster by following the
+[StarCluster Installation Guide](http://star.mit.edu/cluster/docs/latest/installation.html). This is a simple and fast process.
+
+If you are on Windows, go directly to 
+[the Windows section](http://star.mit.edu/cluster/docs/latest/installation.html#installing-on-windows).
+
+Before continuing, it's worth watching the 
+[Quick Start Screencast](http://star.mit.edu/cluster/)
+or following the 
+[Quick-Start Tutorial](http://star.mit.edu/cluster/docs/latest/quickstart.html).
+
+<a name="configuring_starcluster"></a>
+### Configuring StarCluster
+
+Before we can use StarCluster with the Bioconductor AMI,
+we need to configure it, by editing its `config` file.
+
+You can create the file by issuing the command:
+
+    starcluster help
+
+This will give you three options:
+
+    Options:
+    --------
+    [1] Show the StarCluster config template
+    [2] Write config template to /home/user/.starcluster/config
+    [q] Quit
+
+Choose option 2 and note the location of the config file (it will 
+be different from what is shown above).
+
+On Unix systems (including Linux and Mac OS X), this file is found
+at `~/.starcluster/config`. On Windows systems, the `.starcluster`
+folder should be located in your 
+[home directory](http://weka.wikispaces.com/Where+is+my+home+directory+located%3F).
+
+Open the `config` file in your favorite text editor, and edit it 
+as follows:
+
+
+#### AWS Credentials and Connection Settings section
+
+You need to fill in values for `AWS_ACCESS_KEY_ID`
+and `AWS_SECRET_ACCESS_KEY`. If you don't know these values,
+go to the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential)
+page of the AWS Console and expand the "Access Keys" section.
+You can view or create your access keys here. Be sure and
+store these credentials in a safe place (in addition to
+your StarCluster config file).
+
+The value of `AWS_USER_ID` can also be found on
+the [Security Credentials](https://console.aws.amazon.com/iam/home?#security_credential) page, by expanding
+the "Account Identifiers" section. Fill in `AWS_USER_ID`
+with the number shown as your "AWS Account ID" (this
+should be a 12-digit number with hyphens).
+
+#### Defining EC2 Keypairs section
+
+If you haven't already created a keypair in EC2,
+please do so now by reading the [keypairs](#keypairs) section.
+
+You can also create a keypair with StarCluster; run the command
+
+    starcluster createkey --help
+
+...for instructions.
+
+Remember the name that you assigned to your keypair.
+Change the line 
+
+    [key mykey]
+
+So that `mykey` is replaced by the name you assigned
+to your keypair in EC2, and change the following line
+
+    KEY_LOCATION=~/.ssh/mykey.rsa
+
+So that the value of `KEY_LOCATION` is the full path to
+the private key downloaded from .ec2 (it probably has a `.pem`
+extension).
+
+#### Defining Cluster Templates section
+
+StarCluster allows you to define multiple clusters in the config
+file. For now let's just modify the cluster defined as `smallcluster`.
+
+* Change the value of `KEYNAME` to the name of your key pair
+  (see keypair section above).
+* Optionally change `CLUSTER_SIZE` to the number of machines you
+  want to launch. This number includes the master node, so the
+  default value of 2 means one master, and one worker. We
+  recommend starting with 2 until you have familiarized yourself
+  with using StarCluster and Bioconductor.
+* Change `CLUSTER_USER` to `ubuntu`.
+* Uncomment the line `DNS_PREFIX = True`. This makes your cluster
+  instances easier to recognize when using the AWS Console or 
+  command line tools.
+* Change the `NODE_IMAGE_ID` to the AMI-ID of the AMI you want to use
+  This will be listed in the [AMI IDs](#ami_ids) section of this document.
+  Note that StarCluster only works with AMIs for Bioconductor
+  version 2.14 and higher.
+* Optionally change `NODE_INSTANCE_TYPE` to another instance type.
+  See the [Instance Types page](https://aws.amazon.com/ec2/instance-types/)
+  for more information.
+* Under the line reading `#PERMISSIONS = ssh, http`, add the line
+  `permissions = http` (note lowercase). This is related to security
+  group permissions (more about this below).
+
+You can make additional changes to this section if you
+want to further customize your configuration. Refer
+to the
+[StarCluster documentation](http://star.mit.edu/cluster/docs/latest/manual/configuration.html#creating-the-configuration-file)
+for more information.
+
+#### Configuring Security Group Permissions section
+
+Remove the comments (`#` symbol) from the four lines 
+starting with `[permission http]`
+so that you end up with:
+
+    [permission http]
+    IP_PROTOCOL = tcp
+    FROM_PORT = 80
+    TO_PORT = 80
+
+This allows port 80 on the cluster instances to be open to the
+world, allowing us to use Rstudio Server on that port.
+
+<a name="starting_cluster"></a>
+### Starting a Cluster
+
+Assuming you have completed the steps above, you can create
+a cluster with the command:
+
+    starcluster start smallcluster
+
+After a few moments, the cluster should be available.
+
+<a name="connecting_cluster"></a>
+### Connecting to the cluster
+
+There are two ways to connect to the cluster's master node: RStudio Server and
+SSH. Unless you have a special need to use SSH, we recommend 
+using RStudio Server.
+
+#### Connecting using RStudio Server
+
+First, get the hostname of the master node by issuing the command:
+
+    starcluster listclusters
+
+
+You can also abbreviate this:
+
+    starcluster lc
+
+This will produce output like the following:
+
+```
+-----------------------------------------------
+smallcluster (security group: @sc-smallcluster)
+-----------------------------------------------
+Launch time: 2014-06-16 09:57:54
+Uptime: 0 days, 02:19:56
+Zone: us-east-1b
+Keypair: bioc-default
+EBS volumes: N/A
+Cluster nodes:
+    smallcluster-master running i-46a76c6d ec2-54-91-23-93.compute-1.amazonaws.com
+    smallcluster-node001 running i-47a76c6c ec2-54-224-6-153.compute-1.amazonaws.com
+Total nodes: 2
+```
+
+The line that starts with `smallcluster-master` ends with a hostname
+(in this case it's `ec2-54-91-23-93.compute-1.amazonaws.com`; in your
+case it will be something different but similar). You can paste
+this host name into a web browser (depending on the browser, you may
+need to put `http://` in front of the host name).
+
+This should bring you to the RStudio Server login page. You can log 
+in with the username `ubuntu` and the password `bioc`.
+
+#### Connecting using SSH
+
+To connect to the master node using ssh, simply issue the command
+
+    starcluster sshmaster --user=ubuntu smallcluster
+
+<a name="terminate_cluster"></a>
+### Terminating the Cluster <font color="red">**IMPORTANT!!**</font>
+
+When you are done, you MUST terminate your cluster or you
+will continue to be charged money by Amazon Web Services.
+To terminate the cluster, do this:
+
+    starcluster terminate smallcluster
+
+This command will prompt you to confirm that you really want to 
+terminate the cluster.
+
+<a name="cluster_scenarios"></a>
+### Cluster Scenarios
+
+The following scenarios assume that you have started up a cluster 
+and that you are connected to the master node.
+
+
+
+
 
 <a name="mpi"></a>
-### Using an MPI cluster in the cloud
+### Using MPI
 
-You can launch multiple EC2 instances and set them up as an [MPI](http://en.wikipedia.org/wiki/Message_Passing_Interface)
-cluster, to parallelize and shorten long-running CPU-intensive jobs. You must explicitly parallelize your
-CPU-intensive code using functions in the [Rmpi](http://cran.r-project.org/web/packages/Rmpi/index.html) package. 
+When you start a cluster using the above steps, R is automatically
+aware of the cluster, as shown in the following example:
 
-The simplest way to start up a cluster is to just click on this URL:
+    library(Rmpi)
+    mpi.universe.size()
 
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCMPICluster|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/cluster.json">Start MPI Cluster</a></b>
+With the default cluster configuration, this should return 2, which
+make sense, since our cluster consists of two machines (`smallcluster-master`
+and `smallcluster-node001`), each of type m1.small, which 
+have one core each.
 
-That will start an MPI cluster which you can access via you web browser using RStudio Server.
+If you're familiar with the `Rmpi` package, you can start
+running MPI code, for example:
 
-If you also want to be able to access your cluster via ssh, use this URL instead (you'll
-need to provide the name of an ssh keypair that you have <a href="#first-time-steps">
-previously set up</a>):
+    mpi.spawn.Rslaves()
+    mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
 
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCMPIClusterWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/cluster_ssh.json">Start MPI Cluster with ssh access</a></b>
+<a name="BiocParallel"></a>
+### Using BiocParallel with Sun Grid Engine
 
+When you start a cluster with StarCluster, it's automatically
+configured to use the `BiocParallel` and `BatchJobs` packages
+with Sun Grid Engine as the back end. You can demonstrate this
+by loading BatchJobs:
 
-The startup procedure is similar to <a href="#launch">the launch
-procedure</a> discussed earlier, except that you are also asked
-how many worker instances you want to start. The 
-[EC2 instance types](http://aws.amazon.com/ec2/instance-types/) page
-tells you how many cores are available with each instance type.
-So if you wanted to start a cluster with 40 workers, you could
-choose a NumClusterWorkers of 10 and a ClusterInstanceType of m1.xlarge.
-Ten machines with four cores each gives you a cluster with 40 
-workers. An additional master node will also be started up.
+    library(BatchJobs)
 
-Once you have logged into the RStudio Server using the
-link provided by the above step, you'll be able to access
-your cluster as follows:
+Among other output, this will say
 
-	library(Rmpi)
-	mpi.spawn.Rslaves()
+          cluster functions: SGE
 
-You can then run some code on each worker, for example:
+indicating that Sun Grid Engine is the back end.
 
-	mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
+Here's how to send a simple job to the cluster:
 
-This performs a simple calculation on each worker and returns the 
-results as a list. For more complex examples, read on
-or consult the 
-[Rmpi documentation](http://cran.r-project.org/web/packages/Rmpi/index.html).
+```
+library(BatchJobs)
+library(BiocParallel)
+param <- BatchJobsParam(4, resources=list(ncpus=1))
+register(param)
+FUN <- function(i) system("hostname", intern=TRUE)
+xx <- bplapply(1:100, FUN)
+table(unlist(xx))
+```
+This will produce:
 
-Be sure and delete your stack when you are finished using it, 
-in order to stop accruing charges.
+```
+ smallcluster-master smallcluster-node001 
+                  50                   50 
+```
 
-The above procedure can handle many parallel processing tasks.
+...indicating that SGE ran half the jobs on the master and
+the other half on the worker node.
 
-If you want your cluster nodes to have a shared disk, follow
-the steps below. (This procedure will soon be replaced by 
-a simpler one-click procedure like those above.)
+<a name="ssh_backend"></a>
+### Using SSH as the back end
 
-This section assumes you have [started up your AMI and connected to it
-with ssh](#connecting_ssh).
+Here is the same example as above, except using 
+SSH instead of Sun Grid Engine as the back end:
 
-Here we present a tutorial for using the Bioconductor package
-<code>ShortRead</code> with an EC2-based MPI cluster.
+```
+library(BatchJobs)
+library(BiocParallel)
+cluster.functions <- makeClusterFunctionsSSH(
+    makeSSHWorker(nodename="smallcluster-master"),
+    makeSSHWorker(nodename="smallcluster-node001")
+)
 
-To configure an EC2-based MPI cluster, launch single EC2 instance as described 
-<a href="#connecting_ssh">above</a>, if you haven't already.
-This will be the master node of your cluster. Consider which [instance type](http://aws.amazon.com/ec2/instance-types/)
-you want your cluster to consist of. Note that the master and worker nodes will be of the same instance type.
 
-In most cases, you'll want all of your cluster nodes to have access to the same data files. We accomplish this by 
-creating an [EBS Volume](http://aws.amazon.com/ebs/) holding our data. This volume is attached to the master node 
-and then shared by the workers using NFS. 
+param2 <- BatchJobsParam(2, resources=list(ncpus=1),
+    cluster.functions=cluster.functions)
+register(param2)
+FUN <- function(i) system("hostname", intern=TRUE)
+xx <- bplapply(1:10, FUN)
+table(unlist(xx))
+```
+You should see results like this:
 
-We've provided a script that will create an EBS volume already populated with sample data. To use it, run the following
-command from your AMI instance:
+```
+ smallcluster-master smallcluster-node001 
+                   5                    5 
+```
 
-	create_sample_volume --access-key-id XXX --secret-key yyy
 
-Where "xxx" is your Amazon Access Key ID and "yyy" is your Secret Key. The script will produce output like the following:
-
-	Waiting for volume to be available...
-	.
-	Volume is available.
-	Created volume vol-dec646b6 in availability zone us-east-1c.
-
-Make a note of the volume ID and the availability zone (you can also find this information in the
-[Volumes page of the EC2 console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Volumes)). This step is not necessary if cluster nodes do not need to share a disk.
-
-Now you're ready to spin up an MPI cluster. Use the <code>mpiutil</code> script. Invoked without arguments, 
-<code>mpiutil</code> produces the following:
-
-	Manage MPI clusters
-	--access-key-id     -a  Amazon Access Key ID
-	--secret-key        -s  Amazon Secret Key ID
-	--num-workers       -w  Number of workers to start
-	--cluster-name      -n  Name of cluster
-	--halt-cluster      -h  Halt cluster
-	--instance-type     -t  Instance type
-	--volume-id         -v  Volume ID
-
-	Examples:
-	  To start a cluster:
-	    mpiutil -a XXX -s YYY -w 2 -n "my cluster" -t t1.micro -v vol-9999999
-
-	  To stop a cluster:
-	    mpiutil -a XXX -s YYY -n "my cluster" -h -v vol-9999999
-	
-
-Let's start a cluster with three workers. Use a command line this:
-
-	mpiutil -a XXX -s YYY -w 3 -n workers -t t1.micro -v vol-9999999
-
-Make the following substitutions:
-
-* For "xxx", substitute your Amazon Access Key ID.
-* For "yyy", substitute your Amazon Secret Key.
-* For "vol-9999999", substitute the volume ID generated by the <code>create_sample_volume</code> script above. (The -v option is not required if your task does not need access
-to shared data on an EBS volume).
-
-This command will mount your EBS volume, launch three worker instances, share the EBS volume with
-them using NFS, and do some other housekeeping tasks.
-
-You can verify that your cluster is working with the following command. You may need to wait a few moments 
-before all the workers are up and running, but then this command will work:
-
-	mpirun -np 1 --hostfile /usr/local/Rmpi/hostfile R --no-save -f /usr/local/Rmpi/mpiTest.R --args 3
-	
-This will run an R script which should produce some output like this:
-
-	> library(Rmpi)
-	> 
-	> mpi.spawn.Rslaves(nsl = nsl)
-		3 slaves are spawned successfully. 0 failed.
-	master (rank 0, comm 1) of size 4 is running on: ip-10-117-50-18 
-	slave1 (rank 1, comm 1) of size 4 is running on: ip-10-117-47-155 
-	slave2 (rank 2, comm 1) of size 4 is running on: ip-10-117-45-245 
-	slave3 (rank 3, comm 1) of size 4 is running on: ip-10-117-74-57 
-	> 
-	> mpi.close.Rslaves()
-	> mpi.quit()
-
-This output shows that there is a master and three worker nodes running, each with distinct IP addresses.
-You may see the same IP address repeated multiple times, once for every processor core available on 
-a machine.
-
-Now, to do some actual work with your MPI cluster, run the following command:
-
-	mpirun -np 1 --hostfile /usr/local/Rmpi/hostfile R --no-save -f /usr/local/Rmpi/ShortReadQA.R --args 3
-
-This will run the <code>qa()</code> function from the <code>ShortRead</code> package on three files in parallel, giving each
-node one input file to process. Then the script will create a file called "report.tar.gz" in your current directory,
-containing a QA report on these files. You can download this file using <code>scp</code> 
-(see [Moving data to and from your Bioconductor AMI instance](#movingdata)) and unarchive it with the following
-command on your local computer:
-
-	tar zxf report.tar.gz
-
-This will create a "report" directory. Inside it is an "index.html" file that you can open with a web browser.
-
-
-You can also run R interactively with the MPI cluster connected, by using this command:
-
-	mpirun -np 1 --hostfile /usr/local/Rmpi/hostfile R --no-save
-
-
-When you are finished with your MPI cluster, you can shut down the worker instances and do other housekeeping 
-tasks with the following command, issued on your master node:
-
-	mpiutil -a XXX -s YYY -n workers -h -v vol-9999999
-
-Make the following substitutions:
-
-* For "xxx", substitute your Amazon Access Key ID.
-* For "yyy", substitute your Amazon Secret Key.
-* For "vol-9999999", substitute the volume ID generated by the <code>create_sample_volume</code> script above. You can omit the -v option if your cluster was not started up with it).
-
-
-**Note**: As always when working with EC2, be sure to shut down all running instances when you are done with them,
-to avoid unnecessary charges. You can quickly check instance status on the 
-[Instances Page](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances) of the AWS Console.
-
-
-<a name="parallel"></a>
-### Using a parallel cluster in the cloud
-
-You can create easily create a socket cluster of multiple machines
-using R's `parallel` package. 
-
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCParallelCluster|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/parallel_cluster.json">Start parallel Cluster</a></b>
-
-You can also start a parallel cluster with SSH access enabled:
-
-<b><a target="start_ami"
-href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioCParallelClusterWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/parallel_cluster_ssh.json">Start parallel Cluster with ssh access</a></b>
-
-These links prompt you for instance type and number of workers. For information
-about instance types, refer to
-[Amazon's Instance Type Page](http://aws.amazon.com/ec2/instance-types/).
-"Virtual cores" is the number that tells us how many cores are available
-for parallel computation on each instance.
-
-Choosing 2 for "number of workers" results in a cluster of 3 machines: 2
-workers plus one master. If the instance type chosen is m1.xlarge, then
-you will be starting up a cluster of 12 cores (3 machines times 4 cores
-each).
-
-After starting the above stack, you'll see a URL in the Outputs tab
-where you can log into R on the master node.
-
-A file `/usr/local/Rmpi/hostfile.plain` describes the machines in this 
-cluster and how many cores are on each. It might look like this:
-
-    10.68.155.37 4
-    10.50.213.89 4
-    10.29.191.43 4
-
-So you can do a parallel operation as follows:
-
-    library(parallel)
-    lines <- readLines("/usr/local/Rmpi/hostfile.plain")
-    hosts <- character()
-    for (line in lines)
-    {
-        x <- (strsplit(line[[1]], " "))
-        hosts <-
-            c(hosts, rep.int(x[[1]][1], as.integer(x[[1]][2])))
-    }
-    cl <- makePSOCKcluster(hosts,
-        master=system("hostname -i", intern=TRUE))
-    system.time(clusterCall(cl, Sys.sleep, 1))
-
-We know this was done in parallel because it took just over one
-second:
-
-    user  system elapsed 
-    0.004   0.000   1.005 
 
 
 
@@ -643,6 +753,18 @@ being sure to substitute the ID of your own AMI. Your AMI will be private, acces
 to make it more widely accessible.
 
 Now you should Terminate the Stopped instance of the Bioconductor AMI.
+
+<a name="provisioning"></a>
+### Provisioning a virtual or physical machine for use with Bioconductor
+
+The Bioconductor AMI was created using Vagrant and Chef.
+The same scripts that were used to create these AMIs
+can also be used to provision virtual machines
+(Virtualbox or VMWare) or physical machines.
+
+For more information, see the scripts' 
+[github repository](https://github.com/Bioconductor/setup-starcluster-image).
+
 
 <a name="movingdata"></a>
 ## Moving data to and from your Bioconductor AMI instance

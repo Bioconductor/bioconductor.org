@@ -240,12 +240,12 @@
       "InstanceSecurityGroup" : {
         "Type" : "AWS::EC2::SecurityGroup",
         "Properties" : {
-          "GroupDescription" : "Enable HTTP access via port 8787",
+          "GroupDescription" : "Enable HTTP access via port 80",
           "SecurityGroupIngress" : [
            {
             "IpProtocol" : "tcp",
-            "FromPort" : "8787",
-            "ToPort" : "8787",
+            "FromPort" : "80",
+            "ToPort" : "80",
             "CidrIp" : "0.0.0.0/0"
           } ,
           {
@@ -273,7 +273,7 @@
        "URL" : {
            "Description" : "URL of RStudio Server",
            "Value" :  { "Fn::Join" : [ "", [ "http://", 
-               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}, ":8787"]]}
+               { "Fn::GetAtt" : [ "MasterInstance", "PublicDnsName" ]}]]}
          },
        "Username": {
            "Description": "Log in with this username",
