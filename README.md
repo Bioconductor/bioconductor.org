@@ -114,7 +114,7 @@ After installing ruby as above, install needed gems as follows:
 
     gem install --no-ri --no-rdoc nanoc nanoc3 rdiscount rack mime-types haml \
       rack-cache httparty rake sass kramdown mechanize json nokogiri \
-      rgl sqlite3 adsf twitter aws-sdk hpricot uuid htmlentitites
+      rgl sqlite3 adsf twitter aws-sdk hpricot uuid htmlentities
 
 
 3. Install subversion client package. Windows packages are listed
