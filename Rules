@@ -129,7 +129,7 @@ preprocess do
         else
           manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
         end
-        manifest = = HTTParty.get(manifest_url, :basic_auth => auth)
+        manifest = HTTParty.get(manifest_url, :basic_auth => auth)
         for l in manifest.split("\n")
           next unless l =~ /^Package: /
           manifests[ver].push l.chomp.sub(/^Package: /, "").strip
