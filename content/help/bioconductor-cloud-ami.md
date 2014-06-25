@@ -24,9 +24,9 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#connecting_cluster">Connecting to a Cluster</a>
 * <a href="#terminate_cluster">Terminating the Cluster</a>
 * <a href="#cluster_scenarios">Cluster Scenarios</a>
-* <a href="#mpi">Using an MPI cluster in the cloud</a>
 * <a href="#BiocParallel">Using BiocParallel with Sun Grid Engine</a>
 * <a href="#ssh_backend">Using SSH as the back end</a>
+* <a href="#mpi">Using an MPI cluster in the cloud</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
 * <a href="#provisioning">Provisioning a virtual or physical machine for use with Bioconductor</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
@@ -627,27 +627,6 @@ and that you are connected to the master node.
 
 
 
-
-<a name="mpi"></a>
-### Using MPI
-
-When you start a cluster using the above steps, R is automatically
-aware of the cluster, as shown in the following example:
-
-    library(Rmpi)
-    mpi.universe.size()
-
-With the default cluster configuration, this should return 2, which
-make sense, since our cluster consists of two machines (`smallcluster-master`
-and `smallcluster-node001`), each of type m1.small, which 
-have one core each.
-
-If you're familiar with the `Rmpi` package, you can start
-running MPI code, for example:
-
-    mpi.spawn.Rslaves()
-    mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
-
 <a name="BiocParallel"></a>
 ### Using BiocParallel with Sun Grid Engine
 
@@ -713,6 +692,27 @@ You should see results like this:
  smallcluster-master smallcluster-node001 
                    5                    5 
 ```
+
+
+<a name="mpi"></a>
+### Using MPI
+
+When you start a cluster using the above steps, R is automatically
+aware of the cluster, as shown in the following example:
+
+    library(Rmpi)
+    mpi.universe.size()
+
+With the default cluster configuration, this should return 2, which
+make sense, since our cluster consists of two machines (`smallcluster-master`
+and `smallcluster-node001`), each of type m1.small, which 
+have one core each.
+
+If you're familiar with the `Rmpi` package, you can start
+running MPI code, for example:
+
+    mpi.spawn.Rslaves()
+    mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
 
 
 
