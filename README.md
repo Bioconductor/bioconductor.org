@@ -105,10 +105,20 @@ After installing ruby as above, install needed gems as follows:
 ** Windows Developer Required Software
 
 1. Download and run the one-click ruby installer
-   http://www.ruby-lang.org/en/downloads/. Accept all default
+   http://rubyinstaller.org/downloads/. Accept all default
    settings.
 
-2. In a newly opened shell (to pick up configuration changes made
+2. Also download and install the Development Kit
+   from http://rubyinstaller.org/downloads/.
+   Be sure and add the bin dir to your path
+   (see devkitvars.bat)
+
+3. If you don't already have it, be sure and install cygwin
+   and explicitly install rsync. rsync is required for parts
+   of the web site to work.
+
+
+4. In a newly opened shell (to pick up configuration changes made
    by the Ruby installer), run the following command to install
    the Ruby gems used by the website:
 
@@ -117,7 +127,7 @@ After installing ruby as above, install needed gems as follows:
       rgl sqlite3 adsf twitter aws-sdk hpricot uuid htmlentities
 
 
-3. Install subversion client package. Windows packages are listed
+5. Install subversion client package. Windows packages are listed
    here:
 
        http://subversion.tigris.org/getting.html#binary-packages
@@ -128,7 +138,7 @@ After installing ruby as above, install needed gems as follows:
    window to pickup the updated config after installing so that you
    will be able to use the svn command.
 
-4. Follow the developer setup instructions below.
+6. Follow the developer setup instructions below.
 
 ** Developer Setup
 
