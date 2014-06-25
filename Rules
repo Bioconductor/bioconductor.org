@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 # compilation rules
+require 'httparty'
 
 @@config = YAML.load_file("./config.yaml")
 
@@ -116,7 +117,8 @@ preprocess do
     puts "Getting manifest information..."
     url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
     branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
-    page = `curl -s -u readonly:readonly #{url}`
+    auth = {:username => "readonly", :password => "readonly"}
+    page = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/", :basic_auth => auth)
     manifests = {}
     for line in page.split("\n")
       if line =~ /bioc_([0123456789.]+)\.manifest/
@@ -127,7 +129,7 @@ preprocess do
         else
           manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
         end
-        manifest = `curl -s -u readonly:readonly #{manifest_url}`
+        manifest = = HTTParty.get(manifest_url, :basic_auth => auth)
         for l in manifest.split("\n")
           next unless l =~ /^Package: /
           manifests[ver].push l.chomp.sub(/^Package: /, "").strip

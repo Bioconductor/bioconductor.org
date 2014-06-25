@@ -11,6 +11,7 @@ require 'find'
 require 'pathname'
 require 'json'
 require 'pp'
+require 'httparty'
 
 include Open3
 
@@ -84,8 +85,12 @@ task :post_compile do
 
   FileUtils.rm_f "devel"
   FileUtils.rm_f"release"
-  FileUtils.ln_s "#{site_config["release_version"]}", "release"
-  FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
+  begin
+    FileUtils.ln_s "#{site_config["release_version"]}", "release"
+    FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
+  rescue
+    puts "skipping symlink as ln_s is not supported on this platform"
+  end
   puts "Generated symlinks for release and devel"
   FileUtils.cd cwd
 end
@@ -317,7 +322,8 @@ task :get_workflows do
     system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
     system(%Q(chmod -R a+r workflows_tmp))
   end    
-  json = `curl -s --user readonly:readonly  https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json`
+  auth = {:username => "readonly", :password => "readonly"}
+  json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json", :basic_auth => auth)
   manifest = JSON.parse(json)  
 
   dir = Dir.new("workflows_tmp")
