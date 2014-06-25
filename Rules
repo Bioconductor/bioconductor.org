@@ -119,7 +119,7 @@ preprocess do
     branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
     auth = {:username => "readonly", :password => "readonly"}
     page = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/",
-      :basic_auth => auth, :verify => false).to_s
+      :basic_auth => auth, :verify => false).body
     manifests = {}
     for line in page.split("\n")
       if line =~ /bioc_([0123456789.]+)\.manifest/
@@ -130,7 +130,7 @@ preprocess do
         else
           manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
         end
-        manifest = HTTParty.get(manifest_url, :basic_auth => auth, :verify=>false).to_s
+        manifest = HTTParty.get(manifest_url, :basic_auth => auth, :verify=>false).body
         for l in manifest.split("\n")
           next unless l =~ /^Package: /
           manifests[ver].push l.chomp.sub(/^Package: /, "").strip
