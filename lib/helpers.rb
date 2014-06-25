@@ -486,7 +486,7 @@ end
 
 def recent_packages()
   begin
-    xml = HTTParty.get("http://bioconductor.org/rss/new_packages.rss")
+    xml = HTTParty.get("http://bioconductor.org/rss/new_packages.rss").to_s
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -515,7 +515,7 @@ end
 
 def get_svn_commits()
   begin
-    xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss")
+    xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss").to_s
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -862,11 +862,11 @@ end
 def recent_spb_builds
     # FIXME - make sure this fails gracefully if user is not in hutch
     # network (or connected to internet at all)
-    HTTParty.get("http://merlot2.fhcrc.org:8000/recent_builds")
+    HTTParty.get("http://merlot2.fhcrc.org:8000/recent_builds").to_s
 end
 
 def get_last_svn_commit_time()
-  xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss")
+  xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss").to_s
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
