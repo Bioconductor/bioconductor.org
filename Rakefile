@@ -88,7 +88,7 @@ task :post_compile do
   begin
     FileUtils.ln_s "#{site_config["release_version"]}", "release"
     FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
-  rescue
+  rescue NotImplementedError => ex
     puts "skipping symlink as ln_s is not supported on this platform"
   end
   puts "Generated symlinks for release and devel"
