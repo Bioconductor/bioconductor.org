@@ -3,6 +3,7 @@
 
 * [Introduction](#introduction)
 * [Checklist](#checklist)
+* [Package version numbers](#versions)
 * [Additional Support](#support)
 * [Contact Information](#contact-info)
 
@@ -31,10 +32,10 @@ Packages must satisfy the following checklist:
 * Contain a DESCRIPTION file with valid contact information, an informative
   title and description, correct license specification, appropriate biocViews
   terms, valid version number.
-* Set Version to 0.99.0 in the DESCRIPTION.  Subsequent versions created 
-  during the review process will be numbered 0.99.1, 0.99.2, etc.  When 
-  released, your package's version number will be automatically incremented 
-  to 1.0.0.
+* Set Version: 0.99.0 in the DESCRIPTION.  Subsequent versions created
+  during the review process will be numbered 0.99.1, 0.99.2, etc.
+  When released, your package's version number will be automatically
+  incremented to 1.0.0.
 * Contain a NAMESPACE that imports all symbols used in the package, and
   exports just those symbols the package author identifies as appropriate.
   Use of a NAMESPACE implies that appropriate packages are mentioned in the
@@ -64,6 +65,68 @@ Packages should also conform to the following:
   appropriate use.
 * Include an inst/NEWS file for providing users with information on package
   updates.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="versions>Package version numbers</h2>
+
+* Package developers submit their first version of a package with the
+  version number at 0.99.0
+* A detailed package review is returned to the developer, where they
+  are expected to increase the z in "0.99.z" for every new source
+  tarball they submit.  They are also expected to build and check the
+  package on their local machine before re-submitting to Bioconductor.
+
+Example  
+
+* A package was submitted as 'DemoPackage_0.99.0.tar.gz'
+* During package review it was recommended that biocViews terms in the
+  DESCRIPTION file, a NEWS file and a vignette be added.
+* The package developer made all the recommended changes, bumped the
+  version number to 0.99.1 in the DESCRIPTION file, built and checked
+  the package on their local machine.
+* The developer uploaded the tar ball 'DemoPackage_0.99.1.tar.gz' to
+  the tracker.
+
+Following acceptance of a package...
+
+* Packages accepted on the tracker are added to the devel branch of
+  the Bioconductor SVN repository, with the current version number of
+  the accepted package.
+* Developers should bump the `z` portion of their version number every
+  time they commit changes to their package, following the
+  [Version numbering](how-to/version-numbering) guidelines.
+* If developers don't bump the version, the changes made to their
+  package **do not propagate** to the Bioconductor web site and
+  package repository.
+
+Example  
+
+* The accepted package tarball is added to the devel branch by the
+  Bioconductor group members. The package is built on all supported
+  platforms during the nightly build. If the build is successful, the
+  package has its own 'landing page' created. Users of the devel
+  branch can now download the "0.99.1" version of "DemoPackage" using
+  `biocLite("DemoPackage")`.
+* The package developer wants to add a new function to his
+  package. The following steps are recommended.
+
+  * Check out the package from the svn repository (using the link,
+    username and password) emailed to the Developer.
+  * Add the functionality to the package.
+  * Increment the version number from 0.99.1 to 0.99.2.
+  * Build and check the package.
+  * Commit changes to the svn repository.
+  
+* The following day, after the build report is generated - the users
+  can now access the "0.99.2" version from the Bioconductor
+  repository/website (via `biocLite("DemoPackage")`).
+
+If the developer had made an error and not bumped the version from
+0.99.1 to 0.99.2, then the package would be built by the nightly build
+process, but the new version would not propogate to the public
+repository. `biocLite("DemoPackage")` would return the old version
+0.99.1 of the package.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
