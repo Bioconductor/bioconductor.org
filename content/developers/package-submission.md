@@ -3,7 +3,7 @@
 
 * [Introduction](#introduction)
 * [Checklist](#checklist)
-* [Package version numbers](#versions)
+* [From submission to acceptance](#acceptance)
 * [Additional Support](#support)
 * [Contact Information](#contact-info)
 
@@ -68,14 +68,16 @@ Packages should also conform to the following:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="versions>Package version numbers</h2>
+<h2 id="acceptance">From submission to acceptance</h2>
 
 * Package developers submit their first version of a package with the
   version number at 0.99.0
-* A detailed package review is returned to the developer, where they
-  are expected to increase the z in "0.99.z" for every new source
-  tarball they submit.  They are also expected to build and check the
-  package on their local machine before re-submitting to Bioconductor.
+* A detailed package review is returned to the developer
+* The package developer updates their package, increments the version
+  number to 0.99.1, builds and checks the package on the local
+  machine, and re-submitts the package to Bioconductor.
+* The process is repeated, with version bumps on each iteration, until
+  the package is accepted to Bioconductor.
 
 Example  
 
@@ -88,17 +90,23 @@ Example
 * The developer uploaded the tar ball 'DemoPackage_0.99.1.tar.gz' to
   the tracker.
 
-Following acceptance of a package...
+Following acceptance of a package:
 
 * Packages accepted on the tracker are added to the devel branch of
   the Bioconductor SVN repository, with the current version number of
   the accepted package.
+* Packages are then built by the Bioconductor nightly build
+  process. If the build is successful, the package has its own
+  'landing page' created, and the package is made available to users
+  of the 'devel' branch of Bioconductor via `biocLite()`.
+* Developers may continue to make changes to their package, but now do
+  so to the version in the subversion repository.
 * Developers should bump the `z` portion of their version number every
   time they commit changes to their package, following the
-  [Version numbering](how-to/version-numbering) guidelines.
-* If developers don't bump the version, the changes made to their
-  package **do not propagate** to the Bioconductor web site and
-  package repository.
+  [Version numbering](how-to/version-numbering) guidelines. If
+  developers don't bump the version, the changes made to their package
+  **do not propagate** to the Bioconductor web site and package
+  repository.
 
 Example  
 
