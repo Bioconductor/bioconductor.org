@@ -253,9 +253,7 @@ to your instance.
 
 You can vary this command. If you want to use programs or R packages that use X11, be sure and add a -X flag, to make the command something like this:
 
-	ssh -X -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
-
-If you do not want to log in as root, you can change "root" to "ubuntu".
+	ssh -X -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
 
 Now you can paste your command line into a terminal or Command Prompt. Make sure you are in the same directory as your
 key pair file. 
@@ -340,7 +338,7 @@ current AMI IDs. These AMIs live in the US-East-1 region.*
 Make sure you have connected to your instance either with a web browser, or
 using the -X flag of the *ssh* command. Something like:
 
-	ssh -X -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com
+	ssh -X -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
 
 Then, from within R on the remote instance:
 
@@ -711,9 +709,10 @@ If you want to customize the AMI for your own purposes, it is simple. Just go ah
 running instance as you see fit. Typically this will involve installing R packages with <code>biocLite()</code>,
 and software packages (at the operating system level) with the Ubuntu package manager <code>apt-get</code>.
 
-When your instance is customized to your liking, issue the following commands (as root):
+When your instance is customized to your liking, issue the following commands:
 
-	clean_ami
+   
+	sudo clean_ami
 	exit
 
 This will remove unneeded files from your AMI, clear your shell history, and log you out of your instance.
@@ -764,14 +763,14 @@ To copy a file from your computer to a running Bioconductor AMI instance:
 	
 	
 <span style="display:none">Hidden</span>
-	scp -i bioconductor-bob-mylaptop.pem /path/to/myfile root@ec2-50-16-120-30.compute-1.amazonaws.com:/root
+	scp -i bioconductor-bob-mylaptop.pem /path/to/myfile ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com:~
 	
-That will copy the file at "/path/to/myfile" on your local computer to the /root directory on the remote instance. To copy a file from a 
+That will copy the file at "/path/to/myfile" on your local computer to ubuntu's home directory on the remote instance. To copy a file from a 
 running instance to your local computer, do something like this (still at your local computer):
 
-	scp -i bioconductor-bob-mylaptop.pem root@ec2-50-16-120-30.compute-1.amazonaws.com:/root/myfile /some/directory
+	scp -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com:~/myfile /some/directory
 
-That will copy the file /root/myfile from the running instance to /some/directory on your local machine.
+That will copy the file ~/myfile from the running instance to /some/directory on your local machine.
 
 *Reminder*: Files created on a running EC2 instance are **not** persisted unless you do some special steps. So if you are 
 generating output files with Bioconductor, you must copy them to your local machine before terminating your instance, or
