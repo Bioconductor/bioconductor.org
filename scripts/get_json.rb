@@ -282,16 +282,16 @@ class GetJson
   def write_packages_file(data, version, repo, outdir)
     fulloutdir = "#{outdir}/#{version}/#{repo}"
     json = JSON.pretty_generate(data)
-    out = []
-    for i in json.split ""
-      if i.ord > 128 # ??
-        out << @coder.encode(i, :named)
-        # puts "converting #{i} to #{out.last}"
-      else
-        out << i
-      end
-    end
-    json = out.join
+    # out = []
+    # for i in json.split ""
+    #   # if i.ord > 128 # ??
+    #   #   out << @coder.encode(i, :named)
+    #   #   # puts "converting #{i} to #{out.last}"
+    #   # else
+    #     # out << i
+    #   # end
+    # end
+    # json = out.join
     pkgs_file = File.open("#{fulloutdir}/packages.json", "w")
     pkgs_file.print(json)
     pkgs_file.close
