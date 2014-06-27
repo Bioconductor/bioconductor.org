@@ -707,7 +707,7 @@ Evaluate the work in parallel and process the results:
 
 ```
 xx <- bplapply(1:10, FUN)
-table(unlist(x))
+table(unlist(xx))
 ```
 
 <a name="custom"></a>
