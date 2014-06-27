@@ -25,7 +25,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#cluster_scenarios">Cluster Scenarios</a>
 * <a href="#BiocParallel">Using BiocParallel with Sun Grid Engine</a>
 * <a href="#ssh_backend">Using SSH as the back end</a>
-* <a href="#mpi">Using an MPI cluster in the cloud</a>
+* <a href="#mpi">Using MPI as the back end</a>
 * <a href="#custom">Creating a custom version of the Bioconductor AMI</a>
 * <a href="#provisioning">Provisioning a virtual or physical machine for use with Bioconductor</a>
 * <a href="#movingdata">Moving data to and from your Bioconductor AMI instance</a>
@@ -673,7 +673,7 @@ You should see results like this:
 
 
 <a name="mpi"></a>
-### Using MPI
+### Using MPI as the back end
 
 When you start a cluster using the above steps, R is automatically
 aware of the cluster, as shown in the following example:
@@ -686,15 +686,29 @@ make sense, since our cluster consists of two machines (`smallcluster-master`
 and `smallcluster-node001`), each of type m1.small, which 
 have one core each.
 
-If you're familiar with the `Rmpi` package, you can start
-running MPI code, for example:
+Again using `BiocParallel`, you can run a simple function
+on your MPI cluster:
 
-    mpi.spawn.Rslaves()
-    mpi.parLapply(1:mpi.universe.size(), function(x) x+1)
+```
+FUN <- function(i) system("hostname", intern=TRUE)
+```
 
+Create a `SnowParam` instance with the number of nodes equal to
+the size of the MPI universe minus 1 (let one node dispatch jobs to
+workers), and register this instance as the default:
 
+```
+param3 <- SnowParam(mpi.universe.size() - 1, "MPI")
+register(param3)
 
+```
 
+Evaluate the work in parallel and process the results:
+
+```
+xx <- bplapply(1:10, FUN)
+table(unlist(x))
+```
 
 <a name="custom"></a>
 ### Creating a custom version of the Bioconductor AMI
