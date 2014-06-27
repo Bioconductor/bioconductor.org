@@ -135,8 +135,9 @@ or layout errors, relying on a debugger alone might not be sufficient
 to track down memory errors. [Valgrind](http://valgrind.org/) is the
 premier tool for detecting memory errors.
 
-See the Bioconductor guide on [debugging C/C++ code](../c-debugging)
-for examples of using a debugger and Valgrind.
+See the Bioconductor guide on [debugging C/C++
+code](/developers/how-to/c-debugging/) for examples of using a
+debugger and Valgrind.
 
 #### What if I cannot access a Mavericks machine?
 
