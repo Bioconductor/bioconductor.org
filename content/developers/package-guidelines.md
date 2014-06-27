@@ -17,7 +17,7 @@
 * [The Vignette](#vignettes)
 * [Citations](#citations)
 * [Version Numbering](#versions)
-* [C or Fortran code](#c-code)
+* [C/C++ or Fortran code](#c-code)
 * [Unit tests](#unitTests)
 * [Duplication of Packages in CRAN and Bioconductor](#duplications)
 * [Package Author and Maintainer Responsibilities](#responsibilities)
@@ -305,41 +305,56 @@ and methods described in the
 [System and foreign language interfaces](http://cran.r-project.org/doc/manuals/R-exts.html#System-and-foreign-language-interfaces)
 section of the Writing R Extensions manual. In particular:
 
-* Use internal R functions, e.g., R_alloc and random number generators, over
-  system supplied ones.
-* Use C function registration (See the
-  [Registering native routines](http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines))
-* Use R_CheckUserInterrupt in C level loops when there is a chance that they
-  may not terminate for certain parameter settings or when their run time
-  exceeds 10 seconds with typical parameter settings, and the method is
-  intended for interactive use.
+* Use internal R functions, e.g., R_alloc and random number
+  generators, over system supplied ones.
+* Use C function registration (See the [Registering native
+  routines](http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines))
+* Use R_CheckUserInterrupt in C level loops when there is a chance
+  that they may not terminate for certain parameter settings or when
+  their run time exceeds 10 seconds with typical parameter settings,
+  and the method is intended for interactive use.
 * Make judicious use of Makevars and Makefile within a package. These
   are often not required at all (See the [Configure and
   cleanup](http://cran.fhcrc.org/doc/manuals/R-exts.html#Configure-and-cleanup)).
+<a name="development-compiler-settings"></a>
 * During package development, enable all warnings and disable
-  optimizations. The easiest way to enforce this is to use a
-  user-level Makevars file (called 'Makevars', placed in a user's home
-  directory in a sub-directory called '.R'). See examples below for
-  flags for common toolchains. Consult the Writing R Extensions Manual
-  for [details about Makevars
+  optimizations. If you plan to [use a
+  debugger](/developers/how-to/c-debugging/), tell the compiler to
+  include debugging symbols. The easiest way to enforce these is to
+  create a user-level Makevars file user's home directory in a
+  sub-directory called '.R'). See examples below for flags for common
+  toolchains. Consult the Writing R Extensions Manual for [details
+  about Makevars
   files](http://cran.r-project.org/doc/manuals/R-exts.html#Using-Makevars).
 
-  - Example for gcc/g++
+  - Example for gcc/g++:
 
-        CFLAGS=-Wall -Wextra -pedantic -O0
-        CXXFLAGS=-Wall -Wextra -pedantic -O0
-        FFLAGS=-Wall -Wextra -pedantic -O0
+        CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+        CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+        FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 
-  - Example for clang/clang++
+  - Example for clang/clang++:
 
-        CFLAGS=-Weverything -O0
-        CXXFLAGS=-Weverything -O0
-        FFLAGS=-Wall -Wextra -pedantic -O0
+        CFLAGS=-Weverything -O0 -g
+        CXXFLAGS=-Weverything -O0 -g
+        FFLAGS=-Wall -Wextra -pedantic -O0 -g
 
-Use of external libraries whose functionality is redundant with libraries
-already supported is strongly discouraged. In cases where the external library
-is complex the author may need to supply pre-built binary versions for some
-platforms.
+<h4 id="third-party-code">Third-party code</h4>
+
+Use of external libraries whose functionality is redundant with
+libraries already supported is strongly discouraged. In cases where
+the external library is complex the author may need to supply
+pre-built binary versions for some platforms.
+
+By including third-party code a package maintainer assumes
+responsibility for maintenance of that code. Part of the maintenance
+responsibility includes keeping the code up to date as bug fixes and
+updates are released for the mainline third-party project.
+
+For guidance on including code from some specific third-party sources,
+see the [external code sources
+section](/developers/how-to/mavericks-howto/#external-code-sources) of
+the C++ Best Practices guide.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
