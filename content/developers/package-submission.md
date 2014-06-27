@@ -103,7 +103,7 @@ Following acceptance of a package:
   so to the version in the subversion repository.
 * Developers should bump the `z` portion of their version number every
   time they commit changes to their package, following the
-  [Version numbering](how-to/version-numbering) guidelines. If
+  [Version numbering](/developers/how-to/version-numbering/) guidelines. If
   developers don't bump the version, the changes made to their package
   **do not propagate** to the Bioconductor web site and package
   repository.
