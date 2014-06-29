@@ -294,7 +294,7 @@ apply:
 
 When first submitted to Bioconductor, a package usually has version 0.99.0.
 For more details, see
-[Version Numbering Standards](../version-numbering/)
+[Version Numbering](../version-numbering/)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
