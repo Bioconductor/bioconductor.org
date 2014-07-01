@@ -109,7 +109,7 @@ Afternoon labs
 
 Morning talks
 
-- [pdf](5_Friday/lectures/ExpDesign_Anders.pdf)Elements of statistics
+- [pdf](5_Friday/lectures/ExpDesign_Anders.pdf) Elements of statistics
   5: experimental design
 - [pdf](5_Friday/lectures/vjcEQTLfri.pdf) eQTL / molecular-QTL
   analyses
