@@ -19,6 +19,7 @@ Afternoon labs
   programming, functions and packages.
 - [pdf](1_Monday/labs/vizlab14.pdf) [R](1_Monday/labs/vizlab14.R)
   Exploratory data analysis and visualization
+  ([pdf](1_Monday/labs/solutionsToVizlab.pdf) solutions)
 - [html](1_Monday/labs/IntermediateR.html)
   [R](1_Monday/labs/IntermediateR.R) Intermediate R 1: accessing
   resources - packages, classes, methods, and efficient code. Download
@@ -57,8 +58,11 @@ Morning talks
 
 Afternoon labs
 
-- [pdf]() [R](2_Tuesday/labs/RNA-Seq-Analysis-Lab.R) A complete
-  RNA-Seq differential expression workflow
+- [pdf](2_Tuesday/labs/RNA-Seq-Analysis-Lab.pdf)
+  [R](2_Tuesday/labs/RNA-Seq-Analysis-Lab.R)
+  ([Rnw](2_Tuesday/labs/RNA-Seq-Analysis-Lab.Rnw),
+  [bib](2_Tuesday/labs/RNA-Seq-Analysis-Lab.bib)) A complete RNA-Seq
+  differential expression workflow
   [DESeq2_result_table.RData](2_Tuesday/labs/DESeq2_result_table.RData)
   [Homo_sapiens.GRCh37.75.subset.gtf.gz](2_Tuesday/labs/Homo_sapiens.GRCh37.75.subset.gtf.gz)
 
@@ -79,13 +83,15 @@ Afternoon labs
 
 - [pdf](3_Wednesday/labs/Tutorial.pdf)
   [R](3_Wednesday/labs/Tutorial.R) Variant tallies, visualisation,
-  HDF5
+  HDF5 [ExampleData.zip](3_Wednesday/labs/ExampleData.zip)
+  [NRAS.tally.hfs5](3_Wednesday/labs/NRAS.tally.hfs5)
 
 ## Thursday
 
 Morning talks
 
-- RNA-Seq 3: alternative exon usage
+- [pdf](4_Thursday/lectures/isoforms_dexseq_talk.pdf) RNA-Seq 3:
+  alternative exon usage
 - [html](4_Thursday/lectures/thursClust.html) Elements of statistics
   3: Classification and clustering - basic concepts
 - [pdf](4_Thursday/lectures/140626-brixen-machinelearn-huber.pdf)
@@ -103,11 +109,15 @@ Afternoon labs
 
 Morning talks
 
-- Elements of statistics 5: experimental design
-- eQTL / molecular-QTL analyses
-- Proteomics
-- Emerging topic
+- [pdf](5_Friday/lectures/ExpDesign_Anders.pdf)Elements of statistics
+  5: experimental design
+- [pdf](5_Friday/lectures/vjcEQTLfri.pdf) eQTL / molecular-QTL
+  analyses
+- [pdf](5_Friday/lectures/proteomics_slides.pdf) Proteomics
+- Emerging topic -- [pdf](5_Friday/lectures/ImageData.pdf) image
+  analysis
 
 Afternoon labs
 
-- Reporting your analysis - authoring knitr/Rmarkdown, ReportingTools, shiny
+- Reporting your analysis - authoring knitr/Rmarkdown, ReportingTools,
+  shiny. [rauthoring_0.2.2.tar.gz](5_Friday/labs/rauthoring_0.2.2.tar.gz)
