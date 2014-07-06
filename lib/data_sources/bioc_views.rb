@@ -162,7 +162,8 @@ class BiocViews < Nanoc3::DataSource
 
         for package in packages.keys
           repo = k
-          item = Nanoc3::Item.new("", packages[package], package)
+          id = "/#{version}/#{repo}#{package}/"
+          item = Nanoc3::Item.new("", packages[package], id)
           
           item[:rebase] = true
           item[:subnav] = []

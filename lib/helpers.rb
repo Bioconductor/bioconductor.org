@@ -860,9 +860,11 @@ def get_current_time
 end
 
 def recent_spb_builds
-    # FIXME - make sure this fails gracefully if user is not in hutch
-    # network (or connected to internet at all)
-    HTTParty.get("http://merlot2.fhcrc.org:8000/recent_builds").body
+    begin
+      HTTParty.get("http://merlot2.fhcrc.org:8000/recent_builds").body
+    rescue Exception => ex
+      "Can't connect to merlot2, not building dashboard"
+    end
 end
 
 def get_last_svn_commit_time()
