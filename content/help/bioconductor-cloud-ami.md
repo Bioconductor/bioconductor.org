@@ -15,7 +15,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#ami_ids">AMI IDs</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
-* <a href="#multicore">Parallelization using multicore</a>
+* <a href="#parallel">Parallelization using the parallel package</a>
 * <a href="#using_cluster">Using the AMI as a cluster</a>
 * <a href="#installing_starcluster">Installing StarCluster</a>
 * <a href="#configuring_starcluster">Configuring StarCluster</a>
@@ -352,15 +352,15 @@ Then, from within R on the remote instance:
 
 This should start a graphics device on your local computer displaying a simple graph.
 
-<a name="multicore"></a>
-### Paralellization using multicore
+<a name="parallel"></a>
+### Paralellization using the parallel package
 
 This works best if you have selected a high-CPU instance type to run. 
 
 This trivial example runs the <code>rnorm()</code> function, but any function would work. Consult the 
-[multicore](http://cran.r-project.org/web/packages/multicore/index.html) documentation for more information.
+parallel documentation for more information.
 
-    library(multicore)
+    library(parallel)
     mclapply(1:30, rnorm)
 
 <a name="using_cluster"></a>
