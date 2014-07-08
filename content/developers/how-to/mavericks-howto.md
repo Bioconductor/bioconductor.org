@@ -46,8 +46,7 @@ C++ compilers), rather than simply the 'GCC C compiler' or 'clang C
 compiler'. 'Mavericks environment' refers to the combination of clang
 and Xcode versions available by default for Mavericks.
 
-Until recently [CRAN](http://cran.r-project.org/) and Bioconductor had
-only used GCC to build packages.  With the release of the Mavericks
+With the release of the Mavericks
 build of R, CRAN and Bioconductor have adopted Apple's preferred
 toolchain for building packages for the Mavericks
 platform. Bioconductor packages are built on the Mavericks platform
