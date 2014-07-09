@@ -1,4 +1,4 @@
-# ![](/images/icons/help.gif)Bioconductor Newsletter
+# ![](/images/icons/help.gif)*Bioconductor* Newsletter
 
 The Bioconductor newsletter summarizes core development projects 
 and BioC-related events on a quarterly basis.
