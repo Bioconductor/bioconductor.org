@@ -8,11 +8,15 @@ end_date: 2014-08-01
 instructors:
 - TBA
 location: Dana Farber Cancer Institute, Boston, MA, USA
-url: /help/course-materials/2014/BioC2014/
+url: https://register.bioconductor.org/BioC2014/
 tags:
 - BioC2014
 description: 
-  The 2014 Bioconductor annual conference will be held July 30 -
-  August 1 in <strong>Boston</strong> at the Dana Farber Cancer
-  Institute. More information will be available as we get closer to
-  the date.
+  This conference highlights current developments within and beyond
+  Bioconductor. Morning scientific talks and afternoon practicals
+  provide conference participants with insights and tools required for
+  the analysis and comprehension of high-throughput genomic data.
+  This year's conference is at the Dana-Farber Cancer Institute
+  Longwood Campus, in Boston, MA. Visit the <a
+  href="https://register.bioconductor.org/BioC2014/">Conference
+  Registration Page</a> for more information.
