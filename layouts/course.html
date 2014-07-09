@@ -4,7 +4,7 @@
   <body>
     <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
     <div id="SiteContainer" class="SiteContainer">
-      <div id="PageContent" class="PageContent">
+      <div id="PageContent" class="PageContent WithRightRail">
         <%= render("/_crumbs/") %>
         <h1><img src="/images/icons/help.gif" alt="" /><%=  @item[:title] %></h1>
         <p class="location"><%= @item[:location] %></p>
@@ -19,6 +19,11 @@
         <p><%= @item[:description] %></p>
         <h2>Materials</h2>
         <%= yield %>
+      </div>
+      <div id="RightRail" class="RightRail">
+        <a name="section-navigation"></a> <!-- accessibility anchor -->
+        <%= render("/_bioc_release_packages/") %>
+        <%= render("/_workflows/") %>
       </div>
       <%= render("/_footer/") %>
     </div>
