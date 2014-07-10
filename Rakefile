@@ -323,7 +323,7 @@ task :get_workflows do
     system(%Q(chmod -R a+r workflows_tmp))
   end    
   auth = {:username => "readonly", :password => "readonly"}
-  json = HTTPaHTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
+  json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
     :basic_auth => auth, :verify => false).body
   manifest = JSON.parse(json)  
 
