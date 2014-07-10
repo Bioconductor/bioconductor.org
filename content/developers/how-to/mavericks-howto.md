@@ -198,7 +198,7 @@ to offer support.
   Mavericks platform is, by default, assumed to be incompatible with
   programs compiled and linked against libc++.
 
-Code should be adapted to avoid constructs that are backwards or
+Code should be adapted to avoid constructs that are backward- or
 forward-incompatible. See the [forward-incompatibility
 problems](#forward-incompatible) section for examples.
 
