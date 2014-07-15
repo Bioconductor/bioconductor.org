@@ -308,6 +308,7 @@ end
 
 desc "Get Docbuilder Workflows"
 task :get_workflows do
+  site_config = YAML.load_file("./config.yaml")
   home = Dir.pwd
   #FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir_p "workflows_tmp"
@@ -323,7 +324,8 @@ task :get_workflows do
     system(%Q(chmod -R a+r workflows_tmp))
   end    
 
-  #system(%Q(rsync -av workflows_tmp/CRANrepo/ assets/packages/))
+  FileUtils.mkdir_p "assets/packages/#{site_config['release_version']}/workflows"
+  system(%Q(rsync -av workflows_tmp/CRANrepo/#{site_config['release_version']}/ assets/packages/#{site_config['release_version']}/workflows/))
 
   auth = {:username => "readonly", :password => "readonly"}
   json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
