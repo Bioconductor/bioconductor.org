@@ -322,6 +322,9 @@ task :get_workflows do
     system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
     system(%Q(chmod -R a+r workflows_tmp))
   end    
+
+  system(%Q(rsync -av workflows_tmp/CRANrepo/ assets/packages/))
+
   auth = {:username => "readonly", :password => "readonly"}
   json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
     :basic_auth => auth, :verify => false).body
