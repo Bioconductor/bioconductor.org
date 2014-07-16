@@ -207,7 +207,7 @@ accessors (functions or methods to extract information from the class)
 to help separate the interface seen by the user from the
 implementation details relevant to the developer; compare
 `DNAStringSet()` invoked with a character vector of DNA sequences with
-its internal represenation.
+its internal representation.
 
 The following layout is sometimes used to organize classes and
 methods; other approaches are possible and acceptable.
