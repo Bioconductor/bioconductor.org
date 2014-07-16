@@ -238,6 +238,7 @@ Example of correct `#include` of R headers:
     }
     extern "C" void bar(); // function 'bar' has C linkage
 
+<a name="openmp"></a>
 ### OpenMP
 
 As of this writing the Mavericks environment does not support OpenMP,
