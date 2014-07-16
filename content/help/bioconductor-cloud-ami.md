@@ -642,6 +642,12 @@ This will produce:
 ...indicating that SGE ran half the jobs on the master and
 the other half on the worker node.
 
+[This presentation](/help/course-materials/2014/ISMB2014/vjcScalable2.pptx)
+outlines how to develop a full-scale analysis 
+(identification of cis-dsQTL)
+using the kind
+of cluster we've just created.
+
 <a name="ssh_backend"></a>
 ### Using SSH as the back end
 
