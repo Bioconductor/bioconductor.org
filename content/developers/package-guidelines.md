@@ -202,15 +202,20 @@ and so that users of related packages will be able to seamlessly use
 your data structures. Do not hesitate to ask on the Bioc-devel mailing
 list for advice.
 
-We recommend the following structure/layout:
+Always implement a constructor (typically a simple function) and
+accessors (functions or methods to extract information from the class)
+to help separate the interface seen by the user from the
+implementation details relevant to the developer; compare
+`DNAStringSet()` invoked with a character vector of DNA sequences with
+its internal represenation.
+
+The following layout is sometimes used to organize classes and
+methods; other approaches are possible and acceptable.
 
 * All class definitions in R/AllClasses.R
 * All generic function definitions in R/AllGenerics.R
 * Methods are defined in a file named by the generic function. For example, all
-  `show` methods would go in R/show-methods.R. This is not written in stone,
-  but tends to provide a useful organization. Sometimes a collection of methods
-  that provide the interface to a class are best put in a SomeClass-accessors.R
-  file.
+  `show` methods would go in R/show-methods.R.
 
 A Collates: field in the DESCRIPTION file may be necessary to order class and
 method definitions appropriately during package installation.
