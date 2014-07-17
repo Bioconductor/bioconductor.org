@@ -202,12 +202,12 @@ and so that users of related packages will be able to seamlessly use
 your data structures. Do not hesitate to ask on the Bioc-devel mailing
 list for advice.
 
-Always implement a constructor (typically a simple function) and
-accessors (functions or methods to extract information from the class)
-to help separate the interface seen by the user from the
-implementation details relevant to the developer; compare
-`DNAStringSet()` invoked with a character vector of DNA sequences with
-its internal representation.
+Implement a constructor (typically a simple function) if the user is
+supposed to be able to create an instance of your class. Write short
+accessors (functions or methods) if the user needs to extract from or
+assign to slots in the class. Constructors and accessors help separate
+the interface seen by the user from the implementation details
+relevant to the developer.
 
 The following layout is sometimes used to organize classes and
 methods; other approaches are possible and acceptable.
