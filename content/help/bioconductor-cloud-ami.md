@@ -626,7 +626,7 @@ Here's how to send a simple job to the cluster:
 ```
 library(BatchJobs)
 library(BiocParallel)
-param <- BatchJobsParam(4, resources=list(ncpus=1))
+param <- BatchJobsParam(2, resources=list(ncpus=1))
 register(param)
 FUN <- function(i) system("hostname", intern=TRUE)
 xx <- bplapply(1:100, FUN)
