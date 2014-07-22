@@ -20,6 +20,9 @@
   <% else %>
     <script type="text/javascript" src="/js/jquery.js"></script>
   <% end %>
+  <%# see about including this conditionally, only needed for pkg landing pages:%>
+  <script src="/js/jquery.tools.min.js"></script>
+
   
   <% 
 	title = " - #{@item[:title]}"

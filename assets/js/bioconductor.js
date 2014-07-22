@@ -229,7 +229,7 @@ var handleCitations = function()
                 // working around possible R bug?
                 data = data.replace(/}. /g, "");
                 data = data.replace(/}.</g, '<');
-                data = data.replace(/}."/g, '"');
+                data = data.replace(/}."/g, '"'); // ' to pacify my editor
 
                 data = data.replace(' (????)', "");
                 jQuery("#bioc_citation").html(data);
@@ -250,60 +250,61 @@ jQuery(function() {
       var href = jQuery(value).attr("href");
       jQuery(value).attr("href", getHrefForSymlinks(href));
     });
+    jQuery(".rpack").tooltip({tip: "#tooltip"});//{ effect: 'slide'});
     handleCitations();
 });
 
-// another document ready function, for try-it-now
-jQuery(function(){
-    if (jQuery("#tryitnow_instance_started").length > 0) {
-        jQuery("#initially_hidden").hide();
-        var dnsName = getParameterByName("dns");
-        var key = getParameterByName("key");
-        var url = "http://" + dnsName + ":8787";
-        var action = url + "/auth-do-sign-in";
-        var link = "../launch?username=ubuntu&password=bioc&url=" + url;
-        link += "&encrypted=";
-        jQuery("#ami_link").attr("href", link);
-        jQuery("#instance_url").html(url);
+// // another document ready function, for try-it-now
+// jQuery(function(){
+//     if (jQuery("#tryitnow_instance_started").length > 0) {
+//         jQuery("#initially_hidden").hide();
+//         var dnsName = getParameterByName("dns");
+//         var key = getParameterByName("key");
+//         var url = "http://" + dnsName + ":8787";
+//         var action = url + "/auth-do-sign-in";
+//         var link = "../launch?username=ubuntu&password=bioc&url=" + url;
+//         link += "&encrypted=";
+//         jQuery("#ami_link").attr("href", link);
+//         jQuery("#instance_url").html(url);
         
-        var payload, exp, mod;
-        payload = "ubuntu\nbioc";
-        var chunks = key.split(':', 2);
-        exp = chunks[0];
-        mod = chunks[1];
+//         var payload, exp, mod;
+//         payload = "ubuntu\nbioc";
+//         var chunks = key.split(':', 2);
+//         exp = chunks[0];
+//         mod = chunks[1];
         
-        var encrypted = encrypt(payload, exp, mod);
+//         var encrypted = encrypt(payload, exp, mod);
 
-        var link = jQuery("#ami_link").attr("href");
-        jQuery("#ami_link").attr("href", link + encrypted);
-        jQuery("#instance_loading").html("");
-        jQuery("#initially_hidden").show();
-    }
+//         var link = jQuery("#ami_link").attr("href");
+//         jQuery("#ami_link").attr("href", link + encrypted);
+//         jQuery("#instance_loading").html("");
+//         jQuery("#initially_hidden").show();
+//     }
     
     
-    if (jQuery("#launch_tryitnow").length > 0) { // is this launch.md?
-        jQuery("#hide_this_stuff").hide();
-        var username = getParameterByName("username");
-        var password = getParameterByName("password");
-        var encrypted = getParameterByName("encrypted");
-        encrypted = encrypted.replace(/ /g, "+");
-        var url = getParameterByName("url");
-        var action = url + "/auth-do-sign-in";
-        jQuery("form").get(1).setAttribute("action", action);
-        document.getElementById("username").value = username;
-        document.getElementById("password").value = password;
-        //todo change this:
-        document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
-        document.getElementById('clientPath').value = window.location.pathname;
-        document.getElementById('package').value = encrypted;
-        document.realform.submit();
-    }
+//     if (jQuery("#launch_tryitnow").length > 0) { // is this launch.md?
+//         jQuery("#hide_this_stuff").hide();
+//         var username = getParameterByName("username");
+//         var password = getParameterByName("password");
+//         var encrypted = getParameterByName("encrypted");
+//         encrypted = encrypted.replace(/ /g, "+");
+//         var url = getParameterByName("url");
+//         var action = url + "/auth-do-sign-in";
+//         jQuery("form").get(1).setAttribute("action", action);
+//         document.getElementById("username").value = username;
+//         document.getElementById("password").value = password;
+//         //todo change this:
+//         document.getElementById('persist').value = document.getElementById('staySignedIn').checked ? "1" : "0";
+//         document.getElementById('clientPath').value = window.location.pathname;
+//         document.getElementById('package').value = encrypted;
+//         document.realform.submit();
+//     }
     
-    if (jQuery("#captcha_js").length > 0) {
-        jQuery("#captcha_js").html("<script type='text/javascript' src='http://cloud.bioconductor.org:2112/cgi-bin/get_captcha.js'></script>")
-    }
+//     if (jQuery("#captcha_js").length > 0) {
+//         jQuery("#captcha_js").html("<script type='text/javascript' src='http://cloud.bioconductor.org:2112/cgi-bin/get_captcha.js'></script>")
+//     }
     
-});
+// });
 
 var submit_tryitnow = function() {
     jQuery("#tryitnow_button").attr("disabled", "disabled");

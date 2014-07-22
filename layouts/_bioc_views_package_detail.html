@@ -1,6 +1,14 @@
+<div class="tooltip2" id="tooltip">
+    <p>To install this package, start R and enter:</p>
+<pre>source("http://bioconductor.org/biocLite.R")
+biocLite("<%=@package[:Package]%>")</pre>
+    <p> In most cases, you don't need to download the
+    package archive at all.</p>    
+</div>
 <div class="do_not_rebase">
         <h1><%=@package[:Package]%></h1>
 
+    <%= get_devel_fragment(@package, @item, @item_rep) %>
 
     <%# package title - not to be confused with page title %>
 
@@ -19,17 +27,29 @@
 
     <p>To install this package, start R and enter:</p>
 
-    <pre>
-source("http://bioconductor.org/biocLite.R")
-biocLite("<%=@package[:Package]%>")</pre>
-
     <div id="bioc_citation_outer">
     <p>Citation (from within R,
       enter <code>citation("<%=@package[:Package]%>")</code>):</p>
       <div id="bioc_citation" class="bioc_citation"></div>
     </div>
 
+    <h3>Installation</h3>
+
+
+    <pre>
+source("http://bioconductor.org/biocLite.R")
+biocLite("<%=@package[:Package]%>")</pre>
+
+
     <h3>Documentation</h3>
+
+    <p>To view documentation for the version of this package installed
+        in your system, start R and enter:
+    </p>
+
+<pre>browseVignettes("<%=@package[:Package]%>")</pre>
+
+    <p>&nbsp;</p>
 
     <table>
         <% rowindex = 0 %>
@@ -205,7 +225,12 @@ biocLite("<%=@package[:Package]%>")</pre>
 
     </table>
 
-    <h3>Package Downloads</h3>
+    <h3>Package Archives</h3>
+
+    <p>Follow <a href="/install/#install-bioconductor-packages">
+    Installation</a> instructions to use this 
+    package in your R session.</p>
+    
     <%
     ri = RowIndexer.new
     %>
@@ -213,13 +238,13 @@ biocLite("<%=@package[:Package]%>")</pre>
     <table>
         <tr class="<%=ri.rowclass%>">
             <td>Package Source</td>
-            <td><a href="../<%=@package[:"source.ver"]%>">
+            <td class="rpack"><a href="../<%=@package[:"source.ver"]%>">
                 <%= base_filename(@package[:"source.ver"]) %></a></td>
             </tr>
 
             <tr class="<%=ri.rowclass%>">
                 <td>Windows Binary</td>
-                <td>
+                <td class="rpack">
                     <% wb = windows_binary(@package) %>
                     <% unless wb.nil?%>
                     <a href="../<%=windows_binary(@package)%>">
@@ -234,7 +259,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                     <tr class="<%=ri.rowclass%>">
                         <td><%= h[:os] %></td>
-                        <td><a href="<%=h[:url]%>">
+                        <td class="rpack"><a href="<%=h[:url]%>">
                             <%=h[:basename]%></td>
                     </tr>
 

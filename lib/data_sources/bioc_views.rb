@@ -171,6 +171,9 @@ class BiocViews < Nanoc3::DataSource
           item[:subnav].push({:include => "/_mailing_list/"})
 
           item[:title] = "#{item[:Package]}"
+          if  version == @site_config["devel_version"]
+            item[:title] += " (development version)"
+          end
           item[:repo] = repo
           item[:bioc_version_num] = version
           if (version == @site_config["release_version"])

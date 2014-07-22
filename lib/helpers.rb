@@ -895,3 +895,35 @@ def get_mac_packs(package)
     end
     res
 end
+
+def is_devel(item)
+    return true if item.identifier =~ /\/devel\/|\/#{config[:devel_version]}\//
+    return false 
+end
+
+def is_new_package(package)
+    since = since(package[:Package])
+    return(since == config[:devel_version])
+end
+
+def get_release_url(item_rep)
+    item_rep.raw_path.sub(/^output/, "").sub(/\/devel\/|\/#{config[:devel_version]}\//, "/release/")
+end
+
+
+def get_devel_fragment(package, item, item_rep)
+    return "" unless is_devel(item)
+
+    str=<<-"EOT"
+<p>This is the <b>development</b> version of #{@package[:Package]}
+EOT
+    unless is_new_package(package)
+        str2=<<-"EOT"
+; for the stable release version, see 
+<a href="#{get_release_url(item_rep)}">#{@package[:Package]}</a>
+EOT
+        str = str.strip() + str2
+    end
+    str = str.strip() + ".</p>"
+    str
+end
