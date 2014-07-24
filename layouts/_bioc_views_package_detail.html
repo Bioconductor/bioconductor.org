@@ -268,6 +268,13 @@ biocLite("<%=@package[:Package]%>")</pre>
                 <% end %>
 
 
+                <% if package_has_source_url(@item) %>
+                    <tr class="<%=ri.rowclass%>">
+                        <td>Browse/checkout Source</td>
+                        <td><a href="<%=get_source_url(@package, @item, @item_rep)%>">(username/password: readonly)</a></td>
+                    </tr>
+                <% end %>
+
                     <tr class="<%=ri.rowclass%>">
                         <td>Package Downloads Report</td>
                         <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>

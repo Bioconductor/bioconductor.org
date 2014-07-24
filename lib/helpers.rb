@@ -927,3 +927,36 @@ EOT
     str = str.strip() + ".</p>"
     str
 end
+
+def package_has_source_url(item)
+    segs = item.identifier.split('/')
+    return true if segs[5] == "bioc"
+    return true if segs[5] == "data" and segs[6] == "experiment"
+    return false
+end
+
+def get_source_url(package, item, item_rep)
+    url = "https://hedgehog.fhcrc.org/"
+    segs = item.identifier.split("/")
+    repos = segs[5]
+    repos = segs[5] + "/" + segs[6] if segs[5] == "data" \
+      and segs[6] == "experiment"
+    if repos == "bioc"
+        url += "bioconductor/"
+    else
+        url += "bioc-data/"
+    end
+    if is_devel(item)
+        url += "trunk/"
+    else
+        pkg_version = segs[4].sub(".", "_")
+        url += "branches/RELEASE_#{pkg_version}/"
+    end
+    if repos == "bioc"
+        url += "madman/Rpacks/"
+    else
+        url += "experiment/pkgs/"
+    end
+    url += package[:Package] + "/"
+    url
+end
