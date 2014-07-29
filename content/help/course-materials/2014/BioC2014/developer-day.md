@@ -31,7 +31,7 @@ Developer Day is part of the Bioconductor
   - Michael Love. [Shiny clickable plots](https://github.com/mikelove/shinyMA).
   - Stephanie Hicks. When to use quantile normalization?
   - Leonardo Rodrigues. LAT, streamlining lipid data analysis in R.
-  - Robert Costello. Integrated variant annotation and filtering using
+  - Robert Castelo. Integrated variant annotation and filtering using
     R/Bioconductor and the
     [VariantFiltering](http://bioconductor.org/packages/release/bioc/html/VariantFiltering.html)
     package.
