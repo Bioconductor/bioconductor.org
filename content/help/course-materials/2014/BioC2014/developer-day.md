@@ -5,6 +5,10 @@ Developer Day is part of the Bioconductor
 2014. This page is under active development, and will be until July
 30!
 
+A Google doc for
+[public notes](https://docs.google.com/document/d/1l7WyS7z8O-qKd-sCMsWdVsNHRVDP4TqrGcMLMHlEwog/edit?usp=sharing)
+is available.
+
 ## Tentative schedule
 
 9:00 - 12:00 Morning
