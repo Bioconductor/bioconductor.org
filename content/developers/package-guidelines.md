@@ -19,6 +19,7 @@
 * [Version Numbering](#versions)
 * [C/C++ or Fortran code](#c-code)
 * [Unit tests](#unitTests)
+* [Videos](#videos)
 * [Duplication of Packages in CRAN and Bioconductor](#duplications)
 * [Package Author and Maintainer Responsibilities](#responsibilities)
 
@@ -371,6 +372,18 @@ both package development and maintenance.  Examples and explanations are provide
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="videos">Videos</h2>
+
+You can submit an instructional video along with 
+your package.
+In the DESCRIPTION file of your package, add a "Video:" line
+which contains the link to your video. We will then feature your 
+video on our
+[Bioconductor YouTube Channel](https://www.youtube.com/user/bioconductor).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 
 <h2 id="duplications">Duplication of Packages in CRAN and Bioconductor</h2>
