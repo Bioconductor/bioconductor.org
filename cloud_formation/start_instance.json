@@ -8,7 +8,7 @@
       "Description" : "Bioconductor Version. <%=config['release_version']%> (release) is recommended.",
       "Type" : "String",
       "Default": "<%=config['release_version']%>",
-      "AllowedValues": ["2.8", "2.9", "2.10", "2.11", "2.12", "2.13", "2.14", "3,0"],
+      "AllowedValues": ["2.8", "2.9", "2.10", "2.11", "2.12", "2.13", "2.14", "3.0"],
       "ConstraintDescription": "Must be 2.8, 2.9, 2.10, 2.11, 2.12, 2.13, 2.14 or 3.0"
     },
     "InstanceType" : {
