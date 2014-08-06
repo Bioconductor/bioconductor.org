@@ -880,13 +880,23 @@ def get_last_svn_commit_time()
     %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
 end
 
-def get_mac_packs(package)
+def get_mac_packs(package, item)
+
     res = []
-    os =  ["Mac OS X 10.6 (Snow Leopard)", "Mac OS X 10.9 (Mavericks)"]
-    osvers = ["mac.binary.ver", "mac.binary.mavericks.ver"]
-    for i in 0..1
+    os =  ["Mac OS X 10.6 (Snow Leopard)"] 
+    osvers = ["mac.binary.ver"] 
+
+    version = item.identifier.split("/")[4].to_f
+    if (version > 2.13)
+        os <<  "Mac OS X 10.9 (Mavericks)"
+        osvers << "mac.binary.mavericks.ver"
+    end
+
+
+
+    os.each_with_index do |this_os, i|
         h = {}
-        h[:os] = os[i]
+        h[:os] = this_os
         if package.has_key? osvers[i].to_sym
             h[:url] = "../#{package[osvers[i].to_sym]}"
             h[:basename] = package[osvers[i].to_sym].split("/").last
