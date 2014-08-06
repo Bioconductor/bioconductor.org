@@ -17,7 +17,6 @@ versions:
 ## if old versions (no older than 2.5) need to be rebuilt for any reason,
 ## add them here, but in most cases this should just contain the
 ## release and devel versions:
-- "2.13"
 - "2.14"
 - "3.0"
 ## CHANGE THIS as various parts of the new devel version become available.
