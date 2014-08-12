@@ -141,6 +141,20 @@ biocLite("<%=@package[:Package]%>")</pre>
                 <% rowindex += 1 %>
             <% end %>
 
+            <% if @package.has_key? :Video %>
+                <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+                <tr class="<%= row_class %>">
+                    <td class="docFixedWidth">
+                        <a href="<%=@package[:Video]%>">Video</a>
+                    </td>
+                    <td class="docFixedWidth">&nbsp;</td>
+                    <td>&nbsp;</td>
+                </tr>
+                <% rowindex += 1 %>
+            <% end %>
+
+
+
         
     </table>
 
