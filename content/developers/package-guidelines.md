@@ -171,6 +171,10 @@ Packages must
 
 <h2 id="dependencies">Package Dependencies</h2>
 
+Packages you depend on must be available via Bioconductor or CRAN;
+the automated build system has no way to install packages from
+any other source.
+
 Reuse, rather than re-implement or duplicate, well-tested functionality from
 other packages. Specify package dependencies in the DESCRIPTION file, listed
 as follows
