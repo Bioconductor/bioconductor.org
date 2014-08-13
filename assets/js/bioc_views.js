@@ -52,6 +52,7 @@ var displayPackages = function(packageList, nodeName) {
     jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
     jQuery("#packages").html(html);
     jQuery("#biocViews_package_table").dataTable({
+        sScrollX: "100%",
              "aLengthMenu": [
          [-1, 10, 25, 50, 100],
          ["All", 10, 25, 50, 100]
