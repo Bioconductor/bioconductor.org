@@ -291,6 +291,14 @@ section) and vignettes; this aspect of documentation is no different from any
 scientific endeavor. The file inst/CITATION can be used to specify how a
 package is to be cited.
 
+Whether or not a CITATION file is present, an automatically-generated
+citation will appear on the package landing page on the
+Bioconductor web site. For optimal formatting of author names,
+specify the package author and maintainer using the Authors@R
+field as described in
+[Writing R Extensions](http://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file).
+
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="versions">Version Numbering</h2>
