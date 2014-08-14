@@ -293,7 +293,8 @@ package is to be cited.
 
 Whether or not a CITATION file is present, an automatically-generated
 citation will appear on the package landing page on the
-Bioconductor web site. For optimal formatting of author names,
+Bioconductor web site. For optimal formatting of author names
+(if a CITATION file is not present),
 specify the package author and maintainer using the Authors@R
 field as described in
 [Writing R Extensions](http://cran.r-project.org/doc/manuals/r-release/R-exts.html#The-DESCRIPTION-file).
