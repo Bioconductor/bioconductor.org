@@ -978,7 +978,7 @@ def get_video_title(video)
 end
 
 def render_courses()
-    lines = File.readlines("etc/course_descriptions.csv")
+    lines = File.readlines("etc/course_descriptions.tsv")
     headers = lines.shift.strip.split("\t")
     out=<<-"EOT" # what class?
 <table id="course_descriptions">
