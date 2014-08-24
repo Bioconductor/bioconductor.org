@@ -1,3 +1,20 @@
+<link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
+ 
+<!-- DataTables -->
+<script type="text/javascript" charset="utf8" src="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+
+<script language="javascript">
+    jQuery(document).ready( function () {
+        jQuery.fn.dataTableExt.oStdClasses.sStripeOdd = "row_odd";
+        jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
+
+        jQuery('#course_descriptions').DataTable({
+            "iDisplayLength": 10
+        });
+} );
+</script>
+
+
 <h1><img src="/images/icons/help.gif" alt="" />Courses &amp; Conferences</h1>
 
 <p>Bioconductor provides training in computational and statistical
@@ -7,6 +24,13 @@
    using all or parts of the Bioconductor course materials (slides,
    vignettes, scripts) please cite the authors and refer your audience
    to the Bioconductor website.</p>
+
+
+<%= render_courses %>
+
+<p>&nbsp;</p>
+
+<h2>Courses by year</h2>
 
 <ul class="inline_list">
 <% course_materials.each do |item| %>

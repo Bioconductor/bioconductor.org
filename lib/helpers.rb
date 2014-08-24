@@ -976,3 +976,66 @@ def get_video_title(video)
    doc = Nokogiri::HTML(response.body)
    doc.css("title").text.sub(/ - YouTube$| on Vimeo$/, "")
 end
+
+def render_courses()
+    lines = File.readlines("etc/course_descriptions.csv")
+    headers = lines.shift.strip.split("\t")
+    out=<<-"EOT" # what class?
+<table id="course_descriptions">
+    <thead>
+        <tr>
+            <th>Subject Matter</th>
+            <th>Course</th>
+            <th>Date of Course</th>
+            <th>BioC version used</th>
+            <th>Instructor</th>
+            <th>Materials</th>
+        </tr>
+    </thead>
+    <tbody>
+    EOT
+    lines.each_with_index do |line, idx|
+        # break if idx == 1
+        lh = {}
+        line.strip.split("\t").each_with_index do |seg, i|
+            lh[headers[i].strip] = seg
+        end
+        rowclass = nil
+        if idx % 2 == 0
+            rowclass = "row_even"
+        else
+            rowclass = "row_odd"
+        end
+        #out += "        <tr class='#{rowclass}'>\n"
+        out += "        <tr>\n"
+        out += "<td>" + lh["Area"] + "</td>\n"
+        out += "<td>" + lh["Course"] + "</td>\n"
+        out += "<td>" + lh["Date"].split(" - ").first.strip + "</td>\n"
+        biocver = lh['Bioc devel version']
+        biocver = "3.0" if biocver.strip == "3"
+        out += "<td>" + biocver + "</td>\n"
+        out += "<td>" + lh["Instructor Name"] + "</td>\n"
+        out += "<td>"
+        segs = lh["Material"].split(",")
+        segs.each_with_index do |seg, i|
+            title, href = seg.gsub('"', '').split(/\(|\)/)
+            href.gsub!("http://www.bioconductor.org", "")
+            out += %Q(<a href="#{href}">#{title}</a>)
+            if i != (segs.length - 1)
+                out += ", "
+            end
+        end
+        out += "</td>\n"
+
+
+
+        # ...
+        out += "        </tr>\n"
+    end
+
+    out+=<<-"EOT"
+            </tbody>
+        </table>
+    EOT
+    out
+end
