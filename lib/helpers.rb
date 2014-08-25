@@ -988,6 +988,7 @@ def render_courses()
             <th>Course</th>
             <th>Date of Course</th>
             <th>BioC version used</th>
+            <th>R version used</th>
             <th>Instructor</th>
             <th>Materials</th>
         </tr>
@@ -1000,20 +1001,14 @@ def render_courses()
         line.strip.split("\t").each_with_index do |seg, i|
             lh[headers[i].strip] = seg
         end
-        rowclass = nil
-        if idx % 2 == 0
-            rowclass = "row_even"
-        else
-            rowclass = "row_odd"
-        end
-        #out += "        <tr class='#{rowclass}'>\n"
         out += "        <tr>\n"
         out += "<td>" + lh["Area"] + "</td>\n"
         out += "<td>" + lh["Course"] + "</td>\n"
         out += "<td>" + lh["Date"].split(" - ").first.strip + "</td>\n"
-        biocver = lh['Bioc devel version']
+        biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
         out += "<td>" + biocver + "</td>\n"
+        out += "<td>" + lh["R version"] + "</td>\n"
         out += "<td>" + lh["Instructor Name"] + "</td>\n"
         out += "<td>"
         segs = lh["Material"].split(",")
