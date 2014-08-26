@@ -986,9 +986,8 @@ def render_courses()
         <tr>
             <th>Subject Matter</th>
             <th>Course</th>
-            <th>Date of Course</th>
-            <th>BioC version used</th>
-            <th>R version used</th>
+            <th>Date</th>
+            <th>Bioc/R Version</th>
             <th>Instructor</th>
             <th>Materials</th>
         </tr>
@@ -1007,8 +1006,7 @@ def render_courses()
         out += "<td>" + lh["Date"].split(" - ").first.strip + "</td>\n"
         biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
-        out += "<td>" + biocver + "</td>\n"
-        out += "<td>" + lh["R version"] + "</td>\n"
+        out += "<td>" + lh["R version"]  + '/' +  biocver + "</td>\n"
         out += "<td>" + lh["Instructor Name"] + "</td>\n"
         out += "<td>"
         segs = lh["Material"].split(",")
