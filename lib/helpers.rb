@@ -19,6 +19,7 @@ require 'open-uri'
 require 'nokogiri'
 require 'fileutils'
 require 'mechanize'
+require 'kramdown'
 
 include REXML
 
@@ -984,12 +985,12 @@ def render_courses()
 <table id="course_descriptions">
     <thead>
         <tr>
-            <th>Subject Matter</th>
+            <th>Keyword</th>
             <th>Course</th>
-            <th>Date</th>
-            <th>Bioc/R Version</th>
             <th>Title</th>
             <th>Materials</th>
+            <th>Date</th>
+            <th>Bioc/R Version</th>
         </tr>
     </thead>
     <tbody>
@@ -1000,25 +1001,17 @@ def render_courses()
         line.strip.split("\t").each_with_index do |seg, i|
             lh[headers[i].strip] = seg
         end
+        year = lh["Date"].split(" - ").first.strip.split("-").first
+        course_url = "/help/course-materials/#{year}/#{lh["Course"]}/"
         out += "        <tr>\n"
-        out += "<td>" + lh["Area"] + "</td>\n"
-        out += "<td>" + lh["Course"] + "</td>\n"
+        out += "<td>" + lh["Keyword"] + "</td>\n"
+        out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
+        out += "<td>" + lh["Title"].strip + ", "  + lh["Instructor"].strip +  "</td>\n"
+        out += "<td>" + Kramdown::Document.new(lh["Material"]).to_html + "</td>\n"
         out += "<td>" + lh["Date"].split(" - ").first.strip.gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
         out += "<td>" + lh["R version"]  + '/' +  biocver + "</td>\n"
-        out += "<td>" + lh["Course Content"].strip + ", "  + lh["Instructor Name"].strip +  "</td>\n"
-        out += "<td>"
-        segs = lh["Material"].split(",")
-        segs.each_with_index do |seg, i|
-            title, href = seg.gsub('"', '').split(/\(|\)/)
-            href.gsub!("http://www.bioconductor.org", "")
-            out += %Q(<a href="#{href}">#{title}</a>)
-            if i != (segs.length - 1)
-                out += ", "
-            end
-        end
-        out += "</td>\n"
 
 
 
