@@ -988,7 +988,7 @@ def render_courses()
             <th>Course</th>
             <th>Date</th>
             <th>Bioc/R Version</th>
-            <th>Instructor</th>
+            <th>Title</th>
             <th>Materials</th>
         </tr>
     </thead>
@@ -1003,11 +1003,11 @@ def render_courses()
         out += "        <tr>\n"
         out += "<td>" + lh["Area"] + "</td>\n"
         out += "<td>" + lh["Course"] + "</td>\n"
-        out += "<td>" + lh["Date"].split(" - ").first.strip + "</td>\n"
+        out += "<td>" + lh["Date"].split(" - ").first.strip.gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
         out += "<td>" + lh["R version"]  + '/' +  biocver + "</td>\n"
-        out += "<td>" + lh["Instructor Name"] + "</td>\n"
+        out += "<td>" + lh["Course Content"].strip + ", "  + lh["Instructor Name"].strip +  "</td>\n"
         out += "<td>"
         segs = lh["Material"].split(",")
         segs.each_with_index do |seg, i|
