@@ -38,14 +38,14 @@ active_release_builders:
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
 ami_ids:
- bioc2_8: ami-e2dc278a
- bioc2_9: ami-56d2293e
- bioc2_10: ami-b2d42fda
- bioc2_11: ami-04cb306c
- bioc2_12: ami-b0cb30d8
- bioc2_13: ami-c8cf34a0
- bioc2_14: ami-6e4f8e06
- bioc3_0: ami-be4e8fd6
+ bioc2_8: ami-3a2ef452
+ bioc2_9: ami-2623f94e
+ bioc2_10: ami-5621fb3e
+ bioc2_11: ami-f827fd90
+ bioc2_12: ami-7224fe1a
+ bioc2_13: ami-4a25ff22
+ bioc2_14: ami-9c25fff4
+ bioc3_0: ami-e45a808c
 data_sources: 
 - items_root: /
   layouts_root: /
