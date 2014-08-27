@@ -1032,3 +1032,7 @@ def render_courses()
     EOT
     out
 end
+
+def ami_url(ami)
+    "<a href='https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=#{ami}'>#{ami}</a>"
+end

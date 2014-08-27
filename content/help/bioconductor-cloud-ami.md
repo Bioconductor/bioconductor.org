@@ -284,42 +284,42 @@ Our AMIs have the following IDs.
     <tr>
         <td>3.0 (devel)</td>
         <td>3.1.0</td>
-        <td><%= config[:ami_ids][:bioc3_0]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc3_0]%></td>
     </tr>
     <tr>
         <td>2.14 (release, <b>recommended</b>)</td>
         <td>3.1.0</td>
-        <td><%= config[:ami_ids][:bioc2_14]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_14]%></td>
     </tr>
     <tr>
         <td>2.13</td>
         <td>3.0.2</td>
-        <td><%= config[:ami_ids][:bioc2_13]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_13]%></td>
     </tr>
     <tr>
         <td>2.12</td>
         <td>3.0</td>
-        <td><%= config[:ami_ids][:bioc2_12]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_12]%></td>
     </tr>
     <tr>
         <td>2.11</td>
         <td>2.15</td>
-        <td><%= config[:ami_ids][:bioc2_11]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_11]%></td>
     </tr>
     <tr>
         <td>2.10</td>
         <td>2.15</td>
-        <td><%= config[:ami_ids][:bioc2_10]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_10]%></td>
     </tr>
     <tr>
         <td>2.9</td>
         <td>2.14</td>
-        <td><%= config[:ami_ids][:bioc2_9]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_9]%></td>
     </tr>
     <tr>
         <td>2.8</td>
         <td>2.13</td>
-        <td><%= config[:ami_ids][:bioc2_8]%></td>
+        <td><%= ami_url config[:ami_ids][:bioc2_8]%></td>
     </tr>
   </tbody>
 </table>
