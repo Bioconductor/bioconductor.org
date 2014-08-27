@@ -980,6 +980,13 @@ end
 
 def render_courses()
     lines = File.readlines("etc/course_descriptions.tsv")
+
+    lines = lines.sort do |a,b|
+        d1 = a.split("\t").first
+        d2 = a.split("\t").first
+        b <=> a
+    end
+
     headers = lines.shift.strip.split("\t")
     out=<<-"EOT" # what class?
 <table id="course_descriptions">
@@ -1006,7 +1013,7 @@ def render_courses()
         out += "        <tr>\n"
         out += "<td>" + lh["Keyword"] + "</td>\n"
         out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
-        out += "<td>" + lh["Title"].strip + ", "  + lh["Instructor"].strip +  "</td>\n"
+        out += "<td>" + Kramdown::Document.new(lh["Title"].strip + ", "  + lh["Instructor"].strip).to_html +  "</td>\n"
         out += "<td>" + Kramdown::Document.new(lh["Material"]).to_html + "</td>\n"
         out += "<td>" + lh["Date"].split(" - ").first.strip.gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']

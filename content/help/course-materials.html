@@ -9,6 +9,8 @@
         jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
 
         jQuery('#course_descriptions').DataTable({
+          //"order": [[ 4, "desc" ]],
+           "aaSorting": [],
             "iDisplayLength": 10,
             "aLengthMenu": [
                  [10, 25, 50, 100, -1],
