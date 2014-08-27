@@ -1,4 +1,12 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2014-08-24 - 2014-08-26	Epigenomics	R	Introduction to R (slides)	Martin Morgan	[html](IntroductionToR.html)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	Epigenomics	Introduction to Bioconductor for Epigneomics	Martin Morgan	[pdf](BiocForEpigenomics.pdf) [R](BiocForEpigenomics.R) [Rnw](BiocForEpigenomics.Rnw)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	Sequence Analysis	Introduction to Bioconductor for Sequence Analysis	Martin Morgan	[html](BiocForSequenceAnalysis.html) [R](BiocForSequenceAnalysis.R) [Rmd](BiocForSequenceAnalysis.Rmd)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	Data Representation	Sequence data represenations in Bioconductor	Martin Morgan	[html](SequenceDataRepresentation.html) [R](SequenceDataRepresentation.R) [Rmd](SequenceDataRepresentation.Rmd)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	RNASeq	Counting reads for RNA-seq in Bioconductor	Martin Morgan	[pdf](CountingReadsForRNASeq.pdf) [R](CountingReadsForRNASeq.R) [Rnw](CountingReadsForRNASeq.Rnw)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	Methylation	Introduction to working with methylation arrays (slides)	Martin Morgan	[html](MethylationArrays.html)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	Methylation	A short methylation analysis using [minfi](/packages/release/bioc/html/minfi.html)	Martin Morgan	[html](MethylationArrays-lab.html) [R](MethylationArrays-lab.R) [Rmd](MethylationArrays-lab.Rmd)	2.14	3.1.1
+2014-08-24 - 2014-08-26	Epigenomics	eQTL	eQTL analysis -- an approach with Bioconductor	Vincent Carey	[pdf](eQTLTalk.pdf)	2.14	3.1.1
 2014-07-30 - 2014-08-01	BioC2014	R/Bioconductor	R / Bioconductor for everyone	Martin Morgan	[slides](/help/course-materials/2014/BioC2014/RBiocForEveryone.pdf), [pdf](/help/course-materials/2014/BioC2014/RBiocForEveryone-lab.pdf), [R](/help/course-materials/2014/BioC2014/RBiocForEveryone-lab.R)	2.14	3.1.1
 2014-07-15 - 2014-07-15	ISMB2014	R/Bioconductor	Trends in Genomic Data Analysis in R	Levi Waldron	[pdf](/help/course-materials/2014/ISMB2014/ISMB2014_WaldronOverview.pdf)	2.14	3.1.1
 2014-06-30 - 2014-06-30	useR2014	R/Bioconductor	Introduction to R / Bioconductor	Martin Morgan	[html](/help/course-materials/2014/useR2014/Introduction.html), [R](/help/course-materials/2014/useR2014/Introduction.R)	2.14	3.1.0
