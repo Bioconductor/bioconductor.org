@@ -328,6 +328,12 @@ Our AMIs have the following IDs.
 *Please note that AMI IDs may change over time as we update the underlying AMI. Refer to this page for the most
 current AMI IDs. These AMIs live in the US-East-1 region.*
 
+For administrative and funding reasons, Bioconductor
+keeps track of each time a Bioconductor AMI is launched.
+No identifying information is kept. By using this AMI,
+you consent to this tracking.
+
+
 
 <a name="scenarios"></a>
 ## Scenarios for using your Bioconductor instance
