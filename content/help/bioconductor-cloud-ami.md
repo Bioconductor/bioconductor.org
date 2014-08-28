@@ -330,7 +330,7 @@ current AMI IDs. These AMIs live in the US-East-1 region.*
 
 For administrative and funding reasons, Bioconductor
 keeps track of each time a Bioconductor AMI is launched.
-No identifying information is kept. By using this AMI,
+No identifying information is kept. By using the AMI,
 you consent to this tracking.
 
 
