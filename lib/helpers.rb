@@ -1018,7 +1018,7 @@ def render_courses()
         out += "<td>" + lh["Date"].split(" - ").first.strip.gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
-        out += "<td>" + lh["R version"]  + '/' +  biocver + "</td>\n"
+        out += "<td>" + biocver + '/' +  lh["R version"]  + "</td>\n"
 
 
 
