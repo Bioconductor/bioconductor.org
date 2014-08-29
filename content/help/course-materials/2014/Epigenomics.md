@@ -28,9 +28,9 @@ Sunday
 Monday
 
 * [pdf](RNASeqShortCourse.pdf) Introduction to RNA-Seq data analysis,
-  Benilton Carvahlo
+  Benilton Carvalho
 
 Tuesday
 
-* [pdf](eQTLTalk.pdf) eQTL analysis -- an approach with Bioconductor,
+* [pdf](eQTLtalk.pdf) eQTL analysis -- an approach with Bioconductor,
   Vincent Carey
