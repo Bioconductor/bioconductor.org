@@ -1009,7 +1009,7 @@ def render_courses()
             lh[headers[i].strip] = seg
         end
         year = lh["Date"].split(" - ").first.strip.split("-").first
-        course_url = "/help/course-materials/#{year}/#{lh["Course"]}/"
+        course_url = "#{year}/#{lh["Course"]}/"
         out += "        <tr>\n"
         out += "<td>" + lh["Keyword"] + "</td>\n"
         out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
