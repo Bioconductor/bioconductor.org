@@ -1,6 +1,7 @@
 Sunday
 
-* [html](IntroductionToR.html) Introduction to R (slides), Martin Morgan
+* [html](IntroductionToR.html) [Rpres](IntroductionToR.Rpres)
+  Introduction to R (slides), Martin Morgan
 * [pdf](BiocForEpigenomics.pdf) [R](BiocForEpigenomics.R)
   [Rnw](BiocForEpigenomics.Rnw) Introduction to Bioconductor for
   Epigneomics, Martin Morgan
@@ -17,11 +18,17 @@ Sunday
     * [pdf](CountingReadsForRNASeq.pdf) [R](CountingReadsForRNASeq.R)
       [Rnw](CountingReadsForRNASeq.Rnw) Counting reads for RNA-seq in
       Bioconductor, Martin Morgan
-    * [html](MethylationArrays.html) Introduction to working with
-      methylation arrays (slides), Martin Morgan
+    * [html](MethylationArrays.html) [Rpres](MethylationArrays.Rpres)
+      Introduction to working with methylation arrays (slides), Martin
+      Morgan
     * [html](MethylationArrays-lab.html) [R](MethylationArrays-lab.R)
       [Rmd](MethylationArrays-lab.Rmd) A short methylation analysis using
       [minfi](/packages/release/bioc/html/minfi.html), Martin Morgan
+
+Monday
+
+* [pdf](RNASeqShortCourse.pdf) Introduction to RNA-Seq data analysis,
+  Benilton Carvahlo
 
 Tuesday
 
