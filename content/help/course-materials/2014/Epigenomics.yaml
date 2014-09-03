@@ -21,8 +21,8 @@ description: Brazilian 2014 Cancer Epigenomics Workshop is an international foru
   collaboration with the 60th Society of Brazilian Genetics Congress and the Latin
   American Bioconductor Foundation, we have put together a series of talks and hands-on
   training. The workshop will include high-level science talks plus a short course
-  on bioinformatics using open source statistical tool - [R](http://cran.r-project.org)
-  and [Bioconductor](http://bioconductor.org) to analyze large-scale
+  on bioinformatics using open source statistical tool - <a href="http://cran.r-project.org">R</a>
+  and <a href="http://bioconductor.org">Bioconductor</a> to analyze large-scale
   biological data. Bioconductor is a community driven platform, devoted to providing
   resources (via packages) for molecular biologist, computational biologist and bioinformatician
   interested in using R to analyze big bio-data, such as microarray and next-generation
