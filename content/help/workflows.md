@@ -57,3 +57,7 @@ genomic data. Common workflows include:
   Default outputs of the cloud-oriented interface ciseqByCluster
   include FDR for all SNP-gene pairs in cis, along with locus-specific
   annotations of genetic and genomic contexts.
+
+See the [HOWTO](/developers/how-to/workflows/) for information on contributing
+your own workflow.
+
