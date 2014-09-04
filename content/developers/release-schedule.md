@@ -1,44 +1,47 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 2.14 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 3.0 Release Schedule
 
-This release will use R-3.1.0 (Spring Dance). 
+This release will use R-3.1.1 (Sock it to Me). 
 
 ## Tentative schedule
 
-### March 11, 2014
+### September 16, 2014
 
 * Packages for deprecation identified.
 
-### March 18
+### September 23
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
-* Deadline for .db0 packages to be available for developers.
+* Deadline for first-pass .db0 packages to be available for developers.
 
 [guidelines]: /developers/package-guidelines
 
 
-### March 20
+### September 25
 
 * Deadline for new package submissions.
 
+* Deadline for release candidate .db0 packages to be available
+  for developers.
 
-### March 24
+
+### September 29
 
 * Release candidate of annotation packages built and posted to devel
   annotation data repository.
 
 
-### March 26
+### October 2
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
-   
-### April 1
+
+### October 6
 
 * Grand Feature Freeze (alpha):  no new packages added to BioC
   release roster.
 
-### April 3
+### October 8
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
@@ -46,12 +49,12 @@ This release will use R-3.1.0 (Spring Dance).
    Some warnings will be accepted, clarification on the bioc-devel mailing
    list.
 
-* Stop release (BioC 2.13) builds. Commits to this branch will be disabled.
+* Stop release (BioC 2.14) builds. Commits to this branch will be disabled.
 
 * Deadline for annotation package contributors to upload updated packages.
 
 
-### April 7
+### October 10
 
 * Bioconductor release candidate.  Package maintainers should limit
    changes to "show-stopper" bugs and documentation improvements.
@@ -61,15 +64,15 @@ This release will use R-3.1.0 (Spring Dance).
 * Package NEWS files updated. Latest NEWS will be collated and included
   in release announcement.
 
-### April 11
+### October 13
 
-* Creation of the BioC 2.14 release branch. Development can resume on
+* Creation of the BioC 3.0 release branch. Development can resume on
    trunk, but changes will not be part of the release.
 
 * Build final release repositories.
 
 * Test install scripts, GUI installation.
 
-### April 14
+### October 14
 
 * Bioconductor release.
