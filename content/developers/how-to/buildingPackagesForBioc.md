@@ -9,7 +9,7 @@
 ![](/images/icons/help.gif)Building packages for Bioconductor
 =======================================================================
 
-The aim of this guide is to be a primer for new package authors who aspire to write packages for Bioconductor.  It will take you through the steps necessary to do this using tools available in the widely available IDE R Studio.  And it will also attempt to explain the most fundamental aspects of package anatomy with the aim of helping your package to eventually meet or exceed the [Bioconductor Package Guidelines](http://www.bioconductor.org/developers/package-guidelines/).  We also have other resources that can help developers with various aspects of package development.  For those not interested in this very introductory guide, there are other developer resources on the Bioconductor website [here](http://www.bioconductor.org/developers/).  And there are also other [how to documents](http://www.bioconductor.org/developers/how-to/) that can be explored to answer various questions about developing for Bioconductor.
+The aim of this guide is to be a primer for new package authors who aspire to write packages for Bioconductor.  It will take you through the steps necessary to do this using tools available in the widely available IDE RStudio.  And it will also attempt to explain the most fundamental aspects of package anatomy with the aim of helping your package to eventually meet or exceed the [Bioconductor Package Guidelines](http://www.bioconductor.org/developers/package-guidelines/).  We also have other resources that can help developers with various aspects of package development.  For those not interested in this very introductory guide, there are other developer resources on the Bioconductor website [here](http://www.bioconductor.org/developers/).  And there are also other [how to documents](http://www.bioconductor.org/developers/how-to/) that can be explored to answer various questions about developing for Bioconductor.
 
 Bioconductor packages are really just R packages.  So the final word on what
 can be done with them can be found in this document
@@ -21,7 +21,7 @@ packages for Bioconductor.  This document will attempt to
 simplify the discussion by focusing on the bare minimum of what is
 needed to make R code run as a Bioconductor package.
 
-* [Creating a package using R Studio](#creating-packages-rstudio)  
+* [Creating a package using RStudio](#creating-packages-rstudio)  
 * [Basic package Anatomy](#basic-package-anatomy)  
 * [The DESCRIPTION file](#description)  
 * [The 'R' directory](#the-r-dir)
@@ -50,17 +50,17 @@ other R users can also easily reproduce and build on your work.
 
 
 
-<h2 id="creating-packages-rstudio">Creating a package using R Studio</h2> 
+<h2 id="creating-packages-rstudio">Creating a package using RStudio</h2> 
 
-Today a lot of people use R Studio, and this is a great place to get
-started because R Studio has already added tools to make package
+Today a lot of people use RStudio, and this is a great place to get
+started because RStudio has already added tools to make package
 creation easier for end users.  But before we get started lets configure a couple of things so that your code will be formatted the way that we prefer it for Bioconductor.  
 
 * Set the column width marker to 80 columns.  You can find this in the 'Tools' menu if you select the 'Global Options...' and then look at the 'Code Editing' panel.  Then make sure that you click the 'show margin' option and that it is set to 80 columns.  This will help you see if your lines are too long.
 
 * Second set up the tab to be 4 spaces.  You can do this right above where you set the column width marker for 80.
 
-To make your first package with R Studio, go to the
+To make your first package with RStudio, go to the
 'File' menu and choose 'New Project'.  From here you probably want to
 choose 'New Directory' and then you definitely want o choose 'R
 Package' to set up a new R package.  This will take you to the final
@@ -76,8 +76,8 @@ this information in and push the 'Create Project' button.
 
 If you look at the screen now you will see several files listed in the
 files tab.  These are files that are needed to make a package (and
-which R Studio conveniently creates for you).  A couple of these files
-are 'extras' that are put there by R Studio to help it manage your
+which RStudio conveniently creates for you).  A couple of these files
+are 'extras' that are put there by RStudio to help it manage your
 package building ('.Rbuildignore', 'Read-and-delete-me' and
 'MyPkg.Rproj') You can just ignore these files, but I wanted you to
 understand that they are not part of 'required' R package anatomy.
@@ -87,7 +87,7 @@ understand that they are not part of 'required' R package anatomy.
 
 <h2 id="basic-package-anatomy">Basic package Anatomy</h2>
 
-Now lets look at the core files and directories that R Studio has
+Now lets look at the core files and directories that RStudio has
 placed in this directory and describe what they are each for:
 
 *  The DESCRIPTION file both describes and helps to configure the R package.
@@ -98,7 +98,7 @@ order.
 * The 'man' directory is where you put .Rd files that will be
 rendered by R into manual pages when they are needed by users.
 
-These are just the parts that R Studio will put in for you. Some other important things you will need to know about are:
+These are just the parts that RStudio will put in for you. Some other important things you will need to know about are:
 
 * The 'vignettes' directory which is in the base directory and is used to store '.Rnw' or '.Rmd' files.  These files will contain vignettes that explain how to use your package to new users.  
 * The 'data' directory.  This is where you can put R objects stored in .Rda files that are intended to be used for examples.
@@ -138,7 +138,7 @@ Which is a good start really for almost any DESCRIPTION file.  You will see that
 * Description - This is where you can write a nice verbose description of what your package is about.
 * License - Here you need to fill in the official license.  Normally you will want to just use one of the 'official' licenses.  Which basically means choosing from one of the following strings for this field: 'GPL-2', 'GPL-3', 'LGPL-2', 'LGPL-2.1', 'LGPL-3', 'AGPL-3', 'Artistic-2.0', 'BSD_2_clause', 'BSD_3_clause', 'MIT'.
 
-Those are the fields that R studio will have created for you.  Here are some others that you should also think about:
+Those are the fields that RStudio will have created for you.  Here are some others that you should also think about:
 
 * Depends - This field is for listing hard dependencies.  If you have another package and your package is really meant to be used along with that package then you might want to list it here.  Doing so will basically always load that other package before loading yours thus guaranteeing that all the contents exported by both packages are available to end users.
 * Imports - This is what you should use when you want to access the contents of another package from within the code of your own package.  If that is your intention, then you should list those packages here.  This field is normally used in conjunction with import statements inside the NAMESPACE file that will spell out which functions and objects need to be available for your package.
@@ -258,7 +258,7 @@ The R manual pages are written in 'Rd format'.  The style is mostly self explana
 
 * Always be thinking about the examples section.  The most important thing on your entire manual page is the example section.  If you don't have good examples, it will be hard for many users to sort out how they should use your code.  So plan ahead and write examples that demonstrate clearly how the functions should be called and that run quickly.  It is not important that the example data produces a meaningful result, but it is important that the code clearly demonstrate how it is intended to be used.
 
-Now look again at that manual page that R Studio generated for your new package ('Rd format').  You will notice that (among other things) the example section is not filled in.  If you were to try and run check on your package right now you would get an error from this.  Go ahead and try that to see for yourself what will happen.  From the 'Build' menu, choose 'Check Package' (CTRL-SHIFT-E).  You should get an error.
+Now look again at that manual page that RStudio generated for your new package ('Rd format').  You will notice that (among other things) the example section is not filled in.  If you were to try and run check on your package right now you would get an error from this.  Go ahead and try that to see for yourself what will happen.  From the 'Build' menu, choose 'Check Package' (CTRL-SHIFT-E).  You should get an error.
 
 To correct this put a simple example into your manual page.  This is just the page that describes the package so there is not much for it to demonstrate.  For now just add the following simple example section as a replacement for what is currently there: 
 
@@ -268,7 +268,7 @@ To correct this put a simple example into your manual page.  This is just the pa
 
 Then run check again.  You will still have warnings, but it should at least complete the process.
 
-Now lets look at another one of R Studios nicer features.  Lets add a manual page for our new function.
+Now lets look at another one of RStudios nicer features.  Lets add a manual page for our new function.
 
 To do this go to the 'File' menu, choose 'New File' and 'Rd File'.  Be sure to choose a man page that is pre-configured for a 'Function' and be sure to name it 'myFun' after our new function. This should drop a new 'pre-fabricated' manual page into your packages existing 'man' directory.  
 
@@ -285,7 +285,7 @@ You might be wondering why you would need a vignette if you already have a serie
 
 Structurally, vignettes go in the 'vignettes' directory. These consist of either an '.Rnw' or a .Rmd' file. That R will render into a .pdf or html document later.  It used to be that most vignettes were written in Sweave as described [here](http://cran.r-project.org/doc/manuals/R-exts.html#Writing-package-vignettes), but now more and more users are choosing to write them using the knitr package as described [here](http://cran.r-project.org/doc/manuals/r-devel/R-exts.html#Non_002dSweave-vignettes).  Either form of vignette is acceptable, but writing a '.Rmd' document is a lot easier to do.
 
-To get R Studio to create a vignette for you simply go to the 'File' menu, and look under 'New File'. From here you could choose to create either a new 'R Sweave' or 'R Markdown' file.  But for our purposes in this demo, choose an 'R Markdown' file.  Now at this point R Studio will create a sample R Markdown file for you.  But unlike the case with the man pages, it will not put it in the correct place for you (at least not as of the time of this writing).  So go again to the 'File' menu and choose 'Save As'.  This will open up a little widget for you to specify how you want this markdown file to be saved.  From here click the button at the bottom left called 'New Folder' and create a sub directory in your MyPkg directory called 'vignettes'.  Then tell the widget to save the markdown file there under the name 'MyPkg.Rmd'.
+To get RStudio to create a vignette for you simply go to the 'File' menu, and look under 'New File'. From here you could choose to create either a new 'R Sweave' or 'R Markdown' file.  But for our purposes in this demo, choose an 'R Markdown' file.  Now at this point RStudio will create a sample R Markdown file for you.  But unlike the case with the man pages, it will not put it in the correct place for you (at least not as of the time of this writing).  So go again to the 'File' menu and choose 'Save As'.  This will open up a little widget for you to specify how you want this markdown file to be saved.  From here click the button at the bottom left called 'New Folder' and create a sub directory in your MyPkg directory called 'vignettes'.  Then tell the widget to save the markdown file there under the name 'MyPkg.Rmd'.
 
 Finally you must add the following lines to your DESCRIPTION file:
 
@@ -349,7 +349,7 @@ Then use write.table() to create a tab delimited file with the contents of that 
 
 <h2 id="bioccheck">BiocCheck</h2> 
 
-If you look in our [package guidelines](http://www.bioconductor.org/developers/package-guidelines/) you will see that not only must a package pass R CMD build and R CMD check without ERRORs or WARNINGs, but it must also pass a bunch of other requirements intended to make sure that your code is well documented and that it will integrate well into the rest of the project.  Fortunately we have a tool to help you with this.  From R Studio you can run build and check from the 'Build' menu.  But you can also test your own package for BiocCheck compliance like this:
+If you look in our [package guidelines](http://www.bioconductor.org/developers/package-guidelines/) you will see that not only must a package pass R CMD build and R CMD check without ERRORs or WARNINGs, but it must also pass a bunch of other requirements intended to make sure that your code is well documented and that it will integrate well into the rest of the project.  Fortunately we have a tool to help you with this.  From RStudio you can run build and check from the 'Build' menu.  But you can also test your own package for BiocCheck compliance like this:
 
 ```
     library(BiocCheck)
