@@ -112,7 +112,7 @@ In the next several sections we will go over most of these components in a littl
 
 <h2 id="description">The DESCRIPTION file</h2>
 
-The DESCRIPTION file has a LOT of roles in an R package.  And technically it is a '.dcf' file.  It does it's job by detailing a series of fields to tell R about what is in a package and how to use that information.  The one that was auto generated for you should already look like this:
+The DESCRIPTION file has a LOT of roles in an R package.  And technically it is a '.dcf' file.  It does its job by detailing a series of fields to tell R about what is in a package and how to use that information.  The one that was auto generated for you should already look like this:
 
 ```
     Package: MyPkg
@@ -248,7 +248,7 @@ Now create another new function.  This time, have your function return just the 
 
 <h2 id="manual-pages">Documenting manual pages</h2> 
 
-The R manual pages are written in 'Rd format'.  The style is mostly self explanatory and the example file 'MyPkg-package.Rd' that is provided for you is worth taking a moment to look at.  The topic of how to write these kinds of files, what the different fields mean and how to fill them out has already been very well documented [here](http://cran.r-project.org/doc/manuals/R-exts.html#Writing-R-documentation-files), in it's own specific section of the 'Writing R Extensions' manual.  There are a few specific things worth mentioning though.
+The R manual pages are written in 'Rd format'.  The style is mostly self explanatory and the example file 'MyPkg-package.Rd' that is provided for you is worth taking a moment to look at.  The topic of how to write these kinds of files, what the different fields mean and how to fill them out has already been very well documented [here](http://cran.r-project.org/doc/manuals/R-exts.html#Writing-R-documentation-files), in its own specific section of the 'Writing R Extensions' manual.  There are a few specific things worth mentioning though.
 
 * Use aliases.  The alias tags are how the manual pages will know when to bring a user to your manual page.  So use a lot of appropriate aliases.  Also it is OK to document a few related functions on the same page.  Not only is this efficient, but it will make it more likely that you will come back and do a better job of maintaining your documentation if it is less repetitive.
 
