@@ -25,7 +25,7 @@ implies commitment to package maintenance across multiple release cycles.
 
 Packages must satisfy the following checklist:
 
-* Pass `R CMD build` and `R CMD check` on all supported platforms (Windows,
+* Pass `R CMD build`, `R CMD check`, and `R CMD BiocCheck` (see the [BiocCheck](/packages/devel/bioc/html/BiocCheck.html) package) on all supported platforms (Windows,
   Macintosh, Linux) with no errors or warnings, using a recent R-devel.
   The result of `R CMD build` must be less than 4MB; `R CMD check` must
   complete within 5 minutes.
