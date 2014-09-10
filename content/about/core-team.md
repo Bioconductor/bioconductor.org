@@ -8,8 +8,8 @@
   Women's, Harvard Medical School, USA.
 * [Marc Carlson](http://www.fhcrc.org/) Fred Hutchinson Cancer
   Research Center, USA.
-* [Sean Davis](http://watson.nci.nih.gov/~sdavis), USA, National
-  Cancer Institute.
+* [Sean Davis](http://watson.nci.nih.gov/~sdavis), National
+  Cancer Institute, USA.
 * Robert Gentleman, Genentech Research and Early Development, USA.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
   Bloomberg School of Public Health, Johns Hopkins University.
