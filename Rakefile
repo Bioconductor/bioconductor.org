@@ -65,7 +65,7 @@ task :pre_compile do
 end
 
 task :real_compile do
-  system "nanoc co"
+  fail "compilation failed" unless system "nanoc co"
 end
 
 task :post_compile do
