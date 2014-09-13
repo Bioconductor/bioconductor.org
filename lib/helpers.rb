@@ -79,6 +79,7 @@ def get_cran_packages()
 end
 
 $cran_packages = get_cran_packages()
+@pkgdata = nil
 
 def nav_link_unless_current(text, path)
   if @item_rep && @item_rep.path && ((@item_rep.path == path) ||
@@ -913,8 +914,33 @@ def is_devel(item)
 end
 
 def is_new_package(package)
-    since = since(package[:Package])
-    return(since == config[:devel_version])
+    if @pkgdata.nil?
+        @pkgdata = {"bioc/" => {}, "data/annotation/" => {}, "data/experiment/" => {}}
+        dir = File.join("assets", "packages", "json")
+        d = Dir.new(dir)
+        for entry in d.entries
+            next if entry =~ /^\./
+            file = File.join(dir, entry, 
+                package[:repo].sub(/\/$/, "").gsub("/", File::SEPARATOR), "packages.json")
+            if (File.exists?(file))
+                f = File.open(file)
+                @pkgdata[package[:repo]][entry] = JSON.load(f)
+                f.close
+            end
+        end
+    end
+
+    obj = @pkgdata[package[:repo]]
+    k = obj.keys#.sort {|a,b| b.to_f <=> a.to_f}
+    for key in k
+        next if key.to_f >= package[:bioc_version_num].to_f
+        return false if obj[key].has_key? package[:Package]
+    end
+    return true
+    # remove:
+    # since = since(package[:Package])
+    # return(since == config[:devel_version])
+
 end
 
 def get_release_url(item_rep)
