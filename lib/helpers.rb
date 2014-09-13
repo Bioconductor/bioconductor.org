@@ -973,7 +973,7 @@ def get_source_url(package, item, item_rep)
 end
 
 def get_video_title(video)
-   response = HTTParty.get(video)
+   response = HTTParty.get(video, :verify => false)
    doc = Nokogiri::HTML(response.body)
    doc.css("title").text.sub(/ - YouTube$| on Vimeo$/, "")
 end
