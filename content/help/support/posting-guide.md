@@ -1,6 +1,6 @@
 # ![](/images/icons/magnifier.gif)Posting guide #
 
-Revised: 23 August, 2013
+Revised: 18 August, 2014
 
 ## Why? ##
 
@@ -34,14 +34,14 @@ Revised: 23 August, 2013
   package(s) using `vignette(package="somepkg")`
 
 * Search the [FAQ](/docs/faq/) and
-  [Bioconductor](http://dir.gmane.org/gmane.science.biology.informatics.conductor)
+  [support site](https://support.bioconductor.org/local/search/page/)
   and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
   similar posts. Try a [Google](http://www.google.com/) search.
 
 ## Composing ##
 
-* Compose a new email message with a new subject line; only reply to
-  an existing email if you are elaborating on or answering a previous
+* Compose a new message with a new subject line; only reply to
+  an existing post if you are elaborating on or answering a previous
   question.
 
 * Use an informative subject line. This will help attract responders
@@ -49,8 +49,12 @@ Revised: 23 August, 2013
   subject line "time course experiment using limma" is better than
   just "limma".
 
-* Identify yourself.  If you are using a non-professional email
-  account, like gmail or hotmail, or the guest posting facility, then
+* Tag your post appropriately. Choose one or more tags so that people
+  following those tags will see your posts. If you're posting about a
+  specific package, tag your post with the name of that package.
+
+* Identify yourself.  If you are logged in with a non-professional email
+  account, like gmail or hotmail, then
   give your full name and professional affiliation.
 
 * If you are asking for advice on how to use a particular function or
@@ -59,32 +63,19 @@ Revised: 23 August, 2013
   responder to answer your specific question instead of simply
   referring you to the existing documentation.
 
-* Send email to the appropriate list.  Use the Bioconductor mailing
-  list for questions about specific package, or conceptual
-  questions. The R-help mailing list is for questions about the
-  underlying R program. The Bioc-devel and R-devel lists are for
-  discussing code development and other technical issues.
-
-* Use plain text instead of HTML; it is smaller in size and easier to
-  read.
-
-* The following attachment types are accepted: png, pdf, rda/Rdata. Total 
-  message size cannot exceed 1MB. If larger attachments are essential, post
-  them to a publicly accessible location and include the link in
-  your email.
+* If your question is about package development, send email to the
+  [bioc-devel list](/support/#bioc-devel); otherwise post to the
+  [Bioconductor support site](https://support.bioconductor.org).
 
 * Package developers always appreciate being alerted to possible bugs,
   but be very sure that you have used the package correctly.  In most
   cases, best practice is (i) to double-check the documentation and
   then (ii) report the behavior that was unexpected to you.
 
-* Read over your mail. Is it polite and easy to understand? Remember
-  that responses on the Bioconductor mailing list are from volunteers.
+* Read over your post. Is it polite and easy to understand? Remember
+  that responses on the Bioconductor support site are from volunteers.
 
 ## Replying ##
-
-* Respond to everyone in the list, which ensures that your response is
-  archived.
 
 * If possible, write an answer that can be understood by readers with
   different scientific backgrounds and skill levels / skill
@@ -109,3 +100,4 @@ This posting guide has been heavily adapted from the
 various comments and suggestions by Bioconductor posters and inspired
 by Eric Steven Raymond's essay on
 [How To Ask Questions The Smart Way](http://www.catb.org/%7Eesr/faqs/smart-questions.html).
+

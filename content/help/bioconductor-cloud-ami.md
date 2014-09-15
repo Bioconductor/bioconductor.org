@@ -807,6 +807,6 @@ your files will be lost. If you have a lot of data to move back and forth, you m
 ## Questions
 
 
-If you have questions about the Bioconductor AMI, please contact us through the [Bioconductor mailing list](/help/mailing-list/#bioconductor).
+If you have questions about the Bioconductor AMI, please contact us through the [Bioconductor support site](/help/support/).
 
 

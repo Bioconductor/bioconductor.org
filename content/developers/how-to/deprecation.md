@@ -18,7 +18,7 @@ then soon after decide not to use it, you may simply remove the function
 without following these guidelines. It is expected that the devel
 branch is unstable and subject to API changes without notice (though
 you may decide to communicate these changes to your users via the
-[bioconductor](/help/mailing-list) mailing list).
+[Bioconductor support site](/help/support/)).
 
 However, if a function has existed in at least one released version
 of Bioconductor, these guidelines must be followed.

@@ -54,7 +54,7 @@ data_sources:
   config:
     encoding: utf-8
 - items_root: /mailing-list-posts
-  type: pipermail_list
+  type: biostar_list
   encoding: utf-8
   config:
     gmane_rss_url: 'http://rss.gmane.org/messages/excerpts/gmane.science.biology.informatics.conductor'

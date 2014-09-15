@@ -147,3 +147,6 @@ RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocChec
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
 
+## mailing list -> support
+
+RewriteRule ^help/mailing-list$ /help/support/ [R=301]

@@ -182,4 +182,4 @@ from the results of the <code>rbind()</code>.
 
 ### Support
 
-If you run into any issues, contact us through the [Bioconductor mailing list](/help/mailing-list/#bioconductor).
+If you run into any issues, contact us through the [Bioconductor support site](/help/support/).

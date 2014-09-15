@@ -47,7 +47,7 @@ Visiting the list of [package home pages][home-pages]
 shows that the package was not available on Windows, the platform on
 which the user was trying to install the package. If the package
 Description does not indicate why the package is not available, please
-feel free to ask on the [Bioconductor][mailing-list] mailing list.
+feel free to ask on the [Bioconductor support site](/help/support/).
 
 It's useful to check that the package name is spelt correctly, with
 correct capitalization!
@@ -96,7 +96,7 @@ These types of errors can sometimes be easily solved (installing
 necessary libraries or other software, perhaps referenced on the
 [package home page][home-pages]). It will often be necessary to
 understand your system more thoroughly than you'd like, perhaps with
-the assistance of the Bioconductor [mailing list][mailing-list].
+the assistance of the Bioconductor [support site](/help/support/).
 
 <h3 class="faq" id="80">Installing packages from the development repository</h3>
 

@@ -332,6 +332,12 @@ def find_item(items, identifier)
   items.find { |i| i.identifier == identifier }
 end
 
+def get_biostar_post_summaries(items)
+  # at some point, might need to order these....
+  items.find_all{|i| i.identifier =~ /\/biostar_list\//}
+end
+
+
 def timeago(time, options = {})
   start_date = options.delete(:start_date) || Time.new
   date_format = options.delete(:date_format) || :default
