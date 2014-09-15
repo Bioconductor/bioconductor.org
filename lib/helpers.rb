@@ -517,6 +517,10 @@ end
 
 def get_svn_commits()
   begin
+    # FIXME - maybe switch to nokogiri to avoid the necessity
+    # for this. See https://stackoverflow.com/questions/15593133/rexml-runtimeerror-entity-expansion-has-grown-too-large
+    REXML::Document.entity_expansion_text_limit = 
+      REXML::Document.entity_expansion_text_limit * 4
     xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss").body
     doc = Document.new xml
     items = []
