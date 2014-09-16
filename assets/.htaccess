@@ -143,10 +143,10 @@ RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
 RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
 
 RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
+RewriteRule ^help/mailing-list$ /help/support/ [R=301]
 </IfModule>
 
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
 
 ## mailing list -> support
 
-RewriteRule ^help/mailing-list$ /help/support/ [R=301]
