@@ -4,10 +4,6 @@ This release will use R-3.1.1 (Sock it to Me).
 
 ## Tentative schedule
 
-### September 16, 2014
-
-* Packages for deprecation identified.
-
 ### September 23
 
 * All packages conform to Bioconductor [guidelines][guidelines].
