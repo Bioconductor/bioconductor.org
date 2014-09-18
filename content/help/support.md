@@ -1,22 +1,20 @@
 <script src="http://www.google.com/jsapi" type="text/javascript"></script>
 <link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
 
-# ![](/images/icons/help.gif)Support #
+# ![](/images/icons/help.gif)Support
 
 
-## The Bioconductor [posting guide][5]
-
-Please always read the posting guide before posting new questions
+Please always read the [posting guide][5] before posting new questions
 to the community.  Doing so will help you to get clear answers to
 your questions.
 
-## The Bioconductor [support site](https://support.bioconductor.org/).
+## Support Site
 
 For almost all questions about Bioconductor software please use the
-Bioconductor support site. This site is the primary way to contact us
-and is a great way to search for answers to your questions, post novel
-questions or even to share your knowledge with other people who have
-questions about the project.
+Bioconductor [support site](https://support.bioconductor.org/). This
+site is the primary way to contact us and is a great way to search for
+answers to your questions, post novel questions or even to share your
+knowledge with other people who have questions about the project.
 
 
 
