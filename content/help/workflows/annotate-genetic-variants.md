@@ -1,9 +1,9 @@
 <!--
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{Using Bioconductor to Annotate Genetic Variants}
+%\VignetteIndexEntry{Annotate Genetic Variants}
 -->
 
-# ![](/images/icons/help.gif)Using Bioconductor to Annotate Genetic Variants 
+# ![](/images/icons/help.gif)Annotate Genetic Variants 
 
 The VariantAnnotation package has facilities for reading in all or portions 
 of Variant Call Format (VCF) files. Structural location information can be 
@@ -19,16 +19,13 @@ PolyPhen database packages.
 
 <h2 id="sample-workflow">Sample Workflow</h2>
 
-Performed with Bioconductor 2.11 and R >= 2.15; 
-VariantAnnotation 1.3.9 in the devel branch.
+Performed with Bioconductor 3.0 and R >= 3.1; 
+VariantAnnotation 1.11.35.
 
 This workflow annotates variants found in the Transient Receptor Potential 
 Vanilloid (TRPV) gene family on chromosome 17. The VCF file is available in 
 the cgdv17 data package and contains Complete Genomics data for population 
 type CEU.
-
-
-
 
 
     library(VariantAnnotation)
@@ -75,7 +72,7 @@ the VCF file.
     ## get entrez ids from gene symbols
     library(org.Hs.eg.db)
     genesym <- c("TRPV1", "TRPV2", "TRPV3")
-    geneid <- select(org.Hs.eg.db, keys = genesym, keytype = "SYMBOL", cols = "ENTREZID")
+    geneid <- select(org.Hs.eg.db, keys = genesym, keytype = "SYMBOL", columns = "ENTREZID")
 
     ## Warning: The 'cols' argument has been deprecated and replaced by 'columns'
     ## for versions of Bioc that are higher than 2.13.  Please use the 'columns'
@@ -89,32 +86,33 @@ the VCF file.
     ## 3  TRPV3   162514
 
      
-Load the annotation package and create a list of transcripts
-by gene.
+Load the annotation package and keep only the standard chromosomes.
 
 
     library(TxDb.Hsapiens.UCSC.hg19.knownGene)
     txdb <- TxDb.Hsapiens.UCSC.hg19.knownGene
+    keepStandardChromosomes(txdb)
+
+
+    ## Modify the seqlevels (chromosomes) in the txdb to match
+    those in the VCF file. This step is necessary because we want
+    to use ranges from the txdb to extract a subset from the VCF.
+    renameSeqlevels(txdb, gsub("chr", "", seqlevels(txdb)))
+
+
+    ## Create a list of transcripts by gene:
     txbygene = transcriptsBy(txdb, "gene")
 
-     
-Subset the annotations on chromosome 17 and adjust the seqlevels 
-to match those in the VCF file.
-
-
-    tx_chr17 <- keepSeqlevels(txbygene, "chr17")
-    tx_17 <- renameSeqlevels(tx_chr17, c(chr17 = "17"))
     
     ## Create the gene ranges for the TRPV genes
-    rngs <- lapply(geneid$ENTREZID, function(id) range(tx_17[names(tx_17) %in% id]))
-    gnrng <- unlist(do.call(c, rngs), use.names = FALSE)
+    gnrng <- unlist(range(txbygene[geneid$ENTREZID]), use.names=FALSE)
     names(gnrng) <- geneid$SYMBOL
 
      
-To retrieve a subset of data from a VCF file, create a ScanVcfParam
-object. This object can specify genomic coordinates (ranges) or 
-individual VCF elements to be extracted. When ranges are extracted, 
-a tabix index file must exist for the VCF. See ?indexTabix for details.
+A ScanVcfParam object is used to retrieve data subsets. This object 
+can specify genomic coordinates (ranges) or individual VCF elements.
+Extractions of ranges (vs fields) requires a tabix index.
+See ?indexTabix for details.
 
 
     param <- ScanVcfParam(which = gnrng, info = "DP", geno = c("GT", "cPd"))
@@ -124,9 +122,8 @@ a tabix index file must exist for the VCF. See ?indexTabix for details.
     ## vcfWhich: 1 elements
     ## vcfFixed: character() [All] 
     ## vcfInfo: DP 
-    ## vcfGeno: GT, cPd 
-    ## vcfSamples: character() [All]
-
+    ## vcfGeno: GT cPd 
+    ## vcfSamples:  
     
     ## Extract the TRPV ranges from the VCF file
     vcf <- readVcf(file, "hg19", param)
@@ -134,7 +131,7 @@ a tabix index file must exist for the VCF. See ?indexTabix for details.
     vcf
 
     ## class: CollapsedVCF 
-    ## dim: 387 1 
+    ## dim: 405 1 
     ## rowData(vcf):
     ##   GRanges with 5 metadata columns: paramRangeID, REF, ALT, QUAL, FILTER
     ## info(vcf):
@@ -147,8 +144,7 @@ a tabix index file must exist for the VCF. See ?indexTabix for details.
     ## geno(header(vcf)):
     ##        Number Type   Description         
     ##    cPd 1      String called Ploidy(level)
-    ##    GT  1      String Genotype
-
+    ##    GT  1      String Genotype  
     
     head(fixed(vcf))
 
@@ -171,43 +167,16 @@ a tabix index file must exist for the VCF. See ?indexTabix for details.
 
 To find the structural location of the variants, use the locateVariants 
 function with the TxDb.Hsapiens.UCSC.hg19.knownGene package that was
-loaded eariler. The variants in the VCF object have chromosome name "17" 
-while the annotation has "chr17". Adjust the seqlevels (chromosome names) of 
-the VCF object to match that of the annotation.
-
-
-
-    seqlevels(vcf)
-
-    ## [1] "17"
-
-    head(seqlevels(txdb))
-
-    ## [1] "chr1" "chr2" "chr3" "chr4" "chr5" "chr6"
-
-    ## seqlevels do not match
-    intersect(seqlevels(vcf), seqlevels(txdb))
-
-    ## character(0)
-
-    vcf_mod <- renameSeqlevels(vcf, c(`17` = "chr17"))
-    ## seqlevels now match
-    intersect(seqlevels(vcf_mod), seqlevels(txdb))
-
-    ## [1] "chr17"
+loaded eariler. 
 
     
     ## Use the 'region' argument to define the region of interest. See
     ## ?locateVariants for details.
-    cds <- locateVariants(vcf_mod, txdb, CodingVariants())
-    five <- locateVariants(vcf_mod, txdb, FiveUTRVariants())
-    splice <- locateVariants(vcf_mod, txdb, SpliceSiteVariants())
-    intron <- locateVariants(vcf_mod, txdb, IntronVariants())
-    all <- locateVariants(vcf_mod, txdb, AllVariants())
-
-    ## Note: method with signature 'Vector#GRangesList' chosen for function
-    ## 'countOverlaps', target signature 'GRanges#GRangesList'.
-    ## "GenomicRanges#Vector" would also be valid
+    cds <- locateVariants(vcf, txdb, CodingVariants())
+    five <- locateVariants(vcf, txdb, FiveUTRVariants())
+    splice <- locateVariants(vcf, txdb, SpliceSiteVariants())
+    intron <- locateVariants(vcf, txdb, IntronVariants())
+    all <- locateVariants(vcf, txdb, AllVariants())
 
      
 Each row in cds represents a variant-transcript match so multiple rows
@@ -215,51 +184,50 @@ per variant are possible. If we are interested in gene-centric questions
 the data can be summarized by gene regardless of transcript.
 
 
-    ## Did any variants match more than one gene
-    table(sapply(split(values(all)[["GENEID"]], values(all)[["QUERYID"]]), function(x) length(unique(x)) > 
-        1))
+    ## Did any variants match more than one gene?
+    table(sapply(split(values(all)[["GENEID"]], 
+          values(all)[["QUERYID"]]), function(x) length(unique(x)) > 1))
 
     ## 
     ## FALSE  TRUE 
-    ##   367    20
+    ##   391   11 
 
     
-    ## Summarize the number of variants by gene
+    ## Summarize the number of variants by gene:
     idx <- sapply(split(values(all)[["QUERYID"]], values(all)[["GENEID"]]), unique)
     sapply(idx, length)
 
-    ## 125144 162514  23729  51393   7442  84690 
-    ##      1    178      2     63    146     17
-
+    ## 125144 162514  51393   7442  84690 
+    ##      1    172     62    143     35 
     
-    ## Summarize variant location by gene
+    ## Summarize variant location by gene:
     sapply(names(idx), function(nm) {
         d <- all[values(all)[["GENEID"]] %in% nm, c("QUERYID", "LOCATION")]
         table(values(d)[["LOCATION"]][duplicated(d) == FALSE])
     })
 
-    ##            125144 162514 23729 51393 7442 84690
-    ## spliceSite      0      2     0     0    1     0
-    ## intron          0    153     0    58  117     1
-    ## fiveUTR         0      2     0     1    3     5
-    ## threeUTR        0      6     2     1    2     0
-    ## coding          0      5     0     3    8     0
-    ## intergenic      0      0     0     0    0     0
-    ## promoter        1     10     0     0   15    11
 
-     
+    ##            125144 162514 51393 7442 84690
+    ## spliceSite      0      2     0    1     0
+    ## intron          0    153    58  117    19
+    ## fiveUTR         0      0     0    0     0
+    ## threeUTR        0      0     0    0     0
+    ## coding          0      5     3    8     0
+    ## intergenic      0      0     0    0     0
+    ## promoter        1     12     1   17    16
+
+
+
 Amino acid coding for non-synonymous variants can be computed
 with the function predictCoding. The BSgenome.Hsapiens.UCSC.hg19 
 package is used as the source of the reference alleles. Variant 
 alleles are provided by the user.
 
-
+    ## Convert the VCF and txdb to UCSC seqlevel style to match BSgenome.
     library(BSgenome.Hsapiens.UCSC.hg19)
-    aa <- predictCoding(vcf_mod, txdb, Hsapiens)
-
-    ## Warning: records with missing 'varAllele' were ignored
-
-    ## Warning: varAllele values containing 'N' were not translated
+    seqlevelsStyle(vcf) <- "UCSC"
+    seqlevelsStyle(txdb) <- "UCSC"
+    aa <- predictCoding(vcf, txdb, Hsapiens)
 
      
 predictCoding returns results for coding variants only. As with 
@@ -268,8 +236,8 @@ so multiple rows per variant are possible.
 
 
     ## Did any variants match more than one gene
-    table(sapply(split(values(aa)[["GENEID"]], values(aa)[["QUERYID"]]), function(x) length(unique(x)) > 
-        1))
+    table(sapply(split(values(aa)[["GENEID"]], 
+          values(aa)[["QUERYID"]]), function(x) length(unique(x)) > 1))
 
     ## 
     ## FALSE 
@@ -316,18 +284,10 @@ from UCSC Known Gene so we will use PolyPhen for predictions.
     ## Load the PolyPhen package and explore the available keys and columns
     library(PolyPhen.Hsapiens.dbSNP131)
     keys <- keys(PolyPhen.Hsapiens.dbSNP131)
-    cols <- cols(PolyPhen.Hsapiens.dbSNP131)
-
-    ## Warning: 'cols' has been deprecated and replaced by 'columns' for versions
-    ## of Bioc that are higher than 2.13.  Please use 'columns' anywhere that you
-    ## previously used 'cols'
+    cols <- columns(PolyPhen.Hsapiens.dbSNP131)
 
     ## column descriptions are found at ?PolyPhenDbColumns
-    cols(PolyPhen.Hsapiens.dbSNP131)
-
-    ## Warning: 'cols' has been deprecated and replaced by 'columns' for versions
-    ## of Bioc that are higher than 2.13.  Please use 'columns' anywhere that you
-    ## previously used 'cols'
+    cols
 
     ##  [1] "RSID"        "TRAININGSET" "OSNPID"      "OACC"        "OPOS"       
     ##  [6] "OAA1"        "OAA2"        "SNPID"       "ACC"         "POS"        

@@ -1,6 +1,6 @@
 ---
 package: variants
-title: Using Bioconductor to Annotate Genetic Variants
+title: Annotate Genetic Variants
 file: variants.Rmd
 built_with_R: 3.0
 built_with_bioc: 2.13
