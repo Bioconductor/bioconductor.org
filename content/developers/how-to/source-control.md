@@ -135,6 +135,9 @@ affydata package:
     svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
     ./add_data.py affydata
 
+Note that experiment data packages are only built twice a week,
+on Wednesdays and Saturdays.
+
 ## Having Problems?
 
 Here is a list of possible issues:
