@@ -22,6 +22,130 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
 * Table of contents will replace this text. 
 {:toc}
 
+
+## Software Infrastructure
+
+### GRCh38 assembly
+
+The CRCh38 human genome assembly is available in `Bioconductor` as
+[BSgenome](http://www.bioconductor.org/packages/devel/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html)
+[TranscriptDb](),
+and
+[SNPloc](http://www.bioconductor.org/packages/devel/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38.html)
+packages.
+
+The GRCh38 assembly includes both a primary assembly (non-redundant haploid
+assembly) and alternate sequences (alt loci). Alt loci are provided for regions
+of the genome where variation prevents representation by a single sequence.
+These regions are not new but have become more prominent as tools for variant
+detection have matured.
+
+The previous GRCh37 assembly included patch releases tagged as 'fix' or 'novel'.
+The 'fix' patches were incorporated in the primary assembly of GRCh38 while the
+'novel' patches moved into the alt loci units. The 'multi-sequence' nature of
+GRCh38 raises questions around  how to best work with these alternate sequences
+with respect to alignment and downstream analysis.
+
+### htslib
+
+The samtools library and associated sub-tools play and integral role in the
+analysis of HTS data. The htslib is the successor of libbam which is currently
+provided by samtools. Specifically, it is a C library for handling high-
+throughput sequencing data, providing APIs for manipulating SAM, BAM, and CRAM
+sequence files (similar to but more flexible than the old Samtools API) and for
+manipulating VCF or BCF variant files.
+
+An implementation of htslib is in the works for `Bioconductor` and will likely 
+be implemented as stand-alone package. Follow the development on Martin's 
+GitHub site:
+(\url{https://github.com/mtmorgan/Rhtslib}).
+
+### `S4 Vectors` and `IRanges` split completed
+
+In September Herve completed the move of non-range based code from `IRanges` to
+`S4Vectors`. Classes moved include `Vector` and `List` (virtual) as well as
+`DataFrame`, `Rle` and `Hits`. Developers using or building on these classes
+should now import from `S4Vectors`.
+
+
+## `Bioconductor` support site 
+
+In September the `Bioconductor` mailing list was replaced with a fork of
+Biostars and was renamed the 
+[Bioconductor Support Site](https://support.bioconductor.org/). This affects 
+the bioconductor list only; bioc-devel remains unchanged (devel@r-project.org).
+
+The move was motivated by the volume of list traffic which highlighted
+the need for advanced searching, tagging and real-time editing of posts. 
+Ideally the new interface will encourage participation from first-time users 
+and simplify topic management.
+
+Marc has imported the last 11+ years of posts to create continuity in the
+new environment. A [FAQ](https://support.bioconductor.org/info/faq/) is
+available to help with site navigation and common tasks such as posting,
+merging, or tracking topics. 
+
+Thanks to Marc and Dan for their work on this.
+
+
+
+## Developer's corner 
+
+### Style markdown documents with `BiocStyle`
+
+The `BiocStyle` package provides a fast and easy approach to styling markdown
+documents in `Bioconductor` fashion. It includes all standard formatting 
+styles for creating PDF and HTML documents of vignettes, workflows 
+or other project documents. 
+The [html](http://www.bioconductor.org/packages/3.0/bioc/vignettes/BiocStyle/inst/doc/HtmlStyle.html)
+version of the package vignette is a demo of the styling and color theme.
+
+The package offers formatting advantages over standard markdown such as
+automatic centering of figures, improved table display and Latex-compatible math
+symbols. Custom style sheets can be included by wrapping them in `
+BiocStyle:::markdown`:
+
+  BiocStyle::markdown(css.files = c('my.css'))
+
+### Reuse and recycle: The power of `import()`
+
+The `Bioconductor` infrastructure contains a wealth of tools for HTS analysis.
+Because these methods and containers exist across a number of packages they can
+be difficult for new users to discover and for developers to remember when
+adding new functionality.
+
+The `import` generic in rtracklayer is one such tool. `import` reads and parses
+large file formats such as BED, BAM, BigWig, GFF, Fasta, and Chain files. The
+methods operate on *File objects (e.g., `BamFile`) and param (e.g.,
+`ScanBamParam`) objects, which allow flexible control over the parsing and
+subsetting of data. Data returned from `import` are parsed into useful
+downstream containers such as `GRanges`  or `Rle`.
+
+`import` should be the tool of choice when interacting with large files, such as
+those available in `AnnotationHub`, or when developing new reading/parsing
+functions.
+
+### biocMultiAssay
+
+At Developer Day BioC 2014 Levi Waldron's discussion of his biocMultiAssay
+project generated a good deal of interest in the community. This effort, lead by
+Levi, Vince, Kasper and Martin, aims to create `Bioconductor` tools for the
+efficient manipulation and analysis of multi-assay omics experiments.
+
+The primary motivation is to combine data across multiple experiments for a
+common group of samples or patients. Goals are to develop classes and methods
+for the extraction of data subsets defined by indices such as genomic position
+or gene ID, and to streamline analyses that span multiple genomic data types.
+The data are high-dimensional assays such as gene and protein expression, copy
+number, methylation,  somatic mutation, or microRNA.
+
+The project has a both a
+[GitHub](https://github.com/vjcitn/biocMultiAssay) site with code prototypes
+and a
+[Google Group](https://groups.google.com/forum/#!forum/biocmultiassay) for
+conference call announcements and tracking progress.
+
+
 ## Interview with Dr. Janet Young, FHCRC
 
 This section of the newsletter highlights the work of an individual or group in
@@ -72,75 +196,10 @@ package or task right away.
 Thank you for talking with us and sharing your insights.
 
 
-## Software Infrastructure
-
-### GRCh38 assembly
-
-The CRCh38 human genome assembly is available in `Bioconductor` as
-[BSgenome](http://www.bioconductor.org/packages/devel/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html)
-[TranscriptDb](),
-and
-[SNPloc](http://www.bioconductor.org/packages/devel/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38.html)
-packages.
-
-The GRCh38 assembly includes both a primary assembly (non-redundant haploid
-assembly) and alternate sequences (alt loci). Alt loci are provided for regions
-of the genome where variation prevents representation by a single sequence.
-These regions are not new but have become more prominent as tools for variant
-detection have matured.
-
-The previous GRCh37 assembly included patch releases tagged as 'fix' or 'novel'.
-The 'fix' patches were incorporated in the primary assembly of GRCh38 while the
-'novel' patches moved into the alt loci units. The 'multi-sequence' nature of
-GRCh38 raises questions around  how to best work with these alternate sequences
-with respect to alignment and downstream analysis.
-
-### htslib
-
-The samtools library and associated sub-tools play and integral role in the
-analysis of HTS data. The htslib is the successor of libbam which is currently
-provided by samtools. Specifically, it is a C library for handling high-
-throughput sequencing data, providing APIs for manipulating SAM, BAM, and CRAM
-sequence files (similar to but more flexible than the old Samtools API) and for
-manipulating VCF or BCF variant files.
-
-An implementation of htslib is in the works for `Bioconductor` and will likely 
-be implemented as stand-alone package. Follow the development on Martin's 
-GitHub site:
-(\url{https://github.com/mtmorgan/Rhtslib}).
-
-### `S4 Vectors` and `IRanges` split completed
-
-In September Herve completed the move of non-range based code from `IRanges` to
-`S4Vectors`. Classes moved include `Vector` and `List` (virtual) as well as
-`DataFrame`, `Rle` and `Hits`. Developers using or building on these classes
-should now import from `S4Vectors`.
-
-
-## Communications / Issue tracking
-
-In September the `Bioconductor` mailing list was replaced with a fork of
-Biostars and was renamed the 
-[Bioconductor Support Site](https://support.bioconductor.org/). This affects 
-the bioconductor list only; bioc-devel remains unchanged (devel@r-project.org).
-
-The move was motivated by the volume of list traffic which highlighted
-the need for advanced searching, tagging and real-time editing of posts. 
-Ideally the new interface will encourage participation from first-time users 
-and simplify topic management.
-
-Marc has imported the last 11+ years of posts to create continuity in the
-new environment. A [FAQ](https://support.bioconductor.org/info/faq/) is
-available to help with site navigation and common tasks such as posting,
-merging, or tracking topics. 
-
-Thanks to Marc and Dan for their work on this.
-
-
 ## Quarterly Project Statistics 
 
 The `Bioconductor` project continues to expand globally. Over the next months 
-there are [course offereings](http://www.bioconductor.org/help/events/) in 
+there are [course offerings](http://www.bioconductor.org/help/events/) in 
 Japan, Germany and the UK. 
 
 In August 2014, the Latin American Bioconductor [LAB](http://lab.foundation/) 
@@ -153,18 +212,80 @@ scientific research community​ in Latin America.
 Google analytics reports the following website traffic for the period
 of July 1 to September 24, 2014.
 
-  | Continent | Sessions | % New Sessions | New Users |
-  | ------ | ----------- | -------------- | --------- |
-  | | 269,868 |  36.16% | 97,571 |
-  | | <ltgray>% of Total:</ltgray> | <ltgray>Site Avg:</ltgray> | <ltgray>% of Total:</ltgray> | 
-  | | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
-  | Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
-  | Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
-  | Asia | **55,387** (20.52%) | 40.26% | 22,297 (22.85%) |
-  | Oceania | **7,719** (2.86%) | 32.01% | 2,471 (2.53%) |
-  | Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
-  | Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
-  [Website Visits by Geographic Location] 
+<!--
+| Continent | Sessions | % New Sessions | New Users |
+| ------ | ----------- | -------------- | --------- |
+| | 269,868 |  36.16% | 97,571 |
+| | <ltgray>% of Total:</ltgray> | <ltgray>Site Avg:</ltgray> | <ltgray>% of Total:</ltgray> | 
+| | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
+| Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
+| Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
+| Asia | **55,387** (20.52%) | 40.26% | 22,297 (22.85%) |
+| Oceania | **7,719** (2.86%) | 32.01% | 2,471 (2.53%) |
+| Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
+| Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
+[Website Visits by Geographic Location] 
+-->
+
+<table style="width:80%",  border=0>
+ <caption>Website Visits by Geographic Location</caption>
+  <tr>
+    <th>Continent</th><th>Sessions</th><th>% New Sessions</th><th>New Users</th>
+  </tr>
+  <tr>
+    <td></td><td><b>269,868</b></td>
+    <td><b>36.16%</b></td>
+    <td><b>97,571</b></td>
+  </tr>
+  <tr color:gray>
+    <td></td>
+    <td>% of Total:</td>
+    <td>Site Avg:</td>
+    <td>% of Total:</td> 
+  </tr>
+  <tr color:gray>
+    <td></td>
+    <td>100.00% (269,868)</td>
+    <td>6.09% (0.18%)</td>
+    <td>100.18% (97,397)</td>
+  </tr>
+  <tr>
+    <td>Americas</td>
+    <td><b>113,700</b> (42.13%)</td>
+    <td>35.70%</td>
+    <td>40,595 (41.61%)</td>
+  </tr>
+  <tr>
+    <td>Europe</td>
+    <td><b>90,386</b> (33.49%)</td>
+    <td>34.12%</td>
+    <td>30,837(31.60%)</td>
+  </tr>
+  <tr>
+    <td>Asia</td>
+    <td><b>55,387</b> (20.52%)</td>
+    <td>40.26%</td>
+    <td>22,297 (22.85%)</td>
+  </tr>
+  <tr>
+    <td>Oceania</td>
+    <td><b>7,719</b> (2.86%)</td>
+    <td>32.01%</td>
+    <td>2,471 (2.53%)</td>
+  </tr>
+  <tr>
+    <td>Africa</td>
+    <td><b>2,309</b> (0.86%)</td>
+    <td>51.36%</td>
+    <td>1,186 (1.22%)</td>
+  </tr>
+  <tr>
+|   <td>Other</td>
+    <td><b>367</b> (0.14%)</td>
+    <td>50.41%</td>
+    <td>185 (0.19%)</td>
+  </tr>
+</table>
 
 ### Package downloads
 
@@ -173,63 +294,6 @@ July, August and September were 36900, 36749, and 36618 respectively for an
 average of 36756. This is down slightly from last quarter's average of 38243. A
 full summary of package download stats is available
 [here](http://www.bioconductor.org/packages/stats/).
-
-
-## Developer's corner 
-
-### Style markdown documents with `BiocStyle`
-
-The `BiocStyle` package provides a fast and easy approach to styling markdown
-documents in `Bioconductor` fashion. It includes all standard formatting 
-styles for creating PDF and HTML documents of vignettes, workflows 
-or other project documents. 
-The [html](http://www.bioconductor.org/packages/3.0/bioc/vignettes/BiocStyle/inst/doc/HtmlStyle.html)
-version of the package vignette is a demo of the styling and color theme.
-
-The package offers formatting advantages over standard markdown such as
-automatic centering of figures, improved table display and Latex-compatible math
-symbols. Custom style sheets can be included by wrapping them in `
-BiocStyle:::markdown`:
-
-  BiocStyle::markdown(css.files = c('my.css'))
-
-### Reuse and recycle: The power of `import()`
-
-The `Bioconductor` infrastructure contains a wealth of tools for HTS analysis.
-Because these methods and containers exist across a number of packages they can
-be difficult for new users to discover and for developers to remember when
-adding new functionality.
-
-The `import` generic in rtracklayer is one such tool. `import` reads and parses
-large file formats such as BED, BAM, BigWig, GFF, Fasta, and Chain files. The
-methods operate on *File objects (e.g., `BamFile`) and param (e.g.,
-`ScanBamParam`) objects, which allow flexible control over the parsing and
-subsetting of data. Data returned from `import` are parsed into useful
-downstream containers such as `GRanges`  or `Rle`.
-
-`import` should be the tool of choice when interacting with large files, such as
-those available in `AnnotationHub`, or when developing new reading/parsing
-functions for such files.
-
-### biocMultiAssay
-
-At Developer Day BioC 2014 Levi Waldron's discussion of his biocMultiAssay
-project generated a good deal of interest in the community. This effort, lead by
-Levi, Vince, Kasper and Martin, aims to create `Bioconductor` tools for the
-efficient manipulation and analysis of multi-assay omics experiments.
-
-The primary motivation is to combine data across multiple experiments for a
-common group of samples or patients. Goals are to develop classes and methods
-for the extraction of data subsets defined by indices such as genomic position
-or gene ID, and to streamline analyses that span multiple genomic data types.
-The data are high-dimensional assays such as gene and protein expression, copy
-number, methylation,  somatic mutation, or microRNA.
-
-The project has a both a
-[GitHub](https://github.com/vjcitn/biocMultiAssay) site with code prototypes
-and a
-[Google Group](https://groups.google.com/forum/#!forum/biocmultiassay) for
-conference call announcements and tracking progress.
 
 
 ## Resources, Courses and Conferences
