@@ -7,11 +7,9 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 {:no_toc} tags will be rendered by nanoc, the tool that produces the website.
 -->
 
-ltgray { color: #F0F0F0; } 
-
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter 
+# *Bioconductor* Newsletter **DRAFT** 
 {:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
@@ -62,10 +60,10 @@ GitHub site:
 
 ### `S4 Vectors` and `IRanges` split completed
 
-In September Herve completed the move of non-range based code from `IRanges` to
-`S4Vectors`. Classes moved include `Vector` and `List` (virtual) as well as
-`DataFrame`, `Rle` and `Hits`. Developers using or building on these classes
-should now import from `S4Vectors`.
+In September Herv&eacute completed the move of non-range based code from
+`IRanges` to `S4Vectors`. Classes moved include `Vector` and `List` (virtual) as
+well as `DataFrame`, `Rle` and `Hits`. Developers using or building on these
+classes should now import from `S4Vectors`.
 
 
 ## `Bioconductor` support site 
@@ -212,11 +210,10 @@ scientific research community​ in Latin America.
 Google analytics reports the following website traffic for the period
 of July 1 to September 24, 2014.
 
-<!--
 | Continent | Sessions | % New Sessions | New Users |
 | ------ | ----------- | -------------- | --------- |
 | | 269,868 |  36.16% | 97,571 |
-| | <ltgray>% of Total:</ltgray> | <ltgray>Site Avg:</ltgray> | <ltgray>% of Total:</ltgray> | 
+| | % of Total: | Site Avg: | % of Total: | 
 | | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
 | Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
 | Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
@@ -225,8 +222,8 @@ of July 1 to September 24, 2014.
 | Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
 | Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
 [Website Visits by Geographic Location] 
--->
 
+<!--
 <table style="width:80%",  border=0>
  <caption>Website Visits by Geographic Location</caption>
   <tr>
@@ -286,6 +283,7 @@ of July 1 to September 24, 2014.
     <td>185 (0.19%)</td>
   </tr>
 </table>
+-->
 
 ### Package downloads
 
