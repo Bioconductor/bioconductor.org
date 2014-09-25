@@ -11,13 +11,16 @@ ltgray { color: #F0F0F0; }
 
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter {:.no_toc}
+# *Bioconductor* Newsletter 
+{:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
 
-## Contents {:.no_toc}
+## Contents 
+{:.no_toc}
 
-* Table of contents will replace this text. {:toc}
+* Table of contents will replace this text. 
+{:toc}
 
 ## Interview with Dr. Janet Young, FHCRC
 
@@ -28,7 +31,7 @@ undergraduate degree in Natural Sciences from the University of Cambridge, and a
 PhD in Genetics from University College London. She is currently a Staff
 Scientist in the Malik lab in the Basic Sciences Division.
 
-Q: To begin would you tell us a bit about yourself?
+**Q: To begin would you tell us a bit about yourself?**
 
 I joined Fred Hutch in 2000 and worked in the Trask lab first as a post-doc then
 as a staff scientist. My own research focused on the evolution and
@@ -41,14 +44,14 @@ Currently I provide bioinformatics support to a variety of projects in the Malik
 lab. The group studies evolutionary biology and genetic conflict, primarily in
 drosophila, primates and yeast.
 
-Q: How did you get started with `Bioconductor`?
+**Q: How did you get started with `Bioconductor`?**
 
 I started working with `Bioconductor` when helping others in the Trask and
 Tapscott labs with various microarray projects. Initially I used `R` /
 `Bioconductor` simply for creating diagnostic plots of microarray data, but soon
 started using limma and lumi for the analysis steps.
 
-Q: How does `Bioconductor` fit into your current workflows?
+**Q: How does `Bioconductor` fit into your current workflows?**
 
 I'm largely using it for analysis of deep sequencing data these days. We use a
 variety of upstream software such as TopHat, BWA, and GATK. I use `Bioconductor`
@@ -58,7 +61,7 @@ annotations. Often I use rtracklayer to export the data for viewing in IGV or
 the UCSC genome browser. As well as being a great analysis tool itself,
 `Bioconductor` acts as the glue to help me integrate results from other tools.
 
-Q: Are there any `Bioconductor` resources you find particularly useful?
+**Q: Are there any `Bioconductor` resources you find particularly useful?**
 
 The local classes offered at the Hutch were very helpful. I also like the
 responsive Q and A on the mailing list. All software has bugs; knowing that the
@@ -150,18 +153,18 @@ scientific research community​ in Latin America.
 Google analytics reports the following website traffic for the period
 of July 1 to September 24, 2014.
 
-| Continent | Sessions | % New Sessions | New Users |
-| ------ | ----------- | -------------- | --------- |
-| | 269,868 |  36.16% | 97,571 |
-| | <ltgray>% of Total:</ltgray> | <ltgray>Site Avg:</ltgray> | <ltgray>% of Total:</ltgray> | 
-| | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
-| Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
-| Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
-| Asia | **55,387** (20.52%) | 40.26% | 22,297 (22.85%) |
-| Oceania | **7,719** (2.86%) | 32.01% | 2,471 (2.53%) |
-| Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
-| Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
-[Website Visits by Geographic Location] 
+  | Continent | Sessions | % New Sessions | New Users |
+  | ------ | ----------- | -------------- | --------- |
+  | | 269,868 |  36.16% | 97,571 |
+  | | <ltgray>% of Total:</ltgray> | <ltgray>Site Avg:</ltgray> | <ltgray>% of Total:</ltgray> | 
+  | | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
+  | Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
+  | Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
+  | Asia | **55,387** (20.52%) | 40.26% | 22,297 (22.85%) |
+  | Oceania | **7,719** (2.86%) | 32.01% | 2,471 (2.53%) |
+  | Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
+  | Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
+  [Website Visits by Geographic Location] 
 
 ### Package downloads
 
@@ -174,7 +177,7 @@ full summary of package download stats is available
 
 ## Developer's corner 
 
-### Style markdown with `BiocStyle`
+### Style markdown documents with `BiocStyle`
 
 The `BiocStyle` package provides a fast and easy approach to styling markdown
 documents in `Bioconductor` fashion. It includes all standard formatting 
@@ -188,9 +191,7 @@ automatic centering of figures, improved table display and Latex-compatible math
 symbols. Custom style sheets can be included by wrapping them in `
 BiocStyle:::markdown`:
 
-  ```{r style, echo = FALSE, results = 'asis'}
   BiocStyle::markdown(css.files = c('my.css'))
-  ```
 
 ### Reuse and recycle: The power of `import()`
 
@@ -237,7 +238,7 @@ conference call announcements and tracking progress.
 
 Materials from past courses and conferences have long been available on the
 `Bioconductor` web site categorized by conference name and date. At BioC 2014
-this year there were several requests for a more refined search of these
+this year we had several requests for a more refined search of these
 materials by topic area or key word.
 
 In response, Sonali and Dan have categorized all 2014 materials and implemented
