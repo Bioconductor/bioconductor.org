@@ -9,7 +9,7 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter **DRAFT** 
+# *Bioconductor* Newsletter **-DRAFT-** 
 {:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
@@ -58,7 +58,7 @@ be implemented as stand-alone package. Follow the development on Martin's
 GitHub site:
 (\url{https://github.com/mtmorgan/Rhtslib}).
 
-### `S4 Vectors` and `IRanges` split completed
+### `S4Vectors` and `IRanges` split completed
 
 In September Herv&eacute completed the move of non-range based code from
 `IRanges` to `S4Vectors`. Classes moved include `Vector` and `List` (virtual) as
