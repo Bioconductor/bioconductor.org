@@ -41,15 +41,6 @@ Belgium
   Contact: Willem Ligtenberg &lt;willem.ligtenberg at openanalytics.eu&gt;
 
 
-United Kingdom
-------
-
-* [European Bioinformatics Institute](http://www.ebi.ac.uk/)
-
-  URL: <http://mirrors.ebi.ac.uk/bioconductor/>
-
-  Contact: Misha Kapushesky &lt;ostolop at ebi.ac.uk&gt;
-
 Japan
 ------
 
