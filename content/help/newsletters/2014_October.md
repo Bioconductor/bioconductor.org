@@ -196,14 +196,13 @@ Thank you for talking with us and sharing your insights.
 
 ## Quarterly Project Statistics 
 
-The `Bioconductor` project continues to expand globally. Over the next months 
+The `Bioconductor` project continues to expand globally. Over the next quarter 
 there are [course offerings](http://www.bioconductor.org/help/events/) in 
-Japan, Germany and the UK. 
-
-In August 2014, the Latin American Bioconductor [LAB](http://lab.foundation/) 
-foundation held its official inauguration. LAB is a non-profit scientific
-initiative created to represent and expand `Bioconductor` to the scientific
-research community in Latin America.
+Japan, Germany the UK and US. In July 2014, the Latin American Bioconductor 
+[LAB](http://lab.foundation/) foundation held its official inauguration
+in Ribeirao Preto, Brazil. LAB is a non-profit scientific initiative created 
+to represent and expand `Bioconductor` to the research community in Latin America
+and is headed up by Benilton Carvalho and Houtan Noushmehr.
 
 ### Website traffic
 
