@@ -71,7 +71,7 @@ classes should now import from `S4Vectors`.
 In September the `Bioconductor` mailing list was replaced with a fork of
 Biostars and was renamed the 
 [Bioconductor Support Site](https://support.bioconductor.org/). This affects 
-the bioconductor list only; bioc-devel remains unchanged (devel@r-project.org).
+the bioconductor list only; bioc-devel remains unchanged (bioc-devel@r-project.org).
 
 The move was motivated by the volume of list traffic which highlighted
 the need for advanced searching, tagging and real-time editing of posts. 
