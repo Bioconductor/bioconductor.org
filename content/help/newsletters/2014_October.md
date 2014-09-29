@@ -201,89 +201,56 @@ there are [course offerings](http://www.bioconductor.org/help/events/) in
 Japan, Germany and the UK. 
 
 In August 2014, the Latin American Bioconductor [LAB](http://lab.foundation/) 
-foundation held its official inauguration. LAB is a non-profit 
-scientific​ initiative​ created​ to represent and expand `Bioconductor` to the 
-scientific research community​ in Latin America.
+foundation held its official inauguration. LAB is a non-profit scientific
+initiative created to represent and expand `Bioconductor` to the scientific
+research community in Latin America.
 
 ### Website traffic
 
-Google analytics reports the following website traffic for the period
-of July 1 to September 24, 2014.
+Google analytics reports the following new visitors to the website
+for the period of July 1 to September 28, 2014:
 
-| Continent | Sessions | % New Sessions | New Users |
-| ------ | ----------- | -------------- | --------- |
-| | 269,868 |  36.16% | 97,571 |
-| | % of Total: | Site Avg: | % of Total: | 
-| | 100.00% (269,868) | 6.09% (0.18%) | 100.18% (97,397) |
-| Americas | **113,700** (42.13%) | 35.70% | 40,595 (41.61%) |
-| Europe | **90,386** (33.49%) | 34.12% | 30,837(31.60%) |
-| Asia | **55,387** (20.52%) | 40.26% | 22,297 (22.85%) |
-| Oceania | **7,719** (2.86%) | 32.01% | 2,471 (2.53%) |
-| Africa | **2,309** (0.86%) | 51.36% | 1,186 (1.22%) |
-| Other | **367** (0.14%) | 50.41% | 185 (0.19%) |
-[Website Visits by Geographic Location] 
-
-<!--
-<table style="width:80%",  border=0>
- <caption>Website Visits by Geographic Location</caption>
+<table>
+ <caption> New vs Returning Users </caption>
   <tr>
-    <th>Continent</th><th>Sessions</th><th>% New Sessions</th><th>New Users</th>
+   <th></th><th>Sessions</th>
   </tr>
   <tr>
-    <td></td><td><b>269,868</b></td>
-    <td><b>36.16%</b></td>
-    <td><b>97,571</b></td>
-  </tr>
-  <tr color:gray>
-    <td></td>
-    <td>% of Total:</td>
-    <td>Site Avg:</td>
-    <td>% of Total:</td> 
-  </tr>
-  <tr color:gray>
-    <td></td>
-    <td>100.00% (269,868)</td>
-    <td>6.09% (0.18%)</td>
-    <td>100.18% (97,397)</td>
+   <td width="55%">Returning Visitor</td><td><b>179,242</b> (63.81%)</td>
   </tr>
   <tr>
-    <td>Americas</td>
-    <td><b>113,700</b> (42.13%)</td>
-    <td>35.70%</td>
-    <td>40,595 (41.61%)</td>
-  </tr>
-  <tr>
-    <td>Europe</td>
-    <td><b>90,386</b> (33.49%)</td>
-    <td>34.12%</td>
-    <td>30,837(31.60%)</td>
-  </tr>
-  <tr>
-    <td>Asia</td>
-    <td><b>55,387</b> (20.52%)</td>
-    <td>40.26%</td>
-    <td>22,297 (22.85%)</td>
-  </tr>
-  <tr>
-    <td>Oceania</td>
-    <td><b>7,719</b> (2.86%)</td>
-    <td>32.01%</td>
-    <td>2,471 (2.53%)</td>
-  </tr>
-  <tr>
-    <td>Africa</td>
-    <td><b>2,309</b> (0.86%)</td>
-    <td>51.36%</td>
-    <td>1,186 (1.22%)</td>
-  </tr>
-  <tr>
-|   <td>Other</td>
-    <td><b>367</b> (0.14%)</td>
-    <td>50.41%</td>
-    <td>185 (0.19%)</td>
+   <td width="55%">New Visitor</td><td><b>101,668</b> (36.19%)</td>
   </tr>
 </table>
--->
+
+
+Overall website traffic by country:
+
+<table>
+ <caption>Website Visits by Location</caption>
+  <tr>
+    <th></th><th>Sessions</th>
+  </tr>
+  <tr>
+    <td width="55%">Americas</td><td><b>118,398</b> (42.15%)</td>
+  </tr>
+  <tr>
+    <td width="55%">Europe</td><td><b>93,973</b> (33.45%)</td>
+  </tr>
+  <tr>
+    <td width="55%">Asia</td><td><b>57,744</b> (20.56%)</td>
+  </tr>
+  <tr>
+    <td width="55%">Oceania</td><td><b>8,015</b> (2.85%)</td>
+  </tr>
+  <tr>
+    <td width="55%">Africa</td><td><b>2,403</b> (0.86%)</td>
+  </tr>
+  <tr>
+   <td width="55%">Other</td><td><b>377</b> (0.13%)</td>
+  </tr>
+</table>
+
 
 ### Package downloads
 
