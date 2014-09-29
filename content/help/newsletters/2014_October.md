@@ -191,7 +191,7 @@ bugs get fixed in a timely manner makes you keep using it. The package vignettes
 are a valuable 'stand alone' resource that help get you going with a specific
 package or task right away.
 
-Thank you for talking with us and sharing your insights.
+**Thank you for talking with us and sharing your insights.**
 
 
 ## Quarterly Project Statistics 
