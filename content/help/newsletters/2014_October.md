@@ -222,7 +222,7 @@ for the period of July 1 to September 28, 2014:
    <td width="55%">New Visitor</td><td><b>101,668</b> (36.19%)</td>
   </tr>
 </table>
-
+<p></p>
 
 Overall website traffic by country:
 
