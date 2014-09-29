@@ -16,6 +16,10 @@ Header set Cache-Control "max-age=300"
 <FilesMatch "^biocLite\.R$">
 Header set Cache-Control "max-age=60"
 </FilesMatch>
+<FilesMatch "\.tar.gz$|\.tgz$|\.zip$">
+Header set Cache-Control "max-age=15552000"
+</FilesMatch>
+
 </ifModule>
 
 <IfModule mod_rewrite.c>
