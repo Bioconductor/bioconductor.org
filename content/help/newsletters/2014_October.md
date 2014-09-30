@@ -38,10 +38,10 @@ of the genome where variation prevents representation by a single sequence.
 These regions are not new but have become more prominent as tools for variant
 detection have matured.
 
-The previous GRCh37 assembly included patch releases tagged as &lsquo;fix&rsquo; 
-or &lsquo;novel&rsquo;. The &lsquo;fix&rsquo; patches were incorporated in the 
-primary assembly of GRCh38 while the &lsquo;novel&rsquo; patches were moved 
-into the alt loci units. The &lquo;multi-sequence&rsquo; nature of GRCh38 
+The previous GRCh37 assembly included patch releases tagged as 'fix' 
+or 'novel'. The 'fix' patches were incorporated in the 
+primary assembly of GRCh38 while the 'novel' patches were moved 
+into the alt loci units. The 'multi-sequence' nature of GRCh38 
 raises questions about how to best work with these alternate sequences
 with respect to alignment and downstream analysis.
 
@@ -271,7 +271,7 @@ materials by topic area or key word.
 In response, Sonali and Dan have categorized all 2014 materials and implemented
 a new key word(s) [search table](http://www.bioconductor.org/help/course-materials/)
 interface. The plan is to index all future materials while years prior to 2014
-will be available in the old format (see &lsquo;Courses by year&rsquo; below 
+will be available in the old format (see 'Courses by year' below 
 the search table).
 
 ### Publications 
