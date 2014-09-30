@@ -9,7 +9,7 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter **-DRAFT-** 
+# *Bioconductor* Newsletter  
 {:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
@@ -25,9 +25,9 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
 
 ### GRCh38 assembly
 
-The CRCh38 human genome assembly is available in `Bioconductor` as
+The GRCh38 human genome assembly is available in `Bioconductor` as
 [BSgenome](http://www.bioconductor.org/packages/devel/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html)
-[TranscriptDb](),
+[TranscriptDb](http://www.bioconductor.org/packages/devel/data/annotation/html/TxDb.Hsapiens.UCSC.hg38.knownGene.html)
 and
 [SNPloc](http://www.bioconductor.org/packages/devel/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38.html)
 packages.
@@ -38,30 +38,30 @@ of the genome where variation prevents representation by a single sequence.
 These regions are not new but have become more prominent as tools for variant
 detection have matured.
 
-The previous GRCh37 assembly included patch releases tagged as 'fix' or 'novel'.
-The 'fix' patches were incorporated in the primary assembly of GRCh38 while the
-'novel' patches moved into the alt loci units. The 'multi-sequence' nature of
-GRCh38 raises questions around  how to best work with these alternate sequences
+The previous GRCh37 assembly included patch releases tagged as &lsquo;fix&rsquo; 
+or &lsquo;novel&rsquo;. The &lsquo;fix&rsquo; patches were incorporated in the 
+primary assembly of GRCh38 while the &lsquo;novel&rsquo; patches were moved 
+into the alt loci units. The &lquo;multi-sequence&rsquo; nature of GRCh38 
+raises questions about how to best work with these alternate sequences
 with respect to alignment and downstream analysis.
 
 ### htslib
 
 The samtools library and associated sub-tools play and integral role in the
 analysis of HTS data. The htslib is the successor of libbam which is currently
-provided by samtools. Specifically, it is a C library for handling high-
-throughput sequencing data, providing APIs for manipulating SAM, BAM, and CRAM
-sequence files (similar to but more flexible than the old Samtools API) and for
-manipulating VCF or BCF variant files.
+provided by samtools. Specifically, htslib is a C library for handling 
+high-throughput sequencing data, providing APIs for manipulating SAM, BAM, and 
+CRAM sequence files (similar to but more flexible than the old Samtools API) 
+and for manipulating VCF or BCF variant files.
 
 An implementation of htslib is in the works for `Bioconductor` and will likely 
 be implemented as stand-alone package. Follow the development on Martin's 
-GitHub site:
-(\url{https://github.com/mtmorgan/Rhtslib}).
+[GitHub site](https://github.com/mtmorgan/Rhtslib).
 
 ### `S4Vectors` and `IRanges` split completed
 
-In September Herv&eacute completed the move of non-range based code from
-`IRanges` to `S4Vectors`. Classes moved include `Vector` and `List` (virtual) as
+In September Herv&eacute; completed the move of non-range based code from
+`IRanges` to `S4Vectors`. The virtual `Vector` and `List` classes moved as
 well as `DataFrame`, `Rle` and `Hits`. Developers using or building on these
 classes should now import from `S4Vectors`.
 
@@ -69,7 +69,7 @@ classes should now import from `S4Vectors`.
 ## `Bioconductor` support site 
 
 In September the `Bioconductor` mailing list was replaced with a fork of
-Biostars and was renamed the 
+Biostars and renamed the 
 [Bioconductor Support Site](https://support.bioconductor.org/). This affects 
 the bioconductor list only; bioc-devel remains unchanged (bioc-devel@r-project.org).
 
@@ -84,7 +84,6 @@ available to help with site navigation and common tasks such as posting,
 merging, or tracking topics. 
 
 Thanks to Marc and Dan for their work on this.
-
 
 
 ## Developer's corner 
@@ -105,7 +104,7 @@ BiocStyle:::markdown`:
 
   BiocStyle::markdown(css.files = c('my.css'))
 
-### Reuse and recycle: The power of `import()`
+### Reuse and recycle: The power of `import`
 
 The `Bioconductor` infrastructure contains a wealth of tools for HTS analysis.
 Because these methods and containers exist across a number of packages they can
@@ -125,10 +124,11 @@ functions.
 
 ### biocMultiAssay
 
-At Developer Day BioC 2014 Levi Waldron's discussion of his biocMultiAssay
-project generated a good deal of interest in the community. This effort, lead by
-Levi, Vince, Kasper and Martin, aims to create `Bioconductor` tools for the
-efficient manipulation and analysis of multi-assay omics experiments.
+During Developer Day at BioC 2014, Levi Waldron's discussion of his
+biocMultiAssay project generated a good deal of interest in the community. This
+effort, lead by Levi, Vince, Kasper and Martin, aims to create `Bioconductor`
+tools for the efficient manipulation and analysis of multi-assay omics
+experiments.
 
 The primary motivation is to combine data across multiple experiments for a
 common group of samples or patients. Goals are to develop classes and methods
@@ -191,14 +191,14 @@ bugs get fixed in a timely manner makes you keep using it. The package vignettes
 are a valuable 'stand alone' resource that help get you going with a specific
 package or task right away.
 
-**Thank you for talking with us and sharing your insights.**
+**Thanks for talking with us and sharing your insights.**
 
 
 ## Quarterly Project Statistics 
 
 The `Bioconductor` project continues to expand globally. Over the next quarter 
 there are [course offerings](http://www.bioconductor.org/help/events/) in 
-Japan, Germany the UK and US. In July 2014, the Latin American Bioconductor 
+Japan, Germany the UK and US. In August 2014, the Latin American Bioconductor 
 [LAB](http://lab.foundation/) foundation held its official inauguration
 in Ribeirao Preto, Brazil. LAB is a non-profit scientific initiative created 
 to represent and expand `Bioconductor` to the research community in Latin America
@@ -255,8 +255,7 @@ Overall website traffic by country:
 
 The number of distinct IP downloads of `Bioconductor` software packages  for
 July, August and September were 36900, 36749, and 36618 respectively for an
-average of 36756. This is down slightly from last quarter's average of 38243. A
-full summary of package download stats is available
+average of 36756. A full summary of package download stats is available
 [here](http://www.bioconductor.org/packages/stats/).
 
 
@@ -270,12 +269,12 @@ this year we had several requests for a more refined search of these
 materials by topic area or key word.
 
 In response, Sonali and Dan have categorized all 2014 materials and implemented
-a new key word(s) [search interface](http://www.bioconductor.org/help/course-materials/). 
-The plan is to index all future materials while years prior to 2014
-will still be available in the old format (see 'Courses by year' below the
-search table).
+a new key word(s) [search table](http://www.bioconductor.org/help/course-materials/)
+interface. The plan is to index all future materials while years prior to 2014
+will be available in the old format (see &lsquo;Courses by year&rsquo; below 
+the search table).
 
-### Working with ranges
+### Publications 
 
 If you are looking for resources to enhance your knowledge of working with
 genomic ranges and sequences in `Bioconductor` the following publications maybe
