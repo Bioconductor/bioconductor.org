@@ -76,8 +76,8 @@ In the Payload URL box, enter:
 
 **Important Note**: This url must start with `http`, **not** `https`.
 
-Leave "Payload version" alone (it should be 
-"application/vnd.github-v3+form")
+Leave "Content type" alone (it should be 
+"application/json"). Leave "Secret" alone as well.
 
 Under "Which events", choose "Just the `push` event". Make sure
 the "Active" box is checked. Then click "Update webhook".
@@ -399,17 +399,23 @@ to set up a collaborator are a little bit different:
 * Go to the Organization's main page. If the organization is called 
   `myorg`, you'd go to
 
-        https://github.com/organizations/myorg
+        https://github.com/myorg
 
 * Click on "Teams", at the right-hand side of the top navigation bar.
 * Click on "New Team." You may be prompted to enter your Github password.
 * Choose a descriptive name for the team, such as `bioc-collab`.
-* Grant the "Push & Pull" privileges
+* Grant the "Write Access" permission level and click Create Team.
+* On the next screen, type `bioc-sync` in the 
+  `Invite or add users to team` box and press Enter.
+  You may be prompted to enter your Github password.
+* This will invite the  `bioc-sync` user to join your team.
+  Unfortunately, as of September 2014 this is a manual process
+  and you will need to wait until a human in the Biconductor group
+  receives and accepts the emailed invitation.
 * In the Members box, add the user `bioc-sync` and click `Add`.
-* In the Repositories box, type the organization name, a slash,
-  and the repository name, for example: `myorg/MyPackage`, and
-  click `Add`.
-* Now click `Save Team`.
+* Click Repositories and in the "Add repositories" box,
+  enter the name of the repository you want to bridge.
+  You may be prompted for your github password.
 
 Now you can go back to the repository "Settings" page and 
 [continue](#step-1c) configuring repository settings.
