@@ -47,7 +47,7 @@ with respect to alignment and downstream analysis.
 
 ### htslib
 
-The samtools library and associated sub-tools play and integral role in the
+The samtools library and associated sub-tools play an integral role in the
 analysis of HTS data. The htslib is the successor of libbam which is currently
 provided by samtools. Specifically, htslib is a C library for handling 
 high-throughput sequencing data, providing APIs for manipulating SAM, BAM, and 
