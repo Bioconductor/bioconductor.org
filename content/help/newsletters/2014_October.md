@@ -126,7 +126,7 @@ functions.
 
 During Developer Day at BioC 2014, Levi Waldron's discussion of his
 biocMultiAssay project generated a good deal of interest in the community. This
-effort, lead by Levi, Vince, Kasper and Martin, aims to create `Bioconductor`
+effort, led by Levi, Vince, Kasper and Martin, aims to create `Bioconductor`
 tools for the efficient manipulation and analysis of multi-assay omics
 experiments.
 
@@ -277,7 +277,7 @@ the search table).
 ### Publications 
 
 If you are looking for resources to enhance your knowledge of working with
-genomic ranges and sequences in `Bioconductor` the following publications maybe
+genomic ranges and sequences in `Bioconductor` the following publications may be
 of  interest:
 
 [Software for Computing and Annotating GenomicRanges](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3738458/)  
