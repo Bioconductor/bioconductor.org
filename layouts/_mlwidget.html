@@ -1,8 +1,14 @@
 
 <div style="padding:0 12px 0 0">
   <h2 style="min-height:40px;">
-     <img height="36" width="37" src="/images/icons/help.gif" alt=""/> <a href="help/support/">Support</a>
+     <img height="36" width="37" src="/images/icons/help.gif" alt=""/> <a href="https://support.bioconductor.org/">Support</a>
 </h2>
+  
+  <ul>
+    <li>Read the <a href="/help/support/posting-guide/">posting guide</a></li>
+    <li><a href="/help/support/#bioc-devel">bioc-devel mailing list (for package authors)</a></li>
+  </ul>
+
 
   <% @ml_item.each_with_index do |p, i| %>
     <div class="<%= "#{i % 2 == 0 ? 'grey_box' : 'white_box'}" %>">

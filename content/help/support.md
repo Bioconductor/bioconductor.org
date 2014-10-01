@@ -1,6 +1,3 @@
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<link rel="stylesheet" href="http://www.google.com/cse/style/look/default.css" type="text/css" />
-
 # ![](/images/icons/help.gif)Support
 
 
@@ -8,7 +5,7 @@ Please always read the [posting guide][5] before posting new questions
 to the community.  Doing so will help you to get clear answers to
 your questions.
 
-## Support Site
+## [Support Site](https://support.bioconductor.org/)
 
 For almost all questions about Bioconductor software please use the
 Bioconductor [support site](https://support.bioconductor.org/). This
@@ -17,7 +14,7 @@ answers to your questions, post novel questions or even to share your
 knowledge with other people who have questions about the project.
 
 
-
+<a name="bioc-devel"></a>
 ## Bioc-devel Mailing List
 
 This mailing list is for discussions about the active and future development
