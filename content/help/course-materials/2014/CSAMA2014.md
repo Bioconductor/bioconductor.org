@@ -28,7 +28,7 @@ Afternoon labs
 
       source("http://bioconductor.org/biocLite.R")
       biocLite(c("IRanges", "GenomicRanges", "microbenchmark"))
-      install.packages(IntermediateR1_1.0.0.tar.gz", repos=NULL, type="source")
+      install.packages("IntermediateR1_1.0.0.tar.gz", repos=NULL, type="source")
     
 - [pdf](1_Monday/labs/ScalableComputing.pdf)
   [R](1_Monday/labs/ScalableComputing.pdf) Intermediate R 2: scalable
@@ -41,7 +41,7 @@ Afternoon labs
       biocLite(c("IRanges", "GenomicRanges", "Rsamtools", "ShortRead", 
           "rtracklayer", "GenomicAlignments", "GEOquery", "microbenchmark",
           "BiocParallel", "ggbio", "Biobase", "GenomicFiles"))
-      install.packages(CSAMA2014ScalableComputingLab_0.0.1.tar.gz",
+      install.packages("CSAMA2014ScalableComputingLab_0.0.1.tar.gz",
           repos=NULL, type="source")
 
 ## Tuesday
