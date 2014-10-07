@@ -47,7 +47,7 @@ Namespaces
   tedious, fully enumerate imports.
 * Export all symbols useful to end users. Fully enumerate exports.
 * For conditional package use, see
-  [Package Guidelines](developers/package-guidelines/#dependencies)
+  [Package Guidelines](/developers/package-guidelines/#dependencies)
 
 Misc
 
