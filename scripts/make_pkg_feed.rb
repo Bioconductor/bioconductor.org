@@ -53,8 +53,6 @@ for pkg in pkgs
     next unless response.code == 200
     description = response.body
 #    3.times {|i| description.gsub!(/\r\n/, "")}
-    puts description
-    puts pkg
     description.gsub!(/\r\n?/, "\n")
     description.gsub!(/\n{2,}/, "\n")
     description = description.gsub(/^\n+/, "")
