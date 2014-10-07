@@ -124,10 +124,17 @@ def get_first_profile_id(service):
 
   accounts = service.management().accounts().list().execute()
 
+
+
   if accounts.get('items'):
-    firstAccountId = accounts.get('items')[0].get('id')
-    webproperties = service.management().webproperties().list(
-        accountId=firstAccountId).execute()
+    items = accounts.get('items')
+    for item in items:
+        if item.get('name') == "www.bioconductor.org":
+            firstAccountId = item.get('id')
+            webproperties = service.management().webproperties().list(
+              accountId=firstAccountId).execute()
+    if not firstAccountId:
+        return None
 
     if webproperties.get('items'):
       firstWebpropertyId = webproperties.get('items')[0].get('id')
