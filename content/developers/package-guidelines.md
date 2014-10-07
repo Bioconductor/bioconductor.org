@@ -300,8 +300,11 @@ therefore essential that the vignette embed R code between <<>>= and
 Sweave eval=FALSE flag, or equivalent tricks in markdown) undermine
 the benefit of vignettes.
 
-All packages are expected to have at least one vignette.
-Vignettes go in the `vignettes` directory of the package.
+All packages are expected to have at least one vignette.  Vignettes go
+in the `vignettes` directory of the package. Vignettes are often used
+as stand-alone documents, so best practices are to include an
+informative _title_, the primary _author_ of the vignette, the _last
+modified date_ of the vignette, and a link to the package landing page.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
