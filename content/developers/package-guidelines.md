@@ -14,7 +14,7 @@
 * [Vectorized Calculations](#vectorized)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
-* [The Vignette](#vignettes)
+* [Vignette(s)](#vignettes)
 * [Citations](#citations)
 * [Version Numbering](#versions)
 * [C/C++ or Fortran code](#c-code)
@@ -172,8 +172,8 @@ Packages must
 <h2 id="dependencies">Package Dependencies</h2>
 
 Packages you depend on must be available via Bioconductor or CRAN;
-the automated build system has no way to install packages from
-any other source.
+users and the automated build system has no way to install packages
+from any other source.
 
 Reuse, rather than re-implement or duplicate, well-tested functionality from
 other packages. Specify package dependencies in the DESCRIPTION file, listed
@@ -193,6 +193,27 @@ as follows
    is required, but not automatically installed by the normal package
    installation process. If the installation process is non-trivial,
    a top-level README file should be included to document the process.
+
+A package may rarely offer optional functionality, e.g., visualization
+with `rgl` when that package is available. Authors then list the
+package in the **Suggests** field, and use `requireNamespace()` (or
+`loadNamespace()`) to condition code execution. Functions from the
+loaded namespace should be accessed using `::` notation, e.g.,
+
+    x <- sort(rnorm(1000))
+    y <- rnorm(1000)
+    z <- rnorm(1000) + atan2(x,y)
+    if (requireNamespace("rgl", quietly=TRUE)) {
+        rgl::plot3d(x, y, z, col=rainbow(1000))
+    } else {
+        ## code when "rgl" is not available
+    }
+
+This approach does not alter the user `search()` path, and ensures
+that the necessary function (`plot3d()`, from the `rgl` package) is
+used.  Such conditional code increases complexity of the package and
+frustrates users who do not understand why behavior differs between
+installations, so is often best avoided.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -254,7 +275,7 @@ server.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="vignettes">The Vignette</h2>
+<h2 id="vignettes">Vignette(s)</h2>
 
 A vignette demonstrates how to accomplish non-trivial tasks embodying
 the core functionality of your package. There are two common types of
