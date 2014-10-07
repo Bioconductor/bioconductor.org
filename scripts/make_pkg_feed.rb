@@ -6,6 +6,7 @@ require "dcf"
 require "rexml/document"
 require "yaml"
 require 'nokogiri'
+require 'httparty'
 
 include REXML
 
@@ -47,8 +48,13 @@ for pkg in pkgs
   raw_result = `curl -s -I http://bioconductor.org/packages/devel/bioc/html/#{pkg}.html`
   first_line  = raw_result.split("\n").first
   if (first_line =~ /200/) # is there a pkg homepage?
-    description = `curl -s -u readonly:readonly #{rpacks_url}#{pkg}/DESCRIPTION`
+    response = HTTParty.get("#{rpacks_url}#{pkg}/DESCRIPTION",
+        :verify => false, :basic_auth => {:username => 'readonly', :password => 'readonly'})
+    next unless response.code == 200
+    description = response.body
 #    3.times {|i| description.gsub!(/\r\n/, "")}
+    puts description
+    puts pkg
     description.gsub!(/\r\n?/, "\n")
     description.gsub!(/\n{2,}/, "\n")
     description = description.gsub(/^\n+/, "")
