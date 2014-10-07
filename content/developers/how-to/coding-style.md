@@ -43,9 +43,11 @@ Comments
 Namespaces
 
 * Import all symbols used from packages other than "base". Except for
-  default packages (base, graphics, stats, etc.), fully enumerate
-  imports.
+  default packages (base, graphics, stats, etc.) or when overly
+  tedious, fully enumerate imports.
 * Export all symbols useful to end users. Fully enumerate exports.
+* For conditional package use, see
+  [Package Guidelines](developers/package-guidelines/#dependencies)
 
 Misc
 
