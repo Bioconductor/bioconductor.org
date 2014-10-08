@@ -182,7 +182,7 @@ as follows
 * **Imports**: is for packages that provide functions, methods, or
   classes that are used inside your package name space. Most packages
   are listed here.
-* **Depends**: is for packages that provides essential functionality
+* **Depends**: is for packages that provide essential functionality
   for users of your package, e.g., the `GenomicRanges` package is
   listed in the Depends: field of `GenomicAlignments`.  It is unusual
   for more than three packages to be listed as 'Depends:'.
