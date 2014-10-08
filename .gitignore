@@ -3,3 +3,8 @@ tmp
 _MIRROR
 /README.html
 logs
+.DS_Store
+.sass-cache/
+assets/bioc-version
+content/packages/
+crash.log
