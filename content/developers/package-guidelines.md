@@ -98,7 +98,7 @@ less than 4MB on disk. The package should require less than 5 minutes to run
 Using the <code>&#45;&#45;no&#45;build&#45;vignettes</code>
 option ensures that the vignette is built only once.
 
-Vignette and man page examples should not use more than 2GB of memory
+Vignette and man page examples should not use more than 3GB of memory
 since R cannot allocate more than this on 32-bit Windows.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
