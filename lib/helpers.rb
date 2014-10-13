@@ -1,3 +1,4 @@
+require 'nanoc'
 include Nanoc3::Helpers::Text
 include Nanoc3::Helpers::Rendering
 include Nanoc3::Helpers::Breadcrumbs
@@ -20,6 +21,7 @@ require 'nokogiri'
 require 'fileutils'
 require 'mechanize'
 require 'kramdown'
+require 'open3'
 
 include REXML
 
@@ -1066,9 +1068,168 @@ def render_courses()
             </tbody>
         </table>
     EOT
+
     out
 end
 
 def ami_url(ami)
     "<a href='https://console.aws.amazon.com/ec2/home?region=us-east-1#launchAmi=#{ami}'>#{ami}</a>"
+end
+
+def pad(input)
+    input.to_s.rjust(2, '0')
+end
+
+def download_support_usage_data(year, month, day, overwrite=false)
+    # day should be either a number or "last"
+    suffix = nil
+    if day == "last"
+        suffix = "last"
+        day = pad(Date.civil(year, month, -1).mday)
+    else
+        suffix = pad(day)
+    end
+    url = "https://support.bioconductor.org/api/stats/date/#{pad(year)}/#{pad(month)}/#{pad(day)}/"
+    cachedir = File.join("tmp", "usage_stats")
+    FileUtils.mkdir_p cachedir
+    filename = cachedir + File::SEPARATOR + year.to_s + "_" + pad(month) + \
+        "_" + suffix + ".json"
+    #filename = "#{cachedir}/#{year}_#{pad(month)}_#{suffix}.json"
+    if overwrite or (!File.exists? filename)
+        response = HTTParty.get(url, :verify => false)
+        # "#{year}/#{month}/#{day}"
+        f = File.open(filename, "w")
+        f.write response.body
+        f.close
+    end
+end
+
+def cache_support_usage_info()
+    now = DateTime.now
+
+    download_support_usage_data(now.year, now.mon, 1)
+    download_support_usage_data(now.year, now.mon, now.mday)
+
+    for x in 1..12
+        thepast = now << x # subtract x months, unintuitively
+        download_support_usage_data(thepast.year, thepast.mon, 1)
+        download_support_usage_data(thepast.year, thepast.mon, "last")
+    end
+    # also need to download first & last of year for each year
+    # starting with last (complete) year, going back to 2002. 
+    # probably should tweak download_support_usage_data()
+    # to support a "year" mode
+    lastyear = now.year - 1
+    firstyear = 2002
+    rng = lastyear..firstyear
+    (rng.first).downto(rng.last).each do |year|
+        download_support_usage_data(year, 1, 1)
+        download_support_usage_data(year, 12, 31)
+    end
+    nil
+end
+
+def iterate_month_mode(now, code)
+    res = []
+    month_mode  = true
+    (1..12).each do |offset|
+        res << code.call(offset, month_mode)
+    end
+    res
+end
+
+def iterate_year_mode(now, code)
+    res = []
+    month_mode = false
+    lastyear = now.year - 1
+    firstyear = 2002
+    rng = lastyear..firstyear
+    (rng.first).downto(rng.last).each do |year|
+        res << code.call(year, month_mode)
+    end
+    res
+end
+
+def cache_google_analytics_info()
+    now = DateTime.now
+    cachedir = File.join("tmp", "usage_stats")
+
+    block = Proc.new do |item, month_mode|
+        if month_mode
+            timethen = now << item
+            start_date = "#{timethen.year}-#{pad(timethen.mon)}-01"
+            end_date = "#{timethen.year}-#{pad(timethen.mon)}-#{pad(Date.civil(timethen.year, timethen.mon, -1).mday)}"
+            outfile = File.join(cachedir, "ga_#{timethen.year}_#{pad(timethen.mon)}.txt")
+        else
+            timethen = DateTime.new(item, 1, 1)
+            start_date = "#{timethen.year}-01-01"
+            end_date = "#{timethen.year}-12-31"
+            outfile = File.join(cachedir, "ga_#{timethen.year}.txt")
+        end
+        unless File.exists? outfile
+            Dir.chdir "analytics_py" do
+                Open3.popen3("python users.py #{start_date} #{end_date}") do |stdin, stdout, stderr, wait_thr|
+                    f = File.open(File.join("..", outfile), "w+")
+                    f.write(stdout.read.chomp)
+                    f.close
+                end
+            end
+        end
+    end
+
+    iterate_month_mode(now, block)
+    iterate_year_mode(now, block)
+
+end
+
+
+def get_stats()
+    return [] unless File.exists?(File.join("analytics_py", "client_secrets.json"))
+    cache_support_usage_info()
+    cache_google_analytics_info()
+    # start with current month and last 12 months before that
+    now = DateTime.now
+    cachedir = File.join("tmp", "usage_stats")
+    hsh = {:label => nil, :toplevel => nil, :questions => nil,
+        :answers => nil, :comments => nil, :new_visitors => nil, :returning_visitors => nil}
+   
+    block = Proc.new do |item, month_mode|
+        if (month_mode)
+            timethen = now << item
+            label = "#{timethen.strftime("%b")} #{timethen.year}"
+            lastday = "last"
+            month = pad(timethen.mon)
+            file1 = cachedir + File::SEPARATOR + timethen.year.to_s + "_" +
+               month + "_01.json"
+            file2 = cachedir + File::SEPARATOR + timethen.year.to_s + "_" +
+               month +    "_" +  lastday + ".json"
+            gafile = cachedir + File::SEPARATOR + "ga_" + timethen.year.to_s + "_" +
+                month + ".txt"
+        else
+            timethen = DateTime.new(item, 1, 1)
+            label = timethen.year.to_s
+            month = pad(timethen.mon)
+            file1 = cachedir + File::SEPARATOR + timethen.year.to_s + "_01_01.json"
+            file2 = cachedir + File::SEPARATOR + timethen.year.to_s + "_12_31.json"
+            gafile = cachedir + File::SEPARATOR + "ga_" + timethen.year.to_s + ".txt"
+        end
+        obj1 = JSON.parse(IO.read(file1))
+        obj2 = JSON.parse(IO.read(file2))
+        row = hsh.dup
+        row[:label] =  label
+        for type in ["toplevel", "questions", "answers", "comments"]
+           row[type.to_sym] = (obj2[type]) - obj1[type]
+        end
+        row[:new_visitors], row[:returning_visitors] = File.readlines(gafile).first.split("\t")
+        row[:new_visitors] = row[:new_visitors].to_i
+        row[:returning_visitors] = row[:returning_visitors].to_i
+        row
+    end
+
+    results = [] 
+
+    results += iterate_month_mode(now, block)
+    results += iterate_year_mode(now, block)
+
+    results
 end

@@ -128,8 +128,35 @@
 
 
 
-
-
-
-
 <br clear="all"/>
+
+<div>
+    <h2>Support Site Usage Stats</h2>
+
+    <table id="support_site_usage">
+      <thead>
+        <tr>
+          <th>Period</th>
+          <th>Top-level posts</th>
+          <th>Answers</th>
+          <th>Comments</th>
+          <th>New Visitors</th>
+          <th>Returning Visitors</th>
+      </thead>
+      <tbody>
+        <% for row in get_stats %>
+          <tr>
+          <% #require 'pry';binding.pry %>
+          <% for key in [:label, :toplevel, :answers, :comments, :new_visitors, :returning_visitors] %>
+            <td><%= row[key] %></td>
+          <% end %>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+<p>&nbsp;</p>
+
+<p><i>Note</i>: Before September, 2014, the support site was a mailing list, so the terms 'new visitors'
+and 'returning visitors' did not apply.</p>
+</div>
