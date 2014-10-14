@@ -1,10 +1,10 @@
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.0, consisting of 929
+We are pleased to announce Bioconductor 3.0, consisting of 930
 software packages, 220 experiment data packages, and 870
 up-to-date annotation packages. 
 
-There are 109 new software packages, and many updates and improvements
+There are 110 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.0 is compatible with R 3.1.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release includes an updated Bioconductor [Amazon Machine Image]
@@ -35,7 +35,7 @@ for this version of R.
 New Software Packages
 =====================
 
-There are 109 new packages in this release of Bioconductor.
+There are 110 new packages in this release of Bioconductor.
 
 ALDEx2 - A differential abundance analysis for the comparison of two or more conditions. For example, single-organism and meta-RNA-seq high-throughput sequencing assays, or of selected and unselected values from in-vitro sequence selections. Uses a Dirichlet-multinomial model to infer abundance from counts, that has been optimized for three or more experimental replicates. Infers sampling variation and calculates the expected false discovery rate given the biological and sampling variation using the Wilcox rank test or Welches t-test (aldex.ttest) or the glm and Kruskal Wallis tests (aldex.glm). Reports both P and fdr values calculated by the Benjamini Hochberg correction.
 
@@ -184,6 +184,11 @@ paxtoolsr - The package provides a basic set of R functions for interacting with
 Pbase - A set of classes and functions to investigate and understand protein sequence data in the context of a proteomics experiment.
 
 pepStat - Statistical analysis of peptide microarrays
+
+pepXMLTab - Parsing pepXML files based one XML package.  The package
+tries to handle pepXML files generated from different softwares. The
+output will be a peptide-spectrum-matching tabular file. The package
+also provide function to filter the PSMs based on FDR.
 
 polyester - This package can be used to simulate RNA-seq reads from differential expression experiments with replicates. The reads can then be aligned and used to perform comparisons of methods for differential expression.
 
@@ -419,6 +424,48 @@ ballgown
 9.0: several bug fixes in plotting functions and statistical testing function Alpha release, 30 March 2014:
 
 9.0: package announced
+
+
+BiocParallel
+------------
+
+CHANGES IN VERSION 1.0.0
+------------------------
+
+NEW FEATURES
+
+    o Add vignette sections for cluster managers, AMI
+
+    o Add bpiterate generic and methods 
+
+    o Add REDUCE to bpiterate()
+
+    o Add 'reduce.in.order' to bpiterate()
+
+
+MODIFICATIONS
+
+    o Update vignette examples, reorganize sections 
+
+    o Allow 'workers' in BiocParallelParam to be character or integer
+
+    o Enhance bpresume() man page; add examples
+
+    o Enhance register() man page; add examples
+
+    o Improve default registration for SnowParam:
+      - max 8 cores
+      - use detectcores() / mc.cores if available
+
+    o Modify .convertToSimpleError() to convert NULL to NA_character_
+
+
+BUG FIXES
+
+    o Fix recursion problem for BPPARAM as list 
+
+    o Modify bpaggregate() to run in parallel
+
 
 BiocStyle
 ---------
