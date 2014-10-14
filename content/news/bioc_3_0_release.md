@@ -4,7 +4,7 @@ We are pleased to announce Bioconductor 3.0, consisting of 934
 software packages, 219 experiment data packages, and 870
 up-to-date annotation packages. 
 
-There are 113 new software packages, and many updates and improvements
+There are 114 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.0 is compatible with R 3.1.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release includes an updated Bioconductor [Amazon Machine Image]
@@ -35,7 +35,7 @@ for this version of R.
 New Software Packages
 =====================
 
-There are 113 new packages in this release of Bioconductor.
+There are 114 new packages in this release of Bioconductor.
 
 ALDEx2 - A differential abundance analysis for the comparison of two or more conditions. For example, single-organism and meta-RNA-seq high-throughput sequencing assays, or of selected and unselected values from in-vitro sequence selections. Uses a Dirichlet-multinomial model to infer abundance from counts, that has been optimized for three or more experimental replicates. Infers sampling variation and calculates the expected false discovery rate given the biological and sampling variation using the Wilcox rank test or Welches t-test (aldex.ttest) or the glm and Kruskal Wallis tests (aldex.glm). Reports both P and fdr values calculated by the Benjamini Hochberg correction.
 
@@ -72,6 +72,13 @@ derfinderPlot - Plotting functions for derfinder
 DOQTL - DOQTL is a quantitative trait locus (QTL) mapping pipeline designed for Diversity Outbred mice and other multi-parent outbred populations. The package reads in data from genotyping arrays and perform haplotype reconstruction using a hidden Markov model (HMM). The haplotype probabilities from the HMM are then used to perform linkage mapping. When founder sequences are available, DOQTL can use the haplotype reconstructions to impute the founder sequences onto DO genomes and perform association mapping.
 
 DupChecker - Meta-analysis has become a popular approach for high-throughput genomic data analysis because it often can significantly increase power to detect biological signals or patterns in datasets. However, when using public-available databases for meta-analysis, duplication of samples is an often encountered problem, especially for gene expression data. Not removing duplicates would make study results questionable. We developed a Bioconductor package DupChecker that efficiently identifies duplicated samples by generating MD5 fingerprints for raw data.
+
+EBSeqHMM - The EBSeqHMM package implements an auto-regressive hidden
+Markov model for statistical analysis in ordered RNA-seq experiments
+(e.g. time course or spatial course data). The EBSeqHMM package
+provides functions to identify genes and isoforms that have non-
+constant expression profile over the time points/positions, and
+cluster them into expression paths.
 
 EnrichmentBrowser - The EnrichmentBrowser package implements essential functionality for the enrichment analysis of gene expression data. The analysis combines the advantages of set-based and network-based enrichment analysis in order to derive high-confidence gene sets and biological pathways that are differentially regulated in the expression data under investigation. Besides, the package facilitates the visualization and exploration of such sets and pathways.
 
@@ -179,6 +186,11 @@ MultiMed - Implements permutation method with joint correction for testing multi
 
 mvGST - mvGST provides platform-independent tools to identify GO terms (gene sets) that are differentially active (up or down) in multiple contrasts of interest.  Given a matrix of one-sided p-values (rows for genes, columns for contrasts), mvGST uses meta-analytic methods to combine p-values for all genes annotated to each gene set, and then classify each gene set as being significantly more active (1), less active (-1), or not significantly differentially active (0) in each contrast of interest.  With multiple contrasts of interest, each gene set is assigned to a profile (across contrasts) of differential activity.  Tools are also provided for visualizing (in a GO graph) the gene sets classified to a given profile.
 
+mygene - MyGene.Info_ provides simple-to-use REST web services   to
+query/retrieve gene annotation data. It's designed   with simplicity
+and performance emphasized. *mygene*,   is an easy-to-use R wrapper to
+access MyGene.Info_ services.
+
 netbiov - A package that provides an effective visualization of large biological networks
 
 NGScopy - NGScopy provides a quantitative caller for detecting copy number variations in next generation sequencing (NGS), including whole genome sequencing (WGS), whole exome sequencing (WES) and targeted panel sequencing (TPS). The caller can be parallelized by chromosomes to use multiple processors/cores on one computer.
@@ -239,6 +251,9 @@ S4Vectors - The S4Vectors package defines the Vector and List virtual classes an
 SemDist - This package implements methods to calculate information accretion for a given version of the gene ontology and uses this data to calculate remaining uncertainty, misinformation, and semantic similarity for given sets of predicted annotations and true annotations from a protein function predictor.
 
 seqplots - SeqPlots is a tool for plotting next generation sequencing (NGS) based experiments' signal tracks, e.g. reads coverage from ChIP-seq, RNA-seq and DNA accessibility assays like DNase-seq and MNase-seq, over user specified genomic features, e.g. promoters, gene bodies, etc. It can also calculate sequence motif density profiles from reference genome. The data are visualized as average signal profile plot, with error estimates (standard error and 95% confidence interval) shown as fields, or as series of heatmaps that can be sorted and clustered using hierarchical clustering, k-means algorithm and self organising maps. Plots can be prepared using R programming language or web browser based graphical user interface (GUI) implemented using Shiny framework. The dual-purpose implementation allows running the software locally on desktop or deploying it on server. SeqPlots is useful for both for exploratory data analyses and preparing replicable, publication quality plots. Other features of the software include collaboration and data sharing capabilities, as well as ability to store pre-calculated result matrixes, that combine many sequencing experiments and in-silico generated tracks with multiple different features. These binaries can be further used to generate new combination plots on fly, run automated batch operations or share with colleagues, who can adjust their plotting parameters without loading actual tracks and recalculating numeric values. SeqPlots relays on Bioconductor packages, mainly on rtracklayer for data input and BSgenome packages for reference genome sequence and annotations.
+
+seqTools - Analyze read length, phred scores and alphabet frequency
+and DNA k-mers on uncompressed and compressed fastq files.
 
 SGSeq - RNA-seq data are informative for the analysis of known and novel transcript isoforms. While the short length of RNA-seq reads limits the ability to predict and quantify full-length transcripts, short read data are well suited for the analysis of individual alternative transcripts events (e.g. inclusion or skipping of a cassette exon). The SGSeq package enables the prediction, quantification and visualization of alternative transcript events from BAM files.
 
