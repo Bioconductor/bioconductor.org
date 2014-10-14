@@ -1,10 +1,10 @@
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.0, consisting of 930
-software packages, 220 experiment data packages, and 870
+We are pleased to announce Bioconductor 3.0, consisting of 934
+software packages, 219 experiment data packages, and 870
 up-to-date annotation packages. 
 
-There are 110 new software packages, and many updates and improvements
+There are 113 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.0 is compatible with R 3.1.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release includes an updated Bioconductor [Amazon Machine Image]
@@ -35,7 +35,7 @@ for this version of R.
 New Software Packages
 =====================
 
-There are 110 new packages in this release of Bioconductor.
+There are 113 new packages in this release of Bioconductor.
 
 ALDEx2 - A differential abundance analysis for the comparison of two or more conditions. For example, single-organism and meta-RNA-seq high-throughput sequencing assays, or of selected and unselected values from in-vitro sequence selections. Uses a Dirichlet-multinomial model to infer abundance from counts, that has been optimized for three or more experimental replicates. Infers sampling variation and calculates the expected false discovery rate given the biological and sampling variation using the Wilcox rank test or Welches t-test (aldex.ttest) or the glm and Kruskal Wallis tests (aldex.glm). Reports both P and fdr values calculated by the Benjamini Hochberg correction.
 
@@ -136,6 +136,16 @@ MBASED - The package implements MBASED algorithm for detecting allele-specific g
 MEIGOR - Global Optimization
 
 metabomxtr - The functions in this package return optimized parameter estimates and log likelihoods for mixture models of truncated data with normal or lognormal distributions.
+
+Metab - Metab is an R package for high-throughput processing of
+metabolomics data analysed by the Automated Mass Spectral
+Deconvolution and Identification System (AMDIS)
+(http://chemdata.nist.gov/mass-spc/amdis/downloads/). In addition, it
+performs statistical hypothesis test (t-test) and analysis of variance
+(ANOVA). Doing so, Metab considerably speed up the data mining process
+in metabolomics and produces better quality results. Metab was
+developed using interactive features, allowing users with lack of R
+knowledge to appreciate its functionalities.
 
 metagene - This package produces metagene plots to compare the behavior of DNA-interacting proteins at selected groups of genes/features. Pre-calculated features (such as transcription start sites of protein coding gene or enhancer) are available. Bam files are used to increase the resolution. Multiple combination of group of features and or group of bam files can be compared in a single analysis. Bootstraping analysis is used to compare the groups and locate regions with statistically different enrichment profiles.
 
@@ -3015,6 +3025,34 @@ Changes in version 1.0.2:
 Changes in version 1.0.1:
 
 - documentation improvements
+
+Metab
+-----
+
+CHANGES IN VERSION 0.99
+-----------------------
+
+ o Function clean.fix renamed to MetReport
+
+ o The function raw.peaks has been removed.
+
+ o Improved speed and error messages.
+
+ o MetReport is now able to extract directly the 
+   area and/or the base peak of an AMDIS report.
+
+ o The new function MetReportNames allows users to 
+   extract sample's abundances from an AMDIS report 
+   based only in sample's names.
+
+ o The new function buildLib allows users to convert an 
+   AMDIS library to a csv file in the format required by 
+   Metab.
+
+ o Function Htest allows users to adjust p-values for multiple comparisons.
+
+
+
 
 metagenomeSeq
 -------------
