@@ -363,6 +363,23 @@ NEW FEATURES
 - blastSequences accepts an argument as controlling the representation of the return value, either a DNAMultipleAlignment, a
   data.frame, or the XML.
 
+AnnotationForge
+---------------
+
+    **************************************************
+    *                        *
+    *           1.8.0 SERIES NEWS        *
+    *                        *
+    **************************************************
+
+NEW FEATURES
+
+    o Adds support for making orgDb objects/databases for all NCBI
+    taxIDs where there is sufficient data (for adding to
+    AnnotationHub).  This makes objects for 1100 organisms.
+
+
+
 AnnotationHub
 -------------
 
