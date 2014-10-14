@@ -3,7 +3,7 @@
    "Description":"Start up an Rhipe cluster with ssh access. **WARNING** This template creates Amazon EC2 instances. You will be billed for the AWS resources used if you create a stack from this template.",
    "Parameters":{
        "BiocVersion" : {
-         "Description" : "Bioconductor Version. 2.11 is recommended.",
+         "Description" : "Bioconductor Version. <%=config['release_version']%> is recommended.",
          "Type" : "String",
          "Default": "<%=config['release_version']%>",
          "AllowedValues": ["2.11", "2.12", "2.13", "2.14", "3.0"],

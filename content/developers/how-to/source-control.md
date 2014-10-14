@@ -78,10 +78,10 @@ portion of the `x.y.z` package
 
 <!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
 
-If you commit to trunk before 4:20 PM Seattle time, your changes will
+If you commit to trunk before 5:20 PM Seattle time, your changes will
 build overnight and be reflected in the next day's  [build
 report](http://bioconductor.org/checkResults/devel/bioc-LATEST/) which
-should appear around 11:00 AM Seattle time.
+should appear around 10:00 AM Seattle time.
 
 
 ### Committing Changes to the Release Branch

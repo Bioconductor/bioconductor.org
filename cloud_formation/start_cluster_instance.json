@@ -5,7 +5,7 @@
 
   "Parameters" : {
     "BiocVersion" : {
-      "Description" : "Bioconductor Version. 2.11 (devel) is recommended.",
+      "Description" : "Bioconductor Version. <%=config['release_version']%>  is recommended.",
       "Type" : "String",
       "Default": "<%=config['release_version']%>",
       "AllowedValues": ["2.11", "2.12", "2.13", "2.14", "3.0"],
