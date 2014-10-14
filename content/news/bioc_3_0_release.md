@@ -1921,6 +1921,56 @@ Changes in version 1.20.1:
 
 - Corrected some R CMD check warnings
 
+GenomicFeatures
+---------------
+
+CHANGES IN VERSION 1.18
+
+NEW FEATURES
+
+    o Add extractUpstreamSeqs().
+
+    o makeTranscriptDbFromUCSC() now supports the "flyBaseGene" table
+      (FlyBase Genes track).
+
+    o makeTranscriptDbFromBiomart() now knows how to fetch the sequence
+      lengths from the Ensembl Plants db.
+
+    o makeTranscriptDbFromGFF() is now more tolerant of bad strand
+      information.
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+    o Replace toy TxDb UCSC_knownGene_sample.sqlite (based on hg18) with
+      hg19_knownGene_sample.sqlite (based on hg19) and use hg19 instead of
+      hg18 in all examples (and unit tests).
+
+    o Rename TranscriptDb class -> TxDb.
+
+    o Now when GTF files are processed into TxDbs with exon ranking being
+      inferreed, if the exons are on separate chromosomes, we toss out that
+      transcript (since we cannot possibly guess the exon ranking correctly).
+
+DEPRECATED AND DEFUNCT
+
+    o extractTranscripts() and extractTranscriptsFromGenome() are now defunct.
+
+    o Deprecate sortExonsByRank().
+
+BUG FIXES
+
+    o Bug fixes and improvements to makeTranscriptDbFromBiomart():
+      (a) Fix long standing bug where the code in charge of inferring the
+          CDSs from the UTRs would return CDSs spanning all the exons of a
+          non-coding transcript.
+      (b) Fix an issue that was preventing the function from extracting the
+          CDS information added recently to the datasets in the Ensembl Fungi,
+          Ensembl Metazoa, Ensembl Plants, and Ensembl Protists databases. 
+      (c) Make the code in charge of extracting the CDSs more robust by taking
+          advantage of new attributes (genomic_coding_start and
+          genomic_coding_end) added by Ensembl in release 74 (Dec 2013),
+          and by adding more sanity checks.
+
 GenomicFiles
 ------------
 
