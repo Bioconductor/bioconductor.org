@@ -725,6 +725,7 @@ def get_build_summary(version, repo)
     doc = Nokogiri::HTML(html.read)
     doc.encoding = "ascii"
     dateline = doc.css %Q(p[style="text-align: center;"])
+    return "" if dateline.children[1].nil?
     dateline = dateline.children[1].text
     dateline.sub!(/^This page was generated on /, "")
     dateline = dateline.split("(").first.strip
