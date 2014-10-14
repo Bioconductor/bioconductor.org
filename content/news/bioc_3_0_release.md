@@ -455,7 +455,6 @@ BiocParallel
 ------------
 
 CHANGES IN VERSION 1.0.0
-------------------------
 
 NEW FEATURES
 
@@ -1938,7 +1937,6 @@ GenomicRanges
 -------------
 
 CHANGES IN VERSION 1.18.0
--------------------------
 
 NEW FEATURES
 
@@ -2073,7 +2071,6 @@ gmapR
 -----
 
 CHANGES IN VERSION 1.8.0
------------------------
 
 NEW FEATURES
 
@@ -2727,7 +2724,6 @@ IRanges
 -------
 
 CHANGES IN VERSION 2.0.0
-------------------------
 
 NEW FEATURES
 
@@ -2806,8 +2802,6 @@ BUG FIXES
       CompressedRangesList).
 
     o Make flank() work on Ranges object of length 0.
-
-
 
 kebabs
 ------
@@ -2977,7 +2971,6 @@ Metab
 -----
 
 CHANGES IN VERSION 0.99
------------------------
 
  o Function clean.fix renamed to MetReport
 
@@ -4798,7 +4791,6 @@ S4Vectors
 ---------
 
 CHANGES IN VERSION 0.4.0
-------------------------
 
 NEW FEATURES
 
@@ -4975,7 +4967,6 @@ seqTools
 --------
 
 CHANGES IN VERSION 0.99.42
--------------------------
 
 BUG FIXES
 
@@ -4984,7 +4975,6 @@ BUG FIXES
 
 
 CHANGES IN VERSION 0.99.40
--------------------------
 
 NEW FEATURES
 
