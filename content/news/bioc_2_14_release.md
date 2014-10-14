@@ -342,16 +342,6 @@ lead features to develop into clinical tests (both diagnostic
 and prognostic), and in identifying differential expression
 when a fraction of samples show unusual patterns of expression.
 
-Metab - Metab is an R package for high-throughput processing of
-metabolomics data analysed by the Automated Mass Spectral
-Deconvolution and Identification System (AMDIS)
-(http://chemdata.nist.gov/mass-spc/amdis/downloads/). In addition, it
-performs statistical hypothesis test (t-test) and analysis of variance
-(ANOVA). Doing so, Metab considerably speed up the data mining process
-in metabolomics and produces better quality results. Metab was
-developed using interactive features, allowing users with lack of R
-knowledge to appreciate its functionalities.
-
 metaMS - MS-based metabolomics data processing and compound
 annotation pipeline.
 
@@ -2626,33 +2616,6 @@ Changes in version 3.20.0:
 
 - bug fix to topTable() and topTableF() when sorting by F-statistic combined with p-value or lfc
   cutoffs.
-
-Metab
------
-
-CHANGES IN VERSION 0.99
------------------------
-
- o Function clean.fix renamed to MetReport
-
- o The function raw.peaks has been removed.
-
- o Improved speed and error messages.
-
- o MetReport is now able to extract directly the 
-   area and/or the base peak of an AMDIS report.
-
- o The new function MetReportNames allows users to 
-   extract sample's abundances from an AMDIS report 
-   based only in sample's names.
-
- o The new function buildLib allows users to convert an 
-   AMDIS library to a csv file in the format required by 
-   Metab.
-
- o Function Htest allows users to adjust p-values for multiple comparisons.
-
- 
 
 metagenomeSeq
 -------------
