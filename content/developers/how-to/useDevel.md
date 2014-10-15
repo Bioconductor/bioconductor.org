@@ -1,7 +1,7 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
-In order to use the `devel` (3.1) version of Bioconductor, you
+In order to use the `devel` version of Bioconductor (Bioconductor 3.1), you
 must install `R-devel`, available from:
 
 * [Source](ftp://ftp.stat.math.ethz.ch/Software/R/)
