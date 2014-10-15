@@ -757,7 +757,7 @@ end
 # FIXME gracefully fail w/o internet access
 def get_new_packages_in_tracker()
     return "" unless File.exists?("tracker.yaml")
-    url = "http://tracker.fhcrc.org/roundup/bioc_submit/"
+    url = "https://tracker.bioconductor.org/"
     cfg = YAML::load(File.open("tracker.yaml"))
     @agent = Mechanize.new
     page = @agent.post(url, {
@@ -792,7 +792,7 @@ EOT
     nr.each do |i|
         #puts i.to_s
         html = i.to_s.sub(%Q(a href="), # i.to_html.sub
-                %Q(a href="http://tracker.fhcrc.org/roundup/bioc_submit/))
+                %Q(a href="https://tracker.bioconductor.org/))
         s += html
     end
     s += "</table></body>"
