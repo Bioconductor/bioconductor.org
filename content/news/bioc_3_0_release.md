@@ -5329,6 +5329,6 @@ Packages removed from the release
 
 The following packages are no longer in the release:
 
-Clonality, Resourcerer, RMAPPER, virtualArray
+Resourcerer, RMAPPER, virtualArray
 
 
