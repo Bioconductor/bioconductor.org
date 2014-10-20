@@ -15,6 +15,7 @@ require 'net/http'
 require 'uri'
 require 'pp'
 require 'yaml'
+require 'httparty'
 
 class String
   def to_boolean()
