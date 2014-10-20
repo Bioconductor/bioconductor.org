@@ -146,7 +146,13 @@ class GetJson
         branch = "branches/RELEASE_#{version.gsub(".", "_")}"
       end
       url = "https://hedgehog.fhcrc.org/bioconductor/#{branch}/madman/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite"
-      `curl -s -u  readonly:readonly #{url} > #{dir}/biocViewsVocab.sqlite`
+      auth = {:username => "readonly", :password => "readonly"}
+      File.open("#{dir}/biocViewsVocab.sqlite", "wb") do |f|
+          resp = HTTParty.get(url, :verify => false, :basic_auth => auth)
+          # require 'pry';binding.pry
+          f.write resp
+      end
+      #`curl -s -u  readonly:readonly #{url} > #{dir}/biocViewsVocab.sqlite`
       dbfile = "#{dir}/biocViewsVocab.sqlite"      
       db = SQLite3::Database.new(dbfile)
       rows = db.execute("select * from biocViews")
