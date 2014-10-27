@@ -26,4 +26,5 @@ Explore the material through the following documents:
 * [html](C03.2_CodeToPackages.html), [R](C03.2_CodeToPackages.R), [Rmd](C03.2_CodeToPackages.Rmd) Organizing Code in Functions, Files ,and Packages
 * [html](C03.3_ReproducibleResearch.html), [R](C03.3_ReproducibleResearch.R), [Rmd](C03.3_ReproducibleResearch.Rmd) Reproducible Research 
 * [html](C03.4_Visualization.html), [R](C03.4_Visualization.R), [Rmd](C03.4_Visualization.Rmd) Visualization
+* [html](D04.1_InstallIGV.html), [R](D04.1_InstallIGV.R), [Rmd](D04.1_InstallIGV.Rmd) [hg19_alias.tab](hg19_alias.tab) Appendix: Install IGV
 
