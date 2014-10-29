@@ -24,7 +24,7 @@ versions:
 devel_repos:
 - "bioc"
 - "data/experiment"
-#- "data/annotation"
+- "data/annotation"
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
