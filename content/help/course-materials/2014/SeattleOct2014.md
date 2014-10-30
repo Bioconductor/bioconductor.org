@@ -28,7 +28,7 @@ Explore the material through the following documents:
 * [html](A01.2_IntroductionToBioconductor.html), [R](A01.2_IntroductionToBioconductor.R), [Rmd](A01.2_IntroductionToBioconductor.Rmd) Introduction to Bioconductor
 * [html](A01.3_BioconductorForSequenceAnalysis.html), [R](A01.3_BioconductorForSequenceAnalysis.R), [Rmd](A01.3_BioconductorForSequenceAnalysis.Rmd) Bioconductor for Sequence Analysis
 * [html](B02.1_RNASeq.html), [R](B02.1_RNASeq.R), [Rmd](B02.1_RNASeq.Rmd) RNA-Seq Work Flows
-* [html](B02.1.1_RNASeqLab.html), [R](B02.1.1_RNASeqLab.R), [Rmd](B02.1.1_RNASeqLab.Rmd) RNA-Seq Lab
+* [html](http://bioconductor.org/help/workflows/rnaseqGene/) RNA-Seq Lab
 * [html](B02.2_CommonWorkFlows.html), [R](B02.2_CommonWorkFlows.R), [Rmd](B02.2_CommonWorkFlows.Rmd) Other Sequence Analysis Work Flows
 * [html](B02.3_MachineLearning.html), [R](B02.3_MachineLearning.R), [Rmd](B02.3_MachineLearning.Rmd) Machine Learning
 * [html](B02.4_Annotation.html), [R](B02.4_Annotation.R), [Rmd](B02.4_Annotation.Rmd) Annotating Genes, Genomes,and Variants
