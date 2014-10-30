@@ -1,14 +1,19 @@
 Download and install the package (containing all material) for use with 
 R-3.1.1 / Bioconductor 3.0.
 
-* [LearnBioconductor_0.1.1.tar.gz](LearnBioconductor_0.1.1.tar.gz)
+* [LearnBioconductor_0.1.6.tar.gz](LearnBioconductor_0.1.6.tar.gz)
 
 Install the course package with
 
     source("http://bioconductor.org/biocLite.R")
     # optionally install suggested packages (used in exercises, etc.)
-    biocLite(c("knitr", "BiocStyle", "BiocInstaller", "ALL", "BSgenome.Hsapiens.UCSC.hg19", "BiocParallel", "Biostrings", "GenomicAlignments", "GenomicFeatures", "Gviz", "MLSeq", "PoiClaClu", "RColorBrewer", "RNAseqData.HNRNPC.bam.chr14", "Rsamtools", "ShortRead", "TxDb.Hsapiens.UCSC.hg19.knownGene", "VariantAnnotation", "airway", "class", "cn.mops", "dendextend", "fission", "genefilter", "ggplot2", "gplots", "org.Hs.eg.db", "sva", "xtable", "PoiClaClu", "sva", "fission", "kernlab", "e1071"))
-    install.packages("LearnBioconductor_0.1.1.tar.gz", repos=NULL)
+    biocLite(c("knitr", "BiocStyle", "BiocInstaller", "ALL", "BSgenome.Hsapiens.UCSC.hg19", 
+    "BiocParallel", "Biostrings", "GenomicAlignments", "GenomicFeatures", "Gviz", "MLSeq", "PoiClaClu", 
+    "RColorBrewer", "RNAseqData.HNRNPC.bam.chr14", "Rsamtools", "ShortRead", 
+    "TxDb.Hsapiens.UCSC.hg19.knownGene", "VariantAnnotation", "airway", "class", 
+    "cn.mops", "dendextend", "fission", "genefilter", "ggplot2", "gplots",
+    "org.Hs.eg.db", "sva", "xtable", "PoiClaClu", "sva", "fission", "kernlab", "e1071"))
+    install.packages("LearnBioconductor_0.1.6.tar.gz", repos=NULL)
 
 Explore the material through the following documents:
 
