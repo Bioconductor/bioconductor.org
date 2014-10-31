@@ -58,8 +58,16 @@ genomic data. Common workflows include:
   include FDR for all SNP-gene pairs in cis, along with locus-specific
   annotations of genetic and genomic contexts.
 
-* [RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene)
+* [RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)
   This lab will walk you through an end-to-end RNA-Seq differential expression workflow, using DESeq2 along with other Bioconductor packages. We will start from the FASTQ files, show how these were aligned to the reference genome, prepare gene expression values as a count matrix by counting the sequenced fragments, perform exploratory data analysis (EDA), perform differential gene expression analysis with DESeq2, and visually explore the results.
+
+* [Changing genomic coordinate systems with rtracklayer::liftOver](/help/workflows/liftOver/)
+  The liftOver facilities developed in conjunction with the UCSC
+  browser track infrastructure are available for transforming
+  data in GRanges formats.  This is illustrated here with
+  an image of the NHGRI GWAS catalog that is, as of Oct. 31 2014,
+  distributed with coordinates defined by NCBI build hg38.
+
 
 See the [HOWTO](/developers/how-to/workflows/) for information on contributing
 your own workflow.
