@@ -5,7 +5,7 @@ software packages, 219 experiment data packages, and 870
 up-to-date annotation packages. 
 
 There are 114 new software packages, and many updates and improvements
-to existing packages; Bioconductor 3.0 is compatible with R 3.1.1,
+to existing packages; Bioconductor 3.0 is compatible with R 3.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release includes an updated Bioconductor [Amazon Machine Image]
 (http://bioconductor.org/help/bioconductor-cloud-ami/).
@@ -26,7 +26,7 @@ Getting Started with Bioconductor 3.0
 
 To update to or install Bioconductor 3.0:
 
-1. Install R 3.1.1.  Bioconductor 3.0 has been designed expressly
+1. Install R 3.1.  Bioconductor 3.0 has been designed expressly
 for this version of R.
 
 2. Follow the instructions at
