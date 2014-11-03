@@ -760,13 +760,17 @@ def get_new_packages_in_tracker()
     url = "https://tracker.bioconductor.org/"
     cfg = YAML::load(File.open("tracker.yaml"))
     @agent = Mechanize.new
-    page = @agent.post(url, {
-        "__login_name" => cfg['username'],
-        "__login_password" => cfg['password'], 
-        "__came_from" => url,
-        "@action" => "login"
-    })
-    rows = page.search("table.list tr")
+    begin
+      page = @agent.post(url, {
+          "__login_name" => cfg['username'],
+          "__login_password" => cfg['password'], 
+          "__came_from" => url,
+          "@action" => "login"
+      })
+   rescue
+    return ""
+   end
+   rows = page.search("table.list tr")
     nr = []
     #nr.push rows.first
     header = <<-"EOT"
