@@ -4,7 +4,7 @@
 
 Below are the top 20 results of searching the PubMed database for the term *Bioconductor*, sorted by date. 
 For a complete list, go to <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor" target="_blank">PubMed</a>. Last updated 
-<abbr class="timeago" title="<%=get_pubmed_cache_date()%>">.
+<abbr class="timeago" title="<%=get_pubmed_cache_date()%>"><%=get_pubmed_cache_date()%></abbr>.
 
 <p></p>
 
