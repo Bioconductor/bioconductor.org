@@ -1238,3 +1238,9 @@ def get_stats()
 
     results
 end
+
+def get_pubmed_cache_date
+    cachefile = "tmp/pubmed_cache_file.yaml"
+    return "" unless File.exists? cachefile
+    File.mtime(cachefile).iso8601
+end

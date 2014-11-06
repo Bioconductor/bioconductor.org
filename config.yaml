@@ -68,6 +68,16 @@ data_sources:
   config:
     json_dir: "assets/packages/json"
     encoding: utf-8
+- items_root: /help/publications/papers/pubmed
+  type: pubmed_papers
+  encoding: utf-8
+  config:
+    cache_file: tmp/pubmed_cache_file.yaml
+    retmax: 20
+    ttl: 24
+    baseurl: http://eutils.ncbi.nlm.nih.gov/entrez/eutils/
+    db: pubmed
+    term: bioconductor
 # CHANGE THIS when it becomes apparent which future versions of BioC will
 # work with which versions of R:
 r_ver_for_bioc_ver: 
