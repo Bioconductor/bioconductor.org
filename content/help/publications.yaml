@@ -1,5 +1,7 @@
 --- 
 title: Publications
 subnav:
-  - include: /_search/
+  - include: /_literature_search/
+  - include: /_course_materials/
+  - include: /_bioc_release_packages/
   
