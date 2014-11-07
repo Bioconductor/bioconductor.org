@@ -441,10 +441,15 @@ include:
 
 * Subscription to the [bioc-devel](/help/mailing-list/) mailing list.
 * Response to bug reports and questions from users regarding your
-  package, as posted on the Bioconductor mailing list or directly to
+  package, as posted on the [Bioconductor support site](https://support.bioconductor.org/)
+  or directly to
   developers. Add a `BugReports:` field to the DESCRIPTION file if
   reports should be directed to a particular web page rather than the
-  package maintainer.
+  package maintainer. You should register on the 
+  [support site](https://support.bioconductor.org/)
+  and edit your profile, changing the "Watched Tags" field to
+  include all packages you maintain, so you will be notified
+  when anyone posts a question about your package.
 * Package maintenance through software release cycles, including
   prompt updates to software and documentation necessitated by
   underlying changes in R.
