@@ -22,8 +22,8 @@ Revised: 18 August, 2014
 * Include the output of `sessionInfo()`. If the example produces an
   error, provide the output of `traceback()` after the error occurs.
 
-* Include the maintainer of the package in the email, e.g.,
-  `packageDescription('GenomicRanges')$Maintainer`.
+* Be sure and tag your post with the names of the appropriate
+  package(s).
 
 ## Preparing ##
 
