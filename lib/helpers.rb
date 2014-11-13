@@ -496,7 +496,7 @@ end
 
 def recent_packages()
   begin
-    xml = HTTParty.get("http://bioconductor.org/rss/new_packages.rss").body
+    xml = HTTParty.get("http://master.bioconductor.org/rss/new_packages.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}

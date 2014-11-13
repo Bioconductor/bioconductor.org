@@ -7,6 +7,7 @@ require "rexml/document"
 require "yaml"
 require 'nokogiri'
 require 'httparty'
+require 'net/http'
 
 include REXML
 
@@ -28,7 +29,9 @@ site_config = YAML.load_file("#{nanoc_path}/config.yaml")
 devel_version = site_config["devel_version"]
 
 
-manifest = `curl -s -u readonly:readonly #{rpacks_url}bioc_#{devel_version}.manifest`
+manifest = HTTParty.get("#{rpacks_url}bioc_#{devel_version}.manifest",
+  :verify => false, :basic_auth => {:username => 'readonly', :password => 'readonly'}).body
+
 
 lines = manifest.split("\n")
 
@@ -45,9 +48,15 @@ descs = []
 
 
 for pkg in pkgs
-  raw_result = `curl -s -I http://bioconductor.org/packages/devel/bioc/html/#{pkg}.html`
-  first_line  = raw_result.split("\n").first
-  if (first_line =~ /200/) # is there a pkg homepage?
+  # HTTParty.head doesn't work for some reason
+  url = URI("http://bioconductor.org/packages/devel/bioc/html/#{pkg}.html")
+  resp = nil
+  Net::HTTP.start(url.host, url.port){|http|
+   response = http.head('/')
+   resp = response
+  }
+
+  if resp.code == "200" # is there a pkg homepage?
     response = HTTParty.get("#{rpacks_url}#{pkg}/DESCRIPTION",
         :verify => false, :basic_auth => {:username => 'readonly', :password => 'readonly'})
     next unless response.code == 200
@@ -126,3 +135,4 @@ end
 # for some reason, indentation breaks on merlot2
 #doc.write($stdout, 2)
 doc.write($stdout)
+
