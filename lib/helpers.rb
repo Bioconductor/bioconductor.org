@@ -1036,8 +1036,8 @@ def render_courses()
     <thead>
         <tr>
             <th>Keyword</th>
-            <th>Course</th>
             <th>Title</th>
+            <th>Course</th>
             <th>Materials</th>
             <th>Date</th>
             <th>Bioc/R Version</th>
@@ -1055,10 +1055,10 @@ def render_courses()
         course_url = "#{year}/#{lh["Course"]}/"
         out += "        <tr>\n"
         out += "<td>" + lh["Keyword"] + "</td>\n"
+        out += "<td>" + Kramdown::Document.new(lh["Title"].strip + ", "  + lh["Instructor"].strip).to_html.gsub(/<\/*p>/, "") +  "</td>\n"
         out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
-        out += "<td>" + Kramdown::Document.new(lh["Title"].strip + ", "  + lh["Instructor"].strip).to_html +  "</td>\n"
-        out += "<td>" + Kramdown::Document.new(lh["Material"]).to_html + "</td>\n"
-        out += "<td>" + lh["Date"].split(" - ").first.strip.gsub("-", "&#8209;") + "</td>\n"
+        out += "<td>" + Kramdown::Document.new(lh["Material"]).to_html.gsub(/<\/*p>/, "") + "</td>\n"
+        out += "<td>" + lh["Date"].split(" ")[0].gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']
         biocver = "3.0" if biocver.strip == "3"
         out += "<td>" + biocver + '/' +  lh["R version"]  + "</td>\n"
