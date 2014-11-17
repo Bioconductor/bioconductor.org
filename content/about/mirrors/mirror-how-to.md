@@ -4,59 +4,91 @@ The Bioconductor package repositories may be mirrored with `rsync`.  If
 you would like to become a mirror for package and data package
 repositories, please use the commands below.
 
-## BioC <%= config[:release_version] %> repos ##
+## BioC release repos ##
 
-If you want to mirror the Bioconductor **<%= config[:release_version] %>** repos (the current
-release version), please use the following commands:
-
-### All Bioconductor <%= config[:release_version] %> repos ###
-
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %> /dest/bioc_<%= config[:release_version] %>
-
-### Bioconductor <%= config[:release_version] %> Software repo ###
-
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/bioc /dest/bioc_<%= config[:release_version] %>/bioc
-
-### Bioconductor <%= config[:release_version] %> Data repos ###
-
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/data /dest/bioc_<%= config[:release_version] %>/data
-
-### Bioconductor <%= config[:release_version] %> Extra repo ###
-
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:release_version] %>/extra /dest/bioc_<%= config[:release_version] %>/extra
+If you want to mirror the current Bioconductor release version
+(currently <%= config[:release_version] %>),
+please use the following commands:
 
 
-## BioC <%= config[:devel_version] %> repos ##
+### Directory structure
 
-If you want to mirror the Bioconductor **<%= config[:devel_version] %>** repos (the current
-devel version), please use the following commands:
+Pick a destination directory where files will be mirrored. Let's say this will be in `/dest`. 
+This directory should be served by your web server.
+Under that you'll need a directory called `packages`. 
+This directory must be present as it is part of the structure
+of a Bioconductor repository.
+Underneath `packages` should be a directory corresponding to 
+the versions of Bioconductor that you will host. The current
+release version is <%= config[:release_version] %> and the current
+devel version is <%= config[:devel_version] %>. We recommend you
+use symlinks called `release` and `devel` that always point to 
+the current release and devel versions; this way you will never
+have to change your rsync commands. __But__ you should change the
+symlink targets with every Bioconductor release (see
+the [release schedule](/developers/release-schedule/) for
+exact dates).
 
-### All Bioconductor <%= config[:devel_version] %> repos ###
+The following
+commands will create the directory structure you'll need (remember
+that `/dest` is just an example of the destination directory
+you could use; you can put this directory anywhere on your system
+where there is enough free space). 
 
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %> /dest/bioc_<%= config[:devel_version] %>
+    mkdir -p /dest/packages
+    mkdir /dest/packages/<%= config[:release_version] %> # current release
+    mkdir /dest/packages/<%= config[:devel_version] %> # current devel
+    ln -s /dest/packages/<%= config[:release_version] %> /dest/packages/release # change these links
+    ln -s /dest/packages/<%= config[:release_version] %> /dest/packages/devel   # every 6 months (with Bioc release)
 
-### Bioconductor <%= config[:devel_version] %> Software repo ###
+### All Bioconductor release repos (RECOMMENDED) ###
 
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/bioc /dest/bioc_<%= config[:devel_version] %>/bioc
+    rsync -zrtlv --delete master.bioconductor.org::release /dest/packages/release
 
-### Bioconductor <%= config[:devel_version] %> Data repos ###
+### Bioconductor release Software repo ###
 
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/data /dest/bioc_<%= config[:devel_version] %>/data
+    rsync -zrtlv --delete master.bioconductor.org::release/bioc /dest/packages/release /bioc
+
+### Bioconductor release Data repos ###
+
+    rsync -zrtlv --delete master.bioconductor.org::release/data /dest/packages/release/data
+
+### Bioconductor release Extra repo ###
+
+    rsync -zrtlv --delete master.bioconductor.org::release/extra /dest/packages/release/extra
 
 
-### Bioconductor <%= config[:devel_version] %> Extra repo ###
+## BioC devel repos ##
 
-    rsync -zrtlv --delete master.bioconductor.org::<%= config[:devel_version] %>/extra /dest/bioc_<%= config[:devel_version] %>/extra
+If you want to mirror the Bioconductor 
+devel repos (currently <%= config[:devel_version] %>),
+please use the following commands:
+
+### All Bioconductor <%= config[:devel_version] %> repos (RECOMMENDED) ###
+
+    rsync -zrtlv --delete master.bioconductor.org::devel /dest/packages/devel
+
+### Bioconductor release Software repo ###
+
+    rsync -zrtlv --delete master.bioconductor.org::devel/bioc /dest/packages/devel/bioc
+
+### Bioconductor devel Data repos ###
+
+    rsync -zrtlv --delete master.bioconductor.org::devel/data /dest/packages/devel/data
+
+
+### Bioconductor devel Extra repo ###
+
+    rsync -zrtlv --delete master.bioconductor.org::devel/extra /dest/packages/devel/extra
 
 
 ## Additional information ##
 
-Sync the above directories to a directory called `packages` on your
-system, and make sure the directory above `packages` is served by
+Make sure the directory above `packages` is served by
 a web server. 
 
-Bioconductor is big (> 64G for BioC <%= config[:release_version] %>). Please check the size of
-what will be transferred with e.g. `rsync -avn master.bioconductor.org::<%= config[:release_version] %>`
+Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version] %>). Please check the size of
+what will be transferred with e.g. `rsync -avn master.bioconductor.org::release`
 and make sure you have enough room on your local disk before you
 start.
 
