@@ -19,8 +19,8 @@ and Bioconductor</a> Statistical Science, Vol. 29, No. 2, 214-226
 
 <h2 name="recent">Recent</h2>
 
-20 most recent PubMed citations mentioning &quot;*Bioconductor*&quot;.
-For a complete list, go to <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor" target="_blank">PubMed</a>. Last updated 
+20 most recent PubMed Central citations mentioning &quot;*Bioconductor*&quot;.
+For a complete list, go to <a href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor" target="_blank">PubMed Central</a>. Last updated 
 <abbr class="timeago" title="<%=get_pubmed_cache_date()%>"><%=get_pubmed_cache_date()%></abbr>.
 
 <p></p>

@@ -14,7 +14,8 @@ class PubmedPapers < Nanoc3::DataSource
       :ttl => 24,
       :baseurl => "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
       :db => "pubmed",
-      :term => "bioconductor"
+      :term => "bioconductor",
+      :sort => ""
     }
     # read configuration
     @opts.each do |key, val|
@@ -49,14 +50,12 @@ class PubmedPapers < Nanoc3::DataSource
     entries
   end
   
-  def query_pubmed    
+  def query_pubmed
     baseurl = @opts[:baseurl]
     db =  @opts[:db]
-    retmax = @opts[:retmax]
-    term = @opts[:term]
 
     ## search
-    search = "#{baseurl}esearch.fcgi?db=#{db}&term=#{term}&retmax=#{retmax}"
+    search = "#{baseurl}esearch.fcgi?db=#{db}&term=#{@opts[:term]}&retmax=#{@opts[:retmax]}&sort=#{@opts[:sort]}"
     doc = getXML(search)
     return nil if doc.nil?
     
@@ -100,12 +99,16 @@ class PubmedPapers < Nanoc3::DataSource
 	date = Time.strptime(attributes[:epub], "%Y %b %d")
       rescue
 	begin
-	  date = Time.strptime(attributes[:date], "%Y %b %d")
+	  date = Time.strptime(attributes[:epub], "%Y/%m/%d")
 	rescue
 	  begin
-	    date = Time.strptime(attributes[:pubmed],  "%Y/%m/%d %H:%M")
+	    date = Time.strptime(attributes[:date], "%Y %b %d")
 	  rescue
-	    date = Time.new(Time.now.year-3, Time.now.month, Time.now.day) # if no clue about the actual date, just put it 3 years in the past
+	    begin
+	      date = Time.strptime(attributes[:pubmed],  "%Y/%m/%d %H:%M")
+	    rescue
+	      date = Time.new(Time.now.year-3, Time.now.month, Time.now.day) # if no clue about the actual date, just put it 3 years in the past
+	    end
 	  end
 	end
       end
