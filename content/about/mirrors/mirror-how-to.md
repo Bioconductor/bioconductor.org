@@ -4,6 +4,15 @@ The Bioconductor package repositories may be mirrored with `rsync`.  If
 you would like to become a mirror for package and data package
 repositories, please use the commands below.
 
+Note that mirroring can also be accomplished with the
+[udr](https://github.com/LabAdvComp/UDR) command. If you have installed
+`udr` locally, you can just prepend `udr` to the `rsync` commands below. 
+This should result in a massive increase in file transfer speed.
+The [mirroring instructions at UCSC](http://rabadan.c2b2.columbia.edu/admin/mirror.html) provide more details, including information 
+on firewall ports that may need to be opened at your instution in order
+for `udr` to work.
+
+
 ## BioC release repos ##
 
 If you want to mirror the current Bioconductor release version
