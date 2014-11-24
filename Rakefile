@@ -103,8 +103,13 @@ task :real_clean do
   FileUtils.mkdir_p(output_dir)
 end
 
+desc "copy config.yaml to assets"
+task :copy_config do
+    FileUtils.copy("config.yaml", "assets/")
+end
+
 desc "Build the bioconductor.org site (default)"
-task :build => [ :compile, :copy_assets, 
+task :build => [ :compile, :copy_config, :copy_assets, 
     :write_version_info, :write_version_number ]
 
 task :default => :build

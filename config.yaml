@@ -35,6 +35,19 @@ active_release_builders:
   linux: "zin1"
   windows: "moscato1"
   mac: "perceval"
+
+## CHANGE this when the workflow builder builds
+## on a newer version of bioc
+workflow_builder:
+  bioc_version: "3.0"
+  r_version: "3.1"
+
+## CHANGE this when the single package builder builds
+## on a newer version of bioc
+single_package_builder:
+  bioc_version: "3.1"
+  r_version: "3.2"
+
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
 ami_ids:
