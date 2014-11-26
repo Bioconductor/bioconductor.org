@@ -310,7 +310,7 @@ task :generate_cf_templates do
   puts "Don't forget to copy templates (in cloudformation/output)"
   puts "to S3 and mark them as public!"
   puts "This might work:"
-  puts "aws s3 cp --acl=public-read --recursive cloudformation/output  s3://bioc-cloudformation-templates"
+  puts "aws s3 cp --acl=public-read --recursive cloud_formation/output  s3://bioc-cloudformation-templates"
 end
 
 desc "Get Docbuilder Workflows"
