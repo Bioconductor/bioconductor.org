@@ -282,6 +282,11 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
+        <td>3.1 (devel)</td>
+        <td>3.2.0</td>
+        <td><%= ami_url config[:ami_ids][:bioc3_1]%></td>
+    </tr>
+    <tr>
         <td>3.0 (release, <b>recommended</b>)</td>
         <td>3.1.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_0]%></td>
