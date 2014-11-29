@@ -1,3 +1,4 @@
+# encoding: utf-8
 require 'nanoc'
 include Nanoc3::Helpers::Text
 include Nanoc3::Helpers::Rendering
