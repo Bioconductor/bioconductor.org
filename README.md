@@ -4,6 +4,11 @@
 
 *** Required software 
 
+NOTE: Before reading the following instructions you may want to consider 
+installing the web site as a Docker container. See the instructions
+[here](https://registry.hub.docker.com/u/dtenenba/bioc-docker/).
+
+
 **** Ruby
 
 The site requires ruby 1.9.1 or newer.
