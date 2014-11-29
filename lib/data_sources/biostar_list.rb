@@ -16,17 +16,9 @@ class BiostarList < Nanoc3::DataSource
         # https://support.bioconductor.org/info/rss/
         # for now let's go with latest posts
         url = "https://support.bioconductor.org/feeds/latest/"
+        body = HTTParty.get(url, :verify => false).body
 
-        uri = URI.parse(url)
-        http = Net::HTTP.new(uri.host, uri.port)
-        http.use_ssl = true
-        http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-        request = Net::HTTP::Get.new(uri.request_uri)
-
-        response = http.request(request)
-        body = response.body
-        feed = RSS::Parser.parse(response.body)
+        feed = RSS::Parser.parse(body)
         num_wanted = 5
         feed.items.each_with_index do |item, i|
             attributes = {
