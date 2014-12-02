@@ -31,7 +31,9 @@ The feeds support PubSubHubbub (also known as PuSH) which means updates
 will be pushed immediately to PuSH-enabled readers, eliminating the need to poll
 the feeds for new content.
 
+<!--
 If a package had no build issues, its feed is not updated.
+-->
 
 ## RSS To Email
 
