@@ -25,7 +25,7 @@ not meant to be viewed by web browsers).
 RSS reader.)
 
 At present, feeds for software packages are updated daily at approximately 10:30AM Seattle time. Feeds for experiment data packages are updated
-at about 5:30PM.
+at about 7:20PM on Wednesday and Saturday.
 
 The feeds support PubSubHubbub (also known as PuSH) which means updates
 will be pushed immediately to PuSH-enabled readers, eliminating the need to poll
