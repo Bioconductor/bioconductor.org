@@ -8,6 +8,7 @@ require 'fileutils'
 require 'rubygems'
 require 'uuid'
 require 'rexml/document'
+require 'redis'
 include REXML
 
 
@@ -33,7 +34,6 @@ else
     DCFDIR="tmp/data_build_dcfs"
     OUTDIR="assets/rss/build/data"
 end
-
 
 
 
@@ -109,12 +109,11 @@ def make_problem_feed(pkglist, config, problems, outfile)
     f.close
 end
 
-def make_individual_feed(pkglist, config)
+def make_individual_feed(pkglist, config, pkgs_to_update)
     rootdir =  "#{OUTDIR}/packages" 
     FileUtils.mkdir_p rootdir
-    for key in pkglist.keys
+    for key in  pkgs_to_update #pkglist.keys
         filename = "#{rootdir}/#{key}.rss"
-        file_exists = File.exist?(filename) and File.file?(filename)
         bad = pkglist[key].find_all {|i| i[:status] != "OK"}
         rss = RSS::Maker.make("atom") do |maker|
             maker.channel.author = "Bioconductor Build System"
@@ -123,7 +122,7 @@ def make_individual_feed(pkglist, config)
             ## FIXME: add content here:
             maker.channel.about = "http://bioconductor.org/developers/rss-feeds/"
 
-            if bad.empty? and not file_exists
+            if bad.empty?
                 maker.items.new_item do |item|
                     if pkglist[key].find {|i| i[:version] == "release"}
                         version = "release"
@@ -173,19 +172,20 @@ def make_individual_feed(pkglist, config)
             end
 
         end
-        if (not bad.empty?) or (not file_exists)
-            f = File.open(filename, "w")
-            #puts filename
-            tweaked = tweak(rss, filename)
-            f.puts tweaked #rss 
-            f.close
-        end
+        #if (not bad.empty?) or (not file_exists)
+        f = File.open(filename, "w")
+        #puts filename
+        tweaked = tweak(rss, filename)
+        f.puts tweaked #rss 
+        f.close
+        #end
     end
 end
 
 def runit()
+    redis = Redis.new
     pkglist = {}
-
+    pkgs_to_update = {}
     config = YAML.load_file("./config.yaml")
     $hub_url = config["rss_hub_url"]
     Dir.chdir DCFDIR do
@@ -202,6 +202,14 @@ def runit()
             node =  segs[3]
             version = segs[1]
             phase = segs[4]
+            key = "#{version}_#{node}_#{phase}"
+            oldstatus = redis.hget(pkg, key)
+            rhash = redis.hgetall(pkg)
+
+            if (oldstatus.nil? or oldstatus != status)
+                pkgs_to_update[pkg] = 1
+                redis.hset(pkg, key, status)
+            end
             pkglist[pkg].push({:version => version, :node => node,
                 :phase => phase, :status => status})
         end
@@ -211,7 +219,8 @@ def runit()
         "problems.rss")
     make_problem_feed(pkglist, config, ["ERROR", "TIMEOUT"],
         "errors.rss")
-    make_individual_feed(pkglist, config)
+    puts "making #{pkgs_to_update.keys.length} updated individual pkg rss files"
+    make_individual_feed(pkglist, config, pkgs_to_update.keys)
     puts "Done at #{Time.now.to_s}"
     rssfile = ($repo == "bioc") ? "tmp/rss_urls.txt" : "tmp/data_rss_urls.txt"
     FileUtils.rm_f rssfile
