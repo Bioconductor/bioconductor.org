@@ -113,7 +113,7 @@ Merge your changes from the trunk to the release branch, check and fix
 any conflicts, and commit. So, from your release branch directory
 (e.g. RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME):
 
-    svn merge -c140 https://hedgehog.fhcrc.org/gentleman/bioconductor/trunk/madman/Rpacks/MYPACKAGENAME
+    svn merge -c140 https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/MYPACKAGENAME
     svn status   # Look for C, indicating a conflict
                  # fix conflicts... (remember to use svn resolve for each)
     svn commit -m "merged r140 from trunk"
