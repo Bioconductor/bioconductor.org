@@ -1,4 +1,4 @@
-[Slides](PackageHangout.pdf)
+[Slides](PackageHangout.html)
 
 ### Video:
 
