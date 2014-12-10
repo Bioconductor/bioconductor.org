@@ -58,8 +58,8 @@ ami_ids:
  bioc2_12: ami-7224fe1a
  bioc2_13: ami-4a25ff22
  bioc2_14: ami-9c25fff4
- bioc3_0: ami-d0a5c2b8
- bioc3_1: ami-7ca4c314
+ bioc3_0: ami-aea3c4c6
+ bioc3_1: ami-a0a2c5c8
 data_sources: 
 - items_root: /
   layouts_root: /
