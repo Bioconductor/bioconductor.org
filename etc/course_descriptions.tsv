@@ -1,5 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
-2014-12-10 – 2014-12-10	NewPackageHangout2014	Best Practices	Google Hangout for New Package Submitters	Marc Carlson	[slides](2014/NewPackageHangout2014/PackageHangout.html), [Video](https://www.youtube.com/watch?v=QfqaK_BHebU)	3.1	3.2
+2014-12-10 - 2014-12-10	NewPackageHangout2014	Best Practices	Google Hangout for New Package Submitters	Marc Carlson	[slides](2014/NewPackageHangout2014/PackageHangout.html), [Video](https://www.youtube.com/watch?v=QfqaK_BHebU)	3.1	3.2
 2014-10-27 - 2014-10-30	SeattleOct2014	Appendix	Appendix: Install IGV	Martin Morgan	[html](2014/SeattleOct2014/D04.1_InstallIGV.html), [R](2014/SeattleOct2014/D04.1_InstallIGV.R), [Rmd](2014/SeattleOct2014/D04.1_InstallIGV.Rmd) [hg19_alias.tab](2014/SeattleOct2014/hg19_alias.tab)	3	3.1.1
 2014-10-27 - 2014-10-30	SeattleOct2014	Visualization	Visualization	Martin Morgan	[html](2014/SeattleOct2014/C03.4_Visualization.html), [R](2014/SeattleOct2014/C03.4_Visualization.R), [Rmd](2014/SeattleOct2014/C03.4_Visualization.Rmd)	3	3.1.1
 2014-10-27 - 2014-10-30	SeattleOct2014	Reproducibility	Reproducible Research	Martin Morgan	[html](2014/SeattleOct2014/C03.3_ReproducibleResearch.html), [R](2014/SeattleOct2014/C03.3_ReproducibleResearch.R), [Rmd](2014/SeattleOct2014/C03.3_ReproducibleResearch.Rmd)	3	3.1.1
