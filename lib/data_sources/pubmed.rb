@@ -13,13 +13,17 @@ class PubmedPapers < Nanoc3::DataSource
       :retmax => 20,
       :ttl => 24,
       :baseurl => "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
-      :db => "pubmed",
       :term => "bioconductor",
-      :sort => ""
+      :db => ["pubmed", "pmc"],
+      :sort => ["", "electronic+pub+date"]
     }
     # read configuration
     @opts.each do |key, val|
       @opts[key] = self.config[key] unless self.config[key].nil?
+    end
+    # convert to array if necessary
+    [:db, :sort].each do |key|
+      @opts[key] = [@opts[key]] unless @opts[key].is_a?(Array)
     end
     FileUtils.mkdir_p(File.dirname(@opts[:cache_file]))
   end
@@ -36,39 +40,52 @@ class PubmedPapers < Nanoc3::DataSource
     entries = cache_data[:entries]
       
     if expired?(cache_data)
-      puts "PubMed cache expired, querying NCBI"
-      res = query_pubmed
-      if res
-	write_cache(res)
-	entries = res[:entries]
-	puts "PubMed 200 UPDATE saved"
+      puts "Publication cache expired, querying NCBI databases"
+      res = []
+      # query individual databases 
+      @opts[:db].each_with_index do |db, i|
+	res = res + query_ncbi(db,  @opts[:sort][i])
+      end
+      # process results
+      if !res.empty?
+	# remove dups
+	res.uniq! { |x| x[:doi] }
+	# sort by date
+	res.sort! { |x, y| y[:date] <=> x[:date] }
+	# take the top ones
+	entries = res[0, @opts[:retmax]]
+	write_cache({
+	  :timestamp => Time.now.utc, # mark the retrieval time
+	  :entries => entries
+	})
+	puts "Publication data saved"
       end
     else
-      puts "Using cached PubMed data"
+      puts "Using cached publication data"
     end
     
     entries
   end
   
-  def query_pubmed
+  def query_ncbi(db, sort)
+    print(db.upcase+"... ")
     baseurl = @opts[:baseurl]
-    db =  @opts[:db]
 
     ## search
-    search = "#{baseurl}esearch.fcgi?db=#{db}&term=#{@opts[:term]}&retmax=#{@opts[:retmax]}&sort=#{@opts[:sort]}"
+    search = "#{baseurl}esearch.fcgi?db=#{db}&term=#{@opts[:term]}&retmax=#{@opts[:retmax]}&sort=#{sort}"
     doc = getXML(search)
-    return nil if doc.nil?
+    return [] if doc.nil?
     
     id_list = doc.xpath("/eSearchResult/IdList/Id")
-    return nil if id_list.empty?
+    return [] if id_list.empty?
 
     ## query for results 
     query = "#{baseurl}esummary.fcgi?db=#{db}&id=#{join(id_list)}"
     doc = getXML(query)
-    return nil if doc.nil?
+    return [] if doc.nil?
 
     items = doc.xpath("/eSummaryResult/DocSum")
-    return nil if items.empty?
+    return [] if items.empty?
     
     # XML attribute name mapping  
     mapping = {
@@ -92,7 +109,7 @@ class PubmedPapers < Nanoc3::DataSource
       mapping.each {
 	|key, val| 
         content = extract(item, val)
-        attributes[key] = content unless content.length == 0 # ommit missing entries
+        attributes[key] = content unless content.length == 0 # omit missing entries
       }
       
       begin
@@ -117,28 +134,22 @@ class PubmedPapers < Nanoc3::DataSource
 
       entries.push Nanoc3::Item.new("unused", attributes, id, nil)
     end
-    
-    ## sort by date
-    entries.sort! { |x, y| y.attributes[:date] <=> x.attributes[:date] }
-    
-    return {
-      :timestamp => Time.now.utc, # mark the retrieval time
-      :entries => entries
-    }     
+    puts("done")
+    return entries
   end
       
   def getXML(url)
     begin
       data = HTTParty.get(url)
       rescue Timeout::Error
-	puts "PubMed timeout error"
+	puts "Timeout error"
 	return nil
       rescue TCPSocket::SocketError
 	puts "Socket error"
 	return nil
     end
     if data.code != 200
-      puts "Pubmed error: HTTP #{data.code}"
+      puts "Error: HTTP #{data.code}"
       return nil
     else
       return Nokogiri::XML(data.body)

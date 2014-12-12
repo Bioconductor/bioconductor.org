@@ -90,14 +90,14 @@ data_sources:
     retmax: 20
     ttl: 24
     baseurl: http://eutils.ncbi.nlm.nih.gov/entrez/eutils/
-#   queried database, e.g. "pubmed" or "pmc"
-    db: pmc
+#   queried database, e.g. "pubmed" or "pmc"; can be a vector
+    db: [pubmed, pmc]
     term: bioconductor
 #   Sorting of query results. This one is database-specific; possible values include
 #   pubmed: pub+date, first+author, last+author, journal, title, relevance
 #   pmc: print+pub+date, electronic+pub+date, journal, pmc+live+date
 #   For default sorting leave this field out
-    sort: electronic+pub+date
+    sort: [ "", electronic+pub+date]
 # CHANGE THIS when it becomes apparent which future versions of BioC will
 # work with which versions of R:
 r_ver_for_bioc_ver: 
