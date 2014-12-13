@@ -52,7 +52,7 @@ for pkg in pkgs
   url = URI("http://bioconductor.org/packages/devel/bioc/html/#{pkg}.html")
   resp = nil
   Net::HTTP.start(url.host, url.port){|http|
-   response = http.head('/')
+   response = http.head(url.path)
    resp = response
   }
 
