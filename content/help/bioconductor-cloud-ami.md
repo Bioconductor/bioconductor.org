@@ -84,6 +84,7 @@ and the following Bioconductor packages (and all their CRAN dependencies):
     <li>DynDoc</li>
     <li>EDASeq</li>
     <li>edgeR</li>
+    <li>ensemblVEP</li>
     <li>gage</li>
     <li>genefilter</li>
     <li>geneplotter</li>
