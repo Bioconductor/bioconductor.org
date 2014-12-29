@@ -9,11 +9,39 @@
 
 <h2 id="introduction">Introduction</h2>
 
-Users are welcome to contribute new packages to Bioconductor. Packages
-must meet a [checklist](#checklist) of standards of functionality,
-documentation, and interoperability. See
-[Contact information](#contact-info) to obtain instructions for
-submitting new packages.
+Consider contributing your completed R package to Bioconductor if the
+package
+
+* Addresses areas of high-throughput genomic analysis where
+  Bioconductor already makes significant contributions, e.g.,
+  sequencing, expression and other microarrays, flow cytometry, mass
+  spectrometry, image analysis; see
+  [biocViews](http://www.bioconductor.org/packages/devel/BiocViews.html#___Software).
+* Interoperates with other Bioconductor packages, re-using common data
+  structures (see
+  [S4 classes and methods](/developers/how-to/S4-classes/)) and
+  existing infrastructure (e.g., `rtracklayer::import()` for input of
+  common genomic files).
+* Adopts software best practices that enable reproducible research and
+  use, such as full documentation and vignettes (including fully
+  evaluated code) as well as commitment to long-term user support
+  through the Bioconductor
+  [support site](https://support.bioconductor.org).
+
+Other avenues for distributing your package include
+[CRAN](http://www.r-project.org/) (for packages only tangentially
+related to areas of Bioconductor emphasis) and repositories such as
+[r-forge](https://r-forge.r-project.org/) or
+[github](https://github.com) (for packages in early stages of
+development).  Many Bioconductor packages import or depend on CRAN
+packages. CRAN packages importing or depending on many Bioconductor
+packages can be problematic, because of the different approaches to
+repository structure and release schedules.
+
+Packages submitted to Bioconductor must meet a [checklist](#checklist)
+of standards of functionality, documentation, and
+interoperability. See [Contact information](#contact-info) to obtain
+instructions for submitting new packages.
 
 Authors receive initial feedback in 1 to 3 weeks. Packages will be checked
 for adherence to the Bioconductor package guidelines and the checklist below
@@ -25,10 +53,11 @@ implies commitment to package maintenance across multiple release cycles.
 
 Packages must satisfy the following checklist:
 
-* Pass `R CMD build`, `R CMD check`, and `R CMD BiocCheck` (see the [BiocCheck](/packages/devel/bioc/html/BiocCheck.html) package) on all supported platforms (Windows,
-  Macintosh, Linux) with no errors or warnings, using a recent R-devel.
-  The result of `R CMD build` must be less than 4MB; `R CMD check` must
-  complete within 5 minutes.
+* Pass `R CMD build`, `R CMD check`, and `R CMD BiocCheck` (see the
+  [BiocCheck](/packages/devel/bioc/html/BiocCheck.html) package) on
+  all supported platforms (Windows, Macintosh, Linux) with no errors
+  or warnings, using a recent R-devel.  The result of `R CMD build`
+  must be less than 4MB; `R CMD check` must complete within 5 minutes.
 * Contain a DESCRIPTION file with valid contact information, an informative
   title and description, correct license specification, appropriate biocViews
   terms, valid version number.
@@ -152,7 +181,8 @@ information](#contact-information) below to obtain additional support.
 
 <h2 id="contact-info">Contact Information</h2>
 
-To submit a package or obtain additional support, contact Sonali Arora (email: bioconductorseattle NEAR gmail POINT com)
+To submit a package or obtain additional support, contact Sonali Arora
+(email: bioconductorseattle NEAR gmail POINT com)
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
