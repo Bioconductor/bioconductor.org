@@ -182,7 +182,7 @@ information](#contact-information) below to obtain additional support.
 <h2 id="contact-info">Contact Information</h2>
 
 To submit a package or obtain additional support, contact Sonali Arora
-(email: bioconductorseattle NEAR gmail POINT com)
+(email: packages NEAR bioconductor POINT org)
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
