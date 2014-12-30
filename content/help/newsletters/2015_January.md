@@ -9,7 +9,7 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter 
+# *Bioconductor* Newsletter *DRAFT*
 {:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), January 2015
@@ -60,6 +60,37 @@ For a complete description of changes and future activity please see
 Herv&eacute;'s 
 [post](https://stat.ethz.ch/pipermail/bioc-devel/2014-December/006749.html)
 on the bioc-devel mailing list.
+
+### Docker
+
+Anyone who has attended the annual BioC conference or participated in a
+class at the Hutchinson Center is familiar with the `Bioconductor` Amazon 
+Machine Images (AMI). Dan configures these images with the current
+version of `R` and all necessary package dependencies and non-R software.
+Providing a pre-configured environment to participants has eliminated 
+many "day of" problems such as internet overload due to concurrent downloads, 
+installation of the wrong package version and the inability to access common 
+sample data used in the course.
+
+Recently Dan has been looking into the Docker software as another approach to
+providing pre-configured environments. The Docker containers operate at the
+single process level and are therefore more lightweight than a virtual machine.
+Additionally the containers have access to the full physical machine.
+
+These containers are isolated, reproducible environments useful for development
+or production. In contrast to the AMI, a Docker container could be used on a
+desktop or laptop instead of the cloud or other remote hardware. We envision
+them being useful for 
+
+* Providing identical, reproducible environments
+* Deploying on any (Linux, Mac, or Windows) machine, or in the cloud via 
+  Amazon's Elastic Container Service (ECS)
+* Saving time; instead of waiting for packages to compile on Linux, you can 
+  download a container in which packages are already installed
+
+Examples of potential applications are available at the 
+[bioc_docker](https://github.com/Bioconductor/bioc_docker) GitHub repository. 
+
 
 ## Coordinate Mapping
 
@@ -152,36 +183,6 @@ Another example of using `liftOver()` is in the
 [Changing genomic coordinate systems](http://www.bioconductor.org/help/workflows/liftOver/) workflow. SNPS from the NHGRI GWAS catalogue are mapped from hg38 
 to hg19 resulting in a few lost loci.
 
-### Docker
-
-Anyone who has attended the annual BioC conference or participated in a
-class at the Hutchinson Center is familiar with the `Bioconductor` Amazon 
-Machine Images (AMI). Dan configures these images with the current
-version of `R` and all necessary package dependencies and non-R software.
-Providing a pre-configured environment to participants has eliminated 
-many "day of" problems such as internet overload due to concurrent downloads, 
-installation of the wrong package version and the inability to access common 
-sample data used in the course.
-
-Recently Dan has been looking into the Docker software as another approach to
-providing pre-configured environments. The Docker containers operate at the
-single process level and are therefore more lightweight than a virtual machine.
-Additionally the containers have access to the full physical machine.
-
-These containers are isolated, reproducible environments useful for development
-or production. In contrast to the AMI, a Docker container could be used on a
-desktop or laptop instead of the cloud or other remote hardware. We envision
-them being useful for 
-
-* Providing identical, reproducible environments
-* Deploying on any (Linux, Mac, or Windows) machine, or in the cloud via 
-  Amazon's Elastic Container Service (ECS)
-* Saving time; instead of waiting for packages to compile on Linux, you can 
-  download a container in which packages are already installed
-
-Examples of potential applications are available at the 
-[bioc_docker](https://github.com/Bioconductor/bioc_docker) GitHub repository. 
-
 
 ## Overview of the `csaw` package
 
@@ -206,8 +207,8 @@ questions about the package and they graciously agreed.
 
 Aaron Lun and Gordon Smyth on the csaw package:
 
-** Q: What is differential binding (DB) in ChIP-seq and how does this
-differ from differential expression (DE) in RNA-seq? **
+**Q: What is differential binding (DB) in ChIP-seq and how does this
+differ from differential expression (DE) in RNA-seq?**
 
 As most readers will know, ChIP-seq sequences genomic DNA that is bound to a
 target protein whereas RNA-seq sequences RNA transcripts. From a scientific
@@ -230,7 +231,7 @@ regions, and then test for differential coverage between the experimental
 conditions relative to biological variability. The key difference between
 ChIP-seq and RNA-seq is how the genomic locations are chosen and combined.
 
-** Q: What scientific question does a DB ChIP-seq analysis help answer? **
+**Q: What scientific question does a DB ChIP-seq analysis help answer?**
 
 A conventional ChIP-seq analysis produces a list of peaks in each library, with
 the implication that the protein is bound to DNA within the peak regions and not
@@ -247,8 +248,8 @@ differential expression for the same set of genes. These insights are harder to
 obtain with the conventional analyses, as the identified regions are only
 associated with each condition in isolation.
 
-** Q: What was the motivation for creating the package? Has your group recently
-started doing DB ChIP-seq or have you been doing it for some time? **
+**Q: What was the motivation for creating the package? Has your group recently
+started doing DB ChIP-seq or have you been doing it for some time?**
 
 Our group has been doing DB analyses for a while. However, these analyses have
 mostly been gene-orientated. We'd count reads into pre-defined intervals like
@@ -282,9 +283,9 @@ regions externally . We wanted to generate and discover the DB completely de
 novo as an integral part of the analysis. csaw is the first Bioc package to take
 a windowing approach.
 
-** Q: How are the statistical methods from edgeR leveraged or extended in
+**Q: How are the statistical methods from edgeR leveraged or extended in
 csaw? Please describe from a statistical perspective, why methods used in
-RNA-seq are appropriate for DB ChIP-seq? **
+RNA-seq are appropriate for DB ChIP-seq?**
 
 Once a set of genomic regions has been chosen, a DB analysis is very similar to
 an RNA-seq experiment. So it was logical to leverage the statistical methods
@@ -315,13 +316,7 @@ a method to calculate the average abundance of a region scaled to its width.
 
 ### Project citations
 
-The `Bioconductor` project continues to expand globally. Over the next quarter 
-there are [course offerings](http://www.bioconductor.org/help/events/) in 
-Japan, Germany the UK and US. In August 2014, the Latin American Bioconductor 
-[LAB](http://lab.foundation/) foundation held its official inauguration
-in Ribeirao Preto, Brazil. LAB is a non-profit scientific initiative created 
-to represent and expand `Bioconductor` to the research community in Latin America
-and is headed up by Benilton Carvalho and Houtan Noushmehr.
+TODO
 
 ### Website traffic
 
