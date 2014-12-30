@@ -4,12 +4,17 @@
 
 <div>
 <div class="grey_box">
+Tippmann, S. (2015) <a
+href="http://www.nature.com/news/programming-tools-adventures-with-r-1.16609">Programming
+tools: Adventures with R</a>. Nature 517: 109–110.
+</div>
+<div class="white_box">
 Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
 </div>
-<div class="white_box">
+<div class="grey_box">
 Lawrence, M, and Morgan, M. (2014) <a
 href="http://arxiv.org/abs/1409.2864">Scalable Genomics with R
 and Bioconductor</a> Statistical Science, Vol. 29, No. 2, 214-226
