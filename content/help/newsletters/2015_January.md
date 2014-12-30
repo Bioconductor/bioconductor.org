@@ -56,8 +56,7 @@ Situations where 'nclist' and 'intervaltree' produce different output:
   meaning if 'type' is "start", "end", or "within". This is not yet
   the case with the new 'nclist'.
 
-For a complete description of changes and future activity please see 
-Herv&eacute;'s 
+For a complete description of changes and future activity please see this
 [post](https://stat.ethz.ch/pipermail/bioc-devel/2014-December/006749.html)
 on the bioc-devel mailing list.
 
@@ -82,10 +81,12 @@ or production. In contrast to the AMI, a Docker container could be used on a
 desktop or laptop instead of the cloud or other remote hardware. We envision
 them being useful for 
 
-* Providing identical, reproducible environments
-* Deploying on any (Linux, Mac, or Windows) machine, or in the cloud via 
-  Amazon's Elastic Container Service (ECS)
-* Saving time; instead of waiting for packages to compile on Linux, you can 
+* reproducibility: providing identical, reproducible environments
+
+* convenience: deploying on any (Linux, Mac, or Windows) machine, or in 
+  the cloud via Amazon's Elastic Container Service (ECS)
+
+* time saver; instead of waiting for packages to compile on Linux, you can 
   download a container in which packages are already installed
 
 Examples of potential applications are available at the 
@@ -94,15 +95,15 @@ Examples of potential applications are available at the
 
 ## Coordinate Mapping
 
-Translation (mapping) of coordinates between genome, transcript and
-protein space is a common task in bioinformatics. Over the past months a
-group of us have been working to expand and harmonize the mapping
-capabilities in our infrastructure. High-level functions for mapping between 
-genome and transcript space (`mapToGenome()` and `mapToTranscript()`) have been 
-added to `GenomicRanges` and `GenomicAlignments` in the devel branch. 
-Element-wise (aka "parallel") versions of the functions (`pmapToGenome()` and 
-`pmapToTranscript`) map the i-th element of 'x' to the i-th element of
-'alignment'. Still on the TODO is a function for protein space.
+Translation (mapping) of coordinates between genome, transcript and protein
+space is a common task in bioinformatics. Over the past months we've been
+working to expand and harmonize the mapping capabilities in our infrastructure.
+High-level functions for mapping between genome and transcript space, 
+`mapToGenome` and `mapToTranscript`, have been added to `GenomicRanges` and
+`GenomicAlignments` in the devel branch.  Element-wise (aka "parallel") versions
+of the functions, `pmapToGenome` and `pmapToTranscript`, map the i-th element
+of 'x' to the i-th element of 'alignment'. Still on the TODO is a function for
+protein space.
 
 Others involved in the project are  Michael, Herve, Laurent, Robert and
 Martin. Discussions and progress can be followed at the
@@ -333,6 +334,9 @@ dropped slightly from 2013 numbers.
 <table>
  <caption>Website traffic Q4 2014 vs Q4 2013</caption>
   <tr>
+    <th></th><th></th>
+  </tr>
+  <tr>
    <td width="55%">Sessions</td><td><b>23.28%</b> (311,731 vs 252,873)</td>
   </tr>
   <tr>
@@ -363,7 +367,7 @@ followed by Spain then the United States and Italy.
 <table>
  <caption>Total Sessions by Location Q4 2014 vs Q4 2013</caption>
   <tr>
-    <th></th><th>Sessions</th>
+    <th></th><th></th>
   </tr>
   <tr>
     <td width="55%">United States</td><td><b>24.95%</b> (101011 vs 80840)</td>
@@ -384,16 +388,16 @@ followed by Spain then the United States and Italy.
    <td width="55%">Canada</td><td><b>21.96%</b> (9808 vs 8042)</td>
   </tr>
   <tr>
-   <td width="55%">Japan</td><td><b>19.21%/b> (9406 vs 7890)</td>
+   <td width="55%">Japan</td><td><b>19.21%</b> (9406 vs 7890)</td>
   </tr>
   <tr>
-   <td width="55%">Spain</td><td><b>27.30%/b> (8444 vs 6633)</td>
+   <td width="55%">Spain</td><td><b>27.30%</b> (8444 vs 6633)</td>
   </tr>
   <tr>
-   <td width="55%">India</td><td><b>4.15%/b> (8048 vs 7727)</td>
+   <td width="55%">India</td><td><b>4.15%</b> (8048 vs 7727)</td>
   </tr>
   <tr>
-   <td width="55%">Italy</td><td><b>24.68%/b> (7494 vs 6010)</td>
+   <td width="55%">Italy</td><td><b>24.68%</b> (7494 vs 6010)</td>
   </tr>
 </table>
 <p></p>
