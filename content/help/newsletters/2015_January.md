@@ -387,15 +387,16 @@ followed by Spain then the United States and Italy.
    <td width="55%">Japan</td><td><b>19.21%/b> (9406 vs 7890)</td>
   </tr>
   <tr>
-   <td width="55%"></td>Spain<td><b>27.30%/b> (8444 vs 6633)</td>
+   <td width="55%">Spain</td><td><b>27.30%/b> (8444 vs 6633)</td>
   </tr>
   <tr>
-   <td width="55%"></td>India<td><b>4.15%/b> (8048 vs 7727)</td>
+   <td width="55%">India</td><td><b>4.15%/b> (8048 vs 7727)</td>
   </tr>
   <tr>
-   <td width="55%"></td>Italytd><b>24.68%/b> (7494 vs 6010)</td>
+   <td width="55%">Italy</td><td><b>24.68%/b> (7494 vs 6010)</td>
   </tr>
 </table>
+<p></p>
 
 Statistics were generated with Google Analytics.
 
