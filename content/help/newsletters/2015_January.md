@@ -315,7 +315,7 @@ a method to calculate the average abundance of a region scaled to its width.
 
 ## Project Statistics 
 
-### Publications and Citations
+### Publications
 
 This past year a number of `Bioconductor` core and community members contributed
 to the manuscript, Orchestrating high-throughput genomic analysis with 
