@@ -437,7 +437,7 @@ presentation. If you are considering submitting a package you may want to
 check out the Webinar posted on the `Bioconductor` 
 [video page](https://www.youtube.com/watch?v=QfqaK_BHebU).
 
-### Upcoming events
+### Conferences and Courses 
 
 The [events page](http://www.bioconductor.org/help/events/) is updated regularly 
 with new courses and conference announcements. In January 2015, EMBL is hosting 
