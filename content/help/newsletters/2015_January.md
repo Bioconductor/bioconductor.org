@@ -121,7 +121,7 @@ implementation of the UCSC LifOver tool in `rtracklayer`
 The chain file format describes a pairwise alignment that allows gaps in both 
 sequences simultaneously. `AnnotationHub` currently hosts 1113 chain files.
 
-    allChains <- query(hug, 'chain')
+    allChains <- query(hub, 'chain')
 
     ## > length(allChains)
     ## [1] 1113
@@ -343,12 +343,8 @@ Full text citations of `Bioconductor` are available on the web site from
 The following tables compare traffic from the fourth quarter of 2014 with 
 the fourth quarter of 2013 (October 1 - December 28).
 
-In the fourth quarter we saw an increase in overall website traffic in the
-number of total users, total sessions and % new sessions. The increased bounce
-rate means there was an increase in the number of single-page sessions (i.e.
-sessions in which the person left the site from the entrance page without
-interacting with the page).  Average session duration and pages per session both
-dropped slightly from 2013 numbers.
+In the fourth quarter we saw an increase in total sessions, new sessions and
+the number of total users.
 
 <table>
  <caption>Website traffic Q4 2014 vs Q4 2013</caption>
@@ -363,19 +359,6 @@ dropped slightly from 2013 numbers.
   </tr>
   <tr>
    <td width="55%">Users</td><td><b>24.32%</b> (133,839 vs 107,655)</td>
-  </tr>
-  <tr>
-   <td width="55%">Pageviews</td><td><b>14.42%</b> (790,960 vs 691,276)</td>
-  </tr>
-  <tr>
-   <td width="55%">Avg Session Duration</td><td><b>-1.29</b> (00:03:46 vs
-   00:03:48)</td>
-  </tr>
-  <tr>
-   <td width="55%">Bounce Rate</td><td><b>3.03%</b> (55.18% vs 53.56%)</td>
-  </tr>
-  <tr>
-   <td width="55%">Pages Per Session</td><td><b>-7.18%</b> (2.54 vs 2.73)</td>
   </tr>
 </table>
 <p></p>
@@ -425,12 +408,14 @@ Statistics were generated with Google Analytics.
 
 ### Package downloads and new submissions 
 
-There was a ~9% increase in the number of (distinct IP) downloads of software 
+There was a 9% increase in the number of (distinct IP) downloads of software 
 packages in the fourth quarter of 2015 (106212 total) as compared to the fourth
 quarter of 2014 (97462 total). See the website for a full summary of package
 [download stats](http://www.bioconductor.org/packages/stats/).
 
-** add number added in Q4 **
+During the period of October 1 to December 31 a total of 63 software packages
+were added bringing the current counts to 954 packages in devel (`Bioconductor`
+3.1) and 934 in release (`Bioconductor` 3.0).
 
 ## Resources and Upcoming Events
 
