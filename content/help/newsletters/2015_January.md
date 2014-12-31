@@ -253,9 +253,9 @@ associated with each condition in isolation.
 started doing DB ChIP-seq or have you been doing it for some time?**
 
 Our group has been doing DB analyses for a while. However, these analyses have
-mostly been gene-orientated. We'd count reads into pre-defined intervals like
-the promoters or gene bodies and then test for whether these intervals were DB
-using the edgeR package. This type of analysis can be done very similarly for
+mostly been gene-orientated. We would count reads into pre-defined intervals
+like the promoters or gene bodies and then test for whether these intervals were
+DB using the edgeR package. This type of analysis can be done very similarly for
 ChIP-seq as for RNA-seq. The csaw package is our first attempt at performing de
 novo DB analyses where the regions of interest are not known in advance. We
 wanted to be able to identify novel DNA elements like new enhancers or promoters
@@ -313,16 +313,35 @@ within a region; a non-linear normalization procedure adapted to low counts; and
 a method to calculate the average abundance of a region scaled to its width. 
 
 
-## Quarterly Project Statistics 
+## Project Statistics 
 
-### Project citations
+### Publications and Citations
 
-TODO
+This past year a number of `Bioconductor` core and community members contributed
+to the manuscript, Orchestrating high-throughput genomic analysis with 
+`Bioconductor`, scheduled to appear in Nature Methods early 2015. The article
+provides an overview of the project for potential users and developers
+highlighting reproducibility and flexibility in current applications.
+
+Other recent project-level (vs package-level) publications are Scalable Genomics
+with `R` and `Bioconductor` by Michael Lawrence and Martin, and a review of `R`
+and `Bioconductor` as applied to genomics, oceanography and ecology in by Sylvia
+Tippman. Links to all articles are available on the 
+[publications page](http://www.bioconductor.org/help/publications/).
+
+A PubMed query for title or PubMed ID returned 22838 citation references
+for software packages with CITATION files. For packages with no CITATION, a
+PubMed title search returned 1281 references.
+
+Full text citations of `Bioconductor` are available on the web site from 
+[PubMed](http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=ePubDate),
+[PubMedCentral](http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate)and 
+[Google Scholar](http://scholar.google.com/scholar?q=bioconductor&btnG=Search).
 
 ### Website traffic
 
 The following tables compare traffic from the fourth quarter of 2014 with 
-the fourth quarter of 2013 (period of October 1 - December 28).
+the fourth quarter of 2013 (October 1 - December 28).
 
 In the fourth quarter we saw an increase in overall website traffic in the
 number of total users, total sessions and % new sessions. The increased bounce
@@ -404,13 +423,14 @@ followed by Spain then the United States and Italy.
 
 Statistics were generated with Google Analytics.
 
-### Package downloads
+### Package downloads and new submissions 
 
 There was a ~9% increase in the number of (distinct IP) downloads of software 
 packages in the fourth quarter of 2015 (106212 total) as compared to the fourth
 quarter of 2014 (97462 total). See the website for a full summary of package
 [download stats](http://www.bioconductor.org/packages/stats/).
 
+** add number added in Q4 **
 
 ## Resources and Upcoming Events
 
