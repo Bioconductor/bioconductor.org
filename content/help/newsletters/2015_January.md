@@ -264,12 +264,12 @@ for example misspecifying the promoter region of a gene.  We were motivated to
 take a new approach to de novo DB analysis by our observation that some commonly
 used approaches do not control the error rates correctly. A simple method is to
 call peaks in each condition separately, then simply compare the regions to
-identify unique peaks in each condition. This ad hoc approach does provide any
-statistical error rate control and tends to overstate the differences between
-the conditions. A more sophisticated version of this approach is to conduct
-statistical tests between conditions for each of the regions called as peaks in
-either condition. Again, this over-estimates the differences between the
-conditions.  Our approach gives similar flexibility to peak calling but with
+identify unique peaks in each condition. This ad hoc approach does not provide
+any statistical error rate control and tends to overstate the differences
+between the conditions. A more sophisticated version of this approach is to
+conduct statistical tests between conditions for each of the regions called as
+peaks in either condition. Again, this over-estimates the differences between
+the conditions.  Our approach gives similar flexibility to peak calling but with
 rigorous error rate control. The idea is to slide windows across the genome,
 count reads into those windows, and then use those counts to test for
 significant differences between conditions. Adjacent regions are then merged and
