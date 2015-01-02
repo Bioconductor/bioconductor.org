@@ -1,0 +1,131 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    addressable (2.3.6)
+    adsf (1.2.0)
+      rack (>= 1.0.0)
+    algorithms (0.5.0)
+    aws-sdk (1.60.2)
+      aws-sdk-v1 (= 1.60.2)
+    aws-sdk-v1 (1.60.2)
+      json (~> 1.4)
+      nokogiri (>= 1.4.4)
+    buftok (0.2.0)
+    coderay (1.1.0)
+    colored (1.2)
+    cri (2.6.1)
+      colored (~> 1.2)
+    domain_name (0.5.23)
+      unf (>= 0.0.5, < 1.0.0)
+    equalizer (0.0.9)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    haml (4.0.6)
+      tilt
+    hpricot (0.8.6)
+    htmlentities (4.3.3)
+    http (0.6.3)
+      http_parser.rb (~> 0.6.0)
+    http-cookie (1.0.2)
+      domain_name (~> 0.5)
+    http_parser.rb (0.6.0)
+    httparty (0.13.3)
+      json (~> 1.8)
+      multi_xml (>= 0.5.2)
+    json (1.8.1)
+    kramdown (1.5.0)
+    macaddr (1.7.1)
+      systemu (~> 2.6.2)
+    mechanize (2.7.3)
+      domain_name (~> 0.5, >= 0.5.1)
+      http-cookie (~> 1.0)
+      mime-types (~> 2.0)
+      net-http-digest_auth (~> 1.1, >= 1.1.1)
+      net-http-persistent (~> 2.5, >= 2.5.2)
+      nokogiri (~> 1.4)
+      ntlm-http (~> 0.1, >= 0.1.1)
+      webrobots (>= 0.0.9, < 0.2)
+    memoizable (0.4.2)
+      thread_safe (~> 0.3, >= 0.3.1)
+    method_source (0.8.2)
+    mime-types (2.4.3)
+    mini_portile (0.6.2)
+    multi_xml (0.5.5)
+    multipart-post (2.0.0)
+    nanoc (3.7.4)
+      cri (~> 2.3)
+    nanoc3 (3.3.0)
+      nanoc (>= 3.3.0)
+    naught (1.0.0)
+    net-http-digest_auth (1.4)
+    net-http-persistent (2.9.4)
+    nokogiri (1.6.5)
+      mini_portile (~> 0.6.0)
+    ntlm-http (0.1.1)
+    pry (0.10.1)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    rack (1.6.0)
+    rack-cache (1.2)
+      rack (>= 0.4)
+    rake (10.4.2)
+    rdiscount (2.1.7.1)
+    redis (3.2.0)
+    rgl (0.5.0)
+      algorithms (~> 0.5.0)
+      stream (~> 0.5.0)
+    sass (3.4.9)
+    simple_oauth (0.3.1)
+    slop (3.6.0)
+    sqlite3 (1.3.10)
+    stream (0.5)
+    systemu (2.6.4)
+    thread_safe (0.3.4)
+    tilt (2.0.1)
+    twitter (5.13.0)
+      addressable (~> 2.3)
+      buftok (~> 0.2.0)
+      equalizer (~> 0.0.9)
+      faraday (~> 0.9.0)
+      http (~> 0.6.0)
+      http_parser.rb (~> 0.6.0)
+      json (~> 1.8)
+      memoizable (~> 0.4.0)
+      naught (~> 1.0)
+      simple_oauth (~> 0.3.0)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.6)
+    uuid (2.3.7)
+      macaddr (~> 1.0)
+    webrobots (0.1.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  adsf
+  aws-sdk
+  haml
+  hpricot
+  htmlentities
+  httparty
+  json
+  kramdown
+  mechanize
+  mime-types
+  nanoc
+  nanoc3
+  nokogiri
+  pry
+  rack
+  rack-cache
+  rake
+  rdiscount
+  redis
+  rgl
+  sass
+  sqlite3
+  twitter
+  uuid
