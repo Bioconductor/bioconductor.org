@@ -1222,6 +1222,8 @@ def get_stats()
         end
         obj1 = JSON.parse(IO.read(file1))
         obj2 = JSON.parse(IO.read(file2))
+        FileUtils.rm file1 if obj1 == {}
+        FileUtils.rm file2 if obj2 == {}
         row = hsh.dup
         row[:label] =  label
         for type in ["toplevel", "questions", "answers", "comments"]
