@@ -17,6 +17,8 @@ There are numerous issues on various platforms when attempting to install
 appropriate versions of ruby and the necessary ruby packages. The simplest
 way around all of this is to use rbenv, which allows you to switch
 between various ruby versions and avoids conflicts between them.
+*NOTE*: rbenv works on Unix only; if you are on Windows, skip to
+the Windows section.
 
 On ubuntu, before proceeding, make sure the `libsqlite3-dev` package is
 installed (`sudo apt-get install libsqlite3-dev`).
@@ -95,17 +97,6 @@ If you want to use different versions of ruby in different contexts, read the
 for more information.
 
 
-**** Installing Necessary Ruby Packages
-
-Ruby packages are called gems and `gem` is the program used to install them.
-
-After installing ruby as above, install needed gems as follows:
-
-
-    gem install --no-ri --no-rdoc nanoc nanoc3 rdiscount rack mime-types haml \
-      rack-cache httparty rake sass kramdown mechanize json nokogiri \
-      rgl sqlite3 adsf twitter aws-sdk hpricot uuid htmlentities redis
-
 
 ** Windows Developer Required Software
 
@@ -123,16 +114,7 @@ After installing ruby as above, install needed gems as follows:
    of the web site to work.
 
 
-4. In a newly opened shell (to pick up configuration changes made
-   by the Ruby installer), run the following command to install
-   the Ruby gems used by the website:
-
-    gem install --no-ri --no-rdoc nanoc nanoc3 rdiscount rack mime-types haml \
-      rack-cache httparty rake sass kramdown mechanize json nokogiri \
-      rgl sqlite3 adsf twitter aws-sdk hpricot uuid htmlentities
-
-
-5. Install subversion client package. Windows packages are listed
+4. Install subversion client package. Windows packages are listed
    here:
 
        http://subversion.tigris.org/getting.html#binary-packages
@@ -143,7 +125,7 @@ After installing ruby as above, install needed gems as follows:
    window to pickup the updated config after installing so that you
    will be able to use the svn command.
 
-6. Follow the developer setup instructions below.
+5. Follow the developer setup instructions below.
 
 ** Developer Setup
 
@@ -151,9 +133,37 @@ After installing ruby as above, install needed gems as follows:
 
    svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
 
+*** Installing Necessary Ruby Packages
+
+Ruby packages are called gems and `gem` is the program used to install them.
+
+
+To save time, ensure your ~/.gemrc file contains the text
+
+    gem: --no-document
+
+This will ensure that gem does not try to install documentation files
+that you will not use.
+
+The web site comes with a Gemfile which is similar to an R package DESCRIPTION
+file in that it lists all dependencies needed. Gemfiles are read by
+the `bundler` gem, so install that as follows, prepending `sudo` if
+necessary (remember, *don't* use `sudo` if your ruby was installed
+with `rbenv`:
+
+    cd bioconductor.org
+    gem install bundler
+
+
+Then, assuming you are in the bioconductor.org working copy, issue this command
+to install all dependencies, again prepending `sudo` if necessary:
+
+    bundle install
+
+
 *** Build the site
 
-   cd bioconductor.org
+   cd bioconductor.org # if you aren't already in the working copy
    rake
 
 One step in the build process runs 'nanoc',  "a Ruby web publishing system  
