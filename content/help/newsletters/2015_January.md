@@ -9,7 +9,7 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 {::options parse_block_html="true" /}
 
-# *Bioconductor* Newsletter *DRAFT*
+# *Bioconductor* Newsletter
 {:.no_toc}
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), January 2015
@@ -25,26 +25,24 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), January 2015
 
 ### NCList
 
-One of Herv&eacute;'s recent projects was to find a replacement for the interval
-tree-based algorithm used in finding and counting overlaps.  The change was
-motivated by performance problems especially when the comparison involved many
-different chromosomes or many overlapping ranges. He decided on an approach 
-based on the Nested Containment List algorithm by Alexander V. Alekseyenko and
-Christopher J. Lee. The change has been implemented in BioC 3.1 (current devel). 
+One of Herv&eacute;'s recent projects was replacing the interval tree-based
+algorithm used in finding and counting overlaps. The change was motivated by
+decreased performance observed when comparing many different chromosomes or many
+overlapping ranges. He decided on an approach based on the Nested Containment
+List algorithm by Alexander V. Alekseyenko and Christopher J. Lee.
 
-In BioC 3.1 overlaps operations on GRanges and/or GRangesList objects are
-approximately 3x to 10x faster than in BioC 3.0 for a medium size data set 
-(e.g. 25 million reads). Memory usage is also reduced by ~ 25% or more.
+In BioC 3.1 (current devel) overlaps operations on GRanges and/or GRangesList
+objects are approximately 3x to 10x faster than in BioC 3.0 for a medium size
+data set (e.g. 25 million reads). Memory usage is also reduced by ~ 25% or more.
 Numbers will vary depending on the size of the data; the larger the data the
 greater the improvement.
 
-The user-visible change is the 'algorithm' argument added to most overlap-based 
-operations. This allows a choice between the new (algorithm="nclist") and the 
-old (algorithm="intervaltree") algorithm. Except for the 3 situations below, 
-choosing one algorithm or the other does not affect the output, only the 
-performance.
+The user-visible change is the 'algorithm' argument added to most overlap-based
+operations. This allows a choice between the new (algorithm="nclist") and the
+old (algorithm="intervaltree"). 
 
-Situations where 'nclist' and 'intervaltree' produce different output:
+At the time of this writing, there are 3 situations where "nclist" and
+"intervaltree" produce different output:
 
 * With 'nclist', zero-width ranges are interpreted as insertion points and are
   considered to overlap with ranges that contain them.
@@ -72,8 +70,8 @@ installation of the wrong package version and the inability to access common
 sample data used in the course.
 
 Recently Dan has been looking into the Docker software as another approach to
-providing pre-configured environments. The Docker containers operate at the
-single process level and are therefore more lightweight than a virtual machine.
+providing pre-configured environments. The Docker containers operate using
+process level isolation and are therefore more lightweight than a virtual machine.
 Additionally the containers have access to the full physical machine.
 
 These containers are isolated, reproducible environments useful for development
@@ -89,25 +87,32 @@ them being useful for
 * time saver; instead of waiting for packages to compile on Linux, you can 
   download a container in which packages are already installed
 
-Examples of potential applications are available at the 
+This work is exploratory and not yet supported. There will be an announcement
+on the mailing list when containers are ready for use. Those interested
+in following the development can visit the 
 [bioc_docker](https://github.com/Bioconductor/bioc_docker) GitHub repository. 
 
 
 ## Coordinate Mapping
 
-Translation (mapping) of coordinates between genome, transcript and protein
-space is a common task in bioinformatics. Over the past months we've been
-working to expand and harmonize the mapping capabilities in our infrastructure.
-High-level functions for mapping between genome and transcript space, 
-`mapToGenome` and `mapToTranscript`, have been added to `GenomicRanges` and
-`GenomicAlignments` in the devel branch.  Element-wise (aka "parallel") versions
-of the functions, `pmapToGenome` and `pmapToTranscript`, map the i-th element
-of 'x' to the i-th element of 'alignment'. Still on the TODO is a function for
-protein space.
+Translating (mapping) coordinates between genome, transcript and protein space
+is a common task in bioinformatics. Over the past quarter a group of us have
+been working to expand and harmonize mapping capabilities in the infrastructure.
 
-Others involved in the project are  Michael, Herve, Laurent, Robert and
-Martin. Discussions and progress can be followed at the
-[biocCoordinateMapping](https://groups.google.com/forum/#!forum/bioccoordinatemapping) Google Group.
+Functions mapping between genome and the transcriptome will be added to
+`GenomicFeatures` and methods for mapping via a CIGAR alignment will be added to
+`GenomicAlignments`. The `Pbase` package has a [mapping
+vignette](http://www.bioconductor.org/packages/3.1/bioc/vignettes/Pbase/inst/doc/mapping.html)
+that demonstrates the steps involved when mapping from protein to genomic
+position. Once the API for the transcriptome and alignment mapping methods is
+stable, similar functions can be added to `Pbase` to round out the suite of 
+mappers.
+
+Others involved in the project are  Michael Lawrence, Herv&eacute; Pag&egrave;s,
+Laurent Gatto, Robert Castelo and Martin Morgan. Discussions and progress can be
+followed at the
+[biocCoordinateMapping](https://groups.google.com/forum/#!forum/bioccoordinatemapping)
+Google Group.
 
 A related mapping task is migrating data from one assembly to another
 either via alignment tool or by converting assembly coordinates. The 
@@ -318,8 +323,8 @@ a method to calculate the average abundance of a region scaled to its width.
 ### Publications
 
 This past year a number of `Bioconductor` core and community members contributed
-to the manuscript, Orchestrating high-throughput genomic analysis with 
-`Bioconductor`, scheduled to appear in Nature Methods early 2015. The article
+to the manuscript, "Orchestrating high-throughput genomic analysis with 
+`Bioconductor`", scheduled to appear in Nature Methods early 2015. The article
 provides an overview of the project for potential users and developers
 highlighting reproducibility and flexibility in current applications.
 
@@ -426,7 +431,7 @@ quarter resulting in 100+ new packages each year. New package guidelines are
 posted on the
 [website](http://www.bioconductor.org/developers/package-guidelines/) but 
 developers often have additional questions or special case situations. We
-thought a more interactive exchange might help avoid common errors and
+thought a more interactive exchange would help avoid common errors and
 encourage questions before a package was submitted for review.
 
 In mid December Marc and Sonail hosted a Google Hangout to share some key 
