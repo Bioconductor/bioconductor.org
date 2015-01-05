@@ -345,12 +345,18 @@ oceanography and ecology applications.
 Links to the articles are available on the 
 [publications page](http://www.bioconductor.org/help/publications/).
 
-A PubMed query for title or PubMed ID returned 22838 citation references
-for software packages with CITATION files. For packages with no CITATION, a
-PubMed title search returned 1281 references. Full text citations of `Bioconductor` are available on the web site from 
+It can be challenging to get an accurate count of articles that cite 
+the `Bioconductor` project or the individual software packages. The 
+Publications page of the web site lists results of a full text
+search for the single term `bioconductor` for each of 
 [PubMed](http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=ePubDate),
 [PubMedCentral](http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate)and 
 [Google Scholar](http://scholar.google.com/scholar?q=bioconductor&btnG=Search).
+The number of hits range from 591 (PubMed) to 27,000 (Google Scholar).
+
+Taking a package-level approach, a PubMed query for titles or IDs found in
+CITATION files returned 22838 references. For packages with no CITATION file 
+a PubMed search of the package title returned 1281 references.
 
 ### Website traffic
 
