@@ -14,14 +14,55 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), January 2015
 
+Welcome to the January 2015 `Bioconductor` newsletter. This is a quarterly look
+behind the scenes at recent developments and exploratory work going on in the
+core group and `Bioconductor` community. This issue covers  Docker containers,
+work on coordinate mapping, changes to the algorithm underlying overlap
+operations and an overview of `csaw`, the most recent package contribution from
+the Smyth group. We want this newsletter to be valuable to you so please share
+comments and feedback.
+
 ## Contents 
 {:.no_toc}
 
 * Table of contents will replace this text. 
 {:toc}
 
+## Infrastructure Developments
 
-## Software Infrastructure
+### Docker
+
+Anyone who has attended the annual BioC conference or participated in a
+class at the Hutchinson Center is familiar with the `Bioconductor` Amazon 
+Machine Images (AMI). Dan configures these images with the current
+version of `R` and all necessary package dependencies and non-R software.
+Providing a pre-configured environment to participants has eliminated 
+many "day of" problems such as internet overload due to concurrent downloads, 
+installation of the wrong package version and the inability to access common 
+sample data used in the course.
+
+Recently Dan has been looking into the Docker software as another approach to
+providing pre-configured environments. The Docker containers operate using
+process level isolation and are therefore more lightweight than a virtual machine.
+Additionally the containers have access to the full physical machine.
+
+These containers are isolated, reproducible environments useful for development
+or production. In contrast to the AMI, a Docker container could be used on a
+desktop or laptop instead of the cloud or other remote hardware. We envision
+them being useful for 
+
+* reproducibility: providing identical, reproducible environments
+
+* convenience: deploying on any (Linux, Mac, or Windows) machine, or in 
+  the cloud via Amazon's Elastic Container Service (ECS)
+
+* time saver; instead of waiting for packages to compile on Linux, you can 
+  download a container in which packages are already installed
+
+This work is exploratory and not yet supported. There will be an announcement
+on the mailing list when containers are ready for use. Those interested
+in following the development can visit the 
+[bioc_docker](https://github.com/Bioconductor/bioc_docker) GitHub repository. 
 
 ### NCList
 
@@ -57,40 +98,6 @@ At the time of this writing, there are 3 situations where "nclist" and
 For a complete description of changes and future activity please see this
 [post](https://stat.ethz.ch/pipermail/bioc-devel/2014-December/006749.html)
 on the bioc-devel mailing list.
-
-### Docker
-
-Anyone who has attended the annual BioC conference or participated in a
-class at the Hutchinson Center is familiar with the `Bioconductor` Amazon 
-Machine Images (AMI). Dan configures these images with the current
-version of `R` and all necessary package dependencies and non-R software.
-Providing a pre-configured environment to participants has eliminated 
-many "day of" problems such as internet overload due to concurrent downloads, 
-installation of the wrong package version and the inability to access common 
-sample data used in the course.
-
-Recently Dan has been looking into the Docker software as another approach to
-providing pre-configured environments. The Docker containers operate using
-process level isolation and are therefore more lightweight than a virtual machine.
-Additionally the containers have access to the full physical machine.
-
-These containers are isolated, reproducible environments useful for development
-or production. In contrast to the AMI, a Docker container could be used on a
-desktop or laptop instead of the cloud or other remote hardware. We envision
-them being useful for 
-
-* reproducibility: providing identical, reproducible environments
-
-* convenience: deploying on any (Linux, Mac, or Windows) machine, or in 
-  the cloud via Amazon's Elastic Container Service (ECS)
-
-* time saver; instead of waiting for packages to compile on Linux, you can 
-  download a container in which packages are already installed
-
-This work is exploratory and not yet supported. There will be an announcement
-on the mailing list when containers are ready for use. Those interested
-in following the development can visit the 
-[bioc_docker](https://github.com/Bioconductor/bioc_docker) GitHub repository. 
 
 
 ## Coordinate Mapping
@@ -322,23 +329,25 @@ a method to calculate the average abundance of a region scaled to its width.
 
 ### Publications
 
-This past year a number of `Bioconductor` core and community members contributed
-to the manuscript, "Orchestrating high-throughput genomic analysis with 
-`Bioconductor`", scheduled to appear in Nature Methods early 2015. The article
-provides an overview of the project for potential users and developers
-highlighting reproducibility and flexibility in current applications.
+A number of core and community members have been working on a "perspective"
+article that provides a project overview for potential users and developers.
+Focus is on reproducibility, interoperability and data access.  The collective
+work, "Orchestrating high-throughput genomic analysis with `Bioconductor`", is
+scheduled to appear in Nature Methods in early 2015.
 
-Other recent project-level (vs package-level) publications are Scalable Genomics
-with `R` and `Bioconductor` by Michael Lawrence and Martin, and a review of `R`
-and `Bioconductor` as applied to genomics, oceanography and ecology in by Sylvia
-Tippman. Links to all articles are available on the 
+Other recent project-level (vs package-level) publications are "Scalable
+Genomics with `R` and `Bioconductor`" by Michael Lawrence and Martin Morgan
+which reviews strategies for processing, summarizing and visualizing large
+genomic data. "Programming tools: Adventures with R" by Sylvia Tippman
+highlights `R` / `Bioconductor` as the analysis tool of choice in genomics,
+oceanography and ecology applications.
+
+Links to the articles are available on the 
 [publications page](http://www.bioconductor.org/help/publications/).
 
 A PubMed query for title or PubMed ID returned 22838 citation references
 for software packages with CITATION files. For packages with no CITATION, a
-PubMed title search returned 1281 references.
-
-Full text citations of `Bioconductor` are available on the web site from 
+PubMed title search returned 1281 references. Full text citations of `Bioconductor` are available on the web site from 
 [PubMed](http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=ePubDate),
 [PubMedCentral](http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate)and 
 [Google Scholar](http://scholar.google.com/scholar?q=bioconductor&btnG=Search).
@@ -414,13 +423,13 @@ Statistics were generated with Google Analytics.
 ### Package downloads and new submissions 
 
 There was a 9% increase in the number of (distinct IP) downloads of software 
-packages in the fourth quarter of 2015 (106212 total) as compared to the fourth
-quarter of 2014 (97462 total). See the website for a full summary of package
+packages in the fourth quarter of 2014 (106212 total) as compared to the fourth
+quarter of 2013 (97462 total). See the website for a full summary of package
 [download stats](http://www.bioconductor.org/packages/stats/).
 
-During the period of October 1 to December 31 a total of 63 software packages
-were added bringing the current counts to 954 packages in devel (`Bioconductor`
-3.1) and 934 in release (`Bioconductor` 3.0).
+A total of 63 software packages were added in the fourth quarter of 2014
+bringing the count to 954 in devel (`Bioconductor` 3.1) and 934 in release
+(`Bioconductor` 3.0).
 
 ## Resources and Upcoming Events
 
