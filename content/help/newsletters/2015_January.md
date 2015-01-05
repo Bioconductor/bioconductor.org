@@ -215,7 +215,7 @@ scientific and statistical background. These documents are an excellent starting
 point for anyone new to microarray or RNA-seq analysis. The most recent 
 contribution from the group is the `csaw` package (ChIP-seq analysis with 
 windows) by Aaron Lun. I asked Aaron and Gordon if they would answer a few 
-questions about the package and they graciously agreed.
+questions about the package.
 
 
 Aaron Lun and Gordon Smyth on the csaw package:
