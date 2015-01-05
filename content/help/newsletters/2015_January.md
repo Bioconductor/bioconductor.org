@@ -14,13 +14,13 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), January 2015
 
-Welcome to the January 2015 `Bioconductor` newsletter. This is a quarterly look
-behind the scenes at recent developments and exploratory work going on in the
-core group and `Bioconductor` community. This issue covers  Docker containers,
-work on coordinate mapping, changes to the algorithm underlying overlap
-operations and an overview of `csaw`, the most recent package contribution from
-the Smyth group. We want this newsletter to be valuable to you so please share
-comments and feedback.
+Welcome to the January 2015 newsletter. This is a quarterly look behind the
+scenes at recent developments and exploratory work going on in the core group
+and `Bioconductor` community. This issue covers  Docker containers, work on
+coordinate mapping, changes to the algorithm underlying overlap operations and
+an overview of `csaw`, the most recent package contribution from the Smyth
+group. We want this newsletter to be valuable to you so please share comments
+and feedback.
 
 ## Contents 
 {:.no_toc}
