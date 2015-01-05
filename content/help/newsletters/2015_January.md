@@ -123,7 +123,7 @@ Google Group.
 
 A related mapping task is migrating data from one assembly to another
 either via alignment tool or by converting assembly coordinates. The 
-implementation of the UCSC LifOver tool in `rtracklayer` 
+implementation of the UCSC LiftOver tool in `rtracklayer` 
 (thanks Michael) and the availability of the UCSC chain files in 
 `AnnotationHub` (thanks Sonali) make this a straightforward operation. 
 
@@ -340,10 +340,8 @@ Genomics with `R` and `Bioconductor`" by Michael Lawrence and Martin Morgan
 which reviews strategies for processing, summarizing and visualizing large
 genomic data. "Programming tools: Adventures with R" by Sylvia Tippman
 highlights `R` / `Bioconductor` as the analysis tool of choice in genomics,
-oceanography and ecology applications.
-
-Links to the articles are available on the 
-[publications page](http://www.bioconductor.org/help/publications/).
+oceanography and ecology applications. Links are available on 
+the [publications page](http://www.bioconductor.org/help/publications/).
 
 It can be challenging to get an accurate count of articles that cite 
 the `Bioconductor` project or the individual software packages. The 
