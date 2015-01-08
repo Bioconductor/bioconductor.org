@@ -3,23 +3,34 @@
 <h2 name="featured">Featured</h2>
 
 <div>
+
 <div class="grey_box">
+Love M, Huber W, and Anders S. (2014) <a
+href="http://genomebiology.com/2014/15/12/550/abstract">Moderated
+estimation of fold change and dispersion for RNA-seq data with
+DESeq2</a> Genome Biology 15:550; doi:10.1186/s13059-014-0550-8
+</div>
+
+<div class="white_box">
 Tippmann, S. (2015) <a
 href="http://www.nature.com/news/programming-tools-adventures-with-r-1.16609">Programming
 tools: Adventures with R</a>. Nature 517: 109–110.
 </div>
-<div class="white_box">
+
+<div class="grey_box">
 Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
 </div>
-<div class="grey_box">
+
+<div class="white_box">
 Lawrence, M, and Morgan, M. (2014) <a
 href="http://arxiv.org/abs/1409.2864">Scalable Genomics with R
 and Bioconductor</a> Statistical Science, Vol. 29, No. 2, 214-226
 10.1214/14-STS476
 </div>
+
 </div>
 
 <h2 name="recent">Recent</h2>
