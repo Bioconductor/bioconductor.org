@@ -124,6 +124,17 @@ to read/write files in a host directory, please
 For full documentation, type `docker run --help` or visit
 the [help page](https://docs.docker.com/reference/run/).
 
+## Modifying the images
+
+There are two ways to modify these images:
+
+1. Making changes in a running container and then committing them
+   using the `docker commit` command.
+2. Using a Dockerfile to declare the changes you want to make.
+
+The second way is the recommended way. Both ways are
+[documented here](https://docs.docker.com/userguide/dockerimages/#creating-our-own-images).
+
 <a name="the-full-list"></a>
 ## List of packages installed on the *core* container
 
