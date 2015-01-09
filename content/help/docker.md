@@ -108,6 +108,10 @@ If you're on Linux and using default settings, the docker host is
 
 Log in to RStudio with the username `rstudio` and password `rstudio`.
 
+If you want to run RStudio as a user on your host machine, in order
+to read/write files in a host directory, please
+[read this](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine#interactive-containers).
+
 ##### To run R from the command line:
 
     docker run -ti bioconductor/devel_base R
