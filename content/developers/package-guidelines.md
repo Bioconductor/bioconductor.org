@@ -120,8 +120,8 @@ that imply a temporal (e.g., `ExistingPackage2`) or qualitative (e.g.,
 <h2 id="license">License</h2>
 
 The "License:" field in the DESCRIPTION file should preferably refer to a
-standard license (see [opensource.org](http://wiki.fhcrc.org/bioc/opensource.org)
-or [wikipedia](http://en.wikipedia.org/wiki/Comparison_of_free_software_licences))
+standard license (see 
+[wikipedia](http://en.wikipedia.org/wiki/Comparison_of_free_software_licences))
 using one of R's standard specifications. Be specific about any version that
 applies (e.g., GPL-2). Core Bioconductor packages are typically licensed under
 Artistic-2.0. To specify a non-standard license, include a file named LICENSE
