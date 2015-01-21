@@ -39,7 +39,7 @@ pkgs = []
 for line in lines
   next if line =~ /^#/
   next if line.empty?
-  pkgs.push line.gsub(/^Package: /, "")
+  pkgs.push line.gsub(/^Package: /, "").strip
 end
 
 pkgs.reverse!
