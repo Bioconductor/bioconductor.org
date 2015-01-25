@@ -7,6 +7,7 @@
 	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
 	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot Package Installations</a></li> 
 	<li><a href="#why-biocLite">Why biocLite()?</a></li> 
+	<li><a href="#preconfigured">Pre-configured Bioconductor</a></li> 
 </ul>
 
 
@@ -269,3 +270,12 @@ preferred to `install.packages()`.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+<h2 id="Preconfigured">Pre-configured <em>Bioconductor</em></h2>
+
+Bioconductor is also available as a set of 
+[Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
+[Docker images](/help/docker/).
+
+
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
