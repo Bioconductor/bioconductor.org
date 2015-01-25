@@ -270,7 +270,7 @@ preferred to `install.packages()`.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="Preconfigured">Pre-configured <em>Bioconductor</em></h2>
+<h2 id="preconfigured">Pre-configured <em>Bioconductor</em></h2>
 
 Bioconductor is also available as a set of 
 [Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
