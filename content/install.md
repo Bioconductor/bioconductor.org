@@ -152,7 +152,7 @@ Bioconductor has a repository and release schedule that differs from R
 are introduced, and a stable 'release' branch emitted once every 6
 months to which bug fixes but not new features are introduced).
 
-A consequences of the mismatch between R and Bioconductor release
+A consequence of the mismatch between R and Bioconductor release
 schedules is that the Bioconductor version identified by
 `install.packages()` is sometimes not the most recent 'release'
 available. For instance, an R minor version may be introduced some
