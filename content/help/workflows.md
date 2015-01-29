@@ -68,6 +68,12 @@ genomic data. Common workflows include:
   an image of the NHGRI GWAS catalog that is, as of Oct. 31 2014,
   distributed with coordinates defined by NCBI build hg38.
 
+* [Mass spectrometry and proteomics](/help/workflows/proteomics/)  
+  This lab demonstrates how to accessing data from proteomics data
+  repositories, how to parse various mass spectrometry data formats, how
+  to identify MS2 spectra and analyse the search results, how to use the
+  high-level infrastructure for raw mass spectrometry and quantitative
+  proteomics experiments and quantitative data processing and analysis.
 
 See the [HOWTO](/developers/how-to/workflows/) for information on contributing
 your own workflow.
