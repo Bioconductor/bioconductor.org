@@ -69,7 +69,7 @@ genomic data. Common workflows include:
   distributed with coordinates defined by NCBI build hg38.
 
 * [Mass spectrometry and proteomics](/help/workflows/proteomics/)  
-  This lab demonstrates how to accessing data from proteomics data
+  This lab demonstrates how to access data from proteomics data
   repositories, how to parse various mass spectrometry data formats, how
   to identify MS2 spectra and analyse the search results, how to use the
   high-level infrastructure for raw mass spectrometry and quantitative
