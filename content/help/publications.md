@@ -4,6 +4,13 @@
 
 <div>
 
+<div class="grey_box">
+Huber W, et al. (2015) <a
+href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrating
+high-throughput genomic analysis with <em>Bioconductor</em></a> Nature
+Methods 12:115-121; doi:10.1038/nmeth.3252.
+</div>
+
 <div class="white_box">
 Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, and Smyth, GK (2015)
 <a
@@ -30,13 +37,6 @@ Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
-</div>
-
-<div class="white_box">
-Lawrence, M, and Morgan, M. (2014) <a
-href="http://arxiv.org/abs/1409.2864">Scalable Genomics with R
-and Bioconductor</a> Statistical Science, Vol. 29, No. 2, 214-226
-10.1214/14-STS476
 </div>
 
 </div>
