@@ -50,11 +50,11 @@ and suggestions are welcome, please send to Valerie at
 Last fall Herv&eacute; did some housecleaning on the infrastructure 
 packages. All `GAlignments*` classes and related functions were
 moved from
-[GenomicRanges](http://www.bioconductor.org/packages/devel/bioc/html/GenomicRanges.html)
+[GenomicRanges](http://bioconductor.org/packages/devel/bioc/html/GenomicRanges.html)
 and
-[Rsamtools](http://www.bioconductor.org/packages/devel/bioc/html/Rsamtools.html) 
+[Rsamtools](http://bioconductor.org/packages/devel/bioc/html/Rsamtools.html) 
 to the new 
-[GenomicAlignments](http://www.bioconductor.org/packages/devel/bioc/html/GenomicAlignments.html)
+[GenomicAlignments](http://bioconductor.org/packages/devel/bioc/html/GenomicAlignments.html)
 package. Classes and functions from `GenomicRanges` that built on 
 functionality in `Rsamtools` were also moved. The reorg substantially
 cleaned up our dependency tree and will be reflected in the upcoming 
@@ -107,17 +107,17 @@ New junction-related operations:
 Converting between chromosome names from different institutions
 presents a challenge when working with ranges and annotations.
 The new
-[GenomeInfoDb](http://www.bioconductor.org/packages/devel/bioc/html/GenomeInfoDb.html)
+[GenomeInfoDb](http://bioconductor.org/packages/devel/bioc/html/GenomeInfoDb.html)
  package is a step towards resolving these
 inconsistencies by providing a mapping interface between 
 styles (e.g., UCSC, NCBI, Ensembl, ...) and organisms.
 
 Low-level functions related to seqnames and SeqnamesStyle were 
 moved from `GenomicRanges` and 
-[AnnotationDbi](http://www.bioconductor.org/packages/devel/bioc/html/AnnotationDbi.html) 
+[AnnotationDbi](http://bioconductor.org/packages/devel/bioc/html/AnnotationDbi.html) 
 into `GenomeInfoDb`. Some functions were deprecated, some renamed. 
 See the 
-[NEWS](http://www.bioconductor.org/packages/devel/bioc/news/GenomeInfoDb/NEWS)
+[NEWS](http://bioconductor.org/packages/devel/bioc/news/GenomeInfoDb/NEWS)
 file for a complete listing of activities.
 
 The package is intended to serve as the base for methods querying or
@@ -163,7 +163,7 @@ and for converting between styles. Here we map from UCSC to NCBI:
 ### `AnnotationHub` package 
 
 The
-[AnnotationHub](http://www.bioconductor.org/packages/devel/bioc/html/AnnotationHub.html) 
+[AnnotationHub](http://bioconductor.org/packages/devel/bioc/html/AnnotationHub.html) 
 resource continues to grow steadily. As of March 
 2014 the hub supports 204 genomes and 98 species from 7 data providers 
 (Ensembl, NCBI, UCSC, dbSNP, HAEMCODE, Encode, Inparanoid 8). The hub 
@@ -183,7 +183,7 @@ form and is the first of its kind in *Bioconductor*. The package offers
 access to 2 transcription factor networks and Recon 2 (consensus 
 metabolic reconstruction compiled from 5 resources). Queries are
 made using the 
-[PSICQUIC](http://www.bioconductor.org/packages/devel/bioc/html/PSICQUIC.html) 
+[PSICQUIC](http://bioconductor.org/packages/devel/bioc/html/PSICQUIC.html) 
 or `RefNet.db` packages. (Note: `RefNet` and `RefNet.db` will be
 available in BioC 2.14.)
 
@@ -207,7 +207,7 @@ contributions from Mentored Projects mentees.
 The biocViews terms used to categorize packages have been been refreshed.
 New terms were added, old terms removed and packages with old or invalid
 terms were updated. The 
-[updated web-interface](http://www.bioconductor.org/packages/devel/BiocViews.html#___Software)
+[updated web-interface](http://bioconductor.org/packages/devel/BiocViews.html#___Software)
  allows searching by biocViews 
 term or subject. A check box option displays terms not 
 associated with any package. Thanks to 
@@ -215,7 +215,7 @@ Sonali and Dan for the work on this.
  
 ### `BiocCheck` package
 
-[BiocCheck](http://www.bioconductor.org/packages/devel/bioc/html/BiocCheck.html) 
+[BiocCheck](http://bioconductor.org/packages/devel/bioc/html/BiocCheck.html) 
 is a new package that encapsulates *Bioconductor* package 
 guidelines and best practices. It was designed to provide guidance
 to new package authors and is run by the SinglePackageBuilder
@@ -521,7 +521,7 @@ More detail on the `Hits` class can be found on the man page:
 
     ?Hits
 
-The ["HOWTOs" vignette](http://www.bioconductor.org/packages/devel/bioc/vignettes/GenomicRanges/inst/doc/GenomicRangesHOWTOs.pdf)
+The ["HOWTOs" vignette](http://bioconductor.org/packages/devel/bioc/vignettes/GenomicRanges/inst/doc/GenomicRangesHOWTOs.pdf)
 in `GenomicRanges` demonstrates other
 practical workflows that make use of the extensive `GenomicRanges`
 infrastructure.
@@ -545,17 +545,17 @@ course covering the basics of working with large data, class structure,
 integrated workflows and the analysis of RNAseq differential expresssion data.
 
 Upcoming events and past course materials can be found on the 
-[web site](http://www.bioconductor.org/help/course-materials/).
+[web site](http://bioconductor.org/help/course-materials/).
 
 
 ## Looking ahead
 
 The spring release is just weeks away. We plan to branch on April 11th
 and release on the 14th. The full schedule is
-[posted online](http://www.bioconductor.org/developers/release-schedule/).
+[posted online](http://bioconductor.org/developers/release-schedule/).
 
 BioC 2014 is in Boston this year (July 30 - August 1). Watch the 
-[web site](http://www.bioconductor.org/help/course-materials/2014/BioC2014/)
+[web site](http://bioconductor.org/help/course-materials/2014/BioC2014/)
 for updates.
 
 The July newsletter will (probably) include copy number packages on the

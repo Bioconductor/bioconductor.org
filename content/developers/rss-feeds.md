@@ -66,7 +66,7 @@ Build issues may be transient (for example, a package tries to
 download a file from a site which may be down temporarily),
 or they may be the result of a problem with the build system itself.
 If you have questions about a build issue, contact the
-[bioc-devel](http://www.bioconductor.org/help/mailing-list/)
+[bioc-devel](http://bioconductor.org/help/mailing-list/)
 mailing list.
 
 

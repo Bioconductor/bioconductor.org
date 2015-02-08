@@ -165,7 +165,7 @@ on the Mavericks platform are related to memory addressing problems,
 many errors should be equally discoverable using Valgrind on Linux.
 
 4. If you are unable to diagnose your problem using the combination of
-[build system output](http://www.bioconductor.org/checkResults/) and
+[build system output](http://bioconductor.org/checkResults/) and
 Valgrind, feel free to contact the [bioc-devel mailing
 list](/help/mailing-list/).
 
@@ -265,7 +265,7 @@ gracefully if OpenMP support is not available:
 ```
 
 See the
-[ShortRead](http://www.bioconductor.org/packages/release/bioc/html/ShortRead.html)
+[ShortRead](http://bioconductor.org/packages/release/bioc/html/ShortRead.html)
 package for an example of good practices around support for OpenMP.
 
 <a name="best-practices"></a>

@@ -16,7 +16,7 @@ other sources.
 <h2 id="package-type">Package Types</h2> Bioconductor contains many
 different types of annotation packages.  You can browse the currently
 available types here
-[here](http://www.bioconductor.org/packages/release/BiocViews.html#___PackageType)
+[here](http://bioconductor.org/packages/release/BiocViews.html#___PackageType)
 by simply using the bioconductor web site.
 
 You will see that there are packages that contain annotation data

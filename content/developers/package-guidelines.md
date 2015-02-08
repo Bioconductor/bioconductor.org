@@ -407,7 +407,7 @@ the C++ Best Practices guide.
 
 Unit tests are highly recommended.  We find them indispensable for 
 both package development and maintenance.  Examples and explanations are provided 
-[here](http://www.bioconductor.org/developers/unitTesting-guidelines).
+[here](http://bioconductor.org/developers/unitTesting-guidelines).
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

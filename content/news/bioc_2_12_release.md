@@ -3408,7 +3408,7 @@ Changes in version 0.99.7:
   Bioinformatics (2013) 29(4): 520-522.
 
 - rBiopaxParser has been accepted to Bioconductor!
-  http://www.bioconductor.org/packages/devel/bioc/html/rBiopaxParser.html
+  http://bioconductor.org/packages/devel/bioc/html/rBiopaxParser.html
 
 - README.md has been updated accordingly with steps to install directly
   from Bioconductor.

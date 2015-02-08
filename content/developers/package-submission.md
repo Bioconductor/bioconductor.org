@@ -16,7 +16,7 @@ package
   Bioconductor already makes significant contributions, e.g.,
   sequencing, expression and other microarrays, flow cytometry, mass
   spectrometry, image analysis; see
-  [biocViews](http://www.bioconductor.org/packages/devel/BiocViews.html#___Software).
+  [biocViews](http://bioconductor.org/packages/devel/BiocViews.html#___Software).
 * Interoperates with other Bioconductor packages, re-using common data
   structures (see
   [S4 classes and methods](/developers/how-to/S4-classes/)) and

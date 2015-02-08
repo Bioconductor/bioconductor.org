@@ -109,7 +109,7 @@ been working to expand and harmonize mapping capabilities in the infrastructure.
 Functions mapping between genome and the transcriptome will be added to
 `GenomicFeatures` and methods for mapping via a CIGAR alignment will be added to
 `GenomicAlignments`. The `Pbase` package has a [mapping
-vignette](http://www.bioconductor.org/packages/3.1/bioc/vignettes/Pbase/inst/doc/mapping.html)
+vignette](http://bioconductor.org/packages/3.1/bioc/vignettes/Pbase/inst/doc/mapping.html)
 that demonstrates the steps involved when mapping from protein to genomic
 position. Once the API for the transcriptome and alignment mapping methods is
 stable, similar functions can be added to `Pbase` to round out the suite of 
@@ -193,7 +193,7 @@ chromosome are parsed into a `ChainBlock` class.
 
 
 Another example of using `liftOver()` is in the
-[Changing genomic coordinate systems](http://www.bioconductor.org/help/workflows/liftOver/) workflow. SNPS from the NHGRI GWAS catalogue are mapped from hg38 
+[Changing genomic coordinate systems](http://bioconductor.org/help/workflows/liftOver/) workflow. SNPS from the NHGRI GWAS catalogue are mapped from hg38 
 to hg19 resulting in a few lost loci.
 
 
@@ -341,7 +341,7 @@ which reviews strategies for processing, summarizing and visualizing large
 genomic data. "Programming tools: Adventures with R" by Sylvia Tippman
 highlights `R` / `Bioconductor` as the analysis tool of choice in genomics,
 oceanography and ecology applications. Links are available on 
-the [publications page](http://www.bioconductor.org/help/publications/).
+the [publications page](http://bioconductor.org/help/publications/).
 
 It can be challenging to get an accurate count of articles that cite 
 the `Bioconductor` project or the individual software packages. The 
@@ -429,7 +429,7 @@ Statistics were generated with Google Analytics.
 There was a 9% increase in the number of (distinct IP) downloads of software 
 packages in the fourth quarter of 2014 (106212 total) as compared to the fourth
 quarter of 2013 (97462 total). See the website for a full summary of package
-[download stats](http://www.bioconductor.org/packages/stats/).
+[download stats](http://bioconductor.org/packages/stats/).
 
 A total of 63 software packages were added in the fourth quarter of 2014
 bringing the count to 954 in devel (`Bioconductor` 3.1) and 934 in release
@@ -442,7 +442,7 @@ bringing the count to 954 in devel (`Bioconductor` 3.1) and 934 in release
 On average, 20-30 software packages are submitted to `Bioconductor` each 
 quarter resulting in 100+ new packages each year. New package guidelines are
 posted on the
-[website](http://www.bioconductor.org/developers/package-guidelines/) but 
+[website](http://bioconductor.org/developers/package-guidelines/) but 
 developers often have additional questions or special case situations. We
 thought a more interactive exchange would help avoid common errors and
 encourage questions before a package was submitted for review.
@@ -457,7 +457,7 @@ check out the Webinar posted on the `Bioconductor`
 
 ### Conferences and Courses 
 
-The [events page](http://www.bioconductor.org/help/events/) is updated regularly 
+The [events page](http://bioconductor.org/help/events/) is updated regularly 
 with new courses and conference announcements. In January 2015, EMBL is hosting 
 both the European Developer's conference and an Advanced `R` Programming course.
 

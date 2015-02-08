@@ -26,10 +26,10 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), October 2014
 ### GRCh38 assembly
 
 The GRCh38 human genome assembly is available in `Bioconductor` as
-[BSgenome](http://www.bioconductor.org/packages/devel/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html)
-[TranscriptDb](http://www.bioconductor.org/packages/devel/data/annotation/html/TxDb.Hsapiens.UCSC.hg38.knownGene.html)
+[BSgenome](http://bioconductor.org/packages/devel/data/annotation/html/BSgenome.Hsapiens.NCBI.GRCh38.html)
+[TranscriptDb](http://bioconductor.org/packages/devel/data/annotation/html/TxDb.Hsapiens.UCSC.hg38.knownGene.html)
 and
-[SNPloc](http://www.bioconductor.org/packages/devel/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38.html)
+[SNPloc](http://bioconductor.org/packages/devel/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38.html)
 packages.
 
 The GRCh38 assembly includes both a primary assembly (non-redundant haploid
@@ -94,7 +94,7 @@ The `BiocStyle` package provides a fast and easy approach to styling markdown
 documents in `Bioconductor` fashion. It includes all standard formatting 
 styles for creating PDF and HTML documents of vignettes, workflows 
 or other project documents. 
-The [html](http://www.bioconductor.org/packages/3.0/bioc/vignettes/BiocStyle/inst/doc/HtmlStyle.html)
+The [html](http://bioconductor.org/packages/3.0/bioc/vignettes/BiocStyle/inst/doc/HtmlStyle.html)
 version of the package vignette is a demo of the styling and color theme.
 
 The package offers formatting advantages over standard markdown such as
@@ -197,7 +197,7 @@ package or task right away.
 ## Quarterly Project Statistics 
 
 The `Bioconductor` project continues to expand globally. Over the next quarter 
-there are [course offerings](http://www.bioconductor.org/help/events/) in 
+there are [course offerings](http://bioconductor.org/help/events/) in 
 Japan, Germany the UK and US. In August 2014, the Latin American Bioconductor 
 [LAB](http://lab.foundation/) foundation held its official inauguration
 in Ribeirao Preto, Brazil. LAB is a non-profit scientific initiative created 
@@ -256,7 +256,7 @@ Overall website traffic by country:
 The number of distinct IP downloads of `Bioconductor` software packages  for
 July, August and September were 36900, 36749, and 36618 respectively for an
 average of 36756. A full summary of package download stats is available
-[here](http://www.bioconductor.org/packages/stats/).
+[here](http://bioconductor.org/packages/stats/).
 
 
 ## Resources, Courses and Conferences
@@ -269,7 +269,7 @@ this year we had several requests for a more refined search of these
 materials by topic area or key word.
 
 In response, Sonali and Dan have categorized all 2014 materials and implemented
-a new key word(s) [search table](http://www.bioconductor.org/help/course-materials/)
+a new key word(s) [search table](http://bioconductor.org/help/course-materials/)
 interface. The plan is to index all future materials while years prior to 2014
 will be available in the old format (see 'Courses by year' below 
 the search table).
@@ -295,9 +295,9 @@ visualization.
 
 The release of `Bioconductor` 3.0 is scheduled for October 14. This version
 will continue to use the current version of `R` (3.1.1). Visit the website for 
-help [updating packages](http://www.bioconductor.org/install/) and for a 
+help [updating packages](http://bioconductor.org/install/) and for a 
 look at the 
-[release schedule](http://www.bioconductor.org/developers/release-schedule/).
+[release schedule](http://bioconductor.org/developers/release-schedule/).
 
 ### Upcoming events
 
@@ -309,7 +309,7 @@ October 20-25, 2014
 FHCRC, Seattle WA, USA
 October 27-29, 2014
 
-[BioC Europe 2015](http://www.bioconductor.org/help/course-materials/2015/BiocEurope2015/)
+[BioC Europe 2015](http://bioconductor.org/help/course-materials/2015/BiocEurope2015/)
 EMBL, Heidelberg, Germany
 January 12-15, 2015
 

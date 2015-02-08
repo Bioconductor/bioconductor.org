@@ -2778,7 +2778,7 @@ FEATURES
 - Package helps to obtain datasets from IMPC database.
 
 - The data retrieved from IMPCdata package can be directly used by PhenStat -- an R package that encapsulates the IMPC
-  statistical pipeline, available at <URL: http://www.bioconductor.org/packages/release/bioc/html/PhenStat.html>.
+  statistical pipeline, available at <URL: http://bioconductor.org/packages/release/bioc/html/PhenStat.html>.
 
 inSilicoMerging
 ---------------
