@@ -4,20 +4,18 @@
 
 <div>
 
-<div class="grey_box">
-Huber W, et al. (2015) <a href="http://rdcu.be/b2VE">Orchestrating
+<div class="grey_box"> Huber W, et al. (2015) <a
+href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrating
 high-throughput genomic analysis with
 <em>Bioconductor</em></a>. Nature Methods 12:115-121;
-doi:10.1038/nmeth.3252 (<a
-href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">abstract</a>).
-</div>
+doi:10.1038/nmeth.3252 (full-text free with registration).</div>
 
 <div class="white_box">
 Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, and Smyth, GK (2015)
 <a
 href="http://m.nar.oxfordjournals.org/content/early/2015/01/20/nar.gkv007.abstract">limma
 powers differential expression analyses for RNA-sequencing and
-microarray studies</a>. Nucl. Acids Res; doi: 10.1093/nar/gkv007 
+microarray studies</a>. Nucl. Acids Res; doi:10.1093/nar/gkv007 
 </div>
 
 <div class="grey_box">
