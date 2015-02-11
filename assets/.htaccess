@@ -26,6 +26,10 @@ Header set Cache-Control "max-age=15552000"
 RewriteEngine On
 RewriteBase /
 
+# Redirect www. to non-www
+RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
+
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
 ## packages urls
