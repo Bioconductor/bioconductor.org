@@ -54,6 +54,13 @@ United Kingdom
 Japan
 ------
 
+* [The Institute of Statistical Mathematics](http://www.ism.ac.jp/)
+
+  URL: <http://bioc.ism.ac.jp/>
+
+  Contact: Keisuke Honda, &lt;khonda at ism.ac.jp&gt;
+
+
 * [RIKEN Center for Developmental Biology](http://www.cdb.riken.jp/en/index.html)
 
   URL: <http://bioconductor.jp/>
