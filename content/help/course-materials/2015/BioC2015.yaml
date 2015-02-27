@@ -6,11 +6,19 @@ layout: course
 start_date: 2015-07-20
 end_date: 2015-07-22
 instructors:
-- TBA
-location: Seattle, USA
+- Various
+location: Seattle, Washington, USA
 url: COURSE_URL_HERE
 tags:
 - intro
 - seattle
 - package
-description: TBA
+description: This conference highlights current developments within
+  and beyond Bioconductor. Morning scientific talks and afternoon
+  practicals provide conference participants with insights and tools
+  required for the analysis and comprehension of high-throughput
+  genomic data. 'Developer Day' preceeds the main conference on July
+  20, providing developers and would-be developers an opportunity to
+  gain insights into project direction and software development best
+  practices.
+
