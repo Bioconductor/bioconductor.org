@@ -1248,3 +1248,20 @@ def get_pubmed_cache_date
     return "" unless File.exists? cachefile
     File.mtime(cachefile).iso8601
 end
+
+def render_mirror_contacts(mirror_orig)
+    mirror = mirror_orig.dup
+    unless mirror[:contact].is_a? Array and mirror[:contact_email].is_a? Array
+        mirror[:contact] = [mirror[:contact]]
+        mirror[:contact_email] = [mirror[:contact_email]]
+    end
+    out = "Contact: "
+    len = mirror[:contact].length
+    mirror[:contact].each_with_index do |m, i|
+        out += "#{m} &lt;#{mirror[:contact_email][i].sub("@", " at ")}&gt;" 
+        if len > 1 and i < (len -1)
+            out += " or "
+        end
+    end
+    out
+end

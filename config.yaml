@@ -126,3 +126,62 @@ r_ver_for_bioc_ver:
   "3.3": "3.3"
   "3.4": "3.3"
   "3.5": "3.4"
+mirrors:
+ - United States:
+   - institution: National Cancer Institute, National Institutes of Health
+     institution_url: http://nci.nih.gov/
+     contact: Sean Davis
+     mirror_url: http://watson.nci.nih.gov/bioc_mirror/
+     contact_email: sdavis2@mail.nih.gov
+ - Brazil/Latin America:
+   - institution: Department of Genetics, Medical School of Ribeir&atilde;o Preto, University of S&atilde;o Paulo
+     institution_url: http://rge.fmrp.usp.br/
+     contact: Houtan Noushmehr
+     mirror_url: http://bioconductor.fmrp.usp.br/
+     contact_email: houtan@usp.br
+ - Germany:
+   - institution: Department of Statistics, TU Dortmund
+     institution_url: http://www.statistik.tu-dortmund.de/
+     contact: Uwe Ligges
+     mirror_url: http://bioconductor.statistik.tu-dortmund.de/
+     contact_email: ligges@statistik.tu-dortmund.de
+ - Belgium:
+   - institution: OpenAnalytics
+     institution_url: http://www.openanalytics.eu/
+     contact: Willem Ligtenberg
+     mirror_url: http://bioc.openanalytics.eu/
+     contact_email: willem.ligtenberg@openanalytics.eu
+ - United Kingdom:
+   - institution: European Bioinformatics Institute
+     institution_url: http://www.ebi.ac.uk/
+     contact: Andrew Tikhonov
+     mirror_url: http://mirrors.ebi.ac.uk/bioconductor/
+     contact_email: andrew@ebi.ac.uk
+ - Japan:
+   - institution: The Institute of Statistical Mathematics
+     institution_url: http://www.ism.ac.jp/
+     contact: Keisuke Honda
+     mirror_url: http://bioc.ism.ac.jp/
+     contact_email: khonda@ism.ac.jp
+   - institution: RIKEN Center for Developmental Biology
+     institution_url: http://www.cdb.riken.jp/en/index.html
+     contact: Itoshi NIKAIDO, Ph.D.
+     mirror_url: http://bioconductor.jp/
+     contact_email: dritoshi@gmail.com
+ - China:
+   - institution: University of Science and Technology of China
+     institution_url: http://en.ustc.edu.cn/
+     contact: 
+      - Mirror Maintainer
+      - Tengfei Yin
+     mirror_url: http://mirrors.ustc.edu.cn/bioc/
+     contact_email: 
+      - mirrors@ustc.edu.cn
+      - yintengfei@gmail.com
+ - Australia:
+   - institution: Australia's Academic and Research Network
+     institution_url: http://www.aarnet.edu.au/
+     contact: Alex Dodson
+     mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
+     contact_email: alex.dodson@aarnet.edu.au
+
