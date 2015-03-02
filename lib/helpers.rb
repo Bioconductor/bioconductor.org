@@ -1255,7 +1255,7 @@ def render_mirror_contacts(mirror_orig)
         mirror[:contact] = [mirror[:contact]]
         mirror[:contact_email] = [mirror[:contact_email]]
     end
-    out = "Contact: "
+    out = ""
     len = mirror[:contact].length
     mirror[:contact].each_with_index do |m, i|
         out += "#{m} &lt;#{mirror[:contact_email][i].sub("@", " at ")}&gt;" 
