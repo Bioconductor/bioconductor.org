@@ -13,6 +13,7 @@ require 'time'
 require 'date'
 require 'rubygems'
 require 'httparty'
+require 'net/http'
 require 'yaml'
 require 'pp'
 require 'rexml/document'
@@ -1264,4 +1265,56 @@ def render_mirror_contacts(mirror_orig)
         end
     end
     out
+end
+
+def url_ok(url)
+    url = URI(url)
+
+    Net::HTTP.start(url.host, url.port){|http|
+       path = "/"
+       path = url.path unless url.path.empty?
+       response = http.head(path)
+       if response.code =~ /^2/
+           return true
+       else
+           return false
+       end
+    }
+end
+
+def mirror_status()
+    cachefile = "tmp#{File::SEPARATOR}mirror.cache"
+    now = Time.now
+    yesterday = now - (60*60*24)
+    if File.exists? (cachefile) and File.mtime(cachefile) > yesterday
+        return YAML.load_file(cachefile)
+    end
+    h = {}
+    h[:last_updated] = Time.now.iso8601
+    res = []
+    for country in config[:mirrors]
+        for mirror in country.values.first
+            status = {}
+            status[:url] = mirror[:mirror_url]
+            url = status[:url]
+            url += "/" unless url.end_with? "/"
+            ["release", "devel"].each do |version|
+                puts "HELLO!!!!!"
+                numeric_version = config["#{version}_version".to_sym]
+                url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
+                #puts url_to_check
+                begin
+                    result = url_ok(url_to_check)
+                rescue
+                    result = false
+                end
+                status[version.to_sym] = result ? "yes" : "no"
+            end
+
+            res << status
+        end
+    end
+    h[:status] = res
+    File.open(cachefile, 'w') {|f| f.write h.to_yaml }
+    h
 end

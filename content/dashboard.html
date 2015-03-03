@@ -160,3 +160,27 @@
 <p><i>Note</i>: Before mid-September, 2014, the support site was a mailing list, so the terms 'new visitors'
 and 'returning visitors' did not apply.</p>
 </div>
+
+
+<h2>Mirror Status</h2>
+
+<% status = mirror_status() %>
+
+<p>Last updated <abbr class="timeago" title="<%=status[:last_updated]%>">
+        <%=status[:last_updated]%></abbr>. (Will be updated every 24 hours).</p>
+
+
+<table>
+  <tr>
+    <th>URL</th>
+    <th>Release</th>
+    <th>Devel</th>
+  </tr>
+  <% for row in status[:status] %>
+    <tr>
+      <td><a href="<%= row[:url] %>"><%= row[:url] %></a></td>
+      <td><%= row[:release] %></td>
+      <td><%= row[:devel] %></td>
+    </tr>
+  <% end %>
+</table>
