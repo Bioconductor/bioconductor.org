@@ -40,7 +40,7 @@ end
 
 pkgs_in_rss = []
 tweet_hash = {}
-doc = REXML::Document.new(open("http://www.bioconductor.org/rss/new_packages.rss").read)
+doc = REXML::Document.new(open("http://bioconductor.org/rss/new_packages.rss").read)
 doc.elements.each("rss/channel/item/title") do |element|
     key = element.text.split(" ")[1]
     pkgs_in_rss.push key
