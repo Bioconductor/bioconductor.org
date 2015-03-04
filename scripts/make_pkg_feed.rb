@@ -82,7 +82,7 @@ startxml = <<EOF
 <rss version="2.0">
   <channel>
     <title>New Packages: Bioconductor</title>
-    <link>http://www.bioconductor.org/</link>
+    <link>http://bioconductor.org/</link>
     <description>New Bioconductor Packages (devel branch)</description>
     <language>en-us</language>
     <copyright></copyright>
