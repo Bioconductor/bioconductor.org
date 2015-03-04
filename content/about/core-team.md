@@ -1,36 +1,36 @@
 # ![](/images/icons/magnifier.gif)Core Team
 
-## Current
+## Current Members
 
-* [Sonali Arora](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
+[FHCRC](http://fredhutch.org)
+
+* Sonali Arora
+* Marc Carlson
+* Nate Hayden
+* Jim Hester
+* Martin Morgan
+* Valerie Obenchain
+* Herv&eacute; Pag&egrave;s
+* Paul Shannon
+* Dan Tenenbaum
+
+## Techinical Adivsory Board
+
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
-* [Marc Carlson](http://www.fhcrc.org/) Fred Hutchinson Cancer
-  Research Center, USA.
+* [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
+  Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), National
   Cancer Institute, USA.
 * Robert Gentleman, Genentech Research and Early Development, USA.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
   Bloomberg School of Public Health, Johns Hopkins University.
-* [Nate Hayden](http://www.fhcrc.org/), Fred Hutchinson Cancer 
-  Research Center, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
   European Molecular Biology Laboratory, Heidelberg, Germany.
 * [Rafael Irizarry](http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281) Dana-Farber Cancer
   Institute, USA
 * [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech Research and Early Development, USA.
 * [James MacDonald](mailto:jmacdon@uw.edu), University of Washington, USA.
-* [Martin Morgan](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
-* [Valerie Obenchain](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
-* [Herv&eacute; Pag&egrave;s](http://www.fhcrc.org),
-  Fred Hutchinson Cancer Research Center, USA.
-* [Paul Shannon](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
-* [Dan Tenenbaum](http://www.fhcrc.org/), Fred Hutchinson Cancer
-  Research Center, USA.
 
 ## Additional Participants
 
