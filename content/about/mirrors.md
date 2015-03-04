@@ -15,3 +15,6 @@
 <% end %>
 <% end %>
 
+If you are interested in maintaining a mirror of this site (for either
+public or private use) [read this](mirror-how-to/).
+
