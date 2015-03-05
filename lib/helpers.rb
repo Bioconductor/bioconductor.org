@@ -1299,7 +1299,6 @@ def mirror_status()
             url = status[:url]
             url += "/" unless url.end_with? "/"
             ["release", "devel"].each do |version|
-                puts "HELLO!!!!!"
                 numeric_version = config["#{version}_version".to_sym]
                 url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
                 #puts url_to_check
