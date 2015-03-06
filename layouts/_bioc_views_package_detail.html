@@ -212,6 +212,11 @@ biocLite("<%=@package[:Package]%>")</pre>
         </tr>
 
         <tr class="<%=ri.rowclass%>">
+            <td>LinkingTo</td>
+            <td><%= linkify(:LinkingTo, @package)%></td>
+        </tr>
+
+        <tr class="<%=ri.rowclass%>">
             <td>Suggests</td>
             <td><%= linkify(:Suggests, @package)%></td>
         </tr>
@@ -219,6 +224,11 @@ biocLite("<%=@package[:Package]%>")</pre>
         <tr class="<%=ri.rowclass%>">
             <td>SystemRequirements</td>
             <td><%= @package[:SystemRequirements]%></td>
+        </tr>
+
+        <tr class="<%=ri.rowclass%>">
+            <td>Enhances</td>
+            <td><%= linkify(:Enhances, @package)%></td>
         </tr>
 
         <tr class="<%=ri.rowclass%>">
@@ -241,6 +251,12 @@ biocLite("<%=@package[:Package]%>")</pre>
             <td><%= linkify(:suggestsMe, @package)%></td>
         </tr>
 
+        <% if ["bioc/", "data/experiment/"].include? @package[:repo] %>
+            <tr class="<%=ri.rowclass%>">
+                <td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
+                <td>&nbsp;</td>
+            </tr>
+        <% end %> 
 
 
     </table>

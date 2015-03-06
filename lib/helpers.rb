@@ -1317,3 +1317,11 @@ def mirror_status()
     File.open(cachefile, 'w') {|f| f.write h.to_yaml }
     h
 end
+
+def get_build_report_link(package)
+    repo = package[:repo].sub(/\/$/, "")
+    repo = repo.sub "/", "-"
+    version = package[:bioc_version_num]
+    package_name = package[:Package]
+    "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
+end

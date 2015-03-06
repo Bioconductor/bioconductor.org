@@ -140,7 +140,8 @@ class BiocViews < Nanoc3::DataSource
 
     items = []
     
-    link_list = [:Depends, :Imports, :Suggests, :dependsOnMe, :importsMe, :suggestsMe]
+    link_list = [:Depends, :Imports, :Suggests, :Enhances,
+      :LinkingTo, :dependsOnMe, :importsMe, :suggestsMe]
     
     for version in @site_config["versions"]
       @repos = get_repos(version, @repos)
