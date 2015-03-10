@@ -39,12 +39,15 @@ Bioconductor's Docker images are stored in
 the source Dockerfiles are in 
 [Github](https://github.com/Bioconductor/bioc_docker).
 
+Our release images are based on [rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio) and our devel
+images are based on [rocker/rstudio-daily](https://github.com/rocker-org/rstudio-daily).
+
 For each supported version of Bioconductor, we provide several
 images:
 
 
-* *base*: Based on the latest Ubuntu LTS distribution.
-  Contains R and a single Bioconductor package (`BiocInstaller`,
+* *base*: Contains R, RStudio, and a single Bioconductor 
+  package (`BiocInstaller`,
   providing the `biocLite()` function for installing additional
   packages).
   Also contains many system dependencies for Bioconductor packages.
@@ -163,5 +166,7 @@ These packages, plus their dependencies, are installed:
 
 ### Acknowledgements
 
-Some code used to create these containers comes from the
-[rocker](https://github.com/rocker-org/rocker) project.
+Thanks to the
+[rocker](https://github.com/rocker-org/rocker) project for providing the
+R/RStudio Server containers upon which ours are based.
+
