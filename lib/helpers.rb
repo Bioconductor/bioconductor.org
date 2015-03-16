@@ -692,7 +692,6 @@ def workflow_helper(item)
     end
   end
   w
-
 end
 
 def release_branch

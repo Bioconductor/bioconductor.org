@@ -72,6 +72,21 @@ equations, use <span>$</span>$N<span>$</span>$.
 The first will render as \\(N\\) and the second as $$N$$.
 
 
+## Adding metadata to a Markdown vignette
+
+With a markdown vignette (.Rmd file) you can add a YAML metadata preamble
+at the beginning of the file, for example:
+
+    ---
+    Author: My Name
+    Date: March 16, 2015
+    ---
+
+This metadata will be rendered in the "About This Document" box that appears at the
+top of the web page.
+
+
+
 If you have any questions, please ask on the bioc-devel
 [mailing list](/help/mailing-list).
 

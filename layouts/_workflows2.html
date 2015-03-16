@@ -7,13 +7,34 @@
   <p class="box_header">About This Document <span class="olive">&raquo;</span></p>
   Package: <%= w[:package] %><br/>
   Built with Bioconductor (R): <%= w[:built_with_bioc]%>  (<%= w[:built_with_R]%>)<br/>
+
+
+  <% 
+  ri = RowIndexer.new
+  if w.has_key? :user_defined_metadata 
+      md = w[:user_defined_metadata]
+      keys = md.keys.sort 
+  end
+  %>
+
+
+
+
   <table>
     <tbody>
-      <tr class="row_odd">
+      <% if w.has_key? :user_defined_metadata %>
+        <% for key in keys %>
+          <tr class="<%= ri.rowclass %>">
+            <td><%= key %></td>
+            <td><%= md[key] %></td>
+          </tr>
+        <% end %>
+      <% end %>
+      <tr class="<%= ri.rowclass %>">
         <td>Source Package</td>
         <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a><br/></td>
       </tr>
-      <tr class="row_even">
+      <tr class="<%= ri.rowclass %>">
         <td>Windows Binary</td>
         <td>
           <% if w.has_key? :win_pkg %>
@@ -21,7 +42,7 @@
           <% end %>
         </td>
       </tr>
-      <tr class="row_odd">
+      <tr class="<%= ri.rowclass %>">
         <td>Mac OS 10.6 (Snow Leopard)</td>
         <td>
           <% if w.has_key? :mac_pkg %>
