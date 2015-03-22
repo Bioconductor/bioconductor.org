@@ -161,7 +161,7 @@ Example
 
 If the developer had made an error and not bumped the version from
 0.99.1 to 0.99.2, then the package would be built by the nightly build
-process, but the new version would not propogate to the public
+process, but the new version would not propagate to the public
 repository. `biocLite("DemoPackage")` would return the old version
 0.99.1 of the package.
 
