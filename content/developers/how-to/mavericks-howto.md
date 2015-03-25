@@ -38,6 +38,7 @@ You might skip to the [lessons-learned](#lessons-learned) section to
 check if your issue has already been explored.
 
 <a name="orientation"></a>
+
 ## Orientation
 
 Note: For simplicity, this guide uses 'GCC' (GNU Compiler Collection)
@@ -121,6 +122,7 @@ The foremost difference regarding memory is clang seems to be more
 restrictive about out-of-bounds memory addressing.
 
 <a name="find-bugs"></a>
+
 #### How to find bugs
 
 With GCC the preferred debugger is
@@ -170,6 +172,7 @@ Valgrind, feel free to contact the [bioc-devel mailing
 list](/help/mailing-list/).
 
 <a name="CXX11"></a>
+
 ## C++11
 
 Although the default version of clang on Mavericks includes support
@@ -203,6 +206,7 @@ forward-incompatible. See the [forward-incompatibility
 problems](#forward-incompatible) section for examples.
 
 <a name="issues-with-Mavericks-env"></a>
+
 ## Issues specific to Mavericks environment
 
 ### C Linkage
@@ -239,6 +243,7 @@ Example of correct `#include` of R headers:
     extern "C" void bar(); // function 'bar' has C linkage
 
 <a name="openmp"></a>
+
 ### OpenMP
 
 As of this writing the Mavericks environment does not support OpenMP,
@@ -269,6 +274,7 @@ See the
 package for an example of good practices around support for OpenMP.
 
 <a name="best-practices"></a>
+
 ## C++ Best Practices
 
 These C++ practices are applicable for most C++ projects, but have
@@ -288,6 +294,7 @@ working examples for many tasks: the [Rcpp
 Gallery](http://gallery.rcpp.org/).
 
 <a name="name-resolution-errors"></a>
+
 ### Avoid name resolution errors
 
 A name resolution error occurs when the compiler encounters an
@@ -418,6 +425,7 @@ void foo() {
 ```
 
 <a name="undefined-behavior"></a>
+
 ### Avoid undefined behavior and non-portable unspecified behavior
 
 There are two major categories of behavior that is not prescribed by
@@ -445,6 +453,7 @@ Solution: code defensively to avoid problematic constructs and [use
 debuggers](#find-bugs) to find the code that leads to errors.
 
 <a name="issues-external-code-sources"></a>
+
 ## Issues with code from external sources
 
 Some packages need to use code not written directly by the
@@ -510,6 +519,7 @@ Solutions in approximate order of preference:
    the codebase is updated the changes can be easily reproduced.
 
 <a name="lessons-learned"></a>
+
 ## Lessons learned from specific issues
 
 This section serves as a loosely organized repository for knowledge
@@ -527,6 +537,7 @@ time or runtime.
 Where applicable, a link to a live code demo is provided.
 
 <a name="forward-incompatible"></a>
+
 ### Forward-incompatibility problems with C++11
 
 C++11 is not completely backward-compatible. In particular, the API
@@ -564,6 +575,7 @@ example](/developers/how-to/c-debugging/#diagnose-a-crash) on the
 debug C/C++ page.
 
 <a name="external-code-sources"></a>
+
 ### External code sources
 
 Common examples of external code sources are

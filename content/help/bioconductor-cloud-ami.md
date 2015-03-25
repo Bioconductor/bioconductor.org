@@ -32,6 +32,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#questions">Questions</a>
 
 <a name="overview"></a>
+
 ## Overview
 
 We have developed an Amazon Machine Image (AMI) that is optimized for running Bioconductor in the Amazon Elastic Compute Cloud 
@@ -49,6 +50,7 @@ Here are a few reasons you could use it:
 See below for more specific scenarios.
 
 <a name="preloaded_ami"></a>
+
 ## Preloaded AMI
 
 The AMI comes pre-loaded with the latest release version of R, 
@@ -151,6 +153,7 @@ Plus the following categories of annotation package:
 
 
 <a name="first-time-steps"></a>
+
 ### First-time steps
 
 First you will need an [Amazon Web Services](http://aws.amazon.com/) (AWS) account if you do not already have one. Sign up for AWS and then click [here](http://aws-portal.amazon.com/gp/aws/developer/subscription/index.html?productCode=AmazonEC2) to sign up for the EC2 service. This will require that you provide credit
@@ -174,6 +177,7 @@ place.
 
 
 <a name="launching"></a>
+
 ## Launching the AMI
 
 Once you have [created an AWS account](#first-time-steps), you can launch the AMI simply by clicking on this link:
@@ -238,6 +242,7 @@ Then click "Delete Stack" and confirm by clicking "Yes, Delete":
 <img src="/images/ami/stack6.jpg">
 
 <a name="connecting_ssh"></a>
+
 ## Connecting to your AMI using SSH
 
 Use the following URL to start your AMI:
@@ -269,6 +274,7 @@ to your Amazon EC2 instance.
 
 
 <a name="ami_ids"></a>
+
 ## AMI IDs
 
 Our AMIs have the following IDs.
@@ -342,9 +348,11 @@ you consent to this tracking.
 
 
 <a name="scenarios"></a>
+
 ## Scenarios for using your Bioconductor instance
 
 <a name="rgraphviz"></a>
+
 ### Using Rgraphviz
 
 Make sure you have connected to your instance either with a web browser, or
@@ -365,6 +373,7 @@ Then, from within R on the remote instance:
 This should start a graphics device on your local computer displaying a simple graph.
 
 <a name="parallel"></a>
+
 ### Paralellization using the parallel package
 
 This works best if you have selected a high-CPU instance type to run. 
@@ -376,6 +385,7 @@ parallel documentation for more information.
     mclapply(1:30, rnorm)
 
 <a name="using_cluster"></a>
+
 ## Using the AMI as a cluster
 
 You can also use the AMI as a cluster, wherein the machines communicate
@@ -405,6 +415,7 @@ is only supported for the Bioconductor AMI version 2.14 and higher.
 
 
 <a name="installing_starcluster"></a>
+
 ### Installing StarCluster
 
 Install StarCluster by following the
@@ -419,6 +430,7 @@ or following the
 [Quick-Start Tutorial](http://star.mit.edu/cluster/docs/latest/quickstart.html).
 
 <a name="configuring_starcluster"></a>
+
 ### Configuring StarCluster
 
 Before we can use StarCluster with the Bioconductor AMI,
@@ -537,6 +549,7 @@ This allows port 80 on the cluster instances to be open to the
 world, allowing us to use Rstudio Server on that port.
 
 <a name="starting_cluster"></a>
+
 ### Starting a Cluster
 
 Assuming you have completed the steps above, you can create
@@ -547,6 +560,7 @@ a cluster with the command:
 After a few moments, the cluster should be available.
 
 <a name="connecting_cluster"></a>
+
 ### Connecting to the cluster
 
 There are two ways to connect to the cluster's master node: RStudio Server and
@@ -597,6 +611,7 @@ To connect to the master node using ssh, simply issue the command
     starcluster sshmaster --user=ubuntu smallcluster
 
 <a name="terminate_cluster"></a>
+
 ### Terminating the Cluster <font color="red">**IMPORTANT!!**</font>
 
 When you are done, you MUST terminate your cluster or you
@@ -609,6 +624,7 @@ This command will prompt you to confirm that you really want to
 terminate the cluster.
 
 <a name="cluster_scenarios"></a>
+
 ### Cluster Scenarios
 
 The following scenarios assume that you have started up a cluster 
@@ -691,6 +707,7 @@ You should see results like this:
 
 
 <a name="mpi"></a>
+
 ### Using MPI as the back end
 
 When you start a cluster using the above steps, R is automatically
@@ -729,6 +746,7 @@ table(unlist(xx))
 ```
 
 <a name="custom"></a>
+
 ### Creating a custom version of the Bioconductor AMI
 
 
@@ -766,6 +784,7 @@ to make it more widely accessible.
 Now you should Terminate the Stopped instance of the Bioconductor AMI.
 
 <a name="provisioning"></a>
+
 ### Provisioning a virtual or physical machine for use with Bioconductor
 
 The Bioconductor AMI was created using Vagrant and Chef.
@@ -778,6 +797,7 @@ For more information, see the scripts'
 
 
 <a name="movingdata"></a>
+
 ## Moving data to and from your Bioconductor AMI instance
 
 If you are using RStudio Server, you can upload and download files 
@@ -810,6 +830,7 @@ your files will be lost. If you have a lot of data to move back and forth, you m
 [Elastic Block Storage](http://aws.amazon.com/ebs/).
 
 <a name="questions"></a>
+
 ## Questions
 
 

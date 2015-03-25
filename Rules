@@ -34,7 +34,7 @@ compile '*' do
   case item[:extension]
   when /md$/, /markdown$/
     filter :erb
-    filter :kramdown, :auto_id_stripping => true
+    filter :kramdown, :input => 'GFM', :auto_id_stripping => true
   when /haml$/
     filter :haml
   when /html$/
