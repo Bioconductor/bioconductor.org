@@ -74,7 +74,7 @@ environment contrasts with GCC:
   organization seems to be more forgiving of loose naming, whereas the
   Mavericks environment is more exacting.
 
-* [C++11]((#CXX11) as the default language specification, and clang's
+* [C++11](#CXX11) as the default language specification, and clang's
   [libc++](http://libcxx.llvm.org/). libc++ is an implementation of the
   C++11 standard library written from scratch. At the time of this
   writing the libc++ implementation is only available for Mac OS X.
