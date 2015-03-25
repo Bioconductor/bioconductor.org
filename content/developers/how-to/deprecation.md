@@ -1,17 +1,17 @@
 ![](/images/icons/magnifier.gif)Function Deprecation Guidelines
 ==================================================
 
-** About Deprecation **
+**About Deprecation**
 
 In the normal course of software development, a function, method, or 
 other object may be removed. Here are some guidelines for ensuring
 that this process is minimally disruptive to your users.
 
-** What to Deprecate **
+**What to Deprecate**
 
 Any function, method, or data that is no longer used.
 
-** When to Follow These Guidelines **
+**When to Follow These Guidelines**
 
 If you introduce a function into the devel branch of your package, 
 then soon after decide not to use it, you may simply remove the function
@@ -23,12 +23,12 @@ you may decide to communicate these changes to your users via the
 However, if a function has existed in at least one released version
 of Bioconductor, these guidelines must be followed.
 
-** How To Deprecate **
+**How To Deprecate**
 
 The full process for removing a function takes three release cycles
 (18 months).
 
-*** Step 1: Deprecate the function ***
+***Step 1: Deprecate the function***
 
 When you first decide to eliminate a function, you should mark it as
 deprecated in the devel branch. Do this by calling <code>.Deprecated()</code>
@@ -69,7 +69,7 @@ CMD check should report this.
       }
     }
     
-*** Step 2: Mark the function as defunct ***
+***Step 2: Mark the function as defunct***
 
 In the next release cycle, after your function has been deprecated, it
 must be made defunct in the devel branch.  This means a call to the
@@ -95,7 +95,7 @@ page such as the following:
       Defunct functions are: \code{myOldFunc}
     }
 
-*** Step 3: Remove the function ***
+***Step 3: Remove the function***
 
 In the next release cycle, after your function has been marked as defunct,
 remove it entirely from your package R code and NAMESPACE in the devel
