@@ -138,7 +138,8 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
             else
                 relprobs = bad.find_all {|i| i[:version] == "release"}
                 devprobs = bad.find_all {|i| i[:version] == "devel"}
-                os = {"linux" => 1, "windows" => 2, "mac" => 3}
+                os = {"linux" => 1, "windows" => 2, 
+                    "mac_snowleopard" => 3, "mac_mavericks" => 4}
                 for ary in [relprobs, devprobs]
                     machines = ary == relprobs ? config["active_release_builders"] : config["active_devel_builders"]
                     ary = ary.find_all{|i| machines.values.include? i[:node]}

@@ -441,6 +441,9 @@ end
 
 desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)" 
 # requires connection to internal hutch network 
+# FIXME - use e.g. http://bioconductor.org/checkResults/3.1/bioc-LATEST/STATUS_DB.txt
+# instead of downloading DCFs for each package? Need to fix downstream too
+# (i.e. make_build_rss_feeds.rb)
 task :get_build_result_dcfs, :repo do |t, args|
     hargs = args.to_hash
     if hargs.empty? or !hargs.has_key? :repo

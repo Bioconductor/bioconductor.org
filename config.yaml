@@ -30,11 +30,13 @@ devel_repos:
 active_devel_builders:
   linux: "zin2"
   windows: "moscato2"
-  mac: "petty"
+  mac_snowleopard: "petty"
+  mac_mavericks: "morelia"
 active_release_builders:
   linux: "zin1"
   windows: "moscato1"
-  mac: "perceval"
+  mac_snowleopard: "perceval"
+  mac_mavericks: "oaxaca"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
