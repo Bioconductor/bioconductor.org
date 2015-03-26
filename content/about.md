@@ -6,17 +6,19 @@ genomic data.  It is based primarily on the
 The Bioconductor [release version](/packages/release/bioc/) is updated
 twice each year, and is appropriate for most users. There is also a
 [development version](/packages/devel/bioc), to which new features and
-packages are added prior to incorporation in the release. A large number
-of [meta-data packages](/packages/release/data/annotation) provide
-pathway, organism, microarray and other annotations.
+packages are added prior to incorporation in the release. A large
+number of [meta-data packages](/packages/release/data/annotation)
+provide pathway, organism, microarray and other annotations.
 
-The Bioconductor project started in 2001 and is overseen by a [core
-team](/about/core-team/), based primarily at the [Fred Hutchinson
-Cancer Research Center](http://www.fhcrc.org), and by other members
-coming from US and international institutions.  It gained widespread
-exposure in a 2004 [Genome
-Biology](http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf)
-paper.
+The Bioconductor project started in 2001 and is overseen by a
+[core team](/about/core-team/), based primarily at the
+[Fred Hutchinson Cancer Research Center](http://www.fhcrc.org), and by
+other members coming from US and international institutions. 
+
+Key citations to the project include Huber et al., 2015
+[Nature Methods 12:115-121](http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html)
+and Gentleman et al., 2004
+[Genome Biology 5:R80](http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf)
 
 ## Bioconductor Packages
 
