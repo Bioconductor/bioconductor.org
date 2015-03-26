@@ -22,7 +22,7 @@ end
 
 compile '/help/newsletters/*' do
     filter :erb
-    filter :kramdown
+    filter :kramdown, :auto_id_stripping => true
     layout 'default'
 end
 
@@ -34,7 +34,8 @@ compile '*' do
   case item[:extension]
   when /md$/, /markdown$/
     filter :erb
-    filter :kramdown, :auto_id_stripping => true, :input => 'GFM'
+    filter :kramdown, :auto_id_stripping => true, :input => 'GFM',
+        :hard_wrap => false
   when /haml$/
     filter :haml
   when /html$/
