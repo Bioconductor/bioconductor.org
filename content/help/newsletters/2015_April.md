@@ -357,15 +357,15 @@ Her research focuses on transcriptional and post transcriptional
 regulation with special interest in transcription factors and the alternative 
 polyadenylation phenomenon. 
 
-With a background in computer science part she is involved in developing both
-computational pipelines and tools, including the `Bioconductor` packages
+With a background in computer science she is involved both in developing
+computational pipelines and tools and is author of the `Bioconductor` packages
 `roar` (preferential usage of APA sites) and `MatrixRider` (propensity of
 binding protein to interact with a sequence). Elena was one of the first to try
 out the Docker containers and found them useful for both package development and
 system administration tasks. I asked a few questions about her experience and
 got some interesting answers.
 
-**What motivated you try Docker when developing `MatrixRider`?**
+**What motivated you to try Docker when developing `MatrixRider`?**
 
 I heard about docker from some friends last year and I was eager to try it.
 During the New Year's Eve holidays I decided to start using it with `R` \ 
@@ -395,7 +395,7 @@ flawlessly with `biocLite()`.
 No. I think that I will continue using the devel containers to develop
 and maintain packages.
 
-**Describe how was Docker useful for managing multiple `R` versions
+**Describe how Docker was useful for managing multiple `R` versions
   on your computational server. Was this for multiple users or
   just yourself?**
 
