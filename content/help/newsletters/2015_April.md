@@ -357,8 +357,8 @@ Her research focuses on transcriptional and post transcriptional
 regulation with special interest in transcription factors and the alternative 
 polyadenylation phenomenon. 
 
-With a background in computer science she is involved both in developing
-computational pipelines and tools and is author of the `Bioconductor` packages
+With a background in computer science she is involved in developing
+computational pipelines and tools and is the author of `Bioconductor` packages
 `roar` (preferential usage of APA sites) and `MatrixRider` (propensity of
 binding protein to interact with a sequence). Elena was one of the first to try
 out the Docker containers and found them useful for both package development and
