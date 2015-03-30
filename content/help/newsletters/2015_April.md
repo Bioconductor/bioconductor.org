@@ -468,29 +468,29 @@ mention.
     to also handle S4. 
     (enhanced by Martin Morgan)
 
-    > library(Rsamtools)
-    > methods("scanBam")
-    [1] scanBam,BamFile-method    scanBam,BamSampler-method
-    [3] scanBam,BamViews-method   scanBam,character-method 
-    see '?methods' for accessing help and source code
-    Warning message:
-    In findGeneric(generic.function, envir) :
-      'scanBam' is a formal generic function; S3 methods will not 
-       likely be found
+        > library(Rsamtools)
+        > methods("scanBam")
+        [1] scanBam,BamFile-method    scanBam,BamSampler-method
+        [3] scanBam,BamViews-method   scanBam,character-method 
+        see '?methods' for accessing help and source code
+        Warning message:
+        In findGeneric(generic.function, envir) :
+          'scanBam' is a formal generic function; S3 methods will not 
+           likely be found
 
-    > methods(class = "BamFile")
-     [1] $                   $<-                 asMates            
-     [4] asMates<-           close               coerce             
-     [7] countBam            filterBam           indexBam           
-    [10] initialize          isIncomplete        isOpen             
-    [13] obeyQname           obeyQname<-         open               
-    [16] path                pileup              qnamePrefixEnd     
-    [19] qnamePrefixEnd<-    qnameSuffixStart    qnameSuffixStart<- 
-    [22] quickBamFlagSummary scanBam             scanBamHeader      
-    [25] seqinfo             show                sortBam            
-    [28] testPairedEndBam    updateObject        yieldSize          
-    [31] yieldSize<-        
-    see '?methods' for accessing help and source code
+        > methods(class = "BamFile")
+         [1] $                   $<-                 asMates            
+         [4] asMates<-           close               coerce             
+         [7] countBam            filterBam           indexBam           
+        [10] initialize          isIncomplete        isOpen             
+        [13] obeyQname           obeyQname<-         open               
+        [16] path                pileup              qnamePrefixEnd     
+        [19] qnamePrefixEnd<-    qnameSuffixStart    qnameSuffixStart<- 
+        [22] quickBamFlagSummary scanBam             scanBamHeader      
+        [25] seqinfo             show                sortBam            
+        [28] testPairedEndBam    updateObject        yieldSize          
+        [31] yieldSize<-        
+        see '?methods' for accessing help and source code
 
 *   *GenomicFeatures::transcriptLengths()*
 
@@ -516,13 +516,13 @@ mention.
 
 ### Website traffic
 
-The following compares the number of sessions and new users from the
-first quarter of 2014 with the first quarter of 2015 (January 1 - March 30).
-Sessions are broken down by new and returning visitors. New visitors
-correspond to the total new users.
+The following compares the number of sessions and new users from the first
+quarter of 2015 (January 1 - March 30) with the first quarter of 2014. Sessions
+are broken down by new and returning visitors. New visitors correspond to the
+total new users.
 
 <table border="0" cellpadding="5" cellspacing="0">
- <caption>Website traffic Quarter 1 2015 vs Quarter 1 2014</caption>
+ <caption><b>Website traffic Quarter 1 2015 vs Quarter 1 2014</b></caption>
   <tbody valign="top">
     <tr>
         <td><b>Total Sessions</b></td>
