@@ -229,6 +229,7 @@ new resources were added and the display method and search navigation were
 substantially reworked.
 
 New resources:
+
 * TF-Target Gene Files from the PAZAR public database 
   (available as `GRanges` objects)
 * BioPAX files (Level1 and Level2) from the NCI Pathway Interaction Database
