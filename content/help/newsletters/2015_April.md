@@ -22,9 +22,9 @@ the first svn commits made in May of that year:
     r2      rgentlem      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001)
     r1      (no author)      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001) 
 
-The first official
-[project manuscript](http://genomebiology.com/2004/5/10/r80)
-was published in 2004 and at the time `Bioconductor` hosted 
+At the time of the first official
+[Bioconductor manuscript](http://genomebiology.com/2004/5/10/r80)
+in 2004 the project hosted 
 
     "... more than 80 software packages, hundreds of metadata
     packages and a number of experimental data packages ..."
@@ -35,11 +35,11 @@ than an order of magnitude with a current count of 936 in the devel branch.
 Another quote from the 2004 paper shows that, fortunately, not everything has 
 changed,
 
-    > "... The group dynamic has also been an important factor in the success of 
-    > Bioconductor. A willingness to work together, to see that cooperation and 
-    > coordination in software development yields substantial benefits for the 
-    > developers and the users and encouraging others to join and contribute to 
-    > the project are also major factors in our success. ..."
+    "... The group dynamic has also been an important factor in the success of 
+    Bioconductor. A willingness to work together, to see that cooperation and 
+    coordination in software development yields substantial benefits for the 
+    developers and the users and encouraging others to join and contribute to 
+    the project are also major factors in our success. ..."
 
 This issue looks at the growing role of proteomics in `Bioconductor` and the use
 of web sockets to bridge the gap between workspace data and interactive
