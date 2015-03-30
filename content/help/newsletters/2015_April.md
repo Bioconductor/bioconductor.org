@@ -145,7 +145,7 @@ from protein to genomic coordinates.
 As our ability to generate volumes of sequencing data grows so does the need for
 effective visualization tools. Tools that can summarize large quantities of
 information into digestible bits and quickly identify unique features or
-outliers are important steps in any analysis pipeline. In the 'R' world we
+outliers are important steps in any analysis pipeline. In the `R` world we
 have seen an increase in the use of web sockets to provide an interactive link
 between data in the workspace and exploration in the browser.
 
@@ -369,7 +369,7 @@ got some interesting answers.
 **What motivated you to try Docker when developing `MatrixRider`?**
 
 I heard about docker from some friends last year and I was eager to try it.
-During the New Year's Eve holidays I decided to start using it with `R` \ 
+During the New Year's Eve holidays I decided to start using it with `R` / 
 `Bioconductor` to run different versions on our computational server without
 adding burden to the sysadmin work. I started with mere curiosity fiddling with
 rocker and, eased by the holiday laziness, I stopped with the idea to begin
@@ -426,7 +426,7 @@ outsourcing to the package more straightforward for both `Rsamtools` and others
 wanting access to the native routines.
 
 htslib was developed with a 'linux-centric' approach and getting the library
-to build across platforms (specifically Windows) was challenge. To address this,
+to build across platforms (specifically Windows) was a challenge. To address this,
 Nate chose to use [Gnulib](https://www.gnu.org/software/gnulib/), the GNU
 portability library.  Briefly, Gnulib is a collection of modules that package
 portability code to enable POSIX-compliance in a transparent manner; the goal
