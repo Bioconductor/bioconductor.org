@@ -17,20 +17,24 @@ posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), April 2015
 Welcome to the Spring 2015 newsletter. In a few weeks `Bioconductor` 3.1 
 will mark the 24th release of the software. The project started in 2001 with 
 the first svn commits made in May of that year:
-    > r3      rgentlem      2001-05-25 14:08:57 -0700 (Fri, 25 May 2001)
-    > r2      rgentlem      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001)
-    > r1      (no author)      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001) 
+
+    r3      rgentlem      2001-05-25 14:08:57 -0700 (Fri, 25 May 2001)
+    r2      rgentlem      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001)
+    r1      (no author)      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001) 
 
 The first official
 [project manuscript](http://genomebiology.com/2004/5/10/r80)
 was published in 2004 and at the time `Bioconductor` hosted 
-    > "... more than 80 software packages, hundreds of metadata
-    > packages and a number of experimental data packages ..." 
+
+    "... more than 80 software packages, hundreds of metadata
+    packages and a number of experimental data packages ..."
+
 Eleven years later the number of software packages alone have grown more
 than an order of magnitude with a current count of 936 in the devel branch.
 
 Another quote from the 2004 paper shows that, fortunately, not everything has 
 changed,
+
     > "... The group dynamic has also been an important factor in the success of 
     > Bioconductor. A willingness to work together, to see that cooperation and 
     > coordination in software development yields substantial benefits for the 
@@ -39,9 +43,9 @@ changed,
 
 This issue looks at the growing role of proteomics in `Bioconductor` and the use
 of web sockets to bridge the gap between workspace data and interactive
-visualization. We re-visit Docker with applications in package development and
-system administration. Also a section on new and notable functions recently
-added to base `R` and `Bioconductor`.
+visualization. We re-visit Docker with use cases in package development and
+managing system administration tasks. Also a section on new and notable 
+functions recently added to base `R` and `Bioconductor`.
 
 
 ## Contents 
@@ -53,8 +57,8 @@ added to base `R` and `Bioconductor`.
 
 ## Proteomics in Bioconductor 
 
-The diversity of proteomics analysis available within `Bioconductor` continues
-to grow steadily; the devel branch currently hosts 68 software
+The diversity of proteomics analysis available in `Bioconductor` continues
+to grow steadily and the devel branch now hosts 68 proteomic-based software 
 packages. Many individuals have contributed to this area in the form of
 packages, web-based workflows and course offerings. One very active member is
 Laurent Gatto, head of the Computational Proteomics Unit at the Cambridge Centre
@@ -95,13 +99,11 @@ vignette is specific to the `Using R and Bioconductor for proteomics analysis`
 publication. Special attention is given to labelled vs label-free quantitation 
 and `Bioconductor` packages that offer these methods. 
 
-* [Using R and Bioconductor for Proteomics Data Analysis]
-(http://www.bioconductor.org/packages/release/data/experiment/vignettes/RforProteomics/inst/doc/RforProteomics.pdf)
+* [Using R and Bioconductor for Proteomics Data Analysis](http://www.bioconductor.org/packages/release/data/experiment/vignettes/RforProteomics/inst/doc/RforProteomics.pdf)
 includes code executed in the `Using R and Bioconductor for proteomics 
 analysis` publication.
 
-* [Visualisation of proteomics data using R and Bioconductor]
-(http://www.bioconductor.org/packages/release/data/experiment/vignettes/RforProteomics/inst/doc/RProtVis.html)
+* [Visualisation of proteomics data using R and Bioconductor](http://www.bioconductor.org/packages/release/data/experiment/vignettes/RforProteomics/inst/doc/RProtVis.html)
 includes the code from the `Visualisation of proteomics data using R
 and Bioconductor` publication.
 
@@ -138,7 +140,7 @@ from protein to genomic coordinates.
 
 ## Web Sockets
 
-### Brief overview 
+### Overview 
 
 As our ability to generate volumes of sequencing data grows so does the need for
 effective visualization tools. Tools that can summarize large quantities of
@@ -147,7 +149,7 @@ outliers are important steps in any analysis pipeline. In the 'R' world we
 have seen an increase in the use of web sockets to provide an interactive link
 between data in the workspace and exploration in the browser.
 
-The analysis capabilities of 'R' make it a good fit for the rich and interactive
+The analysis capabilities of `R` make it a good fit for the rich and interactive
 graphics of HTML5 web browsers. The WebSocket protocol enables more interaction
 between a browser and a web site, facilitating live content and the creation of
 real-time graphics. 
@@ -166,7 +168,7 @@ characteristics offer several advantages over HTTP:
 
 - Web sockets open a 'single TCP connection' over which the client and server
   communicate for the lifecycle of the web socket connection. In contrast, HTTP
-  typically opens a new TCP connection for each `round trip`; a connection is
+  typically opens a new TCP connection for each round trip; a connection is
   initiated for a request and terminated after the response is received. A new
   TCP connection must be established for each request/response.  The opening and
   closing creates overhead, especially in the case where rapid responses or real
@@ -223,7 +225,7 @@ More details on the `BrowserViz` class and applications can be found in the
 ## AnnotationHub Update
 
 This quarter Marc and Sonali continued their work on `AnnotationHub`. Several 
-new resources were added and the display and search navigation were 
+new resources were added and the display method and search navigation were 
 substantially reworked.
 
 New resources:
@@ -340,7 +342,7 @@ files from these metadata. Detailed HOWTO steps are in the
 
 The [course materials](http://www.bioconductor.org/help/course-materials/) web
 page has links to several resources including slides, presentations and
-packages. Recently Dan started adding an 'AMI' link for courses that use them.
+packages. Recently Dan started adding an "AMI" link for courses that use them.
 The AMI contains the packages, sample data and exact version of
 `R`/`Bioconductor` used. This is a convenient, portable way to ensure
 reproduciblity.  One can imagine using an AMI or Docker container to
@@ -363,7 +365,7 @@ out the Docker containers and found them useful for both package development and
 system administration tasks. I asked a few questions about her experience and
 got some interesting answers.
 
-** What made you try using Docker when developing `MatrixRider`? **
+**What motivated you try Docker when developing `MatrixRider`?**
 
 I heard about docker from some friends last year and I was eager to try it.
 During the New Year's Eve holidays I decided to start using it with `R` \ 
@@ -382,20 +384,20 @@ dependencies on my local system libraries that would not be available in a
 clean installation. This was my first package containing C code and it was nice
 to be sure.
 
-** Which image did you use, base, core, sequencing, ... ? **
+**Which image did you use, base, core, sequencing, ... ?**
 
 Mainly devel_sequencing to start with a fully-fledged working environment. I
 had to install some other packages (TFBSTools and JASPAR2014) and it worked
 flawlessly with `biocLite()`.
 
-** Any unanticipated pros/cons of developing in these containers? **
+**Any unanticipated pros/cons of developing in these containers?**
 
 No. I think that I will continue using the devel containers to develop
 and maintain packages.
 
-** Describe how was Docker useful for managing multiple `R` versions
-   on your computational server. Was this for multiple users or
-   just yourself? **
+**Describe how was Docker useful for managing multiple `R` versions
+  on your computational server. Was this for multiple users or
+  just yourself?**
 
 Right now I'm the only one that needs devel so the version management was for
 myself. Eventually I would like to set it up on our server and have it working
@@ -414,17 +416,15 @@ analyses.
 
 Nate recently completed work on the
 [Rhtslib](http://bioconductor.org/packages/3.1/bioc/html/Rhtslib.html)
-package which wraps the
-[HTSlib](http://www.htslib.org/) C library from Samtools. The plan is
-for `Rhtslib` to eventually replace the Samtools code inside `Rsamtools`.
-`Rhtslib` contains a clean branch of htslib directly from Samtools,
-including all unit tests. This approach simplifies the update process when
-new versions or bug fixes become available from Samtools. The clean API 
-also promises to make outsourcing to the package more straightforward
-for both `Rsamtools` and other packages wanting access to the native
-routines.
+package which wraps the [htslib](http://www.htslib.org/) C library from
+Samtools. The plan is for `Rhtslib` to replace the Samtools code inside
+`Rsamtools`.  `Rhtslib` contains a clean branch of htslib directly from
+Samtools, including all unit tests. This approach simplifies maintenance when
+new versions or bug fixes become available. The clean API also promises to make
+outsourcing to the package more straightforward for both `Rsamtools` and others
+wanting access to the native routines.
 
-The development approach to htslib was 'linux-centric' and getting the library
+htslib was developed with a 'linux-centric' approach and getting the library
 to build across platforms (specifically Windows) was challenge. To address this,
 Nate chose to use [Gnulib](https://www.gnu.org/software/gnulib/), the GNU
 portability library.  Briefly, Gnulib is a collection of modules that package
@@ -434,13 +434,14 @@ of operating systems.  Modules are incorporated into a project at the source
 level rather than as a library that is built, installed and linked against.
 
 Incorporating Gnulib involves (at minimum) the following steps:
+
 * adapt the project to use Autoconf and Automake
 * identify and import relevant Gnulib modules using gnulib-tool
 * add `#include "config.h"` to source files
 * remove (now uncessary!) preprocessor complier/platform tests from source
 
-To learn more about what functions are available in `Rhtslib` see the API-type
-headers in the package, faidx.h, hfile.h, hts.h, sam.h, tbx.h and vcf.h or the
+To learn more about functions available in `Rhtslib` see the API-type
+headers in the package, faidx.h, hfile.h, hts.h, sam.h, tbx.h and vcf.h and the
 [Samtools docs](http://www.htslib.org/doc/).
 
 
@@ -451,54 +452,60 @@ quarter have potential for wide-spread use. I thought they were worth a
 mention.
 
 *   *base::lengths()*
+
     Computes the element lengths of a `list` object. In `Bioconductor`,
     S4Vectors::elementLengths performs the same operation on `List` objects.
     (contributed by Michael Lawrence)
 
 *   *base::trimws()*
+
     Removes leading or trailing whitespace from character strings.
     (contributed by Kurt Hornik)
 
 *   *utils::methods()*
+
     This function previously worked on S3 generics only and has been enhanced 
     to also handle S4. 
     (enhanced by Martin Morgan)
 
     > library(Rsamtools)
     > methods("scanBam")
-    ## [1] scanBam,BamFile-method    scanBam,BamSampler-method
-    ## [3] scanBam,BamViews-method   scanBam,character-method 
-    ## see '?methods' for accessing help and source code
-    ## Warning message:
-    ## In findGeneric(generic.function, envir) :
-    ##   'scanBam' is a formal generic function; S3 methods will not 
-    ##    likely be found
+    [1] scanBam,BamFile-method    scanBam,BamSampler-method
+    [3] scanBam,BamViews-method   scanBam,character-method 
+    see '?methods' for accessing help and source code
+    Warning message:
+    In findGeneric(generic.function, envir) :
+      'scanBam' is a formal generic function; S3 methods will not 
+       likely be found
 
     > methods(class = "BamFile")
-    ##  [1] $                   $<-                 asMates            
-    ##  [4] asMates<-           close               coerce             
-    ##  [7] countBam            filterBam           indexBam           
-    ## [10] initialize          isIncomplete        isOpen             
-    ## [13] obeyQname           obeyQname<-         open               
-    ## [16] path                pileup              qnamePrefixEnd     
-    ## [19] qnamePrefixEnd<-    qnameSuffixStart    qnameSuffixStart<- 
-    ## [22] quickBamFlagSummary scanBam             scanBamHeader      
-    ## [25] seqinfo             show                sortBam            
-    ## [28] testPairedEndBam    updateObject        yieldSize          
-    ## [31] yieldSize<-        
-    ## see '?methods' for accessing help and source code
+     [1] $                   $<-                 asMates            
+     [4] asMates<-           close               coerce             
+     [7] countBam            filterBam           indexBam           
+    [10] initialize          isIncomplete        isOpen             
+    [13] obeyQname           obeyQname<-         open               
+    [16] path                pileup              qnamePrefixEnd     
+    [19] qnamePrefixEnd<-    qnameSuffixStart    qnameSuffixStart<- 
+    [22] quickBamFlagSummary scanBam             scanBamHeader      
+    [25] seqinfo             show                sortBam            
+    [28] testPairedEndBam    updateObject        yieldSize          
+    [31] yieldSize<-        
+    see '?methods' for accessing help and source code
 
 *   *GenomicFeatures::transcriptLengths()*
+
     Computes transcripts lengths in a TxDb object with the option to
     include / excluded coding and UTR regions.
     (contributed by Herv&eacute; Pag&egrave;s)
 
 *   *BiocParallel::bpvalidate()*
+
     Flags undefined symbols in functions intended for parallel,
     distributed memory computations.
     (contributed by Martin Morgan, Valerie Obenchain)
 
 *   *BiocInstaller::biocLite()*
+
     Now capable of installing git repositories. When the 'pkg' argument 
     contains a forward slash, e.g., "myRepo/myPkg", it is assumed to be a
     repository and is installed with devtools::install_github.
@@ -514,27 +521,34 @@ first quarter of 2014 with the first quarter of 2015 (January 1 - March 30).
 Sessions are broken down by new and returning visitors. New visitors
 correspond to the total new users.
 
-<table>
+<table border="0" cellpadding="5" cellspacing="0">
  <caption>Website traffic Quarter 1 2015 vs Quarter 1 2014</caption>
-  <tr>
-    <th></th><th></th>
-  </tr>
-  <tr>
-   <td width="55%">Sessions</td><td><b>24.03%</b> (339,283 vs 273,559)</td>
-   <td width="55%">Returning Visitor</td><td><b>21.42%</b> (213,848 vs 176,128)</td>
-   <td width="55%">New Visitor</td><td><b>28.74%</b>(125,435 vs 97,431)</td>
-  </tr>
-  <tr>
-    <th></th><th></th>
-  </tr>
-  <tr>
-   <td width="55%">New Users</td><td><b>28.74%</b> (125,435 vs 97,431)</td>
-  </tr>
+  <tbody valign="top">
+    <tr>
+        <td><b>Total Sessions</b></td>
+        <td>24.03%</td>
+        <td>(339,283 vs 273,559)</td>
+    </tr>
+    <tr>
+        <td><b>Sessions: Returning Visitor</b></td>
+        <td>21.42%</td>
+        <td>(213,848 vs 176,128)</td>
+    </tr>
+    <tr>
+        <td><b>Sessions: New Visitor</b></td>
+        <td>28.74%</td>
+        <td>(125,435 vs 97,431)</td>
+    </tr>
+    <tr>
+        <td><b>New Users</b></td>
+        <td>28.74%</td>
+        <td>(125,435 vs 97,431)</td>
+    </tr>
+  </tbody>
 </table>
-<p></p>
 
-
-Generated with [Google Analytics](http://www.google.com/analytics/).
+<br/>
+Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions 
 
