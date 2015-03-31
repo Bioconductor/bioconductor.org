@@ -222,7 +222,9 @@ More details on the `BrowserViz` class and applications can be found in the
 [package vignette](http://www.bioconductor.org/packages/3.1/bioc/vignettes/BrowserViz/inst/doc/BrowserViz.pdf).
 
 
-## AnnotationHub Update
+## Infrastructure
+
+### Changes in `AnnotationHub`
 
 This quarter Marc and Sonali continued their work on `AnnotationHub`. Several 
 new resources were added and the display method and search navigation were 
@@ -286,56 +288,105 @@ Tab completion on a hub object lists all fields available for subsetting:
 
 Quick discovery of file type and provider:
 
-    > unique(hub$sourcetype)
-     [1] "FASTA"         "BED"           "UCSC track"    "VCF"          
-     [5] "GTF"           "Inparanoid"    "NCBI/blast2GO" "TwoBit"       
-     [9] "Chain"         "GRASP"         "Zip"           "CSV"          
-    [13] "BioPax"        "BioPaxLevel2"  "RData"         "BigWig"       
+    > sort(table(hub$sourcetype), decreasing=TRUE)
+    
+              BED         FASTA    UCSC track           GTF NCBI/blast2GO 
+             7855          3876          2208          1606          1145 
+            Chain           CSV           VCF        BigWig    Inparanoid 
+             1113           406           316           315           268 
+           TwoBit  BioPaxLevel2         RData        BioPax         GRASP 
+              144             6             4             3             1 
+           tar.gz           Zip 
+                1             1 
 
-
-    > unique(hub$dataprovider)
-     [1] "Ensembl"                          "EncodeDCC"                       
-     [3] "UCSC"                             "dbSNP"                           
-     [5] "Inparanoid8"                      "NCBI"                            
-     [7] "BroadInstitute"                   "NHLBI"                           
-     [9] "ChEA"                             "Pazar"                           
-    [11] "NIH Pathway Interaction Database" "RefNet"                          
-    [13] "Haemcode"   
+    > sort(table(hub$dataprovider), decreasing=TRUE)
+    
+                                UCSC                          Ensembl 
+                                8746                             4590 
+                      BroadInstitute                             NCBI 
+                                3146                             1145 
+                            Haemcode                            dbSNP 
+                                 945                              316 
+                         Inparanoid8                            Pazar 
+                                 268                               91 
+    NIH Pathway Interaction Database                        EncodeDCC 
+                                   9                                5 
+                              RefNet                             ChEA 
+                                   4                                1 
+                                 GEO                            NHLBI 
+                                   1                                1 
 
 Given the volume and diversity of data available in the hub we encourage
 using these files as sample data before creating your own experimental data 
 package.
 
-For example, see all available hg19 FASTA from Ensembl:
+For example, to get an idea of available GRCh37 FASTA from Ensembl:
 
-    > subset(hub, hub$sourcetype=="FASTA", hub$dataprovider=="Ensembl", hub$genome=="hg19")
-    AnnotationHub with 1292 records
-    # snapshotDate(): 2015-03-12 
+    >  hub[hub$sourcetype=="FASTA" & hub$dataprovider=="Ensembl" & hub$genome=="GRCh37"] 
+    AnnotationHub with 42 records
+    # snapshotDate(): 2015-03-26 
     # $dataprovider: Ensembl
-    # $species: Ailuropoda melanoleuca, Anolis carolinensis, Bos taurus, Caenorh...
+    # $species: Homo sapiens
     # $rdataclass: FaFile
     # additional mcols(): taxonomyid, genome, description, tags, sourceurl,
     #   sourcetype 
-    # retrieve records with, e.g., 'object[["AH169"]]' 
+    # retrieve records with, e.g., 'object[["AH18924"]]' 
     
-                title                                               
-      AH169   | Meleagris_gallopavo.UMD2.69.cdna.all.fa             
-      AH170   | Meleagris_gallopavo.UMD2.69.dna.toplevel.fa         
-      AH19514 | Tarsius_syrichta.tarSyr1.74.dna_sm.toplevel.fa      
-      AH19515 | Tarsius_syrichta.tarSyr1.74.dna.toplevel.fa         
-      AH19516 | Tarsius_syrichta.tarSyr1.74.ncrna.fa                
-      ...       ...                                                 
-      AH20800 | Gallus_gallus.Galgal4.71.ncrna.fa                   
-      AH20801 | Gallus_gallus.Galgal4.71.pep.all.fa                 
-      AH20802 | Gasterosteus_aculeatus.BROADS1.71.cdna.all.fa       
-      AH20803 | Gasterosteus_aculeatus.BROADS1.71.dna_rm.toplevel.fa
-      AH20804 | Gasterosteus_aculeatus.BROADS1.71.dna_sm.toplevel.fa
+                title                                    
+      AH18924 | Homo_sapiens.GRCh37.73.cdna.all.fa       
+      AH18925 | Homo_sapiens.GRCh37.73.dna_rm.toplevel.fa
+      AH18926 | Homo_sapiens.GRCh37.73.dna_sm.toplevel.fa
+      AH18927 | Homo_sapiens.GRCh37.73.dna.toplevel.fa   
+      AH18928 | Homo_sapiens.GRCh37.73.ncrna.fa          
+      ...       ...                                      
+      AH21181 | Homo_sapiens.GRCh37.72.dna_rm.toplevel.fa
+      AH21182 | Homo_sapiens.GRCh37.72.dna_sm.toplevel.fa
+      AH21183 | Homo_sapiens.GRCh37.72.dna.toplevel.fa   
+      AH21184 | Homo_sapiens.GRCh37.72.ncrna.fa          
+      AH21185 | Homo_sapiens.GRCh37.72.pep.all.fa        
 
 Advanced developers may be interested in writing a 'recipe' to add 
 additional online resources to `AnnotationHub`. The process involves
 writing functions to first parse file metadata and then create `R` objects or 
 files from these metadata. Detailed HOWTO steps are in the 
 [AnnotationHubRecipes vignette](http://bioconductor.org/packages/3.1/bioc/vignettes/AnnotationHub/inst/doc/AnnotationHubRecipes.html)
+
+### `Rhtslib` package
+
+Nate recently completed work on the
+[Rhtslib](http://bioconductor.org/packages/3.1/bioc/html/Rhtslib.html)
+package which wraps the [htslib](http://www.htslib.org/) C library from
+Samtools. The plan is for `Rhtslib` to replace the Samtools code inside
+`Rsamtools`.  `Rhtslib` contains a clean branch of htslib directly from
+Samtools, including all unit tests. This approach simplifies maintenance when
+new versions or bug fixes become available. The clean API also promises to make
+outsourcing to the package more straightforward for both `Rsamtools` and others
+wanting access to the native routines.
+
+htslib was developed with a 'linux-centric' approach and getting the library
+to build across platforms (specifically Windows) was a challenge. To address this,
+Nate chose to use [Gnulib](https://www.gnu.org/software/gnulib/), the GNU
+portability library.  Briefly, Gnulib is a collection of modules that package
+portability code to enable POSIX-compliance in a transparent manner; the goal
+being to supply common infrastructure to enable GNU software to run on a variety
+of operating systems.  Modules are incorporated into a project at the source
+level rather than as a library that is built, installed and linked against.
+
+Incorporating Gnulib involves (at minimum) the following steps:
+
+* adapt the project to use Autoconf and Automake
+* identify and import relevant Gnulib modules using gnulib-tool
+* add `#include "config.h"` to source files
+* remove (now unnecessary!) preprocessor complier/platform tests from source
+
+For more on specific functions available in `Rhtslib` see the 
+[Samtools docs](http://www.htslib.org/doc/) or the API-type headers in the
+package, faidx.h, hfile.h, hts.h, sam.h, tbx.h and vcf.h. Headers are located
+in Rhtslib/src/htslib/htslib or if the package is installed,
+
+    library(Rhtslib)
+    system.file(pacakge="Rhtslib", "include")
+
 
 ## Reproducible Research
 
@@ -360,11 +411,13 @@ polyadenylation phenomenon.
 
 With a background in computer science she is involved in developing
 computational pipelines and tools and is the author of `Bioconductor` packages
-`roar` (preferential usage of APA sites) and `MatrixRider` (propensity of
-binding protein to interact with a sequence). Elena was one of the first to try
-out the Docker containers and found them useful for both package development and
-system administration tasks. I asked a few questions about her experience and
-got some interesting answers.
+[roar](http://bioconductor.org/packages/3.1/bioc/html/roar.html) 
+(preferential usage of APA sites) and 
+[MatrixRider](http://bioconductor.org/packages/3.1/bioc/html/MatrixRider.html)
+(propensity of binding protein to interact with a sequence). Elena was one of 
+the first to try out the Docker containers and found them useful for both
+package development and system administration tasks. I asked a few questions
+about her experience and got some interesting answers.
 
 **What motivated you to try Docker when developing `MatrixRider`?**
 
@@ -411,40 +464,6 @@ new students how to reach them and the related library paths has been hard - I
 am pretty sure docker will give a huge hand in these situations, helping
 also in tracking which versions of packages were used to perform certain
 analyses.
-
-
-### `Rhtslib`
-
-Nate recently completed work on the
-[Rhtslib](http://bioconductor.org/packages/3.1/bioc/html/Rhtslib.html)
-package which wraps the [htslib](http://www.htslib.org/) C library from
-Samtools. The plan is for `Rhtslib` to replace the Samtools code inside
-`Rsamtools`.  `Rhtslib` contains a clean branch of htslib directly from
-Samtools, including all unit tests. This approach simplifies maintenance when
-new versions or bug fixes become available. The clean API also promises to make
-outsourcing to the package more straightforward for both `Rsamtools` and others
-wanting access to the native routines.
-
-htslib was developed with a 'linux-centric' approach and getting the library
-to build across platforms (specifically Windows) was a challenge. To address this,
-Nate chose to use [Gnulib](https://www.gnu.org/software/gnulib/), the GNU
-portability library.  Briefly, Gnulib is a collection of modules that package
-portability code to enable POSIX-compliance in a transparent manner; the goal
-being to supply common infrastructure to enable GNU software to run on a variety
-of operating systems.  Modules are incorporated into a project at the source
-level rather than as a library that is built, installed and linked against.
-
-Incorporating Gnulib involves (at minimum) the following steps:
-
-* adapt the project to use Autoconf and Automake
-* identify and import relevant Gnulib modules using gnulib-tool
-* add `#include "config.h"` to source files
-* remove (now uncessary!) preprocessor complier/platform tests from source
-
-To learn more about functions available in `Rhtslib` see the API-type
-headers in the package, faidx.h, hfile.h, hts.h, sam.h, tbx.h and vcf.h and the
-[Samtools docs](http://www.htslib.org/doc/).
-
 
 ## New and Noteworthy
 
@@ -553,15 +572,10 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions 
 
-There was a 2% increase in the number of (distinct IP) downloads of software 
-packages in the first quarter of 2015 (105552 total) as compared to the first 
-quarter of 2014 (103401 total). See the website for a full summary of package
+There were 105552 distinct IP downloads of software in the first quarter
+of 2015 as compared to 103401 for the first quarter of 2014. See the website
+for a full summary of package
 [download stats](http://bioconductor.org/packages/stats/).
-
-The top 20 downloads of non-infrastructure packages include `limma`, `annotate`,
-`genefilter`, `biomaRt`, `graph`, `preprocessCore`, `affy`, `affyio`,
-`geneplotter`, `edgeR`, `multitest`, `RBGL`, `DESeq2`, `Rgraphviz`,
-`GEOquery`, `DESeq`, `impute`, `VariantAnnotation`, `BiovizBase` and `rhdf5`.
 
 A total of 53 software packages were added in the first quarter of 2015
 bringing counts to 989 in devel (`Bioconductor` 3.2) and 936 in release
