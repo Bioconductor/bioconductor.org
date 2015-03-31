@@ -545,7 +545,7 @@ total new users.
  <caption><b>Website traffic Quarter 1 2015 vs Quarter 1 2014</b></caption>
   <tbody valign="top">
     <tr>
-        <td><b>Total Sessions</b></td>
+        <td><b>Sessions: Total</b></td>
         <td>24.03%</td>
         <td>(339,283 vs 273,559)</td>
     </tr>
