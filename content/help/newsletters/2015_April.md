@@ -14,9 +14,9 @@ This will produce an .md file that can be used  on the website. The {:toc} and
 
 posted by [Valerie Obenchain](mailto:vobencha@fhcrc.org), April 2015
 
-Welcome to the Spring 2015 newsletter. In a few weeks `Bioconductor` 3.1 
-will mark the 24th release of the software. The project started in 2001 with 
-the first svn commits made in May of that year:
+On April 17, the release of `Bioconductor` 3.1 will mark the 24th release of the
+software. The project started in 2001 with the first svn commits made in May of
+that year:
 
     r3      rgentlem      2001-05-25 14:08:57 -0700 (Fri, 25 May 2001)
     r2      rgentlem      2001-05-25 08:28:31 -0700 (Fri, 25 May 2001)
@@ -29,7 +29,7 @@ in 2004 the project consisted of
     "... more than 80 software packages, hundreds of metadata
     packages and a number of experimental data packages ..."
 
-Eleven years later the project hosts over 990 software, 900 annotation and
+Eleven years later `Bioconductor` hosts over 990 software, 900 annotation and
 230 experimental data packages.
 
 Another quote from the 2004 paper shows that, fortunately, not everything has 
