@@ -24,13 +24,13 @@ the first svn commits made in May of that year:
 
 At the time of the first official
 [Bioconductor manuscript](http://genomebiology.com/2004/5/10/r80)
-in 2004 the project hosted 
+in 2004 the project consisted of 
 
     "... more than 80 software packages, hundreds of metadata
     packages and a number of experimental data packages ..."
 
-Eleven years later the number of software packages alone have grown more
-than an order of magnitude with a current count of 936 in the devel branch.
+Eleven years later the project hosts over 990 software, 900 annotation and
+230 experimental data packages.
 
 Another quote from the 2004 paper shows that, fortunately, not everything has 
 changed,
@@ -385,7 +385,7 @@ package, faidx.h, hfile.h, hts.h, sam.h, tbx.h and vcf.h. Headers are located
 in Rhtslib/src/htslib/htslib or if the package is installed,
 
     library(Rhtslib)
-    system.file(pacakge="Rhtslib", "include")
+    system.file(package="Rhtslib", "include")
 
 
 ## Reproducible Research
@@ -577,8 +577,7 @@ of 2015 as compared to 103401 for the first quarter of 2014. See the website
 for a full summary of package
 [download stats](http://bioconductor.org/packages/stats/).
 
-A total of 53 software packages were added in the first quarter of 2015
-bringing counts to 989 in devel (`Bioconductor` 3.2) and 936 in release
+A total of 55 software packages were added in the first quarter of 2015 bringing counts to 991 in devel (`Bioconductor` 3.2) and 936 in release 
 (`Bioconductor` 3.1).
 
 ## Upcoming Events
