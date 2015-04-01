@@ -245,8 +245,8 @@ New resources:
 
 An improved show method and more flexible data retrieval make interacting with
 the 18900+ files straightforward. Sonali has a new [AnnotationHub
-video](**TODO**) where she gives a detailed tour of the resource with tips and
-tricks for data access.
+video](https://www.youtube.com/watch?v=pFvUOPfR8eA&feature=youtu.be) where she 
+gives a tour of the resource with tips and tricks for data access.
 
 Code below was generated with `AnnotationHub` version 1.99.75. The show
 method now list fields common for subsetting up front, e.g., providers, 
@@ -349,7 +349,7 @@ Advanced developers may be interested in writing a 'recipe' to add
 additional online resources to `AnnotationHub`. The process involves
 writing functions to first parse file metadata and then create `R` objects or 
 files from these metadata. Detailed HOWTO steps are in the 
-[AnnotationHubRecipes vignette](http://bioconductor.org/packages/3.1/bioc/vignettes/AnnotationHub/inst/doc/AnnotationHubRecipes.html)
+[AnnotationHubRecipes vignette](http://bioconductor.org/packages/3.1/bioc/vignettes/AnnotationHub/inst/doc/AnnotationHubRecipes.html).
 
 ### `Rhtslib` package
 
@@ -572,9 +572,9 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions 
 
-There were 105552 distinct IP downloads of software in the first quarter
-of 2015 as compared to 103401 for the first quarter of 2014. See the website
-for a full summary of package
+In the first quarter of 2015 there were 101123 distinct IP downloads of software
+packages as compared to 93317 for the same time period in 2014. See the web site
+for a full summary of 
 [download stats](http://bioconductor.org/packages/stats/).
 
 A total of 55 software packages were added in the first quarter of 2015 bringing counts to 991 in devel (`Bioconductor` 3.2) and 936 in release 
