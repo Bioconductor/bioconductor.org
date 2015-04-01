@@ -148,13 +148,6 @@ def win_format(package)
   _64only = "(64-bit only)"
   ret = ""
   
-  #if windows_binary(package) =~ /64/
-  #  ret = both
-  #else
-  #  ret = _32only
-  #end
-  
-  ret = both
   
   if (package.has_key?(:Archs) && !package[:Archs].empty?)
     archs = package[:Archs]
