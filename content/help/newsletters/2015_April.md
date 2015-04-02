@@ -44,7 +44,7 @@ changed,
 This issue looks at the growing role of proteomics in `Bioconductor` and the use
 of web sockets to bridge the gap between workspace data and interactive
 visualization. We re-visit Docker with use cases in package development and
-managing system administration tasks. Also a section on new and notable 
+managing system administration tasks. We also have a section on new and notable 
 functions recently added to base `R` and `Bioconductor`.
 
 
@@ -131,11 +131,11 @@ The `pRoloc` package contains methods for spatial proteomics analysis,
 e.g., machine learning and classification methods for assigning a
 protein to an organelle.
 
-The relatively new `Pbase` package contains a `Proteins` class for
-storing and manipulating protein sequences and ranges of interest. The
-package has multiple vignettes on mapping coordinates, one addressing
-mapping proteins between different genome builds and the other maps
-from protein to genomic coordinates.
+The relatively new `Pbase` package contains a `Proteins` class for storing and
+manipulating protein sequences and ranges of interest. The package has multiple
+vignettes on coordinate mapping. One addresses mapping proteins between
+different genome builds and the other mapping from protein to genomic 
+coordinates.
 
 
 ## Web Sockets
@@ -178,7 +178,7 @@ For those interested, this
 [blog post](http://blog.arungupta.me/rest-vs-websocket-comparison-benchmarks/)
 provides more in-depth details and benchmarking against REST.
 
-### Applications in Shiny and epivizr
+### Applications in `Shiny` and `epivizr`
 
 The [Shiny package](http://shiny.rstudio.com/) created by the RStudio team
 pioneered the use of web sockets in `R`. Shiny enables the building of
@@ -189,13 +189,15 @@ widgets. The workhorse behind Shiny is the
 RStudio.  httpuv provides low-level socket and protocol support for handling 
 HTTP and WebSocket requests within `R`.
 
-The httpuv infrastructure is also used by the epivizr package. In this
-application, web sockets create a two-way communication between the `R`
-environment and the [Epiviz visualization tool](http://epiviz.github.io/).
+The httpuv infrastructure is also used by the 
+[epivizr](http://www.bioconductor.org/packages/3.1/bioc/html/epivizr.html) 
+package. In this application, web sockets create a two-way communication 
+between the `R` environment and the 
+[Epiviz visualization tool](http://epiviz.github.io/).
 Objects available in an `R` session can be displayed as tracks or plots on
 Epiviz. 
 
-### BrowserViz
+### `BrowserViz`
 
 A slightly different approach is taken in the new 
 [BrowserViz](http://bioconductor.org/packages/3.1/bioc/html/BrowserViz.html)
@@ -236,7 +238,7 @@ New resources:
   (available as `GRanges` objects)
 * BioPAX files (Level1 and Level2) from the NCI Pathway Interaction Database
   (available as `biopax` objects)
-* background file for ChEA required for the command line version of ChEA
+* Background file for ChEA required for the command line version of ChEA
   (available as `data.frame` object)
 * GTF files from Ensembl release 76 to 79
   (available as `GRanges` object)
@@ -542,7 +544,7 @@ are broken down by new and returning visitors. New visitors correspond to the
 total new users.
 
 <table border="0" cellpadding="5" cellspacing="0">
- <caption><b>Website traffic Quarter 1 2015 vs Quarter 1 2014</b></caption>
+ <caption><b>First Quarter Website Traffic 2015 vs 2014</b></caption>
   <tbody valign="top">
     <tr>
         <td><b>Sessions: Total</b></td>
@@ -580,6 +582,7 @@ for a full summary of
 A total of 55 software packages were added in the first quarter of 2015 bringing counts to 991 in devel (`Bioconductor` 3.2) and 936 in release 
 (`Bioconductor` 3.1).
 
+
 ## Upcoming Events
 
 See the [events page](http://www.bioconductor.org/help/events/) for a listing
@@ -598,5 +601,13 @@ Held the 14 - 19 of June in Bressanone-Brixen, Italy.
 * [BioC2015](http://www.bioconductor.org/help/course-materials/2015/BioC2015/):
 This year the 20 - 22 of July in Seattle, WA, USA.
 
+
+## Acknowledgements 
+
+Thanks to Laurent Gatto, Elena Grassi and Paul Shannon for their contributions.
+Also thanks to the `Bioconductor` team in Seattle for the project updates and 
+review.
+
+
 Send comments or questions to Valerie at 
-[vobencha@fhcrc.org](vobencha@fhcrc.org).
+[vobencha@fredhutch.org](vobencha@fredhutch.org).
