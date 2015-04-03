@@ -531,7 +531,7 @@ mention.
     Now capable of installing git repositories. When the 'pkg' argument 
     contains a forward slash, e.g., "myRepo/myPkg", it is assumed to be a
     repository and is installed with devtools::install_github.
-    (contributed and enhanced by Dan Tenenbaum)
+    (contributed and enhanced by Martin Morgan)
 
 
 ## Project Statistics 
