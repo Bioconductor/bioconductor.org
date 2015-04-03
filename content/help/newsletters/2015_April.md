@@ -213,12 +213,12 @@ interactive graphics of a web browser in conjunction with an active `R` session.
 
 The companion Javascript library, BrowserViz.js, is also included in the
 package. The combination of library and base class provides the infrastructure
-necessary for any BrowserViz-style application.  Tools derived from the
-`BrowserViz` class include [BrowserVizDemo](**TODO**) and [RCyjs](**TODO**).
-BrowserVizDemo is a minimal example of interactive plotting and selection of xy
-points using the popular d3.js library. The more full featured RCyjs provides
-interactive access to the full power of Cytoscape.js, a richly featured
-browser-based network visualization library.
+necessary for any BrowserViz-style application. The `BrowserVizDemo` and `RCyjs`
+packages build on the `BrowserViz` class and will be available in the
+`Bioconductor` 3.2 release. `BrowserVizDemo` is a minimal example of interactive
+plotting and selection of xy points using the popular d3.js library. The more
+full featured RCyjs provides interactive access to the full power of
+Cytoscape.js, a richly featured browser-based network visualization library.
 
 More details on the `BrowserViz` class and applications can be found in the 
 [package vignette](http://www.bioconductor.org/packages/3.1/bioc/vignettes/BrowserViz/inst/doc/BrowserViz.pdf).
@@ -604,9 +604,9 @@ This year the 20 - 22 of July in Seattle, WA, USA.
 
 ## Acknowledgements 
 
-Thanks to Laurent Gatto, Elena Grassi and Paul Shannon for their contributions.
-Also thanks to the `Bioconductor` team in Seattle for the project updates and 
-review.
+Thanks to Laurent Gatto, Elena Grassi and Paul Shannon for contributing to
+the Proteomics, Docker and Web Sockets sections. Also thanks to the 
+`Bioconductor` team in Seattle for project updates and editorial review.
 
 
 Send comments or questions to Valerie at 
