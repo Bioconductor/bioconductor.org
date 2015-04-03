@@ -29,8 +29,8 @@ in 2004 the project consisted of
     "... more than 80 software packages, hundreds of metadata
     packages and a number of experimental data packages ..."
 
-Eleven years later `Bioconductor` hosts over 990 software, 900 annotation and
-230 experimental data packages.
+Eleven years later (and after more than 100000 svn commits) `Bioconductor` 
+hosts over 990 software, 900 annotation and 230 experimental data packages.
 
 Another quote from the 2004 paper shows that, fortunately, not everything has 
 changed,
@@ -574,10 +574,12 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions 
 
-In the first quarter of 2015 there were 101123 distinct IP downloads of software
-packages as compared to 93317 for the same time period in 2014. See the web site
-for a full summary of 
-[download stats](http://bioconductor.org/packages/stats/).
+The number of unique IP downloads of software packages for January, February and
+March of 2015 were 31720, 31956, and 38379, respectively.  For the same time
+period in 2014, numbers were 29690, 28993 and 34634. Numbers must be
+compared by month (vs sum) because some IPs are the same between months.
+See the web site for a full summary of [download
+stats](http://bioconductor.org/packages/stats/).
 
 A total of 55 software packages were added in the first quarter of 2015 bringing counts to 991 in devel (`Bioconductor` 3.2) and 936 in release 
 (`Bioconductor` 3.1).
