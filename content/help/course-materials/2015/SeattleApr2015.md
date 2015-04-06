@@ -26,29 +26,29 @@ Schedule (tentative)
 
 Day 1 (9:00 - 12:30; 1:30 - 5:00)
 
-- [A. Introduction](vignettes/A_Introduction.Rmd). _Bioconductor_ and
+- [A. Introduction]A_Introduction.Rmd). _Bioconductor_ and
   sequencing work flows
-- [B. Genomic Ranges](vignettes/B_GenomicRanges.Rmd). Working with Genomic
+- [B. Genomic Ranges]B_GenomicRanges.Rmd). Working with Genomic
   Ranges and other _Bioconductor_ data structures (e.g., in the
   [GenomicRanges](http://bioconductor.org/packages/devel/bioc/html/GenomicRanges.html).
   package).  
-- [C. Differential Gene Expression](vignettes/C_DifferentialExpression.Rmd). RNA-Seq
+- [C. Differential Gene Expression]C_DifferentialExpression.Rmd). RNA-Seq
   known gene differential expression with
   [DESeq2](http://bioconductor.org/packages/devel/bioc/html/DESeq2.html)
   and
   [edgeR](http://bioconductor.org/packages/devel/bioc/html/edgeR.html).
-- [D. Machine Learning](vignettes/D_MachineLearning.Rmd).
-- [E. Gene Set Enrichment](vignettes/E_GeneSetEnrichment.Rmd).
+- [D. Machine Learning]D_MachineLearning.Rmd).
+- [E. Gene Set Enrichment]E_GeneSetEnrichment.Rmd).
 
 Day 2 (9:00 - 12:30; 1:30 - 5:00)
 
-- [F. ChIP-seq](vignettes/F_ChIPSeq.Rmd) ChIP-seq with
+- [F. ChIP-seq]F_ChIPSeq.Rmd) ChIP-seq with
   [csaw](http://bioconductor.org/packages/devel/bioc/html/csaw.html)
-- [G. Methylation](vignettes/G_Methylation.Rmd) and regulatory work flows with
+- [G. Methylation]G_Methylation.Rmd) and regulatory work flows with
   [minfi](http://bioconductor.org/packages/devel/bioc/html/minfi.html).
-- [H. Integrative Data Analysis](vignettes/H_IntegrativeAnalysis.Rmd) -- emerging
+- [H. Integrative Data Analysis]H_IntegrativeAnalysis.Rmd) -- emerging
   approaches
-- [I. Large Data](vignettes/I_LargeData.Rmd) -- efficient, parallel, and cloud
+- [I. Large Data]I_LargeData.Rmd) -- efficient, parallel, and cloud
   programming with
   [BiocParallel](http://bioconductor.org/packages/devel/bioc/html/BiocParallel.html),
   [GenomicFiles](http://bioconductor.org/packages/devel/bioc/html/GenomicFiles.html),
