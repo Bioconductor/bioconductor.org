@@ -634,6 +634,7 @@ and that you are connected to the master node.
 
 
 <a name="BiocParallel"></a>
+
 ### Using BiocParallel with Sun Grid Engine
 
 When you start a cluster with StarCluster, it's automatically
@@ -677,6 +678,7 @@ using the kind
 of cluster we've just created.
 
 <a name="ssh_backend"></a>
+
 ### Using SSH as the back end
 
 Here is the same example as above, except using 

@@ -33,6 +33,7 @@ That's the URL for the devel version of the package. You can also create a bridg
 [FAQ](#bridge-to-release-version)).
 
 <a name="step1"></a>
+
 ## Step 1: Configure your Github Repository
 
 ### Step 1a: Create Github Repository
@@ -63,6 +64,7 @@ Then in the "Add a Friend" box, type
 Then click the **Add** button. This allows the Git-SVN bridge to make changes to your github repository in response to Subversion commits.
 
 <a name="step-1c"></a>
+
 ### Step 1c: Add Push Hook
 
 Again in the nav bar at left, click on "Webhooks & Services".
@@ -118,6 +120,7 @@ in [step 1](#step1), e.g.
     https://github.com/username/MyPackage
 
 <a name="who-wins"></a>
+
 ### Deciding which repository takes precedence
 
 <h1 style="color: red;">DANGER ZONE: READ CAREFULLY</h1>
@@ -189,6 +192,7 @@ as long as you don't do it in the *master* branch.
 ## FAQ
 
 <a name="history"></a>
+
 ##### Can I see old commit history?
 
 After creating a bridge, you can't see old svn commit information
@@ -206,6 +210,7 @@ This may change in the future.
 [[Back To Top]](#top)
 
 <a name="commit-messages"></a>
+
 ##### How do I know whether a commit came from Git or SVN?
 
 If a commit was made in svn, it will show up in the output
@@ -255,6 +260,7 @@ your repository, or if you accept a pull request.
 
 
 <a name="other-users-push"></a>
+
 ##### Other users have push access to my repository. Will it work for them?
 
 Yes. Be sure this is what you want. If you grant another user push access to your repository, they can push to any branch, including `master`, which will then propagate to the Bioconductor build system. If you don't want the user to have that level of access, then don't grant them push access. You can accept pull requests from them instead.
@@ -267,6 +273,7 @@ who made the commits (see above [FAQ](#commit-messages)).
 
 
 <a name="howto-list-bridges"></a>
+
 ##### How do I know what Git-SVN bridges exist?
 
 Look at the 
@@ -276,6 +283,7 @@ maintained by the web app.
 [[Back To Top]](#top)
 
 <a name="advertise"></a>
+
 ##### How do I advertise my bridge?
 
 Add the Github URL of your repository to the URL: field 
@@ -294,6 +302,7 @@ filed via Github, then it is pointless to file them.
 
 
 <a name="responsibilities"></a>
+
 ##### What are my responsibilities when I create a bridge?
 
 As implied by the previous question, package maintainers must
@@ -304,6 +313,7 @@ respond to pull requests and issues filed in their Github repositories.
 
 
 <a name="svn-password"></a>
+
 ##### I don't know my Subversion username and/or password. What do I do?
 
 One of the following steps should work:
@@ -342,6 +352,7 @@ One of the following steps should work:
 [[Back To Top]](#top)
 
 <a name="create-github"></a>
+
 ##### How do I create a Github repository?
 
 * Go to [https://github.com/](https://github.com/).
@@ -363,6 +374,7 @@ One of the following steps should work:
 [[Back To Top]](#top)
 
 <a name="bridge-to-release-version"></a>
+
 ##### How do I create a bridge to the release version of my package?
 
 Follow the same instructions as given in [Step 1](#step1), but
@@ -390,6 +402,7 @@ release bridge pointing to it.
 [[Back To Top]](#top)
 
 <a name="org-repos"></a>
+
 ##### Working with a Github Organization repository
 
 If you're working with a Github Organization repository, the steps
@@ -434,6 +447,7 @@ which are also the inspiration for the Git-SVN bridge.
 [[Back To Top]](#top)
 
 <a name="experiment-pkgs"></a>
+
 ##### Can I create a bridge to an experiment data package?
 
 No.

@@ -102,6 +102,7 @@ You can also view a (b)ack(t)race of the call stack, navigate (u)p and
 and our mutual friend Google for additional information.
 
 <a name="diagnose-a-crash"></a>
+
 ### Finding clues for causes of a program crash
 
 Perhaps the most useful function of debuggers is to provide a
@@ -262,6 +263,7 @@ the extra help afforded by the insight about relevant program state is
 invaluable.
 
 <a name="case-study"></a>
+
 # Case study
 
 As a case study, a colleague reported that their complicated program

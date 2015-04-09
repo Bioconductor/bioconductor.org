@@ -139,6 +139,7 @@ The second way is the recommended way. Both ways are
 [documented here](https://docs.docker.com/userguide/dockerimages/#creating-our-own-images).
 
 <a name="the-full-list"></a>
+
 ## List of packages installed on the *core* container
 
 These packages, plus their dependencies, are installed:
