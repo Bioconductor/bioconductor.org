@@ -21,4 +21,4 @@ tags:
 - intro
 - seattle
 - package
-description: TBA
+description: This INTERMEDIATE course is designed for individuals comfortable using R, and with some familiarity with Bioconductor. It consists of approximately equal parts lecture and practical sessions addressing use of Bioconductor software for analysis and comprehension of high-throughput sequence and related data. Specific topics include use of central Bioconductor classes (e.g., GRanges, SummarizedExperiment), RNASeq gene differential expression, ChIP-seq and methylation work flows, approaches to management and integrative analysis of diverse high-throughput data types, and strategies for working with large data. Participants are required to bring a laptop with wireless internet access and a modern version of the Chrome or Safari web browser.
