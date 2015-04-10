@@ -1,3 +1,18 @@
+[Course Package](UseBioconductor_0.1.0.tar.gz)
+
+
+<h4 id="ami">To launch an Amazon Machine Image (AMI) for this course:</h4>
+
+* [Create an Amazon Web Services (AWS) Account](https://aws.amazon.com/) if you
+  don't already have one.
+* Start the instance <%= ami_url("ami-705b6718") %>; See the [documentation for this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html). Make sure your [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) has
+port 80 accessible.
+* Paste the Public DNS name of your instance into a web browser.
+* Log in to RStudio with username *ubuntu* and password *bioc* .
+* Be sure and [terminate your instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html) when you are done using it, in order to avoid excessive charges.
+
+
+
 ## Use R / Bioconductor for Sequence Analysis
 
 Fred Hutchinson Cancer Research Center, Seattle, WA<br />
