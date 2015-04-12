@@ -1,5 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
-2015-04-27 - 2015-04-27		MOOC	[Statistics and R for the Life Sciences](https://www.edx.org/course/statistics-r-life-sciences-harvardx-ph525-1x)	Rafael Irizarry, Michael Love, Vincent Carey	[html](http://genomicsclass.github.io/book/)	3.1	3.2
+2015-01-19 - 2015-04-27	[EdX-PH525.1x](https://www.edx.org/course/statistics-r-life-sciences-harvardx-ph525-1x)	MOOC	Statistics and R for the Life Sciences	Rafael Irizarry, Michael Love, Vincent Carey	[html](http://genomicsclass.github.io/book/)	3.1	3.2
 2015-04-06 - 2015-04-07	SeattleApr2015	Intermediate	Use R / Bioconductor for Sequence Analysis	Martin Morgan, Sonali Arora	[package](2015/SeattleApr2015/UseBioconductor_0.1.0.tar.gz), [AMI](2015/SeattleApr2015/#ami)	3.1	3.2
 2015-04-06 - 2015-04-07	SeattleApr2015	Genomic Ranges	Genomic Ranges	Martin Morgan	[html](SeattleApr2015/B_GenomicRanges.html), [R](2015/SeattleApr2015/B_GenomicRanges.R), [Rmd](2015/SeattleApr2015/B_GenomicRanges.Rmd)	3.1	3.2
 2015-04-06 - 2015-04-07	SeattleApr2015	RNASeq	Differential Gene Expression	Martin Morgan	[html](2015/SeattleApr2015/C_DifferentialExpression.html), [R](2015/SeattleApr2015/C_DifferentialExpression.R), [Rmd](2015/SeattleApr2015/C_DifferentialExpression.Rmd)	3.1	3.2

@@ -1019,13 +1019,16 @@ end
 def render_courses()
     lines = File.readlines("etc/course_descriptions.tsv")
 
-    lines = lines.sort do |a,b|
-        d1 = a.split("\t").first
-        d2 = a.split("\t").first
-        b <=> a
-    end
 
     headers = lines.shift.strip.split("\t")
+
+    lines = lines.sort do |a,b|
+        d1 = a.split("\t").first.split(" ").last.strip
+        d2 = b.split("\t").first.split(" ").last.strip
+        d2 <=> d1
+    end
+
+
     out=<<-"EOT" # what class?
 <table id="course_descriptions">
     <thead>
@@ -1051,7 +1054,11 @@ def render_courses()
         out += "        <tr>\n"
         out += "<td>" + lh["Keyword"] + "</td>\n"
         out += "<td>" + Kramdown::Document.new(lh["Title"].strip + ", "  + lh["Instructor"].strip).to_html.gsub(/<\/*p>/, "") +  "</td>\n"
-        out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
+        if lh["Course"].start_with? "["
+         out += "<td>" + Kramdown::Document.new(lh["Course"]).to_html.gsub(/<\/*p>/, "") + "</td>\n"
+        else
+          out += "<td><a href='#{course_url}'>" + lh["Course"] + "</a></td>\n"
+        end
         out += "<td>" + Kramdown::Document.new(lh["Material"]).to_html.gsub(/<\/*p>/, "") + "</td>\n"
         out += "<td>" + lh["Date"].split(" ")[0].gsub("-", "&#8209;") + "</td>\n"
         biocver = lh['Bioc version']
