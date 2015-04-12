@@ -4,6 +4,12 @@
 
 <div>
 
+<div class="white_box">
+Irizarry R, et al. (2015) <a
+href="http://genomicsclass.github.io/book/">Biomedical Data
+Science</a>. Course Notes, EdX PH525.1x.
+</div>
+
 <div class="grey_box"> Huber W, et al. (2015) <a
 href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrating
 high-throughput genomic analysis with
@@ -26,12 +32,6 @@ DESeq2</a>. Genome Biology 15:550; doi:10.1186/s13059-014-0550-8
 </div>
 
 <div class="white_box">
-Tippmann, S. (2015) <a
-href="http://www.nature.com/news/programming-tools-adventures-with-r-1.16609">Programming
-tools: Adventures with R</a>. Nature 517: 109–110.
-</div>
-
-<div class="grey_box">
 Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
