@@ -22,7 +22,7 @@
   Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), National
   Cancer Institute, USA.
-* Robert Gentleman, Genentech Research and Early Development, USA.
+* Robert Gentleman, Computational Biology, 23andMe, USA.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
   Bloomberg School of Public Health, Johns Hopkins University.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/) 
