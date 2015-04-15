@@ -6,6 +6,8 @@ contributed by members of the Bioconductor community.
 * Resources from MOOC: PH525x Data Analysis for Genomics --
   [book](http://genomicsclass.github.io/book/) and
   [labs](https://github.com/genomicsclass/labs)
+* Mike Love's
+  [bioc-refcard](https://github.com/mikelove/bioc-refcard/blob/master/README.Rmd)
 * [Bioconductor on YouTube](https://www.youtube.com/results?search_query=bioconductor)
 * [Video Lectures by Rafael Irizarry and guests](http://www.youtube.com/user/RafalabChannel?feature=watch)
 * [R/Bioconductor Notes by Thomas Girke](http://manuals.bioinformatics.ucr.edu/home/R_BioCondManual)
