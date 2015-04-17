@@ -4,15 +4,18 @@ We are pleased to announce Bioconductor 3.1, consisting of 1024
 software packages, 241 experiment data packages, and 917
 up-to-date annotation packages. 
 
-There are 90 new software packages, and many updates and improvements
+There are 95 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.1 is compatible with R 3.2,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
-release includes an updated Bioconductor [Amazon Machine Image]
-(http://bioconductor.org/help/bioconductor-cloud-ami/) and 
-[Docker containers](/help/docker/).
+release includes an updated Bioconductor [Amazon Machine Image][1]
+and [Docker containers][2].
 
-Visit [http://bioconductor.org](http://bioconductor.org)
+Visit [http://bioconductor.org][3]
 for details and downloads.
+
+[1]: /help/bioconductor-cloud-ami/
+[2]: /help/docker/
+[3]: http://bioconductor.org
 
 Contents
 --------
@@ -20,7 +23,7 @@ Contents
 * Getting Started with Bioconductor 3.1
 * New Software Packages
 * NEWS from new and existing packages
-* Packages removed from the release
+* Packages removed from Bioconductor since the last release.
 
 Getting Started with Bioconductor 3.1
 ======================================
@@ -36,7 +39,7 @@ for this version of R.
 New Software Packages
 =====================
 
-There are 90 new packages in this release of Bioconductor.
+There are 95 new packages in this release of Bioconductor.
 
 AIMS - This package contains the AIMS implementation. It
 contains necessary functions to assign the five intrinsic
@@ -6958,10 +6961,10 @@ VERSION xps-1.27.1
 
 
 
-Packages removed from the release
+Packages removed since the last release.
 =================================
 
-The following packages are no longer in the release:
+The following packages are no longer in Bioconductor:
 
 asmn, COPDSexualDimorphism, DNaseR, flowFlowJo, flowPhyto
 
