@@ -15,13 +15,13 @@ RewriteBase /packages/
 # Note: (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/bioc/html/$2.html [PT]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/bioc/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/annotation/html/$2.html [PT]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/annotation/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/experiment/html/$2.html [PT]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/experiment/html/$2.html [R=301]
 
 ################################################################################
 # /packages/xxx is internally rewritten to
@@ -30,21 +30,21 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/experiment/html/$2.ht
 #      (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/$ release/bioc/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ release/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/$ release/data/annotation/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ release/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/$ release/data/experiment/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ release/data/experiment/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/$ devel/bioc/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ devel/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/$ devel/data/annotation/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ devel/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/$ devel/data/experiment/html/$1.html [PT]
+RewriteRule ^([^/]+)/$ devel/data/experiment/html/$1.html [R=301]
 
 </IfModule>
