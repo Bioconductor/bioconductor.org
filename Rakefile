@@ -6,7 +6,6 @@ require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
-require './scripts/generate_redirects.rb'
 require 'open3'
 require 'find'
 require 'pathname'
@@ -212,7 +211,7 @@ end
 
 ## If this doesn't work, do:
 ##   rake prepare_json && rake json2js
-task :get_json => [:prepare_json, :json2js, :generate_redirects]
+task :get_json => [:prepare_json, :json2js]
 
 task :json2js do
   # convert json to javascript expression suitable for inclusion via a script tag
@@ -476,8 +475,3 @@ task :get_build_result_dcfs, :repo do |t, args|
     end
 end
 
-desc "Generate list of redirects"
-task :generate_redirects do
-  include GenerateRedirects
-  generate_redirects()
-end

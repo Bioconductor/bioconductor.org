@@ -1,0 +1,50 @@
+## Thanks to Justin lurman for help with this:
+## http://stackoverflow.com/questions/29758551/apache-redirects-with-different-destination-depending-on-whether-one-of-several
+
+<IfModule mod_rewrite.c>
+
+##### Options -Indexes
+
+RewriteEngine On
+RewriteBase /packages/
+
+
+################################################################################
+# /packages/release/xxx or /packages/devel/xxx are internally rewritten to
+# /packages/release/reposX/html/xxx.html or /packages/devel/reposX/html/xxx.html
+# Note: (reposX) X is the first repos where xxx is found
+################################################################################
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/bioc/html/$2.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/html/$2\.html -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/annotation/html/$2.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/$ $1/data/experiment/html/$2.html [PT]
+
+################################################################################
+# /packages/xxx is internally rewritten to
+# /packages/release/reposX/html/xxx.html or /packages/devel/reposX/html/xxx.html
+# Note: all release repos are fetch first, then devel ones
+#      (reposX) X is the first repos where xxx is found
+################################################################################
+RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
+RewriteRule ^([^/]+)/$ release/bioc/html/$1.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/html/$1\.html -f
+RewriteRule ^([^/]+)/$ release/data/annotation/html/$1.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/html/$1\.html -f
+RewriteRule ^([^/]+)/$ release/data/experiment/html/$1.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/html/$1\.html -f
+RewriteRule ^([^/]+)/$ devel/bioc/html/$1.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/html/$1\.html -f
+RewriteRule ^([^/]+)/$ devel/data/annotation/html/$1.html [PT]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
+RewriteRule ^([^/]+)/$ devel/data/experiment/html/$1.html [PT]
+
+</IfModule>
