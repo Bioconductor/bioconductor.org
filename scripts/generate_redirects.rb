@@ -31,6 +31,7 @@ module GenerateRedirects
       for subdir in ['bioc', File.join('data', 'annotation'), File.join('data', 'experiment')]
         repos = subdir.sub(File::SEPARATOR, "/")
         jsonfile = File.join(fulldir, subdir, "packages.json")
+        next unless File.exists? jsonfile
         fh = File.read(jsonfile)
         obj = JSON.parse(fh)
         for key in obj.keys
