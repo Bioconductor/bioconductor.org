@@ -971,13 +971,17 @@ def get_devel_fragment(package, item, item_rep)
     str=<<-"EOT"
 <p>This is the <b>development</b> version of #{@package[:Package]}
 EOT
-    unless is_new_package(package)
+    if is_new_package(package)
+        str2=<<-"EOT"
+; to use it, please install the <a href="/developers/how-to/useDevel/">devel version</a> of Bioconductor
+EOT
+    else
         str2=<<-"EOT"
 ; for the stable release version, see 
 <a href="#{get_release_url(item_rep)}">#{@package[:Package]}</a>
 EOT
-        str = str.strip() + str2
     end
+    str = str.strip() + str2
     str = str.strip() + ".</p>"
     str
 end
