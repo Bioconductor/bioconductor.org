@@ -154,6 +154,8 @@ RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocChec
 RewriteRule ^help/mailing-lis.*$ /help/support [R=301]
 </IfModule>
 
+RewriteRule ^BioC2015*$ /help/course-materials/2015/BioC2015/ [R=301]
+
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
 
 ## mailing list -> support
