@@ -926,8 +926,13 @@ def is_devel(item)
 end
 
 def is_new_package(package)
-    if $pkgdata.nil?
-        $pkgdata = {"bioc/" => {}, "data/annotation/" => {}, "data/experiment/" => {}}
+    if $pkgdata.nil? or $pkgdata[package[:repo]].nil?
+        if $pkgdata.nil?
+          $pkgdata = {}
+        end
+        if $pkgdata[package[:repo]].nil?
+          $pkgdata[package[:repo]] = {}
+        end
         dir = File.join("assets", "packages", "json")
         d = Dir.new(dir)
         for entry in d.entries
