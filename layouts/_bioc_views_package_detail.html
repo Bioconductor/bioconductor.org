@@ -236,6 +236,13 @@ biocLite("<%=@package[:Package]%>")</pre>
             <td><%=make_package_url_links(@package[:URL])%></td>
         </tr>
 
+        <% if @package.has_key? :BugReports %>
+            <tr class="<%=ri.rowclass%>">
+                <td>BugReports</td>
+                <td><%=make_package_url_links(@package[:BugReports])%></td>
+            </tr>
+        <% end %>
+
         <tr class="<%=ri.rowclass%>">
             <td>Depends On Me</td>
             <td><%= linkify(:dependsOnMe, @package)%></td>
