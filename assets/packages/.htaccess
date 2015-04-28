@@ -8,6 +8,7 @@
 RewriteEngine On
 RewriteBase /packages/
 
+RewriteRule ^/{0,1}$ /packages/release/BiocViews.html#___Software [NE,R=301]
 
 ################################################################################
 # /packages/release/xxx or /packages/devel/xxx are internally rewritten to
