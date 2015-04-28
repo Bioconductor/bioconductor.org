@@ -802,3 +802,29 @@ The relevant Javascript file is assets/js/bioc_views.js. The automatically gener
 
 Take a look at the config.yaml file in the root of the bioconductor.org working copy.
 This should be the only place you need to make changes.
+
+# Standard Operating Procedures / SOPs /  Troubleshooting
+
+## Problem: Web site does not seem to be updating
+
+Symptom: Commits you made are not going through, and/or 
+the dashboard (http://bioconductor.org/dashboard/) says
+that the site has not been updated in over 20 minutes.
+It likely means that an error was introduced in a recent
+commit. (make sure you haven't forgotten to `svn add` any files).
+
+Solution: ssh to biocadmin@merlot2 (ask Dan or Carl if 
+you don't have permission to do so). Change directories:
+
+    cd ~/bioc-test-web
+
+Look at the timestamp on the file `bioconductor.org/crash.log`; if it's recent,
+then its contents are relevant. You can also look at the last
+few lines of `./cron.log`. 
+
+Note that there is a cron job that copies BiocInstaller/inst/scripts/biocLite.R
+from Rpacks (trunk) to ~/bioc-test-web/bioconductor.org/assets every 3
+minutes (then we rely on the normal rake tasks that run every 10 minutes
+to propagate this to the web site (krait)). So if there is a problem
+building the website this file will also fail to propagate.
+
