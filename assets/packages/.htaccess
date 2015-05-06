@@ -8,7 +8,7 @@
 RewriteEngine On
 RewriteBase /packages/
 
-RewriteRule ^/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/release/BiocViews.html#___Software [NE,R=301]
+RewriteRule ^/?$ http://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=301]
 
 ################################################################################
 # /packages/release/xxx or /packages/devel/xxx are internally rewritten to
@@ -16,13 +16,13 @@ RewriteRule ^/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/release/BiocViews
 # Note: (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/$1/bioc/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/bioc/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/$1/data/annotation/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/data/annotation/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/$1/data/experiment/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=301]
 
 ################################################################################
 # /packages/xxx is internally rewritten to
@@ -31,21 +31,21 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://%{SERVER_NAME}:%{SERV
 #      (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/release/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/release/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/release/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/data/experiment/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/devel/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/devel/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://%{SERVER_NAME}:%{SERVER_PORT}/packages/devel/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=301]
 
 </IfModule>
