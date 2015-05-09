@@ -195,7 +195,8 @@ class BiocViews < Nanoc3::DataSource
           end
 
 
-          items.push item
+          # items.push item
+          items.push item if item.identifier =~ /\/a4\//
         end
       end
     end
