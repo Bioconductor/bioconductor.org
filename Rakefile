@@ -467,7 +467,7 @@ task :get_build_result_dcfs, :repo do |t, args|
             machine = config["active_devel_builders"]["linux"]
             biocversion = config["devel_version"]
         end
-        unless (config["devel_repos"].include? repo.gsub("/", "-"))
+        unless (config["devel_repos"].include? repo.gsub("-", "/"))
           next
         end
         cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
