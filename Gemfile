@@ -2,6 +2,7 @@ source 'http://rubygems.org'
 gem "nanoc"
 gem "nanoc3"
 gem "pry"
+gem "pry-byebug"
 gem "rdiscount"
 gem "rack"
 gem "mime-types"
