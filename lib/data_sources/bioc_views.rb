@@ -153,7 +153,11 @@ class BiocViews < Nanoc3::DataSource
 
 
 
-        packages = JSON.parse(json_file.readlines.join("\n"))
+        packages = JSON.parse(
+          File.read(json_file,
+            :external_encoding => 'iso-8859-1',
+          )
+        )
         for bad in @bad_packages
           packages.delete(bad)
         end
@@ -194,14 +198,11 @@ class BiocViews < Nanoc3::DataSource
             end
           end
 
-
-          # items.push item
-          items.push item if item.identifier =~ /\/a4\//
+          items.push item # UNCOMMENT ME!
+          # items.push item if item.identifier =~ /\/ALL\//# REMOVEME!
         end
       end
     end
-    
-    
     
     items
   end

@@ -5,8 +5,88 @@ biocLite("<%=@package[:Package]%>")</pre>
     <p> In most cases, you don't need to download the
     package archive at all.</p>    
 </div>
-<div class="do_not_rebase">
+
         <h1><%=@package[:Package]%></h1>
+
+<% # shields go here
+if current? @package
+tr = TableRower.new
+%>
+<table border="0">
+<tr>
+
+
+<% # shield 1: availability 
+get_available(@package) # copies appropriate svg.
+%>
+<td>
+<span class="do_not_rebase"><a href="#archives"><img border="0" src="/shields/availability/<%=@package[:bioc_version_str].downcase.sub('opment', '') %>/<%=@package[:Package]%>.svg" title="Whether the package is available on all platforms; click for details."/></a></span>
+</td>
+<%=tr.betweencells%>
+
+<% # shield 2: downloads 
+%>
+
+<td>
+   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of average downloads over last 6 full months"/></a>
+</td>
+<%= tr.betweencells %>
+
+<% # shield 3: posts
+%>
+<td>
+
+   <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity: tagged questions/avg. answers per question/avg. comments per question/closed questions, or 0 if no tagged posts."/></a>
+
+</td>
+<%= tr.betweencells %>
+
+
+<%
+   # shield 4: years in bioc 
+    result = get_year_shield(@package[:Package])
+    unless result.nil?
+%>
+<td>
+<span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version"/></a></span>
+</td>
+<%= tr.betweencells %>
+<% end %>
+
+
+<% # shield 5: build 
+   res = get_build_results(@package)
+   unless res.nil?
+%>
+<td>
+   <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
+</td>
+<%= tr.betweencells %>
+<% end %>
+
+<% # shield 6: commits
+   if ['bioc/', 'data/experiment/'].include? @package[:repo]
+     pkgdir = @package[:repo].sub(/\/$/, "").sub("/", "-")
+%>
+<td>
+   <span class="do_not_rebase"><a href="#svn_source"><img border='0' src="/shields/commits/<%=pkgdir%>/<%=@package[:Package]%>.svg" title="average Subversion commits (to the devel branch) per month for the last 6 months"/></a></span>
+</td>
+<%= tr.betweencells %>
+<% end  # if not annotation pkg 
+%>
+
+
+</tr>
+</table>
+
+<p>&nbsp;</p>
+
+<%  end # if current? @package
+# end shields 
+%>
+
+
+<div class='do_not_rebase'>
 
     <%= get_devel_fragment(@package, @item, @item_rep) %>
 
@@ -184,13 +264,19 @@ biocLite("<%=@package[:Package]%>")</pre>
         since = since(@package[:Package])
         r = nil
         r = r_ver_for_bioc_ver(since) unless since.nil?
+        yib = years_in_bioc(@package[:Package])
+        if yib.nil?
+            yearstr = ""
+        else
+            yearstr = "(#{yib} years)"
+        end
         if not (since.nil? or r.nil?)
             or_earlier = ""
             or_earlier = " or earlier" if since == "1.6"
         %>
-            <tr class="<%=ri.rowclass%>">
+            <tr id="since" class="<%=ri.rowclass%>">
                 <td>In Bioconductor since</td>
-                <td>BioC <%= since %> (R-<%= r %>)<%=or_earlier%></td>
+                <td>BioC <%= since %> (R-<%= r %>)<%=or_earlier%> <%=yearstr %></td>
             </tr>
         <% end %>
 
@@ -268,7 +354,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
     </table>
 
-    <h3>Package Archives</h3>
+    <h3 id="archives">Package Archives</h3>
 
     <p>Follow <a href="/install/#install-bioconductor-packages">
     Installation</a> instructions to use this 
@@ -312,7 +398,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                 <% if package_has_source_url(@item) %>
                     <tr class="<%=ri.rowclass%>">
-                        <td>Browse/checkout source</td>
+                        <td id="svn_source">Browse/checkout source</td>
                         <td><a href="<%=get_source_url(@package, @item, @item_rep)%>">(username/password: readonly)</a></td>
                     </tr>
                 <% end %>
@@ -323,8 +409,8 @@ biocLite("<%=@package[:Package]%>")</pre>
                     </tr>
 
                 </table>
+
+
+
+
 </div>
-
-
-
-

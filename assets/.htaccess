@@ -19,6 +19,9 @@ Header set Cache-Control "max-age=60"
 <FilesMatch "\.tar.gz$|\.tgz$|\.zip$">
 Header set Cache-Control "max-age=15552000"
 </FilesMatch>
+<FilesMatch "\.svg$">
+Header set Cache-Control "max-age=30"
+</FilesMatch>
 
 </ifModule>
 

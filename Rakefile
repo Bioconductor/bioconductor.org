@@ -6,12 +6,17 @@ require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
+require './scripts/generate_build_shields.rb'
+require './scripts/svn_shield_helper.rb'
+require './scripts/get_post_tag_info.rb'
 require 'open3'
 require 'find'
 require 'pathname'
 require 'json'
 require 'pp'
 require 'httparty'
+require 'nokogiri'
+require 'descriptive_statistics'
 
 include Open3
 
@@ -43,7 +48,8 @@ task :copy_assets do
 end
 
 desc "Run nanoc compile"
-task :compile => [:pre_compile, :real_compile, :post_compile]
+task :compile => [:pre_compile, 
+  :real_compile, :post_compile]
 
 desc "Pre-compilation tasks"
 task :pre_compile do
@@ -242,10 +248,11 @@ task :json2js do
         var = "data_experiment_packages"
       end
       unless var.nil?
-        f = File.open(file)
-        lines = f.readlines
-        json = lines.join.strip
-        obj = JSON.parse json
+        obj = JSON.parse(
+          File.read(file,
+            :external_encoding => 'iso-8859-1',
+          )
+        )
         
         ret = []
         obj.values.each do |v|
@@ -475,3 +482,200 @@ task :get_build_result_dcfs, :repo do |t, args|
     end
 end
 
+# should be run via cron every 15 minutes
+desc "download build system databases and get build shields"
+task :get_build_dbs do
+  build_dbs_dir = File.join(%w(tmp build_dbs))
+  FileUtils.mkdir_p(build_dbs_dir)
+  %w(release devel).each do |version|
+    %w(bioc data-experiment).each do |repo|
+      url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt"
+      dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
+      dest_etag_name = dest_file_name.sub("dcf", "etag")
+      etag = HTTParty.head(url).headers["etag"]
+      if (!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag
+        shield_dir = File.join("assets", "shields", "build", version, repo)
+        FileUtils.mkdir_p shield_dir
+        efh = File.open(dest_etag_name, 'w')
+        efh.write etag
+        efh.close
+        body = HTTParty.get(url).to_s
+        fh = File.open(dest_file_name, "w")
+        fh.write(body)
+        fh.close
+        generate_build_shields(shield_dir, dest_file_name)
+      end
+    end
+  end
+end
+
+
+desc "get and preprocess svn logs" # run this via cron every day (or more often?)
+task :get_svn_logs do
+  destdir = File.join('tmp', 'svnlogs')
+  FileUtils.mkdir_p destdir
+  shield_dir = File.join('assets', 'shields', 'commits')
+  FileUtils.mkdir_p shield_dir
+  today = Date.today
+  now = DateTime.new(today.year, today.month, today.day)
+  sixmonthsago = now
+  months = [now]
+
+  6.times do
+    tmp = sixmonthsago.prev_month
+    months << tmp
+    sixmonthsago = tmp
+  end
+  months.reverse!
+  ranges = []
+  for i in 0..(months.length()-2)
+    ranges.push months[i]..months[i+1]  
+  end
+  h = {'bioc.log' => 'https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/',
+    'data-experiment.log' => 'https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/'}
+  h.each_pair do |destfile,url|
+      full_shield_dir = File.join(shield_dir, destfile.split('.').first)
+      FileUtils.mkdir_p full_shield_dir
+      command = "svn log --username=readonly --password=readonly --non-interactive --no-auth-cache -v --xml -r {#{sixmonthsago.strftime("%Y-%m-%d")}}:{#{now.strftime("%Y-%m-%d")}} #{url}"
+
+      stdin, stdout, stderr, wait_thr = Open3.popen3(command)
+
+      fh = File.open(File.join(destdir, destfile), "w")
+      while !stdout.eof
+        line = stdout.readline
+        fh.write line
+      end
+      fh.close
+      stdout.close
+      stderr.close
+      stdin.close
+      unless wait_thr.value.exitstatus == 0
+        raise "svn log command failed!"
+      end
+      fh = File.open(File.join(destdir, destfile), 'r')
+      doc = Nokogiri::XML(fh)
+      fh.close
+      logentries = doc.xpath("//log/logentry")
+      dates = []
+      for logentry in logentries
+        slop = Nokogiri::Slop(logentry.to_xml)
+        datestr = slop.logentry.date.children.first.text
+        date = DateTime.iso8601(datestr)
+        dates << date
+      end
+
+      mindate = dates.min.prev_day
+      maxdate = dates.max.next_day
+      ranges[0] =  mindate..ranges[0].last
+      ranges[ranges.length-1] = ranges.last.first..maxdate
+      res = Hash.new { |hash, key| hash[key] = {} }
+
+      for logentry in logentries
+        thisone = {}
+        slop = Nokogiri::Slop(logentry.to_xml)
+        datestr = slop.logentry.date.children.first.text
+        date = DateTime.iso8601(datestr)
+        paths = slop.logentry.paths.children.text.split("\n")
+        for path in paths
+          next if path.empty?
+            segs = path.split '/'
+            next if segs.length < 6
+            thisone[segs[4]] = 1
+        end
+        # === operator does not work as expected, so....
+        daterange = ranges.find{|i| i === date} 
+        daterange = ranges.find{|i| date > i.first and date < i.last} if daterange.nil?
+        for item in thisone.keys
+          unless ranges.include? daterange
+            raise "there's a problem!"
+          end
+          if res[daterange].has_key? item
+            res[daterange][item] += 1
+          else
+            res[daterange][item]= 1
+          end
+        end
+      end
+      packages = get_list_of_packages(bioc=(destfile=='bioc.log'))
+      for package in packages
+        hits = []
+        for range in ranges
+          if res[range].has_key? package
+            hits << res[range][package]
+          else
+            hits << 0
+          end
+        end
+        avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
+        avg_s = sprintf("%0.2f", avg)
+        puts "#{package}: #{avg_s}" # comment me out
+        # parallelize this to make it faster?
+        response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-green.svg")
+        fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
+        fh.write(response.to_s)
+        fh.close
+      end
+  end
+
+
+end
+
+# run me with cron every day or so...
+desc "process downloads data"
+task :process_downloads_data do
+  begin
+    system("scp biocadmin@wilson1:/home/biocadmin/manage-BioC-repos/stats/download_summary.csv ./tmp/")
+  rescue
+    puts
+    puts
+    puts "Whoops, download_summary.csv was not downloaded! This may cause problems."
+  end
+  lines = File.readlines(File.join("tmp", "download_summary.csv"))
+  raw_data = lines.map do |i|
+    num, pkg = i.strip.split(',')
+    {num: num.to_i, pkg: pkg}
+  end
+  pkgs = []
+  [true, false].each do |state|
+    pkgs += get_list_of_packages(state)
+    pkgs += get_annotation_package_list(state)
+  end
+  avgs = {}
+  for pkg in pkgs
+    relevant = raw_data.find_all{|i| i[:pkg] == pkg}
+    hits = relevant.map{|i| i[:num]}
+    avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
+    avg = 0 if avg.nan?
+    avgs[pkg] = avg
+  end
+  percentiles = {}
+  data = avgs.values
+  for pkg in pkgs
+    percentiles[pkg] = data.percentile_rank(avgs[pkg])
+  end
+  srcdir = File.join('assets', 'images', 'shields', 'downloads')
+  destdir = File.join('assets', 'shields', 'downloads')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+  percentiles.each_pair do |k, v|
+    img = nil
+    case v
+    when 95..100
+      img = 'top5.svg'
+    when 80...95
+      img = 'top20.svg'
+    when 50...80
+      img = 'top50.svg'
+    else
+      img = 'available.svg'
+    end
+    # puts "#{k}: #{img} (#{v})"
+    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))  
+  end
+end
+
+# set this to run in crontab
+desc "get info about post tags"
+task :get_post_tag_info do
+  get_post_tag_info()
+end

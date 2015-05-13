@@ -25,6 +25,7 @@ require 'mechanize'
 require 'kramdown'
 require 'open3'
 
+
 include REXML
 
 
@@ -54,8 +55,16 @@ class RowIndexer
     @@rownum += 1
     (@@rownum % 2 == 1) ? "row_odd" : "row_even"
   end
-
 end
+
+class TableRower
+  @@cellnum = 0
+  def betweencells(cells_per_row=3)
+    @@cellnum += 1
+    (@@cellnum % cells_per_row == 0) ? "</tr><tr>\n" : ""
+  end
+end
+
 
 def get_cran_packages()
   puts "Grabbing list of CRAN packages..."
@@ -570,6 +579,38 @@ def since(package)
   nil
 end
 
+def get_year_shield(package)
+  yib = years_in_bioc(package)
+  return nil if yib.nil?
+  destdir = File.join("assets", "shields", "years-in-bioc")
+  FileUtils.mkdir_p destdir
+  shield = File.join(destdir, "#{package}.svg")
+  now = DateTime.now
+  onedayago = now.prev_day
+  if ((!File.exists?(shield)) or  DateTime.parse(File.mtime(shield).to_s) < onedayago)
+    puts "Downloading years-in-bioc shield for #{package}..."
+    resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{yib}_years-green.svg")
+    fh = File.open(shield, 'w')
+    fh.write(resp.to_s)
+    fh.close
+  end
+  true
+end
+
+def years_in_bioc(package)
+  since_ver = since(package)
+  return nil if since_ver.nil?
+  key = since_ver.to_sym
+  unless config[:release_dates].has_key? key
+    return nil
+  end
+  release_date_str = config[:release_dates][key]
+  release_date = Date.strptime(release_date_str, "%m/%d/%Y")
+  today = Date.today
+  days_since_release = (today - release_date)
+  years_since_release = days_since_release / 365.25
+  sprintf("%0.2f", years_since_release)
+end
 
 def get_version_from_item_id(item)
   segs = item.identifier.split "/"
@@ -1332,4 +1373,113 @@ def get_build_report_link(package)
     version = package[:bioc_version_num]
     package_name = package[:Package]
     "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
+end
+
+def pkg_platforms(package) # returns all, none, or some
+  all_win_archs = (win_format(package) !~ /only/)
+  has_src = package.has_key? "source.ver".to_sym
+  has_sl = package.has_key? "mac.binary.ver".to_sym
+  has_mav = package.has_key? "mac.binary.mavericks.ver".to_sym
+  has_win32 = package.has_key? "win.binary.ver".to_sym
+  has_win64 = package.has_key? "win64.binary.ver".to_sym
+  needs_compilation = package[:NeedsCompilation] == 'yes'
+  keys = %w(source.ver mac.binary.ver mac.binary.mavericks.ver
+  win.binary.ver win64.binary.ver)
+  unless package[:repo] == "bioc/" # non-software packages
+    if has_src
+      return 'all'
+    else
+      return 'none'
+    end
+  end
+
+  missing = []
+  for key in keys
+    unless package.has_key? key.to_sym
+      missing << key
+    end
+  end
+
+
+  if package.has_key? :OS_type and package[:OS_type] == 'unix' # some or none
+    if needs_compilation
+      if has_src and has_mav and has_sl
+        return 'some'
+      else
+        return 'none'
+      end
+    end
+  end
+
+  if has_src and all_win_archs and not needs_compilation
+    return 'all'
+  end
+
+  if needs_compilation
+    if missing.empty?
+      if all_win_archs
+        return 'all'
+      else
+        return 'some'
+      end
+    elsif missing.length == keys.length
+      return 'none'
+    else
+      return 'some'
+    end
+  end
+
+  raise ("i just don't know about #{package[:Package]}!")
+
+end
+
+def get_available(package)
+  img = pkg_platforms(package)
+  ver = package[:bioc_version_str].downcase.sub('opment', '')
+  srcdir = File.join('assets', 'images', 'shields', 'availability')
+  destdir = File.join('assets', 'shields', 'availability', ver)
+  FileUtils.mkdir_p destdir
+  FileUtils.copy(File.join(srcdir, "#{img}.svg"), File.join(destdir, "#{package[:Package]}.svg"))
+end
+
+def get_build_results(package)
+  return nil unless %w(bioc/ data/experiment/).include? package[:repo]
+  return nil unless current? package
+  # return nil unless [config[:release_version],
+  #   config[:devel_version]].include? package[:bioc_version_num]  
+  # build_dbs_dir = File.join(%w(tmp build_dbs))
+  repo = package[:repo].sub(/\/$/, "").sub("/", "-")
+  h = {config[:release_version] => 'release', 
+    config[:devel_version] => 'devel'}
+  version = h[package[:bioc_version_num]]
+  res = {}
+  res[:report_url] = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
+  # colors = {"OK" => "green", "WARNINGS" => "yellow",
+  #   "ERROR" => "red", "TIMEOUT" => "AA0088"}
+  # db_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
+  # data = File.readlines(db_file_name)
+  # relevant = data.find_all{|i| i =~ /^#{package[:Package]}#/}
+  # statuses = relevant.map {|i| i.split(' ').last.strip}
+  # statuses = statuses.reject{|i| i == "NotNeeded"}
+  # statuses = statuses.uniq
+  # if statuses.length == 1 and statuses.first == "OK"
+  #   final_status = "OK"
+  # elsif statuses.include? "ERROR"
+  #   final_status = "ERROR"
+  # elsif statuses.include? "TIMEOUT"
+  #   final_status = "TIMEOUT"
+  # elsif statuses.include? "WARNINGS"
+  #   final_status = "WARNINGS"
+  # end
+  # res[:status] = final_status
+  # res[:color] = colors[final_status]
+  res[:repo] = repo
+  res [:version] = version
+  res
+end
+
+# is package in release or devel?
+def current? (package)
+    [config[:release_version],
+    config[:devel_version]].include? package[:bioc_version_num]  
 end

@@ -182,12 +182,14 @@ var unRebaseMirrors = function() {
             if (!href.match(/^http:/i)) {
                 if (href.match(/^\//)) {
                     jQuery(value).attr("href", "http://" + host + href);
+                } else if (href.match(/^#/)) {
+                    jQuery(value).attr("href", window.location.href + href);
                 } else {
                     jQuery(value).attr("href", url + "/" + href);
                 }
             }
         });
-    } 
+    }
 }
 
 /*

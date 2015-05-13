@@ -1,3 +1,4 @@
+raise 'Ruby version must be 2.0 or greater' unless  RUBY_VERSION.to_f >= 2.0
 source 'http://rubygems.org'
 gem "nanoc"
 gem "nanoc3"
@@ -25,3 +26,5 @@ gem "uuid"
 gem "htmlentities"
 gem "redis"
 gem "descriptive_statistics"
+gem "sequel"
+gem "pg"

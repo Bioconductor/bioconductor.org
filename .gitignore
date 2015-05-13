@@ -12,3 +12,5 @@ analytics_py/analytics.dat
 analytics_py/client_secrets.json
 analytics_py/*.pyc
 assets/packages
+assets/shields
+assets/config.yaml
