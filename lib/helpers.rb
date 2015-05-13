@@ -1376,6 +1376,29 @@ def get_build_report_link(package)
 end
 
 def pkg_platforms(package) # returns all, none, or some
+  unsupported_platforms = nil
+  is_built = ['bioc/', 'data/experiment/'].include? package[:repo]
+  if is_built
+    repo = package[:repo].sub(/\/$/, "").gsub("/", "-")
+    version = package[:bioc_version_str].sub('opment', '').downcase
+    meat_index = File.join("tmp", "build_dbs","#{version}-#{repo}.meat-index.txt")
+    mi = File.open(meat_index, 'r')
+    curpkg = nil
+    mi.each_line do |line|
+      if line =~ /^Package:/
+        curpkg = line.strip.sub(/^Package: /, '').strip
+      end
+      if curpkg == package[:Package] and line =~ /^UnsupportedPlatforms: /
+        unsupported_platforms = line.strip.sub(/^UnsupportedPlatforms: /, '').strip.split(',').map{|i| i.strip}
+        unsupported_platforms = nil if unsupported_platforms == ["None"]
+        break
+      end
+    end
+    mi.close
+  end
+  unless unsupported_platforms.nil?
+    return 'some'
+  end
   all_win_archs = (win_format(package) !~ /only/)
   has_src = package.has_key? "source.ver".to_sym
   has_sl = package.has_key? "mac.binary.ver".to_sym

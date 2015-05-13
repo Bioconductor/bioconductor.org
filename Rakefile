@@ -503,7 +503,13 @@ task :get_build_dbs do
         fh = File.open(dest_file_name, "w")
         fh.write(body)
         fh.close
+        url2 = url.sub "STATUS_DB", 'meat-index'
+        body2 = HTTParty.get(url2).to_s
+        fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
+        fh2.write(body2)
+        fh2.close
         generate_build_shields(shield_dir, dest_file_name)
+
       end
     end
   end
