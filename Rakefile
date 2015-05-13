@@ -679,3 +679,6 @@ desc "get info about post tags"
 task :get_post_tag_info do
   get_post_tag_info()
 end
+
+desc "do push tasks"
+task :push => [:copy_assets, :deploy_staging, :deploy_production]

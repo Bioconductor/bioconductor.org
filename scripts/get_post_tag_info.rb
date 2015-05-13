@@ -89,7 +89,7 @@ def get_post_tag_info()
 
       a_avg =  sprintf("%0.1g", answers.inject(0.0) { |sum, el| sum + el } / answers.size)
       c_avg =  sprintf("%0.1g", comments.inject(0.0) { |sum, el| sum + el } / comments.size)
-      shield_text = "#{q}_/_#{a_avg}_/_#{c_avg}_/_#{closed}"
+      shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}".gsub(' ', '%20')
       puts "getting shield for #{pkg}"
       response = HTTParty.get("https://img.shields.io/badge/posts-#{shield_text}-green.svg")
       sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
