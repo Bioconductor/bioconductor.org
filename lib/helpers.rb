@@ -50,10 +50,12 @@ def myfunc()
 end
 
 class RowIndexer
-  @@rownum = 0
+  def initialize()
+    @rownum = 0
+  end
   def rowclass()
-    @@rownum += 1
-    (@@rownum % 2 == 1) ? "row_odd" : "row_even"
+    @rownum += 1
+    (@rownum % 2 == 1) ? "row_odd" : "row_even"
   end
 end
 
