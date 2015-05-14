@@ -28,7 +28,7 @@ get_available(@package) # copies appropriate svg.
 %>
 
 <td>
-   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of average downloads over last 6 full months"/></a>
+   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of downloads over last 6 full months"/></a>
 </td>
 <%= tr.betweencells %>
 
