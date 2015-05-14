@@ -646,6 +646,7 @@ task :process_downloads_data do
     pkgs += get_list_of_packages(state)
     pkgs += get_annotation_package_list(state)
   end
+  pkgs = pkgs.uniq
   avgs = {}
   for pkg in pkgs
     relevant = raw_data.find_all{|i| i[:pkg] == pkg}
