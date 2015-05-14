@@ -58,10 +58,12 @@ class RowIndexer
 end
 
 class TableRower
-  @@cellnum = 0
+  def initialize()
+    @cellnum = 0
+  end
   def betweencells(cells_per_row=3)
-    @@cellnum += 1
-    (@@cellnum % cells_per_row == 0) ? "</tr><tr>\n" : ""
+    @cellnum += 1
+    (@cellnum % cells_per_row == 0) ? "</tr><tr>\n" : ""
   end
 end
 
