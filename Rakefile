@@ -651,6 +651,10 @@ task :process_downloads_data do
   for pkg in pkgs
     relevant = raw_data.find_all{|i| i[:pkg] == pkg}
     hits = relevant.map{|i| i[:num]}
+    if hits.length < 6
+      diff = 6 - hits.length
+      diff.times {hits << 0}
+    end
     avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
     avg = 0 if avg.nan?
     avgs[pkg] = avg
