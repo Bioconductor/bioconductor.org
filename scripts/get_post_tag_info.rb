@@ -19,7 +19,7 @@ def get_post_tag_info()
     pkgs += get_annotation_package_list(state)
   end
 
-pkgs = pkgs.uniq
+  pkgs = pkgs.uniq
 
   posts_post = DB[:posts_post]
 
