@@ -24,7 +24,7 @@ require 'fileutils'
 require 'mechanize'
 require 'kramdown'
 require 'open3'
-
+require 'open-uri'
 
 include REXML
 
@@ -584,19 +584,25 @@ def since(package)
 end
 
 def get_year_shield(package)
-  yib = years_in_bioc(package)
-  return nil if yib.nil?
+  yib = years_in_bioc(package[:Package])
   destdir = File.join("assets", "shields", "years-in-bioc")
   FileUtils.mkdir_p destdir
-  shield = File.join(destdir, "#{package}.svg")
+  shield = File.join(destdir, "#{package[:Package]}.svg")
   now = DateTime.now
   onedayago = now.prev_day
   if ((!File.exists?(shield)) or  DateTime.parse(File.mtime(shield).to_s) < onedayago)
-    puts "Downloading years-in-bioc shield for #{package}..."
-    resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{yib}_years-green.svg")
-    fh = File.open(shield, 'w')
-    fh.write(resp.to_s)
-    fh.close
+    puts "Downloading years-in-bioc shield for #{package[:Package]}..."
+    if is_new_package(package)
+      FileUtils.cp(File.join('assets', 'images', 'shields',
+        'in_bioc', "devel-only.svg"), shield)
+    elsif yib.nil?
+      return nil
+    else
+      resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{URI::encode(yib)}-87b13f.svg")
+      fh = File.open(shield, 'w')
+      fh.write(resp.to_s)
+      fh.close
+    end
   end
   true
 end
@@ -613,7 +619,19 @@ def years_in_bioc(package)
   today = Date.today
   days_since_release = (today - release_date)
   years_since_release = days_since_release / 365.25
-  sprintf("%0.2f", years_since_release)
+
+  rep = (years_since_release * 2).round / 2.0
+  rep = rep.to_i == rep ? rep.to_i : rep
+  srep = (rep.is_a? Integer) ? rep.to_i.to_s : srep.to_s
+  srep += " years"
+  srep = "> " + srep if since_ver == "1.6"
+
+
+  # we probably won't see this:
+  if years_since_release <= 0.5
+    return "< 6 months"
+  end
+  srep
 end
 
 def get_version_from_item_id(item)

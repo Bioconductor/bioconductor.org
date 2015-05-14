@@ -28,7 +28,7 @@ get_available(@package) # copies appropriate svg.
 %>
 
 <td>
-   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of downloads over last 6 full months"/></a>
+   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of downloads over last 6 full months. Comparison is done across all package categories (software, annotation, experiment)."/></a>
 </td>
 <%= tr.betweencells %>
 
@@ -44,11 +44,11 @@ get_available(@package) # copies appropriate svg.
 
 <%
    # shield 4: years in bioc 
-    result = get_year_shield(@package[:Package])
+    result = get_year_shield(@package)
     unless result.nil?
 %>
 <td>
-<span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version"/></a></span>
+<span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version (or is it in devel only)."/></a></span>
 </td>
 <%= tr.betweencells %>
 <% end %>
@@ -268,8 +268,9 @@ biocLite("<%=@package[:Package]%>")</pre>
         if yib.nil?
             yearstr = ""
         else
-            yearstr = "(#{yib} years)"
+            yearstr = "(#{yib})"
         end
+        yearstr.sub!(">", "&gt;")
         if not (since.nil? or r.nil?)
             or_earlier = ""
             or_earlier = " or earlier" if since == "1.6"

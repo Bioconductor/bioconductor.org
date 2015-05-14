@@ -616,7 +616,7 @@ task :get_svn_logs do
         avg_s = sprintf("%0.2f", avg)
         puts "#{package}: #{avg_s}" # comment me out
         # parallelize this to make it faster?
-        response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-green.svg")
+        response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-1881c2.svg")
         fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
         fh.write(response.to_s)
         fh.close
@@ -681,6 +681,7 @@ task :process_downloads_data do
       img = 'available.svg'
     end
     # puts "#{k}: #{img} (#{v})"
+    puts 'yow!!!'  if k == 'acde'
     FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))  
   end
 end
