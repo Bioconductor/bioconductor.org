@@ -681,7 +681,6 @@ task :process_downloads_data do
       img = 'available.svg'
     end
     # puts "#{k}: #{img} (#{v})"
-    puts 'yow!!!'  if k == 'acde'
     FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))  
   end
 end
