@@ -1,11 +1,11 @@
 # Package End of Life Policy
 
-Creation Date: 3 March, 2015.
-Last Edit Date: 3 March 2015.
+Creation Date: 3 March, 2015.<br />
+Last Edit Date: 14 May, 2015.
 
 The Bioconductor project strives to provide a software repository that is stable
 and relevant to users across the community. Each year 100-150 new software
-packages are added to the repository; as of Spring 2015 over 900 packages are
+packages are added to the repository; as of Spring 2015 over 1000 packages are
 hosted. The Bioconductor build system builds and checks each software package
 every 24 hours. Regular execution of example, vignette and unit test code
 ensures the package is operating as expected and all required dependencies are
@@ -69,19 +69,18 @@ through review as a 'new package'.
 
 **Example**:
 
-- Immediately prior to Bioconductor release 3.1 -- 'devel' package
+      devel  --|------|---
+             ^      ^ 
+             Depr   Defunct
+    
+    release  --|------|---
+                ^      ^
+                Depr   Defunct
+
+- Immediately prior to Bioconductor release 3.2 -- 'devel' package
   fails to meet required criteria. Marked as 'Deprecated' in the
   devel branch prior to the release, and consequently are marked as
-  'Deprecated' in the release (3.1) and subsequent devel branches.
+  'Deprecated' in the release (3.3) and subsequent devel branches.
 
-- Immediately before Bioconductor release 3.2 -- 'devel' packages are
-  marked as 'Defunct', and removed from the 3.2 release manifest.
-
-
-  devel  --|------|---
-         ^      ^ 
-         Depr   Defunct
-
-release  --|------|---
-            ^      ^
-            Depr   Defunct
+- Immediately before Bioconductor release 3.3 -- 'devel' packages are
+  marked as 'Defunct', and removed from the 3.3 release manifest.
