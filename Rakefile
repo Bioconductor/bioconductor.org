@@ -17,6 +17,7 @@ require 'pp'
 require 'httparty'
 require 'nokogiri'
 require 'descriptive_statistics'
+require './lib/helpers.rb'
 
 include Open3
 
@@ -693,3 +694,53 @@ end
 
 desc "do push tasks"
 task :push => [:copy_assets, :deploy_staging, :deploy_production]
+
+# run me in crontab daily
+desc "get years-in-bioc shields"
+task :get_years_in_bioc_shields do
+  sconfig = YAML.load_file("./config.yaml")
+  sconfig[:release_dates] = sconfig["release_dates"]
+  sconfig[:release_dates] = sconfig[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+  puts "Getting manifest information..."
+  url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
+  branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
+  auth = {:username => "readonly", :password => "readonly"}
+  page = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/",
+    :basic_auth => auth, :verify => false).body
+  manifests = {}
+  for line in page.split("\n")
+    if line =~ /bioc_([0123456789.]+)\.manifest/
+      ver = $1
+      manifests[ver] = []
+      if ver == sconfig["devel_version"]
+        manifest_url = "#{url}bioc_#{ver}.manifest"
+      else
+        manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
+      end
+      manifest = HTTParty.get(manifest_url, :basic_auth => auth, :verify=>false).body
+      for l in manifest.split("\n")
+        next unless l =~ /^Package: /
+        manifests[ver].push l.chomp.sub(/^Package: /, "").strip
+      end
+    end
+  end
+  sconfig[:manifests] = manifests
+  
+  sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
+    amaj, amin = a.split(".")
+    bmaj, bmin = b.split(".")
+    amaj = Integer(amaj)
+    amin = Integer(amin)
+    bmaj = Integer(bmaj)
+    bmin = Integer(bmin)
+    if amaj == bmaj
+      amin <=> bmin
+    else
+      amaj <=> bmaj
+    end
+  end
+  pkgs = get_list_of_packages()
+  for pkg in pkgs
+    get_year_shield(pkg, true, sconfig)
+  end
+end

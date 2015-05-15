@@ -95,7 +95,6 @@ def get_cran_packages()
   cran_packages
 end
 
-$cran_packages = get_cran_packages()
 $pkgdata = nil
 
 def nav_link_unless_current(text, path)
@@ -224,6 +223,9 @@ def remove_emails(str)
 end
 
 def linkify(sym, package)
+  if defined?($cran_packages).nil?
+    $cran_packages = get_cran_packages
+  end
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
@@ -574,7 +576,13 @@ def get_svn_commits()
   end
 end
 
-def since(package)
+def since(package, conf=nil)
+  if conf.nil?
+    config = @config
+  else
+    config = conf
+  end
+
   for key in config[:manifest_keys]
     if config[:manifests][key].include? package
       return key
@@ -583,32 +591,48 @@ def since(package)
   nil
 end
 
-def get_year_shield(package)
-  yib = years_in_bioc(package[:Package])
+def get_year_shield(package, make_shield=false, conf=nil)
+  if conf.nil?
+    config = @config
+  else
+    config = conf
+  end
+  yib = years_in_bioc(package, config)
+
   destdir = File.join("assets", "shields", "years-in-bioc")
   FileUtils.mkdir_p destdir
-  shield = File.join(destdir, "#{package[:Package]}.svg")
+  shield = File.join(destdir, "#{package}.svg")
   now = DateTime.now
   onedayago = now.prev_day
   if ((!File.exists?(shield)) or  DateTime.parse(File.mtime(shield).to_s) < onedayago)
-    puts "Downloading years-in-bioc shield for #{package[:Package]}..."
-    if is_new_package(package)
-      FileUtils.cp(File.join('assets', 'images', 'shields',
-        'in_bioc', "devel-only.svg"), shield)
+    if is_new_package2(package, config)
+      if make_shield
+        puts "Downloading years-in-bioc shield for #{package}..."
+        FileUtils.cp(File.join('assets', 'images', 'shields',
+          'in_bioc', "devel-only.svg"), shield)
+      end
     elsif yib.nil?
       return nil
     else
-      resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{URI::encode(yib)}-87b13f.svg")
-      fh = File.open(shield, 'w')
-      fh.write(resp.to_s)
-      fh.close
+      if make_shield
+        puts "Downloading years-in-bioc shield for #{package}..."
+        resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{URI::encode(yib)}-87b13f.svg")
+        fh = File.open(shield, 'w')
+        fh.write(resp.to_s)
+        fh.close
+      end
     end
   end
   true
 end
 
-def years_in_bioc(package)
-  since_ver = since(package)
+def years_in_bioc(package, conf=nil)
+  if conf.nil?
+    config = @config
+  else
+    config = conf
+  end
+  since_ver = since(package, config)
   return nil if since_ver.nil?
   key = since_ver.to_sym
   unless config[:release_dates].has_key? key
@@ -986,6 +1010,18 @@ end
 def is_devel(item)
     return true if item.identifier =~ /\/devel\/|\/#{config[:devel_version]}\//
     return false 
+end
+
+# FIXME eventually replace is_new_package() implementation with this
+def is_new_package2(package, conf) # just a string (pkg name)
+  keys = conf[:manifest_keys].dup
+  keys.pop
+  for rel in keys.reverse
+    if conf[:manifests][rel].include? package
+      return false
+    end
+  end
+  return true
 end
 
 def is_new_package(package)
