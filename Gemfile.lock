@@ -67,6 +67,7 @@ GEM
       mini_portile (~> 0.6.0)
     ntlm-http (0.1.1)
     pg (0.18.1)
+    polyglot (0.3.5)
     pry (0.10.1)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -92,6 +93,10 @@ GEM
     systemu (2.6.4)
     thread_safe (0.3.4)
     tilt (2.0.1)
+    treetop (1.5.3)
+      polyglot (~> 0.3)
+    treetop-dcf (0.2.1)
+      treetop (>= 1.2.5)
     twitter (5.13.0)
       addressable (~> 2.3)
       buftok (~> 0.2.0)
@@ -140,5 +145,6 @@ DEPENDENCIES
   sass
   sequel
   sqlite3
+  treetop-dcf
   twitter
   uuid
