@@ -1,7 +1,7 @@
 # Package End of Life Policy
 
 Creation Date: 3 March, 2015.<br />
-Last Edit Date: 14 May, 2015.
+Last Edit Date: 21 May, 2015
 
 The Bioconductor project strives to provide a software repository that is stable
 and relevant to users across the community. Each year 100-150 new software
@@ -21,9 +21,9 @@ assessed for EOL deprecation prior to each Bioconductor release; the
 EOL policies apply to software, annotation, and experiment data
 packages.
 
-## Required criteria to avoid package removal
+## Criteria for package deprecation
 
-1. Error-free R CMD build and check on all platforms
+1. R CMD build or check errors on one or more platforms
 
    The package must build and check without error on all platforms
    (exceptions to cross-platform builds are available under limited
@@ -31,27 +31,30 @@ packages.
    made to keep a package in the repository if the maintainer is
    actively attempting a fix.
 
-2. Active maintainer 
+2. Inactive maintainer 
 
    The maintainer listed in the DESCRIPTION file must be responsive to
    questions on the support site, package-related email from users and
    Bioconductor team members, package-related errors in the build
    system, and requests for bug fixes.
 
+Alternatively, a package maintainer may decide that they no longer
+wish to maintain their package. 
+
 ## End of Life process
 
 **Step I**: Deprecation (1 release cycle)
 
-Packages that fail to meet requirements outlined in the previous
-section will be marked with a deprecation warning. The message is
+Packages to be deprecated
+will be marked with a deprecation warning. The warning is
 emitted when the package is loaded, and is reported on the package
 'landing page'. The message alerts users that the package currently
 fails the minimal build and check criteria, and that the package will
 likely be removed from Bioconductor in the next release.
 
 If at any time in this 6 month period the required criteria are met
-(e.g., the package returns to active maintenance, perhaps by a third
-party) the warning is removed.
+(e.g., the package returns to active maintenance, perhaps after
+'adoption' by a third party) the warning is removed.
 
 **Step II**: Defunct (subsequent release cycles)
 
@@ -84,3 +87,25 @@ through review as a 'new package'.
 
 - Immediately before Bioconductor release 3.3 -- 'devel' packages are
   marked as 'Defunct', and removed from the 3.3 release manifest.
+
+## Implementation detail
+
+1. Notify the bioc-devel mailing list and maintainers of packages
+   Depending, Importing, or Suggesting the package that the package
+   will be deprecated. If appropriate, indicate that a new maintainer
+   is welcome to take over.
+   
+2. Add the following code chunk to the 'devel' version of the package,
+   adjusting the Bioconductor version to the version _after_ the
+   current devel version.
+
+       .onAttach <- function(libname, pkgname) {
+           msg <- sprintf(
+               "Package '%s' is deprecated and will be removed from Bioconductor 
+                version %s", pkgname, "3.3")
+           .Deprecated(msg=paste(strwrap(msg, exdent=2), collapse="\n"))
+       }
+
+3. The package remains deprecated in the 'devel' branch for up to 6
+   months, as illustrated above, after which time Bioconductor core
+   team members remove the package from the 'devel' package manifest.
