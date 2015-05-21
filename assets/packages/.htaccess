@@ -1,5 +1,20 @@
+## Redirects to supposrt 'short urls'.
+
 ## Thanks to Justin lurman for help with this:
 ## http://stackoverflow.com/questions/29758551/apache-redirects-with-different-destination-depending-on-whether-one-of-several
+
+## Ideally we could replace bioconductor.org throughout with
+## %{SERVER_NAME}:%{SERVER_PORT} but if we do that, CloudFront
+## will redirect to master. ;-( 
+
+## That means that if you are using master and you use a 
+## 'short url', you will get redirected to plain old bioconductor.org.
+## There seems to be no way around that, as far as I can tell 
+## (at least at this point).
+
+## Note that short urls don't work on mirrors because they
+## may not be using apache and they don't copy this file in
+## any case.
 
 <IfModule mod_rewrite.c>
 
