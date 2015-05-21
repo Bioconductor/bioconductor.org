@@ -27,6 +27,7 @@ Header set Cache-Control "max-age=30"
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
+DirectorySlash Off
 RewriteBase /
 
 # Redirect www. to non-www
@@ -34,6 +35,14 @@ RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
+
+
+# handle omitted trailing slash:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ $1/ [PT]
+
 
 ## packages urls
 ##RewriteRule ^packages/release/BiocViews\.html$ /help/bioc-views/release/BiocViews.html [R=301]
