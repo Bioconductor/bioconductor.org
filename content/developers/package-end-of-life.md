@@ -95,9 +95,9 @@ through review as a 'new package'.
    will be deprecated. If appropriate, indicate that a new maintainer
    is welcome to take over.
    
-2. Add the following code chunk to the 'devel' version of the package,
-   adjusting the Bioconductor version to the version _after_ the
-   current devel version.
+2. Add the following code chunk to the 'devel' version of the package
+   in a file `R/zzz.R`, adjusting the Bioconductor version to the
+   version _after_ the current devel version.
 
        .onAttach <- function(libname, pkgname) {
            msg <- sprintf(
