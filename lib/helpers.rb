@@ -963,7 +963,7 @@ def recent_spb_builds
     begin
       HTTParty.get("http://pinot.fhcrc.org:8000/recent_builds").body
     rescue Exception => ex
-      "Can't connect to merlot2, not building dashboard"
+      "Can't connect to pinot, not building dashboard"
     end
 end
 
