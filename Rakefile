@@ -351,7 +351,6 @@ task :get_workflows do
       FileUtils.rm path
     end
   end
-end    
 
   auth = {:username => "readonly", :password => "readonly"}
   json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
