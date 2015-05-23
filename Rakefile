@@ -337,6 +337,11 @@ task :get_workflows do
   unless ENV["SKIP_WORKFLOW_RSYNC"] == "true"
     system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
     system(%Q(chmod -R a+r workflows_tmp))
+    Find.find('workflows_tmp') do |path|
+      if (!File.directory?(path)) and (File.basename(path).start_with? '.')
+        FileUtils.rm path
+      end
+    end
   end    
 
   FileUtils.mkdir_p "assets/packages/#{site_config['release_version']}/workflows"
