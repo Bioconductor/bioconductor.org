@@ -26,10 +26,10 @@ Bioconductor by starting R and entering the commands
     biocLite()
 
 Details, including instructions to
-[install additional packages](#install-bioconductor-packages") and to
-[update](#update-bioconductor-packages"),
-[find](#find-bioconductor-packages"), and
-[troubleshoot](#troubleshoot-bioconductor-packages") are provided
+[install additional packages](#install-bioconductor-packages) and to
+[update](#update-bioconductor-packages),
+[find](#find-bioconductor-packages), and
+[troubleshoot](#troubleshoot-bioconductor-packages) are provided
 below.  A [devel](/developers/how-to/useDevel/) version of
 Bioconductor is available. There are good
 [reasons for using `biocLite()`](#why-biocLite) for managing
