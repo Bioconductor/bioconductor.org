@@ -1,5 +1,7 @@
-// bioconductor.js
 
+// bioconductor.js
+if (!/\.html$|\/$/.test(window.location.href))
+    window.location.href = window.location.href + "/";
 
 // global variables
 var checkForEncryptInterval;
