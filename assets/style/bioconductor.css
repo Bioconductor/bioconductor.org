@@ -281,7 +281,12 @@ p.rightrail_header {
 
 /* ul lists in right rail are generally pleasing using the
    background-image trick */ 
-.RightRail ul { list-style-type:none; margin:0; padding:0; }
+.RightRail ul {
+    list-style-type:none;
+    padding:0;
+    margin-top:0em;
+    margin-bottom:1em;
+}
 .RightRail ul li { 
  	background-image:url(../images/list_bullet_bare.gif);
 	background-position:0 .5em;
