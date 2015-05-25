@@ -7,7 +7,7 @@ version of _R_. The following table summarizes the relationship, and
 links to packages designed to work with the corresponding _R_ /
 _Bioconductor_ version.
 
-| Bioconductor                                     | R    |
+| Release                                          | R    |
 |:-------------------------------------------------|:-----|
 | [3.1](/packages/3.1/)                            | 3.2  |
 | [2.14](/packages/2.14/), [3.0](/packages/3.0/)   | 3.1  |
@@ -18,8 +18,17 @@ _Bioconductor_ version.
 | [2.7](/packages/2.7/)                            | 2.12 |
 | [2.6](/packages/2.6/)                            | 2.11 |
 | [2.5](/packages/2.5/)                            | 2.10 |
+| [2.4](/packages/2.4/)                            | 2.9  |
+| [2.3](/packages/2.3/)                            | 2.8  |
+| [2.2](/packages/2.2/)                            | 2.7  |
+| [2.1](/packages/2.1/)                            | 2.6  | 
+| [2.0](/packages/2.0/)                            | 2.5  |
+| [1.9](/packages/1.9/)                            | 2.4  |
+| [1.8](/packages/1.8/)                            | 2.3  |
+| [1.7](/packages/bioc/1.7/src/contrib/html/)      | 2.2  |
+| [1.6](/packages/bioc/1.6/src/contrib/html/)      | 2.1  |
 
-## Release Announcements
+## Release announcements
 
 Release announcements summarize new package additions, updates to
 existing packages, and package removals.
