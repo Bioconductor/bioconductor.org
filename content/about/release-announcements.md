@@ -1,16 +1,41 @@
-## Bioconductor Release Announcements
+# Bioconductor releases
 
-| Release                         | R       | Date             |
-|:--------------------------------|:--------|:-----------------|
-| [3.1](/news/bioc_3_1_release)   | 3.2     | April 17, 2015   |
-| [3.0](/news/bioc_3_0_release)   | 3.1     | October 14, 2014 |
-| [2.14](/news/bioc_2_14_release) | 3.1     | April 14, 2014   | 
-| [2.13](/news/bioc_2_13_release) | 3.0     | October 15, 2013 |
-| [2.12](/news/bioc_2_12_release) | 3.0     | April 4, 2013    |
-| [2.11](/news/bioc_2_11_release) | 2.15    | October 3, 2012  |
-| [2.10](/news/bioc_2_10_release) | 2.15    | April 2, 2012    |
-| [2.9](/news/bioc_2_9_release)   | 2.14    | November 1, 2011 |
-| [2.8](/news/bioc_2_8_release)   | 2.13    | April 14, 2011   |
-| [2.7](/news/bioc_2_7_release)   | 2.12    | October 18, 2010 |
-| [2.6](/news/bioc_2_6_release)   | 2.11    | April 23, 2010   |
-| [2.5](/news/bioc_2_5_release)   | 2.10    | October 28, 2009 |
+## Release versions
+
+Each _Bioconductor_ release is designed to work with a specific
+version of _R_. The following table summarizes the relationship, and
+links to packages designed to work with the corresponding _R_ /
+_Bioconductor_ version.
+
+| Bioconductor                                     | R    |
+|:-------------------------------------------------|:-----|
+| [3.1](/packages/3.1/)                            | 3.2  |
+| [2.14](/packages/2.14/), [3.0](/packages/3.0/)   | 3.1  |
+| [2.12](/packages/2.12/), [2.13](/packages/2.13/) | 3.0  |
+| [2.10](/packages/2.10/), [2.11](/packages/2.11/) | 2.15 |
+| [2.9](/packages/2.9/)                            | 2.14 |
+| [2.8](/packages/2.8/)                            | 2.13 |
+| [2.7](/packages/2.7/)                            | 2.12 |
+| [2.6](/packages/2.6/)                            | 2.11 |
+| [2.5](/packages/2.5/)                            | 2.10 |
+
+## Release Announcements
+
+Release announcements summarize new package additions, updates to
+existing packages, and package removals.
+
+| Release                         | Date             |
+|:--------------------------------|:-----------------|
+| [3.1](/news/bioc_3_1_release)   | April 17, 2015   |
+| [3.0](/news/bioc_3_0_release)   | October 14, 2014 |
+| [2.14](/news/bioc_2_14_release) | April 14, 2014   | 
+| [2.13](/news/bioc_2_13_release) | October 15, 2013 |
+| [2.12](/news/bioc_2_12_release) | April 4, 2013    |
+| [2.11](/news/bioc_2_11_release) | October 3, 2012  |
+| [2.10](/news/bioc_2_10_release) | April 2, 2012    |
+| [2.9](/news/bioc_2_9_release)   | November 1, 2011 |
+| [2.8](/news/bioc_2_8_release)   | April 14, 2011   |
+| [2.7](/news/bioc_2_7_release)   | October 18, 2010 |
+| [2.6](/news/bioc_2_6_release)   | April 23, 2010   |
+| [2.5](/news/bioc_2_5_release)   | October 28, 2009 |
+
