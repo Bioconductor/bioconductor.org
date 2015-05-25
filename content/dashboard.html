@@ -11,6 +11,9 @@
 </div>
 
 
+<% if on_fhcrc_network? %>
+
+
   <div>
     <p>Last SVN commit to Rpacks devel was  <%= get_last_svn_commit_time() %>.</p>
   </div>
@@ -184,3 +187,9 @@ and 'returning visitors' did not apply.</p>
     </tr>
   <% end %>
 </table>
+
+<% else %>
+
+<p>Not on fhcrc network; not building dashboard.
+
+<% end %>

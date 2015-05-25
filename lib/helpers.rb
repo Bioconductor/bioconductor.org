@@ -25,6 +25,7 @@ require 'mechanize'
 require 'kramdown'
 require 'open3'
 require 'open-uri'
+require 'socket'
 
 include REXML
 
@@ -1563,4 +1564,9 @@ end
 def current? (package)
     [config[:release_version],
     config[:devel_version]].include? package[:bioc_version_num]  
+end
+
+def on_fhcrc_network?
+  fh = Socket.gethostbyname(Socket.gethostname).first
+  fh.end_with? "fhcrc.org"
 end
