@@ -2,12 +2,12 @@
 <ul class="inline_list">
     <li><a href="#bioc-version">Using Bioconductor</a></li>
 	<li><a href="#install-R">Install&nbsp;R</a></li>
-	<li><a href="#install-bioconductor-packages">Install Packages</a></li> 
-	<li><a href="#find-bioconductor-packages">Find Packages</a></li> 
-	<li><a href="#update-bioconductor-packages">Update Packages</a></li> 
-	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot Package Installations</a></li> 
-	<li><a href="#why-biocLite">Why biocLite()?</a></li> 
-	<li><a href="#preconfigured">Pre-configured Bioconductor</a></li> 
+	<li><a href="#install-bioconductor-packages">Install&nbsp;Packages</a></li> 
+	<li><a href="#find-bioconductor-packages">Find&nbsp;Packages</a></li> 
+	<li><a href="#update-bioconductor-packages">Update&nbsp;Packages</a></li> 
+	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot&nbsp;Package&nbsp;Installations</a></li> 
+	<li><a href="#why-biocLite">Why&nbsp;biocLite()?</a></li> 
+	<li><a href="#preconfigured">Pre-configured&nbsp;Bioconductor</a></li> 
 </ul>
 
 
