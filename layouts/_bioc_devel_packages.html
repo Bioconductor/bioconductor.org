@@ -1,26 +1,23 @@
 <div class="shaded_box">
   <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
   <p class="box_header">Development Version
-  <span class="olive">&raquo;</span></p>
+    <span class="olive">&raquo;</span></p>
   <p>Bioconductor packages under development:</p>
   <ul>
     <% devel_repos = config[:devel_repos] %>
     <% if devel_repos.include? "bioc" %>
-        <li><a class="symlink" href="/packages/devel/BiocViews.html#___Software">Software</a></li>    
+    <li>Analysis <a class="symlink" href="/packages/devel/BiocViews.html#___Software">software</a></li>
     <% end %>
     <% if devel_repos.include? "data/annotation" %>
-        <li><a class="symlink" href="/packages/devel/BiocViews.html#___AnnotationData">Annotation Data</a> (Genome, Array, etc.)</li>
+    <li><a class="symlink" href="/packages/devel/BiocViews.html#___AnnotationData">Annotation</a> packages</li>
     <% end %>
     <% if devel_repos.include? "data/experiment" %>
-        <li><a class="symlink" href="/packages/devel/BiocViews.html#___ExperimentData">Experiment Data</a></li>
+    <li>Illustrative <a class="symlink" href="/packages/devel/BiocViews.html#___ExperimentData">experiment data</a> packages</li>
     <% end %>
   </ul>
-
-<br/>
-<p>Developer Resources:</p>
-
-<ul>
-	<li><a href="/developers/svnlog">Subversion Log</a></li>
-	<li><a href="/developers/new_packages">New Packages</a></li>
-</ul>
+  <p>Developer Resources:</p>
+  <ul>
+    <li><a href="/developers/svnlog">Subversion Log</a></li>
+    <li><a href="/developers/new_packages">New Packages</a></li>
+  </ul>
 </div>
