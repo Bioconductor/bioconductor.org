@@ -1,6 +1,6 @@
 ---
 title: Workflows
+suppress_subnav: true
 subnav:
   - include: /_documentation/
   - include: /_bioc_release_packages/
-suppress_subnav: true
