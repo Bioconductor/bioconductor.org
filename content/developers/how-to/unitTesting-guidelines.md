@@ -4,10 +4,14 @@
 
 * [Introduction](#introduction)
 * [Motivation](#motivation)
-* [Adding Tests to Your Code](#addingTests)
-* [Conventions for the Build Process](#conventions)
-* [Using Tests During Development](#duringDevelopment)
-* [File Summary](#fileSummary)
+* [Deciding Which Test Framework To Use](#choosingTestFramework)
+* [RUnit Usage](#RUnitSetup)
+  * [Adding Tests to Your Code](#RUnitAddingTests)
+  * [Conventions for the Build Process](#RUnitConventions)
+  * [Using Tests During Development](#RUnitDuringDevelopment)
+  * [File Summary](#RUnitFileSummary)
+* [Testthat Usage](#testthatSetup)
+  * [Conversion from RUnit to testthat](#testthatConversion)
 * [Additional Resources](#resources)
 
 <h2 id="introduction">Introduction</h2>
@@ -21,23 +25,27 @@ and how they are woven into the standard Bioconductor build process.
 We hope that unit tests will become a standard part of your software
 development, and an integral part of your Bioconductor package.
 
-We recommend the [RUnit] package from CRAN to write unit tests &mdash;
-an _R_ implementation of the [agile] software development 'XUnit'
-tools (see also [JUnit], [PyUnit]) each of which tries to encourage,
-in their respective language, the rapid development of robust useful
-software.
+We recommend either the [RUnit] or [testthat] packages from CRAN to write unit
+tests. RUnit is an _R_ implementation of the [agile] software development 'XUnit'
+tools (see also [JUnit], [PyUnit]) each of which tries to encourage, in their
+respective language, the rapid development of robust useful
+software.  Testthat also draws inspiration from the xUnit family of testing
+packages, as well as from many of the innovative ruby testing libraries, like
+[rspec](https://rspec.info/), [testy](https://github.com/ahoward/testy),
+[bacon](https://github.com/chneukirchen/bacon) and
+[cucumber](https://cucumber.io).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="motivation">Motivation</h2>
 
-Why bother with unit testing?  
+Why bother with unit testing?
 
 Imagine that you need a function `divideBy` taking two arguments,
 which you might define like this:
 
-    divideBy <- function(dividend, divisor) { 
-        if (divisor == 0) 
+    divideBy <- function(dividend, divisor) {
+        if (divisor == 0)
            return(NA)
         dividend / divisor
     }
@@ -56,16 +64,24 @@ formalized** unit testing.  This requires only a very few conventions
 and practices:
 
 * Store the test functions in a standard directory.
-* Use simple functions from the *RUnit* package to check your results.
+* Use simple functions from the *RUnit* or *testthat* packages to check your results.
 * Run the tests as a routine part of your development process.
 
-Here is such a unit test for `divideBy`:
+Here is a RUnit test for `divideBy`:
 
     test_divideBy <- function() {
         checkEquals(divideBy(4, 2), 2)
         checkTrue(is.na(divideBy(4, 0)))
         checkEqualsNumeric(divideBy(4, 1.2345), 3.24, tolerance=1.0e-4)
     }
+
+And the equivalent test suing testthat:
+
+    test_that("divideBy works properly", {
+      expect_equal(divideBy(4, 2), 2)
+      expect_true(is.na(divideBy(4, 0)))
+      expect_equal(divideBy(4, 1.2345), 3.24, tolerance = 1.0e-4)
+    })
 
 Adopting these practices will cost you very little.  Most developers
 find that these practices simplify and shorten development time.  In
@@ -92,7 +108,7 @@ specifies these behaviors, and provides a single mechanism &mdash; one
 or more test functions residing in one or more files, within a
 standard directory structure &mdash; to ensure that the target
 function, method or class does its job.  With that assurance, the
-programmer (and her collaborators) can then, with confidence, proceed
+programmer (and their collaborators) can then, with confidence, proceed
 to use it in a larger program.  When a bug appears, or new features
 are needed and added, one adds new tests to the existing collection.
 Your code becomes progressively more powerful, more robust, and yet
@@ -104,13 +120,6 @@ operational definition of a function through its tests encourages
 clean design, the 'separation of concerns', and sensible handling of
 edge cases.
 
-`test_dividesBy` illustrates all the crucial features of a good test
-function.  It uses the simple *RUnit* **check** functions.  It makes
-sure that reasonable values are returned across a range of normal and
-pathological conditions.  Its name begins with `test_` so that it is
-recognized and run by the Bioconductor build process.  It would reside
-(more about this below) in the `inst/unitTests` directory.
-
 Finally, unit testing can be **adopted piecemeal**.  Add a single test
 to your package, even if only a test for a minor feature, and both you
 and your users will benefit.  Add more tests as you go, as bugs arise,
@@ -121,7 +130,47 @@ complete set of tests.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="addingTests">Adding Tests For Your Code</h2>
+<h2 id="choosingTestFramework">Deciding Which Test Framework To Use</h2>
+
+RUnit and testthat are both robust testing solutions that are great tools for
+package development, which you choose to use for your package largely comes
+down to personal preference.  However here is a brief list of strengths and
+weaknesses of each.
+
+### RUnit Strengths ###
+- Longer history (first release 2005)
+- Direct analog to other xUnit projects in other languages.
+- Only need to learn a small set of check functions.
+- Used extensively in Bioconductor (210 Bioconductor packages, overall 339 circa May 2015), particularly in
+  the core packages.
+
+### RUnit Weaknesses ###
+- No RUnit development activity since 2010, and has no active maintainer.
+- Need to manually source package and test code to run interactively.
+- More difficult to setup and run natively (although see
+  `BiocGenerics:::testPackage()` below which handles some of this).
+
+### Testthat Strengths ###
+- Active development with over 39 contributors.
+- Greater variety of test functions available, including partial matching and
+  catching errors, warnings and messages.
+- Easy to setup with `devtools::use_testthat()`.
+- Integrates with `devtools::test()` to automatically reload package source and
+  run tests during development.
+- Test failures and errors are more informative than RUnit.
+- A number of different reporting functions available, including visual
+  real-time test results.
+- Used extensively in CRAN (546 CRAN packages, overall 598 circa May 2015).
+
+### Testthat Weaknesses ###
+- Test code is slightly more verbose than the equivalent RUnit tests.
+- Has been available for less time (only since 2009).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="RUnitUsage">RUnit Usage</h2>
+
+<h3 id="RUnitAddingTests">Adding Tests For Your Code</h3>
 
 Three things are required:
 
@@ -149,25 +198,25 @@ context to track down the error.
 *RUnit* can test that an exception (error) occurs with
 
     checkException(expr, msg)
-	
+
 but it is often convenient to test specific exceptions, e.g., that a
 warning "unusual condition" is generated in the function `f <- function()
 { warning("unusual condition"); 1 }` with
 
     obs <- tryCatch(f(), warning=conditionMessage)
-	checkIdentical("unusual condition", obs)
+    checkIdentical("unusual condition", obs)
 
 use `error=...` to test for specific errors.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="conventions">Conventions for the Build Process</h2>
+<h3 id="RUnitConventions">Conventions for the Build Process</h3>
 
 Writing unit tests is easy, though your Bioconductor package must be
 set up properly so that `R CMD check MyPackage` finds and run your
 tests.  We take some pains to describe exactly how things should be
 set up, and what is going on behind the scenes.  (See the [next
-section](#duringDeveloment) for the simple technique to use when you
+section](#RUnitDuringDeveloment) for the simple technique to use when you
 want to test only a small part of your code).
 
 The standard command `R CMD check MyPackage` sources and runs all R
@@ -204,7 +253,7 @@ There are two steps:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="duringDevelopment">Using Tests During Development</h2>
+<h3 id="RUnitDuringDevelopment">Using Tests During Development</h3>
 
     R CMD check MyPackage
 
@@ -230,12 +279,12 @@ A failed test is reported like this:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="fileSummary">Summary: the minimal setup</h2>
+<h3 id="RUnitFileSummary">Summary: the minimal setup</h3>
 
 A minimal Bioconductor **unitTest** setup requires only this one-line addition to
 the `MyPackage/DESCRIPTION` file
 
-    Suggests: RUnit, BiocGenerics 
+    Suggests: RUnit, BiocGenerics
 
 and two files, `MyPackage/tests/runTests.R`:
 
@@ -254,6 +303,35 @@ name(s), as long as they start with `test_`.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+<h2 id="testthatUsage">Testthat Usage</h2>
+Hadley Wickham, the primary author of testthat has a comprehensive chapter on
+[Testing with testthat] in his R packages book.  There is also an article
+[testthat: Get Started with Testing] in the R-Journal.
+
+The easiest way to setup the testthat infrastructure for a package is using
+`devtools::use_testthat()`.
+
+You can then automatically reload your code and tests and re-run them using
+`devtools::test()`.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h3 id="testthatConversion">Conversion from RUnit to testthat</h3>
+
+If you have an existing RUnit project you would like to convert to using
+testthat you will need to change the following things in your package
+structure.
+
+1. `devtools::use_testthat()` can be used to setup the testthat testing structure.
+2. Test files are stored in `tests/testthat` rather than `inst/unitTests` and
+   should start with `test`.  Richard Cotton's
+   [runittotesthat](https://github.com/richierocks/runittotestthat]) package
+   can be used to programmatically convert RUnit tests to testthat format.
+3. You need to add `Suggests: testthat` to your `DESCRIPTION` file rather than
+   `Suggests: RUnit, BiocGenerics`.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 <h2 id="resources">Additional Resources</h2>
 
 Some web resources worth reading:
@@ -262,7 +340,8 @@ Some web resources worth reading:
 * [An informal account](http://www.daedtech.com/addicted-to-unit-testing)
 * [Test-driven development][tdd]
 * [Agile software development][agile]
-
+* [Testing with testthat]
+* [testthat: Get Started with Testing]
 
 [BiocGenerics]: /packages/release/bioc/html/BiocGenerics.html
 [RUnit]: http://cran.r-project.org/web/packages/RUnit/index.html
@@ -271,5 +350,7 @@ Some web resources worth reading:
 [PyUnit]: http://pyunit.sourceforge.net
 [tdd]: http://en.wikipedia.org/wiki/Test-driven_development
 [bioc-devel]: /help/mailing-list/#bioc-devel
-
+[testthat]: http://cran.r-project.org/web/packages/testthat/index.html
+[Testing with testthat]: http://r-pkgs.had.co.nz/tests.html
+[testthat: Get Started with Testing]: http://journal.r-project.org/archive/2011-1/RJournal_2011-1_Wickham.pdf
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
