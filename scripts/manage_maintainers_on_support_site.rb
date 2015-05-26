@@ -19,6 +19,9 @@
 require 'sequel'
 require 'fileutils'
 require 'httparty'
+require 'net/smtp'
+require 'yaml'
+
 
 DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@habu:5432/biostar")
 users = DB[:users_user]
@@ -59,14 +62,13 @@ for line in lines
       raw = mtr_lines.join "\n"
       emails = raw.scan(/<([^>]*)>/).flatten
       pm[curpkg] = emails
-      #puts curpkg if pm[curpkg].count("<") > 1
       mtr_lines = []
     end
   end
 end
 
 
-need_to_register = {}
+need_to_register = Hash.new { |h, k| h[k] = [] }
 
 pm.each_pair do |k, v|
   for email in v
@@ -77,8 +79,7 @@ pm.each_pair do |k, v|
         "%#{email}%")).first
 
     if record.nil?
-      # puts "#{email} isn't signed up, so #{k} is SOL!"
-      need_to_register[email] = 1
+      need_to_register[email] << k
     else
       # make sure all watched tags are lowercase
       watched_tags = record[:watched_tags]
@@ -91,11 +92,10 @@ pm.each_pair do |k, v|
       if watched_tags != "" and watched_tags !~ /,/ and watched_tags =~ /\s/
         puts "whoa, #{watched_tags} is badly formatted!"
       end
-      # puts "watched tags for #{email} are #{watched_tags}."
       pkgs = watched_tags.downcase.split(",")
       pkgs = pkgs.map{|i| i.strip}
       if pkgs.include? k.downcase
-        # puts "hells yeah, good lookin out, #{email} has #{k} in watched tags!"
+        # great, all is right with the world.
       else
         # add it...
         pkgs << k.downcase
@@ -115,7 +115,60 @@ pm.each_pair do |k, v|
   end
 end
 
-require 'pry';binding.pry
+
+if ARGV.length > 0 and ARGV.first == 'nag'
+  configfile = File.join(File.expand_path(File.dirname(__FILE__)),
+    "mailconfig.yml")
+  mailconfig = YAML::load_file(configfile)
+  need_to_register.each_pair do |k,v|
+    message = <<"MESSAGE_END"
+From: Dan Tenenbaum <dtenenba@fredhutch.org>
+To: #{k}
+Subject: Please register for the Bioconductor Support site
+
+Hi, this is an automated message (sent on behalf of Dan Tenenbaum)
+asking you to please register for the Bioconductor support site
+so that you can more effectively maintain your package(s)
+(#{v.join(", ")}). 
+
+If you have registered on the support site, you have not done so
+under the same email address that is found in the Maintainer
+field of the DESCRIPTION file in your package (#{k}). You should either
+register under that email address, or change the email address in
+the Maintainer field to match the address that is already subscribed
+to the support site.
+
+To register, visit the link:
+
+https://support.bioconductor.org/accounts/signup/
+
+Once you have registered, visit the link
+https://support.bioconductor.org/profile/#div_id_watched_tags
+in order to add the packages you maintain to the "Watched tags" list.
+For each (comma-separated, lowercase) entry in this list, you'll
+receive an email whenever someone posts a question tagged with your
+package name. (If you forget this step, it's OK, your packages
+will automatically be added to this field once a day).
+
+Thank you for your understanding of this process.
+We are just trying to bring people with questions closer to
+the people with answers, and make sure that questions
+asked don't fall into a hole. 
+
+This automated email will be sent out once a week. 
+In order to avoid further nagging, please register today.
+
+Thanks for contributing to Bioconductor and for helping the
+community by supporting your package. 
+
+MESSAGE_END
+    Net::SMTP.start(mailconfig['server'], mailconfig['port']) do |smtp|
+      puts "emailing #{k} about #{v.join(", ")}"
+      smtp.send_message(message, 'dtenenba@fredhutch.org', k)
+    end
+  end
+end
 
 
-puts 'bye'
+
+puts 'Done.'
