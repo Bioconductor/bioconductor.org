@@ -328,10 +328,10 @@ task :get_workflows do
   #FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir_p "workflows_tmp"
   dest_dir = "help/workflows"
-  f = File.open("content/#{dest_dir}.yaml", "w")
-  f.puts "---"
-  f.puts "title: Workflows"
-  f.close
+  # f = File.open("content/#{dest_dir}.yaml", "w")
+  # f.puts "---"
+  # f.puts "title: Workflows"
+  # f.close
   ##indexfile = File.open("content/#{dest_dir}.md", "w")
   ## You must have the appropriate private key in order for this to work.
   unless ENV["SKIP_WORKFLOW_RSYNC"] == "true"
