@@ -117,10 +117,20 @@ end
 
 
 if ARGV.length > 0 and ARGV.first == 'nag'
+  blacklist = []
+  blacklist_file = File.join(File.expand_path(File.dirname(__FILE__)), "maintainer_blacklist.txt")
+
+  if File.exists?(blacklist_file)
+    blacklist = File.readlines(blacklist_file).map{|i|i.strip}
+  end
   configfile = File.join(File.expand_path(File.dirname(__FILE__)),
     "mailconfig.yml")
   mailconfig = YAML::load_file(configfile)
   need_to_register.each_pair do |k,v|
+    if blacklist.include? k
+      puts "not sending email to #{k} (#{v.join ', '}) because email is in the blacklist"
+      next
+    end
     message = <<"MESSAGE_END"
 From: Dan Tenenbaum <dtenenba@fredhutch.org>
 To: #{k}

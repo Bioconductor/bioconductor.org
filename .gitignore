@@ -14,3 +14,6 @@ analytics_py/*.pyc
 assets/packages
 assets/shields
 assets/config.yaml
+scripts/mailconfig.yml
+scripts/maintainer_blacklist.txt
+scripts/test.rb
