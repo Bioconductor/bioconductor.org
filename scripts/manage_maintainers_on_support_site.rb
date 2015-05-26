@@ -66,7 +66,7 @@ for line in lines
 end
 
 
-need_to_register = []
+need_to_register = {}
 
 pm.each_pair do |k, v|
   for email in v
@@ -78,7 +78,7 @@ pm.each_pair do |k, v|
 
     if record.nil?
       # puts "#{email} isn't signed up, so #{k} is SOL!"
-      need_to_register.push({email: email, package: k})
+      need_to_register[email] = 1
     else
       # make sure all watched tags are lowercase
       watched_tags = record[:watched_tags]
