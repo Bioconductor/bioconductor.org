@@ -440,6 +440,8 @@ responsibility for package maintenance. These responsibilities
 include:
 
 * Subscription to the [bioc-devel](/help/mailing-list/) mailing list.
+* [Registration](https://support.bioconductor.org/accounts/signup/)
+  on the [support site](https://support.bioconductor.org/).
 * Response to bug reports and questions from users regarding your
   package, as posted on the [Bioconductor support site](https://support.bioconductor.org/)
   or directly to
