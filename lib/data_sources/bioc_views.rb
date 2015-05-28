@@ -155,7 +155,8 @@ class BiocViews < Nanoc3::DataSource
 
         packages = JSON.parse(
           File.read(json_file,
-            :external_encoding => 'iso-8859-1',
+            :external_encoding => 'utf-8',
+            :internal_encoding => 'utf-8'
           )
         )
         for bad in @bad_packages
