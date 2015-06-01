@@ -18,13 +18,13 @@ _Bioconductor_ version.
 | [2.7](/packages/2.7/)                            | 2.12 |
 | [2.6](/packages/2.6/)                            | 2.11 |
 | [2.5](/packages/2.5/)                            | 2.10 |
-| [2.4](/packages/2.4/)                            | 2.9  |
-| [2.3](/packages/2.3/)                            | 2.8  |
-| [2.2](/packages/2.2/)                            | 2.7  |
-| [2.1](/packages/2.1/)                            | 2.6  | 
-| [2.0](/packages/2.0/)                            | 2.5  |
-| [1.9](/packages/1.9/)                            | 2.4  |
-| [1.8](/packages/1.8/)                            | 2.3  |
+| [2.4](/packages/2.4/BiocViews.html)              | 2.9  |
+| [2.3](/packages/2.3/BiocViews.html)              | 2.8  |
+| [2.2](/packages/2.2/BiocViews.html)              | 2.7  |
+| [2.1](/packages/2.1/BiocViews.html)              | 2.6  | 
+| [2.0](/packages/2.0/BiocViews.html)              | 2.5  |
+| [1.9](/packages/1.9/BiocViews.html)              | 2.4  |
+| [1.8](/packages/1.8/BiocViews.html)              | 2.3  |
 | [1.7](/packages/bioc/1.7/src/contrib/html/)      | 2.2  |
 | [1.6](/packages/bioc/1.6/src/contrib/html/)      | 2.1  |
 
