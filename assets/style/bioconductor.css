@@ -542,6 +542,7 @@ ul.big_arrow_list li {
 /* an inline list with no marker */
 ul.inline_list {
   list-style-type:none;
+  padding-right:5px;
 }
 ul.inline_list li {
   display: inline;
