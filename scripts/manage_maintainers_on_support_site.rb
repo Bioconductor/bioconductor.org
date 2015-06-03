@@ -146,7 +146,8 @@ under the same email address that is found in the Maintainer
 field of the DESCRIPTION file in your package (#{k}). You should either
 register under that email address, or change the email address in
 the Maintainer field to match the address that is already subscribed
-to the support site.
+to the support site (and increment your version number so that
+the change is propagated).
 
 To register, visit the link:
 
