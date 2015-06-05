@@ -17,3 +17,4 @@ assets/config.yaml
 scripts/mailconfig.yml
 scripts/maintainer_blacklist.txt
 scripts/test.rb
+scripts/twitter.yaml
