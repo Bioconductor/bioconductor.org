@@ -48,11 +48,6 @@ genomic data. Common workflows include:
   Import, transform, edit, analyze and visualize flow cytometric, mass
   spec, HTqPCR, cell-based, and other assays.
 
-* [RNAseq Differential Expression](/packages/release/data/experiment/html/parathyroidSE.html)
-  Use the <em>parathyroidSE</em> ExperimentData package and vignette
-  to learn how to count reads and perform other common operations
-  required for differential expression analysis.
-
 * [RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)
   This lab will walk you through an end-to-end RNA-Seq differential 
   expression workflow, using DESeq2 along with other Bioconductor 

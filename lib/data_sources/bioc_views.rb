@@ -173,8 +173,8 @@ class BiocViews < Nanoc3::DataSource
           
           item[:rebase] = true
           item[:subnav] = []
-          item[:subnav].push({:include => "/_workflows/"})
-          item[:subnav].push({:include => "/_mailing_list/"})
+          item[:subnav].push({:include => "/_documentation/"})
+          item[:subnav].push({:include => "/_support/"})
 
           item[:title] = "#{item[:Package]}"
           if  version == @site_config["devel_version"]
@@ -200,7 +200,7 @@ class BiocViews < Nanoc3::DataSource
           end
 
           items.push item # UNCOMMENT ME!
-          # items.push item if item.identifier =~ /\/ALL\//# REMOVEME!
+          # items.push item if item.identifier =~ /\/a4\//# REMOVEME!
         end
       end
     end
