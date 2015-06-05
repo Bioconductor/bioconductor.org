@@ -648,7 +648,11 @@ def years_in_bioc(package, conf=nil)
   rep = (years_since_release * 2).round / 2.0
   rep = rep.to_i == rep ? rep.to_i : rep
   srep = (rep.is_a? Integer) ? rep.to_i.to_s : rep.to_s
-  srep += " years"
+  if srep == "1"
+    srep += " year"
+  else
+    srep += " years"
+  end
   srep = "> " + srep if since_ver == "1.6"
 
 
