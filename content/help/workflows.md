@@ -19,12 +19,6 @@ genomic data. Common workflows include:
   number, SNP, methylation and other assays.  Access GEO,
   ArrayExpress, Biomart, UCSC, and other community resources.
 
-* [Variants](variants/)
-  Read and write VCF files. Identify structural location of variants
-  and compute amino acid coding changes for non-synonymous
-  variants. Use SIFT and PolyPhen database packages to predict
-  consequence of amino acid coding changes.
-
 * [Annotation Resources](annotation/Annotation_Resources/)
   Introduction to using gene, pathway, gene ontology, homology annotations
   and the AnnotationHub. Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
@@ -34,6 +28,12 @@ genomic data. Common workflows include:
   Represent common sequence data types (e.g., from BAM, gff, bed, and
   wig files) as genomic ranges for simple and advanced range-based
   queries.
+
+* [Annotating Genomic Variants](variants/)
+  Read and write VCF files. Identify structural location of variants
+  and compute amino acid coding changes for non-synonymous
+  variants. Use SIFT and PolyPhen database packages to predict
+  consequence of amino acid coding changes.
 
 * [Changing genomic coordinate systems with rtracklayer::liftOver](/help/workflows/liftOver/)
   The liftOver facilities developed in conjunction with the UCSC
