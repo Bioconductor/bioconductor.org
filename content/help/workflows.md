@@ -25,9 +25,9 @@ genomic data. Common workflows include:
   variants. Use SIFT and PolyPhen database packages to predict
   consequence of amino acid coding changes.
 
-* [Accessing Annotation Data](annotation/Genomic_Annotation_Resources/)
-  Use microarray probe, gene, pathway, gene ontology, homology and
-  other annotations.  Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
+* [Annotation Resources](annotation/Annotation_Resources/)
+  Introduction to using gene, pathway, gene ontology, homology annotations
+  and the AnnotationHub. Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
   and other sources.
 
 * [Annotating Genomic Ranges](annotation/Annotating_Genomic_Ranges)
