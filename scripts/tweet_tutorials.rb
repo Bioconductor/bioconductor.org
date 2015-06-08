@@ -55,7 +55,7 @@ tweeted_tutorials = ["#rstats / #Bioconductor new tutorial: Epigenomics RoadMap 
 for tweet in tweets
     text = tweet.text
     if text =~ /#rstats \/ #Bioconductor new tutorial/#%r(^http://t.co)
-        tweeted_tutorials.push(text.split(" ").last)
+        tweeted_tutorials.push text
     end
 end
 
@@ -72,8 +72,25 @@ def truncate(input)
 end
 
 
+
+
 tutorials_in_rss = tutorials_in_rss.map{|i| truncate(i)}
-tutorials_to_tweet = tutorials_in_rss - tweeted_tutorials
+
+tutorials_in_rss_without_urls = tutorials_in_rss.map{|i| segs = i.split(" "); segs.pop; segs.join(" ")}
+tweeted_tutorials_without_urls = tweeted_tutorials.map{|i| segs = i.split(" "); segs.pop; segs.join(" ")}
+
+tutorials_to_tweet = []
+
+
+tutorials_in_rss_without_urls.each_with_index do |item, i|
+  unless tweeted_tutorials_without_urls.include? item
+    tutorials_to_tweet.push tutorials_in_rss[i]
+  end
+
+end
+
+
+#tutorials_to_tweet = tutorials_in_rss - tweeted_tutorials
 
 
 if tutorials_to_tweet.length >= 100
