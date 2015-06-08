@@ -99,9 +99,8 @@ if tutorials_to_tweet.length >= 100
 end
 
 for item in tutorials_to_tweet
-    tweet = truncate(item)
     begin
-        @client.update(tweet)
+        @client.update(item)
         puts "successfully tweeted #{item}..."
     rescue Exception => ex
         puts "Error tweeting #{item}: #{ex.message}"
