@@ -29,7 +29,7 @@ genomic data. Common workflows include:
   wig files) as genomic ranges for simple and advanced range-based
   queries.
 
-* [Annotating Genomic Variants](variants/Annotating_Genomic_Variants/)
+* [Annotating Genomic Variants](variants/)
   Read and write VCF files. Identify structural location of variants
   and compute amino acid coding changes for non-synonymous
   variants. Use SIFT and PolyPhen database packages to predict
