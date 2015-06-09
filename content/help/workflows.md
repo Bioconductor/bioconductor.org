@@ -24,12 +24,12 @@ genomic data. Common workflows include:
   and the AnnotationHub. Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
   and other sources.
 
-* [Annotating Genomic Ranges](annotation/Annotating_Genomic_Ranges)
+* [Annotating Genomic Ranges](annotation/Annotating_Genomic_Ranges/)
   Represent common sequence data types (e.g., from BAM, gff, bed, and
   wig files) as genomic ranges for simple and advanced range-based
   queries.
 
-* [Annotating Genomic Variants](variants/)
+* [Annotating Genomic Variants](variants/Annotating_Genomic_Variants/)
   Read and write VCF files. Identify structural location of variants
   and compute amino acid coding changes for non-synonymous
   variants. Use SIFT and PolyPhen database packages to predict
