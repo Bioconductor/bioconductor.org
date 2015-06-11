@@ -133,6 +133,7 @@ will not produce any output since the package has already been loaded:
     library(RNAseqData.HNRNPC.bam.chr14)
     ```
 
+## Questions
 
 If you have any questions, please ask on the bioc-devel
 [mailing list](/help/mailing-list).
