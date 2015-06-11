@@ -85,6 +85,51 @@ at the beginning of the file, for example:
 This metadata will be rendered in the "About This Document" box that appears at the
 top of the web page.
 
+## Tidying package loading output
+
+Most workflows load a number of packages and you do not want
+the output of loading those packages to clutter your workflow 
+document. Here's how you would solve this in markdown; you can
+do something similar in Latex.
+
+First, set up a code chunk that is evaluated but not echoed, and whose
+results are hidden. We also set warning=FALSE to be sure that 
+no output from this chunk ends up in the document:
+
+    ```{r, echo=FALSE, results="hide", warning=FALSE}
+    suppressPackageStartupMessages({
+        library(GenomicRanges)
+        library(GenomicAlignments) 
+        library(Biostrings)
+        library(Rsamtools)
+        library(ShortRead)
+        library(BiocParallel)
+        library(rtracklayer)
+        library(VariantAnnotation)
+        library(AnnotationHub)
+        library(BSgenome.Hsapiens.UCSC.hg19)
+        library(RNAseqData.HNRNPC.bam.chr14)
+    })
+    ```
+
+Then you can set up another code chunk that *is* echoed,
+which has the same contents. The second invocation of `library()`
+will not produce any output since the package has already been loaded:
+
+
+    ```{r}
+    library(GenomicRanges)
+    library(GenomicAlignments) 
+    library(Biostrings)
+    library(Rsamtools)
+    library(ShortRead)
+    library(BiocParallel)
+    library(rtracklayer)
+    library(VariantAnnotation)
+    library(AnnotationHub)
+    library(BSgenome.Hsapiens.UCSC.hg19)
+    library(RNAseqData.HNRNPC.bam.chr14)
+    ```
 
 
 If you have any questions, please ask on the bioc-devel
