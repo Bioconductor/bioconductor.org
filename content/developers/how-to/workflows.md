@@ -66,11 +66,13 @@ snippet at the beginning of your .Rmd file:
     </script>
 
 Then you can use math the same way you would in `LaTeX`, except the symbols for escaping it 
-are different. For inline formulae, use <span>\\</span>\\(N\\<span>\\)</span>, and for displayed 
-equations, use <span>$</span>$N<span>$</span>$.
+are different. For inline formulae, use <span>\\</span>(N<span>\\)</span>, and for displayed 
+equations, use <span>$</span>$N<span>$</span>$. 
 
-The first will render as \\(N\\) and the second as $$N$$.
+The first will render as \\(N\\) and the second as $$N$$ .
 
+See the [Mathjax](https://www.mathjax.org/) documentation for
+more information.
 
 ## Adding metadata to a Markdown vignette
 
@@ -113,7 +115,7 @@ no output from this chunk ends up in the document:
     ```
 
 Then you can set up another code chunk that *is* echoed,
-which has the same contents. The second invocation of `library()`
+which has almost the same contents. The second invocation of `library()`
 will not produce any output since the package has already been loaded:
 
 
