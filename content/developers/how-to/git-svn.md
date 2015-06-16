@@ -1,5 +1,14 @@
  <a name="top"></a>
 
+<h1 style="font-size: 300%; color: red;">Important</h1>
+
+The Git-SVN bridge has been deprecated. You can no longer
+create any new bridges. The bridge will go away at some point.
+
+Instead, please use the [Git Mirrors](../git-mirrors/). If you 
+currently have a Git-SVN bridge, you should migrate to using
+a Git Mirror as soon as practicable.
+
 # Using the Bioconductor Git-SVN bridge
 
 

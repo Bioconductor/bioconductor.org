@@ -74,9 +74,8 @@ Some Helpful Coding Resources
   The developer mailing list facilitates communication amongst _Bioconductor_ 
   developers. 
 
-* [Using Git-Subversion Bridge](/developers/how-to/git-svn/)    
-  One can also use git to check in new changes into their package using the 
-  Git-SUBVERSION Bridge.
+* [Using Bioconductor Git Mirrors](/developers/how-to/git-mirrors/)    
+  Use Git and Github if you prefer not to use Subversion.
 
 * [RSS Feeds](/developers/rss-feeds/)   
   _Bioconductor_ build system updates RSS feeds for each package 

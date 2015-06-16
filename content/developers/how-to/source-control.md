@@ -2,7 +2,7 @@
 
 The Bioconductor project is maintained in a Subversion source control
 system. Maintainers can also access their packages through git and
-Github using the [Bioconductor Git-SVN bridge](../git-svn/).
+Github using the [Bioconductor Git mirrors](../git-mirrors/).
 
 ## Subversion Resources
 
