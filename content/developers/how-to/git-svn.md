@@ -21,6 +21,9 @@ social coding features of Github such as issue tracking and pull requests.
 
 ## How to create a bridge
 
+**Bridge creation is now disabled. Please use the
+[Git mirrors](../git-mirrors/) instead for new projects.**
+
 In order to create a bridge, you must be the maintainer of a Bioconductor 
 package, with read/write access to its directory in the
 Bioconductor
