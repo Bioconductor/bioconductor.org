@@ -36,6 +36,9 @@ RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
+RewriteRule ^developers/how-to/git-mirror/$ /developers/how-to/git-mirrors/ [R=301]
+
+
 
 # handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
