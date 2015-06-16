@@ -2,13 +2,18 @@ Subject: Bioconductor Git/Github Mirrors
 
 Dear Bioconductors,
 
-We're pleased to announce the availability of Bioconductor Git Mirrors. These are read-only Github repositories (available under https://github.com/Bioconductor-mirror) for every Bioconductor software package. These repositories are synchronized with our 
+We're pleased to announce the availability of Bioconductor Git Mirrors. 
+These are read-only Github repositories (available under https://github.com/Bioconductor-mirror) 
+for every Bioconductor software package. These repositories are synchronized with our 
 Subversion repository. Package maintainers (or anyone else) can fork these repositories
 and do their development on the fork. Complete documentation of the mirrors is at
 
 http://bioconductor.org/developers/how-to/git-mirror/
 
-These mirrors supersede the Git-SVN bridge, which is now deprecated. Creation of new bridges is disabled and maintainers who are using the bridge should migrate to the Git mirrors as soon as it's convenient, as the bridge will eventually go away. Instructions for migrating can be found at the above link.
+These mirrors supersede the Git-SVN bridge, which is now deprecated. 
+Creation of new bridges is disabled and maintainers who are using the bridge
+should migrate to the Git mirrors as soon as it's convenient, as the bridge
+will eventually go away. Instructions for migrating can be found at the above link.
 
 Some features of the new Git Mirrors, and why they are better than the Git-SVN bridge:
 
@@ -30,6 +35,8 @@ Some features of the new Git Mirrors, and why they are better than the Git-SVN b
  - Use of Git and Github is still optional; if you prefer Subversion, you
    can continue to use it.
 
-We are excited about these new mirrors (brought to you by the amazing work of Jim Hester) and we hope you are too. Questions and comments are welcome on the bioc-devel mailing list.
+We are excited about these new mirrors (brought to you by the amazing
+work of Jim Hester) and we hope you are too. Questions and comments are
+welcome on the bioc-devel mailing list.
 
 
