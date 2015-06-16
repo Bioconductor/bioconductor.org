@@ -30,7 +30,7 @@ Some features of the new Git Mirrors, and why they are better than the Git-SVN b
  - The Git mirrors are much more reliable.
  - Use is flexible. You can use git locally (without Github) or you 
    can use Github as well, to take advantage of all its social coding features.
- - Using github's code search, you can search the entire Github codebase.
+ - Using github's code search, you can search the entire Bioconductor codebase.
    Here's a sample search: https://goo.gl/jI92Ys
  - Use of Git and Github is still optional; if you prefer Subversion, you
    can continue to use it.
