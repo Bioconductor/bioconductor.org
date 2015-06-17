@@ -49,7 +49,8 @@ sudo apt-get install git-svn
 ## Download the update_remotes.sh script ##
 
 This script will automatically create local branches to track the development
-and release branches from svn and the associated git mirrors.
+and release branches from svn and the associated git mirrors. You can download this script
+to any directory and (optionally) put it in your PATH.
 
 `curl -O https://raw.githubusercontent.com/Bioconductor/mirror/master/update_remotes.sh`
 
@@ -67,13 +68,13 @@ instructions in the next section) before continuing.
 
   1. `git clone https://github.com/Bioconductor-mirror/REPO` to clone the repository to your machine.
   2. `cd REPO` to switch to the REPO directory.
-  3. `bash update_remotes.sh` to setup the git remotes.
+  3. `bash /path/to/update_remotes.sh` to setup the git remotes.
   4. Commit to git as you normally would.
   5. Each time you want to push git commits to svn run the following commands:
      1. `git svn rebase` to get the latest SVN changes.
      2. `git svn dcommit --add-author-from` to commit your changes to SVN.
      You may be prompted here for your SVN username and password.
- 
+
 ### Scenario 2: Set Up Your Own GitHub Repository ###
 
 If you are currently using the Git-Svn Bridge please disable it at
@@ -92,7 +93,7 @@ account. Then perform the following steps in your terminal.
 
   1. `git clone https://github.com/USER/REPO` to clone the repository to your machine.
   2. `cd REPO` to switch to the REPO directory.
-  3. `bash update_remotes.sh` to setup the git remotes.
+  3. `bash /path/to/update_remotes.sh` to setup the git remotes.
   4. Commit to git and push to GitHub as you normally would.
   5. Each time you want to push git commits to svn:
      1. `git checkout devel` to switch to the devel branch. (use release-X.X for release branches)
@@ -100,6 +101,14 @@ account. Then perform the following steps in your terminal.
      3. `git merge master --no-edit` to merge your changes from the master branch or skip this step and work directly on the current branch.
      4. `git svn rebase && git svn dcommit --add-author-from` to sync and commit your changes to svn.
      You may be prompted here for your SVN username and password.
+
+
+When you're done, be sure and merge any changes from svn back into the git master branch:
+
+    git checkout master
+    git merge devel
+
+
  
 ## FAQs ##
 
