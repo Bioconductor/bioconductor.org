@@ -207,7 +207,7 @@ Please send your feedback to the
 
 The dreadful message indicating that `git` and `svn` got out of sync is `Unable
 to determine upstream SVN information from working tree history`. This can
-happen, for example if one forgets to `git pull --rbase` before trying to 
+happen, for example if one forgets to `git pull --rebase` before trying to 
 `git svn dcommit` and changes were committed to svn independently. Inspect your git 
 log with `git log --graph --decorate --pretty=oneline --abbrev-commit --all` to help 
 identify such cases.
