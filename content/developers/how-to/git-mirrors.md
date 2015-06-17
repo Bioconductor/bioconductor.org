@@ -112,7 +112,7 @@ When you're done, be sure and merge any changes from svn back into the git maste
  
 ## FAQs ##
 
-### How do let users know I am using GitHub for development and contributions?
+### How do I let users know I am using GitHub for development and contributions?
 
 Add `URL: https://github.com/USER/REPO` and `BugReports:
 https://github.com/USER/REPO/issues` to your `DESCRIPTION` file. You can also
