@@ -19,7 +19,6 @@ genomic data. Common workflows include:
   number, SNP, methylation and other assays.  Access GEO,
   ArrayExpress, Biomart, UCSC, and other community resources.
 
-<<<<<<< HEAD
 * [Annotation Resources](annotation/Annotation_Resources/)
   Introduction to using gene, pathway, gene ontology, homology annotations
   and the AnnotationHub. Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
@@ -31,15 +30,11 @@ genomic data. Common workflows include:
   queries.
 
 * [Annotating Genomic Variants](variants/)
-=======
-* [Variants](variants/)
->>>>>>> reorganize developer and workflow page
   Read and write VCF files. Identify structural location of variants
   and compute amino acid coding changes for non-synonymous
   variants. Use SIFT and PolyPhen database packages to predict
   consequence of amino acid coding changes.
 
-<<<<<<< HEAD
 * [Changing genomic coordinate systems with rtracklayer::liftOver](/help/workflows/liftOver/)
   The liftOver facilities developed in conjunction with the UCSC
   browser track infrastructure are available for transforming
@@ -49,39 +44,10 @@ genomic data. Common workflows include:
 
 <h2 id="advanced">Advanced Workflows</h2>
 
-=======
-* [Accessing Annotation Data](annotation/annotation/)
-  Use microarray probe, gene, pathway, gene ontology, homology and
-  other annotations.  Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
-  and other sources.
-
-* [Annotating Ranges](annotation/AnnotatingRanges)
-  Represent common sequence data types (e.g., from BAM, gff, bed, and
-  wig files) as genomic ranges for simple and advanced range-based
-  queries.
-
-* [Changing genomic coordinate systems with rtracklayer::liftOver](/help/workflows/liftOver/)
-  The liftOver facilities developed in conjunction with the UCSC
-  browser track infrastructure are available for transforming
-  data in GRanges formats.  This is illustrated here with
-  an image of the NHGRI GWAS catalog that is, as of Oct. 31 2014,
-  distributed with coordinates defined by NCBI build hg38.
-
-<h2 id="advanced">Advanced Workflows</h2>
-
->>>>>>> reorganize developer and workflow page
 * [High Throughput Assays](/help/workflows/highthroughputassays/)
   Import, transform, edit, analyze and visualize flow cytometric, mass
   spec, HTqPCR, cell-based, and other assays.
 
-<<<<<<< HEAD
-=======
-* [RNAseq Differential Expression](/packages/release/data/experiment/html/parathyroidSE.html)
-  Use the <em>parathyroidSE</em> ExperimentData package and vignette
-  to learn how to count reads and perform other common operations
-  required for differential expression analysis.
-
->>>>>>> reorganize developer and workflow page
 * [RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)
   This lab will walk you through an end-to-end RNA-Seq differential 
   expression workflow, using DESeq2 along with other Bioconductor 
@@ -115,14 +81,6 @@ genomic data. Common workflows include:
   annotations of genetic and genomic contexts.
 
 <h2 id="Contribute">Contribute a Workflow</h2>
-<<<<<<< HEAD
 
 See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/) 
 for information on contributing your own workflow.
-
-=======
-
-See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/) 
-for information on contributing your own workflow.
->>>>>>> reorganize developer and workflow page
-
