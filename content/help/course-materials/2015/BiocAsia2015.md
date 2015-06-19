@@ -6,7 +6,7 @@ packages for high-throughput genomic analysis and recently surpassed
 the milestone of 100,000 commits to its svn repository. Many popular
 software tools from the project are developed by researchers based in
 the Asia-Pacific region. To enhance collaborations and provide an
-avenue for networking, the region's first developer's meeting will be
+avenue for networking, the region's first developers' meeting will be
 held directly preceding GIW/InCoB 2015. This event will bring together
 both current and prospective package developers to provide a forum for
 exchanging ideas and future plans for software in the project.  The
