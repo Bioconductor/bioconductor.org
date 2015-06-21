@@ -53,7 +53,7 @@ genomic data. Common workflows include:
   expression workflow, using DESeq2 along with other Bioconductor 
   packages. We will start from the FASTQ files, show how these were 
   aligned to the reference genome, prepare gene expression values 
-  as a count matrix by counting the sequenced fragments, perform  
+  as a count matrix by counting the sequenced fragments, perform
   exploratory data analysis (EDA), perform differential gene 
   expression analysis with DESeq2, and visually explore the results.
 
