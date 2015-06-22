@@ -1459,8 +1459,17 @@ def pkg_platforms(package) # returns all, none, or some
     end
     mi.close
   end
+
   unless unsupported_platforms.nil?
-    return 'some'
+    winbad = unsupported_platforms.find_all{|i| i =~ /win/}
+    if winbad.length == unsupported_platforms.length
+      wf = win_format(package)
+      if (!wf.nil?) and wf.empty?
+        unsupported_platforms = nil
+      else
+        return 'some'
+      end
+    end
   end
   all_win_archs = (win_format(package) !~ /only/)
   has_src = package.has_key? "source.ver".to_sym
