@@ -8,28 +8,29 @@ end_date: 2015-06-15
 instructors:
 - Martin Morgan
 location: Brixen, Italy
-url: "/help/course-materials/2015/CSAMA2015/"
+url: "http://www.huber.embl.de/csama/programme/"
 tags:
 - intro
 - seattle
 - package
-description: This one-week intensive course teaches current approaches
-  in the statistical and computational analysis of large-scale
-  experiments in biology. The course focuses on the methods for
-  downstream analyses of high-throughput sequencing experiments
-  including RNA sequencing (differential expression), DNA sequencing
-  (variant calling), ChIP-Seq. Lectures also cover essentials
-  including statistical testing, linear models, machine learning,
-  visualisation and bioinformatic annotation.  Emphasis is given to
-  practical problem solving skills using open-source software from the
-  Bioconductor, CRAN and other projects. The course is intended for
-  researchers who have basic familiarity with the experimental
-  technologies and the biology of the genome, and who are interested
-  in developing their own, advanced data analyses using a scripting
-  environment. The four practical sessions of the course will require
-  simple script understanding in the computer language R. A tutorial
-  on the required more advanced features of R will be provided,
-  students are advised to familiarize themselves with the very basics
-  of R beforehand. (Consider one of the many online resources or
-  books, e.g. R-Intro from the R Project, Germán Rodríguez, R-Studio.
-
+description: The one-week intensive course Statistics and Computing in
+  Genome Data Science teaches statistical and computational analysis
+  of multi-omics studies in biology and biomedicine. It covers the
+  underlying theory and state of the art (the morning lectures), and
+  practical hands-on exercises based on the R / Bioconductor
+  environment (the afternoon labs). The course covers the primary
+  analysis ("preprocessing") of high-throughput sequencing based
+  assays in functional genomics (transcriptomics, epigenetics, etc.)
+  as well as integrative methods including efficiently operating with
+  genomic intervals, statistical testing, linear models, machine
+  learning, bioinformatic annotation and visualization. At the end of
+  the course, you should be able to run analysis workflows on your own
+  (multi-)omic data, adapt and combine different tools, and make
+  informed and scientifically sound choices about analysis strategies.
+  The course is intended for researchers who have basic familiarity
+  with the experimental technologies and their applications in
+  biology, and who are interested in making the step from a user of
+  bioinformatics software towards adapting or developing their own
+  analysis workflows. The four practical sessions of the course will
+  require you to follow (and hopefully, modify) scripts in the
+  computer language R.
