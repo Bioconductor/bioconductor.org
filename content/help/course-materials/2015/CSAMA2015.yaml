@@ -13,3 +13,23 @@ tags:
 - intro
 - seattle
 - package
+description: This one-week intensive course teaches current approaches
+  in the statistical and computational analysis of large-scale
+  experiments in biology. The course focuses on the methods for
+  downstream analyses of high-throughput sequencing experiments
+  including RNA sequencing (differential expression), DNA sequencing
+  (variant calling), ChIP-Seq. Lectures also cover essentials
+  including statistical testing, linear models, machine learning,
+  visualisation and bioinformatic annotation.  Emphasis is given to
+  practical problem solving skills using open-source software from the
+  Bioconductor, CRAN and other projects. The course is intended for
+  researchers who have basic familiarity with the experimental
+  technologies and the biology of the genome, and who are interested
+  in developing their own, advanced data analyses using a scripting
+  environment. The four practical sessions of the course will require
+  simple script understanding in the computer language R. A tutorial
+  on the required more advanced features of R will be provided,
+  students are advised to familiarize themselves with the very basics
+  of R beforehand. (Consider one of the many online resources or
+  books, e.g. R-Intro from the R Project, Germán Rodríguez, R-Studio.
+
