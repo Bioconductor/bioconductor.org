@@ -168,7 +168,7 @@ RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
 RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
 RewriteRule ^help/mailing-lis.*$ /help/support [R=301]
 
-RewriteRule ^BioC2015/$ /help/course-materials/2015/BioC2015/ [R=301]
+RewriteRule ^BioC2015/$ http://bioconductor.org/help/course-materials/2015/BioC2015/ [R=301]
 
 </IfModule>
 
