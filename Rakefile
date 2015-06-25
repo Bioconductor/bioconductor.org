@@ -767,7 +767,7 @@ task :get_coverage_shields do
     dirname = "release" if branch =~ /^release/
     shield_dir = "assets/shields/coverage/#{dirname}"
 
-    packages = get_list_of_packages(true, dirname)
+    packages = get_list_of_packages(true, branch=="release")
     unless File.exists? shield_dir
       FileUtils.mkdir_p shield_dir
     end
