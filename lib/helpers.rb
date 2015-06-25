@@ -1609,7 +1609,7 @@ def coverage_url(package)
   shield = File.join("assets", "shields", "coverage",
     dirname, "#{pkgname}.svg")
   unless File.exists? shield
-    return "http://cnn.com" ## REMOVE ME!!!!!
+    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}?branch=#{branch}"
   end
   content = File.readlines(shield).first
   if (content =~ /unknown/)
