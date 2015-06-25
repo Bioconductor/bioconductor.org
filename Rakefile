@@ -765,6 +765,8 @@ task :get_coverage_shields do
   branches.each do |branch|
     dirname = branch
     dirname = "release" if branch =~ /^release/
+    codecov_branch = branch
+    codecov_branch = "master" if branch == "devel"
     shield_dir = "assets/shields/coverage/#{dirname}"
 
     packages = get_list_of_packages(true, branch=="release")
@@ -772,7 +774,7 @@ task :get_coverage_shields do
       FileUtils.mkdir_p shield_dir
     end
     for package in packages
-      url = "https://codecov.io/github/Bioconductor-mirror/#{package}/coverage.svg?branch=#{branch}"
+      url = "https://codecov.io/github/Bioconductor-mirror/#{package}/coverage.svg?branch=#{codecov_branch}"
       cov = HTTParty.head(url).headers["x-coverage"]
       cov_color = coverage_color(cov)
       cov += "%" unless cov == "unknown"

@@ -1600,7 +1600,7 @@ end
 
 def coverage_url(package)
   pkgname = package[:Package]
-  branch = "devel"
+  branch = "master"
   if package[:bioc_version_num] == config[:release_version]
     branch = "release-#{config[:release_version]}"
   end
