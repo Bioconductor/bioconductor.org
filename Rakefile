@@ -788,3 +788,8 @@ task :get_coverage_shields do
 
   end
 end
+
+desc "get all shields"
+task :get_all_shields => [:get_build_dbs, :get_svn_logs,
+  :process_downloads_data, :get_post_tag_info, 
+  :get_years_in_bioc_shields, :get_coverage_shields]
