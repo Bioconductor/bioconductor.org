@@ -64,7 +64,7 @@ class TableRower
   def initialize()
     @cellnum = 0
   end
-  def betweencells(cells_per_row=3)
+  def betweencells(cells_per_row=4)
     @cellnum += 1
     (@cellnum % cells_per_row == 0) ? "</tr><tr>\n" : ""
   end
