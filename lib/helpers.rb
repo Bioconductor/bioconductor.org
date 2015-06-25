@@ -1583,3 +1583,46 @@ def on_fhcrc_network?
   fh = Socket.gethostbyname(Socket.gethostname).first
   fh.end_with? "fhcrc.org"
 end
+
+def coverage_color(coverage)
+  if coverage == "unknown"
+    return "AA0088"
+  end
+
+  coverage = coverage.to_i
+  if coverage >= 90
+    return "green"
+  elsif coverage >= 75
+    return "yellow"
+  end
+  return "red"
+end
+
+def coverage_url(package)
+  pkgname = package[:Package]
+  branch = "devel"
+  if package[:bioc_version_num] == config[:release_version]
+    branch = "release-#{config[:release_version]}"
+  end
+  dirname = "devel"
+  dirname = "release" if branch =~ /^release/
+  shield = File.join("assets", "shields", "coverage",
+    dirname, "#{pkgname}.svg")
+  unless File.exists? shield
+    return "http://cnn.com" ## REMOVE ME!!!!!
+  end
+  content = File.readlines(shield).first
+  if (content =~ /unknown/)
+    return "/developers/how-to/unitTesting-guidelines/#coverage"
+  else
+    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}?branch=#{branch}"
+  end
+end
+
+def coverage_svg_url(package)
+  vers = "devel"
+  if package[:bioc_version_num] == config[:release_version]
+    vers = "release" 
+  end
+  "/shields/coverage/#{vers}/#{package[:Package]}.svg"
+end

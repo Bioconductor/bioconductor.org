@@ -75,6 +75,20 @@ get_available(@package) # copies appropriate svg.
 <% end  # if not annotation pkg 
 %>
 
+<% # shield 7: coverage 
+    if @package[:repo] == "bioc/"
+%>
+
+
+<td>
+   <span class="do_not_rebase"><a href="<%=coverage_url(@package)%>"><img border='0' src="<%=coverage_svg_url(@package)%>" title="Test coverage percentage, or 'unknown'"/></a></span>
+</td>
+
+
+<%= tr.betweencells %>
+
+<% end # if is software package 
+%>
 
 </tr>
 </table>

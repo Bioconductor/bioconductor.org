@@ -754,3 +754,35 @@ task :get_years_in_bioc_shields do
     get_year_shield(pkg, true, sconfig)
   end
 end
+
+# run me in crontab
+desc "get test coverage shields"
+task :get_coverage_shields do
+  config = YAML.load_file("./config.yaml")
+
+  branches = ["release-#{config['release_version']}", "devel"]
+
+  branches.each do |branch|
+    dirname = branch
+    dirname = "release" if branch =~ /^release/
+    shield_dir = "assets/shields/coverage/#{dirname}"
+
+    packages = get_list_of_packages(true, dirname)
+    unless File.exists? shield_dir
+      FileUtils.mkdir_p shield_dir
+    end
+    for package in packages
+      url = "https://codecov.io/github/Bioconductor-mirror/#{package}/coverage.svg?branch=#{branch}"
+      cov = HTTParty.head(url).headers["x-coverage"]
+      cov_color = coverage_color(cov)
+      cov += "%" unless cov == "unknown"
+      puts "Downloading test-coverage shield for #{package} in #{dirname}..."
+      resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
+      shield = File.join(shield_dir, "#{package}.svg")
+      fh = File.open(shield, "w")
+      fh.write(resp.to_s)
+      fh.close
+    end
+
+  end
+end

@@ -12,6 +12,7 @@
   * [File Summary](#RUnitFileSummary)
 * [Testthat Usage](#testthatUsage)
   * [Conversion from RUnit to testthat](#testthatConversion)
+* [Test Coverage](#coverage)
 * [Additional Resources](#resources)
 
 <h2 id="introduction">Introduction</h2>
@@ -331,6 +332,32 @@ structure.
    `Suggests: RUnit, BiocGenerics`.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="coverage">Test Coverage</h2>
+
+[Test coverage](https://en.wikipedia.org/wiki/Code_coverage)
+refers to the percentage of your package code
+that is tested by your unit tests. Packages with higher coverage
+have a lower chance of containing bugs. 
+
+Our build system calculates test coverage for every software
+package (using the [covr](https://github.com/jimhester/covr)
+package) and reports the results in a "test coverage" shield
+on the package landing page. The value shown in this shield is
+either a percentage (a number from 0 to 100) or 'unknown', which
+could mean:
+
+* The package has no unit tests, or the unit tests are not
+  properly configured. Read this page from
+  [the beginning](#top) to learn how to add them.
+* The unit tests in the package failed.
+* There was a problem calculating the test coverage.
+  Inquire on the [bioc-devel list](/help/support/#bioc-devel)
+  if you have questions about this.
+
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <h2 id="resources">Additional Resources</h2>
 
