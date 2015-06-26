@@ -1,12 +1,14 @@
-# ![](/images/icons/help.gif)*Bioconductor* Newsletter
+# ![](/images/icons/help.gif)Newsletters #
 
 The Bioconductor newsletter summarizes core development projects 
 and BioC-related events on a quarterly basis.
 
 2014
-    * [April](2014_April/)
-    * [July](2014_July/)
-    * [October](2014_October/)
+* [April](/help/newsletters/2014_April/)
+* [July](/help/newsletters/2014_July/)
+* [October](/help/newsletters/2014_October/)
+
 2015
-    * [January](2015_January/)
-    * [April](2015_April/)
+* [January](/help/newsletters/2015_January/)
+* [April](/help/newsletters/2015_April/)
+* [July](/help/newsletters/2015_July/)
