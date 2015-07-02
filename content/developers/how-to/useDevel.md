@@ -4,7 +4,7 @@ Using the `devel` Version of Bioconductor
 In order to use the `devel` version of Bioconductor, simply call
 the function `useDevel()` (from the `BiocInstaller`) package:
 
-    ## In R-3.2.0
+    ## In R-3.2.1
     library(BiocInstaller) 
     useDevel()
 
@@ -13,7 +13,7 @@ After doing this, all packages will be installed from the `devel`
 
 If you also want to work with the `release` version of Bioconductor
 (3.1), we recommend maintaining two separate installations of R
-3.2.0, one to be used with Bioconductor 3.1 (BioC-release) and the
+3.2.1, one to be used with Bioconductor 3.1 (BioC-release) and the
 other to be used with Bioconductor 3.2 (BioC-devel). Run `useDevel()`
 as described above in this latter installation.
 
