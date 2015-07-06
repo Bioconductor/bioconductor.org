@@ -806,7 +806,7 @@ end
 #FIXME  should gracefully fail (and allow flow to continue) if no internet access
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
-    url_without_protocol = url.sub("^http:", "")
+    url_without_protocol = url.sub(/^http:/i, "")
     css_url = "#{url_without_protocol}report.css"
     html = open(url)
     doc = Nokogiri::HTML(html.read)
