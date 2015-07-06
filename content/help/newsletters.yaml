@@ -1,2 +1,5 @@
 ---
 title: Newsletters
+subnav:
+  - include: /_documentation/
+  - include: /_upcoming_events/
