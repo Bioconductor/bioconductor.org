@@ -806,7 +806,8 @@ end
 #FIXME  should gracefully fail (and allow flow to continue) if no internet access
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
-    css_url = "#{url}/report.css"
+    url_without_protocol = url.sub("^http:", "")
+    css_url = "#{url_without_protocol}report.css"
     html = open(url)
     doc = Nokogiri::HTML(html.read)
     doc.encoding = "ascii"
@@ -820,7 +821,7 @@ def get_build_summary(version, repo)
 
     htmlfrag=<<-"EOT"
         <head>
-        <base href="#{url}" target="_blank">
+        <base href="#{url_without_protocol}" target="_blank">
         </head
         <body>
         <p><i>Build report generated at #{dateline}</i></p>
