@@ -1,3 +1,4 @@
 --- 
 title: Newsletter, October 2014
-subnav: true
+subnav:
+  - include: /_newsletters/

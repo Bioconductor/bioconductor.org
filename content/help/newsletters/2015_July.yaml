@@ -1,3 +1,4 @@
 --- 
 title: Newsletter, July 2015
-subnav: true
+subnav:
+  - include: /_newsletters/
