@@ -1,6 +1,6 @@
 # ![](/images/icons/help.gif)Newsletters #
 
-The Bioconductor newsletter summarizes core developments and community events 
+The newsletter summarizes core developments and community events 
 on a quarterly basis.
 
 <h2> 2014 </h2>
