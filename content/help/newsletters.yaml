@@ -1,4 +1,5 @@
 ---
 title: Newsletters
+suppress_subnav: true
 subnav:
   - include: /_documentation/
