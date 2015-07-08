@@ -1627,3 +1627,7 @@ def coverage_svg_url(package)
   end
   "/shields/coverage/#{vers}/#{package[:Package]}.svg"
 end
+
+def get_short_url(package)
+  "/packages/#{package[:Package]}/"
+end
