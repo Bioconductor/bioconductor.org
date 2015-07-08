@@ -420,7 +420,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                     <tr class="<%=ri.rowclass%>">
                         <td>Package Short Url</td>
-                        <td><a title="Canonical url for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="<%=get_short_url(@package)%>"><%=get_short_url(@package)%></a></td>
+                        <td><a title="Canonical url for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="<%=get_short_url(@package)%>"><%=get_short_url(@package, true)%></a></td>
                     </tr>
 
 

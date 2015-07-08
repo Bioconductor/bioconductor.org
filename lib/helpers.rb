@@ -1628,6 +1628,11 @@ def coverage_svg_url(package)
   "/shields/coverage/#{vers}/#{package[:Package]}.svg"
 end
 
-def get_short_url(package)
-  "/packages/#{package[:Package]}/"
+def get_short_url(package, full=false)
+  url =  "/packages/#{package[:Package]}/"
+  if full
+    "http://bioconductor.org#{url}"
+  else
+    url
+  end
 end
