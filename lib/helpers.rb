@@ -1091,10 +1091,12 @@ EOT
     str
 end
 
-def package_has_source_url(item)
+def package_has_source_url(item, software_only=false)
     segs = item.identifier.split('/')
     return true if segs[5] == "bioc"
-    return true if segs[5] == "data" and segs[6] == "experiment"
+    unless software_only
+      return true if segs[5] == "data" and segs[6] == "experiment"
+    end
     return false
 end
 
@@ -1634,5 +1636,20 @@ def get_short_url(package, full=false)
     "http://bioconductor.org#{url}"
   else
     url
+  end
+end
+
+def get_github_url(package)
+  if package[:bioc_version_num] == config[:devel_version]
+    branch = 'master'
+  else
+    branch = "release-#{package[:bioc_version_num]}"
+  end
+  url = "https://github.com/Bioconductor-mirror/#{package[:Package]}"
+
+  if branch == 'master'
+    url
+  else
+    "#{url}/tree/#{branch}"
   end
 end
