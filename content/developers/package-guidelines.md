@@ -270,10 +270,10 @@ hoc clusters, batch schedulers and cloud computing. By default,
 supported across Unix, Mac and Windows.
 
 Coding requirements for `BiocParallel`:
-- lapply-style iteration instead of explicit for loops
-- functional functions, i.e., a function that takes one or more 
+* lapply-style iteration instead of explicit for loops
+* functional functions, i.e., a function that takes one or more 
 functions as input
-- default back-ends: Expose BPPARAM to the user but do not specify your 
+* default back-ends: Expose BPPARAM to the user but do not specify your 
 own default; `BiocParallel` automatically selects an appropriate 
 back-end based on the OS.
 
