@@ -261,7 +261,7 @@ situations require an explicit for loop.
 <h2 id="vectorized">Parallel Recommendations</h2>
 
 We recommend using
-[BiocParallel](http://www.bioconductor.org/packages/3.2/bioc/html/BiocParallel.html) 
+[BiocParallel](/packages/BiocParallel/) 
 which provides a consistent interface to the user and supports the major 
 parallel computing styles: forks and processes on a single computer, ad 
 hoc clusters, batch schedulers and cloud computing. By default, 
@@ -277,7 +277,7 @@ own default; `BiocParallel` automatically selects an appropriate
 back-end based on the OS.
 
 For more information see the
-[BiocParallel vignette](http://www.bioconductor.org/packages/3.2/bioc/vignettes/BiocParallel/inst/doc/Introduction_To_BiocParallel.pdf).
+[BiocParallel vignette](/packages/release/bioc/vignettes/BiocParallel/inst/doc/Introduction_To_BiocParallel.pdf).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
