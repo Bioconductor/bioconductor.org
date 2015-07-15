@@ -18,12 +18,24 @@
 
 <IfModule mod_rewrite.c>
 
+## define a variable that contains the protocol (http or https) of the
+## current request.
+## You can refer to the variable as  %{ENV:proto} and it will
+## expand to its value.
+## from http://stackoverflow.com/a/20419821/470769
+# initialization code - put only once at the beginning of .htaccess
+RewriteCond %{HTTPS} =on
+RewriteRule ^(.*)$ - [env=proto:https]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ - [env=proto:http]
+
+
 ##### Options -Indexes
 
 RewriteEngine On
 RewriteBase /packages/
 
-RewriteRule ^/?$ http://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=301]
+RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=301]
 
 ################################################################################
 # /packages/release/xxx or /packages/devel/xxx are internally rewritten to
@@ -31,13 +43,13 @@ RewriteRule ^/?$ http://bioconductor.org/packages/release/BiocViews.html#___Soft
 # Note: (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/bioc/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/data/annotation/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/html/$2.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=301]
 
 ################################################################################
 # /packages/xxx is internally rewritten to
@@ -46,21 +58,21 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ http://bioconductor.org/pack
 #      (reposX) X is the first repos where xxx is found
 ################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/release/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/html/$1.html [R=301]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ http://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=301]
 
 
