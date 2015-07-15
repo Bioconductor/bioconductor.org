@@ -12,6 +12,7 @@
 * [Package Dependencies](#dependencies)
 * [S4 Classes and Methods](#classes)
 * [Vectorized Calculations](#vectorized)
+* [Parallel Recommendations](#parallel)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
 * [Vignette(s)](#vignettes)
@@ -258,7 +259,7 @@ situations require an explicit for loop.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="vectorized">Parallel Recommendations</h2>
+<h2 id="parallel">Parallel Recommendations</h2>
 
 We recommend using
 [BiocParallel](/packages/BiocParallel/) 
