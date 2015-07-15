@@ -12,7 +12,7 @@
 * [Package Dependencies](#dependencies)
 * [S4 Classes and Methods](#classes)
 * [Vectorized Calculations](#vectorized)
-* [Parallel Recommendations](#parallel)
+* [Parallel Recommendations](#parallel-recommendations)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
 * [Vignette(s)](#vignettes)
@@ -259,26 +259,27 @@ situations require an explicit for loop.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="parallel">Parallel Recommendations</h2>
+<h2 id="parallel-recommendations">Parallel Recommendations</h2>
 
-We recommend using
-[BiocParallel](/packages/BiocParallel/) 
-which provides a consistent interface to the user and supports the major 
-parallel computing styles: forks and processes on a single computer, ad 
-hoc clusters, batch schedulers and cloud computing. By default, 
-`BiocParallel` chooses a parallel back-end appropriate for the OS and is 
-supported across Unix, Mac and Windows.
+We recommend using [BiocParallel](/packages/devel/BiocParallel) which
+provides a consistent interface to the user and supports the major
+parallel computing styles: forks and processes on a single computer,
+ad hoc clusters, batch schedulers and cloud computing. By default,
+`BiocParallel` chooses a parallel back-end appropriate for the OS and
+is supported across Unix, Mac and Windows. Coding requirements for
+`BiocParallel` are:
 
-Coding requirements for `BiocParallel`:
-* lapply-style iteration instead of explicit for loops
-* functional functions, i.e., a function that takes one or more 
-functions as input
-* default back-ends: Expose BPPARAM to the user but do not specify your 
-own default; `BiocParallel` automatically selects an appropriate 
-back-end based on the OS.
+- Use `lapply()`-style iteration instead of explicit for loops.
+- The `FUN` argument to `bplapply()` must be a self-contained
+  function; all symbols used in the function are from default R
+  packages, from packages `require()`'ed in the function, or passed in
+  as arguments.
+- Allow the user to specify the BiocParallel back-end. Do this by
+  invoking `bplapply()` _without_ specifying `BPPARAM`; the user can
+  then override the default choice with `BiocParallel::register()`.
 
 For more information see the
-[BiocParallel vignette](/packages/release/bioc/vignettes/BiocParallel/inst/doc/Introduction_To_BiocParallel.pdf).
+[BiocParallel vignette](/packages/devel/bioc/vignettes/BiocParallel/inst/doc/Introduction_To_BiocParallel.pdf).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
