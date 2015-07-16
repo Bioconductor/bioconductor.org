@@ -5,7 +5,7 @@ genomic data. Common workflows include:
 
 <h2 id="basic">Basic Workflows</h2>
 
-* [Sequence Analysis](high-throughput-sequencing/)
+* [Sequence Analysis](sequencing/)
   Import fasta, fastq, BAM, gff, bed, wig, and other sequence formats.
   Trim, transform, align, and manipulate sequences. Perform quality
   assessment, ChIP-seq, differential expression, RNA-seq, and other
