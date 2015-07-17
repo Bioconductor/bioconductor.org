@@ -14,24 +14,6 @@
 * Paul Shannon
 * Dan Tenenbaum
 
-## Technical Advisory Board
-
-* [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
-  Women's, Harvard Medical School, USA.
-* [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
-  Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
-* [Sean Davis](http://watson.nci.nih.gov/~sdavis), National
-  Cancer Institute, USA.
-* Robert Gentleman, Computational Biology, 23andMe, USA.
-* [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
-  Bloomberg School of Public Health, Johns Hopkins University.
-* [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/)
-  European Molecular Biology Laboratory, Heidelberg, Germany.
-* [Rafael Irizarry](http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281) Dana-Farber Cancer
-  Institute, USA
-* [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech Research and Early Development, USA.
-* [James MacDonald](mailto:jmacdon@uw.edu), University of Washington, USA.
-
 ## Additional Participants
 
 * [Patrick Aboyoun](http://www.oracle.com/), Oracle, USA.
