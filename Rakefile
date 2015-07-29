@@ -18,6 +18,7 @@ require 'httparty'
 require 'nokogiri'
 require 'descriptive_statistics'
 require './lib/helpers.rb'
+require 'csv'
 
 include Open3
 
@@ -793,3 +794,37 @@ desc "get all shields"
 task :get_all_shields => [:get_build_dbs, :get_svn_logs,
   :process_downloads_data, :get_post_tag_info, 
   :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets]
+
+# should be run every time mirror info in config.yaml changes
+# that's hard to remember do to, so
+# make sure this is run via crontab every hour
+desc "extract mirror information to csv file"
+task :mirror_csv do
+    config = YAML.load_file("./config.yaml")
+    CSV.open(File.join("output", "bioc_mirrors.csv"), "w") do |csv|
+      csv << ["Name","Country","City","URL","Host","Maintainer","OK","CountryCode"]
+      for mirror_outer in config['mirrors']
+        country = mirror_outer.keys.first
+        country_mirrors = mirror_outer.values
+        for mirrors in country_mirrors
+          for mirror in mirrors
+            if mirror['contact'].is_a? Array
+              mirror['contact'] = mirror['contact'].first
+              mirror['contact_email'] = mirror['contact_email'].first
+            end
+            maintainer = "#{mirror['contact']} <#{mirror['contact_email']}>".sub("@", " # ")
+            data = ["#{country} (#{mirror['city']})", country, mirror['city'], mirror['mirror_url'],
+              mirror['institution'], maintainer,
+              check_mirror_url(mirror['mirror_url']), mirror['country_code']]
+            csv << data
+            if mirror.has_key? "https_mirror_url"
+              data[3] = mirror['https_mirror_url']
+              data[0] = data[0] + " [https]"
+              data[6] = check_mirror_url(mirror['https_mirror_url'])
+              csv << data
+            end
+          end
+        end
+      end
+    end
+end

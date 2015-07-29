@@ -14,6 +14,7 @@ require 'date'
 require 'rubygems'
 require 'httparty'
 require 'net/http'
+require 'net/https'
 require 'yaml'
 require 'pp'
 require 'rexml/document'
@@ -1651,5 +1652,24 @@ def get_github_url(package)
     url
   else
     "#{url}/tree/#{branch}"
+  end
+end
+
+def check_mirror_url(url)
+  uri = URI(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  if uri.port == 443
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+  begin
+    response = http.head(uri.path)
+    if response.code == "200"
+      "1"
+    else
+      "0"
+    end
+  rescue
+    return "0"
   end
 end
