@@ -420,7 +420,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                 <% if package_has_source_url(@item, true) %>
                     <tr class="<%=ri.rowclass%>">
-                        <td id="github_source">GitHub source</td>
+                        <td id="github_source">Git source</td>
                         <td><a href="<%=get_github_url(@package)%>"><%=get_github_url(@package)%></a></td>
                     </tr>
                 <% end %>
