@@ -15,7 +15,7 @@ href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrat
 high-throughput genomic analysis with
 <em>Bioconductor</em></a>. Nature Methods 12:115-121;
 doi:10.1038/nmeth.3252 (full-text free with registration).
-[PMC4509590](http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509590/)
+<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509590/">PMC4509590</a>
 </div>
 
 <div class="white_box">
