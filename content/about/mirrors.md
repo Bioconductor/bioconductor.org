@@ -2,6 +2,7 @@
 =======================================
 
 <% for country in config[:mirrors] %>
+  <% next if country.keys.first.to_s == "0-Cloud" %>
 <%= country.keys.first.to_s %>
 ------------------------
 
