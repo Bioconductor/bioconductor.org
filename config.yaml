@@ -161,12 +161,12 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.0": "10/14/2014"
   "3.1": "4/17/2015"
 mirrors:
- - 0-Cloud:
+ - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
      institution_url: http://bioconductor.org
      contact: Bioconductor Maintainer
      contact_email: maintainer@bioconductor.org
-     city: 0-Cloud
+     city: World-wide
      mirror_url: http://bioconductor.org/
      https_mirror_url: https://bioconductor.org/
      country_code: us
