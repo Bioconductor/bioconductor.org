@@ -801,7 +801,7 @@ task :get_all_shields => [:get_build_dbs, :get_svn_logs,
 desc "extract mirror information to csv file"
 task :mirror_csv do
     config = YAML.load_file("./config.yaml")
-    CSV.open(File.join("assets", "bioc_mirrors.csv"), "w") do |csv|
+    CSV.open(File.join("assets", "BioC_mirrors.csv"), "w") do |csv|
       csv << ["Name","Country","City","URL","Host","Maintainer","OK","CountryCode"]
       for mirror_outer in config['mirrors']
         country = mirror_outer.keys.first
