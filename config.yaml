@@ -223,7 +223,8 @@ mirrors:
    - institution: RIKEN Center for Developmental Biology
      institution_url: http://www.cdb.riken.jp/en/index.html
      contact: Itoshi NIKAIDO, Ph.D.
-     mirror_url: http://bioconductor.jp/
+     mirror_url: http://bioconductor.riken.jp/
+     https_mirror_url: https://bioconductor.riken.jp/
      contact_email: dritoshi@gmail.com
      country_code: jp
      city: Wako
