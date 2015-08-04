@@ -89,7 +89,11 @@ If you do not already have a public git repository for package REPO the
 simplest thing to do is navigate to
 `https://github.com/Bioconductor-mirror/REPO` and click the `Fork` button in
 the upper right.  This will create a copy of the repository on your personal
-account. Then perform the following steps in your terminal.
+account. You may want to re-enable issue tracking in your repository
+(it's disabled in the read-only mirrors and forks inherit
+this setting). To do this, go to Settings and then click the Issues
+checkbox.
+Then perform the following steps in your terminal.
 
   1. `git clone https://github.com/USER/REPO` to clone the repository to your machine.
   2. `cd REPO` to switch to the REPO directory.
