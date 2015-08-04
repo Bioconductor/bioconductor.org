@@ -220,8 +220,8 @@ mirrors:
      contact_email: khonda@ism.ac.jp
      country_code: jp
      city: Tachikawa
-   - institution: RIKEN Center for Developmental Biology
-     institution_url: http://www.cdb.riken.jp/en/index.html
+   - institution: RIKEN Advanced Center for Computing and Communication
+     institution_url: http://accc.riken.jp/en/
      contact: Itoshi NIKAIDO, Ph.D.
      mirror_url: http://bioconductor.riken.jp/
      https_mirror_url: https://bioconductor.riken.jp/
