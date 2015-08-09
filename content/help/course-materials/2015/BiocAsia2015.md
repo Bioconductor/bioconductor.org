@@ -53,3 +53,9 @@ attending.
 | 3:15pm   - 4:15pm | Developer workshop "Turning great ideas into Bioconductor packages with impact" |
 | 4:15pm   - 5:15pm | Poster session/social hour                                                      |
 | 6:00pm   - 8:00pm | Dinner                                                                          |
+
+## Scholarships
+
+A number of scholarships (up to $400 USD each) are available for students and Bioconductor package developers to help with the cost of travel to attend the meeting.
+
+To apply for a scholarship, please submit a brief statement (200 words of less) describing your interest in the meeting. If you are a package developer or maintainer please tell us the package(s) you work on. The due date for applications is August 21st. Please send applications to gustin.s AT wehi DOT edu DOT au and put SCHOLARSHIP in the subject line.
