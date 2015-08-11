@@ -106,7 +106,7 @@ class SearchIndexer
     ###goodfiles = throw_out_bad_files(goodfiles)
     #exit if true
 
-    url = "http://localhost:8983/solr/update"
+    url = "http://localhost:8983/solr/default/update"
 
     script_file.puts "#!/bin/sh\n"
 
