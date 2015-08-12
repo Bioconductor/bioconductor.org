@@ -182,7 +182,7 @@ information](#contact-information) below to obtain additional support.
 
 <h2 id="contact-info">Contact Information</h2>
 
-To submit a package or obtain additional support, contact Sonali Arora
+To submit a package or obtain additional support, contact Jim Hester
 (email: packages NEAR bioconductor POINT org)
 
 
