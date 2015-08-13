@@ -183,7 +183,7 @@ information](#contact-information) below to obtain additional support.
 <h2 id="contact-info">Contact Information</h2>
 
 To submit a package or obtain additional support, contact Jim Hester
-(email: packages NEAR bioconductor POINT org)
+(email: packages@bioconductor.org)
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
