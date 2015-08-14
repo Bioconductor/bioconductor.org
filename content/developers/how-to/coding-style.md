@@ -7,7 +7,7 @@ Using similar coding style helps people understand code.  These
 guidelines are really just preferences; they are not enforced. 
 
 * See also: [package guidelines](/developers/package-guidelines)
-  and [Hadly Wickams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
+  and [Hadley Wickhams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
 
 Indentation
 
