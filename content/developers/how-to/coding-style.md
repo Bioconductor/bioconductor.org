@@ -1,12 +1,13 @@
 # Coding Style
 
 Creation Date: Antiquity.
-Last Edit Date: 18 Feb 2014.
+Last Edit Date: 13 Aug 2015.
 
 Using similar coding style helps people understand code.  These
 guidelines are really just preferences; they are not enforced. 
 
-* See also: [package guidelines](/developers/package-guidelines).
+* See also: [package guidelines](/developers/package-guidelines)
+  and [Hadly Wickams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
 
 Indentation
 
@@ -22,11 +23,20 @@ Function names
 * Use camelCaps: initial lower case, then alternate case between words.
 * Do not use '.' (in the S3 class system, `some(x)` where `x` is class
   `A` will dispatch to `some.A`).
-  
+* Prefix non-exported functions with a '.'.
+ 
 Class names
 
 * Use CamelCaps: initial upper case, then alternate case between
   words.
+
+File names
+
+* Filename extension for R code should be '.R'. Use the prefix 
+  'methods-' for S4 class methods, e.g., 'methods-coverage.R'. Generic 
+  definitions can be listed in a single file, 'AllGenerics.R', and
+  class definitions in 'AllClasses.R'.
+* Filename extension for man pages should be '.Rd'. 
 
 Use of space
 
