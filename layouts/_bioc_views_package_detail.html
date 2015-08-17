@@ -1,6 +1,7 @@
 <div class="tooltip2" id="tooltip">
     <p>To install this package, start R and enter:</p>
-<pre>source("http://bioconductor.org/biocLite.R")
+<pre># try http if https is not available
+source("https://bioconductor.org/biocLite.R")
 biocLite("<%=@package[:Package]%>")</pre>
     <p> In most cases, you don't need to download the
     package archive at all.</p>    
@@ -131,8 +132,8 @@ get_available(@package) # copies appropriate svg.
     <p>To install this package, start R and enter:</p>
 
 
-    <pre>
-source("http://bioconductor.org/biocLite.R")
+    <pre># try http if https is not available
+source("https://bioconductor.org/biocLite.R")
 biocLite("<%=@package[:Package]%>")</pre>
 
 
