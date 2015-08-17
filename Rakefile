@@ -642,7 +642,7 @@ end
 desc "process downloads data"
 task :process_downloads_data do
   begin
-    system("scp biocadmin@wilson1:/home/biocadmin/manage-BioC-repos/stats/download_summary.csv ./tmp/")
+    system("scp biocadmin@wilson2:/home/biocadmin/manage-BioC-repos/stats/download_summary.csv ./tmp/")
   rescue
     puts
     puts
