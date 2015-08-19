@@ -173,10 +173,12 @@ Thanks for contributing to Bioconductor and for helping the
 community by supporting your package. 
 
 MESSAGE_END
-    Net::SMTP.start(mailconfig['server'], mailconfig['port']) do |smtp|
-      puts "emailing #{k} about #{v.join(", ")}"
-      smtp.send_message(message, 'dtenenba@fredhutch.org', k)
-    end
+    puts "emailing #{k} about #{v.join(", ")}"
+    smtp = Net::SMTP.new(mailconfig['server'], mailconfig['port'])
+    smtp.enable_starttls
+    smtp.start('localhost', mailconfig['username'],
+      mailconfig['password'])
+    smtp.send_message(message, "dtenenba@fredhutch.org", k)
   end
 end
 
