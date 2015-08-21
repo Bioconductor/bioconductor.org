@@ -1,5 +1,9 @@
 # ![](/images/icons/magnifier.gif)Publications
 
+*Bioconductor*
+[F1000 Research Channel](http://f1000research.com/channels/bioconductor)
+launched!
+
 <h2 name="featured">Featured</h2>
 
 <div>
