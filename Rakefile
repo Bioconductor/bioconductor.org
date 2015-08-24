@@ -459,10 +459,7 @@ task :my_task, :arg1 do |t, args|
 end
 
 desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)" 
-# requires connection to internal hutch network 
-# FIXME - use e.g. http://bioconductor.org/checkResults/3.1/bioc-LATEST/STATUS_DB.txt
-# instead of downloading DCFs for each package? Need to fix downstream too
-# (i.e. make_build_rss_feeds.rb)
+# requires internet connection
 task :get_build_result_dcfs, :repo do |t, args|
     hargs = args.to_hash
     if hargs.empty? or !hargs.has_key? :repo
@@ -479,6 +476,7 @@ task :get_build_result_dcfs, :repo do |t, args|
     FileUtils.mkdir_p tmpdir
     ary = []
     for version in ["release", "devel"]
+        FileUtils.mkdir_p(File.join(tmpdir, version))
         if version == "release"
             machine = config["active_release_builders"]["linux"]
             biocversion = config["release_version"]
@@ -489,8 +487,14 @@ task :get_build_result_dcfs, :repo do |t, args|
         unless (config["devel_repos"].include? repo.gsub("-", "/"))
           next
         end
-        cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
-        system(cmd)
+
+        res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt")
+        f = File.open(File.join(tmpdir, version, "STATUS_DB.txt"), "w")
+        f.write(res)
+        f.close
+
+        #cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
+        #system(cmd)
     end
 end
 

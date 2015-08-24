@@ -35,7 +35,15 @@ else
     OUTDIR="assets/rss/build/data"
 end
 
-
+$results = {release: [], devel: []}
+for vers in [:release, :devel]
+    f = File.open(File.join(DCFDIR, vers.to_s, "STATUS_DB.txt"))
+    lines = f.readlines()
+    for line in lines
+        key, val = line.strip.split(": ")
+        $results[vers] << {key => val}
+    end
+end
 
 $urls = []
 
@@ -189,21 +197,18 @@ def runit()
     pkgs_to_update = {}
     config = YAML.load_file("./config.yaml")
     $hub_url = config["rss_hub_url"]
-    Dir.chdir DCFDIR do
-        Find.find "." do |path|
-            next unless path =~ /-summary\.dcf$/
-            segs = path.split("/")
-            segs2 = segs.last.split(".")
-            segs2.pop
-            segs2.pop
-            pkg = segs2.join(".")
-            status = get_status(path)
+    for vers in [:release, :devel]
+        db = $results[vers]
+        for item in db
+            k = item.keys.first
+            v = item.values.first
+            pkg, node, phase = k.split("#")
+            status = v
             pkglist[pkg] = [] unless pkglist.has_key? pkg
-            segs = path.split("/")
-            node =  segs[3]
-            version = segs[1]
-            phase = segs[4]
-            key = "#{version}_#{node}_#{phase}"
+            pkglist[pkg].push(:version => vers.to_s, :node => node, 
+                :phase => phase, :status => status)
+
+            key = "#{vers.to_s}_#{node}_#{phase}"
             oldstatus = redis.hget(pkg, key)
             rhash = redis.hgetall(pkg)
 
@@ -211,8 +216,9 @@ def runit()
                 pkgs_to_update[pkg] = 1
                 redis.hset(pkg, key, status)
             end
-            pkglist[pkg].push({:version => version, :node => node,
-                :phase => phase, :status => status})
+
+
+
         end
     end
 
