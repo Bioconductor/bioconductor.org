@@ -21,3 +21,4 @@ scripts/twitter.yaml
 assets/help/workflows/*
 workflows_tmp/
 content/help/workflows/*
+postgresql_password

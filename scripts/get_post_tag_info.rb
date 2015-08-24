@@ -6,7 +6,7 @@ require 'httparty'
 
 require_relative './svn_shield_helper.rb'
 
-DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@habu:5432/biostar")
+DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@support.bioconductor.org:6432/biostar")
 
 
 

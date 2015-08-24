@@ -23,7 +23,7 @@ require 'net/smtp'
 require 'yaml'
 
 
-DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@habu:5432/biostar")
+DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@support.bioconductor.org:6432/biostar")
 users = DB[:users_user]
 profiles = DB[:users_profile]
 

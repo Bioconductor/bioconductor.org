@@ -11,7 +11,6 @@
 </div>
 
 
-<% if on_fhcrc_network? %>
 
 
   <div>
@@ -83,11 +82,18 @@
 
 </div>
 
+<% if on_fhcrc_network? %>
+
   <div style="float:left;width:100%;">
       <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://tracker.bioconductor.org/">New Packages</a></h2>
     <%=get_new_packages_in_tracker()%>
   </div>
 
+<% else %>
+
+<div><p> not on fhcrc network, skipping new packages info... </p></div>
+
+<% end %>
 
   <div style="float:left;width:100%;">
       <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>
@@ -188,8 +194,4 @@ and 'returning visitors' did not apply.</p>
   <% end %>
 </table>
 
-<% else %>
 
-<p>Not on fhcrc network; not building dashboard.
-
-<% end %>

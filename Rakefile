@@ -641,16 +641,9 @@ end
 # run me with cron every day or so...
 desc "process downloads data"
 task :process_downloads_data do
-  begin
-    system("scp biocadmin@wilson2:/home/biocadmin/manage-BioC-repos/stats/download_summary.csv ./tmp/")
-  rescue
-    puts
-    puts
-    puts "Whoops, download_summary.csv was not downloaded! This may cause problems."
-  end
-  lines = File.readlines(File.join("tmp", "download_summary.csv"))
+  lines = HTTParty.get("http://s3.amazonaws.com/bioc-download-summaries/download_summary.csv")
   raw_data = lines.map do |i|
-    num, pkg = i.strip.split(',')
+    num, pkg = i.first.strip.split(',')
     {num: num.to_i, pkg: pkg}
   end
   pkgs = []
