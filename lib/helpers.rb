@@ -1585,7 +1585,8 @@ def current? (package)
 end
 
 def on_fhcrc_network?
-  fh = Socket.gethostbyname(Socket.gethostname).first
+  io = IO.popen('hostname')
+  fh = io.readlines.first.strip
   fh.end_with? "fhcrc.org"
 end
 
