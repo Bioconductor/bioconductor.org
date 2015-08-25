@@ -30,8 +30,8 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
-  linux: "zin1"
-  windows: "moscato1"
+  linux: "linux1.bioconductor.org"
+  windows: "windows1.bioconductor.org"
   mac_snowleopard: "perceval"
   mac_mavericks: "oaxaca"
 active_release_builders:
