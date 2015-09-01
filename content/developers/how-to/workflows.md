@@ -74,17 +74,28 @@ The first will render as \\(N\\) and the second as $$N$$ .
 See the [Mathjax](https://www.mathjax.org/) documentation for
 more information.
 
-## Adding metadata to a Markdown vignette
+## The metadata preamble
 
-With a markdown vignette (.Rmd file) you can add a YAML metadata preamble
-at the beginning of the file, for example:
+If you submit one or more standalone Rmd files (and not a full
+R package), you **must** have a YAML metadata section.
+
+The **vignette** field is mandatory but all other fields are
+optional. Here's an example
 
     ---
     Author: My Name
     Date: March 16, 2015
+    vignette: >
+      %\VignetteIndexEntry{Replace this with the title of your vignette}
+      %\VignetteEngine{knitr::rmarkdown}
     ---
 
-This metadata will be rendered in the "About This Document" box that appears at the
+The **vignette** field is necessary to tell the build system
+which builder to use (in this case, the rmarkdown package)
+and what the title of the vignette is.
+
+This metadata (but not the contents of the *vignette* field) will be 
+rendered in the "About This Document" box that appears at the
 top of the web page.
 
 ## Tidying package loading output
