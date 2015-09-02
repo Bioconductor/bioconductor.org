@@ -80,6 +80,8 @@ genomic data. Common workflows include:
   include FDR for all SNP-gene pairs in cis, along with locus-specific
   annotations of genetic and genomic contexts.
 
+* [Differential Binding from ChIP-seq data](/help/workflows/chipseqDB/)
+  This workflow describes an analysis pipeline for de novo detection of differential binding (DB) from ChIP-seq data, from read alignment to interpretation of putative DB regions. It will be based on the use of sliding windows in the csaw package, with statistical modelling performed using methods in the edgeR package. Analyses will be demonstrated on real histone mark and transcription factor ChIP-seq data.
 <h2 id="Contribute">Contribute a Workflow</h2>
 
 See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/) 
