@@ -9,6 +9,8 @@ biocLite("<%=@package[:Package]%>")</pre>
 
         <h1><%=@package[:Package]%></h1>
 
+
+
 <% # shields go here
 if current? @package
 tr = TableRower.new
@@ -102,6 +104,18 @@ get_available(@package) # copies appropriate svg.
 
 
 <div class='do_not_rebase'>
+
+
+    <% if @package.has_key? :PackageStatus and @package[:PackageStatus] == "Deprecated" %>
+
+    <p>This package is <b>deprecated</b>. It will probably
+    be removed from Bioconductor. Please refer to 
+    the <a href="/developers/package-end-of-life/">
+    package end-of-life guidelines</a> for more information.
+     </p>  
+
+    <% end %>
+
 
     <%= get_devel_fragment(@package, @item, @item_rep) %>
 
