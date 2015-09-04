@@ -1,15 +1,14 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 3.1 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 3.2 Release Schedule
 
-This release will use R-3.2.0 (Full of Ingredients). 
+This release will use R-3.2.2 (Fire Safety). 
 
 ## Tentative schedule
 
-### March 19, 2015
+### September 16, 2015
 
-* (**R**): Grand Feature Freeze (3.2.0 alpha)
+* Packages for deprecation identified.
 
-### March 25
-
+### September 23
 
 * All packages conform to Bioconductor [guidelines][guidelines].
 
@@ -18,7 +17,7 @@ This release will use R-3.2.0 (Full of Ingredients).
 [guidelines]: /developers/package-guidelines
 
 
-### March 27
+### September 25
 
 * Deadline for new package submissions.
 
@@ -26,31 +25,23 @@ This release will use R-3.2.0 (Full of Ingredients).
   for developers.
 
 
-### March 31
+### September 29
 
 * Release candidate of annotation packages built and posted to devel
   annotation data repository.
 
 
-### April 2
-
-* (**R**): Feature Freeze (3.2.0 beta)
-
-### April 3
+### October 2
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
 
-
-### April 7
+### October 6
 
 * Grand Feature Freeze (alpha):  no new packages added to BioC
   release roster.
 
-
-### April 9
-
-* (**R**): Code Freeze (3.2.0 RC)
+### October 8
 
 * Bioconductor Feature Freeze (beta): no API changes to BioC.
 
@@ -58,14 +49,12 @@ This release will use R-3.2.0 (Full of Ingredients).
    Some warnings will be accepted, clarification on the bioc-devel mailing
    list.
 
-* Stop release (BioC 3.0) builds. Commits to this branch will be disabled.
+* Stop release (BioC 3.1) builds. Commits to this branch will be disabled.
 
 * Deadline for annotation package contributors to upload updated packages.
 
 
-### April 13
-
-* (**R**): Prerelease
+### October 10
 
 * Bioconductor release candidate.  Package maintainers should limit
    changes to "show-stopper" bugs and documentation improvements.
@@ -75,14 +64,15 @@ This release will use R-3.2.0 (Full of Ingredients).
 * Package NEWS files updated. Latest NEWS will be collated and included
   in release announcement.
 
-### April 16
+### October 13
 
-* (**R**): Release (3.2.0)
-
-* Creation of the BioC 3.1 release branch. Development can resume on
+* Creation of the BioC 3.2 release branch. Development can resume on
    trunk, but changes will not be part of the release.
 
+* Build final release repositories.
 
-### April 17
+* Test install scripts, GUI installation.
+
+### October 14
 
 * Bioconductor release.
