@@ -67,3 +67,22 @@ To apply for a scholarship, please submit a brief statement (200 words of less) 
 * RNASeq [HTML](W3-RNASeq.html) | [Rmd](W3-RNASeq.Rmd) | [R](W3-RNASeq.R)
 * Annotation [HTML](W4-Annotation.html) | [Rmd](W4-Annotation.Rmd) | [R](W4-Annotation.R)
 
+<h2 id="ami">To launch an Amazon Machine Image (AMI) for this course:</h2>
+
+* [Create an Amazon Web Services (AWS) Account](https://aws.amazon.com/) if you
+  don't already have one.
+* Start the instance <%= ami_url("ami-c5472aa0") %>; See the [documentation for this](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/launching-instance.html). Make sure your [security group](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-network-security.html) has
+port 80 accessible.
+* Paste the Public DNS name of your instance into a web browser.
+* Log in to RStudio with username *ubuntu* and password *bioc* .
+* Be sure and [terminate your instance](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/terminating-instances.html) when you are done using it, in order to avoid excessive charges.
+* Inside RStudio, view the available vignettes with
+  `help(package="BiocAsiaPacific2015")` and then click on 
+  "User guides, package vignettes and other documentation.".
+* For more information, see the
+  [Bioconductor AMI page](/help/bioconductor-cloud-ami/).
+
+
+
+
+
