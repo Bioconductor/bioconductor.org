@@ -59,3 +59,11 @@ attending.
 A number of scholarships (up to $400 USD each) are available for students and Bioconductor package developers to help with the cost of travel to attend the meeting.
 
 To apply for a scholarship, please submit a brief statement (200 words of less) describing your interest in the meeting. If you are a package developer or maintainer please tell us the package(s) you work on. The due date for applications is August 21st. Please send applications to gustin.s AT wehi DOT edu DOT au and put SCHOLARSHIP in the subject line.
+
+## Materials
+
+* Introduction [HTML](W1-Introduction.html) | [Rmd](W1-Introduction.Rmd) | [R](W1-Introduction.R)
+* Data Representations [HTML](W2-Data-Representations.html) | [Rmd](W2-Data-Representations.html) | [R](W2-Data-Representations.R)
+* RNASeq [HTML](W3-RNASeq.html) | [Rmd](W3-RNASeq.Rmd) | [R](W3-RNASeq.R)
+* Annotation [HTML](W4-Annotation.html) | [Rmd](W4-Annotation.Rmd) | [R](W4-Annotation.R)
+
