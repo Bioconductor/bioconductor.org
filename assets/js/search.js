@@ -95,7 +95,9 @@ var searchResponse = function(data) {
 
 var initSearch = function() {
 	q = getParameterByName("q");
-	
+	q = q.replace(/\/$/, "");
+
+
 	if (q == "") {
 		jQuery("#q").focus();
 	} else {
