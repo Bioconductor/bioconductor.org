@@ -2,16 +2,21 @@
 
 ## Current Members
 
-[FHCRC](http://fredhutch.org)
 
-* Sonali Arora
-* Marc Carlson
-* Nate Hayden
+[Roswell Park](http://roswellpark.org)
+
 * Jim Hester
 * Martin Morgan
 * Valerie Obenchain
 * Herv&eacute; Pag&egrave;s
-* Paul Shannon
+* Dan Tenenbaum
+* Jim Java
+* Brian Long
+
+
+[FHCRC](http://fredhutch.org)
+
+* Herv&eacute; Pag&egrave;s
 * Dan Tenenbaum
 
 ## Additional Participants
