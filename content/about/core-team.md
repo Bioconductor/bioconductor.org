@@ -6,10 +6,10 @@
 [Roswell Park](http://roswellpark.org)
 
 * Jim Hester
-* Martin Morgan
-* Valerie Obenchain
 * Jim Java
 * Brian Long
+* Martin Morgan
+* Valerie Obenchain
 
 
 [FHCRC](http://fredhutch.org)
