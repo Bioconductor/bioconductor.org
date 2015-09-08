@@ -8,8 +8,6 @@
 * Jim Hester
 * Martin Morgan
 * Valerie Obenchain
-* Herv&eacute; Pag&egrave;s
-* Dan Tenenbaum
 * Jim Java
 * Brian Long
 
