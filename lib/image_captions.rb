@@ -4,7 +4,7 @@ class ImageFilter < Nanoc::Filter
   identifier :image_captions
   
   def run(content, params={})
-    content.gsub(/!\[(.*)\]\((.*)\)/m) do
+    content.gsub(/!\[([^\]]*)\]\(([^\]]*)\)/m) do
       alt = $1
       src = $2
       fig = "![#{alt}](#{src})"
