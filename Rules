@@ -33,7 +33,7 @@ end
 compile '*' do
   case item[:extension]
   when /md$/, /markdown$/
-    #filter :image_captions
+    filter :image_captions
     filter :erb
     filter :kramdown, :auto_id_stripping => true, :input => 'GFM',
         :hard_wrap => false
