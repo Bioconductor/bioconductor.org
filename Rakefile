@@ -633,9 +633,11 @@ task :get_svn_logs do
         puts "#{package}: #{avg_s}" # comment me out
         # parallelize this to make it faster?
         response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-1881c2.svg")
-        fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
-        fh.write(response.to_s)
-        fh.close
+        if response.code == 200
+          fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
+          fh.write(response.to_s)
+          fh.close
+        end
       end
   end
 
@@ -778,10 +780,12 @@ task :get_coverage_shields do
       cov += "%" unless cov == "unknown"
       puts "Downloading test-coverage shield for #{package} in #{dirname}..."
       resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
-      shield = File.join(shield_dir, "#{package}.svg")
-      fh = File.open(shield, "w")
-      fh.write(resp.to_s)
-      fh.close
+      if resp.code == 200    
+        shield = File.join(shield_dir, "#{package}.svg")
+        fh = File.open(shield, "w")
+        fh.write(resp.to_s)
+        fh.close
+      end
     end
 
   end

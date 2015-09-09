@@ -92,9 +92,11 @@ def get_post_tag_info()
       shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}".gsub(' ', '%20')
       puts "getting shield for #{pkg}"
       response = HTTParty.get("https://img.shields.io/badge/posts-#{shield_text}-87b13f.svg")
-      sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
-      sf.write(response.to_s)
-      sf.close
+      if response.code == 200
+        sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
+        sf.write(response.to_s)
+        sf.close
+      end
 
     else
       FileUtils.cp zero_shield, File.join(dest_dir, "#{pkg}.svg")
