@@ -63,6 +63,8 @@ No packages were removed with this release.
 * [Rredland](/packages/2.8/bioc/html/Rredland.html)
 * [Ruuid](/packages/2.8/bioc/html/Ruuid.html)
 * [simulatorAPMS](/packages/2.8/bioc/html/simulatorAPNS.html)
+* [snpMatrix](/packages/2.8/bioc/html/snpMatrix.html)
+
 
 ## Packages removed with Bioconductor 2.8 release 
 
