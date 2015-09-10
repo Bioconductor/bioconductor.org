@@ -648,9 +648,9 @@ end
 desc "process downloads data"
 task :process_downloads_data do
   lines = HTTParty.get("http://s3.amazonaws.com/bioc-download-summaries/download_summary.csv")
-  raw_data = lines.map do |i|
-    num, pkg = i.first.strip.split(',')
-    {num: num.to_i, pkg: pkg}
+  raw_data = []
+  for line in lines
+    raw_data << {num: line.first.to_i, pkg: line.last}
   end
   pkgs = []
   [true, false].each do |state|
