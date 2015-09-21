@@ -128,10 +128,10 @@ list](http://bioconductor.org/help/mailing-list/).
 One of the following steps should work:
 
 * Look in your email. Your SVN credentials were originally sent to you
-  by a member of the Bioconductor team (probably Marc Carlson), probably
+  by a member of the Bioconductor team, probably
   with the subject line "congrats" or "congratulations". The email 
-  by a member of the Bioconductor team (likely Marc Carlson or
-  Sonali Arora), probably
+  by a member of the Bioconductor team,
+  probably
   with a subject line containing
   "congrats" or "congratulations". The email   should contain the text "Information about your svn account". 
 * Go to your `~/.subversion/auth/svn.simple` directory. There should be
