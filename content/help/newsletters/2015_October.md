@@ -18,12 +18,14 @@ October 2015
 The `Bioconductor` newsletter is a quarterly review of core infrastructure
 developments, community projects and future directions. We cover topics of
 general interest as well as those with the greatest impact on the software.
-This quarter the `Bioconductor` core team relocated to Buffalo NY,
-the `Bioconductor` F1000Research Channel was launched and BMC Source Code for 
-Biology and Medicine journal introduced a new section for 
-`R`/`Bioconductor` workflows. We have a summary of new functions from
-the infrastructure packages as well as new features added to some actively
-developed contributed packages.
+This quarter the `Bioconductor` core team relocated from Seattle, Washington to
+Buffalo, New York and welcomed two new team members. New forums for
+sharing workflows and analysis pipelines include the recently launched 
+`Bioconductor` F1000Research Channel and the new section for 
+`R`/`Bioconductor` Workflows in the BMC Source Code for Biology and Medicine
+journal. New feature and functions are summarized for the infrastructure 
+packages as well as a handful of contributed packages that have been especially 
+active over the past devel cycle.
 
 ## Contents 
 {:.no_toc}
@@ -246,16 +248,16 @@ flexible login access as well as machine configuration. Everything should look
 the same from the outside so user interaction with these resources will
 not change.
 
-This has been a huge effort and is almost complete. Thanks Dan.
+This has been a huge effort and is almost complete. Thanks Dan!
 
 
 ## Active development in contributed packages
 
-As part of the Newsletter we often mention new features and functions in the 
-core packages, i.e., S4Vectors, IRanges, GenomicRanges, GenomicAlignments, 
-Rsamtools etc. The other half of this story are the significant changes made in 
-contributed packages. It's hard to know how to best judge which packages have
-changed the most over a development cycle. One way of gauging active development is by the number of svn/git commits.
+As complement to the section on new features and functions in the 
+infrastructure packages we want to highlight significant changes made in 
+contributed packages. Not all packages keep current NEWS files so it can be
+tricky to determine which packages have added new features. One way of gauging 
+active development is the number of svn/git commits over a period of time.
 
 As of September 22, these packages all had 50+ commits since the April 2015 
 release: CopywriteR, systemPipeR, ComplexHeatmap, derfinderHelper, ggtree,
@@ -306,16 +308,16 @@ been lightly edited for length.
   (taxa) annotation layers. Extends the graph grammar and infrastructure in
   `ggplot` and `ggplot2`.
 
-  - add `read.raxml()` and `read.r8s()` to support RAxML and r8s input;
+  - `read.raxml()` and `read.r8s()` to support RAxML and r8s input;
   data are stored in `raxml` and `r8s` objects
 
-  - add `merge_tree()` which combines statistical evidences inferred from 
+  - `merge_tree()` which combines statistical evidences inferred from 
   different software making it possible to compare results 
 
-  - add `gheatmap()` which annotates a tree with associated numerical matrix 
+  - `gheatmap()` which annotates a tree with associated numerical matrix 
   (e.g. genotype table)
 
-  - add `msaplot()` which annotates a tree with multiple sequence alignment
+  - `msaplot()` which annotates a tree with multiple sequence alignment
 
   Both `gheatmap()` and `msaplot()` add a new layer to tree view and can be 
   transformed to circular form by adding `+coord_polar(theta="y")` to the 
@@ -327,7 +329,7 @@ been lightly edited for length.
 
   cogena is a workflow for co-expressed gene-set enrichment analysis.
 
-  - add pipeline for drug discovery and drug repositioning based on the cogena 
+  - Add pipeline for drug discovery and drug repositioning based on the cogena 
   workflow. Candidate drugs can be predicted based on the gene expression of
   disease-related data, or other similar drugs can be identified based on the
   gene expression of drug-related data. Moreover, the drug mode of action can
@@ -345,14 +347,78 @@ been lightly edited for length.
 * [systemPipeR](http://www.bioconductor.org/packages/3.2/bioc/html/systemPipeR.html)
   Authors: Thomas Girke 
 
+  systemPipeR provides infrastructure for building and running automated
+  analysis workflows for a wide range of next generation sequence (NGS)
+  applications.
+
+  NGS WORKFLOWS
+
+  - added new end-to-end workflows for Ribo-Seq and polyRibo-Seq, ChIP-Seq and
+    VAR-Seq
+
+  - added the data package 'systemPipeRdata' to generate systemPipeR workflow
+    environments with a single command (genWorkenvir) containing all parameter
+    files and sample data required to quickly test and run workflows
+
+  - about 20 new functions have been added to the package. Some examples are:
+    - Read pre-processor function with support for SE and PE reads
+    - Parallelization option of detailed FASTQ quality reports
+    - Read distribution plots across all features available in a 
+      genome annotation (see ?featuretypeCounts) 
+    - Visualization of coverage trends along transcripts summarized 
+      for any number of transcripts (see ?featureCoverage)
+    - Differential expression/binding analysis includes now DESeq2 as
+      well as edgeR
+
+  - adaption of R Markdown for main vignette
+
+  WORKFLOW FRAMEWORK
+
+  - simplified design of complex analysis workflows
+
+  - improvements to workflow automation and parallelization on single
+    machines and computer clusters
+
 
 ## Developers
 
-### algorithm performance
+### why vectorize
 
--  Herve's chipseeker diagnosis example
-https://support.bioconductor.org/p/70432/#70545
+When looking at ways to optimize `R` code there are a hand-full of standard
+recommendations, one of the most common suggestions is to 'vectorize'.
+A 'vectorized' function is one that has a loop-like construct written in a
+compiled language with a light `R` wrapper. There are a couple of qualities
+that give these functions their performance advantage.
 
+Data are passed to a 'vectorized' function as a vector instead of 
+individual elements. Vectors in `R` are 'typed' meaning all elements must be 
+of the same data type. Passing a whole vector to the complied code reduces the
+amount of work `R` has to do to interpret data type. Second, the loop 
+computation is done in a complied language such as C, C++ or FORTRAN.
+
+Vectorized functions call .C, .Call, .Primitive or .Internal in the source
+code. One example is which::duplicated()
+
+    > which
+    function (x, arr.ind = FALSE, useNames = TRUE) 
+    {
+        wh <- .Internal(which(x))
+        if (arr.ind && !is.null(d <- dim(x))) 
+            arrayInd(wh, d, dimnames(x), useNames = useNames)
+        else wh
+    }
+    <bytecode: 0x3699c90>
+    <environment: namespace:base>
+
+An example of how these functions can improve performance 
+is this
+[post](https://support.bioconductor.org/p/70432/#70545) where Herv&eacute; 
+helped the author of the ChIPseeker package identify a bottleneck
+in ChIPseeker:::getFirstHitIndex(). The solution was to replace a call to
+sapply() with two vectorized functions, duplicated() and which(). This
+elegant one-liner reduced the algorithm from quadratic in time to linear in 
+time. Nice! We may not all see such drastic improvements but take home is that
+these functions are worth knowing about and implementing when possible.
 
 ### the ellipsis
 
@@ -374,7 +440,6 @@ deal with.
      setGeneric("parameters",
          function(object, ...) standardGeneric("parameters")
      )
-
 
 Another case is that of having a extra arguments such as a modifier or toggle
 precede the ellipsis in the generic. 
@@ -439,8 +504,8 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 FIXME: check with Dan
 The number of unique IP downloads of software packages for April, May and
-June of 2015 were 38853, 37784 and 35505 respectively.  For the same time
-period in 2014, numbers were 39818, 38348 and 36179. Numbers must be
+June of 2015 were *, * and * respectively.  For the same time
+period in 2014, numbers were *, * and *. Numbers must be
 compared by month (vs sum) because some IPs are the same between months.
 See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
@@ -450,20 +515,24 @@ third quarter of 2015 bringing counts to 1078 in devel (`Bioconductor` 3.2)
 and 1024 in release (`Bioconductor` 3.1). 
 
 
-## Events and Courses
+## News, Events and Courses
 
 See the [events page](http://www.bioconductor.org/help/events/) for a listing
 of all courses and conferences.
 
-* [`Bioconductor` 3.2 Release](http://www.bioconductor.org/developers/release-schedule/)
-14 October 2015 - Worldwide
-
 * [European Bioconductor Developers Conference](https://sites.google.com/site/eurobioc2015/)
 07 - 08 December 2015 — Cambridge, UK
 
-* [`Bioconductor` for Genomic Data Science Coursera course](http://kasperdanielhansen.github.io/genbioconductor/)
+* ["Bioconductor for Genomic Data Science" Coursera course](http://kasperdanielhansen.github.io/genbioconductor/)
 Launched September 7 2015. This series of month-long courses is part of the
 JHU Genomic Data Science Specialization. All 6 classes will run every month.
+
+* [`Bioconductor` 3.2 Release](http://www.bioconductor.org/developers/release-schedule/)
+14 October 2015 - Worldwide
+
+* [A Short Introduction to Bioconductor](http://blog.revolutionanalytics.com/2015/08/a-short-introduction-to-bioconductor.html)
+A brief summary of the project by Pete Hickey written for the Revolutions blog.
+
 
 Send comments or questions to Valerie at 
 [valerie.obenchain@roswellpark.org](valerie.obenchain@roswellpark.org).
