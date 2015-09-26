@@ -19,13 +19,13 @@ The `Bioconductor` newsletter is a quarterly review of core infrastructure
 developments, community projects and future directions. We cover topics of
 general interest as well as those with the greatest impact on the software.
 This quarter the `Bioconductor` core team relocated from Seattle, Washington to
-Buffalo, New York and welcomed two new team members. New forums for
-sharing workflows and analysis pipelines include the recently launched 
+Buffalo, New York and welcomed two new team members.  Two new forums for
+workflows and analysis pipelines were introduced: the recently launched 
 `Bioconductor` F1000Research Channel and the new section for 
-`R`/`Bioconductor` Workflows in the BMC Source Code for Biology and Medicine
-journal. New feature and functions are summarized for the infrastructure 
-packages as well as a handful of contributed packages that have been especially 
-active over the past devel cycle.
+`R`/`Bioconductor` Workflows in the BMC Source Code for Biology and Medicine 
+journal. New features and functions are summarized for the infrastructure 
+packages as well as a handful of contributed packages that have been 
+especially active over the past devel cycle.
 
 ## Contents 
 {:.no_toc}
@@ -34,7 +34,7 @@ active over the past devel cycle.
 {:toc}
 
 
-## The `Bioconductor` project relocates
+## `Bioconductor` relocates
 
 In September the `Bioconductor` core team relocated from Seattle, Washington to
 Buffalo, New York. The new home institution is 
@@ -69,14 +69,6 @@ demand virtual infrastructure and supports a large number of programming
 languages via Apache Thrift. Most of the work was not done as open source but
 the [code](https://github.com/ezbake) has been released on GitHub. Feel free
 to check it out!
-
-Another contributor that deserves mention is Jim MacDonald. Jim is a
-statistician by training and very active in the `Bioconductor` community. He
-often teaches at the annual BioC conference and provides incredible support on
-the `Bioconductor`
-[mailing list](https://support.bioconductor.org/).
-This year the October release comes on the heels of our relocation and Jim 
-will be preparing the in-house annotation packages for us. Thanks Jim!
 
 
 ## Reproducible Research 
@@ -117,8 +109,7 @@ quickly arrive at a solution for their specific problem.
 This effort has been led by Wolfgang Huber, Vince Carey, Sean Davis, Kasper
 Daniel Hansen and Martin Morgan.
 
-### Source Code for Biology and Medicine hosts new
-    `R`/`Bioconductor` Workflows section
+### Source Code for Biology and Medicine hosts new `R`/`Bioconductor` Workflows section
 
 Levi Waldron is an Assistant Professor of Biostatistics at the CUNY School of 
 Public Health in New York City. He serves on the `Bioconductor` technical 
@@ -146,46 +137,17 @@ cross-platform supported approach. More details are available in the
 
 ## Infrastructure Updates
 
-## New functions
+### Build machines to cloud 
 
-All are available in the devel branch, `Bioconductor` 3.2:
+Over the past weeks Dan has been busy transferring package builds, the
+single package builder and the web site to the cloud. The move provides more
+flexible login access as well as machine configuration. Everything should look
+the same from the outside so user interaction with these resources will
+not change.
 
-*   *GenomicFeatures::coverageByTranscripts()*
+This has been a huge effort and is almost complete. Thanks Dan!
 
-    Computes transcripts (of CDS) coverage of a set of ranges. 
-    (contributed by Herv&eacute; Pages) 
-
-*   *rtracklayer::readGFF()*
-
-    Reads data from a GFF file into a data.frame or DataFrame object. The
-    function auto-detects the GFF version but has a 'version' argument if 
-    needed. All columns are loaded by default or individual columns can be 
-    specified in the 'columns' argument.
-    (contributed by Herv&eacute; Pages) 
-
-*   *coercion between GRanges object and character vector*
-
-    A GRanges object can be coerced to a character vector and back. See
-    ?GRanges in the GenomicRanges package for details.
-    (contributed by Herv&eacute; Pages) 
-
-        ## From GRanges to character:
-        > gr <- GRanges("chr1", IRanges(1, 5), "-")
-        > x <- as.character(gr)
-        > x
-        [1] "chr1:1-5:-"
-
-        ## From character to GRanges:
-        > GRanges(x)
-        GRanges object with 1 range and 0 metadata columns:
-              seqnames    ranges strand
-                 <Rle> <IRanges>  <Rle>
-          [1]     chr1    [1, 5]      -
-          -------
-          seqinfo: 1 sequence from an unspecified genome; no seqlengths
-
-
-## HTS core package stack
+### HTS core package stack
 
 `Bioconductor` encourages software reuse and aims for a flexible, integrated
 set of infrastructure packages. One consequence of interrelationship is 
@@ -193,9 +155,9 @@ that a change in a low-level package can affect packages downstream.
 
 Throughout a devel cycle new classes are added and code is reorganized which may
 cause the dependency hierarchy to change. We do our best to identify and fix 
-affected packages and to keep version dependencies current in the DESCRIPTION 
-files. Modified packages and their dependencies propagate together through the 
-nightly builds and are available via `biocLite()` the following day.
+packages affected by these changes. Modified packages and their dependencies 
+are committed to svn/git and should propagate together through the 
+nightly builds and become available via `biocLite()` the following day.
 
 Herv&eacute; recently added a graphic to S4Vectors/inst/doc/ that depicts the 
 High Throughput Sequencing (HTS) core package stack. Knowledge of this
@@ -206,9 +168,6 @@ through the build system and must be installed (in order) by hand.
 
 The package stack file will be updated as the core packages change. This is the
 current snapshot.
-
-HTS core package stack
-----------------------
 
   as of August 2015
 
@@ -239,19 +198,49 @@ HTS core package stack
                        S4Vectors
 
 
+### New functions
 
-### Build machines to cloud 
+All are available in the devel branch, `Bioconductor` 3.2:
 
-Over the past weeks Dan has been busy transferring package builds, the
-single package builder and the web site to the cloud. The move provides more
-flexible login access as well as machine configuration. Everything should look
-the same from the outside so user interaction with these resources will
-not change.
+*   *GenomicFeatures::coverageByTranscripts()*
 
-This has been a huge effort and is almost complete. Thanks Dan!
+    Computes transcripts (of CDS) coverage of a set of ranges. 
+
+    (contributed by Herv&eacute; Pages) 
+
+*   *rtracklayer::readGFF()*
+
+    Reads data from a GFF file into a data.frame or DataFrame object. The
+    function auto-detects the GFF version but has a 'version' argument if 
+    needed. All columns are loaded by default or individual columns can be 
+    specified in the 'columns' argument.
+
+    (contributed by Herv&eacute; Pages) 
+
+*   *coercion between GRanges object and character vector*
+
+    A GRanges object can be coerced to a character vector and back. See
+    ?GRanges in the GenomicRanges package for details.
+
+    (contributed by Herv&eacute; Pages) 
+
+        ## From GRanges to character:
+        > gr <- GRanges("chr1", IRanges(1, 5), "-")
+        > x <- as.character(gr)
+        > x
+        [1] "chr1:1-5:-"
+
+        ## From character to GRanges:
+        > GRanges(x)
+        GRanges object with 1 range and 0 metadata columns:
+              seqnames    ranges strand
+                 <Rle> <IRanges>  <Rle>
+          [1]     chr1    [1, 5]      -
+          -------
+          seqinfo: 1 sequence from an unspecified genome; no seqlengths
 
 
-## Active development in contributed packages
+## Development in contributed packages
 
 As complement to the section on new features and functions in the 
 infrastructure packages we want to highlight significant changes made in 
@@ -261,14 +250,14 @@ active development is the number of svn/git commits over a period of time.
 
 As of September 22, these packages all had 50+ commits since the April 2015 
 release: CopywriteR, systemPipeR, ComplexHeatmap, derfinderHelper, ggtree,
-RnBeads and cognea.
+RnBeads and cogena.
 
 A few authors said the commits were due to maintenance and the package had
 not changed much since the last release. Other packages did change
 significantly and the authors have summarized the changes below. Comments have 
 been lightly edited for length.
 
-* [ComplexHeatmap](http://www.bioconductor.org/packages/3.2/bioc/html/ComplexHeatmap.html)
+[ComplexHeatmap](http://www.bioconductor.org/packages/3.2/bioc/html/ComplexHeatmap.html)
   Author: Zuguang Gu 
 
   This package provides a framework to combine and visualize multiple heat
@@ -301,7 +290,7 @@ been lightly edited for length.
   `row_anno_barplot()`)
 
 
-* [ggtree](http://www.bioconductor.org/packages/3.2/bioc/html/ggtree.html)
+[ggtree](http://www.bioconductor.org/packages/3.2/bioc/html/ggtree.html)
   Authors: Guangchuang Yu and Tommy Tsan-Yuk Lam
 
   A phylogenetic tree viewer with extensive capabilities for adding node-level
@@ -324,7 +313,7 @@ been lightly edited for length.
   grammar.
 
 
-* [cogena](http://www.bioconductor.org/packages/3.2/bioc/html/cogena.html)
+[cogena](http://www.bioconductor.org/packages/3.2/bioc/html/cogena.html)
   Authors: Zhilong Jia and Michael Barnes 
 
   cogena is a workflow for co-expressed gene-set enrichment analysis.
@@ -344,8 +333,8 @@ been lightly edited for length.
 
   - add new gene set MsigDB 5.0
 
-* [systemPipeR](http://www.bioconductor.org/packages/3.2/bioc/html/systemPipeR.html)
-  Authors: Thomas Girke 
+[systemPipeR](http://www.bioconductor.org/packages/3.2/bioc/html/systemPipeR.html)
+  Author: Thomas Girke 
 
   systemPipeR provides infrastructure for building and running automated
   analysis workflows for a wide range of next generation sequence (NGS)
@@ -384,11 +373,10 @@ been lightly edited for length.
 
 ### why vectorize
 
-When looking at ways to optimize `R` code there are a hand-full of standard
-recommendations, one of the most common suggestions is to 'vectorize'.
-A 'vectorized' function is one that has a loop-like construct written in a
-compiled language with a light `R` wrapper. There are a couple of qualities
-that give these functions their performance advantage.
+When asking about how to optimize `R` code a common suggestion is to
+'vectorize'. A 'vectorized' function is one that has a loop-like construct
+written in a compiled language with a light `R` wrapper. There are a couple of
+qualities that give these functions their performance advantage.
 
 Data are passed to a 'vectorized' function as a vector instead of 
 individual elements. Vectors in `R` are 'typed' meaning all elements must be 
@@ -397,7 +385,7 @@ amount of work `R` has to do to interpret data type. Second, the loop
 computation is done in a complied language such as C, C++ or FORTRAN.
 
 Vectorized functions call .C, .Call, .Primitive or .Internal in the source
-code. One example is which::duplicated()
+code. One example is base::which()
 
     > which
     function (x, arr.ind = FALSE, useNames = TRUE) 
@@ -410,9 +398,9 @@ code. One example is which::duplicated()
     <bytecode: 0x3699c90>
     <environment: namespace:base>
 
-An example of how these functions can improve performance 
+An concrete example of how these functions can improve performance 
 is this
-[post](https://support.bioconductor.org/p/70432/#70545) where Herv&eacute; 
+[post on the support site](https://support.bioconductor.org/p/70432/#70545) where Herv&eacute; 
 helped the author of the ChIPseeker package identify a bottleneck
 in ChIPseeker:::getFirstHitIndex(). The solution was to replace a call to
 sapply() with two vectorized functions, duplicated() and which(). This
@@ -422,8 +410,8 @@ these functions are worth knowing about and implementing when possible.
 
 ### the ellipsis
 
-In `R`, the ellipsis (...) is used to allow a variable number of arguments to
-be passed to a function. A common question from developers writing their own S4 
+In `R`, the ellipsis (...) is used to pass a variable number of arguments to
+a function. A common question from developers writing their own S4 
 generics is when (and why) to include the ellipsis in the function signature. 
 Herv&eacute; answered a recent
 [post on
@@ -451,19 +439,19 @@ precede the ellipsis in the generic.
 
 In this situation method dispatch will be on all arguments that precede the
 ellipsis unless unless you specify signature='object'; it's highly recommended
-to dispatch on 'object' only. Defining sensible default values is also
-important (method="auto" or verbose=FALSE) is important to encourage
+to dispatch on 'object' only. Defining sensible default values
+(e.g., method="auto" or verbose=FALSE) is also important to encourage
 consistent, user-friendly behavior across methods.
 
 Going the direction of more restrictive, an example where the ellipsis
 was intensionally omitted is the organism() generic recently added to
-BiocGenerics. The contract is simple: this is a straightforward getter and we
+BiocGenerics. This is a straightforward getter and we
 want to enforce this and encourage methods to stick to that very simple
 contract. If someone comes up with a use-case where extra arguments are needed
 for their method then the ellipsis can be added to the generic. 
 
 The key is to identify or anticipate the greatest common factor across methods
-and formalize that at the level of the generic. When in doubt, better
+and formalize that at the level of the generic. When in doubt, better to
 underestimate than overestimate.
 
 
@@ -502,7 +490,8 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions 
 
-FIXME: check with Dan
+FIXME: check with Dan:
+
 The number of unique IP downloads of software packages for April, May and
 June of 2015 were *, * and * respectively.  For the same time
 period in 2014, numbers were *, * and *. Numbers must be
@@ -528,7 +517,7 @@ Launched September 7 2015. This series of month-long courses is part of the
 JHU Genomic Data Science Specialization. All 6 classes will run every month.
 
 * [`Bioconductor` 3.2 Release](http://www.bioconductor.org/developers/release-schedule/)
-14 October 2015 - Worldwide
+14 October 2015 - Worldwide!
 
 * [A Short Introduction to Bioconductor](http://blog.revolutionanalytics.com/2015/08/a-short-introduction-to-bioconductor.html)
 A brief summary of the project by Pete Hickey written for the Revolutions blog.
