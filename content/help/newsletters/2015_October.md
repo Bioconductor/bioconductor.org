@@ -240,7 +240,7 @@ All are available in the devel branch, `Bioconductor` 3.2:
           seqinfo: 1 sequence from an unspecified genome; no seqlengths
 
 
-## Development in contributed packages
+## Activity in contributed packages
 
 As complement to the section on new features and functions in the 
 infrastructure packages we want to highlight significant changes made in 
@@ -373,16 +373,17 @@ been lightly edited for length.
 
 ### why vectorize
 
-When asking about how to optimize `R` code a common suggestion is to
-'vectorize'. A 'vectorized' function is one that has a loop-like construct
-written in a compiled language with a light `R` wrapper. There are a couple of
-qualities that give these functions their performance advantage.
+When asking about ways to optimize `R` code one of the most common suggestions
+is to 'vectorize'. A 'vectorized' function in `R` is one that has a
+loop-like construct written in a compiled language with a light `R` wrapper.
+There are a couple of qualities that give these functions their performance
+advantage.
 
-Data are passed to a 'vectorized' function as a vector instead of 
-individual elements. Vectors in `R` are 'typed' meaning all elements must be 
-of the same data type. Passing a whole vector to the complied code reduces the
-amount of work `R` has to do to interpret data type. Second, the loop 
-computation is done in a complied language such as C, C++ or FORTRAN.
+Data are passed to a 'vectorized' function as a vector instead of individual
+elements. Vectors in `R` are 'typed' meaning all elements must be of the same
+data type. Passing a whole vector to the complied code reduces the amount of
+work `R` has to do to interpret data type. Second, the loop computation is done
+in a complied language such as C, C++ or FORTRAN.
 
 Vectorized functions call .C, .Call, .Primitive or .Internal in the source
 code. One example is base::which()
