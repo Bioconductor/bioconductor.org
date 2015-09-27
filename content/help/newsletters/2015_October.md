@@ -373,7 +373,7 @@ been lightly edited for length.
 
 ### why vectorize
 
-When asking about ways to optimize `R` code one of the most common suggestions
+When looking for ways to optimize `R` code one of the most common suggestions
 is to 'vectorize'. A 'vectorized' function in `R` is one that has a
 loop-like construct written in a compiled language with a light `R` wrapper.
 There are a couple of qualities that give these functions their performance
