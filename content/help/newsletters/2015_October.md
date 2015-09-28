@@ -47,9 +47,9 @@ SUNY University at Buffalo.
 
 The change in physical location also brought some staffing changes. Marc
 Carlson, Sonail Arora and Paul Shannon left the project at the end of August.
-All were instrumental in the design and implementation of AnnotationHub (and
-annotations in general), tools for biological network analysis, educational
-material and many other areas. A big thanks to them for their many
+All were instrumental in the design and implementation of [AnnotationHub][AH]
+(and annotations in general), tools for biological network analysis,
+educational material and many other areas. A big thanks to them for their many
 contributions.
 
 In Buffalo we are pleased to welcome new team members Jim Java and Brian Long.
@@ -243,8 +243,8 @@ All are available in the devel branch, _Bioconductor_ 3.2:
 
 *   *coercion to and from ExpressionSet and SummarizedExperiment*
 
-    The venerable *ExpressionSet* can be coerced to and from the more
-    modern *SummarizedExperiment*. Coercion using `as()` supports
+    The venerable `ExpressionSet` can be coerced to and from the more
+    modern `SummarizedExperiment`. Coercion using `as()` supports
     mapping identifiers from common probe- or gene-based annotation
     labels to genomic ranges;
     `makeSummarizedExperimentFromExpressionSet()` allows
@@ -261,15 +261,16 @@ tricky to determine which packages have added new features. One way of gauging
 active development is the number of svn/git commits over a period of time.
 
 As of September 22, these packages all had 50+ commits since the April 2015
-release: CopywriteR, systemPipeR, ComplexHeatmap, derfinderHelper, ggtree,
-RnBeads and cogena.
+release: [CopywriteR][CopywriteR], [systemPipeR][systemPipeR], 
+[ComplexHeatmap][ComplexHeatmap], [derfinderHelper][derfinderHelper], 
+[ggtree][ggtree], [RnBeads][RnBeads] and [cogena][cognea].
 
 A few authors said the commits were due to maintenance and the package had
 not changed much since the last release. Other packages did change
 significantly and the authors have summarized the changes below. Comments have
 been lightly edited for length.
 
-[ComplexHeatmap](http://www.bioconductor.org/packages/3.2/bioc/html/ComplexHeatmap.html)
+  [ComplexHeatmap][ComplexHeatmap]
   Author: Zuguang Gu
 
   This package provides a framework to combine and visualize multiple heat
@@ -302,7 +303,7 @@ been lightly edited for length.
   `row_anno_barplot()`)
 
 
-[ggtree](http://www.bioconductor.org/packages/3.2/bioc/html/ggtree.html)
+  [ggtree][ggtree]
   Authors: Guangchuang Yu and Tommy Tsan-Yuk Lam
 
   A phylogenetic tree viewer with extensive capabilities for adding node-level
@@ -325,7 +326,7 @@ been lightly edited for length.
   grammar.
 
 
-[cogena](http://www.bioconductor.org/packages/3.2/bioc/html/cogena.html)
+  [cogena][cogena]
   Authors: Zhilong Jia and Michael Barnes
 
   cogena is a workflow for co-expressed gene-set enrichment analysis.
@@ -345,12 +346,13 @@ been lightly edited for length.
 
   - add new gene set MsigDB 5.0
 
-[systemPipeR](http://www.bioconductor.org/packages/3.2/bioc/html/systemPipeR.html)
+
+  [systemPipeR][systemPipeR]
   Author: Thomas Girke
 
-  systemPipeR provides infrastructure for building and running automated
-  analysis workflows for a wide range of next generation sequence (NGS)
-  applications.
+  [systemPipeR][systemPipeR] provides infrastructure for building and running
+  automated analysis workflows for a wide range of next generation sequence
+  (NGS) applications.
 
   NGS WORKFLOWS
 
@@ -398,7 +400,7 @@ work _R_ has to do to interpret data type. Second, the loop computation is done
 in a complied language such as C, C++ or FORTRAN.
 
 Vectorized functions call .C, .Call, .Primitive or .Internal in the source
-code. One example is base::which()
+code. One example is `base::which()`
 
     > which
     function (x, arr.ind = FALSE, useNames = TRUE)
@@ -427,7 +429,7 @@ simplifying the original support site example (thanks!)  to one that
 illustrated the problem in a timely fashion; stepping through the code
 a line at a time and noticing that one function call took inordinately
 long; understanding the small section of code that caused problems;
-and identifying a vectorized alterantive.
+and identifying a vectorized alternative.
 
 We may not all see such drastic improvements but take home is that
 these functions are worth knowing about and implementing when
@@ -537,11 +539,9 @@ Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
 ### Package downloads and new submissions
 
-FIXME: check with Dan:
-
-The number of unique IP downloads of software packages for April, May and
-June of 2015 were *, * and * respectively.  For the same time
-period in 2014, numbers were *, * and *. Numbers must be
+The number of unique IP downloads of software packages for July, August and
+September of 2015 were 35349, 33600 and 29953 respectively.  For the same time
+period in 2014, numbers were 36362, 36118 and 47918. Numbers must be
 compared by month (vs sum) because some IPs are the same between months.
 See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
@@ -572,3 +572,13 @@ A brief summary of the project by Pete Hickey written for the Revolutions blog.
 
 Send comments or questions to Valerie at
 [valerie.obenchain@roswellpark.org](valerie.obenchain@roswellpark.org).
+
+
+[AH]: //bioconductor.org/packages/AnnotationHub
+[CopywriteR]: //bioconductor.org/packages/CopywriteR
+[systemPipeR]: //bioconductor.org/packages/systemPipeR
+[ComplexHeatmap]: //bioconductor.org/packages/ComplexHeatmap
+[derfinderHelper]: //bioconductor.org/packages/derfinderHelper
+[ggtree]: //bioconductor.org/packages/ggtree
+[RnBeads]: //bioconductor.org/packages/RnBeads
+[cogena]: //bioconductor.org/packages/cogena
