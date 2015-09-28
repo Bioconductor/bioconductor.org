@@ -20,29 +20,29 @@ developments, community projects and future directions. We cover topics of
 general interest as well as those with the greatest impact on the software.
 This quarter the _Bioconductor_ core team relocated from Seattle, Washington to
 Buffalo, New York and welcomed two new team members.  Two new forums for
-workflows and analysis pipelines were introduced: the recently launched 
-_Bioconductor_ F1000Research Channel and the new section for 
-_R / Bioconductor_ Workflows in the BMC Source Code for Biology and Medicine 
-journal. New features and functions are summarized for the infrastructure 
-packages as well as a handful of contributed packages that have been 
+workflows and analysis pipelines were introduced: the recently launched
+_Bioconductor_ F1000Research Channel and the new section for
+_R / Bioconductor_ Workflows in the BMC Source Code for Biology and Medicine
+journal. New features and functions are summarized for the infrastructure
+packages as well as a handful of contributed packages that have been
 especially active over the past devel cycle.
 
-## Contents 
+## Contents
 {:.no_toc}
 
-* Table of contents will replace this text. 
+* Table of contents will replace this text.
 {:toc}
 
 
 ## _Bioconductor_ relocates to Roswell Park Cancer Institute
 
 In September the _Bioconductor_ core team relocated from Seattle, Washington to
-Buffalo, New York. The new home institution is 
+Buffalo, New York. The new home institution is
 [Roswell Park Cancer Institute](https://www.roswellpark.org/about-us)
 (RPCI) which is part of the Buffalo Niagara Medical Complex. The Complex covers
 about 120 acres in downtown Buffalo and is a consortium of hospitals, health care facilities and
 educational institutions. The campus is growing rapidly with current employee
-numbers at 12000 estimated to reach 17000 by 2017. RPCI has close ties with 
+numbers at 12000 estimated to reach 17000 by 2017. RPCI has close ties with
 SUNY University at Buffalo.
 
 The change in physical location also brought some staffing changes. Marc
@@ -57,7 +57,7 @@ Jim formerly worked as a biostatistician for the Gynecologic Oncology
 Group at RPCI where he analyzed clinical trial data. He also worked as a
 software engineer for several companies on projects ranging from point-of-sale
 software to embedded systems. He has a Ph.D. in computer science (focused on
-natural language processing), and MS degrees in biostatistics and English
+natural language processing), and MA degrees in biostatistics and English
 literature. His research interests include scientific and statistical
 computing, natural language processing (especially authorship identification),
 linguistics, climate science, gun violence, ethics, and literature.
@@ -72,13 +72,13 @@ the [code](https://github.com/ezbake) has been released on GitHub. Feel free
 to check it out!
 
 
-## Reproducible Research 
+## Reproducible Research
 
 ### F1000Research channel launched
 
 The _Bioconductor_ [home page](http://www.bioconductor.org/) has a new link
-for the 
-[F1000 Research Channel](http://f1000research.com/channels/bioconductor). 
+for the
+[F1000 Research Channel](http://f1000research.com/channels/bioconductor).
 
 [F1000Research](http://f1000research.com/) is an open science publishing
 platform with the following goals:
@@ -86,13 +86,13 @@ platform with the following goals:
 - Fast publication:
   All scientific research is published with a few days making new results
   immediately visible. Review is conducted after publication.
- 
+
 - Open peer review:
-  Open peer review removes the potential bias that can be present with anonymous 
+  Open peer review removes the potential bias that can be present with anonymous
   pre-publication review.
 
 - Publication of all findings:
-  All results are published including null/negative results, small findings, 
+  All results are published including null/negative results, small findings,
   case reports, data notes and observation articles.
 
 - Data provided:
@@ -101,10 +101,10 @@ platform with the following goals:
 
 The motivation for a _Bioconductor_ F1000Research channel was a forum for
 task-oriented workflows that cover a current, genome-scale analysis problem
-from start to finish. In contrast to package vignettes, these workflows combine 
-resources from several different packages, demonstrating integrative analysis 
-and modeling techniques. The end goal is to make it easier for _Bioconductor_ 
-users to navigate the software offerings by adapting these workflows to 
+from start to finish. In contrast to package vignettes, these workflows combine
+resources from several different packages, demonstrating integrative analysis
+and modeling techniques. The end goal is to make it easier for _Bioconductor_
+users to navigate the software offerings by adapting these workflows to
 quickly arrive at a solution for their specific problem.
 
 This effort has been led by Wolfgang Huber, Vince Carey, Sean Davis, Kasper
@@ -112,25 +112,25 @@ Daniel Hansen and Martin Morgan.
 
 ### Source Code for Biology and Medicine hosts new _R / Bioconductor_ Workflows section
 
-Levi Waldron is an Assistant Professor of Biostatistics at the CUNY School of 
-Public Health in New York City. He serves on the _Bioconductor_ technical 
-advisory board and is currently heads up the group developing new 
-infrastructure for the analysis of 
+Levi Waldron is an Assistant Professor of Biostatistics at the CUNY School of
+Public Health in New York City. He serves on the _Bioconductor_ technical
+advisory board and is currently heads up the group developing new
+infrastructure for the analysis of
 [multi-assay genomic experiments](https://github.com/vjcitn/biocMultiAssay).
-Levi recently became a section editor for the 
+Levi recently became a section editor for the
 [BMC Source Code for Biology and Medicine Journal](http://www.scfbm.org/)
-and earlier this month posted an 
-[announcement](https://support.bioconductor.org/p/71811/) calling for 
-_R / Bioconducor_ workflows submissions to the new section. The journal is 
+and earlier this month posted an
+[announcement](https://support.bioconductor.org/p/71811/) calling for
+_R / Bioconducor_ workflows submissions to the new section. The journal is
 open access and aims to publish source code for distribution and use
-to advance biological and medical research. Manuscripts are considered on all 
-aspects of workflow for information systems, decision support systems, client 
+to advance biological and medical research. Manuscripts are considered on all
+aspects of workflow for information systems, decision support systems, client
 user networks, database management, and data mining.
 
-The workflows should address a problem of general interest and be easily 
-adaptable by other researchers. Implementation can be as a workflow on the 
+The workflows should address a problem of general interest and be easily
+adaptable by other researchers. Implementation can be as a workflow on the
 [Bioconductor web site](http://www.bioconductor.org/help/workflows/), an
-[Amazon](http://www.bioconductor.org/help/bioconductor-cloud-ami/) or 
+[Amazon](http://www.bioconductor.org/help/bioconductor-cloud-ami/) or
 [docker](http://www.bioconductor.org/help/docker/) image or other
 cross-platform supported approach. More details are available in the
 [author instructions](http://www.scfbm.org/authors/instructions/workflow).
@@ -138,7 +138,7 @@ cross-platform supported approach. More details are available in the
 
 ## Infrastructure Updates
 
-### Build machines to cloud 
+### Build machines to cloud
 
 Over the past weeks Dan has been busy transferring package builds, the
 single package builder and the web site to the cloud. The move provides more
@@ -151,19 +151,19 @@ This has been a huge effort and is almost complete. Thanks Dan!
 ### HTS core package stack
 
 _Bioconductor_ encourages software reuse and aims for a flexible, integrated
-set of infrastructure packages. One consequence of interrelationship is 
+set of infrastructure packages. One consequence of interrelationship is
 that a change in a low-level package can affect packages downstream.
 
 Throughout a devel cycle new classes are added and code is reorganized which may
-cause the dependency hierarchy to change. We do our best to identify and fix 
-packages affected by these changes. Modified packages and their dependencies 
-are committed to svn/git and should propagate together through the 
+cause the dependency hierarchy to change. We do our best to identify and fix
+packages affected by these changes. Modified packages and their dependencies
+are committed to svn/git and should propagate together through the
 nightly builds and become available via `biocLite()` the following day.
 
-Herv&eacute; recently added a graphic to S4Vectors/inst/doc/ that depicts the 
+Herv&eacute; recently added a graphic to S4Vectors/inst/doc/ that depicts the
 High Throughput Sequencing (HTS) core package stack. Knowledge of this
 hierarchy is useful when developing new S4 classes and methods. It also
-benefits leading-edge developers working directly from svn (vs `biocLite()`). A package 
+benefits leading-edge developers working directly from svn (vs `biocLite()`). A package
 installed from svn may have updated dependencies that have not yet propagated
 through the build system and must be installed (in order) by hand.
 
@@ -195,7 +195,7 @@ current snapshot.
                         v     v
                         IRanges
                            |
-                           v 
+                           v
                        S4Vectors
 
 
@@ -205,26 +205,26 @@ All are available in the devel branch, _Bioconductor_ 3.2:
 
 *   *GenomicFeatures::coverageByTranscripts()*
 
-    Computes transcripts (of CDS) coverage of a set of ranges. 
+    Computes transcripts (of CDS) coverage of a set of ranges.
 
-    (contributed by Herv&eacute; Pages) 
+    (contributed by Herv&eacute; Pages)
 
 *   *improvements to rtracklayer::import() for GFF files*
 
     Reads data from a GFF file into a data.frame or DataFrame object. The
-    function auto-detects the GFF version but has a 'version' argument if 
-    needed. All columns are loaded by default or individual columns can be 
-    specified in the 'columns' argument. Additional flexibility is provided 
+    function auto-detects the GFF version but has a 'version' argument if
+    needed. All columns are loaded by default or individual columns can be
+    specified in the 'columns' argument. Additional flexibility is provided
     by `rtracklayer::readGFF()`.
 
-    (contributed by Herv&eacute; Pages) 
+    (contributed by Herv&eacute; Pages)
 
 *   *coercion between GRanges object and character vector*
 
     A GRanges object can be coerced to a character vector and back. See
     ?GRanges in the GenomicRanges package for details.
 
-    (contributed by Herv&eacute; Pages) 
+    (contributed by Herv&eacute; Pages)
 
         ## From GRanges to character:
         > gr <- GRanges("chr1", IRanges(1, 5), "-")
@@ -249,28 +249,28 @@ All are available in the devel branch, _Bioconductor_ 3.2:
     labels to genomic ranges;
     `makeSummarizedExperimentFromExpressionSet()` allows
     user-specified identifier conversions.
-    
+
     (contributed by Jim Hester)
 
 ## Activity in contributed packages
 
-As complement to the section on new features and functions in the 
-infrastructure packages we want to highlight significant changes made in 
+As complement to the section on new features and functions in the
+infrastructure packages we want to highlight significant changes made in
 contributed packages. Not all packages keep current NEWS files so it can be
-tricky to determine which packages have added new features. One way of gauging 
+tricky to determine which packages have added new features. One way of gauging
 active development is the number of svn/git commits over a period of time.
 
-As of September 22, these packages all had 50+ commits since the April 2015 
+As of September 22, these packages all had 50+ commits since the April 2015
 release: CopywriteR, systemPipeR, ComplexHeatmap, derfinderHelper, ggtree,
 RnBeads and cogena.
 
 A few authors said the commits were due to maintenance and the package had
 not changed much since the last release. Other packages did change
-significantly and the authors have summarized the changes below. Comments have 
+significantly and the authors have summarized the changes below. Comments have
 been lightly edited for length.
 
 [ComplexHeatmap](http://www.bioconductor.org/packages/3.2/bioc/html/ComplexHeatmap.html)
-  Author: Zuguang Gu 
+  Author: Zuguang Gu
 
   This package provides a framework to combine and visualize multiple heat
   maps. Combined maps can be flexibly annotated and decorated (add graphics
@@ -287,18 +287,18 @@ been lightly edited for length.
 
   - row title and column title as well as legend title support math expressions.
 
-  - add `densityHeatmap()` which visualizes density distribution in a 
+  - add `densityHeatmap()` which visualizes density distribution in a
   matrix/list through a heatmap.
 
-  - add `decorate*` functions which make it easy and straightforward to add 
+  - add `decorate*` functions which make it easy and straightforward to add
   more graphics on the plot.
 
   - add `oncoPrint()` which makes it easy to make oncoprints
 
-  - add `select()` function to interactively select sub-region in the heatmap 
+  - add `select()` function to interactively select sub-region in the heatmap
   and retrieve row/column index in the selected sub region.
 
-  - add `row*` and `column*` helper functions (e.g. `rowAnnotation()`, 
+  - add `row*` and `column*` helper functions (e.g. `rowAnnotation()`,
   `row_anno_barplot()`)
 
 
@@ -312,25 +312,25 @@ been lightly edited for length.
   - `read.raxml()` and `read.r8s()` to support RAxML and r8s input;
   data are stored in `raxml` and `r8s` objects
 
-  - `merge_tree()` which combines statistical evidences inferred from 
-  different software making it possible to compare results 
+  - `merge_tree()` which combines statistical evidences inferred from
+  different software making it possible to compare results
 
-  - `gheatmap()` which annotates a tree with associated numerical matrix 
+  - `gheatmap()` which annotates a tree with associated numerical matrix
   (e.g. genotype table)
 
   - `msaplot()` which annotates a tree with multiple sequence alignment
 
-  Both `gheatmap()` and `msaplot()` add a new layer to tree view and can be 
-  transformed to circular form by adding `+coord_polar(theta="y")` to the 
+  Both `gheatmap()` and `msaplot()` add a new layer to tree view and can be
+  transformed to circular form by adding `+coord_polar(theta="y")` to the
   grammar.
 
 
 [cogena](http://www.bioconductor.org/packages/3.2/bioc/html/cogena.html)
-  Authors: Zhilong Jia and Michael Barnes 
+  Authors: Zhilong Jia and Michael Barnes
 
   cogena is a workflow for co-expressed gene-set enrichment analysis.
 
-  - Add pipeline for drug discovery and drug repositioning based on the cogena 
+  - Add pipeline for drug discovery and drug repositioning based on the cogena
   workflow. Candidate drugs can be predicted based on the gene expression of
   disease-related data, or other similar drugs can be identified based on the
   gene expression of drug-related data. Moreover, the drug mode of action can
@@ -338,7 +338,7 @@ been lightly edited for length.
 
   - add functions `coExp()` and `clEnrich()` used in the pipeline
 
-  - add gene sets CmapDn100.gmt and CmapUp100.gmt, based on 
+  - add gene sets CmapDn100.gmt and CmapUp100.gmt, based on
   [Connectivity
   Map](https://www.broadinstitute.org/genome_bio/connectivitymap.html)
   to enable drug repositioning analysis
@@ -346,7 +346,7 @@ been lightly edited for length.
   - add new gene set MsigDB 5.0
 
 [systemPipeR](http://www.bioconductor.org/packages/3.2/bioc/html/systemPipeR.html)
-  Author: Thomas Girke 
+  Author: Thomas Girke
 
   systemPipeR provides infrastructure for building and running automated
   analysis workflows for a wide range of next generation sequence (NGS)
@@ -364,9 +364,9 @@ been lightly edited for length.
   - about 20 new functions have been added to the package. Some examples are:
     - Read pre-processor function with support for SE and PE reads
     - Parallelization option of detailed FASTQ quality reports
-    - Read distribution plots across all features available in a 
-      genome annotation (see ?featuretypeCounts) 
-    - Visualization of coverage trends along transcripts summarized 
+    - Read distribution plots across all features available in a
+      genome annotation (see ?featuretypeCounts)
+    - Visualization of coverage trends along transcripts summarized
       for any number of transcripts (see ?featureCoverage)
     - Differential expression/binding analysis includes now DESeq2 as
       well as edgeR
@@ -401,10 +401,10 @@ Vectorized functions call .C, .Call, .Primitive or .Internal in the source
 code. One example is base::which()
 
     > which
-    function (x, arr.ind = FALSE, useNames = TRUE) 
+    function (x, arr.ind = FALSE, useNames = TRUE)
     {
         wh <- .Internal(which(x))
-        if (arr.ind && !is.null(d <- dim(x))) 
+        if (arr.ind && !is.null(d <- dim(x)))
             arrayInd(wh, d, dimnames(x), useNames = useNames)
         else wh
     }
@@ -420,14 +420,14 @@ identify a bottleneck in `ChIPseeker:::getFirstHitIndex()`. The
 solution was to replace a call to `sapply()` (i.e., _R_-level
 iteration) with two vectorized functions, `duplicated()` and
 `which()`. This elegant one-liner reduced the algorithm from quadratic
-in time to linear in time. Nice! 
+in time to linear in time. Nice!
 
 Herv&eacute; took a classic approach to improving the code:
 simplifying the original support site example (thanks!)  to one that
 illustrated the problem in a timely fashion; stepping through the code
 a line at a time and noticing that one function call took inordinately
 long; understanding the small section of code that caused problems;
-and identifying a vectorized alterantive. 
+and identifying a vectorized alterantive.
 
 We may not all see such drastic improvements but take home is that
 these functions are worth knowing about and implementing when
@@ -436,12 +436,12 @@ possible.
 ### The ellipsis
 
 In _R_, the ellipsis (...) is used to pass a variable number of arguments to
-a function. A common question from developers writing their own S4 
-generics is when (and why) to include the ellipsis in the function signature. 
+a function. A common question from developers writing their own S4
+generics is when (and why) to include the ellipsis in the function signature.
 Herv&eacute; answered a recent
 [post on
 Bioc-devel](https://stat.ethz.ch/pipermail/bioc-devel/2015-September/008014.html)
-about this topic. Main ideas are summarized here but for the full details 
+about this topic. Main ideas are summarized here but for the full details
 you'll want to read the post.
 
 Defining generics and methods instead of ordinary functions for the getters and
@@ -455,7 +455,7 @@ deal with.
      )
 
 Another case is that of having extra arguments such as a modifier or toggle
-precede the ellipsis in the generic. 
+precede the ellipsis in the generic.
 
      setGeneric("enrichment",
          function(object, method="auto", ...)
@@ -486,13 +486,13 @@ this way, invalid arguments are not silently ignored:
         cat("enrichment:", class(object), "; method:", method, "\n")
     })
     enrichment(.A(), mehods="special")    # typo silently ignored
-    ## enrichment: A ; method: auto 
+    ## enrichment: A ; method: auto
 
     setMethod("enrichment", "A", function(object, method="auto") {
         cat("enrichment:", class(object), "\nmethod:", method, "\n")
     })
     enrichment(.A(), mehods="special")
-    ## Error in .local(object, method, ...) : 
+    ## Error in .local(object, method, ...) :
     ## unused argument (mehods = "special")
 
 The key when designing generics is to identify or anticipate the
@@ -502,11 +502,11 @@ overestimate. For methods, use the most restrictive signature
 possible.
 
 
-## Project Statistics 
+## Project Statistics
 
 ### Website traffic
 
-The following compares the number of sessions and new users from the third 
+The following compares the number of sessions and new users from the third
 quarter of 2015 (July 1 - September 25) with the third quarter of 2015. Sessions
 are broken down by new and returning visitors. New visitors correspond to the
 total new users.
@@ -535,7 +535,7 @@ total new users.
 <br/>
 Statistics generated with [Google Analytics](http://www.google.com/analytics/).
 
-### Package downloads and new submissions 
+### Package downloads and new submissions
 
 FIXME: check with Dan:
 
@@ -546,9 +546,9 @@ compared by month (vs sum) because some IPs are the same between months.
 See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
 
-As of September 25, a total of 54 software packages have been added in the 
-third quarter of 2015 bringing counts to 1078 in devel (_Bioconductor_ 3.2) 
-and 1024 in release (_Bioconductor_ 3.1). 
+As of September 25, a total of 54 software packages have been added in the
+third quarter of 2015 bringing counts to 1078 in devel (_Bioconductor_ 3.2)
+and 1024 in release (_Bioconductor_ 3.1).
 
 
 ## News, Events and Courses
@@ -570,5 +570,5 @@ JHU Genomic Data Science Specialization. All 6 classes will run every month.
 A brief summary of the project by Pete Hickey written for the Revolutions blog.
 
 
-Send comments or questions to Valerie at 
+Send comments or questions to Valerie at
 [valerie.obenchain@roswellpark.org](valerie.obenchain@roswellpark.org).
