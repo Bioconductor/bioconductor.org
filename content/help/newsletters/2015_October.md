@@ -221,8 +221,8 @@ All are available in the devel branch, _Bioconductor_ 3.2:
 
 *   *coercion between GRanges object and character vector*
 
-    A GRanges object can be coerced to a character vector and back. See
-    ?GRanges in the GenomicRanges package for details.
+    A `GRanges` object can be coerced to a character vector and back. See
+    ?GRanges in the [GenomicRanges][GR] package for details.
 
     (contributed by Herv&eacute; Pages)
 
@@ -570,11 +570,12 @@ JHU Genomic Data Science Specialization. All 6 classes will run every month.
 A brief summary of the project by Pete Hickey written for the Revolutions blog.
 
 
-Send comments or questions to Valerie at
-[valerie.obenchain@roswellpark.org](valerie.obenchain@roswellpark.org).
+Send comments or questions to 
+[Valerie](mailto:valerie.obenchain@roswellpark.org).
 
 
 [AH]: //bioconductor.org/packages/AnnotationHub
+[GR]: //bioconductor.org/packages/GenomicRanges
 [CopywriteR]: //bioconductor.org/packages/CopywriteR
 [systemPipeR]: //bioconductor.org/packages/systemPipeR
 [ComplexHeatmap]: //bioconductor.org/packages/ComplexHeatmap
