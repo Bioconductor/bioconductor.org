@@ -263,7 +263,7 @@ active development is the number of svn/git commits over a period of time.
 As of September 22, these packages all had 50+ commits since the April 2015
 release: [CopywriteR][CopywriteR], [systemPipeR][systemPipeR], 
 [ComplexHeatmap][ComplexHeatmap], [derfinderHelper][derfinderHelper], 
-[ggtree][ggtree], [RnBeads][RnBeads] and [cogena][cognea].
+[ggtree][ggtree], [RnBeads][RnBeads] and [cogena][cogena].
 
 A few authors said the commits were due to maintenance and the package had
 not changed much since the last release. Other packages did change
@@ -570,7 +570,7 @@ JHU Genomic Data Science Specialization. All 6 classes will run every month.
 A brief summary of the project by Pete Hickey written for the Revolutions blog.
 
 
-Send comments or questions to 
+Please send comments or questions to 
 [Valerie](mailto:valerie.obenchain@roswellpark.org).
 
 
