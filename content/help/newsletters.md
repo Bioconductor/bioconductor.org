@@ -19,3 +19,5 @@ on a quarterly basis.
 
 * [July](/help/newsletters/2015_July/)
 
+* [October](/help/newsletters/2015_October/)
+
