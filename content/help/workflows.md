@@ -96,7 +96,7 @@ genomic data. Common workflows include:
   compared against published genotypes for concordance.  Final variants are
   annotated with with coding consequence and disease association.
 
-* [Nucleotide Tallys](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)
+* [Nucleotide Tallies](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)
   Managing sequence data of large cohorts for population level analysis has
   become increasingly difficult with current file formats such as BAM, VCF,
   BCF, GTF, etc. Many studies work exclusively on the level of preprocessed
