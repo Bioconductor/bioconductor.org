@@ -81,7 +81,32 @@ genomic data. Common workflows include:
   annotations of genetic and genomic contexts.
 
 * [Differential Binding from ChIP-seq data](/help/workflows/chipseqDB/)
-  This workflow describes an analysis pipeline for de novo detection of differential binding (DB) from ChIP-seq data, from read alignment to interpretation of putative DB regions. It will be based on the use of sliding windows in the csaw package, with statistical modelling performed using methods in the edgeR package. Analyses will be demonstrated on real histone mark and transcription factor ChIP-seq data.
+  This workflow describes an analysis pipeline for de novo detection of
+  differential binding (DB) from ChIP-seq data, from read alignment to
+  interpretation of putative DB regions. It will be based on the use of sliding
+  windows in the csaw package, with statistical modelling performed using
+  methods in the edgeR package. Analyses will be demonstrated on real histone
+  mark and transcription factor ChIP-seq data.
+
+* [Variant Calling](/help/course-materials/2014/BioC2014/Lawrence_Tutorial.pdf)
+  This presentation illustrates a typical variant calling workflow starting
+  with FASTQ data working through alignment, filtering, tallying, and
+  calling. QC issues are discussed such as alignment coverage and mappability,
+  and problematic homopolymers. Called variants are exported as a vcf file and 
+  compared against published genotypes for concordance and functionally 
+  annotation with genomic content, coding consequence and disease association.
+
+* [Nucleotide Tallys](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)
+  Managing sequence data of large cohorts for population level analysis has
+  become increasingly difficult with current file formats such as BAM, VCF,
+  BCF, GTF, etc. Many studies work exclusively on the level of preprocessed
+  variant calls stored in VCF/MAF file simply because there is no way to look
+  at the data with reasonable resource usage. This tutorial presents an HDF5
+  alternative for storing variant tallies from BAM files. This intermediate
+  file format stores nucleotide tallies rather than alignments and provides
+  efficient random access to cohort-level data. Once created, the tally files
+  can be easily manipulated and used to create custom reports and plots.
+
 <h2 id="Contribute">Contribute a Workflow</h2>
 
 See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/) 
