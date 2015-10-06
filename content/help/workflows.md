@@ -90,11 +90,11 @@ genomic data. Common workflows include:
 
 * [Variant Calling](/help/course-materials/2014/BioC2014/Lawrence_Tutorial.pdf)
   This presentation illustrates a typical variant calling workflow starting
-  with FASTQ data working through alignment, filtering, tallying, and
-  calling. QC issues are discussed such as alignment coverage and mappability,
-  and problematic homopolymers. Called variants are exported as a vcf file and 
-  compared against published genotypes for concordance and functionally 
-  annotation with genomic content, coding consequence and disease association.
+  with FASTQ data working through alignment, filtering, tallying, and calling.
+  QC issues such as alignment coverage, mappability, and problematic
+  homopolymers are explored. Called variants are exported as a vcf file and
+  compared against published genotypes for concordance.  Final variants are
+  annotated with with coding consequence and disease association.
 
 * [Nucleotide Tallys](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)
   Managing sequence data of large cohorts for population level analysis has
