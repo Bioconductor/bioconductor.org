@@ -379,6 +379,29 @@ You can edit the pages for an existing course by editing the files in
       svn commit -m "made changes" content/help/course-materials/2010/course_to_modify
 
 
+
+** Adding course material to the spreadsheet
+
+The page
+[http://www.bioconductor.org/help/course-materials/](http://www.bioconductor.org/help/course-materials/) 
+is built from the tab-delimited file `etc/course_descriptions.tsv`. 
+
+Add information to this file using a spreadsheet
+program (Excel, LibreOffice, etc.). Be sure to save
+in the original tsv format. Note that some spreadsheets
+insert non-ASCII characters which cause problems.
+Before committing your changes, check for this in R
+with:
+
+    tools::showNonASCII(readLines("etc/course_descriptions.tsv"))
+
+And if it reports any non-ascii characters (it will
+show line numbers) fix these in a text editor before
+committing. Usually the culprit is a non-ascii
+hyphen that can be replaced with a regular hyphen.
+
+
+
 ** http://bioconductor-test.fhcrc.org test site
 
 We run an inside FHCRC only test instance of the Bioconductor website
