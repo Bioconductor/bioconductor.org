@@ -9,6 +9,7 @@ _Bioconductor_ version.
 
 | Release                                          | R    |
 |:-------------------------------------------------|:-----|
+| [3.2](/packages/3.2/)                            | 3.2  |
 | [3.1](/packages/3.1/)                            | 3.2  |
 | [2.14](/packages/2.14/), [3.0](/packages/3.0/)   | 3.1  |
 | [2.12](/packages/2.12/), [2.13](/packages/2.13/) | 3.0  |
@@ -35,6 +36,7 @@ existing packages, and package removals.
 
 | Release                         | Date             |
 |:--------------------------------|:-----------------|
+| [3.2](/news/bioc_3_2_release)   | October 14, 2015 |
 | [3.1](/news/bioc_3_1_release)   | April 17, 2015   |
 | [3.0](/news/bioc_3_0_release)   | October 14, 2014 |
 | [2.14](/news/bioc_2_14_release) | April 14, 2014   | 

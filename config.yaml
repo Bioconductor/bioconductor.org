@@ -6,10 +6,10 @@ output_dir: output
 staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.1"
-r_version_associated_with_release: "3.2.1"
+release_version: "3.2"
+r_version_associated_with_release: "3.2.2"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.2"
+devel_version: "3.3"
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
@@ -21,6 +21,7 @@ versions:
 ## landing pages won't say "release version"):
 - "3.1"
 - "3.2"
+- "3.3"
 ## CHANGE THIS as various parts of the new devel version become available.
 ## set to "[]" if none are available.
 devel_repos:
@@ -30,21 +31,20 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
+  linux: "linux2.bioconductor.org"
+  windows: "windows2.bioconductor.org"
+  mac_mavericks: "morelia"
+active_release_builders:
   linux: "linux1.bioconductor.org"
   windows: "windows1.bioconductor.org"
   mac_snowleopard: "perceval"
   mac_mavericks: "oaxaca"
-active_release_builders:
-  linux: "zin2"
-  windows: "moscato2"
-  mac_snowleopard: "petty"
-  mac_mavericks: "morelia"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
 workflow_builder:
-  bioc_version: "3.0"
-  r_version: "3.1"
+  bioc_version: "3.1"
+  r_version: "3.2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
@@ -64,7 +64,7 @@ ami_ids:
  bioc2_14: ami-9c25fff4
  bioc3_0: ami-be7917d6
  bioc3_1: ami-a3d126c8
- bioc3_2: ami-1f2fe074
+ bioc3_2: ami-85d88de0
 data_sources: 
 - items_root: /
   layouts_root: /
@@ -160,6 +160,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "2.14": "4/14/2014"
   "3.0": "10/14/2014"
   "3.1": "4/17/2015"
+  "3.2": "10/14/2015"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide

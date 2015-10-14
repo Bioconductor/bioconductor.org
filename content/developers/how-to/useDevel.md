@@ -1,6 +1,14 @@
 Using the `devel` Version of Bioconductor
 =========================================
 
+In order to use the `devel` version of Bioconductor,
+you must install `R-devel`:
+
+* [Source](https://stat.ethz.ch/R/daily/)
+* [Mac OS X](http://r.research.att.com/)
+* [Windows](https://cran.r-project.org/bin/windows/base/rdevel.html)
+
+<!--
 In order to use the `devel` version of Bioconductor, simply call
 the function `useDevel()` (from the `BiocInstaller`) package:
 
@@ -16,6 +24,7 @@ If you also want to work with the `release` version of Bioconductor
 3.2.1, one to be used with Bioconductor 3.1 (BioC-release) and the
 other to be used with Bioconductor 3.2 (BioC-devel). Run `useDevel()`
 as described above in this latter installation.
+-->
 
 <!--
 An easy way to do this is to have two separate installations of R-3.1.

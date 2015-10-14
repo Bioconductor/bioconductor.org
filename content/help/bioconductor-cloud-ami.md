@@ -289,12 +289,12 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
-        <td>3.2 (devel)</td>
+        <td>3.2 (release, <b>recommended</b>)</td>
         <td>3.2.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_2]%></td>
     </tr>
     <tr>
-        <td>3.1 (release, <b>recommended</b>)</td>
+        <td>3.1</td>
         <td>3.2.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_1]%></td>
     </tr>
