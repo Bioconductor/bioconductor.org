@@ -23,11 +23,9 @@ doi:10.1038/nmeth.3252 (full-text free with registration).
 </div>
 
 <div class="white_box">
-Ritchie ME, Phipson B, Wu D, Hu Y, Law CW, Shi W, and Smyth, GK (2015)
-<a
-href="http://m.nar.oxfordjournals.org/content/early/2015/01/20/nar.gkv007.abstract">limma
-powers differential expression analyses for RNA-sequencing and
-microarray studies</a>. Nucl. Acids Res; doi:10.1093/nar/gkv007 
+Kannan L, et al. (2015).
+<a href="http://dx.doi.org/10.1093/bib/bbv080">Public data and open source tools for multi-assay genomic investigation of disease</a>.
+Brief Bioinform. doi:10.1093/bib/bbv080
 </div>
 
 <div class="grey_box">
