@@ -1,3 +1,9 @@
+This page summarizes material presented by Martin Morgan and Houtan
+Noushmehr; additional course material may be available on the course
+[home page](http://www.pasteur.edu.uy/index.php/es/proximoscursos/695-untangling-genomes-through-bioinformatics-using-r-bioconductor-and-tools-for-pathway-analysis)
+
+### Martin Morgan's material:
+
 1. Introduction: [HTML](V1-Introduction.html) [Rmd](V1-Introduction.Rmd) [R](V1-Introduction.R)
 
 2. Working With Data - `SummarizedExperiment`: [HTML](V2-WorkingWithData) [Rmd](V2-WorkingWithData.Rmd) [R](V2-WorkingWithData.R)
@@ -16,3 +22,10 @@ Supplement 1: RNA-Seq Workflow: [HTML](S1-RNASeq-Workflow.html) [Rmd](S1-RNASeq-
 
 Supplement 2: RNA-Seq Statistical Issues: [HTML](S2-RNASeq-Experimental-Design.html) [Rmd](S2-RNASeq-Experimental-Design.Rmd) [R](S2-RNASeq-Experimental-Design.R)
 
+### Houtan Noushmehr's material:
+
+- Day 3: Gene expression [HTML](day3-gene.expression.html) [Rmd](day3-gene.expression.rmd) [R](day3-gene.expression.R)
+
+- Day 5: Data analysis [HTML](day5-data_analysis.html) [Rmd](day5-data_analysis.rmd) [R](day5-data_analysis.R)
+
+- TCGAbiolinks [PDF](TCGAbiolinks.pdf)

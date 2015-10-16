@@ -7,10 +7,14 @@ start_date: 2015-10-05
 end_date: 2015-10-10
 instructors:
 - Martin Morgan
+- Houtan Noushmehr
+- Tathiane Maistro Malta
+- and others
 location: Montevideo, Uruguay
 url: http://www.pasteur.edu.uy/index.php/es/proximoscursos/695-untangling-genomes-through-bioinformatics-using-r-bioconductor-and-tools-for-pathway-analysis
 tags:
 - intro
-- seattle
 - package
-description: Introduction to Bioconductor
+description: This course introduced students to untangling genomes
+    through bioinformatics using R/Bioconductor and tools for pathway
+    analysis. See the course web site for additional detail.
