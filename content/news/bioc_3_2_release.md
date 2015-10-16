@@ -1,3 +1,5 @@
+October 14, 2015
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.2, consisting of 1104
