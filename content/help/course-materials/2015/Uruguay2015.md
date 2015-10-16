@@ -24,8 +24,8 @@ Supplement 2: RNA-Seq Statistical Issues: [HTML](S2-RNASeq-Experimental-Design.h
 
 ### Houtan Noushmehr's material:
 
-- Day 3: Gene expression [HTML](day3-gene.expression.html) [Rmd](day3-gene.expression.rmd) [R](day3-gene.expression.R)
+- Day 3: Gene expression [HTML](day3-gene.expression.html) [Rmd](day3-gene.expression.Rmd) [R](day3-gene.expression.R)
 
-- Day 5: Data analysis [HTML](day5-data_analysis.html) [Rmd](day5-data_analysis.rmd) [R](day5-data_analysis.R)
+- Day 5: Data analysis [HTML](day5-data_analysis.html) [Rmd](day5-data_analysis.Rmd) [R](day5-data_analysis.R)
 
 - TCGAbiolinks [PDF](TCGAbiolinks.pdf)
