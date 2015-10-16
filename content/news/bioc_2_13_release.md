@@ -1,3 +1,5 @@
+October 15, 2013
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 2.13, consisting of 749

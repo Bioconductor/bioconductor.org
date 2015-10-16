@@ -1,3 +1,5 @@
+October 14, 2014
+
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.0, consisting of 934
