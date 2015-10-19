@@ -47,11 +47,16 @@ module Dcf
     ret
   end
   
-  def self.get_value_as_array(value, remove_version_specifiers=false)
+  def self.get_value_as_array(value, remove_version_specifiers=false, double_quoted=false)
     return [] if value.empty? or value.nil? 
     value.gsub!(",,", "%%ESCAPED_COMMA%%")
-    value.gsub!(", ", ",")
-    segs = value.split(",")
+    if double_quoted
+      value.gsub!('", "', '","')
+      segs = value.split('","')
+    else
+      value.gsub!(", ", ",")
+      segs = value.split(",")
+    end
     segs = segs.map{|i| i.gsub("%%ESCAPED_COMMA%%", ",")}
     segs = segs.map{|i| i.gsub(/^\s*|\s*$/, "")}
     if remove_version_specifiers
@@ -126,7 +131,12 @@ class GetJson
     for dcf in dcfs
       for key in dcf.keys
         if plural_fields.include? key
-          dcf[key] = Dcf.get_value_as_array(dcf[key])
+          if %w(vignetteTitles htmlTitles).include? key
+            double_quoted = true
+          else
+            double_quoted = false
+          end
+          dcf[key] = Dcf.get_value_as_array(dcf[key], false, double_quoted)
         end
       end
       key = dcf["Package"]
