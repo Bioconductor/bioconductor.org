@@ -358,7 +358,7 @@ To add a course, you will typically perform the following steps
        ./scripts/course_mgr --push 2010/seattle-intro
        SYNC:
         src: ./seattle-intro
-        dst: biocadmin@merlot2.fhcrc.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
+        dst: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
        NEXT STEPS: svn add/checkin changes in contents
 
 5. Finally, "svn add" the new course index html and yaml files that were generated in the
@@ -399,8 +399,6 @@ And if it reports any non-ascii characters (it will
 show line numbers) fix these in a text editor before
 committing. Usually the culprit is a non-ascii
 hyphen that can be replaced with a regular hyphen.
-
-
 
 ** http://bioconductor-test.fhcrc.org test site
 
