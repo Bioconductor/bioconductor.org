@@ -90,7 +90,8 @@ Bioconductor packages, especially those in the development branch, are
 updated fairly regularly. To identify packages requiring update within
 your version of Bioconductor, start a new session of R and enter
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
 	biocLite()                  ## R version 3.0 or later
 
 Use the argument `ask=FALSE` to update old packages without being

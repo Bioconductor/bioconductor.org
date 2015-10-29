@@ -109,7 +109,8 @@ since R cannot allocate more than this on 32-bit Windows.
 Choose a descriptive name. An easy way to check whether your name is already
 in use is to check that the following command fails
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
     biocLite("MyPackage")
 
 Avoid names that are easily confused with existing package names, or
