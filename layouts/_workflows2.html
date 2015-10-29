@@ -24,7 +24,7 @@
     <tbody>
       <% if w.has_key? :user_defined_metadata %>
         <% for key in keys %>
-          <% next if [:output, :bibliography].include? key %>
+          <% next if [:output, :bibliography, :vignette].include? key %>
           <tr class="<%= ri.rowclass %>">
             <td><%= key %></td>
             <td><%= md[key] %></td>
