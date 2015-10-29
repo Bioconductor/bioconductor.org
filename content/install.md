@@ -22,7 +22,8 @@ of new features.
 [Install](#install-R) the latest release of R, then get the latest version of
 Bioconductor by starting R and entering the commands
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
     biocLite()
 
 Details, including instructions to
@@ -61,7 +62,8 @@ the main ones).
 Use the `biocLite.R` script to install Bioconductor packages. To
 install core packages, type the following in an R command window:
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
     biocLite()
 
 Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
@@ -101,7 +103,8 @@ details.
 Some versions of R support more than one version of Bioconductor. To
 use the latest version of Bioconductor for your version of R, enter
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
 	biocLite("BiocUpgrade")     ## R version 2.15 or later
 
 Read the help page for `?BiocUpgrade` for additional details. Remember
@@ -115,7 +118,8 @@ installed packages to be recompiled for source (C or Fortran)
 compatibility. One way to address this might be to start a new R
 session and enter
 
-    source("http://bioconductor.org/biocLite.R")
+    ## try http:// if https:// URLs are not supported
+    source("https://bioconductor.org/biocLite.R")
     pkgs <- rownames(installed.packages())
     biocLite(pkgs, type="source")
 
@@ -181,7 +185,7 @@ that packages are from the same release, and that all packages are
 current within the release.
 
 These days, the main purpose of
-`source("http://bioconductor.org/biocLite.R")` is to install and
+`source("https://bioconductor.org/biocLite.R")` is to install and
 attach the 'BiocInstaller' package.
 
 In a new installation, the script installs the most recent version of
@@ -198,7 +202,7 @@ require an updated version of Bioconductor, the source() command
 evaluated in an out-of-date R will nudge users to upgrade, e.g., in
 R-2.15.3
 
-    > source("http://bioconductor.org/biocLite.R")
+    > source("https://bioconductor.org/biocLite.R")
     A new version of Bioconductor is available after installing the most
       recent version of R; see http://bioconductor.org/install
 
