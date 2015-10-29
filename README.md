@@ -1,15 +1,15 @@
-* Site Maintainer README for bioconductor.org 
+# Site Maintainer README for bioconductor.org 
 
 ** Unix-ish Developer Required Software
 
-*** Required software 
+## Required software 
 
 NOTE: Before reading the following instructions you may want to consider 
 installing the web site as a Docker container. See the instructions
 [here](https://registry.hub.docker.com/u/dtenenba/bioconductor.org/).
 
 
-**** Ruby
+### Ruby
 
 The site requires ruby 1.9.1 or newer.
 
@@ -129,11 +129,11 @@ for more information.
 
 ** Developer Setup
 
-*** Checkout the bioconductor.org codebase
+### Checkout the bioconductor.org codebase
 
    svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
 
-*** Installing Necessary Ruby Packages
+### Installing Necessary Ruby Packages
 
 Ruby packages are called gems and `gem` is the program used to install them.
 
@@ -161,7 +161,7 @@ to install all dependencies, again prepending `sudo` if necessary:
     bundle install
 
 
-*** Build the site
+### Build the site
 
    cd bioconductor.org # if you aren't already in the working copy
    rake
@@ -180,15 +180,15 @@ Whether run by hand or by rake, the compiled html files are all found in
 and below output/, an immediate subdirectory of the bioconductor.org/ directory
 you have been working in.  
 
-*** Start the built-in development server, 'adsf' "A dead-simple file" server:
+### Start the built-in development server, 'adsf' "A dead-simple file" server:
 
    cd output
    adsf
 
 
-*** Test in a browser by going to http://localhost:3000/
+### Test in a browser by going to http://localhost:3000/
 
-** Overview of site source code
+## Overview of site source code
 
 * README.md :: You are reading this file or a file generated from
                 this file.
@@ -279,7 +279,7 @@ index pages that describe the course and provide links to the
 materials *are* stored in svn. The `course_mgr` script will help
 with index file creation and data transfer.
 
-*** `course_mgr` workflow and important tips
+### `course_mgr` workflow and important tips
 
 To add a course, you will typically perform the following steps
 (each described in detail below):
@@ -292,7 +292,7 @@ To add a course, you will typically perform the following steps
 4. Run `./scripts/course_mgr --push COURSE_NAME`
 5. Use svn to commit changes and additions made by `course_mgr`
 
-*** Using `course_mgr`
+### Using `course_mgr`
 
 1. Generate a skeleton course directory structure.
 
@@ -364,7 +364,7 @@ To add a course, you will typically perform the following steps
 5. Finally, "svn add" the new course index html and yaml files that were generated in the
    content directory and commit.
 
-*** Modifying an existing course
+### Modifying an existing course
 
 You can edit the pages for an existing course by editing the files in
 `./content`. If you need to add or modify data files, run:
@@ -418,7 +418,7 @@ overview of the test site configuration:
 
 * Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
 
-*** Staging site scheduled update
+### Staging site scheduled update
 
 The biocadmin user's crontab on merlot2 is used to schedule site
 updates every ten minutes. Below are some details on how the test
@@ -461,11 +461,11 @@ deployment, and log rotation (biocadmin user):
     ,*/10 * * * *  cd $HOME/bioc-test-web;./update_site >> cron.log 2>&1
     0    0 * * *  logrotate -s $HOME/bioc-test-web/logrotate.state $HOME/bioc-test-web/logrotate.conf
 
-*** Staging site SuSE Apache Configuration
+### Staging site SuSE Apache Configuration
 
 A good resource is available [http://en.opensuse.org/Apache_Quickstart_HOWTO](here).
 
-**** Apache module config
+#### Apache module config
 
 Edit /etc/sysconfig/apache2
 
@@ -480,7 +480,7 @@ One way to add them is to do:
    sudo /usr/sbin/a2enmod deflate
    sudo /usr/sbin/a2enmod rewrite
 
-**** Apache vhosts config
+#### Apache vhosts config
 
 Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 
@@ -527,11 +527,11 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
       </Directory>
     </VirtualHost>
 
-*** TODO Add apache2 to rc startup config
+### TODO Add apache2 to rc startup config
 
-*** Start apache using /etc/init.d/apache2 re
+### Start apache using /etc/init.d/apache2 re
 
-*** Staging site nginx installation
+### Staging site nginx installation
 
 We will most likely deploy the test and production sites using
 Apache2. A first test setup was configured using nginx. The details
@@ -554,12 +554,12 @@ nginx paths:
    error log file: "/usr/local/nginx/logs/error.log"
    http access log file: "/usr/local/nginx/logs/access.log"
 
-*** creating an nginx user (SuSE Linux)
+### creating an nginx user (SuSE Linux)
 
      sudo useradd -c "nginx worker" -d /usr/local/nginx -s /bin/false \
                   -g www -G www nginx
 
-*** nginx config
+### nginx config
 
 Followed basic config.
 
@@ -607,9 +607,9 @@ that this runs against the staging site so will have a lot of false positives.
 
 ** Note on launching the new site
 
-*** Discuss production setup with Dirk
+### Discuss production setup with Dirk
 
-**** DNS
+#### DNS
 
 You want to set things up so that you can move to the new site or
 revert to current quickly. Dirk should be able to suggest a way to
@@ -617,13 +617,13 @@ achieve this. Ideally, you would not change the bioconductor.org DNS
 record as this can take awhile to propagate and doesn't give a quick
 way to revert.
 
-**** Site monitoring and alerting
+#### Site monitoring and alerting
 
 I imagine PHS IT has some monitoring that can be put in place for the
 new site. Would also make sense to add an external monitor so that
 you will know if the site becomes unreachable from the outside.
 
-**** Squid
+#### Squid
 
 I'm not sure what the current status is w.r.t. to Squid proxy/cache.
 With the new setup, I would anticipate that a reasonable web server
@@ -631,7 +631,7 @@ running Apache will be enough for the load and that if more throughput
 or redundancy is desired, setting up a second server and load
 balancing would be a good next step.
 
-*** Optimize redirects
+### Optimize redirects
 
 Currently the redirects are defined using Apache's mod_rewrite in a
 top-level `.htaccess` file. This has the advantage of allowing easy
@@ -649,32 +649,32 @@ following changes:
    top-level directory. This should disable .htaccess files as it
    isn't enough just to remove the .htaccess file itself.
 
-*** Testing the staging site
+### Testing the staging site
 
-**** Use a few days worth of access logs
+#### Use a few days worth of access logs
 
 Extract paths from a few days of access logs (make sure to filter for
 200 responses) and "replay" these against the staging site. This should
 give a good idea of whether the redirects are doing enough and whether
 or not basic repository structure has been appropriately mirrored.
 
-**** Use wget to test for broken links on the site
+#### Use wget to test for broken links on the site
 
     wget -r -l 20 --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
 
-**** Work with Dirk to make the staging site available on the internet
+#### Work with Dirk to make the staging site available on the internet
 
 Then you can ask Wolfgang to do some tests to see how the site
 performs from Europe. You could also run some site performance
 analysis tools like YSlow to get some suggestions for improvements.
 
-**** Staging site performance
+#### Staging site performance
 
 You might look into running some simple benchmarks with `ab` or
 `httperf`. Might be interesting to compare against the current
 Plone-based site.
 
-*** Misc Concerns
+### Misc Concerns
 
 In trying to get some test data from the current site using wget,
 I've seen a number of cases where a wget request failed, but then
@@ -683,12 +683,12 @@ wget-based snapshot may not be as complete as thought. Not sure if
 the issue is wget config options or Plone getting overwhelmed with
 requests and failing to respond.
 
-*** Site Search
+### Site Search
 
 The site search contains several moving parts. The search is built on 
 Apache Solr, which is in turn built on top of Apache Lucene. 
 
-**** How to configure Solr
+#### How to configure Solr
 The default SOLR installation works fine, with the exception of the file
 example/solr/conf/schema.xml which must be replaced with the version in
 this subversion repository at etc/solr.The changes in this file enable
@@ -700,12 +700,12 @@ where the solr tarball has been expanded):
     cd $SOLR_HOME/example; java -jar start.jar
 
 
-**** How to ensure that Solr is started up at boot time (on merlot2 and krait)
+#### How to ensure that Solr is started up at boot time (on merlot2 and krait)
 On both machines there is an /etc/rc.d/rc.local script (with symlink at
 /etc/rc.d/rclocal) which starts Solr as above. TODO: reboot (at least merlot2)
 and make sure this works.
 
-**** How to configure the Apache web server to work with Solr
+#### How to configure the Apache web server to work with Solr
 
 Using a2enmod, we added support for the "proxy" and "proxy_http" modules
 to the Apache web server. Then we added the following to 
@@ -725,7 +725,7 @@ This means that all requests starting with "/solr" will go to the
 solr server on port 8983. This allows us to make requests to the 
 search server without violating the "same-origin" policy.
 
-**** How the client-side portion of the search works
+#### How the client-side portion of the search works
 
 The page /search/index.html includes some javascript (in the file
 js/search.html) which in turn uses jQuery. The code parses the 
@@ -733,7 +733,7 @@ arguments in the URL and then makes an AJAX request to the SOLR
 server which returns a JSON string. The javascript code converts
 that to an object and then renders the search response page.
 
-**** How to rebuild the search index (on your own machine, merlot2, or krait)
+#### How to rebuild the search index (on your own machine, merlot2, or krait)
 
 Note that you typically do not want to do this by hand as it is handled
 by cron jobs (see below). 
@@ -759,7 +759,7 @@ To re-index files on krait, ssh to merlot2 (not krait) and do this:
     rake index_production
 
 
-**** Cron jobs for rebuilding the search index/why it is decoupled from site update
+#### Cron jobs for rebuilding the search index/why it is decoupled from site update
 
 Doing "crontab l" on merlot2 shows how the index us updated 
 on both merlot2 and krait. Here are the relevant lines:
@@ -774,7 +774,7 @@ the search indexing takes place every hour on merlot2 and every four hours on
 krait (where there are many more files to be indexed which originate from the build system).
 
 
-**** How to get search working on your own development machine
+#### How to get search working on your own development machine
 
 You could set up apache as described above but I think that is overkill.
 I use pound (http://www.apsis.ch/pound/) as a simple front end to both
@@ -788,10 +788,10 @@ to handle the hostname of your local machine.
 --todo: make sure people can't do anything bad as solr admin (change password?)
 See http://wiki.apache.org/solr/SolrSecurity
 
-*** BiocViews Pages
+### BiocViews Pages
 The BiocViews pages are generated by a three-step process:
 
-**** Step 1: rake get_json
+#### Step 1: rake get_json
 
 This is run by a cron job on merlot2 every day at 2PM (presumably after the build system
 has finished and copied all its output to krait). Here is the cron job:
@@ -805,21 +805,21 @@ is run which processes that JSON into a format usable by the javascript tree wid
 If you want to run this target on your own machine, you need R available with the biocViews
 (Bioconductor) and rjson (CRAN) packages installed.
 
-**** Step 2: Build package detail pages
+#### Step 2: Build package detail pages
 
 This is done by nanoc and handled by the DataSource subclass BiocViews (found in
 lib/data_sources/bioc_views.rb). This data source uses the JSON files generated in the
 previous step to build a single page for each page, one for release and one for devel.
 The pages are rendered by the partial layouts/_bioc_views_package_detail.html.
 
-**** Step 3: The BiocViews Hierarchy page
+#### Step 3: The BiocViews Hierarchy page
 
 At http://bioconductor.org/packages.
 This page uses javascript to build the tree, reading in data generated in step 1.
 The relevant Javascript file is assets/js/bioc_views.js. The automatically generated 
 (by rake) file output/js/versions.js is also sourced.
 
-*** Updating the site during a release
+### Updating the site during a release
 
 Take a look at the config.yaml file in the root of the bioconductor.org working copy.
 This should be the only place you need to make changes.
@@ -839,7 +839,7 @@ you don't have permission to do so). Change directories:
 
     cd ~/bioc-test-web
 
-Look at the timestamp on the file `bioconductor.org/crash.log`; if it's recent,
+Look at the 2015 Oct 29 10:22:19 AM
 then its contents are relevant. You can also look at the last
 few lines of `./cron.log`. 
 
