@@ -42,7 +42,7 @@ active_release_builders:
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
 workflow_builder:
-  bioc_version: "3.1"
+  bioc_version: "3.2"
   r_version: "3.2"
 
 ## CHANGE this when the single package builder builds
