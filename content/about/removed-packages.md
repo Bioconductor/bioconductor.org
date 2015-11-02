@@ -18,7 +18,6 @@ No packages were removed with this release.
 
 ## Packages removed with Bioconductor 3.0 release 
 
-* [GeneRfold](/packages/2.14/bioc/html/GeneRfold.html)
 * [RMAPPER](/packages/2.14/bioc/html/RMAPPER.html)
 * [virtualArray](/packages/2.14/bioc/html/virtualArray.html)
 
@@ -51,6 +50,7 @@ No packages were removed with this release.
 ## Packages removed with Bioconductor 2.10 release 
 
 * [edd](/packages/2.9/bioc/html/edd.html)
+* [GeneRfold](/packages/2.9/bioc/html/GeneRfold.html)
 * [ontoTools](/packages/2.9/bioc/html/ontoTools.html)
 * [GeneR](/packages/2.9/bioc/html/GeneR.html)
 * [RMAGEML](/packages/2.9/bioc/html/RMAGEML.html)
