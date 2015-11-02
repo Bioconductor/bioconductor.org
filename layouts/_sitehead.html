@@ -3,6 +3,15 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta name="robots" content="all" />
   
+<% if  item.identifier =~ /^\/help\/bioc-views\/package-pages\// \
+  and not item.identifier =~ /\/all-/ %>
+  <meta property="og:title" content="<%= item[:title] %>" />
+  <meta property="og:description" content="<%= item[:Description] %>" />
+  <meta property="og:url" content="http://bioconductor.org/packages/<%=item[:title]%>/" />
+  <meta property="og:image" content="http://bioconductor.org/images/logo/jpg/bioconductor_logo_rgb.jpg" />
+<% end %>
+
+
   <%
     if (item.identifier  =~ /BiocViews\.html$/)
         item[:rebase] = true

@@ -1,5 +1,6 @@
 <%= doctype %>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
+prefix="og: http://ogp.me/ns#">
   <%= render("/_sitehead/") %>
   <body>
     <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
