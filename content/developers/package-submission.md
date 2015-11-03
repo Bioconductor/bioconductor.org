@@ -16,7 +16,7 @@ Bioconductor Packages should
   sequencing, expression and other microarrays, flow cytometry, mass
   spectrometry, image analysis; see
   [biocViews](http://bioconductor.org/packages/devel/BiocViews.html#___Software).
-* Interoperate other Bioconductor packages, re-using common data
+* Interoperate with other Bioconductor packages, re-using common data
   structures (see
   [S4 classes and methods](/developers/how-to/S4-classes/)) and
   existing infrastructure (e.g., `rtracklayer::import()` for input of
