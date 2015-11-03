@@ -1,6 +1,6 @@
 # Site Maintainer README for bioconductor.org 
 
-** Unix-ish Developer Required Software
+ Unix-ish Developer Required Software
 
 ## Required software 
 
@@ -98,7 +98,7 @@ for more information.
 
 
 
-** Windows Developer Required Software
+## Windows Developer Required Software
 
 1. Download and run the one-click ruby installer
    http://rubyinstaller.org/downloads/. Accept all default
@@ -127,7 +127,7 @@ for more information.
 
 5. Follow the developer setup instructions below.
 
-** Developer Setup
+## Developer Setup
 
 ### Checkout the bioconductor.org codebase
 
@@ -244,9 +244,9 @@ you have been working in.
 
 * scripts :: Helper scripts for managing the site live here.
 
-** How to add a page
+## How to add a page
 
-** How to add event
+## How to add event
 
 You will use a helper scripts `./scripts/add_event` to add event
 to the site using the following steps:
@@ -270,7 +270,7 @@ to the site using the following steps:
 3. Edit the `EVENT_NAME.yaml` file 
 4. Use svn to commit changes and additions by `add_event`
  
-** How to add course material
+## How to add course material
 
 You will use a helper script `./scripts/course_mgr` to add course
 material to the site. PDF files for labs and presentations as well
@@ -380,7 +380,7 @@ You can edit the pages for an existing course by editing the files in
 
 
 
-** Adding course material to the spreadsheet
+## Adding course material to the spreadsheet
 
 The page
 [http://www.bioconductor.org/help/course-materials/](http://www.bioconductor.org/help/course-materials/) 
@@ -400,7 +400,7 @@ show line numbers) fix these in a text editor before
 committing. Usually the culprit is a non-ascii
 hyphen that can be replaced with a regular hyphen.
 
-** http://bioconductor-test.fhcrc.org test site
+## http://bioconductor-test.fhcrc.org test site
 
 We run an inside FHCRC only test instance of the Bioconductor website
 at the above URL. The site is rebuilt every ten minutes. Here's an
@@ -582,7 +582,7 @@ Followed basic config.
 
 Started nginx as: `sudo /usr/local/nginx/sbin/nginx`
 
-** How to test for broken links
+## How to test for broken links
 
 You can run wget as shown below to get a report on 404s for the site. Note
 that this runs against the staging site so will have a lot of false positives.
@@ -605,7 +605,7 @@ that this runs against the staging site so will have a lot of false positives.
     http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/tutorial.mpeg
     http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/dataFiles.tar
 
-** Note on launching the new site
+## Note on launching the new site
 
 ### Discuss production setup with Dirk
 
