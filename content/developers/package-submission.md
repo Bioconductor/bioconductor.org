@@ -17,10 +17,8 @@ Bioconductor Packages should
   spectrometry, image analysis; see
   [biocViews](http://bioconductor.org/packages/devel/BiocViews.html#___Software).
 * Interoperate with other Bioconductor packages, re-using common data
-  structures (see
-  [S4 classes and methods](/developers/how-to/S4-classes/)) and
-  existing infrastructure (e.g., `rtracklayer::import()` for input of
-  common genomic files).
+  structures and existing infrastructure (e.g.,
+  `rtracklayer::import()` for input of common genomic files).
 * Adopt software best practices that enable reproducible research and
   use, such as full documentation and vignettes (including fully
   evaluated code) as well as commitment to long-term user support
