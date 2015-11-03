@@ -24,7 +24,7 @@ Bioconductor Packages should
   evaluated code) as well as commitment to long-term user support
   through the Bioconductor [support site](https://support.bioconductor.org).
 
-[S4 classes and methods]: http://bioconductor.org/developers/package-guidelines/#classes
+[S4 classes and methods]: /developers/package-guidelines/#classes
 
 Bioconductor Authors should
 
