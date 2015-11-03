@@ -109,6 +109,14 @@ To install this version of ruby in rbenv, type
 
     rbenv install 2.1.1
 
+NOTE: this failed for me under Ubuntu 14.04, somehow related to
+readline. The [solution][] was
+
+    curl -fsSL https://gist.github.com/mislav/a18b9d7f0dc5b9efc162.txt | \
+	    rbenv install --patch 2.1.1
+
+[solution]: https://github.com/sstephenson/ruby-build/issues/526
+
 Then, to make this the only version of ruby that you will use, type:
 
     rbenv global 2.1.1
@@ -181,11 +189,13 @@ to install all dependencies, again prepending `sudo` if necessary:
 
     bundle install
 
+NOTE: this failed installing the pg gem on Ubuntu 14.04; fixed
+with `sudo apt-get install libpq-dev`
 
 ### Build the site
 
-   cd bioconductor.org # if you aren't already in the working copy
-   rake
+    cd bioconductor.org # if you aren't already in the working copy
+    rake
 
 One step in the build process runs 'nanoc',  "a Ruby web publishing system  
 for building small to medium-sized websites"; it is one of the 
@@ -195,7 +205,7 @@ gems you installed above.  If you ever need to run nanoc explicitly:
 
 To run an abbreviated compile, which does not attempt to build all package pages:
 
-   QUICK_NANOC_COMPILE=true nanoc co
+    QUICK_NANOC_COMPILE=true nanoc co
 
 Whether run by hand or by rake, the compiled html files are all found in 
 and below output/, an immediate subdirectory of the bioconductor.org/ directory
@@ -203,8 +213,8 @@ you have been working in.
 
 ### Start the built-in development server, 'adsf' "A dead-simple file" server:
 
-   cd output
-   adsf
+    cd output
+    adsf
 
 
 ### Test in a browser by going to http://localhost:3000/
