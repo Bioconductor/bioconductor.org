@@ -17,32 +17,39 @@ Bioconductor Packages should
   spectrometry, image analysis; see
   [biocViews](http://bioconductor.org/packages/devel/BiocViews.html#___Software).
 * Interoperate with other Bioconductor packages, re-using common data
-  structures and existing infrastructure (e.g.,
-  `rtracklayer::import()` for input of common genomic files).
+  structures ([S4 classes and methods][]) and existing infrastructure
+  (e.g., `rtracklayer::import()` for input of common genomic files).
 * Adopt software best practices that enable reproducible research and
   use, such as full documentation and vignettes (including fully
   evaluated code) as well as commitment to long-term user support
   through the Bioconductor [support site](https://support.bioconductor.org).
 
+[S4 classes and methods]: http://bioconductor.org/developers/package-guidelines/#classes
+
 Bioconductor Authors should
-* Be familiar with the ‘devel’ and ‘release’ branch concepts used in the project.
-New packages and features are added to the ‘devel’ branch. The current devel
-branch becomes the next release, with a release in April and October. Once your
-package has been accepted, it will initially be in the ‘devel’ branch. Most
-users are expected to use the release branch, so will not immediately have
-access to your package.
-* Realize Bioconductor, unlike CRAN, maintains all package source code under
-version control (‘SVN’; ‘git’ is also possible). This means that, once your
-package is accepted, you will make additional changes to your package using
-SVN or git rather than submitting a new tarball.
-* Be committed to maintaining your package across multiple release cycles.
+
+* Be familiar with the ‘devel’ and ‘release’ branch concepts used in
+  the project.  New packages and features are added to the ‘devel’
+  branch. The current devel branch becomes the next release, with a
+  release in April and October. Once your package has been accepted,
+  it will initially be in the ‘devel’ branch. Most users are expected
+  to use the release branch, so will not immediately have access to
+  your package.
+* Realize Bioconductor, unlike CRAN, maintains all package source code
+  under version control (‘SVN’; ‘git’ is also possible). This means
+  that, once your package is accepted, you will make additional
+  changes to your package using SVN or git rather than submitting a
+  new tarball.
+* Be committed to maintaining your package across multiple release
+  cycles.
 
 Other avenues for distributing your package include
+
 * [CRAN](http://www.r-project.org/) (for packages only tangentially
-related to areas of Bioconductor emphasis) and repositories such as
+  related to areas of Bioconductor emphasis) and repositories such as
 * [r-forge](https://r-forge.r-project.org/) or
 * [GitHub](https://github.com) (for packages in early stages of
-development).
+  development).
 
 Many Bioconductor packages import or depend on CRAN
 packages. CRAN packages importing or depending on many Bioconductor
@@ -75,8 +82,8 @@ Packages must satisfy the following checklist:
 * Contain a vignette that illustrates the major uses of the
   package. The vignette must be *evaluated* during package installation; a
   static vignette is not acceptable.
-* Contain comprehensive help pages. This includes accurate description of function
-  parameter and return values, and meaningful examples.
+* Contain comprehensive help pages. This includes accurate description
+  of function parameter and return values, and meaningful examples.
 * Make use of appropriate existing packages (e.g., biomaRt, AnnotationDbi,
   Biostrings) and classes (e.g., ExpressionSet, AnnotatedDataFrame,
   RangedData, Rle, DNAStringSet) to avoid duplication of functionality
@@ -147,16 +154,17 @@ A typical review works as follows.
 
 * The package developer submits first version of the package (0.99.0).
 * Build system returns check results.
-* The package developer fixes any issues found, runs `R CMD build`, `R CMD check`
-and `R CMD BiocCheck` on their local machine, and uploads the new version
-(0.99.1).
+* The package developer fixes any issues found, runs `R CMD build`,
+  `R CMD check` and `R CMD BiocCheck` on their local machine, and
+  uploads the new version (0.99.1).
 * A reviewer is assigned to the package.
 * A detailed package review is returned to the developer within a few weeks.
-* The package developer updates their package incorporating the reviewer
-comments, runs `R CMD build`, `R CMD check` and `R CMD BiocCheck` on their
-local machine, and uploads the new version (0.99.2).
-* The process is repeated, with appropriate version bumps, until the package is
-accepted to Bioconductor.
+* The package developer updates their package incorporating the
+  reviewer comments, runs `R CMD build`, `R CMD check` and
+  `R CMD BiocCheck` on their local machine, and uploads the new version
+  (0.99.2).
+* The process is repeated, with appropriate version bumps, until the
+  package is accepted to Bioconductor.
 
 Following acceptance of a package:
 
@@ -180,13 +188,14 @@ Following acceptance of a package:
 
 <h2 id="support">Additional Support</h2>
 
-We are eager to enhance the quality and interoperability of Bioconductor
-software and will provide additional support when requested by package
-developers. Example areas of assistance include use of appropriate S4
-structures, specific guidance on efficient implementation, guidance on code
-structure, and critical assessment of package documentation and structure.
-Use the [bioc-devel](/help/mailing-list/) mailing list or email <packages@bioconductor.org>
-to obtain additional support.
+We are eager to enhance the quality and interoperability of
+Bioconductor software and will provide additional support when
+requested by package developers. Example areas of assistance include
+use of appropriate S4 structures, specific guidance on efficient
+implementation, guidance on code structure, and critical assessment of
+package documentation and structure.  Use the
+[bioc-devel](/help/mailing-list/) mailing list or email
+<packages@bioconductor.org> to obtain additional support.
 
 * [Webinar on Package Submission](https://www.youtube.com/watch?v=QfqaK_BHebU)
 * Support Email: <packages@bioconductor.org>
