@@ -27,4 +27,4 @@ EPS
 
 GIF
 
-* [logo_bioconductor.gif](/images/logo/logo_bioconductor.gif)
+* [logo_bioconductor.gif](/images/logo_bioconductor.gif)
