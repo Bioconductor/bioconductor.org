@@ -53,7 +53,7 @@ tweeted_pkgs = []
 
 for tweet in tweets
     text = tweet.text
-    if text =~ %r(^http://t.co)
+    if text =~ %r(^https?://t.co)
         tweeted_pkgs.push(text.split(" ")[1])
     end
 end
