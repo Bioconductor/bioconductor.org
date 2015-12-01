@@ -104,7 +104,7 @@ Packages must satisfy the following checklist:
 
 
 <h2 id="submission">Submission</h2>
-* Submit by opening a new issue at https://tracker.bioconductor.org
+* Submit by opening a new issue on the [Bioconductor Issue Tracker](https://tracker.bioconductor.org).
 * You will need to be registered in order to use the tracker.
 * Once you've registered, log on and create a new issue.
 * On the `New Issue Editing` page:
