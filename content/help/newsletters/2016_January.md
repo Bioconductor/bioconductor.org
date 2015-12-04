@@ -19,8 +19,8 @@ posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 
 ### `Bioconductor` annotation packages 
 
-`Bioconductor` contains many different types of annotation packages. In this
-section we highlight the most heavily used packages and their common uses.
+`Bioconductor` contains many different types of annotation packages. This
+section highlights the most heavily used packages and their common applications.
 
 * OrgDb
 
