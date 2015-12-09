@@ -38,7 +38,150 @@ contain similar data or can perform like actions
 
 Explain why some packages are build-specific and some are not.
 
-### Common tasks 
+### Common tasks
+
+One common task is to annotate a microarray experiment by mapping the
+manufacturer's IDs to something more general, such as a HUGO gene
+symbol, or an NCBI (Gene, GenBank, RefSeq, UniGene) or Ensembl (Ensembl
+gene, Ensembl transcript) ID. As an example, we can map an Affymetrix
+ID from the Human Gene 1.0 ST array to the corresponding HUGO symbol.
+
+	library(hugene10sttranscriptcluster.db)
+	hugene <- hugene10sttranscriptcluster.db ## minimize typing
+	select(hugene, "8012257", "SYMBOL")
+
+    'select()' returned 1:1 mapping between keys and columns
+     PROBEID SYMBOL
+	1 8012257   TP53
+
+This is a very simple example, and probably not that useful, except
+as a quick interactive query. Note that we did not specify the
+`keytype` argument. The default `keytype` argument for `select` is the
+central ID for the package being used. In this case, that is the
+PROBEID, and since we are using probeset IDs as `keys`, it is not
+necessary to specify the `keytype`.
+
+A more common use case is to annotate a vector of `keys`, returning
+one or more output IDs (or `columns`). As an example, we will use just
+five `keys` from the hugene10sttranscriptcluster.db package, and query
+for the HUGO symbol and Entrez Gene IDs. 
+
+	ids <- keys(hugene)[15000:15005]
+	ids
+	[1] "8005171" "8005191" "8005200" "8005202" "8005204"
+	
+	annot <- c("SYMBOL","ENTREZID")
+	select(hugene, ids, annot)
+	'select()' returned 1:many mapping between keys and columns
+	   PROBEID       SYMBOL  ENTREZID
+	1  8005171        TRPV2     51393
+	2  8005191  LRRC75A-AS1    125144
+	3  8005191     SNORD49A     26800
+	4  8005191     SNORD49B    692087
+	5  8005191      SNORD65    692106
+	6  8005200  LRRC75A-AS1    125144
+	7  8005200     SNORD49A     26800
+	8  8005200     SNORD49B    692087
+	9  8005200      SNORD65    692106
+	10 8005202     SNORD49A     26800
+	11 8005202  LRRC75A-AS1    125144
+	12 8005202     SNORD49B    692087
+	13 8005202      SNORD65    692106
+	14 8005204     CCDC144A      9720
+	15 8005204    CCDC144CP    348254
+	16 8005204     CCDC144B    284047
+	17 8005204    CCDC144NL    339184
+	18 8005204 LOC101929141 101929141
+	19 8005221         <NA>      <NA>
+
+Please note two things about the above results. First, the PROBEID
+column in the returned `data.frame` has the same order as the input
+ids. Second, some of the Affymetrix IDs map to more than one
+gene. All of the mappings are returned, with a message that there
+was a 1:many mapping for some of the `keys`. Because of the 1:many
+mappings, the dimensions of the returned `data.frame` do not match the
+dimensions of the data we would like to annotate (e.g., we wanted
+information for five IDs, and got 19 rows of data returned).
+
+If we want to guarantee that the returned data are in the same order
+*and* are the same length as the input `keys` vector, we can use
+`mapIds` instead. However, `mapIds` can only do one `keytype` at a
+time, and returns a `vector` rather than a `data.frame`. Unlike
+`select`, which has a default value for the keytype, `mapIds` requires
+a fourth argument, specifying the `keytype` of the `keys` we are
+using.
+
+	> mapIds(hugene, ids, "SYMBOL", "PROBEID")
+      8005171       8005191       8005200       8005202       8005204 
+      "TRPV2" "LRRC75A-AS1" "LRRC75A-AS1"    "SNORD49A"    "CCDC144A" 
+      8005221 
+      NA
+
+We can easily wrap this in a small script to return a `data.frame`
+with just one row per `key`.
+
+	> d.f <- as.data.frame(lapply(annot, function(x) mapIds(hugene, ids, x, "PROBEID")))
+	> names(d.f) <- annot
+	> d.f
+		         SYMBOL ENTREZID
+	8005171       TRPV2    51393
+	8005191 LRRC75A-AS1   125144
+	8005200 LRRC75A-AS1   125144
+	8005202    SNORD49A    26800
+	8005204    CCDC144A     9720
+	8005221        <NA>     <NA>
+
+The default for `mapIds` is to take the first instance for any 1:many
+mappings. We can use the `multiVals` argument to control what is
+returned. Please note that this argument comes after an ellipsis
+(`...`) argument, so you cannot use positional arguments, and must
+instead specify the `multiVals` argument directly.
+
+	> mapIds(hugene, ids, "SYMBOL", "PROBEID", multiVals = "list")
+	$`8005171`
+	[1] "TRPV2"
+
+	$`8005191`
+	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"    
+
+	$`8005200`
+	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"    
+
+	$`8005202`
+	[1] "SNORD49A"    "LRRC75A-AS1" "SNORD49B"    "SNORD65"    
+
+	$`8005204`
+	[1] "CCDC144A"     "CCDC144CP"    "CCDC144B"     "CCDC144NL"    "LOC101929141"
+
+	$`8005221`
+	[1] NA
+
+If we want to have a rectangular format for our annotation, where we
+keep all the 1:many mappings while ensuring that each row maps
+directly to our array of expression values, we can use a `DataFrame`
+instead, telling `mapIds` to return a `CharacterList`.
+
+	> lst <- lapply(annot, function(x)
+	mapIds(hugene, ids, x, "PROBEID", multiVals = "CharacterList")
+	> d.f <- as(lst, "DataFrame")
+	> names(d.f) <- annot
+	> d.f
+	DataFrame with 6 rows and 2 columns
+                                   SYMBOL                ENTREZID
+                          <CharacterList>         <CharacterList>
+	8005171                             TRPV2                   51393
+	8005191 LRRC75A-AS1,SNORD49A,SNORD49B,... 125144,26800,692087,...
+	8005200 LRRC75A-AS1,SNORD49A,SNORD49B,... 125144,26800,692087,...
+	8005202 SNORD49A,LRRC75A-AS1,SNORD49B,... 26800,125144,692087,...
+	8005204   CCDC144A,CCDC144CP,CCDC144B,...  9720,348254,284047,...
+	8005221                                NA                      NA
+
+
+Given the above data, perhaps we are interested in LRRC75A-AS1,
+and want to know its chromosomal location. We can use the Homo.sapiens
+package to get that information, starting with the 
+
+
 
 * convert an Affy ID to Entrez Gene ID, 
 * find the genomic region for a gene, etc. 
