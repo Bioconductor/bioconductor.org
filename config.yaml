@@ -217,6 +217,7 @@ mirrors:
      institution_url: http://www.ism.ac.jp/
      contact: Keisuke Honda
      mirror_url: http://bioc.ism.ac.jp/
+     https_mirror_url: https://bioc.ism.ac.jp/
      contact_email: khonda@ism.ac.jp
      country_code: jp
      city: Tachikawa
