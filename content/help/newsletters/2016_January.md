@@ -17,26 +17,79 @@ posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 
 ## Annotations (need better title)
 
-### `Bioconductor` annotation packages 
+### The primary packages
 
-`Bioconductor` contains many different types of annotation packages. This
-section highlights the most heavily used packages and their common applications.
+`Bioconductor` hosts many different types of annotation packages. This
+section highlights the most heavily used and the most common applications.
 
-* OrgDb
+* `OrgDb`:
 
-* ChipDb
+  The OrgDb packages encapsulate all the information we know about a
+  given organism's genes as of a given date. GO terms, ontology, Entrez IDs,
+  RefSeq ID, Ensembl IDs and many others. Because these data have nothing
+  to do with where a gene is found they are not related to a genome build.
 
-* TxDb
+* `ChipDb`:
 
-* BSgenome
+  The `ChipDb` packages contain a single mapping: probe Id to Entrez gene ID.
+  The Entrez gene ID is also found in the `OrgDb` package but for those
+  interested in just this single mapping, the `ChipDb` is a lighter weight
+  option.
 
-* ...
+* `TxDb`:
 
-After individual explanations segue into ... several annotations 
-contain similar data or can perform like actions 
-(OrgDb and biomaRt; ChipDb and biomaRt ...). 
+  `TxDb` packages contain location information of transcripts, genes,
+  exons and other gene-related features for a specific organism
+  based on a given build of the genome.
 
-Explain why some packages are build-specific and some are not.
+* `BSgenome`:
+
+  These packages contain full genome sequences for a specific organism
+  based on a given build of the genome.
+
+* `SNPlocs`:
+
+  SNP locations and alleles for a specific organism extracted from a
+  particular dbSNP build which is based on genome build. 
+
+* `AnnotationHub`:
+
+  This package provides an interface to browse and download a wide collection
+  of annotation packages and individual resources. Much of the data are
+  pre-parsed into `R` / `Bioconductor` objects.
+
+
+@Jim: I know this next chunk is long but it such excellent background I feel 
+we must include it (or parts of it).
+
+The NCBI databases are a hierarchy of sorts, where people submit sequences they
+think were expressed in a particular species.  These sequences come from lots
+of different groups, and start out as sort of provisional transcripts at NCBI
+or Ensembl. As more people find the same things and evidence accrues for a
+particular sequence being real, the provisional transcripts get collapsed into
+a single sequence, and are given a RefSeq or GenBank ID (or maybe both).  Then
+if a set of RefSeq or GenBank transcripts appear to be variants from a single
+locus, they might be collapsed into a single UniGene ID.  But the general idea
+is that a jumble of submitted (and predicted) transcripts are slowly collapsed
+from a bunch of hypothetical gene like sequences, into a smaller set of
+transcripts or DNA sequences that we think are 'for real'. 
+
+This collapsing process goes on all the time. In addition, duplicates are
+constantly being found in RefSeq or Gene or whatever, and one ID is deprecate
+in favor of the other. RefSeq and GenBank have weekly releases so this is a
+fast-moving target.
+
+Genome builds, on the other hand, have to do with trying to piece
+together the actual structure of the genome. Since the build has to do
+with the entire genome, it isn't possible or reasonable to update
+weekly, so they do releases every so often. So in mm9, GeneX may have
+been thought to have been found on Chr1 at 1234567-1237654, but when
+they did mm10, they may have shuffled things around so that gene may
+now be in a different place on the genome. But that doesn't change the
+sequence of the gene, nor what it does, nor what transcripts it is
+thought to make, nor the gene ontology terms appended to it, or
+anything else.
+
 
 ### Common tasks
 
@@ -198,9 +251,15 @@ want to generate a list of DE genes with annotation for my PI, etc).
 
 ## ExperimentHub
 
+## Reproducible Research
+- manage your install with
+  biocLite(), biocValid(), chooseBioCmirror(), biocinstallRepos() ...
+- locate specific version with (if done) Jim's tag svn / git repos 
+
+
 ## Infrastructure
 - 'generics' package
-- SummarizedExperiment ongoing development
+- ongoing SummarizedExperiment development
 - ExperimentHub
 - ChiA-PET and Hi-C and InteractionSet class (https://github.com/LTLA/InteractionSet)
 
