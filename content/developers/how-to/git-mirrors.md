@@ -112,8 +112,40 @@ When you're done, be sure and merge any changes from svn back into the git maste
     git checkout master
     git merge devel
 
+### Dealing with prior history / merge conflicts ###
+If your Git repository has prior history before being added to SVN or you are
+running into merge conflicts when trying to run `git svn rebase` the best way
+forward is to [git cherry-pick](https://git-scm.com/docs/git-cherry-pick) the
+new commits rather than trying to merge. The following workflow assumes
+your new commits are on the 'master' branch and the SVN tracking branch is
+called 'devel' (this is the case when using setup_remotes.sh).
 
- 
+```bash
+# switch to the devel branch
+git checkout devel
+
+# lookup commit range to cherry-pick on the master branch. Copy the sha1 hashes
+# for the range of commits you want to pick.
+git log master
+
+# cherry pick the commits from master to devel
+git cherry-pick d9773cdb3b07c0..0bd4b4f4de831
+
+# Fix any conflicts that arise, then run
+git cherry-pick --continue
+
+# both of these commands should now work without error
+git svn info
+git svn rebase
+
+# You should now be able to commit to SVN with
+git svn dcommit
+```
+
+If you run into any problems with this procedure please post a message to the
+[Bioc-Devel mailing list](bioc-devel@r-project.org) or send an email to
+<packages@bioconductor.org>.
+
 ## FAQs ##
 
 ### How do I let users know I am using GitHub for development and contributions?
