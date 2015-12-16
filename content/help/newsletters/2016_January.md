@@ -75,7 +75,7 @@ from a bunch of hypothetical gene like sequences, into a smaller set of
 transcripts or DNA sequences that we think are 'for real'. 
 
 This collapsing process goes on all the time. In addition, duplicates are
-constantly being found in RefSeq or Gene or whatever, and one ID is deprecate
+constantly being found in RefSeq or Gene or whatever, and one ID is deprecated
 in favor of the other. RefSeq and GenBank have weekly releases so this is a
 fast-moving target.
 
@@ -230,16 +230,83 @@ instead, telling `mapIds` to return a `CharacterList`.
 	8005221                                NA                      NA
 
 
-Given the above data, perhaps we are interested in LRRC75A-AS1,
+Given the above data, perhaps we are interested in TRPV2,
 and want to know its chromosomal location. We can use the Homo.sapiens
-package to get that information, starting with the 
+package to get that information. While it is possible to use the HUGO
+symbol for this gene to get the location, it is a better idea to use
+the Entrez Gene ID, which is more likely to be unique.
 
+	> select(Homo.sapiens, "51393", c("TXCHROM","TXSTART","TXEND"), "SYMBOL")
+	'select()' returned 1:1 mapping between keys and columns
+	   ENTREZID TXCHROM  TXSTART    TXEND
+	1  51393     chr17 16318856 16340317
 
+This just tells us the start and stop positions for the transcript. If
+we want exonic locations, we can get those as well.
 
-* convert an Affy ID to Entrez Gene ID, 
-* find the genomic region for a gene, etc. 
-Cover some of the inherent difficulties of annotating things, like 1:many 
-mappings, and the tradeoffs you have to make.
+	> select(Homo.sapiens, "TRPV2", c("EXONCHROM","EXONSTART","EXONEND"), "SYMBOL")
+	'select()' returned 1:many mapping between keys and columns
+	    SYMBOL EXONCHROM EXONSTART  EXONEND
+	1   TRPV2     chr17  16318856 16319147
+	2   TRPV2     chr17  16320876 16321182
+	3   TRPV2     chr17  16323429 16323562
+	4   TRPV2     chr17  16325913 16326203
+	5   TRPV2     chr17  16326783 16327081
+	6   TRPV2     chr17  16329413 16329583
+	7   TRPV2     chr17  16330036 16330191
+	8   TRPV2     chr17  16330763 16330861
+	9   TRPV2     chr17  16331631 16331701
+	10  TRPV2     chr17  16332131 16332296
+	11  TRPV2     chr17  16335098 16335164
+	12  TRPV2     chr17  16335280 16335614
+	13  TRPV2     chr17  16336888 16337012
+	14  TRPV2     chr17  16338204 16338283
+	15  TRPV2     chr17  16340103 16340317
+	16  TRPV2     chr17  16325913 16326207
+	17  TRPV2     chr17  16330177 16330191
+	18  TRPV2     chr17  16330766 16330861
+
+While this is useful for a single gene, it can get unweildy for large
+numbers of genes. We can instead use `transcriptsBy` or `exonsBy` with
+the `TxDb.Hsapiens.UCSC.hg19.knownGene` package, to get information
+about all genes at once, and subset to those we care about.
+
+	> trscpts <- transcriptsBy(TxDb.Hsapiens.UCSC.hg19.knownGene, "gene")
+	> trscpts[["51393"]]
+	GRanges object with 2 ranges and 2 metadata columns:
+        seqnames               ranges strand |     tx_id     tx_name
+           <Rle>            <IRanges>  <Rle> | <integer> <character>
+	[1]    chr17 [16318856, 16340317]      + |     60527  uc002gpy.3
+	[2]    chr17 [16318856, 16340317]      + |     60528  uc002gpz.4
+
+	> exns <- exonsBy(TxDb.Hsapiens.UCSC.hg19.knownGene, "gene")
+	> exns[["51393"]]
+	GRanges object with 18 ranges and 2 metadata columns:
+         seqnames               ranges strand   |   exon_id   exon_name
+            <Rle>            <IRanges>  <Rle>   | <integer> <character>
+	 [1]    chr17 [16318856, 16319147]      +   |    217024        <NA>
+	 [2]    chr17 [16320876, 16321182]      +   |    217025        <NA>
+	 [3]    chr17 [16323429, 16323562]      +   |    217026        <NA>
+	 [4]    chr17 [16325913, 16326203]      +   |    217027        <NA>
+	 [5]    chr17 [16325913, 16326207]      +   |    217028        <NA>
+	...      ...                  ...    ... ...       ...         ...
+	[14]    chr17 [16335098, 16335164]      +   |    217037        <NA>
+	[15]    chr17 [16335280, 16335614]      +   |    217038        <NA>
+	[16]    chr17 [16336888, 16337012]      +   |    217039        <NA>
+	[17]    chr17 [16338204, 16338283]      +   |    217040        <NA>
+	[18]    chr17 [16340103, 16340317]      +   |    217041        <NA>
+	-------
+	seqinfo: 93 sequences (1 circular) from hg19 genome
+
+Using `*Ranges` objects is beyond the scope of this newsletter. Please
+see the
+[IRanges](http://bioconductor.org/packages/release/bioc/vignettes/IRanges/inst/doc/IRangesOverview.pdf)
+vignette, as well as the
+[GRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
+vignettes for more information.
+
+@Val - is this getting too long, or should I add to the advanced
+tasks?
 
 ### Advanced tasks 
 
