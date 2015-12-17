@@ -14,8 +14,147 @@ posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 * Table of contents will replace this text. 
 {:toc}
 
+TODO: intro
 
-## Annotations (need better title)
+
+## October release
+
+`Bioconductor` 3.2 was release on October 14, consisting of 1104 software
+packages, 257 experiment data packages, and 917 annotation packages. There are
+80 new software packages.
+
+This is the last version of `Bioconductor` to be supported on Snow Leopard. Snow
+Leopard users should plan to migrate to Mavericks or newer before the next
+release in Spring 2016.
+
+There are 80 new software packages included in this release. Package summaries
+and the official release schedule can be found on the 
+[web site](http://www.bioconductor.org/news/bioc_3_2_release/).
+
+
+## Design matrices for differential gene expression
+
+Mike Love is an author of the
+[DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html)
+package for differential gene expression of RNASeq data.  A visit to the
+[support site](https://support.bioconductor.org/) shows the number of questions
+he answers on a daily basis related not only to using the [DESeq2
+package](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) but
+about analysis of gene expression data in general. In addition to supporting
+[DESeq2](), he is a postdoc in [Rafael Irizarry's
+lab](http://rafalab.dfci.harvard.edu/) in the Department of Biostatistics and
+Computational Biology at the Dana Farber Cancer Institute and Harvard School of
+Public Health where he develops quantitative methods for genomics and
+epigenetics, teaches
+[edX
+courses](https://www.edx.org/course/data-analysis-life-sciences-1-statistics-harvardx-ph525-1x)
+and and occasionally [blogs](https://mikelove.wordpress.com/) about statistics and
+`R`.
+
+Of the many DESeq2-related posts on the support site,
+creating an appropriate design matrix is a regular, and one that causes a
+fair bit of confusion. I asked Mike if he had observed any patterns in these
+questions or could share any insights as to what users were struggling with.
+Below he explains 
+
+### What is 'study design'?
+
+TODO:
+Explain what study 'design' is eg, 'design of a study
+explains the inter-relationship between the sample, essentially describes how
+samples are distributed between groups' ...
+
+and why it's important, eg, the design matrix affects (dictates?) how the
+scientific question is asked/answered ...? I'm guessing the design matrix
+carries with it assumptions that if not true or specified correctly will
+invalidation results. Right?
+
+
+### Case vs control
+
+Simple designs don't seem to pose much issue. For example, control and treated
+samples, or control, treatment 1 and treatment 2. These are easily modeled
+using R's built-in `formula` and `model.matrix` functions, and then input to
+[limma]()http://www.bioconductor.org/packages/3.3/bioc/html/limma.html), 
+[edgeR](http://www.bioconductor.org/packages/3.3/bioc/html/edgeR.html), 
+[DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) or other 
+`Bioconductor` packages.
+
+### Confounding and batch effects
+
+Sometimes, quantitative/computational problems arise in the form of
+error messages which indicate inherent problems in the experimental
+design. One of these is when comparisons of interest are *confounded*
+with technical factors, such as the sample preparation batch. There
+is the canonical case of confounding when control and treatment
+samples are prepared in their own batches, but I also see cases of bad
+experiment design such as:
+
+| condition | batch |
+|:---------:|:-----:|
+| control   | 1     |
+| control   | 1     |
+| treat. A  | 1     |
+| treat. A  | 1     |
+| treat. B  | 2     |
+| treat. B  | 2     |
+| treat. C  | 2     |
+| treat. C  | 2     |
+
+While treatment A can be compared against control, and treatment C can
+be compared against treatment B, no comparisons can be made across the
+batches. The reason some comparisons cannot be made is that the
+difference in gene expression due to, for example the effect of
+treatment B compared to control, cannot separated from the differences
+which could arise between different sample preparation batches. The
+most effective solution here is to use a blocked design, where the
+batches each include all of the possible conditions. At the least,
+control samples should be included in each batch, so that the batch
+effect can be measured using these samples.
+
+For more on why batch effects pose a big problem for high-throughput
+experiments (or any experiments) here are two links:
+
+* http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/
+* http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html
+
+### Blocking, interactions and nested designs
+
+Blocked experimental designs, and others, such as those where the
+significance of interactions between conditions is tested, or nested
+interactions, can be read about in the excellent limma User's Guide,
+in the section on  
+[Single-Channel Experimental
+Designs](https://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
+
+The Guide describes in detail how the design matrix can be formulated in
+different ways to answer the same question and explains how the different
+parametrizations affect interpretation of the results.  The approaches
+recommended by the limma authors can typically be applied as well to other
+Bioconductor packages.
+
+### Advanced designs 
+
+Then there are some very complicated designs with myriad technical and
+biological factors, where the investigator has many comparisons to
+make and not a solid sense how to make them. In these cases I highly
+recommend, for people who find themselves not knowing what
+design to use or how to interpret the coefficients, that they consider
+partnering with a local statistician or someone with a
+background in linear modeling or quantitative analysis.
+
+Interpreting quantitative analyses is hard stuff, and while
+Bioconductor simplifies the analysis of high-throughput assays to a
+large degree, and it's not necessarily reasonable to expect that
+complicated results can be compiled or interpreted by someone without
+a quantitative background. I like to compare this expectation
+to a person not trained in laboratory procedures expecting to walk into a lab and
+perform an experiment that would be complicated even for an experience
+technician. I think it's safer and more reasonable to find a
+collaborator who can assist, although it's preferable to include such
+collaborators on projects from the beginning.
+
+## Annotation Tour
 
 ### The primary packages
 
@@ -316,22 +455,99 @@ want to generate a list of DE genes with annotation for my PI, etc).
 
 
 
-## ExperimentHub
-
 ## Reproducible Research
-- manage your install with
-  biocLite(), biocValid(), chooseBioCmirror(), biocinstallRepos() ...
-- locate specific version with (if done) Jim's tag svn / git repos 
+
+### Managing package versions with biocLite() 
+
+`Bioconductor` follows a biannual schedule with one release in Spring and one
+in Fall. `R` has a single release per year, usually in the Fall. Because each
+`Bioconductor` release is tied to a version of `R` this asymmetrical schedule
+creates some confusion. 
+
+When releases coincide in the Fall, the development branches become release
+branches. For the next 6 months, packages in the `Bioconductor`
+'devel' branch are built against the 'devel' version of `R` and packages in the
+'release' branch are built against the 'release' version of `R`.
+
+In Spring, `Bioconductor` has a release but `R` does not. The `Bioconductor`
+'devel' branch becomes the current 'release' and both branches are developed
+against the 'release' version of `R`. The purpose of building `Bioconductor`
+'devel' against `R` release is to allow for a smooth transition in Fall,
+specifically, it allows the `Bioconductor` 'release' branch to always be in
+sync with the `R` 'release' branch.
+
+The [BiocInstaller]() package has several functions to help manage clean
+'release' and 'devel' package repositories. Below are a few troubleshooting
+tips for common install and version mis-match problems. 
+
+* Confirm a single, correct version of `BiocInstaller`:
+
+Make sure you have only a single installation directory defined by 
+
+    .libPaths()
+
+If multiple paths are reported, remove one.
+
+Check the version of `BiocInstaller`:
+
+    packageVersion("BiocInstaller")
+
+The 'correct' version will depend on whether you are using the 'devel' or
+'release' branch of `Bioconductor`. You can check the current version of
+[BiocInstaller]() on the 
+[release]()
+and
+[devel]() 
+build pages.
+
+If you have the wrong package version (or multiple versions) installed, remove
+them with repeated calls to 
+
+    remove.packages("BiocInstaller")
+
+until `R` says there is no package to remove. Restart `R`, verify there is no
+[BiocInstaller]() package and install the correct version with
+
+    source("http://bioconductor.org/biocLite.R")
+
+Invoking biocLite(), with no arguments, will update all packages.
+When asked whether to update old packages, choose 'a' for 'all.
+
+    biocLite()
+
+* Identify mis-matched package versions with `biocValid()`:
+
+Use biocValid() to identify version mis-matches between packages:
+
+    BiocInstaller::biocValid()
+
+Resolve by calling `remove.packages()` on the offending package, confirm the
+correct version of [BiocInstaller]() and reinstall with `biocLite()`.
+
+* TODO: BiocInstaller::biocLite("BiocUpgrade")
+* TODO: BiocInstaller::useDevel()
+* TODO: BiocInstaller::chooseBioCmirror
+
+More information on keeping your versions in sync can be found at the 
+[Why use biocLite()?](http://www.bioconductor.org/install/#why-biocLite) 
+section of the web site.
+
+### Package version tags in svn / git
 
 
 ## Infrastructure
-- 'generics' package
-- ongoing SummarizedExperiment development
-- ExperimentHub
-- ChiA-PET and Hi-C and InteractionSet class (https://github.com/LTLA/InteractionSet)
+
+### 'generics' package
+
+### ongoing SummarizedExperiment development
+
+### ExperimentHub
+
+### InteractionSet class
+ChiA-PET and Hi-C and InteractionSet class (https://github.com/LTLA/InteractionSet)
 
 
-## New and Noteworthy
+## New functions in R / Bioconductor
 
 New functions added to `R` (3.3) and `Bioconductor` (3.3) this quarter:
 
