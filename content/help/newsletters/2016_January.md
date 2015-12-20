@@ -7,6 +7,16 @@
 
 posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 
+The _Bioconductor_ newsletter is a quarterly review of core infrastructure
+developments, community projects and future directions. Topics are of general
+interest as well as those with the greatest impact on the software.  This
+quarter has seen substantial development on the ExperimentHub resource and the
+InteractionSet class. We review some tips for managing package repositories
+with `biocLite()` and introduce the new version tagging in the svn / git repos
+which makes it possible to retrieve a specific version of a _Bioconductor_
+package. Mike Love talks about constructing design matrices for gene expression
+experiments and Jim MacDonald takes us on tour of _Bioconductor_ annotation
+packages and some common use cases.
 
 ## Contents 
 {:.no_toc}
@@ -14,7 +24,31 @@ posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 * Table of contents will replace this text. 
 {:toc}
 
-TODO: intro
+## F1000 Research Support Prize
+
+At the 
+[European Bioconductor Developers
+meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
+was awarded to the individual(s) with the greatest contribution to the
+_Bioconductor_ [support site](https://support.bioconductor.org/) forum. 
+
+The prize was sponsored by F1000 research which recently recently launched a
+dedicated
+[_Bioconductor_ channel](http://f1000research.com/channels/bioconductor).
+The [terms](https://support.bioconductor.org/p/75500/) of the award were 
+'greatest contribution to the support site' and 'those attending the European 
+developer conference'.
+
+Congratulations to winners Aaron Lun and Michael Love! Each were awarded the
+prize of waived publication costs for an article appearing in the F1000
+Bioconductor channel. Other contributors with substantial posts to their credit
+are Jim MacDonald, Gordon Smyth, Ryan Thompson and Steve Lianoglou. Thanks to
+everyone who takes the time to answer questions and share their experience on
+the support site. 
+
+Thanks to Mark Dunning and Laurent Gatto for suggesting the
+prize (and organizing the conference!) and to Thomas Ingraham and F1000 Research
+for sponsoring it.
 
 
 ## October release
@@ -34,33 +68,32 @@ and the official release schedule can be found on the
 
 ## Design matrices for differential gene expression
 
-Mike Love is an author of the
-[DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html)
-package for differential gene expression of RNASeq data.  A visit to the
-[support site](https://support.bioconductor.org/) shows the number of questions
-he answers on a daily basis related not only to using the [DESeq2
-package](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) but
-about analysis of gene expression data in general. In addition to supporting
-[DESeq2](), he is a postdoc in [Rafael Irizarry's
+Mike Love is a postdoc in [Rafael Irizarry's
 lab](http://rafalab.dfci.harvard.edu/) in the Department of Biostatistics and
 Computational Biology at the Dana Farber Cancer Institute and Harvard School of
 Public Health where he develops quantitative methods for genomics and
 epigenetics, teaches
-[edX
-courses](https://www.edx.org/course/data-analysis-life-sciences-1-statistics-harvardx-ph525-1x)
-and and occasionally [blogs](https://mikelove.wordpress.com/) about statistics and
-`R`.
+[edX courses](https://www.edx.org/course/data-analysis-life-sciences-1-statistics-harvardx-ph525-1x)
+and occasionally [blogs](https://mikelove.wordpress.com/) about statistics and
+_R_. Many know him as is author and primary supporter of the very
+popular [DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html)
+package for differential gene expression of RNASeq data.
+
+A visit to the
+[support site](https://support.bioconductor.org/) shows the number of questions
+he answers on a daily basis related not only to the [DESeq2
+package](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) but
+about gene expression analysis in general. 
 
 Of the many DESeq2-related posts on the support site,
-creating an appropriate design matrix is a regular, and one that causes a
-fair bit of confusion. I asked Mike if he had observed any patterns in these
-questions or could share any insights as to what users were struggling with.
-Below he explains 
+creating an appropriate design matrix is a regular one and appears to causes a
+fair bit of confusion. Below Mike shares some of his observations and thoughts
+about what key concepts cause the most problems.
 
-### What is 'study design'?
+### A little background about 'study design'
 
 TODO:
-Explain what study 'design' is eg, 'design of a study
+Briefly explain what study 'design' is eg, 'the design of a study
 explains the inter-relationship between the sample, essentially describes how
 samples are distributed between groups' ...
 
@@ -69,7 +102,6 @@ scientific question is asked/answered ...? I'm guessing the design matrix
 carries with it assumptions that if not true or specified correctly will
 invalidation results. Right?
 
-
 ### Case vs control
 
 Simple designs don't seem to pose much issue. For example, control and treated
@@ -77,8 +109,8 @@ samples, or control, treatment 1 and treatment 2. These are easily modeled
 using R's built-in `formula` and `model.matrix` functions, and then input to
 [limma]()http://www.bioconductor.org/packages/3.3/bioc/html/limma.html), 
 [edgeR](http://www.bioconductor.org/packages/3.3/bioc/html/edgeR.html), 
-[DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) or other 
-`Bioconductor` packages.
+[DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) or 
+other _Bioconductor_ packages.
 
 ### Confounding and batch effects
 
@@ -87,8 +119,8 @@ error messages which indicate inherent problems in the experimental
 design. One of these is when comparisons of interest are *confounded*
 with technical factors, such as the sample preparation batch. There
 is the canonical case of confounding when control and treatment
-samples are prepared in their own batches, but I also see cases of bad
-experiment design such as:
+samples are prepared in their own batches, but also common are cases of 
+bad experimental design such as:
 
 | condition | batch |
 |:---------:|:-----:|
@@ -112,8 +144,8 @@ batches each include all of the possible conditions. At the least,
 control samples should be included in each batch, so that the batch
 effect can be measured using these samples.
 
-For more on why batch effects pose a big problem for high-throughput
-experiments (or any experiments) here are two links:
+These two links explain why batch effects pose a big problem for
+high-throughput experiments (or any experiments):
 
 * http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/
 * http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html
@@ -123,15 +155,15 @@ experiments (or any experiments) here are two links:
 Blocked experimental designs, and others, such as those where the
 significance of interactions between conditions is tested, or nested
 interactions, can be read about in the excellent limma User's Guide,
-in the section on  
+in the section on 
 [Single-Channel Experimental
 Designs](https://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
 
 The Guide describes in detail how the design matrix can be formulated in
 different ways to answer the same question and explains how the different
 parametrizations affect interpretation of the results.  The approaches
-recommended by the limma authors can typically be applied as well to other
-Bioconductor packages.
+recommended by the limma authors can typically be applied to other
+_Bioconductor_ packages as well.
 
 ### Advanced designs 
 
@@ -143,18 +175,33 @@ design to use or how to interpret the coefficients, that they consider
 partnering with a local statistician or someone with a
 background in linear modeling or quantitative analysis.
 
-Interpreting quantitative analyses is hard stuff, and while
-Bioconductor simplifies the analysis of high-throughput assays to a
-large degree, and it's not necessarily reasonable to expect that
-complicated results can be compiled or interpreted by someone without
-a quantitative background. I like to compare this expectation
-to a person not trained in laboratory procedures expecting to walk into a lab and
-perform an experiment that would be complicated even for an experience
-technician. I think it's safer and more reasonable to find a
-collaborator who can assist, although it's preferable to include such
-collaborators on projects from the beginning.
+Interpreting quantitative analyses is hard stuff, and while _Bioconductor_
+simplifies the analysis of high-throughput assays to a large degree, it's not
+necessarily reasonable to expect that complicated results can be compiled or
+interpreted by someone without a quantitative background. I like to compare
+this expectation to a person not trained in laboratory procedures expecting to
+walk into a lab and perform an experiment that would be complicated even for an
+experienced technician. I think it's safer and more reasonable to find a
+collaborator who can assist and ideally be involved with the project from the
+beginning.
 
-## Annotation Tour
+## Tour of Annotations
+
+Jim MacDonald is a biostatistician at the University of Washington Department
+of Environmental and Occupational Health Sciences. He has analyzed the gamut of
+HTS data from expression (microarray, RNA-Seq), to genomics (SNP arrays, DNA-Seq,
+ChIP-Seq, methylation arrays, BS-Seq) and other 'omics' data. He has been heavily
+involved in the direction of the _Bioconductor_ project since inception and has
+long been the contributor of **TODO** (chip? or?)  annotation packages.
+
+During the October 2015 release we were short-handed after loosing staff to the
+Buffalo move. Jim stepped in and took responsibility for building all 
+internal _Bioconductor_ annotation packages. Jim's comprehensive understanding 
+of the annotation world is evident in his numerous posts on the 
+[suport site](https://support.bioconductor.org/). In this section we've teamed
+up (90% Jim, 10% Val) to give an overview of key packages and how they can be
+used to answer some common analysis questions.
+
 
 ### The primary packages
 
@@ -197,10 +244,6 @@ section highlights the most heavily used and the most common applications.
   of annotation packages and individual resources. Much of the data are
   pre-parsed into `R` / `Bioconductor` objects.
 
-
-@Jim: I know this next chunk is long but it such excellent background I feel 
-we must include it (or parts of it).
-
 The NCBI databases are a hierarchy of sorts, where people submit sequences they
 think were expressed in a particular species.  These sequences come from lots
 of different groups, and start out as sort of provisional transcripts at NCBI
@@ -228,7 +271,6 @@ now be in a different place on the genome. But that doesn't change the
 sequence of the gene, nor what it does, nor what transcripts it is
 thought to make, nor the gene ontology terms appended to it, or
 anything else.
-
 
 ### Common tasks
 
@@ -444,16 +486,6 @@ vignette, as well as the
 [GRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
 vignettes for more information.
 
-@Val - is this getting too long, or should I add to the advanced
-tasks?
-
-### Advanced tasks 
-
-Then if we aren't getting too long, we could move from simple
-task-based examples to use cases (I have an RNA-Seq experiment and I
-want to generate a list of DE genes with annotation for my PI, etc).
-
-
 
 ## Reproducible Research
 
@@ -536,8 +568,6 @@ section of the web site.
 
 
 ## Infrastructure
-
-### 'generics' package
 
 ### ongoing SummarizedExperiment development
 
