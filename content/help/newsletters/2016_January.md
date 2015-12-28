@@ -564,17 +564,54 @@ More information on keeping your versions in sync can be found at the
 [Why use biocLite()?](http://www.bioconductor.org/install/#why-biocLite) 
 section of the web site.
 
-### Package version tags in svn / git
-
 
 ## Infrastructure
 
-### ongoing SummarizedExperiment development
+### `ExperimentHub`
 
-### ExperimentHub
+### `InteractionSet`
 
-### InteractionSet class
-ChiA-PET and Hi-C and InteractionSet class (https://github.com/LTLA/InteractionSet)
+Aaron Lun (TODO: other contributors?) has been working on an
+[InteractionSet](https://github.com/LTLA/InteractionSet) package to store
+and manipulate data from ChIA-PET and Hi-C experiments. 
+
+ChIA-PET stands for Chromatin Interaction Analysis with Paired-End Tag.  These
+experiments probe for genome wide interactions brought about or associated with
+some protein-of-interest. An essential step in this technology that
+differentiates it from Hi-C is the anti-body driven Immuno-precipitation step
+to enrich for chromatin bound by a specific protein. Chromatin interactions can
+only be determined for parts of the genome that have a binding-site for the
+protein of interest. Interaction networks can be elucidated for transcription
+factors, insulator proteins or transcription machinery. A ChIA-PET experiment
+gives information about the potential role of proteins in structuring 3D genome
+organization. 
+
+In contrast, the Hi-C method provides information about 3D genome structure by
+identifying long range chromatin interactions on a genome-wide scale. These
+data are often used to study genome architecture such as chromosome
+territories, segregation of open and closed chromatin and chromatin structure.
+
+Data from both technologies enable the study of physical interactions
+between pairs of genomic regions. The InteractionSet package provides classes
+to represent these interactions and store associated experimental data. The
+aim is to provide package developers with stable class definitions that can be
+manipulated through a large set of methods.
+
+The package defines the following classes:
+
+* `GInteractions` : represents pairwise interactions between genomic regions
+* `InteractionSet`: contains experimental data relevant to each interaction
+* `ContactMatrix` : stores a data matrix where each row and column represent 
+                    a genomic region.
+
+The classes have methods for sorting, overlap and duplicate detection and
+distance calculations.
+TODO: maybe a word here about finding the bounding box or other methods of
+interest?
+
+
+
+### Ongoing `SummarizedExperiment` development
 
 
 ## New functions in R / Bioconductor
