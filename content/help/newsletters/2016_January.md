@@ -300,6 +300,8 @@ _Bioconductor_ updates these packages every 6 months at realse time. The
 
 ### Common tasks
 
+#### Map manufacturer IDs to gene symbol
+
 One common task is to annotate a microarray experiment by mapping the
 manufacturer's IDs to something more general, such as a HUGO gene
 symbol, or an NCBI (Gene, GenBank, RefSeq, UniGene) or Ensembl (Ensembl
@@ -436,6 +438,8 @@ instead, telling `mapIds` to return a `CharacterList`.
 	8005204   CCDC144A,CCDC144CP,CCDC144B,...  9720,348254,284047,...
 	8005221                                NA                      NA
 
+
+#### Map Entrez gene ID to TRPV2 chromosomal location
 
 Given the above data, perhaps we are interested in TRPV2,
 and want to know its chromosomal location. We can use the Homo.sapiens
