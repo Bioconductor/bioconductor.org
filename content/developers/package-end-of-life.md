@@ -31,7 +31,7 @@ packages.
    made to keep a package in the repository if the maintainer is
    actively attempting a fix.
 
-2. Inactive maintainer 
+2. Inactive maintainer
 
    The maintainer listed in the DESCRIPTION file must be responsive to
    questions on the support site, package-related email from users and
@@ -39,7 +39,7 @@ packages.
    system, and requests for bug fixes.
 
 Alternatively, a package maintainer may decide that they no longer
-wish to maintain their package. 
+wish to maintain their package.
 
 ## End of Life process
 
@@ -62,7 +62,7 @@ When a package has gone through one development cycle as 'deprecated'
 without remedial action, the package is marked as 'Defunct'. The
 package is removed from the nightly build system, is no longer
 available through 'biocLite()', and does not have a current 'landing
-page'. 
+page'.
 
 The package remains available in the subversion archive, and in
 previous versions of Bioconductor.
@@ -73,7 +73,7 @@ through review as a 'new package'.
 **Example**:
 
       devel  --|------|---
-             ^      ^ 
+             ^      ^
              Depr   Defunct
     
     release  --|------|---
@@ -94,18 +94,22 @@ through review as a 'new package'.
    Depending, Importing, or Suggesting the package that the package
    will be deprecated. If appropriate, indicate that a new maintainer
    is welcome to take over.
-   
+
 2. Add the following code chunk to the 'devel' version of the package
    in a file `R/zzz.R`, adjusting the Bioconductor version to the
    version _after_ the current devel version.
 
        .onAttach <- function(libname, pkgname) {
            msg <- sprintf(
-               "Package '%s' is deprecated and will be removed from Bioconductor 
+               "Package '%s' is deprecated and will be removed from Bioconductor
                 version %s", pkgname, "3.3")
            .Deprecated(msg=paste(strwrap(msg, exdent=2), collapse="\n"))
        }
 
-3. The package remains deprecated in the 'devel' branch for up to 6
+3. Add the following annotation to the package DESCRIPTION file.
+
+      PackageStatus: Deprecated
+
+4. The package remains deprecated in the 'devel' branch for up to 6
    months, as illustrated above, after which time Bioconductor core
    team members remove the package from the 'devel' package manifest.
