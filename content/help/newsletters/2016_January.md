@@ -27,7 +27,7 @@ packages.
 ## F1000 Research Support Prize
 
 At the 
-[European Bioconductor Developers
+[European _Bioconductor_ Developers
 meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
 was awarded to the individual(s) with the greatest contribution to the
 _Bioconductor_ [support site](https://support.bioconductor.org/) forum. 
@@ -41,7 +41,7 @@ developer conference'.
 
 Congratulations to winners Aaron Lun and Michael Love! Each were awarded the
 prize of waived publication costs for an article appearing in the F1000
-Bioconductor channel. Other contributors with substantial posts to their credit
+_Bioconductor_ channel. Other contributors with substantial posts to their credit
 are Jim MacDonald, Gordon Smyth, Ryan Thompson and Steve Lianoglou. Thanks to
 everyone who takes the time to answer questions and share their experience on
 the support site. 
@@ -54,11 +54,11 @@ for sponsoring it.
 
 ## October release
 
-`Bioconductor` 3.2 was release on October 14, consisting of 1104 software
+_Bioconductor_ 3.2 was release on October 14, consisting of 1104 software
 packages, 257 experiment data packages, and 917 annotation packages. There are
 80 new software packages.
 
-This is the last version of `Bioconductor` to be supported on Snow Leopard. Snow
+This is the last version of _Bioconductor_ to be supported on Snow Leopard. Snow
 Leopard users should plan to migrate to Mavericks or newer before the next
 release in Spring 2016.
 
@@ -136,7 +136,7 @@ I should say, I learned about these topics both from textbooks (John Rice's
 *Mathematical Statistics and Data Analysis*, Sanford Weisberg's *Applied Linear
 Regression*, and [Bioconductor
 books](http://www.bioconductor.org/help/publications/#books)), as well as from
-reading lots of posts on the Bioconductor support forum from people like
+reading lots of posts on the _Bioconductor_ support forum from people like
 Wolfgang Huber, Gordon Smyth, Simon Anders, James MacDonald, Aaron Lun and
 others.
 
@@ -144,7 +144,7 @@ others.
 
 Simple designs don't seem to pose much issue. For example, control and treated
 samples, or control, treatment 1 and treatment 2. These are easily modeled
-using R's built-in `formula` and `model.matrix` functions, and then input to
+using _R_'s built-in `formula` and `model.matrix` functions, and then input to
 [limma](http://www.bioconductor.org/packages/3.3/bioc/html/limma.html),
 [edgeR](http://www.bioconductor.org/packages/3.3/bioc/html/edgeR.html),
 or other _Bioconductor_ packages.
@@ -153,13 +153,12 @@ directly takes `formula` expressions and converts to design matrices internally.
 
 ### Confounding and batch effects
 
-Sometimes, quantitative/computational problems arise in the form of
-error messages which indicate inherent problems in the experimental
-design. One of these is when comparisons of interest are *confounded*
-with technical factors, such as the sample preparation batch. There
-is the canonical case of confounding when control and treatment
-samples are prepared in their own batches, but also common are cases of 
-bad experimental design such as:
+Sometimes, quantitative/computational problems arise in the form of error
+messages which indicate inherent problems in the experimental design. One of
+these is when comparisons of interest are *confounded* with technical factors,
+such as the sample preparation batch. There is the canonical case of
+confounding when control and treatment samples are prepared in their own
+batches, but also common are cases of bad experimental design such as:
 
 | condition | batch |
 |:---------:|:-----:|
@@ -172,15 +171,14 @@ bad experimental design such as:
 | treat. C  | 2     |
 | treat. C  | 2     |
 
-While treatment A can be compared against control, and treatment C can
-be compared against treatment B, no comparisons can be made across the
-batches. The reason some comparisons cannot be made is that the
-difference in gene expression due to, for example the effect of
-treatment B compared to control, cannot separated from the differences
-which could arise between different sample preparation batches. The
-most effective solution here is to use a block design, where the
-batches each include all of the possible conditions. At the least,
-control samples should be included in each batch, so that the batch
+While treatment A can be compared against control, and treatment C can be
+compared against treatment B, no comparisons can be made across the batches.
+The reason some comparisons cannot be made is that the difference in gene
+expression due to, for example the effect of treatment B compared to control,
+cannot separated from the differences which could arise between different
+sample preparation batches. The most effective solution here is to use a block
+design, where the batches each include all of the possible conditions. At the
+least, control samples should be included in each batch, so that the batch
 effect can be estimated using these samples.
 
 These two links explain why batch effects pose a big problem for
@@ -191,36 +189,33 @@ high-throughput experiments (or any experiments):
 
 ### Blocking, interactions and nested designs
 
-Block experimental designs, and others, such as those where the
-significance of interactions between conditions is tested, or nested
-interactions, can be read about in the excellent limma User's Guide,
-in the section on 
-[Single-Channel Experimental
+Block experimental designs, and others, such as those where the significance of
+interactions between conditions is tested, or nested interactions, can be read
+about in the excellent limma User's Guide, in the section on [Single-Channel
+Experimental
 Designs](https://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst/doc/usersguide.pdf)
 
 The Guide describes in detail how the design matrix can be formulated in
 different ways to answer the same question and explains how the different
 parametrizations affect interpretation of the results.  The approaches
-recommended by the limma authors can be applied to other
-_Bioconductor_ packages as well.
+recommended by the limma authors can be applied to other _Bioconductor_
+packages as well.
 
 ### Advanced designs 
 
-Then there are some very complicated designs with many technical and
-biological factors, where the investigator has many comparisons to
-make and not a solid sense how to make them. In these cases I highly
-recommend, for people who find themselves not knowing what
-design to use or how to interpret the coefficients, that they consider
-partnering with a local statistician or someone with a
+Then there are some very complicated designs with many technical and biological
+factors, where the investigator has many comparisons to make and not a solid
+sense how to make them. In these cases I highly recommend, for people who find
+themselves not knowing what design to use or how to interpret the coefficients,
+that they consider partnering with a local statistician or someone with a
 background in linear modeling or quantitative analysis.
 
 Interpreting quantitative analyses is hard stuff, and while _Bioconductor_
 simplifies the analysis of high-throughput assays to a large degree, it's not
 necessarily reasonable to expect that complicated results can be compiled or
-interpreted by someone without a quantitative background.
-I think it's safer and more reasonable to find a
-collaborator who can assist, and such collaborators can help
-identify issues with experimental design if they are
+interpreted by someone without a quantitative background.  I think it's safer
+and more reasonable to find a collaborator who can assist, and such
+collaborators can help identify issues with experimental design if they are
 included on projects from the outset.
 
 [back to top](#Contents)
@@ -282,11 +277,10 @@ packages.
 
   This package provides an interface to browse and download a wide collection
   of annotation packages and individual resources. Much of the data are
-  pre-parsed into `R` / `Bioconductor` objects.
+  pre-parsed into _R_ / _Bioconductor_ objects.
 
-
-It's worth noting that some annotation packages are tied to a specific genome
-and others are not. The `TxDb` family contain the location of
+It's worth noting that some annotation packages are tied to specific genome
+builds and others are not. The `TxDb` family contain the location of
 genes/transcripts/exons/etc. based on a given build. `BSgenome` and `SNPlocs`
 are other examples of build-specific packages. Because genome assembly requires
 piecing together the structure of the whole genome it follows that new builds
@@ -296,33 +290,13 @@ packages can be quite stable and stay current for years.
 Other packages have nothing to do with where a gene is found and are therefore
 not related to a genome build, e.g., the `OrgDb` family. These packages can be
 thought of as encapsulating all information we have about the genes of a given
-organism on a given date, knowing that it became obsolete at least
-in part the very next week. Such information as RefSeq, GenBank, or UniGene ID, 
-representing provisional transcripts. These are a work in progress of a jumble
-of submitted (and predicted) provisional transcript slowing being collapsed
-from a group of hypothetical gene-like sequences into a smaller set of
-transcritps or DNA sequences that we belive are 'real'.
-
-The NCBI databases are a hierarchy of sorts, where people submit
-sequences that they think were expressed in a particular species.
-These sequences come from lots of different groups, and start out as
-sort of provisional transcripts at NCBI or Ensembl. As evidence
-accrues for a particular sequence being real (more people find the
-same thing), all the provisional transcripts get collapsed into a
-single sequence, and are given a RefSeq or GenBank ID (or maybe both).
-Then if a set of RefSeq or GenBank transcripts appear to be variants
-from a single locus, they might be collapsed into a single UniGene ID.
-But the general idea is that a jumble of submitted (and predicted)
-transcripts are slowly collapsed from a bunch of hypothetical gene
-like sequences, into a smaller set of transcripts or DNA sequences
-that we think are 'for real'. 
-
-This collapsing process goes on all the time. In addition, they are
-constantly finding duplicates in RefSeq or Gene or whatever, and they
-deprecate one of the IDs in favor of the other. RefSeq and GenBank
-have weekly releases, so this is a fast-moving target.
-
-
+organism on a given date, knowing that it can become obsolete, at least
+in part, the very next week. They contain such information as RefSeq, GenBank,
+or UniGene IDs which represent provisional transcripts. These are a work in
+progress and constantly being updated and modified based on public submissions.
+_Bioconductor_ updates these packages every 6 months at realse time. The 
+`AnnotationForge` package offers functions to build your own `OrgDb` 
+(or other package) if you want something more current.
 
 ### Common tasks
 
@@ -544,22 +518,22 @@ vignettes for more information.
 
 ### Managing package versions with biocLite() 
 
-`Bioconductor` follows a biannual schedule with one release in Spring and one
-in Fall. `R` has a single release per year, usually in the Fall. Because each
-`Bioconductor` release is tied to a version of `R` this asymmetrical schedule
+_Bioconductor_ follows a biannual schedule with one release in Spring and one
+in Fall. _R_ has a single release per year, usually in the Fall. Because each
+_Bioconductor_ release is tied to a version of _R_ this asymmetrical schedule
 creates some confusion. 
 
 When releases coincide in the Fall, the development branches become release
-branches. For the next 6 months, packages in the `Bioconductor`
-'devel' branch are built against the 'devel' version of `R` and packages in the
-'release' branch are built against the 'release' version of `R`.
+branches. For the next 6 months, packages in the _Bioconductor_
+'devel' branch are built against the 'devel' version of _R_ and packages in the
+'release' branch are built against the 'release' version of _R_.
 
-In Spring, `Bioconductor` has a release but `R` does not. The `Bioconductor`
+In Spring, _Bioconductor_ has a release but _R_ does not. The _Bioconductor_
 'devel' branch becomes the current 'release' and both branches are developed
-against the 'release' version of `R`. The purpose of building `Bioconductor`
-'devel' against `R` release is to allow for a smooth transition in Fall,
-specifically, it allows the `Bioconductor` 'release' branch to always be in
-sync with the `R` 'release' branch.
+against the 'release' version of `R`. The purpose of building _Bioconductor_
+'devel' against _R_ release is to allow for a smooth transition in Fall,
+specifically, it allows the _Bioconductor_ 'release' branch to always be in
+sync with the _R_ 'release' branch.
 
 The [BiocInstaller]() package has several functions to help manage clean
 'release' and 'devel' package repositories. Below are a few troubleshooting
@@ -578,7 +552,7 @@ Check the version of `BiocInstaller`:
     packageVersion("BiocInstaller")
 
 The 'correct' version will depend on whether you are using the 'devel' or
-'release' branch of `Bioconductor`. You can check the current version of
+'release' branch of _Bioconductor_. You can check the current version of
 `BiocInstaller` on the 
 [devel]http://www.bioconductor.org/checkResults/devel/bioc-LATEST/()
 and
@@ -672,9 +646,9 @@ _Bioconductor_ objects like a `RangedSummarizedExperiment` or `GRangesList`.
 
 [back to top](#Contents)
 
-## New functions in R / Bioconductor
+## New functions_
 
-New functions added to `R` (3.3) and `Bioconductor` (3.3) this quarter:
+New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
 *   *SummarizedExperiment::readKalisto()*
 
@@ -767,8 +741,8 @@ See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
 
 A total of 23 software packages were added in the fourth quarter of 2015
-bringing counts to 1101 in devel (`Bioconductor` 3.3) and 1104 in release
-(`Bioconductor` 3.2).
+bringing counts to 1101 in devel (_Bioconductor_ 3.3) and 1104 in release
+(_Bioconductor_ 3.2).
 
 [back to top](#Contents)
 
@@ -780,6 +754,11 @@ of all courses and conferences.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
 10-15 of July in Bressanone-Brixen, Italy.
 
+## Acknowledgements 
+
+Thanks to Jim MacDonald and Mike Love for contributing sections, Aaron Lun for
+proofing the `InteractionSet` section and the _Bioconductor_ core team for
+editorial review.
 
 [back to top](#Contents)
 
