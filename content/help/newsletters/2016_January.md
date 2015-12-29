@@ -605,7 +605,7 @@ section of the web site.
 [back to top](#Contents)
 
 
-## `InteractionSet`
+### `InteractionSet` package
 
 Aaron Lun, Liz Ing-Simmons and Malcolm Perry have been working on an
 [InteractionSet](https://github.com/LTLA/InteractionSet) package to store
@@ -629,10 +629,11 @@ territories, topological domains, open/closed compartments and chromatin
 structure.
 
 Data from both technologies enable the study of physical interactions
-between pairs of genomic regions. The InteractionSet package provides classes
-to represent these interactions and store associated experimental data. The
-aim is to provide package developers with stable class definitions that can be
-manipulated through a large set of methods.
+between pairs of genomic regions. The 
+[InteractionSet](https://github.com/LTLA/InteractionSet) package
+provides classes to represent these interactions and store associated 
+experimental data. The aim is to provide package developers with stable class 
+definitions that can be manipulated through a large set of methods.
 
 The package defines the following classes:
 
@@ -650,7 +651,7 @@ _Bioconductor_ objects like a `RangedSummarizedExperiment` or `GRangesList`.
 
 [back to top](#Contents)
 
-## New functions_
+## New functions in _R_ / _Bioconductor_
 
 New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
