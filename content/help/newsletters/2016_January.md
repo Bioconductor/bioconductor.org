@@ -234,11 +234,11 @@ ChIP-Seq, methylation arrays, BS-Seq) and other 'omics' data. He has been heavil
 involved in the direction of the _Bioconductor_ project since inception and
 contributes and maintains a large number of annotation packages.
 
-During the October 2015 release we were short-handed after loosing staff to the
+During the October 2015 release we were short-handed after losing staff to the
 Buffalo move. Jim stepped in and took responsibility for building all 
 internal _Bioconductor_ annotation packages. Jim's comprehensive understanding 
 of the annotation world is evident in his numerous posts on the 
-[suport site](https://support.bioconductor.org/). In this section we've teamed
+[support site](https://support.bioconductor.org/). In this section we've teamed
 up (90% Jim, 10% Val) to give an overview of key packages and how they can be
 used to answer some common analysis questions.
 
@@ -250,17 +250,23 @@ packages.
 * `OrgDb`:
 
   The OrgDb packages encapsulate all the information we know about a
-  given organism's genes as of a given date. GO terms, ontology, Entrez IDs,
-  RefSeq ID, Ensembl IDs and many others. Because these data have nothing
-  to do with where a gene is found they are not related to a genome build.
+  given organism's genes as of a given date, except for location
+  information. This includes GO terms and ontology, Entrez IDs, RefSeq
+  ID, Ensembl IDs and many others. Most of these data are updated by
+  the annotation services on a regular basis; our semi-annual releases
+  'freeze' the data as of the release date. This is a tradeoff we make
+  between being completely updated at all times and being able to
+  generate reproducible research, based on a static set of
+  annotations.
 
 * `ChipDb`:
 
-  The `ChipDb` packages contain a single mapping: probe Id to Entrez gene ID.
-  The Entrez gene ID is also found in the `OrgDb` package but for those
-  interested in just this single mapping, the `ChipDb` is a lighter weight
-  option.
-
+  The `ChipDb` packages are lightweight packages that contain a single
+  mapping: probe ID to Entrez gene ID.  These packages work in concert
+  with the `OrgDb` package for the same species to provide mappings
+  from the probe ID to all other annotation data, using the internal
+  probe ID to Entrez Gene mapping as a starting point.
+  
 * `TxDb`:
 
   `TxDb` packages contain location information of transcripts, genes,
@@ -283,6 +289,15 @@ packages.
   of annotation packages and individual resources. Much of the data are
   pre-parsed into _R_ / _Bioconductor_ objects.
 
+* `OrganismDb`:
+
+  The `OrganismDb` packages encapuslate multiple annotation packages
+  in a single wrapper to enable inter-package queries. The
+  encapsulated packages are the `GO.db` package, which provides
+  mappings to Gene Ontology data, as well as an `OrgDb` and `TxDb`
+  package for a particular species. Examples include the
+  `Homo.sapiens` and `Mus.musculus` packages.
+
 It's worth noting that some annotation packages are tied to specific genome
 builds and others are not. The `TxDb` family contain the location of
 genes/transcripts/exons/etc. based on a given build. `BSgenome` and `SNPlocs`
@@ -297,12 +312,54 @@ thought of as encapsulating all information we have about the genes of a given
 organism on a given date, knowing that it can become obsolete, at least
 in part, the very next week. They contain such information as RefSeq, GenBank,
 or UniGene IDs which represent provisional transcripts. These are a work in
-progress and constantly being updated and modified based on public submissions.
-_Bioconductor_ updates these packages every 6 months at realse time. The 
+progress and are constantly being updated and modified based on public submissions.
+_Bioconductor_ updates these packages every 6 months at release time. The 
 `AnnotationForge` package offers functions to build your own `OrgDb` 
 (or other package) if you want something more current.
 
+The `OrganismDb` packages contain a combination of build-specific and
+non-build-specific packages, which may not be correct for your use
+case. However, it is simple to switch the `TxDb` package for a more
+appropriate version, using the `TxDb<-` function.
+
 ### Common tasks
+
+Before considering particular tasks, we should first cover the
+question of how to determine what input (`keys`) and output
+(`columns`) are available for a particular annotation package. The
+`keytypes` function will return all types of annotation that can be
+used as input. As an example, let's use the `org.Hs.eg.db` package.
+
+	> library(org.Hs.eg.db)
+	> keytypes(org.Hs.eg.db)
+	[1] "ACCNUM"       "ALIAS"        "ENSEMBL"      "ENSEMBLPROT"  "ENSEMBLTRANS"
+	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"    
+	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"        
+	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"        
+	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"     
+	[26] "UNIPROT"
+
+We can list all the available `keys` for a given `keytype` using the
+`keys` function.
+
+	> head(keys(org.Hs.eg.db))
+	[1] "1"  "2"  "3"  "9"  "10" "11"
+	
+	> head(keys(org.Hs.eg.db, "ENSEMBLPROT"))
+	[1] "ENSP00000263100" "ENSP00000470909" "ENSP00000323929" "ENSP00000438599"
+	[5] "ENSP00000445717" "ENSP00000385710"
+
+And we can get all the available `columns`, or annotation data that we
+can map our `keys` to.
+
+	> columns(org.Hs.eg.db)
+	[1] "ACCNUM"       "ALIAS"        "ENSEMBL"      "ENSEMBLPROT"  "ENSEMBLTRANS"
+	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"    
+	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"        
+	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"        
+	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"     
+	[26] "UNIPROT"
+
 
 #### Map manufacturer IDs to gene symbol
 
@@ -312,10 +369,9 @@ symbol, or an NCBI (Gene, GenBank, RefSeq, UniGene) or Ensembl (Ensembl
 gene, Ensembl transcript) ID. As an example, we can map an Affymetrix
 ID from the Human Gene 1.0 ST array to the corresponding HUGO symbol.
 
-	library(hugene10sttranscriptcluster.db)
-	hugene <- hugene10sttranscriptcluster.db ## minimize typing
-	select(hugene, "8012257", "SYMBOL")
-
+	> library(hugene10sttranscriptcluster.db)
+	> hugene <- hugene10sttranscriptcluster.db ## minimize typing
+	> select(hugene, "8012257", "SYMBOL")
     'select()' returned 1:1 mapping between keys and columns
      PROBEID SYMBOL
 	1 8012257   TP53
@@ -332,12 +388,12 @@ one or more output IDs (or `columns`). As an example, we will use just
 five `keys` from the hugene10sttranscriptcluster.db package, and query
 for the HUGO symbol and Entrez Gene IDs. 
 
-	ids <- keys(hugene)[15000:15005]
-	ids
+	> ids <- keys(hugene)[15000:15005]
+	> ids
 	[1] "8005171" "8005191" "8005200" "8005202" "8005204"
 	
-	annot <- c("SYMBOL","ENTREZID")
-	select(hugene, ids, annot)
+	> annot <- c("SYMBOL","ENTREZID")
+	> select(hugene, ids, annot)
 	'select()' returned 1:many mapping between keys and columns
 	   PROBEID       SYMBOL  ENTREZID
 	1  8005171        TRPV2     51393
@@ -360,19 +416,21 @@ for the HUGO symbol and Entrez Gene IDs.
 	18 8005204 LOC101929141 101929141
 	19 8005221         <NA>      <NA>
 
-Please note two things about the above results. First, the PROBEID
+Please note three things about the above results. First, the PROBEID
 column in the returned `data.frame` has the same order as the input
 ids. Second, some of the Affymetrix IDs map to more than one
 gene. All of the mappings are returned, with a message that there
 was a 1:many mapping for some of the `keys`. Because of the 1:many
 mappings, the dimensions of the returned `data.frame` do not match the
 dimensions of the data we would like to annotate (e.g., we wanted
-information for five IDs, and got 19 rows of data returned).
+information for five IDs, and got 19 rows of data returned). Third, if
+one of the `keys` has no annotation (the last one), an `NA` value is
+returned.
 
 If we want to guarantee that the returned data are in the same order
 *and* are the same length as the input `keys` vector, we can use
 `mapIds` instead. However, `mapIds` can only do one `keytype` at a
-time, and returns a `vector` rather than a `data.frame`. Unlike
+time, and returns a `vector` or `list` rather than a `data.frame`. Unlike
 `select`, which has a default value for the keytype, `mapIds` requires
 a fourth argument, specifying the `keytype` of the `keys` we are
 using.
@@ -398,8 +456,10 @@ with just one row per `key`.
 	8005221        <NA>     <NA>
 
 The default for `mapIds` is to take the first instance for any 1:many
-mappings. We can use the `multiVals` argument to control what is
-returned. Please note that this argument comes after an ellipsis
+mappings. This is fine for some use cases (e.g., a RefSeq ID), but is
+less useful in other situations (e.g., GO IDs), where we want all
+values returned. We can use the `multiVals` argument to control what
+is returned. Please note that this argument comes after an ellipsis
 (`...`) argument, so you cannot use positional arguments, and must
 instead specify the `multiVals` argument directly.
 
@@ -445,11 +505,11 @@ instead, telling `mapIds` to return a `CharacterList`.
 
 #### Map Entrez gene ID to TRPV2 chromosomal location
 
-Given the above data, perhaps we are interested in TRPV2,
-and want to know its chromosomal location. We can use the Homo.sapiens
-package to get that information. While it is possible to use the HUGO
-symbol for this gene to get the location, it is a better idea to use
-the Entrez Gene ID, which is more likely to be unique.
+Given the above data, perhaps we are interested in TRPV2, and want to
+know its chromosomal location. We can use the `Homo.sapiens` package
+to get that information. While it is possible to use the HUGO symbol
+for this gene to get the location, it is a better idea to use the
+Entrez Gene ID, which is more likely to be unique.
 
 	> select(Homo.sapiens, "51393", c("TXCHROM","TXSTART","TXEND"), "SYMBOL")
 	'select()' returned 1:1 mapping between keys and columns
@@ -482,9 +542,10 @@ we want exonic locations, we can get those as well.
 	18  TRPV2     chr17  16330766 16330861
 
 While this is useful for a single gene, it can get unweildy for large
-numbers of genes. We can instead use `transcriptsBy` or `exonsBy` with
-the `TxDb.Hsapiens.UCSC.hg19.knownGene` package, to get information
-about all genes at once, and subset to those we care about.
+numbers of genes. We can instead use the `transcriptsBy` or `exonsBy`
+functions with the `TxDb.Hsapiens.UCSC.hg19.knownGene` package, to get
+information about all genes at once, and subset to those we care
+about.
 
 	> trscpts <- transcriptsBy(TxDb.Hsapiens.UCSC.hg19.knownGene, "gene")
 	> trscpts[["51393"]]
@@ -513,12 +574,12 @@ about all genes at once, and subset to those we care about.
 	-------
 	seqinfo: 93 sequences (1 circular) from hg19 genome
 
-Using `*Ranges` objects is beyond the scope of this newsletter. Please
-see the
+Using `*Ranges` objects is beyond the scope of this newsletter, so we
+won't explore them further. For more information, please see the
 [IRanges](http://bioconductor.org/packages/release/bioc/vignettes/IRanges/inst/doc/IRangesOverview.pdf)
 vignette, as well as the
 [GRanges](http://bioconductor.org/packages/release/bioc/html/GenomicRanges.html)
-vignettes for more information.
+vignettes.
 
 [back to top](#Contents)
 
