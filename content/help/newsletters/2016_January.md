@@ -687,36 +687,45 @@ new users increased by 39.8% for mobile devices vs 6.7% for desktops.
   <tbody valign="top">
     <tr>
     <td><b>Desktop (includes laptops)</b></td>
+    </tr>
     <tr>
         <td>Nov 1, 2015 - Dec 27, 2015</td>
         <td>71,111 (92.86%)</td>
+    </tr>
     <tr>
         <td>Nov 1, 2014 - Dec 27, 2014</td>
         <td>66,622 (93.96%)</td>
+    </tr>
     <tr>
         <td>% change</td>
         <td>6.74%</td>
     </tr>
     <tr>
         <td><b>Mobile</b></td>
+    </tr>
     <tr>
         <td>Nov 1, 2015 - Dec 27, 2015</td>
         <td>4,230 (5.52%)</td>
+    </tr>
     <tr>
         <td>Nov 1, 2014 - Dec 27, 2014</td>
         <td>3,026 (4.27%)</td>
+    </tr>
     <tr>
         <td>% change</td>
         <td>39.79%</td>
     </tr>
     <tr>
         <td><b>Tablet</b></td>
+    </tr>
     <tr>
         <td>Nov 1, 2015 - Dec 27, 2015</td>
         <td>1,241 (1.62%)</td>
+    </tr>
     <tr>
         <td>Nov 1, 2014 - Dec 27, 2014</td>
         <td>1,260 (1.78%)</td>
+    </tr>
     <tr>
         <td>% change</td>
         <td>-1.51%</td>
