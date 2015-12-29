@@ -7,7 +7,7 @@ You can setup git-svn on it by cloning this repository and running
 ```bash
 git svn init https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
 git svn fetch
-git git update-ref refs/remotes/git-svn refs/remotes/origin/master
+git update-ref refs/remotes/git-svn refs/remotes/origin/master
 ```
 
 Then after committing code locally run the following to commit the changes SVN
