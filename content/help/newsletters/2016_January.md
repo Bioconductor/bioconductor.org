@@ -8,15 +8,19 @@
 posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
 
 The _Bioconductor_ newsletter is a quarterly review of core infrastructure
-developments, community projects and future directions. Topics are of general
-interest as well as those with the greatest impact on the software.  This
-quarter has seen substantial development on the `ExperimentHub` resource and the
-`InteractionSet` class. We review some tips for managing package repositories
-with `biocLite()` and introduce the new version tagging in the svn / git repos
-which makes it possible to retrieve a specific version of a _Bioconductor_
-package. Mike Love talks about constructing design matrices for gene expression
-experiments and Jim MacDonald takes us on tour of _Bioconductor_ annotation
-packages.
+developments, community projects and future directions. We aim for topics of
+general interest as well as those with the greatest impact on the software.
+
+In this issue we follow development of the `InteractionSet` class and review
+tips for managing package repositories.  Mike Love talks about constructing
+design matrices for gene expression experiments and Jim MacDonald takes us on
+tour of _Bioconductor_ annotation packages.
+
+_Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
+packages, 257 experiment data packages, and 917 annotation packages. A heads up
+that _Bioconductor_ 3.2 is the last version to be supported on Snow Leopard and
+plans should be made to migrate to Mavericks or newer before the Spring 2016
+release.
 
 ## <a name="Contents"></a> Contents 
 {:.no_toc}
@@ -54,7 +58,7 @@ for sponsoring it.
 
 ## October release
 
-_Bioconductor_ 3.2 was release on October 14, consisting of 1104 software
+_Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
 packages, 257 experiment data packages, and 917 annotation packages. There are
 80 new software packages.
 
@@ -605,6 +609,8 @@ section of the web site.
 [back to top](#Contents)
 
 
+## Infrastructure
+
 ### `InteractionSet` package
 
 Aaron Lun, Liz Ing-Simmons and Malcolm Perry have been working on an
@@ -648,10 +654,9 @@ loci; and for calculating the minimum bounding box for groups of interactions.
 Methods are also available to convert between classes, or to standard
 _Bioconductor_ objects like a `RangedSummarizedExperiment` or `GRangesList`.
 
-
 [back to top](#Contents)
 
-## New functions in _R_ / _Bioconductor_
+### New functions in _R_ / _Bioconductor_
 
 New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
@@ -754,7 +759,7 @@ compared by month (vs sum) because some IPs are the same between months.
 See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
 
-A total of 23 software packages were added in the fourth quarter of 2015
+A total of **TODO** 23 software packages were added in the fourth quarter of 2015
 bringing counts to 1101 in devel (_Bioconductor_ 3.3) and 1104 in release
 (_Bioconductor_ 3.2).
 
