@@ -618,7 +618,7 @@ factors, insulator proteins or transcription machinery. A ChIA-PET experiment
 gives information about the potential role of proteins in structuring 3D genome
 organization. 
 
-In contrast, the Hi-C method provides information about 3D genome structure by
+The Hi-C method provides information about 3D genome structure by
 identifying long range chromatin interactions on a genome-wide scale. These
 data are often used to study aspects of genome architecture such as chromosome
 territories, topological domains, open/closed compartments and chromatin
