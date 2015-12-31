@@ -807,22 +807,28 @@ new users increased by 39.8% for mobile devices vs 6.7% for desktops.
 <br/>
 
 
-Statistics generated with [Google Analytics](http://www.google.com/analytics/).
+Statistics were generated with [Google Analytics](http://www.google.com/analytics/).
 
 [back to top](#Contents)
 
 ### Package downloads and new submissions 
 
-The number of unique IP downloads of software packages for October, November and
-December of 2015 were 40085, 41499 and 31946, respectively.  For the same time
-period in 2014, numbers were **TODO**. Numbers must be
-compared by month (vs sum) because some IPs are the same between months.
-See the web site for a full summary of [download
+The number of unique IP downloads of software packages for October, November
+and December of 2015 were 40085, 41499 and 34216, respectively.  For the same
+time period in 2014, numbers were 44593, 32728 and 30622. Numbers must be
+compared by month (vs quarterly sum) because some IPs are the same between
+months.  See the web site for a full summary of [download
 stats](http://bioconductor.org/packages/stats/).
 
-A total of **TODO** 23 software packages were added in the fourth quarter of 2015
-bringing counts to 1101 in devel (_Bioconductor_ 3.3) and 1104 in release
-(_Bioconductor_ 3.2).
+A total of 17 software, 1 annotation and 5 experimental data packages were
+added in the fourth quarter of 2015.
+
+| _Bioconductor_ version | software | annotation | experimental data |
+|:----------------------:|:--------:|:----------:|:-----------------:|
+| 3.2                    | 1104     | 895        | 257               |
+| 3.3                    | 1121     | 896        | 262               |
+
+
 
 [back to top](#Contents)
 
