@@ -823,10 +823,10 @@ stats](http://bioconductor.org/packages/stats/).
 A total of 17 software, 1 annotation and 5 experimental data packages were
 added in the fourth quarter of 2015.
 
-| _Bioconductor_ version   | software   | annotation   | experimental data   |
-|------------------------|----------|------------|-------------------|
-| 3.2                    | 1104     | 895        | 257               |
-| 3.3                    | 1121     | 896        | 262               |
+| _Bioconductor_   | Software   | Annotation   | Experimental Data   | 
+|-------|--------|-------|-------|
+| 3.2   | 1104   | 895   | 257   |
+| 3.3   | 1121   | 896   | 262   |
 
 
 [back to top](#Contents)
