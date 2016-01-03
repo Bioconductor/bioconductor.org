@@ -16,12 +16,6 @@ tips for managing package repositories.  Mike Love talks about constructing
 design matrices for gene expression experiments and Jim MacDonald takes us on
 tour of _Bioconductor_ annotation packages.
 
-_Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
-packages, 257 experiment data packages, and 917 annotation packages. A heads up
-that _Bioconductor_ 3.2 is the last version to be supported on Snow Leopard and
-plans should be made to migrate to Mavericks or newer before the Spring 2016
-release.
-
 ## <a name="Contents"></a> Contents 
 {:.no_toc}
 
@@ -33,10 +27,10 @@ release.
 At the 
 [European _Bioconductor_ Developers
 meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
-was awarded to the individual(s) with the greatest contribution to the
+was awarded to recognize individual(s) contributing to the
 _Bioconductor_ [support site](https://support.bioconductor.org/) forum. 
 
-The prize was sponsored by F1000 research which recently recently launched a
+The prize was sponsored by F1000 research which recently launched a
 dedicated
 [_Bioconductor_ channel](http://f1000research.com/channels/bioconductor).
 The [terms](https://support.bioconductor.org/p/75500/) of the award were 
@@ -62,7 +56,7 @@ _Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
 packages, 257 experiment data packages, and 917 annotation packages. There are
 80 new software packages.
 
-This is the last version of _Bioconductor_ to be supported on Snow Leopard. Snow
+**NOTE** This is the last version of _Bioconductor_ to be supported on Snow Leopard. Snow
 Leopard users should plan to migrate to Mavericks or newer before the next
 release in Spring 2016.
 
@@ -201,7 +195,7 @@ Designs](https://www.bioconductor.org/packages/release/bioc/vignettes/limma/inst
 
 The Guide describes in detail how the design matrix can be formulated in
 different ways to answer the same question and explains how the different
-parametrizations affect interpretation of the results.  The approaches
+parameterizations affect interpretation of the results.  The approaches
 recommended by the limma authors can be applied to other _Bioconductor_
 packages as well.
 
@@ -291,7 +285,7 @@ packages.
 
 * `OrganismDb`:
 
-  The `OrganismDb` packages encapuslate multiple annotation packages
+  The `OrganismDb` packages encapsulate multiple annotation packages
   in a single wrapper to enable inter-package queries. The
   encapsulated packages are the `GO.db` package, which provides
   mappings to Gene Ontology data, as well as an `OrgDb` and `TxDb`
@@ -585,83 +579,80 @@ vignettes.
 
 ## Reproducible Research
 
-### Managing package versions with biocLite() 
+### Managing package versions with `biocLite()`
 
 _Bioconductor_ follows a biannual schedule with one release in Spring and one
-in Fall. _R_ has a single release per year, usually in the Fall. Because each
+in Fall. _R_ has a single major release per year, usually in the Spring. Because each
 _Bioconductor_ release is tied to a version of _R_ this asymmetrical schedule
 creates some confusion. 
 
-When releases coincide in the Fall, the development branches become release
-branches. For the next 6 months, packages in the _Bioconductor_
-'devel' branch are built against the 'devel' version of _R_ and packages in the
-'release' branch are built against the 'release' version of _R_.
+When releases coincide in the Spring, the development branches of both _R_ and _Bioconductor__ become release
+branches. For the next 6 months, packages in both the _Bioconductor_
+'devel' and release branch are built against the 'release' version of _R_.
 
-In Spring, _Bioconductor_ has a release but _R_ does not. The _Bioconductor_
-'devel' branch becomes the current 'release' and both branches are developed
-against the 'release' version of `R`. The purpose of building _Bioconductor_
-'devel' against _R_ release is to allow for a smooth transition in Fall,
+In Fall, _Bioconductor_ has a release but _R_ does not. The _Bioconductor_
+'devel' branch becomes the current 'release' and uses the release version of _R_.  The new _Bioconductor_ 'devel' branch uses the 'devel' version of _R_. 
+The purpose of building _Bioconductor_
+'devel' against _R_ devel is to allow for a smooth transition in Fall,
 specifically, it allows the _Bioconductor_ 'release' branch to always be in
 sync with the _R_ 'release' branch.
 
-The [BiocInstaller]() package has several functions to help manage clean
+The [BiocInstaller][] package has several functions to help manage clean
 'release' and 'devel' package repositories. Below are a few troubleshooting
 tips for common install and version mis-match problems. 
 
-* Confirm a single, correct version of `BiocInstaller`:
+* Confirm a single writeable installation path.
 
-Make sure you have only a single installation directory defined by 
+  Make sure you have only a single installation directory reported by
+  `.libPaths()` can be 'written to' by an oridinary (i.e., not
+  administrator) user If multiple paths are reported, remove one.
 
-    .libPaths()
+* Check the version of `BiocInstaller`:
 
-If multiple paths are reported, remove one.
+  `packageVersion("BiocInstaller")` reports the version of the
+  [BiocInstaller][] package in use.  The 'correct' version will depend
+  on whether you are using the 'devel' or 'release' branch of
+  _Bioconductor_. You can check the current version of `BiocInstaller`
+  on the
+  [release](http://bioconductor.org/packages/release/BiocInstaller/)
+  and
+  [devel](http://bioconductor.org/packages/devel/BiocInstaller/)
+  landing pages.
 
-Check the version of `BiocInstaller`:
+  If you have the wrong package version (or multiple versions)
+  installed, remove them with repeated calls to
+  `remove.packages("BiocInstaller")` until `R` says there is no
+  package to remove. Restart `R`, verify there is no [BiocInstaller][]
+  package and install the correct version with
 
-    packageVersion("BiocInstaller")
+      source("http://bioconductor.org/biocLite.R")
 
-The 'correct' version will depend on whether you are using the 'devel' or
-'release' branch of _Bioconductor_. You can check the current version of
-`BiocInstaller` on the 
-[devel]http://www.bioconductor.org/checkResults/devel/bioc-LATEST/()
-and
-[release](http://www.bioconductor.org/checkResults/release/bioc-LATEST/) 
-build pages.
+  Invoking `biocLite()`, with no arguments, will update all packages.
+  When asked whether to update old packages, choose 'a' for 'all.
 
-If you have the wrong package version (or multiple versions) installed, remove
-them with repeated calls to 
-
-    remove.packages("BiocInstaller")
-
-until `R` says there is no package to remove. Restart `R`, verify there is no
-[BiocInstaller]() package and install the correct version with
-
-    source("http://bioconductor.org/biocLite.R")
-
-Invoking biocLite(), with no arguments, will update all packages.
-When asked whether to update old packages, choose 'a' for 'all.
-
-    biocLite()
+      biocLite()
 
 * Identify mis-matched package versions with `biocValid()`:
 
-Use biocValid() to identify version mis-matches between packages:
+  Use `biocValid()` to identify version mis-matches between packages:
 
-    BiocInstaller::biocValid()
+      BiocInstaller::biocValid()
 
-Resolve by calling `remove.packages()` on the offending package, confirm the
-correct version of [BiocInstaller]() and reinstall with `biocLite()`.
+  Resolve by calling `remove.packages()` on the offending package,
+  confirm the correct version of [BiocInstaller][] and reinstall with
+  `biocLite()`.
 
 * Upgrade to the most recent _Bioconductor_ for a version of _R_:
 
-When _Bioconductor_ has a release but _R_ does not, the current _R_ release
-supports both the release and devel versions of _Bioconductor_. You can upgrade
-to the most current _Bioconductor_ (devel) with
+  When release and devel versions of _Bioconductor_ are both build
+  agains the release version of _R_ (i.e., after the Spring
+  _Bioconductor_ release). You can upgrade to the most current
+  _Bioconductor_ (devel) with
 
-    BiocInstaller::biocLite("BiocUpgrade")
+      BiocInstaller::biocLite("BiocUpgrade")
 
-This installs the most recent _Bioconductor_ packages without having to
-reinstall _R_.
+  This installs the most recent _Bioconductor_ packages without having
+  to reinstall _R_.
 
 More information on keeping your versions in sync can be found at the 
 [Why use biocLite()?](http://www.bioconductor.org/install/#why-biocLite) 
@@ -836,10 +827,11 @@ added in the fourth quarter of 2015.
 See the [events page](http://www.bioconductor.org/help/events/) for a listing
 of all courses and conferences.
 
+* [BioC 2016](http://bioconductor.org/BioC2016) 24-26 June, Stanford, USA.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
-10-15 of July in Bressanone-Brixen, Italy.
+  10-15 of July in Bressanone-Brixen, Italy.
 
-## Acknowledgements 
+## Acknowledgments 
 
 Thanks to Jim MacDonald and Mike Love for contributing sections, Aaron Lun for
 proofing the `InteractionSet` section and the _Bioconductor_ core team for
@@ -849,3 +841,5 @@ editorial review.
 
 Send comments or questions to Valerie at 
 [vobencha@roswellpark.org](vobencha@roswellpark.org).
+
+[BiocInstaller]: http://bioconductor.org/packages/BiocInstaller
