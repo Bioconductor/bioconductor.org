@@ -90,6 +90,11 @@ Bioconductor packages must pass `R CMD build` (or
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
 Authors should also try to address all notes that arise during build or check.
 
+Packages must also address issues flagged as REQUIRED in the output of
+`R CMD BiocCheck`. The
+[BiocCheck](http://bioconductor.org/packages/devel/BiocCheck) package is a
+set of tests that encompass Bioconductor Best Practices. 
+
 Do not use filenames that differ only in case, as not all file systems are
 case sensitive.
 
