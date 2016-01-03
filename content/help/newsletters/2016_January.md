@@ -586,7 +586,7 @@ in Fall. _R_ has a single major release per year, usually in the Spring. Because
 _Bioconductor_ release is tied to a version of _R_ this asymmetrical schedule
 creates some confusion. 
 
-When releases coincide in the Spring, the development branches of both _R_ and _Bioconductor__ become release
+When releases coincide in the Spring, the development branches of both _R_ and _Bioconductor_ become release
 branches. For the next 6 months, packages in both the _Bioconductor_
 'devel' and release branch are built against the 'release' version of _R_.
 
@@ -603,9 +603,9 @@ tips for common install and version mis-match problems.
 
 * Confirm a single writeable installation path.
 
-  Make sure you have only a single installation directory reported by
+  Make sure only a single installation directory reported by
   `.libPaths()` can be 'written to' by an oridinary (i.e., not
-  administrator) user If multiple paths are reported, remove one.
+  administrator) user. If multiple paths are reported, remove one.
 
 * Check the version of `BiocInstaller`:
 
@@ -625,7 +625,7 @@ tips for common install and version mis-match problems.
   package to remove. Restart `R`, verify there is no [BiocInstaller][]
   package and install the correct version with
 
-      source("http://bioconductor.org/biocLite.R")
+      source("https://bioconductor.org/biocLite.R")
 
   Invoking `biocLite()`, with no arguments, will update all packages.
   When asked whether to update old packages, choose 'a' for 'all.
