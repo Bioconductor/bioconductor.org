@@ -827,7 +827,7 @@ added in the fourth quarter of 2015.
 See the [events page](http://www.bioconductor.org/help/events/) for a listing
 of all courses and conferences.
 
-* [BioC 2016](http://bioconductor.org/BioC2016) 24-26 June, Stanford, USA.
+* [BioC 2016](http://www.bioconductor.org/help/course-materials/2016/BioC2016/) 24-26 June, Stanford, USA.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
   10-15 of July in Bressanone-Brixen, Italy.
 
