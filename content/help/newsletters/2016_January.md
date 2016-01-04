@@ -16,25 +16,25 @@ tips for managing package repositories.  Mike Love talks about constructing
 design matrices for gene expression experiments and Jim MacDonald takes us on
 tour of _Bioconductor_ annotation packages.
 
-## <a name="Contents"></a> Contents 
+## <a name="Contents"></a> Contents
 {:.no_toc}
 
-* Table of contents will replace this text. 
+* Table of contents will replace this text.
 {:toc}
 
 ## F1000 Research Support Prize
 
-At the 
+At the
 [European _Bioconductor_ Developers
 meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
 was awarded to recognize individual(s) contributing to the
-_Bioconductor_ [support site](https://support.bioconductor.org/) forum. 
+_Bioconductor_ [support site](https://support.bioconductor.org/) forum.
 
 The prize was sponsored by F1000 research which recently launched a
 dedicated
 [_Bioconductor_ channel](http://f1000research.com/channels/bioconductor).
-The [terms](https://support.bioconductor.org/p/75500/) of the award were 
-'greatest contribution to the support site' and 'those attending the European 
+The [terms](https://support.bioconductor.org/p/75500/) of the award were
+'greatest contribution to the support site' and 'those attending the European
 developer conference'.
 
 Congratulations to winners Aaron Lun and Michael Love! Each were awarded the
@@ -42,7 +42,7 @@ prize of waived publication costs for an article appearing in the F1000
 _Bioconductor_ channel. Other contributors with substantial posts to their credit
 are Jim MacDonald, Gordon Smyth, Ryan Thompson and Steve Lianoglou. Thanks to
 everyone who takes the time to answer questions and share their experience on
-the support site. 
+the support site.
 
 Thanks to Mark Dunning and Laurent Gatto for suggesting the
 prize (and organizing the conference!) and to Thomas Ingraham and F1000 Research
@@ -61,7 +61,7 @@ Leopard users should plan to migrate to Mavericks or newer before the next
 release in Spring 2016.
 
 There are 80 new software packages included in this release. Package summaries
-and the official release schedule can be found on the 
+and the official release schedule can be found on the
 [web site](http://www.bioconductor.org/news/bioc_3_2_release/).
 
 [back to top](#Contents)
@@ -84,7 +84,7 @@ A visit to the
 [support site](https://support.bioconductor.org/) shows the number of questions
 he answers on a daily basis related not only to the [DESeq2
 package](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html) but
-about gene expression analysis in general. 
+about gene expression analysis in general.
 
 Of the many DESeq2-related posts on the support site, creating an appropriate
 design matrix is a regular one and appears to cause a fair bit of confusion.
@@ -108,11 +108,11 @@ design to someone for either a planned experiment or an experiment that has
 already taken place.
 
 **Design matrix** or **model matrix** is a matrix, typically represented in
-statistics by an $X$, that will be used in statistical modeling.  Every row in
+statistics by an **X**, that will be used in statistical modeling.  Every row in
 the design matrix describes a sample, and every column provides pieces of
 information about that sample, such as, whether the sample was treated, whether
 the sample was in batch 1, 2, or 3, etc.  For every column of the design
-matrix, the model has a matching coefficient, usually denoted by $\beta$'s, to
+matrix, the model has a matching coefficient, usually denoted by *&beta;*'s, to
 describe differences in expression across samples.  These coefficients are
 additive differences on the log scale, so multiplicative differences (fold
 changes) in RNA-seq counts or microarray expression values, hence they are *log
@@ -182,8 +182,8 @@ effect can be estimated using these samples.
 These two links explain why batch effects pose a big problem for
 high-throughput experiments (or any experiments):
 
-* http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/
-* http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html
+* [http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/](http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/)
+* [http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html](http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html)
 
 ### Blocking, interactions and nested designs
 
@@ -199,7 +199,7 @@ parameterizations affect interpretation of the results.  The approaches
 recommended by the limma authors can be applied to other _Bioconductor_
 packages as well.
 
-### Advanced designs 
+### Advanced designs
 
 Then there are some very complicated designs with many technical and biological
 factors, where the investigator has many comparisons to make and not a solid
@@ -229,9 +229,9 @@ involved in the direction of the _Bioconductor_ project since inception and
 contributes and maintains a large number of annotation packages.
 
 During the October 2015 release we were short-handed after losing staff to the
-Buffalo move. Jim stepped in and took responsibility for building all 
-internal _Bioconductor_ annotation packages. Jim's comprehensive understanding 
-of the annotation world is evident in his numerous posts on the 
+Buffalo move. Jim stepped in and took responsibility for building all
+internal _Bioconductor_ annotation packages. Jim's comprehensive understanding
+of the annotation world is evident in his numerous posts on the
 [support site](https://support.bioconductor.org/). In this section we've teamed
 up (90% Jim, 10% Val) to give an overview of key packages and how they can be
 used to answer some common analysis questions.
@@ -260,7 +260,7 @@ packages.
   with the `OrgDb` package for the same species to provide mappings
   from the probe ID to all other annotation data, using the internal
   probe ID to Entrez Gene mapping as a starting point.
-  
+
 * `TxDb`:
 
   `TxDb` packages contain location information of transcripts, genes,
@@ -275,7 +275,7 @@ packages.
 * `SNPlocs`:
 
   SNP locations and alleles for a specific organism extracted from a
-  particular dbSNP build which is based on genome build. 
+  particular dbSNP build which is based on genome build.
 
 * `AnnotationHub`:
 
@@ -307,8 +307,8 @@ organism on a given date, knowing that it can become obsolete, at least
 in part, the very next week. They contain such information as RefSeq, GenBank,
 or UniGene IDs which represent provisional transcripts. These are a work in
 progress and are constantly being updated and modified based on public submissions.
-_Bioconductor_ updates these packages every 6 months at release time. The 
-`AnnotationForge` package offers functions to build your own `OrgDb` 
+_Bioconductor_ updates these packages every 6 months at release time. The
+`AnnotationForge` package offers functions to build your own `OrgDb`
 (or other package) if you want something more current.
 
 The `OrganismDb` packages contain a combination of build-specific and
@@ -327,10 +327,10 @@ used as input. As an example, let's use the `org.Hs.eg.db` package.
 	> library(org.Hs.eg.db)
 	> keytypes(org.Hs.eg.db)
 	[1] "ACCNUM"       "ALIAS"        "ENSEMBL"      "ENSEMBLPROT"  "ENSEMBLTRANS"
-	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"    
-	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"        
-	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"        
-	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"     
+	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"
+	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"
+	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"
+	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"
 	[26] "UNIPROT"
 
 We can list all the available `keys` for a given `keytype` using the
@@ -338,7 +338,7 @@ We can list all the available `keys` for a given `keytype` using the
 
 	> head(keys(org.Hs.eg.db))
 	[1] "1"  "2"  "3"  "9"  "10" "11"
-	
+
 	> head(keys(org.Hs.eg.db, "ENSEMBLPROT"))
 	[1] "ENSP00000263100" "ENSP00000470909" "ENSP00000323929" "ENSP00000438599"
 	[5] "ENSP00000445717" "ENSP00000385710"
@@ -348,10 +348,10 @@ can map our `keys` to.
 
 	> columns(org.Hs.eg.db)
 	[1] "ACCNUM"       "ALIAS"        "ENSEMBL"      "ENSEMBLPROT"  "ENSEMBLTRANS"
-	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"    
-	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"        
-	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"        
-	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"     
+	[6] "ENTREZID"     "ENZYME"       "EVIDENCE"     "EVIDENCEALL"  "GENENAME"
+	[11] "GO"           "GOALL"        "IPI"          "MAP"          "OMIM"
+	[16] "ONTOLOGY"     "ONTOLOGYALL"  "PATH"         "PFAM"         "PMID"
+	[21] "PROSITE"      "REFSEQ"       "SYMBOL"       "UCSCKG"       "UNIGENE"
 	[26] "UNIPROT"
 
 
@@ -380,12 +380,12 @@ necessary to specify the `keytype`.
 A more common use case is to annotate a vector of `keys`, returning
 one or more output IDs (or `columns`). As an example, we will use just
 five `keys` from the hugene10sttranscriptcluster.db package, and query
-for the HUGO symbol and Entrez Gene IDs. 
+for the HUGO symbol and Entrez Gene IDs.
 
 	> ids <- keys(hugene)[15000:15005]
 	> ids
 	[1] "8005171" "8005191" "8005200" "8005202" "8005204"
-	
+
 	> annot <- c("SYMBOL","ENTREZID")
 	> select(hugene, ids, annot)
 	'select()' returned 1:many mapping between keys and columns
@@ -430,9 +430,9 @@ a fourth argument, specifying the `keytype` of the `keys` we are
 using.
 
 	> mapIds(hugene, ids, "SYMBOL", "PROBEID")
-      8005171       8005191       8005200       8005202       8005204 
-      "TRPV2" "LRRC75A-AS1" "LRRC75A-AS1"    "SNORD49A"    "CCDC144A" 
-      8005221 
+      8005171       8005191       8005200       8005202       8005204
+      "TRPV2" "LRRC75A-AS1" "LRRC75A-AS1"    "SNORD49A"    "CCDC144A"
+      8005221
       NA
 
 We can easily wrap this in a small script to return a `data.frame`
@@ -462,13 +462,13 @@ instead specify the `multiVals` argument directly.
 	[1] "TRPV2"
 
 	$`8005191`
-	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"    
+	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"
 
 	$`8005200`
-	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"    
+	[1] "LRRC75A-AS1" "SNORD49A"    "SNORD49B"    "SNORD65"
 
 	$`8005202`
-	[1] "SNORD49A"    "LRRC75A-AS1" "SNORD49B"    "SNORD65"    
+	[1] "SNORD49A"    "LRRC75A-AS1" "SNORD49B"    "SNORD65"
 
 	$`8005204`
 	[1] "CCDC144A"     "CCDC144CP"    "CCDC144B"     "CCDC144NL"    "LOC101929141"
@@ -535,7 +535,7 @@ we want exonic locations, we can get those as well.
 	17  TRPV2     chr17  16330177 16330191
 	18  TRPV2     chr17  16330766 16330861
 
-While this is useful for a single gene, it can get unweildy for large
+While this is useful for a single gene, it can get unwieldy for large
 numbers of genes. We can instead use the `transcriptsBy` or `exonsBy`
 functions with the `TxDb.Hsapiens.UCSC.hg19.knownGene` package, to get
 information about all genes at once, and subset to those we care
@@ -584,14 +584,14 @@ vignettes.
 _Bioconductor_ follows a biannual schedule with one release in Spring and one
 in Fall. _R_ has a single major release per year, usually in the Spring. Because each
 _Bioconductor_ release is tied to a version of _R_ this asymmetrical schedule
-creates some confusion. 
+creates some confusion.
 
 When releases coincide in the Spring, the development branches of both _R_ and _Bioconductor_ become release
 branches. For the next 6 months, packages in both the _Bioconductor_
 'devel' and release branch are built against the 'release' version of _R_.
 
 In Fall, _Bioconductor_ has a release but _R_ does not. The _Bioconductor_
-'devel' branch becomes the current 'release' and uses the release version of _R_.  The new _Bioconductor_ 'devel' branch uses the 'devel' version of _R_. 
+'devel' branch becomes the current 'release' and uses the release version of _R_.  The new _Bioconductor_ 'devel' branch uses the 'devel' version of _R_.
 The purpose of building _Bioconductor_
 'devel' against _R_ devel is to allow for a smooth transition in Fall,
 specifically, it allows the _Bioconductor_ 'release' branch to always be in
@@ -599,12 +599,12 @@ sync with the _R_ 'release' branch.
 
 The [BiocInstaller][] package has several functions to help manage clean
 'release' and 'devel' package repositories. Below are a few troubleshooting
-tips for common install and version mis-match problems. 
+tips for common install and version mis-match problems.
 
 * Confirm a single writeable installation path.
 
   Make sure only a single installation directory reported by
-  `.libPaths()` can be 'written to' by an oridinary (i.e., not
+  `.libPaths()` can be 'written to' by an ordinary (i.e., not
   administrator) user. If multiple paths are reported, remove one.
 
 * Check the version of `BiocInstaller`:
@@ -627,8 +627,8 @@ tips for common install and version mis-match problems.
 
       source("https://bioconductor.org/biocLite.R")
 
-  Invoking `biocLite()`, with no arguments, will update all packages.
-  When asked whether to update old packages, choose 'a' for 'all.
+  Invoking `biocLite()` with no arguments will update all packages.
+  When asked whether to update old packages, choose 'a' for 'all'.
 
       biocLite()
 
@@ -654,8 +654,8 @@ tips for common install and version mis-match problems.
   This installs the most recent _Bioconductor_ packages without having
   to reinstall _R_.
 
-More information on keeping your versions in sync can be found at the 
-[Why use biocLite()?](http://www.bioconductor.org/install/#why-biocLite) 
+More information on keeping your versions in sync can be found at the
+[Why use biocLite()?](http://www.bioconductor.org/install/#why-biocLite)
 section of the web site.
 
 [back to top](#Contents)
@@ -678,7 +678,7 @@ only be determined for parts of the genome that have a binding site for the
 protein of interest. Interaction networks can be elucidated for transcription
 factors, insulator proteins or transcription machinery. A ChIA-PET experiment
 gives information about the potential role of proteins in structuring 3D genome
-organization. 
+organization.
 
 The Hi-C method provides information about 3D genome structure by
 identifying long range chromatin interactions on a genome-wide scale. These
@@ -687,10 +687,10 @@ territories, topological domains, open/closed compartments and chromatin
 structure.
 
 Data from both technologies enable the study of physical interactions
-between pairs of genomic regions. The 
+between pairs of genomic regions. The
 [InteractionSet](https://github.com/LTLA/InteractionSet) package
-provides classes to represent these interactions and store associated 
-experimental data. The aim is to provide package developers with stable class 
+provides classes to represent these interactions and store associated
+experimental data. The aim is to provide package developers with stable class
 definitions that can be manipulated through a large set of methods.
 
 The package defines the following classes:
@@ -712,9 +712,9 @@ _Bioconductor_ objects like a `RangedSummarizedExperiment` or `GRangesList`.
 
 New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
-*   *SummarizedExperiment::readKalisto()*
+*   *SummarizedExperiment::readKallisto()*
 
-    Reads kalisto data into a SummarizedExperiment.
+    Reads kallisto data into a SummarizedExperiment.
 
     (contributed by Martin Morgan)
 
@@ -727,7 +727,7 @@ New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
 [back to top](#Contents)
 
-## Project Statistics 
+## Project Statistics
 
 ### Website traffic
 
@@ -802,7 +802,7 @@ Statistics were generated with [Google Analytics](http://www.google.com/analytic
 
 [back to top](#Contents)
 
-### Package downloads and new submissions 
+### Package downloads and new submissions
 
 The number of unique IP downloads of software packages for October, November
 and December of 2015 were 40085, 41499 and 34216, respectively.  For the same
@@ -814,7 +814,7 @@ stats](http://bioconductor.org/packages/stats/).
 A total of 17 software, 1 annotation and 5 experimental data packages were
 added in the fourth quarter of 2015.
 
-|_Bioconductor_ Version| |Software| |Annotation| |Experimental Data| 
+|_Bioconductor_ Version| |Software| |Annotation| |Experimental Data|
 |----------------------|-||-------|-|----------|-|-----------------|
 | 3.2| |1104| |895| |257|
 | 3.3| |1121| |896| |262|
@@ -831,7 +831,7 @@ of all courses and conferences.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
   10-15 of July in Bressanone-Brixen, Italy.
 
-## Acknowledgments 
+## Acknowledgments
 
 Thanks to Jim MacDonald and Mike Love for contributing sections, Aaron Lun for
 proofing the `InteractionSet` section and the _Bioconductor_ core team for
@@ -839,7 +839,7 @@ editorial review.
 
 [back to top](#Contents)
 
-Send comments or questions to Valerie at 
+Send comments or questions to Valerie at
 [vobencha@roswellpark.org](vobencha@roswellpark.org).
 
 [BiocInstaller]: http://bioconductor.org/packages/BiocInstaller
