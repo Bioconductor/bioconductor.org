@@ -22,52 +22,8 @@ tour of _Bioconductor_ annotation packages.
 * Table of contents will replace this text.
 {:toc}
 
-## F1000 Research Support Prize
 
-At the
-[European _Bioconductor_ Developers
-meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
-was awarded to recognize individual(s) contributing to the
-_Bioconductor_ [support site](https://support.bioconductor.org/) forum.
-
-The prize was sponsored by F1000 research which recently launched a
-dedicated
-[_Bioconductor_ channel](http://f1000research.com/channels/bioconductor).
-The [terms](https://support.bioconductor.org/p/75500/) of the award were
-'greatest contribution to the support site' and 'those attending the European
-developer conference'.
-
-Congratulations to winners Aaron Lun and Michael Love! Each were awarded the
-prize of waived publication costs for an article appearing in the F1000
-_Bioconductor_ channel. Other contributors with substantial posts to their credit
-are Jim MacDonald, Gordon Smyth, Ryan Thompson and Steve Lianoglou. Thanks to
-everyone who takes the time to answer questions and share their experience on
-the support site.
-
-Thanks to Mark Dunning and Laurent Gatto for suggesting the
-prize (and organizing the conference!) and to Thomas Ingraham and F1000 Research
-for sponsoring it.
-
-[back to top](#Contents)
-
-## October release
-
-_Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
-packages, 257 experiment data packages, and 917 annotation packages. There are
-80 new software packages.
-
-**NOTE** This is the last version of _Bioconductor_ to be supported on Snow Leopard. Snow
-Leopard users should plan to migrate to Mavericks or newer before the next
-release in Spring 2016.
-
-There are 80 new software packages included in this release. Package summaries
-and the official release schedule can be found on the
-[web site](http://www.bioconductor.org/news/bioc_3_2_release/).
-
-[back to top](#Contents)
-
-
-## Design matrices for differential gene expression
+# Design matrices for differential gene expression
 
 Mike Love is a postdoc in [Rafael Irizarry's
 lab](http://rafalab.dfci.harvard.edu/) in the Department of Biostatistics and
@@ -91,7 +47,7 @@ design matrix is a regular one and appears to cause a fair bit of confusion.
 Below Mike shares some of his observations and thoughts about what key concepts
 cause the most problems.
 
-### A little background about 'experimental design'
+## A little background about 'experimental design'
 
 **Experimental design** refers to the inter-relationships between samples,
 including the biological and experiment information (clone 1, treatment B,
@@ -138,7 +94,7 @@ reading lots of posts on the _Bioconductor_ support forum from people like
 Wolfgang Huber, Gordon Smyth, Simon Anders, James MacDonald, Aaron Lun and
 others.
 
-### Case vs control
+## Case vs control
 
 Simple designs don't seem to pose much issue. For example, control and treated
 samples, or control, treatment 1 and treatment 2. These are easily modeled
@@ -149,7 +105,7 @@ or other _Bioconductor_ packages.
 [DESeq2](http://www.bioconductor.org/packages/3.3/bioc/html/DESeq2.html)
 directly takes `formula` expressions and converts to design matrices internally.
 
-### Confounding and batch effects
+## Confounding and batch effects
 
 Sometimes, quantitative/computational problems arise in the form of error
 messages which indicate inherent problems in the experimental design. One of
@@ -185,7 +141,7 @@ high-throughput experiments (or any experiments):
 * [http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/](http://simplystatistics.org/2015/05/20/is-it-species-or-is-it-batch-they-are-confounded-so-we-cant-know/)
 * [http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html](http://www.nature.com/nrg/journal/v11/n10/abs/nrg2825.html)
 
-### Blocking, interactions and nested designs
+## Blocking, interactions and nested designs
 
 Block experimental designs, and others, such as those where the significance of
 interactions between conditions is tested, or nested interactions, can be read
@@ -199,7 +155,7 @@ parameterizations affect interpretation of the results.  The approaches
 recommended by the limma authors can be applied to other _Bioconductor_
 packages as well.
 
-### Advanced designs
+## Advanced designs
 
 Then there are some very complicated designs with many technical and biological
 factors, where the investigator has many comparisons to make and not a solid
@@ -219,7 +175,7 @@ included on projects from the outset.
 [back to top](#Contents)
 
 
-## Getting started with _Bioconductor_ annotation packages
+# Getting started with _Bioconductor_ annotation packages
 
 Jim MacDonald is a biostatistician at the University of Washington Department
 of Environmental and Occupational Health Sciences. He has analyzed the gamut of
@@ -236,7 +192,7 @@ of the annotation world is evident in his numerous posts on the
 up (90% Jim, 10% Val) to give an overview of key packages and how they can be
 used to answer some common analysis questions.
 
-### The primary packages
+## The primary packages
 
 This section highlights the most heavily used _Bioconductor_ annotation
 packages.
@@ -316,7 +272,7 @@ non-build-specific packages, which may not be correct for your use
 case. However, it is simple to switch the `TxDb` package for a more
 appropriate version, using the `TxDb<-` function.
 
-### Common tasks
+## Common tasks
 
 Before considering particular tasks, we should first cover the
 question of how to determine what input (`keys`) and output
@@ -355,7 +311,7 @@ can map our `keys` to.
 	[26] "UNIPROT"
 
 
-#### Map manufacturer IDs to gene symbol
+### Map manufacturer IDs to gene symbol
 
 One common task is to annotate a microarray experiment by mapping the
 manufacturer's IDs to something more general, such as a HUGO gene
@@ -497,7 +453,7 @@ instead, telling `mapIds` to return a `CharacterList`.
 	8005221                                NA                      NA
 
 
-#### Map Entrez gene ID to TRPV2 chromosomal location
+### Map Entrez gene ID to TRPV2 chromosomal location
 
 Given the above data, perhaps we are interested in TRPV2, and want to
 know its chromosomal location. We can use the `Homo.sapiens` package
@@ -727,9 +683,53 @@ New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
 [back to top](#Contents)
 
-## Project Statistics
+# Project Activities 
 
-### Website traffic
+## Recognizing community contributions
+
+At the
+[European _Bioconductor_ Developers
+meeting](https://sites.google.com/site/eurobioc2015/) last December, a prize
+was awarded to recognize individual(s) contributing to the
+_Bioconductor_ [support site](https://support.bioconductor.org/) forum.
+
+The prize was sponsored by F1000 research which recently launched a
+dedicated
+[_Bioconductor_ channel](http://f1000research.com/channels/bioconductor).
+The [terms](https://support.bioconductor.org/p/75500/) of the award were
+'greatest contribution to the support site' and 'those attending the European
+developer conference'.
+
+Congratulations to winners Aaron Lun and Michael Love! Each were awarded the
+prize of waived publication costs for an article appearing in the F1000
+_Bioconductor_ channel. Other contributors with substantial posts to their credit
+are Jim MacDonald, Gordon Smyth, Ryan Thompson and Steve Lianoglou. Thanks to
+everyone who takes the time to answer questions and share their experience on
+the support site.
+
+Thanks to Mark Dunning and Laurent Gatto for suggesting the
+prize (and organizing the conference!) and to Thomas Ingraham and F1000 Research
+for sponsoring it.
+
+[back to top](#Contents)
+
+## October release
+
+_Bioconductor_ 3.2 was released on October 14, consisting of 1104 software
+packages, 257 experiment data packages, and 917 annotation packages. There are
+80 new software packages.
+
+**NOTE** This is the last version of _Bioconductor_ to be supported on Snow Leopard. Snow
+Leopard users should plan to migrate to Mavericks or newer before the next
+release in Spring 2016.
+
+There are 80 new software packages included in this release. Package summaries
+and the official release schedule can be found on the
+[web site](http://www.bioconductor.org/news/bioc_3_2_release/).
+
+[back to top](#Contents)
+
+## Website traffic
 
 The following compares the number of sessions and new users from the fourth
 quarter of 2015 (November 1 - December 28) with the fourth quarter of 2014.
@@ -802,7 +802,7 @@ Statistics were generated with [Google Analytics](http://www.google.com/analytic
 
 [back to top](#Contents)
 
-### Package downloads and new submissions
+## Package downloads and new submissions
 
 The number of unique IP downloads of software packages for October, November
 and December of 2015 were 40085, 41499 and 34216, respectively.  For the same
@@ -831,7 +831,7 @@ of all courses and conferences.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
   10-15 of July in Bressanone-Brixen, Italy.
 
-## Acknowledgments
+# Acknowledgments
 
 Thanks to Jim MacDonald and Mike Love for contributing sections, Aaron Lun for
 proofing the `InteractionSet` section and the _Bioconductor_ core team for
