@@ -831,7 +831,7 @@ of all courses and conferences.
 * [CSAMA 2016 (14th edition) - Statistics and Computing in Genome Data Science](http://www-huber.embl.de/csama/):
   10-15 of July in Bressanone-Brixen, Italy.
 
-# Acknowledgments
+# Acknowledgements
 
 Thanks to Jim MacDonald and Mike Love for contributing sections, Aaron Lun for
 proofing the `InteractionSet` section and the _Bioconductor_ core team for
