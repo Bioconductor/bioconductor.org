@@ -5,7 +5,7 @@
 # *Bioconductor* Newsletter
 {:.no_toc}
 
-posted by [Valerie Obenchain](mailto:vobencha@roswellpark.org), January 2016
+posted by [Valerie Obenchain](mailto:valerie.obenchain@roswellpark.org), January 2016
 
 The _Bioconductor_ newsletter is a quarterly review of core infrastructure
 developments, community projects and future directions. We aim for topics of
@@ -840,6 +840,6 @@ editorial review.
 [back to top](#Contents)
 
 Send comments or questions to Valerie at
-[vobencha@roswellpark.org](vobencha@roswellpark.org).
+[valerie.obenchain@roswellpark.org](valerie.obenchain@roswellpark.org).
 
 [BiocInstaller]: http://bioconductor.org/packages/BiocInstaller
