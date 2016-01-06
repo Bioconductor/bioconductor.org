@@ -533,9 +533,9 @@ vignettes.
 
 [back to top](#Contents)
 
-## Reproducible Research
+# Reproducible Research
 
-### Managing package versions with `biocLite()`
+## Managing package versions with `biocLite()`
 
 _Bioconductor_ follows a biannual schedule with one release in Spring and one
 in Fall. _R_ has a single major release per year, usually in the Spring. Because each
@@ -617,9 +617,9 @@ section of the web site.
 [back to top](#Contents)
 
 
-## Infrastructure
+# Infrastructure
 
-### `InteractionSet` package
+## `InteractionSet` package
 
 Aaron Lun, Liz Ing-Simmons and Malcolm Perry have been working on an
 [InteractionSet](https://github.com/LTLA/InteractionSet) package to store
@@ -664,7 +664,7 @@ _Bioconductor_ objects like a `RangedSummarizedExperiment` or `GRangesList`.
 
 [back to top](#Contents)
 
-### New functions in _R_ / _Bioconductor_
+## New functions in _R_ / _Bioconductor_
 
 New functions added to _R_ (3.3) and _Bioconductor_ (3.3) this quarter:
 
