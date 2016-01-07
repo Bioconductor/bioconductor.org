@@ -71,7 +71,7 @@ Other avenues for distributing your package include
 related to areas of Bioconductor emphasis) and repositories such as
 * [r-forge](https://r-forge.r-project.org/) or
 * [GitHub](https://github.com) (for packages in early stages of
-development).  
+development).
 
 Many Bioconductor packages import or depend on CRAN
 packages. CRAN packages importing or depending on many Bioconductor
@@ -87,7 +87,7 @@ Packages must satisfy the following checklist:
   [BiocCheck](/packages/devel/bioc/html/BiocCheck.html) package) on all
   supported platforms (Windows, Macintosh, Linux) with no errors or warnings,
   using an appropiate version of R. To work out which version that is, see
-  [useDevel](developers/how-to/useDevel).
+  [useDevel](how-to/useDevel).
 * The result of `R CMD build` must be less than 4MB;
 * `R CMD check` must complete within 5 minutes.
 * Contain a DESCRIPTION file with valid contact information, an informative
@@ -117,7 +117,7 @@ Packages must satisfy the following checklist:
   See if it is by running <code>biocLite("myPackageName")</code>. You
   cannot have a package name that is case-insensitively equal to
   an existing package name in CRAN or Bioconductor.
-* Follow the [Package Guidelines](/developers/package-guidelines) for details on
+* Follow the [Package Guidelines](/package-guidelines) for details on
   appropriate use.
 * Include an `inst/NEWS` file for providing users with information on package
   updates.
@@ -144,6 +144,19 @@ analysis or experiment. They often accompany a software package for use
 in the examples and vignettes and in general are not updated regularly.
 If you need a general subset of data for workflows or examples first check the
 AnnotationHub resource for available files (e.g., BAM, FASTA, BigWig, etc.).
+
+### Annotation Packages ###
+
+Annotation packages contain lightly or non-curated data from a public
+source and are updated with each Bioconductor release (every 6 months).
+They are a source of general annotation for one or many organisms and
+are not specific to a particular experiment.  When possible, they
+should support the select() interface from AnnotationDbi.
+
+Annotation packages should *NOT* be uploaded to the tracker. Instead send
+an email to <packages@bioconductor.org> with a description of the proposed
+annotation package and futher instructions of where to send the package will
+be provided.
 
 ### Annotation Packages ###
 
