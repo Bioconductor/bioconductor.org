@@ -384,7 +384,9 @@ To add a course, you will typically perform the following steps
    preview after compiling the site.
 
 4. If everything looks good, you can sync the data files to the web
-   server:
+   server (note that we do not put these files in svn because large
+   data files are not appropriate for svn and they are not likely to
+   change):
 
        ./scripts/course_mgr --push 2010/seattle-intro
        SYNC:
@@ -457,7 +459,7 @@ site is configured.
 
 The site source is located at
 `~biocadmin/bioc-test-web/bioconductor.org`. The `deploy_staging`
-Rake task deploys site content to the staging server root on merlot2.
+Rake task deploys site content to the staging server root on staging.
 
     task :deploy_staging do
       dst = '/loc/www/bioconductor.org'
