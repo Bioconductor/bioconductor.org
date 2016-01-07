@@ -28,3 +28,4 @@ EPS
 GIF
 
 * [logo_bioconductor.gif](/images/logo_bioconductor.gif)
+* [logo_bioconductor.gif](/images/logos/logo_bioconductor.gif)
