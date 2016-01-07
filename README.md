@@ -433,7 +433,7 @@ show line numbers) fix these in a text editor before
 committing. Usually the culprit is a non-ascii
 hyphen that can be replaced with a regular hyphen.
 
-## http://bioconductor-test.fhcrc.org test site
+** http://bioconductor-test.fhcrc.org test site
 
 We run an inside FHCRC only test instance of the Bioconductor website
 at the above URL. The site is rebuilt every ten minutes. Here's an
