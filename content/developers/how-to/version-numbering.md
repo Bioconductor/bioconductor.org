@@ -1,7 +1,7 @@
 ![](/images/icons/magnifier.gif)Version Numbering
 =================
 
-All Bioconductor packages should have a version number like x.y.z.
+All _Bioconductor_ packages should have a version number like x.y.z.
 Here are examples of good version numbers:
 
     1.2.3
@@ -10,15 +10,18 @@ Here are examples of good version numbers:
     2.3.0
     3.12.44
     
-
-First time developers (submitting a package to Bioconductor) should
+First time developers (submitting a package to _Bioconductor_) should
 set Version: 0.99.0 in the DESCRIPTION file; see additional details on
 the [Package Submission](/developers/package-submission) page.
+
+See also the instructions for [Using Bioc Devel][].
+
+[Using Bioc Devel]: /developers/how-to/useDevel/
 
 Even Odd Schedule
 -----------------
 
-Bioconductor has a 'devel' branch where new features are introduced,
+_Bioconductor_ has a 'devel' branch where new features are introduced,
 and release branches created twice per year.  Given a package with
 version number x.y.z,
 
@@ -35,7 +38,7 @@ During regular development of new features
 * Changes made to SVN without a corresponding version bump **do not
   propagate** to the repository visible to `biocLite()`.
 
-At the time of a release, the Bioconductor team arranges to:
+At the time of a release, the _Bioconductor_ team arranges to:
 
 * Create a release branch package with version x.y+1.0
 * Increment the devel branch package version to x.y+2.0
@@ -48,12 +51,12 @@ Example
 
 1. Normal Case. Suppose a package in the devel branch has version
    number 1.1.25. The new release branch now contains a copy of the
-   package with version "1.2.0".  The devel branch of Bioconductor
+   package with version "1.2.0".  The devel branch of _Bioconductor_
    contains the package whose version number has been bumped to
    "1.3.0"
 
 2. Special Case.  The "0.99.2" version of our package is copied by the
-   Bioconductor team to the release branch with version number
+   _Bioconductor_ team to the release branch with version number
    "1.0.0". The package version is bumped to "1.1.0" in the devel
    branch.
 
@@ -87,6 +90,4 @@ Here is a table showing examples of the version bumping scheme:
 </tr>
 </tbody>
 </table>
-
-
-
+<br />

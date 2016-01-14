@@ -1,16 +1,53 @@
-Using the `devel` Version of Bioconductor
-=========================================
+Using the 'Devel' Version of _Bioconductor_
+===========================================
 
-In order to use the `devel` version of Bioconductor,
-you must install `R-devel`:
+Which version of R?
+-------------------
+
+Package developers want to develop against the version of _R_ that
+will be available to users when the _Bioconductor_ devel branch
+becomes the _Bioconductor_ release branch.
+
+_R_ has a '.y' release in x.y.z every year, but Bioconductor has a .y
+release (where current devel becomes release) every 6 months.
+
+When the next (typically mid-April) .y releases of _R_ and
+_Bioconductor_ coincide, Bioc-devel is based on R-devel.
+
+When the next (typically mid-October) .y release of _Bioconductor_
+corresponds to no change in _R_'s y, Bioc-devel is based on release R.
+
+This means that, from mid-October through mid-April, _Bioconductor_
+developers should be developing against R-devel. From mid-April to
+mid-October, developers should use R-release (actually, the R snapshot
+from the R-x-y-branch) for _Bioconductor_ development. 
+
+[BiocInstaller]: /packages/BiocInstaller
+
+Using Bioc-devel
+----------------
+
+In order to use the `devel` version of _Bioconductor_ during the current
+release cycle, you must install `R-devel`:
 
 * [Source](https://stat.ethz.ch/R/daily/)
 * [Mac OS X](http://r.research.att.com/)
 * [Windows](https://cran.r-project.org/bin/windows/base/rdevel.html)
 
+Then, make sure that your version of [BiocInstaller][] is current and
+your packages up-to-date. Do this by removing all versions of
+[BiocInstaller][]
+
+    remove.packages("BiocInstaller")  # repeat until R says there is no
+                                      # package 'BiocInstaller' to remove
+    source("https://bioconductor.org/biocLite.R")  # install correct version
+    BiocInstaller::biocValid()
+
 <!--
-In order to use the `devel` version of Bioconductor, simply call
-the function `useDevel()` (from the `BiocInstaller`) package:
+
+In order to use the `devel` version of _Bioconductor_ during the current
+release cycle, simply call the function `useDevel()` (from the
+`BiocInstaller`) package:
 
     ## In R-3.2.1
     library(BiocInstaller) 
@@ -19,10 +56,10 @@ the function `useDevel()` (from the `BiocInstaller`) package:
 After doing this, all packages will be installed from the `devel`
 (BioC 3.2) repository.
 
-If you also want to work with the `release` version of Bioconductor
+If you also want to work with the `release` version of _Bioconductor_
 (3.1), we recommend maintaining two separate installations of R
-3.2.1, one to be used with Bioconductor 3.1 (BioC-release) and the
-other to be used with Bioconductor 3.2 (BioC-devel). Run `useDevel()`
+3.2.1, one to be used with _Bioconductor_ 3.1 (BioC-release) and the
+other to be used with _Bioconductor_ 3.2 (BioC-devel). Run `useDevel()`
 as described above in this latter installation.
 -->
 
