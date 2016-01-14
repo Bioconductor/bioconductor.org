@@ -15,8 +15,11 @@ jQuery(function() {
 
 
 var getSearchUrl = function(query, start) {
-	var url = "//master.bioconductor.org/solr/default/select?indent=on&version=2.2&q=" + query + 
-	"&fq=&start=" + start +  "&rows=10&fl=id,score,title&qt=standard&wt=json&explainOther=&hl=on&hl.fl=&hl.fragsize=200";
+	var url = "//master.bioconductor.org/solr/default/select?indent=on&version=2.2&q=" + query +
+	// boost release and devel landing page paths, and fuzzy title matches
+	" id:*\\/release\\/bioc\\/html*^1.2 id:*\\/devel\\/bioc\\/html*^1.1 title:" + query + "~" +
+	"&fq=&start=" + start +
+	"&rows=20&fl=id,score,title&qt=standard&wt=json&explainOther=&hl=on&hl.fl=&hl.fragsize=200";
 	return url;
 }
 
