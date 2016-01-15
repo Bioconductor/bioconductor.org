@@ -138,22 +138,11 @@ class SearchIndexer
         nice_name = cleanfile.gsub(/index\.html$/,"")
         puts "adding #{nice_name} to indexing script"
         boost = get_boost(nice_name)
-        boost_frag = (boost==1) ? "" : "&boost.text=#{boost}"
+        boost_frag = (boost==1) ? "" : "&boost.title=#{boost}"
         script_file.puts %Q(echo "indexing #{nice_name}")
         cmd = %Q(#{curl_path} -s "#{url}/extract?literal.id=#{nice_name}&commit=false#{boost_frag}" -F "myfile=@#{directory_to_index}#{cleanfile}")
         script_file.puts cmd
-        #result = system(cmd)
-        #{}`#{cmd}`
-        #puts "#{result}\t#{nice_name}"
-        
-        #puts "#{nice_name}"
-        #Open3.popen3(cmd) do |stdin, stdout, stderr|
-        #  puts "stderr:"
-        #  puts stderr.readlines
-        #  puts "stdout:"
-        #  puts stdout.readlines
-        #  puts
-        #end
+
       end
       cache[file] = mtime
 
