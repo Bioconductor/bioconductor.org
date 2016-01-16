@@ -11,9 +11,11 @@ url: COURSE_URL_HERE
 tags:
 - Stanford
 - Conference
-description: This conference highlights current developments within and beyond Bioconductor.
-  Morning scientific talks and afternoon practicals provide conference participants
-  with insights and tools required for the analysis and comprehension of high-throughput
-  genomic data. 'Developer Day' preceeds the main conference on June 26, providing
-  developers and would-be developers an opportunity to gain insights into project
-  direction and software development best practices.
+description: This conference highlights current developments within
+  and beyond Bioconductor.  Morning scientific talks and afternoon
+  practicals provide conference participants with insights and tools
+  required for the analysis and comprehension of high-throughput
+  genomic data. 'Developer Day' preceeds the main conference on June
+  26, providing developers and would-be developers an opportunity to
+  gain insights into project direction and software development best
+  practices.
