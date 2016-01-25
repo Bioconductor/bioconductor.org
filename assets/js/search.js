@@ -21,7 +21,7 @@ var getSearchUrl = function(query, start) {
 	"&fq=&start=" + start +
 	"&rows=20&fl=id,score,title&qt=standard&wt=json&explainOther=&hl=on&hl.fl=&hl.fragsize=200";
 	return url;
-}
+};
 
 var searchResponse = function(data) {
 		var numFound = data['response']['numFound'];
@@ -67,7 +67,7 @@ var searchResponse = function(data) {
 				  doc.id +
 				  "</dt><dd>";
 				if (isR) {
-					stringToAppend += "<pre>"
+					stringToAppend += "<pre>";
 				}
 				stringToAppend += snippet;
 				if (isR) {
@@ -92,7 +92,7 @@ var searchResponse = function(data) {
 				jQuery(".next_search_page").html(" <a href='"+url+"'>Next </a> &gt;");
 			}
 		}
-}
+};
 
 var initSearch = function() {
 	q = getParameterByName("q");
@@ -116,5 +116,4 @@ var initSearch = function() {
 	jQuery.ajax({'url': url, 'data': null, 'success': searchResponse,
 		'dataType': 'jsonp', 'jsonp': 'json.wrf'});
 	
-}
-
+};
