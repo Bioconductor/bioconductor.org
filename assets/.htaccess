@@ -41,6 +41,9 @@ RewriteRule ^(.*)/index_html$ $1/ [R=301]
 
 RewriteRule ^developers/how-to/git-mirror/$ /developers/how-to/git-mirrors/ [PT]
 
+RewriteRule ^BioC2016/$ /help/course-materials/2016/BioC2016/ [R=301]
+
+
 
 
 # handle omitted trailing slash:
