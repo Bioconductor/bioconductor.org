@@ -94,6 +94,10 @@ var searchResponse = function(data) {
 		}
 };
 
+var ajaxErrHandler = function(jqXHR, textStatus, errorThrown) {
+	$("#search_results").html("An error occurred performing search.  The server returned : " + JSON.stringify(errorThrown));
+};
+
 var initSearch = function() {
 	q = getParameterByName("q");
 	q = q.replace(/\/$/, "");
@@ -114,6 +118,7 @@ var initSearch = function() {
 	
 	var url = getSearchUrl(q, start);
 	jQuery.ajax({'url': url, 'data': null, 'success': searchResponse,
+	  'error': ajaxErrHandler,
 		'dataType': 'jsonp', 'jsonp': 'json.wrf'});
 	
 };
