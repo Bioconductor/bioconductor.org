@@ -95,7 +95,8 @@ var searchResponse = function(data) {
 };
 
 var ajaxErrHandler = function(jqXHR, textStatus, errorThrown) {
-	$("#search_results").html("An error occurred performing search.  The server returned : " + JSON.stringify(errorThrown));
+	$("#search_results").html("An error occurred performing search.  A timeout occurred " +
+	"or you've entered an invalid search term.");
 };
 
 var initSearch = function() {
@@ -118,7 +119,7 @@ var initSearch = function() {
 	
 	var url = getSearchUrl(q, start);
 	jQuery.ajax({'url': url, 'data': null, 'success': searchResponse,
-	  'error': ajaxErrHandler,
+		'timeout': 5000, 'error': ajaxErrHandler,
 		'dataType': 'jsonp', 'jsonp': 'json.wrf'});
 	
 };
