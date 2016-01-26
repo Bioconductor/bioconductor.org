@@ -30,8 +30,8 @@ class SearchIndexer
   def get_boost(url)
     release_regex =  /\/packages\/(release|#{@release_version})\/(bioc|data\/annotation|data\/experiment)\/html/
     devel_regex =  /\/packages\/(devel|#{@devel_version})\/(bioc|data\/annotation|data\/experiment)\/html/
-    return 100 if url =~ release_regex
-    return 50 if url =~ devel_regex
+    return 1.2 if url =~ release_regex
+    return 1.1 if url =~ devel_regex
     #return 3 if url =~ /\/packages\/release/ or url =~ /\/packages\/#{@release_version}/
     #return 2 if url =~ /\/packages\/devel/ or url =~ /\/packages\/#{@devel_version}/
     return 1
