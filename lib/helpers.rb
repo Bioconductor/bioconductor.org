@@ -77,7 +77,7 @@ def get_cran_packages()
   ## Is there a non-web-scraping way to get a list of CRAN packages?
   cran_packages = []
   data = begin
-           HTTParty.get("http://cran.fhcrc.org/web/packages/available_packages_by_name.html",
+           HTTParty.get("http://cran.rstudio.com/web/packages/available_packages_by_name.html",
                         :timeout => 6)
          rescue Timeout::Error
            puts "Timeout grabbing list of CRAN packages..."
@@ -244,7 +244,7 @@ def linkify(sym, package)
 
     if (repo == false)
       if ($cran_packages.include?(linkable))
-        output.push %Q(<a class="cran_package" href="http://cran.fhcrc.org/web/packages/#{linkable}/index.html">#{linkable}</a>#{remainder})
+        output.push %Q(<a class="cran_package" href="http://cran.rstudio.com/web/packages/#{linkable}/index.html">#{linkable}</a>#{remainder})
       else
         output.push item.strip
       end
