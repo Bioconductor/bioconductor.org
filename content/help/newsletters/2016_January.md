@@ -600,8 +600,8 @@ tips for common install and version mis-match problems.
 
 * Upgrade to the most recent _Bioconductor_ for a version of _R_:
 
-  When release and devel versions of _Bioconductor_ are both build
-  agains the release version of _R_ (i.e., after the Spring
+  When release and devel versions of _Bioconductor_ are both built
+  against the release version of _R_ (i.e., after the Spring
   _Bioconductor_ release). You can upgrade to the most current
   _Bioconductor_ (devel) with
 
