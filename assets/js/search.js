@@ -95,8 +95,7 @@ var searchResponse = function(data) {
 };
 
 var ajaxErrHandler = function(jqXHR, textStatus, errorThrown) {
-	$("#search_results").html("An error occurred performing search.  A timeout occurred " +
-	"or you've entered an invalid search term.");
+	$("#search_results").html("A timeout or invalid search term resulted in an error.");
 };
 
 var initSearch = function() {
