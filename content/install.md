@@ -99,7 +99,7 @@ prompted.  For older versions of `R`, use the command
 `biocLite(NULL)`.  Read the help page for `?biocLite` for additional
 details.
 
-<h3>Upgrading installed <em>Bioconductor</em> packages</h3>
+<h3 id="upgrade-bioconductor-packages">Upgrading installed <em>Bioconductor</em> packages</h3>
 
 Some versions of R support more than one version of Bioconductor. To
 use the latest version of Bioconductor for your version of R, enter
@@ -111,6 +111,12 @@ use the latest version of Bioconductor for your version of R, enter
 Read the help page for `?BiocUpgrade` for additional details. Remember
 that more recent versions of Bioconductor may be available if your
 version of R is out-of-date.
+
+For more detail on <em>Bioconductor</em> approaches to versioning, see
+the <a
+href="/help/newsletters/2016_January/#managing-package-versions-with-">newsletter</a>
+and version numbering <a
+href="/developers/how-to/version-numbering/">developer reference</a>.
 
 <h3>Recompiling installed <em>Bioconductor</em> packages</h3>
 
