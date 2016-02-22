@@ -4,7 +4,7 @@
 source("https://bioconductor.org/biocLite.R")
 biocLite("<%=@package[:Package]%>")</pre>
     <p> In most cases, you don't need to download the
-    package archive at all.</p>    
+    package archive at all.</p>
 </div>
 
         <h1><%=@package[:Package]%></h1>
@@ -19,7 +19,7 @@ tr = TableRower.new
 <tr>
 
 
-<% # shield 1: availability 
+<% # shield 1: availability
 get_available(@package) # copies appropriate svg.
 %>
 <td>
@@ -27,7 +27,7 @@ get_available(@package) # copies appropriate svg.
 </td>
 <%=tr.betweencells%>
 
-<% # shield 2: downloads 
+<% # shield 2: downloads
 %>
 
 <td>
@@ -46,7 +46,7 @@ get_available(@package) # copies appropriate svg.
 
 
 <%
-   # shield 4: years in bioc 
+   # shield 4: years in bioc
     result = get_year_shield(@package)
     if @package[:repo] == 'bioc/' and not result.nil?
 %>
@@ -57,7 +57,7 @@ get_available(@package) # copies appropriate svg.
 <% end %>
 
 
-<% # shield 5: build 
+<% # shield 5: build
    res = get_build_results(@package)
    unless res.nil?
 %>
@@ -75,10 +75,10 @@ get_available(@package) # copies appropriate svg.
    <span class="do_not_rebase"><a href="#svn_source"><img border='0' src="/shields/commits/<%=pkgdir%>/<%=@package[:Package]%>.svg" title="average Subversion commits (to the devel branch) per month for the last 6 months"/></a></span>
 </td>
 <%= tr.betweencells %>
-<% end  # if not annotation pkg 
+<% end  # if not annotation pkg
 %>
 
-<% # shield 7: coverage 
+<% # shield 7: coverage
     if @package[:repo] == "bioc/"
 %>
 
@@ -88,9 +88,10 @@ get_available(@package) # copies appropriate svg.
 </td>
 
 
+
 <%= tr.betweencells %>
 
-<% end # if is software package 
+<% end # if is software package
 %>
 
 </tr>
@@ -99,8 +100,13 @@ get_available(@package) # copies appropriate svg.
 <p>&nbsp;</p>
 
 <%  end # if current? @package
-# end shields 
+# end shields
 %>
+
+
+<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= get_socialized_url item.identifier %>"><img height="16" width="16" src="/images/facebook.png"/></a> &nbsp;
+<a title= "Share on Twitter" href="https://twitter.com/intent/tweet?url=<%= get_socialized_url item.identifier %>&text=<%= urlescape item[:Title] %>"><img height="16" width="16" src="/images/twitter.png"/></a> &nbsp;
+
 
 
 <div class='do_not_rebase'>
@@ -109,10 +115,10 @@ get_available(@package) # copies appropriate svg.
     <% if @package.has_key? :PackageStatus and @package[:PackageStatus] == "Deprecated" %>
 
     <p>This package is <b>deprecated</b>. It will probably
-    be removed from Bioconductor. Please refer to 
+    be removed from Bioconductor. Please refer to
     the <a href="/developers/package-end-of-life/">
     package end-of-life guidelines</a> for more information.
-     </p>  
+     </p>
 
     <% end %>
 
@@ -121,7 +127,7 @@ get_available(@package) # copies appropriate svg.
 
     <%# package title - not to be confused with page title %>
 
-    <h2><%= @package[:Title]%></h2> 
+    <h2><%= @package[:Title]%></h2>
 
     <p>
         Bioconductor version: <%= verbose_bioc_version(@package) %>
@@ -188,7 +194,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
             <% end %>
         <% end %>
-        
+
 
             <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
             <tr class="<%= row_class %>">
@@ -269,7 +275,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
 
 
-        
+
     </table>
 
 
@@ -288,7 +294,7 @@ biocLite("<%=@package[:Package]%>")</pre>
             <td>Version</td>
             <td><%= @package[:Version]%></td>
         </tr>
-        
+
         <%
         since = since(@package[:Package])
         r = nil
@@ -379,7 +385,7 @@ biocLite("<%=@package[:Package]%>")</pre>
                 <td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
                 <td>&nbsp;</td>
             </tr>
-        <% end %> 
+        <% end %>
 
 
     </table>
@@ -387,9 +393,9 @@ biocLite("<%=@package[:Package]%>")</pre>
     <h3 id="archives">Package Archives</h3>
 
     <p>Follow <a href="/install/#install-bioconductor-packages">
-    Installation</a> instructions to use this 
+    Installation</a> instructions to use this
     package in your R session.</p>
-    
+
     <%
     ri = RowIndexer.new
     %>

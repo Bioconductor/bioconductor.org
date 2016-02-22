@@ -27,6 +27,7 @@ require 'kramdown'
 require 'open3'
 require 'open-uri'
 require 'socket'
+require 'cgi'
 
 include REXML
 
@@ -127,28 +128,28 @@ def base_filename(path)
 end
 
 # This function returns nil if there is no windows binary at all available for the package.
-# If there is a windows package available it will return the path to it. 
+# If there is a windows package available it will return the path to it.
 # The path may have "windows" or "windows64" in it, but you can't draw
 # any conclusions from that, because windows64 is a symlink to windows. It does not
 # mean that the package is available only for a particular architecture. Use the Archs flag
-# to determine that. 
+# to determine that.
 #
 # The fields win.binary.ver and win64.binary.ver may have values or not. If neither of them
 # have values, the package is not available for Windows. If either of them have a value, the
-# package is available. 
+# package is available.
 #
 # 20101215 - I'm changing the behavior of this function to return the "windows" path (if available) instead of
-# the "windows64" path. 
-# An ordinary 32-bit windows user might wonder why the download path has 64 in it, 
+# the "windows64" path.
+# An ordinary 32-bit windows user might wonder why the download path has 64 in it,
 # and there really isn't any good reason. The more generic "windows" is appropriate.
 def windows_binary(package)
   return nil unless package.has_key? :"win.binary.ver" or package.has_key? :"win64.binary.ver"
   return nil if (package[:"win.binary.ver"] == "" or package[:"win.binary.ver"] == [])\
    and (package[:"win64.binary.ver"] == "" or package[:"win64.binary.ver"] == [])
-  
+
   win32 = package[:"win.binary.ver"]
   win64 = package[:"win64.binary.ver"]
-  
+
   return win32 unless win32.nil?  or win32.empty?
   win64
 end
@@ -156,13 +157,13 @@ end
 def win_format(package)
   wb = windows_binary(package)
   return nil if wb.nil?
-  
+
   both = "(32- &amp; 64-bit)"
   _32only = "(32-bit only)"
   _64only = "(64-bit only)"
   ret = ""
-  
-  
+
+
   if (package.has_key?(:Archs) && !package[:Archs].empty?)
     archs = package[:Archs]
     if (archs =~ /i386/ && archs =~ /x64/)
@@ -173,8 +174,8 @@ def win_format(package)
       ret = _64only
     end
   end
-  
-  
+
+
   return ret
 end
 
@@ -233,7 +234,7 @@ def linkify(sym, package)
   key = "#{sym.to_s}_repo".to_sym
   repos = package[key]
   output = []
-  
+
   to_array(items).each_with_index do |item, index|
     next if item.nil?
     item=item.gsub("(", " (").gsub("  (", " (")
@@ -324,20 +325,20 @@ end
 
 def bioc_views_links(package)
   links = []
-  
-  
+
+
   if package[:repo] == "bioc/"
     jumpup = "../.."
   else
     jumpup = "../../.."
   end
-  
-  
+
+
   bioc_views = to_array(package[:biocViews])
   bioc_views.each do |bioc_view|
     links.push %Q(<a href="#{jumpup}/BiocViews.html#___#{bioc_view}#{version_fragment(package)}">#{bioc_view}</a>)
   end
-  
+
   links.join(", ")
 end
 
@@ -356,8 +357,8 @@ def timeago(time, options = {})
   start_date = options.delete(:start_date) || Time.new
   date_format = options.delete(:date_format) || :default
   delta_minutes = (start_date.to_i - time.to_i).floor / 60
-  if delta_minutes.abs <= (8724*60)       
-    distance = distance_of_time_in_words(delta_minutes)       
+  if delta_minutes.abs <= (8724*60)
+    distance = distance_of_time_in_words(delta_minutes)
     return "#{distance} ago"
   else
     return "on #{DateTime.now.to_formatted_s(date_format)}"
@@ -386,13 +387,13 @@ def pluralize(count, what)
 end
 
 def add_missing_info
-  items.each do |item| 
-    if item[:file] 
-      # nanoc3 >= 3.1 will have this feature, add for older versions 
+  items.each do |item|
+    if item[:file]
+      # nanoc3 >= 3.1 will have this feature, add for older versions
       item[:extension] ||= item[:file].path.match(/\.(.*)$/)[0]
-    end 
+    end
   end
-end 
+end
 
 def annual_reports
   # FIXME: need a more robust way to obtain assets path
@@ -426,7 +427,7 @@ def upcoming_events(events)
   ## Make upcoming BioC sticky at top, if sticky == true
   sticky = false
   if sticky
-    bioc = step2.find{|i| i[:title] =~ /^BioC2/} 
+    bioc = step2.find{|i| i[:title] =~ /^BioC2/}
     unless bioc.nil?
       step2 = step2.reject{|i| i == bioc}
       step2 = step2.unshift(bioc)
@@ -539,14 +540,14 @@ def get_svn_commits()
   begin
     # FIXME - maybe switch to nokogiri to avoid the necessity
     # for this. See https://stackoverflow.com/questions/15593133/rexml-runtimeerror-entity-expansion-has-grown-too-large
-    REXML::Document.entity_expansion_text_limit = 
+    REXML::Document.entity_expansion_text_limit =
       REXML::Document.entity_expansion_text_limit * 4
     xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
     ret = []
-    for item in items 
+    for item in items
       next if item.nil?
       next if item.elements.nil?
       next unless item.elements.respond_to? :each
@@ -556,12 +557,12 @@ def get_svn_commits()
       item.elements.each("pubDate") {|i| date = i.text}
       item.elements.each("author") {|i| author = i.text}
       item.elements.each("description") {|i| description = i.text}
-      
+
       msg = description.gsub(/<div style="white-space:pre">/,"")
       msg = msg.split("</div>").first
       table = "<table>" + description.split("<table>").last
-      
-      
+
+
       rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
       date = %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
 
@@ -725,7 +726,7 @@ def get_package_maintainers()
     ## there should not be more than one maintainer, but if there is,
     ## just pick the first one
     maintainer = maintainer.split(",").first.strip
-    
+
     maintainer = "#{k} Maintainer <#{maintainer}>"
     if exclude_these_packages.include? k
       row.push ""
@@ -853,7 +854,7 @@ def get_new_packages_in_tracker()
     begin
       page = @agent.post(url, {
           "__login_name" => cfg['username'],
-          "__login_password" => cfg['password'], 
+          "__login_password" => cfg['password'],
           "__came_from" => url,
           "@action" => "login"
       })
@@ -866,10 +867,10 @@ def get_new_packages_in_tracker()
     header = <<-"EOT"
     <tr>
   <th>ID</th>
-   
+
    <th>Activity</th>
-   
-   
+
+
    <th>Title</th>
    <th>Status</th>
   </tr>
@@ -993,8 +994,8 @@ end
 def get_mac_packs(package, item)
 
     res = []
-    os =  ["Mac OS X 10.6 (Snow Leopard)"] 
-    osvers = ["mac.binary.ver"] 
+    os =  ["Mac OS X 10.6 (Snow Leopard)"]
+    osvers = ["mac.binary.ver"]
 
     version = item.identifier.split("/")[4].to_f
     if (version > 2.13)
@@ -1018,7 +1019,7 @@ end
 
 def is_devel(item)
     return true if item.identifier =~ /\/devel\/|\/#{config[:devel_version]}\//
-    return false 
+    return false
 end
 
 # FIXME eventually replace is_new_package() implementation with this
@@ -1045,7 +1046,7 @@ def is_new_package(package)
         d = Dir.new(dir)
         for entry in d.entries
             next if entry =~ /^\./
-            file = File.join(dir, entry, 
+            file = File.join(dir, entry,
                 package[:repo].sub(/\/$/, "").gsub("/", File::SEPARATOR), "packages.json")
             if (File.exists?(file))
                 f = File.open(file)
@@ -1085,7 +1086,7 @@ EOT
 EOT
     else
         str2=<<-"EOT"
-; for the stable release version, see 
+; for the stable release version, see
 <a href="#{get_release_url(item_rep)}">#{@package[:Package]}</a>
 EOT
     end
@@ -1242,7 +1243,7 @@ def cache_support_usage_info()
         download_support_usage_data(thepast.year, thepast.mon, "last")
     end
     # also need to download first & last of year for each year
-    # starting with last (complete) year, going back to 2002. 
+    # starting with last (complete) year, going back to 2002.
     # probably should tweak download_support_usage_data()
     # to support a "year" mode
     lastyear = now.year - 1
@@ -1318,7 +1319,7 @@ def get_stats()
     cachedir = File.join("tmp", "usage_stats")
     hsh = {:label => nil, :toplevel => nil, :questions => nil,
         :answers => nil, :comments => nil, :new_visitors => nil, :returning_visitors => nil}
-   
+
     block = Proc.new do |item, month_mode|
         if (month_mode)
             timethen = now << item
@@ -1354,7 +1355,7 @@ def get_stats()
         row
     end
 
-    results = [] 
+    results = []
 
     results += iterate_month_mode(now, block)
     results += iterate_year_mode(now, block)
@@ -1377,7 +1378,7 @@ def render_mirror_contacts(mirror_orig)
     out = ""
     len = mirror[:contact].length
     mirror[:contact].each_with_index do |m, i|
-        out += "#{m} &lt;#{mirror[:contact_email][i].sub("@", " at ")}&gt;" 
+        out += "#{m} &lt;#{mirror[:contact_email][i].sub("@", " at ")}&gt;"
         if len > 1 and i < (len -1)
             out += " or "
         end
@@ -1548,10 +1549,10 @@ def get_build_results(package)
   return nil unless %w(bioc/ data/experiment/).include? package[:repo]
   return nil unless current? package
   # return nil unless [config[:release_version],
-  #   config[:devel_version]].include? package[:bioc_version_num]  
+  #   config[:devel_version]].include? package[:bioc_version_num]
   # build_dbs_dir = File.join(%w(tmp build_dbs))
   repo = package[:repo].sub(/\/$/, "").sub("/", "-")
-  h = {config[:release_version] => 'release', 
+  h = {config[:release_version] => 'release',
     config[:devel_version] => 'devel'}
   version = h[package[:bioc_version_num]]
   res = {}
@@ -1583,7 +1584,7 @@ end
 # is package in release or devel?
 def current? (package)
     [config[:release_version],
-    config[:devel_version]].include? package[:bioc_version_num]  
+    config[:devel_version]].include? package[:bioc_version_num]
 end
 
 def on_fhcrc_network?
@@ -1630,7 +1631,7 @@ end
 def coverage_svg_url(package)
   vers = "devel"
   if package[:bioc_version_num] == config[:release_version]
-    vers = "release" 
+    vers = "release"
   end
   "/shields/coverage/#{vers}/#{package[:Package]}.svg"
 end
@@ -1676,4 +1677,22 @@ def check_mirror_url(url)
   rescue
     return "0"
   end
+end
+
+def get_url_from_item_identifier(identifier)
+  # from /help/bioc-views/package-pages/3.2/bioc/a4/"
+  # to   /packages/3.2/bioc/html/a4.html
+  out = identifier.sub("/help/bioc-views/package-pages", "/packages")
+  out = out.sub("/bioc/", "/bioc/html/")
+  out = out.sub(/\/$/, ".html")
+  out
+end
+
+def urlescape(url)
+  URI.escape(url)
+end
+
+def get_socialized_url(identifier)
+  url = "https://bioconductor.org#{get_url_from_item_identifier identifier}"
+  CGI::escape(url)
 end
