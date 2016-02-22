@@ -64,7 +64,7 @@ Some Helpful Coding Resources
   branches can be built via `R CMD build` and checked via `R CMD check`.
 
 * [Release Schedule](/developers/release-schedule/)   
-  Bioconductor has two releases in a year and package developers
+  Bioconductor has two releases per year and package developers
   are expected to make sure that their package passes build and check without
   any errors and warnings before each release. Packages that fail to
   pass these checks will regretfully be dropped from the next release
