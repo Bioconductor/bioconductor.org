@@ -1696,3 +1696,7 @@ def get_socialized_url(identifier)
   url = "https://bioconductor.org#{get_url_from_item_identifier identifier}"
   CGI::escape(url)
 end
+
+def get_social_title(item, package)
+  urlescape "#{package[:Package]}:#{item[:Title]}"
+end
