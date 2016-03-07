@@ -5,8 +5,8 @@ containers: self-contained environments that contain everything
 needed to run the software. Containers can be run anywhere
 (containers run in modern Linux kernels, but can be run
 on Windows and Mac as well using a virtual machine called
-[boot2docker](http://boot2docker.io/)). Containers can
-also be deployed in the cloud using 
+[Docker Toolbox](https://www.docker.com/products/docker-toolbox).
+Containers can also be deployed in the cloud using
 [Amazon EC2 Container Service](https://aws.amazon.com/ecs/)
 or other cloud providers.
 
@@ -18,9 +18,9 @@ With Bioconductor containers, we hope to enhance
   years later and know that nothing in the container has changed.
   You should always take note of the tag you used if you think
   you might want to reproduce some work later.
-* *ease of use*: With one command, you can be running the 
+* *ease of use*: With one command, you can be running the
   latest release or devel Bioconductor. No need to worry
-  about whether packages and system dependencies are 
+  about whether packages and system dependencies are
   installed.
 * *convenience*: Sometimes you just want a fresh R with
   no packages installed, in order to test something; or
@@ -30,13 +30,13 @@ With Bioconductor containers, we hope to enhance
 
 ### Available Containers
 
-Our aim is to provide up-to-date containers for the current 
+Our aim is to provide up-to-date containers for the current
 release and devel versions of Bioconductor, and (probably, eventually)
 some older versions.
 
-Bioconductor's Docker images are stored in 
+Bioconductor's Docker images are stored in
 [Docker Hub](https://registry.hub.docker.com/repos/bioconductor/);
-the source Dockerfiles are in 
+the source Dockerfiles are in
 [Github](https://github.com/Bioconductor/bioc_docker).
 
 Our release images are based on [rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio) and our devel
@@ -46,12 +46,12 @@ For each supported version of Bioconductor, we provide several
 images:
 
 
-* *base*: Contains R, RStudio, and a single Bioconductor 
+* *base*: Contains R, RStudio, and a single Bioconductor
   package (`BiocInstaller`,
   providing the `biocLite()` function for installing additional
   packages).
   Also contains many system dependencies for Bioconductor packages.
-  Useful when you want a relatively blank slate for testing purposes. 
+  Useful when you want a relatively blank slate for testing purposes.
   R is accessible via the command line or via RStudio Server.
   The release and devel versions of these containers (and the
   containers built from them, below) are rebuilt
@@ -62,8 +62,8 @@ images:
   See [the full list](#the-full-list).
 * *flow*: everything in *core*, plus all packages tagged with the
   [FlowCytometry](/packages/release/BiocViews.html#___FlowCytometry) biocView.
-* *microarray*: everything in *core*, plus 
-  all packages tagged with the 
+* *microarray*: everything in *core*, plus
+  all packages tagged with the
   [Microarray](/packages/release/BiocViews.html#___Microarray) biocView.
 * *proteomics*: everything in *core*, plus all packages tagged with the
   [Proteomics](/packages/release/BiocViews.html#___Proteomics) biocView.
@@ -92,11 +92,11 @@ At present, the following containers are available:
 The following examples use the `bioconductor/devel_base` container.
 Note that you may need to prepend `sudo` to all `docker` commands.
 
-**Prerequisites**: On Linux, you need Docker 
+**Prerequisites**: On Linux, you need Docker
 [installed](https://docs.docker.com/installation/) and
 on [Mac](http://docs.docker.com/installation/mac/)
 or [Windows](http://docs.docker.com/installation/windows/)
-you need boot2docker installed and running.
+you need Docker Toolbox installed and running.
 
 ##### To run RStudio Server:
 
@@ -106,8 +106,8 @@ You can then open a web browser pointing to your docker host on port 8787.
 If you're on Linux and using default settings, the docker host is
 `127.0.0.1` (or `localhost`, so the full URL to RStudio would be
 `http://localhost:8787)`. If you are on Mac or Windows and running
-`boot2docker`, you can determine the docker host with the
-`boot2docker ip` command.
+`Docker Toolbox`, you can determine the docker host with the
+`docker-machine ip default` command.
 
 Log in to RStudio with the username `rstudio` and password `rstudio`.
 
@@ -123,7 +123,7 @@ to read/write files in a host directory, please
 
     docker run -ti bioconductor/devel_base bash
 
-*Note*: The `docker run` command is very powerful and versatile. 
+*Note*: The `docker run` command is very powerful and versatile.
 For full documentation, type `docker run --help` or visit
 the [help page](https://docs.docker.com/reference/run/).
 
@@ -170,4 +170,3 @@ These packages, plus their dependencies, are installed:
 Thanks to the
 [rocker](https://github.com/rocker-org/rocker) project for providing the
 R/RStudio Server containers upon which ours are based.
-
