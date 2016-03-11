@@ -13,7 +13,7 @@ Revised: 18 August, 2014
 ## Key points ##
 
 * Use the latest Bioconductor release (or 'devel') version. Ensure
-  that your packages are [up-to-date](/install/).
+  that your packages are [up-to-date](/install#update-bioconductor-packages).
 
 * Provide a minimal, self-contained example (data and code) that
   someone else can cut-and-paste into a new R session to reproduce
