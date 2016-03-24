@@ -2,61 +2,58 @@
 
 ## Current Members
 
-
 [Roswell Park](http://roswellpark.org)
 
-* Jim Hester
-* Jim Java
-* Brian Long
-* Martin Morgan
+* Martin Morgan (Project Lead)
 * Valerie Obenchain
 
-
-[FHCRC](http://fredhutch.org)
+[Fred Hutch](http://fredhutch.org)
 
 * Herv&eacute; Pag&egrave;s
 * Dan Tenenbaum
 
+Recent alumni
+
+* Brian Long
+* Jim Hester
+* Jim Java
+* Marc Carlson
+* Nathaniel Hayden
+* Paul Shannon
+* Sonali Arora
+
 ## Additional Participants
 
-* [Patrick Aboyoun](http://www.oracle.com/), Oracle, USA.
+* Patrick Aboyoun
 * [Douglas Bates](http://www.stat.wisc.edu/~bates/), University of Wisconsin,
   USA.
 * Benjamin Bolstad, Affymetrix, USA.
 * Tony Chiang.
-* [Marcel Dettling](http://stat.ethz.ch/~dettling), Federal Inst. Technology,
-  Switzerland.
+* Marcel Dettling, Federal Inst. Technology, Switzerland.
 * [Sandrine Dudoit](http://www.stat.berkeley.edu/~sandrine), Division of
   Biostatistics, UC Berkeley, USA.
 * Byron Ellis, AdBrite, USA.
 * Seth Falcon, Opscode, USA.
 * [Laurent Gatto](http://proteome.sysbiol.cam.ac.uk/lgatto/), University of Cambridge, UK.
 * Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
-* [Jeff Gentry](http://biowww.dfci.harvard.edu/~jgentry), Dana-Farber Cancer
-  Institute, USA.
+* Jeff Gentry, Dana-Farber Cancer Institute, USA.
 * Florian Hahne, Novartis Institute of Biomedical Research, Switzerland.
-* [Kurt Hornik](http://www.ci.tuwien.ac.at/~hornik), Wirtschafts Universitat
-  Wien, Austria.
-* [Torsten Hothorn](http://www.imbe.med.uni-erlangen.de/~hothorn/hothorn.html),
-  Institut fuer Medizininformatik, Biometrie und Epidemiologie, Germany.
-* [Stefano Iacus](mailto:stefano.iacus@unimi.it), Italy.
-* [Friedrich Leisch](http://www.ci.tuwien.ac.at/~leisch), Technische Universitat
-  Wien, Austria.
+* Kurt Hornik, Wirtschafts Universitat Wien, Austria.
+* Torsten Hothorn, Institut fuer Medizininformatik, Biometrie und
+  Epidemiologie, Germany.
+* Stefano Iacus, Italy.
+* Friedrich Leisch, Technische Universitat Wien, Austria.
 * Nianhua Li
 * Ting-Yuan Liu
-* [Li Long](http://www.isb-sib.ch/index.htm) Swiss Institute of
-  Bioinformatics, Switzerland.
-* [Martin Maechler](http://stat.ethz.ch/~maechler), Federal Inst. Technology,
+* Li Long Swiss Institute of Bioinformatics, Switzerland.
+* [Martin Maechler](http://stat.ethz.ch/~maechler), Federal
+  Inst. Technology, Switzerland.
+* Crispin Miller, Paterson Institute Bioinformatics Group, UK.
+* Anthony Rossini, Modeling and Simulation, Novartis Pharma AG,
   Switzerland.
-* [Crispin Miller](http://bioinf.picr.man.ac.uk/), Paterson Institute
-  Bioinformatics Group, UK.
-* [Anthony Rossini](mailto:blindglobe@gmail.com), Modeling and Simulation,
-  Novartis Pharma AG, Switzerland.
-* [Colin Smith](mailto:colin@colinsmith.org), University of California,
-  San Francisco, USA.
+* Colin Smith, University of California, San Francisco, USA.
 * Gordon Smyth WEHI, Australia.
 * [Luke Tierney](http://www.stat.uiowa.edu/~luke/), University of
   Iowa, USA.
-* [Jean Yee Hwa Yang](mailto:jeany@maths.usyd.edu.au), Sydney, Australia.
-* [Jianhua (John) Zhang](http://biowww.dfci.harvard.edu/~jzhang), Dana-Farber
-  Cancer Institute, USA.
+* Jean Yee Hwa Yang, Sydney, Australia.
+* Jianhua (John) Zhang, Dana-Farber Cancer Institute, USA.
