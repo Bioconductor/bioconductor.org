@@ -1,6 +1,6 @@
 # ![](/images/icons/magnifier.gif)Core Team
 
-## Current Members
+## Current and Recent Members
 
 [Roswell Park](http://roswellpark.org)
 
