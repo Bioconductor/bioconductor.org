@@ -91,7 +91,7 @@ class GetJson
       http.request(req)
     }
     views = res.body
-    views = views.force_encoding('UTF-8')
+    views.force_encoding('UTF-8')
     view_dcfs = []
     view_lines = views.split("\n")
     dcf = ""
