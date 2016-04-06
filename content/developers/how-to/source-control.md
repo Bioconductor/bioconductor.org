@@ -140,6 +140,44 @@ on Wednesdays and Saturdays.
 
 ## Having Problems?
 
+### Lost Subversion username or password
+
+One of the following steps should work:
+
+* Look in your email. Your SVN credentials were originally sent to you
+  by a member of the Bioconductor team, probably with the subject line
+  "congrats" or "congratulations". The email by a member of the
+  Bioconductor team, probably with a subject line containing
+  "congrats" or "congratulations". The email should contain the text
+  "Information about your svn account".
+
+* Go to your `~/.subversion/auth/svn.simple` directory. There should
+  be one or more files whose names are long hexadecimal numbers. Use
+  `grep` to find out which file contains your username. If you don't
+  know your username, it's usually your first initial, a dot, and your
+  last name (all lowercase). So Jill User would be `j.user`. Example:
+
+        $ grep -l j.user *
+        81a52e36a28dfd7750bd975f30c7998b
+
+  This indicates that your password can be found in the file called
+  `81a52e36a28dfd7750bd975f30c7998b`. Examine that file and you should
+  see something like:
+
+        password
+        V 8
+        Z7oRUVH6
+
+  In this case, `Z7oRUVH6` is your password.
+
+* If you still can't find your username or password, contact a member
+  of the Bioconductor team at `maintainer at bioconductor dot org`.
+  Mention the package(s) that you maintain. We cannot send you
+  your password but we can ask for a new one to be generated, and send
+  it to you. It may take a day or two for the request to be processed.
+
+### Other problems
+
 Here is a list of possible issues:
 
 * Unrecognized URL scheme:
