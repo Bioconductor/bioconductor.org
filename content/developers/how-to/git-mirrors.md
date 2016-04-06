@@ -157,7 +157,7 @@ list](http://bioconductor.org/help/mailing-list/).
 
 ### I don't know my Subversion username and/or password. What do I do? ###
 
-See [Lost Subversion username or password][/developers/how-to/source-control#Lost-Subversion-username-or-password].
+See [Lost Subversion username or password][/developers/how-to/source-control/#Lost-Subversion-username-or-password].
 
 ### How do I commit to the release version of my package? ##
 
