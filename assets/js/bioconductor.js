@@ -12,10 +12,10 @@ var gExp;
 // logging functions:
 var fb_lite = false;
 try {
-	if (firebug) {
-		fb_lite = true;  
-		firebug.d.console.cmd.log("initializing firebug logging");
-	}
+	// if (firebug) {
+	// 	fb_lite = true;
+	// 	firebug.d.console.cmd.log("initializing firebug logging");
+	// }
 } catch(e) {
 	// do nothing
 }
@@ -23,12 +23,12 @@ try {
 
 
 function log(message) {
-	if (fb_lite) {  
-		console.log(message);
+	if (fb_lite) {
+		//console.log(message);
 	} else {
-		if (window.console) {
-			console.log(message);
-		} 
+		// if (window.console) {
+		// 	console.log(message);
+		// }
 	}
 	if (window.dump) {
 	    dump(message + "\n");
@@ -85,12 +85,12 @@ function renderShadedBoxes(){
   var className = '';
   for(var i=0;i<oDivs.length;i++){
     className = oDivs.item(i).getAttribute('class')||oDivs.item(i).getAttribute('className'); //alert(className);
-    if(className&&className.indexOf('shaded_box')>-1){  //alert(i);        
-      oDivs.item(i).innerHTML = insert1 + oDivs.item(i).innerHTML + insert2;    
+    if(className&&className.indexOf('shaded_box')>-1){  //alert(i);
+      oDivs.item(i).innerHTML = insert1 + oDivs.item(i).innerHTML + insert2;
       oDivs.item(i).className=''; // this removes the shaded_box class from the original div so the styling i just made takes over
     }
   }
-  
+
 }
 
 // check each page load to see if there is any shaded_box class
@@ -103,8 +103,8 @@ addEvent(window,'load',renderShadedBoxes);
 // the corresponding element to be olive and color unchanged at hover. we do this by pattern matching
 // on the page url (client side), and turning the corresponding element olive.
 // the position of each of the patterns corresponds to the masthead nav element number,
-// e.g., the third element, /help/, which is index 3 (option base 1), matches masthead_nav_element_3 
-// we use one Array of matching patterns for each element in case one element needs to match more than one patten. 
+// e.g., the third element, /help/, which is index 3 (option base 1), matches masthead_nav_element_3
+// we use one Array of matching patterns for each element in case one element needs to match more than one patten.
 // examples are shown below, but adjust for your info architecture.
 var masthead_nav_elements = Array( Array(/^\/$/, /^\/index\.html$/),Array(/\/install\//, /install\.html/),
 	Array(/\/help\//),Array(/\/developers\//),Array(/\/about\//) );
@@ -115,7 +115,7 @@ function checkNav(){
 	  if (window.location.pathname.match(masthead_nav_elements[i][j])) {
         // match at element i. make it olive
         if( document.getElementById('masthead_nav_element_'+(i+1)) ){
-            document.getElementById('masthead_nav_element_'+(i+1)).className='masthead_nav_element masthead_nav_element_selected'; 
+            document.getElementById('masthead_nav_element_'+(i+1)).className='masthead_nav_element masthead_nav_element_selected';
             return; // matched, so no need to continue checking.
         }
       }
@@ -195,7 +195,7 @@ var unRebaseMirrors = function() {
 }
 
 /*
- * The little file server we use for development does not follow symlinks, so see if we are running 
+ * The little file server we use for development does not follow symlinks, so see if we are running
  * that server (assume we are if we are not on port 80) and change URLs tagged with the "symlink"
  * class (e.g. containing "release" or "devel" to point to the actual file.
  */
@@ -228,7 +228,7 @@ var handleCitations = function()
         segs.push(pkg);
         segs.push("citation.html");
         url = segs.join("/");
-        jQuery.ajax({url: url, dataType: "html", 
+        jQuery.ajax({url: url, dataType: "html",
             success: function(data,textStatus,jqXHR){
                 // working around possible R bug?
                 data = data.replace(/}. /g, "");
@@ -239,14 +239,14 @@ var handleCitations = function()
                 jQuery("#bioc_citation").html(data);
                 jQuery("#bioc_citation_outer").show();
             }, error: function(data, textStatus, jqXHR){
-                console.log("error!");
+                //console.log("error!");
             }
         });
     }
 
 }
 
-//document ready function                                      
+//document ready function
 jQuery(function() {
     unRebaseMirrors(); // comment this out if there are issues with rebasing
     tidyWorkflows();
@@ -270,13 +270,13 @@ jQuery(function() {
 //         link += "&encrypted=";
 //         jQuery("#ami_link").attr("href", link);
 //         jQuery("#instance_url").html(url);
-        
+
 //         var payload, exp, mod;
 //         payload = "ubuntu\nbioc";
 //         var chunks = key.split(':', 2);
 //         exp = chunks[0];
 //         mod = chunks[1];
-        
+
 //         var encrypted = encrypt(payload, exp, mod);
 
 //         var link = jQuery("#ami_link").attr("href");
@@ -284,8 +284,8 @@ jQuery(function() {
 //         jQuery("#instance_loading").html("");
 //         jQuery("#initially_hidden").show();
 //     }
-    
-    
+
+
 //     if (jQuery("#launch_tryitnow").length > 0) { // is this launch.md?
 //         jQuery("#hide_this_stuff").hide();
 //         var username = getParameterByName("username");
@@ -303,17 +303,17 @@ jQuery(function() {
 //         document.getElementById('package').value = encrypted;
 //         document.realform.submit();
 //     }
-    
+
 //     if (jQuery("#captcha_js").length > 0) {
 //         jQuery("#captcha_js").html("<script type='text/javascript' src='http://cloud.bioconductor.org:2112/cgi-bin/get_captcha.js'></script>")
 //     }
-    
+
 // });
 
 var submit_tryitnow = function() {
     jQuery("#tryitnow_button").attr("disabled", "disabled");
     jQuery("#tryitnow_button").attr("value", "Please wait...");
-    return(true);   
+    return(true);
 }
 
 var processCaptchaResults = function(factoryFilename, captchaKey) {

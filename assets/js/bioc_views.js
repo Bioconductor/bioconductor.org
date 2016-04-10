@@ -29,8 +29,8 @@ var displayPackages = function(packageList, nodeName) {
     var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
 
     html += "<table id='biocViews_package_table'><thead><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr></thead><tbody>\n";
-    
-    
+
+
     var tableData = "";
     for (var i = 0; i < packageList.length; i++) {
         var rowClass = (i % 2 == 0) ? "row_odd" : "row_even";
@@ -45,9 +45,9 @@ var displayPackages = function(packageList, nodeName) {
         tableData += "</tr>\n";
     }
     html += tableData;
-    
+
     html += "</tbody></table>\n";
-    
+
     jQuery.fn.dataTableExt.oStdClasses.sStripeOdd = "row_odd";
     jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
     jQuery("#packages").html(html);
@@ -78,25 +78,25 @@ var nodeSelected = function(event, data){
 
         nodeName = data;
     } else {
-        // we got here from clicking on a tree node, 
+        // we got here from clicking on a tree node,
         // so clear the autocompleter
         jQuery("#autocompleter").val("");
 
 
         // for IE
         nodeName = data['args'][0]['innerText'];
-        
+
         if (data['args'][0]['text'] != undefined) {
             nodeName = data['args'][0]['text'];
         }
-        
-        
-        
+
+
+
         if (nodeName == undefined) {
             nodeName = getNodeName();
-        } 
+        }
 
-        console.log("nodeName is " + nodeName);
+        //console.log("nodeName is " + nodeName);
         nodeName = nodeName.trim();
     }
 
@@ -106,7 +106,7 @@ var nodeSelected = function(event, data){
 
     var newUrl = "" + wl + "#" + "___" + bareNodeName;
     window.location.href = newUrl;
-    
+
     var tmp = nodeName.split(" ");
     nodeName = tmp[0];
     var packageList = getAllPackages(nodeName);
@@ -120,7 +120,7 @@ var nodeSelected = function(event, data){
 
 
 var setBiocVersion = function() {
-    
+
     var href = window.location.href;
 
 
@@ -135,11 +135,11 @@ var setBiocVersion = function() {
     } else if (href.match(/\/packages\/([^/]*)\//)) {
         biocVersion = RegExp.$1;
     }
-    
-    
-    
+
+
+
     var versionText;
-    
+
     if (biocVersion == releaseVersion) {
         versionText = "Release"
     } else if (biocVersion == develVersion) {
@@ -147,13 +147,13 @@ var setBiocVersion = function() {
     } else {
       versionText ="";
     }
-    
+
     var versionString = biocVersion;
     if (versionText != "") {
         versionString += " (" + versionText + ")";
     }
-    
-    
+
+
     jQuery("#bioc_version").html(versionString);
 }
 
@@ -189,16 +189,16 @@ var getNodeName = function() {
 
 var init = function() {
     // todo add ajax failure method (possible?)
-    
+
     var initiallySelected = [];
     var nodeName = "";
     nodeName = getNodeName();
-    
+
     if (nodeName != "") {
         initiallySelected.push(nodeName);
     }
-    
-    jQuery("#tree").jstree({ 
+
+    jQuery("#tree").jstree({
         "core": {
             "animation": 0
         },
@@ -224,11 +224,11 @@ var init = function() {
         log("event name: " + event.type);
     })
     */
-    
+
     jQuery("#tree").bind("select_node.jstree", function(event, data){
         nodeSelected(event, data);
     });
-    
+
     jQuery("#tree").bind("loaded.jstree", function(event, data){
         var initiallyOpen = [];
         var openNode = getNodeName();
@@ -264,8 +264,8 @@ var init = function() {
     });
 
 
-    
-    
+
+
 }
 
 
@@ -309,7 +309,7 @@ jQuery(function () {
     }
 
     //do this in displayPackages instead:
-    //jQuery(".jstree li:not([id])").hide(); 
+    //jQuery(".jstree li:not([id])").hide();
 
     loadPackageData();
     init();
@@ -367,10 +367,10 @@ var setupAutoCompleter = function()
     }).keypress(function(e){
         if (e.keyCode === 13) {
             var value = jQuery("#autocompleter").val().toLowerCase();
-            console.log("value is " + value);
+            //console.log("value is " + value);
             if (Object.keys(lowerHash).indexOf(value) > -1) {
                 value = lowerHash[value];
-                console.log("now value is " + value);
+                //console.log("now value is " + value);
                 jQuery("#tree").jstree("deselect_all");
                 jQuery("#tree").jstree("close_all");
                 var selector = "#" + value;
@@ -438,7 +438,7 @@ var eff2 = function(data) {
         var tag = data['data'];
         var biocView = tag.split(" ")[0];
     } else {
-        console.log("this is unexpected!");
+        //console.log("this is unexpected!");
     }
     if ('attr' in data) {
         var attr = data['attr'];
