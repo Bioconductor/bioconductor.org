@@ -28,3 +28,8 @@ EPS
 GIF
 
 * [logo_bioconductor.gif](/images/logo_bioconductor.gif)
+
+Web
+
+* 'Bioc blue': `#1881c2;`
+* 'Bioc green': `#87b13f;`
