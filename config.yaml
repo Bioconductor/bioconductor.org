@@ -1,4 +1,4 @@
---- 
+---
 ## Lines that must be updated when we release a new software version are indicated in comments below
 
 
@@ -64,8 +64,8 @@ ami_ids:
  bioc3_0: ami-be7917d6
  bioc3_1: ami-a3d126c8
  bioc3_2: ami-85d88de0
- bioc3_3: ami-05d6896f
-data_sources: 
+ bioc3_3: ami-acfae8c6
+data_sources:
 - items_root: /
   layouts_root: /
   type: filesystem_unified
@@ -105,7 +105,7 @@ data_sources:
     sort: [ "", electronic+pub+date]
 # CHANGE THIS when it becomes apparent which future versions of BioC will
 # work with which versions of R:
-r_ver_for_bioc_ver: 
+r_ver_for_bioc_ver:
   "1.6": "2.1"
   "1.7": "2.2"
   "1.8": "2.3"
@@ -233,12 +233,12 @@ mirrors:
  - China:
    - institution: University of Science and Technology of China
      institution_url: http://en.ustc.edu.cn/
-     contact: 
+     contact:
       - Mirror Maintainer
       - Tengfei Yin
      mirror_url: http://mirrors.ustc.edu.cn/bioc/
      https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
-     contact_email: 
+     contact_email:
       - mirrors@ustc.edu.cn
       - yintengfei@gmail.com
      country_code: cn
