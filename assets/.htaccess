@@ -26,7 +26,7 @@ Header set Cache-Control "max-age=600"
 <FilesMatch "\.rss$">
 Header set Cache-Control "max-age=300"
 </FilesMatch>
-<FilesMatch "^biocLite\.R$">
+<FilesMatch "^biocLite\.R$|^BiocInstaller\.dcf$">
 Header set Cache-Control "max-age=60"
 </FilesMatch>
 <FilesMatch "\.tar.gz$|\.tgz$|\.zip$">
