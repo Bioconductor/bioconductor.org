@@ -951,6 +951,7 @@ def get_search_terms()
 end
 
 def get_hits()
+    return "" if true # bypass badness
     return "" unless File.exists? "analytics_py/client_secrets.json"
     FileUtils.mkdir_p "output/dashboard"
     Dir.chdir("analytics_py") do
