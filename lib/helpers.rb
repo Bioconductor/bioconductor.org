@@ -1311,6 +1311,7 @@ end
 
 
 def get_stats()
+    return [] if true # while things are broken
     return [] unless File.exists?(File.join("analytics_py", "client_secrets.json"))
     cache_support_usage_info()
     cache_google_analytics_info()
