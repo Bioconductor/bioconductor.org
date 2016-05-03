@@ -95,7 +95,7 @@ Packages must satisfy the following checklist:
   See if it is by running <code>biocLite("myPackageName")</code>. You
   cannot have a package name that is case-insensitively equal to
   an existing package name in CRAN or Bioconductor.
-* Follow the [Package Guidelines](/package-guidelines) for details on
+* Follow the [Package Guidelines](/developers/package-guidelines/) for details on
   appropriate use.
 * Include an `inst/NEWS` file for providing users with information on package
   updates.
@@ -201,4 +201,3 @@ package documentation and structure.  Use the
 * Support Email: <packages@bioconductor.org>
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
