@@ -19,7 +19,7 @@ versions:
 ## release and devel versions (though after a release you should
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
-#- "3.2"
+- "3.2"
 - "3.3"
 - "3.4"
 ## CHANGE THIS as various parts of the new devel version become available.
