@@ -9,6 +9,7 @@ _Bioconductor_ version.
 
 | Release                                          | R    |
 |:-------------------------------------------------|:-----|
+| [3.3](/packages/3.3/)                            | 3.3  |
 | [3.2](/packages/3.2/)                            | 3.2  |
 | [3.1](/packages/3.1/)                            | 3.2  |
 | [2.14](/packages/2.14/), [3.0](/packages/3.0/)   | 3.1  |
@@ -22,7 +23,7 @@ _Bioconductor_ version.
 | [2.4](/packages/2.4/BiocViews.html)              | 2.9  |
 | [2.3](/packages/2.3/BiocViews.html)              | 2.8  |
 | [2.2](/packages/2.2/BiocViews.html)              | 2.7  |
-| [2.1](/packages/2.1/BiocViews.html)              | 2.6  | 
+| [2.1](/packages/2.1/BiocViews.html)              | 2.6  |
 | [2.0](/packages/2.0/BiocViews.html)              | 2.5  |
 | [1.9](/packages/1.9/BiocViews.html)              | 2.4  |
 | [1.8](/packages/1.8/BiocViews.html)              | 2.3  |
@@ -36,10 +37,11 @@ existing packages, and package removals.
 
 | Release                         | Date             |
 |:--------------------------------|:-----------------|
+| [3.3](/news/bioc_3_3_release)   | May 4, 2016      |
 | [3.2](/news/bioc_3_2_release)   | October 14, 2015 |
 | [3.1](/news/bioc_3_1_release)   | April 17, 2015   |
 | [3.0](/news/bioc_3_0_release)   | October 14, 2014 |
-| [2.14](/news/bioc_2_14_release) | April 14, 2014   | 
+| [2.14](/news/bioc_2_14_release) | April 14, 2014   |
 | [2.13](/news/bioc_2_13_release) | October 15, 2013 |
 | [2.12](/news/bioc_2_12_release) | April 4, 2013    |
 | [2.11](/news/bioc_2_11_release) | October 3, 2012  |
@@ -49,4 +51,3 @@ existing packages, and package removals.
 | [2.7](/news/bioc_2_7_release)   | October 18, 2010 |
 | [2.6](/news/bioc_2_6_release)   | April 23, 2010   |
 | [2.5](/news/bioc_2_5_release)   | October 28, 2009 |
-

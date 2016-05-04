@@ -23,7 +23,7 @@ Github using the [Bioconductor Git mirrors](/developers/how-to/git-mirrors/).
 To check out (co) all packages in the software repository (~3 GB) use:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks Rpacks-devel
-    
+
 This creates a copy of all packages on your local machine.  Specify a
 name other than "Rpacks-devel" if you want a top-level directory with
 different name.
@@ -78,7 +78,7 @@ portion of the `x.y.z` package
 
 <!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
 
-If you commit to trunk before 7:24 PM New York time, your changes will
+If you commit to trunk before 7:20 PM New York time, your changes will
 build overnight and be reflected in the next day's  [build
 report](http://bioconductor.org/checkResults/devel/bioc-LATEST/) which
 should appear around 1:30 PM New York time.

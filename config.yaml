@@ -6,10 +6,10 @@ output_dir: output
 staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.2"
-r_version_associated_with_release: "3.2.2"
+release_version: "3.3"
+r_version_associated_with_release: "3.3.0"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.3"
+devel_version: "3.4"
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
@@ -19,8 +19,9 @@ versions:
 ## release and devel versions (though after a release you should
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
-- "3.2"
+#- "3.2"
 - "3.3"
+- "3.4"
 ## CHANGE THIS as various parts of the new devel version become available.
 ## set to "[]" if none are available.
 devel_repos:
@@ -30,14 +31,13 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
+  linux: "zin1"
+  windows: "moscato1"
+  mac_mavericks: "oaxaca"
+active_release_builders:
   linux: "zin2"
   windows: "moscato2"
   mac_mavericks: "morelia"
-active_release_builders:
-  linux: "zin1"
-  windows: "moscato1"
-  mac_snowleopard: "perceval"
-  mac_mavericks: "oaxaca"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
@@ -48,8 +48,8 @@ workflow_builder:
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.1"
-  r_version: "3.2"
+  bioc_version: "3.3"
+  r_version: "3.3"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
@@ -131,6 +131,9 @@ r_ver_for_bioc_ver:
   "3.3": "3.3"
   "3.4": "3.3"
   "3.5": "3.4"
+  "3.6": "3.4"
+  "3.7": "3.5"
+  "3.8": "3.5"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -161,6 +164,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.0": "10/14/2014"
   "3.1": "4/17/2015"
   "3.2": "10/14/2015"
+  "3.3": "5/4/2016"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide

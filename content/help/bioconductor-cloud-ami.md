@@ -1,7 +1,7 @@
 # Bioconductor in the cloud
 <a name="top"></a>
 
-[Obtain](#first-time-steps) an Amazon Web Services account and 
+[Obtain](#first-time-steps) an Amazon Web Services account and
 <b><a target="start_ami"
 href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">start
 the AMI</a></b>. Additional instructions below.
@@ -35,7 +35,7 @@ the AMI</a></b>. Additional instructions below.
 
 ## Overview
 
-We have developed an Amazon Machine Image (AMI) that is optimized for running Bioconductor in the Amazon Elastic Compute Cloud 
+We have developed an Amazon Machine Image (AMI) that is optimized for running Bioconductor in the Amazon Elastic Compute Cloud
 (or EC2) for sequencing tasks.
 
 Here are a few reasons you could use it:
@@ -53,7 +53,7 @@ See below for more specific scenarios.
 
 ## Preloaded AMI
 
-The AMI comes pre-loaded with the latest release version of R, 
+The AMI comes pre-loaded with the latest release version of R,
 and the following Bioconductor packages (and all their CRAN dependencies):
 
 <ul class="inline_list">
@@ -167,7 +167,7 @@ If you also want to connect to it with SSH, create a keypair as follows:
 
 #### Creating a Key Pair
 <a name="keypairs"></a>
-Launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1). 
+Launch the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1).
 Click on the [Key Pairs](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)
 link in the lower left-hand corner of the page. Click the "Create Key Pair" button. When prompted, supply a name.
 We suggest that the name be a combination of "bioconductor", your first name, and your machine name
@@ -201,7 +201,7 @@ Click "continue".
 On this screen, you can choose which version of Bioconductor you want to run.
 If you are not sure, use the version that is already filled in.
 You can also choose an EC2 [instance type](http://aws.amazon.com/ec2/instance-types/).
-The default, t1.micro, is free to use under AWS's 
+The default, t1.micro, is free to use under AWS's
 [free usage tier](http://aws.amazon.com/free/) if you use it for less than 750
 hours a month.
 After choosing Bioconductor version and instance type, click Continue.
@@ -251,7 +251,7 @@ Use the following URL to start your AMI:
 
 Follow the same steps as [above](#launching), but give AWS the name
 of a key-pair that you created in the [first-time steps](#first-time-steps).
-(A list of your keypairs is available 
+(A list of your keypairs is available
 [here](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)).
 
 The Outputs tab will display the ssh command you should use to connect
@@ -262,15 +262,15 @@ You can vary this command. If you want to use programs or R packages that use X1
 	ssh -X -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
 
 Now you can paste your command line into a terminal or Command Prompt. Make sure you are in the same directory as your
-key pair file. 
+key pair file.
 
 **Windows Users**: You will need to install a version of the *ssh* and *scp* commands. Graphical programs like
-[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) and [WinSCP](http://winscp.net/eng/index.php) will work. 
-Our examples, however, will use the command-line versions of these programs, which you can obtain by installing 
+[PuTTY](http://www.chiark.greenend.org.uk/~sgtatham/putty/) and [WinSCP](http://winscp.net/eng/index.php) will work.
+Our examples, however, will use the command-line versions of these programs, which you can obtain by installing
 [Cygwin](http://www.cygwin.com/) (be sure and install the *openssh* package).
 
 Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
-to your Amazon EC2 instance. 
+to your Amazon EC2 instance.
 
 
 <a name="ami_ids"></a>
@@ -289,12 +289,12 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
-        <td>3.3 (devel)</td>
+        <td>3.3 (release, <b>recommended</b>)</td>
         <td>3.3.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_3]%></td>
     </tr>
     <tr>
-        <td>3.2 (release, <b>recommended</b>)</td>
+        <td>3.2</td>
         <td>3.2.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_2]%></td>
     </tr>
@@ -378,7 +378,7 @@ Then, from within R on the remote instance:
 	M <- 1:4
 	g1 <- randomGraph(V, M, 0.2)
 	plot(g1)
-	
+
 
 This should start a graphics device on your local computer displaying a simple graph.
 
@@ -386,9 +386,9 @@ This should start a graphics device on your local computer displaying a simple g
 
 ### Paralellization using the parallel package
 
-This works best if you have selected a high-CPU instance type to run. 
+This works best if you have selected a high-CPU instance type to run.
 
-This trivial example runs the <code>rnorm()</code> function, but any function would work. Consult the 
+This trivial example runs the <code>rnorm()</code> function, but any function would work. Consult the
 parallel documentation for more information.
 
     library(parallel)
@@ -431,12 +431,12 @@ is only supported for the Bioconductor AMI version 2.14 and higher.
 Install StarCluster by following the
 [StarCluster Installation Guide](http://star.mit.edu/cluster/docs/latest/installation.html). This is a simple and fast process.
 
-If you are on Windows, go directly to 
+If you are on Windows, go directly to
 [the Windows section](http://star.mit.edu/cluster/docs/latest/installation.html#installing-on-windows).
 
-Before continuing, it's worth watching the 
+Before continuing, it's worth watching the
 [Quick Start Screencast](http://star.mit.edu/cluster/)
-or following the 
+or following the
 [Quick-Start Tutorial](http://star.mit.edu/cluster/docs/latest/quickstart.html).
 
 <a name="configuring_starcluster"></a>
@@ -458,15 +458,15 @@ This will give you three options:
     [2] Write config template to /home/user/.starcluster/config
     [q] Quit
 
-Choose option 2 and note the location of the config file (it will 
+Choose option 2 and note the location of the config file (it will
 be different from what is shown above).
 
 On Unix systems (including Linux and Mac OS X), this file is found
 at `~/.starcluster/config`. On Windows systems, the `.starcluster`
-folder should be located in your 
+folder should be located in your
 [home directory](http://weka.wikispaces.com/Where+is+my+home+directory+located%3F).
 
-Open the `config` file in your favorite text editor, and edit it 
+Open the `config` file in your favorite text editor, and edit it
 as follows:
 
 
@@ -498,7 +498,7 @@ You can also create a keypair with StarCluster; run the command
 ...for instructions.
 
 Remember the name that you assigned to your keypair.
-Change the line 
+Change the line
 
     [key mykey]
 
@@ -525,7 +525,7 @@ file. For now let's just modify the cluster defined as `smallcluster`.
   with using StarCluster and Bioconductor.
 * Change `CLUSTER_USER` to `ubuntu`.
 * Uncomment the line `DNS_PREFIX = True`. This makes your cluster
-  instances easier to recognize when using the AWS Console or 
+  instances easier to recognize when using the AWS Console or
   command line tools.
 * Change the `NODE_IMAGE_ID` to the AMI-ID of the AMI you want to use
   This will be listed in the [AMI IDs](#ami_ids) section of this document.
@@ -546,7 +546,7 @@ for more information.
 
 #### Configuring Security Group Permissions section
 
-Remove the comments (`#` symbol) from the four lines 
+Remove the comments (`#` symbol) from the four lines
 starting with `[permission http]`
 so that you end up with:
 
@@ -574,7 +574,7 @@ After a few moments, the cluster should be available.
 ### Connecting to the cluster
 
 There are two ways to connect to the cluster's master node: RStudio Server and
-SSH. Unless you have a special need to use SSH, we recommend 
+SSH. Unless you have a special need to use SSH, we recommend
 using RStudio Server.
 
 #### Connecting using RStudio Server
@@ -611,7 +611,7 @@ case it will be something different but similar). You can paste
 this host name into a web browser (depending on the browser, you may
 need to put `http://` in front of the host name).
 
-This should bring you to the RStudio Server login page. You can log 
+This should bring you to the RStudio Server login page. You can log
 in with the username `ubuntu` and the password `bioc`.
 
 #### Connecting using SSH
@@ -630,14 +630,14 @@ To terminate the cluster, do this:
 
     starcluster terminate smallcluster
 
-This command will prompt you to confirm that you really want to 
+This command will prompt you to confirm that you really want to
 terminate the cluster.
 
 <a name="cluster_scenarios"></a>
 
 ### Cluster Scenarios
 
-The following scenarios assume that you have started up a cluster 
+The following scenarios assume that you have started up a cluster
 and that you are connected to the master node.
 
 
@@ -674,15 +674,15 @@ table(unlist(xx))
 This will produce:
 
 ```
- smallcluster-master smallcluster-node001 
-                  50                   50 
+ smallcluster-master smallcluster-node001
+                  50                   50
 ```
 
 ...indicating that SGE ran half the jobs on the master and
 the other half on the worker node.
 
 [This presentation](/help/course-materials/2014/ISMB2014/vjcScalable2.pptx)
-outlines how to develop a full-scale analysis 
+outlines how to develop a full-scale analysis
 (identification of cis-dsQTL)
 using the kind
 of cluster we've just created.
@@ -691,7 +691,7 @@ of cluster we've just created.
 
 ### Using SSH as the back end
 
-Here is the same example as above, except using 
+Here is the same example as above, except using
 SSH instead of Sun Grid Engine as the back end:
 
 ```
@@ -713,8 +713,8 @@ table(unlist(xx))
 You should see results like this:
 
 ```
- smallcluster-master smallcluster-node001 
-                   5                    5 
+ smallcluster-master smallcluster-node001
+                   5                    5
 ```
 
 
@@ -730,7 +730,7 @@ aware of the cluster, as shown in the following example:
 
 With the default cluster configuration, this should return 2, which
 make sense, since our cluster consists of two machines (`smallcluster-master`
-and `smallcluster-node001`), each of type m1.small, which 
+and `smallcluster-node001`), each of type m1.small, which
 have one core each.
 
 Again using `BiocParallel`, you can run a simple function
@@ -762,18 +762,18 @@ table(unlist(xx))
 ### Creating a custom version of the Bioconductor AMI
 
 
-*Note*: If you make changes to the running Bioconductor AMI, and then terminate the AMI, your changes will be lost. 
+*Note*: If you make changes to the running Bioconductor AMI, and then terminate the AMI, your changes will be lost.
 Use the steps described here to ensure that your changes are persistent.
 
 If the AMI is missing some packages or features you think it should have, please let us know.
 
-If you want to customize the AMI for your own purposes, it is simple. Just go ahead and customize your 
+If you want to customize the AMI for your own purposes, it is simple. Just go ahead and customize your
 running instance as you see fit. Typically this will involve installing R packages with <code>biocLite()</code>,
 and software packages (at the operating system level) with the Ubuntu package manager <code>apt-get</code>.
 
 When your instance is customized to your liking, issue the following commands:
 
-   
+
 	sudo clean_ami
 	exit
 
@@ -782,7 +782,7 @@ You may also want to change the password of the "ubuntu" user (because the defau
 is publicly known, in order to run RStudio Server) with the command:
 
 	passwd ubuntu
-	
+
 
 
 Now use the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)
@@ -804,7 +804,7 @@ The same scripts that were used to create these AMIs
 can also be used to provision virtual machines
 (Virtualbox or VMWare) or physical machines.
 
-For more information, see the scripts' 
+For more information, see the scripts'
 [github repository](https://github.com/Bioconductor/setup-starcluster-image).
 
 
@@ -812,7 +812,7 @@ For more information, see the scripts'
 
 ## Moving data to and from your Bioconductor AMI instance
 
-If you are using RStudio Server, you can upload and download files 
+If you are using RStudio Server, you can upload and download files
 from the Files pane in RStudio server.
 
 If you are connected via ssh,
@@ -824,21 +824,21 @@ To copy a file from your computer to a running Bioconductor AMI instance:
 * Using "cd", change to the directory where your key pair (.pem) file lives
 * Issue a command like the following (your key pair name and the hostname of the AMI instance will be different; you can determine the correct values by clicking on your running instance in the [AWS Console](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=Instances)):
 
-	
-	
+
+
 <span style="display:none">Hidden</span>
 	scp -i bioconductor-bob-mylaptop.pem /path/to/myfile ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com:~
-	
-That will copy the file at "/path/to/myfile" on your local computer to ubuntu's home directory on the remote instance. To copy a file from a 
+
+That will copy the file at "/path/to/myfile" on your local computer to ubuntu's home directory on the remote instance. To copy a file from a
 running instance to your local computer, do something like this (still at your local computer):
 
 	scp -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com:~/myfile /some/directory
 
 That will copy the file ~/myfile from the running instance to /some/directory on your local machine.
 
-*Reminder*: Files created on a running EC2 instance are **not** persisted unless you do some special steps. So if you are 
+*Reminder*: Files created on a running EC2 instance are **not** persisted unless you do some special steps. So if you are
 generating output files with Bioconductor, you must copy them to your local machine before terminating your instance, or
-your files will be lost. If you have a lot of data to move back and forth, you may want to look into 
+your files will be lost. If you have a lot of data to move back and forth, you may want to look into
 [Elastic Block Storage](http://aws.amazon.com/ebs/).
 
 <a name="questions"></a>
@@ -847,5 +847,3 @@ your files will be lost. If you have a lot of data to move back and forth, you m
 
 
 If you have questions about the Bioconductor AMI, please contact us through the [Bioconductor support site](/help/support/).
-
-
