@@ -54,6 +54,8 @@ release cycle, simply call the function `useDevel()` (from the
     ## In R-3.3
     library(BiocInstaller)
     useDevel()
+    biocValid()              # checks for out of date packages
+    biocLite()               # (optional) updates out of date packages
 
 After doing this, all packages will be installed from the `devel`
 (BioC 3.4) repository.
