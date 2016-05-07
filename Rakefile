@@ -50,7 +50,7 @@ task :copy_assets do
 end
 
 desc "Run nanoc compile"
-task :compile => [:pre_compile, 
+task :compile => [:pre_compile,
   :real_compile, :post_compile]
 
 desc "Pre-compilation tasks"
@@ -69,7 +69,7 @@ task :pre_compile do
       FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", {:preserve => false}
     end
   end
-  
+
 end
 
 task :real_compile do
@@ -85,7 +85,7 @@ task :post_compile do
     entry = "#{site_config["output_dir"]}/packages/#{entry}"
     next unless Kernel.test(?d, entry)
     puts "copying index.html to #{entry}..."
-    FileUtils.cp("assets/extra/index.html", 
+    FileUtils.cp("assets/extra/index.html",
       "#{entry}/index.html")
   end
   cwd = FileUtils.pwd
@@ -117,7 +117,7 @@ task :copy_config do
 end
 
 desc "Build the bioconductor.org site (default)"
-task :build => [ :compile, :copy_config, :copy_assets, 
+task :build => [ :compile, :copy_config, :copy_assets,
     :write_version_info, :write_version_number ]
 
 task :default => :build
@@ -148,7 +148,7 @@ task :clear_search_index do
     system command
   end
   dir = (`hostname`.chomp == 'merlot2') ? "/home/biocadmin" : "."
-  
+
   FileUtils.rm_f "#{dir}/search_indexer_cache.yaml"
 end
 
@@ -170,7 +170,7 @@ task :search_index do
     hostname = `hostname`.chomp
     args = [] # directory to index, location of cache file, location of output shell script, url of site
     if (hostname =~ /^dhcp/i) # todo - don't test this, instead see if nanoc is installed
-      args = ['./output', './', 'scripts', 'http://localhost:3000'] 
+      args = ['./output', './', 'scripts', 'http://localhost:3000']
     elsif (hostname == 'merlot2')
       args = ['/loc/www/bioconductor-test.fhcrc.org', '/home/biocadmin', '/home/biocadmin', 'http://bioconductor-test.fhcrc.org']
     end
@@ -251,11 +251,11 @@ task :json2js do
       end
       unless var.nil?
         obj = JSON.parse(
-          File.read(file,
-            :external_encoding => 'iso-8859-1',
-          )
+          File.read(file)#,
+          #   :external_encoding => 'iso-8859-1',
+          # )
         )
-        
+
         ret = []
         obj.values.each do |v|
           line = []
@@ -264,7 +264,7 @@ task :json2js do
           line.push v['Title']
           ret.push line
         end
-        
+
         holder = {"content" => ret}
         outf = File.open(jsfile, "w")
         outf.print("var #{var} = #{holder.to_json};")
@@ -293,7 +293,7 @@ task :prepare_json do
     else
       repos = ["data/annotation", "data/experiment", "bioc"]
     end
-   
+
     gj = GetJson.new(version, "assets/packages/json")
   end
 end
@@ -343,7 +343,7 @@ task :get_workflows do
         FileUtils.rm path
       end
     end
-  end    
+  end
 
   FileUtils.mkdir_p "assets/packages/#{site_config['release_version']}/workflows"
   system(%Q(rsync -av workflows_tmp/CRANrepo/#{site_config['release_version']}/ assets/packages/#{site_config['release_version']}/workflows/))
@@ -356,7 +356,7 @@ task :get_workflows do
   auth = {:username => "readonly", :password => "readonly"}
   json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
     :basic_auth => auth, :verify => false).body
-  manifest = JSON.parse(json)  
+  manifest = JSON.parse(json)
 
   dir = Dir.new("workflows_tmp")
   for entry in dir.entries
@@ -458,7 +458,7 @@ task :my_task, :arg1 do |t, args|
   pp hargs.keys()
 end
 
-desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)" 
+desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)"
 # requires internet connection
 task :get_build_result_dcfs, :repo do |t, args|
     hargs = args.to_hash
@@ -551,7 +551,7 @@ task :get_svn_logs do
   months.reverse!
   ranges = []
   for i in 0..(months.length()-2)
-    ranges.push months[i]..months[i+1]  
+    ranges.push months[i]..months[i+1]
   end
   h = {'bioc.log' => 'https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/',
     'data-experiment.log' => 'https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/'}
@@ -605,7 +605,7 @@ task :get_svn_logs do
             thisone[segs[4]] = 1
         end
         # === operator does not work as expected, so....
-        daterange = ranges.find{|i| i === date} 
+        daterange = ranges.find{|i| i === date}
         daterange = ranges.find{|i| date > i.first and date < i.last} if daterange.nil?
         for item in thisone.keys
           unless ranges.include? daterange
@@ -692,7 +692,7 @@ task :process_downloads_data do
       img = 'available.svg'
     end
     # puts "#{k}: #{img} (#{v})"
-    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))  
+    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))
   end
 end
 
@@ -735,7 +735,7 @@ task :get_years_in_bioc_shields do
     end
   end
   sconfig[:manifests] = manifests
-  
+
   sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
     amaj, amin = a.split(".")
     bmaj, bmin = b.split(".")
@@ -780,7 +780,7 @@ task :get_coverage_shields do
       cov += "%" unless cov == "unknown"
       puts "Downloading test-coverage shield for #{package} in #{dirname}..."
       resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
-      if resp.code == 200    
+      if resp.code == 200
         shield = File.join(shield_dir, "#{package}.svg")
         fh = File.open(shield, "w")
         fh.write(resp.to_s)
@@ -793,7 +793,7 @@ end
 
 desc "get all shields"
 task :get_all_shields => [:get_build_dbs, :get_svn_logs,
-  :process_downloads_data, :get_post_tag_info, 
+  :process_downloads_data, :get_post_tag_info,
   :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets]
 
 # should be run every time mirror info in config.yaml changes
