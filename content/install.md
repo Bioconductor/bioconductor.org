@@ -2,12 +2,12 @@
 <ul class="inline_list">
     <li><a href="#bioc-version">Using Bioconductor</a></li>
 	<li><a href="#install-R">Install&nbsp;R</a></li>
-	<li><a href="#install-bioconductor-packages">Install&nbsp;Packages</a></li> 
-	<li><a href="#find-bioconductor-packages">Find&nbsp;Packages</a></li> 
-	<li><a href="#update-bioconductor-packages">Update&nbsp;Packages</a></li> 
-	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot&nbsp;Package&nbsp;Installations</a></li> 
-	<li><a href="#why-biocLite">Why&nbsp;biocLite()?</a></li> 
-	<li><a href="#preconfigured">Pre-configured&nbsp;Bioconductor</a></li> 
+	<li><a href="#install-bioconductor-packages">Install&nbsp;Packages</a></li>
+	<li><a href="#find-bioconductor-packages">Find&nbsp;Packages</a></li>
+	<li><a href="#update-bioconductor-packages">Update&nbsp;Packages</a></li>
+	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot&nbsp;Package&nbsp;Installations</a></li>
+	<li><a href="#why-biocLite">Why&nbsp;biocLite()?</a></li>
+	<li><a href="#preconfigured">Pre-configured&nbsp;Bioconductor</a></li>
 </ul>
 
 
@@ -50,7 +50,7 @@ the main ones).
 2. Start the R program; on Windows and OS X, this will usually mean
    double-clicking on the R application, on UNIX-like systems, type
    "R" at a shell prompt.
-   
+
 3. As a first step with R, start the R help browser by typing
    `help.start()` in the R command window. For help on any
    function, e.g. the "mean" function, type `? mean`.
@@ -150,6 +150,26 @@ version of Bioconductor. The output suggests ways to solve identified
 problems, and the help page `?biocValid` lists arguments influencing
 the behavior of the function.
 
+<h3 id="troubleshoot-biocinstaller">Troubleshoot BiocInstaller</h3>
+
+If you see a message like this:
+
+    BiocInstaller version 3.2 is too old for R version 3.3
+
+...do the following:
+
+* Quit your R session
+* Start a new session with `R --vanilla`
+* Run the command `remove.packages("BiocInstaller")`
+* Repeat that command until R says there is no such package.
+* Run the command `source("https://bioconductor.org/biocLite.R")`
+* Run `biocValid()` to ensure your installed packages are
+  valid for the current version of Bioconductor, and follow
+  the instructions it gives you.
+
+
+
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="why-biocLite">Why Use biocLite()?</h2>
@@ -230,7 +250,7 @@ like to update
       'GenomicRanges', 'IRanges', 'MASS', 'reshape2', 'Rgraphviz',
       'RJSONIO', 'rtracklayer'
     Update all/some/none? [a/s/n]:
-    
+
 The BiocInstaller package provides facilities for switching to the
 'devel' version of Bioconductor
 
@@ -242,12 +262,12 @@ The BiocInstaller package provides facilities for switching to the
     opened URL
     ==================================================
     downloaded 13 Kb
-    
+
     * installing *source* package ‘BiocInstaller’ ...
     ...
     Bioconductor version 3.0 (BiocInstaller 1.15.5), ?biocLite for help
     'BiocInstaller' changed to version 1.15.5
-    
+
 (at some points in the R / Bioconductor release cycle use of 'devel'
 requires use of a different version of R itself, in which case the
 attempt to `useDevel()` fails with an appropriate message).
@@ -258,23 +278,23 @@ releases (the 'too new' packages have been installed from source
 rather than a repository; regular users would seldom have these).
 
     > biocValid()
-    
+
     * sessionInfo()
-    
+
     R version 3.1.0 Patched (2014-05-06 r65533)
     Platform: x86_64-unknown-linux-gnu (64-bit)
     ...
-    
+
     * Out-of-date packages
     ...
     update with biocLite()
-    
+
     * Packages too new for Bioconductor version '3.0'
     ...
     downgrade with biocLite(c("ShortRead", "BatchJobs"))
-    
+
     Error: 9 package(s) out of date; 2 package(s) too new
-    
+
 For users who spend a lot of time in Bioconductor, the features
 outlined above become increasingly important and `biocLite()` is much
 preferred to `install.packages()`.
@@ -283,7 +303,7 @@ preferred to `install.packages()`.
 
 <h2 id="preconfigured">Pre-configured <em>Bioconductor</em></h2>
 
-Bioconductor is also available as a set of 
+Bioconductor is also available as a set of
 [Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
 [Docker images](/help/docker/).
 
