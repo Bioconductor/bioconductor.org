@@ -113,12 +113,12 @@ def make_problem_feed(pkglist, config, problems, outfile)
     FileUtils.mkdir_p OUTDIR
     f = File.open("#{OUTDIR}/#{outfile}", "w")
     tweaked = tweak(rss, outfile)
-    f.puts tweaked 
+    f.puts tweaked
     f.close
 end
 
 def make_individual_feed(pkglist, config, pkgs_to_update)
-    rootdir =  "#{OUTDIR}/packages" 
+    rootdir =  "#{OUTDIR}/packages"
     FileUtils.mkdir_p rootdir
     for key in  pkgs_to_update #pkglist.keys
         filename = "#{rootdir}/#{key}.rss"
@@ -146,7 +146,7 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
             else
                 relprobs = bad.find_all {|i| i[:version] == "release"}
                 devprobs = bad.find_all {|i| i[:version] == "devel"}
-                os = {"linux" => 1, "windows" => 2, 
+                os = {"linux" => 1, "windows" => 2,
                     "mac_snowleopard" => 3, "mac_mavericks" => 4}
                 for ary in [relprobs, devprobs]
                     machines = ary == relprobs ? config["active_release_builders"] : config["active_devel_builders"]
@@ -163,7 +163,7 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
                         else
                             0
                         end
-                    end                    
+                    end
                     next if ary.empty?
                     version = ary.first[:version]
                     probs = ary.collect{|i| i[:status]}
@@ -185,7 +185,7 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
         f = File.open(filename, "w")
         #puts filename
         tweaked = tweak(rss, filename)
-        f.puts tweaked #rss 
+        f.puts tweaked #rss
         f.close
         #end
     end
@@ -205,17 +205,17 @@ def runit()
             pkg, node, phase = k.split("#")
             status = v
             pkglist[pkg] = [] unless pkglist.has_key? pkg
-            pkglist[pkg].push(:version => vers.to_s, :node => node, 
+            pkglist[pkg].push(:version => vers.to_s, :node => node,
                 :phase => phase, :status => status)
 
             key = "#{vers.to_s}_#{node}_#{phase}"
             oldstatus = redis.hget(pkg, key)
             rhash = redis.hgetall(pkg)
 
-            if (oldstatus.nil? or oldstatus != status)
+            # if (oldstatus.nil? or oldstatus != status)
                 pkgs_to_update[pkg] = 1
                 redis.hset(pkg, key, status)
-            end
+            # end
 
 
 
