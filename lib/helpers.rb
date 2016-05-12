@@ -994,11 +994,18 @@ end
 
 def get_mac_packs(package, item)
 
-    res = []
-    os =  ["Mac OS X 10.6 (Snow Leopard)"]
-    osvers = ["mac.binary.ver"]
+   version = item.identifier.split("/")[4].to_f
 
-    version = item.identifier.split("/")[4].to_f
+    res = []
+
+    os = []
+    osvers = []
+
+    if version < 3.3
+      os <<  "Mac OS X 10.6 (Snow Leopard)"
+      osvers << "mac.binary.ver"
+    end
+
     if (version > 2.13)
         os <<  "Mac OS X 10.9 (Mavericks)"
         osvers << "mac.binary.mavericks.ver"
