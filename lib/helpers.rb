@@ -482,7 +482,7 @@ def get_stats_url(package)
   else
     repo = "stats/#{package[:repo]}"
   end
-  "http://bioconductor.org/packages/#{repo}#{package[:Package]}.html"
+  "http://bioconductor.org/packages/#{repo}#{package[:Package]}/"
 end
 
 def get_updated_breadcrumbs(old_breadcrumbs, item)
