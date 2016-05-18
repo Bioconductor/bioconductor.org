@@ -3,87 +3,69 @@ developers from the scientific community are able to contribute
 software. Listed below are helpful links which will guide developers
 at different stages of their package.
 
-<h2 id="make">Package Design</h2>
+<div style="width:50%;float:left;">
+  <div class="shaded_box">
+    <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
+    <p class="box_header">Contributing Packages</p>
 
-* [Primer for Making Packages](/developers/how-to/buildingPackagesForBioc/)
-  Understanding the structure of a typical R package and helpful pointers to
-  keep in mind when writing a package for _Bioconductor_.
+    <p>Design and Submission</p>
 
-* [Package Guidelines](/developers/package-guidelines/)
-  In order to foster coherence within the project, developers
-  are encouraged to follow package guidelines to make it easier for
-  others to use and extend the software.
+    <ul>
+      <li><a class="symlink" href="/developers/how-to/buildingPackagesForBioc/">New Package Primer</a></li>
+      <li><a class="symlink" href="/developers/package-guidelines/">Package Guidelines</a></li>
+      <li><a class="symlink" href="/developers/package-submission">Package Submission</a></li>
+    </ul>
 
-<h2 id="submit">Submit to <i>Bioconductor</i></h2>
+    <p>Package Maintenance</p>
 
-* [Package Submission](/developers/package-submission)
-  New packages are added to the project through a package submission
-  process after a review. Developers can submit software, experiment
-  data and annotation data packages to us.
+    <ul>
+      <li><a class="symlink" href="/developers/how-to/source-control/">Source Control</a></li>
+      <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
+      <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
+      <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
+      <li><a class="symlink" href="/developers/new_packages/">New Packages Log</a></li>
+      <li><a class="symlink" href="/developers/svnlog/">Subversion Log</a></li>
+      <li><a class="symlink" href="/developers/rss-feeds/">RSS Feeds</a></li>
+    </ul>
 
-* [New Packages](/developers/new_packages/) Last 100 packages added to
-  devel branch of _Bioconductor_ are listed here.
+  </div>
+</div>
 
-<h2 id="maintenance">Package Maintenance</h2>
+<div style="width:50%;float:left;">
+  <div class="shaded_box">
+    <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
+    <p class="box_header">Developer Resources</p>
 
-* [Source Control](/developers/how-to/source-control/) Packages
-  contributed to _Bioconductor_ are added to the project subversion
-  (SVN) repository. Contributing developers are then provided with
-  password protected write access to their portion of the
-  codebase. Anonymous access to this repository is also available. It
-  is also possible to [use github](/developers/how-to/git-mirrors/) to
-  manage your SVN repository.
+    <p>Package Development</p>
 
-* [Build Reports](/checkResults/) Changes in R and _Bioconductor_
-  could result in the malfunction of software packages. Therefore,
-  package maintainers should periodically check their packages to
-  ensure that they are still working as expected. To facilitate this,
-  _Bioconductor_ maintains a daily build system to check that every
-  package in the release and development branches can be built via `R
-  CMD build` and checked via `R CMD check`.
+    <ul>
+      <li><a class="symlink" href="/developers/how-to/useDevel">Use <em>Bioconductor</em> 'devel'</a></li>
+      <li><a class="symlink" href="/developers/how-to/biocViews">Use biocViews</a></li>
+      <li><a class="symlink" href="/developers/how-to/version-numbering">Version Numbering</a></li>
+      <li><a class="symlink" href="/developers/how-to/deprecation">Function Deprecation</a></li>
+      <li><a class="symlink" href="/developers/package-end-of-life/">Package End-of-life</a></li>
+    </ul>
 
-* [Release Schedule](/developers/release-schedule/) _Bioconductor_ has
-  two releases per year and package developers are expected to make
-  sure that their package passes build and check without any errors
-  and warnings before each release. Packages that fail to pass these
-  checks will regretfully be dropped from the next release of
-  _Bioconductor_.
+    <p>Coding Practice</p>
 
-* [Developer Mailing List](https://stat.ethz.ch/mailman/listinfo/bioc-devel)
-  The developer mailing list facilitates communication amongst
-  _Bioconductor_ developers.
+    <ul>
+      <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
+      <li><a class="symlink" href="/developers/how-to/unitTesting-guidelines">Unit Tests</a></li>
+      <li><a class="symlink" href="/developers/how-to/coding-style">Coding Style</a></li>
+      <li><a class="symlink" href="/developers/how-to/c-debugging">Debug C/C++ Code</a></li>
+      <li><a class="symlink" href="/developers/how-to/mavericks-howto">C++ / Mavericks Best Practises</a></li>
+    </ul>
 
-* [Subversion Log](/developers/svnlog/) Recent commits to the
-  development branch of _Bioconductor_ subversion repository.
+    <p>Other</p>
 
-* [RSS Feeds](/developers/rss-feeds/)
-  _Bioconductor_ build system updates RSS feeds for each package
-  if there were any issues (warnings, errors, timeouts) with
-  the package build, in both release and devel. Package maintainers
-  are encouraged to subscribe to these feeds to be
-  notified immediately if there are any build problems.
+    <ul>
+      <li><a class="symlink" href="/developers/how-to/workflows/">Creating Workflow Vignettes</a></li>
+    </ul>
 
-<h2 id="howto"><i>Bioconductor</i> Coding Resources</h2>
+  </div>
+</div>
 
-Package development
-
-* [Use the 'devel' Version of _Bioconductor_](/developers/how-to/useDevel)
-* [Version Numbering](/developers/how-to/version-numbering)
-* [Using biocViews](/developers/how-to/biocViews)
-* [Function Deprecation](/developers/how-to/deprecation)
-* [Package End-of-life](/developers/package-end-of-life/)
-
-Coding practice
-
-* [Robust and Efficient Code](/developers/how-to/efficient-code)
-* [Unit Tests](/developers/how-to/unitTesting-guidelines)
-* [Coding Style](/developers/how-to/coding-style)
-* [Debug C/C++ Code](/developers/how-to/c-debugging)
-* [C++ / Mavericks Best Practises](/developers/how-to/mavericks-howto)
-
-Other
-
-* [Creating Workflow Vignettes](/developers/how-to/workflows/)
+<br clear="all"/>
 
 <h2 id="contact">Contact us</h2>
 
