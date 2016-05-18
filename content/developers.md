@@ -11,16 +11,15 @@ at different stages of their package.
     <p>Design and Submission</p>
 
     <ul>
-      <li><a class="symlink" href="/developers/how-to/buildingPackagesForBioc/">New Package Primer</a></li>
       <li><a class="symlink" href="/developers/package-guidelines/">Package Guidelines</a></li>
       <li><a class="symlink" href="/developers/package-submission">Package Submission</a></li>
+      <li><a class="symlink" href="/developers/how-to/buildingPackagesForBioc/">New Package Primer</a></li>
     </ul>
 
     <p>Package Maintenance</p>
 
     <ul>
       <li><a class="symlink" href="/developers/how-to/source-control/">SVN Source Control</a></li>
-      <li><a class="symlink" href="/developers/how-to/git-mirrors/">Git Mirrors</a></li>
       <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
       <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
       <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
@@ -42,6 +41,7 @@ at different stages of their package.
     <ul>
       <li><a class="symlink" href="/developers/how-to/useDevel">Use <em>Bioconductor</em> 'devel'</a></li>
       <li><a class="symlink" href="/developers/how-to/biocViews">Use biocViews</a></li>
+      <li><a class="symlink" href="/developers/how-to/git-mirrors/">Use Git Mirrors</a></li>
       <li><a class="symlink" href="/developers/how-to/version-numbering">Version Numbering</a></li>
       <li><a class="symlink" href="/developers/how-to/deprecation">Function Deprecation</a></li>
       <li><a class="symlink" href="/developers/package-end-of-life/">Package End-of-life</a></li>
