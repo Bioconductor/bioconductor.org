@@ -20,7 +20,7 @@ at different stages of their package.
 
     <ul>
       <li><a class="symlink" href="/developers/how-to/source-control/">SVN Source Control</a></li>
-      <li><a class="symlink" href="/developers/how-to/git-mirrors/">Using Git with SVN</a></li>
+      <li><a class="symlink" href="/developers/how-to/git-mirrors/">Git Mirrors</a></li>
       <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
       <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
       <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
