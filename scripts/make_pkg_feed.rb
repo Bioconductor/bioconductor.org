@@ -49,7 +49,7 @@ descs = []
 
 for pkg in pkgs
   # HTTParty.head doesn't work for some reason
-  url = URI("http://bioconductor.org/packages/devel/bioc/html/#{pkg}.html")
+  url = URI("http://bioconductor.org/packages/#{pkg}/")
   resp = nil
   Net::HTTP.start(url.host, url.port){|http|
    response = http.head(url.path)
