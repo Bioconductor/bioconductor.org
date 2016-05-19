@@ -7,4 +7,4 @@
 7. RNASeq Workflow [HTML](B3_RNASeq_Workflow.html) [R](B3_RNASeq_Workflow.R) [Rmd](B3_RNASeq_Workflow.Rmd)
 8. Next Steps [HTML](B4_Next_Steps.html) [R](B4_Next_Steps.R) [Rmd](B4_Next_Steps.Rmd)
 
-[Course Package](BiocIntroRPCI_0.1.2.tar.gz)
+[Course Package](BiocIntroRPCI_0.1.3.tar.gz)
