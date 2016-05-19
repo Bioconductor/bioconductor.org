@@ -68,7 +68,7 @@ for pkg in pkgs
     parse_result = Dcf.parse(description)
     dcs = parse_result.first
     descs.push dcs
-    
+
     break if descs.size == pkg_limit
   end
 end
@@ -99,7 +99,7 @@ doc.elements.each("rss/channel") {|i| elem = i}
 
 
 for desc in descs
-  url = "http://bioconductor.org/packages/devel/bioc/html/#{desc["Package"]}.html"
+  url = "http://bioconductor.org/packages/#{desc["Package"]}/"
 
   item = Element.new "item"
   title = Element.new "title"
@@ -116,15 +116,15 @@ for desc in descs
   author.text = desc["Author"]
   description  = Element.new "description"
   description.attributes["disable-output-escaping"] = "yes"
-  
+
   # attr?
-  
+
   link = %Q(\n<br/><a href="#{url}">link</a>)
-  
+
   description.text = "#{desc["Description"]}#{link}"
-  
-  
-  
+
+
+
   item.add_element title
   item.add_element pubdate
   item.add_element author
@@ -135,4 +135,3 @@ end
 # for some reason, indentation breaks on merlot2
 #doc.write($stdout, 2)
 doc.write($stdout)
-
