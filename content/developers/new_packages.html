@@ -3,7 +3,7 @@
 as an <a href="/rss/new_packages.rss">RSS Feed</a>.</P>
 
 <% for package in recent_packages() %>
-  <p><a class="symlink" href="/packages/devel/bioc/html/<%=package[:package]%>.html"><%=package[:package]%></a> <%= package[:title]%></p>
+  <p><a class="symlink" href="/packages/<%=package[:package]%>/"><%=package[:package]%></a> <%= package[:title]%></p>
 
 <blockquote><%= package[:description]%></blockquote>
 <% end %>
