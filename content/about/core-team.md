@@ -6,6 +6,7 @@
 
 * Martin Morgan (Project Lead)
 * Valerie Obenchain
+* Lori Shepherd
 
 [Fred Hutch](http://fredhutch.org)
 
