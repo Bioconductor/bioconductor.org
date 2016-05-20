@@ -499,9 +499,9 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
   crumbs = []
   crumbs.push home_crumb
-  ver_crumb = Nanoc3::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
+  ver_crumb = Nanoc::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
   crumbs.push ver_crumb
-  repo_crumb = Nanoc3::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
+  repo_crumb = Nanoc::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
   crumbs.push repo_crumb unless index_page
   crumbs.push last_crumb
   crumbs
