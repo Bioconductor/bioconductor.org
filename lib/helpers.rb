@@ -1,10 +1,10 @@
 # encoding: utf-8
 require 'nanoc'
-include Nanoc3::Helpers::Text
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::Breadcrumbs
-include Nanoc3::Helpers::XMLSitemap
-include Nanoc3::Helpers::HTMLEscape
+include Nanoc::Helpers::Text
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Breadcrumbs
+include Nanoc::Helpers::XMLSitemap
+include Nanoc::Helpers::HTMLEscape
 
 
 # coding: utf-8
