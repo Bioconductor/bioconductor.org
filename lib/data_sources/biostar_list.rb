@@ -7,7 +7,7 @@ require 'rss'
 
 
 
-class BiostarList < Nanoc3::DataSource
+class BiostarList < Nanoc::DataSource
     identifier :biostar_list
 
     def fetch
