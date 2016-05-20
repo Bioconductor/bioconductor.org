@@ -89,9 +89,9 @@ class BiocViews < Nanoc::DataSource
 
 
   def get_index_page(packages, repo, version)
-    item = Nanoc3::Item.new("", {}, "all-#{repo}-#{version}")
+    item = Nanoc::Item.new("", {}, "all-#{repo}-#{version}")
     item[:rebase] = true
-    rep = Nanoc3::ItemRep.new(item, :package_index_page)
+    rep = Nanoc::ItemRep.new(item, :package_index_page)
 
 
     item[:package_index_page] = true
@@ -169,7 +169,7 @@ class BiocViews < Nanoc::DataSource
         for package in packages.keys
           repo = k
           id = "/#{version}/#{repo}#{package}/"
-          item = Nanoc3::Item.new("", packages[package], id)
+          item = Nanoc::Item.new("", packages[package], id)
 
           item[:rebase] = true
           item[:subnav] = []
@@ -189,7 +189,7 @@ class BiocViews < Nanoc::DataSource
           else
             item[:bioc_version_str] = nil
           end
-          rep = Nanoc3::ItemRep.new(item, :unique_name)
+          rep = Nanoc::ItemRep.new(item, :unique_name)
 
           for sym in link_list
             new_sym = "#{sym.to_s}_repo".to_sym
