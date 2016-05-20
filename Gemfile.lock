@@ -58,6 +58,8 @@ GEM
     multipart-post (2.0.0)
     nanoc (3.7.4)
       cri (~> 2.3)
+    nanoc3 (3.3.0)
+      nanoc (>= 3.3.0)
     naught (1.0.0)
     net-http-digest_auth (1.4)
     net-http-persistent (2.9.4)
@@ -129,6 +131,7 @@ DEPENDENCIES
   mechanize
   mime-types
   nanoc
+  nanoc3
   nokogiri
   pg
   pry

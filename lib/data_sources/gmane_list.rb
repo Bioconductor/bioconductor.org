@@ -5,9 +5,8 @@ require 'httparty'
 require 'time'
 require 'yaml'
 require 'fileutils'
-require 'nanoc'
 
-class GmaneList < Nanoc::DataSource
+class GmaneList < Nanoc3::DataSource
   identifier :gmane_list
   def fetch
     fetch_entries().map do |e|
@@ -130,7 +129,7 @@ class GmaneList < Nanoc::DataSource
       }
     end
   end
-
+  
   def write_cache(cache_data)
     cache_data[:cache_time] = Time.now.utc
     open(cache_file, "w") do |f|

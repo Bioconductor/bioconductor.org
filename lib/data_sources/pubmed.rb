@@ -1,10 +1,10 @@
 # encoding: utf-8
 require 'nokogiri'
 require 'httparty'
-require 'nanoc'
+require 'nanoc3'
 
-class PubmedPapers < Nanoc::DataSource
-  identifier :pubmed_papers
+class PubmedPapers < Nanoc3::DataSource
+  identifier :pubmed_papers    
 
   def up
     # set default options here
@@ -27,22 +27,22 @@ class PubmedPapers < Nanoc::DataSource
     end
     FileUtils.mkdir_p(File.dirname(@opts[:cache_file]))
   end
-
+    
   def items
     fetch()
   end
-
-
-  private
-
+    
+    
+  private 
+    
   def fetch
-    cache_data = read_cache()
+    cache_data = read_cache()      
     entries = cache_data[:entries]
-
+      
     if expired?(cache_data)
       puts "Publication cache expired, querying NCBI databases"
       res = []
-      # query individual databases
+      # query individual databases 
       @opts[:db].each_with_index do |db, i|
 	res = res + query_ncbi(db,  @opts[:sort][i])
       end
@@ -63,10 +63,10 @@ class PubmedPapers < Nanoc::DataSource
     else
       puts "Using cached publication data"
     end
-
+    
     entries
   end
-
+  
   def query_ncbi(db, sort)
     print(db.upcase+"... ")
     baseurl = @opts[:baseurl]
@@ -75,19 +75,19 @@ class PubmedPapers < Nanoc::DataSource
     search = "#{baseurl}esearch.fcgi?db=#{db}&term=#{@opts[:term]}&retmax=#{@opts[:retmax]}&sort=#{sort}"
     doc = getXML(search)
     return [] if doc.nil?
-
+    
     id_list = doc.xpath("/eSearchResult/IdList/Id")
     return [] if id_list.empty?
 
-    ## query for results
+    ## query for results 
     query = "#{baseurl}esummary.fcgi?db=#{db}&id=#{join(id_list)}"
     doc = getXML(query)
     return [] if doc.nil?
 
     items = doc.xpath("/eSummaryResult/DocSum")
     return [] if items.empty?
-
-    # XML attribute name mapping
+    
+    # XML attribute name mapping  
     mapping = {
       :date => "PubDate",
       :epub => "EPubDate",
@@ -100,18 +100,18 @@ class PubmedPapers < Nanoc::DataSource
       :pages => "Pages",
       :doi => "DOI"
     }
-
+    
     ## iterate over results
     entries = []
     items.each do |item|
       id = "/#{item.xpath("./Id").text}/"
       attributes = {}
       mapping.each {
-	|key, val|
+	|key, val| 
         content = extract(item, val)
         attributes[key] = content unless content.length == 0 # omit missing entries
       }
-
+      
       begin
 	date = Time.strptime(attributes[:epub], "%Y %b %d")
       rescue
@@ -129,15 +129,15 @@ class PubmedPapers < Nanoc::DataSource
 	  end
 	end
       end
-
+      
       attributes[:date] = date
 
-      entries.push Nanoc::Item.new("unused", attributes, id, nil)
+      entries.push Nanoc3::Item.new("unused", attributes, id, nil)
     end
     puts("done")
     return entries
   end
-
+      
   def getXML(url)
     begin
       data = HTTParty.get(url)
@@ -155,7 +155,7 @@ class PubmedPapers < Nanoc::DataSource
       return Nokogiri::XML(data.body)
     end
   end
-
+    
   ## join the content of NodeSet elements
   def join(x, sep = ",")
     y = []
@@ -171,26 +171,26 @@ class PubmedPapers < Nanoc::DataSource
     paths = names.map { |name| "/Item[@Name='#{name}']" }
     join(item.xpath(".#{paths.join}"), sep = sep)
   end
-
+  
   ## cache management
-
+  
   def read_cache
     if File.exist? @opts[:cache_file]
       YAML.load_file(@opts[:cache_file])
     else
-      {
+      { 
 	:timestamp => nil,
         :entries => []
       }
     end
   end
-
+  
   def write_cache(cache_data)
     open(@opts[:cache_file], "w") do |f|
       f.write(cache_data.to_yaml)
     end
   end
-
+  
   def expired?(cache_data)
     if cache_data[:timestamp]
       ttl = @opts[:ttl].to_i * 60**2 # expiration time in hours
@@ -199,5 +199,5 @@ class PubmedPapers < Nanoc::DataSource
       true
     end
   end
-
+  
 end
