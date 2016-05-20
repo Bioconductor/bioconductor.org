@@ -9,7 +9,7 @@ require 'nokogiri'
 require 'open-uri'
 #require 'date'
 
-class PipermailList < Nanoc3::DataSource
+class PipermailList < Nanoc::DataSource
     identifier :pipermail_list
 
     def fetch
