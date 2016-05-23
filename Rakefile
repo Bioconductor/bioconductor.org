@@ -74,7 +74,7 @@ task :pre_compile do
 end
 
 task :real_compile do
-  fail "compilation failed" unless system "nanoc co"
+  fail "compilation failed" unless system "bundle exec nanoc co"
 end
 
 task :post_compile do
@@ -214,7 +214,7 @@ end
 
 desc "Runs nanoc's dev server on localhost:3000"
 task :devserver => [:build] do
-  system "nanoc aco"
+  system "bundle exec nanoc aco"
 end
 
 
