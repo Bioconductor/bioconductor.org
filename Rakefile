@@ -1,4 +1,5 @@
 require 'rubygems'
+require 'nanoc3'
 require 'nanoc3/tasks'
 require 'yaml'
 require 'fileutils'
