@@ -20,6 +20,7 @@ require 'nokogiri'
 require 'descriptive_statistics'
 require './lib/helpers.rb'
 require 'csv'
+require 'date'
 
 include Open3
 
@@ -648,39 +649,42 @@ end
 # run me with cron every day or so...
 desc "process downloads data"
 task :process_downloads_data do
-  lines = HTTParty.get("http://s3.amazonaws.com/bioc-download-summaries/download_summary.csv")
-  raw_data = []
-  for line in lines
-    raw_data << {num: line.first.to_i, pkg: line.last}
+  urls = %W{
+    http://bioconductor.org/packages/stats/bioc/bioc_pkg_stats.tab
+    http://bioconductor.org/packages/stats/data-annotation/annotation_pkg_stats.tab
+    http://bioconductor.org/packages/stats/data-experiment.html
+  }
+  d = Date.parse(Time.now.to_s)
+  last6 = []
+  for i in 1..6 do
+    x = d << i
+    last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
   end
-  pkgs = []
-  [true, false].each do |state|
-    pkgs += get_list_of_packages(state)
-    pkgs += get_annotation_package_list(state)
-  end
-  pkgs = pkgs.uniq
-  avgs = {}
-  for pkg in pkgs
-    relevant = raw_data.find_all{|i| i[:pkg] == pkg}
-    hits = relevant.map{|i| i[:num]}
-    if hits.length < 6
-      diff = 6 - hits.length
-      diff.times {hits << 0}
-    end
-    avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
-    avg = 0 if avg.nan?
-    avgs[pkg] = avg
-  end
-  percentiles = {}
-  data = avgs.values
-  for pkg in pkgs
-    percentiles[pkg] = data.percentile_rank(avgs[pkg])
-  end
+
   srcdir = File.join('assets', 'images', 'shields', 'downloads')
   destdir = File.join('assets', 'shields', 'downloads')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
-  percentiles.each_pair do |k, v|
+
+  raw_data = Hash.new(0)
+  percentiles = {}
+
+  urls.each do |url|
+    lines = HTTParty.get(url).split("\n")
+    for line in lines
+      next if line =~ /^Package\tYear/ # skip header
+      package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
+      if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
+        raw_data[package] = (raw_data[package] + Integer(downloads))
+      end
+    end
+  end
+
+  raw_data.each do |k, v|
+    percentiles[k] = raw_data.values.percentile_rank v
+  end
+
+  percentiles.each do |k, v|
     img = nil
     case v
     when 95..100
@@ -692,7 +696,7 @@ task :process_downloads_data do
     else
       img = 'available.svg'
     end
-    # puts "#{k}: #{img} (#{v})"
+
     FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))
   end
 end
