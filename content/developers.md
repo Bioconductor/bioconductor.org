@@ -54,7 +54,7 @@ at different stages of their package.
       <li><a class="symlink" href="/developers/how-to/unitTesting-guidelines">Unit Tests</a></li>
       <li><a class="symlink" href="/developers/how-to/coding-style">Coding Style</a></li>
       <li><a class="symlink" href="/developers/how-to/c-debugging">Debug C/C++ Code</a></li>
-      <li><a class="symlink" href="/developers/how-to/mavericks-howto">C++ / Mavericks Best Practises</a></li>
+      <li><a class="symlink" href="/developers/how-to/mavericks-howto">C++ / Mavericks Best Practices</a></li>
     </ul>
 
     <p>Other</p>
