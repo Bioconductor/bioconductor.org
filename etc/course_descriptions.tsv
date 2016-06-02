@@ -1,4 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2016-05-29 - 2016-05-29	[China-R](http://stat2016.china-r.org/en/)	Introduction	China R Conference: Bioconductor for high-throughput genetic data	Martin Morgan	[PDF](2016/China-R/R-China-Morgan-May-2016.pdf)	3.3	3.3
 2016-05-16 - 2016-05-17	[BiocIntroRPCI](2016/BiocIntro-May/)	Introduction	A1: R Intro	Martin Morgan, Lori Shepherd	[HTML](2016/BiocIntro-May/A1_R_Intro.html) [R](2016/BiocIntro-May/A1_R_Intro.R) [Rmd](2016/BiocIntro-May/A1_R_Intro.Rmd)	3.3	3.3
 2016-05-16 - 2016-05-17	[BiocIntroRPCI](2016/BiocIntro-May/)	Introduction	A2: Input and Manipulation	Martin Morgan, Lori Shepherd	[HTML](2016/BiocIntro-May/A2_Input_And_Manipulation.html) [R](2016/BiocIntro-May/A2_Input_And_Manipulation.R) [Rmd](2016/BiocIntro-May/A2_Input_And_Manipulation.Rmd)	3.3	3.3
 2016-05-16 - 2016-05-17	[BiocIntroRPCI](2016/BiocIntro-May/)	Introduction	A3: Statistical Analysis	Martin Morgan, Lori Shepherd	[HTML](2016/BiocIntro-May/A3_Statistical_Analysis.html) [R](2016/BiocIntro-May/A3_Statistical_Analysis.R) [Rmd](2016/BiocIntro-May/A3_Statistical_Analysis.Rmd)	3.3	3.3
