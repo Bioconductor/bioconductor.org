@@ -22,6 +22,8 @@ developers should be developing against R-devel. From mid-April to
 mid-October, developers should use R-release (actually, the R snapshot
 from the R-x-y-branch) for _Bioconductor_ development.
 
+<% rvers = config[:r_version_associated_with_release].split(".")[0..1].join(".") %>
+
 [BiocInstaller]: /packages/BiocInstaller
 
 Using Bioc-devel
@@ -51,57 +53,57 @@ In order to use the `devel` version of _Bioconductor_ during the current
 release cycle, simply call the function `useDevel()` (from the
 `BiocInstaller`) package:
 
-    ## In R-3.3
+    ## In R-<%= rvers %>
     library(BiocInstaller)
     useDevel()
     biocValid()              # checks for out of date packages
     biocLite()               # (optional) updates out of date packages
 
 After doing this, all packages will be installed from the `devel`
-(BioC 3.4) repository.
+(BioC <%=config[:devel_version]%>) repository.
 
 If you also want to work with the `release` version of _Bioconductor_
-(3.2), we recommend maintaining two separate installations of R
-3.3, one to be used with _Bioconductor_ 3.3 (BioC-release) and the
-other to be used with _Bioconductor_ 3.4 (BioC-devel). Run `useDevel()`
+(<%=config[:release_version]%>), we recommend maintaining two separate installations of R
+<%= rvers %>, one to be used with _Bioconductor_ <%=config[:release_version]%> (BioC-release) and the
+other to be used with _Bioconductor_ <%=config[:devel_version]%> (BioC-devel). Run `useDevel()`
 as described above in this latter installation.
 
-An easy way to do this is to have two separate installations of R-3.3.
+An easy way to do this is to have two separate installations of R-<%=config[:release_version]%>.
 
 A more complicated way is to use the `R_LIBS_USER` environment
 variable.  First, create two separate directories. Suggested directory
 names are Linux:
 
-    ~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-release
-    ~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-devel
+    ~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-release
+    ~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-devel
 
 Mac OS:
 
-    ~/Library/R/3.3-bioc-release/library
-    ~/Library/R/3.3-bioc-devel/library
+    ~/Library/R/<%=config[:release_version]%>-bioc-release/library
+    ~/Library/R/<%=config[:release_version]%>-bioc-devel/library
 
 and Windows:
 
-    C:\Users\YOUR_NAME\Documents\R\win-library\3.3-bioc-release
-    C:\Users\YOUR_NAME\Documents\R\win-library\3.3-bioc-devel
+    C:\Users\YOUR_NAME\Documents\R\win-library\<%=config[:release_version]%>-bioc-release
+    C:\Users\YOUR_NAME\Documents\R\win-library\<%=config[:release_version]%>-bioc-devel
 
 (change `YOUR_NAME` to your user name)
 
 Invoke "R for bioc-devel" or "R for bioc-release" from the command
 line on Linux:
 
-    R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-release R
-    R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-devel R
+    R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-release R
+    R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-devel R
 
 Mac OS X:
 
-    R_LIBS_USER=~~/Library/R/3.3-bioc-release/library R
-    R_LIBS_USER=~~/Library/R/3.3-bioc-devel/library R
+    R_LIBS_USER=~~/Library/R/<%=config[:release_version]%>-bioc-release/library R
+    R_LIBS_USER=~~/Library/R/<%=config[:release_version]%>-bioc-devel/library R
 
 and Windows (assuming that R.exe is in PATH):
 
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.3-bioc-release &&  R"
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.3-bioc-devel &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\<%=config[:release_version]%>-bioc-release &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\<%=config[:release_version]%>-bioc-devel &&  R"
 
 When correctly configured, R's `.libPaths()` function will return the
 `release` or `devel` directory as its first entry. Packages are
@@ -117,13 +119,13 @@ Aliases
 On Linux and Mac OS X, you can create a bash alias to save typing. Add the
 following to your ~/bash_profile on Linux:
 
-    alias Rdevel='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-devel R'
-    alias Rrelease='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/3.3-bioc-release R'
+    alias Rdevel='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-devel R'
+    alias Rrelease='R_LIBS_USER=~/R/x86_64-unknown-linux-gnu-library/<%=config[:release_version]%>-bioc-release R'
 
 or Mac OS X
 
-    alias Rdevel='R_LIBS_USER=~/Library/R/3.3-bioc-devel/library R'
-    alias Rrelease='R_LIBS_USER=~/Library/R/3.3-bioc-release/library R'
+    alias Rdevel='R_LIBS_USER=~/Library/R/<%=config[:release_version]%>-bioc-devel/library R'
+    alias Rrelease='R_LIBS_USER=~/Library/R/<%=config[:release_version]%>-bioc-release/library R'
 
 Invoke R from the command line as `Rdevel` or `Rrelease`.
 
@@ -133,7 +135,7 @@ Computer and navigate to a directory that is in your PATH. Then
 right-click and choose New->Shortcut.  In the "type the location of
 the item" box, put:
 
-    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\3.3-bioc-devel &&  R"
+    cmd /C "set R_LIBS_USER=C:\Users\YOUR_NAME\Documents\R\win-library\<%=config[:release_version]%>-bioc-devel &&  R"
 
 (again, it's assumed R.exe is in your PATH) Click "Next", and in the
 "Type a name for this shortcut" box, type
