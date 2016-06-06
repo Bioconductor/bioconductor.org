@@ -32,7 +32,7 @@ installing the web site as a Docker container. See the instructions
 
 ### Ruby
 
-The site requires ruby 1.9.1 or newer.
+The site requires ruby 2.2.2 or newer.
 
 There are numerous issues on various platforms when attempting to install
 appropriate versions of ruby and the necessary ruby packages. The simplest
