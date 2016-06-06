@@ -160,7 +160,7 @@ for more information.
 
 ### Checkout the bioconductor.org codebase
 
-   svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
+    svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
 
 ### Installing Necessary Ruby Packages
 
