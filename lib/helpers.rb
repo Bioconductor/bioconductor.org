@@ -1025,7 +1025,14 @@ def get_mac_packs(package, item)
     res
 end
 
-def is_devel(item)
+def is_old?(item)
+  return false if item.identifier =~ /\/devel\/|\/release\//
+  return false if item.identifier =~ /\/#{config[:devel_version]}\/|\/#{config[:release_version]}\//
+  return true
+end
+
+
+def is_devel?(item)
     return true if item.identifier =~ /\/devel\/|\/#{config[:devel_version]}\//
     return false
 end
@@ -1081,9 +1088,28 @@ def get_release_url(item_rep)
     item_rep.raw_path.sub(/^output/, "").sub(/\/devel\/|\/#{config[:devel_version]}\//, "/release/")
 end
 
+def get_fragment(package, item, item_rep)
+  return \
+    get_devel_fragment(package, item, item_rep) if is_devel? item
+  return \
+    get_old_fragment(package, item, item_rep) if is_old? item
+  return ""
+end
+
+def get_old_fragment(package, item, item_rep)
+  segs = item.identifier.split('/')
+  version_seg = segs.find_index "package-pages"
+  return "" if version_seg.nil? or version_seg >= (segs.length() -1)
+  bioc_version = segs[version_seg+1]
+  str=<<-"EOT"
+<p>This package is for version #{bioc_version} of Bioconductor;
+for the stable, up-to-date release version, see
+<a href="/packages/#{@package[:Package]}/">#{@package[:Package]}</a>.</p>
+EOT
+  str
+end
 
 def get_devel_fragment(package, item, item_rep)
-    return "" unless is_devel(item)
 
     str=<<-"EOT"
 <p>This is the <b>development</b> version of #{@package[:Package]}
@@ -1123,7 +1149,7 @@ def get_source_url(package, item, item_rep)
     else
         url += "bioc-data/"
     end
-    if is_devel(item)
+    if is_devel?(item)
         url += "trunk/"
     else
         pkg_version = segs[4].sub(".", "_")
