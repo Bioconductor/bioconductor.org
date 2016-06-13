@@ -13,14 +13,15 @@
 
 <h2 id="bioc-version">Using <em>Bioconductor</em></h2>
 
-The current release of Bioconductor is version
+The current release of _Bioconductor_ is version
 <%=config[:release_version] %>; it works with R version
 <%=config[:r_version_associated_with_release]%>. Users of older R and
-Bioconductor versions must update their installation to take advantage
-of new features.
+_Bioconductor_ users must update their installation to take advantage
+of new features and to access packages that have been added to
+_Bioconductor_ since the last release.
 
 [Install](#install-R) the latest release of R, then get the latest version of
-Bioconductor by starting R and entering the commands
+_Bioconductor_ by starting R and entering the commands
 
     ## try http:// if https:// URLs are not supported
     source("https://bioconductor.org/biocLite.R")
@@ -32,9 +33,9 @@ Details, including instructions to
 [find](#find-bioconductor-packages), and
 [troubleshoot](#troubleshoot-bioconductor-packages) are provided
 below.  A [devel](/developers/how-to/useDevel/) version of
-Bioconductor is available. There are good
+_Bioconductor_ is available. There are good
 [reasons for using `biocLite()`](#why-biocLite) for managing
-Bioconductor resources.
+_Bioconductor_ resources.
 
 <h2 id="install-R">Install R</h2>
 
@@ -59,7 +60,7 @@ the main ones).
 
 <h2 id="install-bioconductor-packages">Install <em>Bioconductor</em> Packages</h2>
 
-Use the `biocLite.R` script to install Bioconductor packages. To
+Use the `biocLite.R` script to install _Bioconductor_ packages. To
 install core packages, type the following in an R command window:
 
     ## try http:// if https:// URLs are not supported
@@ -86,9 +87,9 @@ to discover available packages.
 
 <h2 id="update-bioconductor-packages">Update Installed <em>Bioconductor</em> Packages</h2>
 
-Bioconductor packages, especially those in the development branch, are
+_Bioconductor_ packages, especially those in the development branch, are
 updated fairly regularly. To identify packages requiring update within
-your version of Bioconductor, start a new session of R and enter
+your version of _Bioconductor_, start a new session of R and enter
 
     ## try http:// if https:// URLs are not supported
     source("https://bioconductor.org/biocLite.R")
@@ -101,15 +102,15 @@ details.
 
 <h3 id="upgrade-bioconductor-packages">Upgrading installed <em>Bioconductor</em> packages</h3>
 
-Some versions of R support more than one version of Bioconductor. To
-use the latest version of Bioconductor for your version of R, enter
+Some versions of R support more than one version of _Bioconductor_. To
+use the latest version of _Bioconductor_ for your version of R, enter
 
     ## try http:// if https:// URLs are not supported
     source("https://bioconductor.org/biocLite.R")
 	biocLite("BiocUpgrade")     ## R version 2.15 or later
 
 Read the help page for `?BiocUpgrade` for additional details. Remember
-that more recent versions of Bioconductor may be available if your
+that more recent versions of _Bioconductor_ may be available if your
 version of R is out-of-date.
 
 For more detail on <em>Bioconductor</em> approaches to versioning, see
@@ -146,7 +147,7 @@ Use the commands
 	biocValid()             ## R version 3.0 or later
 
 to flag packages that are either out-of-date or too new for your
-version of Bioconductor. The output suggests ways to solve identified
+version of _Bioconductor_. The output suggests ways to solve identified
 problems, and the help page `?biocValid` lists arguments influencing
 the behavior of the function.
 
@@ -164,7 +165,7 @@ If you see a message like this:
 * Repeat that command until R says there is no such package.
 * Run the command `source("https://bioconductor.org/biocLite.R")`
 * Run `biocValid()` to ensure your installed packages are
-  valid for the current version of Bioconductor, and follow
+  valid for the current version of _Bioconductor_, and follow
   the instructions it gives you.
 
 
@@ -174,38 +175,38 @@ If you see a message like this:
 
 <h2 id="why-biocLite">Why Use biocLite()?</h2>
 
-`biocLite()` is the recommended way to install Bioconductor
+`biocLite()` is the recommended way to install _Bioconductor_
 packages. There are several reasons for preferring this to the
 'standard' way in which R pacakges are installed via
 `install.packages()`.
 
-Bioconductor has a repository and release schedule that differs from R
-(Bioconductor has a 'devel' branch to which new packages and updates
+_Bioconductor_ has a repository and release schedule that differs from R
+(_Bioconductor_ has a 'devel' branch to which new packages and updates
 are introduced, and a stable 'release' branch emitted once every 6
 months to which bug fixes but not new features are introduced).
 
-A consequence of the mismatch between R and Bioconductor release
-schedules is that the Bioconductor version identified by
+A consequence of the mismatch between R and _Bioconductor_ release
+schedules is that the _Bioconductor_ version identified by
 `install.packages()` is sometimes not the most recent 'release'
 available. For instance, an R minor version may be introduced some
 months before the next Bioc release. After the Bioc release the users
 of the R minor version will be pointed to an out-of-date version of
-Bioconductor.
+_Bioconductor_.
 
 A consequence of the distinct 'devel' branch is that
 `install.packages()` sometimes points only to the 'release'
-repository, whereas Bioconductor developers and users wanting
-leading-edge features wish to access the Bioconductor 'devel'
-repository. For instance, the Bioconductor 3.0 release is available
-for R.3.1.x, so Bioconductor developers and leading-edge users need to
-be able to install the devel version of Bioconductor packages into the
+repository, whereas _Bioconductor_ developers and users wanting
+leading-edge features wish to access the _Bioconductor_ 'devel'
+repository. For instance, the _Bioconductor_ 3.0 release is available
+for R.3.1.x, so _Bioconductor_ developers and leading-edge users need to
+be able to install the devel version of _Bioconductor_ packages into the
 same version (though perhaps different instance or at least library
-location) of R that supports version 2.14 of Bioconductor.
+location) of R that supports version 2.14 of _Bioconductor_.
 
-An indirect consequence of Bioconductor's structured release is that
+An indirect consequence of _Bioconductor_'s structured release is that
 packages generally have more extensive dependencies with one another,
 both explicitly via the usual package mechanisms and implicitly
-because the repository, release structure, and Bioconductor community
+because the repository, release structure, and _Bioconductor_ community
 interactions favor re-use of data representations and analysis
 concepts across packages. There is thus a higher premium on knowing
 that packages are from the same release, and that all packages are
@@ -217,15 +218,15 @@ attach the 'BiocInstaller' package.
 
 In a new installation, the script installs the most recent version of
 the BiocInstaller package relevant to the version of R in use,
-regardless of the relative times of R and Bioconductor release
+regardless of the relative times of R and _Bioconductor_ release
 cycles. The BiocInstaller package serves as the primary way to
-identify the version of Bioconductor in use
+identify the version of _Bioconductor_ in use
 
     > library(BiocInstaller)
     Bioconductor version 2.14 (BiocInstaller 1.14.2), ?biocLite for help
 
 Since new features are often appealing to users, but at the same time
-require an updated version of Bioconductor, the source() command
+require an updated version of _Bioconductor_, the source() command
 evaluated in an out-of-date R will nudge users to upgrade, e.g., in
 R-2.15.3
 
@@ -235,7 +236,7 @@ R-2.15.3
 
 The `biocLite()` function is provided by BiocInstaller. This is a
 wrapper around `install.packages`, but with the repository chosen
-according to the version of Bioconductor in use, rather than to the
+according to the version of _Bioconductor_ in use, rather than to the
 version relevant at the time of the release of R.
 
 `biocLite()` also nudges users to remain current within a release, by
@@ -252,7 +253,7 @@ like to update
     Update all/some/none? [a/s/n]:
 
 The BiocInstaller package provides facilities for switching to the
-'devel' version of Bioconductor
+'devel' version of _Bioconductor_
 
     > BiocInstaller::useDevel()
     Installing package into ‘/home/mtmorgan/R/x86_64-unknown-linux-gnu-library/3.1’
@@ -268,12 +269,12 @@ The BiocInstaller package provides facilities for switching to the
     Bioconductor version 3.0 (BiocInstaller 1.15.5), ?biocLite for help
     'BiocInstaller' changed to version 1.15.5
 
-(at some points in the R / Bioconductor release cycle use of 'devel'
+(at some points in the R / _Bioconductor_ release cycle use of 'devel'
 requires use of a different version of R itself, in which case the
 attempt to `useDevel()` fails with an appropriate message).
 
 The BiocInstaller package also provides `biocValid()` to test that the
-installed packages are not a hodgepodge from different Bioconductor
+installed packages are not a hodgepodge from different _Bioconductor_
 releases (the 'too new' packages have been installed from source
 rather than a repository; regular users would seldom have these).
 
@@ -295,7 +296,7 @@ rather than a repository; regular users would seldom have these).
 
     Error: 9 package(s) out of date; 2 package(s) too new
 
-For users who spend a lot of time in Bioconductor, the features
+For users who spend a lot of time in _Bioconductor_, the features
 outlined above become increasingly important and `biocLite()` is much
 preferred to `install.packages()`.
 
@@ -303,10 +304,8 @@ preferred to `install.packages()`.
 
 <h2 id="preconfigured">Pre-configured <em>Bioconductor</em></h2>
 
-Bioconductor is also available as a set of
+_Bioconductor_ is also available as a set of
 [Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
 [Docker images](/help/docker/).
-
-
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>

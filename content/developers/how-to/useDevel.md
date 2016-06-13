@@ -4,9 +4,9 @@ Using the 'Devel' Version of _Bioconductor_
 Which version of R?
 -------------------
 
-Package developers want to develop against the version of _R_ that
-will be available to users when the _Bioconductor_ devel branch
-becomes the _Bioconductor_ release branch.
+Package authors should develop against the version of _R_ that will be
+available to users when the _Bioconductor_ devel branch becomes the
+_Bioconductor_ release branch.
 
 _R_ has a '.y' release in x.y.z every year, but Bioconductor has a .y
 release (where current devel becomes release) every 6 months.

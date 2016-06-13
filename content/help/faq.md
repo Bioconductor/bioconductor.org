@@ -25,7 +25,19 @@ This is the FAQ, currently under construction.
 
 <h2 id="install-packages-faq">Package Installation</h2>
 
-<h3 class="faq" id="30">biocLite warns that a package is not available</h3>
+<h3 class="faq" id="30">biocLite() warns that a package is not available</h3>
+
+_Bioconductor_ has a 'release' and a 'devel' branch. The 'release'
+branch is intended for most users, and is available using the
+**current version of _R_**. New packages are first added to the
+'devel' branch, and then become available after the next
+_Bioconductor_ release, typically in April and October.  See
+[Why use biocLite()?][1] for more information about our release
+policy, and [these instructions][2] if you wish to use the devel
+branch.
+
+[1]: https://bioconductor.org/install#why-biocLite
+[2]: https://bioconductor.org/developers/how-to/useDevel/
 
 Most Bioconductor packages are available for Windows, Mac OS, and
 Linux operating systems. A few packages are not available on one or
