@@ -35,7 +35,7 @@ release and devel versions of Bioconductor, and (probably, eventually)
 some older versions.
 
 Bioconductor's Docker images are stored in
-[Docker Hub](https://registry.hub.docker.com/repos/bioconductor/);
+[Docker Hub](https://hub.docker.com/u/bioconductor/);
 the source Dockerfiles are in
 [Github](https://github.com/Bioconductor/bioc_docker).
 
