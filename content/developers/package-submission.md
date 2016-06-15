@@ -126,7 +126,7 @@ If you have an associated data package for your software package, please do
 *NOT* create a separate issue in the our tracker repository for that. Instead, please add the
 data package repository to the same issue as the software package.
 The process for doing this is documented
-[here](https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md#multiple-related-packages).
+[here](https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md#submitting-related-packages).
 
 ### Annotation Packages ###
 
