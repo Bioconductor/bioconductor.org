@@ -42,6 +42,16 @@ genomic data. Common workflows include:
   an image of the NHGRI GWAS catalog that is, as of Oct. 31 2014,
   distributed with coordinates defined by NCBI build hg38.
 
+* [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
+  This workflow implements a low-level analysis pipeline for scRNA-seq
+  data using scran, scater and other Bioconductor packages. It describes
+  how to perform quality control on the libraries, normalization of
+  cell-specific biases, basic data exploration and cell cycle phase
+  identification. Procedures to detect highly variable genes,
+  significantly correlated genes and subpopulation-specific marker genes
+  are also shown. These analyses are demonstrated on a range of publicly
+  available scRNA-seq data sets.
+
 <h2 id="advanced">Advanced Workflows</h2>
 
 * [High Throughput Assays](/help/workflows/highthroughputassays/)
@@ -49,12 +59,12 @@ genomic data. Common workflows include:
   spec, HTqPCR, cell-based, and other assays.
 
 * [RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)
-  This lab will walk you through an end-to-end RNA-Seq differential 
-  expression workflow, using DESeq2 along with other Bioconductor 
-  packages. We will start from the FASTQ files, show how these were 
-  aligned to the reference genome, prepare gene expression values 
+  This lab will walk you through an end-to-end RNA-Seq differential
+  expression workflow, using DESeq2 along with other Bioconductor
+  packages. We will start from the FASTQ files, show how these were
+  aligned to the reference genome, prepare gene expression values
   as a count matrix by counting the sequenced fragments, perform
-  exploratory data analysis (EDA), perform differential gene 
+  exploratory data analysis (EDA), perform differential gene
   expression analysis with DESeq2, and visually explore the results.
 
 * [Mass spectrometry and proteomics](/help/workflows/proteomics/)
@@ -109,5 +119,5 @@ genomic data. Common workflows include:
 
 <h2 id="Contribute">Contribute a Workflow</h2>
 
-See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/) 
+See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/)
 for information on contributing your own workflow.
