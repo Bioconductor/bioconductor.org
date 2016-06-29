@@ -212,10 +212,10 @@ def runit()
             oldstatus = redis.hget(pkg, key)
             rhash = redis.hgetall(pkg)
 
-            # if (oldstatus.nil? or oldstatus != status)
+            if (oldstatus.nil? or oldstatus != status)
                 pkgs_to_update[pkg] = 1
                 redis.hset(pkg, key, status)
-            # end
+            end
 
 
 
