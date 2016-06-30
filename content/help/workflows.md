@@ -42,15 +42,6 @@ genomic data. Common workflows include:
   an image of the NHGRI GWAS catalog that is, as of Oct. 31 2014,
   distributed with coordinates defined by NCBI build hg38.
 
-* [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
-  This workflow implements a low-level analysis pipeline for scRNA-seq
-  data using scran, scater and other Bioconductor packages. It describes
-  how to perform quality control on the libraries, normalization of
-  cell-specific biases, basic data exploration and cell cycle phase
-  identification. Procedures to detect highly variable genes,
-  significantly correlated genes and subpopulation-specific marker genes
-  are also shown. These analyses are demonstrated on a range of publicly
-  available scRNA-seq data sets.
 
 <h2 id="advanced">Advanced Workflows</h2>
 
@@ -116,6 +107,17 @@ genomic data. Common workflows include:
   file format stores nucleotide tallies rather than alignments and provides
   efficient random access to cohort-level data. Once created, the tally files
   can be easily manipulated and used to create custom reports and plots.
+
+  * [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
+    This workflow implements a low-level analysis pipeline for scRNA-seq
+    data using scran, scater and other Bioconductor packages. It describes
+    how to perform quality control on the libraries, normalization of
+    cell-specific biases, basic data exploration and cell cycle phase
+    identification. Procedures to detect highly variable genes,
+    significantly correlated genes and subpopulation-specific marker genes
+    are also shown. These analyses are demonstrated on a range of publicly
+    available scRNA-seq data sets.
+
 
 <h2 id="Contribute">Contribute a Workflow</h2>
 
