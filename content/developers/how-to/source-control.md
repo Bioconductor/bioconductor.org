@@ -131,13 +131,35 @@ script
 on the exported package. Here are the commands to check out the
 affydata package:
 
+    ## export add_data.py script
     svn export https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py
+    
+    ## check out the package, without the large data
     svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
+    
+    ## add the large data
     ./add_data.py affydata
 
 Note that experiment data packages are only built twice a week,
 on Wednesdays and Saturdays.
 
+Updating the affydata package might involve commits to
+`data_store/affydata` (if data is being updated), to `pkgs/affydata`
+(if documentation is being updated) or both (e.g., a data change in
+`data_store/affydata` coupled with a version bump in
+`pkgs/affydata/DESCRIPTION`). The file
+`pkgs/affydata/external_data_store.txt` would be appropriate if the
+organization of the data in the data_store were changed. A typical
+work flow might create a subset of the experiment data repository
+
+    svn co -N https://hedgehog.fhcrc.org/bioc-data/trunk/experiment
+    cd experiment
+    svn up pkgs/affydata data_store/affydata pkgs/add_data.py
+    
+make changes, and commit
+
+    svn ci pkgs/affydata data_store/affydata
+   
 ## Having Problems?
 
 ### Lost Subversion username or password
