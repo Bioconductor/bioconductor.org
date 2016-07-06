@@ -189,57 +189,44 @@ Alternative links:
 * <a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a>
 
 
-You'll see the following screen:
+To launch the AMI you'll step through several screens:
 
-<img src="/images/ami/stack1.jpg"/>
-
-Click "continue".
-
-<img src="/images/ami/stack2.jpg"/>
-
-
+* Select Template
+This screen allows you to choose the default AWS S3 template or upload 
+your own. Click "Next".
+* Specify Details
 On this screen, you can choose which version of Bioconductor you want to run.
 If you are not sure, use the version that is already filled in.
 You can also choose an EC2 [instance type](http://aws.amazon.com/ec2/instance-types/).
 The default, t1.micro, is free to use under AWS's
 [free usage tier](http://aws.amazon.com/free/) if you use it for less than 750
 hours a month.
-After choosing Bioconductor version and instance type, click Continue.
-
-<img src="/images/ami/stack3.jpg"/>
-
-Click Continue here to launch the AMI. If you like, you can click Cost
+After choosing Bioconductor version and instance type, click "Next".
+* Options
+Specify any tags (key-value pairs) you want to assign to the image. Click
+"Next".
+* Review
+Click "Create" here to launch the AMI. If you like, you can click Cost
 to see how much it will cost to run the AMI with the selected instance type
 (if you have selected the t1.micro instance type, be sure and click
 the "FREE USAGE TIER" box in the page that comes up).
 
+You'll see a screen with the status of the AMI and in a few moments the AMI
+will be ready (when Status changes to CREATE_COMPLETE). You may need to click
+the Refresh button in the upper right-hand corner of the screen (not your
+browser's refresh button).  You can then click on the Outputs tab to get the
+URL and login information for your instance.
 
-You'll see the following screen:
-
-<img src="/images/ami/stack4.jpg"/>
-
-Click Close.
-
-In a few moments, the AMI will be ready (when Status changes to
-CREATE_COMPLETE). You may need to click the Refresh button in the
-upper right-hand corner of the screen (not your browser's refresh button).
-You can then click on the Outputs tab to get
-the URL and login information for your instance:
-
-<img src="/images/ami/stack5.jpg"/>
-
-Click on the link shown in the Stack Outputs table under URL.
-You can then log in to
-RStudio server using the username and password shown.
+Click on the link shown in the Stack Outputs table under URL.  You can then log
+in to RStudio server using the username and password shown.
 
 **Important Note**: When you are finished using the AMI, be sure and
 shut it down to avoid incurring extra charges. Shut it down by
 going to the
 [CloudFormation Console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1)
 and checking the box next to StartBioconductorAMI.
-Then click "Delete Stack" and confirm by clicking "Yes, Delete":
+Then click "Delete Stack" and confirm by clicking "Yes, Delete".
 
-<img src="/images/ami/stack6.jpg">
 
 <a name="connecting_ssh"></a>
 
