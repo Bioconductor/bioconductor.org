@@ -184,10 +184,6 @@ Once you have [created an AWS account](#first-time-steps), you can launch the AM
 
 <b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">Start AMI</a></b>
 
-Alternative links: 
-<a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a>
-
-
 To launch the AMI you'll step through several screens:
 
 * Select Template
@@ -204,6 +200,7 @@ The default, t1.micro, is free to use under AWS's
 [free usage tier](http://aws.amazon.com/free/) if you use it for less than 750
 hours a month.
 After choosing Bioconductor version and instance type, click "Next".
+
 * Options
 
 Specify any tags (key-value pairs) you want to assign to the image. Click
