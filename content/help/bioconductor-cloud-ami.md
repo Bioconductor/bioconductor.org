@@ -184,17 +184,19 @@ Once you have [created an AWS account](#first-time-steps), you can launch the AM
 
 <b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">Start AMI</a></b>
 
-Alternative links:
-
-* <a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a>
+Alternative links: 
+<a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a>
 
 
 To launch the AMI you'll step through several screens:
 
 * Select Template
+
 This screen allows you to choose the default AWS S3 template or upload 
 your own. Click "Next".
+
 * Specify Details
+
 On this screen, you can choose which version of Bioconductor you want to run.
 If you are not sure, use the version that is already filled in.
 You can also choose an EC2 [instance type](http://aws.amazon.com/ec2/instance-types/).
@@ -203,9 +205,12 @@ The default, t1.micro, is free to use under AWS's
 hours a month.
 After choosing Bioconductor version and instance type, click "Next".
 * Options
+
 Specify any tags (key-value pairs) you want to assign to the image. Click
 "Next".
+
 * Review
+
 Click "Create" here to launch the AMI. If you like, you can click Cost
 to see how much it will cost to run the AMI with the selected instance type
 (if you have selected the t1.micro instance type, be sure and click
