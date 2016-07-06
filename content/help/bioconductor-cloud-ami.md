@@ -216,9 +216,9 @@ to see how much it will cost to run the AMI with the selected instance type
 (if you have selected the t1.micro instance type, be sure and click
 the "FREE USAGE TIER" box in the page that comes up).
 
-You'll see a screen with the status of the AMI and in a few moments the AMI
-will be ready (when Status changes to CREATE_COMPLETE). You may need to click
-the Refresh button in the upper right-hand corner of the screen (not your
+A screen will appear with the status of the AMI. The instance will be ready
+after a few moments when Status changes to CREATE_COMPLETE. You may need to
+click the Refresh button in the upper right-hand corner of the screen (not your
 browser's refresh button).  You can then click on the Outputs tab to get the
 URL and login information for your instance.
 
