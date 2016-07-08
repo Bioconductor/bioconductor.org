@@ -108,7 +108,7 @@ genomic data. Common workflows include:
   efficient random access to cohort-level data. Once created, the tally files
   can be easily manipulated and used to create custom reports and plots.
 
-  * [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
+* [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
   This workflow implements a low-level analysis pipeline for scRNA-seq
   data using scran, scater and other Bioconductor packages. It describes
   how to perform quality control on the libraries, normalization of
