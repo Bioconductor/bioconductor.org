@@ -96,9 +96,8 @@ place.
 
 ## Launching the AMI
 
-Once you have [created an AWS account](#first-time-steps), you can launch the AMI simply by clicking on this link:
-
-<b><a target="start_ami" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">Start AMI</a></b>
+Once you have [created an AWS account](#first-time-steps), you can launch one
+of the [pre-loaded AMIs](https://www.bioconductor.org/help/bioconductor-cloud-ami/#ami_ids).
 
 To launch the AMI you'll step through several screens:
 
@@ -150,9 +149,7 @@ Then click "Delete Stack" and confirm by clicking "Yes, Delete".
 
 ## Connecting to your AMI using SSH
 
-Use the following URL to start your AMI:
-
-<b><a target="start_ami_with_ssh" href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMIWithSSH|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_ssh_instance.json">Start AMI with SSH</a></b>
+Start one of the [pre-loaded AMIs](https://www.bioconductor.org/help/bioconductor-cloud-ami/#ami_ids).
 
 Follow the same steps as [above](#launching), but give AWS the name
 of a key-pair that you created in the [first-time steps](#first-time-steps).
