@@ -161,9 +161,7 @@ to your Amazon EC2 instance.
 ## Connecting to your AMI using HTTP and RStudio
 
 Each instance that receives a public IP address is also given an external 
-DNS hostname; for example, ec2-203-0-113-25.compute-1.amazonaws.com.
-
-The Public IP is part of the external DNS hostname. For example if the Public 
+DNS hostname. The Public IP is part of the hostname, for example if the Public 
 IP is 50-16-120-30, the external DNS hostname is 
 ec2-50-16-120-30.compute-1.amazonaws.com. Note the use of dash in the DNS
 hostname vs dots in the IP.
