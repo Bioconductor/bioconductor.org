@@ -11,10 +11,10 @@
 [Fred Hutch](http://fredhutch.org)
 
 * Herv&eacute; Pag&egrave;s
-* Dan Tenenbaum
 
 Recent alumni
 
+* Dan Tenenbaum
 * Brian Long
 * Jim Hester
 * Jim Java
