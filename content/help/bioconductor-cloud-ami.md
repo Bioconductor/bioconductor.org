@@ -12,6 +12,7 @@ the AMI</a></b>. Additional instructions below.
 * <a href="#first-time-steps">First-Time Steps</a>
 * <a href="#launching">Launching The AMI</a>
 * <a href="#connecting_ssh">Connecting to your AMI using SSH</a>
+* <a href="#connecting_rstudio">Connecting to your AMI using HTTP and Rstudio</a>
 * <a href="#ami_ids">AMI IDs</a>
 * <a href="#scenarios">Scenarios for using your Bioconductor instance</a>
 * <a href="#rgraphviz">Using Rgraphviz</a>
@@ -101,49 +102,30 @@ of the [pre-loaded AMIs](https://www.bioconductor.org/help/bioconductor-cloud-am
 
 To launch the AMI you'll step through several screens:
 
-* Select Template
+* Choose AMI
+Choose version of Bioconductor you want to run.
+* Choose Instance Type
+The current AMIs were created from instances with 4 cores and 16 GiB of memory.
+* Configure Instance
+Defaults are usually fine.
+* Add Storage
+Only necessary if you want to store large files with the instance.
+* Tag Instance
+Specify any tags (key-value pairs) you want to assign to the image.
+* Configure Security Group
+Specify port 22 for SSH (default) and add port 80 for http (Rstudio) access.
+* Review and Launch
 
-This screen allows you to choose the default AWS S3 template or upload 
-your own. Click "Next".
+View the progress of the launching instance by going to the EC2 dashboard
+then click 'running instances'. Once the instance is 'running' it's ready
+to go. 
 
-* Specify Details
-
-On this screen, you can choose which version of Bioconductor you want to run.
-If you are not sure, use the version that is already filled in.
-You can also choose an EC2 [instance type](http://aws.amazon.com/ec2/instance-types/).
-The default, t1.micro, is free to use under AWS's
-[free usage tier](http://aws.amazon.com/free/) if you use it for less than 750
-hours a month.
-After choosing Bioconductor version and instance type, click "Next".
-
-* Options
-
-Specify any tags (key-value pairs) you want to assign to the image. Click
-"Next".
-
-* Review
-
-Click "Create" here to launch the AMI. If you like, you can click Cost
-to see how much it will cost to run the AMI with the selected instance type
-(if you have selected the t1.micro instance type, be sure and click
-the "FREE USAGE TIER" box in the page that comes up).
-
-A screen will appear with the status of the AMI. The instance will be ready
-after a few moments when Status changes to CREATE_COMPLETE. You may need to
-click the Refresh button in the upper right-hand corner of the screen (not your
-browser's refresh button).  You can then click on the Outputs tab to get the
-URL and login information for your instance.
-
-Click on the link shown in the Stack Outputs table under URL.  You can then log
-in to RStudio server using the username and password shown.
-
-**Important Note**: When you are finished using the AMI, be sure and
-shut it down to avoid incurring extra charges. Shut it down by
-going to the
-[CloudFormation Console](https://console.aws.amazon.com/cloudformation/home?region=us-east-1)
-and checking the box next to StartBioconductorAMI.
-Then click "Delete Stack" and confirm by clicking "Yes, Delete".
-
+**Important Note**: When you are finished using the AMI, be sure to stop or
+terminate the instance. Click on the instance and select the desired action
+from the 'Actions' -> 'Instance State'. If you stop the instance
+you are still charged for storage. Termination eliminates all further charges
+but also looses any changes you've made and any new session needs to be
+started fresh from one of the pre-loaded AMIs.
 
 <a name="connecting_ssh"></a>
 
@@ -151,13 +133,13 @@ Then click "Delete Stack" and confirm by clicking "Yes, Delete".
 
 Start one of the [pre-loaded AMIs](https://www.bioconductor.org/help/bioconductor-cloud-ami/#ami_ids).
 
-Follow the same steps as [above](#launching), but give AWS the name
-of a key-pair that you created in the [first-time steps](#first-time-steps).
-(A list of your keypairs is available
-[here](https://console.aws.amazon.com/ec2/home?region=us-east-1#s=KeyPairs)).
+Follow the same steps as [above](#launching). On the 'Running Instances' 
+page select the instance and get the public IP from the 'Description' tab
+at the bottom.
 
-The Outputs tab will display the ssh command you should use to connect
-to your instance.
+If the public IP was 50.16.120.30 the basic ssh command is
+
+	ssh -i bioconductor-bob-mylaptop.em ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
 
 You can vary this command. If you want to use programs or R packages that use X11, be sure and add a -X flag, to make the command something like this:
 
@@ -174,6 +156,20 @@ Our examples, however, will use the command-line versions of these programs, whi
 Once you have pasted this command into your Terminal or Command Prompt window (and pressed Enter) you should be connected
 to your Amazon EC2 instance.
 
+<a name="connecting_rstudio"></a>
+
+## Connecting to your AMI using HTTP and RStudio
+
+Each instance that receives a public IP address is also given an external 
+DNS hostname; for example, ec2-203-0-113-25.compute-1.amazonaws.com.
+
+The Public IP is part of the external DNS hostname. For example if the Public 
+IP is 50-16-120-30, the external DNS hostname is 
+ec2-50-16-120-30.compute-1.amazonaws.com. Note the use of dash in the DNS
+hostname vs dots in the IP.
+
+Paste the hostname in your browser and it should take you to the RStudio
+Server login page. Log in with the username `ubuntu` and password `bioc`.
 
 <a name="ami_ids"></a>
 
