@@ -2,15 +2,11 @@
 
 ## Current and Recent Members
 
-[Roswell Park](http://roswellpark.org)
-
 * Martin Morgan (Project Lead)
+* Herv&eacute; Pag&egrave;s
 * Valerie Obenchain
 * Lori Shepherd
-
-[Fred Hutch](http://fredhutch.org)
-
-* Herv&eacute; Pag&egrave;s
+* Marcel Ramos
 
 Recent alumni
 
