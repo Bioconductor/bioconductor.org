@@ -42,29 +42,36 @@ site](http://cran.fhcrc.org/manuals.html).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-
 <h2 id="package-types">Types of Packages</h2>
 
 Most packages contributed by users are [software][software-pkgs]
 packages that perform analytic calculations. Users also contribute
 [annotation][annotation-pkgs] and [experiment data][exptdata-pkgs]
-packages. Annotation packages are database-like packages that provide
+packages.
+
+Annotation packages are database-like packages that provide
 information linking identifiers (e.g., Entrez gene names or Affymetrix
 probe ids) to other information (e.g., chromosomal location, Gene
-Ontology category). Experiment data packages provide data sets that
-are used, often by software packages, to illustrate particular
-analyses. An excellent practice is to develop a software package, and
-to provide or use an existing experiment data package to give a
-comprehensive illustration of the methods in the software package. If 
-the data files of a package are larger than 100 MB but less than 2 GB, 
-bioconductor now supports the use of [Git Large File Storage][gitlfs] 
-(Git LFS). Please be aware Git LFS is free for all users up to 1 GB of 
-data and a monthly usage of 1 GB of bandwidth; more data and bandwidth 
-can be purchases at the contributers expense. The guidelines below apply 
-to all packages, but annotation and experiment data packages are not 
-required to conform to the space limitations of software packages. 
-Developers wishing to contribute annotation or experiment data packages 
-should seek [additional support][support] associated with package submission.
+Ontology category).
+
+Experiment data packages provide data sets that are used, often by
+software packages, to illustrate particular analyses.
+
+An excellent practice is to develop a software package, and to provide
+or use an existing experiment data package to give a comprehensive
+illustration of the methods in the software package. If the data files
+of a package are larger than 100 MB but less than 2 GB, _Bioconductor_
+now supports the use of [Git Large File Storage][gitlfs] (Git LFS)
+during package contribution. Please be aware Git LFS is free for all
+users up to 1 GB of data and a monthly usage of 1 GB of bandwidth;
+more data and bandwidth can be purchases at the contributers
+expense.
+
+The guidelines below apply to all packages, but annotation and
+experiment data packages are not required to conform to the space
+limitations of software packages.  Developers wishing to contribute
+annotation or experiment data packages should seek
+[additional support][support] associated with package submission.
 
 [software-pkgs]: /packages/release/bioc/
 [annotation-pkgs]: /packages/release/data/annotation/
