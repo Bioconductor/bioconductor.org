@@ -139,7 +139,7 @@ at the bottom.
 
 If the public IP was 50.16.120.30 the basic ssh command is
 
-	ssh -i bioconductor-bob-mylaptop.em ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
+	ssh -i bioconductor-bob-mylaptop.pem ubuntu@ec2-50-16-120-30.compute-1.amazonaws.com
 
 You can vary this command. If you want to use programs or R packages that use X11, be sure and add a -X flag, to make the command something like this:
 
