@@ -54,8 +54,13 @@ information linking identifiers (e.g., Entrez gene names or Affymetrix
 probe ids) to other information (e.g., chromosomal location, Gene
 Ontology category).
 
-Experiment data packages provide data sets that are used, often by
-software packages, to illustrate particular analyses.
+Experiment data packages provide data sets that are used, often by software
+packages, to illustrate particular analyses. These packages contain curated
+data from an experiment, teaching course or publication and in most cases
+contain a single data set. Collections of related data sets can be hosted in
+the ExperimentHub resource. Instructions for adding data to ExperimentHub are
+in the [ExperimentHubData
+vignette](http://www.bioconductor.org/packages/3.4/bioc/vignettes/ExperimentHubData/inst/doc/ExperimentHubData.html).
 
 An excellent practice is to develop a software package, and to provide
 or use an existing experiment data package to give a comprehensive
