@@ -1552,11 +1552,9 @@ def get_available(package, ver, view)
   srcdir = File.join('assets', 'images', 'shields', 'availability')
   destdir = File.join('assets', 'shields', 'availability', ver)
   FileUtils.mkdir_p destdir
-  puts("img is #{img}")
   src = File.join(srcdir, "#{img}.svg")
   dest = File.join(destdir, "#{package['Package']}.svg")
   res = FileUtils.copy(File.join(srcdir, "#{img}.svg"), File.join(destdir, "#{package['Package']}.svg"))
-  puts("copied #{src} to #{dest} with result #{res}.")
 end
 
 def get_build_results(package)
