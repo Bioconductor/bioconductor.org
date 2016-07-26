@@ -21,6 +21,7 @@ require 'descriptive_statistics'
 require './lib/helpers.rb'
 require 'csv'
 require 'date'
+require 'dcf'
 
 include Open3
 
@@ -701,6 +702,28 @@ task :process_downloads_data do
 end
 
 # set this to run in crontab
+desc "get pkg availability info"
+task :get_availability_shields  do
+#  dante
+  site_config = YAML.load_file("./config.yaml")
+  for reldev in ['release', 'devel']
+    numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
+    unsupported_platforms = {}
+    meat_index_file = File.join("tmp", "build_dbs","#{reldev}-bioc.meat-index.txt")
+    json_file = File.join("assets", "packages", "json", numeric_version, "bioc",
+      "packages.json")
+    mitxt = File.readlines(meat_index_file).join
+    meat_index = Dcf.parse(mitxt)
+    json_obj = JSON.parse(File.read(json_file))
+    for item in meat_index
+      view = json_obj[item['Package']]
+      next if view.nil?
+      get_available(item, numeric_version, view)
+    end
+  end
+end
+
+# set this to run in crontab
 desc "get info about post tags"
 task :get_post_tag_info do
   get_post_tag_info()
@@ -798,7 +821,8 @@ end
 desc "get all shields"
 task :get_all_shields => [:get_build_dbs, :get_svn_logs,
   :process_downloads_data, :get_post_tag_info,
-  :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets]
+  :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets,
+  :get_availability_shields]
 
 # should be run every time mirror info in config.yaml changes
 # that's hard to remember do to, so

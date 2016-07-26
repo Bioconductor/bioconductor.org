@@ -1481,27 +1481,10 @@ def get_build_report_link(package)
     "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
 end
 
-def pkg_platforms(package) # returns all, none, or some
-  unsupported_platforms = nil
-  is_built = ['bioc/', 'data/experiment/'].include? package[:repo]
-  if is_built
-    repo = package[:repo].sub(/\/$/, "").gsub("/", "-")
-    version = package[:bioc_version_str].sub('opment', '').downcase
-    meat_index = File.join("tmp", "build_dbs","#{version}-#{repo}.meat-index.txt")
-    mi = File.open(meat_index, 'r')
-    curpkg = nil
-    mi.each_line do |line|
-      if line =~ /^Package:/
-        curpkg = line.strip.sub(/^Package: /, '').strip
-      end
-      if curpkg == package[:Package] and line =~ /^UnsupportedPlatforms: /
-        unsupported_platforms = line.strip.sub(/^UnsupportedPlatforms: /, '').strip.split(',').map{|i| i.strip}
-        unsupported_platforms = nil if unsupported_platforms == ["None"]
-        break
-      end
-    end
-    mi.close
-  end
+
+def pkg_platforms(package, view) # returns all, none, or some
+  unsupported_platforms = view['UnsupportedPlatforms']
+  unsupported_platforms = nil if unsupported_platforms == "None"
 
   unless unsupported_platforms.nil?
     winbad = unsupported_platforms.find_all{|i| i =~ /win/}
@@ -1515,33 +1498,25 @@ def pkg_platforms(package) # returns all, none, or some
     end
   end
   all_win_archs = (win_format(package) !~ /only/)
-  has_src = package.has_key? "source.ver".to_sym
-  has_sl = package.has_key? "mac.binary.ver".to_sym
-  has_mav = package.has_key? "mac.binary.mavericks.ver".to_sym
-  has_win32 = package.has_key? "win.binary.ver".to_sym
-  has_win64 = package.has_key? "win64.binary.ver".to_sym
-  needs_compilation = package[:NeedsCompilation] == 'yes'
-  keys = %w(source.ver mac.binary.ver mac.binary.mavericks.ver
+  has_src = view.has_key? "source.ver"
+  has_mav = view.has_key? "mac.binary.mavericks.ver"
+  has_win32 = view.has_key? "win.binary.ver"
+  has_win64 = view.has_key? "win64.binary.ver"
+  needs_compilation = view['NeedsCompilation'] == 'yes'
+  keys = %w(source.ver mac.binary.mavericks.ver
   win.binary.ver win64.binary.ver)
-  unless package[:repo] == "bioc/" # non-software packages
-    if has_src
-      return 'all'
-    else
-      return 'none'
-    end
-  end
 
   missing = []
   for key in keys
-    unless package.has_key? key.to_sym
+    unless view.has_key? key
       missing << key
     end
   end
 
 
-  if package.has_key? :OS_type and package[:OS_type] == 'unix' # some or none
+  if view.has_key? 'OS_type' and view['OS_type'] == 'unix' # some or none
     if needs_compilation
-      if has_src and has_mav and has_sl
+      if has_src and has_mav
         return 'some'
       else
         return 'none'
@@ -1571,13 +1546,17 @@ def pkg_platforms(package) # returns all, none, or some
 
 end
 
-def get_available(package)
-  img = pkg_platforms(package)
-  ver = package[:bioc_version_str].downcase.sub('opment', '')
+def get_available(package, ver, view)
+  img = pkg_platforms(package, view)
+  # ver = package[:bioc_version_str].downcase.sub('opment', '')
   srcdir = File.join('assets', 'images', 'shields', 'availability')
   destdir = File.join('assets', 'shields', 'availability', ver)
   FileUtils.mkdir_p destdir
-  FileUtils.copy(File.join(srcdir, "#{img}.svg"), File.join(destdir, "#{package[:Package]}.svg"))
+  puts("img is #{img}")
+  src = File.join(srcdir, "#{img}.svg")
+  dest = File.join(destdir, "#{package['Package']}.svg")
+  res = FileUtils.copy(File.join(srcdir, "#{img}.svg"), File.join(destdir, "#{package['Package']}.svg"))
+  puts("copied #{src} to #{dest} with result #{res}.")
 end
 
 def get_build_results(package)

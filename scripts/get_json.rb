@@ -127,6 +127,7 @@ class GetJson
       "LinkingTo",  "vignettes", "vignetteTitles", "Rfiles", "htmlDocs",
       "htmlTitles"]
     for dcf in dcfs
+      dcf = dcf.first if dcf.is_a? Array
       for key in dcf.keys
         if plural_fields.include? key
           dcf[key] = Dcf.get_value_as_array(dcf[key])

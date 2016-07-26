@@ -19,11 +19,16 @@ tr = TableRower.new
 <tr>
 
 
-<% # shield 1: availability
-get_available(@package) # copies appropriate svg.
-%>
+<% # shield 1: availability %>
+
+<% if ['data/annotation/', 'data/experiment/'].include? @package[:repo] %>
+    <% av_img = '/images/shields/availability/all.svg' %>
+<% else %>
+    <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
+<% end %>
+
 <td>
-<span class="do_not_rebase"><a href="#archives"><img border="0" src="/shields/availability/<%=@package[:bioc_version_str].downcase.sub('opment', '') %>/<%=@package[:Package]%>.svg" title="Whether the package is available on all platforms; click for details."/></a></span>
+<span class="do_not_rebase"><a href="#archives"><img border="0" src="<%=av_img%>" title="Whether the package is available on all platforms; click for details."/></a></span>
 </td>
 <%=tr.betweencells%>
 
