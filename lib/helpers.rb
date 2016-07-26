@@ -1555,6 +1555,7 @@ def get_available(package, ver, view)
   src = File.join(srcdir, "#{img}.svg")
   dest = File.join(destdir, "#{package['Package']}.svg")
   res = FileUtils.copy(File.join(srcdir, "#{img}.svg"), File.join(destdir, "#{package['Package']}.svg"))
+  puts("copied #{src} to #{dest}")
 end
 
 def get_build_results(package)
