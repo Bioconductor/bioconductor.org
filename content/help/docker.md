@@ -69,6 +69,8 @@ images:
   [Proteomics](/packages/release/BiocViews.html#___Proteomics) biocView.
 * *sequencing*: everything in *core*, plus all packages tagged with the
   [Sequencing](/packages/release/BiocViews.html#___Sequencing) biocView.
+* *metabolomics*: everything in *core*, plus all packages tagged with the
+  [Metabolomics](/packages/release/BiocViews.html#___Metabolomics) biocView.
 
 #### List of Containers
 
@@ -80,12 +82,14 @@ At present, the following containers are available:
 * bioconductor/devel_microarray
 * bioconductor/devel_proteomics
 * bioconductor/devel_sequencing
+* bioconductor/devel_metabolomics
 * bioconductor/release_base
 * bioconductor/release_core
 * bioconductor/release_flow
 * bioconductor/release_microarray
 * bioconductor/release_proteomics
 * bioconductor/release_sequencing
+* bioconductor/release_metabolomics
 
 ## Using the containers
 
