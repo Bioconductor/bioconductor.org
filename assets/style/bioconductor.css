@@ -670,3 +670,8 @@ td.docFixedWidth
   padding:40px 30px 10px 30px;
   font-size:11px;
 }
+
+/* limit image width to prevent oversized figures on workflow pages */
+img {
+  max-width: 100%;
+}
