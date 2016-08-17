@@ -72,7 +72,7 @@ data_sources:
   encoding: utf-8
   config:
     encoding: utf-8
-- items_root: /mailing-list-posts
+- items_root: /
   type: biostar_list
   encoding: utf-8
   config:

@@ -6,11 +6,6 @@ require 'httparty'
 @@config = YAML.load_file("./config.yaml")
 
 
-compile '/mailing-list-posts/' do
-  filter :erb
-  ## no layout as this gets included in homepage '/'
-end
-
 compile '/style/*/' do
   filter :sass
 end
@@ -55,11 +50,7 @@ end
 
 # routing rules
 
-route '/mailing-list-posts/' do
-  nil
-end
-
-route '/mailing-list-posts/[0-9]+/' do
+route '/biostar_list/[0-9]+/' do
   nil
 end
 
