@@ -2,7 +2,7 @@
 
 July 10-15, 2016<br />
 Bressanone-Brixen, Italy<br />
-URL: http://www.huber.embl.de/csama2016/
+URL: [http://www.huber.embl.de/csama2016/](http://www.huber.embl.de/csama2016/)
 
 Lecturers: Simon Anders, Institute for Molecular Medicine, Helsinki;
 Jennifer Bryan, University of British Columbia, Vancouver; Vincent
