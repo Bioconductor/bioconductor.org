@@ -65,8 +65,6 @@
   <% end %>
   SVN Revision: <%= w[:svn_revision] %></br/>
   Install with (under BioC <%= @config[:release_version] %>):<br/>
-  <code><pre>
-source("http://bioconductor.org/workflows.R")
-workflowInstall("<%=w[:package]%>")
-  </pre></code>
+  <pre>source("http://bioconductor.org/workflows.R")
+workflowInstall("<%=w[:package]%>")</pre>
 </div>
