@@ -332,6 +332,7 @@ task :get_workflows do
   #FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir_p "workflows_tmp"
   dest_dir = "help/workflows"
+  FileUtils.mkdir_p "content/#{dest_dir}"
   # f = File.open("content/#{dest_dir}.yaml", "w")
   # f.puts "---"
   # f.puts "title: Workflows"
