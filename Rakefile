@@ -329,10 +329,14 @@ desc "Get Docbuilder Workflows"
 task :get_workflows do
   site_config = YAML.load_file("./config.yaml")
   home = Dir.pwd
-  #FileUtils.rm_rf "workflows_tmp"
   FileUtils.mkdir_p "workflows_tmp"
   dest_dir = "help/workflows"
-  FileUtils.mkdir_p "content/#{dest_dir}"
+  asset_dir = "assets/#{dest_dir}"
+  md_dir = "content/#{dest_dir}"
+  FileUtils.rm_rf asset_dir
+  FileUtils.rm_rf md_dir
+  FileUtils.mkdir_p asset_dir
+  FileUtils.mkdir_p md_dir
   # f = File.open("content/#{dest_dir}.yaml", "w")
   # f.puts "---"
   # f.puts "title: Workflows"
