@@ -83,8 +83,11 @@ The **vignette** field is mandatory but all other fields are
 optional. Here's an example
 
     ---
-    Author: My Name
-    Date: March 16, 2015
+    title: My Workflow Title
+    author: My Name
+    date: March 16, 2015
+    output:
+      BiocStyle::html_document
     vignette: >
       %\VignetteIndexEntry{Replace this with the title of your vignette}
       %\VignetteEngine{knitr::rmarkdown}
@@ -93,6 +96,10 @@ optional. Here's an example
 The **vignette** field is necessary to tell the build system
 which builder to use (in this case, the rmarkdown package)
 and what the title of the vignette is.
+
+The **output** field specifies the document format of the compiled vignette
+distributed with the workflow package. If omitted, it defaults to
+`rmarkdown::html_document`.
 
 This metadata (but not the contents of the *vignette* field) will be 
 rendered in the "About This Document" box that appears at the
