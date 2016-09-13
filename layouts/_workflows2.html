@@ -70,3 +70,14 @@ workflowInstall("<%=w[:package]%>")</pre>
 </div>
 
 <h1><%=@item[:title]%></h1>
+<% if defined?(md) %>
+  <% if md[:author] %>
+    <h3><i><%=
+    if md[:author].respond_to?("collect")
+     md[:author].collect{ |a| a[:name] }.join(", ")
+    else
+      md[:author]
+    end
+    %></i></h3>
+  <% end %>
+<% end %>

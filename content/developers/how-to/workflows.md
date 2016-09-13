@@ -113,7 +113,7 @@ document. Here's how you would solve this in markdown; you can
 do something similar in Latex.
 
 First, set up a code chunk that is evaluated but not echoed, and whose
-results are hidden. We also set warning=FALSE to be sure that 
+results are hidden. We also set `warning=FALSE` to be sure that 
 no output from this chunk ends up in the document:
 
     ```{r, echo=FALSE, results="hide", warning=FALSE}
