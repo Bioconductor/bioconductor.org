@@ -72,12 +72,20 @@ workflowInstall("<%=w[:package]%>")</pre>
 <h1><%=@item[:title]%></h1>
 <% if defined?(md) %>
   <% if md[:author] %>
-    <h3><i><%=
-    if md[:author].respond_to?("collect")
-     md[:author].collect{ |a| a[:name] }.join(", ")
+  <% author = md[:author] %>
+  <%=
+if author.respond_to?("collect")
+  res = author.collect do |a|
+    if a.respond_to?("keys")
+      "<h3><i>#{a[:name]}</i></h3><address class='author_afil'>#{a[:affiliation]}</address>"
     else
-      md[:author]
+      "<h3><i>#{a}</i></h3>"
     end
-    %></i></h3>
+  end
+  res.join("")
+else
+  "<h3><i>#{author}</i></h3>"
+end
+%>
   <% end %>
 <% end %>
