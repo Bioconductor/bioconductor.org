@@ -30,11 +30,11 @@ Anyone who is a bioinformatics domain expert.
   [here](https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/), username
   and password is **readonly**.)
 
-* Write a vignette in LaTeX or Markdown, using the 
- [knitr](http://yihui.name/knitr/) package. Commit it to the 
+* Write a vignette in Markdown, using the 
+ [rmarkdown](http://rmarkdown.rstudio.com/) package. Commit it to the 
  svn location above. Alternatively, you can write a full
  R package in this location (in this case, it's not required to use
- knitr for your vignette).
+ rmarkdown for your vignette).
 
  * Go to the [DocBuilder Web App](https://docbuilder.bioconductor.org/app/).
    Log in with your SVN username and password.
@@ -66,7 +66,7 @@ snippet at the beginning of your .Rmd file:
     </script>
 
 Then you can use math the same way you would in `LaTeX`, except the symbols for escaping it 
-are different. For inline formulae, use <span>\\</span>(N<span>\\)</span>, and for displayed 
+are different. For inline formulas, use <span>\\</span>(N<span>\\)</span>, and for displayed 
 equations, use <span>$</span>$N<span>$</span>$. 
 
 The first will render as \\(N\\) and the second as $$N$$ .
@@ -150,6 +150,21 @@ will not produce any output since the package has already been loaded:
     library(BSgenome.Hsapiens.UCSC.hg19)
     library(RNAseqData.HNRNPC.bam.chr14)
     ```
+
+## Citations
+
+To manage citations in your workflow document,
+specify the bibliography file in the document metadata header.
+
+    bibliography: references.bib
+    link-citations: true
+    
+You can then use citation keys in the form of [@label] to cite an entry with an identifier "label".
+The **link-citations** option makes your citations hyperlinked to the corresponding bibliography entries.
+
+Normally, you will want to end your document with a section header "References" or similar, after which the bibliography will be appended.
+
+For more details see the [rmarkdown documentation](http://rmarkdown.rstudio.com/authoring_pandoc_markdown.html#citations).
 
 ## Questions
 
