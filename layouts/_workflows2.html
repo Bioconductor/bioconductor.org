@@ -1,70 +1,69 @@
 <%# Need to handle it for the workflow index page which may not have the variables below assigned. %>
 <div class="shaded_box">
-  <% 
-  w = workflow_helper(item)
-  %>
   <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
   <p class="box_header">About This Document <span class="olive">&raquo;</span></p>
-  Package: <%= w[:package] %><br/>
-  Built with Bioconductor (R): <%= w[:built_with_bioc]%>  (<%= w[:built_with_R]%>)<br/>
-
 
   <% 
   ri = RowIndexer.new
+  w = workflow_helper(item)
   if w.has_key? :user_defined_metadata 
       md = w[:user_defined_metadata]
-      keys = md.keys.sort 
   end
   %>
 
-
-
-
   <table>
     <tbody>
-      <% if w.has_key? :user_defined_metadata %>
-        <% for key in keys %>
-          <% next if [:output, :bibliography, :vignette].include? key %>
-          <tr class="<%= ri.rowclass %>">
-            <td><%= key %></td>
-            <td><%= md[key] %></td>
-          </tr>
-        <% end %>
-      <% end %>
+      <tr class="<%= ri.rowclass %>">
+        <td>Package name</td>
+        <td><%= w[:package] %></td>
+      </tr>
+      <tr class="<%= ri.rowclass %>">
+        <td>Built with Bioconductor (R)</td>
+        <td><%= w[:built_with_bioc]%>  (<%= w[:built_with_R]%>)</td>
+      </tr>
+      <tr class="<%= ri.rowclass %>">
+        <td>Last Built</td>
+        <td><%= w[:built_at] %></td>
+      </tr>
+      <tr class="<%= ri.rowclass %>">
+        <td>Last Modified</td>
+        <td><%= w[:last_commit]%> (r<%= w[:svn_revision] %>)</td>
+      </tr>
       <tr class="<%= ri.rowclass %>">
         <td>Source Package</td>
-        <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a><br/></td>
+        <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a></td>
       </tr>
       <tr class="<%= ri.rowclass %>">
         <td>Windows Binary</td>
         <td>
           <% if w.has_key? :win_pkg %>
-            <a href="<%=w[:win_pkg]%>"><%=w[:win_pkg]%></a><br/>
+            <a href="<%=w[:win_pkg]%>"><%=w[:win_pkg]%></a>
           <% end %>
         </td>
       </tr>
       <tr class="<%= ri.rowclass %>">
-        <td>Mac OS 10.6 (Snow Leopard)</td>
+        <td>Mac OS X 10.10 (Yosemite)</td>
         <td>
           <% if w.has_key? :mac_pkg %>
-            <a href="<%=w[:mac_pkg]%>"><%=w[:mac_pkg]%></a><br/>
+            <a href="<%=w[:mac_pkg]%>"><%=w[:mac_pkg]%></a>
           <% end %>
         </td>    
       </tr>
-
+      <tr class="<%= ri.rowclass %>">
+        <td>R Script</td>
+        <td><a href="<%=w[:r_source]%>"><%=w[:r_source]%></a>
+        </td>    
+      </tr>
+          
     </tbody>
   </table>
-  <a href="<%=w[:r_source]%>">R Script</a>
+  
   <% if w.has_key? :output_file and w[:output_file] =~ /\.pdf$/i %>
     | <a href="<%=w[:output_file]%>">PDF Vignette</a>
   <% end %>
   <br/>
-  Last Built At: <%= w[:built_at]%><br/>
-  <% if w.has_key? :first_committed %>
-  First Committed: <%= w[:first_committed]%><br/>
-  <% end %>
-  SVN Revision: <%= w[:svn_revision] %></br/>
-  Install with (under BioC <%= @config[:release_version] %>):<br/>
+  
+  To install this workflow under Bioconductor <%= @config[:release_version] %>, start R and enter:<br/>
   <pre>source("http://bioconductor.org/workflows.R")
 workflowInstall("<%=w[:package]%>")</pre>
 </div>
