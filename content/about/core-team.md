@@ -7,6 +7,7 @@
 * Valerie Obenchain
 * Lori Shepherd
 * Marcel Ramos
+* Greg Wargula
 
 Recent alumni
 
