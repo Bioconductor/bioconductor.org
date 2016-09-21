@@ -67,24 +67,3 @@
   <pre>source("http://bioconductor.org/workflows.R")
 workflowInstall("<%=w[:package]%>")</pre>
 </div>
-
-<h1><%=@item[:title]%></h1>
-<% if defined?(md) %>
-  <% if md[:author] %>
-  <% author = md[:author] %>
-  <%=
-if author.respond_to?("collect")
-  res = author.collect do |a|
-    if a.respond_to?("keys")
-      "<h3><i>#{a[:name]}</i></h3><address class='author_afil'>#{a[:affiliation]}</address>"
-    else
-      "<h3><i>#{a}</i></h3>"
-    end
-  end
-  res.join("")
-else
-  "<h3><i>#{author}</i></h3>"
-end
-%>
-  <% end %>
-<% end %>
