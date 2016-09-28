@@ -25,7 +25,7 @@ class String
   end
 end
 
-module Dcf
+module DcfHelper
   def self.parse(input)
     ret = {}
     lines = input.split("\n")
@@ -106,7 +106,7 @@ class GetJson
         end
       end
       if line.empty?
-        pdcf = Dcf.parse(dcf)
+        pdcf = DcfHelper.parse(dcf)
         view_dcfs.push pdcf
         dcf = ""
       else
@@ -130,7 +130,7 @@ class GetJson
       dcf = dcf.first if dcf.is_a? Array
       for key in dcf.keys
         if plural_fields.include? key
-          dcf[key] = Dcf.get_value_as_array(dcf[key])
+          dcf[key] = DcfHelper.get_value_as_array(dcf[key])
         end
       end
       key = dcf["Package"]
