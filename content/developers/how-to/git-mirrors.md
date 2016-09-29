@@ -62,10 +62,6 @@ If you simply want to use git locally on your machine and do not need to have a
 publicly accessible git repository on GitHub (or elsewhere) you can simply
 clone your package from the mirror directly.
 
-If you are using the Git-Svn bridge, **please** delete your bridge (see
-instructions in the next section) before continuing.
-
-
   1. `git clone https://github.com/Bioconductor-mirror/REPO` to clone the repository to your machine.
   2. `cd REPO` to switch to the REPO directory.
   3. `bash /path/to/update_remotes.sh` to setup the git remotes.
