@@ -101,10 +101,6 @@ The **output** field specifies the document format of the compiled vignette
 distributed with the workflow package. If omitted, it defaults to
 `rmarkdown::html_document`.
 
-This metadata (but not the contents of the *vignette* field) will be 
-rendered in the "About This Document" box that appears at the
-top of the web page.
-
 ## Tidying package loading output
 
 Most workflows load a number of packages and you do not want
