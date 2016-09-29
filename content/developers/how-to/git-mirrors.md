@@ -77,14 +77,6 @@ instructions in the next section) before continuing.
 
 ### Scenario 2: Set Up Your Own GitHub Repository ###
 
-If you are currently using the Git-Svn Bridge please disable it at
-<https://gitsvn.bioconductor.org/>. 
-[Log in](https://gitsvn.bioconductor.org/login), 
-[list your bridges](https://gitsvn.bioconductor.org/my_bridges),
-and delete the one you want to migrate. **If you migrate to
-git mirrors without deleting your Git-svn bridge, your
-repository could be damaged!**
-
 If you do not already have a public git repository for package REPO the
 simplest thing to do is navigate to
 `https://github.com/Bioconductor-mirror/REPO` and click the `Fork` button in
@@ -113,6 +105,7 @@ When you're done, be sure and merge any changes from svn back into the git maste
     git merge devel
 
 ### Dealing with prior history / merge conflicts ###
+
 If your Git repository has prior history before being added to SVN or you are
 running into merge conflicts when trying to run `git svn rebase` the best way
 forward is to [git cherry-pick](https://git-scm.com/docs/git-cherry-pick) the
