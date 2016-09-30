@@ -153,10 +153,8 @@ To manage citations in your workflow document,
 specify the bibliography file in the document metadata header.
 
     bibliography: references.bib
-    link-citations: true
     
 You can then use citation keys in the form of [@label] to cite an entry with an identifier "label".
-The **link-citations** option makes your citations hyperlinked to the corresponding bibliography entries.
 
 Normally, you will want to end your document with a section header "References" or similar, after which the bibliography will be appended.
 
