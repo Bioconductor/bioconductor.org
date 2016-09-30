@@ -25,18 +25,19 @@ versions:
 ## set to "[]" if none are available.
 devel_repos:
 - "bioc"
+- "data/annotation"
 - "data/experiment"
 ##- "data/annotation"
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
-  linux: "zin1"
-  windows: "moscato1"
-  mac_mavericks: "oaxaca"
+  linux: "malbec1"
+  windows: "tokay1"
+  mac_mavericks: "morelia"
 active_release_builders:
   linux: "zin2"
   windows: "moscato2"
-  mac_mavericks: "morelia"
+  mac_mavericks: "oaxaca"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
