@@ -133,10 +133,10 @@ affydata package:
 
     ## export add_data.py script
     svn export https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/add_data.py
-    
+ 
     ## check out the package, without the large data
     svn co https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/affydata
-    
+ 
     ## add the large data
     ./add_data.py affydata
 
@@ -155,11 +155,23 @@ work flow might create a subset of the experiment data repository
     svn co -N https://hedgehog.fhcrc.org/bioc-data/trunk/experiment
     cd experiment
     svn up pkgs/affydata data_store/affydata pkgs/add_data.py
-    
+ 
 make changes, and commit
 
     svn ci pkgs/affydata data_store/affydata
-   
+ 
+## Annotation Packages
+
+Due to the size of the Annotation files these packages are not stored in svn.
+To update an existing Annotation package please make the new version available 
+in dropbox (or similar) and send an email to maintainer@bioconductor.org. A 
+member of the Bioconductor team will add the package to the appropriate 
+repository.
+
+To contribute a new Annotation package please contact packages@bioconductor.org
+for guidance.
+
+
 ## Having Problems?
 
 ### Lost Subversion username or password
