@@ -107,10 +107,7 @@ Bioconductor packages must pass `R CMD build` (or
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
 Authors should also try to address all notes that arise during build or check.
 
-Packages must also address issues flagged as REQUIRED in the output of
-`R CMD BiocCheck`. The
-[BiocCheck](http://bioconductor.org/packages/devel/BiocCheck) package is a
-set of tests that encompass Bioconductor Best Practices. 
+Packages must also pass `R CMD BiocCheck` with no errors and no warnings. The [BiocCheck](http://bioconductor.org/packages/devel/BiocCheck) package is a set of tests that encompass Bioconductor Best Practices. Every effort should be made to address any notes that arise during this build or check. 
 
 Do not use filenames that differ only in case, as not all file systems are
 case sensitive.
@@ -123,6 +120,8 @@ option ensures that the vignette is built only once.
 
 Vignette and man page examples should not use more than 3GB of memory
 since R cannot allocate more than this on 32-bit Windows.
+
+These requirement are the minimum for package acceptance and will still be subject to other guidelines below and a formal technical review by a Bioconductor team member.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
