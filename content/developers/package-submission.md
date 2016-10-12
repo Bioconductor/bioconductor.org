@@ -109,7 +109,7 @@ Packages must satisfy the following checklist:
   [Contributions](https://github.com/Bioconductor/Contributions/issues/new) repository.
 * Read the [Contribution Guidelines](https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md) for full instructions.
 * Assuming your package is in a
-  [GitHub Repository](https://help.github.com/articles/create-a-repo/),
+  [GitHub Repository](https://help.github.com/articles/create-a-repo/), under a default 'master' branch, 
   add the link to your repository to the issue you are submitting.
 
 *Note - your DESCRIPTION file will be automatically attached the
