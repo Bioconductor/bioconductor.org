@@ -812,7 +812,14 @@ def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
     url_without_protocol = url.sub(/^http:/i, "")
     css_url = "#{url_without_protocol}report.css"
-    html = open(url)
+    begin
+      html = open(url)
+    rescue Exception => e
+      puts "open(url) failed"
+      puts "  url: " + url
+      puts "  message: " + e.message
+      return ""
+    end
     doc = Nokogiri::HTML(html.read)
     doc.encoding = "ascii"
     dateline = doc.css %Q(p[style="text-align: center;"])
