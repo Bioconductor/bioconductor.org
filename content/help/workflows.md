@@ -118,6 +118,15 @@ genomic data. Common workflows include:
   are also shown. These analyses are demonstrated on a range of publicly
   available scRNA-seq data sets.
 
+* [RNA-seq analysis is easy as 1-2-3](/help/workflows/RNAseq123/)
+  This workflow demonstrates how to analyse RNA-sequencing data using the edgeR,
+  limma and Glimma packages. The edgeR package is first used to import,
+  organise, filter and normalise the data, followed by the limma package with
+  its voom method, linear modelling and empirical Bayes moderation to assess
+  differential expression and perform gene set testing. This pipeline is further
+  enhanced by the Glimma package which enables interactive exploration of the
+  results so that individual samples and genes can be examined by the user.
+
 
 <h2 id="Contribute">Contribute a Workflow</h2>
 
