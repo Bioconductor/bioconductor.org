@@ -3,6 +3,36 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.4 release
+
+Software Packages:
+
+* [AffyTiling](/packages/3.1/bioc/html/AffyTiling.html)
+* caFlowQ
+* [cellHTS](/packages/3.2/bioc/html/cellHTS.html)
+* [DASiR](/packages/3.1/bioc/html/DASiR.html)
+* [DAVIDQuery](/packages/3.0/bioc/html/DAVIDQuery.html)
+* [GenoView](/packages/3.0/bioc/html/GenoView.html)
+* [inSilicoDb](/packages/3.1/bioc/html/inSilicoDb.html)
+* [inSilicoMerging](/packages/3.1/bioc/html/inSilicoMerging.html)
+* [jmosaics](/packages/3.2/bioc/html/jmosaics.html)
+* [metaX](/packages/3.2/bioc/html/metaX.html)
+* [MMDiff](/packages/3.2/bioc/html/MMDiff.html)
+* [neaGUI](/packages/3.1/bioc/html/neaGUI.html)
+* [Rolexa](/packages/3.1/bioc/html/Rolexa.html)
+* [RWebServices](/packages/3.2/bioc/html/RWebServices.html)
+* [SJava](/packages/3.2/bioc/html/SJava.html)
+* [SomatiCA](/packages/3.2/bioc/html/SomatiCA.html)
+* [spade](/packages/3.0/bioc/html/spade.html)
+
+Experimental Data Packages:
+
+* [geuvStore](/packages/3.2/data/experiment/html/geuvStore.html)
+* [ind1KD](/packages/3.2/data/experiment/html/ind1KG.html)
+
+1 software package and 2 experimental data packages were marked as deprecated,
+to be removed in the next release. 
+
 ## Packages removed with Bioconductor 3.3 release
 
 No packages were removed with this release.
