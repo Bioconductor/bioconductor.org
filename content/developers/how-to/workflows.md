@@ -21,40 +21,39 @@ building system which will time out if package building takes too long).
 
 Anyone who is a bioinformatics domain expert.
 
-## How do I write a workflow vignette?
+## How do I write and submit a workflow vignette?
 
-* Request that a new directory be created in our SVN repository
-  under "/trunk/madman/workflows" and that you be given read/write access to this
-  directory. You can request this access by emailing 
-  "maintainer at bioconductor dot org". (You can view existing workflow sources
-  [here](https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/), username
-  and password is **readonly**.)
+* Write a package with the same name as the workflow. The workflow vignette
+ written in Markdown, using the [rmarkdown](http://rmarkdown.rstudio.com/)
+ package should be included in the vignette directory. The package does not need
+ man/ or R/ directories nor a data/ directory as ideally workflows make use of
+ existing data in a Bioconductor repository or on the web; the workflow package
+ itself should not contain large data files. Please include a detailed
+ Description in the DESCRIPTION file as this will be used as the abstract on the
+ Bioconductor web site alongside [the other workflows](/help/workflows/).
 
-* Write a vignette in Markdown, using the 
- [rmarkdown](http://rmarkdown.rstudio.com/) package. Commit it to the 
- svn location above. Alternatively, you can write a full
- R package in this location (in this case, it's not required to use
- rmarkdown for your vignette).
+* Submit the package to the [GitHub submission
+  tracker](https://github.com/Bioconductor/Contributions) for a formal
+  review. Please also indicate in the tracker issue that this package is a
+  workflow. 
+  
+* Once the package is approved a new directory will be created in our SVN repository
+  under "/trunk/madman/workflows/<YourPackage>" that you be given read/write
+  access to. Your SVN credentials will be sent to you via email after
+  approval. The SVN repository is where you will make any future commits/updates
+  to your workflow package. (You can view existing workflow sources
+  [here](https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/),
+  username and password is **readonly**.)
 
- * Go to the [DocBuilder Web App](https://docbuilder.bioconductor.org/app/).
-   Log in with your SVN username and password.
-
-* Click on "Create New Jenkins Project".
-  Fill in the directory name from the first step above, and your email address.
-
-* The workflow builder will now try and build your vignette on Mac, Windows, and Linux.
-  You'll receive an email if there were any errors. You can monitor the progress of
-  builds [here](http://docbuilder.bioconductor.org:8080/).
-
-* Every time you commit a change to your workflow directory, another 
-  build will be triggered and you will receive email if it fails.
-
-* When you are ready for your workflow to appear on the 
-  Bioconductor web site, contact "maintainer at bioconductor dot org"
-  and we will allow the workflow to propagate to our web site where it
-  will be listed alongside [the other workflows](/help/workflows/).
-  It will be updated every time there is an SVN commit and 
-  a successful build.
+* A Bioconductor Team member will "Create New Jenkins Project" for your
+  package. Jenkins is an Amazon Web Serice (AWS) instance that manages the
+  Biocondcutor workflows. You can access Jenkins at [DocBuilder Web
+  App](https://docbuilder.bioconductor.org/app/). Log in with your SVN username
+  and password. Every time you commit a change to your workflow directory, the
+  workflow builder will try and build your vignette on Mac, Windows, and
+  Linux. You will receive an email if there were any errors. You can monitor the
+  progress of builds [here](http://docbuilder.bioconductor.org:8080/). After a
+  successful build, the Bioconductor website will be updated accordingly. 
 
 ## Using Math Symbols in a Markdown workflow vignette
 
@@ -73,33 +72,6 @@ The first will render as \\(N\\) and the second as $$N$$ .
 
 See the [Mathjax](https://www.mathjax.org/) documentation for
 more information.
-
-## The metadata preamble
-
-If you submit one or more standalone Rmd files (and not a full
-R package), you **must** have a YAML metadata section.
-
-The **vignette** field is mandatory but all other fields are
-optional. Here's an example
-
-    ---
-    title: My Workflow Title
-    author: My Name
-    date: March 16, 2015
-    output:
-      BiocStyle::html_document
-    vignette: >
-      %\VignetteIndexEntry{Replace this with the title of your vignette}
-      %\VignetteEngine{knitr::rmarkdown}
-    ---
-
-The **vignette** field is necessary to tell the build system
-which builder to use (in this case, the rmarkdown package)
-and what the title of the vignette is.
-
-The **output** field specifies the document format of the compiled vignette
-distributed with the workflow package. If omitted, it defaults to
-`rmarkdown::html_document`.
 
 ## Tidying package loading output
 
