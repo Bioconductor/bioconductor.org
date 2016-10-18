@@ -6,7 +6,7 @@ We are pleased to announce Bioconductor 3.4, consisting of 1294
 software packages, 309 experiment data packages, and 933
 up-to-date annotation packages.
 
-There are 101 new software packages, and many updates and improvements
+There are 100 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.4 is compatible with R 3.3,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -40,7 +40,7 @@ To update to or install Bioconductor 3.4:
 New Software Packages
 =====================
 
-There are 101 new packages in this release of Bioconductor.
+There are 100 new software packages in this release of Bioconductor.
 
 - [alpine](https://bioconductor.org/packages/alpine) Fragment
   sequence bias modeling and correction for RNA-seq transcript
@@ -375,17 +375,6 @@ There are 101 new packages in this release of Bioconductor.
 - [GRmetrics](https://bioconductor.org/packages/GRmetrics) Functions
   for calculating and visualizing growth-rate inhibition (GR)
   metrics.
-
-- [HDF5Array](https://bioconductor.org/packages/HDF5Array) This
-  package implements the HDF5Array class for convenient access and
-  manipulation of HDF5 datasets. In order to reduce memory usage and
-  optimize performance, operations on an HDF5Array object are either
-  delayed or executed using a block processing mechanism. The
-  delaying and block processing mechanisms are independent of the
-  on-disk backend and implemented via the DelayedArray class. They
-  even work on in-memory array-like objects like DataFrame objects
-  (typically with Rle columns), Matrix objects, or ordinary arrays or
-  data frames, where they can improve performance.
 
 - [HelloRanges](https://bioconductor.org/packages/HelloRanges)
   Translates bedtools command-line invocations to R code calling
@@ -9963,7 +9952,7 @@ Changes in version 0.99.0:
 Deprecated and Defunct Packages
 ===============================
 
-18 previously deprecated software packages were removed from the release.
+17 previously deprecated software packages were removed from the release.
 
 1 software package (betr) was marked as deprecated, to be removed in the next release.
 
