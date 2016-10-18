@@ -9737,8 +9737,7 @@ Changes in version 0.99.0:
 Deprecated and Defunct Packages
 ===============================
 
-17 previously deprecated software packages were removed from the release.
-
 1 software package (betr) was marked as deprecated, to be removed in the next release.
 
+17 previously deprecated software packages were removed from the release.
 
