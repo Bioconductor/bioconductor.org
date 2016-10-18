@@ -38,7 +38,7 @@ Anyone who is a bioinformatics domain expert.
   workflow. 
   
 * Once the package is approved a new directory will be created in our SVN repository
-  under "/trunk/madman/workflows/<YourPackage>" that you be given read/write
+  under "/trunk/madman/workflows/\<YourPackage\>" that you be given read/write
   access to. Your SVN credentials will be sent to you via email after
   approval. The SVN repository is where you will make any future commits/updates
   to your workflow package. (You can view existing workflow sources
