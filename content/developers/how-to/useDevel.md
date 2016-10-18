@@ -29,8 +29,6 @@ from the R-x-y-branch) for _Bioconductor_ development.
 Using Bioc-devel
 ----------------
 
-<!--
-
 In order to use the `devel` version of _Bioconductor_ during the current
 release cycle, you must install `R-devel`:
 
@@ -47,7 +45,7 @@ your packages up-to-date. Do this by removing all versions of
     source("https://bioconductor.org/biocLite.R")  # install correct version
     BiocInstaller::biocValid()
 
--->
+<!--
 
 In order to use the `devel` version of _Bioconductor_ during the current
 release cycle, simply call the function `useDevel()` (from the
@@ -147,3 +145,5 @@ Invoke these from the command line as `Rdevel.lnk`.
 Because `R_LIBS_USER` is an environment variable, its value should be
 inherited by any subprocesses started by R, so they should do the
 right thing as well.
+
+-->
