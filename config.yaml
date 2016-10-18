@@ -19,6 +19,7 @@ versions:
 ## release and devel versions (though after a release you should
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
+- "3.4"
 - "3.5"
 ## CHANGE THIS as various parts of the new devel version become available.
 ## set to "[]" if none are available.
@@ -26,7 +27,6 @@ devel_repos:
 - "bioc"
 # - "data/annotation"
 # - "data/experiment"
-##- "data/annotation"
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
