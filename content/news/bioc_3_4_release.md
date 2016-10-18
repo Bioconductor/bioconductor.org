@@ -3,7 +3,7 @@ October 18, 2016
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.4, consisting of 1294
-software packages, 309 experiment data packages, and 916
+software packages, 309 experiment data packages, and 933
 up-to-date annotation packages.
 
 There are 101 new software packages, and many updates and improvements
@@ -30,10 +30,9 @@ Contents
 Getting Started with Bioconductor 3.4
 ======================================
 
-To update to or install Bioconductor 3.3:
+To update to or install Bioconductor 3.4:
 
-1. Install R 3.3.  Bioconductor 3.4 has been designed expressly
-for this version of R.
+1. Install R 3.3 (>= 3.3.1 recommended).  Bioconductor 3.4 has been designed expressly for this version of R.
 
 2. Follow the instructions at
 [http://bioconductor.org/install/](http://bioconductor.org/install/) .
@@ -9964,8 +9963,8 @@ Changes in version 0.99.0:
 Deprecated and Defunct Packages
 ===============================
 
-17 previously deprecated packages were removed from the release.
+18 previously deprecated software packages were removed from the release.
 
-1 package (betr) was marked as deprecated, to be removed in the next release.
+1 software package (betr) was marked as deprecated, to be removed in the next release.
 
 
