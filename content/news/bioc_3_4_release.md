@@ -881,18 +881,6 @@ BUG FIXES
 - fixed error in get_expression(..., dataset="5_stages")- message
   ("returning log2(RPKM)" to "returning RPKM").
 
-[ABSSeq](https://bioconductor.org/packages/ABSSeq)
-------
-
-Version: 2015-08-24
-Date: 2015-08-24
-Category: This is the second version of ABSSeq
-Text: 1) Use NB distribution insead of GP to model the counts
-        difference between conditions 2) Introduce an efficient outlier
-        detection method: moderated MAD 3) Introduce penalty for
-        dispersion estimation 4) Provide moderation of log2 fold-change
-        at expression level and gene-specific dispersion
-
 [affxparser](https://bioconductor.org/packages/affxparser)
 ----------
 
@@ -921,12 +909,6 @@ Changes in version 1.5.2:
 - made BiocParallel the only parallel package for multicore processing
 
 - made zero-replacement a prior probability rather than a pseudocount
-
-[AllelicImbalance](https://bioconductor.org/packages/AllelicImbalance)
-----------------
-
-Version: 1.12.0
-Text:
 
 [alpine](https://bioconductor.org/packages/alpine)
 ------
@@ -1269,27 +1251,24 @@ Text: The version number was bumped for the Bioconductor devel version,
 Version: 0.98
 Category: NEW FEATURES: multiple bins are reclassified using annotated
         junctions
-Text:
 
 [attract](https://bioconductor.org/packages/attract)
 -------
 
 Version: 1.25.2
 Date: 2016-10-13
-Category: Update attract to accept MsigDB data sets in both .gmt and
-        .gmx file formats. Before it was just .gmt files. An error is
-        thrown if custom gene sets are not in .gmt or .gmx format. Also
-        update attract to correct bug when you use reactome database
-        and microarray data
-Text:
+- Update attract to accept MsigDB data sets in both .gmt and
+  .gmx file formats. Before it was just .gmt files. An error is
+  thrown if custom gene sets are not in .gmt or .gmx format. Also
+  update attract to correct bug when you use reactome database
+  and microarray data
 
 Version: 1.25.1
 Date: 2016-05-23
-Category: Corrected bug found when using MsigDB data sets instead of
-        KEGG and reactome. Also added expressionSetGeneFormat to
-        findAttractors and calcFuncSynexprs functions. The vignette was
-        also changed to reflect the update
-Text:
+- Corrected bug found when using MsigDB data sets instead of
+  KEGG and reactome. Also added expressionSetGeneFormat to
+  findAttractors and calcFuncSynexprs functions. The vignette was
+  also changed to reflect the update
 
 [BaalChIP](https://bioconductor.org/packages/BaalChIP)
 --------
@@ -1351,15 +1330,6 @@ Changes in version 1.0.3 (2016-08-31):
 
 - Fixed get_data() and format_data() functions, which did not work when
   multiple chip types were available for an experiment.
-
-[bigmelon](https://bioconductor.org/packages/bigmelon)
---------
-
-Version: 0.99.4
-Text:
-
-Version: 0.1.2
-Text:
 
 [Biobase](https://bioconductor.org/packages/Biobase)
 -------
@@ -1493,115 +1463,6 @@ Changes in version 2.30.0:
 SIGNIFICANT USER-LEVEL CHANGES
 
 - Updated vignette to use BiocStyle and execute most code chunks.
-
-[BioQC](https://bioconductor.org/packages/BioQC)
------
-
-Changes in version 1.1-5:
-
-- Add C-level implementation of Wilcoxon-Mann-Whitney rank sum test
-
-- Documentation and vignettes updated to be ready for Bioconductor
-  submission.
-
-Changes in version 1.1-0:
-
-- Dependencies on BIOS has been resolved by copying the C functions
-  into the package, in order to prepare BioQC for public release. It
-  can now be installed on systems where BIOS is not available.
-
-- Clean-ups and updates of documentations.
-
-Changes in version 1.0-14:
-
-- Add a series of functions related to Shannon entropy: entropy,
-  entropyDiversity, entropySpecificity, sampleSpecialization
-
-Changes in version 1.0-13:
-
-- Add gini, a function to calculate Gini index. It implements the
-  gini_stat function in the BIOS library
-
-Changes in version 1.0-12:
-
-- If the p-value is lower than than the threshold of R (about 10E-320)
-  and thus produces a score of -Inf, the value of 320 is used to avoid
-  -Inf as output.
-
-Changes in version 1.0-11:
-
-- bioqc.Rscript: add command-line option '-appendGmtDesc' to append
-  DESC column in the GMT file to outputs.
-
-Changes in version 1.0-10:
-
-- bioqc.Rscript: add details in the help information of 'chiptype'
-  option
-
-- bioqc.Rscript: accepts 'GeneID' and 'GeneSymbol' as chiptype in a
-  case-insensitive manner
-
-- Update the gmt file to include a few rat tissues (upstream change by
-  Laura Badi, Sep. 3, 2012)
-
-Changes in version 1.0-9:
-
-- bioqc.Rscript: the threshold input is first transformed by
-  10^(-threshold) to make inputting threshold easier
-
-Changes in version 1.0-8:
-
-- filterPmat fixes the warning message when threshold is NULL: it is
-  tested before is.na
-
-Changes in version 1.0-7:
-
-- bioqc.Rscript rounds output to two digits
-
-Changes in version 1.0-6:
-
-- Add absLog10p function to take the absolute base-10 logarithm of
-  p-values
-
-- Add filterPmat
-
-Changes in version 1.0-5:
-
-- bioqc.Rscript accepts -gmt correctly (before it is -gmtfile)
-
-Changes in version 1.0-4:
-
-- exp.tissuemark.affy.roche.symbols.gmt were updated by L. Badi,
-  removing suspected contaminated samples
-
-- bioqc.Rscript maps genes to human orthologues from
-  ChipFetcher-exported files
-
-Changes in version 1.0-3:
-
-- bioqc.Rscript: the dependence on ribiosAnnotation has been
-  simplified: only when chiptype is GeneSymbol, the script does not
-  need ribiosAnnotation
-
-- bioqc.Rscript: annotate GeneID and Probesets have been simplified by
-  using syntax from ribiosAnnotation >= 2.0-0
-
-- bioqc.Rscript: Program exists when no valid GeneSymbol could be
-  found.
-
-Changes in version 1.0-2:
-
-- bioqc.Rscript: Fix supported.ct2 bug seen on the UDIS machine
-
-- bioqc.Rscript: ribiosIO minimum version 1.0-12 added
-
-Changes in version 1.0-1:
-
-- wmw.test has been made more robust: in case no TRUE exists in sub,
-  the function does not fail and return 0 (statistic) or 1 (p-value)
-
-- bioqc.Rscript has been added and published under
-  /SOFT/bi/apps/ribios/scripts
 
 [biosigner](https://bioconductor.org/packages/biosigner)
 ---------
@@ -1753,29 +1614,10 @@ NEW FEATURES
 ------
 
 Version: 1.5.2
-Category: resolve issue 1 about "tl not found
-Text:
-
-Version: 1.5.2
-Category: delete file R/getGeneticProfiles.R
-Text:
-
-Version: 1.5.2
-Category: resolve 'no visible binding for global variable
-Text:
-
-Version: 1.5.2
-Category: add R/aaa.R
-Text:
-
-Version: 3.1
-Text:
-
-Version: 3.2
-Text: dimensions levels will be plot. 1- dialogMetOption(): add
-        "Circos" argument to make the difference between
-        getMetDataMultipleGene() and getListMetData() 2- getGeneList():
-        add rm("GeneListMSigDB"", envir="myGlobalEnv")
+- resolve issue 1 about "tl not found
+- delete file R/getGeneticProfiles.R
+- resolve 'no visible binding for global variable
+- add R/aaa.R
 
 [Cardinal](https://bioconductor.org/packages/Cardinal)
 --------
@@ -1823,46 +1665,33 @@ Changes in version 2.0.1:
 -------
 
 Version: 1.1.5
-Category: We fixed a bug in .addTLB() (called by
-        estimateTechnicalNoise()) that reduced the number of
-        trans-count bins used, though the read counts in those bins
-        were still calculated correctly. Since fixing this bug
-        increased the number of trans-count bins, we adjusted the
-        default values of two settings accordingly
-Text:
 
-Version: 1.1.5
-Category: tlb.minProxOEPerBin: 1,000 changed to 50,000
-Text:
+- We fixed a bug in .addTLB() (called by
+  estimateTechnicalNoise()) that reduced the number of
+  trans-count bins used, though the read counts in those bins
+  were still calculated correctly. Since fixing this bug
+  increased the number of trans-count bins, we adjusted the
+  default values of two settings accordingly
 
-Version: 1.1.5
-Category: tlb.minProxB2BPerBin: 100 changed to 2,500
-Text:
+- tlb.minProxOEPerBin: 1,000 changed to 50,000
 
-Version: 1.1.5
-Category: These values have been chosen to ensure that results should
-        change as little as possible from Chicago 1.1.4. Unless you
-        were using custom values, you should not notice any qualitative
-        differences
-Text:
+- tlb.minProxB2BPerBin: 100 changed to 2,500
 
-Version: 1.1.5
-Category: If you need to re-run chicagoPipeline() (or just
-        estimateTechnicalNoise()) on a chicagoData object created using
-        version 1.1.4 or earlier, please manually update the parameters
-        to their new settings
-Text:
+- These values have been chosen to ensure that results should
+  change as little as possible from Chicago 1.1.4. Unless you
+  were using custom values, you should not notice any qualitative
+  differences
 
-Version: 1.1.5
-Category: cd <- modifySettings(cd,
-        settings=list(tlb.minProxOEPerBin=50000,
-        tlb.minProxB2BPerBin=2500
-Text:
+- If you need to re-run chicagoPipeline() (or just
+  estimateTechnicalNoise()) on a chicagoData object created using
+  version 1.1.4 or earlier, please manually update the parameters
+  to their new settings
 
-Version: 1.1.5
-Category: Many thanks to Thomas Sexton for bringing the bug to our
-        attention and helping us fix it
-Text:
+- cd <- modifySettings(cd, settings=list(tlb.minProxOEPerBin=50000,
+        tlb.minProxB2BPerBin=2500))
+
+- Many thanks to Thomas Sexton for bringing the bug to our attention and
+  helping us fix it
 
 [chipenrich](https://bioconductor.org/packages/chipenrich)
 ----------
