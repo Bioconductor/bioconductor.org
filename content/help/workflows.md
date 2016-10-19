@@ -126,6 +126,14 @@ genomic data. Common workflows include:
   differential expression and perform gene set testing. This pipeline is further
   enhanced by the Glimma package which enables interactive exploration of the
   results so that individual samples and genes can be examined by the user.
+  
+* [Gene Expression Normalization Workflow](/help/workflows/ExpressionNormalizationWorkflow/)
+  This workflow elucidates a customizable strategy to identify the effects of
+  technical and confounding factors on gene expression data and normalize it
+  while preserving the underlying biological features of interest. The example
+  analysis demonstrated here explores how certain technical covariates 
+  influence the interpretation of the impact of Coronary Artery Disease on
+  peripheral blood gene expression.
 
 
 <h2 id="Contribute">Contribute a Workflow</h2>
