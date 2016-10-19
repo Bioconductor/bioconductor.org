@@ -2,7 +2,7 @@ October 18, 2016
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.4, consisting of 1294
+We are pleased to announce Bioconductor 3.4, consisting of 1295
 software packages, 309 experiment data packages, and 933
 up-to-date annotation packages.
 
@@ -9739,5 +9739,5 @@ Deprecated and Defunct Packages
 
 1 software package (betr) was marked as deprecated, to be removed in the next release.
 
-17 previously deprecated software packages were removed from the release.
+16 previously deprecated software packages were removed from the release.
 
