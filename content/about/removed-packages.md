@@ -8,7 +8,6 @@ with their last-available landing pages.
 Software Packages:
 
 * [AffyTiling](/packages/3.1/bioc/html/AffyTiling.html)
-* caFlowQ
 * [cellHTS](/packages/3.2/bioc/html/cellHTS.html)
 * [DASiR](/packages/3.1/bioc/html/DASiR.html)
 * [DAVIDQuery](/packages/3.0/bioc/html/DAVIDQuery.html)
