@@ -354,7 +354,7 @@ task :get_workflows do
   end
 
   FileUtils.mkdir_p "assets/packages/#{site_config['release_version']}/workflows"
-  system(%Q(rsync -av workflows_tmp/CRANrepo/#{site_config['release_version']}/ assets/packages/#{site_config['release_version']}/workflows/))
+  system(%Q(rsync --delete -av workflows_tmp/CRANrepo/#{site_config['release_version']}/ assets/packages/#{site_config['release_version']}/workflows/))
   Find.find("assets/packages/#{site_config['release_version']}/workflows/") do |path|
     if (!File.directory?(path)) and (File.basename(path).start_with? '.')
       FileUtils.rm path
