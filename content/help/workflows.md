@@ -135,6 +135,18 @@ genomic data. Common workflows include:
   influence the interpretation of the impact of Coronary Artery Disease on
   peripheral blood gene expression.
 
+* [Methylation Array Analysis](/help/workflows/methylationArrayAnalysis/)
+  Methylation in the human genome is known to be associated with development and
+  disease. The Illumina Infinium methylation arrays are by far the most common
+  way to interrogate methylation across the human genome. This Bioconductor
+  workflow uses multiple packages for the analysis of methylation array
+  data. Specifically, we demonstrate the steps involved in a typical
+  differential methylation analysis pipeline including: quality control,
+  filtering, normalization, data exploration and statistical testing for
+  probe-wise differential methylation. We further outline other analyses such as
+  differential methylation of regions, differential variability analysis,
+  estimating cell type composition and gene ontology testing. Finally, we
+  provide some examples of how to visualise methylation array data.
 
 <h2 id="Contribute">Contribute a Workflow</h2>
 
