@@ -2,11 +2,11 @@ October 18, 2016
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.4, consisting of 1295
+We are pleased to announce Bioconductor 3.4, consisting of 1296
 software packages, 309 experiment data packages, and 933
 up-to-date annotation packages.
 
-There are 100 new software packages, and many updates and improvements
+There are 101 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.4 is compatible with R 3.3,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -40,7 +40,7 @@ To update to or install Bioconductor 3.4:
 New Software Packages
 =====================
 
-There are 100 new software packages in this release of Bioconductor.
+There are 101 new software packages in this release of Bioconductor.
 
 - [alpine](https://bioconductor.org/packages/alpine) Fragment
   sequence bias modeling and correction for RNA-seq transcript
@@ -115,6 +115,14 @@ There are 100 new software packages in this release of Bioconductor.
 - [BiocWorkflowTools](https://bioconductor.org/packages/BiocWorkflowTools)
   Provides functions to ease the transition between Rmarkdown and
   LaTeX documents when authoring a Bioconductor Workflow.
+
+- [BPRMeth](https://bioconductor.org/packages/BPRMeth)
+  BPRMeth package uses the Binomial Probit Regression likelihood to model
+  methylation profiles and extract higher order features. These features
+  quantitate precisely notions of shape of a methylation profile. Using these
+  higher order features across promoter-proximal regions, we construct a
+  powerful predictor of gene expression. Also, these features are used to
+  cluster proximal-promoter regions using the EM algorithm.
 
 - [CancerInSilico](https://bioconductor.org/packages/CancerInSilico)
   The CancerInSilico package provides an R interface for running
