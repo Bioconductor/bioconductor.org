@@ -25,7 +25,7 @@ versions:
 ## set to "[]" if none are available.
 devel_repos:
 - "bioc"
-# - "data/annotation"
+- "data/annotation"
 - "data/experiment"
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
