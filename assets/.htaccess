@@ -38,6 +38,9 @@ Header set Cache-Control "max-age=30"
 <FilesMatch "\.csv$">
 Header set Cache-Control "max-age=30"
 </FilesMatch>
+<FilesMatch "^config\.yaml$">
+Header set Cache-Control "max-age=30"
+</FilesMatch>
 
 </ifModule>
 
