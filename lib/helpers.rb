@@ -1638,13 +1638,13 @@ def coverage_url(package)
   shield = File.join("assets", "shields", "coverage",
     dirname, "#{pkgname}.svg")
   unless File.exists? shield
-    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}?branch=#{branch}"
+    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}/branch/#{branch}"
   end
   content = File.readlines(shield).first
   if (content =~ /unknown/)
     return "/developers/how-to/unitTesting-guidelines/#coverage"
   else
-    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}?branch=#{branch}"
+    return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}/branch/#{branch}"
   end
 end
 
