@@ -148,6 +148,12 @@ genomic data. Common workflows include:
   estimating cell type composition and gene ontology testing. Finally, we
   provide some examples of how to visualise methylation array data.
 
+* [Gene-level RNA-seq differential expression and pathway
+    analysis](/help/workflows/RnaSeqGeneEdgeRQL/) 
+    Gene-level RNA-seq differential expression and pathway analysis using
+    Rsubread and the edgeR quasi-likelihood pipeline
+
+
 <h2 id="Contribute">Contribute a Workflow</h2>
 
 See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/)
