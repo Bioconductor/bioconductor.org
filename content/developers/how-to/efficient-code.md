@@ -100,4 +100,55 @@ Write `seq_len(n)` or `seq_along(x)` rather than `1:n` or
 is 0 (which often occurs as an unexpected 'edge case' in real code) or
 negative.
 
+### Re-use existing functionality, especially for data import
+
+Common input formats include
+
+<table>
+<tr><td>GTF, GFF, BED, BigWig, ...</td><td><code>rtracklayer::import()</code></td></tr>
+<tr><td>FASTA</td><td><code>Biostrings::readDNAStringSet()</code></td></tr>
+<tr><td>SAM / BAM</td><td><code>Rsamtools::scanBam()</code>, <code>GenomicAlignments::readGAlignment*()</code></td></tr>
+<tr><td>VCF</td><td><code>VariantAnnotation::readVcf()</code></td></tr>
+<tr><td>FASTQ</td><td><code>ShortRead::readFastq()</code></td></tr>
+</table>
+<p></p>
+
+If there are problems, e.g., in performance or parsing your particular
+file type, ask for input from other developers on the bioc-devel
+mailing list. Common disadvantages to 'implementing your own' are the
+introduction of non-standard data representations (e.g., neglecting to
+translate coordinate systems of file formats to Bioconductor objects)
+and user bewilderment.
+
+### Re-use existing classes
+
+Re-use enhances interoperability between _Bioconductor_ packages while
+providing robust code for data manipulation.
+
+Use `GenomicRanges::GRanges` (and `GRangesList`) to represent 1-based,
+closed-interval genomic coordinates.
+
+Use `SummarizedExperiment::SummarizedExperiment` (with or without
+ranges as row data) to coordinate rectangular feature x sample data
+(e.g., RNAseq count matrix) with feature and sample description. Use
+`SummarizedExperiment` rather than the older `ExpressionSet`,
+especially for sequence data.
+
+### Implement `show()` and accessor methods for any custom classes
+
+A `show()` method provides an opportunity to effectively convey
+information to your users without overwhelming them with detail.
+
+Accessors (simple functions that return components of your object)
+rather than direct slot access (using `@`) help to isolate the
+implementation of your class from its interface. Generally `@` should
+only be used in an accessor, all other code should use the
+accessor. The accessor does not need to be exported from the class if
+the user has no need or business accessing parts of your data
+object. Plain-old-functions (rather than generic + method) are often
+sufficient for accessors; it's often useful to employ (consistently) a
+lightweight name mangling scheme (e.g., starting the accessor method
+name with a 2 or 3 letter acronym for your package) to avoid name
+collisions between similarly named functions in other packages.
+
 [microbenchmark]: https://cran.r-project.org/web/packages/microbenchmark
