@@ -8,6 +8,7 @@
 * Lori Shepherd
 * Marcel Ramos
 * Greg Wargula
+* Nitesh Turaga
 
 Recent alumni
 
