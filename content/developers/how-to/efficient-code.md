@@ -5,9 +5,9 @@ coding practices can be very unfortunate. Here are some suggestions.
 
 ## Guiding Principles
 
-1. The primary principle is to make sure your code, and attempts to
-   make it efficient, are correct first. Use `identical()` or
-   `all.equal()` to ensure correctness.
+1. The primary principle is to make sure your code is **correct**. Use
+   `identical()` or `all.equal()` to ensure correctness, and
+   [unit tests][] to ensure consistent results across code revisions.
 
 2. Write robust code. Avoid efficiencies that do not easily handle
    edge cases such as 0 length or `NA` values.
@@ -100,7 +100,7 @@ Write `seq_len(n)` or `seq_along(x)` rather than `1:n` or
 is 0 (which often occurs as an unexpected 'edge case' in real code) or
 negative.
 
-### Re-use existing functionality, especially for data import
+### Re-use existing functionality
 
 Common input formats include
 
@@ -134,10 +134,17 @@ ranges as row data) to coordinate rectangular feature x sample data
 `SummarizedExperiment` rather than the older `ExpressionSet`,
 especially for sequence data.
 
-### Implement `show()` and accessor methods for any custom classes
+### Essential S4 interface
 
-A `show()` method provides an opportunity to effectively convey
-information to your users without overwhelming them with detail.
+For any class you define, implement and use a 'constructor' for object
+creation. A constructor is usually plain-old-function (rather than,
+e.g., a generic with methods). It provides documented and
+user-friendly arguments, while allowing for developer-friendly
+implementation. Use the constructor throughout your own code,
+examples, and vignette.
+
+Implement a `show()` method to effectively convey information to your
+users without overwhelming them with detail.
 
 Accessors (simple functions that return components of your object)
 rather than direct slot access (using `@`) help to isolate the
@@ -152,3 +159,4 @@ name with a 2 or 3 letter acronym for your package) to avoid name
 collisions between similarly named functions in other packages.
 
 [microbenchmark]: https://cran.r-project.org/web/packages/microbenchmark
+[unit tests]: /developers/how-to/unitTesting-guidelines/

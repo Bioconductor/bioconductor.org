@@ -244,14 +244,18 @@ installations, so is often best avoided.
 
 <h2 id="classes">S4 Classes and Methods</h2>
 
-Re-use existing S4 classes and generics where possible. This
-encourages interoperability and simplifies your own package
-development. If your data requires a new representation or function,
-carefully design an S4 class or generic so that other package
-developers with similar needs will be able to re-use your hard work,
-and so that users of related packages will be able to seamlessly use
-your data structures. Do not hesitate to ask on the Bioc-devel mailing
-list for advice.
+Re-use existing functionality, especially for S4
+[input methods][RECReuseFunctions] and
+[S4 classes][RECReuseClasses]. This encourages interoperability and
+simplifies your own package development. 
+
+If your data requires a new representation or function, carefully
+design an S4 class or generic so that other package developers with
+similar needs will be able to re-use your hard work, and so that users
+of related packages will be able to seamlessly use your data
+structures. Do not hesitate to ask on the Bioc-devel mailing list for
+advice. Be sure to implement the
+[essential S4 interface][RECEssentialS4].
 
 Implement a constructor (typically a simple function) if the user is
 supposed to be able to create an instance of your class. Write short
@@ -271,13 +275,22 @@ methods; other approaches are possible and acceptable.
 A Collates: field in the DESCRIPTION file may be necessary to order class and
 method definitions appropriately during package installation.
 
+[RECReuseFunctions]: /developers/how-to/efficient-code/#re-use-existing-functionality
+[RECReuseClasses]: /developers/how-to/efficient-code/#re-use-existing-classes
+[RECEssentialS4]: /developers/how-to/efficient-code/#essential-s4-interface
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<h2 id="vectorized">Vectorized Calculations</h2>
+<h2 id="vectorized">Robust and Efficient Code</h2>
 
-Many R operations are performed on the whole object, not just the elements of
-the object (e.g., sum(x), not x[1] + x[2] + ...). In particular, relatively few
-situations require an explicit for loop.
+Many R operations are performed on the whole object, not just the
+elements of the object (e.g., sum(x), not x[1] + x[2] + ...). In
+particular, relatively few situations require an explicit for
+loop. See the [Vectorize][RECVectorize] section of
+[Robust and Efficient Code][] for additional detail.
+
+[RECVectorize]: /developers/how-to/efficient-code/#vectorize
+[Robust and Efficient Code]: /developers/how-to/efficient-code
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
