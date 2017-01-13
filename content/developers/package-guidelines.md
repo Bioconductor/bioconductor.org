@@ -11,7 +11,7 @@
 * [Package Content](#content)
 * [Package Dependencies](#dependencies)
 * [S4 Classes and Methods](#classes)
-* [Vectorized Calculations](#vectorized)
+* [Robust and Efficient Code](#vectorized)
 * [Parallel Recommendations](#parallel-recommendations)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
