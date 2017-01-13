@@ -29,7 +29,11 @@ packages.
    (exceptions to cross-platform builds are available under limited
    circumstances) at each Bioconductor release. All efforts will be
    made to keep a package in the repository if the maintainer is
-   actively attempting a fix.
+   actively attempting a fix. 
+ 
+   If a package is broken for an extended period of time the maintainer will
+   be given a final 2 week notice. If the package is not fixed by the end 
+   of the 2 weeks, End of Life will be started.
 
 2. Inactive maintainer
 
@@ -111,3 +115,10 @@ devel 3.3 would make the following transitions:
 4. The package remains deprecated in the 'devel' branch for up to 6
    months, after which time Bioconductor core
    team members remove the package from the 'devel' package manifest.
+
+
+## Reversing End of Life
+
+A deprecated package can be un-deprecated and removed from the End of Life
+process if it is fixed before the next Bioconductor release. To have a
+package un-deprecated, please contact maintainer@bioconductor.org.
