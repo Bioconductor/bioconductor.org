@@ -12,6 +12,7 @@
 * [Package Dependencies](#dependencies)
 * [S4 Classes and Methods](#classes)
 * [Robust and Efficient Code](#vectorized)
+* [Querying Web Resources](#web-resources)
 * [Parallel Recommendations](#parallel-recommendations)
 * [End-User Messages](#messages)
 * [Graphics Device](#graphical)
@@ -291,6 +292,20 @@ loop. See the [Vectorize][RECVectorize] section of
 
 [RECVectorize]: /developers/how-to/efficient-code/#vectorize
 [Robust and Efficient Code]: /developers/how-to/efficient-code
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<h2 id="web-queries">Querying Web Resources</h2>
+
+Packages that rely on access to web resources need to be written
+carefully. Web resources can change location, can be temporarily
+unavailable, or can be very slow to access and retrieve. Functions
+that query web resources, should anticipate and handle such situations
+gracefully -- failing quickly and clearly when the resource is not
+available in a reasonable time frame. See [Querying Web Resources][] 
+for additional detail and examples of robust web-query functions.
+
+[Querying Web Resources]: /developers/how-to/web-query
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 

@@ -1,4 +1,4 @@
-# Writing Robust Web-Query Functions
+# Querying Web Resources
 
 Packages that rely on access to web resources need to be written
 carefully. Web resources can change location, can be temporarily

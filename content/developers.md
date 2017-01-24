@@ -51,6 +51,8 @@ at different stages of their package.
 
     <ul>
       <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
+      <li><a class="symlink" href="/developers/how-to/web-query">Querying Web
+      Resources</a></li>
       <li><a class="symlink" href="/developers/how-to/unitTesting-guidelines">Unit Tests</a></li>
       <li><a class="symlink" href="/developers/how-to/coding-style">Coding Style</a></li>
       <li><a class="symlink" href="/developers/how-to/c-debugging">Debug C/C++ Code</a></li>
