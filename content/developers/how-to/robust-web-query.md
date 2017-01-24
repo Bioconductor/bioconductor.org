@@ -1,58 +1,79 @@
 # Writing Robust Web-Query Functions
 
-Web resources (files) have been known to move location and many urls can be
-temporarily unavailable. Functions that query web resources, for reading or
-download, should handle such situations and avoid the infinite loop, using up
-all available _R_ connections and unclear error messages.
+Packages that rely on access to web resources need to be written
+carefully. Web resources can change location, can be temporarily
+unavailable, or can be very slow to access and retrieve. Functions
+that query web resources, should anticipate and handle such situations
+gracefully -- failing quickly and clearly when the resource is not
+available in a reasonable time frame. Some avoidable problems seen in
+_Bioconductor_ package code include infinite loops, use of all
+available _R_ connections, and unclear error messages.
 
 ## Guiding Principles
 
-1. Download a file of reasonable size. Use `system.time()` to estimate the
+Remember the _Bioconductor_ packages are built nightly across multiple
+operating systems, and that users benefit from easy-to-run vignettes
+and examples.
+
+1. Download files of reasonable size. Use `system.time()` to estimate the
    download time. Remember the package should require less than 5 minutes to
    run `R CMD check --no-build-vignettes`.
 
-2. Set a limit on the number of times the function tries a url. Avoid
+2. Set a limit on the number of times the function tries a URL. Avoid
    `while()` statements that have no guaranteed termination. These
-   become infinite loops and eventually `timeout` on the build report.
+   become infinite loops and eventually result in build-system `TIMEOUT`s.
 
 3. Supply an informative error message.
 
-## Sample Functions
+## Template for Resource Queries
 
-These functions try a url 3 times and then fail. The last error message is 
-reported and warnings are allowed through.
+This function can serve as a template for appropriate resource
+retrieval. It tries to retrieve the resource one or several times before
+failing, and takes as arguments:
 
-    readURL <- function(URL, n=-1L) {
-        tries <- 0L
-        msg <- character()
-        while (tries < 3L) {
-            URLdata <- tryCatch(readLines(URL, n), error=identity)
-            if (!inherits(URLdata, "error"))
+- `URL`, the resource to be queried, typically `character(1)` or
+  `url()`.
+- `FUN`, the function to be used to query the resource. Examples might
+  include `readLines()`, `download.file()`, `httr::GET()`,
+  `RCurl::getURL()`.
+- `...`: additional arguments used by `FUN`.
+- `N.TRIES`: the number of times the URL will be attempted; only under
+  exceptional circumstances might this differ from its default value.
+
+The return value is the retrieved resource. If resource retrieval
+fails, the function indicates the failure, including the condition
+(error) message on the last attempt. Warnings propagate to the user in
+the normal way.
+
+    getURL <- function(URL, FUN, ..., N.TRIES=1L) {
+        N.TRIES <- as.integer(N.TRIES)
+        stopifnot(length(N.TRIES) == 1L, !is.na(N.TRIES))
+
+        while (N.TRIES >= 0L)
+            result <- tryCatch(FUN(URL, ...), error=identity)
+            if (!inherits(result, "error"))
                 break
-            tries <- tries + 1L
+            N.TRIES <- N.TRIES - 1L
         }
-        if (tries == 3L)
-            stop("failed to get URL after 3 tries:",
-                 "\n  url: ", URL,
-                 "\n  error: ", conditionMessage(URLdata))
-        URLdata
+
+        if (N.TRIES == 0L) {
+            stop("'getURL()' failed:",
+                 "\n  URL: ", URL,
+                 "\n  error: ", conditionMessage(result))
+        }
+
+        result
     }
 
-This function uses RCurl::getURL() but easily could have been written with
-download.file(), httr::GET() or curl::curl() etc.
 
-    getURL <- function(URL) {
-        tries <- 0L
-        msg <- character()
-        while (tries < 3L) {
-            URLdata <- tryCatch(getURL(URL, dirlistonly = TRUE), error=identity)
-            if (!inherits(URLdata, "error"))
-                break
-            tries <- tries + 1L
-        }
-        if (tries == 3L)
-            stop("failed to get URL after 3 tries:",
-                 "\n  url: ", URL,
-                 "\n  error: ", conditionMessage(URLdata))
-        URLdata
+Base _R_ functions using `url()` connections respect
+`getOption("timeout")`; see `?url` for details.
+
+`FUN` might be implemented to retrieve the resource and test for
+status, e.g.,
+
+    FUN <- function(URL, ...) {
+        response <- httr::GET(URL, timeout(getOption("timeout")), ...)
+        stop_for_status(response)
+        response
     }
