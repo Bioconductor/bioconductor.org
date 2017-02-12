@@ -28,7 +28,7 @@ This creates a copy of all packages on your local machine.  Specify a
 name other than "Rpacks-devel" if you want a top-level directory with
 different name.
 
-To check out the code for the Biobase package use:
+To check out the code for a single package, for example Biobase, use:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/Biobase
 
@@ -69,30 +69,40 @@ for all the commands and options.
 
 ## Where to Commit Changes
 
+### Committing Changes to the Development Branch
+
 Almost all development is on the trunk ('devel') branch of the SVN
 repository, as indicated by the 'trunk' part of the URL in the
-examples above. All bug fixes, new features and major changes are
-introduced in devel. Each commit should include a bump in the `z`
-portion of the `x.y.z` package
-[versioning scheme](/developers/how-to/version-numbering/).
+examples above. To checkout or commit to the 'devel' branch use this url:
 
-<!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
+    https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/Biobase
 
-If you commit to trunk before 5:00 PM New York time, your changes will
-build overnight and be reflected in the next day's  [build
-report](http://bioconductor.org/checkResults/devel/bioc-LATEST/) which
-should appear around 9:00 AM New York time.
-
+All bug fixes, new features and major changes are
+introduced in devel. 
 
 ### Committing Changes to the Release Branch
 
 Only *bug fixes* should be back-ported to the release branch. This is
 so that users of the release branch have a stable environment in which
-to get their work done.
+to get their work done. To checkout or commit to the release branch use
+this url:
+
+    https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME
 
 If you wish to have a bug-fix made in the devel branch also available
-in the current release branch, you first need to take note of the
-revision number from your commit, for example,
+in the current release branch, you have a couple of options. Once approach is
+to simply checkout the release code
+
+    svn co https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME
+
+apply the bug fix changes, run R CMD build and check with the release version
+of R/Bioconductor, bump the version and commit:
+
+    svn ci https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME
+
+A second approach is to use the 'changeset' from devel and apply it to release.
+To do this first need to take note of the revision number from your devel
+commit, for example,
 
     $ svn commit -m "Sample commit"
     Adding         Rpacks\Biobase\DESCRIPTION
@@ -109,14 +119,48 @@ branch subdirectory:
 
     svn co https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME
 
-Merge your changes from the trunk to the release branch, check and fix
-any conflicts, and commit. So, from your release branch directory
-(e.g. RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME):
+Merge your changes from the trunk to the release branch, check and fix any
+conflicts, bump the version and commit. Step by step:
+
+- cd to your release branch directory
+  (e.g. RELEASE_<%=release_branch%>/madman/Rpacks/MYPACKAGENAME)
+
+- Merge the changes from devel changeset 140 to the release branch:
 
     svn merge -c140 https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/MYPACKAGENAME
+
+- Check the status, resolve any conflicts
+
     svn status   # Look for C, indicating a conflict
                  # fix conflicts... (remember to use svn resolve for each)
+
+- Run R CMD build and R CMD check on the modified release package with the 
+  release version of R/Bioconductor. This is very important. Just because
+  the changes you made pass build/check in devel does not guarantee the
+  package will pass in release.
+
+- Bump the version and commit
+
     svn commit -m "merged r140 from trunk"
+
+NOTE: The version in the release branch (in DESCRIPTION file) should never
+be the same as the version in the devel branch. In release, `y` is even and
+in devel it's odd. You should only be bumping the `z` portion of the version.
+See 
+[versioning scheme](/developers/how-to/version-numbering/) for details.
+
+### Version Bump and Propagation of Changes
+
+Each commit, in either release or devel, should include a bump in the `z`
+portion of the `x.y.z` package
+[versioning scheme](/developers/how-to/version-numbering/).
+
+<!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
+
+If you commit to trunk before 5:00 PM New York time, your changes will
+build overnight and be reflected in the next day's  [build
+report](http://bioconductor.org/checkResults/devel/bioc-LATEST/) which
+should appear around 9:00 AM New York time.
 
 ## Experiment Data Packages
 
