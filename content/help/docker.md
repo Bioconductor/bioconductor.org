@@ -28,53 +28,61 @@ With Bioconductor containers, we hope to enhance
   but suddenly you need to do a microarray analysis.
   Containers make this easy.
 
-### Available Containers
-
 Our aim is to provide up-to-date containers for the current
-release and devel versions of Bioconductor, and (probably, eventually)
-some older versions.
-
-Bioconductor's Docker images are stored in
-[Docker Hub](https://hub.docker.com/u/bioconductor/);
+release and devel versions of Bioconductor, and some older
+versions. Bioconductor's Docker images are stored in [Docker
+Hub](https://hub.docker.com/u/bioconductor/); 
 the source Dockerfiles are in
 [Github](https://github.com/Bioconductor/bioc_docker).
 
-Our release images are based on [rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio) and our devel
-images are based on [rocker/rstudio-daily](https://github.com/rocker-org/rstudio-daily).
+Our release images are based on
+[rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio) and
+built when a Biocondcutor Release occurs. Our devel images are based on
+[rocker/rstudio-daily](https://github.com/rocker-org/rstudio-daily) and built
+weekly with the latest versions of R and Bioconductor packages.
 
 For each supported version of Bioconductor, we provide several
 images:
 
-
-* *base*: Contains R, RStudio, and a single Bioconductor
+* *base2*: Contains R, RStudio, and a single Bioconductor
   package (`BiocInstaller`,
   providing the `biocLite()` function for installing additional
   packages).
   Also contains many system dependencies for Bioconductor packages.
   Useful when you want a relatively blank slate for testing purposes.
   R is accessible via the command line or via RStudio Server.
-  The release and devel versions of these containers (and the
-  containers built from them, below) are rebuilt
-  daily with the latest versions of R-release or R-devel
-  (with previous versions available via tags).
-* *core*: Built on *base*, so it contains everything in *base*, plus
+* *core2*: Built on *base2*, so it contains everything in *base2*, plus
   a selection of core Bioconductor packages.
   See [the full list](#the-full-list).
-* *flow*: everything in *core*, plus all packages tagged with the
-  [FlowCytometry](/packages/release/BiocViews.html#___FlowCytometry) biocView.
-* *microarray*: everything in *core*, plus
-  all packages tagged with the
-  [Microarray](/packages/release/BiocViews.html#___Microarray) biocView.
-* *proteomics*: everything in *core*, plus all packages tagged with the
-  [Proteomics](/packages/release/BiocViews.html#___Proteomics) biocView.
-* *sequencing*: everything in *core*, plus all packages tagged with the
-  [Sequencing](/packages/release/BiocViews.html#___Sequencing) biocView.
-* *metabolomics*: everything in *core*, plus all packages tagged with the
+* *protmetcore2*: Built on *core2*, so it contains everything in *core2*, plus
+  a selection of core Bioconductor packages recommended for proteomic and
+  metabolomics analysis.
+* *metabolomics2*: everything in *protmetcore2*, plus select packages from the
   [Metabolomics](/packages/release/BiocViews.html#___Metabolomics) biocView.
 
-#### List of Containers
+## Current Containers
 
-At present, the following containers are available:
+
+###### Maintained by the Bioconductor Core Team: bioc-issue-bot@bioconductor.org
+* [bioconductor/devel_base2](https://hub.docker.com/r/bioconductor/devel_base2/)
+* [bioconductor/devel_core2](https://hub.docker.com/r/bioconductor/devel_core2/)
+* [bioconductor/release_base2](https://hub.docker.com/r/bioconductor/release_base2/)
+* [bioconductor/release_core2](https://hub.docker.com/r/bioconductor/release_core2/)
+
+###### Maintained by Steffen Neumann: sneumann@ipb-halle.de
+* [bioconductor/devel_protmetcore2](https://hub.docker.com/r/bioconductor/devel_protmetcore2/)
+* [bioconductor/devel_metabolomics2](https://hub.docker.com/r/bioconductor/devel_metabolomics2/)
+* [bioconductor/release_protmetcore2](https://hub.docker.com/r/bioconductor/release_protmetcore2/)
+* [bioconductor/release_metabolomics2](https://hub.docker.com/r/bioconductor/release_metabolomics2/)
+
+###### Maintained by Laurent Gatto: lg390@cam.ac.uk
+* bioconductor/devel_proteomics2
+* bioconductor/release_proteomics2
+
+## Legacy Containers
+
+The following containers are legacy and no longer updated. They have been kept
+to retain previous versions available via tags:
 
 * bioconductor/devel_base
 * bioconductor/devel_core
@@ -93,7 +101,7 @@ At present, the following containers are available:
 
 ## Using the containers
 
-The following examples use the `bioconductor/devel_base` container.
+The following examples use the `bioconductor/devel_base2` container.
 Note that you may need to prepend `sudo` to all `docker` commands.
 
 **Prerequisites**: On Linux, you need Docker
@@ -104,7 +112,7 @@ you need Docker Toolbox installed and running.
 
 ##### To run RStudio Server:
 
-    docker run -p 8787:8787 bioconductor/devel_base
+    docker run -p 8787:8787 bioconductor/devel_base2
 
 You can then open a web browser pointing to your docker host on port 8787.
 If you're on Linux and using default settings, the docker host is
@@ -121,11 +129,11 @@ to read/write files in a host directory, please
 
 ##### To run R from the command line:
 
-    docker run -ti bioconductor/devel_base R
+    docker run -ti bioconductor/devel_base2 R
 
 ##### To open a Bash shell on the container:
 
-    docker run -ti bioconductor/devel_base bash
+    docker run -ti bioconductor/devel_base2 bash
 
 *Note*: The `docker run` command is very powerful and versatile.
 For full documentation, type `docker run --help` or visit
@@ -144,7 +152,7 @@ The second way is the recommended way. Both ways are
 
 <a name="the-full-list"></a>
 
-## List of packages installed on the *core* container
+## List of packages installed on the *core2* container
 
 These packages, plus their dependencies, are installed:
 
@@ -157,15 +165,18 @@ These packages, plus their dependencies, are installed:
 <li>biomaRt</li>
 <li>Biostrings</li>
 <li>BSgenome</li>
-<li>epivizr</li>
 <li>GenomicFeatures</li>
 <li>GenomicRanges</li>
 <li>graph</li>
 <li>Gviz</li>
+<li>httr</li>
 <li>IRanges</li>
+<li>knitr</li>
 <li>RBGL</li>
-<li>ReportingTools</li>
+<li>RCurl</li>
 <li>Rgraphviz</li>
+<li>rmarkdown</li>
+<li>XML</li>
 <li>zlibbioc</li>
 </ul>
 
