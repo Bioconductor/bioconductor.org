@@ -70,6 +70,8 @@ images:
 * [bioconductor/release_core2](https://hub.docker.com/r/bioconductor/release_core2/)
 
 ###### Maintained by Steffen Neumann: sneumann@ipb-halle.de
+Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
+
 * [bioconductor/devel_protmetcore2](https://hub.docker.com/r/bioconductor/devel_protmetcore2/)
 * [bioconductor/devel_metabolomics2](https://hub.docker.com/r/bioconductor/devel_metabolomics2/)
 * [bioconductor/release_protmetcore2](https://hub.docker.com/r/bioconductor/release_protmetcore2/)
@@ -79,6 +81,7 @@ images:
 * bioconductor/devel_proteomics2
 * bioconductor/release_proteomics2
 
+ 
 ## Legacy Containers
 
 The following containers are legacy and no longer updated. They have been kept
