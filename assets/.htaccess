@@ -59,9 +59,7 @@ RewriteRule ^(.*)/index_html$ $1/ [R=301]
 RewriteRule ^developers/how-to/git-mirror/$ /developers/how-to/git-mirrors/ [PT]
 
 RewriteRule ^BioC2016/$ %{ENV:proto}://bioconductor.org/help/course-materials/2016/BioC2016/ [R=301]
-
-
-
+RewriteRule ^BioC2017/$ %{ENV:proto}://bioconductor.org/help/course-materials/2017/BioC2017/ [R=301]
 
 # handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
