@@ -12,7 +12,7 @@ provide pathway, organism, microarray and other annotations.
 
 The Bioconductor project started in 2001 and is overseen by a
 [core team](/about/core-team/), based primarily at 
-[Roswell Park Cancer Institute](http://roswellpark.org), and by
+[Roswell Park Cancer Institute](https://www.roswellpark.org), and by
 other members coming from US and international institutions. 
 
 Key citations to the project include Huber et al., 2015
