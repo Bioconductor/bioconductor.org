@@ -11,8 +11,8 @@ number of [meta-data packages](/packages/release/data/annotation)
 provide pathway, organism, microarray and other annotations.
 
 The Bioconductor project started in 2001 and is overseen by a
-[core team](/about/core-team/), based primarily at the
-[Fred Hutchinson Cancer Research Center](http://www.fhcrc.org), and by
+[core team](/about/core-team/), based primarily at 
+[Roswell Park Cancer Institute](http://roswellpark.org), and by
 other members coming from US and international institutions. 
 
 Key citations to the project include Huber et al., 2015
