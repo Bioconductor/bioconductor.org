@@ -1411,6 +1411,14 @@ def get_pubmed_cache_date
     File.mtime(cachefile).iso8601
 end
 
+def render_mirror_urls(mirror)
+    out = ""
+    if mirror.key?(:https_mirror_url) then
+        out += "<#{mirror[:https_mirror_url]}>; "
+    end
+    out + "<#{mirror[:mirror_url]}>"
+end
+
 def render_mirror_contacts(mirror_orig)
     mirror = mirror_orig.dup
     unless mirror[:contact].is_a? Array and mirror[:contact_email].is_a? Array

@@ -9,7 +9,7 @@
 <% for mirror in country.values.first %>
 * [<%= mirror[:institution] %>](<%= mirror[:institution_url] %>)
 
-  URL: <<%= mirror[:mirror_url] %>>
+  URL: <%= render_mirror_urls(mirror) %>
 
   Contact: <%= render_mirror_contacts(mirror) %>
 
