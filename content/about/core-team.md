@@ -7,11 +7,11 @@
 * Valerie Obenchain
 * Lori Shepherd
 * Marcel Ramos
-* Greg Wargula
 * Nitesh Turaga
 
 Recent alumni
 
+* Greg Wargula
 * Dan Tenenbaum
 * Brian Long
 * Jim Hester
