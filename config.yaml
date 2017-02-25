@@ -254,6 +254,7 @@ mirrors:
      institution_url: http://www.aarnet.edu.au/
      contact: Alex Dodson
      mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
+     https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor/
      contact_email: alex.dodson@aarnet.edu.au
      country_code: au
      city: Sydney
