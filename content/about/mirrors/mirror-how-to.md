@@ -1,17 +1,8 @@
 # ![](/images/icons/magnifier.gif)How to Create a Bioconductor Mirror Site #
 
-The Bioconductor package repositories may be mirrored with `rsync`.  If
-you would like to become a mirror for package and data package
+The Bioconductor package repositories may be mirrored with `rsync`.
+If you would like to become a mirror for package and data package
 repositories, please use the commands below.
-
-Note that mirroring can also be accomplished with the
-[udr](https://github.com/LabAdvComp/UDR) command. If you have installed
-`udr` locally, you can just prepend `udr` to the `rsync` commands below. 
-This should result in a massive increase in file transfer speed.
-The [mirroring instructions at UCSC](http://rabadan.c2b2.columbia.edu/admin/mirror.html) provide more details, including information 
-on firewall ports that may need to be opened at your instution in order
-for `udr` to work.
-
 
 ## BioC release repos ##
 
@@ -22,21 +13,19 @@ please use the following commands:
 
 ### Directory structure
 
-Pick a destination directory where files will be mirrored. Let's say this will be in `/dest`. 
-This directory should be served by your web server.
-Under that you'll need a directory called `packages`. 
-This directory must be present as it is part of the structure
-of a Bioconductor repository.
-Underneath `packages` should be a directory corresponding to 
-the versions of Bioconductor that you will host. The current
-release version is <%= config[:release_version] %> and the current
-devel version is <%= config[:devel_version] %>. We recommend you
-use symlinks called `release` and `devel` that always point to 
-the current release and devel versions; this way you will never
-have to change your rsync commands. __But__ you should change the
-symlink targets with every Bioconductor release (see
-the [release schedule](/developers/release-schedule/) for
-exact dates).
+Pick a destination directory where files will be mirrored. Let's say
+this will be in `/dest`.  This directory should be served by your web
+server.  Under that you'll need a directory called `packages`.  This
+directory must be present as it is part of the structure of a
+Bioconductor repository.  Underneath `packages` should be a directory
+corresponding to the versions of Bioconductor that you will host. The
+current release version is <%= config[:release_version] %> and the
+current devel version is <%= config[:devel_version] %>. We recommend
+you use symlinks called `release` and `devel` that always point to the
+current release and devel versions; this way you will never have to
+change your rsync commands. __But__ you should change the symlink
+targets with every Bioconductor release (see the
+[release schedule](/developers/release-schedule/) for exact dates).
 
 The following
 commands will create the directory structure you'll need (remember
@@ -96,23 +85,23 @@ please use the following commands:
 Make sure the directory above `packages` is served by
 a web server. 
 
-Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version] %>). Please check the size of
-what will be transferred with e.g. `rsync -avn master.bioconductor.org::release`
-and make sure you have enough room on your local disk before you
-start.
+Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version]
+%>). Please check the size of what will be transferred with
+e.g. `rsync -avn master.bioconductor.org::release` and make sure you
+have enough room on your local disk before you start.
 
 It is recommended that package repositories be synced once per day,
 scheduled with cron.
 
-**Begin** using your new local repository, by making it accessible on
+**Begin** using your new local repository by making it accessible on
 your webserver. See the **"contriburl"** option to
 **install.packages()** (utils) for more information.
 
 **Finally**, [contact us](mailto:webmaster@bioconductor.org) if you
-would like to have your mirror listed on 
+would like to have your mirror listed on
 [our mirror page](/about/mirrors/) and in R's
 <code>chooseBioCmirror()</code> function.
 
-The [Bioconductor](/) master package repositories reside at [Fred
-Hutchinson Cancer Research Center](http://www.fhcrc.org/) in Seattle,
-WA, USA.
+The [Bioconductor](/) master package repositories reside at
+[https://master.bioconductor.org](https://master.bioconductor.org) in
+the Amazon cloud.
