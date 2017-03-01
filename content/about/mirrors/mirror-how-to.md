@@ -6,17 +6,15 @@ repositories, please use the commands below.
 
 ## Security
 
-We have increased the security requirements on the public Bioconductor mirror
-sites.  As of April 2017, the mirror sites must support https and use secure
-rsync when retrieving packages from the master.
-
-If you are interested in hosting a publicly available mirror site, please send
-a suitable public key to
+We have recently increased security requirements for the public Bioconductor
+mirror sites. Specifically, the sites must support https and use secure rsync
+when retrieving packages from the master. If you are interested in hosting a
+publicly available mirror site, please send a suitable public key to
 [valerie.obenchain@roswellpark.org](mailto:valerie.obenchain@roswellpark.org).
 
-In the `rsync` commands below you will connect to master.bioconductor.org
-as user `bioc-rsync`. You can use a config file to manage your ssh
-keys or include the full path to your key in the `-e` statement:
+Once your key is added to the `bioc-rsync` account you can `rsync` from
+master.bioconductor.org as this user. You can use a config file to manage your
+ssh keys or include the full path to your key in the `-e` statement:
 
   rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
 
