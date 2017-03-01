@@ -7,9 +7,9 @@ repositories, please use the commands below.
 ## Security
 
 We have recently increased security requirements for the public Bioconductor
-mirror sites. Specifically, the sites must support https and use secure rsync
-when retrieving packages from the master. If you are interested in hosting a
-publicly available mirror site, please send a suitable public key to
+mirror sites. Specifically, site maintainers must support https and use secure
+rsync when retrieving packages from the master. If you are interested in
+hosting a publicly available mirror site, please send a suitable public key to
 [valerie.obenchain@roswellpark.org](mailto:valerie.obenchain@roswellpark.org).
 
 Once your key is added to the `bioc-rsync` account you can `rsync` from
