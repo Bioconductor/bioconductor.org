@@ -182,44 +182,48 @@ mirrors:
    - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
      institution_url: http://rge.fmrp.usp.br/
      contact: Houtan Noushmehr
-     mirror_url: http://bioconductor.fmrp.usp.br/
      contact_email: houtan@usp.br
+     mirror_url: http://bioconductor.fmrp.usp.br/
+     rsync: 
      city: Ribeirão Preto
      country_code: br
  - Germany:
    - institution: Department of Statistics, TU Dortmund
      institution_url: http://www.statistik.tu-dortmund.de/
      contact: Uwe Ligges
+     contact_email: ligges@statistik.tu-dortmund.de
      mirror_url: http://bioconductor.statistik.tu-dortmund.de/
      https_mirror_url: https://bioconductor.statistik.tu-dortmund.de/
-     contact_email: ligges@statistik.tu-dortmund.de
+     rsync: 
      city: Dortmund
      country_code: de
  - United Kingdom:
    - institution: European Bioinformatics Institute
      institution_url: http://www.ebi.ac.uk/
      contact: Andrew Tikhonov
+     contact_email: andrew@ebi.ac.uk
      mirror_url: http://mirrors.ebi.ac.uk/bioconductor/
      https_mirror_url: https://mirrors.ebi.ac.uk/bioconductor/
-     contact_email: andrew@ebi.ac.uk
+     rsync: secure_mirror_from_master
      country_code: uk
      city: Hinxton
-     rsync: secure_mirror_from_master
  - Japan:
    - institution: The Institute of Statistical Mathematics
      institution_url: http://www.ism.ac.jp/
      contact: Keisuke Honda
+     contact_email: khonda@ism.ac.jp
      mirror_url: http://bioc.ism.ac.jp/
      https_mirror_url: https://bioc.ism.ac.jp/
-     contact_email: khonda@ism.ac.jp
+     rsync:
      country_code: jp
      city: Tachikawa
    - institution: RIKEN Advanced Center for Computing and Communication
      institution_url: http://accc.riken.jp/en/
      contact: Itoshi NIKAIDO, Ph.D.
+     contact_email: dritoshi@gmail.com
      mirror_url: http://bioconductor.riken.jp/
      https_mirror_url: https://bioconductor.riken.jp/
-     contact_email: dritoshi@gmail.com
+     rsync:
      country_code: jp
      city: Wako
  - China:
@@ -228,11 +232,12 @@ mirrors:
      contact:
       - Mirror Maintainer
       - Tengfei Yin
-     mirror_url: http://mirrors.ustc.edu.cn/bioc/
-     https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
      contact_email:
       - mirrors@ustc.edu.cn
       - yintengfei@gmail.com
+     mirror_url: http://mirrors.ustc.edu.cn/bioc/
+     https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
+     rsync:
      country_code: cn
      city: Anhui
  - Australia:

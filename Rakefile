@@ -855,16 +855,13 @@ task :mirror_csv do
               mirror['institution'], 
               maintainer,
               check_mirror_url(mirror['mirror_url']), 
-              mirror['country_code']]
+              mirror['country_code'],
+              mirror['rsync']]
             csv << data
             if mirror.has_key? "https_mirror_url"
               data[3] = mirror['https_mirror_url']
               data[0] = data[0] + " [https]"
               data[6] = check_mirror_url(mirror['https_mirror_url'])
-              csv << data
-            end
-            if mirror.has_key? "rsync"
-              data[8] = mirror['rsync']
               csv << data
             end
           end
