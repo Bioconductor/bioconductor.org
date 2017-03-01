@@ -176,6 +176,7 @@ mirrors:
      city: World-wide
      mirror_url: http://bioconductor.org/
      https_mirror_url: https://bioconductor.org/
+     rsync: secure_mirror_from_master
      country_code: us
  - Brazil/Latin America:
    - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
@@ -203,6 +204,7 @@ mirrors:
      contact_email: andrew@ebi.ac.uk
      country_code: uk
      city: Hinxton
+     rsync: secure_mirror_from_master
  - Japan:
    - institution: The Institute of Statistical Mathematics
      institution_url: http://www.ism.ac.jp/
@@ -239,6 +241,7 @@ mirrors:
      contact: Alex Dodson
      mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
      https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor/
+     rsync: secure_mirror_from_master
      contact_email: alex.dodson@aarnet.edu.au
      country_code: au
      city: Sydney

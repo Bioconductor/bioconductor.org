@@ -836,7 +836,8 @@ desc "extract mirror information to csv file"
 task :mirror_csv do
     config = YAML.load_file("./config.yaml")
     CSV.open(File.join("assets", "BioC_mirrors.csv"), "w") do |csv|
-      csv << ["Name","Country","City","URL","Host","Maintainer","OK","CountryCode"]
+      csv << ["Name","Country","City","URL","Host","Maintainer","OK",
+              "CountryCode","Comment"]
       for mirror_outer in config['mirrors']
         country = mirror_outer.keys.first
         country_mirrors = mirror_outer.values
@@ -847,14 +848,23 @@ task :mirror_csv do
               mirror['contact_email'] = mirror['contact_email'].first
             end
             maintainer = "#{mirror['contact']} <#{mirror['contact_email']}>".sub("@", " # ")
-            data = ["#{country} (#{mirror['city']})", country, mirror['city'], mirror['mirror_url'],
-              mirror['institution'], maintainer,
-              check_mirror_url(mirror['mirror_url']), mirror['country_code']]
+            data = ["#{country} (#{mirror['city']})", 
+              country, 
+              mirror['city'], 
+              mirror['mirror_url'],
+              mirror['institution'], 
+              maintainer,
+              check_mirror_url(mirror['mirror_url']), 
+              mirror['country_code']]
             csv << data
             if mirror.has_key? "https_mirror_url"
               data[3] = mirror['https_mirror_url']
               data[0] = data[0] + " [https]"
               data[6] = check_mirror_url(mirror['https_mirror_url'])
+              csv << data
+            end
+            if mirror.has_key? "rsync"
+              data[8] = mirror['rsync']
               csv << data
             end
           end
