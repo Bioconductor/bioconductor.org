@@ -4,6 +4,23 @@ The Bioconductor package repositories may be mirrored with `rsync`.
 If you would like to become a mirror for package and data package
 repositories, please use the commands below.
 
+## Security
+
+We have increased the security requirements on the public Bioconductor mirror
+sites.  As of April 2017, the mirror sites must support https and use secure
+rsync when retrieving packages from the master.
+
+If you are interested in hosting a publicly available mirror site, please send
+a suitable public key to
+[valerie.obenchain@roswellpark.org](mailto:valerie.obenchain@roswellpark.org).
+
+In the `rsync` commands below you will connect to master.bioconductor.org
+as user `bioc-rsync`. You can use a config file to manage your ssh
+keys or include the full path to your key in the `-e` statement:
+
+  rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
+
+
 ## BioC release repos ##
 
 If you want to mirror the current Bioconductor release version
@@ -41,19 +58,19 @@ where there is enough free space).
 
 ### All Bioconductor release repos (RECOMMENDED) ###
 
-    rsync -zrtlv --delete master.bioconductor.org::release /dest/packages/release
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release /dest/packages/release
 
 ### Bioconductor release Software repo ###
 
-    rsync -zrtlv --delete master.bioconductor.org::release/bioc /dest/packages/release /bioc
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/bioc /dest/packages/release /bioc
 
 ### Bioconductor release Data repos ###
 
-    rsync -zrtlv --delete master.bioconductor.org::release/data /dest/packages/release/data
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/data /dest/packages/release/data
 
 ### Bioconductor release Extra repo ###
 
-    rsync -zrtlv --delete master.bioconductor.org::release/extra /dest/packages/release/extra
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/extra /dest/packages/release/extra
 
 
 ## BioC devel repos ##
@@ -64,20 +81,20 @@ please use the following commands:
 
 ### All Bioconductor <%= config[:devel_version] %> repos (RECOMMENDED) ###
 
-    rsync -zrtlv --delete master.bioconductor.org::devel /dest/packages/devel
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel /dest/packages/devel
 
 ### Bioconductor release Software repo ###
 
-    rsync -zrtlv --delete master.bioconductor.org::devel/bioc /dest/packages/devel/bioc
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/bioc /dest/packages/devel/bioc
 
 ### Bioconductor devel Data repos ###
 
-    rsync -zrtlv --delete master.bioconductor.org::devel/data /dest/packages/devel/data
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/data /dest/packages/devel/data
 
 
 ### Bioconductor devel Extra repo ###
 
-    rsync -zrtlv --delete master.bioconductor.org::devel/extra /dest/packages/devel/extra
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/extra /dest/packages/devel/extra
 
 
 ## Additional information ##
@@ -87,8 +104,8 @@ a web server.
 
 Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version]
 %>). Please check the size of what will be transferred with
-e.g. `rsync -avn master.bioconductor.org::release` and make sure you
-have enough room on your local disk before you start.
+e.g. `rsync -e "ssh" -avn bioc-rsync@master.bioconductor.org:release` and 
+make sure you have enough room on your local disk before you start.
 
 It is recommended that package repositories be synced once per day,
 scheduled with cron.
