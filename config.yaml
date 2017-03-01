@@ -177,14 +177,6 @@ mirrors:
      mirror_url: http://bioconductor.org/
      https_mirror_url: https://bioconductor.org/
      country_code: us
- ##- United States:
- ##  - institution: National Cancer Institute, National Institutes of Health
- ##    institution_url: http://nci.nih.gov/
- ##    contact: Sean Davis
- ##    mirror_url: http://watson.nci.nih.gov/bioc_mirror/
- ##    contact_email: sdavis2@mail.nih.gov
- ##    city: Rockville
- ##    country_code: us
  - Brazil/Latin America:
    - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
      institution_url: http://rge.fmrp.usp.br/
@@ -202,14 +194,6 @@ mirrors:
      contact_email: ligges@statistik.tu-dortmund.de
      city: Dortmund
      country_code: de
- - Belgium:
-   - institution: OpenAnalytics
-     institution_url: http://www.openanalytics.eu/
-     contact: Willem Ligtenberg
-     mirror_url: http://bioc.openanalytics.eu/
-     contact_email: willem.ligtenberg@openanalytics.eu
-     country_code: be
-     city: Antwerp
  - United Kingdom:
    - institution: European Bioinformatics Institute
      institution_url: http://www.ebi.ac.uk/
