@@ -1212,7 +1212,7 @@ def render_courses()
         end
         year = lh["Date"].split(" - ").first.strip.split("-").first
         course_url = "#{year}/#{lh["Course"]}/"
-        out += "        <tr>\n"
+        out += "        <tr valign=\"top\">\n"
         out += "<td>" + lh["Keyword"] + "</td>\n"
         out += "<td>" + Kramdown::Document.new(lh["Title"].strip + ", "  + lh["Instructor"].strip).to_html.gsub(/<\/*p>/, "") +  "</td>\n"
         if lh["Course"].start_with? "["
