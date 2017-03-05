@@ -16,8 +16,7 @@ Once your key is added to the `bioc-rsync` account you can `rsync` from
 master.bioconductor.org as this user. You can use a config file to manage your
 ssh keys or include the full path to your key in the `-e` statement:
 
-  rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
-
+    rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
 
 ## BioC release repos ##
 
