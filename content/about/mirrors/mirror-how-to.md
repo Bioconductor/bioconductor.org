@@ -6,10 +6,15 @@ repositories, please use the commands below.
 
 ## Security
 
+### Public mirrors
+
 We have recently increased security requirements for the public Bioconductor
-mirror sites. Specifically, site maintainers must support https and use secure
-rsync when retrieving packages from the master. If you are interested in
-hosting a publicly available mirror site, please send a suitable public key to
+mirror sites. A mirror is considered "public" if it's an option in R's
+<code>chooseBioCmirror()</code> function and listed on [our mirror
+page](/about/mirrors/). Public site maintainers must support https on their
+site and use secure rsync when retrieving packages from the master. If you are
+interested in hosting a publicly available mirror site, please send a suitable
+public key to
 [valerie.obenchain@roswellpark.org](mailto:valerie.obenchain@roswellpark.org).
 
 Once your key is added to the `bioc-rsync` account you can `rsync` from
@@ -18,11 +23,21 @@ ssh keys or include the full path to your key in the `-e` statement:
 
     rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
 
+### Non-public mirrors
+
+To host a non-secure mirror (maybe for internal purposes), invoke 
+the rsync commands without the `bioc-rsync` user, e.g.,
+
+    rsync -avn master.bioconductor.org::release  ## check size
+    rsync -zrtlv --delete master.bioconductor.org::release /dest/packages/release
+    rsync -zrtlv --delete master.bioconductor.org::devel/bioc /dest/packages/devel
+etc ...
+
+
 ## BioC release repos ##
 
 If you want to mirror the current Bioconductor release version
-(currently <%= config[:release_version] %>),
-please use the following commands:
+(currently <%= config[:release_version] %>), use the following commands:
 
 
 ### Directory structure
@@ -96,26 +111,20 @@ please use the following commands:
 
 ## Additional information ##
 
-Make sure the directory above `packages` is served by
-a web server. 
+Make sure the directory above `packages` is served by a web server. 
 
-Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version]
-%>). Please check the size of what will be transferred with
-e.g. `rsync -e "ssh" -avn bioc-rsync@master.bioconductor.org:release` and 
-make sure you have enough room on your local disk before you start.
+Bioconductor is **big** (> 188GB for BioC <%= config[:devel_version] %>).
+Please check the size of what will be transferred with e.g. `rsync -e "ssh"
+-avn bioc-rsync@master.bioconductor.org:release` and make sure you have enough
+room on your local disk before you start.
 
-It is recommended that package repositories be synced once per day,
-scheduled with cron.
+It is recommended that package repositories be synced once per day, scheduled
+with cron.
 
-**Begin** using your new local repository by making it accessible on
-your webserver. See the **"contriburl"** option to
-**install.packages()** (utils) for more information.
-
-**Finally**, [contact us](mailto:webmaster@bioconductor.org) if you
-would like to have your mirror listed on
-[our mirror page](/about/mirrors/) and in R's
-<code>chooseBioCmirror()</code> function.
+**Begin** using your new local repository by making it accessible on your
+webserver. See the **"contriburl"** option to **install.packages()** (utils)
+for more information.
 
 The [Bioconductor](/) master package repositories reside at
-[https://master.bioconductor.org](https://master.bioconductor.org) in
-the Amazon cloud.
+[https://master.bioconductor.org](https://master.bioconductor.org) in the
+Amazon cloud.
