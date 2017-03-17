@@ -160,27 +160,31 @@ The second way is the recommended way. Both ways are
 These packages, plus their dependencies, are installed:
 
 <ul class="inline_list">
-<li>AnnotationDbi</li>
-<li>AnnotationHub</li>
+<li>BiocInstaller</li>
+<li>OrganismDbiDbi</li>
+<li>ExperimentHub</li>
 <li>Biobase</li>
 <li>BiocParallel</li>
-<li>biocViews</li>
 <li>biomaRt</li>
 <li>Biostrings</li>
 <li>BSgenome</li>
-<li>GenomicFeatures</li>
-<li>GenomicRanges</li>
-<li>graph</li>
-<li>Gviz</li>
-<li>httr</li>
+<li>ShortRead</li>
 <li>IRanges</li>
-<li>knitr</li>
+<li>GenomicRanges</li>
+<li>GenomicAlignment</li>
+<li>GenomicFeatures</li>
+<li>SummarizedExperiment</li>
+<li>VariantAnnotation</li>
+<li>DelayedArray</li>
+<li>GSEABase</li>
+<li>Gviz</li>
+<li>graph</li>
 <li>RBGL</li>
-<li>RCurl</li>
 <li>Rgraphviz</li>
 <li>rmarkdown</li>
-<li>XML</li>
-<li>zlibbioc</li>
+<li>httr</li>
+<li>knitr</li>
+<li>BiocStyle</li>
 </ul>
 
 ### Acknowledgements
