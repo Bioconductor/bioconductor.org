@@ -161,7 +161,7 @@ These packages, plus their dependencies, are installed:
 
 <ul class="inline_list">
 <li>BiocInstaller</li>
-<li>OrganismDbiDbi</li>
+<li>OrganismDbi</li>
 <li>ExperimentHub</li>
 <li>Biobase</li>
 <li>BiocParallel</li>
