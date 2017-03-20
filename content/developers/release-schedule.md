@@ -1,85 +1,69 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 3.4 Release Schedule
+# ![](/images/icons/magnifier.gif)Bioconductor 3.5 Release Schedule
 
-This release will use R-3.3.1 (Bug in Your Hair) unless 3.3.2 comes
-out in time (would need to be at least 1 week before release day
-though).
-
+This release will use R-3.4.0 ("You Stupid Darkness").
 
 ## Tentative schedule
 
+### Friday March 24 
 
-### Tuesday September 20, 2016
+* Packages for deprecation identified and announced.
 
-* Packages for deprecation identified.
+* Start building/checking workflows in R devel.
 
-
-### Monday September 26
+### Friday March 31
 
 * Deadline for new package submissions.
 
-* All packages conform to Bioconductor [guidelines][guidelines].
-
 * .db0 packages available for developers.
 
-[guidelines]: /developers/package-guidelines
+### Friday April 7
 
-
-### Monday October 3
-
-* Release candidate of annotation packages built and posted to devel
-  annotation data repository.
-
-
-### Friday October 7
+* Ask maintainers to update package NEWS files. Latest NEWS will be collated 
+  and included in release announcement.
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without error.
 
-* Bioconductor Feature Freeze: no API changes to BioC.
+* Deadline for workflows to build successfully.
 
+* Annotations Deadline:
+  - Core packages built and posted to devel annotation data repository.
+  - Contributed packages posted to devel annotation data repository.
 
-### Wednesday October 12
+* Bioconductor Feature Freeze: 
+  - No API changes to BioC 3.5.
+  - No new packages added to BioC 3.5 roster.
 
-* No new packages added to BioC release roster.
-
-* Deadline for annotation package contributors to upload updated
-  packages.
-
-* Stop release (BioC 3.3) builds.  Commits to this branch will be
+* Stop current release (BioC 3.4) builds.  Commits to this branch will be
   disabled.
 
-
-### Thursday October 13
+### Friday April 14
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without warning.  Some warnings will be accepted, clarification on
   the bioc-devel mailing list.
 
-* Annotation data packages finalized.
-
-* Start rebuilding/checking workflows.
-
-
-### Friday October 14
-
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-* Package NEWS files updated.  Latest NEWS will be collated and included
-  in release announcement.
+### Monday April 24 
 
-
-### Monday October 17
-
-* Creation of the BioC 3.4 release branch.  Development can resume on
+* Creation of the BioC 3.5 release branch.  Development can resume on
   trunk, but changes there will not be part of the release.
 
 * Build final release repositories.
 
 * Test install scripts, GUI installation.
 
-
-### Tuesday October 18
+### Tuesday April 25 
 
 * Bioconductor release.
 
+
+## Post-release
+
+### Wednesday April 26 
+
+* Build AMIs for release and devel
+
+* Build Dockers for release and devel
