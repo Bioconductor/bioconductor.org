@@ -18,7 +18,7 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 
 ### Friday April 7
 
-* Ask maintainers to update package NEWS files. Latest NEWS will be collated 
+* Maintainers update package NEWS files. Latest NEWS will be collated 
   and included in release announcement.
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
