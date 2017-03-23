@@ -46,6 +46,12 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
+* Packages that were 'deprecated' in Bioconductor 3.4 are marked as 
+  'defunct' for the 3.5 release.
+
+* Packages that were 'defunct' in Bioconductor 3.4 are not included
+  in the 3.5 release.
+
 ### Monday April 24 
 
 * Creation of the BioC 3.5 release branch.  Development can resume on
