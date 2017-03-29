@@ -30,7 +30,7 @@ Using Bioc-devel
 ----------------
 
 In order to use the `devel` version of _Bioconductor_ during the current
-release cycle, you must install `R-devel`:
+release cycle, you must install `R-3.4`:
 
 * [Source](https://stat.ethz.ch/R/daily/)
 * [Mac OS X](http://r.research.att.com/)
