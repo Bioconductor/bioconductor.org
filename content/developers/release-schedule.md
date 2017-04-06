@@ -21,9 +21,6 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 * Maintainers update package NEWS files. Latest NEWS will be collated 
   and included in release announcement.
 
-* Deadline for packages passing ''R CMD build'' and ''R CMD check''
-  without error.
-
 * Deadline for workflows to build successfully.
 
 * Annotations Deadline:
@@ -40,8 +37,8 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 ### Friday April 14
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
-  without warning.  Some warnings will be accepted, clarification on
-  the bioc-devel mailing list.
+  without errors or warnings.  Some warnings will be accepted, clarification 
+  on the bioc-devel mailing list.
 
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
