@@ -68,3 +68,5 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 * Build AMIs for release and devel
 
 * Build Dockers for release and devel
+
+* Update Chef recipes
