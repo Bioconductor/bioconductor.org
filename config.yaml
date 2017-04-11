@@ -184,7 +184,7 @@ mirrors:
      contact: Houtan Noushmehr
      contact_email: houtan@usp.br
      mirror_url: http://bioconductor.fmrp.usp.br/
-     rsync: 
+     rsync: secure_mirror_from_master
      city: Ribeirão Preto
      country_code: br
  - Germany:
@@ -214,7 +214,7 @@ mirrors:
      contact_email: khonda@ism.ac.jp
      mirror_url: http://bioc.ism.ac.jp/
      https_mirror_url: https://bioc.ism.ac.jp/
-     rsync:
+     rsync: secure_mirror_from_master
      country_code: jp
      city: Tachikawa
    - institution: RIKEN Advanced Center for Computing and Communication
@@ -223,7 +223,7 @@ mirrors:
      contact_email: dritoshi@gmail.com
      mirror_url: http://bioconductor.riken.jp/
      https_mirror_url: https://bioconductor.riken.jp/
-     rsync:
+     rsync: secure_mirror_from_master
      country_code: jp
      city: Wako
  - China:
@@ -237,7 +237,7 @@ mirrors:
       - yintengfei@gmail.com
      mirror_url: http://mirrors.ustc.edu.cn/bioc/
      https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
-     rsync:
+     rsync: secure_mirror_from_master
      country_code: cn
      city: Anhui
  - Australia:
