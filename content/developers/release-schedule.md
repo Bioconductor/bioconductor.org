@@ -6,7 +6,7 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 
 ### Friday March 24 
 
-* Packages for deprecation identified and announced.
+* Announce deprecated / defunct packages for BioC 3.5.
 
 * Start building/checking workflows in R devel.
 
@@ -38,6 +38,10 @@ This release will use R-3.4.0 ("You Stupid Darkness").
   without errors or warnings.  Some warnings will be accepted, clarification 
   on the bioc-devel mailing list.
 
+  NOTE: Packages with no Landing Page (have not built this devel cycle) 
+  or those with errors and unresponsive maintainers are marked 
+  as 'deprecated' in Bioconductor 3.5.
+
 * Deadline for workflows to build successfully.
 
 * Bioconductor release candidate.  Package maintainers should limit
@@ -46,6 +50,7 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 * Packages 'deprecated' in Bioconductor 3.4 are marked as 'defunct' and 
   removed from the nightly builds for Bioconductor 3.5.
   See [End of Life](/developers/package-end-of-life) for details.
+
 
 ### Monday April 24 
 
