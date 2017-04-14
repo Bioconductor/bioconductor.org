@@ -38,14 +38,17 @@ This release will use R-3.4.0 ("You Stupid Darkness").
   without errors or warnings.  Some warnings will be accepted, clarification 
   on the bioc-devel mailing list.
 
-  NOTE: Packages with no Landing Page (have not built this devel cycle) 
-  or those with errors and unresponsive maintainers are marked 
-  as 'deprecated' in Bioconductor 3.5.
-
 * Deadline for workflows to build successfully.
 
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
+
+
+### Wednesday April 19
+
+* Identify additional packages to be deprecated in Bioconductor 3.5. This 
+  includes packages with no Landing Page (have not built this devel cycle) 
+  or those with errors and unresponsive maintainers. 
 
 * Packages 'deprecated' in Bioconductor 3.4 are marked as 'defunct' and 
   removed from the nightly builds for Bioconductor 3.5.
