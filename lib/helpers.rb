@@ -732,8 +732,10 @@ end
 def mac_os(pkg)
   if pkg.has_key? :"mac.binary.ver"
     return "Mac OS X 10.6 (Snow Leopard)"
-  elsif pkg.has_key? :"mac.binary.leopard.ver"
-    return "Mac OS X 10.5 (Leopard)"
+  elsif pkg.has_key? :"mac.binary.mavericks.ver"
+    return "Mac OS X 10.9 (Mavericks)"
+  elsif pkg.has_key? :"mac.binary.el-capitan.ver"
+    return "Mac OS X 10.11 (El Capitan)"
   end
   return nil
 end
@@ -742,8 +744,10 @@ end
 def mac_ver_key(pkg)
   if pkg.has_key? :"mac.binary.ver"
     return pkg[:"mac.binary.ver"]
-  elsif pkg.has_key? :"mac.binary.leopard.ver"
-    return pkg[:"mac.binary.leopard.ver"]
+  elsif pkg.has_key? :"mac.binary.mavericks.ver"
+    return pkg[:"mac.binary.mavericks.ver"]
+  elsif pkg.has_key? :"mac.binary.el-capitan.ver"
+    return pkg[:"mac.binary.el-capitan.ver"]
   end
   return nil
 end
