@@ -1508,8 +1508,10 @@ def pkg_platforms(package, view) # returns all, none, or some
   end
 
   has_src = view.has_key? "source.ver"
+  has_win = view.has_key? "win.binary.ver"
   has_mav = view.has_key? "mac.binary.mavericks.ver"
   has_elcap = view.has_key? "mac.binary.el-capitan.ver"
+
   if view.has_key? 'OS_type' and view['OS_type'] == 'unix' # some or none
     if has_src or has_mav or has_elcap
       return 'some'
@@ -1520,6 +1522,7 @@ def pkg_platforms(package, view) # returns all, none, or some
 
   all_win_archs = (win_format(package) !~ /only/)
   needs_compilation = view['NeedsCompilation'] == 'yes'
+
   if not needs_compilation # all or some
     if has_src and all_win_archs
       return 'all'
@@ -1528,31 +1531,19 @@ def pkg_platforms(package, view) # returns all, none, or some
     end
   end
     
-  keys = %w(source.ver win.binary.ver mac.binary.mavericks.ver
-            mac.binary.el-capitan.ver)
-  missing = []
-  for key in keys
-    unless view.has_key? key
-      missing << key
-    end
-  end
-
-  if missing.empty?
-    if all_win_archs
+  if has_src # all or some
+    if has_win and all_win_archs and (has_mav or has_elcap)
       return 'all'
     else
       return 'some'
     end
   end
 
-  if missing.length == keys.length
-    return 'none'
-  else
+  # some or none
+  if has_win or has_mav or has_elcap
     return 'some'
   end
-
-  raise ("i just don't know about #{package[:Package]}!")
-
+  return 'none'
 end
 
 def get_available(package, ver, view)
