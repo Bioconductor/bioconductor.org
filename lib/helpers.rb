@@ -1491,8 +1491,8 @@ def get_build_report_link(package)
 end
 
 
-def pkg_platforms(package, view) # returns all, none, or some
-  unsupported_platforms = view['UnsupportedPlatforms']
+def pkg_platforms(package) # returns all, none, or some
+  unsupported_platforms = package['UnsupportedPlatforms']
   unsupported_platforms = nil if unsupported_platforms == "None"
 
   unless unsupported_platforms.nil?
@@ -1507,12 +1507,12 @@ def pkg_platforms(package, view) # returns all, none, or some
     end
   end
 
-  has_src = view.has_key? "source.ver"
-  has_win = view.has_key? "win.binary.ver"
-  has_mav = view.has_key? "mac.binary.mavericks.ver"
-  has_elcap = view.has_key? "mac.binary.el-capitan.ver"
+  has_src = package.has_key? "source.ver"
+  has_win = package.has_key? "win.binary.ver"
+  has_mav = package.has_key? "mac.binary.mavericks.ver"
+  has_elcap = package.has_key? "mac.binary.el-capitan.ver"
 
-  if view.has_key? 'OS_type' and view['OS_type'] == 'unix' # some or none
+  if package.has_key? 'OS_type' and package['OS_type'] == 'unix' # some or none
     if has_src or has_mav or has_elcap
       return 'some'
     else
@@ -1521,7 +1521,7 @@ def pkg_platforms(package, view) # returns all, none, or some
   end
 
   all_win_archs = (win_format(package) !~ /only/)
-  needs_compilation = view['NeedsCompilation'] == 'yes'
+  needs_compilation = package['NeedsCompilation'] == 'yes'
 
   if not needs_compilation # all or some
     if has_src and all_win_archs
@@ -1547,7 +1547,7 @@ def pkg_platforms(package, view) # returns all, none, or some
 end
 
 def get_available(package, ver, view)
-  img = pkg_platforms(package, view)
+  img = pkg_platforms(view)
   # ver = package[:bioc_version_str].downcase.sub('opment', '')
   srcdir = File.join('assets', 'images', 'shields', 'availability')
   destdir = File.join('assets', 'shields', 'availability', ver)
