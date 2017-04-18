@@ -133,37 +133,35 @@ end
 # The field win.binary.ver may have a value or not. If it doesn't, then the
 # package is not available for Windows.
 def windows_binary(package)
-  return nil unless package.has_key? :"win.binary.ver"
-  return nil if (package[:"win.binary.ver"] == "" or package[:"win.binary.ver"] == [])
-
-  win32 = package[:"win.binary.ver"]
-  return win32 unless win32.nil?  or win32.empty?
-  return nil
+  return nil unless package.has_key? 'win.binary.ver'
+  wb = package['win.binary.ver']
+  if wb.nil? or wb.empty? or wb == "" or wb == []
+    return nil
+  end
+  return wb
 end
 
 def win_format(package)
   wb = windows_binary(package)
-  return nil if wb.nil?
-
-  both = "(32- &amp; 64-bit)"
-  _32only = "(32-bit only)"
-  _64only = "(64-bit only)"
-  ret = ""
-
-
-  if (package.has_key?(:Archs) && !package[:Archs].empty?)
-    archs = package[:Archs]
-    if (archs =~ /i386/ && archs =~ /x64/)
-      ret = both
-    elsif (archs =~ /i386/)
-      ret = _32only
-    elsif (archs =~ /x64/)
-      ret = _64only
+  return "" if wb.nil?
+  if package.has_key? 'Archs'
+    archs = package['Archs']
+    if archs.nil? or archs.empty? or archs == "" or archs == []
+      return ""
+    end
+    i386 = (archs =~ /i386/)
+    x64 = (archs =~ /x64/)
+    if i386 and x64
+      return "(32- &amp; 64-bit)"
+    end
+    if i386
+      return "(32-bit only)"
+    end
+    if x64
+      return "(64-bit only)"
     end
   end
-
-
-  return ret
+  return ""
 end
 
 def cjoin(item, sep)
@@ -1520,7 +1518,8 @@ def pkg_platforms(package) # returns all, none, or some
     end
   end
 
-  all_win_archs = (win_format(package) !~ /only/)
+  wf = win_format(package)
+  all_win_archs = (wf !~ /only/)
   needs_compilation = package['NeedsCompilation'] == 'yes'
 
   if not needs_compilation # all or some
