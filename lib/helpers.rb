@@ -1020,7 +1020,7 @@ def get_mac_packs(package, item)
 
     if (version > 3.4)
         os <<  "Mac OS X 10.11 (El Capitan)"
-        osvers << "mac.binary.elcapitan.ver"
+        osvers << "mac.binary.el-capitan.ver"
     end
 
     os.each_with_index do |this_os, i|
@@ -1518,11 +1518,11 @@ def pkg_platforms(package, view) # returns all, none, or some
   all_win_archs = (win_format(package) !~ /only/)
   has_src = view.has_key? "source.ver"
   has_mav = view.has_key? "mac.binary.mavericks.ver"
-  has_elcap = view.has_key? "mac.binary.elcapitan.ver"
+  has_elcap = view.has_key? "mac.binary.el-capitan.ver"
   has_win32 = view.has_key? "win.binary.ver"
   has_win64 = view.has_key? "win64.binary.ver"
   needs_compilation = view['NeedsCompilation'] == 'yes'
-  keys = %w(source.ver mac.binary.mavericks.ver mac.binary.elcapitan.ver
+  keys = %w(source.ver mac.binary.mavericks.ver mac.binary.el-capitan.ver
   win.binary.ver win64.binary.ver)
 
   missing = []
