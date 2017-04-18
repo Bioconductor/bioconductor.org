@@ -416,8 +416,8 @@ biocLite("<%=@package[:Package]%>")</pre>
                 <td class="rpack">
                     <% wb = windows_binary(@package) %>
                     <% unless wb.nil?%>
-                    <a href="../<%=windows_binary(@package)%>">
-                        <%= base_filename(windows_binary(@package))%></a> <%=win_format(@package)%>
+                    <a href="../<%=wb%>">
+                        <%= base_filename(wb)%></a> <%=win_format(@package)%>
                     <% end %>
                     </td>
                 </tr>

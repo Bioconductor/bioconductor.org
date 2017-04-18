@@ -133,8 +133,8 @@ end
 # The field win.binary.ver may have a value or not. If it doesn't, then the
 # package is not available for Windows.
 def windows_binary(package)
-  return nil unless package.has_key? 'win.binary.ver'
-  wb = package['win.binary.ver']
+  return nil unless package.has_key? :"win.binary.ver"
+  wb = package[:"win.binary.ver"]
   if wb.nil? or wb.empty? or wb == "" or wb == []
     return nil
   end
@@ -144,8 +144,8 @@ end
 def win_format(package)
   wb = windows_binary(package)
   return "" if wb.nil?
-  if package.has_key? 'Archs'
-    archs = package['Archs']
+  if package.has_key? :Archs
+    archs = package[:Archs]
     if archs.nil? or archs.empty? or archs == "" or archs == []
       return ""
     end
@@ -1489,8 +1489,11 @@ def get_build_report_link(package)
 end
 
 
-def pkg_platforms(package) # returns all, none, or some
-  unsupported_platforms = package['UnsupportedPlatforms']
+def pkg_platforms(view) # returns all, none, or some
+  # make sure all keys in the hash are symbols by turning any string into a
+  # symbol
+  package = view.inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+  unsupported_platforms = package[:UnsupportedPlatforms]
   unsupported_platforms = nil if unsupported_platforms == "None"
 
   unless unsupported_platforms.nil?
@@ -1505,12 +1508,12 @@ def pkg_platforms(package) # returns all, none, or some
     end
   end
 
-  has_src = package.has_key? "source.ver"
-  has_win = package.has_key? "win.binary.ver"
-  has_mav = package.has_key? "mac.binary.mavericks.ver"
-  has_elcap = package.has_key? "mac.binary.el-capitan.ver"
+  has_src = package.has_key? :"source.ver"
+  has_win = package.has_key? :"win.binary.ver"
+  has_mav = package.has_key? :"mac.binary.mavericks.ver"
+  has_elcap = package.has_key? :"mac.binary.el-capitan.ver"
 
-  if package.has_key? 'OS_type' and package['OS_type'] == 'unix' # some or none
+  if package.has_key? :OS_type and package[:OS_type] == "unix" # some or none
     if has_src or has_mav or has_elcap
       return 'some'
     else
@@ -1520,7 +1523,7 @@ def pkg_platforms(package) # returns all, none, or some
 
   wf = win_format(package)
   all_win_archs = (wf !~ /only/)
-  needs_compilation = package['NeedsCompilation'] == 'yes'
+  needs_compilation = package[:NeedsCompilation] == "yes"
 
   if not needs_compilation # all or some
     if has_src and all_win_archs
