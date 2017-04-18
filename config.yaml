@@ -32,7 +32,8 @@ devel_repos:
 active_devel_builders:
   linux: "malbec2"
   windows: "tokay2"
-  mac_mavericks: "oaxaca"	
+  mac_mavericks: "toluca2"	
+  mac_elcapitan: "veracruz2"
 active_release_builders:
   linux: "malbec1"
   windows: "tokay1"
