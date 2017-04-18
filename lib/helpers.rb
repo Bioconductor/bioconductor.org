@@ -1002,12 +1002,12 @@ def get_mac_packs(package, item)
       osvers << "mac.binary.ver"
     end
 
-    if (version > 2.13)
+    if version > 2.13 and version < 3.5
         os <<  "Mac OS X 10.9 (Mavericks)"
         osvers << "mac.binary.mavericks.ver"
     end
 
-    if (version > 3.4)
+    if version >= 3.5
         os <<  "Mac OS X 10.11 (El Capitan)"
         osvers << "mac.binary.el-capitan.ver"
     end
