@@ -848,22 +848,23 @@ task :mirror_csv do
               mirror['contact_email'] = mirror['contact_email'].first
             end
             maintainer = "#{mirror['contact']} <#{mirror['contact_email']}>".sub("@", " # ")
-            data = ["#{country} (#{mirror['city']})", 
+            # As of BioC 3.5 https is required for all sites
+            # First row is https (CRAN request)
+            data = ["#{country} (#{mirror['city']}) [https]", 
               country, 
               mirror['city'], 
               mirror['mirror_url'],
               mirror['institution'], 
               maintainer,
-              check_mirror_url(mirror['mirror_url']), 
+              check_mirror_url(mirror['https_mirror_url']), 
               mirror['country_code'],
               mirror['rsync']]
             csv << data
-            if mirror.has_key? "https_mirror_url"
-              data[3] = mirror['https_mirror_url']
-              data[0] = data[0] + " [https]"
-              data[6] = check_mirror_url(mirror['https_mirror_url'])
-              csv << data
-            end
+            # Second row is http
+            data[3] = mirror['mirror_url']
+            data[0] = "#{country} (#{mirror['city']})"
+            data[6] = check_mirror_url(mirror['mirror_url'])
+            csv << data
           end
         end
       end
