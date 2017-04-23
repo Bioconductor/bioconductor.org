@@ -853,7 +853,7 @@ task :mirror_csv do
             data = ["#{country} (#{mirror['city']}) [https]", 
               country, 
               mirror['city'], 
-              mirror['mirror_url'],
+              mirror['https_mirror_url'],
               mirror['institution'], 
               maintainer,
               check_mirror_url(mirror['https_mirror_url']), 
