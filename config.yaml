@@ -179,6 +179,16 @@ mirrors:
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
+ - Brazil/Latin America:
+   - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
+     institution_url: http://rge.fmrp.usp.br/
+     contact: Houtan Noushmehr
+     contact_email: houtan@usp.br
+     mirror_url: http://bioconductor.fmrp.usp.br/
+     https_mirror_url: https://bioconductor.fmrp.usp.br/
+     rsync: secure_mirror_from_master
+     city: Ribeirão Preto
+     country_code: br
  - Germany:
    - institution: Department of Statistics, TU Dortmund
      institution_url: http://www.statistik.tu-dortmund.de/
