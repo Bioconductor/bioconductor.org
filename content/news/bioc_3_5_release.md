@@ -8138,4 +8138,7 @@ fixed or removed in the next release.
 
 Nine previously deprecated software packages (coRNAi, saps, MeSHSim,
 GENE.E, mmnet, CopyNumber450k, AtlasRDF, GEOsearch, pdmclass) were
-removed from the release.
+removed from the release. One experimental data package
+(CopyNumber450kData) and 26 annotation packages (gahgu\*cdf,
+gahgu\*.db, gahgu\*probe, org.Tgondii.eg.db, org.Sco.eg.db) were also
+removed.
