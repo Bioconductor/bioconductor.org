@@ -2,8 +2,8 @@ April 25, 2017
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.5, consisting of 1384
-software packages, 316 experiment data packages, and 911 annotation
+We are pleased to announce Bioconductor 3.5, consisting of 1383
+software packages, 315 experiment data packages, and 911 annotation
 packages.
 
 There are 88 new software packages, and many updates and improvements
@@ -8132,13 +8132,16 @@ Changes in version 1.1:
 Deprecated and Defunct Packages
 ===============================
 
-Seven software packages (seqplots, ssviz, stepwiseCM, segmentSeq,
-EWCE, anamiR, IdMappingRetrieval) were marked as deprecated, to be
-fixed or removed in the next release.
+One software package (betr) was removed from this release (after being
+deprecated in BioC 3.4).
 
-Nine previously deprecated software packages (coRNAi, saps, MeSHSim,
-GENE.E, mmnet, CopyNumber450k, AtlasRDF, GEOsearch, pdmclass) were
-removed from the release. One experimental data package
-(CopyNumber450kData) and 26 annotation packages (gahgu\*cdf,
-gahgu\*.db, gahgu\*probe, org.Tgondii.eg.db, org.Sco.eg.db) were also
-removed.
+Nine software packages (AtlasRDF, coRNAi, saps, MeSHSim, GENE.E, mmnet,
+CopyNumber450k, GEOsearch, pdmclass) are deprecated in this release and
+will be removed in BioC 3.6.
+
+Two experimental data packages (encoDnaseI, ggtut) were removed from this
+release (after being deprecated in BioC 3.4).
+
+One experimental data package (CopyNumber450kData) is deprecated in this
+release and will be removed in BioC 3.6.
+
