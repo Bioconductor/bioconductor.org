@@ -6,10 +6,10 @@ output_dir: output
 staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.4"
-r_version_associated_with_release: "3.3.1"
+release_version: "3.5"
+r_version_associated_with_release: "3.4.0"
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.5"
+devel_version: "3.6"
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## this is the list of all versions for which we want to generate "new" bioc-views, package
 ## index, and package detail pages
@@ -19,8 +19,8 @@ versions:
 ## release and devel versions (though after a release you should
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
-- "3.4"
 - "3.5"
+- "3.6"
 ## CHANGE THIS as various parts of the new devel version become available.
 ## set to "[]" if none are available.
 devel_repos:
@@ -30,20 +30,19 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
+  linux: "malbec1"
+  #windows: "tokay1"
+  #mac_elcapitan: "veracruz1"
+active_release_builders:
   linux: "malbec2"
   windows: "tokay2"
-  mac_mavericks: "toluca2"	
   mac_elcapitan: "veracruz2"
-active_release_builders:
-  linux: "malbec1"
-  windows: "tokay1"
-  mac_mavericks: "morelia"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
 workflow_builder:
-  bioc_version: "3.4"
-  r_version: "3.3"
+  bioc_version: "3.5"
+  r_version: "3.4"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
@@ -168,6 +167,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.2": "10/14/2015"
   "3.3": "5/4/2016"
   "3.4": "10/18/2016"
+  "3.5": "4/25/2017"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
