@@ -46,9 +46,9 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 
 ### Wednesday April 19
 
-* Identify additional packages to be deprecated in Bioconductor 3.5. This 
-  includes packages with no Landing Page (have not built this devel cycle) 
-  or those with errors and unresponsive maintainers. 
+* Identify packages to be 'deprecated' in the new devel, Bioconductor 3.6. This 
+  includes packages in 3.5 with no Landing Page (have not built this 
+  devel cycle) or those with errors and unresponsive maintainers. 
 
 * Packages 'deprecated' in Bioconductor 3.4 are marked as 'defunct' and 
   removed from the nightly builds for Bioconductor 3.5.
