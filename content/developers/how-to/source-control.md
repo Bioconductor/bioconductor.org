@@ -151,16 +151,16 @@ See
 
 ### Version Bump and Propagation of Changes
 
-Each commit, in either release or devel, should include a bump in the `z`
-portion of the `x.y.z` package
-[versioning scheme](/developers/how-to/version-numbering/).
+Each commit, in either release or devel, should include a bump in the
+`z` portion of the `x.y.z` package [versioning scheme][].
 
-<!-- UPDATE THIS PARAGRAPH WITH EACH RELEASE (make sure times are correct): -->
+Builds occur once per day, and take approximately 24 hours. See the
+[build report][] for the SVN 'Snapshot Date' (upper left corner) for
+the last SVN commit included in the report, and the 'page was
+generated' time stamp (top center) for the date of the build report.
 
-If you commit to trunk before 5:00 PM New York time, your changes will
-build overnight and be reflected in the next day's  [build
-report](http://bioconductor.org/checkResults/devel/bioc-LATEST/) which
-should appear around 9:00 AM New York time.
+[versioning scheme]: /developers/how-to/version-numbering/).
+[build report]: https://bioconductor.org/checkResults/devel/bioc-LATEST/
 
 ## Experiment Data Packages
 
