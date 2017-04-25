@@ -8,27 +8,19 @@ with their last-available landing pages.
 Software Packages:
 
 <ul class="inline_list">
-<li><a href="/packages/3.4/bioc/html/AtlasRDF.html">AtlasRDF</a></li>
-<li><a href="/packages/3.4/bioc/html/CopyNumber450k.html">CopyNumber450k</a></li>
-<li><a href="/packages/3.4/bioc/html/coRNAi.html">coRNAi</a></li>
-<li><a href="/packages/3.4/bioc/html/GENE.E.html">GENE.E</a></li>
-<li><a href="/packages/3.4/bioc/html/GEOsearch.html">GEOsearch</a></li>
-<li><a href="/packages/3.4/bioc/html/MeSHSim.html">MeSHEim</a></li>
-<li><a href="/packages/3.4/bioc/html/mmnet.html">mmnet</a></li>
-<li><a href="/packages/3.4/bioc/html/pdmclass.html">pdmclass</a></li>
-<li><a href="/packages/3.4/bioc/html/saps.html">saps</a></li>
+<li><a
+href="/packages/3.4/bioc/html/betr.html">betr</a></li>
 </ul>
 
-Experimental Data Packages:
+Experimental Data Packages: 
 
 <ul class="inline_list">
-<li><a href="/packages/3.4/data/experiment/html/CopyNumber450kData.html">CopyNumber450kData</a></li>
+<li><a href="/packages/3.4/data/experiment/html/encoDnaseI.html">encoDnaseI</a></li>
+<li><a href="/packages/3.2/data/experiment/html/ggtut.html">ggtut</a></li>
 </ul>
 
 Annotation Packages: 
 
-* 26 annotation packages (gahgu*cdf, gahgu*.db, gahgu*probe, org.Tgondii.eg.db,
-org.Sco.eg.db)
 <ul class="inline_list">
 <li><a href="/packages/3.4/data/annotation/html/gahgu133a.db.html">gahgu133a.db</a></li>
 <li><a href="/packages/3.4/data/annotation/html/gahgu133acdf.html">gahgu133acdf</a></li>
@@ -58,8 +50,8 @@ org.Sco.eg.db)
 <li><a href="/packages/3.4/data/annotation/html/org.Tgondii.eg.db.html">org.Tgondii.eg.db</a></li>
 </ul>
 
-
-7 software packages were marked as deprecated, to be fixed or removed in the next release. 
+9 software package and 1 experimental data packages were marked as deprecated,
+to be removed in the next release. 
 
 
 ## Packages removed with Bioconductor 3.4 release
