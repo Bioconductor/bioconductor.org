@@ -3,7 +3,7 @@ April 25, 2017
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.5, consisting of 1383
-software packages, 315 experiment data packages, and 911 annotation
+software packages, 316 experiment data packages, and 911 annotation
 packages.
 
 There are 88 new software packages, and many updates and improvements
