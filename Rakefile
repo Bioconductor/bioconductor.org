@@ -656,9 +656,9 @@ end
 desc "process downloads data"
 task :process_downloads_data do
   urls = %W{
-    http://bioconductor.org/packages/stats/bioc/bioc_pkg_stats.tab
-    http://bioconductor.org/packages/stats/data-annotation/annotation_pkg_stats.tab
-    http://bioconductor.org/packages/stats/data-experiment.html
+    https://bioconductor.org/packages/stats/bioc/bioc_pkg_stats.tab
+    https://bioconductor.org/packages/stats/data-annotation/annotation_pkg_stats.tab
+    https://bioconductor.org/packages/stats/data-experiment/experiment_pkg_stats.tab
   }
   d = Date.parse(Time.now.to_s)
   last6 = []
