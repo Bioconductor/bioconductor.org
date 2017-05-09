@@ -31,7 +31,7 @@ devel_repos:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
   linux: "malbec1"
-  #windows: "tokay1"
+  windows: "tokay1"
   #mac_elcapitan: "veracruz1"
 active_release_builders:
   linux: "malbec2"
@@ -65,7 +65,8 @@ ami_ids:
  bioc3_2: ami-85d88de0
  bioc3_3: ami-abd0b3bc
  bioc3_4: ami-e43e1af3
- bioc3_5: ami-dbd2c7cc
+ bioc3_5: ami-d47d09c2
+ bioc3_6: ami-54295c42
 data_sources:
 - items_root: /
   layouts_root: /
