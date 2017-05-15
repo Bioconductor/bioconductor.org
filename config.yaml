@@ -32,7 +32,7 @@ devel_repos:
 active_devel_builders:
   linux: "malbec1"
   windows: "tokay1"
-  #mac_elcapitan: "veracruz1"
+  mac_elcapitan: "veracruz1"
 active_release_builders:
   linux: "malbec2"
   windows: "tokay2"
