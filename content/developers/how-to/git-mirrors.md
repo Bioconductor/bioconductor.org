@@ -58,44 +58,51 @@ to any directory and (optionally) put it in your PATH.
 
 ### Scenario 1: Use Git Locally, No GitHub Repository ###
 
-If you simply want to use git locally on your machine and do not need to have a
-publicly accessible git repository on GitHub (or elsewhere) you can simply
-clone your package from the mirror directly.
+If you simply want to use git locally on your machine and do not need
+to have a publicly accessible git repository on GitHub (or elsewhere)
+you can simply clone your package from the mirror directly.
 
-  1. `git clone https://github.com/Bioconductor-mirror/REPO` to clone the repository to your machine.
+  1. `git clone https://github.com/Bioconductor-mirror/REPO` to clone
+     the repository to your machine.
   2. `cd REPO` to switch to the REPO directory.
   3. `bash /path/to/update_remotes.sh` to setup the git remotes.
   4. Commit to git as you normally would.
-  5. Each time you want to push git commits to svn run the following commands:
+  5. Each time you want to push git commits to svn run the following
+     commands:
      1. `git svn rebase` to get the latest SVN changes.
-     2. `git svn dcommit --add-author-from` to commit your changes to SVN.
-     You may be prompted here for your SVN username and password.
+     2. `git svn dcommit --add-author-from` to commit your changes to
+         SVN.  You may need to provide your SVN username `git svn
+         --username=u.name dcommit --add-author-from`.
 
 ### Scenario 2: Set Up Your Own GitHub Repository ###
 
-If you do not already have a public git repository for package REPO the
-simplest thing to do is navigate to
-`https://github.com/Bioconductor-mirror/REPO` and click the `Fork` button in
-the upper right.  This will create a copy of the repository on your personal
-account. You may want to re-enable issue tracking in your repository
-(it's disabled in the read-only mirrors and forks inherit
-this setting). To do this, go to Settings and then click the Issues
-checkbox.
-Then perform the following steps in your terminal.
+If you do not already have a public git repository for package REPO
+the simplest thing to do is navigate to
+`https://github.com/Bioconductor-mirror/REPO` and click the `Fork`
+button in the upper right.  This will create a copy of the repository
+on your personal account. You may want to re-enable issue tracking in
+your repository (it's disabled in the read-only mirrors and forks
+inherit this setting). To do this, go to Settings and then click the
+Issues checkbox.  Then perform the following steps in your terminal.
 
-  1. `git clone https://github.com/USER/REPO` to clone the repository to your machine.
+  1. `git clone https://github.com/USER/REPO` to clone the repository
+     to your machine.
   2. `cd REPO` to switch to the REPO directory.
   3. `bash /path/to/update_remotes.sh` to setup the git remotes.
   4. Commit to git and push to GitHub as you normally would.
   5. Each time you want to push git commits to svn:
-     1. `git checkout devel` to switch to the devel branch. (use release-X.X for release branches)
+     1. `git checkout devel` to switch to the devel branch. (use
+        release-X.X for release branches)
      2. `git svn rebase` to get the latest SVN changes.
-     3. `git merge master --log` to merge your changes from the master branch or skip this step and work directly on the current branch.
-     4. `git svn dcommit --add-author-from` to sync and commit your changes to svn.
-     You may be prompted here for your SVN username and password.
+     3. `git merge master --log` to merge your changes from the master
+        branch or skip this step and work directly on the current
+        branch.
+     4. `git svn dcommit --add-author-from` to sync and commit your
+         changes to svn.  You may need to provide your SVN username
+         `git svn --username=u.name dcommit --add-author-from`.
 
-
-When you're done, be sure and merge any changes from svn back into the git master branch:
+When you're done, be sure and merge any changes from svn back into the
+git master branch:
 
     git checkout master
     git merge devel
