@@ -116,7 +116,7 @@ new commits rather than trying to merge. The following workflow assumes
 your new commits are on the 'master' branch and the SVN tracking branch is
 called 'devel' (this is the case when using setup_remotes.sh).
 
-```bash
+```
 # switch to the devel branch
 git checkout devel
 
