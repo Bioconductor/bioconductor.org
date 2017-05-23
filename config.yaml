@@ -1,32 +1,37 @@
 ---
-## Lines that must be updated when we release a new software version are indicated in comments below
-
+## Lines that must be updated when we release a new software version are 
+## indicated in comments below
 
 output_dir: output
 staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
+
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "3.5"
 r_version_associated_with_release: "3.4.0"
+
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 devel_version: "3.6"
+
 ## CHANGE THIS WHEN WE ADD A VERSION:
-## this is the list of all versions for which we want to generate "new" bioc-views, package
-## index, and package detail pages
-versions:
+## This is the list of all versions for which we want to generate "new" 
+## bioc-views, package index, and package detail pages.
 ## if old versions (no older than 2.5) need to be rebuilt for any reason,
 ## add them here, but in most cases this should just contain the
 ## release and devel versions (though after a release you should
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
+versions:
 - "3.5"
 - "3.6"
-## CHANGE THIS as various parts of the new devel version become available.
-## set to "[]" if none are available.
+
+## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
+## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
 - "data/experiment"
-# - "data/annotation"
+- "data/annotation"
+
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
