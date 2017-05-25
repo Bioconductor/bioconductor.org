@@ -17,8 +17,8 @@ ExpiresByType text/html A600
 ExpiresByType text/javascript A600
 
 <ifModule mod_headers.c>
-<FilesMatch "PACKAGES$|PACKAGES\.gz$|VIEWS">
-Header set Cache-Control "max-age=300"
+<FilesMatch "PACKAGES$|PACKAGES\.gz$|PACKAGES\.rds$|VIEWS">
+Header set Cache-Control "max-age=30"
 </FilesMatch>
 <FilesMatch "\.json$|\.js$">
 Header set Cache-Control "max-age=600"
