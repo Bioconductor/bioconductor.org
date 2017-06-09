@@ -106,11 +106,10 @@ The broad goals of the Bioconductor project are:
 
 * **Open source**. The Bioconductor project has a commitment to full
   open source discipline, with distribution via a public subversion
-  (version control) server. All contributions exist under an open
-  source license such as Artistic 2.0, GPL2, or BSD. There are many
-  different reasons why open source software is beneficial to the
-  analysis of microarray data and to computational biology in
-  general. The reasons include:
+  (version control) server. Almost all contributions exist under an
+  open source license. There are many different reasons why open
+  source software is beneficial to the analysis of microarray data and
+  to computational biology in general. The reasons include:
   * To provide full access to algorithms and their implementation
   * To facilitate software improvements through bug fixing and software
     extension
