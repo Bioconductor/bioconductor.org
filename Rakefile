@@ -331,12 +331,12 @@ task :get_workflows do
   home = Dir.pwd
   FileUtils.mkdir_p "workflows_tmp"
   dest_dir = "help/workflows"
-  asset_dir = "assets/#{dest_dir}"
-  md_dir = "content/#{dest_dir}"
-  FileUtils.rm_rf asset_dir
-  FileUtils.rm_rf md_dir
-  FileUtils.mkdir_p asset_dir
-  FileUtils.mkdir_p md_dir
+  assets_dir = "assets/#{dest_dir}"
+  source_dir = "content/#{dest_dir}"
+  FileUtils.rm_rf assets_dir
+  FileUtils.rm_rf source_dir
+  FileUtils.mkdir_p assets_dir
+  FileUtils.mkdir_p source_dir
   # f = File.open("content/#{dest_dir}.yaml", "w")
   # f.puts "---"
   # f.puts "title: Workflows"
@@ -384,63 +384,30 @@ task :get_workflows do
       # indexfile.puts
       # indexfile.puts "## Workflows in #{entry.capitalize}:"
       # indexfile.puts
-      asset_dir = "assets/#{dest_dir}/#{entry}"
-      md_dir = "content/#{dest_dir}/#{entry}"
-      FileUtils.rm_rf asset_dir
-      FileUtils.rm_rf md_dir
-      FileUtils.mkdir_p asset_dir
-      dir2 = Dir.new(fullpath)
-      vignettes = dir2.entries.find_all {|i| i =~ /\.md$/i}
-      multivig = false
-      multivig = true if vignettes.length() > 1
-      FileUtils.mkdir_p md_dir if multivig
-      for vignette in vignettes
-        vigname = vignette.gsub(/\.md$/i, "")
-        pdf = "#{vigname}.pdf"
-        FileUtils.mkdir_p "#{asset_dir}/#{vigname}" if multivig
-        if multivig
-          dest = "#{asset_dir}/#{vigname}"
-          md_dest = md_dir
-        else
-          dest = "#{asset_dir}/#{entry}.R"
-          md_dest = "content/#{dest_dir}"
-        end
-        yaml = YAML::load(File.open("#{fullpath}/#{vigname}.yaml"))
-        FileUtils.cp "#{fullpath}/#{vigname}.R", dest
-        ["md", "yaml"].each do |suffix|
-          if multivig
-            FileUtils.cp "#{fullpath}/#{vigname}.#{suffix}", md_dest
-          else
-            FileUtils.cp "#{fullpath}/#{vigname}.#{suffix}", \
-              "#{md_dest}/#{entry}.#{suffix}"
-          end
-        end
-
-        # if multivig
-        #   indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry}/#{vigname})"
-        # else
-        #   indexfile.puts "* [#{yaml['title']}](/#{dest_dir}/#{entry})"
-        # end
-
-        ["tar.gz", "tgz", "zip"].each do |suffix|
-          file = Dir.glob("#{fullpath}/*.#{suffix}").first
-          next if file.nil?
-          FileUtils.cp "#{file}", asset_dir
-        end
-      end
+      assets_dir = "assets/#{dest_dir}/#{entry}"
+      content_dir = "content/#{dest_dir}/#{entry}"
+      FileUtils.rm_rf assets_dir
+      FileUtils.rm_rf content_dir
+      FileUtils.mkdir_p assets_dir
       dir = Dir.new(fullpath)
-      for entry in dir.entries
-        next if entry =~ /^\./
-        for vig in vignettes
-          vigname = vig.gsub(/\.md$/i, "")
-          if multivig
-            dest = "#{asset_dir}/#{vigname}"
-          else
-            dest = asset_dir
-          end
-          FileUtils.cp_r "#{fullpath}/#{entry}", dest
+      vignettes = dir.entries.find_all {|i| i =~ /\.yaml$/i}
+      multivig = vignettes.length() > 1 ? true : false
+      FileUtils.mkdir_p content_dir if multivig
+      for vignette in vignettes
+        yaml = YAML::load(File.open("#{fullpath}/#{vignette}"))
+        vigname = vignette.gsub(/\.yaml$/i, "")
+        FileUtils.mkdir_p "#{assets_dir}/#{vigname}" if multivig
+        FileUtils.cp "#{fullpath}/#{vigname}.R", multivig ? "#{assets_dir}/#{vigname}" : "#{assets_dir}/#{entry}.R"
+        [vignette, yaml['output_file']].each do |f|
+          FileUtils.cp "#{fullpath}/#{f}", multivig ? content_dir : "#{content_dir}#{File.extname(f)}"
+        end
+        ## the following should go away once workflows are rendered to html containing embedded graphics
+        for entry in dir.entries.find_all {|i| i =~ /(_files|\.png)$/i}
+          FileUtils.cp_r "#{fullpath}/#{entry}", multivig ? "#{assets_dir}/#{vigname}" : assets_dir
         end
       end
+      pkgfiles = yaml.values_at('source_tarball', 'mac_pkg', 'win_pkg').compact - ["NOT_SUPPORTED"]
+      FileUtils.cp pkgfiles.map { |f| "#{fullpath}/#{f}" }, assets_dir
     end
   end
   #indexfile.close
