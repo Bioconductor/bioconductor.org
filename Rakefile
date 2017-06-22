@@ -406,12 +406,12 @@ task :get_workflows do
           md_dest = "content/#{dest_dir}"
         end
         yaml = YAML::load(File.open("#{fullpath}/#{vigname}.yaml"))
-        FileUtils.mv "#{fullpath}/#{vigname}.R", dest
+        FileUtils.cp "#{fullpath}/#{vigname}.R", dest
         ["md", "yaml"].each do |suffix|
           if multivig
-            FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", md_dest
+            FileUtils.cp "#{fullpath}/#{vigname}.#{suffix}", md_dest
           else
-            FileUtils.mv "#{fullpath}/#{vigname}.#{suffix}", \
+            FileUtils.cp "#{fullpath}/#{vigname}.#{suffix}", \
               "#{md_dest}/#{entry}.#{suffix}"
           end
         end
@@ -425,9 +425,8 @@ task :get_workflows do
         ["tar.gz", "tgz", "zip"].each do |suffix|
           file = Dir.glob("#{fullpath}/*.#{suffix}").first
           next if file.nil?
-          FileUtils.mv "#{file}", asset_dir
+          FileUtils.cp "#{file}", asset_dir
         end
-        FileUtils.rm_f "#{fullpath}/#{vigname}.Rmd"
       end
       dir = Dir.new(fullpath)
       for entry in dir.entries
