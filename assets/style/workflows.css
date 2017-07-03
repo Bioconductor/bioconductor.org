@@ -1,0 +1,35 @@
+.figure {
+  padding: 1em 0;
+}
+
+.author-name {
+  font-size: 130%;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+}
+
+.affil-mark, .sidenote-number {
+  position: relative;
+  vertical-align: super;
+  font-size: 7.5pt;
+  font-weight: normal;
+  font-style: normal;
+  line-height: normal;
+}
+
+.sidenote {
+  float: right;
+  clear: right;
+  margin-right: -320px;
+  width: 300px;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 8pt;
+  line-height: 1.3;
+  vertical-align: baseline;
+  position: relative;
+  text-align: left;
+}
+
+input.margin-toggle { display: none; }

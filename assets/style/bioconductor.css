@@ -679,24 +679,6 @@ td.docFixedWidth
   font-size:11px;
 }
 
-/* styles for workflows */
-
-.author-name {
-  font-size: 130%;
-  font-weight: bold;
-  font-style: italic;
-  text-align: left;
-}
-
-.affil-mark {
-  position: relative;
-  vertical-align: super;
-  font-size: 7.5pt;
-  font-weight: normal;
-  font-style: normal;
-  line-height: normal;
-}
-
 /* limit image width to prevent oversized figures on workflow pages */
 img {
   max-width: 100%;
