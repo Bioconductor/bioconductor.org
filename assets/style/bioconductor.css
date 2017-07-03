@@ -56,7 +56,7 @@ h1,h2 {
    are only used at top-level pages with short text */ 
 h1 img, h2 img { padding-right:12px; vertical-align:middle; }
 
-p { padding-bottom: 1em; } /* makes a nice separation between paragraphs */
+p, table { padding-bottom: 1em; } /* makes a nice separation between paragraphs */
 
 .olive { color:#87b13f; } /* anything can be colored olive */
 .blue  { color:#1881c2; } /* anything can be colored blue (light blue) */
@@ -389,7 +389,7 @@ li.footer_nav_list_element { float:left; }
 .shaded_box .box_header a:visited { color:#000000; text-decoration:none; }
 .shaded_box .box_header a:hover { color:#87b13f; text-decoration:underline; }
 
-.sb { width:100%; height:100%; margin-bottom:1em; }
+.sb { width:100%; height:100%; }
 .sb .sb1 {
   width:8px;
   height:8px;
@@ -497,7 +497,7 @@ pre {
   padding:1em;
   border:1px #aaaaaa dashed;
   font-family:'Lucida Console',monaco,monospace;
-  margin-top:1em;
+  margin-top:0;
   margin-bottom:1em;
   overflow-x: auto;
   white-space:pre;

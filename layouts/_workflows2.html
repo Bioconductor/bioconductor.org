@@ -61,9 +61,9 @@
   <% if w.has_key? :output_file and w[:output_file] =~ /\.pdf$/i %>
     | <a href="<%=w[:output_file]%>">PDF Vignette</a>
   <% end %>
-  <br/>
+    
+  <p>To install this workflow under Bioconductor <%= @config[:release_version] %>, start R and enter:</p>
   
-  To install this workflow under Bioconductor <%= @config[:release_version] %>, start R and enter:<br/>
-  <pre>source("http://bioconductor.org/workflows.R")
+  <pre style="margin-bottom: 0;">source("http://bioconductor.org/workflows.R")
 workflowInstall("<%=w[:package]%>")</pre>
 </div>
