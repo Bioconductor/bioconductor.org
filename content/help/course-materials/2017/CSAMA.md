@@ -18,6 +18,8 @@ Heidelberg.
 
 ## Resources
 
+Source: [Github](https://github.com/Bioconductor/CSAMA/blob/2017/README.md)
+
 **Monday, June 12**
 
 Lectures
@@ -36,14 +38,14 @@ Labs
 
 - Introduction to Bioc. Introduction
   ([html](labs/1-monday/lab-01-intro-to-r-bioc/L1.1-r-intro-morgan.html)),
-  _R_[html](labs/1-monday/lab-01-intro-to-r-bioc/lab-1-intro-to-r-bioc.html)),
+  _R_ [html](labs/1-monday/lab-01-intro-to-r-bioc/lab-1-intro-to-r-bioc.html)),
   _Bioconductor_
   ([html](labs/1-monday/lab-01-intro-to-r-bioc/L1.2-bioc-intro-morgan.html)),
   Data representations
   ([html](labs/1-monday/lab-01-intro-to-r-bioc/L1.3-bioc-data-representation-morgan.html)),
   Annotation
-  ([html](labs/1-monday/lab-01-intro-to-r-bioc/L1.4-bioc-annotation-morgan.html)),
-  (Data:
+  ([html](labs/1-monday/lab-01-intro-to-r-bioc/L1.4-bioc-annotation-morgan.html))
+  (data:
   [ALLphenoData.tsv](labs/1-monday/lab-01-intro-to-r-bioc/ALLphenoData.tsv),
   [BRFSS-subset.csv](labs/1-monday/lab-01-intro-to-r-bioc/BRFSS-subset.csv),
   [symgo.csv](labs/1-monday/lab-01-intro-to-r-bioc/symgo.csv)).
@@ -128,8 +130,8 @@ Lectures
 
 Labs
 
-- Graphics ([pdf](labs/5-friday/lab-06-graphics/lab6-graphics.pdf)),
-  ([diabetes.csv](labs/5-friday/lab-06-graphics/diabetes.csv)).
+- Graphics ([pdf](labs/5-friday/lab-06-graphics/lab6-graphics.pdf))
+  (data: [diabetes.csv](labs/5-friday/lab-06-graphics/diabetes.csv)).
 - Machine learning (supervised)
   ([pdf](labs/5-friday/lab-07-machine-learning/lab7-machine-learning.pdf)).
 - Large data, performance, and parallelization; large-scale efficient
