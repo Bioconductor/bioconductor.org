@@ -78,8 +78,12 @@ Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
 * [bioconductor/release_metabolomics2](https://hub.docker.com/r/bioconductor/release_metabolomics2/)
 
 ###### Maintained by Laurent Gatto: lg390@cam.ac.uk
-* bioconductor/devel_proteomics2
-* bioconductor/release_proteomics2
+* [bioconductor/devel_mscore2](https://hub.docker.com/r/bioconductor/devel_mscore2/)
+* [bioconductor/devel_protcore2](https://hub.docker.com/r/bioconductor/devel_protcore2/)
+* [bioconductor/devel_proteomics2](https://hub.docker.com/r/bioconductor/devel_proteomics2/)
+* [bioconductor/release_mscore2](https://hub.docker.com/r/bioconductor/release_mscore2/)
+* [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
+* [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
 
  
 ## Legacy Containers
