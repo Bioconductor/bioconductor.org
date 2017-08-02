@@ -102,16 +102,7 @@ negative.
 
 ### Re-use existing functionality
 
-Common input formats include
-
-<table>
-<tr><td>GTF, GFF, BED, BigWig, ...</td><td><code>rtracklayer::import()</code></td></tr>
-<tr><td>FASTA</td><td><code>Biostrings::readDNAStringSet()</code></td></tr>
-<tr><td>SAM / BAM</td><td><code>Rsamtools::scanBam()</code>, <code>GenomicAlignments::readGAlignment*()</code></td></tr>
-<tr><td>VCF</td><td><code>VariantAnnotation::readVcf()</code></td></tr>
-<tr><td>FASTQ</td><td><code>ShortRead::readFastq()</code></td></tr>
-</table>
-<p></p>
+For common input formats see [common _Bioconductor_ import and classes][]
 
 If there are problems, e.g., in performance or parsing your particular
 file type, ask for input from other developers on the bioc-devel
@@ -133,6 +124,8 @@ ranges as row data) to coordinate rectangular feature x sample data
 (e.g., RNAseq count matrix) with feature and sample description. Use
 `SummarizedExperiment` rather than the older `ExpressionSet`,
 especially for sequence data.
+
+For more existing classes see [common _Bioconductor_ import and classes][]
 
 ### Essential S4 interface
 
@@ -160,3 +153,4 @@ collisions between similarly named functions in other packages.
 
 [microbenchmark]: https://cran.r-project.org/web/packages/microbenchmark
 [unit tests]: /developers/how-to/unitTesting-guidelines/
+[common _Bioconductor_ import and classes]: /developers/how-to/commonImportsAndClasses

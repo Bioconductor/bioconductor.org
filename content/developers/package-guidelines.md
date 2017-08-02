@@ -288,10 +288,12 @@ Many R operations are performed on the whole object, not just the
 elements of the object (e.g., sum(x), not x[1] + x[2] + ...). In
 particular, relatively few situations require an explicit for
 loop. See the [Vectorize][RECVectorize] section of
-[Robust and Efficient Code][] for additional detail.
+[Robust and Efficient Code][] for additional detail. See also [Coding Style][]
+for advice on common coding syntax.
 
 [RECVectorize]: /developers/how-to/efficient-code/#vectorize
 [Robust and Efficient Code]: /developers/how-to/efficient-code
+[Coding Style]: /developers/how-to/coding-style
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 

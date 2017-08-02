@@ -50,7 +50,10 @@ at different stages of their package.
     <p>Coding Practice</p>
 
     <ul>
-      <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
+      <li><a class="symlink"
+      href="/developers/how-to/commonImportsAndClasses">Common Bioconductor
+      Imports and Classes</a></li>
+       <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
       <li><a class="symlink" href="/developers/how-to/web-query">Querying Web
       Resources</a></li>
       <li><a class="symlink" href="/developers/how-to/unitTesting-guidelines">Unit Tests</a></li>
