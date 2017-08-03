@@ -32,4 +32,13 @@
   text-align: left;
 }
 
-input.margin-toggle { display: none; }
+input.margin-toggle {
+  display: none;
+}
+
+.nav-icon {
+  width: 1.5ex;
+  float: left;
+  text-align: center;
+  padding-right: 0.5ex;
+}
