@@ -32,13 +32,16 @@ Anyone who is a bioinformatics domain expert.
  Description in the DESCRIPTION file as this will be used as the abstract on the
  Bioconductor web site alongside [the other workflows](/help/workflows/).
 
+* The package should pass R CMD build in <= 20 minutes and should require
+  <= 8GB RAM.
+
 * In the DESCRIPTION file, include the line "Workflow: True"
 
 * Submit the package to the [GitHub submission
   tracker](https://github.com/Bioconductor/Contributions) for a formal
   review. Please also indicate in the tracker issue that this package is a
   workflow. 
-  
+ 
 * Once the package is approved a new directory will be created in our SVN repository
   under "/trunk/madman/workflows/\<YourPackage\>" that you be given read/write
   access to. Your SVN credentials will be sent to you via email after
