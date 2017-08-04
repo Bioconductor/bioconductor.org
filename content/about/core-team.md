@@ -5,9 +5,11 @@
 * Martin Morgan (Project Lead)
 * Herv&eacute; Pag&egrave;s
 * Valerie Obenchain
+* Andrzej Ole&#347;
 * Lori Shepherd
 * Marcel Ramos
 * Nitesh Turaga
+* Daniel van Twisk
 
 Recent alumni
 
