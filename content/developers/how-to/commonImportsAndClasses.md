@@ -1,4 +1,4 @@
-# Re-using Bioconductor Import Methods and Classes
+# Common Bioconductor Methods and Classes
 
 It is highly recommended to reuse existing methods for importing data as well as
 reuse already established classes and functionality rather than creating 'new'

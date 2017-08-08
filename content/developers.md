@@ -52,7 +52,7 @@ at different stages of their package.
     <ul>
       <li><a class="symlink"
       href="/developers/how-to/commonImportsAndClasses">Common Bioconductor
-      Imports and Classes</a></li>
+      Methods and Classes</a></li>
        <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
       <li><a class="symlink" href="/developers/how-to/web-query">Querying Web
       Resources</a></li>
