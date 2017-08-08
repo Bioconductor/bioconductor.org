@@ -102,7 +102,7 @@ negative.
 
 ### Re-use existing functionality
 
-For common input formats see [common _Bioconductor_ import and classes][]
+For common input formats see [common _Bioconductor_ methods and classes][]
 
 If there are problems, e.g., in performance or parsing your particular
 file type, ask for input from other developers on the bioc-devel
@@ -125,7 +125,7 @@ ranges as row data) to coordinate rectangular feature x sample data
 `SummarizedExperiment` rather than the older `ExpressionSet`,
 especially for sequence data.
 
-For more existing classes see [common _Bioconductor_ import and classes][]
+For more existing classes see [common _Bioconductor_ methods and classes][]
 
 ### Essential S4 interface
 
@@ -153,4 +153,4 @@ collisions between similarly named functions in other packages.
 
 [microbenchmark]: https://cran.r-project.org/web/packages/microbenchmark
 [unit tests]: /developers/how-to/unitTesting-guidelines/
-[common _Bioconductor_ import and classes]: /developers/how-to/commonImportsAndClasses
+[common _Bioconductor_ methods and classes]: /developers/how-to/commonMethodsAndClasses

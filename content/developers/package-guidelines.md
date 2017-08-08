@@ -180,7 +180,7 @@ Packages must
   RangedData or RangedDataList objects (those classes are defined in the
   IRanges package) is discouraged so new contributed packages should use
   GRanges/GRangesList objects instead (those classes are defined in the
-  GenomicRanges package).
+  GenomicRanges package). See [Common Bioconductor Methods and Classes](developers/how-to/commonMethodsAndClasses)
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
 * Contain only code that can be redistributed according to the package license.
