@@ -23,7 +23,7 @@ for your data type.
 + DNA / RNA / AA sequences<br><code>Biostrings::*Stringset()</code><br><br>
 + GeneSets<br><code>GSEABase::GeneSet()</code><br><code>GSEABase::GeneSetCollection()</code><br><br>
 + 1-based, closed-interval genomic coordinates<br><code>GenomicRanges::GRanges()</code><br><br>
-+ rectangular freature x sample data (RNAseq count matrix, microarray, ...)<br><code>SummarizedExperiment::SummarizedExperiment()</code><br><br>
-+ multi omics data<br><code>MultiAssayExperiment::MultiAssayExperiment()</code><br><br>
-+ single cell data<br><code>SingleCellExperiment::SingleCellExperiment()</code><br><br>
-+ mass spec data<br><code>MSnbase::MSnExp()</code>
++ Rectangular feature x sample data (RNAseq count matrix, microarray, ...)<br><code>SummarizedExperiment::SummarizedExperiment()</code><br><br>
++ Multi-omics data<br><code>MultiAssayExperiment::MultiAssayExperiment()</code><br><br>
++ Single cell data<br><code>SingleCellExperiment::SingleCellExperiment()</code><br><br>
++ Mass spec data<br><code>MSnbase::MSnExp()</code>
