@@ -51,8 +51,7 @@ at different stages of their package.
 
     <ul>
       <li><a class="symlink"
-      href="/developers/how-to/commonMethodsAndClasses">Common Bioconductor
-      Methods and Classes</a></li>
+      href="/developers/how-to/commonMethodsAndClasses">Common Methods and Classes</a></li>
        <li><a class="symlink" href="/developers/how-to/efficient-code">Robust and Efficient Code</a></li>
       <li><a class="symlink" href="/developers/how-to/web-query">Querying Web
       Resources</a></li>
