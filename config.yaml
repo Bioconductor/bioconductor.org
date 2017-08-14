@@ -70,8 +70,8 @@ ami_ids:
  bioc3_2: ami-85d88de0
  bioc3_3: ami-abd0b3bc
  bioc3_4: ami-8946709f
- bioc3_5: ami-586a7d4e
- bioc3_6: ami-a4697eb2
+ bioc3_5: ami-88deeff3
+ bioc3_6: ami-e4dfee9f
 data_sources:
 - items_root: /
   layouts_root: /
