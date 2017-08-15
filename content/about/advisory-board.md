@@ -6,14 +6,11 @@ Bioconductor has a scientific advisory board composed of leaders in the
 statistical analysis of high-throughput genomic data. Board members
 participate for a flexible term. Current members are:
 
-* Simon Tavare (Advisory Board chair; Cambridge)
+* Robert Gentleman (Advisory Board Chair, 23andMe)
 * Vincent Carey (Brigham &amp; Women's)
-* Robert Gentleman (23andMe)
 * Wolfgang Huber (European Molecular Biology Laboratory)
 * Rafael Irizarry (Dana Farber)
-* Paul Flicek (European Bioinformatics Institute)
-* Simon Urbanek (AT&amp;T Labs &ndash; Research)
-
+* Jan Vitek (Northeastern University)
 
 ## Technical Advisory Board
 
