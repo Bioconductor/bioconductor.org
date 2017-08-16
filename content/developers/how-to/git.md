@@ -130,11 +130,7 @@ repository.
 To contribute a new Annotation package please contact packages@bioconductor.org
 for guidance.
 
-## Common problems
-
-### What SSH keys does _Bioconductor_ know about?
-
-### More help
+## More help
 
 Need more help? Ask on the [bioc-devel](/help/mailing-list/) mailing
 list.
