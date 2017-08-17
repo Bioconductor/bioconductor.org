@@ -433,21 +433,12 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                 <% end %>
 
-
                 <% if package_has_source_url(@item) %>
                     <tr class="<%=ri.rowclass%>">
-                        <td id="svn_source">Subversion source</td>
-                        <td><a href="<%=get_source_url(@package, @item, @item_rep)%>">(username/password: readonly)</a></td>
+                        <td id="svn_source">Source Repository</td>
+                        <td>git clone <%=get_source_url(@package, @item, @item_rep)%></td>
                     </tr>
                 <% end %>
-
-                <% if package_has_source_url(@item, true) %>
-                    <tr class="<%=ri.rowclass%>">
-                        <td id="github_source">Git source</td>
-                        <td><a href="<%=get_github_url(@package)%>"><%=get_github_url(@package)%></a></td>
-                    </tr>
-                <% end %>
-
 
                     <tr class="<%=ri.rowclass%>">
                         <td>Package Short Url</td>

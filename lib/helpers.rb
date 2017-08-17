@@ -1137,7 +1137,7 @@ def package_has_source_url(item, software_only=false)
     return false
 end
 
-def get_source_url(package, item, item_rep)
+def get_svn_source_url(package, item, item_rep)
     url = "https://hedgehog.fhcrc.org/"
     segs = item.identifier.split("/")
     repos = segs[5]
@@ -1161,6 +1161,15 @@ def get_source_url(package, item, item_rep)
     end
     url += package[:Package] + "/"
     url
+end
+
+def get_source_url(package, item, item_rep)
+    segs = item.identifier.split('/')
+    if segs[4] < "3.5"
+        get_svn_source_url(package, item, item_rep)
+    else
+        "https://git.bioconductor.org/packages/" + package[:Package]
+    end
 end
 
 def get_video_title(video)
