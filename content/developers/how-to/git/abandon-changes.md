@@ -4,16 +4,19 @@ __Goal:__ You want to start fresh after failing to resolve conflicts
 or some other issue. If you intend to go nuclear, please contact the
 bioc-devel@bioconductor.org mailing list.
 
-# Going sub-nuclear: force _Bioconductor_ `master` to GitHub `master`
+## Force _Bioconductor_ `master` to GitHub `master`
 
 One way you can ignore your work and make a new branch is by replacing
 your local and GitHub repository `master` branch with the
 _Bioconductor_ `master` branch.
 
-NOTE: This works only if you haven't pushed the change causing the
+__Note__: This works only if you haven't pushed the change causing the
 issue to the _Bioconductor_ repository.
 
-## Steps:
+__Note__: Any references to commits on current master (e.g., in GitHub
+issues) will be invalidated.
+
+### Steps:
 
 1. Checkout a new branch, e.g., `master_backup`, with tracking set to
    track the _Bioconductor_ `master` branch `upstream/master`.
@@ -46,7 +49,7 @@ issue to the _Bioconductor_ repository.
    Push these cherry-picked changes to GitHub and _Bioconductor_
    repositories.
 
-# Reset to a previous commit
+## Reset to a previous commit
 
 If you find yourself in a place where you want to abandon changes
 __already committed__ to _Bioconductor_ or GitHub, use `reset` to undo
@@ -68,12 +71,12 @@ to both GitHub and _Bioconductor_:
     git push -f origin
     git push -f upstream
 
-# Go Nuclear - Delete your local copy and GitHub repo, because nothing is working.
+## Delete your local copy and GitHub repo, because nothing is working
 
 __CAUTION: These instructions come with many disadvantages. You have
 been warned.__
 
-## Steps:
+### Steps:
 
 1. Delete your local repository, e.g., `rm -rf BiocGenerics`
 
@@ -82,7 +85,7 @@ been warned.__
 1. [Maintain GitHub and _Bioconductor_ repositories][] for an existing
    _Bioconductor_ repository, then [pull upstream changes][].
 
-## Disadvantages of going "nuclear":
+### Disadvantages of going "nuclear"
 
 1. You will lose all your GitHub issues
 

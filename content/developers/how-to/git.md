@@ -9,21 +9,20 @@ in
 
 - [New package workflow][]: update your GitHub repository after
   package acceptance.
-- [Maintain GitHub and Bioconductor repositories][] of an existing
-  package.
-- [Maintain a _Bioconductor_-only repository][] of an existing
+- [Create a new GitHub repository][] for an existing package.
+- [Maintain a _Bioconductor_-only repository][] for an existing
   package.
 
 [New package workflow]: new-package-workflow
-[Maintain GitHub and Bioconductor repositories]: maintain-github-bioc
+[Create a new GitHub repository]: maintain-github-bioc
 [Maintain a _Bioconductor_-only repository]: maintain-bioc-only
 
 More scenarios for repository creation:
 
-- [Sync existing repositories][] with _Bioconductor_.
+- [Sync an existing GitHub repository][] with _Bioconductor_.
 - [Create a local repository][] for private use.
 
-[Sync existing repositories]: sync-existing-repositories
+[Sync an existing GitHub repository]: sync-existing-repositories
 [Create a local repository]: create-local-repository
 
 Scenarios for code update:

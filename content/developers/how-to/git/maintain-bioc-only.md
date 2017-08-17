@@ -1,4 +1,4 @@
-# Maintaining a _Bioconductor_-only repository
+# Maintain a _Bioconductor_-only repository for an existing package
 
 __Goal:__ Developer wishes to maintain their _Bioconductor_ repository
 without using GitHub.

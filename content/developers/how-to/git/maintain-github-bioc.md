@@ -1,4 +1,4 @@
-# Maintain GitHub and _Bioconductor_ repositories
+# Create a new GitHub repository for an existing _Bioconductor_ package
 
 __Goal:__ As a maintainer, you'd like to create a new GitHub
 repository for your existing _Bioconductor_ repository, so that your
