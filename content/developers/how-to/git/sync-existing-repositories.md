@@ -5,11 +5,12 @@ repositories are all in sync.
 
 ## Steps:
 
-1. Clone the the GitHub repository to a local machine.
+1. Clone the the GitHub repository to a local machine. Change into the
+   directory containing the repository.
 
 1. Configure the "remotes" of the GitHub clone.
 
-        git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY-NAME>.git`
+        git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY>.git`
 
 1. Fetch updates from all (_Bioconductor_ and GitHub) remotes. You may
    see "warning: no common commits"; this will be addressed after
