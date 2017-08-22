@@ -24,7 +24,6 @@ at different stages of their package.
       <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
       <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
       <li><a class="symlink" href="/developers/new_packages/">New Packages Log</a></li>
-      <li><a class="symlink" href="/developers/svnlog/">Subversion Log</a></li>
       <li><a class="symlink" href="/developers/rss-feeds/">RSS Feeds</a></li>
     </ul>
 
