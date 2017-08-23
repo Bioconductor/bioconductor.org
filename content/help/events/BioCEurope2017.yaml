@@ -5,5 +5,5 @@ event_host:
 start: 2017-12-05
 end:   2017-12-06
 link:
-  text: Additional details forthcoming
-  url: https://bioconductor.org/help/course-materials/2017/BioCEurope
+  text: Conference Information and Registartion
+  url: https://bioconductor.github.io/EuroBioc2017/
