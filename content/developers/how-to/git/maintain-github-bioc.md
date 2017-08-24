@@ -12,6 +12,10 @@ user community can engage in the development of your package.
     [which-remote-url-should-i-use][] and
     [add your public key to your GitHub account][].
 
+1.  If you have an existing svn account,
+    [submit your SSH public key][submit-keys] or github id to
+    _Bioconductor_.
+
 1.  [Create a new GitHub repository][] on your account, with the name
     of the existing _Bioconductor_ package.
 
@@ -77,6 +81,7 @@ user community can engage in the development of your package.
 1. Check your GitHub repository to confirm that the `master` (and
    optionally `RELEASE_3_5`) branches are present.
 
+[submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
 [Create a new GitHub account]: https://help.github.com/articles/signing-up-for-a-new-github-account/
 [Create a new GitHub repository]: https://help.github.com/articles/create-a-repo/
 [Sync existing repositories]: ../sync-existing-repositories
