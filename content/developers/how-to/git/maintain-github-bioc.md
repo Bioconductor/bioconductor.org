@@ -91,4 +91,4 @@ user community can engage in the development of your package.
 [Sync existing repositories]: ../sync-existing-repositories
 [which-remote-url-should-i-use]: https://help.github.com/articles/which-remote-url-should-i-use/
 [add your public key to your GitHub account]: https://help.github.com/articles/connecting-to-github-with-ssh/
-[Push to GitHub and _Bioconductor_]: push-to-github-bioc
+[Push to GitHub and _Bioconductor_]: ../push-to-github-bioc
