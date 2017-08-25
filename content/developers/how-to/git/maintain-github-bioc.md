@@ -81,9 +81,14 @@ user community can engage in the development of your package.
 1. Check your GitHub repository to confirm that the `master` (and
    optionally `RELEASE_3_5`) branches are present.
 
+1. Once the GitHub repository is established follow
+   [Push to GitHub and _Bioconductor_][] to maintain your repository
+   on both GitHub and Bioconductor.
+
 [submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
 [Create a new GitHub account]: https://help.github.com/articles/signing-up-for-a-new-github-account/
 [Create a new GitHub repository]: https://help.github.com/articles/create-a-repo/
 [Sync existing repositories]: ../sync-existing-repositories
 [which-remote-url-should-i-use]: https://help.github.com/articles/which-remote-url-should-i-use/
 [add your public key to your GitHub account]: https://help.github.com/articles/connecting-to-github-with-ssh/
+[Push to GitHub and _Bioconductor_]: push-to-github-bioc
