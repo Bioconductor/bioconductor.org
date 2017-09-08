@@ -69,8 +69,7 @@ RewriteRule ^(.*)$ $1/ [PT]
 
 
 ## packages urls
-RewriteRule ^packages/1.8/BiocViews\.html$
-https://s3.amazonaws.com/bioc-static-website/packages/1.8/BiocViews.html [R=301,L]
+RewriteRule ^packages/1.8/(.*)$ https://s3.amazonaws.com/bioc-static-website/packages/1.8/$1 [R=301,L]
 ##RewriteRule ^packages/release/BiocViews\.html$ /help/bioc-views/release/BiocViews.html [R=301]
 ##RewriteRule ^packages/devel/BiocViews\.html$ /help/bioc-views/devel/BiocViews.html [R=301]
 
