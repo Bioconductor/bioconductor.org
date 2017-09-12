@@ -150,19 +150,19 @@
     Check the output of `git remote -v` for consistency. Include this in your email to bioc-devel,
     if you are unsure. The remote should look like, 
 
-        ```
-        origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
-        origin  git@git.bioconductor.org/packages/myPackage.git (push)
-        ```
-    
-        or,
+    ```
+    origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
+    origin  git@git.bioconductor.org/packages/myPackage.git (push)
+    ```
 
-        ```
-        origin  git@github.com:<github username>/myPackage.git (fetch)
-        origin  git@github.com:<github username>/myPackage.git (push)
-        upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
-        upstream  git@git.bioconductor.org/packages/myPackage.git (push)
-        ```
+    or,
+
+    ```
+    origin  git@github.com:<github username>/myPackage.git (fetch)
+    origin  git@github.com:<github username>/myPackage.git (push)
+    upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
+    upstream  git@git.bioconductor.org/packages/myPackage.git (push)
+    ```
  
     * Check if you have access to the bioc-git server (git@git.bioconductor.org), by using
     `ssh -T git@git.bioconductor.org`.
@@ -182,7 +182,7 @@
      R  	packages/ACME
      R  	packages/ADaCGH2
      R  	packages/AGDEX
-     ```
+    ```
 
 16. SSH key not being recognized because of different name?
 
@@ -204,21 +204,21 @@
 
     There are a few possibilities here,
 
-    1. You have set a password. The bioc-devel mailing list cannot help you with this.
+    * You have set a password. The bioc-devel mailing list cannot help you with this.
     You have to submit a new key on the google-form.
 
-    2. The permissions on your SSH key are wrong. Verify that the permissions on
+    * The permissions on your SSH key are wrong. Verify that the permissions on
     SSH IdentityFile are `400`. SSH will reject, in a not clearly explicit manner,
     SSH keys that are too readable. It will just look like a credential rejection.
     The solution, in this case, is:
 
-    (if your SSH key for bioconductor is called `id_rsa`)
+        (if your SSH key for bioconductor is called `id_rsa`)
 
-    ```
-    chmod 400 ~/.ssh/id_rsa
-    ```
+        ```
+        chmod 400 ~/.ssh/id_rsa
+        ```
 
-    3. You have the wrong remote set up, please check `git remote -v` to make sure
+    * You have the wrong remote set up, please check `git remote -v` to make sure
     the SSH access protocol is being used. Your bioc-git server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
