@@ -81,11 +81,11 @@ RedirectMatch 301 /packages/1.8/(.*) https://s3.amazonaws.com/archive.bioconduct
 RedirectMatch 301 /packages/2.5/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/2.5/$1
 #RedirectMatch 301 /packages/2.6/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/2.6/$1
 
-RedirectMatch 301 /packages/data/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/data/$1
-RedirectMatch 301 /packages/omegahat/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/omegahat/$1
-RedirectMatch 301 /packages/lindsey/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/lindsey/$1
-RedirectMatch 301 /packages/json/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/json/$1
-RedirectMatch 301 /packages/bioc/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/bioc/$1
+#RedirectMatch 301 /packages/data/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/data/$1
+#RedirectMatch 301 /packages/omegahat/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/omegahat/$1
+#RedirectMatch 301 /packages/lindsey/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/lindsey/$1
+#RedirectMatch 301 /packages/json/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/json/$1
+#RedirectMatch 301 /packages/bioc/(.*) https://s3.amazonaws.com/archive.bioconductor.org/packages/bioc/$1
 
 
 ## packages urls
