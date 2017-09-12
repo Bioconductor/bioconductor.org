@@ -33,7 +33,7 @@ Anyone who is a bioinformatics domain expert.
  Bioconductor web site alongside [the other workflows](/help/workflows/).
 
 * The package should pass R CMD build in <= 20 minutes and should require
-  <= 8GB RAM.
+  <= 4GB RAM.
 
 * In the DESCRIPTION file, include the line "Workflow: True"
 
