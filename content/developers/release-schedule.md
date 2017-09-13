@@ -1,38 +1,40 @@
-# ![](/images/icons/magnifier.gif)Bioconductor 3.5 Release Schedule
+# ![](/images/icons/magnifier.gif) Bioconductor 3.6 Release Schedule (TENTATIVE)
 
-This release will use R-3.4.0 ("You Stupid Darkness").
+This release will use R-3.4.2 ("Short Summer").
 
-## Tentative schedule
+### Friday Sept 29 
 
-### Friday March 24 
-
-* Announce deprecated / defunct packages for BioC 3.5.
+* Announce deprecated / defunct packages for BioC 3.6.
 
 * Start building/checking workflows in R devel.
 
-### Friday March 31
+### Friday Oct 6 
 
 * Deadline for new package submissions.
 
 * .db0 packages available for developers.
 
-### Friday April 7
+### Friday Oct 13
 
 * Maintainers update package NEWS files. Latest NEWS will be collated 
   and included in release announcement.
 
-* Annotations Deadline:
-  - Core packages built and posted to devel annotation data repository.
-  - Contributed packages posted to devel annotation data repository.
+* TxDb, OrgDb packages built and posted to devel annotation data repository.
+
+### Friday Oct 20
+
+* Contributed annotation packages posted to devel annotation data repository.
 
 * Bioconductor Feature Freeze: 
-  - No API changes to BioC 3.5.
-  - No new packages added to BioC 3.5 roster.
+  - No API changes to BioC 3.6.
+  - No new packages added to BioC 3.6 roster.
 
-* Stop current release (BioC 3.4) builds.  Commits to this branch will be
+* Stop current release (BioC 3.5) builds.  Commits to this branch will be
   disabled.
 
-### Friday April 14
+* Start building BioC 3.7 new devel
+
+### Wednesday October 25 
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings.  Some warnings will be accepted, clarification 
@@ -40,38 +42,33 @@ This release will use R-3.4.0 ("You Stupid Darkness").
 
 * Deadline for workflows to build successfully.
 
+* Identify packages to be 'deprecated' in the new devel, Bioconductor 3.7. This 
+  includes packages in 3.6 with no Landing Page (have not built this 
+  devel cycle) or those with errors and unresponsive maintainers. 
+
+* Packages 'deprecated' in Bioconductor 3.5 are marked as 'defunct' and 
+  removed from the nightly builds for Bioconductor 3.6.
+  See [End of Life](/developers/package-end-of-life) for details.
+
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
+### Monday October 30 
 
-### Wednesday April 19
-
-* Identify packages to be 'deprecated' in the new devel, Bioconductor 3.6. This 
-  includes packages in 3.5 with no Landing Page (have not built this 
-  devel cycle) or those with errors and unresponsive maintainers. 
-
-* Packages 'deprecated' in Bioconductor 3.4 are marked as 'defunct' and 
-  removed from the nightly builds for Bioconductor 3.5.
-  See [End of Life](/developers/package-end-of-life) for details.
-
-
-### Monday April 24 
-
-* Creation of the BioC 3.5 release branch.  Development can resume on
+* Creation of the BioC 3.6 release branch.  Development can resume on
   trunk, but changes there will not be part of the release.
 
 * Build final release repositories.
 
-* Test install scripts, GUI installation.
 
-### Tuesday April 25 
+### Tuesday October 31 
 
 * Bioconductor release.
 
 
 ## Post-release
 
-### Wednesday April 26 
+### Wednesday November 1 
 
 * Build AMIs for release and devel
 
