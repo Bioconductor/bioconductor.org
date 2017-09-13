@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif) Bioconductor 3.6 Release Schedule (TENTATIVE)
+# ![](/images/icons/magnifier.gif) DRAFT Bioconductor 3.6 Release Schedule
 
 This release will use R-3.4.2 ("Short Summer").
 
