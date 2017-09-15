@@ -126,102 +126,94 @@
 
 14. I cannot push to my package. I get the error,
 
-    ```
-    $ git push origin master
-    fatal: remote error: FATAL: W any packages/myPackage nobody DENIED by fallthru
-    (or you mis-spelled the reponame)
-    ```
+        $ git push origin master
+        fatal: remote error: FATAL: W any packages/myPackage nobody DENIED by fallthru
+        (or you mis-spelled the reponame)
 
     Check your remote,
 
-    ```
-    $ git remote -v
-    origin  https://git.bioconductor.org/packages/myPackage.git (fetch)
-    origin  https://git.bioconductor.org/packages/myPackage.git (push)
-    ```
+        $ git remote -v
+        origin  https://git.bioconductor.org/packages/myPackage.git (fetch)
+        origin  https://git.bioconductor.org/packages/myPackage.git (push)
 
-    As a developer you should be using the SSH protocol, and not HTTPS. The origin,
-    should be `git@git.bioconductor.org:packages/myPackage` or your **SSH key is not valid**.
+    As a developer you should be using the SSH protocol, and not
+    HTTPS. The origin, should be
+    `git@git.bioconductor.org:packages/myPackage` or your **SSH key is
+    not valid**.
 
-15. Before sending a question to the Bioc-devel mailing list about git, please check
-    the output of the following commands for correctness so that we can help you better.
+15. Before sending a question to the Bioc-devel mailing list about
+    git, please check the output of the following commands for
+    correctness so that we can help you better.
 
-    * As a developer check to make sure, you are using SSH as your access protocol. 
-    Check the output of `git remote -v` for consistency. Include this in your email to bioc-devel,
-    if you are unsure. The remote should look like, 
+    * As a developer check to make sure, you are using SSH as your
+      access protocol.  Check the output of `git remote -v` for
+      consistency. Include this in your email to bioc-devel, if you
+      are unsure. The remote should look like,
 
-    ```
-    origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
-    origin  git@git.bioconductor.org/packages/myPackage.git (push)
-    ```
+            origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
+            origin  git@git.bioconductor.org/packages/myPackage.git (push)
 
-    or,
+       or,
 
-    ```
-    origin  git@github.com:<github username>/myPackage.git (fetch)
-    origin  git@github.com:<github username>/myPackage.git (push)
-    upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
-    upstream  git@git.bioconductor.org/packages/myPackage.git (push)
-    ```
+            origin  git@github.com:<github username>/myPackage.git (fetch)
+            origin  git@github.com:<github username>/myPackage.git (push)
+            upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
+            upstream  git@git.bioconductor.org/packages/myPackage.git (push)
  
-    * Check if you have access to the bioc-git server (git@git.bioconductor.org), by using
-    `ssh -T git@git.bioconductor.org`.
+    * Check if you have access to the bioc-git server
+      (git@git.bioconductor.org), by using `ssh -T
+      git@git.bioconductor.org`.  This will show you a list of
+      packages with READ(R) and WRITE(W) permissions.  As a developer
+      you should have `R W` next to your package. This is based on the
+      SSH public key you are using, the default for ssh authentication
+      is `id_rsa`.
 
-    This will show you a list of packages with READ(R) and WRITE(W) permissions.
-    As a developer you should have `R W` next to your package. This is based on
-    the SSH public key you are using, the default for ssh authentication is `id_rsa`.
-
-    ```
-     R    	admin/..*
-     R    	packages/..*
-     R  	admin/manifest
-     R  	packages/ABAData
-     R  	packages/ABAEnrichment
-     R  	packages/ABSSeq
-     R W  	packages/ABarray
-     R  	packages/ACME
-     R  	packages/ADaCGH2
-     R  	packages/AGDEX
-    ```
+            R    	admin/..*
+            R    	packages/..*
+            R  	admin/manifest
+            R  	packages/ABAData
+            R  	packages/ABAEnrichment
+            R  	packages/ABSSeq
+            R W  	packages/ABarray
+            R  	packages/ACME
+            R  	packages/ADaCGH2
+            R  	packages/AGDEX
 
 16. SSH key not being recognized because of different name?
 
-    If you have named your SSH public key differently from `id_rsa` as suggested by
-    `ssh-keygen`, you may find it useful to set up a `~/.ssh/config` file on your machine.
-    Simply make a `~/.ssh/config` file if it does not exist, and add,
+    If you have named your SSH public key differently from `id_rsa` as
+    suggested by `ssh-keygen`, you may find it useful to set up a
+    `~/.ssh/config` file on your machine.  Simply make a
+    `~/.ssh/config` file if it does not exist, and add,
 
-    ```
-    host git.bioconductor.org
-        HostName git.bioconductor.org
-        IdentityFile ~/.ssh/id_rsa_bioconductor
-        User git
-    ```
+        host git.bioconductor.org
+            HostName git.bioconductor.org
+            IdentityFile ~/.ssh/id_rsa_bioconductor
+            User git
 
-    In this example, my private key is called `id_rsa_bioconductor` instead of `id_rsa`.
+    In this example, my private key is called `id_rsa_bioconductor`
+    instead of `id_rsa`.
 
-
-17. SSH key asking for a password and I don't know it? How do I retrieve it?
+17. SSH key asking for a password and I don't know it? How do I
+    retrieve it?
 
     There are a few possibilities here,
 
-    * You have set a password. The bioc-devel mailing list cannot help you with this.
-    You have to submit a new key on the google-form.
+    * You have set a password. The bioc-devel mailing list cannot help
+    you with this.  You have to submit a new key on the google-form.
 
-    * The permissions on your SSH key are wrong. Verify that the permissions on
-    SSH IdentityFile are `400`. SSH will reject, in a not clearly explicit manner,
-    SSH keys that are too readable. It will just look like a credential rejection.
-    The solution, in this case, is:
+    * The permissions on your SSH key are wrong. Verify that the
+    permissions on SSH IdentityFile are `400`. SSH will reject, in a
+    not clearly explicit manner, SSH keys that are too readable. It
+    will just look like a credential rejection.  The solution, in this
+    case, is (if your SSH key for bioconductor is called `id_rsa`):
 
-        (if your SSH key for bioconductor is called `id_rsa`)
+            chmod 400 ~/.ssh/id_rsa
 
-        ```
-        chmod 400 ~/.ssh/id_rsa
-        ```
-
-    * You have the wrong remote set up, please check `git remote -v` to make sure
-    the SSH access protocol is being used. Your bioc-git server remote, should be
+    * You have the wrong remote set up, please check `git remote -v`
+    to make sure the SSH access protocol is being used. Your bioc-git
+    server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
-
 
 ## More questions?
 

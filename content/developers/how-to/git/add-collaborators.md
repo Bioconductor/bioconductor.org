@@ -22,24 +22,18 @@ GitHub, you can push these changes to _Bioconductor_.
 1. Make sure that you are on the branch to which the changes were
    applied, for example `master`.
 
-   ```
-   git checkout master
-   ```
+        git checkout master
 
 1. Fetch and merge the GitHub changes to your local repository.
 
-    ```
-    git fetch origin
-    git merge
-    ```
+        git fetch origin
+        git merge
 
     [Resolve merge conflicts][] if necessary.
 
 1. Push your local repository to the upstream _Bioconductor_ repository.
 
-    ```
-    git push upstream master
-    ```
+        git push upstream master
     
     To push GitHub release branch updates to the _Bioconductor_
     release branch, replace `master` with name of the release branch,
