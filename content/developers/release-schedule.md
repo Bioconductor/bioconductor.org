@@ -50,6 +50,8 @@ This release will use R-3.4.2 ("Short Summer").
   removed from the nightly builds for Bioconductor 3.6.
   See [End of Life](/developers/package-end-of-life) for details.
 
+* Deadline for NEWS files to be updated.
+
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
