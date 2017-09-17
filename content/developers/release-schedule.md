@@ -21,7 +21,7 @@ This release will use R-3.4.2 ("Short Summer").
 
 * TxDb, OrgDb packages built and posted to devel annotation data repository.
 
-### Friday Oct 20
+### Wednesday Oct 18 
 
 * Contributed annotation packages posted to devel annotation data repository.
 
