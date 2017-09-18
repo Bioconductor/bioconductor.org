@@ -21,7 +21,7 @@ This release will use R-3.4.2 ("Short Summer").
 
 * TxDb, OrgDb packages built and posted to devel annotation data repository.
 
-### Wednesday Oct 18 
+### Tuesday Oct 17
 
 * Contributed annotation packages posted to devel annotation data repository.
 
@@ -34,7 +34,7 @@ This release will use R-3.4.2 ("Short Summer").
 
 * Start building BioC 3.7 new devel
 
-### Wednesday October 25 
+### Tuesday October 24 
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings.  Some warnings will be accepted, clarification 
