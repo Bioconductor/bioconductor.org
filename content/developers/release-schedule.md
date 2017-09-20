@@ -1,4 +1,4 @@
-# Bioconductor 3.6 Release Schedule - DRAFT
+# Bioconductor 3.6 Release Schedule
 
 This release will use R-3.4.2 ("Short Summer").
 
@@ -29,10 +29,10 @@ This release will use R-3.4.2 ("Short Summer").
   - No API changes to BioC 3.6.
   - No new packages added to BioC 3.6 roster.
 
-* Stop current release (BioC 3.5) builds.  Commits to this branch will be
+* Stop building BioC 2.5, current release.  Commits to this branch will be
   disabled.
 
-* Start building BioC 3.7 new devel
+* Start building BioC 3.7, new devel.
 
 ### Tuesday October 24 
 
@@ -60,8 +60,6 @@ This release will use R-3.4.2 ("Short Summer").
 * Creation of the BioC 3.6 release branch.  Development can resume on
   trunk, but changes there will not be part of the release.
 
-* Build final release repositories.
-
 
 ### Tuesday October 31 
 
@@ -75,5 +73,3 @@ This release will use R-3.4.2 ("Short Summer").
 * Build AMIs for release and devel
 
 * Build Dockers for release and devel
-
-* Update Chef recipes
