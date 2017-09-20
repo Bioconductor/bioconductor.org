@@ -69,60 +69,12 @@ RewriteRule ^(.*)$ $1/ [PT]
 
 
 # Redirect old BioC versions to static S3 website
-RedirectMatch 301 /packages/1.8/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/bioc/src/$1
-RedirectMatch 301 /packages/1.8/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/bioc/bin/$1
+RedirectMatch 301 /packages/1.8/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/bioc/src/$1
+RedirectMatch 301 /packages/1.8/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/bioc/bin/$1
 RedirectMatch 301 /packages/1.8/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/annotation/src/$1
 RedirectMatch 301 /packages/1.8/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/annotation/bin/$1
 RedirectMatch 301 /packages/1.8/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/experiment/src/$1
 RedirectMatch 301 /packages/1.8/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.8/data/experiment/bin/$1
-RedirectMatch 301 /packages/1.9/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/bioc/src/$1
-RedirectMatch 301 /packages/1.9/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/bioc/bin/$1
-RedirectMatch 301 /packages/1.9/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/annotation/src/$1
-RedirectMatch 301 /packages/1.9/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/annotation/bin/$1
-RedirectMatch 301 /packages/1.9/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/experiment/src/$1
-RedirectMatch 301 /packages/1.9/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/1.9/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.0/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/bioc/src/$1
-RedirectMatch 301 /packages/2.0/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.0/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/annotation/src/$1
-RedirectMatch 301 /packages/2.0/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.0/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/experiment/src/$1
-RedirectMatch 301 /packages/2.0/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.0/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.1/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/bioc/src/$1
-RedirectMatch 301 /packages/2.1/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.1/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/annotation/src/$1
-RedirectMatch 301 /packages/2.1/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.1/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/experiment/src/$1
-RedirectMatch 301 /packages/2.1/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.2/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/bioc/src/$1
-RedirectMatch 301 /packages/2.2/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.2/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/annotation/src/$1
-RedirectMatch 301 /packages/2.2/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.2/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/experiment/src/$1
-RedirectMatch 301 /packages/2.2/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.2/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.3/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/bioc/src/$1
-RedirectMatch 301 /packages/2.3/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.3/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/annotation/src/$1
-RedirectMatch 301 /packages/2.3/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.3/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/experiment/src/$1
-RedirectMatch 301 /packages/2.3/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.3/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.4/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/bioc/src/$1
-RedirectMatch 301 /packages/2.4/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.4/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/annotation/src/$1
-RedirectMatch 301 /packages/2.4/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.4/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/experiment/src/$1
-RedirectMatch 301 /packages/2.4/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.4/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.5/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/bioc/src/$1
-RedirectMatch 301 /packages/2.5/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.5/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/annotation/src/$1
-RedirectMatch 301 /packages/2.5/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.5/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/experiment/src/$1
-RedirectMatch 301 /packages/2.5/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.5/data/experiment/bin/$1
-RedirectMatch 301 /packages/2.6/data/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/bioc/src/$1
-RedirectMatch 301 /packages/2.6/data/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/bioc/bin/$1
-RedirectMatch 301 /packages/2.6/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/annotation/src/$1
-RedirectMatch 301 /packages/2.6/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/annotation/bin/$1
-RedirectMatch 301 /packages/2.6/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/experiment/src/$1
-RedirectMatch 301 /packages/2.6/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.6/data/experiment/bin/$1
 
 
 ## packages urls
