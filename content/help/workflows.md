@@ -216,6 +216,11 @@ genomic data. Common workflows include:
   information to understand the data in recount2 and a compendium of R code to
   use the data.
 
+* [EGSEA123](/help/workflows/EGSEA123/) 
+  R package that supports the F1000Research workflow article `Easy and efficient
+  ensemble gene set testing with EGSEA', Alhamdoosh et al. (2017).
+
+
 <h2 id="Contribute">Contribute a Workflow</h2>
 
 See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/)
