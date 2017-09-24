@@ -976,8 +976,8 @@ end
 
 def get_last_svn_commit_time()
 
+  begin
     xml = HTTParty.get("http://master.bioconductor.org/rss/svnlog.rss").body
-
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -986,6 +986,9 @@ def get_last_svn_commit_time()
     item.elements.each("pubDate") {|i| date = i.text}
     rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
     %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
+  rescue Exception => ex
+    "Can't read / no records in rss feed, not report last svn commit time"
+  end
 end
 
 def get_mac_packs(package, item)
