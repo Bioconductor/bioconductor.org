@@ -10,7 +10,6 @@ RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ - [env=proto:http]
 
 
-
 ## handle cache expiration times
 ExpiresActive On
 ExpiresByType text/html A600
@@ -46,29 +45,24 @@ Header set Cache-Control "max-age=30"
 
 <IfModule mod_rewrite.c>
 RewriteEngine On
-DirectorySlash Off
+DirectorySlash On 
 RewriteBase /
 
-
-# Redirect www. to non-www
+## Redirect www. to non-www
 RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
 RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
-
 RewriteRule ^(.*)/index_html$ $1/ [R=301]
-
 RewriteRule ^developers/how-to/git-mirror/$ /developers/how-to/git-mirrors/ [PT]
-
 RewriteRule ^BioC2016/$ %{ENV:proto}://bioconductor.org/help/course-materials/2016/BioC2016/ [R=301]
 RewriteRule ^BioC2017/$ %{ENV:proto}://bioconductor.org/help/course-materials/2017/BioC2017/ [R=301,NC]
 
-# handle omitted trailing slash:
+## Handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ $1/ [PT]
 
-
-# Redirect BioC versions 1.8-2.6 to static S3 website
+## Redirect BioC versions 1.8-2.6 to static S3 website
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-6])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-6])/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-6])/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
@@ -79,16 +73,8 @@ RedirectMatch 301 /packages/(1.[8-9]|2.[0-6])/data/experiment/bin/(.*) http://ar
 RedirectMatch 301 /packages/2.1/data/extannotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/src/$1
 RedirectMatch 301 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/bin/$1
 
-
-## packages urls
-##RewriteRule ^packages/release/BiocViews\.html$ /help/bioc-views/release/BiocViews.html [R=301]
-##RewriteRule ^packages/devel/BiocViews\.html$ /help/bioc-views/devel/BiocViews.html [R=301]
-RewriteRule ^Docs/Papers/2003/Chiaretti$ /help/publications/2003/Chiaretti/chiaretti2/ [R=301]
-RewriteRule ^help/bioc-views/(.*)$ /packages/$1 [R=301]
-RewriteRule ^mailList.html$ /help/mailing-list/ [R=301]
-
-
 ## papers, slides, screen shots
+RewriteRule ^Docs/Papers/2003/Chiaretti$ /help/publications/2003/Chiaretti/chiaretti2/ [R=301]
 RewriteRule ^docs/papers.*$ /help/publications/ [R=301]
 RewriteRule ^docs/pslides.*$ /help/publications/ [R=301]
 RewriteRule ^PackageSlides.*$ /help/publications/ [R=301]
@@ -106,6 +92,8 @@ RewriteRule ^docs/workflows/index.html$ /help/workflows/ [R=301]
 RewriteRule ^docs/workflows/?$ /help/workflows/ [R=301]
 
 ## general help
+RewriteRule ^help/bioc-views/(.*)$ /packages/$1 [R=301]
+RewriteRule ^mailList.html$ /help/mailing-list/ [R=301]
 RewriteRule ^docs/mailList.html$ /help/mailing-list/ [R=301]
 RewriteRule ^docs/vignettes.html$ /help/package-vignettes/ [R=301]
 RewriteRule ^docs/postingGuide.html$ /help/mailing-list/posting-guide/ [R=301]
@@ -167,6 +155,7 @@ RewriteRule ^docs/fairUse.html$ /help/course-materials/ [R=301]
 RewriteRule ^services.*$ /help/course-materials/ [R=301]
 RewriteRule ^talks.*$ /help/course-materials/ [R=301]
 
+## Is this valid?
 RewriteCond %{REQUEST_FILENAME} (.*)\.html$
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %1 -d
@@ -194,15 +183,11 @@ RewriteRule ^developers/unitTesting-guideline.*$ /developers/how-to/unitTesting-
 RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
 RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
 RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
-
 RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
 RewriteRule ^help/mailing-lis.*$ /help/support [R=301]
-
 RewriteRule ^BioC2015/$ http://bioconductor.org/help/course-materials/2015/BioC2015/ [R=301]
 
 </IfModule>
 
-
+## Broken?
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
-
-## mailing list -> support
