@@ -1039,6 +1039,11 @@ def is_devel?(item)
     return false
 end
 
+def is_removed?(item)
+    return true if File.foreach("content/about/removed-packages.md").grep(/#{item}/).any?
+    return false
+end
+
 # FIXME eventually replace is_new_package() implementation with this
 def is_new_package2(package, conf) # just a string (pkg name)
   keys = conf[:manifest_keys].dup
@@ -1092,10 +1097,30 @@ end
 
 def get_fragment(package, item, item_rep)
   return \
+    get_removed_fragment(package, item, item_rep) if is_removed? @package[:Package]
+  return \
     get_devel_fragment(package, item, item_rep) if is_devel? item
   return \
     get_old_fragment(package, item, item_rep) if is_old? item
   return ""
+end
+
+def get_removed_link(item)
+  line = File.readlines("content/about/removed-packages.md").select{|l| l.match /#{item}/}.last 
+  line[/<li>(.*?)<\/li>/,1]
+end
+
+def get_removed_fragment(package, item, item_rep)
+  segs = item.identifier.split('/')
+  version_seg = segs.find_index "package-pages"
+  return "" if version_seg.nil? or version_seg >= (segs.length() -1)
+  bioc_version = segs[version_seg+1]
+  link = get_removed_link(@package[:Package])
+  str=<<-"EOT"
+<p>This package is for version #{bioc_version} of Bioconductor.
+This package has been removed from Bioconductor.
+For the last stable, up-to-date release version, see #{link}.</p>
+EOT
 end
 
 def get_old_fragment(package, item, item_rep)
