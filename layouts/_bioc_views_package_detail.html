@@ -437,15 +437,6 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                 <% if package_has_source_url(@item) %>
                     <tr class="<%=ri.rowclass%>">
-                        <td id="archive">Old versions</td>
-            <td class="rpack"><a href="../<%=@package[:"source.ver"]%>">
-                <%= base_filename(@package[:"source.ver"]) %></a></td>
-                    </tr>
-                <% end %>
-
-
-                <% if package_has_source_url(@item) %>
-                    <tr class="<%=ri.rowclass%>">
                         <td id="svn_source">Source Repository</td>
                         <td>git clone <%=get_source_url(@package, @item, @item_rep)%></td>
                     </tr>
