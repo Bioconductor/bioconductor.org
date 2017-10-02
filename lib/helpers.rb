@@ -470,6 +470,19 @@ def get_stats_url(package)
   "http://bioconductor.org/packages/#{repo}#{package[:Package]}/"
 end
 
+## For now archive only source tarballs.
+def get_archive_url(package)
+  version = package[:bioc_version_num]
+  if (package[:repo] == "data/annotation/")
+    repo = "packages/#{version}/data/annotation/src/contrib/Archive/"
+  elsif (package[:repo] == "data/experiment/")
+    repo = "pacakges/#{version}/experiment/src/contrib/Archive/"
+  else
+    repo = "stats/#{package[:repo]}"
+  end
+  "http://bioconductor.org/packages/#{repo}#{package[:Package]}/"
+end
+
 def get_updated_breadcrumbs(old_breadcrumbs, item)
   return old_breadcrumbs unless (old_breadcrumbs.last.identifier =~ /package-pages/)
   index_page = false

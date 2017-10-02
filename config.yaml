@@ -205,16 +205,6 @@ mirrors:
      rsync: 
      city: Dortmund
      country_code: de
- - United Kingdom:
-   - institution: European Bioinformatics Institute
-     institution_url: http://www.ebi.ac.uk/
-     contact: Andrew Tikhonov
-     contact_email: andrew@ebi.ac.uk
-     mirror_url: http://mirrors.ebi.ac.uk/bioconductor/
-     https_mirror_url: https://mirrors.ebi.ac.uk/bioconductor/
-     rsync: secure_mirror_from_master
-     country_code: uk
-     city: Hinxton
  - Japan:
    - institution: The Institute of Statistical Mathematics
      institution_url: http://www.ism.ac.jp/
