@@ -8,8 +8,7 @@ with their last-available landing pages.
 Software Packages:
 
 <ul class="inline_list">
-<li><a
-href="/packages/3.4/bioc/html/betr.html">betr</a></li>
+<li><a href="/packages/3.4/bioc/html/betr.html">betr</a></li>
 </ul>
 
 Experimental Data Packages: 
