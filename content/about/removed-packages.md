@@ -136,7 +136,7 @@ No packages were removed with this release.
 ## Packages removed with Bioconductor 2.12 release
 
 <ul class="inline_list">
-<li><a href="/packages/2.11/bioc/html/cosmo.html">cosmo</a></li>
+<li><a href="/packages/2.10/bioc/html/cosmo.html">cosmo</a></li>
 <li><a href="/packages/2.11/bioc/html/cosmoGUI.html">cosmoGUI</a></li>
 <li><a href="/packages/2.11/bioc/html/gene2pathway.html">gene2pathway</a></li>
 </ul>
@@ -169,7 +169,7 @@ No packages were removed with this release.
 <li><a href="/packages/2.8/bioc/html/rflowcyt.html">rflowcyt</a></li>
 <li><a href="/packages/2.8/bioc/html/Rredland.html">Rredland</a></li>
 <li><a href="/packages/2.8/bioc/html/Ruuid.html">Ruuid</a></li>
-<li><a href="/packages/2.8/bioc/html/simulatorAPNS.html">simulatorAPNS</a></li>
+<li><a href="/packages/2.8/bioc/html/simulatorAPMS.html">simulatorAPMS</a></li>
 <li><a href="/packages/2.8/bioc/html/snpMatrix.html">snpMatrix</a></li>
 </ul>
 
@@ -206,14 +206,14 @@ No packages were removed with this release.
 
 <ul class="inline_list">
 <li><a href="/packages/2.3/bioc/html/AnnBuilder.html">AnnBuilder</a></li>
-<li><a href="/packages/2.3/bioc/html/RSNPer.html">RSNPer</a></li>
+<li><a href="/packages/2.3/bioc/html/RSNPper.html">RSNPer</a></li>
 </ul>
 
 ## Packages removed with Bioconductor 2.3 release
 
 <ul class="inline_list">
 <li><a href="/packages/2.2/bioc/html/SemSim.html">SemSim</a></li>
-<li><a href="/packages/2.2/bioc/html/WidgetInvoke.html">WidgetInvoke</a></li>
+<li><a href="/packages/2.2/bioc/html/widgetInvoke.html">WidgetInvoke</a></li>
 </ul>
 
 ## Packages removed with Bioconductor 2.2 release
@@ -222,7 +222,7 @@ No packages were removed with this release.
 <li><a href="/packages/2.1/bioc/html/SAGElyzer.html">SAGElyzer</a></li>
 <li><a href="/packages/2.1/bioc/html/GeneTS.html">GeneTS</a></li>
 <li><a href="/packages/2.1/bioc/html/arrayMagic.html">arrayMagic</a></li>
-<li><a href="/packages/2.1/bioc/html/chromoViz.html">chromoViz</a></li>
+<li><a href="/packages/2.1/bioc/html/ChromoViz.html">chromoViz</a></li>
 <li><a href="/packages/2.1/bioc/html/iSPlot.html">iSPlot</a></li>
 <li><a href="/packages/2.1/bioc/html/iSNetwork.html">iSNetword</a></li>
 </ul>
@@ -230,7 +230,7 @@ No packages were removed with this release.
 ## Packages removed with Bioconductor 2.1 release
 
 <ul class="inline_list">
-<li><a href="/packages/2.0/bioc/html/bim.html">bim</a></li>
+<li><a href="/packages/1.9/bioc/html/bim.html">bim</a></li>
 <li><a href="/packages/2.0/bioc/html/arrayQCplot.html">arrayQCplot</a></li>
 </ul>
 
@@ -257,12 +257,12 @@ No packages were removed with this release.
 ## Packages removed with Bioconductor 1.8 release
 
 <ul class="inline_list">
-<li><a href="/packages/1.7/bioc/html/msbase.html">msbase</a></li>
-<li><a href="/packages/1.7/bioc/html/ideogram.html">ideogram</a></li>
+<li><a href="/packages/bioc/1.7/src/contrib/html/msbase.html">msbase</a></li>
+<li><a href="/packages/bioc/1.7/src/contrib/html/ideogram.html">ideogram</a></li>
 </ul>
 
 ## Packages removed with Bioconductor 1.7 release
 
 <ul class="inline_list">
-<li><a href="/packages/1.6/bioc/html/mscalib.html">mscalib</a></li>
+<li><a href="/packages/bioc/1.6/src/contrib/html/mscalib.html">mscalib</a></li>
 </ul>
