@@ -1752,3 +1752,18 @@ end
 def get_social_title(item, package)
   urlescape "#{package[:Package]}:#{item[:Title]}"
 end
+
+def is_release(package)
+  if package[:bioc_version_num] == config[:release_version]
+    true
+  else
+    false
+  end
+end
+
+## Currently supports software packages and reports source location only
+def get_archive_url(package)
+  version = package[:bioc_version_num]
+  repo = "packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  repo
+end
