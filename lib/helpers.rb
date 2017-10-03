@@ -1761,9 +1761,13 @@ def is_release(package)
   end
 end
 
-## Currently supports software packages and reports source location only
-def get_archive_url(package)
+## Currently supports source software only
+def get_archive_url(package, full=false)
   version = package[:bioc_version_num]
-  repo = "packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  repo
+  url = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  if full
+    "http://bioconductor.org#{url}"
+  else
+    url
+  end
 end
