@@ -454,7 +454,7 @@ biocLite("<%=@package[:Package]%>")</pre>
                     </tr>
 
                 <% if @package[:repo] == "bioc/" %>
-                  <% if package_is_release(@package) %>
+                  <% if is_release(@package) %>
                       <tr class="<%=ri.rowclass%>">
                           <td>Old source BioC <%=@package[:bioc_version_num]%></td>
                           <td><a href="<%=get_archive_url(@package)%>"><%=get_archive_url(@package)%></a></td>
