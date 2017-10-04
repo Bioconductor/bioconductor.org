@@ -1774,6 +1774,7 @@ def has_archive(package)
     return false
   else 
     true
+  end
 end
 
 ## Currently supports source software only
