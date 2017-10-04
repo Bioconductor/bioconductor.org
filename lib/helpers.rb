@@ -1761,12 +1761,28 @@ def is_release(package)
   end
 end
 
+def has_archive(package)
+  if !package[:bioc_version_num] == config[:release_version]
+    return false
+
+  if !@package[:repo] == "bioc/"
+    return false
+
+  version = package[:bioc_version_num]
+  dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  if !File.directory?(dir)
+    return false
+
+  true
+  end
+end
+
 ## Currently supports source software only
-def get_archive_url(package, full=false)
+def get_archive_url(package, text=false)
   version = package[:bioc_version_num]
   url = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  if full
-    "http://bioconductor.org#{url}"
+  if text 
+    "Software Archive"
   else
     url
   end
