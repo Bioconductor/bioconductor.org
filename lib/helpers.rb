@@ -1764,17 +1764,16 @@ end
 def has_archive(package)
   if !package[:bioc_version_num] == config[:release_version]
     return false
-
+  end
   if !@package[:repo] == "bioc/"
     return false
-
+  end
   version = package[:bioc_version_num]
   dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
   if !File.directory?(dir)
     return false
-
-  true
-  end
+  else 
+    true
 end
 
 ## Currently supports source software only
