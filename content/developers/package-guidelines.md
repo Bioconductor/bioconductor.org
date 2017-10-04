@@ -44,7 +44,6 @@ site](http://cran.fhcrc.org/manuals.html).
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="package-types">Types of Packages</h2>
-
 Most packages contributed by users are [software][software-pkgs]
 packages that perform analytic calculations. Users also contribute
 [annotation][annotation-pkgs] and [experiment data][exptdata-pkgs]
@@ -53,25 +52,30 @@ packages.
 Annotation packages are database-like packages that provide
 information linking identifiers (e.g., Entrez gene names or Affymetrix
 probe ids) to other information (e.g., chromosomal location, Gene
-Ontology category).
+Ontology category). It is also encouraged to utilize AnnotationHub for 
+storage and access to large raw data files and their conversion to standard
+R formats. Instructions for adding data to AnnotationHub and designing a
+annotaiton package to use AnnotationHub can be found here: [Creating
+AnnotationHub Packages][annoHowTo].
 
 Experiment data packages provide data sets that are used, often by software
 packages, to illustrate particular analyses. These packages contain curated
 data from an experiment, teaching course or publication and in most cases
-contain a single data set. Collections of related data sets can be hosted in
-the ExperimentHub resource. Instructions for adding data to ExperimentHub are
-in the [ExperimentHubData
-vignette](http://www.bioconductor.org/packages/3.4/bioc/vignettes/ExperimentHubData/inst/doc/ExperimentHubData.html).
+contain a single data set. It is also encouraged to utilize ExperimentHub for
+storage and access to larger data files. ExperimentHub is also particularly 
+useful for hosting collections of related data sets. Instructions for adding
+data to ExperimentHub and designing an experiment data package to use
+ExperimentHub can be found here: [Creating ExperimentHub Packages][expHowTo].
 
 An excellent practice is to develop a software package, and to provide
-or use an existing experiment data package to give a comprehensive
-illustration of the methods in the software package. If the data files
-of a package are larger than 100 MB but less than 2 GB, _Bioconductor_
-now supports the use of [Git Large File Storage][gitlfs] (Git LFS)
-during package contribution. Please be aware Git LFS is free for all
-users up to 1 GB of data and a monthly usage of 1 GB of bandwidth;
-more data and bandwidth can be purchases at the contributers
-expense.
+or use an existing experiment data package or data in ExperimentHub to give a
+comprehensive illustration of the methods in the software package. If the data
+files of a package are larger than 100 MB but less than 2 GB, _Bioconductor_ now
+supports the use of [Git Large File Storage][gitlfs] (Git LFS) during package
+contribution. Please be aware Git LFS is free for all users up to 1 GB of data
+and a monthly usage of 1 GB of bandwidth; more data and bandwidth can be
+purchases at the contributers expense. For larger files, it may be worth while
+to explore using the Hubs. 
 
 The guidelines below apply to all packages, but annotation and
 experiment data packages are not required to conform to the space
@@ -84,6 +88,8 @@ annotation or experiment data packages should seek
 [exptdata-pkgs]: /packages/release/data/experiment/
 [support]: /developers/package-submission/#support
 [gitlfs]: https://git-lfs.github.com/
+[annoHowTo]: /packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
+[expHowTo]: /packages/devel/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
