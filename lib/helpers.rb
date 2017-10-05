@@ -1762,19 +1762,18 @@ def is_release(package)
 end
 
 def has_archive(package)
-  if !package[:bioc_version_num] == config[:release_version]
+  if !is_release(package)
     return false
-  end
-  if !@package[:repo] == "bioc/"
-    return false
-  end
-  version = package[:bioc_version_num]
-  dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  if !File.directory?(dir)
+  elsif !@package[:repo] == "bioc/"
     return false
   else 
-    true
+    version = package[:bioc_version_num]
+    dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+    if !Dir.exists(dir)
+      return false
+    end
   end
+  true
 end
 
 ## Currently supports source software only
