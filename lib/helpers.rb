@@ -1753,7 +1753,7 @@ def get_social_title(item, package)
   urlescape "#{package[:Package]}:#{item[:Title]}"
 end
 
-def is_release(package)
+def package_is_release(package)
   if package[:bioc_version_num] == config[:release_version]
     true
   else
@@ -1761,26 +1761,26 @@ def is_release(package)
   end
 end
 
-def has_archive(package)
-  if !is_release(package)
+def package_has_archive(package)
+  if !package_is_release(package)
     return false
-  elsif !@package[:repo] == "bioc/"
+  elsif !package[:repo] == "bioc/"
     return false
-  else 
+  else
     version = package[:bioc_version_num]
-    dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-    if !File.directory?(dir)
+    url = "https://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+    if !url_ok(url)
       return false
     end
   end
-  true
+  return true
 end
 
 ## Currently supports source software only
 def get_archive_url(package, text=false)
   version = package[:bioc_version_num]
   url = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  if text 
+  if text
     "Software Archive"
   else
     url

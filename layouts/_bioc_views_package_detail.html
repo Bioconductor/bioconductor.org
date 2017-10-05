@@ -453,7 +453,7 @@ biocLite("<%=@package[:Package]%>")</pre>
                         <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
                     </tr>
 
-                <% if has_archive(@package) %>
+                <% if package_has_archive(@package) %>
                     <tr class="<%=ri.rowclass%>">
                         <td>Old source packages for BioC <%=@package[:bioc_version_num]%></td>
                         <td><a href="<%=get_archive_url(@package)%>"><%=get_archive_url(@package, true)%></a></td>
@@ -463,3 +463,6 @@ biocLite("<%=@package[:Package]%>")</pre>
                 </table>
 
 </div>
+
+
+
