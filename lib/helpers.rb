@@ -1769,7 +1769,7 @@ def has_archive(package)
   else 
     version = package[:bioc_version_num]
     dir = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-    if !Dir.exists(dir)
+    if !File.directory?(dir)
       return false
     end
   end
