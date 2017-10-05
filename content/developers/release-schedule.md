@@ -29,7 +29,7 @@ This release will use R-3.4.2 ("Short Summer").
   - No API changes to BioC 3.6.
   - No new packages added to BioC 3.6 roster.
 
-* Stop building BioC 2.5, current release.  Commits to this branch will be
+* Stop building BioC 3.5, current release.  Commits to this branch will be
   disabled.
 
 * Start building BioC 3.7, new devel.
