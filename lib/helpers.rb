@@ -1785,7 +1785,7 @@ def get_archive_url(package, text=false)
   repo = package[:repo]
   url = "/packages/#{version}/#{repo}src/contrib/Archive/#{package[:Package]}/"
   if text
-    "Software Archive"
+    "Source Archive"
   else
     url
   end
