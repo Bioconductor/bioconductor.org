@@ -4,10 +4,11 @@
 
 * Martin Morgan (Project Lead)
 * Herv&eacute; Pag&egrave;s
+* James MacDonald
 * Valerie Obenchain
 * Andrzej Ole&#347;
-* Lori Shepherd
 * Marcel Ramos
+* Lori Shepherd
 * Nitesh Turaga
 * Daniel van Twisk
 
