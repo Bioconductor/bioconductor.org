@@ -1762,24 +1762,28 @@ def package_is_release(package)
 end
 
 def package_has_archive(package)
-  if !package_is_release(package)
+  if !(package_is_release(package))
     return false
-  elsif !package[:repo] == "bioc/"
-    return false
-  else
-    version = package[:bioc_version_num]
-    url = "https://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-    if !url_ok(url)
-      return false
-    end
   end
-  return true
+  if !(package[:repo] == "bioc/")
+    return false
+  end
+  version = package[:bioc_version_num]
+  url = "http://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  uri = URI.parse(url)
+  response = Net::HTTP.start(uri.host, uri.port) {|http|http.head(uri.path)}
+  valid_url = response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
+  if valid_url
+    return true
+  else
+    return false
+  end
 end
 
-## Currently supports source software only
 def get_archive_url(package, text=false)
   version = package[:bioc_version_num]
-  url = "/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  repo = package[:repo]
+  url = "/packages/#{version}/#{repo}src/contrib/Archive/#{package[:Package]}/"
   if text
     "Software Archive"
   else
