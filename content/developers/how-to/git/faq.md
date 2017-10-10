@@ -242,7 +242,7 @@ _Bioconductor_ [source control][] overview.
 [Maintain a _Bioconductor_-only repository]: ../maintain-bioc-only
 [Sync existing repositories]: ../sync-existing-repositories
 [Adding an SSH key to your GitHub account]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-[submit your SSH public key]: https://goo.gl/forms/eg36vcBkIUjfZfLe2.
+[submit your SSH public key]: https://docs.google.com/forms/d/1CCwUhjtG82rnmcTWYqY43WcmBx5YyQm5UD4pcs1dhEs/
 
 [Pull requests]: https://help.github.com/articles/creating-a-pull-request/
 
