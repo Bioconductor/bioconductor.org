@@ -48,7 +48,7 @@ _Bioconductor_ repositories.
 	    <<<<<<< HEAD
 	    Version: 0.23.2
 	    =======
- 	    Version: 0.23.3
+        Version: 0.23.3
 	    >>>>>>> upstream/master
 
 	Everything between `<<<<` and `=====` refers to HEAD, i.e your
