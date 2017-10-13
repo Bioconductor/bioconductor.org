@@ -407,7 +407,8 @@ task :get_workflows do
         end
       end
       pkgfiles = yaml.values_at('source_tarball', 'mac_pkg', 'win_pkg').compact - ["NOT_SUPPORTED"]
-      FileUtils.cp pkgfiles.map { |f| "#{fullpath}/#{f}" }, assets_dir
+      pkgfiles = pkgfiles.map { |f| "#{fullpath}/#{f}" }
+      FileUtils.cp pkgfiles.select { |f| File.file?f }, assets_dir
     end
   end
   #indexfile.close
