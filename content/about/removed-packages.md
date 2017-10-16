@@ -3,6 +3,28 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.6 release
+
+Software Packages: 
+
+<ul class="inline_list">
+<li><a href="/packages/3.4/bioc/html/AtlasRDF.html">AtlasRDF</a></li>
+<li><a href="/packages/3.4/bioc/html/CopyNumber450k.html">CopyNumber450k</a></li>
+<li><a href="/packages/3.4/bioc/html/coRNAi.html">coRNAi</a></li>
+<li><a href="/packages/3.4/bioc/html/GENE.E.html">GENE.E</a></li>
+<li><a href="/packages/3.4/bioc/html/GEOsearch.html">GEOsearch</a></li>
+<li><a href="/packages/3.4/bioc/html/MeSHSim.html">MeSHEim</a></li>
+<li><a href="/packages/3.4/bioc/html/mmnet.html">mmnet</a></li>
+<li><a href="/packages/3.4/bioc/html/pdmclass.html">pdmclass</a></li>
+<li><a href="/packages/3.4/bioc/html/saps.html">saps</a></li>
+</ul>
+
+Experimental Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.4/data/experiment/html/CopyNumber450kData.html">CopyNumber450kData</a></li>
+</ul>
+
 ## Packages removed with Bioconductor 3.5 release
 
 Software Packages:
