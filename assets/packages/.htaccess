@@ -74,3 +74,5 @@ RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/anno
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
 RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=301]
+
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/about/removed-packages/ [R=301]
