@@ -37,6 +37,12 @@ RewriteBase /packages/
 
 RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=301]
 
+## Handle omitted trailing slash:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/packages/$1/ [L,R]
+
 ################################################################################
 # /packages/release/xxx or /packages/devel/xxx are internally rewritten to
 # /packages/release/reposX/html/xxx.html or /packages/devel/reposX/html/xxx.html

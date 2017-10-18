@@ -60,7 +60,7 @@ RewriteRule ^BioC2017/$ %{ENV:proto}://bioconductor.org/help/course-materials/20
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ $1/ [PT]
+RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/$1/ [L,R]
 
 ## Redirect BioC versions 1.8-2.6 to static S3 website
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-6])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
