@@ -4,6 +4,7 @@
 
 * Martin Morgan (Project Lead)
 * Herv&eacute; Pag&egrave;s
+* Michael Lawrence
 * James MacDonald
 * Valerie Obenchain
 * Andrzej Ole&#347;
