@@ -24,7 +24,7 @@ searching in [BiocViews](/packages) for your data type.
   matrix, microarray, ...)
 + Genomic coordinates -- [GenomicRanges][]`::GRanges()` (1-based,
   closed interval)
-+ DNA / RNA / AA sequences -- [Biostrings][]`::*Stringset()`
++ DNA / RNA / AA sequences -- [Biostrings][]`::*StringSet()`
 + Gene sets -- [GSEABase][]`::GeneSet()`
   [GSEABase][]`::GeneSetCollection()`
 + Multi-omics data --

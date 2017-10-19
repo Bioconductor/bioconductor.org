@@ -129,6 +129,9 @@ For more existing classes see [common _Bioconductor_ methods and classes][]
 
 ### Essential S4 interface
 
+Remember to **re-use** [common _Bioconductor_ methods and classes][]
+before implementing new representations.
+
 For any class you define, implement and use a 'constructor' for object
 creation. A constructor is usually plain-old-function (rather than,
 e.g., a generic with methods). It provides documented and

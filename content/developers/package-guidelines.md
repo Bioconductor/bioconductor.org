@@ -251,7 +251,7 @@ installations, so is often best avoided.
 
 <h2 id="classes">S4 Classes and Methods</h2>
 
-Re-use existing functionality, especially for S4
+**Re-use existing functionality**, especially for S4
 [input methods][RECReuseFunctions] and
 [S4 classes][RECReuseClasses]. This encourages interoperability and
 simplifies your own package development. 
@@ -505,8 +505,6 @@ video on our
 [Bioconductor YouTube Channel](https://www.youtube.com/user/bioconductor).
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-
 
 <h2 id="duplications">Duplication of Packages in CRAN and Bioconductor</h2>
 
