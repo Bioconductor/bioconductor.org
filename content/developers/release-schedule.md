@@ -55,6 +55,14 @@ This release will use R-3.4.2 ("Short Summer").
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
+### Sunday October 29
+
+* Last day to commit changes to the Bioc 3.6 devel branch. The branch will be frozen
+  tomorrow prior to creating the release branch. **Remember** Committing changes
+  last minute could break your package in both release 3.6 and devel 3.7! Be
+  sure to run 'R CMD build' and 'R CMD check' locally before committing any
+  changes.
+
 ### Monday October 30 
 
 * Creation of the BioC 3.6 release branch.  Development can resume on
