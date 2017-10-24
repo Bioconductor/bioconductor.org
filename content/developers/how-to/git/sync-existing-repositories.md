@@ -10,7 +10,7 @@ repositories are all in sync.
 
 1. Configure the "remotes" of the GitHub clone.
 
-        git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY>.git`
+        git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY>.git
 
 1. Fetch updates from all (_Bioconductor_ and GitHub) remotes. You may
    see "warning: no common commits"; this will be addressed after
