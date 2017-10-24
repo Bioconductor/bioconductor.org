@@ -40,15 +40,6 @@ tr = TableRower.new
 </td>
 <%= tr.betweencells %>
 
-<% # shield 3: posts
-%>
-<td>
-
-   <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
-
-</td>
-<%= tr.betweencells %>
-
 
 <%
    # shield 4: years in bioc
@@ -72,32 +63,8 @@ tr = TableRower.new
 <%= tr.betweencells %>
 <% end %>
 
-<% # shield 6: commits
-   if ['bioc/', 'data/experiment/'].include? @package[:repo]
-     pkgdir = @package[:repo].sub(/\/$/, "").sub("/", "-")
-%>
-<td>
-   <span class="do_not_rebase"><a href="#svn_source"><img border='0' src="/shields/commits/<%=pkgdir%>/<%=@package[:Package]%>.svg" title="average Subversion commits (to the devel branch) per month for the last 6 months"/></a></span>
-</td>
-<%= tr.betweencells %>
-<% end  # if not annotation pkg
-%>
-
-<% # shield 7: coverage
-    if @package[:repo] == "bioc/"
-%>
 
 
-<td>
-   <span class="do_not_rebase"><a href="<%=coverage_url(@package)%>"><img border='0' src="<%=coverage_svg_url(@package)%>" title="Test coverage percentage, or 'unknown'"/></a></span>
-</td>
-
-
-
-<%= tr.betweencells %>
-
-<% end # if is software package
-%>
 
 </tr>
 </table>
