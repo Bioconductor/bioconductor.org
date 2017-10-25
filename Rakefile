@@ -655,6 +655,13 @@ task :process_downloads_data do
     percentiles[k] = raw_data.values.percentile_rank v
   end
 
+  key_pkg=percentiles.keys
+  all_pkg = get_list_of_packages() + get_list_of_packages(false) + get_annotation_package_list()
+  miss_pkg = all_pkg - key_pkg
+  miss_pkg.each do |k|
+    percentiles["#{k}"] = 0
+  end
+
   percentiles.each do |k, v|
     img = nil
     case v
