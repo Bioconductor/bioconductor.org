@@ -95,7 +95,7 @@ task :post_compile do
   FileUtils.cd "#{site_config["output_dir"]}/packages"
 
   FileUtils.rm_f "devel"
-  FileUtils.rm_f"release"
+  FileUtils.rm_f "release"
   begin
     FileUtils.ln_s "#{site_config["release_version"]}", "release"
     FileUtils.ln_s "#{site_config["devel_version"]}", "devel"
@@ -615,8 +615,6 @@ task :get_svn_logs do
         end
       end
   end
-
-
 end
 
 # run me with cron every day or so...
@@ -704,35 +702,43 @@ end
 desc "do push tasks"
 task :push => [:copy_assets, :deploy_staging, :deploy_production]
 
+desc "pull manifests"
+task :pull_manifests do
+  system("git -C ../manifest/ pull --all")
+end
+
 # run me in crontab daily
 desc "get years-in-bioc shields"
 task :get_years_in_bioc_shields do
   sconfig = YAML.load_file("./config.yaml")
   sconfig[:release_dates] = sconfig["release_dates"]
   sconfig[:release_dates] = sconfig[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-  puts "Getting manifest information..."
-  url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
-  branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
-  auth = {:username => "readonly", :password => "readonly"}
-  page = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/",
-    :basic_auth => auth, :verify => false).body
-  manifests = {}
-  for line in page.split("\n")
-    if line =~ /bioc_([0123456789.]+)\.manifest/
-      ver = $1
-      manifests[ver] = []
-      if ver == sconfig["devel_version"]
-        manifest_url = "#{url}bioc_#{ver}.manifest"
-      else
-        manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
-      end
-      manifest = HTTParty.get(manifest_url, :basic_auth => auth, :verify=>false).body
-      for l in manifest.split("\n")
-        next unless l =~ /^Package: /
-        manifests[ver].push l.chomp.sub(/^Package: /, "").strip
+  rel_ver = sconfig["release_version"]
+  dev_ver = sconfig["devel_version"]
+  all_ver = sconfig["release_dates"].keys
+  all_ver.push dev_ver
+  man_path = "../manifest/"
+
+  manifests = {}	
+
+  all_ver.each { |v| 
+    ver = v.gsub(/\./,"_")
+    manifests[v] = []
+    if v == dev_ver
+      system("git -C #{man_path} checkout master")
+    else
+      system("git -C #{man_path} checkout RELEASE_#{ver}")
+    end
+    if $? == 0
+      soft="#{man_path}/software.txt"
+      File.open(soft, "r") do |f|
+        f.each_line do |line|
+          next unless line =~ /^Package: /
+          manifests[v].push line.chomp.sub(/^Package: /, "").strip
+        end
       end
     end
-  end
+  }
   sconfig[:manifests] = manifests
 
   sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
@@ -753,6 +759,7 @@ task :get_years_in_bioc_shields do
     get_year_shield(pkg, true, sconfig)
   end
 end
+
 
 # run me in crontab
 desc "get test coverage shields"

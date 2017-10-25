@@ -40,6 +40,14 @@ tr = TableRower.new
 </td>
 <%= tr.betweencells %>
 
+<% # shield 3: posts
+%>
+<td>
+
+   <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+
+</td>
+<%= tr.betweencells %>
 
 <%
    # shield 4: years in bioc

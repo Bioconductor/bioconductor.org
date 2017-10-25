@@ -609,6 +609,9 @@ def get_year_shield(package, make_shield=false, conf=nil)
           fh = File.open(shield, 'w')
           fh.write(resp.to_s)
           fh.close
+        else
+          FileUtils.cp(File.join('assets', 'images', 'shields',
+            'in_bioc', "unknown-bioc.svg"), shield) 
         end
       end
     end
