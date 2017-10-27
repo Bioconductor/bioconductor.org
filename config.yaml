@@ -22,8 +22,8 @@ devel_version: "3.6"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
+- "3.5"
 - "3.6"
-- "3.7"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
