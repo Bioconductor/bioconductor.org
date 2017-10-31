@@ -6,7 +6,7 @@ We are pleased to announce Bioconductor 3.6, consisting of 1473
 software packages, 326 experiment data packages, and 911 annotation
 packages.
 
-There are 99 new software packages, and many updates and improvements
+There are 100 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.6 is compatible with R 3.4.2,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -41,7 +41,7 @@ To update to or install Bioconductor 3.6:
 New Software Packages
 =====================
 
-There are 99 new software packages in this release of Bioconductor.
+There are 100 new software packages in this release of Bioconductor.
 
 - [amplican](https://bioconductor.org/packages/amplican) `amplican`
   performs alignment of the amplicon reads, normalizes gathered data,
@@ -457,6 +457,14 @@ There are 99 new software packages in this release of Bioconductor.
   http://ndexbio.org/. It can retrieve and save networks via the API.
   Networks are offered as RCX object and as igraph representation.
 
+- [omicRexposome](https://bioconductor.org/packages/omicRexposome)
+  omicRexposome systematizes the association evaluation between
+  exposures and omic data, taking advantage of MultiDataSet for
+  coordinated data management, rexposome for exposome data definition
+  and limma for association testing. Also to perform data integration
+  mixing exposome and omic data using multi co-inherent analysis
+  (omicade4) and multi-canonical correlation analysis (PMA).
+
 - [Onassis](https://bioconductor.org/packages/Onassis) A package that
   allows the annotation of text with ontology terms (mainly from OBO
   ontologies) and the computation of semantic similarity measures
@@ -542,7 +550,7 @@ There are 99 new software packages in this release of Bioconductor.
   pathways with an enrichment map, where pathways with large number
   of overlapping genes are grouped together in a network graph
 
-- [pcxn](https://bioconductor.org/packages/phenopath) Discover the
+- [pcxn](https://bioconductor.org/packages/pcxn) Discover the
   correlated pathways/gene sets of a single pathway/gene set or
   discover correlation relationships among multiple pathways/gene
   sets. Draw a heatmap or create a network of your query and extract
