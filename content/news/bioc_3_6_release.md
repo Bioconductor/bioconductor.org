@@ -6,7 +6,7 @@ We are pleased to announce Bioconductor 3.6, consisting of 1473
 software packages, 326 experiment data packages, and 911 annotation
 packages.
 
-There are 100 new software packages, and many updates and improvements
+There are 99 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.6 is compatible with R 3.4.2,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -41,7 +41,7 @@ To update to or install Bioconductor 3.6:
 New Software Packages
 =====================
 
-There are 100 new software packages in this release of Bioconductor.
+There are 99 new software packages in this release of Bioconductor.
 
 - [amplican](https://bioconductor.org/packages/amplican) `amplican`
   performs alignment of the amplicon reads, normalizes gathered data,
@@ -208,8 +208,7 @@ There are 100 new software packages in this release of Bioconductor.
 - [DASC](https://bioconductor.org/packages/DASC) The package is used
   for identifying batches in high-dimensional dataset.
 
--
-  [DelayedMatrixStats](https://bioconductor.org/packages/DelayedMatrixStats)
+- [DelayedMatrixStats](https://bioconductor.org/packages/DelayedMatrixStats)
   A port of the 'matrixStats' API for use with DelayedMatrix objects
   from the 'DelayedArray' package. High-performing functions
   operating on rows and columns of DelayedMatrix objects, e.g. col /
@@ -542,6 +541,14 @@ There are 100 new software packages in this release of Bioconductor.
   genes driving pathway significance (6) organizes significant
   pathways with an enrichment map, where pathways with large number
   of overlapping genes are grouped together in a network graph
+
+- [pcxn](https://bioconductor.org/packages/phenopath) Discover the
+  correlated pathways/gene sets of a single pathway/gene set or
+  discover correlation relationships among multiple pathways/gene
+  sets. Draw a heatmap or create a network of your query and extract
+  members of each pathway/gene set found in the available collections
+  (MSigDB H hallmark, MSigDB C2 Canonical pathways, MSigDB C5 GO BP
+  and Pathprint).
 
 - [phenopath](https://bioconductor.org/packages/phenopath) PhenoPath
   infers genomic trajectories (pseudotimes) in the presence of
