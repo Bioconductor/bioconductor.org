@@ -8,7 +8,7 @@ repositories, please use the commands below.
 
 ### Public mirrors
 
-We have recently increased security requirements for the public Bioconductor
+We have increased security requirements for the public Bioconductor
 mirror sites. A mirror is considered "public" if it's an option in R's
 <code>chooseBioCmirror()</code> function and listed on [our mirror
 page](/about/mirrors/). Public site maintainers must support https on their
@@ -80,11 +80,6 @@ where there is enough free space).
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/data /dest/packages/release/data
 
-### Bioconductor release Extra repo ###
-
-    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/extra /dest/packages/release/extra
-
-
 ## BioC devel repos ##
 
 If you want to mirror the Bioconductor 
@@ -102,12 +97,6 @@ please use the following commands:
 ### Bioconductor devel Data repos ###
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/data /dest/packages/devel/data
-
-
-### Bioconductor devel Extra repo ###
-
-    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/extra /dest/packages/devel/extra
-
 
 ## Additional information ##
 
