@@ -32,7 +32,7 @@ Getting Started with Bioconductor 3.6
 
 To update to or install Bioconductor 3.6:
 
-1. Install R 3.4.  Bioconductor 3.6 has been designed expressly for
+1. Install R >=3.4.2.  Bioconductor 3.6 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
