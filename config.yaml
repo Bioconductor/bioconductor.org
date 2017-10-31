@@ -7,11 +7,11 @@ staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-te
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.5"
+release_version: "3.6"
 r_version_associated_with_release: "3.4.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.6"
+devel_version: "3.7"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -22,26 +22,26 @@ devel_version: "3.6"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.5"
 - "3.6"
+- "3.7"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
 - "data/experiment"
-- "data/annotation"
+#- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_devel_builders:
-  linux: "malbec1"
-  windows: "tokay1"
-  mac_elcapitan: "veracruz1"
-active_release_builders:
   linux: "malbec2"
   windows: "tokay2"
-  mac_elcapitan: "veracruz2"
+  mac_elcapitan: "merida2"
+active_release_builders:
+  linux: "malbec1"
+  windows: "tokay2"
+  mac_elcapitan: "veracruz1"
 
 ## CHANGE this when the workflow builder builds
 ## on a newer version of bioc
