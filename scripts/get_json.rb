@@ -145,33 +145,23 @@ class GetJson
     default_view = "AnnotationData" if repo == "data/annotation"
     default_view = "ExperimentData" if repo == "data/experiment"
     rows = nil
-    Dir.mktmpdir do |dir|
-      if version == @config["devel_version"]
-        branch = "trunk"
-      else
-        branch = "branches/RELEASE_#{version.gsub(".", "_")}"
-      end
-      url = "https://hedgehog.fhcrc.org/bioconductor/#{branch}/madman/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite"
-      auth = {:username => "readonly", :password => "readonly"}
-      File.open("#{dir}/biocViewsVocab.sqlite", "wb") do |f|
-          resp = HTTParty.get(url, :verify => false, :basic_auth => auth)
-          # require 'pry';binding.pry
-          f.write resp
-      end
-      #`curl -s -u  readonly:readonly #{url} > #{dir}/biocViewsVocab.sqlite`
-      dbfile = "#{dir}/biocViewsVocab.sqlite"
-      db = SQLite3::Database.new(dbfile)
-      rows = db.execute("select * from biocViews")
+    if version == @config["devel_version"]
+      branch = "master"
+    else
+      branch = "RELEASE_#{version.gsub(".", "_")}"
     end
-    #dbfile = `R --vanilla --slave -e "cat(system.file('extdata','biocViewsVocab.sqlite',package='biocViews'))"`
-    #db = SQLite3::Database.new(dbfile)
-    #rows = db.execute("select * from biocViews")
+    path = "../biocViews"
+    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
+    dbfile = "#{path}/inst/extdata/biocViewsVocab.sqlite"
+    db = SQLite3::Database.new(dbfile)
+    rows = db.execute("select * from biocViews")
     g = RGL::DirectedAdjacencyGraph.new()
     sort_order = []
     for row in rows
       g.add_edge(row.first, row.last)
       sort_order.push row.first
     end
+    system("git -C #{path} checkout master")
     node_attrs = {}
     dcfs.each_pair do |key, value|
       if value.has_key? "biocViews"
