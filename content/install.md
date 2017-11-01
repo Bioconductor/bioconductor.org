@@ -161,7 +161,7 @@ If you see a message like this:
 
 * Quit your R session
 * Start a new session with `R --vanilla`
-* Run the command `remove.packages("BiocInstaller")`
+* Run the command `remove.packages("BiocInstaller", lib=.libPaths())`
 * Repeat that command until R says there is no such package.
 * Run the command `source("https://bioconductor.org/biocLite.R")`
 * Run `biocValid()` to ensure your installed packages are
