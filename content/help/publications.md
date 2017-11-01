@@ -8,10 +8,18 @@ launched!
 
 <div>
 
+<div class="grey_box">
+Ramos, M, et al. (2017) <a
+href="https://dx.doi.org/10.1158/0008-5472.CAN-17-0344">Software for
+the Integration of Multiomics Experiments in Bioconductor</a>
+Cancer Research 77:e39-e42.
+doi:10.1158/0008-5472.CAN-17-0344
+</div>
+
 <div class="white_box">
-Irizarry R, et al. (2015) <a
-href="http://genomicsclass.github.io/book/">Biomedical Data
-Science</a>. Course Notes, EdX PH525.1x.
+Pasolli, E, et al. (2017) <a href="https://dx.doi.org/10.1038/nmeth.4468">
+Accessible, curated metagenomic data through ExperimentHub</a>
+Nature Methods 14, 1023–1024. doi:10.1038/nmeth.4468
 </div>
 
 <div class="grey_box"> Huber W, et al. (2015) <a
@@ -19,20 +27,6 @@ href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrat
 high-throughput genomic analysis with
 <em>Bioconductor</em></a>. Nature Methods 12:115-121;
 doi:10.1038/nmeth.3252 (full-text free with registration).
-<a href="http://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509590/">PMC4509590</a>
-</div>
-
-<div class="white_box">
-Kannan L, et al. (2015).
-<a href="http://dx.doi.org/10.1093/bib/bbv080">Public data and open source tools for multi-assay genomic investigation of disease</a>.
-Brief Bioinform. doi:10.1093/bib/bbv080
-</div>
-
-<div class="grey_box">
-Love M, Huber W, and Anders S. (2014) <a
-href="http://genomebiology.com/2014/15/12/550/abstract">Moderated
-estimation of fold change and dispersion for RNA-seq data with
-DESeq2</a>. Genome Biology 15:550; doi:10.1186/s13059-014-0550-8
 </div>
 
 <div class="white_box">
@@ -40,6 +34,12 @@ Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
+</div>
+
+<div class="grey_box">
+Irizarry R, et al. (2015) <a
+href="http://genomicsclass.github.io/book/">Biomedical Data
+Science</a>. Course Notes, EdX PH525.1x.
 </div>
 
 </div>
