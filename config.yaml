@@ -72,6 +72,7 @@ ami_ids:
  bioc3_4: ami-8946709f
  bioc3_5: ami-279a315d
  bioc3_6: ami-2951fa53
+ bioc3_7: coming_soon
 data_sources:
 - items_root: /
   layouts_root: /
