@@ -130,16 +130,25 @@
         fatal: remote error: FATAL: W any packages/myPackage nobody DENIED by fallthru
         (or you mis-spelled the reponame)
 
-    Check your remote,
+    (you might have renamed the `origin` remote as `upstream`;
+    substitute `upstream` for `origin`. Check your remote,
 
         $ git remote -v
         origin  https://git.bioconductor.org/packages/myPackage.git (fetch)
         origin  https://git.bioconductor.org/packages/myPackage.git (push)
 
-    As a developer you should be using the SSH protocol, and not
-    HTTPS. The origin, should be
-    `git@git.bioconductor.org:packages/myPackage` or your **SSH key is
-    not valid**.
+    As a developer you should be using the SSH protocol, but the
+    `origin` remote is HTTPS. Use
+    
+        git remote add origin git@git.bioconductor.org:packages/myPackage
+        
+    to change the remote to the SSH protocol. Note the `:` after the
+    host name in the SSH protocol, rather than the `/` in the HTTPS
+    protocol. Confirm that the remote has been updated correctly with
+    `git remote -v`.
+    
+    If your remote is corret and you still see the message, then your
+    SSH key is invalid. See the next FAQ.
 
 15. Before sending a question to the Bioc-devel mailing list about
     git, please check the output of the following commands for
@@ -153,7 +162,7 @@
             origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
             origin  git@git.bioconductor.org/packages/myPackage.git (push)
 
-       or,
+       or
 
             origin  git@github.com:<github username>/myPackage.git (fetch)
             origin  git@github.com:<github username>/myPackage.git (push)

@@ -30,6 +30,15 @@ without using GitHub.
     This indicates that your git repository has only one remote
     `origin`, which is the _Bioconductor_ repository.
 
+1. In other work flows, the `origin` remote has been renamed to
+   `upstream`. It may be convenient to make this change to your own
+   repository
+   
+        git remote rename origin upstream
+        
+    and confirm that `git remote -v` now associates the `upstream`
+    repository name with `git@git.bioconductor.org`.
+
 ### Commit changes to your local repository
 
 1. Before making changes to your repository, make sure to `pull`
@@ -61,7 +70,7 @@ without using GitHub.
    Push changes to the `master` branch using:
 
         git checkout master
-        git push origin master
+        git push upstream master
 
 ### (Optional) Merge changes to the current release branch
 
@@ -89,6 +98,6 @@ without using GitHub.
 
 1. Push changes to the `<RELEASE_X_Y>` branch using:
 
-        git push origin <RELEASE_X_Y>
+        git push upstream <RELEASE_X_Y>
 
 [submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
