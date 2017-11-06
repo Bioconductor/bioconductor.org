@@ -150,9 +150,13 @@ class GetJson
     else
       branch = "RELEASE_#{version.gsub(".", "_")}"
     end
-    path = "../biocViews"
-    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
-    dbfile = "#{path}/inst/extdata/biocViewsVocab.sqlite"
+#    path = "../biocViews"
+#    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
+#    dbfile = "#{path}/inst/extdata/biocViewsVocab.sqlite"
+    tempDir = Dir.tmpdir
+    call = "git archive --remote=ssh://git@git.bioconductor.org/packages/biocViews #{branch} inst/extdata/biocViewsVocab.sqlite | tar -x --strip=2 -C #{tempDir}"
+    system(call)
+    dbfile = "#{tempDir}/biocViewsVocab.sqlite"
     db = SQLite3::Database.new(dbfile)
     rows = db.execute("select * from biocViews")
     g = RGL::DirectedAdjacencyGraph.new()
@@ -161,7 +165,7 @@ class GetJson
       g.add_edge(row.first, row.last)
       sort_order.push row.first
     end
-    system("git -C #{path} checkout master")
+#    system("git -C #{path} checkout master")
     node_attrs = {}
     dcfs.each_pair do |key, value|
       if value.has_key? "biocViews"
