@@ -26,7 +26,8 @@ These steps update the `master` branch.
 
     Get help on [Resolve merge conflicts][] if these occur.
 
-1. Push changes to GitHub's (`origin`) `master` branch
+1. If you also maintain a GitHub repository, push changes to GitHub's
+   (`origin`) `master` branch
 
         git push origin master
 
