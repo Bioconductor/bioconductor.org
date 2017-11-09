@@ -48,14 +48,14 @@ repositories are all in sync.
         git push origin master
 
 1. Repeat for the release branch, replacing `master` with the name of
-   the release branch, e.g., `RELEASE_3_5`. It may be necessary to
+   the release branch, e.g., `RELEASE_3_6`. It may be necessary to
    create the release branch in the local repository.
    
-        git checkout RELEASE_3_5
-        git merge upstream/RELEASE_3_5
-        git merge origin/RELEASE_3_5
-        git push upstream RELEASE_3_5
-        git push origin RELEASE_3_5
+        git checkout RELEASE_3_6
+        git merge upstream/RELEASE_3_6
+        git merge origin/RELEASE_3_6
+        git push upstream RELEASE_3_6
+        git push origin RELEASE_3_6
    
    Remember that only `master` and the current release branch of
    _Bioconductor_ repositories can be updated.

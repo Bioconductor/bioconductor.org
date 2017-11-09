@@ -37,7 +37,7 @@ GitHub, you can push these changes to _Bioconductor_.
     
     To push GitHub release branch updates to the _Bioconductor_
     release branch, replace `master` with name of the release branch,
-    e.g.: `RELEASE_3_5`.
+    e.g.: `RELEASE_3_6`.
 
 [Adding a new collaborator]: https://help.github.com/articles/inviting-collaborators-to-a-personal-repository/
 [Removing collaborator]: https://help.github.com/articles/removing-a-collaborator-from-a-personal-repository/

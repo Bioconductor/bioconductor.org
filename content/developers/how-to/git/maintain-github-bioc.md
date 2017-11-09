@@ -72,14 +72,14 @@ user community can engage in the development of your package.
         ## Fetch all updates
         git fetch upstream
 
-        ## Checkout new branch RELEASE_3_5, from upstream/RELEASE_3_5
-        git checkout -b RELEASE_3_5 upstream/RELEASE_3_5
+        ## Checkout new branch RELEASE_3_6, from upstream/RELEASE_3_6
+        git checkout -b RELEASE_3_6 upstream/RELEASE_3_6
 
-        ## Push updates to remote origin's new branch RELEASE_3_5
-        git push -u origin RELEASE_3_5
+        ## Push updates to remote origin's new branch RELEASE_3_6
+        git push -u origin RELEASE_3_6
 
 1. Check your GitHub repository to confirm that the `master` (and
-   optionally `RELEASE_3_5`) branches are present.
+   optionally `RELEASE_3_6`) branches are present.
 
 1. Once the GitHub repository is established follow
    [Push to GitHub and _Bioconductor_][] to maintain your repository

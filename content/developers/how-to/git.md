@@ -93,9 +93,9 @@ To make more extensive changes see [Fix bugs in devel and release][].
 
 Bug fixes can be ported to the current release branch. Use
 `cherry-pick` to identify the commmit(s) you would like to port. E.g.,
-for release 3.5, porting the most recent commit to master
+for release 3.6, porting the most recent commit to master
 
-    BiocGenerics$ git checkout RELEASE_3_5
+    BiocGenerics$ git checkout RELEASE_3_6
     BiocGenerics$ git cherry-pick master
     BiocGenerics$ git push
 
