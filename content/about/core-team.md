@@ -9,7 +9,7 @@
 * Valerie Obenchain
 * Andrzej Ole&#347;
 * Marcel Ramos
-* Lori Shepherd
+* Lori Ann Shepherd
 * Nitesh Turaga
 * Daniel van Twisk
 
