@@ -1,21 +1,19 @@
 # Site Maintainer README for bioconductor.org
 
-The canonical location for this code is https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
+The canonical location for this code is https://github.com/Bioconductor/bioconductor.org
 
-You can setup git-svn on it by cloning this repository and running
+You can setup by cloning this repository and running
 
 ```bash
-git svn init https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
-git svn fetch
-git update-ref refs/remotes/git-svn refs/remotes/origin/master
+git clone https://github.com/Bioconductor/bioconductor.org
 ```
 
 Then after committing code locally run the following to commit the changes SVN
 and push the commits back to GitHub.
 
 ```bash
-# commit code to svn
-git svn dcommit
+# commit code to git
+git commit -m "My informative commit message"
 
 # push code to github
 git push
