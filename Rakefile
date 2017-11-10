@@ -49,7 +49,7 @@ desc "copy assets to output directory"
 task :copy_assets do
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
-  system "rsync -gprt --partial --exclude='.svn' assets/ #{output_dir}"
+  system "rsync -gprt --partial --exclude='.git' assets/ #{output_dir}"
 end
 
 desc "Run nanoc compile"
@@ -130,7 +130,7 @@ task :deploy_staging do
   dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")
   output_dir = site_config["output_dir"]
-  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.svn' #{output_dir}/ #{dst}"
+  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.git' #{output_dir}/ #{dst}"
   chmod_cmd = "chmod -R a+r /loc/www/bioconductor-test.fhcrc.org/packages/json"
   system chmod_cmd
 end
@@ -140,7 +140,7 @@ task :deploy_production do
   site_config = YAML.load_file("./config.yaml")
   src = '/loc/www/bioconductor-test.fhcrc.org'
   dst = site_config["production_deploy_root"]
-  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.svn' #{src}/ #{dst}/"
+  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.git' #{src}/ #{dst}/"
 end
 
 
