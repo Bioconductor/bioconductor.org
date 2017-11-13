@@ -192,8 +192,8 @@ mirrors:
      institution_url: http://rge.fmrp.usp.br/
      contact: Houtan Noushmehr
      contact_email: houtan@usp.br
-     mirror_url: http://bioconductor.fmrp.usp.br/
-     https_mirror_url: https://bioconductor.fmrp.usp.br/
+     mirror_url: http://bioconductor.fmrp.usp.br/bioc/
+     https_mirror_url: https://bioconductor.fmrp.usp.br/bioc/
      rsync: secure_mirror_from_master
      city: Ribeirão Preto
      country_code: br
