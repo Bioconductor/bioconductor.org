@@ -224,6 +224,23 @@
     server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
+18. After submitting my SSH key to the google form, I did not receive a 
+    reply. How do I check?
+
+    Once you submit your SSH key to the google form, you should receive
+    an email notification (from google) confirming your submission. You 
+    should receive another email notification if you key was added to our
+    system from maintainer@bioconductor.org, or if you submitted an invalid
+    entry.
+    
+
+    ```
+    git clone git@git.bioconductor.org:packagse/<myPackage>
+    ```
+
+    If this suceeds via the SSH protocol, then it means that you have
+    access to your package.
+
 ## More questions?
 
 If you have additional questions which are not answered here already,
