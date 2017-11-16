@@ -9,8 +9,9 @@ end_date: 2018-07-27
 location: Toronto, Canada
 url: COURSE_URL_HERE
 tags:
-- Boston
+- Toronto
 - Conference
+- Bioconductor
 description: This conference highlights current developments within
   and beyond Bioconductor.  Morning scientific talks and afternoon
   practicals provide conference participants with insights and tools
