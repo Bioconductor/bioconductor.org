@@ -57,6 +57,17 @@ devel) and the current `release` branch.
         git add DESCRIPTION
         git commit -m "update RELEASE version number"
 
+    NOTE: If you are patching your release for the first time, you have to make
+    a local copy of the RELEASE_X_Y branch, by
+
+        git checkout -b <RELEASE_X_Y> upstream/<RELEASE_X_Y>
+
+    Following this one time local checkout, you may switch between RELEASE_X_Y
+    and master with `git checkout <RELEASE_X_Y>`. If you do not use the command
+    to get a local copy of the release branch, you will get the message,
+
+        (HEAD detached from origin/RELEASE_X_Y)
+
 1. Push your changes to both the GitHub and _Bioconductor_ `master`
    and `<RELEASE_X_Y>` branches. Make sure you are on the correct
    branch on your local machine.
