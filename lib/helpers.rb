@@ -527,7 +527,7 @@ def get_svn_commits()
     # for this. See https://stackoverflow.com/questions/15593133/rexml-runtimeerror-entity-expansion-has-grown-too-large
     REXML::Document.entity_expansion_text_limit =
       REXML::Document.entity_expansion_text_limit * 4
-    xml = HTTParty.get("http://bioconductor.org/rss/svnlog.rss").body
+    xml = HTTParty.get("http://bioconductor.org/rss/gitlog.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -980,7 +980,8 @@ end
 def get_last_svn_commit_time()
 
   begin
-    xml = HTTParty.get("http://master.bioconductor.org/rss/svnlog.rss").body
+    ## FIXME: coming from master
+    xml = HTTParty.get("http://master.bioconductor.org/rss/gitlog.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
