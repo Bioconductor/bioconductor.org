@@ -521,6 +521,48 @@ def recent_packages()
   end
 end
 
+
+def get_git_commits()
+   begin
+     REXML::Document.entity_expansion_text_limit =
+       REXML::Document.entity_expansion_text_limit * 4
+     doc = Document.new File.new("rss/gitlog.xml")
+     items = []
+     doc.elements.each("rss/channel/item") {|i| items.push i}
+     ret = []
+     for item in items
+       next if item.nil?
+       next if item.elements.nil?
+       next unless item.elements.respond_to? :each
+       h = {}
+       revision = title = date = author = description = nil
+       item.elements.each("title") {
+         |i|
+         title = i.text
+       }
+       item.elements.each("pubDate") {|i| date = i.text}
+       item.elements.each("author") {|i| author = i.text}
+       item.elements.each("description") {|i| description = i.text}
+
+       msg = description.gsub(/<div style="white-space:pre">/,"")
+       msg = msg.split("</div>").first
+
+#       rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
+#       date = %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
+
+       h[:revision] = title
+       h[:date] = date
+       h[:author] = author
+       h[:msg] = msg
+
+       ret.push h
+     end
+#     puts ret
+     return ret
+   end
+end
+
+
 def get_svn_commits()
   begin
     # FIXME - maybe switch to nokogiri to avoid the necessity

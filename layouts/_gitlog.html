@@ -1,13 +1,13 @@
 
 <div style="padding:0 12px 0 0">
   <h2 style="min-height:40px;">
-	Subversion Logs
+	GIT Logs
 </h2>
 
-<p>This is a list of recent commits to <a href="https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/">the development branch</a>
-of the Bioconductor Subversion repository. </p>
+<p>This is a list of recent commits to git.bioconductor.org, the master(development) branch
+of the Bioconductor GIT repository. </p>
 
-<p>This list is also available as an <a href="/rss/svnlog.rss">RSS feed</a>.  (<a href="/rss/svnlog.release.rss">release branch</a>)</p>
+<p>This list is also available as an <a href="/rss/gitlog.xml">RSS feed (master branch)</a>, and <a href="/rss/gitlog.release.xml">RSS feed (release branch)</a></p>
 
 
 
@@ -16,7 +16,7 @@ of the Bioconductor Subversion repository. </p>
       Revision: <%= p[:revision] %><br/>
       Author: <%= p[:author] %><br/>
       Date: <%= p[:date] %><br/>
-      Paths:<br/>
+      Commit message:<br/>
 	  <%= p[:table] %>
 		<pre style="background-color: <%= i % 2 == 0 ? "#e6e8e7" : "#ffffff" %>;"><%=p[:msg]%></pre>
     </div>
