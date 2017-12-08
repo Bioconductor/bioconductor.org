@@ -11,12 +11,12 @@ of the Bioconductor GIT repository. </p>
 
 
 
-  <% @svn_items.each_with_index do |p, i| %>
+  <% @git_items.each_with_index do |p, i| %>
     <div class="<%= "#{i % 2 == 0 ? 'grey_box' : 'white_box'}" %>">
       Revision: <%= p[:revision] %><br/>
       Author: <%= p[:author] %><br/>
       Date: <%= p[:date] %><br/>
-      Commit message:<br/>
+      Commit message:<br/><br/>
 	  <%= p[:table] %>
 		<pre style="background-color: <%= i % 2 == 0 ? "#e6e8e7" : "#ffffff" %>;"><%=p[:msg]%></pre>
     </div>

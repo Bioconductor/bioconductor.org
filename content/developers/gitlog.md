@@ -1,8 +1,8 @@
-_Bioconductor_ has moved to git for contributed packages; the
+_Bioconductor_ has moved to GIT for contributed packages; the
 subversion logs are no longer active. The following are the git 
 logs.
 
 
 <div>
-  <%= render('/_gitlog/', :svn_items => get_git_commits()) %>
+  <%= render('/_gitlog/', :git_items => get_git_commits()) %>
 </div>
