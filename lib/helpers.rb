@@ -535,11 +535,12 @@ def get_git_commits()
        next if item.elements.nil?
        next unless item.elements.respond_to? :each
        h = {}
-       revision = title = date = author = description = nil
+       revision = title = package = date = author = description = nil
        item.elements.each("title") {
          |i|
          title = i.text
        }
+       item.elements.each("package") {|i| package = i.text}
        item.elements.each("pubDate") {|i| date = i.text}
        item.elements.each("author") {|i| author = i.text}
        item.elements.each("description") {|i| description = i.text}
@@ -549,7 +550,7 @@ def get_git_commits()
 
 #       rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
 #       date = %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
-
+       h[:package] = package
        h[:revision] = title
        h[:date] = date
        h[:author] = author
