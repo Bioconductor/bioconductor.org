@@ -67,6 +67,7 @@ Annotation Packages:
 <li><a href="/packages/3.4/data/annotation/html/gahgu95e.db.html">gahgu95e.db</a></li>
 <li><a href="/packages/3.4/data/annotation/html/gahgu95ecdf.html">gahgu95ecdf</a></li>
 <li><a href="/packages/3.4/data/annotation/html/gahgu95eprobe.html">gahgu95eprobe</a></li>
+<li><a href="/packages/3.4/data/annotation/html/IlluminaHumanMethylation450k.db.html">IlluminaHumanMethylation450k.db</a></li>
 <li><a href="/packages/3.4/data/annotation/html/org.Sco.eg.db.html">org.Sco.eg.db.html</a></li>
 <li><a href="/packages/3.4/data/annotation/html/org.Tgondii.eg.db.html">org.Tgondii.eg.db</a></li>
 </ul>
