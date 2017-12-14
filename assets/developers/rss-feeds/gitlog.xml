@@ -1,25 +1,97 @@
 <rss version="2.0">
   <channel>
-    <title>GIT: Bioconductor (master)</title>
-    <link>https://www.bioconductor.org/</link>
-    <description>Git commit log</description>
-    <language>en-us</language>
-    <copyright />
-    <item>
-      <title>BiocGenerics_test_two</title>
-      <link>https://www.bioconductor.org</link>
-      <description>Check package name in package 2</description>
-      <author>Nitesh Turaga</author>
-      <pubDate>2017-12-12 12:25:07</pubDate>
-      <guid>4c365632c6aea83d058493d86907c3e3db7389e6</guid>
-    </item>
-    <item>
-      <title>BiocGenerics_test</title>
-      <link>https://www.bioconductor.org</link>
-      <description>Check package name</description>
-      <author>Nitesh Turaga</author>
-      <pubDate>2017-12-12 12:24:15</pubDate>
-      <guid>759a29be28db0a6665d7ebe78012f9451d3f0c8f</guid>
-    </item>
-  </channel>
+  <title>GIT: Bioconductor (master)</title>
+  <link>https://www.bioconductor.org/</link>
+  <description>Git commit log</description>
+  <language>en-us</language>
+  <copyright />
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if config file helps</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:47:32</pubDate>
+    <guid>6275bf1525a09bf43ff17de73531215e408632d9</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Get user name</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:36:48</pubDate>
+    <guid>7feef00ee38f3de8bc34353d60f141cdc0461264</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>print cwd</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:28:43</pubDate>
+    <guid>8cfe033eb3b04b5b9fd49df80774cf3acaf750df</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check git commands</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:18:22</pubDate>
+    <guid>f2850d1064ddd4b067be8c51d71872b6c4c6357b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>test 4: indentation</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:12:19</pubDate>
+    <guid>56aee14a4cd0c9120866f3df42d878b79a45ac21</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>test 3: indentation</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:12:11</pubDate>
+    <guid>3dc4ced6386f939913f739912bf4ec8d2095b72f</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>test 2: indentation</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:11:29</pubDate>
+    <guid>82c2ea9120e9ad4fa6dba071a70a29b2138052a8</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>test 1: indentation</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:11:17</pubDate>
+    <guid>39f4692e1950a13a027b1544c2f8c31ee3c8f701</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Test 1: Single commit</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 16:38:55</pubDate>
+    <guid>9253d34b45ccf5f1e9e934d38c6236144e5032c7</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test_two</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check package name in package 2</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-12 12:25:07</pubDate>
+    <guid>4c365632c6aea83d058493d86907c3e3db7389e6</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check package name</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-12 12:24:15</pubDate>
+    <guid>759a29be28db0a6665d7ebe78012f9451d3f0c8f</guid>
+  </item>
+</channel>
 </rss>
