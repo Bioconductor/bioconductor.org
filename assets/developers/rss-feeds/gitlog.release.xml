@@ -1,9 +1,25 @@
 <rss version="2.0">
   <channel>
-    <title>GIT: Bioconductor (RELEASE)</title>
-    <link>https://www.bioconductor.org/</link>
-    <description>Git commit log</description>
-    <language>en-us</language>
-    <copyright />
-  </channel>
+  <title>GIT: Bioconductor (RELEASE)</title>
+  <link>https://www.bioconductor.org/</link>
+  <description>Git commit log</description>
+  <language>en-us</language>
+  <copyright />
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check indentation on xml</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:10:04</pubDate>
+    <guid>71fb681d947343d0b41bd34a8e1354e0aac9189b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Test 1: Single commit</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 16:39:47</pubDate>
+    <guid>e3c4be80075a9753f9dcc5359be4dcc9461650f4</guid>
+  </item>
+</channel>
 </rss>
