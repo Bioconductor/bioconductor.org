@@ -1,9 +1,129 @@
 <rss version="2.0">
   <channel>
-    <title>GIT: Bioconductor (RELEASE)</title>
-    <link>https://www.bioconductor.org/</link>
-    <description>Git commit log</description>
-    <language>en-us</language>
-    <copyright />
-  </channel>
+  <title>GIT: Bioconductor (RELEASE)</title>
+  <link>https://www.bioconductor.org/</link>
+  <description>Git commit log</description>
+  <language>en-us</language>
+  <copyright />
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Fix version number</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-14 22:15:48</pubDate>
+    <guid>d9e2d65711ac7b9adb8df405415b3cb53fe7e04a</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Fix unit tests</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-14 21:19:04</pubDate>
+    <guid>93cb1ef14a52642c1c4c46f69f27180bef152d05</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Minor bug fixes</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-14 18:35:23</pubDate>
+    <guid>c6b6076168bfc853b2ff5716a85539e9da634cfd</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Tolerate a given number (instead of percentage) of missing values before dimensionality reduction</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-14 18:29:48</pubDate>
+    <guid>33ddf45c6f231035756186b58d72ed9baedae8c0</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Prepare for new alternative splicing annotations</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-07 22:19:23</pubDate>
+    <guid>2bcac586e6d0404a528a99bb85938843c45dd941</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Multiple bug fixes and improvements</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-11-15 17:23:16</pubDate>
+    <guid>de787ed09518735fa3b4bc2091f48c749b1ccfc7</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Fix GTEx data loading</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-11-15 17:21:15</pubDate>
+    <guid>bd9188c5c17c3e7fc81d3140ded1e22299725a57</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Fix gene expression not being normalised</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-11-15 17:08:11</pubDate>
+    <guid>3ca33ea5028f5fa0b273039af23a0bb5798e9385</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Fix setting inclusions levels with no AS events</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-10-26 12:20:39</pubDate>
+    <guid>8ca6ab82bdb7999633d6e0363220e2ff00855024</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Update documentation</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-10-25 14:10:25</pubDate>
+    <guid>1964df5d8a30cdd291aaa34d57f63c93545ac48e</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Merge remote-tracking branch 'upstream/master'</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-12-14 22:07:53</pubDate>
+    <guid>4b2f40f8b3e08cb66d7e138249b5ba2c95fbbc9a</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Version 1.4.0</description>
+    <author>Nuno Agostinho</author>
+    <pubDate>2017-10-31 22:58:52</pubDate>
+    <guid>7eb167058e68d8321995d7775a8c131b17d8b5f5</guid>
+  </item>
+  <item>
+    <title>psichomics</title>
+    <link>https://www.bioconductor.org</link>
+    <description>bump x.y.z versions to odd y after creation of RELEASE_3_6 branch</description>
+    <author>Herv&#233; Pag&#232;s</author>
+    <pubDate>2017-10-30 16:54:21</pubDate>
+    <guid>07cf8a8191eb3da6bdb4d18b4caa494b06b18189</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check indentation on xml</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:10:04</pubDate>
+    <guid>71fb681d947343d0b41bd34a8e1354e0aac9189b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Test 1: Single commit</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 16:39:47</pubDate>
+    <guid>e3c4be80075a9753f9dcc5359be4dcc9461650f4</guid>
+  </item>
+</channel>
 </rss>

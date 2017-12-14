@@ -1,25 +1,129 @@
 <rss version="2.0">
   <channel>
-    <title>GIT: Bioconductor (master)</title>
-    <link>https://www.bioconductor.org/</link>
-    <description>Git commit log</description>
-    <language>en-us</language>
-    <copyright />
-    <item>
-      <title>BiocGenerics_test_two</title>
-      <link>https://www.bioconductor.org</link>
-      <description>Check package name in package 2</description>
-      <author>Nitesh Turaga</author>
-      <pubDate>2017-12-12 12:25:07</pubDate>
-      <guid>4c365632c6aea83d058493d86907c3e3db7389e6</guid>
-    </item>
-    <item>
-      <title>BiocGenerics_test</title>
-      <link>https://www.bioconductor.org</link>
-      <description>Check package name</description>
-      <author>Nitesh Turaga</author>
-      <pubDate>2017-12-12 12:24:15</pubDate>
-      <guid>759a29be28db0a6665d7ebe78012f9451d3f0c8f</guid>
-    </item>
-  </channel>
+  <title>GIT: Bioconductor (master)</title>
+  <link>https://www.bioconductor.org/</link>
+  <description>Git commit log</description>
+  <language>en-us</language>
+  <copyright />
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if it still works</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:54:40</pubDate>
+    <guid>5c2d0148906fce9d87e216b4c2cc05a39864fe06</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>This is working</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:53:13</pubDate>
+    <guid>b30233dcdc1037b7461be596e70933a8e8c0241c</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>check system env variables</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:51:52</pubDate>
+    <guid>279a85678793a11b6993645b622569203135e78e</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if git goes through soomthly</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:28:27</pubDate>
+    <guid>bea7346104151f8850b8b13d2b82a8752cb25101</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if subprocess works and if pathspec error is resolved</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:55:14</pubDate>
+    <guid>0f63d0809d3e1d3807ca372d56d24781a17d3d02</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Avoid pathspec issue</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:30:32</pubDate>
+    <guid>42e23954901bb2e536cb81005148ddfd24959302</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check pathspec</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:24:21</pubDate>
+    <guid>61e58c1fb31a30c3ef55fce1dee3dd6739a6dd9b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>another typo fix</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:10:12</pubDate>
+    <guid>5ffbf8e27f61b05751c508ba3c0a8decd294c4c2</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>fix typo</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:08:08</pubDate>
+    <guid>a1acc3b1b4ca43ad99e0a0b8ed53005df4f55e60</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>env -i seems to work</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:04:37</pubDate>
+    <guid>ddafba7ceddba8f933441069969ba9aacca9f251</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>try env -i in git</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:00:31</pubDate>
+    <guid>b4d400d596e664368b8994b26c4c2e951d102f95</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check with print statments</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 19:28:22</pubDate>
+    <guid>c779e02c608b3b7bb5fc8a6bab7861251e82107b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>does os.system work?</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 19:20:37</pubDate>
+    <guid>ad395b0f057c18bb1406a9349878b4aebe54dedb</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if os works ebtter</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 19:16:17</pubDate>
+    <guid>88881e13faa0d2cad4b5f571a03331ebd267f594</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Check if config file helps</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 18:47:32</pubDate>
+    <guid>6275bf1525a09bf43ff17de73531215e408632d9</guid>
+  </item>
+</channel>
 </rss>
