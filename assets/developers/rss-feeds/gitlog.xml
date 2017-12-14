@@ -8,6 +8,22 @@
   <item>
     <title>BiocGenerics_test</title>
     <link>https://www.bioconductor.org</link>
+    <description>Check if subprocess works and if pathspec error is resolved</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:55:14</pubDate>
+    <guid>0f63d0809d3e1d3807ca372d56d24781a17d3d02</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
+    <description>Avoid pathspec issue</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:30:32</pubDate>
+    <guid>42e23954901bb2e536cb81005148ddfd24959302</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
     <description>Check pathspec</description>
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 20:24:21</pubDate>
@@ -76,22 +92,6 @@
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 18:47:32</pubDate>
     <guid>6275bf1525a09bf43ff17de73531215e408632d9</guid>
-  </item>
-  <item>
-    <title>BiocGenerics_test</title>
-    <link>https://www.bioconductor.org</link>
-    <description>Get user name</description>
-    <author>Nitesh Turaga</author>
-    <pubDate>2017-12-14 18:36:48</pubDate>
-    <guid>7feef00ee38f3de8bc34353d60f141cdc0461264</guid>
-  </item>
-  <item>
-    <title>BiocGenerics_test</title>
-    <link>https://www.bioconductor.org</link>
-    <description>print cwd</description>
-    <author>Nitesh Turaga</author>
-    <pubDate>2017-12-14 18:28:43</pubDate>
-    <guid>8cfe033eb3b04b5b9fd49df80774cf3acaf750df</guid>
   </item>
 </channel>
 </rss>
