@@ -8,6 +8,14 @@
   <item>
     <title>BiocGenerics_test</title>
     <link>https://www.bioconductor.org</link>
+    <description>Check pathspec</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 20:24:21</pubDate>
+    <guid>61e58c1fb31a30c3ef55fce1dee3dd6739a6dd9b</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
     <description>another typo fix</description>
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 20:10:12</pubDate>
@@ -84,14 +92,6 @@
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 18:28:43</pubDate>
     <guid>8cfe033eb3b04b5b9fd49df80774cf3acaf750df</guid>
-  </item>
-  <item>
-    <title>BiocGenerics_test</title>
-    <link>https://www.bioconductor.org</link>
-    <description>Check git commands</description>
-    <author>Nitesh Turaga</author>
-    <pubDate>2017-12-14 18:18:22</pubDate>
-    <guid>f2850d1064ddd4b067be8c51d71872b6c4c6357b</guid>
   </item>
 </channel>
 </rss>
