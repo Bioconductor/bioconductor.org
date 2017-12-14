@@ -8,6 +8,14 @@
   <item>
     <title>BiocGenerics_test</title>
     <link>https://www.bioconductor.org</link>
+    <description>Check if git goes through soomthly</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:28:27</pubDate>
+    <guid>bea7346104151f8850b8b13d2b82a8752cb25101</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
     <description>Check if subprocess works and if pathspec error is resolved</description>
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 20:55:14</pubDate>
