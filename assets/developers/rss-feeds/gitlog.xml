@@ -8,6 +8,14 @@
   <item>
     <title>BiocGenerics_test</title>
     <link>https://www.bioconductor.org</link>
+    <description>check system env variables</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:51:52</pubDate>
+    <guid>279a85678793a11b6993645b622569203135e78e</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
     <description>Check if git goes through soomthly</description>
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 21:28:27</pubDate>
