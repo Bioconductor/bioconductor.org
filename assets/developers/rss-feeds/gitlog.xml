@@ -8,6 +8,14 @@
   <item>
     <title>BiocGenerics_test</title>
     <link>https://www.bioconductor.org</link>
+    <description>Check if it still works</description>
+    <author>Nitesh Turaga</author>
+    <pubDate>2017-12-14 21:54:40</pubDate>
+    <guid>5c2d0148906fce9d87e216b4c2cc05a39864fe06</guid>
+  </item>
+  <item>
+    <title>BiocGenerics_test</title>
+    <link>https://www.bioconductor.org</link>
     <description>This is working</description>
     <author>Nitesh Turaga</author>
     <pubDate>2017-12-14 21:53:13</pubDate>
