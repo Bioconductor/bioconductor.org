@@ -521,6 +521,43 @@ def recent_packages()
   end
 end
 
+
+def get_git_commits()
+   begin
+     REXML::Document.entity_expansion_text_limit =
+       REXML::Document.entity_expansion_text_limit * 4
+     doc = Document.new File.new("assets/developers/rss-feeds/gitlog.xml")
+     items = []
+     doc.elements.each("rss/channel/item") {|i| items.push i}
+     ret = []
+     for item in items
+       next if item.nil?
+       next if item.elements.nil?
+       next unless item.elements.respond_to? :each
+       h = {}
+       title = date = author = description = guid = nil
+       item.elements.each("title") {|i| title = i.text}
+       item.elements.each("pubDate") {|i| date = i.text}
+       item.elements.each("author") {|i| author = i.text}
+       item.elements.each("description") {|i| description = i.text}
+       item.elements.each("guid") {|i| guid = i.text}
+
+       msg = description.gsub(/<div style="white-space:pre">/,"")
+       msg = msg.split("</div>").first
+
+       h[:package] = title
+       h[:date] = date
+       h[:author] = author
+       h[:msg] = msg
+       h[:commit] = guid
+
+       ret.push h
+     end
+     return ret
+   end
+end
+
+
 def get_svn_commits()
   begin
     # FIXME - maybe switch to nokogiri to avoid the necessity
@@ -611,7 +648,7 @@ def get_year_shield(package, make_shield=false, conf=nil)
           fh.close
         else
           FileUtils.cp(File.join('assets', 'images', 'shields',
-            'in_bioc', "unknown-bioc.svg"), shield) 
+            'in_bioc', "unknown-bioc.svg"), shield)
         end
       end
     end
@@ -1110,7 +1147,7 @@ def get_fragment(package, item, item_rep)
 end
 
 def get_removed_link(item)
-  line = File.readlines("content/about/removed-packages.md").select{|l| l.match /#{item}/}.last 
+  line = File.readlines("content/about/removed-packages.md").select{|l| l.match /#{item}/}.last
   line[/<li>(.*?)<\/li>/,1]
 end
 
@@ -1573,7 +1610,7 @@ def pkg_platforms(view) # returns all, none, or some
       return 'some'
     end
   end
-    
+
   if has_src # all or some
     if has_win and all_win_archs and (has_mav or has_elcap)
       return 'all'

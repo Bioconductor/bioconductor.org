@@ -108,16 +108,6 @@ genomic data. Common workflows include:
   efficient random access to cohort-level data. Once created, the tally files
   can be easily manipulated and used to create custom reports and plots.
 
-* [Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/)
-  This workflow implements a low-level analysis pipeline for scRNA-seq
-  data using scran, scater and other Bioconductor packages. It describes
-  how to perform quality control on the libraries, normalization of
-  cell-specific biases, basic data exploration and cell cycle phase
-  identification. Procedures to detect highly variable genes,
-  significantly correlated genes and subpopulation-specific marker genes
-  are also shown. These analyses are demonstrated on a range of publicly
-  available scRNA-seq data sets.
-
 * [RNA-seq analysis is easy as 1-2-3](/help/workflows/RNAseq123/)
   This workflow demonstrates how to analyse RNA-sequencing data using the edgeR,
   limma and Glimma packages. The edgeR package is first used to import,
@@ -219,6 +209,19 @@ genomic data. Common workflows include:
 * [EGSEA123](/help/workflows/EGSEA123/) 
   R package that supports the F1000Research workflow article `Easy and efficient
   ensemble gene set testing with EGSEA', Alhamdoosh et al. (2017).
+
+<h2 id="singlecell">Single-cell Workflows</h2>
+
+* Low-level analyses of single-cell RNA-sequencing data 
+  [Introduction](/help/workflows/simpleSingleCell/intro/) | [Part 1](/help/workflows/simpleSingleCell/part1/) | [Part 2](/help/workflows/simpleSingleCell/part2/) | [Part 3](/help/workflows/simpleSingleCell/part3/) 
+  This workflow implements a low-level analysis pipeline for scRNA-seq
+  data using scran, scater and other Bioconductor packages. It describes
+  how to perform quality control on the libraries, normalization of
+  cell-specific biases, basic data exploration and cell cycle phase
+  identification. Procedures to detect highly variable genes,
+  significantly correlated genes and subpopulation-specific marker genes
+  are also shown. These analyses are demonstrated on a range of publicly
+  available scRNA-seq data sets.
 
 
 <h2 id="Contribute">Contribute a Workflow</h2>
