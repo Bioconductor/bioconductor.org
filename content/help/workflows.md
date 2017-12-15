@@ -108,8 +108,8 @@ for information on contributing your own workflow.
   are also shown. These analyses are demonstrated on a range of publicly
   available scRNA-seq data sets.
   - [Introduction](/help/workflows/simpleSingleCell/intro/)
-  - [Read count data](/help/workflows/simpleSingleCell/part1/)
-  - [UMI count data](/help/workflows/simpleSingleCell/part2/)
+  - [Analyzing read count data](/help/workflows/simpleSingleCell/part1/)
+  - [Analyzing UMI count data](/help/workflows/simpleSingleCell/part2/)
   - [Alternative strategies](/help/workflows/simpleSingleCell/part3/) 
 
 * __[CyTOF workflow: differential discovery in high-throughput high-dimensional
