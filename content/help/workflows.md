@@ -1,9 +1,22 @@
 # ![](/images/icons/help.gif)Bioconductor Workflows
 
 Bioconductor provides software to help analyze diverse high-throughput
-genomic data. Common workflows include:
+genomic data. <a href="#basic">Basic workflows</a> give a general introduction, 
+while the sections below go into more detail on some common topics:
 
-<h2 id="basic">Basic</h2>
+* <a href="#annotation">Annotations</a>
+* <a href="#rnaseq">Gene expression</a>
+* <a href="#singlecell">Single Cell</a>
+* <a href="#variants">Genomic Variants</a>
+* <a href="#epigenetics">Epigenetics</a>
+* <a href="#proteomics">Proteomics</a>
+* <a href="#resources">Resource Querying</a>
+
+See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/)
+for information on contributing your own workflow.
+
+
+<h2 id="basic">Basic workflows</h2>
 
 * __[Sequence Analysis](sequencing/)__  
   Import fasta, fastq, BAM, gff, bed, wig, and other sequence formats.
@@ -46,7 +59,7 @@ genomic data. Common workflows include:
   consequence of amino acid coding changes.
 
 
-<h2 id="rnaseq">RNA Sequencing</h2>
+<h2 id="rnaseq">Gene expression</h2>
 
 * __[RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)__  
   This lab will walk you through an end-to-end RNA-Seq differential
@@ -66,31 +79,24 @@ genomic data. Common workflows include:
   enhanced by the Glimma package which enables interactive exploration of the
   results so that individual samples and genes can be examined by the user.
 
+* __[Gene Expression Normalization Workflow](/help/workflows/ExpressionNormalizationWorkflow/)__  
+  This workflow elucidates a customizable strategy to identify the effects of
+  technical and confounding factors on gene expression data and normalize it
+  while preserving the underlying biological features of interest. The example
+  analysis demonstrated here explores how certain technical covariates 
+  influence the interpretation of the impact of Coronary Artery Disease on
+  peripheral blood gene expression.
+
 * __[Gene-level RNA-seq differential expression and pathway analysis](/help/workflows/RnaSeqGeneEdgeRQL/)__  
   Gene-level RNA-seq differential expression and pathway analysis using
   Rsubread and the edgeR quasi-likelihood pipeline
-
-* __[recountWorkflow](/help/workflows/recountWorkflow/)__  
-  The recount2 resource is composed of over 70,000 uniformly processed human
-  RNA-seq samples spanning TCGA and SRA, including GTEx. The processed data can
-  be accessed via the recount2 website and the recount Bioconductor
-  package. This workflow explains in detail how to use the recount package and
-  how to integrate it with other Bioconductor packages for several analyses that
-  can be carried out with the recount2 resource. In particular, we describe how
-  the coverage count matrices were computed in recount2 as well as different
-  ways of obtaining public metadata, which can facilitate downstream
-  analyses. Step-by-step directions show how to do a gene level differential
-  expression analysis, visualize base-level genome coverage data, and perform an
-  analyses at multiple feature levels. This workflow thus provides further
-  information to understand the data in recount2 and a compendium of R code to
-  use the data.
 
 * __[EGSEA123](/help/workflows/EGSEA123/)__  
   R package that supports the F1000Research workflow article `Easy and efficient
   ensemble gene set testing with EGSEA', Alhamdoosh et al. (2017).
 
 
-<h2 id="singlecell">Single-cell Workflows</h2>
+<h2 id="singlecell">Single cell</h2>
 
 * __Low-level analyses of single-cell RNA-sequencing data__  
   [Introduction](/help/workflows/simpleSingleCell/intro/) | [Part 1](/help/workflows/simpleSingleCell/part1/) | [Part 2](/help/workflows/simpleSingleCell/part2/) | [Part 3](/help/workflows/simpleSingleCell/part3/)  
@@ -128,7 +134,7 @@ genomic data. Common workflows include:
   analyses (e.g. plots of aggregated signals).
 
 
-<h2 id="variants">Genomic Variants</h2>
+<h2 id="variants">Genomic variants</h2>
 
 * __[Variant Calling](/help/course-materials/2014/BioC2014/Lawrence_Tutorial.pdf)__  
   This presentation illustrates a typical variant calling workflow starting
@@ -149,24 +155,6 @@ genomic data. Common workflows include:
   efficient random access to cohort-level data. Once created, the tally files
   can be easily manipulated and used to create custom reports and plots.
 
-
-<h2 id="advanced">Domain Specific</h2>
-
-* __[High Throughput Assays](/help/workflows/highthroughputassays/)__  
-  Import, transform, edit, analyze and visualize flow cytometric, mass
-  spec, HTqPCR, cell-based, and other assays.
-
-* __[Mass spectrometry and proteomics](/help/workflows/proteomics/)__  
-  This lab demonstrates how to access data from proteomics data
-  repositories, how to parse various mass spectrometry data formats, how
-  to identify MS2 spectra and analyse the search results, how to use the
-  high-level infrastructure for raw mass spectrometry and quantitative
-  proteomics experiments and quantitative data processing and analysis.
-
-* __[Transcription Factor Binding](/help/workflows/generegulation/)__  
-  Finding Candidate Binding Sites for Known Transcription Factors via
-  Sequence Matching.
-
 * __[Cloud-enabled cis-eQTL search and annotation](/help/workflows/eQTL/)__  
   Bioconductor can be used to perform detailed analyses of
   relationships between DNA variants and mRNA abundance.  Genotype
@@ -179,6 +167,14 @@ genomic data. Common workflows include:
   include FDR for all SNP-gene pairs in cis, along with locus-specific
   annotations of genetic and genomic contexts.
 
+
+<h2 id="epigenetics">Epigenetics</h2>
+
+* __[Transcription Factor Binding](/help/workflows/generegulation/)__  
+  Finding Candidate Binding Sites for Known Transcription Factors via
+  Sequence Matching.
+
+
 * __[Differential Binding from ChIP-seq data](/help/workflows/chipseqDB/)__  
   This workflow describes an analysis pipeline for de novo detection of
   differential binding (DB) from ChIP-seq data, from read alignment to
@@ -187,13 +183,6 @@ genomic data. Common workflows include:
   methods in the edgeR package. Analyses will be demonstrated on real histone
   mark and transcription factor ChIP-seq data.
 
-* __[Gene Expression Normalization Workflow](/help/workflows/ExpressionNormalizationWorkflow/)__  
-  This workflow elucidates a customizable strategy to identify the effects of
-  technical and confounding factors on gene expression data and normalize it
-  while preserving the underlying biological features of interest. The example
-  analysis demonstrated here explores how certain technical covariates 
-  influence the interpretation of the impact of Coronary Artery Disease on
-  peripheral blood gene expression.
 
 * __[Methylation Array Analysis](/help/workflows/methylationArrayAnalysis/)__  
   Methylation in the human genome is known to be associated with development and
@@ -207,6 +196,38 @@ genomic data. Common workflows include:
   differential methylation of regions, differential variability analysis,
   estimating cell type composition and gene ontology testing. Finally, we
   provide some examples of how to visualise methylation array data.
+
+
+<h2 id="proteomics">Proteomics</h2>
+
+* __[Mass spectrometry and proteomics](/help/workflows/proteomics/)__  
+  This lab demonstrates how to access data from proteomics data
+  repositories, how to parse various mass spectrometry data formats, how
+  to identify MS2 spectra and analyse the search results, how to use the
+  high-level infrastructure for raw mass spectrometry and quantitative
+  proteomics experiments and quantitative data processing and analysis.
+
+* __[High Throughput Assays](/help/workflows/highthroughputassays/)__  
+  Import, transform, edit, analyze and visualize flow cytometric, mass
+  spec, HTqPCR, cell-based, and other assays.
+
+    
+<h2 id="resources">Resource querying</h2>
+
+* __[recountWorkflow](/help/workflows/recountWorkflow/)__  
+  The recount2 resource is composed of over 70,000 uniformly processed human
+  RNA-seq samples spanning TCGA and SRA, including GTEx. The processed data can
+  be accessed via the recount2 website and the recount Bioconductor
+  package. This workflow explains in detail how to use the recount package and
+  how to integrate it with other Bioconductor packages for several analyses that
+  can be carried out with the recount2 resource. In particular, we describe how
+  the coverage count matrices were computed in recount2 as well as different
+  ways of obtaining public metadata, which can facilitate downstream
+  analyses. Step-by-step directions show how to do a gene level differential
+  expression analysis, visualize base-level genome coverage data, and perform an
+  analyses at multiple feature levels. This workflow thus provides further
+  information to understand the data in recount2 and a compendium of R code to
+  use the data.
 
 * __[TCGA Workflow: Analyze cancer genomics and epigenomics data](/help/workflows/TCGAWorkflow/)__  
   Biotechnological advances in sequencing have led to an explosion of publicly
@@ -232,7 +253,5 @@ genomic data. Common workflows include:
   glioma (glioblastoma multiform or GBM). 
 
 
-<h2 id="Contribute">Contribute a Workflow</h2>
 
-See the [HOWTO Creating Workflow Vignettes](/developers/how-to/workflows/)__  
-for information on contributing your own workflow.
+
