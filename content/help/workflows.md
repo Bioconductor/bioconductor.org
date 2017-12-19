@@ -92,14 +92,13 @@ for information on contributing your own workflow.
   Rsubread and the edgeR quasi-likelihood pipeline
 
 * __[EGSEA123](/help/workflows/EGSEA123/)__  
-  R package that supports the F1000Research workflow article `Easy and efficient
+  R package that supports the F1000Research workflow article 'Easy and efficient
   ensemble gene set testing with EGSEA', Alhamdoosh et al. (2017).
 
 
 <h2 id="singlecell">Single cell</h2>
 
-* __Low-level analyses of single-cell RNA-sequencing data__  
-  [Introduction](/help/workflows/simpleSingleCell/intro/) | [Part 1](/help/workflows/simpleSingleCell/part1/) | [Part 2](/help/workflows/simpleSingleCell/part2/) | [Part 3](/help/workflows/simpleSingleCell/part3/)  
+* __[Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/intro/)__  
   This workflow implements a low-level analysis pipeline for scRNA-seq
   data using scran, scater and other Bioconductor packages. It describes
   how to perform quality control on the libraries, normalization of
@@ -108,6 +107,10 @@ for information on contributing your own workflow.
   significantly correlated genes and subpopulation-specific marker genes
   are also shown. These analyses are demonstrated on a range of publicly
   available scRNA-seq data sets.
+  - [Introduction](/help/workflows/simpleSingleCell/intro/)
+  - [Analyzing read count data](/help/workflows/simpleSingleCell/part1/)
+  - [Analyzing UMI count data](/help/workflows/simpleSingleCell/part2/)
+  - [Alternative strategies](/help/workflows/simpleSingleCell/part3/) 
 
 * __[CyTOF workflow: differential discovery in high-throughput high-dimensional
   cytometry datasets](/help/workflows/cytofWorkflow/)__  
