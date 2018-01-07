@@ -241,6 +241,14 @@
     If this suceeds via the SSH protocol, then it means that you have
     access to your package.
 
+19. Can I create and push new branches to my repository on git.bioconductor.org?
+
+    No. Maintainers only have access to "master" and the current "RELEASE_X_Y".
+    New branches cannot be created and pushed to the bioconductor server. We 
+    recommend maintainers have additional branches on their Github repository 
+    if they are maintaining one.
+
+
 ## More questions?
 
 If you have additional questions which are not answered here already,
