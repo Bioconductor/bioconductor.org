@@ -769,38 +769,54 @@ end
 
 
 # run me in crontab
-desc "get test coverage shields"
+desc "get test coverage results and update shields if neccessary"
 task :get_coverage_shields do
-  config = YAML.load_file("./config.yaml")
-
-  branches = ["release-#{config['release_version']}", "devel"]
-
-  branches.each do |branch|
-    dirname = branch
-    dirname = "release" if branch =~ /^release/
-    codecov_branch = branch
-    codecov_branch = "master" if branch == "devel"
-    shield_dir = "assets/shields/coverage/#{dirname}"
-
-    packages = get_list_of_packages(true, branch=="release")
-    unless File.exists? shield_dir
-      FileUtils.mkdir_p shield_dir
-    end
-    for package in packages
-      url = "https://codecov.io/github/Bioconductor-mirror/#{package}/coverage.svg?branch=#{codecov_branch}"
-      cov = HTTParty.head(url).headers["x-coverage"]
-      cov_color = coverage_color(cov)
-      cov += "%" unless cov == "unknown"
-      puts "Downloading test-coverage shield for #{package} in #{dirname}..."
-      resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
-      if resp.code == 200
-        shield = File.join(shield_dir, "#{package}.svg")
-        fh = File.open(shield, "w")
+  tmp_dir = File.join(%w(tmp coverage))
+  FileUtils.mkdir_p(tmp_dir)
+  %w(release devel).each do |version|
+    url = "http://master.bioconductor.org/checkResults/#{version}/bioc-LATEST/COVERAGE.txt"
+    dest_file_name = File.join tmp_dir, "#{version}.dcf"
+    dest_etag_name = dest_file_name.sub("dcf", "etag")
+    etag = HTTParty.head(url).headers["etag"]
+    if (!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag
+      efh = File.open(dest_etag_name, 'w')
+      efh.write etag
+      efh.close
+      resp = HTTParty.get(url)      
+      if resp.code != 200
+        puts "Error getting #{url}: #{resp.code}"
+      else
+        fh = File.open(dest_file_name, "w")
         fh.write(resp.to_s)
         fh.close
+        #generate_build_shields(shield_dir, dest_file_name)
+        packages = get_list_of_packages(true, version=="release")
+        shield_dir = File.join("assets", "shields", "coverage", version)
+        FileUtils.mkdir_p shield_dir
+        unless File.exists? shield_dir
+          FileUtils.mkdir_p shield_dir
+        end
+        
+        ## Convert into hashmap Package: Coverage
+        x = Dcf.parse(File.readlines(dest_file_name).join)
+        cov_res = x.map {|x| [x["Package"], x["Coverage"]]}.to_h
+        
+        for package in packages
+          cov = cov_res[package]
+          cov = "unknown" if cov.nil?
+          cov_color = coverage_color(cov)
+          cov += "%" unless cov == "unknown"
+          puts "Downloading test-coverage shield for #{package} in #{version}..."
+          resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
+          if resp.code == 200
+            shield = File.join(shield_dir, "#{package}.svg")
+            fh = File.open(shield, "w")
+            fh.write(resp.to_s)
+            fh.close
+          end
+        end
       end
     end
-
   end
 end
 
