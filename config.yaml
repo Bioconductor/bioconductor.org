@@ -71,7 +71,7 @@ ami_ids:
  bioc3_3: ami-abd0b3bc
  bioc3_4: ami-8946709f
  bioc3_5: ami-279a315d
- bioc3_6: ami-2951fa53
+ bioc3_6: ami-aab1e9d0
  bioc3_7: ami-e3883599
 data_sources:
 - items_root: /
