@@ -31,5 +31,5 @@ GIF
 
 Web
 
-* 'Bioc blue': `#1881c2;`
+* 'Bioc blue': `#1a81c2;`
 * 'Bioc green': `#87b13f;`
