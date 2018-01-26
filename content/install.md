@@ -16,7 +16,7 @@
 The current release of _Bioconductor_ is version
 <%=config[:release_version] %>; it works with R version
 <%=config[:r_version_associated_with_release]%>. Users of older R and
-_Bioconductor_ users must update their installation to take advantage
+_Bioconductor_ must update their installation to take advantage
 of new features and to access packages that have been added to
 _Bioconductor_ since the last release.
 
