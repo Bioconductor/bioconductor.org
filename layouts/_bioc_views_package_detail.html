@@ -1,85 +1,68 @@
-<div class="tooltip2" id="tooltip">
-    <p>To install this package, start R and enter:</p>
-<pre>## try http:// if https:// URLs are not supported
-source("https://bioconductor.org/biocLite.R")
-biocLite("<%=@package[:Package]%>")</pre>
-    <p> In most cases, you don't need to download the
-    package archive at all.</p>
-</div>
-
-        <h1><%=@package[:Package]%></h1>
+<h1><%=@package[:Package]%></h1>
 
 
 
-<% # shields go here
-if current? @package
-tr = TableRower.new
-%>
-<table border="0">
-<tr>
+  <% if current? @package %>
+
+    <% tr = TableRower.new %>
+
+    <table border="0">
+    <tr>
+
+      <%# Shield 1. Availability %>
+      <% if ['data/annotation/', 'data/experiment/'].include? @package[:repo] %>
+         <% av_img = "/images/shields/availability/all.svg" %>     
+      <% else %>
+         <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
+      <% end %>
+
+      <td>
+      <span class="do_not_rebase"><a href="#archives"><img border="0" src="<%=av_img%>" title="Whether the package is available on all platforms; click for details."/></a></span>
+      </td>
+      <%= tr.betweencells %>
 
 
-<% # shield 1: availability %>
-
-<% if ['data/annotation/', 'data/experiment/'].include? @package[:repo] %>
-    <% av_img = '/images/shields/availability/all.svg' %>
-<% else %>
-    <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
-<% end %>
-
-<td>
-<span class="do_not_rebase"><a href="#archives"><img border="0" src="<%=av_img%>" title="Whether the package is available on all platforms; click for details."/></a></span>
-</td>
-<%=tr.betweencells%>
-
-<% # shield 2: downloads
-%>
-
-<td>
-   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. Comparison is done across all package categories (software, annotation, experiment). The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
-</td>
-<%= tr.betweencells %>
-
-<% # shield 3: posts
-%>
-<td>
-
-   <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
-
-</td>
-<%= tr.betweencells %>
-
-<%
-   # shield 4: years in bioc
-    result = get_year_shield(@package)
-    if @package[:repo] == 'bioc/' and not result.nil?
-%>
-<td>
-<span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version (or is it in devel only)."/></a></span>
-</td>
-<%= tr.betweencells %>
-<% end %>
+      <%# shield 2: downloads %>
+      <td>
+      <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. Comparison is done across all package categories (software, annotation, experiment). The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+      </td>
+      <%= tr.betweencells %>
 
 
-<% # shield 5: build
-   res = get_build_results(@package)
-   unless res.nil?
-%>
-<td>
-   <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
-</td>
-<%= tr.betweencells %>
-<% end %>
+      <%# shield 3: posts %>
+      <td>
+      <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+      </td>
+      <%= tr.betweencells %>
+
+
+      <%# shield 4: years in bioc %>
+      <% result = get_year_shield(@package) %>
+      <% if @package[:repo] == 'bioc/' and not result.nil? %>
+          <td>
+          <span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version (or is it in devel only)."/></a></span>
+          </td>
+          <%= tr.betweencells %>
+      <% end %>
+
+
+      <%# shield 5: build %>
+      <% res = get_build_results(@package) %>
+      <% unless res.nil? %>
+          <td>
+          <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
+          </td>
+          <%= tr.betweencells %>
+      <% end %>
 
 
 
+    </tr>
+    </table>
+  <% end %>
 
-</tr>
-</table>
 
-<%  end # if current? @package
-# end shields
-%>
+
 
 <div class='do_not_rebase'>
 
@@ -88,7 +71,7 @@ tr = TableRower.new
 <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= get_socialized_url item.identifier %>"><img height="16" width="16" src="/images/facebook.png"/></a> &nbsp;
 <a title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<%= get_socialized_url item.identifier %>&text=<%= get_social_title(item, @package) %>"><img height="16" width="16" src="/images/twitter.png"/></a>
 
-    <% if @package.has_key? :PackageStatus and @package[:PackageStatus] == "Deprecated" %>
+   <% if @package.has_key? :PackageStatus and @package[:PackageStatus] == "Deprecated" %>
 
     <p>This package is <b>deprecated</b>. It will probably
     be removed from Bioconductor. Please refer to
@@ -98,10 +81,9 @@ tr = TableRower.new
 
     <% end %>
 
+   <%= get_fragment(@package, @item, @item_rep) %>
 
-    <%= get_fragment(@package, @item, @item_rep) %>
-
-    <%# package title - not to be confused with page title %>
+   <%# package title - not to be confused with page title %>
 
     <h2><%= @package[:Title]%></h2>
 
@@ -116,8 +98,7 @@ tr = TableRower.new
     <p>Maintainer: <%= filter_emails(@package[:Maintainer])%> </p>
 
 
-
-    <div id="bioc_citation_outer">
+   <div id="bioc_citation_outer">
     <p>Citation (from within R,
       enter <code>citation("<%=@package[:Package]%>")</code>):</p>
       <div id="bioc_citation" class="bioc_citation"></div>
@@ -136,7 +117,7 @@ biocLite("<%=@package[:Package]%>")</pre>
     <h3>Documentation</h3>
 
 
-<% if @package.has_key? :vignettes and !@package[:vignettes].empty? %>
+  <% if @package.has_key? :vignettes and !@package[:vignettes].empty? %>
 <p>To view documentation for the version of this package installed
     in your system, start R and enter:
 </p>
@@ -249,12 +230,7 @@ biocLite("<%=@package[:Package]%>")</pre>
                 <% end %>
             <% end %>
 
-
-
-
     </table>
-
-
 
     <h3>Details</h3>
     <%
@@ -366,6 +342,9 @@ biocLite("<%=@package[:Package]%>")</pre>
 
     </table>
 
+
+
+
     <h3 id="archives">Package Archives</h3>
 
     <p>Follow <a href="/install/#install-bioconductor-packages">
@@ -434,7 +413,6 @@ biocLite("<%=@package[:Package]%>")</pre>
 
                 </table>
 
+
 </div>
-
-
 

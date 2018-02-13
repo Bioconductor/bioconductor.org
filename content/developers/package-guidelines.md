@@ -291,7 +291,7 @@ method definitions appropriately during package installation.
 <h2 id="vectorized">Robust and Efficient Code</h2>
 
 Many R operations are performed on the whole object, not just the
-elements of the object (e.g., sum(x), not x[1] + x[2] + ...). In
+elements of the object (e.g., sum(x), not x&#91;1&#93; + x&#91;2&#93; + ...). In
 particular, relatively few situations require an explicit for
 loop. See the [Vectorize][RECVectorize] section of
 [Robust and Efficient Code][] for additional detail. See also [Coding Style][]

@@ -9,8 +9,7 @@ up-to-date annotation packages.
 There are 114 new software packages, and many updates and improvements
 to existing packages; Bioconductor 3.0 is compatible with R 3.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
-release includes an updated Bioconductor [Amazon Machine Image]
-(http://bioconductor.org/help/bioconductor-cloud-ami/).
+release includes an updated Bioconductor [Amazon Machine Image](http://bioconductor.org/help/bioconductor-cloud-ami/).
 
 Visit [http://bioconductor.org](http://bioconductor.org)
 for details and downloads.
@@ -216,7 +215,7 @@ also provide function to filter the PSMs based on FDR.
 
 polyester - This package can be used to simulate RNA-seq reads from differential expression experiments with replicates. The reads can then be aligned and used to perform comparisons of methods for differential expression.
 
-Polyfit - Polyfit is an add-on to the packages DESeq which ensures the p-value distribution is uniform over the interval [0, 1] for data satisfying the null hypothesis of no differential expression, and uses an adpated Storey-Tibshiran method to calculate q-values.
+Polyfit - Polyfit is an add-on to the packages DESeq which ensures the p-value distribution is uniform over the interval &#91;0, 1&#93; for data satisfying the null hypothesis of no differential expression, and uses an adpated Storey-Tibshiran method to calculate q-values.
 
 proBAMr - Mapping PSMs back to genome. The package builds SAM file from shotgun proteomics data The package also provides function to prepare annotation from GTF file.
 
@@ -1682,7 +1681,7 @@ flipflop
 
 Changes in version 1.3.9:
 
-- [pre-processing] redefine extreme boundary of segments (first and last), see calculateBound in readgroup.cpp
+- &#91;pre-processing&#93; redefine extreme boundary of segments (first and last), see calculateBound in readgroup.cpp
 
 Changes in version 1.3.7:
 
@@ -3022,7 +3021,7 @@ meshr
 
 Changes in version 1.0.4:
 
-- Bug Fix (<NA> rows in using with MeSH.db and org.MeSH.XXX.db)
+- Bug Fix (&#60;NA&#62; rows in using with MeSH.db and org.MeSH.XXX.db)
 
 Changes in version 1.0.3:
 
@@ -3470,121 +3469,121 @@ MSnbase
 
 Changes in version 1.13.16:
 
-- width generic if non-existant [2014-09-03 Wed]
+- width generic if non-existant &#91;2014-09-03 Wed&#93;
 
-- fix undocumented S4 methods warnings [2014-09-27 Sat]
+- fix undocumented S4 methods warnings &#91;2014-09-27 Sat&#93;
 
 Changes in version 1.13.15:
 
-- msMap(MSmap)<- method [2014-08-12 Tue]
+- msMap(MSmap)<- method &#91;2014-08-12 Tue&#93;
 
-- Typo in MIAPE man [2014-08-29 Fri]
+- Typo in MIAPE man &#91;2014-08-29 Fri&#93;
 
 Changes in version 1.13.14:
 
-- Fix xic example [2014-08-08 Fri]
+- Fix xic example &#91;2014-08-08 Fri&#93;
 
-- importing lattice, ggplot2 (was depends) and suggesting rgl [2014-08-09 Sat]
+- importing lattice, ggplot2 (was depends) and suggesting rgl &#91;2014-08-09 Sat&#93;
 
-- MSmap infrastructure [2014-08-09 Sat]
+- MSmap infrastructure &#91;2014-08-09 Sat&#93;
 
 Changes in version 1.13.13:
 
-- fix issue with readMSnSet2 without fdata [2014-07-28 Mon]
+- fix issue with readMSnSet2 without fdata &#91;2014-07-28 Mon&#93;
 
 Changes in version 1.13.12:
 
-- Don't import width from IRanges [2014-07-23 Wed]
+- Don't import width from IRanges &#91;2014-07-23 Wed&#93;
 
-- qual slot is populated again [2014-07-23 Wed]
+- qual slot is populated again &#91;2014-07-23 Wed&#93;
 
 Changes in version 1.13.11:
 
-- remove Vennerable::Venn from example and DESCRIPTION [2014-06-19 Thu]
+- remove Vennerable::Venn from example and DESCRIPTION &#91;2014-06-19 Thu&#93;
 
 Changes in version 1.13.10:
 
-- new averageMSnSet function to generate an average over a list of MSnSets. [2014-06-17 Tue]
+- new averageMSnSet function to generate an average over a list of MSnSets. &#91;2014-06-17 Tue&#93;
 
-- new non-parametric coefficent of variation function [2014-06-17 Tue]
+- new non-parametric coefficent of variation function &#91;2014-06-17 Tue&#93;
 
-- Using/importing IRanges::width [2014-06-18 Wed]
+- Using/importing IRanges::width &#91;2014-06-18 Wed&#93;
 
 Changes in version 1.13.9:
 
-- new listOf helper function [2014-06-16 Mon]
+- new listOf helper function &#91;2014-06-16 Mon&#93;
 
-- compfnames to compare and document differences in MSnSet feature names [2014-06-16 Mon]
+- compfnames to compare and document differences in MSnSet feature names &#91;2014-06-16 Mon&#93;
 
-- suggesting Vennerable (compfnames example) and roxygen2 (generate rd) [2014-06-16 Mon]
+- suggesting Vennerable (compfnames example) and roxygen2 (generate rd) &#91;2014-06-16 Mon&#93;
 
 Changes in version 1.13.8:
 
-- Add recommended biocView [2014-06-05 Thu]
+- Add recommended biocView &#91;2014-06-05 Thu&#93;
 
 Changes in version 1.13.7:
 
-- Bug tracking link [2014-05-26 Mon]
+- Bug tracking link &#91;2014-05-26 Mon&#93;
 
 Changes in version 1.13.6:
 
-- new isEmpty method for Spectrum instances [2014-05-14 Wed]
+- new isEmpty method for Spectrum instances &#91;2014-05-14 Wed&#93;
 
-- removePeaks does not try for empty Spectra [2014-05-14 Wed]
+- removePeaks does not try for empty Spectra &#91;2014-05-14 Wed&#93;
 
-- isEmpty unit test [2014-05-14 Wed]
+- isEmpty unit test &#91;2014-05-14 Wed&#93;
 
 Changes in version 1.13.5:
 
-- export .get.amino.acids function [2014-05-08 Thu]
+- export .get.amino.acids function &#91;2014-05-08 Thu&#93;
 
-- removePeaks for centroided data [2014-05-08 Thu]
+- removePeaks for centroided data &#91;2014-05-08 Thu&#93;
 
-- add new exported function get.atomic.mass [2014-05-08 Thu]
+- add new exported function get.atomic.mass &#91;2014-05-08 Thu&#93;
 
-- Spectrum[2] prototype sets centroided=FALSE by default (instead of logical()) [2014-05-08 Thu]
+- Spectrum&#91;2&#93; prototype sets centroided=FALSE by default (instead of logical()) &#91;2014-05-08 Thu&#93;
 
-- fnamesIn also supports y = "data.frame" [2014-05-14 Wed]
+- fnamesIn also supports y = "data.frame" &#91;2014-05-14 Wed&#93;
 
-- Using BiocParallel for parallel support; replaced parallel argument with BPPARAM [2014-05-14 Wed]
+- Using BiocParallel for parallel support; replaced parallel argument with BPPARAM &#91;2014-05-14 Wed&#93;
 
 Changes in version 1.13.4:
 
-- Document difference between traceable and non-traceable FeaturesOfInterest instances [2014-04-30 Wed]
+- Document difference between traceable and non-traceable FeaturesOfInterest instances &#91;2014-04-30 Wed&#93;
 
-- ignoring desciptions with length > 1 [2014-04-30 Wed]
+- ignoring desciptions with length > 1 &#91;2014-04-30 Wed&#93;
 
 Changes in version 1.13.3:
 
-- FeaturesOfInterest [2014-04-29 Tue]
+- FeaturesOfInterest &#91;2014-04-29 Tue&#93;
 
 Changes in version 1.13.2:
 
-- add compareSpectra to compare Spectrum objects [2014-04-09 Wed]
+- add compareSpectra to compare Spectrum objects &#91;2014-04-09 Wed&#93;
 
-- add bin method for Spectrum objects [2014-04-09 Wed]
+- add bin method for Spectrum objects &#91;2014-04-09 Wed&#93;
 
-- recreate inst/extdata/msx.rda for R 3.1 and Biobase 2.24 [2014-04-13 Sun]
+- recreate inst/extdata/msx.rda for R 3.1 and Biobase 2.24 &#91;2014-04-13 Sun&#93;
 
-- add plot,Spectrum,Spectrum method [2014-04-14 Mon]
+- add plot,Spectrum,Spectrum method &#91;2014-04-14 Mon&#93;
 
-- add calculateFragments,character,Spectrum and calculateFragments,character,missing methods [2014-04-15 Tue]
+- add calculateFragments,character,Spectrum and calculateFragments,character,missing methods &#91;2014-04-15 Tue&#93;
 
-- updated readMSData test unit to ignore object@.__classVersion__ that fails with latest R/Bioc versions [2014-04-15 Tue]
+- updated readMSData test unit to ignore object@.__classVersion__ that fails with latest R/Bioc versions &#91;2014-04-15 Tue&#93;
 
-- formatRt conversion from 'mm:sec' to sec and unit test [2014-04-17 Thu]
+- formatRt conversion from 'mm:sec' to sec and unit test &#91;2014-04-17 Thu&#93;
 
-- Update nprot/npsm.prot/npsm.pep/npep.prot feature variables and relevant man/tests/argument defaults [2014-04-17 Thu]
+- Update nprot/npsm.prot/npsm.pep/npep.prot feature variables and relevant man/tests/argument defaults &#91;2014-04-17 Thu&#93;
 
 Changes in version 1.13.1:
 
-- add precursor method to Spectrum2 normalisation method [2014-04-08 Tue]
+- add precursor method to Spectrum2 normalisation method &#91;2014-04-08 Tue&#93;
 
-- add smooth for MSnExp and Spectrum classes [2014-04-10 Thu]
+- add smooth for MSnExp and Spectrum classes &#91;2014-04-10 Thu&#93;
 
-- add pickPeaks for MSnExp and Spectrum classes [2014-04-10 Thu]
+- add pickPeaks for MSnExp and Spectrum classes &#91;2014-04-10 Thu&#93;
 
-- updated show,MSnExp to display only first/last files when > 2 [2014-04-11 Fri]
+- updated show,MSnExp to display only first/last files when > 2 &#91;2014-04-11 Fri&#93;
 
 Changes in version 1.13.0:
 
@@ -3778,11 +3777,11 @@ mzR
 
 Changes in version 1.99.4:
 
-- don't run pwiz example [2014-10-05 Sun]
+- don't run pwiz example &#91;2014-10-05 Sun&#93;
 
 Changes in version 1.99.3:
 
-- revising unit testing and using suggested convention as described in Bioc unitTesting guidelines [2014-10-02 Thu]
+- revising unit testing and using suggested convention as described in Bioc unitTesting guidelines &#91;2014-10-02 Thu&#93;
 
 Changes in version 1.99.2:
 
@@ -3790,17 +3789,17 @@ Changes in version 1.99.2:
 
 Changes in version 1.99.1:
 
-- annoucning pwiz in vignette and that it will become the default backend in Bioc 3.1 [2014-09-25 Thu]
+- annoucning pwiz in vignette and that it will become the default backend in Bioc 3.1 &#91;2014-09-25 Thu&#93;
 
-- adding a dummy close for pwiz backend to avoid breaking code that properly closes the previous ramp backend [2014-09-21 Sun]
+- adding a dummy close for pwiz backend to avoid breaking code that properly closes the previous ramp backend &#91;2014-09-21 Sun&#93;
 
-- Not using ListBuilder to make psms data.frame and fix segfautls, via KK [2014-09-27 Sat]
+- Not using ListBuilder to make psms data.frame and fix segfautls, via KK &#91;2014-09-27 Sat&#93;
 
 Changes in version 1.99.0:
 
 - New pwiz backend and support for mzid, contributed by Qiang Kou as part of GSoC 2014.
 
-- Using BiocStyle for vignette [2014-08-26 Tue]
+- Using BiocStyle for vignette &#91;2014-08-26 Tue&#93;
 
 
 NarrowPeaks
@@ -4214,37 +4213,37 @@ pRoloc
 
 Changes in version 1.5.19:
 
-- added Video tag in DESCRIPTION [2014-10-07 Tue]
+- added Video tag in DESCRIPTION &#91;2014-10-07 Tue&#93;
 
 Changes in version 1.5.18:
 
-- HUPO 2014 poster [2014-01-02 Thu]
+- HUPO 2014 poster &#91;2014-01-02 Thu&#93;
 
 Changes in version 1.5.17:
 
-- fix 'replacing previous import by MLInterfaces::plot when loading pRoloc' warning by using specific importFrom [2014-09-27
-  Sat]
+- fix 'replacing previous import by MLInterfaces::plot when loading pRoloc' warning by using specific importFrom &#91;2014-09-27
+  Sat&#93;
 
 Changes in version 1.5.16:
 
-- new pRolocGUI section [2014-08-15 Fri]
+- new pRolocGUI section &#91;2014-08-15 Fri&#93;
 
-- new foi section [2014-08-16 Sat]
+- new foi section &#91;2014-08-16 Sat&#93;
 
 Changes in version 1.5.15:
 
-- svmOpt sigma defaults changed from 10^(-2:3) to 10^(-3:2) [2014-08-15 Fri]
+- svmOpt sigma defaults changed from 10^(-2:3) to 10^(-3:2) &#91;2014-08-15 Fri&#93;
 
 - in xxxOptimisation, the best parameter(s) for the validation classification runs are now chosen at random instead of using
-  the first best param (see change in pRoloc:::getBestParam that got a sample argument defaulted to TRUE) [2014-08-15 Fri]
+  the first best param (see change in pRoloc:::getBestParam that got a sample argument defaulted to TRUE) &#91;2014-08-15 Fri&#93;
 
 - When calculating macroF1 scores (xval and validation), NAs are set to 0 (via MLInterfaces:::.macroF1(..., naAs0 = TRUE)).
   The macro F1 will not be NA (when mean of F1s is calculated) but lowered. This avoids having an NA macro F1 when 1 (or more)
-  classe(s) end(s) up with NA (also set to 0) precision(s) or recall(s) [2014-08-15 Fri]
+  classe(s) end(s) up with NA (also set to 0) precision(s) or recall(s) &#91;2014-08-15 Fri&#93;
 
 Changes in version 1.5.14:
 
-- add title to plotDist figures [2014-08-13 Wed]
+- add title to plotDist figures &#91;2014-08-13 Wed&#93;
 
 Changes in version 1.5.13:
 
@@ -4252,76 +4251,76 @@ Changes in version 1.5.13:
 
 Changes in version 1.5.12:
 
-- support mirrorX/mirrorY in highlightOnPlot [2014-07-22 Tue]
+- support mirrorX/mirrorY in highlightOnPlot &#91;2014-07-22 Tue&#93;
 
 Changes in version 1.5.11:
 
-- Remove plot2D outliers param [2014-07-10 Thu]
+- Remove plot2D outliers param &#91;2014-07-10 Thu&#93;
 
-- fix subsetAsDataFrame for keepColNames and write unit test [2014-07-11 Fri]
+- fix subsetAsDataFrame for keepColNames and write unit test &#91;2014-07-11 Fri&#93;
 
 Changes in version 1.5.10:
 
-- alias lopims4 function [2014-07-01 Tue]
+- alias lopims4 function &#91;2014-07-01 Tue&#93;
 
 Changes in version 1.5.9:
 
-- Export single steps of lopims [2014-06-23 Mon]
+- Export single steps of lopims &#91;2014-06-23 Mon&#93;
 
-- Rephrase classifier parameter optimisation proceudres [2014-06-23 Mon]
+- Rephrase classifier parameter optimisation proceudres &#91;2014-06-23 Mon&#93;
 
 Changes in version 1.5.8:
 
-- nndistx_matrix function added to allow use of query matrix when calculating knn distances [2014-06-18 Wed]
+- nndistx_matrix function added to allow use of query matrix when calculating knn distances &#91;2014-06-18 Wed&#93;
 
-- nndist[x]_[matrix|msnset] are now available using the experted nndist method [2014-06-18 Wed]
+- nndist&#91;x&#93;_&#91;matrix|msnset&#93; are now available using the experted nndist method &#91;2014-06-18 Wed&#93;
 
-- markerSet and unknownSet renamed to markerMSnSet and unknownMSnSet [2014-06-19 Thu]
+- markerSet and unknownSet renamed to markerMSnSet and unknownMSnSet &#91;2014-06-19 Thu&#93;
 
-- functions sampleMSnSet and testMSnSet added [2014-06-19 Thu]
+- functions sampleMSnSet and testMSnSet added &#91;2014-06-19 Thu&#93;
 
-- fix keepColNames in pRoloc:::subsetAsDataFrame - fcol was always renamed to "markers" [2014-06-19 Thu]
+- fix keepColNames in pRoloc:::subsetAsDataFrame - fcol was always renamed to "markers" &#91;2014-06-19 Thu&#93;
 
 Changes in version 1.5.7:
 
-- add recommended biocView [2014-06-05 Thu]
+- add recommended biocView &#91;2014-06-05 Thu&#93;
 
 Changes in version 1.5.6:
 
-- addMarkers has a new mcol argument to set the markers feature variable label [2014-05-29 Thu]
+- addMarkers has a new mcol argument to set the markers feature variable label &#91;2014-05-29 Thu&#93;
 
 Changes in version 1.5.5:
 
-- replaced MSVBAR::rmultnorm with mvtnorm::rmvnorm since the former has been removed from CRAN and don't import [2014-05-21
-  Wed]
+- replaced MSVBAR::rmultnorm with mvtnorm::rmvnorm since the former has been removed from CRAN and don't import &#91;2014-05-21
+  Wed&#93;
 
-- Bug tracking [2014-05-26 Mon]
+- Bug tracking &#91;2014-05-26 Mon&#93;
 
 Changes in version 1.5.4:
 
-- testMarkers gets an error argument [2014-05-14 Wed]
+- testMarkers gets an error argument &#91;2014-05-14 Wed&#93;
 
-- plotDist now has a ylim argument [2014-05-21 Wed]
+- plotDist now has a ylim argument &#91;2014-05-21 Wed&#93;
 
 Changes in version 1.5.3:
 
-- import all MLInterfaces [2014-04-30 Wed]
+- import all MLInterfaces &#91;2014-04-30 Wed&#93;
 
-- new param optim secion in ml vignette [2014-05-05 Mon]
+- new param optim secion in ml vignette &#91;2014-05-05 Mon&#93;
 
-- various ml typos and pRolocmakers man update [2014-05-06 Tue]
+- various ml typos and pRolocmakers man update &#91;2014-05-06 Tue&#93;
 
 Changes in version 1.5.2:
 
-- In plotDist, ... is now passed to matlines instead of plot and has a new lty parameter [2014-04-17 Thu]
+- In plotDist, ... is now passed to matlines instead of plot and has a new lty parameter &#91;2014-04-17 Thu&#93;
 
-- new highlightOnPlot function, using the new features of interest infrastructure [2014-04-29 Tue]
+- new highlightOnPlot function, using the new features of interest infrastructure &#91;2014-04-29 Tue&#93;
 
 Changes in version 1.5.1:
 
-- new dunkley2006 pdunit object created with mclust 4.3 [2014-04-08 Tue]
+- new dunkley2006 pdunit object created with mclust 4.3 &#91;2014-04-08 Tue&#93;
 
-- addMarker also accepts fcol and addMarkers unit test [2014-04-14 Mon]
+- addMarker also accepts fcol and addMarkers unit test &#91;2014-04-14 Mon&#93;
 
 Changes in version 1.5.0:
 
@@ -4332,11 +4331,11 @@ pRolocGUI
 
 Changes in version 0.99.12:
 
-- added Video tag in DESCRIPTION [2014-10-07 Tue]
+- added Video tag in DESCRIPTION &#91;2014-10-07 Tue&#93;
 
 Changes in version 0.99.11:
 
-- Add screenshot to README [2014-09-05 Fri]
+- Add screenshot to README &#91;2014-09-05 Fri&#93;
 
 - fix bug when features of fois are not present
 
@@ -4344,55 +4343,55 @@ Changes in version 0.99.11:
 
 Changes in version 0.99.10:
 
-- Updated README [2014-09-04 Thu]
+- Updated README &#91;2014-09-04 Thu&#93;
 
-- Remove old R code file [2014-09-04]
+- Remove old R code file &#91;2014-09-04&#93;
 
 Changes in version 0.99.9:
 
-- fix vignette error on Windows (Dan Tenenbaum) [2014-08-26 Tue]
+- fix vignette error on Windows (Dan Tenenbaum) &#91;2014-08-26 Tue&#93;
 
 Changes in version 0.99.8:
 
-- selection and display of multiple features of interest in pRolocVis and pRolocComp [2014-08-13 Wed]
+- selection and display of multiple features of interest in pRolocVis and pRolocComp &#91;2014-08-13 Wed&#93;
 
 Changes in version 0.99.7:
 
-- display feature meta-data instead of protein name when hovering [2014-07-27 Tue]
+- display feature meta-data instead of protein name when hovering &#91;2014-07-27 Tue&#93;
 
-- better feature highlighting [2014-07-27 Tue]
+- better feature highlighting &#91;2014-07-27 Tue&#93;
 
-- only 1 vignette [2014-07-27 Tue]
+- only 1 vignette &#91;2014-07-27 Tue&#93;
 
 Changes in version 0.99.6:
 
-- support mirroring of PCA plots in pRolocComp [2014-07-22 Tue]
+- support mirroring of PCA plots in pRolocComp &#91;2014-07-22 Tue&#93;
 
 Changes in version 0.99.5:
 
-- Update to latest knitcitations version and fix vignette [2014-07-15 Tue]
+- Update to latest knitcitations version and fix vignette &#91;2014-07-15 Tue&#93;
 
 Changes in version 0.99.4:
 
-- add function pRolocComp [2014-06-24 Tue]
+- add function pRolocComp &#91;2014-06-24 Tue&#93;
 
 Changes in version 0.99.3:
 
-- multiple objects can be passed to pRolocVis by using a list [2014-06-03 Tue]
+- multiple objects can be passed to pRolocVis by using a list &#91;2014-06-03 Tue&#93;
 
-- improve query search (submit and select check box) [2014-06-02 Mon]
+- improve query search (submit and select check box) &#91;2014-06-02 Mon&#93;
 
-- add unit tests for helper functions and add manual unit test [2014-06-03 Tue]
+- add unit tests for helper functions and add manual unit test &#91;2014-06-03 Tue&#93;
 
 Changes in version 0.99.2:
 
-- change access and assignment to object pRolocGUI_SearchResults in .GlobalEnv [2014-05-30 Fri]
+- change access and assignment to object pRolocGUI_SearchResults in .GlobalEnv &#91;2014-05-30 Fri&#93;
 
 Changes in version 0.99.1:
 
-- fix biocViews [2014-05-27 Tue]
+- fix biocViews &#91;2014-05-27 Tue&#93;
 
-- misc refactoring [2014-05-27 Tue]
+- misc refactoring &#91;2014-05-27 Tue&#93;
 
 Changes in version 0.99.0:
 
@@ -4447,7 +4446,7 @@ Changes in version 1.1.1:
 
 Changes in version 1.1.0:
 
-- support mz[X]ML format file
+- support mz&#91;X&#93;ML format file
 
 - add identification-independent metrics
 
@@ -4465,7 +4464,7 @@ qcmetrics
 
 Changes in version 1.3.1:
 
-- using S4Vectors' metadata and metadata<- [2014-06-16 Mon]
+- using S4Vectors' metadata and metadata<- &#91;2014-06-16 Mon&#93;
 
 Changes in version 1.3.0:
 
@@ -4728,13 +4727,13 @@ rols
 
 Changes in version 1.7.2:
 
-- Removing (temporarily) allIds("GO")) example as currently returns illegal message to fix testing error [2014-10-07 Tue]
+- Removing (temporarily) allIds("GO")) example as currently returns illegal message to fix testing error &#91;2014-10-07 Tue&#93;
 
-- Updating roxygem inline docs to fix errors in generated Rds [2014-10-07 Tue]
+- Updating roxygem inline docs to fix errors in generated Rds &#91;2014-10-07 Tue&#93;
 
 Changes in version 1.7.1:
 
-- add utils to Imports [2014-04-28 Mon]
+- add utils to Imports &#91;2014-04-28 Mon&#93;
 
 Changes in version 1.7.0:
 
@@ -5006,8 +5005,8 @@ Changes in version 0.99:
 
 GENERAL
 
-- Anchored plots and heatmaps uses [downstream]--0--0--[upstream] X-axis coordinate system instead
-  [downstream]--0--[anchored]-[upstream+anchored]
+- Anchored plots and heatmaps uses &#91;downstream&#93;--0--0--&#91;upstream&#93; X-axis coordinate system instead
+  &#91;downstream&#93;--0--&#91;anchored&#93;-&#91;upstream+anchored&#93;
 
 PACKAGE
 
@@ -5322,7 +5321,7 @@ yaqcaffy
 
 Changes in version 1.25.1:
 
-- fixed typo in vignette code chunk [2014-05-08 Thu]
+- fixed typo in vignette code chunk &#91;2014-05-08 Thu&#93;
 
 
 

@@ -5,12 +5,13 @@ require 'httparty'
 require 'time'
 require 'yaml'
 require 'fileutils'
+require 'nanoc'
 
-class GmaneList < Nanoc3::DataSource
+class GmaneList < Nanoc::DataSource
   identifier :gmane_list
   def fetch
     fetch_entries().map do |e|
-      Nanoc3::Item.new(e[:content], e[:attributes], e[:identifier], e[:mtime])
+      create(e[:content], e[:attributes], e[:identifier], e[:mtime])
     end.sort { |a, b| b[:date] <=> a[:date] }
   end
 

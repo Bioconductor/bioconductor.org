@@ -784,7 +784,7 @@ bigmemoryExtras
 ---------------
 
  Version Date Category Text
- 0.1.8   <NA> <NA>
+ 0.1.8   &#60;NA&#62; &#60;NA&#62;
 
 Biobase
 -------
@@ -850,7 +850,7 @@ Changes in version 2012-04-12:
 - Version 1.13.1
 
 - Bugfix for findIsotopes to fix not consecutive isotope label like
-  [M]+,[M+2]+ without [M+1]+
+  &#91;M&#93;+,&#91;M+2&#93;+ without &#91;M+1&#93;+
 
 ChemmineR
 ---------
@@ -1049,8 +1049,8 @@ v1.2.1
     - Added 'distThresh' argument to findSimilar.  This allows you
           to retrieve all similar genes within a given JS distance as
           specified by distThresh.
-    - Added 'returnGeneSet' argument to findSimilar.  [default =
-          T] If true, findSimilar returns a CuffGeneSet of genes
+    - Added 'returnGeneSet' argument to findSimilar.  &#91;default =
+          T&#93; If true, findSimilar returns a CuffGeneSet of genes
           matching criteria (default). If false, a rank-ordered data
           frame of JS distance values is returned.
     - findSimilar can now take a 'sampleIdList' argument. This
@@ -1065,7 +1065,7 @@ DART
 ----
 
  Version Date Category                                  Text
- 1.3.1   <NA> Dependency changed from igraph to igraph0
+ 1.3.1   &#60;NA&#62; Dependency changed from igraph to igraph0
 
 ddgraph
 -------
@@ -2949,7 +2949,7 @@ Changes in version 1.5.18:
 
 Changes in version 1.5.17:
 
-- changed TMT7[7] mass from 229.26 to 230.17 and ReporterIons
+- changed TMT7&#91;7&#93; mass from 229.26 to 230.17 and ReporterIons
   descriptions <2012-09-12 Wed>
 
 Changes in version 1.5.16:
@@ -3485,7 +3485,7 @@ RedeR
 -----
 
  Version    Date Category Text
- 2011-03-23 <NA> <NA>
+ 2011-03-23 &#60;NA&#62; &#60;NA&#62;
 
 ReQON
 -----
@@ -3748,8 +3748,8 @@ ShortRead
 SIGNIFICANT USER-VISIBLE CHANGES
 
 - as(ShortReadQ, "matrix") now accepts ShortReadQ instances with
-  heterogenous widths, returning a matrix x[i, j] with NA values in
-  when j > width()[i].
+  heterogenous widths, returning a matrix x&#91;i, j&#93; with NA values in
+  when j > width()&#91;i&#93;.
 
 NEW FEATURES
 

@@ -73,15 +73,18 @@ ami_ids:
  bioc3_5: ami-279a315d
  bioc3_6: ami-aab1e9d0
  bioc3_7: ami-e3883599
+string_pattern_type: legacy
 data_sources:
 - items_root: /
   layouts_root: /
   type: filesystem_unified
+  identifier_type: legacy
   encoding: utf-8
   config:
     encoding: utf-8
 - items_root: /
   type: biostar_list
+  identifier_type: legacy
   encoding: utf-8
   config:
     gmane_rss_url: 'http://rss.gmane.org/messages/excerpts/gmane.science.biology.informatics.conductor'
@@ -91,12 +94,14 @@ data_sources:
 - items_root: /help/bioc-views/package-pages
   layouts_root: /
   type: bioc_views
+  identifier_type: legacy
   encoding: utf-8
   config:
     json_dir: "assets/packages/json"
     encoding: utf-8
 - items_root: /help/publications/papers/pubmed
   type: pubmed_papers
+  identifier_type: legacy
   encoding: utf-8
   config:
     cache_file: tmp/pubmed_cache_file.yaml

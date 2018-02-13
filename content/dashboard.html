@@ -149,7 +149,7 @@
       <tbody>
         <% for row in get_stats %>
           <tr>
-          <% #require 'pry';binding.pry %>
+          <% require 'pry';binding.pry %>
           <% for key in [:label, :toplevel, :answers, :comments, :new_visitors, :returning_visitors] %>
             <td><%= row[key] %></td>
           <% end %>

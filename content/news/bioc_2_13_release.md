@@ -1342,7 +1342,7 @@ Changes in version 2012-04-12:
 - Version 1.13.1
 
 - Bugfix for findIsotopes to fix not consecutive isotope label like
-  [M]+,[M+2]+ without [M+1]+
+  &#91;M&#93;+,&#91;M+2&#93;+ without &#91;M+1&#93;+
 
 Changes in version 2012-03-19:
 
@@ -1426,14 +1426,14 @@ Changes in version 2011-22-08:
 
 - Version 1.9.6
 
-- Bugfix in plotEICs (Error in pks[, 1] : incorrect number of
+- Bugfix in plotEICs (Error in pks&#91;, 1&#93; : incorrect number of
   dimensions)
 
 Changes in version 2011-20-25:
 
 - Version 1.9.9
 
-- added some "drop=FALSE" to fix "Error in isomatrix[, 1] : incorrect
+- added some "drop=FALSE" to fix "Error in isomatrix&#91;, 1&#93; : incorrect
   number of dimensions" error
 
 Changes in version 2011-20-10:
@@ -1476,7 +1476,7 @@ Changes in version 2011-02-08:
 - Add parameter polarity to xsAnnotate constructor
 
 - getPeaklist and getpspectra returns now correct annotation of
-  negative charged ions [M]-
+  negative charged ions &#91;M&#93;-
 
 - Add snow as additonal possibilty for parallel processing
 
@@ -3449,7 +3449,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
   Rle object).
 
 - Speedup coverage() in the "tiling case" (i.e. when 'x' is a tiling of
-  the [1, width] interval). This makes it much faster to turn into an
+  the &#91;1, width&#93; interval). This makes it much faster to turn into an
   Rle a coverage loaded from a BigWig, WIG or BED as a GRanges object.
 
 - Allow logical Rle return values from filter rules.
@@ -3493,7 +3493,7 @@ BUG FIXES
 - Allow zero-row replacement values in [<-,DataFrame.
 
 - Fix long standing segfault in "[" method for Rle objects (when doing
-  Rle()[0]).
+  Rle()&#91;0&#93;).
 
 - "show" methods now display its most specific class when a column or
   slot is an S3 object for which class() returns more than one class.
@@ -3541,8 +3541,8 @@ Changes in version 1.7.6:
 Changes in version 1.7.5:
 
 - fixed critical bugs: Excel report output had wrong ordering, ie
-  ratios did not correspond to the meta information [introduced in
-  version 1.7.3].
+  ratios did not correspond to the meta information &#91;introduced in
+  version 1.7.3&#93;.
 
 - fix of real peptide names: Reexport I/L peptides in reports
 
@@ -3571,7 +3571,7 @@ Changes in version 1.7.2:
 
 - fixed mascot parsers
 
-- MzIdentML version 1.1.0 support implemented [not fully tested]
+- MzIdentML version 1.1.0 support implemented &#91;not fully tested&#93;
 
 Changes in version 1.7.1:
 
@@ -3679,10 +3679,10 @@ Changes in version 2008-11-26 (2008-11-26):
 Changes in version 2008-09-23 (2008-09-23):
 
 - modification de la fonction cv pour retourner NA lorsque toutes la
-  valeurs du vecteur sont <e0> NA
+  valeurs du vecteur sont &#60;e0&#62; NA
 
 - modification de la function getChromosomeArm pour que cytoband ne
-  soit pas positionn<e9>e <e0> NULL
+  soit pas positionn&#60;e9&#62;e &#60;e0&#62; NULL
 
 Changes in version 2008-09-04 (2008-09-04):
 
@@ -3760,7 +3760,7 @@ Changes in version 1.7:
   package (Reported by Gustavo Fernandez Bayon <gbayon@gmail.com>).
 
 - Added fixMethOutliers for thresholding extreme observations in the
-  [un]methylation channels.
+  &#91;un&#93;methylation channels.
 
 - Added getSex, addSex, plotSex for estimating sex of the samples.
 
@@ -3918,7 +3918,7 @@ Changes in version 1.9.8:
 
 Changes in version 1.9.7:
 
-- Passing ... to read.table in MSnbase:::readIspy[Silac|15N]Data
+- Passing ... to read.table in MSnbase:::readIspy&#91;Silac|15N&#93;Data
   <2013-09-16 Mon>
 
 - QualityControl biocView <2013-09-16 Mon>
@@ -3933,7 +3933,7 @@ Changes in version 1.9.6:
 
 Changes in version 1.9.5:
 
-- typo in Author[s]@R <2013-05-15 Wed>
+- typo in Author&#91;s&#93;@R <2013-05-15 Wed>
 
 Changes in version 1.9.4:
 
@@ -4396,7 +4396,7 @@ Changes in version 1.1.3:
 
 Changes in version 1.1.2:
 
-- fixed Author[s]@R <2013-05-16 Thu>
+- fixed Author&#91;s&#93;@R <2013-05-16 Thu>
 
 - na.rm=TRUE in f1Count <2013-05-19 Sun>
 
@@ -4954,7 +4954,7 @@ RTN
 
 Changes in version 1.0.0:
 
-- 1st Bioconductor release of RTN [2013-10-15].
+- 1st Bioconductor release of RTN &#91;2013-10-15&#93;.
 
 rtracklayer
 -----------
@@ -5704,7 +5704,7 @@ VERSION xps-1.21.1
 VERSION xps-1.19.10
 
 - update XPSSchemes.cxx to correct possible memory error in TString
-  array names[i]
+  array names&#91;i&#93;
 
 VERSION xps-1.19.9
 

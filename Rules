@@ -15,7 +15,7 @@ compile '/sitemap/' do
 end
 
 
-compile '/help/newsletters/*' do
+compile '/help/newsletters/*/' do
     filter :erb
     filter :kramdown, :auto_id_stripping => true
     layout 'default'
@@ -59,50 +59,50 @@ route '/help/publications/papers/pubmed/*' do
 end
 
 route '/sitemap/' do
-  item.identifier.chop + '.xml'
+  item.identifier.to_s.chop + '.xml'
 end
 
 route '/style/*/' do
-  item.identifier.chop + '.css'
+  item.identifier.to_s.chop + '.css'
 end
 
 # biocViews hierarchy
 route /BiocViews/ do
-  segs = item.identifier.split "/"
+  segs = item.identifier.to_s.split "/"
   segs.pop
   version = segs.pop
   # note that we rely on the rake :pre_compile task to create duplicate versions of this file
   # for each bioC version for which the "new" style BiocViews tree is created.
   #"/help/bioc-views/#{config[:release_version]}/BiocViews.html"
-  item[:rebase] = true
+  #item[:rebase] = true
   "/packages/#{version}/BiocViews.html"
 end
 
 # index pages (package lists)
 route /^\/help\/bioc-views\/package-pages\/all-/ do
-  segs = item.identifier.split("-")
+  segs = item.identifier.to_s.split("-")
   version = segs.pop.gsub("/", "")
   long_repo_name = segs.pop
   repo_map = {"Software" => "bioc", "AnnotationData" => "data/annotation", "ExperimentData" => "data/experiment"}
-  version = item[:bioc_version_num]
+  version = item.attributes[:bioc_version_num]
   #"/help/bioc-views/#{version}/#{repo_map[long_repo_name]}/index.html"
   "/packages/#{version}/#{repo_map[long_repo_name]}/index.html"
 end
 
 # package detail pages
 route /^\/help\/bioc-views\/package-pages\// do
-  pkg_name = item.identifier.split("/").last
-  version = item[:bioc_version_num]
+  pkg_name = item.identifier.to_s.split("/").last
+  version = item.attributes[:bioc_version_num]
   #"/help/bioc-views/#{version}/#{item[:repo]}html/#{pkg_name}.html"
-  "/packages/#{version}/#{item[:repo]}html/#{pkg_name}.html"
+  "/packages/#{version}/#{item.attributes[:repo]}html/#{pkg_name}.html"
 end
 
 
 route '*' do
   if item.binary?
-    item.identifier.chop + "." + item[:extension]
+    item.identifier.to_s.chop + "." + item[:extension]
   else
-    item.identifier + 'index.html'
+    item.identifier.to_s + 'index.html'
   end
 end
 

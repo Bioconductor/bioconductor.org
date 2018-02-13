@@ -799,7 +799,7 @@ Changes in version 0.7:
   not have an impact on user-visible code.
 
 - Added read.bismark() function to parse output from the Bismark
-  alignment suit [thanks to Pete Hickey].
+  alignment suit &#91;thanks to Pete Hickey&#93;.
 
 - Refactorized plotting code.
 
@@ -1162,7 +1162,7 @@ BUG FIXES
 - 'resize': new image width was calculated incorrectly when only height
   was provided (reported by B. Fischer)
 
-- 'medianFilter': incorrect [0:1] <-> integer range conversion (thanks
+- 'medianFilter': incorrect &#91;0:1&#93; <-> integer range conversion (thanks
   to K. Johnson)
 
 edgeR
@@ -1358,7 +1358,7 @@ genomeIntervals
 Changes in version 1.15.3:
 
 - genome intervals order now consisten with assumption that (start ==
-  [start-1 and that stop) == stop-1]
+  &#91;start-1 and that stop) == stop-1&#93;
 
 Changes in version 1.15.2:
 
@@ -2135,9 +2135,9 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - classNameForDisplay() strips 'Simple' or 'Compressed', which affects
   all the "show" methods based on it. So now: > IntegerList(1:4, 2:-3)
-  IntegerList of length 2 [[1]] 1 2 3 4 [[2]] 2 1 0 -1 -2 -3 instead
-  of: > IntegerList(1:4, 2:-3) CompressedIntegerList of length 2 [[1]]
-  1 2 3 4 [[2]] 2 1 0 -1 -2 -3
+  IntegerList of length 2 &#91;&#91;1&#93;&#93; 1 2 3 4 &#91;&#91;2&#93;&#93; 2 1 0 -1 -2 -3 instead
+  of: > IntegerList(1:4, 2:-3) CompressedIntegerList of length 2 &#91;&#91;1&#93;&#93;
+  1 2 3 4 &#91;&#91;2&#93;&#93; 2 1 0 -1 -2 -3
 
 - Optimization of "[<-" method for Rle objects when no indices are
   selected (just return self).
@@ -2234,7 +2234,7 @@ isobar
 
 Changes in version 1.5.2:
 
-- added MSGF+ tsv import [one-line-per-psm format]
+- added MSGF+ tsv import &#91;one-line-per-psm format&#93;
 
 - refactored various parts of the code (proteinRatios, report-utils,
   isobar-import)
@@ -2470,10 +2470,10 @@ Changes in version 2008-11-26 (2008-11-26):
 Changes in version 2008-09-23 (2008-09-23):
 
 - modification de la fonction cv pour retourner NA lorsque toutes la
-  valeurs du vecteur sont <e0> NA
+  valeurs du vecteur sont &#60;e0&#62; NA
 
 - modification de la function getChromosomeArm pour que cytoband ne
-  soit pas positionn<e9>e <e0> NULL
+  soit pas positionn&#60;e9&#62;e &#60;e0&#62; NULL
 
 Changes in version 2008-09-04 (2008-09-04):
 
@@ -2519,7 +2519,7 @@ Changes in version 1.39.5:
 
 Changes in version 1.39.4:
 
-- plsda prediction returns prob matrix instead of array of [, , 1] dims
+- plsda prediction returns prob matrix instead of array of &#91;, , 1&#93; dims
   (lgatto) <2013-03-09 Sat>
 
 Changes in version 1.39.3:
@@ -4354,7 +4354,7 @@ Changes in version 2.16:
 VERSION xps-1.19.10
 
 - update XPSSchemes.cxx to correct possible memory error in TString
-  array names[i]
+  array names&#91;i&#93;
 
 VERSION xps-1.19.9
 

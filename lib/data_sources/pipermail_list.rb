@@ -9,7 +9,7 @@ require 'nokogiri'
 require 'open-uri'
 #require 'date'
 
-class PipermailList < Nanoc3::DataSource
+class PipermailList < Nanoc::DataSource
     identifier :pipermail_list
 
     def fetch
@@ -67,7 +67,7 @@ class PipermailList < Nanoc3::DataSource
             content = "unused"
             identifier = "/#{href.gsub(/\.html/, "")}/"
             mtime = nil
-            ret.push Nanoc3::Item.new(content, attributes, identifier, mtime)
+            ret.push Nanoc::Item.new(content, attributes, identifier, mtime)
         end
         ret.reverse
     end

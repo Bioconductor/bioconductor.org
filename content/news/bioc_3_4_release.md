@@ -311,7 +311,7 @@ There are 101 new software packages in this release of Bioconductor.
   k-mean alignment algorithm to classify them.
 
 - [GAprediction](https://bioconductor.org/packages/GAprediction)
-  [GAprediction] predicts gestational age using Illumina
+  &#91;GAprediction&#93; predicts gestational age using Illumina
   HumanMethylation450 CpG data.
 
 - [gCrisprTools](https://bioconductor.org/packages/gCrisprTools) Set
@@ -1390,7 +1390,7 @@ Changes in version 1.0.0:
 - gene classification using rpart,ggplot2, ggtree:
   http://guangchuangyu.github.io/2016/01/annotate-a-phylogenetic-tree-with-insets/
 
-- Specify the range of mutation frequency in circos plot [Min, Max]
+- Specify the range of mutation frequency in circos plot &#91;Min, Max&#93;
 
 [BiocInstaller](https://bioconductor.org/packages/BiocInstaller)
 -------------
@@ -3626,7 +3626,7 @@ Changes in version 1.15.2:
 
 Changes in version 1.0.0:
 
-- 1st Bioconductor release of geneplast [2015-?-?].
+- 1st Bioconductor release of geneplast &#91;2015-?-?&#93;.
 
 [GeneticsPed](https://bioconductor.org/packages/GeneticsPed)
 -----------
@@ -3802,10 +3802,10 @@ NEW FEATURES
   builds.
 
 - Add function genomeBuilds() that list all the available UCSC or
-  Ensembl builds for a given organism[s] that can be used in
+  Ensembl builds for a given organism&#91;s&#93; that can be used in
   mapGenomeBuilds()
 
-- Add listOrganism() that list all currently available organism[s]
+- Add listOrganism() that list all currently available organism&#91;s&#93;
   included for use in genomeBuilds()
 
 DEPRECATED AND DEFUNCT
@@ -4847,11 +4847,11 @@ USER VISIBLE CHANGES
   sigma and mzdiff have to be # definded later (combineFactors()) when
   sigma and step as well as steps are already known #IPO_V1.5.4.1:
   changes in calcPPS: # rt_window <- rt * 0.005 # rt_lower <-
-  part_peaks[,"rt"] - rt_window # rt_upper <- part_peaks[,"rt"] +
+  part_peaks&#91;,"rt"&#93; - rt_window # rt_upper <- part_peaks&#91;,"rt"&#93; +
   rt_window #IPO_V1.5.4: if bad_group == 0; bad_group = 1 && good_group
   += 1 #IPO_V1.5.3: no parameter for isotope detection.  #
-  c13_peak[,"mz"] has to be within (mzmin + isotope_mass) and (mzmax +
-  isotope_mass) # c13_peak[,"rt"] has to be within (rtmin +
+  c13_peak&#91;,"mz"&#93; has to be within (mzmin + isotope_mass) and (mzmax +
+  isotope_mass) # c13_peak&#91;,"rt"&#93; has to be within (rtmin +
   isotope_mass) and (rtmax + isotope_mass) #IPO_V1.5.: in
   RCSandGSIncreased: also used good_groups ^ 2 #IPO_V1.4.: vectorized
   isotope identification; # no intensity window, between intensity of
@@ -5406,10 +5406,10 @@ Changes in version 2008-11-26 (2008-11-26):
 Changes in version 2008-09-23 (2008-09-23):
 
 - modification de la fonction cv pour retourner NA lorsque toutes la
-  valeurs du vecteur sont <e0> NA
+  valeurs du vecteur sont &#60;e0&#62; NA
 
 - modification de la function getChromosomeArm pour que cytoband ne
-  soit pas positionn<e9>e <e0> NULL
+  soit pas positionn&#60;e9&#62;e &#60;e0&#62; NULL
 
 Changes in version 2008-09-04 (2008-09-04):
 
@@ -5726,67 +5726,67 @@ Changes in version 1.15:
 
 Changes in version 0.99.6:
 
-- improve allocation of clicked features in shinyCircos [2016-10-10
-  Mon]
+- improve allocation of clicked features in shinyCircos &#91;2016-10-10
+  Mon&#93;
 
-- change line width and colour in plotCircos [2016-10-10 Mon]
+- change line width and colour in plotCircos &#91;2016-10-10 Mon&#93;
 
 Changes in version 0.99.5:
 
 - add arguments colour and transparency for functions plotCircos and
-  highlight [2016-09-15 Thu]
+  highlight &#91;2016-09-15 Thu&#93;
 
 Changes in version 0.99.4:
 
 - add arguments splitIndMZ and splitIndRT in function convert2MSP and
   fix bug (colnames classes instead of class) in convert2MSP
-  [2016-08-17 Wed]
+  &#91;2016-08-17 Wed&#93;
 
-- update vignette, unit tests and manuals [2016-08-17 Wed]
+- update vignette, unit tests and manuals &#91;2016-08-17 Wed&#93;
 
 Changes in version 0.99.3:
 
-- remove verbatim Textouput(help) in shinyApp [2016-08-01 Mon]
+- remove verbatim Textouput(help) in shinyApp &#91;2016-08-01 Mon&#93;
 
 - change function createSimilarityMatrix in order that it does not
-  change ordering of row names [2016-08-01 Mon]
+  change ordering of row names &#91;2016-08-01 Mon&#93;
 
-- update unit tests and manuals [2016-08-01 Mon]
+- update unit tests and manuals &#91;2016-08-01 Mon&#93;
 
 Changes in version 0.99.2:
 
-- do not reorder again in createOrderedSimMat function [2016-07-26 Tue]
+- do not reorder again in createOrderedSimMat function &#91;2016-07-26 Tue&#93;
 
 - change allocatePrecursor2mz function such, that it is compatible with
-  all sd01 and sd02 objects [2016-07-26 Tue]
+  all sd01 and sd02 objects &#91;2016-07-26 Tue&#93;
 
 Changes in version 0.99.1:
 
 - rewrite functions that they do not require the argument dfNameGroup
   (data.frame containing group and unique identifier) any longer
-  [2016-06-14 Tue]
+  &#91;2016-06-14 Tue&#93;
 
 - the function binning uses now the function cut to create bins binning
-  has two methods implemented to calculate from these bins [2016-06-10
-  Fri] median and mean m/z values from the fragment m/z values
-  [2016-06-10 Fri]
+  has two methods implemented to calculate from these bins &#91;2016-06-10
+  Fri&#93; median and mean m/z values from the fragment m/z values
+  &#91;2016-06-10 Fri&#93;
 
-- documentation about data sets is extended [2016-06-10 Fri]
+- documentation about data sets is extended &#91;2016-06-10 Fri&#93;
 
-- include 'Suggests: BiocGenerics' in the DESCRIPTION file [2016-06-10
-  Fri]
+- include 'Suggests: BiocGenerics' in the DESCRIPTION file &#91;2016-06-10
+  Fri&#93;
 
 Changes in version 0.99.0:
 
-- submit package to Bioconductor file tracker [2016-05-14 Sat]
+- submit package to Bioconductor file tracker &#91;2016-05-14 Sat&#93;
 
 Changes in version 0.98.0:
 
-- add information of hovered objects in shinyCircos [2016-04-16 Tue]
+- add information of hovered objects in shinyCircos &#91;2016-04-16 Tue&#93;
 
-- allow for subsetting of MSP objects [2016-04-12 Tue]
+- allow for subsetting of MSP objects &#91;2016-04-12 Tue&#93;
 
-- add unit tests for exported functions [2016-04-12 Tue]
+- add unit tests for exported functions &#91;2016-04-12 Tue&#93;
 
 [methylKit](https://bioconductor.org/packages/methylKit)
 ---------
@@ -8914,7 +8914,7 @@ BUG FIXES
 
 - updated procedure to parse BAM headers. Fixes error when performing
   consistency checks of chromosome sizes from BAM files. Fixes the
-  error: Error in if (as.numeric(chrSizes[names(chrSizes)[i]]) !=
+  error: Error in if (as.numeric(chrSizes&#91;names(chrSizes)&#91;i&#93;&#93;) !=
   chrSizes.df$size[chrSizes.df$chr == : argument is of length zero
 
 [SNPRelate](https://bioconductor.org/packages/SNPRelate)
@@ -9420,7 +9420,7 @@ Major changes
   slot of the VCF object, and phenotypes using the colData accessor.
 
 - TVTBparam are no longer an argument of downstream methods; instead,
-  they must be stored in metadata(vcf)[["TVTBparam"]]
+  they must be stored in metadata(vcf)&#91;&#91;"TVTBparam"&#93;&#93;
 
 Minor changes
 
@@ -9615,7 +9615,7 @@ MODIFICATIONS
 
 - support Varscan2 AD/RD convention when coercing VCF to VRanges
 
-- use [["FT"]] to avoid picking up FTZ field
+- use &#91;&#91;"FT"&#93;&#93; to avoid picking up FTZ field
 
 - summarizeVariants() recognize '.' as missing GT field
 

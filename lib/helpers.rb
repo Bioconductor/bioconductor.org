@@ -1,10 +1,10 @@
 # encoding: utf-8
 require 'nanoc'
-include Nanoc3::Helpers::Text
-include Nanoc3::Helpers::Rendering
-include Nanoc3::Helpers::Breadcrumbs
-include Nanoc3::Helpers::XMLSitemap
-include Nanoc3::Helpers::HTMLEscape
+include Nanoc::Helpers::Text
+include Nanoc::Helpers::Rendering
+include Nanoc::Helpers::Breadcrumbs
+include Nanoc::Helpers::XMLSitemap
+include Nanoc::Helpers::HTMLEscape
 
 
 # coding: utf-8
@@ -214,10 +214,13 @@ def linkify(sym, package)
   if defined?($cran_packages).nil?
     $cran_packages = get_cran_packages
   end
+  
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
+  
   repos = package[key]
+
   output = []
 
   to_array(items).each_with_index do |item, index|
@@ -226,6 +229,7 @@ def linkify(sym, package)
     linkable, remainder = item.split(" ", 2)
     remainder = "" if remainder.nil?
     remainder = " " + remainder unless remainder.empty?
+    
     repo = repos[index]
 
     if (repo == false)
@@ -382,8 +386,9 @@ end
 
 def annual_reports
   # FIXME: need a more robust way to obtain assets path
+  
   Dir.chdir("assets/about/annual-reports") do
-    Dir.glob("*").map do |f|
+    Dir.glob("AnnRep*.pdf").map do |f|
       {
         :href => f,
         :name => /[[:alpha:]]+([[:digit:]]+).pdf/.match(f)[1]
@@ -471,9 +476,9 @@ def get_stats_url(package)
 end
 
 def get_updated_breadcrumbs(old_breadcrumbs, item)
-  return old_breadcrumbs unless (old_breadcrumbs.last.identifier =~ /package-pages/)
+  return old_breadcrumbs unless (old_breadcrumbs.last.identifier.to_s =~ /package-pages/)
   index_page = false
-  index_page = true if item.identifier =~ /\/package-pages\/all-/
+  index_page = true if item.identifier.to_s =~ /\/package-pages\/all-/
   last_crumb = old_breadcrumbs.last
   home_crumb = old_breadcrumbs.first
   path = item.path
@@ -484,9 +489,10 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
   crumbs = []
   crumbs.push home_crumb
-  ver_crumb = Nanoc3::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
+#  ver_crumb = Nanoc::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
+  ver_crumb = Nanoc::Int::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
   crumbs.push ver_crumb
-  repo_crumb = Nanoc3::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}/")
+  repo_crumb = Nanoc::Int::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}")
   crumbs.push repo_crumb unless index_page
   crumbs.push last_crumb
   crumbs
@@ -693,7 +699,7 @@ def years_in_bioc(package, conf=nil)
 end
 
 def get_version_from_item_id(item)
-  segs = item.identifier.split "/"
+  segs = item.identifier.to_s.split "/"
   segs.pop
   version = segs.pop
   version
@@ -701,7 +707,7 @@ end
 
 def script_tag_for_package_data(item)
   # todo - something sensible if get_json hasn't been run
-  segs = item.identifier.split "/"
+  segs = item.identifier.to_s.split "/"
   segs.pop
   version = segs.pop
   repos = ["bioc", "data/annotation", "data/experiment"]
@@ -718,7 +724,7 @@ end
 
 def get_tree(item)
   # todo - something sensible if get_json hasn't been run
-  segs = item.identifier.split "/"
+  segs = item.identifier.to_s.split "/"
   segs.pop
   version = segs.pop
   f = File.open "assets/packages/json/#{version}/tree.js"
@@ -792,9 +798,9 @@ end
 
 def workflow_helper(item)
   w = item.attributes.dup
-  id = item.identifier.sub(/\/$/, "")
+  id = item.identifier.to_s.sub(/\/$/, "")
   pkg = id.split("/").last
-  segs = item.identifier.split "/"
+  segs = item.identifier.to_s.split "/"
   3.times {segs.shift}
   multivig = (segs.length > 1)
   if multivig
@@ -1033,7 +1039,7 @@ end
 
 def get_mac_packs(package, item)
 
-   version = item.identifier.split("/")[4].to_f
+   version = item.identifier.to_s.split("/")[4].to_f
 
     res = []
 
@@ -1068,14 +1074,14 @@ def get_mac_packs(package, item)
 end
 
 def is_old?(item)
-  return false if item.identifier =~ /\/devel\/|\/release\//
-  return false if item.identifier =~ /\/#{config[:devel_version]}\/|\/#{config[:release_version]}\//
+  return false if item.identifier.to_s =~ /\/devel\/|\/release\//
+  return false if item.identifier.to_s =~ /\/#{config[:devel_version]}\/|\/#{config[:release_version]}\//
   return true
 end
 
 
 def is_devel?(item)
-    return true if item.identifier =~ /\/devel\/|\/#{config[:devel_version]}\//
+    return true if item.identifier.to_s =~ /\/devel\/|\/#{config[:devel_version]}\//
     return false
 end
 
@@ -1131,9 +1137,14 @@ def is_new_package(package)
 
 end
 
-def get_release_url(item_rep)
+def get_release_url_orig(item_rep)
     item_rep.raw_path.sub(/^output/, "").sub(/\/devel\/|\/#{config[:devel_version]}\//, "/release/")
 end
+
+def get_release_url(item)
+    item.path.sub(/\/devel\/|\/#{config[:devel_version]}\//, "/release/")
+end
+
 
 def get_fragment(package, item, item_rep)
   return \
@@ -1151,7 +1162,7 @@ def get_removed_link(item)
 end
 
 def get_removed_fragment(package, item, item_rep)
-  segs = item.identifier.split('/')
+  segs = item.identifier.to_s.split('/')
   version_seg = segs.find_index "package-pages"
   return "" if version_seg.nil? or version_seg >= (segs.length() -1)
   bioc_version = segs[version_seg+1]
@@ -1164,7 +1175,7 @@ EOT
 end
 
 def get_old_fragment(package, item, item_rep)
-  segs = item.identifier.split('/')
+  segs = item.identifier.to_s.split('/')
   version_seg = segs.find_index "package-pages"
   return "" if version_seg.nil? or version_seg >= (segs.length() -1)
   bioc_version = segs[version_seg+1]
@@ -1177,7 +1188,6 @@ EOT
 end
 
 def get_devel_fragment(package, item, item_rep)
-
     str=<<-"EOT"
 <p>This is the <b>development</b> version of #{@package[:Package]}
 EOT
@@ -1188,7 +1198,7 @@ EOT
     else
         str2=<<-"EOT"
 ; for the stable release version, see
-<a href="#{get_release_url(item_rep)}">#{@package[:Package]}</a>
+<a href="#{get_release_url(item)}">#{@package[:Package]}</a>
 EOT
     end
     str = str.strip() + str2
@@ -1197,7 +1207,7 @@ EOT
 end
 
 def package_has_source_url(item, software_only=false)
-    segs = item.identifier.split('/')
+    segs = item.identifier.to_s.split('/')
     return true if segs[5] == "bioc"
     unless software_only
       return true if segs[5] == "data" and segs[6] == "experiment"
@@ -1207,7 +1217,7 @@ end
 
 def get_svn_source_url(package, item, item_rep)
     url = "https://hedgehog.fhcrc.org/"
-    segs = item.identifier.split("/")
+    segs = item.identifier.to_s.split("/")
     repos = segs[5]
     repos = segs[5] + "/" + segs[6] if segs[5] == "data" \
       and segs[6] == "experiment"
@@ -1232,7 +1242,7 @@ def get_svn_source_url(package, item, item_rep)
 end
 
 def get_source_url(package, item, item_rep)
-    segs = item.identifier.split('/')
+    segs = item.identifier.to_s.split('/')
     if segs[4] < "3.5"
         get_svn_source_url(package, item, item_rep)
     else
@@ -1774,7 +1784,7 @@ end
 def get_url_from_item_identifier(identifier)
   # from /help/bioc-views/package-pages/3.2/bioc/a4/"
   # to   /packages/3.2/bioc/html/a4.html
-  out = identifier.sub("/help/bioc-views/package-pages", "/packages")
+  out = identifier.to_s.sub("/help/bioc-views/package-pages", "/packages")
   out = out.sub("/bioc/", "/bioc/html/")
   out = out.sub(/\/$/, ".html")
   out

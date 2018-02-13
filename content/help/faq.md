@@ -77,9 +77,9 @@ from a user trying to install the `affyPLM` package:
     Execution halted
     ERROR: lazy loading failed for package 'affyPLM'
 
-Be sure to use `biocLite` to [install packages][2] that are
+Be sure to use `biocLite` to [install packages][4] that are
 appropriate for your system and version of `R`.  Be sure that your
-installed packages are up-to-date by following [update packages][1].
+installed packages are up-to-date by following [update packages][3].
 
 Less commonly, packages may install but then fail to load, as here
 with the `Rsamtools` package:
@@ -122,7 +122,7 @@ of R, <code>biocLite()</code> will install the appropriate version of packages.
 <h3 class="faq" id="50">How can I find information about using a package?</h3>
 
 There are three main steps to using a package. (1) Identify an
-appropriate package. Do this using [biocViews][/packages/release/BiocViews.html] to browse
+appropriate package. Do this using [biocViews](/packages/release/BiocViews.html) to browse
 available software. (2) Explore overall package functionality and work
 flows. Do this by reading the package vignettes, listed on the page
 describing the package and available from biocViews. For instance,
@@ -200,8 +200,8 @@ for any installed package. To cite the project as a whole, use
 
     citation('Biobase')
 
-[1]: /install/index.html#update-bioconductor-packages
-[2]: /install/index.html#install-bioconductor-packages
+[3]: /install/index.html#update-bioconductor-packages
+[4]: /install/index.html#install-bioconductor-packages
 [mailing-list]: /help/mailing-list/
 [home-pages]: /packages/release/bioc/
 [bioc-views]: /packages/release/BiocViews.html

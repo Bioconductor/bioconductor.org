@@ -1,9 +1,9 @@
 # encoding: utf-8
 require 'nokogiri'
 require 'httparty'
-require 'nanoc3'
+require 'nanoc'
 
-class PubmedPapers < Nanoc3::DataSource
+class PubmedPapers < Nanoc::DataSource
   identifier :pubmed_papers    
 
   def up
@@ -42,16 +42,16 @@ class PubmedPapers < Nanoc3::DataSource
     if expired?(cache_data)
       puts "Publication cache expired, querying NCBI databases"
       res = []
-      # query individual databases 
+      # query individual database 
       @opts[:db].each_with_index do |db, i|
 	res = res + query_ncbi(db,  @opts[:sort][i])
       end
       # process results
       if !res.empty?
 	# remove dups
-	res.uniq! { |x| x[:doi] }
+	res.uniq! { |x| x.attributes[:doi] }
 	# sort by date
-	res.sort! { |x, y| y[:date] <=> x[:date] }
+	res.sort! { |x, y| y.attributes[:date] <=> x.attributes[:date] }
 	# take the top ones
 	entries = res[0, @opts[:retmax]]
 	write_cache({
@@ -132,7 +132,7 @@ class PubmedPapers < Nanoc3::DataSource
       
       attributes[:date] = date
 
-      entries.push Nanoc3::Item.new("unused", attributes, id, nil)
+      entries.push new_item("unused", attributes, Nanoc::Identifier.new(id, type: :legacy))
     end
     puts("done")
     return entries
@@ -176,7 +176,8 @@ class PubmedPapers < Nanoc3::DataSource
   
   def read_cache
     if File.exist? @opts[:cache_file]
-      YAML.load_file(@opts[:cache_file])
+        file_name = @opts[:cache_file]
+        YAML.load_file(file_name)
     else
       { 
 	:timestamp => nil,
