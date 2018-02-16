@@ -828,7 +828,7 @@ USER-LEVEL CHANGES
   other columns (the old vector-input will still work for
   hypergeometric and Wilcxon rank-sum test)
 
-- sort aba_enrich(...)[[1]] output also on structure-ID (after sorting
+- sort aba_enrich(...)&#91;&#91;1&#93;&#93; output also on structure-ID (after sorting
   on age category and FWER)
 
 - sort genes in 'get_annotated_genes' output (mixedsort)
@@ -3351,7 +3351,7 @@ Changes in version 1.15.1:
 Changes in version 1.11.3 (2017-06-19):
 
 - added vignettes/poster.Rmd for 13th Annual Conference of the
-  Metabolomics Society <URL: metabolomics2017.org> (in portrait).
+  Metabolomics Society &#60;URL: metabolomics2017.org&#62; (in portrait).
 
 [CountClust](https://bioconductor.org/packages/CountClust)
 ----------
@@ -3794,8 +3794,8 @@ Changes in version 1.11.8:
 BUG FIXES
 
 - Improved the documentation regarding an error when
-  coverageInfo$position is NULL when running analyzeChr() [and
-  indirectly running preprocessCoverage()]. See
+  coverageInfo$position is NULL when running analyzeChr() &#91;and
+  indirectly running preprocessCoverage()&#93;. See
   https://support.bioconductor.org/p/99400/ for details.
 
 Changes in version 1.11.7:
@@ -5452,11 +5452,11 @@ USER VISIBLE CHANGES
   sigma and mzdiff have to be # definded later (combineFactors()) when
   sigma and step as well as steps are already known #IPO_V1.5.4.1:
   changes in calcPPS: # rt_window <- rt * 0.005 # rt_lower <-
-  part_peaks[,"rt"] - rt_window # rt_upper <- part_peaks[,"rt"] +
+  part_peaks&#91;,"rt"&#93; - rt_window # rt_upper <- part_peaks&#91;,"rt"&#93; +
   rt_window #IPO_V1.5.4: if bad_group == 0; bad_group = 1 && good_group
   += 1 #IPO_V1.5.3: no parameter for isotope detection.  #
-  c13_peak[,"mz"] has to be within (mzmin + isotope_mass) and (mzmax +
-  isotope_mass) # c13_peak[,"rt"] has to be within (rtmin +
+  c13_peak&#91;,"mz"&#93; has to be within (mzmin + isotope_mass) and (mzmax +
+  isotope_mass) # c13_peak&#91;,"rt"&#93; has to be within (rtmin +
   isotope_mass) and (rtmax + isotope_mass) #IPO_V1.5.: in
   RCSandGSIncreased: also used good_groups ^ 2 #IPO_V1.4.: vectorized
   isotope identification; # no intensity window, between intensity of
@@ -5767,7 +5767,7 @@ FEATURES
 - Add new polar figure to plot all isomiRs at the same time
 
 - Add NLQO distribution to correct expression knowing sequencing bias
-  [Argyropoulos et al, 2017]
+  &#91;Argyropoulos et al, 2017&#93;
 
 - Improve data documentation
 
@@ -6251,7 +6251,7 @@ Changes in version 1.5.0:
 
 - no changes, check if package passes R CMD build and R CMD check
   without any error messages and vignette can be run without any errors
-  [2017-10-20 Fri]
+  &#91;2017-10-20 Fri&#93;
 
 [methimpute](https://bioconductor.org/packages/methimpute)
 ----------
@@ -6867,8 +6867,8 @@ Changes in version 2.3.10:
 - Add `isEmpty` methods for `Chromatogram` and `Chromatograms` objects
   <2017-09-05 Tue>
 
-- plot,Chromatogram[s] creates an empty plot and returns a warning if
-  the Chromatogram[s] object is empty (issue #249) <2017-09-05 Tue>
+- plot,Chromatogram&#91;s&#93; creates an empty plot and returns a warning if
+  the Chromatogram&#91;s&#93; object is empty (issue #249) <2017-09-05 Tue>
 
 Changes in version 2.3.9:
 
@@ -6908,7 +6908,7 @@ Changes in version 2.3.7:
 Changes in version 2.3.6:
 
 - Brutally remove xic and chromatogram functions/methods, to be
-  replaced by the Chromatogram[s] infrastructure <2017-06-15 Thu>
+  replaced by the Chromatogram&#91;s&#93; infrastructure <2017-06-15 Thu>
 
 Changes in version 2.3.5:
 
@@ -7091,14 +7091,14 @@ Changes in version 2.11.8:
 - Fix in copyWriteMSData and writeMSData ensuring that MSn data is
   correctly
 
-- Import pwiz r11174 fix for mzML without <componentList> (see #113).
+- Import pwiz r11174 fix for mzML without &#60;componentList&#62; (see #113).
 
 Changes in version 2.11.7:
 
 - Nothing yet.
 
 - Import fix by Brian Pratt (pwiz r11174) for mzML without
-  <componentList> Another way to fix #113
+  &#60;componentList&#62; Another way to fix #113
 
 - Removing mz5 support from manual page, as currently unsupported.
 
@@ -7163,7 +7163,7 @@ Changes in version 0.99.10:
 
 - Fixed a bug in ngraph_fromRCX, which prevented the resulting ngraph
   object from node attributes to be set correctly. This also lead the
-  following warnings: "Warning in vattrs[[name]][index] <- value :
+  following warnings: "Warning in vattrs&#91;&#91;name&#93;&#93;&#91;index&#93; <- value :
   number of items to replace is not a multiple of replacement length"
 
 - Changed functions from passing a quoted string (e.g. host =
@@ -8136,7 +8136,7 @@ Changes in version 1.2.0:
 
 Changes in version 1.0.0:
 
-- 1st Bioconductor release of RTNsurvival [2017-03-01].
+- 1st Bioconductor release of RTNsurvival &#91;2017-03-01&#93;.
 
 [runibic](https://bioconductor.org/packages/runibic)
 -------
@@ -8236,10 +8236,10 @@ BUG FIXES
   CompressedList objects.
 
 - Modify Mini radix C code to accomodate a bug in Apple LLVM version
-  6.1.0 optimizer. [commit 241150d2b043e8fcf6721005422891baff018586]
+  6.1.0 optimizer. &#91;commit 241150d2b043e8fcf6721005422891baff018586&#93;
 
-- Fix match,Pairs,Pairs() [commit
-  a08c12bf4c31b7304d25122c411d882ec52b360c]
+- Fix match,Pairs,Pairs() &#91;commit
+  a08c12bf4c31b7304d25122c411d882ec52b360c&#93;
 
 - Various other minor fixes.
 
@@ -8958,7 +8958,7 @@ Changes in version 1.13.2:
 Changes in version 1.0.0:
 
 - Release of the transcriptogramer package at Bioconductor
-  [YYYY-MM-DD].
+  &#91;YYYY-MM-DD&#93;.
 
 [treeio](https://bioconductor.org/packages/treeio)
 ------

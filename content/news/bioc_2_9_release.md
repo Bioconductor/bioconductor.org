@@ -546,14 +546,14 @@ Changes in version 2011-22-08:
 
 - Version 1.9.6
 
-- Bugfix in plotEICs (Error in pks[, 1] : incorrect number of
+- Bugfix in plotEICs (Error in pks&#91;, 1&#93; : incorrect number of
   dimensions)
 
 Changes in version 2011-20-25:
 
 - Version 1.9.9
 
-- added some "drop=FALSE" to fix "Error in isomatrix[, 1] : incorrect
+- added some "drop=FALSE" to fix "Error in isomatrix&#91;, 1&#93; : incorrect
   number of dimensions" error
 
 Changes in version 2011-20-10:
@@ -583,7 +583,7 @@ Changes in version 2011-02-08:
 - Add parameter polarity to xsAnnotate constructor
 
 - getPeaklist and getpspectra returns now correct annotation of
-  negative charged ions [M]-
+  negative charged ions &#91;M&#93;-
 
 - Add snow as additonal possibilty for parallel processing
 
@@ -1226,9 +1226,9 @@ either object type.
 
 1.1.11
 
-- ***API Addition*** "k" argument to "[" can be used to subset from a
+- ***API Addition*** "k" argument to "&#91;" can be used to subset from a
   specific assayDataElement.  Numeric and character "k"s are allowed.
-  assayDataElement(ds,k)[i,j] is the same as ds[i,j,k], but "i" can be
+  assayDataElement(ds,k)&#91;i,j&#93; is the same as ds&#91;i,j,k&#93;, but "i" can be
   a RangedData or RangesList.
 
 1.1.12
@@ -1681,7 +1681,7 @@ Changes in version 1.0.0:
 
 - slot name reporterMasses is renamed to reporterTagMasses to fix clash
   with method reporterMasses which fetches
-  assayData(ibspectra)[["mass"]]
+  assayData(ibspectra)&#91;&#91;"mass"&#93;&#93;
 
 - slot name reporterNames is renamed to reporterTagNames to distinguish
   from deprecated Biobase::reporterNames
@@ -2028,7 +2028,7 @@ Changes in version 1.1.18:
 
 - exported and document mfg read/write support <2011-09-01 Thu>
 
-- added centroided parameter to rawToSpectrum[1|2] to set this directly
+- added centroided parameter to rawToSpectrum&#91;1|2&#93; to set this directly
   at object creation in readMzXmlData <2011-09-01 Thu>
 
 - other minor changes in Rd files <2011-09-01 Thu>
@@ -2118,16 +2118,16 @@ Changes in version 1.1.11:
 - added preprocSelection and preprocSelectionTable functions
   <2011-05-18 Wed>
 
-- TODO document preprocSelection[Table] in vignette
+- TODO document preprocSelection&#91;Table&#93; in vignette
 
 - reduces plot2d-figure and plotDensity-figure sizes using png
   <2011-05-19 Thu>
 
 - added plotDensity doc <2011-05-19 Thu>
 
-- added round param to preprocSelection[Table] <2011-05-19 Thu>
+- added round param to preprocSelection&#91;Table&#93; <2011-05-19 Thu>
 
-- preprocSelection[Table] documented and exported <2011-05-19 Thu>
+- preprocSelection&#91;Table&#93; documented and exported <2011-05-19 Thu>
 
 - fixed bug in plot.Spectrum1 <2011-05-24 Tue>
 
@@ -2153,7 +2153,7 @@ Changes in version 1.1.10:
 
 Changes in version 1.1.9:
 
-- exporting normali[s|z]e methods for MSnSet, Spectrum and MSnExp
+- exporting normali&#91;s|z&#93;e methods for MSnSet, Spectrum and MSnExp
   <2011-05-12 Thu>
 
 - added quantile normalisation <2011-05-12 Thu>
@@ -2268,7 +2268,7 @@ Changes in version 1.1.1:
 
 - added validObject(new(...)) tests for each class <2011-04-04 Mon>
 
-- added centroided[<-] methods to Spectrum and pSet <2011-04-04 Mon>
+- added centroided&#91;<-&#93; methods to Spectrum and pSet <2011-04-04 Mon>
 
 - added 'keepAll' parameter to readIspyData <2011-04-11 Mon>
 

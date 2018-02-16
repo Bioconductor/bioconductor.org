@@ -2275,7 +2275,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - 2 significant changes to makeTxDbFromGRanges() and makeTxDbFromGFF():
   - They now also import transcripts of type pseudogenic_transcript and
   pseudogenic_exon.  - They normally get the "gene_id" and
-  "[tx|exon|CDS]_name" columns from the Name tag. Now they will also
+  "&#91;tx|exon|CDS&#93;_name" columns from the Name tag. Now they will also
   infer these columns from the ID tag when the Name tag is missing.
 
 - Improve handling of 'circ_seqs' argument by makeTxDbFromUCSC(),
@@ -2723,8 +2723,8 @@ Changes in version 1.1.3:
 
 Changes in version 1.1.2:
 
-- in addition to parsing beast time scale tree in XXX_year[\\.\\d]*,
-  now supports XXX/year[\\.\\d]* <2015-04-29, Wed>
+- in addition to parsing beast time scale tree in XXX_year&#91;\\.\\d&#93;*,
+  now supports XXX/year&#91;\\.\\d&#93;* <2015-04-29, Wed>
 
 - add examples folder in inst that contains sample data <2015-04-29,
   Wed>
@@ -4344,15 +4344,15 @@ Changes in version 1.9.2:
 Changes in version 1.9.1:
 
 - new plot2Ds function to overlay two data sets on the same PCA plot
-  [2015-04-17 Fri]
+  &#91;2015-04-17 Fri&#93;
 
-- regenerate biomart data used by setAnnotationParams [2015-04-24 Fri]
+- regenerate biomart data used by setAnnotationParams &#91;2015-04-24 Fri&#93;
 
 - new setStockcolGui function to set the default colours manually via a
-  simple interface [2015-04-29 Wed]
+  simple interface &#91;2015-04-29 Wed&#93;
 
 - new move2Ds function to produce an transition movie between two
-  MSnSets [2015-04-29 Wed]
+  MSnSets &#91;2015-04-29 Wed&#93;
 
 - functions to convert GO ids to/from terms. See ?goTermToId for
   details <2015-05-08 Fri>
@@ -4909,7 +4909,7 @@ Changes in version 1.11.5:
 
 Changes in version 1.11.4:
 
-- Fix bug in as("[MS, MS:123, ]", "CVParam") and add unit test
+- Fix bug in as("&#91;MS, MS:123, &#93;", "CVParam") and add unit test
   <2015-06-19 Fri>
 
 Changes in version 1.11.3:

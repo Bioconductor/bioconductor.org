@@ -9,8 +9,7 @@ up-to-date annotation packages.
 There are 77 new software packages, and many updates and improvements
 to existing packages; Bioconductor 2.14 is compatible with R 3.1.0,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
-release includes an updated Bioconductor [Amazon Machine Image]
-(http://bioconductor.org/help/bioconductor-cloud-ami/).
+release includes an updated Bioconductor [Amazon Machine Image](http://bioconductor.org/help/bioconductor-cloud-ami/).
 
 Visit [http://bioconductor.org](http://bioconductor.org)
 for details and downloads.
@@ -720,7 +719,7 @@ NEW FEATURES
 
 - Improved API design and a cleaner representation of the BaseSpace Data Model.
 
-- New count<RESOURCE> methods. These methods should be used to get the number of instances of a
+- New count&#60;RESOURCE&#62; methods. These methods should be used to get the number of instances of a
   particular resource which are visible under the current scope.  For example, the total number of
   Samples within a Project. Or the total number of Files for a given AppResults.
 
@@ -1183,7 +1182,7 @@ compcodeR
 
 0.2.0: more options for providing user-specified values in the data simulation
 
-0.2.0: changed the range of the color palette in the Spearman correlation plots to [-1,1]
+0.2.0: changed the range of the color palette in the Spearman correlation plots to &#91;-1,1&#93;
 
 deepSNV
 -------
@@ -1997,7 +1996,7 @@ DEPRECATED AND DEFUNCT
 
 - The BAFSet and CNSet classes have moved from deprecated to defunct. These classes only added
   getter/setter methods for baf/lrr/cn. Since these only cover some possible assayDataElements, it
-  is better to use x[i,j,k], where k is the name of an assayDataElement.
+  is better to use x&#91;i,j,k&#93;, where k is the name of an assayDataElement.
 
 - All RangedData-related things have now progressed to defunct. Please use GRanges for locData and
   everywhere else. Since the genoset package provides a common API for GenoSet, GRanges, and
@@ -2971,67 +2970,67 @@ MSnbase
 
 Changes in version 1.11.14:
 
-- update dependency to R >= 3.1 [2014-04-05 Sat]
+- update dependency to R >= 3.1 &#91;2014-04-05 Sat&#93;
 
 Changes in version 1.11.13:
 
-- Document [get|grep]Ecols in io vignette [2014-03-31 Mon]
+- Document &#91;get|grep&#93;Ecols in io vignette &#91;2014-03-31 Mon&#93;
 
-- typo in readMSnSet man [2014-03-31 Mon]
+- typo in readMSnSet man &#91;2014-03-31 Mon&#93;
 
-- updated affiliation in vignettes [2014-03-31 Mon]
+- updated affiliation in vignettes &#91;2014-03-31 Mon&#93;
 
 Changes in version 1.11.12:
 
-- Fixed a bug in readMzTabData reported by Hendrik Weisser [2014-03-26 Wed]
+- Fixed a bug in readMzTabData reported by Hendrik Weisser &#91;2014-03-26 Wed&#93;
 
 Changes in version 1.11.11:
 
-- precomputed msx test data now has id data [2014-03-25 Tue]
+- precomputed msx test data now has id data &#91;2014-03-25 Tue&#93;
 
-- quantitation unit tests [2014-03-25 Tue]
+- quantitation unit tests &#91;2014-03-25 Tue&#93;
 
-- quantify method now accepts label-free methods [2014-03-25 Tue]
+- quantify method now accepts label-free methods &#91;2014-03-25 Tue&#93;
 
 Changes in version 1.11.10:
 
-- import mzID [2014-03-20 Thu]
+- import mzID &#91;2014-03-20 Thu&#93;
 
-- dummyiTRAQ id extdata [2014-03-21 Fri]
+- dummyiTRAQ id extdata &#91;2014-03-21 Fri&#93;
 
-- add addIdentificationData method for MSnExp and MSnSet [2014-03-21 Fri]
+- add addIdentificationData method for MSnExp and MSnSet &#91;2014-03-21 Fri&#93;
 
-- using data from pRolocdata (was pRoloc) [2014-03-23 Sun]
+- using data from pRolocdata (was pRoloc) &#91;2014-03-23 Sun&#93;
 
-- added removeNoId,MSnExp,MSnSet methods [2014-03-23 Sun]
+- added removeNoId,MSnExp,MSnSet methods &#91;2014-03-23 Sun&#93;
 
-- added idSummary,MSnExp,MSnSet methods [2014-03-24 Mon]
+- added idSummary,MSnExp,MSnSet methods &#91;2014-03-24 Mon&#93;
 
 - Not generating different sample per file when reading raw data. pData(.) now has systematically 1
   row if not specifically provided by the user. A message is also reported by validity,pSet if
-  row(pData(.)) > 1. [2014-03-24 Mon]
+  row(pData(.)) > 1. &#91;2014-03-24 Mon&#93;
 
-- NAnnotatedDataFrame now has default multiplex 1 [2014-03-25 Tue]
+- NAnnotatedDataFrame now has default multiplex 1 &#91;2014-03-25 Tue&#93;
 
-- NAnnotatedDataFrame unit tests [2014-03-25 Tue]
+- NAnnotatedDataFrame unit tests &#91;2014-03-25 Tue&#93;
 
 Changes in version 1.11.9:
 
-- write.exprs can have fDataCol or fcol (for consistence) [2014-03-17 Mon]
+- write.exprs can have fDataCol or fcol (for consistence) &#91;2014-03-17 Mon&#93;
 
-- Fixing bug in combineFeatures(..., is.character(groupBy)) [2014-03-19 Wed]
+- Fixing bug in combineFeatures(..., is.character(groupBy)) &#91;2014-03-19 Wed&#93;
 
-- fixed combineFeatures [2014-03-20 Thu]
+- fixed combineFeatures &#91;2014-03-20 Thu&#93;
 
-- added example, test and doc for combineFeatures with list [2014-03-20 Thu]
+- added example, test and doc for combineFeatures with list &#91;2014-03-20 Thu&#93;
 
 Changes in version 1.11.8:
 
-- adding redundancy handling to combineFeatures (by vladpetyuk, pull request #18) [2014-03-14 Fri]
+- adding redundancy handling to combineFeatures (by vladpetyuk, pull request #18) &#91;2014-03-14 Fri&#93;
 
-- updated combineFeatures signature to accomodate above changes [2014-03-14 Fri]
+- updated combineFeatures signature to accomodate above changes &#91;2014-03-14 Fri&#93;
 
-- updated unit tests for new testhat 0.8 [2014-03-14 Fri]
+- updated unit tests for new testhat 0.8 &#91;2014-03-14 Fri&#93;
 
 Changes in version 1.11.7:
 
@@ -3039,39 +3038,39 @@ Changes in version 1.11.7:
 
 Changes in version 1.11.6:
 
-- add corresponding xcms functions to the chromatogram and xic manual page [2014-02-21 Fri]
+- add corresponding xcms functions to the chromatogram and xic manual page &#91;2014-02-21 Fri&#93;
 
-- new bpca imputation methods [2014-02-27 Thu]
+- new bpca imputation methods &#91;2014-02-27 Thu&#93;
 
-- replacing stop_on_error with option in vignette [2014-02-27 Thu]
+- replacing stop_on_error with option in vignette &#91;2014-02-27 Thu&#93;
 
 Changes in version 1.11.5:
 
-- typo in MSnSet droplevels man [2014-01-27 Mon]
+- typo in MSnSet droplevels man &#91;2014-01-27 Mon&#93;
 
-- typo in MSnbase-demo vignette [2014-02-20 Thu]
+- typo in MSnbase-demo vignette &#91;2014-02-20 Thu&#93;
 
-- fix BPI legend in chromatogram [2014-02-20 Thu]
+- fix BPI legend in chromatogram &#91;2014-02-20 Thu&#93;
 
 Changes in version 1.11.4:
 
-- passing ... to sweep when normalising [2013-12-08 Sun]
+- passing ... to sweep when normalising &#91;2013-12-08 Sun&#93;
 
-- updated makeMTD to accomodate new MS ontology [2013-12-23 Mon]
+- updated makeMTD to accomodate new MS ontology &#91;2013-12-23 Mon&#93;
 
 Changes in version 1.11.3:
 
-- updated mzTab example files to new url [2013-11-15 Fri]
+- updated mzTab example files to new url &#91;2013-11-15 Fri&#93;
 
-- warning about mzTab versions [2013-11-15 Fri]
+- warning about mzTab versions &#91;2013-11-15 Fri&#93;
 
 Changes in version 1.11.2:
 
-- move inst/doc to vignettes [2013-10-19 Sat]
+- move inst/doc to vignettes &#91;2013-10-19 Sat&#93;
 
 Changes in version 1.11.1:
 
-- document na.rm in combineFeatures Rd [2013-10-18 Fri]
+- document na.rm in combineFeatures Rd &#91;2013-10-18 Fri&#93;
 
 Changes in version 1.11.0:
 
@@ -3141,7 +3140,7 @@ mzR
 
 Changes in version 1.9.8:
 
-- Pointing to the relevant wiki page in the Rcpp compiler/linker warning [2014-04-03 Thu]
+- Pointing to the relevant wiki page in the Rcpp compiler/linker warning &#91;2014-04-03 Thu&#93;
 
 Changes in version 1.9.7:
 
@@ -3236,7 +3235,7 @@ Changes in version 1.7.24:
 
 USER-VISIBLE CHANGES
 
-- Added support for [Partial] Constrained Analysis of Principal Coordinates (CAP).
+- Added support for &#91;Partial&#93; Constrained Analysis of Principal Coordinates (CAP).
 
 - A supported/documented option in `ordinate`, supported by `plot_ordination`.
 
@@ -3539,76 +3538,76 @@ pRoloc
 Changes in version 1.3.19:
 
 - fixed error introduced with mclust 4.3 (that now returns the data in the Mclust output - see
-  comment in pRoloc:::gmmOutliers for details) [2014-04-07 Mon]
+  comment in pRoloc:::gmmOutliers for details) &#91;2014-04-07 Mon&#93;
 
 Changes in version 1.3.18:
 
-- getPredictions can take class-specific scores [2014-04-04 Fri]
+- getPredictions can take class-specific scores &#91;2014-04-04 Fri&#93;
 
 Changes in version 1.3.17:
 
 - fixed newly introduced bug (see 1.3.16) in pRoloc:::subsetAsDataFrame - thank you unit tests for
-  saving me, again [2014-03-26 Wed]
+  saving me, again &#91;2014-03-26 Wed&#93;
 
 Changes in version 1.3.16:
 
-- pRoloc:::subsetAsDataFrame now preserved original sample/column names [2014-03-24 Mon]
+- pRoloc:::subsetAsDataFrame now preserved original sample/column names &#91;2014-03-24 Mon&#93;
 
-- fixed wrong message when using col and pch in plot2D [2014-03-25 Tue]
+- fixed wrong message when using col and pch in plot2D &#91;2014-03-25 Tue&#93;
 
 Changes in version 1.3.15:
 
-- updated pRolocmarkers("mmus") [2014-03-21 Fri]
+- updated pRolocmarkers("mmus") &#91;2014-03-21 Fri&#93;
 
-- moved extdata/*csv to pRolocdata [2014-03-23 Sun]
+- moved extdata/*csv to pRolocdata &#91;2014-03-23 Sun&#93;
 
-- using *csv from pRolocdata [2014-03-23 Sun]
+- using *csv from pRolocdata &#91;2014-03-23 Sun&#93;
 
 Changes in version 1.3.14:
 
-- deleted tab character [2014-03-15 Sat]
+- deleted tab character &#91;2014-03-15 Sat&#93;
 
-- added support for GMM parametrisation to phenoDisco [2014-03-17 Mon]
+- added support for GMM parametrisation to phenoDisco &#91;2014-03-17 Mon&#93;
 
-- message instead of warning when using colour and pch [2014-03-21 Fri]
+- message instead of warning when using colour and pch &#91;2014-03-21 Fri&#93;
 
-- remove 1 duplicated mouse marker [2014-03-21 Fri]
+- remove 1 duplicated mouse marker &#91;2014-03-21 Fri&#93;
 
 Changes in version 1.3.13:
 
-- fixed a bug in addLegend [2014-03-14 Fri]
+- fixed a bug in addLegend &#91;2014-03-14 Fri&#93;
 
-- updated testing to testthat 0.8 [2014-03-14 Fri]
+- updated testing to testthat 0.8 &#91;2014-03-14 Fri&#93;
 
 - Fixing several warnings about symnbols being replaced upon pRoloc loading and note about usage of
-  ::: [2014-03-15 Sat]
+  ::: &#91;2014-03-15 Sat&#93;
 
 Changes in version 1.3.12:
 
-- added phenoDisco2 for testing, allows choice of GMM parameters [2014-02-26 Wed]
+- added phenoDisco2 for testing, allows choice of GMM parameters &#91;2014-02-26 Wed&#93;
 
-- removed duplicated fly markers [2014-02-28 Fri]
+- removed duplicated fly markers &#91;2014-02-28 Fri&#93;
 
-- updated affiliations in vignettes [2014-03-10 Mon]
+- updated affiliations in vignettes &#91;2014-03-10 Mon&#93;
 
 Changes in version 1.3.11:
 
-- modify to new biocViews to DESCRIPTION file by s.arora [2014-03-04]
+- modify to new biocViews to DESCRIPTION file by s.arora &#91;2014-03-04&#93;
 
 Changes in version 1.3.10:
 
 - new phenoDisco ndims argument to use more than two two principal components as input for discovery
-  analysis [2014-01-03 Mon]
+  analysis &#91;2014-01-03 Mon&#93;
 
-- fixed and updated phenoDisco logging [2014-02-03 Mon]
+- fixed and updated phenoDisco logging &#91;2014-02-03 Mon&#93;
 
-- added support for parallel phenoDisco execution. See BPPARAM argument [2014-02-03 Mon]
+- added support for parallel phenoDisco execution. See BPPARAM argument &#91;2014-02-03 Mon&#93;
 
-- fixed issues with using PD and ndims [2014-02-10 Mon]
+- fixed issues with using PD and ndims &#91;2014-02-10 Mon&#93;
 
-- fixed call to anyUnknown in PD code [2014-02-10 Mon]
+- fixed call to anyUnknown in PD code &#91;2014-02-10 Mon&#93;
 
-- checking if duplicated markers in addMarkers [2014-02-14 Fri]
+- checking if duplicated markers in addMarkers &#91;2014-02-14 Fri&#93;
 
 Changes in version 1.3.9:
 
@@ -3616,64 +3615,64 @@ Changes in version 1.3.9:
 
 Changes in version 1.3.8:
 
-- Removed trailing space in mmus nucleus markers [2014-01-21 Tue]
+- Removed trailing space in mmus nucleus markers &#91;2014-01-21 Tue&#93;
 
-- using filterNA to remove features with missing values in plot2D [2014-01-21 Tue]
+- using filterNA to remove features with missing values in plot2D &#91;2014-01-21 Tue&#93;
 
-- fixed plot2D/addLegend [2014-01-23 Thu]
+- fixed plot2D/addLegend &#91;2014-01-23 Thu&#93;
 
 Changes in version 1.3.7:
 
-- fixed addLegend to use correct colours (order) [2014-01-20 Mon]
+- fixed addLegend to use correct colours (order) &#91;2014-01-20 Mon&#93;
 
-- fix typo in addMarkers man [2014-01-20 Mon]
+- fix typo in addMarkers man &#91;2014-01-20 Mon&#93;
 
-- re-arranged stockpch so that interleave full and empty plotting character [2014-01-20 Mon] 0
-  Removed last stockcol (tomato), too cose to "#FF7F00" [2014-01-20 Mon]
+- re-arranged stockpch so that interleave full and empty plotting character &#91;2014-01-20 Mon&#93; 0
+  Removed last stockcol (tomato), too cose to "#FF7F00" &#91;2014-01-20 Mon&#93;
 
 Changes in version 1.3.6:
 
 - updated human markers: keep new pd.markers phenotypes, validated by Lisa and remove singletons
-  [2014-01-14 Tue]
+  &#91;2014-01-14 Tue&#93;
 
-- first stockpch is noe 19 [2014-01-16 Thu]
+- first stockpch is noe 19 &#91;2014-01-16 Thu&#93;
 
-- plot2D(.., pch) now taken into account for labelled data [2014-01-16 Thu]
+- plot2D(.., pch) now taken into account for labelled data &#91;2014-01-16 Thu&#93;
 
-- removed alpha plot2D argument [2014-01-17 Fri]
+- removed alpha plot2D argument &#91;2014-01-17 Fri&#93;
 
 - updated plot2D and addLegend function with support for more organelle groups than colours. The
-  previous versions are available as plot2D_v1 and addLegend_v1. [2014-01-17 Fri]
+  previous versions are available as plot2D_v1 and addLegend_v1. &#91;2014-01-17 Fri&#93;
 
 Changes in version 1.3.5:
 
-- pRoloc citation [2014-01-12 Sun]
+- pRoloc citation &#91;2014-01-12 Sun&#93;
 
 Changes in version 1.3.4:
 
-- new unknownSet function [2013-12-11 Wed]
+- new unknownSet function &#91;2013-12-11 Wed&#93;
 
-- updated vignettes to account for tan2009r1 changes [2013-12-16 Mon]
+- updated vignettes to account for tan2009r1 changes &#91;2013-12-16 Mon&#93;
 
 Changes in version 1.3.3:
 
-- update citation in phenoDisco.Rd [2013-11-22 Fri]
+- update citation in phenoDisco.Rd &#91;2013-11-22 Fri&#93;
 
-- typos in vignettes [2013-11-25 Mon]
+- typos in vignettes &#91;2013-11-25 Mon&#93;
 
 Changes in version 1.3.2:
 
-- new markers [2013-11-06 Wed]
+- new markers &#91;2013-11-06 Wed&#93;
 
-- markers in vinette [2013-11-15 Fri]
+- markers in vinette &#91;2013-11-15 Fri&#93;
 
-- mouse markers [2013-11-18 Mon]
+- mouse markers &#91;2013-11-18 Mon&#93;
 
 Changes in version 1.3.1:
 
-- using combineFeatures(..., na.rm=TRUE) in lopims pipeine [2013-10-22 Tue]
+- using combineFeatures(..., na.rm=TRUE) in lopims pipeine &#91;2013-10-22 Tue&#93;
 
-- corrected spelling errors in phenoDisco doc [2013-10-29 Tue]
+- corrected spelling errors in phenoDisco doc &#91;2013-10-29 Tue&#93;
 
 Changes in version 1.3.0:
 
@@ -4038,10 +4037,10 @@ rols
 
 Changes in version 1.5.2:
 
-- pretty printing with strwrap(mtd[...]) in vignette and termMetadata S3 printing method for
-  readable output (suggestion from Martin Morgan) [2014-02-18 Tue]
+- pretty printing with strwrap(mtd&#91;...&#93;) in vignette and termMetadata S3 printing method for
+  readable output (suggestion from Martin Morgan) &#91;2014-02-18 Tue&#93;
 
-- Using BiocStyle vignette [2014-02-18 Tue]
+- Using BiocStyle vignette &#91;2014-02-18 Tue&#93;
 
 Changes in version 1.5.1:
 
@@ -4056,37 +4055,37 @@ rpx
 
 Changes in version 0.99.9:
 
-- In pxref, dealing with cases without any or pending publications [2014-04-01 Tue]
+- In pxref, dealing with cases without any or pending publications &#91;2014-04-01 Tue&#93;
 
 Changes in version 0.99.8:
 
-- fix leftover issues from renaming package (d.tenenbaum) [2014-03-30 Sun]
+- fix leftover issues from renaming package (d.tenenbaum) &#91;2014-03-30 Sun&#93;
 
 Changes in version 0.99.7:
 
-- renamed to rpx due to CRAN name clash [2014-03-28]
+- renamed to rpx due to CRAN name clash &#91;2014-03-28&#93;
 
 Changes in version 0.99.6:
 
-- more typos in vignette [2014-03-12 Wed]
+- more typos in vignette &#91;2014-03-12 Wed&#93;
 
 Changes in version 0.99.5:
 
-- Suggestions, biocView and typos reported by Nate Hayden [2014-03-12 Wed]
+- Suggestions, biocView and typos reported by Nate Hayden &#91;2014-03-12 Wed&#93;
 
-- added Runit test [2014-03-12 Wed]
+- added Runit test &#91;2014-03-12 Wed&#93;
 
-- use ae fonts in vignette [2014-03-12 Wed]
+- use ae fonts in vignette &#91;2014-03-12 Wed&#93;
 
 Changes in version 0.99.4:
 
-- Update reference in man and vignette [2014-03-11 Tue]
+- Update reference in man and vignette &#91;2014-03-11 Tue&#93;
 
-- Typos in vignette [2014-03-11 Tue]
+- Typos in vignette &#91;2014-03-11 Tue&#93;
 
 Changes in version 0.99.3:
 
-- reverting pxannounced to empty signature to fix warning [2014-03-05 Wed]
+- reverting pxannounced to empty signature to fix warning &#91;2014-03-05 Wed&#93;
 
 Changes in version 0.99.2:
 
@@ -4094,13 +4093,13 @@ Changes in version 0.99.2:
 
 Changes in version 0.99.1:
 
-- fixing pxfiles ending by \r on Windows [2014-03-05 Wed]
+- fixing pxfiles ending by \r on Windows &#91;2014-03-05 Wed&#93;
 
 Changes in version 0.99.0:
 
-- added a vignette [2014-03-05 Wed]
+- added a vignette &#91;2014-03-05 Wed&#93;
 
-- handle invalid identifiers [2014-03-05 Wed]
+- handle invalid identifiers &#91;2014-03-05 Wed&#93;
 
 rqubic
 ------
@@ -4422,23 +4421,23 @@ synapter
 
 Changes in version 1.5.7:
 
-- Enable setting number of missed cleavages (closes #53) [2014-03-24 Mon]
+- Enable setting number of missed cleavages (closes #53) &#91;2014-03-24 Mon&#93;
 
 Changes in version 1.5.6:
 
-- change the default value of grid.ppm.from to 2 (was 5 before) [2014-03-05 Wed]
+- change the default value of grid.ppm.from to 2 (was 5 before) &#91;2014-03-05 Wed&#93;
 
-- change the separator in GridDetails' names to ":" (was "." before) [2014-03-07 Fri]
+- change the separator in GridDetails' names to ":" (was "." before) &#91;2014-03-07 Fri&#93;
 
-- test for corresponding Pep3D file (closes #42) [2014-03-19 Wed]
+- test for corresponding Pep3D file (closes #42) &#91;2014-03-19 Wed&#93;
 
 Changes in version 1.5.5:
 
 - fix a bug in the calculation of non unique matches in gridSearch2 (part of searchGrid); results in
   a higher number of non unique matches (some of the reported -2 will now be reported as 2 in the
-  grid details) [2014-03-05 Wed]
+  grid details) &#91;2014-03-05 Wed&#93;
 
-- partial rewrite of gridSearch2 (part of searchGrid) for faster grid calculation [2014-03-04 Tue]
+- partial rewrite of gridSearch2 (part of searchGrid) for faster grid calculation &#91;2014-03-04 Tue&#93;
 
 Changes in version 1.5.4:
 
@@ -4446,17 +4445,17 @@ Changes in version 1.5.4:
 
 Changes in version 1.5.3:
 
-- modified findMSeEMRTs (part of searchGrid) for faster grid calculation [2014-02-28 Fri]
+- modified findMSeEMRTs (part of searchGrid) for faster grid calculation &#91;2014-02-28 Fri&#93;
 
-- typos in manual [2014-02-25 Tue]
+- typos in manual &#91;2014-02-25 Tue&#93;
 
-- replace readFasta by Biostrings::readAAStringSet [2014-02-25 Tue]
+- replace readFasta by Biostrings::readAAStringSet &#91;2014-02-25 Tue&#93;
 
-- replace digest by cleaver::cleave [2014-02-25 Tue]
+- replace digest by cleaver::cleave &#91;2014-02-25 Tue&#93;
 
 Changes in version 1.5.1:
 
-- typo in vignette [2014-02-18 Tue]
+- typo in vignette &#91;2014-02-18 Tue&#93;
 
 Changes in version 1.5.0:
 
@@ -4694,7 +4693,7 @@ yaqcaffy
 
 Changes in version 1.23.1:
 
-- moved inst/doc to vignettes [2013-10-19 Sat]
+- moved inst/doc to vignettes &#91;2013-10-19 Sat&#93;
 
 
 

@@ -446,14 +446,14 @@ Changes in version 2011-22-08:
 
 - Version 1.9.6
 
-- Bugfix in plotEICs (Error in pks[, 1] : incorrect number of
+- Bugfix in plotEICs (Error in pks&#91;, 1&#93; : incorrect number of
   dimensions)
 
 Changes in version 2011-20-25:
 
 - Version 1.9.9
 
-- added some "drop=FALSE" to fix "Error in isomatrix[, 1] : incorrect
+- added some "drop=FALSE" to fix "Error in isomatrix&#91;, 1&#93; : incorrect
   number of dimensions" error
 
 Changes in version 2011-20-10:
@@ -496,7 +496,7 @@ Changes in version 2011-02-08:
 - Add parameter polarity to xsAnnotate constructor
 
 - getPeaklist and getpspectra returns now correct annotation of
-  negative charged ions [M]-
+  negative charged ions &#91;M&#93;-
 
 - Add snow as additonal possibilty for parallel processing
 
@@ -973,8 +973,8 @@ NEW FEATURES
 - If you do not specificy x & y getSig() will return a vector of
   tracking_ids for all comparisons (with appropriate MTC).
 
-- You can now specify an 'alpha' for getSig() and getSigTable() [ 0.05
-  by default to match cuffdiff default ] by which to filter the
+- You can now specify an 'alpha' for getSig() and getSigTable() &#91; 0.05
+  by default to match cuffdiff default &#93; by which to filter the
   resulting significance calls.
 
 - Added csSpecificity() method: This method returns a
@@ -2449,10 +2449,10 @@ Changes in version 2008-11-26 (2008-11-26):
 Changes in version 2008-09-23 (2008-09-23):
 
 - modification de la fonction cv pour retourner NA lorsque toutes la
-  valeurs du vecteur sont <e0> NA
+  valeurs du vecteur sont &#60;e0&#62; NA
 
 - modification de la function getChromosomeArm pour que cytoband ne
-  soit pas positionn<e9>e <e0> NULL
+  soit pas positionn&#60;e9&#62;e &#60;e0&#62; NULL
 
 Changes in version 2008-09-04 (2008-09-04):
 

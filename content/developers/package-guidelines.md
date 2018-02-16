@@ -52,7 +52,7 @@ packages.
 Annotation packages are database-like packages that provide
 information linking identifiers (e.g., Entrez gene names or Affymetrix
 probe ids) to other information (e.g., chromosomal location, Gene
-Ontology category). It is also encouraged to utilize AnnotationHub for 
+Ontology category). It is also encouraged to utilize AnnotationHub for
 storage and access to large raw data files and their conversion to standard
 R formats. Instructions for adding data to AnnotationHub and designing a
 annotaiton package to use AnnotationHub can be found here: [Creating
@@ -62,7 +62,7 @@ Experiment data packages provide data sets that are used, often by software
 packages, to illustrate particular analyses. These packages contain curated
 data from an experiment, teaching course or publication and in most cases
 contain a single data set. It is also encouraged to utilize ExperimentHub for
-storage and access to larger data files. ExperimentHub is also particularly 
+storage and access to larger data files. ExperimentHub is also particularly
 useful for hosting collections of related data sets. Instructions for adding
 data to ExperimentHub and designing an experiment data package to use
 ExperimentHub can be found here: [Creating ExperimentHub Packages][expHowTo].
@@ -75,7 +75,7 @@ supports the use of [Git Large File Storage][gitlfs] (Git LFS) during package
 contribution. Please be aware Git LFS is free for all users up to 1 GB of data
 and a monthly usage of 1 GB of bandwidth; more data and bandwidth can be
 purchases at the contributers expense. For larger files, it may be worth while
-to explore using the Hubs. 
+to explore using the Hubs.
 
 The guidelines below apply to all packages, but annotation and
 experiment data packages are not required to conform to the space
@@ -96,7 +96,7 @@ annotation or experiment data packages should seek
 
 <h2 id="version">Version of Bioconductor and R</h2>
 
-Package developers should always use the 
+Package developers should always use the
 [devel version of Bioconductor](/packages/devel/BiocViews.html#___Software) when developing and testing packages to be contributed.
 
 Depending on the R release cycle, using Bioconductor devel may or may
@@ -109,19 +109,19 @@ for up-to-date information.
 
 <h2 id="correctness">Correctness, Space and Time</h2>
 
-Bioconductor packages must pass `R CMD build` (or 
+Bioconductor packages must pass `R CMD build` (or
 <code>R CMD INSTALL &#45;&#45;build</code>)
 and pass `R CMD check` with no errors and no warnings using a recent R-devel.
 Authors should also try to address all notes that arise during build or check.
 
-Packages must also pass `R CMD BiocCheck` with no errors and no warnings. The [BiocCheck](http://bioconductor.org/packages/devel/BiocCheck) package is a set of tests that encompass Bioconductor Best Practices. Every effort should be made to address any notes that arise during this build or check. 
+Packages must also pass `R CMD BiocCheck` with no errors and no warnings. The [BiocCheck](http://bioconductor.org/packages/devel/BiocCheck) package is a set of tests that encompass Bioconductor Best Practices. Every effort should be made to address any notes that arise during this build or check.
 
 Do not use filenames that differ only in case, as not all file systems are
 case sensitive.
 
-The source package resulting from running `R CMD build` should occupy 
+The source package resulting from running `R CMD build` should occupy
 less than 4MB on disk. The package should require less than 5 minutes to run
-<code>R CMD check &#45;&#45;no&#45;build&#45;vignettes</code>. 
+<code>R CMD check &#45;&#45;no&#45;build&#45;vignettes</code>.
 Using the <code>&#45;&#45;no&#45;build&#45;vignettes</code>
 option ensures that the vignette is built only once.
 
@@ -150,7 +150,7 @@ that imply a temporal (e.g., `ExistingPackage2`) or qualitative (e.g.,
 <h2 id="license">License</h2>
 
 The "License:" field in the DESCRIPTION file should preferably refer to a
-standard license (see 
+standard license (see
 [wikipedia](http://en.wikipedia.org/wiki/Comparison_of_free_software_licences))
 using one of R's standard specifications. Be specific about any version that
 applies (e.g., GPL-2). Core Bioconductor packages are typically licensed under
@@ -165,7 +165,7 @@ DESCRIPTION file.
 
 Packages must
 
-* Contain a 
+* Contain a
   [vignette](http://cran.fhcrc.org/doc/manuals/R-exts.html#Writing-package-vignettes)
   that demonstrates how to use the package to accomplish a task (more on this
   below).
@@ -190,7 +190,7 @@ Packages must
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
 * Contain only code that can be redistributed according to the package license.
-  Be aware of the licensing agreements for packages you are depending on in your package. 
+  Be aware of the licensing agreements for packages you are depending on in your package.
   Not all packages are open source even if they are publicly available.
   In particular, packages may not include any code from
   [Numerical Recipes](http://www.nr.com/).
@@ -236,9 +236,9 @@ loaded namespace should be accessed using `::` notation, e.g.,
     y <- rnorm(1000)
     z <- rnorm(1000) + atan2(x,y)
     if (requireNamespace("rgl", quietly=TRUE)) {
-        rgl::plot3d(x, y, z, col=rainbow(1000))
+	rgl::plot3d(x, y, z, col=rainbow(1000))
     } else {
-        ## code when "rgl" is not available
+	## code when "rgl" is not available
     }
 
 This approach does not alter the user `search()` path, and ensures
@@ -254,7 +254,7 @@ installations, so is often best avoided.
 **Re-use existing functionality**, especially for S4
 [input methods][RECReuseFunctions] and
 [S4 classes][RECReuseClasses]. This encourages interoperability and
-simplifies your own package development. 
+simplifies your own package development.
 
 If your data requires a new representation or function, carefully
 design an S4 class or generic so that other package developers with
@@ -291,7 +291,7 @@ method definitions appropriately during package installation.
 <h2 id="vectorized">Robust and Efficient Code</h2>
 
 Many R operations are performed on the whole object, not just the
-elements of the object (e.g., sum(x), not x[1] + x[2] + ...). In
+elements of the object (e.g., sum(x), not x&#91;1&#93; + x&#91;2&#93; + ...). In
 particular, relatively few situations require an explicit for
 loop. See the [Vectorize][RECVectorize] section of
 [Robust and Efficient Code][] for additional detail. See also [Coding Style][]
@@ -310,7 +310,7 @@ carefully. Web resources can change location, can be temporarily
 unavailable, or can be very slow to access and retrieve. Functions
 that query web resources, should anticipate and handle such situations
 gracefully -- failing quickly and clearly when the resource is not
-available in a reasonable time frame. See [Querying Web Resources][] 
+available in a reasonable time frame. See [Querying Web Resources][]
 for additional detail and examples of robust web-query functions.
 
 [Querying Web Resources]: /developers/how-to/web-query
@@ -356,7 +356,7 @@ For more information see the
 
 Use `dev.new()` to start a graphics device if necessary. Avoid using `x11()`
 or `X11()` for it can only be called on machines that have access to an X
-server. 
+server.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -457,15 +457,15 @@ section of the Writing R Extensions manual. In particular:
 
   - Example for gcc/g++:
 
-        CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-        CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-        FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 
   - Example for clang/clang++:
 
-        CFLAGS=-Weverything -O0 -g
-        CXXFLAGS=-Weverything -O0 -g
-        FFLAGS=-Wall -Wextra -pedantic -O0 -g
+	CFLAGS=-Weverything -O0 -g
+	CXXFLAGS=-Weverything -O0 -g
+	FFLAGS=-Wall -Wextra -pedantic -O0 -g
 
 <h4 id="third-party-code">Third-party code</h4>
 
@@ -488,14 +488,15 @@ the C++ Best Practices guide.
 
 <h2 id="unitTests">Unit Tests</h2>
 
-Unit tests are highly recommended.  We find them indispensable for 
-both package development and maintenance.  Examples and explanations are provided 
+Unit tests are highly recommended.  We find them indispensable for
+both package development and maintenance.  Examples and explanations are provided
 [here](http://bioconductor.org/developers/unitTesting-guidelines).
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="videos">URLs and Videos</h2>
+<<<<<<< HEAD
 
 Add a "URL:" field in your DESCRIPTION file to direct users to source
 code repositories, additional help resources, etc; details are
@@ -530,7 +531,7 @@ include:
   or directly to
   developers. Add a `BugReports:` field to the DESCRIPTION file if
   reports should be directed to a particular web page rather than the
-  package maintainer. You should register on the 
+  package maintainer. You should register on the
   [support site](https://support.bioconductor.org/)
   and edit your profile, changing the "Watched Tags" field to
   include all packages you maintain, so you will be notified

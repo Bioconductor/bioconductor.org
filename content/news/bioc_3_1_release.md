@@ -1363,7 +1363,7 @@ clusterProfiler
 
 Changes in version 2.1.14:
 
-- [enrichDAVID] report NA in qvalue column when it fail to calculate
+- &#91;enrichDAVID&#93; report NA in qvalue column when it fail to calculate
   instead of throw error <2015-03-10, Fri>
 
 Changes in version 2.1.13:
@@ -2520,10 +2520,10 @@ MINOR CHANGES
 - change a bit the paired-end graph paradigm. Ensure that one isoform
   is one unique path in the graph, as for single-end graph.
 
-- [parameter] add the delta (poisson offset in the loss) parameter as
+- &#91;parameter&#93; add the delta (poisson offset in the loss) parameter as
   an option, in case of fine-tuning.
 
-- [parameter] the cutoff option is now active for both single and
+- &#91;parameter&#93; the cutoff option is now active for both single and
   paired, and the default value is 1%.
 
 Changes in version 1.5.8:
@@ -2549,10 +2549,10 @@ MINOR CHANGES
 - remove the sanity-check for possibly duplicated types, as it was
   solved into readgroup.cpp/getType
 
-- [pre-processing] back to default 1 for minJuncCount (I changed my
+- &#91;pre-processing&#93; back to default 1 for minJuncCount (I changed my
   mind !!)
 
-- [pre-processing] cancel change of version 1.3.9 (extreme boundary of
+- &#91;pre-processing&#93; cancel change of version 1.3.9 (extreme boundary of
   segments calculateBound in readgroup.cpp) (I changed my mind !!)
 
 Changes in version 1.5.5:
@@ -2564,29 +2564,29 @@ Changes in version 1.5.5:
   performs the prediction (it reads automatically the total number of
   reads in prefix.totalnumread)
 
-- [pre-processing] push the default minJuncCount from 1 to 2 (high
+- &#91;pre-processing&#93; push the default minJuncCount from 1 to 2 (high
   enough for a default?)
 
-- [pre-processing] slight change for paired-end preprocessing, see
+- &#91;pre-processing&#93; slight change for paired-end preprocessing, see
   option to processsam (--single-only not automatic anymore)
 
 - start using Rprintf in c/cpp codes for user messages (to continue)
 
 Changes in version 1.5.4:
 
-- [pre-processing] solve small issue on CIGAR character 'S,X,='
+- &#91;pre-processing&#93; solve small issue on CIGAR character 'S,X,='
   (again!), see align.cpp
 
 Changes in version 1.5.3:
 
 NEW FEATURE
 
-- [pre-processing] add minJuncCount as an option, ie number of required
+- &#91;pre-processing&#93; add minJuncCount as an option, ie number of required
   reads to consider a junction/boundary as valid.
 
 Changes in version 1.5.1:
 
-- [pre-processing] solve small issue of possibly duplicated read type,
+- &#91;pre-processing&#93; solve small issue of possibly duplicated read type,
   see getType in readgroup.cpp
 
 flowcatchR
@@ -3697,7 +3697,7 @@ UPDATED FEATURES
 - Disabled manual check of C. elegans and D. melanogaster, as the
   automated detection is doing the exact same thing. Only S. cerevisiae
   requires a manual check of the "Y" prefix instead of the
-  automatically extracted "Y[:LETTERS:]{2}" pattern.
+  automatically extracted "Y&#91;:LETTERS:&#93;{2}" pattern.
 
 - Methods expression_plot_symbol and expression_profiles_symbol now
   return the list of gene feature identifiers instead of NULL when
@@ -4937,133 +4937,133 @@ MSnbase
 Changes in version 1.15.18:
 
 - fix failing test_MSnExp::readMSData unit test on Windows i386
-  (@.cache$size being different on that arch) [2015-04-14 Tue]
+  (@.cache$size being different on that arch) &#91;2015-04-14 Tue&#93;
 
-- merge @vladpetyuk PR #50 fix of combine features bug [2015-04-14 Tue]
+- merge @vladpetyuk PR #50 fix of combine features bug &#91;2015-04-14 Tue&#93;
 
 Changes in version 1.15.17:
 
-- add TMT10 paragraph and fig to demo vignette [2015-04-09 Thu]
+- add TMT10 paragraph and fig to demo vignette &#91;2015-04-09 Thu&#93;
 
 Changes in version 1.15.16:
 
-- support for TMT10 plex [2015-04-08 Wed]
+- support for TMT10 plex &#91;2015-04-08 Wed&#93;
 
 Changes in version 1.15.15:
 
 - using serial parallelisation during quantitation in unit tests
-  [2015-04-02 Thu]
+  &#91;2015-04-02 Thu&#93;
 
 Changes in version 1.15.14:
 
 - new msnset data, used in various examples instead of quantifying the
-  itraqdata experiment over and over again [2015-04-01 Wed]
+  itraqdata experiment over and over again &#91;2015-04-01 Wed&#93;
 
 Changes in version 1.15.13:
 
-- improve nbavg imputation description and add example [2015-03-22 Sun]
+- improve nbavg imputation description and add example &#91;2015-03-22 Sun&#93;
 
-- reduce compareSpectra example timing [2015-03-30 Mon]
+- reduce compareSpectra example timing &#91;2015-03-30 Mon&#93;
 
 Changes in version 1.15.12:
 
 - average neighbour imputation for ordered fractions along a gradient
-  [2015-03-21 Sat]
+  &#91;2015-03-21 Sat&#93;
 
 Changes in version 1.15.11:
 
-- update malformed Description [2015-03-20 Fri]
+- update malformed Description &#91;2015-03-20 Fri&#93;
 
 Changes in version 1.15.10:
 
-- update compareSpectra man [2015-03-19 Thu]
+- update compareSpectra man &#91;2015-03-19 Thu&#93;
 
-- ExpressionSet <-> MSnSet coercion [2015-03-19 Thu]
+- ExpressionSet <-> MSnSet coercion &#91;2015-03-19 Thu&#93;
 
 Changes in version 1.15.9:
 
-- use S4Vectors' isEmpty generic [2015-03-10 Tue]
+- use S4Vectors' isEmpty generic &#91;2015-03-10 Tue&#93;
 
 Changes in version 1.15.8:
 
-- Improved imputation section in demo vignette [2015-03-05 Thu]
+- Improved imputation section in demo vignette &#91;2015-03-05 Thu&#93;
 
 Changes in version 1.15.7:
 
-- Importing ProtGenerics [2015-02-28 Sat]
+- Importing ProtGenerics &#91;2015-02-28 Sat&#93;
 
-- selective import of MALDIquant [2015-03-02 Mon]
+- selective import of MALDIquant &#91;2015-03-02 Mon&#93;
 
 Changes in version 1.15.6:
 
 - add intensity column to the calculateFragments output; closes #47;1
-  [2015-02-02 Mon]
+  &#91;2015-02-02 Mon&#93;
 
 - add method argument to calculateFragments to allow the user choosing
   the highest/closest peak or all peaks in the tolerance range; closes
-  #47;2 [2015-02-09 Mon]
+  #47;2 &#91;2015-02-09 Mon&#93;
 
 - add neutralLoss argument to calculateFragments and calculate loss of
-  water and ammonia; closes #47:3 [2015-02-19 Thu]
+  water and ammonia; closes #47:3 &#91;2015-02-19 Thu&#93;
 
-- new imputation methods via imputeLCMD and norm [2015-02-09 Mon]
+- new imputation methods via imputeLCMD and norm &#91;2015-02-09 Mon&#93;
 
-- vignette updates [2015-02-09 Mon]
+- vignette updates &#91;2015-02-09 Mon&#93;
 
-- imputation unit test [2015-02-24 Tue]
+- imputation unit test &#91;2015-02-24 Tue&#93;
 
 Changes in version 1.15.5:
 
-- update dependency to mzID >= 1.5.2 [2015-01-28 Wed]
+- update dependency to mzID >= 1.5.2 &#91;2015-01-28 Wed&#93;
 
-- rewrite addIdentificationData and change its signature [2015-01-28
-  Wed]
+- rewrite addIdentificationData and change its signature &#91;2015-01-28
+  Wed&#93;
 
 - add methods addIdentificationData which work on MSnExp and MSnSets
   using filenames (characters), mzID objects and data.frames; see #42;
-  closes #45; [2015-01-28 Wed]
+  closes #45; &#91;2015-01-28 Wed&#93;
 
-- add a section about MSmaps in the vignette [2015-02-02 Mon]
+- add a section about MSmaps in the vignette &#91;2015-02-02 Mon&#93;
 
 - MSmap has a new zeroIsNA argument to set all 0 values of the map to
-  NA. This simplifies the resulting plot3D figure. [2015-02-02 Mon]
+  NA. This simplifies the resulting plot3D figure. &#91;2015-02-02 Mon&#93;
 
 Changes in version 1.15.4:
 
-- partly rewrite readMgfData [2015-01-19 Mon]
+- partly rewrite readMgfData &#91;2015-01-19 Mon&#93;
 
-- Typo in addIdentification data man [2015-01-20 Tue]
+- Typo in addIdentification data man &#91;2015-01-20 Tue&#93;
 
-- use Biocstyle [2015-01-23 Fri]
+- use Biocstyle &#91;2015-01-23 Fri&#93;
 
-- replace require with requireNamespace [2015-01-23 Fri]
+- replace require with requireNamespace &#91;2015-01-23 Fri&#93;
 
 Changes in version 1.15.3:
 
 - plot,Spectrum2,character to add fragment ions based on peptide
-  sequence [2014-11-20 Thu]
+  sequence &#91;2014-11-20 Thu&#93;
 
-- update vignette with above [2014-11-20 Thu]
+- update vignette with above &#91;2014-11-20 Thu&#93;
 
-- comment parallel code in quantify man [2015-01-09 Fri]
+- comment parallel code in quantify man &#91;2015-01-09 Fri&#93;
 
 Changes in version 1.15.2:
 
 - merged sgibb's pull request exporting overloaded methods as well
-  [2014-11-02 Sun]
+  &#91;2014-11-02 Sun&#93;
 
 - updated MSnSet validity, checking that exprs(.) is a matrix
-  [2014-11-12 Wed]
+  &#91;2014-11-12 Wed&#93;
 
-- fix error (missing header extraction) is MSmap example [2014-11-18
-  Tue]
+- fix error (missing header extraction) is MSmap example &#91;2014-11-18
+  Tue&#93;
 
 Changes in version 1.15.1:
 
 - Fixing error when id file has no spectrumFile info (see issue #39)
   and return a warning (instead of an error) when the file used to
-  create the MSnExp/MSnSet and mzid file were different [2014-10-15
-  Wed]
+  create the MSnExp/MSnSet and mzid file were different &#91;2014-10-15
+  Wed&#93;
 
 Changes in version 1.15.0:
 
@@ -5125,15 +5125,15 @@ mzR
 
 Changes in version 2.1.12:
 
-- Remove superfluous BiocGenerics in Suggests [2015-03-01 Sun]
+- Remove superfluous BiocGenerics in Suggests &#91;2015-03-01 Sun&#93;
 
-- Merged KK's Makefile to generate pwiz lib for windows [2015-03-01
-  Sun]
+- Merged KK's Makefile to generate pwiz lib for windows &#91;2015-03-01
+  Sun&#93;
 
 Changes in version 2.1.11:
 
 - Using generics from BiocGenerics (fileName, score) and ProtGenerics
-  [2015-02-28 Sat]
+  &#91;2015-02-28 Sat&#93;
 
 Changes in version 2.1.10:
 
@@ -5159,19 +5159,19 @@ Changes in version 2.1.7:
 Changes in version 2.1.6:
 
 - adding an acquisitionNum column to psms (closes issue #17)
-  [2015-02-05 Thu]
+  &#91;2015-02-05 Thu&#93;
 
 Changes in version 2.1.5:
 
-- don't print '1' to the console when calling get3Dmap [2015-01-29 Thu]
+- don't print '1' to the console when calling get3Dmap &#91;2015-01-29 Thu&#93;
 
-- add sequence length in psms output (closes issue #19) [2015-02-04
-  Wed]
+- add sequence length in psms output (closes issue #19) &#91;2015-02-04
+  Wed&#93;
 
 Changes in version 2.1.4:
 
 - documentation and vignette: mzIdentML version 1.1 support only
-  [2015-01-23 Fri]
+  &#91;2015-01-23 Fri&#93;
 
 Changes in version 2.1.1:
 
@@ -5288,92 +5288,92 @@ Pbase
 
 Changes in version 0.6.13:
 
-- Updating Biomart query to reflect changes [2015-04-06 Mon]
+- Updating Biomart query to reflect changes &#91;2015-04-06 Mon&#93;
 
 Changes in version 0.6.12:
 
-- Fix filling in tracks plots [2015-03-07 Sat]
+- Fix filling in tracks plots &#91;2015-03-07 Sat&#93;
 
 Changes in version 0.6.11:
 
-- Documentation for the plotting heler functions [2015-02-28 Sat]
+- Documentation for the plotting heler functions &#91;2015-02-28 Sat&#93;
 
 Changes in version 0.6.10:
 
-- plotting helper functions [2015-02-28 Sat]
+- plotting helper functions &#91;2015-02-28 Sat&#93;
 
-- fixed peptide grouping [2015-02-28 Sat]
+- fixed peptide grouping &#91;2015-02-28 Sat&#93;
 
 Changes in version 0.6.9:
 
 - Fixing junction peptides splitting to support peptides reaching > 2
-  exons [2015-02-27 Fri]
+  exons &#91;2015-02-27 Fri&#93;
 
-- supporting more protein coding biotypes [2015-02-27 Fri]
+- supporting more protein coding biotypes &#91;2015-02-27 Fri&#93;
 
-- rewrite and simplify proteinCoverage; closes #19 [2015-02-27 Fri]
+- rewrite and simplify proteinCoverage; closes #19 &#91;2015-02-27 Fri&#93;
 
 Changes in version 0.6.8:
 
-- fix splitting exon junction ranges [2015-02-26 Thu]
+- fix splitting exon junction ranges &#91;2015-02-26 Thu&#93;
 
 Changes in version 0.6.7:
 
 - The genomic coordinates of peptides that overlap exon junctions are
   now correctly split instead of spanning over the exon and are grouped
-  accordingly. [2015-02-26 Thu]
+  accordingly. &#91;2015-02-26 Thu&#93;
 
 Changes in version 0.6.6:
 
 - update mapping vignette and use alignment to identify correct
-  transcript [2015-02-25 Wed]
+  transcript &#91;2015-02-25 Wed&#93;
 
 Changes in version 0.6.5:
 
-- see also mapping vignette in ?mapToGenome [2015-02-20 Fri]
+- see also mapping vignette in ?mapToGenome &#91;2015-02-20 Fri&#93;
 
 - calculateHeavyLabels, isCleaved, proteotypic and proteinCoverage are
-  is now a function [2015-02-20 Fri]
+  is now a function &#91;2015-02-20 Fri&#93;
 
 - added accessors to Pbase:::pplot() and update Pbase-data vignette
-  accordingly [2015-02-21 Sat]
+  accordingly &#91;2015-02-21 Sat&#93;
 
 Changes in version 0.6.4:
 
-- typos in man [2015-02-19 Thu]
+- typos in man &#91;2015-02-19 Thu&#93;
 
-- Added use.names argument ot etrid2gel [2015-02-19 Thu]
+- Added use.names argument ot etrid2gel &#91;2015-02-19 Thu&#93;
 
 - mapToGenome,Proteins,GRangesList (remove GRanges) using names for
-  1-to-many mapping and document in mapping vignette [2015-02-19 Thu]
+  1-to-many mapping and document in mapping vignette &#91;2015-02-19 Thu&#93;
 
 Changes in version 0.6.3:
 
-- new fig in Pbase-data vignette [2015-02-14 Sat]
+- new fig in Pbase-data vignette &#91;2015-02-14 Sat&#93;
 
-- new section for pmapToGenome in mapping vignette [2015-02-14 Sat]
+- new section for pmapToGenome in mapping vignette &#91;2015-02-14 Sat&#93;
 
 Changes in version 0.6.2:
 
-- Add uniprot release to p metadata [2015-02-14 Sat]
+- Add uniprot release to p metadata &#91;2015-02-14 Sat&#93;
 
-- added a metadata update method [2015-02-14 Sat]
+- added a metadata update method &#91;2015-02-14 Sat&#93;
 
 Changes in version 0.6.1:
 
-- [p]mapToGenome methods [2015-02-14 Sat]
+- &#91;p&#93;mapToGenome methods &#91;2015-02-14 Sat&#93;
 
 Changes in version 0.6.0:
 
-- fixed typos in vigs [2015-02-12 Thu]
+- fixed typos in vigs &#91;2015-02-12 Thu&#93;
 
 - new etrid2grl function to convert Ensembl transcript identifiers to
-  GRangesList objects [2015-02-13 Fri]
+  GRangesList objects &#91;2015-02-13 Fri&#93;
 
-- initial mapToGenome function [2015-02-13 Fri]
+- initial mapToGenome function &#91;2015-02-13 Fri&#93;
 
 - regenerated p data using latest UniProt release and added
-  acols(p)$ENST [2015-02-13 Fri]
+  acols(p)$ENST &#91;2015-02-13 Fri&#93;
 
 pdInfoBuilder
 -------------
@@ -5476,84 +5476,84 @@ pRoloc
 
 Changes in version 1.7.13:
 
-- use donttest instead of dontrun [2015-04-09 Thu]
+- use donttest instead of dontrun &#91;2015-04-09 Thu&#93;
 
 Changes in version 1.7.12:
 
 - don't run knntl example to reduce checking time and timeout on
-  Windows [2015-04-08 Wed]
+  Windows &#91;2015-04-08 Wed&#93;
 
 Changes in version 1.7.11:
 
-- fix splitTh, closes issue #49 [2015-04-06 Mon]
+- fix splitTh, closes issue #49 &#91;2015-04-06 Mon&#93;
 
 Changes in version 1.7.10:
 
 - Change in vignette to work on zin1: using 12 random th rows. See
-  issue #49 for details. Fixed in version 1.7.11. [2015-04-03 Fri]
+  issue #49 for details. Fixed in version 1.7.11. &#91;2015-04-03 Fri&#93;
 
 Changes in version 1.7.9:
 
-- updated tl vignette [2015-04-02 Thu]
+- updated tl vignette &#91;2015-04-02 Thu&#93;
 
-- depending on latest (1.5.8) pRolocdata [2015-04-02 Thu]
+- depending on latest (1.5.8) pRolocdata &#91;2015-04-02 Thu&#93;
 
 Changes in version 1.7.8:
 
-- updating tl vig [2015-04-02 Thu]
+- updating tl vig &#91;2015-04-02 Thu&#93;
 
-- update getParams documentation [2015-04-02 Thu]
+- update getParams documentation &#91;2015-04-02 Thu&#93;
 
 Changes in version 1.7.7:
 
-- renaming theta.scores to knntl.scores [2015-03-24 Tue]
+- renaming theta.scores to knntl.scores &#91;2015-03-24 Tue&#93;
 
 Changes in version 1.7.6:
 
-- added the theta inductive transfer infrastructure [2015-02-05 Thu]
+- added the theta inductive transfer infrastructure &#91;2015-02-05 Thu&#93;
 
-- theta vignette stub [2015-02-06 Fri]
+- theta vignette stub &#91;2015-02-06 Fri&#93;
 
-- rename getClasses to getMarkerClasses [2015-02-06 Fri]
+- rename getClasses to getMarkerClasses &#91;2015-02-06 Fri&#93;
 
-- added the infrastructure to create GO MSnSet [2015-02-07 Sat]
+- added the infrastructure to create GO MSnSet &#91;2015-02-07 Sat&#93;
 
-- Fixed ml vignette [2015-02-16 Mon]
+- Fixed ml vignette &#91;2015-02-16 Mon&#93;
 
-- new filterZeroRows function [2015-03-10 Tue]
+- new filterZeroRows function &#91;2015-03-10 Tue&#93;
 
-- hpa data section [2015-03-10 Tue]
+- hpa data section &#91;2015-03-10 Tue&#93;
 
-- theta sections [2015-03-10 Tue]
+- theta sections &#91;2015-03-10 Tue&#93;
 
-- deprecate getRegulari[z|s]edParams [2015-03-11 Wed]
+- deprecate getRegulari&#91;z|s&#93;edParams &#91;2015-03-11 Wed&#93;
 
 Changes in version 1.7.5:
 
-- Fix vignettes: run bibtex and pdflatex twice and typo [2015-02-03
-  Tue]
+- Fix vignettes: run bibtex and pdflatex twice and typo &#91;2015-02-03
+  Tue&#93;
 
 Changes in version 1.7.4:
 
-- Use default Sweave call to build vignette [2015-01-24 Sat]
+- Use default Sweave call to build vignette &#91;2015-01-24 Sat&#93;
 
 Changes in version 1.7.3:
 
-- use Biocstyle [2015-01-23 Fri]
+- use Biocstyle &#91;2015-01-23 Fri&#93;
 
-- replace library/require by requireNamespace [2015-01-23 Fri]
+- replace library/require by requireNamespace &#91;2015-01-23 Fri&#93;
 
 Changes in version 1.7.2:
 
-- added t-SNE method to plot2D [2015-01-14 Wed]
+- added t-SNE method to plot2D &#91;2015-01-14 Wed&#93;
 
-- Updated NAMESPACE imports [2015-01-14 Wed]
+- Updated NAMESPACE imports &#91;2015-01-14 Wed&#93;
 
 Changes in version 1.7.1:
 
-- updated vignettes with markers.orig [2014-10-30 Thu]
+- updated vignettes with markers.orig &#91;2014-10-30 Thu&#93;
 
-- updated ml tests [2014-10-30 Thu]
+- updated ml tests &#91;2014-10-30 Thu&#93;
 
 Changes in version 1.7.0:
 
@@ -5564,27 +5564,27 @@ pRolocGUI
 
 Changes in version 1.1.5:
 
-- updating failing unit test [2015-04-03 Fri]
+- updating failing unit test &#91;2015-04-03 Fri&#93;
 
 Changes in version 1.1.4:
 
-- fix R_HOME error [2015-02-26 Thu]
+- fix R_HOME error &#91;2015-02-26 Thu&#93;
 
 Changes in version 1.1.3:
 
-- don't require GNU make [2015-02-11 Wed]
+- don't require GNU make &#91;2015-02-11 Wed&#93;
 
 Changes in version 1.1.2:
 
 - Fix bug with FoIs and multiple data sets (reported by Harriet
-  Parsons) [2015-02-06 Fri]
+  Parsons) &#91;2015-02-06 Fri&#93;
 
 Changes in version 1.1.1:
 
-- Update README with uptodate installation instructions [2014-10-14
-  Tue]
+- Update README with uptodate installation instructions &#91;2014-10-14
+  Tue&#93;
 
-- handling and filtering missing value in input data [2014-10-21 Tue]
+- handling and filtering missing value in input data &#91;2014-10-21 Tue&#93;
 
 proteoQC
 --------
@@ -5604,16 +5604,16 @@ ProtGenerics
 
 Changes in version 0.99.3:
 
-- update man with when and why ProtGenerics [2015-03-16 Mon]
+- update man with when and why ProtGenerics &#91;2015-03-16 Mon&#93;
 
 Changes in version 0.99.2:
 
-- updating DESCRIPTION as with BiocContributions::clean [2015-03-03
-  Tue]
+- updating DESCRIPTION as with BiocContributions::clean &#91;2015-03-03
+  Tue&#93;
 
 Changes in version 0.99.1:
 
-- Adding NEWS file [2015-02-27 Fri]
+- Adding NEWS file &#91;2015-02-27 Fri&#93;
 
 Changes in version 0.99.0:
 
@@ -5624,7 +5624,7 @@ qcmetrics
 
 Changes in version 1.5.1:
 
-- Using Biocstyle [2015-01-23 Fri]
+- Using Biocstyle &#91;2015-01-23 Fri&#93;
 
 QDNAseq
 -------
@@ -6227,7 +6227,7 @@ rpx
 Changes in version 1.3.1:
 
 - update vignette to reflect new files in px example, and avoid
-  downloaded the raw data [2015-03-31 Tue]
+  downloaded the raw data &#91;2015-03-31 Tue&#93;
 
 Rqc
 ---
@@ -6398,21 +6398,21 @@ SIMAT
 
 Changes in version 0.99.3:
 
-- exporting single functions instead of pattern [2015-03-12 Thu]
+- exporting single functions instead of pattern &#91;2015-03-12 Thu&#93;
 
 Changes in version 0.99.2:
 
 - The package is updated based on the comments from Bioconductor
-  reviewers [2015-03-01 Wed]
+  reviewers &#91;2015-03-01 Wed&#93;
 
 Changes in version 0.99.1:
 
 - The package is updated based on the comments from Bioconductor
-  reviewers [2015-02-11 Wed]
+  reviewers &#91;2015-02-11 Wed&#93;
 
 Changes in version 0.99.0:
 
-- SIMAT package is created [2015-01-27 Tue]
+- SIMAT package is created &#91;2015-01-27 Tue&#93;
 
 SNPRelate
 ---------
@@ -6598,10 +6598,10 @@ Changes in version 1.1.1:
 
 USER VISIBLE CHANGES
 
-- streamline modsequence, e.g., AAAMASATTM[+16.0]LTTK for compatibility
+- streamline modsequence, e.g., AAAMASATTM&#91;+16.0&#93;LTTK for compatibility
   with peakView V2.0
 
-- streamline modsequence, e.g., AAAMASATTM[+16.0]LTTK for compatibility
+- streamline modsequence, e.g., AAAMASATTM&#91;+16.0&#93;LTTK for compatibility
   with peakView V2.0
 
 SRAdb
@@ -6619,7 +6619,7 @@ Changes in version 1.21.8 (2014-12-12):
 
 - Fastq files can be downloaded by getFastqFile or getSRAfile
 
-- Added <dir2> to the fastq ftp addresses for SRR accessions over
+- Added &#60;dir2&#62; to the fastq ftp addresses for SRR accessions over
   SRR999999
 
 supraHex
@@ -6638,30 +6638,30 @@ synapter
 Changes in version 1.9.5:
 
 - update cross reference to qvalue::plot.qvalue in Synapter man page;
-  closes #86 [2015-03-31 Tue]
+  closes #86 &#91;2015-03-31 Tue&#93;
 
 Changes in version 1.9.4:
 
-- use biocstyle [2015-01-23 Fri]
+- use biocstyle &#91;2015-01-23 Fri&#93;
 
-- use requireNamespace [2015-01-23 Fri]
+- use requireNamespace &#91;2015-01-23 Fri&#93;
 
 Changes in version 1.9.3:
 
 - Filter entries in quantiation final peptides and Pep3D data that
   don't match in their intensity valus; see #42 for details.
-  [2014-11-26 Wed]
+  &#91;2014-11-26 Wed&#93;
 
 Changes in version 1.9.2:
 
 - Only suggesting tcltk and tcltk2, as gui is now deprecated
-  [2014-11-21 Fri]
+  &#91;2014-11-21 Fri&#93;
 
 Changes in version 1.9.1:
 
-- Deprecating synatperGUI [2014-11-10 Mon]
+- Deprecating synatperGUI &#91;2014-11-10 Mon&#93;
 
-- Directing questions to the Bioc support site [2014-11-10 Mon]
+- Directing questions to the Bioc support site &#91;2014-11-10 Mon&#93;
 
 Changes in version 1.9.0:
 
@@ -6794,7 +6794,7 @@ Changes in version 1.14.0:
 NEW FEATURES
 
 - gVCF support: - missing END header written out with writeVcf() -
-  expand() handles <NON_REF> 'REF' value
+  expand() handles &#60;NON_REF&#62; 'REF' value
 
 - support 'Type=Character' in INFO header fields
 
