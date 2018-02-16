@@ -59,7 +59,7 @@ h1 img, h2 img { padding-right:12px; vertical-align:middle; }
 p, table { padding-bottom: 1em; } /* makes a nice separation between paragraphs */
 
 .olive { color:#87b13f; } /* anything can be colored olive */
-.blue  { color:#1881c2; } /* anything can be colored blue (light blue) */
+.blue  { color:#1a81c2; } /* anything can be colored blue (light blue) */
 
 code { color:#87b13f; font-family: 'Lucida Console',monaco,monospace; }
 

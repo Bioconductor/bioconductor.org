@@ -110,11 +110,11 @@ def nav_link_unless_current(text, path)
 end
 
 def verbose_bioc_version(package)
-	if (package.has_key? :bioc_version_str and !package[:bioc_version_str].nil?)
-	  "#{package[:bioc_version_str]} (#{package[:bioc_version_num]})"
-	else
-	  package[:bioc_version_num]
-	end
+        if (package.has_key? :bioc_version_str and !package[:bioc_version_str].nil?)
+          "#{package[:bioc_version_str]} (#{package[:bioc_version_num]})"
+        else
+          package[:bioc_version_num]
+        end
 end
 
 
@@ -214,11 +214,11 @@ def linkify(sym, package)
   if defined?($cran_packages).nil?
     $cran_packages = get_cran_packages
   end
-  
+
   items = package[sym]
   # the following key gets set in bioc_views.rb#items()
   key = "#{sym.to_s}_repo".to_sym
-  
+
   repos = package[key]
 
   output = []
@@ -229,7 +229,7 @@ def linkify(sym, package)
     linkable, remainder = item.split(" ", 2)
     remainder = "" if remainder.nil?
     remainder = " " + remainder unless remainder.empty?
-    
+
     repo = repos[index]
 
     if (repo == false)
@@ -386,7 +386,7 @@ end
 
 def annual_reports
   # FIXME: need a more robust way to obtain assets path
-  
+
   Dir.chdir("assets/about/annual-reports") do
     Dir.glob("AnnRep*.pdf").map do |f|
       {
@@ -489,7 +489,6 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
   crumbs = []
   crumbs.push home_crumb
-#  ver_crumb = Nanoc::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
   ver_crumb = Nanoc::Int::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
   crumbs.push ver_crumb
   repo_crumb = Nanoc::Int::Item.new("", {:title => "#{repo.first} Packages"}, "/packages/#{ver}/#{repo.last}")

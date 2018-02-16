@@ -74,7 +74,7 @@ class BiocViews < Nanoc::DataSource
   end
 
   def get_index_page(packages, repo, version)
-   
+
     info = []
 
     packages.each_pair do |k,v|
@@ -84,7 +84,7 @@ class BiocViews < Nanoc::DataSource
       hsh[:Title] = v["Title"]
       info.push hsh
     end
-    
+
     newinfo = info.sort{|a,b| a[:name].downcase <=> b[:name].downcase}
 
     bioc_version_num = version
@@ -104,18 +104,18 @@ class BiocViews < Nanoc::DataSource
     subnav.push({:include => "/_bioc_older_packages/"})
 
     attributes = {
-	:rebase => true,
+        :rebase => true,
         :package_index_page => true,
-     	:info => newinfo,
-        :bioc_version_num => bioc_version_num, 
+        :info => newinfo,
+        :bioc_version_num => bioc_version_num,
         :bioc_version_str => bioc_version_str,
         :repo => repo,
         :title => title,
-        :subnav => subnav   
+        :subnav => subnav
     }
 
     item = new_item("", attributes, Nanoc::Identifier.new("all-#{repo}-#{version}", type: :legacy))
-    rep = Nanoc::Int::ItemRep.new(item, :package_index_page) 
+    rep = Nanoc::Int::ItemRep.new(item, :package_index_page)
 
 
     item
@@ -161,9 +161,9 @@ class BiocViews < Nanoc::DataSource
           subnav.push({:include => "/_support/"})
 
           title = pkgs["Package"]
-	  if  version == @site_config["devel_version"]
-	    title += " (development version)"
-	  end
+          if  version == @site_config["devel_version"]
+            title += " (development version)"
+          end
           if (version == @site_config["release_version"])
             bioc_version_str = "Release"
           elsif (version == @site_config["devel_version"])
@@ -172,30 +172,30 @@ class BiocViews < Nanoc::DataSource
             bioc_version_str = nil
           end
 
-	  add_sym = {}
+          add_sym = {}
           for sym in link_list
             new_sym_name = "#{sym.to_s}_repo".to_sym
             new_sym = []
             for x in to_array(pkgs["#{sym}"])
               new_sym.push(is_bioc_package?(x, version))
             end
-            add_sym[new_sym_name] = new_sym     
+            add_sym[new_sym_name] = new_sym
           end
 
-          temp = pkgs.merge({         
-		:rebase => true,
-		:subnav => subnav,
-		:title => title,
+          temp = pkgs.merge({
+                :rebase => true,
+                :subnav => subnav,
+                :title => title,
                 :repo => repo,
                 :bioc_version_num => version,
-                :bioc_version_str => bioc_version_str               
-	  })
+                :bioc_version_str => bioc_version_str
+          })
           attributes = temp.merge(add_sym)
 
-	  identifier = Nanoc::Identifier.new(id, type: :legacy)
+          identifier = Nanoc::Identifier.new(id, type: :legacy)
 
-	  item = new_item(" ", attributes, identifier)
-	  rep = Nanoc::Int::ItemRep.new(item, :unique_name)
+          item = new_item(" ", attributes, identifier)
+          rep = Nanoc::Int::ItemRep.new(item, :unique_name)
 
           items.push item
         end

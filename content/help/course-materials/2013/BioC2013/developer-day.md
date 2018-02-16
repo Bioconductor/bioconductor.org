@@ -19,30 +19,30 @@ Developer Day is part of the Bioconductor
 
   `keys`, `cols`, and ranges in the `select` interface of *Db packages.
   AnnotationHub. &#91;Marc&#93;
-  
+
   Single Package Builder; package reviews &#91;Marc, Dan, L&#93;.
 
   Work flows, BiocStyle. Github integration &#91;Dan, Martin&#93;.
-  
-  BiocGenerics. `sequenceLayer` &#91;Herve&#93;.   
+
+  BiocGenerics. `sequenceLayer` &#91;Herve&#93;.
 
   Cloud-aided computation, e.g., ensemblVEP; AnnotationHub &#91;Martin&#93;
-  
+
   Mentored projects &#91;L, Valerie&#93;.
   Google Summer of Code: displayR &#91;Marc / Shawn&#93;; BiocParallel &#91;Michel, Michael, Martin&#93;.
-  
-- 9:45 - 10:30 Small group team-building activities. 
+
+- 9:45 - 10:30 Small group team-building activities.
 
   _Quick fix_ -- Brainstorm about and implement a missing but useful
   feature to be shared by Bioconductor packages. &#91;Martin, Valerie, Herve&#93;
-  
+
   _Unit tests coming and going_ -- Brainstorm and implement **tests**
   describing a new feature; fix buggy code with
   test. &#91;Paul, Laurent, Dan, Marc&#93;
 
 - 10:30 Break
 
-- 10:50 - 12:00 Variants: 
+- 10:50 - 12:00 Variants:
 
   Presentation by Paul Pyl, EMBL, rhdf5-supported variant calling;
   Additional presentations and open discussion on variant calling and
@@ -52,14 +52,14 @@ Developer Day is part of the Bioconductor
 
 1:00 - 5:00 Afternoon
 
-- 1:00 - 1:50 Participant flashlight presentations (short talks). 
+- 1:00 - 1:50 Participant flashlight presentations (short talks).
 
-  Adrian Alexa, Illumina, BaseSpaceR; 
+  Adrian Alexa, Illumina, BaseSpaceR;
   Davide Rambaldi, flowFit for use in stem cell research;
   Tengfei Yin, Updates on ggbio; Bioc Asia;
   Brian Bot, Synapse.
 
-- 1:50 - 2:40 Developer workshops -- Suggestions: 
+- 1:50 - 2:40 Developer workshops -- Suggestions:
 
   knitr &#91;Yihui&#93;;
   Packages, incl. DESCRIPTION &#91;Paul, Laurent&#93;;
