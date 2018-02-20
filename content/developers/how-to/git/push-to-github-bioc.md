@@ -21,7 +21,7 @@ committing local changes.
 
         git remote -v
 
-    which should produce the result (where <developer> is your GitHub
+    which should produce the result (where &#60;developer&#62; is your GitHub
     username):
 
         origin  git@github.com:<developer>/BiocGenerics.git (fetch)

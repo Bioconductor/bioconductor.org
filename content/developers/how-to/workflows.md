@@ -130,7 +130,7 @@ specify the bibliography file in the document metadata header.
 
     bibliography: references.bib
     
-You can then use citation keys in the form of [@label] to cite an entry with an identifier "label".
+You can then use citation keys in the form of &#91;@label&#93; to cite an entry with an identifier "label".
 
 Normally, you will want to end your document with a section header "References" or similar, after which the bibliography will be appended.
 

@@ -291,7 +291,7 @@ Changes in version 1.43.1-9000 (2016-04-05):
 
 Changes in version 1.43.1 (2016-02-28):
 
-- Fixed a bug related to including <R.h> and extern C, reported by
+- Fixed a bug related to including &#60;R.h&#62; and extern C, reported by
   Brian Ripley.
 
 Changes in version 1.43.0 (2015-10-23):
@@ -419,7 +419,7 @@ MODIFICATIONS
   instead of rdatadateadded
 
 - .require fails rather than emits warning - unit test on .require() -
-  also, cache(hub[FALSE]) does not create spurious error
+  also, cache(hub&#91;FALSE&#93;) does not create spurious error
 
 - work on removed records and biocVersion - .uid0() was reorganized and
   no longer groups by record_id - metadata is returned for records with
@@ -1164,7 +1164,7 @@ Changes in version 1.7.4:
   https://github.com/GuangchuangYu/ChIPseeker/issues/21 + plotAnnoBar +
   plotDistToTSS
 
-- [covplot] xlim now not only restrict the window of data but also set
+- &#91;covplot&#93; xlim now not only restrict the window of data but also set
   the limit of the graphic object <2015-12-30, Wed> + see
   https://github.com/GuangchuangYu/ChIPseeker/issues/20
 
@@ -4735,7 +4735,7 @@ Changes in version 1.19.11:
 
 Changes in version 1.19.10:
 
-- export exprs, fvarLabels, and sampleNames[<-] <2016-01-30 Sat>
+- export exprs, fvarLabels, and sampleNames&#91;<-&#93; <2016-01-30 Sat>
 
 Changes in version 1.19.9:
 
@@ -5186,13 +5186,13 @@ Changes in version 0.11.3:
 
 Changes in version 0.11.2:
 
-- add addPeptideFragments; see #24 for details [2016-02-07 Sun]
+- add addPeptideFragments; see #24 for details &#91;2016-02-07 Sun&#93;
 
 Changes in version 0.11.1:
 
 - elementLengths was renamed -> elementNROWS in S4Vectors (new name
-  reflects TRUE semantic, old name will be deprecated soon) [r113044 |
-  hpages@fhcrc.org | 2016-01-29 01:22:03 +0000 (Fri, 29 Jan 2016)]
+  reflects TRUE semantic, old name will be deprecated soon) &#91;r113044 |
+  hpages@fhcrc.org | 2016-01-29 01:22:03 +0000 (Fri, 29 Jan 2016)&#93;
 
 Changes in version 0.11.0:
 
@@ -6018,12 +6018,12 @@ NEW FEATURES
 - New access of HDF5 files by file, group and dataset handles. HDF5
   groups and datasets can be read and written by the $-operator (e.g.
   h5f$A) and the [-operator can be used for partial reading and writing
-  of datasets (e.g. h5d[3,,]).
+  of datasets (e.g. h5d&#91;3,,&#93;).
 
 - New low level general library function H5Dget_create_plist
   implemented.
 
-- Removed #include <R.H> from external C code. To be compatible with
+- Removed #include &#60;R.H&#62; from external C code. To be compatible with
   newest C-compilers and current R-devel
 
 RiboProfiling
@@ -7297,11 +7297,11 @@ Changes in version 1.1.10:
 
 - TCGAanalyze_DMR Differentially methylated regions Analysis
 
-- TCGAanalyze_EA Enrichment analysis of a gene-set with GO [BP,MF,CC]
+- TCGAanalyze_EA Enrichment analysis of a gene-set with GO &#91;BP,MF,CC&#93;
   and pathways.
 
 - TCGAanalyze_EAcomplete Enrichment analysis for Gene Ontology (GO)
-  [BP,MF,CC] and Pathways
+  &#91;BP,MF,CC&#93; and Pathways
 
 - TCGAanalyze_Filtering Filtering mRNA transcripts and miRNA selecting
   a threshold.

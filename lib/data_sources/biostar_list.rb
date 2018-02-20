@@ -4,10 +4,10 @@
 require "net/https"
 require 'uri'
 require 'rss'
+require 'nanoc'
 
 
-
-class BiostarList < Nanoc3::DataSource
+class BiostarList < Nanoc::DataSource
     identifier :biostar_list
 
     def fetch
@@ -28,9 +28,9 @@ class BiostarList < Nanoc3::DataSource
                 :author => "unused"
             }
             content = "unused"
-            identifier = item.link.sub("https://", "/biostar_list/#{i}/")
+            identifier = Nanoc::Identifier.new(item.link.sub("https://", "/biostar_list/#{i}"), type: :legacy)
             mtime = nil
-            ret.push Nanoc3::Item.new(content, attributes, identifier, mtime)
+            ret.push new_item(content, attributes, identifier)
             break if i == (num_wanted - 1)
         end
         ret

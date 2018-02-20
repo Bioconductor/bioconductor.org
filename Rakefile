@@ -1,6 +1,5 @@
 require 'rubygems'
-require 'nanoc3'
-require 'nanoc3/tasks'
+require 'nanoc'
 require 'yaml'
 require 'fileutils'
 require './lib/data_sources/gmane_list.rb'

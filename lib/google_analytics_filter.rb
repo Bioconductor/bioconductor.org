@@ -1,4 +1,4 @@
-class GoogleAnalyticsFilter < Nanoc3::Filter
+class GoogleAnalyticsFilter < Nanoc::Filter
   identifier :google_analytics
 
   # Adds a javascript snippet to links to non-html files so that they can be tracked in google analytics

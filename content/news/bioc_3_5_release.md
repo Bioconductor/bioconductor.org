@@ -869,7 +869,7 @@ USER-LEVEL CHANGES
 - results from aba_enrich get sorted on times_FWER_under_0.05 followed
   by min_FWER and mean_FWER (order of min and mean switched)
 
-- genes in aba_enrich(...)[[2]] are sorted alphabetically
+- genes in aba_enrich(...)&#91;&#91;2&#93;&#93; are sorted alphabetically
 
 - when genomic regions are provided as input, candidate regions are
   implicitly also part of the background for the randomsets (like it is
@@ -2449,7 +2449,7 @@ Changes in version 1.16.0:
   use cases in Paul McMurdie's phyloseq package.
 
 - Ability to specify observation-specific weights, using
-  assays(dds)[["weights"]]. These weights are picked up by dispersion
+  assays(dds)&#91;&#91;"weights"&#93;&#93;. These weights are picked up by dispersion
   and NB GLM fitting functions.
 
 Changes in version 1.15.40:
@@ -2467,7 +2467,7 @@ Changes in version 1.15.39:
 Changes in version 1.15.36:
 
 - Ability to specify observation-specific weights, using
-  assays(dds)[["weights"]]. These weights are picked up by dispersion
+  assays(dds)&#91;&#91;"weights"&#93;&#93;. These weights are picked up by dispersion
   and NB GLM fitting functions.
 
 Changes in version 1.15.28:
@@ -4387,53 +4387,53 @@ Changes in version 1.3.4:
 Changes in version 1.1.5:
 
 - extend unit tests for shinyApp, plottingFunctions and convert2MSP
-  [2017-04-03 Mon]
+  &#91;2017-04-03 Mon&#93;
 
 Changes in version 1.1.4:
 
 - change MSP class, create slots mz, rt, names, classes, information
-  and adduct [2017-01-28 Sat]
+  and adduct &#91;2017-01-28 Sat&#93;
 
-- add tabPanels in shinyCircos (Main, Appearance) [2017-01-28 Sat]
+- add tabPanels in shinyCircos (Main, Appearance) &#91;2017-01-28 Sat&#93;
 
 - rearrange position of legend, implement option to show/not show l
-  egend [2017-01-28 Sat]
+  egend &#91;2017-01-28 Sat&#93;
 
 - rescale plot when changing window size, allow for further
-  scaling/descaling of the plot [2017-01-28 Sat]
+  scaling/descaling of the plot &#91;2017-01-28 Sat&#93;
 
-- adjust convertMSP2MSP to new class MSP, create unit tests [2017-01-29
-  Sun]
+- adjust convertMSP2MSP to new class MSP, create unit tests &#91;2017-01-29
+  Sun&#93;
 
 - include msp2msp matrix, a test data set for convertMSP2MSP
-  [2017-01-29 Sun]
+  &#91;2017-01-29 Sun&#93;
 
-- set methods for names, classes, adduct and information [2017-01-29
-  Sun]
+- set methods for names, classes, adduct and information &#91;2017-01-29
+  Sun&#93;
 
 - change the interactive shinyCircos such that the user can update the
   annotation data of an MSP object (name, class, information and adduct
-  ion information) [2017-01-29 Sun]
+  ion information) &#91;2017-01-29 Sun&#93;
 
 Changes in version 1.1.3:
 
-- use new email adress [2016-12-05 Mon]
+- use new email adress &#91;2016-12-05 Mon&#93;
 
-- use option to calculate MSP-object from msp-file directly [2016-12-05
-  Mon]
+- use option to calculate MSP-object from msp-file directly &#91;2016-12-05
+  Mon&#93;
 
 Changes in version 1.1.2:
 
 - use absolute masses when calculating similarities in
-  createSimilarityMatrix (bug fix) [2016-11-17 Thu]
+  createSimilarityMatrix (bug fix) &#91;2016-11-17 Thu&#93;
 
 - add option links in highlight, i.e. should links be plotted or not?
-  [2016-11-17 Thu]
+  &#91;2016-11-17 Thu&#93;
 
 Changes in version 1.1.1:
 
 - change slider input as such that one is able to select a lower and
-  lower bound instead of only a lower bound [2016-11-04 Fri]
+  lower bound instead of only a lower bound &#91;2016-11-04 Fri&#93;
 
 [MethylAid](https://bioconductor.org/packages/MethylAid)
 ---------
@@ -6408,7 +6408,7 @@ Changes in version 1.14.0:
 
 Changes in version 1.0.0:
 
-- 1st Bioconductor release of RTNduals [2017-03-01].
+- 1st Bioconductor release of RTNduals &#91;2017-03-01&#93;.
 
 [S4Vectors](https://bioconductor.org/packages/S4Vectors)
 ---------
@@ -6427,7 +6427,7 @@ NEW FEATURES
   method as base::rank() (was only supporting ties methods "first" and
   "min" until now).
 
-- Support x[[i,j]] on DataFrame objects.
+- Support x&#91;&#91;i,j&#93;&#93; on DataFrame objects.
 
 - Add "transform" methods for DataTable and Vector objects.
 
@@ -6794,7 +6794,7 @@ Changes in version 1.1.2:
 
 Changes in version 1.7.1:
 
-- bug related to ggplot package fixed [2016-12-07 Wed]
+- bug related to ggplot package fixed &#91;2016-12-07 Wed&#93;
 
 [SNPRelate](https://bioconductor.org/packages/SNPRelate)
 ---------
@@ -7025,24 +7025,24 @@ Text: Add `{set,get}ImDiff` methods.
 Version: 1.99.0
 Category: ION MOBILITY/GRID SEARCH
 Text: `getGrid` returns an array instead of a matrix (because of the
-        new 3D grid search) [2014-05-16 Fri].
+        new 3D grid search) &#91;2014-05-16 Fri&#93;.
 
 Version: 1.99.0
 Category: ION MOBILITY/GRID SEARCH
 Text: `plotFeatures(..., what = "all")` gains a new argument:
-        "ionmobilty" to plot *m/z* vs ionmobility as well. [2014-05-16
-        Fri]
+        "ionmobilty" to plot *m/z* vs ionmobility as well. &#91;2014-05-16
+        Fri&#93;
 
 Version: 1.99.0
 Category: ION MOBILITY/GRID SEARCH
 Text: `plotGrid` gets a new argument "maindim" to decided which of the
-        three dimension should be used. [2014-05-16 Fri]
+        three dimension should be used. &#91;2014-05-16 Fri&#93;
 
 Version: 1.99.0
 Category: ION MOBILITY/GRID SEARCH
 Text: Add `filterNonUniqueIdentMatches` to remove matches of multiple
         identification data to a single quantitation entry (see #111
-        for details) [2016-02-22 Mon].
+        for details) &#91;2016-02-22 Mon&#93;.
 
 Version: 1.99.0
 Category: FRAGMENT MATCHING
@@ -7067,31 +7067,31 @@ Version: 1.99.0
 Category: MISC
 Text: Allow to use an RDS instead of a fasta file as 'Unique Peptides
         Database', adds `createUniquePeptideDbRds`; closes #55
-        [2014-04-29 Tue].
+        &#91;2014-04-29 Tue&#93;.
 
 Version: 1.99.0
 Category: MISC
 Text: Introduce `IisL` argument to `dbUniquePeptideSet` which treats
         I/L as same aminoacid if `IisL == TRUE` (default: `IisL =
-        FALSE`); closes #60 [2014-04-30 Wed].
+        FALSE`); closes #60 &#91;2014-04-30 Wed&#93;.
 
 Version: 1.99.0
 Category: MISC
 Text: Add `rescueEMRTs` functions; replaces the argument `mergedEMRTs`
-        in `findEMRTs`; closes #93 [2015-07-26 Sun].
+        in `findEMRTs`; closes #93 &#91;2015-07-26 Sun&#93;.
 
 Version: 1.99.0
 Category: MISC
 Text: Add `synergise2` which combines the integrates the new 3D grid
         search, the fragment matching; and uses slightly different
-        default arguments than `synergise1`; closes #119 [2016-10-25
-        Di].
+        default arguments than `synergise1`; closes #119 &#91;2016-10-25
+        Di&#93;.
 
 Version: 1.99.0
 Category: MISC
 Text: Load isotopic distributions from Pep3D data and also export them
         to MSnSet, to allow the correction of detector saturation;
-        closes #39 [2015-03-29 Sun].
+        closes #39 &#91;2015-03-29 Sun&#93;.
 
 Version: 1.99.0
 Category: MISC
@@ -7106,22 +7106,22 @@ Text: Introduce `modelIntensity` to correct systematic intensity shifts
 Version: 1.99.0
 Category: IMPROVEMENTS
 Text: Extract the ion that was used for identification (`isFid == 1`)
-        from the Pep3D file instead of the first instance [2014-05-13
-        Tue].
+        from the Pep3D file instead of the first instance &#91;2014-05-13
+        Tue&#93;.
 
 Version: 1.99.0
 Category: IMPROVEMENTS
-Text: Add `updateObject` and `validObject` method [2014-11-16 Sun].
+Text: Add `updateObject` and `validObject` method &#91;2014-11-16 Sun&#93;.
 
 Version: 1.99.0
 Category: IMPROVEMENTS
 Text: Rename `QuantPep3DData$Function` column into
-        `QuantPep3DData$matchedEMRTs`; closes #67 [2015-07-26 Sun].
+        `QuantPep3DData$matchedEMRTs`; closes #67 &#91;2015-07-26 Sun&#93;.
 
 Version: 1.99.0
 Category: IMPROVEMENTS
 Text: Use just unique peptides in master creation (see #107)
-        [2016-01-23 Sat].
+        &#91;2016-01-23 Sat&#93;.
 
 Version: 1.99.0
 Category: IMPROVEMENTS
@@ -7132,45 +7132,45 @@ Version: 1.99.0
 Category: BUGFIXES
 Text: Use new loess model in master creation (now based on m-estimator
         instead of least squares, identical to retention time model in
-        classical synergise workflow; see #107 for details) [2016-01-23
-        Sat]
+        classical synergise workflow; see #107 for details) &#91;2016-01-23
+        Sat&#93;
 
 Version: 1.99.0
 Category: BUGFIXES
 Text: Fix retention time model calculation in `plotFeatures(...,
-        what="some")` [2014-04-28 Mon].
+        what="some")` &#91;2014-04-28 Mon&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
-Text: Add `testthat` to Suggests [2014-04-25 Fri].
+Text: Add `testthat` to Suggests &#91;2014-04-25 Fri&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
-Text: Add recommended biocView [2014-06-05 Thu].
+Text: Add recommended biocView &#91;2014-06-05 Thu&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
 Text: Replace `any(is.na(...)` by `anyNA(...)`; *synapter* depends on
-        `R >= 3.1.0` now [2014-11-01 Sat].
+        `R >= 3.1.0` now &#91;2014-11-01 Sat&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
-Text: Add `ClassVersion` field to `Synapter` class [2014-11-21 Fri].
+Text: Add `ClassVersion` field to `Synapter` class &#91;2014-11-21 Fri&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
 Text: Add `Versioned` class as parent class to `MasterPeptides` and
-        `MasterFdrResults` [2014-11-22 Sat].
+        `MasterFdrResults` &#91;2014-11-22 Sat&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
-Text: Adapt `synergise` to new grid search (closes #81) [2016-10-16
-        So].
+Text: Adapt `synergise` to new grid search (closes #81) &#91;2016-10-16
+        So&#93;.
 
 Version: 1.99.0
 Category: INTERNAL CHANGES
 Text: Replace `hwriter` by `rmarkdown` report in `synergise`; closes
-        #120. [2016-10-17 Mon]
+        #120. &#91;2016-10-17 Mon&#93;
 
 Version: 1.99.0
 Category: REMOVED FUNCTIONS/ARGUMENTS
@@ -7179,23 +7179,23 @@ Text: Remove `synapterGUI`.
 Version: 1.99.0
 Category: REMOVED FUNCTIONS/ARGUMENTS
 Text: Remove unused internal functions: `filterCommonSeq`,
-        `filterKeepUniqueSeq`, `filterKeepUniqueProt` [2014-11-27 Thu].
+        `filterKeepUniqueSeq`, `filterKeepUniqueProt` &#91;2014-11-27 Thu&#93;.
 
 Version: 1.99.0
 Category: REMOVED FUNCTIONS/ARGUMENTS
 Text: Remove "mergedEMRTs" argument from `findEMRTs`. Now `rescueEMRTs`
         has to be called manually at the end of the processing; close
-        #93 [2015-07-26 Sun]
+        #93 &#91;2015-07-26 Sun&#93;
 
 Version: 1.99.0
 Category: REMOVED FUNCTIONS/ARGUMENTS
 Text: Remove "light" version of `writeMergedPeptides` and
         `writeMachtedPeptides` (now always the full `data.frame` is
-        saved; see #95) [2016-10-16 Sun]
+        saved; see #95) &#91;2016-10-16 Sun&#93;
 
 Version: 1.99.0
 Category: REMOVED FUNCTIONS/ARGUMENTS
-Text: Update `synapterTiny` and `synapterTinyData` [2016-10-16 So]
+Text: Update `synapterTiny` and `synapterTinyData` &#91;2016-10-16 So&#93;
 
 [TarSeqQC](https://bioconductor.org/packages/TarSeqQC)
 --------
