@@ -8,7 +8,6 @@ require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
 require './scripts/generate_build_shields.rb'
 require './scripts/svn_shield_helper.rb'
-require './scripts/get_post_tag_info.rb'
 require 'open3'
 require 'find'
 require 'pathname'
@@ -702,6 +701,7 @@ end
 # set this to run in crontab
 desc "get info about post tags"
 task :get_post_tag_info do
+  require './scripts/get_post_tag_info.rb'
   get_post_tag_info()
 end
 
