@@ -255,7 +255,7 @@ mirrors:
      rsync: secure_mirror_from_master
      country_code: au
      city: Sydney
- - CRAN ASIA (Korea and Japan):
+ - CRAN ASIA (Korea, Japan and Singapore):
    - institution: Personnel Psychology Laboratory, Kwangwoon University 
      institution_url: https://www.kw.ac.kr/en/index.do 
      contact: Seongho Bae 
