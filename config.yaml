@@ -249,9 +249,19 @@ mirrors:
    - institution: Australia's Academic and Research Network
      institution_url: http://www.aarnet.edu.au/
      contact: Alex Dodson
+     contact_email: alex.dodson@aarnet.edu.au
      mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
      https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor/
      rsync: secure_mirror_from_master
-     contact_email: alex.dodson@aarnet.edu.au
      country_code: au
      city: Sydney
+ - CRAN ASIA (Korea and Japan):
+   - institution: Personnel Psychology Laboratory, Kwangwoon University 
+     institution_url: https://www.kw.ac.kr/en/index.do 
+     contact: Seongho Bae 
+     contact_email: admin@cran.asia 
+     mirror_url: http://cran.asia/ 
+     https_mirror_url: https://cran.asia/
+     rsync: secure_mirror_from_master
+     country_code: kr 
+     city: Seoul 
