@@ -1,7 +1,8 @@
 ## Logos
 
-The _Bioconductor_ logo can be used freely and without prior consent
-provided:
+[Contact us](mailto:maintainer@bioconductor.org?subject=Permission%20for%20use)
+for permission to use the _Bioconductor_ name and logo.  Permission
+will usually be granted when:
 
 * The use is clearly in reference to _Bioconductor_ or packages
   distributed by _Bioconductor_.
