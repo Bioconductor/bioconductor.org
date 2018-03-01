@@ -2,39 +2,75 @@
 
 ## Current and Recent Members
 
-* Martin Morgan (Project Lead)<br>
-<img src="/images/coreTeamPic/MartinMorgan.jpg" width="50%" height="50%"
-     alt="Martin Morgan" title="Martin Morgan"/>
-* Herv&eacute; Pag&egrave;s<br>
-<img src="/images/coreTeamPic/HervePages.jpg" width="50%" height="50%"
-     alt="Herve Pages" title="Herve Pages"/>
-* Michael Lawrence<br>
-<img src="/images/coreTeamPic/MichaelLawrence2.jpg" width="50%" height="50%"
-     alt="Michael Lawrence" title="Michael Lawrence"/>
-* James MacDonald<br>
-<img src="/images/coreTeamPic/JamesMacDonald.jpg" width="50%" height="50%"
-     alt="James MacDonald" title="James MacDonald"/>
-* Valerie Obenchain<br>
-<img src="/images/coreTeamPic/ValObenchain.jpeg" width="50%" height="50%"
-     alt="Valerie Obenchain" title="Valerie Obenchain"/>
-* Andrzej Ole&#347;<br>
-<img src="/images/coreTeamPic/AndrzejOles.jpeg" width="50%" height="50%"
-     alt="Andrezej Oles" title="Andrezej Oles"/>
-* Marcel Ramos<br>
-<img src="/images/coreTeamPic/MarcelRamos.JPG" width="50%" height="50%"
-     alt="Marcel Ramos" title="Marcel Ramos"/>
-* Lori Ann Shepherd<br>
-<img src="/images/coreTeamPic/LoriShepherd.jpg" width="50%" height="50%"
-     alt="Lori Shepherd" title="Lori Shepherd"/>
-* Nitesh Turaga<br>
-<img src="/images/coreTeamPic/NiteshTuraga.jpeg" width="50%" height="50%"
-     alt="Nitesh Turaga" title="Nitesh Turaga"/>
-* Daniel van Twisk<br>
-<img src="/images/coreTeamPic/DanielVanTwisk.jpeg" width="50%" height="50%"
-     alt="Daniel van Twisk" title="Daniel van Twisk"/>
-* Qian Liu<br>
-<img src="/images/coreTeamPic/QianLiu.jpg" width="50%" height="50%"
-     alt="Qian Liu" title="Qian Liu"/>
+<table width="100%">
+  <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/HervePages.jpg"
+           width="100%" alt="Herve Pages" title="Herve Pages"/>
+      <br>Herv&eacute; Pag&egrave;s
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/MichaelLawrence.jpg"
+           width="100%" alt="Michael Lawrence" title="Michael Lawrence"/>
+      <br>Michael Lawrence
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/QianLiu.jpg"
+           width="100%" alt="Qian Liu" title="Qian Liu"/>
+      <br>Qian Liu
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/JamesMacDonald.jpg"
+           width="100%" alt="James MacDonald" title="James MacDonald"/>
+      <br>James MacDonald
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/MartinMorgan.jpg"
+           width="100%" alt="Martin Morgan" title="Martin Morgan"/>
+      <br>Martin Morgan (Project Lead)
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/ValObenchain.jpeg"
+           width="100%" alt="Valerie Obenchain" title="Valerie Obenchain"/>
+      <br>Valerie Obenchain
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/AndrzejOles.jpeg"
+           width="100%" alt="Andrezej Oles" title="Andrezej Oles"/>
+      <br>Andrzej Ole&#347;
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/MarcelRamos.JPG"
+           width="100%" alt="Marcel Ramos" title="Marcel Ramos"/>
+      <br>Marcel Ramos
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/LoriShepherd.jpg"
+           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
+      <br>Lori Ann Shepherd
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
+           width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
+      <br>Nitesh Turaga
+    </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/DanielVanTwisk.jpeg"
+           width="100%" alt="Daniel van Twisk" title="Daniel van Twisk"/>
+      <br>Daniel van Twisk
+    </td>
+  </tr>
+
+</table>
 
 Recent alumni
 
