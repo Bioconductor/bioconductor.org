@@ -9,7 +9,8 @@ This release will use R-3.5.0 ("Unsuffered Consequences").
 
 ### Monday April 2 
 
-* Announce deprecated / defunct packages for BioC 3.7.
+* Announce deprecated packages for BioC 3.7. They'll be removed from BioC 3.8.
+  See [End of Life](/developers/package-end-of-life) for details.
 
 ### Monday April 9
 
@@ -42,14 +43,6 @@ This release will use R-3.5.0 ("Unsuffered Consequences").
   and workflow packages. Some warnings will be accepted, clarification 
   on the bioc-devel mailing list.
 
-* Identify packages to be 'deprecated' in the new devel, Bioconductor 3.8.
-  This includes packages in 3.7 with no Landing Page (have not built this devel
-  cycle) or those with errors and unresponsive maintainers. 
-
-* Packages 'deprecated' in Bioconductor 3.6 are marked as 'defunct' and 
-  removed from the nightly builds for Bioconductor 3.7.
-  See [End of Life](/developers/package-end-of-life) for details.
-
 * Deadline for NEWS files to be updated.
 
 * Bioconductor release candidate.  Package maintainers should limit
@@ -80,3 +73,10 @@ This release will use R-3.5.0 ("Unsuffered Consequences").
 * Build AMIs for release and devel
 
 * Build Dockers for release and devel
+
+* Packages marked as deprecated in BioC 3.7 are now removed from the
+  BioC 3.8 nightly builds.
+
+* Identify packages to be deprecated in the new devel, BioC 3.8.
+  This includes packages with errors and unresponsive maintainers.
+
