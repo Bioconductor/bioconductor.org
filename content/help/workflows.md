@@ -1,7 +1,7 @@
 # ![](/images/icons/help.gif)Bioconductor Workflows
 
 Bioconductor provides software to help analyze diverse high-throughput
-genomic data. <a href="#basic">Basic workflows</a> give a general introduction, 
+genomic data. <a href="#basic">Basic workflows</a> give a general introduction,
 while the sections below go into more detail on some common topics:
 
 * <a href="#annotation">Annotations</a>
@@ -18,13 +18,13 @@ for information on contributing your own workflow.
 
 <h2 id="basic">Basic workflows</h2>
 
-* __[Sequence Analysis](sequencing/)__  
+* __[Sequence Analysis](devel/sequencing/sequencing)__
   Import fasta, fastq, BAM, gff, bed, wig, and other sequence formats.
   Trim, transform, align, and manipulate sequences. Perform quality
   assessment, ChIP-seq, differential expression, RNA-seq, and other
   workflows.  Access the Sequence Read Archive.
 
-* __[Oligonucleotide Arrays](arrays/)__  
+* __[Oligonucleotide Arrays](devel/arrays/arrays)__
   Import Affymetrix, Illumina, Nimblegen, Agilent, and other
   platforms.  Perform quality assessment, normalization, differential
   expression, clustering, classification, gene set enrichment,
@@ -32,7 +32,7 @@ for information on contributing your own workflow.
   number, SNP, methylation and other assays.  Access GEO,
   ArrayExpress, Biomart, UCSC, and other community resources.
 
-* __[Changing genomic coordinate systems with rtracklayer::liftOver](/help/workflows/liftOver/)__  
+* __[Changing genomic coordinate systems with rtracklayer::liftOver](devel/liftOver/liftOver/)__
   The liftOver facilities developed in conjunction with the UCSC
   browser track infrastructure are available for transforming
   data in GRanges formats.  This is illustrated here with
@@ -42,17 +42,17 @@ for information on contributing your own workflow.
 
 <h2 id="annotation">Annotations</h2>
 
-* __[Annotation Resources](annotation/Annotation_Resources/)__  
+* __[Annotation Resources](devel/annotation/Annotation_Resources/)__
   Introduction to using gene, pathway, gene ontology, homology annotations
   and the AnnotationHub. Access GO, KEGG, NCBI, Biomart, UCSC, vendor,
   and other sources.
 
-* __[Annotating Genomic Ranges](annotation/Annotating_Genomic_Ranges/)__  
+* __[Annotating Genomic Ranges](devel/annotation/Annotating_Genomic_Ranges/)__
   Represent common sequence data types (e.g., from BAM, gff, bed, and
   wig files) as genomic ranges for simple and advanced range-based
   queries.
 
-* __[Annotating Genomic Variants](variants/)__  
+* __[Annotating Genomic Variants](devel/variants/Annotating_Genomic_Variants/)__
   Read and write VCF files. Identify structural location of variants
   and compute amino acid coding changes for non-synonymous
   variants. Use SIFT and PolyPhen database packages to predict
@@ -61,7 +61,7 @@ for information on contributing your own workflow.
 
 <h2 id="rnaseq">Gene expression</h2>
 
-* __[RNA-Seq workflow: gene-level exploratory analysis and differential expression](/help/workflows/rnaseqGene/)__  
+* __[RNA-Seq workflow: gene-level exploratory analysis and differential expression](devel/rnaseqGene/rnaseqGene/)__
   This lab will walk you through an end-to-end RNA-Seq differential
   expression workflow, using DESeq2 along with other Bioconductor
   packages. We will start from the FASTQ files, show how these were
@@ -70,7 +70,7 @@ for information on contributing your own workflow.
   exploratory data analysis (EDA), perform differential gene
   expression analysis with DESeq2, and visually explore the results.
 
-* __[RNA-seq analysis is easy as 1-2-3](/help/workflows/RNAseq123/)__  
+* __[RNA-seq analysis is easy as 1-2-3](devel/RNAseq123/RNAseq123/)__
   This workflow demonstrates how to analyse RNA-sequencing data using the edgeR,
   limma and Glimma packages. The edgeR package is first used to import,
   organise, filter and normalise the data, followed by the limma package with
@@ -79,26 +79,26 @@ for information on contributing your own workflow.
   enhanced by the Glimma package which enables interactive exploration of the
   results so that individual samples and genes can be examined by the user.
 
-* __[Gene Expression Normalization Workflow](/help/workflows/ExpressionNormalizationWorkflow/)__  
+* __[Gene Expression Normalization Workflow](devel/ExpressionNormalizationWorkflow/ExpressionNormalizationWorkflow/)__
   This workflow elucidates a customizable strategy to identify the effects of
   technical and confounding factors on gene expression data and normalize it
   while preserving the underlying biological features of interest. The example
-  analysis demonstrated here explores how certain technical covariates 
+  analysis demonstrated here explores how certain technical covariates
   influence the interpretation of the impact of Coronary Artery Disease on
   peripheral blood gene expression.
 
-* __[Gene-level RNA-seq differential expression and pathway analysis](/help/workflows/RnaSeqGeneEdgeRQL/)__  
+* __[Gene-level RNA-seq differential expression and pathway analysis](devel/RnaSeqGeneEdgeRQL/RnaSeqGeneEdgeRQL/)__
   Gene-level RNA-seq differential expression and pathway analysis using
   Rsubread and the edgeR quasi-likelihood pipeline
 
-* __[EGSEA123](/help/workflows/EGSEA123/)__  
+* __[EGSEA123](devel/EGSEA123/EGSEA123/)__
   R package that supports the F1000Research workflow article 'Easy and efficient
   ensemble gene set testing with EGSEA', Alhamdoosh et al. (2017).
 
 
 <h2 id="singlecell">Single cell</h2>
 
-* __[Low-level analyses of single-cell RNA-sequencing data](/help/workflows/simpleSingleCell/intro/)__  
+* __[Low-level analyses of single-cell RNA-sequencing data](devel/simpleSingleCell/intro/)__
   This workflow implements a low-level analysis pipeline for scRNA-seq
   data using scran, scater and other Bioconductor packages. It describes
   how to perform quality control on the libraries, normalization of
@@ -107,13 +107,13 @@ for information on contributing your own workflow.
   significantly correlated genes and subpopulation-specific marker genes
   are also shown. These analyses are demonstrated on a range of publicly
   available scRNA-seq data sets.
-  - [Introduction](/help/workflows/simpleSingleCell/intro/)
-  - [Analyzing read count data](/help/workflows/simpleSingleCell/part1/)
-  - [Analyzing UMI count data](/help/workflows/simpleSingleCell/part2/)
-  - [Alternative strategies](/help/workflows/simpleSingleCell/part3/) 
+  - [Introduction](devel/simpleSingleCell/intro/)
+  - [Analyzing read count data](devel/simpleSingleCell/part1/)
+  - [Analyzing UMI count data](devel/simpleSingleCell/part2/)
+  - [Alternative strategies](devel/simpleSingleCell/part3/)
 
 * __[CyTOF workflow: differential discovery in high-throughput high-dimensional
-  cytometry datasets](/help/workflows/cytofWorkflow/)__  
+  cytometry datasets](devel/cytofWorkflow/cytofWorkflow/)__
   High dimensional mass and flow cytometry (HDCyto) experiments have become a
   method of choice for high throughput interrogation and characterization of
   cell populations. Here, we present an R-based pipeline for differential
@@ -139,7 +139,7 @@ for information on contributing your own workflow.
 
 <h2 id="variants">Genomic variants</h2>
 
-* __[Variant Calling](/help/course-materials/2014/BioC2014/Lawrence_Tutorial.pdf)__  
+* __[Variant Calling](/help/course-materials/2014/BioC2014/Lawrence_Tutorial.pdf)__
   This presentation illustrates a typical variant calling workflow starting
   with FASTQ data working through alignment, filtering, tallying, and calling.
   QC issues such as alignment coverage, mappability, and problematic
@@ -147,7 +147,7 @@ for information on contributing your own workflow.
   compared against published genotypes for concordance.  Final variants are
   annotated with with coding consequence and disease association.
 
-* __[Nucleotide Tallies](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)__  
+* __[Nucleotide Tallies](/help/course-materials/2014/CSAMA2014/3_Wednesday/labs/Tutorial.pdf)__
   Managing sequence data of large cohorts for population level analysis has
   become increasingly difficult with current file formats such as BAM, VCF,
   BCF, GTF, etc. Many studies work exclusively on the level of preprocessed
@@ -158,7 +158,7 @@ for information on contributing your own workflow.
   efficient random access to cohort-level data. Once created, the tally files
   can be easily manipulated and used to create custom reports and plots.
 
-* __[Cloud-enabled cis-eQTL search and annotation](/help/workflows/eQTL/)__  
+* __[Cloud-enabled cis-eQTL search and annotation](devel/eQTL/cloudeqtl/)__
   Bioconductor can be used to perform detailed analyses of
   relationships between DNA variants and mRNA abundance.  Genotype
   (potentially imputed) and expression data are organized in packages
@@ -173,12 +173,12 @@ for information on contributing your own workflow.
 
 <h2 id="epigenetics">Epigenetics</h2>
 
-* __[Transcription Factor Binding](/help/workflows/generegulation/)__  
+* __[Transcription Factor Binding](devel/generegulation/generegulation/)__
   Finding Candidate Binding Sites for Known Transcription Factors via
   Sequence Matching.
 
 
-* __[Differential Binding from ChIP-seq data](/help/workflows/chipseqDB/)__  
+* __[Differential Binding from ChIP-seq data](devel/chipseqDB/chipseqDB/)__
   This workflow describes an analysis pipeline for de novo detection of
   differential binding (DB) from ChIP-seq data, from read alignment to
   interpretation of putative DB regions. It will be based on the use of sliding
@@ -187,7 +187,7 @@ for information on contributing your own workflow.
   mark and transcription factor ChIP-seq data.
 
 
-* __[Methylation Array Analysis](/help/workflows/methylationArrayAnalysis/)__  
+* __[Methylation Array Analysis](devel/methylationArrayAnalysis/text)__
   Methylation in the human genome is known to be associated with development and
   disease. The Illumina Infinium methylation arrays are by far the most common
   way to interrogate methylation across the human genome. This Bioconductor
@@ -203,21 +203,21 @@ for information on contributing your own workflow.
 
 <h2 id="proteomics">Proteomics</h2>
 
-* __[Mass spectrometry and proteomics](/help/workflows/proteomics/)__  
+* __[Mass spectrometry and proteomics](devel/proteomics/proteomics/)__
   This lab demonstrates how to access data from proteomics data
   repositories, how to parse various mass spectrometry data formats, how
   to identify MS2 spectra and analyse the search results, how to use the
   high-level infrastructure for raw mass spectrometry and quantitative
   proteomics experiments and quantitative data processing and analysis.
 
-* __[High Throughput Assays](/help/workflows/highthroughputassays/)__  
+* __[High Throughput Assays](devel/highthroughputassays/high-throughput-assays/)__
   Import, transform, edit, analyze and visualize flow cytometric, mass
   spec, HTqPCR, cell-based, and other assays.
 
-    
+
 <h2 id="resources">Resource querying</h2>
 
-* __[recountWorkflow](/help/workflows/recountWorkflow/)__  
+* __[recountWorkflow](devel/recountWorkflow/recount-workflow/)__
   The recount2 resource is composed of over 70,000 uniformly processed human
   RNA-seq samples spanning TCGA and SRA, including GTEx. The processed data can
   be accessed via the recount2 website and the recount Bioconductor
@@ -232,7 +232,7 @@ for information on contributing your own workflow.
   information to understand the data in recount2 and a compendium of R code to
   use the data.
 
-* __[TCGA Workflow: Analyze cancer genomics and epigenomics data](/help/workflows/TCGAWorkflow/)__  
+* __[TCGA Workflow: Analyze cancer genomics and epigenomics data](devel/TCGAWorkflow/TCGAWorkflow/)__
   Biotechnological advances in sequencing have led to an explosion of publicly
   available data via large international consortia such as The Cancer Genome
   Atlas (TCGA), The Encyclopedia of DNA Elements (ENCODE), and The NIH Roadmap
@@ -253,8 +253,4 @@ for information on contributing your own workflow.
   data, we provide a work plan to identify biologically relevant functional
   epigenomic elements associated with cancer. To illustrate our workflow, we
   analyzed two types of brain tumors: low-grade glioma (LGG) versus high-grade
-  glioma (glioblastoma multiform or GBM). 
-
-
-
-
+  glioma (glioblastoma multiform or GBM).

@@ -33,6 +33,7 @@
         <td>Source Package</td>
         <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a></td>
       </tr>
+<!--
       <tr class="<%= ri.rowclass %>">
         <td>Windows Binary</td>
         <td>
@@ -41,7 +42,6 @@
           <% end %>
         </td>
       </tr>
-<!--
       <tr class="<%= ri.rowclass %>">
         <td>Mac OS X 10.10 (Yosemite)</td>
         <td>
@@ -66,6 +66,6 @@
     
   <p>To install this workflow under Bioconductor <%= @config[:release_version] %>, start R and enter:</p>
   
-  <pre style="margin-bottom: 0;">source("http://bioconductor.org/workflows.R")
-workflowInstall("<%=w[:package]%>")</pre>
+  <pre style="margin-bottom: 0;">source("https://bioconductor.org/biocLite.R")
+biocLite("<%=w[:package]%>")</pre>
 </div>

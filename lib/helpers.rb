@@ -800,7 +800,7 @@ def workflow_helper(item)
   id = item.identifier.to_s.sub(/\/$/, "")
   pkg = id.split("/").last
   segs = item.identifier.to_s.split "/"
-  3.times {segs.shift}
+  4.times {segs.shift}
   multivig = (segs.length > 1)
   if multivig
     ["source_tarball", "mac_pkg", "win_pkg"].each do |pkgtype|
