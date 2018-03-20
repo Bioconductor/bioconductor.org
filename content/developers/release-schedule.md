@@ -1,6 +1,6 @@
 # Bioconductor 3.7 Release Schedule
 
-This release will use R-3.5.0 ("Unsuffered Consequences").
+This release will use R-3.5.0 ("Joy in Playing").
 
 ### Monday March 26 
 
