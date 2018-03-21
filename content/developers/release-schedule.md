@@ -21,6 +21,11 @@ This release will use R-3.5.0 ("Unsuffered Consequences").
 * Update package NEWS files. Latest NEWS will be collated 
   and included in release announcement.
 
+### Wednesday April 11
+
+* Stop building BioC 3.6, current release. Commits to this branch will be
+  disabled.
+
 ### Monday April 16
 
 * TxDb, OrgDb packages built and posted to devel annotation data repository.
@@ -30,9 +35,6 @@ This release will use R-3.5.0 ("Unsuffered Consequences").
 * Bioconductor Feature Freeze: 
   - No API changes to BioC 3.7.
   - No new packages added to BioC 3.7 roster.
-
-* Stop building BioC 3.6, current release.  Commits to this branch will be
-  disabled.
 
 * Start building BioC 3.8, new devel.
 
