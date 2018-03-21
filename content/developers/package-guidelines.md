@@ -128,6 +128,10 @@ option ensures that the vignette is built only once.
 Vignette and man page examples should not use more than 3GB of memory
 since R cannot allocate more than this on 32-bit Windows.
 
+For software packages, individual files must be <= 5MB. This restriction
+exists even after the package is accepted and added to the `Bioconductor` 
+repository.
+
 These requirement are the minimum for package acceptance and will still be subject to other guidelines below and a formal technical review by a Bioconductor team member.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
