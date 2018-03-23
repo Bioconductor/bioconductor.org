@@ -31,11 +31,11 @@ version number x.y.z,
 During regular development of new features
 
 * Authors increment the z version of their package in the 'devel'
-  branch by 1 for each svn commit, e.g., from 1.1.0 to 1.1.1, 1.1.2,
+  branch by 1 for each GIT commit, e.g., from 1.1.0 to 1.1.1, 1.1.2,
   ..., 1.1.10, 1.1.11
 * Any bug fixes ported to the release branch are similarly
   incremented, 1.0.1, 1.0.2, ...
-* Changes made to SVN without a corresponding version bump **do not
+* Changes made to GIT without a corresponding version bump **do not
   propagate** to the repository visible to `biocLite()`.
 
 At the time of a release, the _Bioconductor_ team arranges to:
