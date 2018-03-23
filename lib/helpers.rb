@@ -479,6 +479,9 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   return old_breadcrumbs unless (old_breadcrumbs.last.identifier.to_s =~ /package-pages/)
   index_page = false
   index_page = true if item.identifier.to_s =~ /\/package-pages\/all-/
+
+  return old_breadcrumbs if item.identifier.to_s =~ /\/package-pages\/all--/
+
   last_crumb = old_breadcrumbs.last
   home_crumb = old_breadcrumbs.first
   path = item.path
@@ -487,6 +490,7 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   repo = ["Software", "bioc"] if path =~ /\/bioc\//
   repo = ["Annotation", "data/annotation"] if path =~ /\/data\/annotation\//
   repo = ["Experiment", "data/experiment"] if path =~ /\/data\/experiment\//
+  repo = ["Workflow", "workflows"] if path  =~ /\/workflows\//
   crumbs = []
   crumbs.push home_crumb
   ver_crumb = Nanoc::Int::Item.new("", {:title => "Bioconductor #{ver}"}, "/packages/#{ver}/BiocViews.html")
@@ -1085,7 +1089,7 @@ def is_devel?(item)
 end
 
 def is_removed?(item)
-    return true if File.foreach("content/about/removed-packages.md").grep(/#{item}/).any?
+    return true if File.foreach("content/about/removed-packages.md").grep(/#{item}\.html/).any?
     return false
 end
 

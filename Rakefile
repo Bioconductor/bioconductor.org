@@ -250,6 +250,8 @@ task :json2js do
 	var = "data_annotation_packages"
       elsif file =~ /\/data\/experiment/
 	var = "data_experiment_packages"
+      elsif file =~ /\/workflows\//
+	var = "workflow_packages"
       end
       unless var.nil?
 	obj = JSON.parse(
@@ -276,29 +278,19 @@ task :json2js do
   end
 end
 
-
 desc "Get JSON files required for BiocViews pages"
 task :prepare_json do
   json_dir = "assets/packages/json"
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")
   versions = site_config["versions"]
-  devel_version = site_config["devel_version"]
-  devel_repos = site_config["devel_repos"]
-  version_str = '"' + versions.join('","') + '"'
-  devel_repos_str = '"' + devel_repos.join('","') + '"'
-
 
   for version in versions
-    if version == devel_version
-      repos = devel_repos
-    else
-      repos = ["data/annotation", "data/experiment", "bioc"]
-    end
-
     gj = GetJson.new(version, "assets/packages/json")
   end
 end
+
+
 
 desc "Create CloudFormation templates"
 task :generate_cf_templates do
@@ -331,7 +323,7 @@ task :get_workflows do
   home = Dir.pwd
   tempdir = "workflows_tmp"
   FileUtils.mkdir_p "#{tempdir}"
-  dest_dir = "help/workflows"
+  dest_dir = "packages"
   BiocRel = site_config["release_version"]
   BiocDev =  site_config["devel_version"]
   Rrel = site_config["r_version_associated_with_release"]
@@ -342,11 +334,7 @@ task :get_workflows do
 
   versions.each do |ver|
 
-    assets_dir = "assets/#{dest_dir}/#{ver}"
-    source_dir = "content/#{dest_dir}/#{ver}"
-    FileUtils.rm_rf assets_dir
-    FileUtils.rm_rf source_dir
-    FileUtils.mkdir_p assets_dir
+    source_dir = (ver == "release") ? "content/#{dest_dir}/#{BiocRel}/workflows/html" : "content/#{dest_dir}/#{BiocDev}/workflows/html"
     FileUtils.mkdir_p source_dir
     FileUtils.mkdir_p "#{tempdir}/#{ver}"
 
@@ -414,11 +402,11 @@ built_with_R: \"#{_R_xyversion}\"
 built_with_bioc: \"#{bioc}\"
 built_at: \"#{timestamp}\"
 svn_revision: \"#{svn_revision}\"
-source_tarball: \"#{tarball}\"
+source_tarball: \"/packages/#{ver}/workflows/src/contrib/#{tarball}\"
 first_committed: \"#{firstcommitdate}\"
 last_commit: \"#{last_commit_str}\"
 output_file: \"#{filename}.html\"
-r_source: \"#{filename}.R\"
+r_source: \"/packages/#{ver}/workflows/webvigs/#{key}/#{filename}.R\"
 subnav:
 - include: /_workflows/
 ")}
@@ -430,33 +418,17 @@ subnav:
 	    #  Move files to new locations
 	    #
 
-	    pkg_assets_dir = "#{assets_dir}/#{key}"
 	    pkg_content_dir = "#{source_dir}/#{key}"
-	    FileUtils.rm_rf pkg_assets_dir
 	    FileUtils.rm_rf pkg_content_dir
-	    FileUtils.mkdir_p pkg_assets_dir
 	    dir = Dir.new(wfdir)
 	    vignettes = dir.entries.find_all {|i| i =~ /\.yaml$/i}
-	    multivig = vignettes.length() > 1 ? true : false
 	    FileUtils.mkdir_p pkg_content_dir
 	    for vignette in vignettes
 		yaml = YAML::load(File.open("#{wfdir}/#{vignette}"))
-		vigname = vignette.gsub(/\.yaml$/i, "")
-		FileUtils.mkdir_p "#{pkg_assets_dir}/#{vigname}" if multivig
-		FileUtils.cp "#{wfdir}/#{vigname}.R", multivig ? "#{pkg_assets_dir}/#{vigname}" : "#{pkg_assets_dir}"
 		[vignette, yaml['output_file']].each do |f|
 		    FileUtils.cp "#{wfdir}/#{f}", "#{pkg_content_dir}"
 		end
 	    end
-
-	    #
-	    # retrieve and move tar.gz/tgz/zip
-	    #
-	    system(%Q(scp -rp "ubuntu@master.bioconductor.org:/extra/www/bioc/packages/#{ver}/workflows/src/contrib/#{tarball}" "#{pkg_assets_dir}/"))
-
-	    # currently mac and windows products not being built
-	    # /extra/www/bioc/packages/3.7/workflows/bin/macosx/el-capitan/contrib/3.5
-	    # /extra/www/bioc/packages/3.7/workflows/bin/windows/contrib/3.5
 
 	end # if directory exists for workflow
     end # keys

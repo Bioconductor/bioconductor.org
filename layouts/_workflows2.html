@@ -5,7 +5,7 @@
 
   <% 
   ri = RowIndexer.new
-  w = workflow_helper(item)
+  w = item.attributes
   if w.has_key? :user_defined_metadata 
       md = w[:user_defined_metadata]
   end
@@ -31,7 +31,7 @@
       </tr>
       <tr class="<%= ri.rowclass %>">
         <td>Source Package</td>
-        <td><a href="<%=w[:source_tarball]%>"><%=w[:source_tarball]%></a></td>
+        <td><a href="<%=w[:source_tarball]%>"><%=File.basename w[:source_tarball]%></a></td>
       </tr>
 <!--
       <tr class="<%= ri.rowclass %>">
@@ -53,7 +53,7 @@
 -->
       <tr class="<%= ri.rowclass %>">
         <td>R Script</td>
-        <td><a href="<%=w[:r_source]%>"><%=w[:r_source]%></a>
+        <td><a href="<%=w[:r_source]%>"><%=File.basename w[:r_source]%></a>
         </td>    
       </tr>
           

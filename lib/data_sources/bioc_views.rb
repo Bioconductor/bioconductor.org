@@ -9,7 +9,7 @@ class BiocViews < Nanoc::DataSource
   def hard_coded_repos()
     {
       "bioc/" => "Software", "data/annotation/" => "AnnotationData",
-      "data/experiment/" => "ExperimentData"
+      "data/experiment/" => "ExperimentData", "workflows/" => "Workflow"
     }
   end
 
@@ -70,7 +70,6 @@ class BiocViews < Nanoc::DataSource
     else
       puts "ERROR: BiocViews DataSource: no JSON files; no initialization"
     end
-
   end
 
   def get_index_page(packages, repo, version)
@@ -133,7 +132,9 @@ class BiocViews < Nanoc::DataSource
     link_list = [:Depends, :Imports, :Suggests, :Enhances,
       :LinkingTo, :dependsOnMe, :importsMe, :suggestsMe]
 
+
     for version in @site_config["versions"]
+
       @repos = get_repos(version, @repos)
       @repos.each_pair do |k,v|
         dir = "#{config[:json_dir]}/#{version}/#{k}"

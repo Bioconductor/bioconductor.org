@@ -1,0 +1,33 @@
+<h1><%=@package[:Package]%> Workflow</h1>
+
+<div class='do_not_rebase'>
+
+   <%# package title - not to be confused with page title %>
+   <h2><%= @package[:Title]%></h2>
+
+    <p>	Bioconductor version: <%= verbose_bioc_version(@package) %></p>
+
+    <p><%= @package[:Description]%></p>
+
+    <p>Author: <%= filter_emails(@package[:Author])%> </p>
+
+    <p>Maintainer: <%= filter_emails(@package[:Maintainer])%> </p>
+
+    <h3>Installation</h3>
+
+    <p>To install this package, start R and enter:</p>
+
+
+    <pre>## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("<%=@package[:Package]%>")</pre>
+
+    <h3>Documentation</h3>
+
+    <p> For indepth documentation please see appropriate section from: </p>
+
+    <h3><a href="/help/workflows">All Available Workflows</a></h3>
+
+
+ 
+</div>
