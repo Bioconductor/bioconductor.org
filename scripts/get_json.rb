@@ -153,8 +153,8 @@ class GetJson
     end
     tempDir = Dir.tmpdir
 
-    call = "git archive --remote=ssh://git@git.bioconductor.org/packages/biocViews #{branch} inst/extdata/biocViewsVocab.sqlite | tar -x --strip=2 -C #{tempDir}"
-#    call = "cp /home/lori/b/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite #{tempDir}"
+#    call = "git archive --remote=ssh://git@git.bioconductor.org/packages/biocViews #{branch} inst/extdata/biocViewsVocab.sqlite | tar -x --strip=2 -C #{tempDir}"
+    call = "cp /home/lori/b/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite #{tempDir}"
 
     system(call)
     dbfile = "#{tempDir}/biocViewsVocab.sqlite"
