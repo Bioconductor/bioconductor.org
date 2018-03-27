@@ -11,9 +11,9 @@ This release will use R-3.5.0 ("Joy in Playing").
 * Announce deprecated packages for BioC 3.7. They'll be removed from BioC 3.8.
   See [End of Life](/developers/package-end-of-life) for details.
 
-### Monday April 9
-
 * Deadline for new package submissions.
+
+### Monday April 9
 
 * .db0 packages available for developers.
 
