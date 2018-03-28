@@ -12,35 +12,43 @@ prefix="og: http://ogp.me/ns#">
       <div id="PageContent" class="PageContent">
       <% end %>
 
-        
-        <% if (@item.identifier != '/')%>
-          <%= render("/_crumbs/") %>
-        <% end %>
 
-        <% if @item.attributes.has_key?(:package_index_page)%>
-            <%= render("/_pkg_idx/", :info => @item.attributes)%>
-        <% end %>
-        <% if @item.attributes.has_key?(:Package)%>
-	    <% if (@item.attributes[:repo] != "workflows/")%> 
-                <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
+	<% if (@item.identifier != '/')%>
+	  <%= render("/_crumbs/") %>
+	<% end %>
+
+	<% if @item.attributes.has_key?(:package_index_page)%>
+	    <%= render("/_pkg_idx/", :info => @item.attributes)%>
+	<% end %>
+	<% if @item.attributes.has_key?(:Package)%>
+	    <% if (@item.attributes[:repo] != "workflows/")%>
+		<%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
 	    <% else %>
-                <%= render("/_workflows_dead/", :package => @item.attributes)%>
+		<%= render("/_workflows_biocview_detail/", :package => @item.attributes)%>
 	    <% end %>
-        <% end %>
-        <%# end hack%>
-        
-        <% unless item[:package].nil? %>
-          <%= render("/_workflows2/") %>
-        <% end %>
+	<% end %>
+	<%# end hack%>
 
-        <%= yield if block_given? %>
-        <% if has_subnav?(@item) %>
-          </div>
-          <div id="RightRail" class="RightRail">
-          <a name="section-navigation"></a> <!-- accessibility anchor -->
-          <%= render("/_subnav/", :pages => subnav_items(@item)) %>
-        <% end %>
+	<% unless item[:package].nil? %>
+	  <%= render("/_workflows2/") %>
+	<% end %>
+
+	<%= yield if block_given? %>
+	<% if has_subnav?(@item) %>
+	  </div>
+	  <div id="RightRail" class="RightRail">
+	  <a name="section-navigation"></a> <!-- accessibility anchor -->
+	  <%= render("/_subnav/", :pages => subnav_items(@item)) %>
+	<% end %>
+
+	<% if @item.attributes.has_key?(:Package)%>
+	    <% if (@item.attributes[:repo] == "workflows/")%>
+		  <%= render("/_workflows/") %>
+	    <% end %>
+	<% end %>
+
       </div>
+
       <%= render("/_footer/") %>
     </div>
   </body>

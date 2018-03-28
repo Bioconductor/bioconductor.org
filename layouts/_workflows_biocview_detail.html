@@ -1,0 +1,250 @@
+<h1><%=@package[:Package]%> Workflow</h1>
+
+<div class='do_not_rebase'>
+
+   <%# package title - not to be confused with page title %>
+   <h2><%= @package[:Title]%></h2>
+
+    <p>	Bioconductor version: <%= verbose_bioc_version(@package) %></p>
+
+    <p><%= @package[:Description]%></p>
+
+    <p>Author: <%= filter_emails(@package[:Author])%> </p>
+
+    <p>Maintainer: <%= filter_emails(@package[:Maintainer])%> </p>
+
+    <h3>Installation</h3>
+
+    <p>To install this package, start R and enter:</p>
+
+
+    <pre>## try http:// if https:// URLs are not supported
+source("https://bioconductor.org/biocLite.R")
+biocLite("<%=@package[:Package]%>")</pre>
+
+    <h3>Documentation</h3>
+
+  <% if @package.has_key? :vignettes and !@package[:vignettes].empty? %>
+<p>To view available workflows for the version of this package installed
+    in your system, start R and enter:
+</p>
+<pre>browseVignettes("<%=@package[:Package]%>")</pre>
+    <p>&nbsp;</p>
+<% end %>
+
+
+    <table>
+	<% rowindex = 0 %>
+	<% doc_obj = doc_object(@package)%>
+	<% if doc_obj.empty? %>
+	    <tr><td>No vignettes available</td></tr>
+	<% else %>
+	    <% doc_obj.each_with_index do |item, i|%>
+		<% rowindex = i %>
+		<% style = (i % 2 == 1) ? "row_even" : "row_odd" %>
+		<tr class="<%=style%>">
+		    <td class="docFixedWidth">
+			<% if item[:file] and item[:file] != "" %>
+			<a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>"><%=item[:type]%></a>
+			<% end %>
+		    </td>
+		    <td class="docFixedWidth">
+			<% if item[:script] and item[:script] != "" %>
+			<a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
+			<% end %>
+		    </td>
+		    <td><%= item[:title]%></td>
+		</tr>
+
+	    <% end %>
+	<% end %>
+
+
+	    <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+
+
+	    <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
+	    <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+	    <tr class="<%= row_class %>">
+		    <td class="docFixedWidth">
+			<a href="../readmes/<%=@package[:Package]%>/README">Text</a>
+		    </td>
+		    <td class="docFixedWidth">&nbsp;</td>
+		    <td>README</td>
+	    </tr>
+	    <% rowindex += 1 %>
+	    <% end %>
+
+
+	    <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
+		<% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+		<tr class="<%= row_class %>">
+		    <td class="docFixedWidth">
+			<a href="../news/<%=@package[:Package]%>/NEWS">Text</a>
+		    </td>
+		    <td class="docFixedWidth">&nbsp;</td>
+		    <td>NEWS</td>
+		</tr>
+		<% rowindex += 1 %>
+	    <% end %>
+
+
+	    <% if @package.has_key? :hasINSTALL and @package[:hasINSTALL] == true%>
+		<% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+		<tr class="<%= row_class %>">
+		    <td class="docFixedWidth">
+			<a href="../install/<%=@package[:Package]%>/INSTALL">Text</a>
+		    </td>
+		    <td class="docFixedWidth">&nbsp;</td>
+		    <td>INSTALL</td>
+		</tr>
+		<% rowindex += 1 %>
+	    <% end %>
+
+
+	    <% if @package.has_key? :hasLICENSE and @package[:hasLICENSE] == true%>
+		<% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+		<tr class="<%= row_class %>">
+		    <td class="docFixedWidth">
+			<a href="../licenses/<%=@package[:Package]%>/LICENSE">Text</a>
+		    </td>
+		    <td class="docFixedWidth">&nbsp;</td>
+		    <td>LICENSE</td>
+		</tr>
+		<% rowindex += 1 %>
+	    <% end %>
+
+	    <% if @package.has_key? :Video %>
+		<% videos = @package[:Video].gsub(/\s/, "").split(",") %>
+		<% for video in videos %>
+		    <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+		    <tr class="<%= row_class %>">
+			<td class="docFixedWidth">
+			    <a href="<%=video%>">Video</a>
+			</td>
+			<td class="docFixedWidth">&nbsp;</td>
+			<td><%=get_video_title(video)%></td>
+		    </tr>
+		    <% rowindex += 1 %>
+		<% end %>
+	    <% end %>
+
+    </table>
+
+    <h3>Details</h3>
+    <%
+    ri = RowIndexer.new
+    %>
+    <table class="details">
+	<tr class="<%=ri.rowclass%>">
+	    <td>biocViews</td>
+	    <td><%= bioc_views_links @package %></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Version</td>
+	    <td><%= @package[:Version]%></td>
+	</tr>
+
+	<%
+	since = since(@package[:Package])
+	r = nil
+	r = r_ver_for_bioc_ver(since) unless since.nil?
+	yib = years_in_bioc(@package[:Package])
+	if yib.nil?
+	    yearstr = ""
+	else
+	    yearstr = "(#{yib})"
+	end
+	yearstr.sub!(">", "&gt;")
+	if not (since.nil? or r.nil?)
+	    or_earlier = ""
+	    or_earlier = " or earlier" if since == "1.6"
+	%>
+	    <tr id="since" class="<%=ri.rowclass%>">
+		<td>In Bioconductor since</td>
+		<td>BioC <%= since %> (R-<%= r %>)<%=or_earlier%> <%=yearstr %></td>
+	    </tr>
+	<% end %>
+
+
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>License</td>
+	    <td><%= @package[:License]%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Depends</td>
+	    <td><%= linkify(:Depends, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Imports</td>
+	    <td><%= linkify(:Imports, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>LinkingTo</td>
+	    <td><%= linkify(:LinkingTo, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Suggests</td>
+	    <td><%= linkify(:Suggests, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>SystemRequirements</td>
+	    <td><%= @package[:SystemRequirements]%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Enhances</td>
+	    <td><%= linkify(:Enhances, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>URL</td>
+	    <td><%=make_package_url_links(@package[:URL])%></td>
+	</tr>
+
+	<% if @package.has_key? :BugReports %>
+	    <tr class="<%=ri.rowclass%>">
+		<td>BugReports</td>
+		<td><%=make_package_url_links(@package[:BugReports])%></td>
+	    </tr>
+	<% end %>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Depends On Me</td>
+	    <td><%= linkify(:dependsOnMe, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Imports Me</td>
+	    <td><%= linkify(:importsMe, @package)%></td>
+	</tr>
+
+	<tr class="<%=ri.rowclass%>">
+	    <td>Suggests Me</td>
+	    <td><%= linkify(:suggestsMe, @package)%></td>
+	</tr>
+
+	<% if ["bioc/", "data/experiment/"].include? @package[:repo] %>
+	    <tr class="<%=ri.rowclass%>">
+		<td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
+		<td>&nbsp;</td>
+	    </tr>
+	<% end %>
+
+    </table>
+
+
+
+   <h3>Additional Workflows can be found at:</h3>
+   <p><a href="/help/workflows">Common Workflows</a></p>
+
+
+
+</div>
