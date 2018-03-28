@@ -4,7 +4,7 @@ This release will use R-3.5.0 ("Joy in Playing").
 
 ### Monday March 26 
 
-* Announce new package deadline of April 9.
+* Announce new package deadline of April 2.
 
 ### Monday April 2 
 
