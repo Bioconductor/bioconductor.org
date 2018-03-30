@@ -42,10 +42,14 @@ Scenarios for code update:
 Github scenarios
 
 - [Add collaborators][] and use Github social coding features.
+- [Change Package Maintainer][]
+- [Remove Large Data Files][] and clean git tree
 
 See other [frequently asked questions][].
 
 [Add collaborators]: add-collaborators
+[Change Package Maintainer]: change-maintainer
+[Remove Large Data Files]: remove-large-data
 [frequently asked questions]: faq
 
 ## Essential work flow
