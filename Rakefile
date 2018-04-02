@@ -8,6 +8,7 @@ require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
 require './scripts/generate_build_shields.rb'
 require './scripts/svn_shield_helper.rb'
+require './scripts/workflow_helper.rb'
 require 'open3'
 require 'find'
 require 'pathname'
@@ -244,37 +245,38 @@ task :json2js do
     elsif fn == "packages.json"
       var = nil
       if file =~ /\/bioc\//
-        var = "bioc_packages"
+	var = "bioc_packages"
       elsif file =~ /\/data\/annotation/
-        var = "data_annotation_packages"
+	var = "data_annotation_packages"
       elsif file =~ /\/data\/experiment/
-        var = "data_experiment_packages"
+	var = "data_experiment_packages"
+      elsif file =~ /\/workflows\//
+	var = "workflow_packages"
       end
       unless var.nil?
-        obj = JSON.parse(
-          File.read(file)#,
-          #   :external_encoding => 'iso-8859-1',
-          # )
-        )
+	obj = JSON.parse(
+	  File.read(file)#,
+	  #   :external_encoding => 'iso-8859-1',
+	  # )
+	)
 
-        ret = []
-        obj.values.each do |v|
-          line = []
-          line.push v['Package']
-          line.push v['Maintainer']
-          line.push v['Title']
-          ret.push line
-        end
+	ret = []
+	obj.values.each do |v|
+	  line = []
+	  line.push v['Package']
+	  line.push v['Maintainer']
+	  line.push v['Title']
+	  ret.push line
+	end
 
-        holder = {"content" => ret}
-        outf = File.open(jsfile, "w")
-        outf.print("var #{var} = #{holder.to_json};")
-        outf.close
+	holder = {"content" => ret}
+	outf = File.open(jsfile, "w")
+	outf.print("var #{var} = #{holder.to_json};")
+	outf.close
       end
     end
   end
 end
-
 
 desc "Get JSON files required for BiocViews pages"
 task :prepare_json do
@@ -282,22 +284,13 @@ task :prepare_json do
   FileUtils.mkdir_p json_dir
   site_config = YAML.load_file("./config.yaml")
   versions = site_config["versions"]
-  devel_version = site_config["devel_version"]
-  devel_repos = site_config["devel_repos"]
-  version_str = '"' + versions.join('","') + '"'
-  devel_repos_str = '"' + devel_repos.join('","') + '"'
-
 
   for version in versions
-    if version == devel_version
-      repos = devel_repos
-    else
-      repos = ["data/annotation", "data/experiment", "bioc"]
-    end
-
     gj = GetJson.new(version, "assets/packages/json")
   end
 end
+
+
 
 desc "Create CloudFormation templates"
 task :generate_cf_templates do
@@ -323,94 +316,125 @@ task :generate_cf_templates do
   puts "aws s3 cp --acl=public-read --recursive cloud_formation/output  s3://bioc-cloudformation-templates"
 end
 
-desc "Get Docbuilder Workflows"
+desc "Get Workflows"
 task :get_workflows do
+
   site_config = YAML.load_file("./config.yaml")
   home = Dir.pwd
-  FileUtils.mkdir_p "workflows_tmp"
-  dest_dir = "help/workflows"
-  assets_dir = "assets/#{dest_dir}"
-  source_dir = "content/#{dest_dir}"
-  FileUtils.rm_rf assets_dir
-  FileUtils.rm_rf source_dir
-  FileUtils.mkdir_p assets_dir
-  FileUtils.mkdir_p source_dir
-  # f = File.open("content/#{dest_dir}.yaml", "w")
-  # f.puts "---"
-  # f.puts "title: Workflows"
-  # f.close
-  ##indexfile = File.open("content/#{dest_dir}.md", "w")
-  ## You must have the appropriate private key in order for this to work.
-  unless ENV["SKIP_WORKFLOW_RSYNC"] == "true"
-    system(%Q(rsync --delete -ave "ssh -i #{ENV['HOME']}/.ssh/docbuilder" jenkins@docbuilder.bioconductor.org:~/repository/ workflows_tmp))
-    system(%Q(chmod -R a+r workflows_tmp))
-    Find.find('workflows_tmp') do |path|
-      if (!File.directory?(path)) and (File.basename(path).start_with? '.')
-        FileUtils.rm path
-      end
-    end
-  end
+  tempdir = "workflows_tmp"
+  FileUtils.mkdir_p "#{tempdir}"
+  dest_dir = "packages"
+  BiocRel = site_config["release_version"]
+  BiocDev =  site_config["devel_version"]
+  Rrel = site_config["r_version_associated_with_release"]
+  Rdev = site_config["r_ver_for_bioc_ver"]["#{BiocDev}"]
 
-  FileUtils.mkdir_p "assets/packages/#{site_config['release_version']}/workflows"
-  system(%Q(rsync --delete -av workflows_tmp/CRANrepo/#{site_config['release_version']}/ assets/packages/#{site_config['release_version']}/workflows/))
-  Find.find("assets/packages/#{site_config['release_version']}/workflows/") do |path|
-    if (!File.directory?(path)) and (File.basename(path).start_with? '.')
-      FileUtils.rm path
-    end
-  end
+  #versions = ["release", "devel"]
+  versions = ["devel"]
 
-  auth = {:username => "readonly", :password => "readonly"}
-  json = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/workflows/manifest.json",
-    :basic_auth => auth, :verify => false).body
-  manifest = JSON.parse(json)
+  versions.each do |ver|
 
-  dir = Dir.new("workflows_tmp")
-  for entry in dir.entries
-    next if entry =~ /^\./
-    next if ["CRANrepo", "manifest.txt"].include? entry
+    source_dir = (ver == "release") ? "content/#{dest_dir}/#{BiocRel}/workflows/html" : "content/#{dest_dir}/#{BiocDev}/workflows/html"
+    FileUtils.mkdir_p source_dir
+    FileUtils.mkdir_p "#{tempdir}/#{ver}"
 
-    unless ENV["IGNORE_WORKFLOW_MANIFEST"] == "true"
-      unless manifest.keys.include? entry and manifest[entry].include? "web"
-        next
-      end
+    # get R, html, and Rmd files
+    system(%Q(rsync -av --filter="+ */" --filter="-! *[.R | .Rmd | .html]" "ubuntu@master.bioconductor.org:/extra/www/bioc/packages/#{ver}/workflows/webvigs/*" "#{tempdir}/#{ver}"))
+
+    # read VIEWS file for versions numbers and active workflows
+    if ver == "devel"
+    then
+	dcf = get_dcfs("workflows", BiocDev)
     else
-      puts "ignoring workflow manifest"
+	dcf = get_dcfs("workflows", BiocRel)
     end
 
-    fullpath = "workflows_tmp/#{entry}"
-    if test ?d, fullpath # if it exists and is a directory
-      # indexfile.puts
-      # indexfile.puts "## Workflows in #{entry.capitalize}:"
-      # indexfile.puts
-      assets_dir = "assets/#{dest_dir}/#{entry}"
-      content_dir = "content/#{dest_dir}/#{entry}"
-      FileUtils.rm_rf assets_dir
-      FileUtils.rm_rf content_dir
-      FileUtils.mkdir_p assets_dir
-      dir = Dir.new(fullpath)
-      vignettes = dir.entries.find_all {|i| i =~ /\.yaml$/i}
-      multivig = vignettes.length() > 1 ? true : false
-      FileUtils.mkdir_p content_dir if multivig
-      for vignette in vignettes
-        yaml = YAML::load(File.open("#{fullpath}/#{vignette}"))
-        vigname = vignette.gsub(/\.yaml$/i, "")
-        FileUtils.mkdir_p "#{assets_dir}/#{vigname}" if multivig
-        FileUtils.cp "#{fullpath}/#{vigname}.R", multivig ? "#{assets_dir}/#{vigname}" : "#{assets_dir}/#{entry}.R"
-        [vignette, yaml['output_file']].each do |f|
-          FileUtils.cp "#{fullpath}/#{f}", multivig ? content_dir : "#{content_dir}#{File.extname(f)}"
-        end
-        ## the following should go away once workflows are rendered to html containing embedded graphics
-        for entry in dir.entries.find_all {|i| i =~ /(_files|\.png)$/i}
-          FileUtils.cp_r "#{fullpath}/#{entry}", multivig ? "#{assets_dir}/#{vigname}" : assets_dir
-        end
-      end
-      pkgfiles = yaml.values_at('source_tarball', 'mac_pkg', 'win_pkg').compact - ["NOT_SUPPORTED"]
-      pkgfiles = pkgfiles.map { |f| "#{fullpath}/#{f}" }
-      FileUtils.cp pkgfiles.select { |f| File.file?f }, assets_dir
-    end
-  end
-  #indexfile.close
-  #FileUtils.rm_rf "workflows_tmp"
+
+    # loop over workflows in VIEWS file
+    dcf.keys.each do |key|
+
+	wfdir = "#{tempdir}/#{ver}/#{key}"
+	if test ?d, wfdir
+	    #
+	    # make YAML files
+	    #
+
+	    tarball = dcf[key]["source.ver"].sub("src/contrib/", "")
+	    # no longer making these
+	    #mac_pkg = tarball.sub(".tar.gz", ".tgz")
+	    #win_pkg = tarball.sub(".tar.gz", ".zip")
+	    #
+	    # last commit once it is in views
+	    last_commit_str=""
+	    # no .BBSoption to correct for mac or win not supported
+	    svn_revision=""
+	    firstcommitdate=""
+	    if ver == "release"
+	    then
+		_R_xyversion = Rrel
+		bioc = BiocRel
+	    else
+		_R_xyversion = Rdev
+		bioc = BiocDev
+	    end
+
+	    files = Dir["#{wfdir}/*.[Rr][NnMm][WwDd]"]
+	    files.each do |file|
+
+		basename = File.basename file
+		extn = File.extname  file
+		filename = File.basename file, extn
+
+		timestamp= File.mtime(file).to_s
+		if `grep -Fq "VignetteIndexEntry" "#{file}"`
+		then
+		    title=`grep -m 1 -o "\VignetteIndexEntry{.*}" "#{file}"`[/\{.*?\}/].sub("{","").sub("}", "")
+		else
+		    title="Title for #{basename}"
+		end
+
+		yamlfile = "#{wfdir}/#{filename}.yaml"
+		File.open("#{yamlfile}", "w+") { |f| f.write(
+"package: \"#{key}\"
+title: \"#{title}\"
+file: \"#{basename}\"
+built_with_R: \"#{_R_xyversion}\"
+built_with_bioc: \"#{bioc}\"
+built_at: \"#{timestamp}\"
+svn_revision: \"#{svn_revision}\"
+source_tarball: \"/packages/#{ver}/workflows/src/contrib/#{tarball}\"
+first_committed: \"#{firstcommitdate}\"
+last_commit: \"#{last_commit_str}\"
+output_file: \"#{filename}.html\"
+r_source: \"/packages/#{ver}/workflows/webvigs/#{key}/#{filename}.R\"
+subnav:
+- include: /_workflows/
+")}
+
+	    end #files
+
+
+	    #
+	    #  Move files to new locations
+	    #
+
+	    pkg_content_dir = "#{source_dir}/#{key}"
+	    FileUtils.rm_rf pkg_content_dir
+	    dir = Dir.new(wfdir)
+	    vignettes = dir.entries.find_all {|i| i =~ /\.yaml$/i}
+	    FileUtils.mkdir_p pkg_content_dir
+	    for vignette in vignettes
+		yaml = YAML::load(File.open("#{wfdir}/#{vignette}"))
+		[vignette, yaml['output_file']].each do |f|
+		    FileUtils.cp "#{wfdir}/#{f}", "#{pkg_content_dir}"
+		end
+	    end
+
+	end # if directory exists for workflow
+    end # keys
+  end # versions
+  # remove and start fresh each time because of file renaming
+  FileUtils.rm_rf tempdir
 end
 
 desc "write version number to endpoint"
@@ -449,25 +473,25 @@ task :get_build_result_dcfs, :repo do |t, args|
     FileUtils.mkdir_p tmpdir
     ary = []
     for version in ["release", "devel"]
-        FileUtils.mkdir_p(File.join(tmpdir, version))
-        if version == "release"
-            machine = config["active_release_builders"]["linux"]
-            biocversion = config["release_version"]
-        else
-            machine = config["active_devel_builders"]["linux"]
-            biocversion = config["devel_version"]
-        end
-        unless (config["devel_repos"].include? repo.gsub("-", "/"))
-          next
-        end
+	FileUtils.mkdir_p(File.join(tmpdir, version))
+	if version == "release"
+	    machine = config["active_release_builders"]["linux"]
+	    biocversion = config["release_version"]
+	else
+	    machine = config["active_devel_builders"]["linux"]
+	    biocversion = config["devel_version"]
+	end
+	unless (config["devel_repos"].include? repo.gsub("-", "/"))
+	  next
+	end
 
-        res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt")
-        f = File.open(File.join(tmpdir, version, "STATUS_DB.txt"), "w")
-        f.write(res)
-        f.close
+	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt")
+	f = File.open(File.join(tmpdir, version, "STATUS_DB.txt"), "w")
+	f.write(res)
+	f.close
 
-        #cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
-        #system(cmd)
+	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
+	#system(cmd)
     end
 end
 
@@ -483,21 +507,21 @@ task :get_build_dbs do
       dest_etag_name = dest_file_name.sub("dcf", "etag")
       etag = HTTParty.head(url).headers["etag"]
       if (!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag
-        shield_dir = File.join("assets", "shields", "build", version, repo)
-        FileUtils.mkdir_p shield_dir
-        efh = File.open(dest_etag_name, 'w')
-        efh.write etag
-        efh.close
-        body = HTTParty.get(url).to_s
-        fh = File.open(dest_file_name, "w")
-        fh.write(body)
-        fh.close
-        url2 = url.sub "STATUS_DB", 'meat-index'
-        body2 = HTTParty.get(url2).to_s
-        fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
-        fh2.write(body2)
-        fh2.close
-        generate_build_shields(shield_dir, dest_file_name)
+	shield_dir = File.join("assets", "shields", "build", version, repo)
+	FileUtils.mkdir_p shield_dir
+	efh = File.open(dest_etag_name, 'w')
+	efh.write etag
+	efh.close
+	body = HTTParty.get(url).to_s
+	fh = File.open(dest_file_name, "w")
+	fh.write(body)
+	fh.close
+	url2 = url.sub "STATUS_DB", 'meat-index'
+	body2 = HTTParty.get(url2).to_s
+	fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
+	fh2.write(body2)
+	fh2.close
+	generate_build_shields(shield_dir, dest_file_name)
 
       end
     end
@@ -537,15 +561,15 @@ task :get_svn_logs do
 
       fh = File.open(File.join(destdir, destfile), "w")
       while !stdout.eof
-        line = stdout.readline
-        fh.write line
+	line = stdout.readline
+	fh.write line
       end
       fh.close
       stdout.close
       stderr.close
       stdin.close
       unless wait_thr.value.exitstatus == 0
-        raise "svn log command failed!"
+	raise "svn log command failed!"
       end
       fh = File.open(File.join(destdir, destfile), 'r')
       doc = Nokogiri::XML(fh)
@@ -553,10 +577,10 @@ task :get_svn_logs do
       logentries = doc.xpath("//log/logentry")
       dates = []
       for logentry in logentries
-        slop = Nokogiri::Slop(logentry.to_xml)
-        datestr = slop.logentry.date.children.first.text
-        date = DateTime.iso8601(datestr)
-        dates << date
+	slop = Nokogiri::Slop(logentry.to_xml)
+	datestr = slop.logentry.date.children.first.text
+	date = DateTime.iso8601(datestr)
+	dates << date
       end
 
       mindate = dates.min.prev_day
@@ -566,51 +590,51 @@ task :get_svn_logs do
       res = Hash.new { |hash, key| hash[key] = {} }
 
       for logentry in logentries
-        thisone = {}
-        slop = Nokogiri::Slop(logentry.to_xml)
-        datestr = slop.logentry.date.children.first.text
-        date = DateTime.iso8601(datestr)
-        paths = slop.logentry.paths.children.text.split("\n")
-        for path in paths
-          next if path.empty?
-            segs = path.split '/'
-            next if segs.length < 6
-            thisone[segs[4]] = 1
-        end
-        # === operator does not work as expected, so....
-        daterange = ranges.find{|i| i === date}
-        daterange = ranges.find{|i| date > i.first and date < i.last} if daterange.nil?
-        for item in thisone.keys
-          unless ranges.include? daterange
-            raise "there's a problem!"
-          end
-          if res[daterange].has_key? item
-            res[daterange][item] += 1
-          else
-            res[daterange][item]= 1
-          end
-        end
+	thisone = {}
+	slop = Nokogiri::Slop(logentry.to_xml)
+	datestr = slop.logentry.date.children.first.text
+	date = DateTime.iso8601(datestr)
+	paths = slop.logentry.paths.children.text.split("\n")
+	for path in paths
+	  next if path.empty?
+	    segs = path.split '/'
+	    next if segs.length < 6
+	    thisone[segs[4]] = 1
+	end
+	# === operator does not work as expected, so....
+	daterange = ranges.find{|i| i === date}
+	daterange = ranges.find{|i| date > i.first and date < i.last} if daterange.nil?
+	for item in thisone.keys
+	  unless ranges.include? daterange
+	    raise "there's a problem!"
+	  end
+	  if res[daterange].has_key? item
+	    res[daterange][item] += 1
+	  else
+	    res[daterange][item]= 1
+	  end
+	end
       end
       packages = get_list_of_packages(bioc=(destfile=='bioc.log'))
       for package in packages
-        hits = []
-        for range in ranges
-          if res[range].has_key? package
-            hits << res[range][package]
-          else
-            hits << 0
-          end
-        end
-        avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
-        avg_s = sprintf("%0.2f", avg)
-        puts "#{package}: #{avg_s}" # comment me out
-        # parallelize this to make it faster?
-        response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-1881c2.svg")
-        if response.code == 200
-          fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
-          fh.write(response.to_s)
-          fh.close
-        end
+	hits = []
+	for range in ranges
+	  if res[range].has_key? package
+	    hits << res[range][package]
+	  else
+	    hits << 0
+	  end
+	end
+	avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
+	avg_s = sprintf("%0.2f", avg)
+	puts "#{package}: #{avg_s}" # comment me out
+	# parallelize this to make it faster?
+	response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-1881c2.svg")
+	if response.code == 200
+	  fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
+	  fh.write(response.to_s)
+	  fh.close
+	end
       end
   end
 end
@@ -644,7 +668,7 @@ task :process_downloads_data do
       next if line =~ /^Package\tYear/ # skip header
       package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
       if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
-        raw_data[package] = (raw_data[package] + Integer(downloads))
+	raw_data[package] = (raw_data[package] + Integer(downloads))
       end
     end
   end
@@ -725,9 +749,9 @@ task :get_years_in_bioc_shields do
   all_ver.push dev_ver
   man_path = "../manifest/"
 
-  manifests = {}	
+  manifests = {}
 
-  all_ver.each { |v| 
+  all_ver.each { |v|
     ver = v.gsub(/\./,"_")
     manifests[v] = []
     if v == dev_ver
@@ -738,10 +762,10 @@ task :get_years_in_bioc_shields do
     if $? == 0
       soft="#{man_path}/software.txt"
       File.open(soft, "r") do |f|
-        f.each_line do |line|
-          next unless line =~ /^Package: /
-          manifests[v].push line.chomp.sub(/^Package: /, "").strip
-        end
+	f.each_line do |line|
+	  next unless line =~ /^Package: /
+	  manifests[v].push line.chomp.sub(/^Package: /, "").strip
+	end
       end
     end
   }
@@ -781,39 +805,39 @@ task :get_coverage_shields do
       efh = File.open(dest_etag_name, 'w')
       efh.write etag
       efh.close
-      resp = HTTParty.get(url)      
+      resp = HTTParty.get(url)
       if resp.code != 200
-        puts "Error getting #{url}: #{resp.code}"
+	puts "Error getting #{url}: #{resp.code}"
       else
-        fh = File.open(dest_file_name, "w")
-        fh.write(resp.to_s)
-        fh.close
-        #generate_build_shields(shield_dir, dest_file_name)
-        packages = get_list_of_packages(true, version=="release")
-        shield_dir = File.join("assets", "shields", "coverage", version)
-        FileUtils.mkdir_p shield_dir
-        unless File.exists? shield_dir
-          FileUtils.mkdir_p shield_dir
-        end
-        
-        ## Convert into hashmap Package: Coverage
-        x = Dcf.parse(File.readlines(dest_file_name).join)
-        cov_res = x.map {|x| [x["Package"], x["Coverage"]]}.to_h
-        
-        for package in packages
-          cov = cov_res[package]
-          cov = "unknown" if cov.nil?
-          cov_color = coverage_color(cov)
-          cov += "%" unless cov == "unknown"
-          puts "Downloading test-coverage shield for #{package} in #{version}..."
-          resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
-          if resp.code == 200
-            shield = File.join(shield_dir, "#{package}.svg")
-            fh = File.open(shield, "w")
-            fh.write(resp.to_s)
-            fh.close
-          end
-        end
+	fh = File.open(dest_file_name, "w")
+	fh.write(resp.to_s)
+	fh.close
+	#generate_build_shields(shield_dir, dest_file_name)
+	packages = get_list_of_packages(true, version=="release")
+	shield_dir = File.join("assets", "shields", "coverage", version)
+	FileUtils.mkdir_p shield_dir
+	unless File.exists? shield_dir
+	  FileUtils.mkdir_p shield_dir
+	end
+
+	## Convert into hashmap Package: Coverage
+	x = Dcf.parse(File.readlines(dest_file_name).join)
+	cov_res = x.map {|x| [x["Package"], x["Coverage"]]}.to_h
+
+	for package in packages
+	  cov = cov_res[package]
+	  cov = "unknown" if cov.nil?
+	  cov_color = coverage_color(cov)
+	  cov += "%" unless cov == "unknown"
+	  puts "Downloading test-coverage shield for #{package} in #{version}..."
+	  resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
+	  if resp.code == 200
+	    shield = File.join(shield_dir, "#{package}.svg")
+	    fh = File.open(shield, "w")
+	    fh.write(resp.to_s)
+	    fh.close
+	  end
+	end
       end
     end
   end
@@ -833,36 +857,36 @@ task :mirror_csv do
     config = YAML.load_file("./config.yaml")
     CSV.open(File.join("assets", "BioC_mirrors.csv"), "w") do |csv|
       csv << ["Name","Country","City","URL","Host","Maintainer","OK",
-              "CountryCode","Comment"]
+	      "CountryCode","Comment"]
       for mirror_outer in config['mirrors']
-        country = mirror_outer.keys.first
-        country_mirrors = mirror_outer.values
-        for mirrors in country_mirrors
-          for mirror in mirrors
-            if mirror['contact'].is_a? Array
-              mirror['contact'] = mirror['contact'].first
-              mirror['contact_email'] = mirror['contact_email'].first
-            end
-            maintainer = "#{mirror['contact']} <#{mirror['contact_email']}>".sub("@", " # ")
-            # As of BioC 3.5 https is required for all sites
-            # First row is https (CRAN request)
-            data = ["#{country} (#{mirror['city']}) [https]", 
-              country, 
-              mirror['city'], 
-              mirror['https_mirror_url'],
-              mirror['institution'], 
-              maintainer,
-              check_mirror_url(mirror['https_mirror_url']), 
-              mirror['country_code'],
-              mirror['rsync']]
-            csv << data
-            # Second row is http
-            data[3] = mirror['mirror_url']
-            data[0] = "#{country} (#{mirror['city']})"
-            data[6] = check_mirror_url(mirror['mirror_url'])
-            csv << data
-          end
-        end
+	country = mirror_outer.keys.first
+	country_mirrors = mirror_outer.values
+	for mirrors in country_mirrors
+	  for mirror in mirrors
+	    if mirror['contact'].is_a? Array
+	      mirror['contact'] = mirror['contact'].first
+	      mirror['contact_email'] = mirror['contact_email'].first
+	    end
+	    maintainer = "#{mirror['contact']} <#{mirror['contact_email']}>".sub("@", " # ")
+	    # As of BioC 3.5 https is required for all sites
+	    # First row is https (CRAN request)
+	    data = ["#{country} (#{mirror['city']}) [https]",
+	      country,
+	      mirror['city'],
+	      mirror['https_mirror_url'],
+	      mirror['institution'],
+	      maintainer,
+	      check_mirror_url(mirror['https_mirror_url']),
+	      mirror['country_code'],
+	      mirror['rsync']]
+	    csv << data
+	    # Second row is http
+	    data[3] = mirror['mirror_url']
+	    data[0] = "#{country} (#{mirror['city']})"
+	    data[6] = check_mirror_url(mirror['mirror_url'])
+	    csv << data
+	  end
+	end
       end
     end
 end
