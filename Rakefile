@@ -352,7 +352,7 @@ task :get_workflows do
 
     # loop over workflows in VIEWS file
     dcf.keys.each do |key|
-
+	puts "#{key}"
 	wfdir = "#{tempdir}/#{ver}/#{key}"
 	if test ?d, wfdir
 	    #
@@ -386,9 +386,14 @@ task :get_workflows do
 		filename = File.basename file, extn
 
 		timestamp= File.mtime(file).to_s
-		if `grep -Fq "VignetteIndexEntry" "#{file}"`
+		if `grep -F "VignetteIndexEntry" "#{file}"`
 		then
-		    title=`grep -m 1 -o "\VignetteIndexEntry{.*}" "#{file}"`[/\{.*?\}/].sub("{","").sub("}", "")
+		    vl = `grep -m 1 -o "\VignetteIndexEntry{.*}" "#{file}"`
+		    if vl != ""
+		       title=vl[/\{.*?\}/].sub("{","").sub("}", "")
+		    else
+		       title = "Title for #{basename}"
+		    end
 		else
 		    title="Title for #{basename}"
 		end
