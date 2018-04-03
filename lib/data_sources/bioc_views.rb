@@ -9,7 +9,7 @@ class BiocViews < Nanoc::DataSource
   def hard_coded_repos()
     {
       "bioc/" => "Software", "data/annotation/" => "AnnotationData",
-      "data/experiment/" => "ExperimentData"
+      "data/experiment/" => "ExperimentData", "workflows/" => "Workflow"
     }
   end
 
@@ -39,7 +39,8 @@ class BiocViews < Nanoc::DataSource
 
         dir = "#{config[:json_dir]}/#{version}/#{k}"
         unless test(?f, "#{dir}/packages.json")
-          @good_to_go = false
+#  if one repo fails they all fail
+#          @good_to_go = false
           puts "'packages.json' missing in #{dir}"
         end
 
@@ -57,12 +58,16 @@ class BiocViews < Nanoc::DataSource
         @repos.each_pair do |k,v|
           key = k.gsub(/\/$/, "")
           dir = "#{config[:json_dir]}/#{version}/#{k}"
-          json_file = File.open("#{dir}/packages.json")
-          obj = JSON.parse(json_file.readlines.join("\n"))
-          #@all_packages[key] = obj
-          hsh[key] = obj
-          for bad in @bad_packages
-            hsh.delete(bad)
+          if File.exist?("#{dir}/packages.json")
+              json_file = File.open("#{dir}/packages.json")
+              obj = JSON.parse(json_file.readlines.join("\n"))
+              #@all_packages[key] = obj
+              hsh[key] = obj
+              for bad in @bad_packages
+                hsh.delete(bad)
+              end
+          else
+            puts "ERROR: BiocViews DataSource: no JSON files; no initialization"
           end
         end
         @all_packages[version] = hsh
@@ -70,7 +75,6 @@ class BiocViews < Nanoc::DataSource
     else
       puts "ERROR: BiocViews DataSource: no JSON files; no initialization"
     end
-
   end
 
   def get_index_page(packages, repo, version)
@@ -133,71 +137,77 @@ class BiocViews < Nanoc::DataSource
     link_list = [:Depends, :Imports, :Suggests, :Enhances,
       :LinkingTo, :dependsOnMe, :importsMe, :suggestsMe]
 
+
     for version in @site_config["versions"]
+
       @repos = get_repos(version, @repos)
       @repos.each_pair do |k,v|
         dir = "#{config[:json_dir]}/#{version}/#{k}"
 
-        json_file = File.open("#{dir}/packages.json")
+        if File.exist?("#{dir}/packages.json")
+            json_file = File.open("#{dir}/packages.json")
 
-        packages = JSON.parse(
-          File.read(json_file,
-            :external_encoding => 'utf-8',
-            :internal_encoding => 'utf-8'
-          )
-        )
-        for bad in @bad_packages
-          packages.delete(bad)
-        end
-
-        items.push(get_index_page(packages, v, version))
-
-        for package in packages.keys
-          repo = k
-          id = "/#{version}/#{repo}#{package}/"
-          pkgs = packages[package]
-          subnav = []
-          subnav.push({:include => "/_documentation/"})
-          subnav.push({:include => "/_support/"})
-
-          title = pkgs["Package"]
-          if  version == @site_config["devel_version"]
-            title += " (development version)"
-          end
-          if (version == @site_config["release_version"])
-            bioc_version_str = "Release"
-          elsif (version == @site_config["devel_version"])
-            bioc_version_str = "Development"
-          else
-            bioc_version_str = nil
-          end
-
-          add_sym = {}
-          for sym in link_list
-            new_sym_name = "#{sym.to_s}_repo".to_sym
-            new_sym = []
-            for x in to_array(pkgs["#{sym}"])
-              new_sym.push(is_bioc_package?(x, version))
+            packages = JSON.parse(
+              File.read(json_file,
+                :external_encoding => 'utf-8',
+                :internal_encoding => 'utf-8'
+              )
+            )
+            for bad in @bad_packages
+              packages.delete(bad)
             end
-            add_sym[new_sym_name] = new_sym
-          end
 
-          temp = pkgs.merge({
-                :rebase => true,
-                :subnav => subnav,
-                :title => title,
-                :repo => repo,
-                :bioc_version_num => version,
-                :bioc_version_str => bioc_version_str
-          })
-          attributes = temp.merge(add_sym)
+            items.push(get_index_page(packages, v, version))
 
-          identifier = Nanoc::Identifier.new(id, type: :legacy)
+            for package in packages.keys
+              repo = k
+              id = "/#{version}/#{repo}#{package}/"
+              pkgs = packages[package]
+              subnav = []
+              subnav.push({:include => "/_documentation/"})
+              subnav.push({:include => "/_support/"})
 
-          item = new_item(" ", attributes, identifier)
-          rep = Nanoc::Int::ItemRep.new(item, :unique_name)
+              title = pkgs["Package"]
+              if  version == @site_config["devel_version"]
+                title += " (development version)"
+              end
+              if (version == @site_config["release_version"])
+                bioc_version_str = "Release"
+              elsif (version == @site_config["devel_version"])
+                bioc_version_str = "Development"
+              else
+                bioc_version_str = nil
+              end
 
-          items.push item
+              add_sym = {}
+              for sym in link_list
+                new_sym_name = "#{sym.to_s}_repo".to_sym
+                new_sym = []
+                for x in to_array(pkgs["#{sym}"])
+                  new_sym.push(is_bioc_package?(x, version))
+                end
+                add_sym[new_sym_name] = new_sym
+              end
+
+              temp = pkgs.merge({
+                  :rebase => true,
+                  :subnav => subnav,
+                  :title => title,
+                  :repo => repo,
+                  :bioc_version_num => version,
+                  :bioc_version_str => bioc_version_str
+              })
+              attributes = temp.merge(add_sym)
+
+              identifier = Nanoc::Identifier.new(id, type: :legacy)
+
+              item = new_item(" ", attributes, identifier)
+              rep = Nanoc::Int::ItemRep.new(item, :unique_name)
+
+              items.push item
+            end
+        else
+          puts "ERROR: BiocViews DataSource: no JSON files; detail pages not built"
         end
       end
     end

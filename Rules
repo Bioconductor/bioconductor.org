@@ -82,7 +82,7 @@ route /^\/help\/bioc-views\/package-pages\/all-/ do
   segs = item.identifier.to_s.split("-")
   version = segs.pop.gsub("/", "")
   long_repo_name = segs.pop
-  repo_map = {"Software" => "bioc", "AnnotationData" => "data/annotation", "ExperimentData" => "data/experiment"}
+  repo_map = {"Software" => "bioc", "AnnotationData" => "data/annotation", "ExperimentData" => "data/experiment", "Workflow" => "workflows"}
   version = item.attributes[:bioc_version_num]
   "/packages/#{version}/#{repo_map[long_repo_name]}/index.html"
 end

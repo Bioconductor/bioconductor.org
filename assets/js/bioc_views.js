@@ -26,7 +26,7 @@ var displayPackages = function(packageList, nodeName) {
 
     var category = parents[0];
 
-    var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment"};
+    var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment", "Workflow": "workflows"};
 
     html += "<table id='biocViews_package_table'><thead><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr></thead><tbody>\n";
 
@@ -298,6 +298,8 @@ var loadPackageData = function() {
         jQuery.extend(packageInfo, addToPackageInfo(data_annotation_packages));
     if (typeof data_experiment_packages != "undefined")
         jQuery.extend(packageInfo, addToPackageInfo(data_experiment_packages));
+    if (typeof workflow_packages != "undefined")
+        jQuery.extend(packageInfo, addToPackageInfo(workflow_packages));
 }
 
 

@@ -144,17 +144,19 @@ class GetJson
     default_view = "Software" if repo == "bioc"
     default_view = "AnnotationData" if repo == "data/annotation"
     default_view = "ExperimentData" if repo == "data/experiment"
+    default_view = "Workflow" if repo == "workflows"
     rows = nil
     if version == @config["devel_version"]
       branch = "master"
     else
       branch = "RELEASE_#{version.gsub(".", "_")}"
     end
-#    path = "../biocViews"
-#    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
-#    dbfile = "#{path}/inst/extdata/biocViewsVocab.sqlite"
     tempDir = Dir.tmpdir
+
     call = "git archive --remote=ssh://git@git.bioconductor.org/packages/biocViews #{branch} inst/extdata/biocViewsVocab.sqlite | tar -x --strip=2 -C #{tempDir}"
+#    local test changes to biocViews
+#    call = "cp /home/lori/b/Rpacks/biocViews/inst/extdata/biocViewsVocab.sqlite #{tempDir}"
+
     system(call)
     dbfile = "#{tempDir}/biocViewsVocab.sqlite"
     db = SQLite3::Database.new(dbfile)
@@ -259,6 +261,7 @@ class GetJson
     nanoc_dir = segs.join("/")
     config = YAML.load_file("./config.yaml")
     @config = config
+#    repos = ["bioc", "data/experiment", "data/annotation", "workflows"]
     repos = ["bioc", "data/experiment", "data/annotation"]
     repos = config["devel_repos"] if version == config["devel_version"]
     packages_data = []
@@ -274,7 +277,6 @@ class GetJson
     repos.each_with_index do |repo, i|
       write_packages_file(packages_data[i], version, repo, outdir)
     end
-
     write_tree_file(repos, biocviews_data, version, outdir)
 
   end

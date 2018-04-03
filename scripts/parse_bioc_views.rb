@@ -56,7 +56,8 @@ class ParseBiocViews
     
     root = clean_hash['BiocViews']['children']
 
-    repos = {"bioc" => "Software", "data/annotation" => "AnnotationData", "data/experiment" => "ExperimentData"}
+    repos = {"bioc" => "Software", "data/annotation" => "AnnotationData",
+      "data/experiment" => "ExperimentData", "workflows" => "Workflow"}
     
     key = root.find{|i|i['data'] =~ /^#{repos[repo]}/}
     
