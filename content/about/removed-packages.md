@@ -3,6 +3,27 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.7 release
+
+Software Packages: 
+
+<ul class="inline_list">
+<li><a href="/packages/3.5/bioc/html/BioMedR.html">BioMedR</a></li>
+<li><a href="/packages/3.4/bioc/html/ddgraph.html">ddgraph</a></li>
+<li><a href="/packages/3.6/bioc/html/domainsignatures.html">domainsignatures</a></li>
+<li><a href="/packages/3.4/bioc/html/EWCE.html">EWCE</a></li>
+<li><a href="/packages/3.4/bioc/html/HCsnip.html">HCsnip</a></li>
+<li><a href="/packages/3.4/bioc/html/oneChannelGUI.html">oneChannelGUI</a></li>
+<li><a href="/packages/3.4/bioc/html/stepwiseCM.html">stepwiseCM</a></li>
+</ul>
+
+Annotation Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.6/data/annotation/html/IlluminaHumanMethylation450k.db.html">IlluminaHumanMethylation450k.db</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.6 release
 
 Software Packages: 
