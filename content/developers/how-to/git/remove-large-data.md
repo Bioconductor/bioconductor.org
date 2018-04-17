@@ -10,7 +10,7 @@ own github repository. The steps below assume origin is a user maintained github
 repository.
 
 **NOTE:** Anyone that is maintaining the package repository (with a local copy)
-  should run steps 2-4.
+  should run steps 1-3.
 
   
 1. Download [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
