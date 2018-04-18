@@ -85,7 +85,7 @@ user community can engage in the development of your package.
    [Push to GitHub and _Bioconductor_][] to maintain your repository
    on both GitHub and Bioconductor.
 
-[submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
+[submit-keys]: https://git.bioconductor.org/BiocCredentials/
 [Create a new GitHub account]: https://help.github.com/articles/signing-up-for-a-new-github-account/
 [Create a new GitHub repository]: https://help.github.com/articles/create-a-repo/
 [Sync existing repositories]: ../sync-existing-repositories

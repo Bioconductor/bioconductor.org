@@ -38,7 +38,7 @@ After your package has been accepted, it is visible on the
     - [Maintain GitHub and _Bioconductor_ repositories][].
     - [Fix bugs in  devel and release][].
 
-[submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
+[submit-keys]: https://git.bioconductor.org/BiocCredentials/
 [Maintain GitHub and _Bioconductor_ repositories]: ../maintain-github-bioc
 [Pull upstream changes]: ../pull-upstream-changes
 [Fix bugs in devel and release]: ../bug-fix-in-release-and-devel

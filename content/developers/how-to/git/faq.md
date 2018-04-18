@@ -1,5 +1,6 @@
 # Frequently asked questions
 
+
 1. I'm a developer for _Bioconductor_, my package `ExamplePackage` is on
    the new server https://git.bioconductor.org. What do I do next?
 
@@ -209,7 +210,7 @@
     There are a few possibilities here,
 
     * You have set a password. The bioc-devel mailing list cannot help
-    you with this.  You have to submit a new key on the google-form.
+    you with this.  You have to submit a new key on the BiocCredentials app.
 
     * The permissions on your SSH key are wrong. Verify that the
     permissions on SSH IdentityFile are `400`. SSH will reject, in a
@@ -224,14 +225,11 @@
     server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
-18. After submitting my SSH key to the google form, I did not receive a 
-    reply. How do I check?
+18. After submitting my SSH key through the BiocCredentials app, I did not
+    receive a reply. How do I check?
 
-    Once you submit your SSH key to the google form, you should receive
-    an email notification (from google) confirming your submission. You 
-    should receive another email notification if you key was added to our
-    system from maintainer@bioconductor.org, or if you submitted an invalid
-    entry.
+    Once you submit your SSH key through the app, you can check what
+    keys we have on file in the 'Profile' interface.
     
 
     ```
@@ -251,10 +249,12 @@
 
 ## More questions?
 
+
 If you have additional questions which are not answered here already,
 please send an email to bioc-devel@bioconductor.org.
 
 ## Helpful links:
+
 
 _Bioconductor_ [source control][] overview.
 
@@ -276,7 +276,7 @@ _Bioconductor_ [source control][] overview.
 [Maintain a _Bioconductor_-only repository]: ../maintain-bioc-only
 [Sync existing repositories]: ../sync-existing-repositories
 [Adding an SSH key to your GitHub account]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
-[submit your SSH public key]: https://docs.google.com/forms/d/1CCwUhjtG82rnmcTWYqY43WcmBx5YyQm5UD4pcs1dhEs/
+[submit your SSH public key]: https://git.bioconductor.org/BiocCredentials/
 
 [Pull requests]: https://help.github.com/articles/creating-a-pull-request/
 
