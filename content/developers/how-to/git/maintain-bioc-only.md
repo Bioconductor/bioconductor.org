@@ -72,7 +72,9 @@ without using GitHub.
         git checkout master
         git push upstream master
 
+
 ### (Optional) Merge changes to the current release branch
+
 
 1. If the changes (bug fixes) need to be available on the
    `<RELEASE_X_Y>` branch. Checkout the branch `<RELEASE_X_Y>` using:
@@ -100,4 +102,4 @@ without using GitHub.
 
         git push upstream <RELEASE_X_Y>
 
-[submit-keys]: https://goo.gl/forms/eg36vcBkIUjfZfLe2
+[submit-keys]: https://git.bioconductor.org/BiocCredentials
