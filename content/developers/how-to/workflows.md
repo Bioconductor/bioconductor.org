@@ -70,8 +70,9 @@ Anyone who is a bioinformatics domain expert.
       - author affiliations
       - a date representing when the workflow vignette has been modified
 
-* The first section should have some versioning information. The following should be
-  included to represent the versions of R, Bioconductor and the package:
+* The first section should have some versioning information. The  R version,
+  Bioconductor version, and package version should be visible. 
+  The following is an example of how this could be achieved:
 
 	```
 	<p>
