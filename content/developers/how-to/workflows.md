@@ -56,9 +56,10 @@ Anyone who is a bioinformatics domain expert.
 
 ## Consistent formatting
 
-* In an effort to standardize the workflow vignette format, it is required to use
-  BiocStyle for formatting. The following header should be inserted into the
-  vignette:
+* In an effort to standardize the workflow vignette format, it is strongly
+  encouraged to use either BiocStyle for formatting or utilize
+  [BiocWorkflowTools](http://bioconductor.org/packages/BiocWorkflowTools/). 
+  The following header shows how to use BiocStyle in the vignette:
 
 	```
 	output:
