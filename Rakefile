@@ -511,7 +511,8 @@ task :get_build_dbs do
       dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
       dest_etag_name = dest_file_name.sub("dcf", "etag")
       etag = HTTParty.head(url).headers["etag"]
-      if (!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag
+      urlcode = HTTParty.head(url).response.code
+      if ((!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag) and urlcode == "200"
 	shield_dir = File.join("assets", "shields", "build", version, repo)
 	FileUtils.mkdir_p shield_dir
 	efh = File.open(dest_etag_name, 'w')
@@ -716,13 +717,17 @@ task :get_availability_shields  do
     meat_index_file = File.join("tmp", "build_dbs","#{reldev}-bioc.meat-index.txt")
     json_file = File.join("assets", "packages", "json", numeric_version, "bioc",
       "packages.json")
-    mitxt = File.readlines(meat_index_file).join
-    meat_index = Dcf.parse(mitxt)
-    json_obj = JSON.parse(File.read(json_file))
-    for item in meat_index
-      view = json_obj[item['Package']]
-      next if view.nil?
-      get_available(item, numeric_version, view)
+    if File.exists? meat_index_file
+      mitxt = File.readlines(meat_index_file).join
+      meat_index = Dcf.parse(mitxt)
+      json_obj = JSON.parse(File.read(json_file))
+      if (not meat_index.nil?)
+        for item in meat_index
+          view = json_obj[item['Package']]
+          next if view.nil?
+          get_available(item, numeric_version, view)
+        end
+      end
     end
   end
 end

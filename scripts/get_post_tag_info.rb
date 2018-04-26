@@ -44,7 +44,7 @@ def get_post_tag_info()
   ranges.push new_range
 
 
-  res = posts_post.where("lastedit_date > ?", sixmonthsago).select(:id, :tag_val, :status, :type, :has_accepted, :root_id, :parent_id, :reply_count).all
+  res = posts_post.where(Sequel.lit("lastedit_date > ?", sixmonthsago)).select(:id, :tag_val, :status, :type, :has_accepted, :root_id, :parent_id, :reply_count).all
 
 
   hsh = Hash.new { |h, k| h[k] = [] }
