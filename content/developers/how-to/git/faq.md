@@ -233,7 +233,7 @@
     
 
     ```
-    git clone git@git.bioconductor.org:packagse/<myPackage>
+    git clone git@git.bioconductor.org:packages/<myPackage>
     ```
 
     If this suceeds via the SSH protocol, then it means that you have
