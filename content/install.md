@@ -79,8 +79,7 @@ behavior; type `?biocLite` for further help.
 
 <h2 id="find-bioconductor-packages">Find <em>Bioconductor</em> Packages</h2>
 
-Visit the [Workflows](/help/workflows/) page
-and [software package list](/packages/release/BiocViews.html#___Software)
+Visit the [software package list](/packages/release/BiocViews.html#___Software)
 to discover available packages.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
