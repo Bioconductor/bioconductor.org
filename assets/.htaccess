@@ -91,7 +91,7 @@ RewriteRule ^docs/workflows/flowoverview.*$ /help/workflows/high-throughput-assa
 RewriteRule ^docs/workflows/index.html$ /help/workflows/ [R=301]
 RewriteRule ^docs/workflows/?$ /help/workflows/ [R=301]
 
-RewriteRule ^help/workflows/?$ /help/workflows/moved.html [R=301]
+#RewriteRule ^help/workflows/?$ /help/workflows/moved.html [R=301]
 RewriteRule ^help/workflows/(.*)/$ /packages/release/workflows/html/$1.html [R=301]
 RewriteRule ^help/workflows/annotation/(.*)/$ /packages/release/workflows/annotation/$1/$1.html [R=301]
 
