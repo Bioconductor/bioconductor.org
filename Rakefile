@@ -8,7 +8,6 @@ require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
 require './scripts/generate_build_shields.rb'
 require './scripts/svn_shield_helper.rb'
-require './scripts/workflow_helper.rb'
 require 'open3'
 require 'find'
 require 'pathname'
@@ -314,129 +313,6 @@ task :generate_cf_templates do
   puts "to S3 and mark them as public!"
   puts "This might work:"
   puts "aws s3 cp --acl=public-read --recursive cloud_formation/output  s3://bioc-cloudformation-templates"
-end
-
-desc "Get Workflows"
-task :get_workflows do
-
-  site_config = YAML.load_file("./config.yaml")
-  home = Dir.pwd
-  tempdir = "workflows_tmp"
-  FileUtils.mkdir_p "#{tempdir}"
-  dest_dir = "packages"
-  BiocRel = site_config["release_version"]
-  BiocDev =  site_config["devel_version"]
-  Rrel = site_config["r_version_associated_with_release"]
-  Rdev = site_config["r_ver_for_bioc_ver"]["#{BiocDev}"]
-
-  versions = ["release", "devel"]
-
-  versions.each do |ver|
-
-    source_dir = (ver == "release") ? "content/#{dest_dir}/#{BiocRel}/workflows/html" : "content/#{dest_dir}/#{BiocDev}/workflows/html"
-    FileUtils.mkdir_p source_dir
-    FileUtils.mkdir_p "#{tempdir}/#{ver}"
-
-    # get R, html, and Rmd files
-    system(%Q(rsync -av --filter="+ */" --filter="-! *[.R | .Rmd | .html]" "ubuntu@master.bioconductor.org:/extra/www/bioc/packages/#{ver}/workflows/webvigs/*" "#{tempdir}/#{ver}"))
-
-    # read VIEWS file for versions numbers and active workflows
-    if ver == "devel"
-    then
-	dcf = get_dcfs("workflows", BiocDev)
-    else
-	dcf = get_dcfs("workflows", BiocRel)
-    end
-
-
-    # loop over workflows in VIEWS file
-    dcf.keys.each do |key|
-	puts "#{key}"
-	wfdir = "#{tempdir}/#{ver}/#{key}"
-	if test ?d, wfdir
-	    #
-	    # make YAML files
-	    #
-
-	    tarball = dcf[key]["source.ver"].sub("src/contrib/", "")
-	    # no longer making these
-	    #mac_pkg = tarball.sub(".tar.gz", ".tgz")
-	    #win_pkg = tarball.sub(".tar.gz", ".zip")
-	    #
-	    # last commit once it is in views
-	    last_commit_str=""
-	    # no .BBSoption to correct for mac or win not supported
-	    svn_revision=""
-	    firstcommitdate=""
-	    if ver == "release"
-	    then
-		_R_xyversion = Rrel
-		bioc = BiocRel
-	    else
-		_R_xyversion = Rdev
-		bioc = BiocDev
-	    end
-
-	    files = Dir["#{wfdir}/*.[Rr][NnMm][WwDd]"]
-	    files.each do |file|
-
-		basename = File.basename file
-		extn = File.extname  file
-		filename = File.basename file, extn
-
-		timestamp= File.mtime(file).to_s
-		if `grep -F "VignetteIndexEntry" "#{file}"`
-		then
-		    vl = `grep -m 1 -o "\VignetteIndexEntry{.*}" "#{file}"`
-		    if vl != ""
-		       title=vl[/\{.*?\}/].sub("{","").sub("}", "")
-		    else
-		       title = "Title for #{basename}"
-		    end
-		else
-		    title="Title for #{basename}"
-		end
-
-		yamlfile = "#{wfdir}/#{filename}.yaml"
-		File.open("#{yamlfile}", "w+") { |f| f.write(
-"package: \"#{key}\"
-title: \"#{title}\"
-file: \"#{basename}\"
-built_with_R: \"#{_R_xyversion}\"
-built_with_bioc: \"#{bioc}\"
-built_at: \"#{timestamp}\"
-svn_revision: \"#{svn_revision}\"
-source_tarball: \"/packages/#{ver}/workflows/src/contrib/#{tarball}\"
-first_committed: \"#{firstcommitdate}\"
-last_commit: \"#{last_commit_str}\"
-output_file: \"#{filename}.html\"
-r_source: \"/packages/#{ver}/workflows/webvigs/#{key}/#{filename}.R\"
-")}
-
-	    end #files
-
-
-	    #
-	    #  Move files to new locations
-	    #
-
-	    pkg_content_dir = "#{source_dir}/#{key}"
-	    FileUtils.rm_rf pkg_content_dir
-	    dir = Dir.new(wfdir)
-	    vignettes = dir.entries.find_all {|i| i =~ /\.yaml$/i}
-	    FileUtils.mkdir_p pkg_content_dir
-	    for vignette in vignettes
-		yaml = YAML::load(File.open("#{wfdir}/#{vignette}"))
-		[vignette, yaml['output_file']].each do |f|
-		    FileUtils.cp "#{wfdir}/#{f}", "#{pkg_content_dir}"
-		end
-	    end
-
-	end # if directory exists for workflow
-    end # keys
-  end # versions
-  # remove and start fresh each time because of file renaming
-  FileUtils.rm_rf tempdir
 end
 
 desc "write version number to endpoint"
