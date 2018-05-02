@@ -41,12 +41,6 @@ prefix="og: http://ogp.me/ns#">
 	  <%= render("/_subnav/", :pages => subnav_items(@item)) %>
 	<% end %>
 
-	<% if @item.attributes.has_key?(:Package)%>
-	    <% if (@item.attributes[:repo] == "workflows/")%>
-		  <%= render("/_workflows/") %>
-	    <% end %>
-	<% end %>
-
       </div>
 
       <%= render("/_footer/") %>
