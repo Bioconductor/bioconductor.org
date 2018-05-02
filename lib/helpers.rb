@@ -1089,7 +1089,7 @@ def is_devel?(item)
 end
 
 def is_removed?(item)
-    return true if File.foreach("content/about/removed-packages.md").grep(/#{item}\.html/).any?
+    return true if File.foreach("content/about/removed-packages.md").grep(/\/#{item}\.html/).any?
     return false
 end
 
