@@ -183,23 +183,21 @@ Packages must
   name space, and exported for users.
 * Contain (literature) references to the methods used as well as to other
   similar or related packages.
-* Make use of appropriate existing packages (e.g., biomaRt, AnnotationDbi,
-  Biostrings) and classes (e.g., ExpressionSet, AnnotatedDataFrame, GRanges,
-  Rle, DNAStringSet), and avoid duplication of functionality available in other
-  Bioconductor packages. Note that, starting with BioC 2.12, the use of
-  RangedData or RangedDataList objects (those classes are defined in the
-  IRanges package) is discouraged so new contributed packages should use
-  GRanges/GRangesList objects instead (those classes are defined in the
-  GenomicRanges package). See [Common Bioconductor Methods and Classes](developers/how-to/commonMethodsAndClasses)
+* Make use of appropriate existing packages (e.g., biomaRt,
+  AnnotationDbi, Biostrings) and classes (e.g., SummarizedExperiment,
+  GRanges, Rle, DNAStringSet), and avoid duplication of functionality
+  available in other Bioconductor packages. See
+  [Common Bioconductor Methods and Classes][CommonMethods].
 * Document data structures used and, if different from data structures used by
   similar packages, explain why a different data structure was used.
-* Contain only code that can be redistributed according to the package license.
-  Be aware of the licensing agreements for packages you are depending on in your package.
-  Not all packages are open source even if they are publicly available.
-  In particular, packages may not include any code from
-  [Numerical Recipes](http://www.nr.com/).
+* Contain only code that can be redistributed according to the package
+  license.  Be aware of the licensing agreements for packages you are
+  depending on in your package.  Not all packages are open source even
+  if they are publicly available.
 * Not contain unnecessary files such as .DS_Store, .project, .svn, cache file,
   log files, etc.
+
+[CommonMethods]: /developers/how-to/commonMethodsAndClasses
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -500,7 +498,6 @@ both package development and maintenance.  Examples and explanations are provide
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="videos">URLs and Videos</h2>
-<<<<<<< HEAD
 
 Add a "URL:" field in your DESCRIPTION file to direct users to source
 code repositories, additional help resources, etc; details are
