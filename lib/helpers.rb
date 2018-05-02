@@ -713,7 +713,7 @@ def script_tag_for_package_data(item)
   segs = item.identifier.to_s.split "/"
   segs.pop
   version = segs.pop
-  repos = ["bioc", "data/annotation", "data/experiment"]
+  repos = ["bioc", "data/annotation", "data/experiment", "workflows"]
   if version == config[:devel_version]
     repos = config[:devel_repos]
   end
