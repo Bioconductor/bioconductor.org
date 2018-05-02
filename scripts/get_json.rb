@@ -261,8 +261,8 @@ class GetJson
     nanoc_dir = segs.join("/")
     config = YAML.load_file("./config.yaml")
     @config = config
-#    repos = ["bioc", "data/experiment", "data/annotation", "workflows"]
-    repos = ["bioc", "data/experiment", "data/annotation"]
+    repos = ["bioc", "data/experiment", "data/annotation", "workflows"]
+#    repos = ["bioc", "data/experiment", "data/annotation"]
     repos = config["devel_repos"] if version == config["devel_version"]
     packages_data = []
     biocviews_data = []

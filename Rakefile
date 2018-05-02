@@ -329,8 +329,7 @@ task :get_workflows do
   Rrel = site_config["r_version_associated_with_release"]
   Rdev = site_config["r_ver_for_bioc_ver"]["#{BiocDev}"]
 
-  #versions = ["release", "devel"]
-  versions = ["devel"]
+  versions = ["release", "devel"]
 
   versions.each do |ver|
 
@@ -412,8 +411,6 @@ first_committed: \"#{firstcommitdate}\"
 last_commit: \"#{last_commit_str}\"
 output_file: \"#{filename}.html\"
 r_source: \"/packages/#{ver}/workflows/webvigs/#{key}/#{filename}.R\"
-subnav:
-- include: /_workflows/
 ")}
 
 	    end #files
