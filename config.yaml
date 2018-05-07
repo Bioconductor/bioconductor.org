@@ -53,7 +53,7 @@ workflow_builder:
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.7"
+  bioc_version: "3.8"
   r_version: "3.5"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
