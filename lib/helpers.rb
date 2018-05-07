@@ -1244,12 +1244,16 @@ def get_svn_source_url(package, item, item_rep)
     url
 end
 
-def get_source_url(package, item, item_rep)
+def get_source_url(package, item, item_rep, access_type)
     segs = item.identifier.to_s.split('/')
     if segs[4] < "3.5"
         get_svn_source_url(package, item, item_rep)
-    else
-        "https://git.bioconductor.org/packages/" + package[:Package]
+    else      
+        if access_type == "ssh"
+            "git@git.bioconductor.org:packages/" + package[:Package]
+        else
+            "https://git.bioconductor.org/packages/" + package[:Package]
+        end
     end
 end
 
