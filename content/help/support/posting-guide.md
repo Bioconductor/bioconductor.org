@@ -1,42 +1,84 @@
 # ![](/images/icons/magnifier.gif)Posting guide #
 
-Revised: 18 August, 2014
+Revised: 8 May, 2018
 
 ## Why? ##
 
-* Good questions attract good responses.
-
-* Formulating a good question can help point to the answer.
-
-* Good questions help avoid embarrassment.
+* Well-formed questions attract better responses and help save
+  everyone's time. 
+* Please remember that the helpers on the support site are volunteers
+  who are often quite knowledgeable about Bioconductor, but won't know
+  what you have done already, nor what you are trying to do. The key
+  points below are intended to help you give enough information that
+  an experienced person could provide a useful answer without
+  requesting more information.
 
 ## Key points ##
 
-* Use the latest Bioconductor release (or 'devel') version. Ensure
-  that your packages are [up-to-date](/install#update-bioconductor-packages).
+* Use the latest Bioconductor [release version](/packages/release/BiocViews.html#___Software). 
+  Ensure that your packages are [up-to-date](/install#update-bioconductor-packages).
+* Post all of your R code.
+* Include a copy of any error or warning messages that appeared in R.
+* If your question involves experimental data, include an example of
+  the [sample-level covariate data](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509590/figure/F2/)
+  (one row per sample, one column per covariate). If it would help
+  answer your technical question, and can be shared, explain the
+  motivation behind your experiment.
+* Always paste the output of `sessionInfo()` at the end of your
+  post. Alternatively, the output of `session_info()` from the
+  devtools or sessioninfo packages can be posted. 
+* If possible, provide a minimal, self-contained example that someone
+  else can cut-and-paste into a new R session to reproduce your
+  problem. 
+* If the example produces an error, provide the output of
+  `traceback()` after the error occurs.
 
-* Provide a minimal, self-contained example (data and code) that
-  someone else can cut-and-paste into a new R session to reproduce
-  your problem.
+## Communication with package maintainers ##
 
-* Include the output of `sessionInfo()`. If the example produces an
-  error, provide the output of `traceback()` after the error occurs.
+* Tag your post with the names of the appropriate packages. Putting
+  the correct tag is important, as this triggers an automatic email
+  from the system to the package maintainer. Capitalization doesn't
+  matter, but spelling does matter for the package tags. 
+* Do not email the package maintainer directly. As much as possible,
+  keep all conversations on the support site, and do not revert to
+  email unless indicated by the other party. Some package maintainers
+  have an alternate URL for bug reports, found under *BugReports* on
+  the package landing page. 
+* Why? Because the support site is public and searchable, it acts as
+  an archive providing benefit to other users who may face similar
+  errors or issues. 
 
-* Be sure and tag your post with the names of the appropriate
-  package(s).
+## Before posting ##
 
-## Preparing ##
 
-* Read the relevant R documentation.  Use `help.start()` to start the
-  HTML search engine. If you are having trouble with function
-  `somefunc`, try `?somefunc`. If you are searching for a function,
-  try `help.search("somefunc")`. Read the vignette(s) for the
-  package(s) using `vignette(package="somepkg")`
+* Read the vignettes for the package in question using
+  `browseVignettes("somepkg")`. Search the vignette text for sections
+  relevant to your question. 
+* Read the relevant R documentation. If you are having trouble with
+  function `somefunc`, read the relevant sections of `?somefunc`,
+  including the sections about function arguments and function
+  output. 
+* Search the support site for similar posts. The best way to search
+  the support site is using [Google](https://google.com) by starting
+  with `site:support.bioconductor.org` followed by a set of keywords
+  and the package name. 
+* If the support site search doesn't help, then try searching
+  the [FAQ](/docs/faq/)
+  and [R-help](https://tolstoy.newcastle.edu.au/R/) archives for
+  similar posts.
+* Ensure that your question is on topic. The Bioconductor support site
+  is intended primarily for helping people with questions about using
+  Bioconductor software. Questions about non-Bioconductor R packages
+  or general statistics should be asked on 
+  [R-help](https://www.r-project.org/help.html) or
+  [Stackoverflow](https://stackoverflow.com/questions/tagged/r). 
+  Questions about bioinformatics in general, but not
+  about Bioconductor packages can be posted to 
+  [Biostars](https://www.biostars.org/).
 
-* Search the [FAQ](/docs/faq/) and
-  [support site](https://support.bioconductor.org/local/search/page/)
-  and [R-help](http://tolstoy.newcastle.edu.au/R/) archives for
-  similar posts. Try a [Google](http://www.google.com/) search.
+
+half-way done with edits...
+
 
 ## Composing ##
 
