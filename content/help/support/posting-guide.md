@@ -26,7 +26,7 @@ Revised: 8 May, 2018
   motivation behind your experiment.
 * Always paste the output of `sessionInfo()` at the end of your
   post. Alternatively, the output of `session_info()` from the
-  devtools or sessioninfo packages can be posted. 
+  *devtools* or *sessioninfo* packages can be posted. 
 * If possible, provide a minimal, self-contained example that someone
   else can cut-and-paste into a new R session to reproduce your
   problem. 
@@ -37,7 +37,7 @@ Revised: 8 May, 2018
 
 * Tag your post with the names of the appropriate packages. Putting
   the correct tag is important, as this triggers an automatic email
-  from the system to the package maintainer. Capitalization doesn't
+  from the system to the package maintainer(s). Capitalization doesn't
   matter, but spelling does matter for the package tags. 
 * Do not email the package maintainer directly. As much as possible,
   keep all conversations on the support site, and do not revert to
@@ -53,16 +53,16 @@ Revised: 8 May, 2018
 
 * Read the vignettes for the package in question using
   `browseVignettes("somepkg")`. Search the vignette text for sections
-  relevant to your question. 
+  relevant to your question.
 * Read the relevant R documentation. If you are having trouble with
   function `somefunc`, read the relevant sections of `?somefunc`,
   including the sections about function arguments and function
   output. 
 * Search the support site for similar posts. The best way to search
   the support site is using [Google](https://google.com) by starting
-  with `site:support.bioconductor.org` followed by a set of keywords
-  and the package name. 
-* If the support site search doesn't help, then try searching
+  with `site:support.bioconductor.org` followed by a space and a set 
+  of keywords and the package name. 
+* If searching the support site with Google doesn't help, then try searching
   the [FAQ](/docs/faq/)
   and [R-help](https://tolstoy.newcastle.edu.au/R/) archives for
   similar posts.
@@ -71,69 +71,49 @@ Revised: 8 May, 2018
   Bioconductor software. Questions about non-Bioconductor R packages
   or general statistics should be asked on 
   [R-help](https://www.r-project.org/help.html) or
-  [Stackoverflow](https://stackoverflow.com/questions/tagged/r). 
+  [Stackoverflow](https://stackoverflow.com/). 
   Questions about bioinformatics in general, but not
   about Bioconductor packages can be posted to 
   [Biostars](https://www.biostars.org/).
 
-
-half-way done with edits...
-
-
 ## Composing ##
 
-* Compose a new message with a new subject line; only reply to
-  an existing post if you are elaborating on or answering a previous
-  question.
-
-* Use an informative subject line. This will help attract responders
-  and helps others when they search the archives.  For example, a
-  subject line "time course experiment using limma" is better than
-  just "limma".
-
-* Tag your post appropriately. Choose one or more tags so that people
-  following those tags will see your posts. If you're posting about a
-  specific package, tag your post with the name of that package.
-
-* Identify yourself.  If you are logged in with a non-professional email
-  account, like gmail or hotmail, then
-  give your full name and professional affiliation.
-
+* Use an informative post title. This will help attract responders and
+  helps others when they search the support site. For example, a subject
+  line "time course experiment using limma" is better than just
+  "limma". 
 * If you are asking for advice on how to use a particular function or
   package, then explain fully what documentation you have already read
-  and why this hasn't yet fully answered your question.  This allows a
-  responder to answer your specific question instead of simply
-  referring you to the existing documentation.
-
+  and why this hasn’t yet fully answered your question. This allows a
+  responder to answer your specific question instead of simply referring
+  you to the existing documentation. 
 * If your question is about package development, send email to the
   [bioc-devel list](/support/#bioc-devel); otherwise post to the
   [Bioconductor support site](https://support.bioconductor.org).
-
-* Package developers always appreciate being alerted to possible bugs,
-  but be very sure that you have used the package correctly.  In most
-  cases, best practice is (i) to double-check the documentation and
-  then (ii) report the behavior that was unexpected to you.
-
+* As mentioned above, tag your post with the names of the appropriate
+  packages.
 * Read over your post. Is it polite and easy to understand? Remember
-  that responses on the Bioconductor support site are from volunteers.
+  that responses on the Bioconductor support site are from volunteers
+  trying to help.
 
 ## Replying ##
 
+* Only use the *Add Answer* button if you are answering the original
+  Question.
+* Use the *Add Comment* button to create a threaded conversation off
+  of an existing Answer. 
 * If possible, write an answer that can be understood by readers with
-  different scientific backgrounds and skill levels / skill
-  profiles.
-
+  different scientific backgrounds, skill levels / skill profiles. Use
+  simple English whenever possible to make your answer accessible to
+  the widest audience. 
 * When answering a question, consider including some explanation of
   how you arrived at your solution. This way, you help people not only
   to solve their problem at hand, but also to help themselves in the
-  future.
-
-* Rudeness and ad hominem comments are not acceptable.
-
+  future. 
+* Rudeness and personal attacks are not acceptable. 
 * Brevity is OK. Consider, though, that information that is obvious to
-  you may be very helpful to others.
-
-* Provide URLs to other relevant threads or web sites.
+  you may be very helpful to others. 
+* Provide URLs to other relevant threads or web sites. 
 
 ## Acknowledgments ##
 
