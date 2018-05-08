@@ -71,11 +71,12 @@ The broad goals of the Bioconductor project are:
 
 * **Statistical and graphical methods**. The Bioconductor project
   provides access to powerful statistical and graphical methods for
-  the analysis of genomic data.  [Analysis packages](/packages/release/bioc/)
-  address [workflows](/help/workflows) for analysis of oligonucleotide
-  arrays, sequence analysis, flow cytometry. and other
-  high-throughput genomic data.  The [R package
-  system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
+  the analysis of genomic data.
+  [Analysis packages](/packages/release/bioc/) address
+  [workflows](/packages/release/workflows/) for analysis of
+  oligonucleotide arrays, sequence analysis, flow cytometry. and other
+  high-throughput genomic data.  The
+  [R package system](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages)
   itself provides implementations for a broad range of
   state-of-the-art statistical and graphical techniques, including
   linear and non-linear modeling, cluster analysis, prediction,
