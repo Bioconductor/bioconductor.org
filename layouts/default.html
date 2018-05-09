@@ -29,10 +29,6 @@ prefix="og: http://ogp.me/ns#">
 	<% end %>
 	<%# end hack%>
 
-	<% unless item[:package].nil? %>
-	  <%= render("/_workflows2/") %>
-	<% end %>
-
 	<%= yield if block_given? %>
 	<% if has_subnav?(@item) %>
 	  </div>
