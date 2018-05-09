@@ -16,6 +16,7 @@ Software Packages:
 <li><a href="/packages/3.4/bioc/html/oneChannelGUI.html">oneChannelGUI</a></li>
 <li><a href="/packages/3.4/bioc/html/stepwiseCM.html">stepwiseCM</a></li>
 <li><a href="/packages/3.6/bioc/html/iontree.html">iontree</a></li>
+<li><a href="/packages/3.4/bioc/html/RCytoscape.html">RCytoscape</a></li>
 </ul>
 
 Annotation Data Packages:
