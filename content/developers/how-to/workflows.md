@@ -42,8 +42,6 @@ Anyone who is a bioinformatics domain expert.
   you think a new term is relevant please reach out to
   <lori.shepherd@roswellpark.org>.
 
-* The package should require <= 4GB RAM.
-
 * Submit the package to the [GitHub submission
   tracker](https://github.com/Bioconductor/Contributions) for a formal
   review. Please also indicate in the tracker issue that this package is a
