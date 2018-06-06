@@ -259,38 +259,36 @@ def doc_object(package)
   doc_obj = []
   if package.has_key? :vignettes
     package[:vignettes].each_with_index do |vignette, i|
-      next if vignette !~ /\.pdf$/i ## FIX this on BiocViews side
       hsh = {}
-      hsh[:type] = "PDF"
-      hsh[:file] = vignette.split("/").last
-      script = vignette.sub(/\.pdf$/, ".R")
-      if (package.has_key? :Rfiles and package[:Rfiles].include? script)
-        hsh[:script] = script.split("/").last
-      end
-      if package.has_key? :vignetteTitles
-        hsh[:title] = package[:vignetteTitles][i]
+      if vignette =~ /\.pdf$/i ## FIX this on BiocViews side
+          hsh[:type] = "PDF"
+          hsh[:file] = vignette.split("/").last
+          script = vignette.sub(/\.pdf$/, ".R")
+          if (package.has_key? :Rfiles and package[:Rfiles].include? script)
+            hsh[:script] = script.split("/").last
+          end
+          if package.has_key? :vignetteTitles
+            hsh[:title] = package[:vignetteTitles][i]
+          else
+            hsh[:title] = hsh[:file]
+          end
+          doc_obj.push hsh
+      elsif vignette =~ /\.html$/i
+          hsh[:type] = "HTML"
+          hsh[:file] = vignette.split("/").last
+          script = vignette.sub(/\.html$/, ".R")
+          if (package.has_key? :Rfiles and package[:Rfiles].include? script)
+            hsh[:script] = script.split("/").last
+          end
+          if package.has_key? :vignetteTitles
+            hsh[:title] = package[:vignetteTitles][i].gsub(/^"/, "").gsub(/"$/, "").gsub(/""/, '"')
+          else
+            hsh[:title] = vignette.split("/").last
+          end
+          doc_obj.push hsh
       else
-        hsh[:title] = hsh[:file]
+        next
       end
-      doc_obj.push hsh
-    end
-  end
-
-  if package.has_key? :htmlDocs
-    package[:htmlDocs].each_with_index do |htmlDoc, i|
-      hsh = {}
-      hsh[:type] = "HTML"
-      hsh[:file] = htmlDoc.split("/").last
-      script = htmlDoc.sub(/\.html$/i, ".R")
-      if (package.has_key? :Rfiles and package[:Rfiles].include? script)
-        hsh[:script] = script.split("/").last
-      end
-      if package.has_key? :htmlTitles
-        hsh[:title] = package[:htmlTitles][i].gsub(/^"/, "").gsub(/"$/, "").gsub(/""/, '"')
-      else
-        hsh[:title] = htmlDoc.split("/").last
-      end
-      doc_obj.push hsh
     end
   end
 

@@ -93,6 +93,8 @@ class GetJson
       http.request(req)
     }
     views = res.body
+    # how to test locally
+    # views = File.read("/home/lori/MasterTest/#{repo}/VIEWS")
     views.force_encoding('UTF-8')
     view_dcfs = []
     view_lines = views.split("\n")
@@ -124,8 +126,7 @@ class GetJson
   def clean_dcfs(dcfs)
     ret = {}
     plural_fields = ["Depends", "Suggests", "Imports", "Enhances", "biocViews",
-      "LinkingTo",  "vignettes", "vignetteTitles", "Rfiles", "htmlDocs",
-      "htmlTitles"]
+      "LinkingTo",  "vignettes", "vignetteTitles", "Rfiles"]
     for dcf in dcfs
       dcf = dcf.first if dcf.is_a? Array
       for key in dcf.keys
