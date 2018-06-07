@@ -292,15 +292,10 @@ def doc_object(package)
     end
   end
 
-
   doc_obj.sort! do |a,b|
     a[:title] = "" if (a[:title].nil?)
     b[:title] = "" if (b[:title].nil?)
-    if a[:type] != b[:type]
-      b[:type] <=> a[:type]
-    else
-      a[:title].downcase <=> b[:title].downcase
-    end
+    a[:title].downcase <=> b[:title].downcase
   end
 
   if doc_obj.empty?
