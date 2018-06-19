@@ -77,29 +77,29 @@ without using GitHub.
 
 
 1. If the changes (bug fixes) need to be available on the
-   `<RELEASE_X_Y>` branch. Checkout the branch `<RELEASE_X_Y>` using:
+`<RELEASE_X_Y>` branch. Checkout the branch `<RELEASE_X_Y>` using:
 
-        git checkout -b <RELEASE_X_Y>
+git checkout -b <RELEASE_X_Y> upstream/<RELEASE_X_Y>
 
 1. Pull any changes from the _Bioconductor_ repository to this branch
 
-        git pull
+git pull
 
 1.  Then, merge `master` into the `<RELEASE_X_Y>` branch
 
-        git merge master
+git merge master
 
-    A new commit message will show up after this step, with the
-    message `Merge branch 'master' into <RELEASE_X_Y>`. It will be
-    committed to `<RELEASE_X_Y>` branch when you save. Update the
-    version number so that it is correct for the release, and commit
-    the modified DESCRIPTION file
+A new commit message will show up after this step, with the
+message `Merge branch 'master' into <RELEASE_X_Y>`. It will be
+committed to `<RELEASE_X_Y>` branch when you save. Update the
+version number so that it is correct for the release, and commit
+the modified DESCRIPTION file
 
-        git add DESCRIPTION
-        git commit -m "Update version bump"
+git add DESCRIPTION
+git commit -m "Update version bump"
 
 1. Push changes to the `<RELEASE_X_Y>` branch using:
 
-        git push upstream <RELEASE_X_Y>
+git push upstream <RELEASE_X_Y>
 
 [submit-keys]: https://git.bioconductor.org/BiocCredentials

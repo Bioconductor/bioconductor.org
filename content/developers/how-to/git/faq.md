@@ -247,6 +247,12 @@
     if they are maintaining one.
 
 
+20. How can I fix my duplicate commits issue and find the required
+    documentation?
+
+	The detailed documentation to [fix respositories with duplicate commit issues][] 
+	can be found at the link.
+
 ## More questions?
 
 
@@ -277,6 +283,7 @@ _Bioconductor_ [source control][] overview.
 [Sync existing repositories]: ../sync-existing-repositories
 [Adding an SSH key to your GitHub account]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 [submit your SSH public key]: https://git.bioconductor.org/BiocCredentials/
+[fix repositories with duplicate commit issues]: ../resolve-duplicate-commits.md
 
 [Pull requests]: https://help.github.com/articles/creating-a-pull-request/
 
