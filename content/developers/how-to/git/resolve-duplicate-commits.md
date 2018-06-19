@@ -11,31 +11,31 @@ this
 ## Steps:
 
 1. **IMPORTANT** Make a backup of the branch with duplicate commits,
-   call this 'master_backup' (or 'RELEASE_3_7_backup'). The name of
+   call this `master_backup` (or `RELEASE_3_7_backup`). The name of
    the back up branch should be identifiable and specific to the
    branch you are trying to fix (i.e if you want to fix the *master*
-   branch or some <RELEASE_X_Y> branch).
+   branch or some `<RELEASE_X_Y>` branch).
 
-   On master, (make sure you are on master by 'git checkout master')
+   On master, (make sure you are on master by `git checkout master`)
 
 		git branch master_backup
 		
 
 2. Identify the commit from which the duplicates have
-   originated. These commits are more often than not, 'merge' commits.
+   originated. These commits are more often than not, `merge` commits.
 
 3. Reset your branch to the commit *before* the merge commit.
 
 		git reset —hard <commit_id>
 
-4. Now cherry pick your commits from the master_backup branch. 
+4. Now cherry pick your commits from the `master_backup` branch. 
 
 		git cherry-pick <commit_id>
 
-	4a. The commits you cherry-pick should be only 1 version of the
+	a. The commits you cherry-pick should be only 1 version of the
     duplicate commit, i.e don’t cherry-pick the same commit twice.
 	
-	4b. Include the branching and version bump commits in your
+	b. Include the branching and version bump commits in your
     cherry-pick. Make the package history look as normal as possible.
 
 5. (Optional) In some cases, there are conflicts you need to fix for
