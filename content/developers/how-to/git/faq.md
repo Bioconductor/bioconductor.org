@@ -283,7 +283,7 @@ _Bioconductor_ [source control][] overview.
 [Sync existing repositories]: ../sync-existing-repositories
 [Adding an SSH key to your GitHub account]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
 [submit your SSH public key]: https://git.bioconductor.org/BiocCredentials/
-[fix repositories with duplicate commit issues]: ../resolve-duplicate-commits.md
+[fix repositories with duplicate commit issues]: ../resolve-duplicate-commits
 
 [Pull requests]: https://help.github.com/articles/creating-a-pull-request/
 
