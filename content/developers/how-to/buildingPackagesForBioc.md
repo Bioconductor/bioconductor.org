@@ -6,7 +6,7 @@
 <!-- TODO: -->
 
 
-![](/images/icons/help.gif)Building packages for Bioconductor
+Building packages for Bioconductor
 =======================================================================
 
 The aim of this guide is to be a primer for new package authors who aspire to write packages for Bioconductor.  It will take you through the steps necessary to do this using tools available in the widely available IDE RStudio.  And it will also attempt to explain the most fundamental aspects of package anatomy with the aim of helping your package to eventually meet or exceed the [Bioconductor Package Guidelines](/developers/package-guidelines/).  We also have other resources that can help developers with various aspects of package development.  For those not interested in this very introductory guide, there are other developer resources on the Bioconductor website [here](/developers/).  And there are also other [how to documents](/developers/how-to/) that can be explored to answer various questions about developing for Bioconductor.

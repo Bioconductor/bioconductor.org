@@ -4,7 +4,7 @@ Creation Date: Antiquity.
 Last Edit Date: 13 Aug 2015.
 
 Using similar coding style helps people understand code.  These
-guidelines are really just preferences; they are not enforced. 
+guidelines are preferences and strongly encouraged. 
 
 * See also: [package guidelines](/developers/package-guidelines)
   and [Hadley Wickhams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
@@ -56,8 +56,16 @@ Namespaces
   default packages (base, graphics, stats, etc.) or when overly
   tedious, fully enumerate imports.
 * Export all symbols useful to end users. Fully enumerate exports.
-* For conditional package use, see
-  [Package Guidelines](/developers/package-guidelines/#dependencies)
+
+
+End-User messages
+
+* `message()` communicates diagnostic messages (e.g., progress during lengthy
+  computations) during code evaluation.
+* `warning()` communicates unusual situations handled by your code.
+* `stop()` indicates an error condition.
+* `cat()` or `print()` are used only when displaying an object to the user,
+  e.g., in a `show` method.
 
 Misc
 

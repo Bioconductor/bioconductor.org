@@ -130,7 +130,15 @@ For more existing classes see [common _Bioconductor_ methods and classes][]
 ### Essential S4 interface
 
 Remember to **re-use** [common _Bioconductor_ methods and classes][]
-before implementing new representations.
+before implementing new representations. This encourages interoperability and
+simplifies your own package development.
+
+If your data requires a new representation or function, carefully
+design an S4 class or generic so that other package developers with
+similar needs will be able to re-use your hard work, and so that users
+of related packages will be able to seamlessly use your data
+structures. Do not hesitate to ask on the Bioc-devel mailing list for
+advice. 
 
 For any class you define, implement and use a 'constructor' for object
 creation. A constructor is usually plain-old-function (rather than,
@@ -153,6 +161,41 @@ sufficient for accessors; it's often useful to employ (consistently) a
 lightweight name mangling scheme (e.g., starting the accessor method
 name with a 2 or 3 letter acronym for your package) to avoid name
 collisions between similarly named functions in other packages.
+
+The following layout is sometimes used to organize classes and
+methods; other approaches are possible and acceptable.
+
+* All class definitions in R/AllClasses.R
+* All generic function definitions in R/AllGenerics.R
+* Methods are defined in a file named by the generic function. For example, all
+  `show` methods would go in R/show-methods.R.
+
+A Collates: field in the DESCRIPTION file may be necessary to order class and
+method definitions appropriately during package installation.
+
+### Parallel Recommendations
+
+We recommend using [BiocParallel](/packages/devel/BiocParallel) which
+provides a consistent interface to the user and supports the major
+parallel computing styles: forks and processes on a single computer,
+ad hoc clusters, batch schedulers and cloud computing. By default,
+`BiocParallel` chooses a parallel back-end appropriate for the OS and
+is supported across Unix, Mac and Windows. Coding requirements for
+`BiocParallel` are:
+
+- Use `lapply()`-style iteration instead of explicit for loops.
+- The `FUN` argument to `bplapply()` must be a self-contained
+  function; all symbols used in the function are from default R
+  packages, from packages `require()`'ed in the function, or passed in
+  as arguments.
+- Allow the user to specify the BiocParallel back-end. Do this by
+  invoking `bplapply()` _without_ specifying `BPPARAM`; the user can
+  then override the default choice with `BiocParallel::register()`.
+
+For more information see the
+[BiocParallel vignette](/packages/devel/bioc/vignettes/BiocParallel/inst/doc/Introduction_To_BiocParallel.pdf).
+
+
 
 [microbenchmark]: https://cran.r-project.org/web/packages/microbenchmark
 [unit tests]: /developers/how-to/unitTesting-guidelines/
