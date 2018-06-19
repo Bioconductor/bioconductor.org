@@ -3,9 +3,8 @@
 __Goal:__ You want to get rid of the duplicate (or triplicate) commits
 in your git commit history.
 
-[Update your package][]
-to the existing version on Bioconductor now. The process is shown on
-this
+Before you begin [Update your package][] to the existing version on
+Bioconductor.
 
 
 ## Steps:
