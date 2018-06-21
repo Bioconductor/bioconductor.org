@@ -4,7 +4,7 @@ Creation Date: Antiquity.
 Last Edit Date: 13 Aug 2015.
 
 Using similar coding style helps people understand code.  These
-guidelines are preferences and strongly encouraged. 
+guidelines are preferences and strongly encouraged.
 
 * See also: [package guidelines](/developers/package-guidelines)
   and [Hadley Wickhams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
@@ -24,7 +24,7 @@ Function names
 * Do not use '.' (in the S3 class system, `some(x)` where `x` is class
   `A` will dispatch to `some.A`).
 * Prefix non-exported functions with a '.'.
- 
+
 Class names
 
 * Use CamelCaps: initial upper case, then alternate case between
@@ -32,11 +32,11 @@ Class names
 
 File names
 
-* Filename extension for R code should be '.R'. Use the prefix 
-  'methods-' for S4 class methods, e.g., 'methods-coverage.R'. Generic 
+* Filename extension for R code should be '.R'. Use the prefix
+  'methods-' for S4 class methods, e.g., 'methods-coverage.R'. Generic
   definitions can be listed in a single file, 'AllGenerics.R', and
   class definitions in 'AllClasses.R'.
-* Filename extension for man pages should be '.Rd'. 
+* Filename extension for man pages should be '.Rd'.
 
 Use of space
 
@@ -60,12 +60,12 @@ Namespaces
 
 End-User messages
 
-* `message()` communicates diagnostic messages (e.g., progress during lengthy
-  computations) during code evaluation.
+* `message()` communicates diagnostic messages (e.g., progress during
+  lengthy computations) during code evaluation.
 * `warning()` communicates unusual situations handled by your code.
 * `stop()` indicates an error condition.
-* `cat()` or `print()` are used only when displaying an object to the user,
-  e.g., in a `show` method.
+* `cat()` or `print()` are used only when displaying an object to the
+  user, e.g., in a `show` method.
 
 Misc
 
