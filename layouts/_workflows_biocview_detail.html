@@ -17,10 +17,21 @@
 
     <p>To install this package, start R and enter:</p>
 
+    <% if @package[:bioc_version_num] == "3.7" %>
 
     <pre>## try http:// if https:// URLs are not supported
 source("https://bioconductor.org/biocLite.R")
 biocLite("<%=@package[:Package]%>")</pre>
+
+    <% else %>
+
+        <pre>if (!require("BiocManager"))
+    install.packages("BiocManager")
+BiocManager::install("<%=@package[:Package]%>", version = "devel")</pre>
+
+    <% end %>
+
+
 
     <h3>Documentation</h3>
 
