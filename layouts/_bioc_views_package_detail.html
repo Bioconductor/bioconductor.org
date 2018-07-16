@@ -109,8 +109,8 @@
     <% if @package[:bioc_version_num] == "3.7" %>
 
         <pre>## try http:// if https:// URLs are not supported
-        source("https://bioconductor.org/biocLite.R")
-        biocLite("<%=@package[:Package]%>")</pre>
+source("https://bioconductor.org/biocLite.R")
+biocLite("<%=@package[:Package]%>")</pre>
 
     <% else %>
 
