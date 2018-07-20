@@ -320,6 +320,8 @@ task :write_version_number do
     config = YAML.load_file("./config.yaml")
     f = File.open("assets/bioc-version", "w")
     f.print(config["release_version"])
+    f = File.open("assets/bioc-devel-version", "w")
+    f.print(config["devel_version"])
 end
 
 task :my_task, :arg1 do |t, args|
