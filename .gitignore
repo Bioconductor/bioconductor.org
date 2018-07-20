@@ -6,6 +6,7 @@ logs
 .DS_Store
 .sass-cache/
 assets/bioc-version
+assets/bioc-devel-version
 content/packages/
 crash.log
 analytics_py/analytics.dat
