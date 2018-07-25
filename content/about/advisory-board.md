@@ -11,6 +11,8 @@ participate for a flexible term. Current members are:
 * Wolfgang Huber (European Molecular Biology Laboratory)
 * Rafael Irizarry (Dana Farber)
 * Jan Vitek (Northeastern University)
+* Jenny Bryan (RStudio)
+* James Taylor (Johns Hopkins University)
 
 ## Technical Advisory Board
 
