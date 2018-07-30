@@ -240,7 +240,7 @@ def linkify(sym, package)
       end
       next
     end
-    if package[:repo] == "bioc/"
+    if (package[:repo] == "bioc/" || package[:repo] == "workflows/")
       jumpup = "../.."
     else
       jumpup = "../../.."
