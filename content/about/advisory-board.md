@@ -35,5 +35,5 @@ flexible term. Current members are:
   Dana-Farber Cancer Institute, USA
 * [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech
   Research and Early Development, USA.
-* [Levi Waldron](http://waldronlab.org/) CUNY School of Public Health
+* [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
   at Hunter College, New York, NY.
