@@ -17,20 +17,21 @@ developers should be developing against R-devel. From mid-April to
 mid-October, developers should use R-release (actually, the R snapshot
 from the R-x-y-branch) for _Bioconductor_ development.
 
-[BiocInstaller]: /packages/BiocInstaller
+[BiocManager]: https://CRAN.R-project.org/package=BiocManager
 
 Using 'bioc-devel' during mid-April to mid-October
 --------------------------------------------------
 
 In order to use the 'bioc-devel' version of _Bioconductor_ during the
 mid-April to mid-October release cycle, use the release version of _R_
-and invoke the function `useDevel()` (from the `BiocInstaller`)
+and invoke the function `install(version="devel")` (from the `BiocManager`)
 package:
 
-    library(BiocInstaller)
-    useDevel()
-    biocValid()              # checks for out of date packages
-    biocLite()               # (optional) updates out of date packages
+    if (!requireNamespace("BiocManager", quietly=TRUE))
+	install.packages("BiocManager")
+    library(BiocManager)
+    BiocManager::install(version = "devel")
+    BiocManager::valid()              # checks for out of date packages
 
 After doing this, all packages will be installed from the 'bioc-devel'
 repository.
@@ -38,7 +39,7 @@ repository.
 One way to work with 'bioc-release' and 'bioc-devel' versions of
 _Bioconductor_, is to have two separate installations of the release
 version of _R_, one to be used with 'bioc-release' and the other to be
-used with 'bioc-devel'. Run `useDevel()` as described above in the
+used with 'bioc-devel'. Run the above instructions in the
 'bioc-devel' installation.
 
 Another way of working with release and devel versions of
@@ -82,10 +83,8 @@ and Windows (assuming that R.exe is in PATH):
 When correctly configured, _R_'s `.libPaths()` function will return
 the 'bioc-release' or bioc-devel' directory as its first
 entry. Packages are installed to that directory, and that is the first
-place that `library()` looks for them.  `biocLite()` and
-`install.packages()` respect this setting; `update.packages()`
-attempts to update packages in the directory where the current package
-is installed.
+place that `library()` looks for them.  `install()` and
+`install.packages()` respect this setting.
 
 Simplify invokation using an alias (Linux, macOS) or shortcut
 (Windows). Add the following to your `~/.bash_profile` on Linux:
@@ -123,11 +122,8 @@ version of _R_.
 * [macOS](http://r.research.att.com/)
 * [Windows](https://cran.r-project.org/bin/windows/base/rdevel.html)
 
-Then, make sure that your version of [BiocInstaller][] is current and
-your packages up-to-date. Do this by removing all versions of
-[BiocInstaller][]
+Then, make sure that your version of [BiocManager][] is current and
+your packages up-to-date.
 
-    remove.packages("BiocInstaller")  # repeat until R says there is no
-                                      # package 'BiocInstaller' to remove
-    source("https://bioconductor.org/biocLite.R")  # install correct version
-    BiocInstaller::biocValid()
+    BiocManager::install(version="devel")
+    BiocManager::valid()
