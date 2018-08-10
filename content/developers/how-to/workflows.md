@@ -77,7 +77,7 @@ Anyone who is a bioinformatics domain expert.
 	<p>
 	**R version**: `r R.version.string`
 	<br />
-	**Bioconductor version**: `r BiocInstaller::biocVersion()`
+	**Bioconductor version**: `r BiocManager::version()`
 	<br />
 	**Package**: `r packageVersion("annotation")`
 	<\p>
