@@ -43,11 +43,14 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/packages/$1/ [L,R]
 
-################################################################################
-# /packages/release/xxx or /packages/devel/xxx are internally rewritten to
-# /packages/release/reposX/html/xxx.html or /packages/devel/reposX/html/xxx.html
-# Note: (reposX) X is the first repos where xxx is found
-################################################################################
+## Short urls for packages:
+##
+## (1) /packages/release/xxx or /packages/devel/xxx are internally rewritten 
+##     to /packages/release/reposX/html/xxx.html or 
+##     /packages/devel/reposX/html/xxx.html
+##     Note: Repo search order is bioc -> workflows -> annotation -> experiment
+##           where 'reposX' X is the first repo where xxx is found.
+
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
 RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/html/$2.html [R=301]
 
@@ -60,13 +63,13 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
 RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=301]
 
+## (2) /packages/xxx is internally rewritten to
+##     /packages/release/reposX/html/xxx.html or 
+##     /packages/devel/reposX/html/xxx.html
+##     Note: Release repos are searched first, then devel.
+##           Repo search order is bioc -> workflows -> annotation -> experiment
+##           where 'reposX' X is the first repo where xxx is found.
 
-################################################################################
-# /packages/xxx is internally rewritten to
-# /packages/release/reposX/html/xxx.html or /packages/devel/reposX/html/xxx.html
-# Note: all release repos are fetch first, then devel ones
-#      (reposX) X is the first repos where xxx is found
-################################################################################
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
 RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/html/$1.html [R=301]
 
@@ -93,3 +96,52 @@ RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/expe
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1 !-d 
 RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/about/removed-packages/ [R=301]
+
+## Short urls for vignettes:
+##
+## (1) /packages/<release or devel>/xxx/vignettes/yyy is internally rewritten to
+##     /packages/<release or devel>/reposX/vignettes/xxx/inst/doc/yyy
+##     Note: Repo search order is bioc -> workflows -> annotation -> experiment
+##           where 'reposX' X is the first repo where xxx is found.
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/vignettes/$2/inst/doc/$3 -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/vignettes/$2/inst/doc/$3 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/workflows/vignettes/$2/inst/doc/$3 -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/workflows/vignettes/$2/inst/doc/$3 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/vignettes/$2/inst/doc/$3 -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/vignettes/$2/inst/doc/$3 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/vignettes/$2/inst/doc/$3 -f
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/vignettes/$2/inst/doc/$3 [R=301]
+
+## (2) /packages/xxx/vignettes/yyy is internally rewritten to
+##     /packages/<release or devel>/reposX/vignettes/xxx/inst/doc/yyy
+##     Release repos are searched first, then devel.
+##     Note: Repo search order is bioc -> workflows -> annotation -> experiment
+##           where 'reposX' X is the first repo where xxx is found.
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/workflows/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/workflows/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/workflows/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/workflows/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/vignettes/$1/inst/doc/$2 [R=301]
+
+RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 -f
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=301]
