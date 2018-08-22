@@ -165,6 +165,14 @@ associated files.
    email will be used for contact regarding an issues that arise with
    your package in the future.
 
+   Only one person should be listed in the `Maintainer` field to ensure a
+   single point of contact. This person by default will have commit access to
+   the git repository on git.bioconductor.org. Commit access can be given to
+   other developers by request on the `bioc-devel` mailing list.  Another
+   option is to add collaborators to the github repository. This approach
+   enables development by many but restricts push access to
+   git.bioconductor.org.
+
 6. "License:" field: should preferably refer to a standard license
    (see [wikipedia][wikiLic]) using one of R's standard
    specifications. Be specific about any version that applies (e.g.,
