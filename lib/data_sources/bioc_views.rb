@@ -135,7 +135,7 @@ class BiocViews < Nanoc::DataSource
     items = []
 
     link_list = [:Depends, :Imports, :Suggests, :Enhances,
-      :LinkingTo, :dependsOnMe, :importsMe, :suggestsMe]
+      :LinkingTo, :dependsOnMe, :importsMe, :suggestsMe, :linksToMe]
 
 
     for version in @site_config["versions"]

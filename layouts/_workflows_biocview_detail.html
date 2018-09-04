@@ -242,7 +242,12 @@ BiocManager::install("<%=@package[:Package]%>", version = "devel")</pre>
 	    <td><%= linkify(:suggestsMe, @package)%></td>
 	</tr>
 
-	<% if ["bioc/", "data/experiment/"].include? @package[:repo] %>
+	<tr class="<%=ri.rowclass%>">
+	    <td>Links To Me</td>
+	    <td><%= linkify(:linksToMe, @package)%></td>
+	</tr>
+
+	<% if ["bioc/", "data/experiment/", "workflows/"].include? @package[:repo] %>
 	    <tr class="<%=ri.rowclass%>">
 		<td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
 		<td>&nbsp;</td>

@@ -310,8 +310,8 @@ class GetJson
   # the biocViews packages builds reverse dependencies, but
   # not across repositories, so we handle that here
   def get_reverse_dependencies(data)
-    fields = ["Suggests", "Depends", "Imports"]
-    reverse_deps = {"Suggests" => {}, "Depends" => {}, "Imports" => {}}
+    fields = ["Suggests", "Depends", "Imports", "LinkingTo"]
+    reverse_deps = {"Suggests" => {}, "Depends" => {}, "Imports" => {}, "LinkingTo" => {}}
     for datum in data
       datum.each_pair do |k,v|
         for field in fields
@@ -326,7 +326,7 @@ class GetJson
     end
 
 
-    fields = {"Suggests" => "suggestsMe", "Depends" => "dependsOnMe", "Imports" => "importsMe"}
+    fields = {"Suggests" => "suggestsMe", "Depends" => "dependsOnMe", "Imports" => "importsMe", "LinkingTo" => "linksToMe"}
     ret = []
     for datum in data
       datum.each_pair do |k, v|
