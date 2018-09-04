@@ -1,5 +1,25 @@
 <h1>Workflow Package: <%=@package[:Package]%></h1>
 
+  <% if current? @package %>
+
+    <% tr = TableRower.new %>
+
+    <table border="0">
+    <tr>
+
+     <%# shield 5: build %>
+      <% res = get_build_results(@package) %>
+      <% unless res.nil? %>
+	  <td>
+	  <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
+	  </td>
+	  <%= tr.betweencells %>
+      <% end %>
+
+    </tr>
+    </table>
+  <% end %>
+
 <div class='do_not_rebase'>
 
    <%# package title - not to be confused with page title %>
