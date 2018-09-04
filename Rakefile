@@ -381,7 +381,7 @@ task :get_build_dbs do
   build_dbs_dir = File.join(%w(tmp build_dbs))
   FileUtils.mkdir_p(build_dbs_dir)
   %w(release devel).each do |version|
-    %w(bioc data-experiment).each do |repo|
+    %w(bioc data-experiment workflows).each do |repo|
       url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt"
       dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
       dest_etag_name = dest_file_name.sub("dcf", "etag")
@@ -402,6 +402,8 @@ task :get_build_dbs do
 	fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
 	fh2.write(body2)
 	fh2.close
+        puts shield_dir
+        puts dest_file_name
 	generate_build_shields(shield_dir, dest_file_name)
 
       end

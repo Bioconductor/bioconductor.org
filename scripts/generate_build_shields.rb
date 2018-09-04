@@ -25,6 +25,10 @@ def generate_build_shields(outdir, build_db)
       final_status = "TIMEOUT"
     elsif statuses.include? "WARNINGS"
       final_status = "WARNINGS"
+    elsif statuses.include? "NA"
+      final_status = "OK"
+    elsif statuses.include? "skipped"
+      final_status = "OK"
     else
       raise "Logic fail!"
     end

@@ -1648,7 +1648,7 @@ def get_available(package, ver, view)
 end
 
 def get_build_results(package)
-  return nil unless %w(bioc/ data/experiment/).include? package[:repo]
+  return nil unless %w(bioc/ data/experiment/ workflows/).include? package[:repo]
   return nil unless current? package
   # return nil unless [config[:release_version],
   #   config[:devel_version]].include? package[:bioc_version_num]
