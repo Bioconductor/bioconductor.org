@@ -529,6 +529,7 @@ task :process_downloads_data do
     https://bioconductor.org/packages/stats/bioc/bioc_pkg_stats.tab
     https://bioconductor.org/packages/stats/data-annotation/annotation_pkg_stats.tab
     https://bioconductor.org/packages/stats/data-experiment/experiment_pkg_stats.tab
+    https://bioconductor.org/packages/stats/workflows/workflows_pkg_stats.tab
   }
   d = Date.parse(Time.now.to_s)
   last6 = []
@@ -561,7 +562,7 @@ task :process_downloads_data do
   end
 
   key_pkg=percentiles.keys
-  all_pkg = get_list_of_packages() + get_list_of_packages(false) + get_annotation_package_list()
+  all_pkg = get_list_of_packages() + get_list_of_packages(false) + get_annotation_package_list() + get_list_of_workflows()
   miss_pkg = all_pkg - key_pkg
   miss_pkg.each do |k|
     percentiles["#{k}"] = 0
