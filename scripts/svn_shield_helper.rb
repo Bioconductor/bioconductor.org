@@ -1,5 +1,8 @@
 require 'yaml'
 require 'httparty'
+require 'date'
+require 'fileutils'
+require 'descriptive_statistics'
 
 def get_list_of_packages(bioc=true, release=false)
     config = YAML.load_file("./config.yaml")
@@ -72,4 +75,74 @@ def get_list_of_workflows(release=false)
     file.close
     system("git -C #{path} checkout master")
     pkgs
+end
+
+def downloadBadge(repo, srcdir, destdir)
+
+  if ["bioc", "workflows"].include? repo
+     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
+  else
+     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_stats.tab"))
+  end
+  urls = [url]
+
+  d = Date.parse(Time.now.to_s)
+  last6 = []
+  for i in 1..6 do
+    x = d << i
+    last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
+  end
+
+  raw_data = Hash.new(0)
+  percentiles = {}
+
+  urls.each do |url|
+    lines = HTTParty.get(url).split("\n")
+    for line in lines
+      next if line =~ /^Package\tYear/ # skip header
+      package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
+      if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
+        raw_data[package] = (raw_data[package] + Integer(downloads))
+      end
+    end
+  end
+
+  raw_data.each do |k, v|
+    percentiles[k] = raw_data.values.percentile_rank v
+  end
+
+  key_pkg=percentiles.keys
+  case repo
+  when "bioc"
+      all_pkg = get_list_of_packages()
+  when "experiment"
+       all_pkg = get_list_of_packages(false)
+  when "annotation"
+       all_pkg = get_annotation_package_list()
+  when "workflows"
+       all_pkg = get_list_of_workflows()
+  end
+
+  miss_pkg = all_pkg - key_pkg
+  miss_pkg.each do |k|
+    percentiles["#{k}"] = 0
+  end
+
+  percentiles.each do |k, v|
+    img = nil
+    case v
+    when 95..100
+      img = 'top5.svg'
+    when 80...95
+      img = 'top20.svg'
+    when 50...80
+      img = 'top50.svg'
+    else
+      img = 'available.svg'
+    end
+    puts File.join(srcdir, img)
+    puts File.join(destdir, "#{k}.svg")
+    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))
+  end
+
 end

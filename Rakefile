@@ -525,63 +525,17 @@ end
 # run me with cron every day or so...
 desc "process downloads data"
 task :process_downloads_data do
-  urls = %W{
-    https://bioconductor.org/packages/stats/bioc/bioc_pkg_stats.tab
-    https://bioconductor.org/packages/stats/data-annotation/annotation_pkg_stats.tab
-    https://bioconductor.org/packages/stats/data-experiment/experiment_pkg_stats.tab
-    https://bioconductor.org/packages/stats/workflows/workflows_pkg_stats.tab
-  }
-  d = Date.parse(Time.now.to_s)
-  last6 = []
-  for i in 1..6 do
-    x = d << i
-    last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
-  end
 
   srcdir = File.join('assets', 'images', 'shields', 'downloads')
   destdir = File.join('assets', 'shields', 'downloads')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  raw_data = Hash.new(0)
-  percentiles = {}
+  downloadBadge("bioc", srcdir, destdir)
+  downloadBadge("annotation", srcdir, destdir)
+  downloadBadge("experiment", srcdir, destdir)
+  downloadBadge("workflows", srcdir, destdir)
 
-  urls.each do |url|
-    lines = HTTParty.get(url).split("\n")
-    for line in lines
-      next if line =~ /^Package\tYear/ # skip header
-      package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
-      if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
-	raw_data[package] = (raw_data[package] + Integer(downloads))
-      end
-    end
-  end
-
-  raw_data.each do |k, v|
-    percentiles[k] = raw_data.values.percentile_rank v
-  end
-
-  key_pkg=percentiles.keys
-  all_pkg = get_list_of_packages() + get_list_of_packages(false) + get_annotation_package_list() + get_list_of_workflows()
-  miss_pkg = all_pkg - key_pkg
-  miss_pkg.each do |k|
-    percentiles["#{k}"] = 0
-  end
-
-  percentiles.each do |k, v|
-    img = nil
-    case v
-    when 95..100
-      img = 'top5.svg'
-    when 80...95
-      img = 'top20.svg'
-    when 50...80
-      img = 'top50.svg'
-    else
-      img = 'available.svg'
-    end
-    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))
-  end
 end
 
 # set this to run in crontab

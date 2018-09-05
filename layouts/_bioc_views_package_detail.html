@@ -24,9 +24,7 @@
 
       <%# shield 2: downloads %>
       <td>
-      <a href="<%=get_stats_url(@package)%>"><img border='0'
-      src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile
-      (top 5/20/50% or 'available') of 'download score'. Comparison is done across all package categories (software, annotation, experiment, workflows). The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+      <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
       </td>
       <%= tr.betweencells %>
 
@@ -60,7 +58,7 @@
      <%# shield 6: last commit %>
      <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
          <td>
-         <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="last commit within: day, week, month, 3 months, since release, none"/></a>
+         <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
          </td>
          <%= tr.betweencells %>
      <% end %>
