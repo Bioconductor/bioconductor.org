@@ -19,8 +19,8 @@
      <%# shield 6: last commit %>
      <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
          <td>
-         <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="last commit within: day, week, month, 3 months, since release, none"/></a>
-         </td>
+          <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
+        </td>
          <%= tr.betweencells %>
      <% end %>
 
