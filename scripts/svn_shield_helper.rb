@@ -146,3 +146,61 @@ def downloadBadge(repo, srcdir, destdir)
   end
 
 end
+
+#
+# This does ranking instead of category 
+#  ie.  1/1676 
+# not currently implemented
+#
+def downloadBadge2(repo, destdir)
+
+  if ["bioc", "workflows"].include? repo
+     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
+  else
+     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_stats.tab"))
+  end
+  urls = [url]
+
+  d = Date.parse(Time.now.to_s)
+  last6 = []
+  for i in 1..6 do
+    x = d << i
+    last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
+  end
+
+  raw_data = Hash.new(0)
+  percentiles = {}
+
+  urls.each do |url|
+    lines = HTTParty.get(url).split("\n")
+    for line in lines
+      next if line =~ /^Package\tYear/ # skip header
+      package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
+      if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
+        raw_data[package] = (raw_data[package] + Integer(downloads))
+      end
+    end
+  end
+
+  sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
+  len = sorted_data.length.to_s
+
+  sorted_data.each_with_index { |(key, value), index|
+    dx = (index + 1).to_s
+    pkg =  key
+    shield = File.join(destdir, "#{pkg}.svg")
+    rank = "#{dx}/#{len}"
+    puts pkg
+    puts rank
+    resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
+    if (resp.code == 200)
+      fh = File.open(shield, 'w')
+      fh.write(resp.to_s)
+      fh.close
+    else
+      FileUtils.cp(File.join('assets', 'images', 'shields',
+       'downloads', "unknown-downloads.svg"), shield)
+    end
+  }
+
+end
