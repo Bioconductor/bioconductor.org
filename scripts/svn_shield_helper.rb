@@ -47,3 +47,29 @@ def get_annotation_package_list(release=false)
   end
   pkgs
 end
+
+def get_list_of_workflows(release=false)
+    config = YAML.load_file("./config.yaml")
+    path = "../manifest"
+
+    if release
+      version = config['release_version']
+      branch = "RELEASE_#{version.sub('.', '_')}"
+    else
+      version = config['devel_version']
+      branch = 'master'
+    end
+
+    manifest_file = "workflows.txt"
+
+    filepath = "#{path}/#{manifest_file}"
+    # check about git pull and forcing overwrite
+    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
+
+    file = File.open(filepath, "rb")
+    contents = file.read
+    pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
+    file.close
+    system("git -C #{path} checkout master")
+    pkgs
+end
