@@ -42,6 +42,14 @@
 
     <p>Maintainer: <%= filter_emails(@package[:Maintainer])%> </p>
 
+   <div id="bioc_citation_outer">
+    <p>Citation (from within R,
+      enter <code>citation("<%=@package[:Package]%>")</code>):</p>
+      <div id="bioc_citation" class="bioc_citation"></div>
+    </div>
+
+
+
     <h3>Installation</h3>
 
     <p>To install this package, start R and enter:</p>
@@ -54,7 +62,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
     <% else %>
 
-        <pre>if (!require("BiocManager"))
+       <pre>if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("<%=@package[:Package]%>", version = "devel")</pre>
 

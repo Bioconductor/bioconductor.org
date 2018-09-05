@@ -123,7 +123,7 @@ biocLite("<%=@package[:Package]%>")</pre>
 
     <% else %>
 
-        <pre>if (!requireNamespace("BiocManager", quietly=TRUE))
+        <pre>if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 BiocManager::install("<%=@package[:Package]%>", version = "devel")</pre>
 
