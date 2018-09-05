@@ -402,8 +402,8 @@ task :get_build_dbs do
 	fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
 	fh2.write(body2)
 	fh2.close
-        puts shield_dir
-        puts dest_file_name
+	puts shield_dir
+	puts dest_file_name
 	generate_build_shields(shield_dir, dest_file_name)
 
       end
@@ -599,11 +599,11 @@ task :get_availability_shields  do
       meat_index = Dcf.parse(mitxt)
       json_obj = JSON.parse(File.read(json_file))
       if (not meat_index.nil?)
-        for item in meat_index
-          view = json_obj[item['Package']]
-          next if view.nil?
-          get_available(item, numeric_version, view)
-        end
+	for item in meat_index
+	  view = json_obj[item['Package']]
+	  next if view.nil?
+	  get_available(item, numeric_version, view)
+	end
       end
     end
   end
@@ -677,6 +677,92 @@ task :get_years_in_bioc_shields do
   end
 end
 
+# run me in crontab daily - or more frequent?
+desc "get last commit date shields"
+task :get_last_commit_date_shields do
+
+  site_config = YAML.load_file("./config.yaml")
+  for reldev in ['release', 'devel']
+     for repo in ['bioc', 'data-experiment', 'workflows']
+
+	numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
+	unsupported_platforms = {}
+	json_file = (repo == 'data-experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
+	json_obj = JSON.parse(File.read(json_file))
+	release_date = Date.strptime(site_config['release_dates'][site_config['release_version'].to_s], "%m/%d/%Y")
+
+	day = []
+	week = []
+	month = []
+	three = []
+	release = []
+	none = []
+	unknown = []
+
+	for k in json_obj.keys
+	    date = json_obj[k]["git_last_commit_date"]
+	    if (date.nil?)
+		if (reldev == 'release')
+		   none.push k
+		else
+		   unknown.push k
+		end
+	    else
+		date = Date.parse(date)
+		if (date < release_date)
+		    none.push k
+		elsif (date < (Date.today - 90) && date >= release_date)
+		    release.push k
+		elsif (date < (Date.today - 30) && date >= (Date.today - 90))
+		    three.push k
+		elsif (date < (Date.today - 7) && date >= (Date.today - 30))
+		    month.push k
+		elsif (date < (Date.today - 1) && date >= (Date.today - 7))
+		    week.push k
+		elsif (date >= (Date.today - 1))
+		    day.push k
+		else
+		    unknown.push k
+		end
+	     end
+	end
+
+	# make badges
+	shield_dir = File.join("assets", "shields", "lastcommit", reldev, repo)
+	FileUtils.mkdir_p shield_dir
+	if (not day.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "Day.svg")
+	    day.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not week.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "Week.svg")
+	    week.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not month.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "Month.svg")
+	    month.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not three.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "ThreeMonths.svg")
+	    three.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not release.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "LastRelease.svg")
+	    release.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not none.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "None.svg")
+	    none.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+	if (not unknown.empty?)
+	    img = File.join("assets","images","shields","lastcommit", "Unknown.svg")
+	    unknown.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	end
+
+     end # repo
+  end  # reldev
+end # task
+
 
 # run me in crontab
 desc "get test coverage results and update shields if neccessary"
@@ -734,7 +820,7 @@ desc "get all shields"
 task :get_all_shields => [:get_build_dbs, :get_svn_logs,
   :process_downloads_data, :get_post_tag_info,
   :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets,
-  :get_availability_shields]
+  :get_availability_shields, :get_last_commit_date_shields]
 
 # should be run every time mirror info in config.yaml changes
 # that's hard to remember do to, so
