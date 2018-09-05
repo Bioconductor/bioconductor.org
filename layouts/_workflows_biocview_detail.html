@@ -16,6 +16,15 @@
 	  <%= tr.betweencells %>
       <% end %>
 
+     <%# shield 6: last commit %>
+     <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
+         <td>
+         <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="last commit within: day, week, month, 3 months, since release, none"/></a>
+         </td>
+         <%= tr.betweencells %>
+     <% end %>
+
+
     </tr>
     </table>
   <% end %>
