@@ -411,36 +411,18 @@ task :get_build_dbs do
   end
 end
 
-
 # run me with cron every day or so...
 desc "process downloads data"
 task :process_downloads_data do
 
-  srcdir = File.join('assets', 'images', 'shields', 'downloads')
   destdir = File.join('assets', 'shields', 'downloads')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", srcdir, destdir)
-  downloadBadge("annotation", srcdir, destdir)
-  downloadBadge("experiment", srcdir, destdir)
-  downloadBadge("workflows", srcdir, destdir)
-
-end
-
-# run me with cron every day or so...
-# not currently implemented - this would do ranking 1/1676 etc
-desc "process downloads data2"
-task :process_downloads_data2 do
-
-  destdir = File.join('assets', 'shields', 'downloads2')
-  FileUtils.rm_rf destdir
-  FileUtils.mkdir_p destdir
-
-  downloadBadge2("bioc", destdir)
-  downloadBadge2("annotation", destdir)
-  downloadBadge2("experiment", destdir)
-  downloadBadge2("workflows", destdir)
+  downloadBadge("bioc", destdir)
+  downloadBadge("annotation", destdir)
+  downloadBadge("experiment", destdir)
+  downloadBadge("workflows", destdir)
 
 end
 
