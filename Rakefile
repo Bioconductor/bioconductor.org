@@ -528,7 +528,7 @@ task :get_last_commit_date_shields do
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
      for repo in ['bioc', 'data-experiment', 'workflows']
-
+        puts "writing badges for #{reldev} #{repo}"
 	numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
 	unsupported_platforms = {}
 	json_file = (repo == 'data-experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
