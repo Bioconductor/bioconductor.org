@@ -128,7 +128,7 @@ def downloadBadge(repo, destdir, release=false)
     dx = (index + 1).to_s
     pkg =  key
     shield = File.join(destdir, "#{pkg}.svg")
-    rank = "#{dx}/#{len}"
+    rank = "#{dx} / #{len}"
     puts pkg
     puts rank
     resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
