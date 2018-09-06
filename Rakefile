@@ -415,14 +415,24 @@ end
 desc "process downloads data"
 task :process_downloads_data do
 
-  destdir = File.join('assets', 'shields', 'downloads')
+  destdir = File.join('assets', 'shields', 'downloads', 'devel')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", destdir)
-  downloadBadge("annotation", destdir)
-  downloadBadge("experiment", destdir)
-  downloadBadge("workflows", destdir)
+  downloadBadge("bioc", destdir, false)
+  downloadBadge("annotation", destdir, false)
+  downloadBadge("experiment", destdir, false)
+  downloadBadge("workflows", destdir, false)
+
+  destdir = File.join('assets', 'shields', 'downloads', 'release')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+
+  downloadBadge("bioc", destdir, true)
+  downloadBadge("annotation", destdir, true)
+  downloadBadge("experiment", destdir, true)
+  downloadBadge("workflows", destdir, true)
+
 
 end
 

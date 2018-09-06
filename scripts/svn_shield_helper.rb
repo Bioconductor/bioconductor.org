@@ -77,7 +77,7 @@ def get_list_of_workflows(release=false)
     pkgs
 end
 
-def downloadBadge(repo, destdir)
+def downloadBadge(repo, destdir, release=false)
 
   if ["bioc", "workflows"].include? repo
      url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
@@ -108,9 +108,23 @@ def downloadBadge(repo, destdir)
   end
 
   sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
-  len = sorted_data.length.to_s
 
-  sorted_data.each_with_index { |(key, value), index|
+  # filter on above helpers for active packages
+  case repo
+  when "workflows"
+      pkgs = get_list_of_workflows(release=release)
+  when "annotation"
+      pkgs = get_annotation_package_list(release=release)
+  when "experiment"
+      pkgs = get_list_of_packages(bioc=false, release=release)
+  when "bioc"
+      pkgs = get_list_of_packages(bioc=true, release=release)
+  end
+
+  len = pkgs.length.to_s
+  filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
+
+  filtered_data.each_with_index { |(key, value), index|
     dx = (index + 1).to_s
     pkg =  key
     shield = File.join(destdir, "#{pkg}.svg")

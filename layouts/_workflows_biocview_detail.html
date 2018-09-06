@@ -37,9 +37,9 @@
 
       <%# shield 2: downloads %>
       <td>
-      <% path = "assets"+"/shields/downloads/"+@package[:Package]+".svg" %>
+      <% path = "assets"+"/shields/downloads/"+res[:version]+"/"+@package[:Package]+".svg" %>
       <% if File.exist?(path) %>
-           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow)."/></a>
+           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=res[:version]%>/<%=@package[:Package]%>.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow)."/></a>
       <% else %>
            <a href="<%=get_stats_url(@package)%>"><img border='0' src="/images/shields/downloads/unknown-downloads.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow)."/></a>
       <% end %>
