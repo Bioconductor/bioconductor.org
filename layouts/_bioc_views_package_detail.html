@@ -1,7 +1,5 @@
 <h1><%=@package[:Package]%></h1>
 
-
-
   <% if current? @package %>
 
     <% tr = TableRower.new %>
@@ -13,7 +11,12 @@
       <% if ['data/annotation/', 'data/experiment/'].include? @package[:repo] %>
 	 <% av_img = "/images/shields/availability/all.svg" %>
       <% else %>
-	 <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
+         <% path = "assets"+"/shields/availability/"+@package[:bioc_version_num]+"/"+@package[:Package]+".svg" %>
+         <% if File.exist?(path) %>
+	     <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
+         <% else %>
+	     <% av_img = "/images/shields/availability/unknown-build.svg" %>
+         <% end %>
       <% end %>
 
       <td>
@@ -24,14 +27,24 @@
 
       <%# shield 2: downloads %>
       <td>
-      <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+      <% path = "assets"+"/shields/downloads/"+@package[:Package]+".svg" %>
+      <% if File.exist?(path) %>
+          <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+      <% else %>
+           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/images/shields/downloads/unknown-downloads.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+      <% end %>
       </td>
       <%= tr.betweencells %>
 
 
       <%# shield 3: posts %>
       <td>
-      <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+      <% path = "assets"+"/shields/posts/"+@package[:Package]+".svg" %>
+      <% if File.exist?(path) %>
+          <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+      <% else %>
+          <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/images/shields/posts/unknown-posts.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+      <% end %>
       </td>
       <%= tr.betweencells %>
 
@@ -43,6 +56,11 @@
 	  <span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/years-in-bioc/<%=@package[:Package]%>.svg" title="How long since the package was first in a released Bioconductor version (or is it in devel only)."/></a></span>
 	  </td>
 	  <%= tr.betweencells %>
+      <% elsif @package[:repo] == 'bioc/' and result.nil? %>
+	  <td>
+	  <span class="do_not_rebase"><a href="#since"><img border="0" src="/images/shields/in-bioc/unknown-bioc.svg" title="How long since the package was first in a released Bioconductor version (or is it in devel only)."/></a></span>
+	  </td>
+	  <%= tr.betweencells %>
       <% end %>
 
 
@@ -50,7 +68,12 @@
       <% res = get_build_results(@package) %>
       <% unless res.nil? %>
 	  <td>
-	  <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
+          <% path = "assets"+"/shields/build/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
+          <% if File.exist?(path) %>
+	      <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
+	  <% else %>
+	      <a href="<%=res[:report_url]%>"><img border='0' src="/images/shields/builds/unknown-builds.svg" title="build results; click for full report"/></a>
+          <% end %>
 	  </td>
 	  <%= tr.betweencells %>
       <% end %>
@@ -58,7 +81,12 @@
      <%# shield 6: last commit %>
      <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
          <td>
-         <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
+         <% path = "assets"+"/shields/lastcommit/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
+         <% if File.exist?(path) %>
+             <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
+	 <% else %>
+	      <a href="<%=res[:report_url]%>"><img border='0' src="/images/shields/lastcommit/Unknown.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
+         <% end %>
          </td>
          <%= tr.betweencells %>
      <% end %>
