@@ -77,7 +77,7 @@ def get_list_of_workflows(release=false)
     pkgs
 end
 
-def downloadBadge(repo, srcdir, destdir)
+def downloadBadge(repo, destdir)
 
   if ["bioc", "workflows"].include? repo
      url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
@@ -107,42 +107,25 @@ def downloadBadge(repo, srcdir, destdir)
     end
   end
 
-  raw_data.each do |k, v|
-    percentiles[k] = raw_data.values.percentile_rank v
-  end
+  sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
+  len = sorted_data.length.to_s
 
-  key_pkg=percentiles.keys
-  case repo
-  when "bioc"
-      all_pkg = get_list_of_packages()
-  when "experiment"
-       all_pkg = get_list_of_packages(false)
-  when "annotation"
-       all_pkg = get_annotation_package_list()
-  when "workflows"
-       all_pkg = get_list_of_workflows()
-  end
-
-  miss_pkg = all_pkg - key_pkg
-  miss_pkg.each do |k|
-    percentiles["#{k}"] = 0
-  end
-
-  percentiles.each do |k, v|
-    img = nil
-    case v
-    when 95..100
-      img = 'top5.svg'
-    when 80...95
-      img = 'top20.svg'
-    when 50...80
-      img = 'top50.svg'
+  sorted_data.each_with_index { |(key, value), index|
+    dx = (index + 1).to_s
+    pkg =  key
+    shield = File.join(destdir, "#{pkg}.svg")
+    rank = "#{dx}/#{len}"
+    puts pkg
+    puts rank
+    resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
+    if (resp.code == 200)
+      fh = File.open(shield, 'w')
+      fh.write(resp.to_s)
+      fh.close
     else
-      img = 'available.svg'
+      FileUtils.cp(File.join('assets', 'images', 'shields',
+       'downloads', "unknown-downloads.svg"), shield)
     end
-    puts File.join(srcdir, img)
-    puts File.join(destdir, "#{k}.svg")
-    FileUtils.cp(File.join(srcdir, img), File.join(destdir, "#{k}.svg"))
-  end
+  }
 
 end

@@ -39,9 +39,9 @@
       <td>
       <% path = "assets"+"/shields/downloads/"+@package[:Package]+".svg" %>
       <% if File.exist?(path) %>
-           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=@package[:Package]%>.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow)."/></a>
       <% else %>
-           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/images/shields/downloads/unknown-downloads.svg" title="Percentile (top 5/20/50% or 'available') of 'download score'. The 'download score' is the average number of distinct IPs that 'hit' the package each month for the last 12 months (not counting the current month)."/></a>
+           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/images/shields/downloads/unknown-downloads.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow)."/></a>
       <% end %>
 
       </td>

@@ -411,132 +411,21 @@ task :get_build_dbs do
   end
 end
 
-
-desc "get and preprocess svn logs" # run this via cron every day (or more often?)
-task :get_svn_logs do
-  destdir = File.join('tmp', 'svnlogs')
-  FileUtils.mkdir_p destdir
-  shield_dir = File.join('assets', 'shields', 'commits')
-  FileUtils.mkdir_p shield_dir
-  today = Date.today
-  now = DateTime.new(today.year, today.month, today.day)
-  sixmonthsago = now
-  months = [now]
-
-  6.times do
-    tmp = sixmonthsago.prev_month
-    months << tmp
-    sixmonthsago = tmp
-  end
-  months.reverse!
-  ranges = []
-  for i in 0..(months.length()-2)
-    ranges.push months[i]..months[i+1]
-  end
-  h = {'bioc.log' => 'https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/',
-    'data-experiment.log' => 'https://hedgehog.fhcrc.org/bioc-data/trunk/experiment/pkgs/'}
-  h.each_pair do |destfile,url|
-      full_shield_dir = File.join(shield_dir, destfile.split('.').first)
-      FileUtils.mkdir_p full_shield_dir
-      command = "svn log --username=readonly --password=readonly --non-interactive --no-auth-cache -v --xml -r {#{sixmonthsago.strftime("%Y-%m-%d")}}:{#{now.strftime("%Y-%m-%d")}} #{url}"
-
-      stdin, stdout, stderr, wait_thr = Open3.popen3(command)
-
-      fh = File.open(File.join(destdir, destfile), "w")
-      while !stdout.eof
-	line = stdout.readline
-	fh.write line
-      end
-      fh.close
-      stdout.close
-      stderr.close
-      stdin.close
-      unless wait_thr.value.exitstatus == 0
-	raise "svn log command failed!"
-      end
-      fh = File.open(File.join(destdir, destfile), 'r')
-      doc = Nokogiri::XML(fh)
-      fh.close
-      logentries = doc.xpath("//log/logentry")
-      dates = []
-      for logentry in logentries
-	slop = Nokogiri::Slop(logentry.to_xml)
-	datestr = slop.logentry.date.children.first.text
-	date = DateTime.iso8601(datestr)
-	dates << date
-      end
-
-      mindate = dates.min.prev_day
-      maxdate = dates.max.next_day
-      ranges[0] =  mindate..ranges[0].last
-      ranges[ranges.length-1] = ranges.last.first..maxdate
-      res = Hash.new { |hash, key| hash[key] = {} }
-
-      for logentry in logentries
-	thisone = {}
-	slop = Nokogiri::Slop(logentry.to_xml)
-	datestr = slop.logentry.date.children.first.text
-	date = DateTime.iso8601(datestr)
-	paths = slop.logentry.paths.children.text.split("\n")
-	for path in paths
-	  next if path.empty?
-	    segs = path.split '/'
-	    next if segs.length < 6
-	    thisone[segs[4]] = 1
-	end
-	# === operator does not work as expected, so....
-	daterange = ranges.find{|i| i === date}
-	daterange = ranges.find{|i| date > i.first and date < i.last} if daterange.nil?
-	for item in thisone.keys
-	  unless ranges.include? daterange
-	    raise "there's a problem!"
-	  end
-	  if res[daterange].has_key? item
-	    res[daterange][item] += 1
-	  else
-	    res[daterange][item]= 1
-	  end
-	end
-      end
-      packages = get_list_of_packages(bioc=(destfile=='bioc.log'))
-      for package in packages
-	hits = []
-	for range in ranges
-	  if res[range].has_key? package
-	    hits << res[range][package]
-	  else
-	    hits << 0
-	  end
-	end
-	avg = hits.inject(0.0) { |sum, el| sum + el } / hits.size
-	avg_s = sprintf("%0.2f", avg)
-	puts "#{package}: #{avg_s}" # comment me out
-	# parallelize this to make it faster?
-	response = HTTParty.get("https://img.shields.io/badge/commits-#{avg_s}-1881c2.svg")
-	if response.code == 200
-	  fh = File.open(File.join(full_shield_dir, "#{package}.svg"), 'w')
-	  fh.write(response.to_s)
-	  fh.close
-	end
-      end
-  end
-end
-
 # run me with cron every day or so...
 desc "process downloads data"
 task :process_downloads_data do
 
-  srcdir = File.join('assets', 'images', 'shields', 'downloads')
   destdir = File.join('assets', 'shields', 'downloads')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", srcdir, destdir)
-  downloadBadge("annotation", srcdir, destdir)
-  downloadBadge("experiment", srcdir, destdir)
-  downloadBadge("workflows", srcdir, destdir)
+  downloadBadge("bioc", destdir)
+  downloadBadge("annotation", destdir)
+  downloadBadge("experiment", destdir)
+  downloadBadge("workflows", destdir)
 
 end
+
 
 # set this to run in crontab
 desc "get pkg availability info"
@@ -719,62 +608,10 @@ task :get_last_commit_date_shields do
 end # task
 
 
-# run me in crontab
-desc "get test coverage results and update shields if neccessary"
-task :get_coverage_shields do
-  tmp_dir = File.join(%w(tmp coverage))
-  FileUtils.mkdir_p(tmp_dir)
-  %w(release devel).each do |version|
-    url = "http://master.bioconductor.org/checkResults/#{version}/bioc-LATEST/COVERAGE.txt"
-    dest_file_name = File.join tmp_dir, "#{version}.dcf"
-    dest_etag_name = dest_file_name.sub("dcf", "etag")
-    etag = HTTParty.head(url).headers["etag"]
-    if (!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag
-      efh = File.open(dest_etag_name, 'w')
-      efh.write etag
-      efh.close
-      resp = HTTParty.get(url)
-      if resp.code != 200
-	puts "Error getting #{url}: #{resp.code}"
-      else
-	fh = File.open(dest_file_name, "w")
-	fh.write(resp.to_s)
-	fh.close
-	#generate_build_shields(shield_dir, dest_file_name)
-	packages = get_list_of_packages(true, version=="release")
-	shield_dir = File.join("assets", "shields", "coverage", version)
-	FileUtils.mkdir_p shield_dir
-	unless File.exists? shield_dir
-	  FileUtils.mkdir_p shield_dir
-	end
-
-	## Convert into hashmap Package: Coverage
-	x = Dcf.parse(File.readlines(dest_file_name).join)
-	cov_res = x.map {|x| [x["Package"], x["Coverage"]]}.to_h
-
-	for package in packages
-	  cov = cov_res[package]
-	  cov = "unknown" if cov.nil?
-	  cov_color = coverage_color(cov)
-	  cov += "%" unless cov == "unknown"
-	  puts "Downloading test-coverage shield for #{package} in #{version}..."
-	  resp = HTTParty.get("https://img.shields.io/badge/test_coverage-#{URI::encode(cov)}-#{cov_color}.svg")
-	  if resp.code == 200
-	    shield = File.join(shield_dir, "#{package}.svg")
-	    fh = File.open(shield, "w")
-	    fh.write(resp.to_s)
-	    fh.close
-	  end
-	end
-      end
-    end
-  end
-end
-
 desc "get all shields"
-task :get_all_shields => [:get_build_dbs, :get_svn_logs,
+task :get_all_shields => [:get_build_dbs,
   :process_downloads_data, :get_post_tag_info,
-  :get_years_in_bioc_shields, :get_coverage_shields, :copy_assets,
+  :get_years_in_bioc_shields, :copy_assets,
   :get_availability_shields, :get_last_commit_date_shields]
 
 # should be run every time mirror info in config.yaml changes
