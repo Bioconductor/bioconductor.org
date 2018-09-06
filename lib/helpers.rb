@@ -1086,6 +1086,15 @@ def is_removed?(item)
     return false
 end
 
+def isReleaseOrDevel(package)
+    config = @config
+    if package[:bioc_version_num] == config[:devel_version]
+        return "devel"
+    else
+        return "release"
+    end
+end
+
 # FIXME eventually replace is_new_package() implementation with this
 def is_new_package2(package, conf) # just a string (pkg name)
   keys = conf[:manifest_keys].dup
