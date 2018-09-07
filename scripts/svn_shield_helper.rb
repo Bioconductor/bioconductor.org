@@ -121,8 +121,8 @@ def downloadBadge(repo, destdir, release=false)
       pkgs = get_list_of_packages(bioc=true, release=release)
   end
 
-  len = pkgs.length.to_s
   filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
+  len = filtered_data.length.to_s
 
   filtered_data.each_with_index { |(key, value), index|
     dx = (index + 1).to_s
