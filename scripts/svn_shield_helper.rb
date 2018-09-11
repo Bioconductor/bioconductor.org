@@ -79,6 +79,30 @@ end
 
 def downloadBadge(repo, destdir, release=false)
 
+  filtered_data = getRanking(repo, release)
+  len = filtered_data.length.to_s
+
+  filtered_data.each_with_index { |(key, value), index|
+    dx = (index + 1).to_s
+    pkg =  key
+    shield = File.join(destdir, "#{pkg}.svg")
+    rank = "#{dx} / #{len}"
+    puts pkg
+    puts rank
+    resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
+    if (resp.code == 200)
+      fh = File.open(shield, 'w')
+      fh.write(resp.to_s)
+      fh.close
+    else
+      FileUtils.cp(File.join('assets', 'images', 'shields',
+       'downloads', "unknown-downloads.svg"), shield)
+    end
+  }
+
+end
+
+def getRanking(repo, release=false)
   if ["bioc", "workflows"].include? repo
      url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
   else
@@ -122,24 +146,5 @@ def downloadBadge(repo, destdir, release=false)
   end
 
   filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
-  len = filtered_data.length.to_s
-
-  filtered_data.each_with_index { |(key, value), index|
-    dx = (index + 1).to_s
-    pkg =  key
-    shield = File.join(destdir, "#{pkg}.svg")
-    rank = "#{dx} / #{len}"
-    puts pkg
-    puts rank
-    resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
-    if (resp.code == 200)
-      fh = File.open(shield, 'w')
-      fh.write(resp.to_s)
-      fh.close
-    else
-      FileUtils.cp(File.join('assets', 'images', 'shields',
-       'downloads', "unknown-downloads.svg"), shield)
-    end
-  }
-
+  filtered_data
 end
