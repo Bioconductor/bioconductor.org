@@ -21,14 +21,14 @@ var displayPackages = function(packageList, nodeName) {
     }
     jQuery(".jstree li:not([id])").hide(); // hide childless views
 
-    var html = "<h3>Packages found under " + nodeName + ":</h3>\n";
+    var html = "<h3>Packages found under " + nodeName + ":</h3>\n<small>Rank based on number of downloads: lower numbers are more frequently downloaded.</small>\n\n";
     var parents = findParents(nodeName);
 
     var category = parents[0];
 
     var map = {"Software": "bioc", "AnnotationData": "data/annotation", "ExperimentData": "data/experiment", "Workflow": "workflows"};
 
-    html += "<table id='biocViews_package_table'><thead><tr><th>Package</th><th>Maintainer</th><th>Title</th></tr></thead><tbody>\n";
+    html += "<table id='biocViews_package_table'><thead><tr><th>Package</th><th>Maintainer</th><th>Title</th><th>Rank</th></tr></thead><tbody>\n";
 
 
     var tableData = "";
@@ -42,6 +42,7 @@ var displayPackages = function(packageList, nodeName) {
         var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(/ *<[^>]*>/g, "");
         tableData += '\t<td>'+cleanMaintainer+'</td>\n';
         tableData += '\t<td>'+packageInfo[pkg]["Title"]+'</td>\n';
+        tableData += '\t<td>'+packageInfo[pkg]["Rank"]+'</td>\n';
         tableData += "</tr>\n";
     }
     html += tableData;
@@ -50,15 +51,32 @@ var displayPackages = function(packageList, nodeName) {
 
     jQuery.fn.dataTableExt.oStdClasses.sStripeOdd = "row_odd";
     jQuery.fn.dataTableExt.oStdClasses.sStripeEven = "row_even";
+
+    jQuery.fn.dataTableExt.oSort['numWithNull-asc'] = function(a,b) {
+    var x = parseInt(a);
+    var y = parseInt(b);
+    return ((isNaN(y) || x < y) ? -1 : ((isNaN(x) || x > y) ? 1 : 0));
+    };
+    jQuery.fn.dataTableExt.oSort['numWithNull-desc'] = function(a,b) {
+    var x = parseInt(a);
+    var y = parseInt(b);
+    return ((isNaN(x) || x < y) ? 1 : ((isNaN(y) || x > y) ? -1 : 0));
+    };
     jQuery("#packages").html(html);
     jQuery("#biocViews_package_table").dataTable({
         sScrollX: "100%",
              "aLengthMenu": [
          [-1, 10, 25, 50, 100],
          ["All", 10, 25, 50, 100]
-     ],
+     ],	
      "iDisplayLength": -1,
-     "oLanguage": {
+     "aoColumns": [
+     null,
+     null,
+     null,
+     { "sType" : "numWithNull" }
+    ],
+    "oLanguage": {
         "sSearch": "Search table:"
      }
     });
@@ -285,7 +303,8 @@ var addToPackageInfo = function(data) {
         var pkg = content[i][0];
         var maintainer = content[i][1];
         var title = content[i][2];
-        ret[pkg] = {"Maintainer": maintainer, "Title": title};
+        var rank = content[i][3];
+        ret[pkg] = {"Maintainer": maintainer, "Title": title, "Rank": rank};
     }
     return(ret);
 }

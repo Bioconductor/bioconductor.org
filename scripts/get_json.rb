@@ -99,6 +99,11 @@ class GetJson
     view_dcfs = []
     view_lines = views.split("\n")
     dcf = ""
+    repo_fmt = repo.sub "data/", ""
+    site_config = YAML.load_file("./config.yaml")
+    release = (site_config["release_version"] == version)
+    ranking_list = getRanking(repo_fmt, release)
+    #len = ranking_list.length.to_s
     view_lines.each_with_index do |line, i|
       line = line.force_encoding("UTF-8") if line.respond_to? :force_encoding
       if i == (view_lines.length() -1)
@@ -118,6 +123,19 @@ class GetJson
           dcf = dcf + "\n" + line
         end
       end
+    end
+    view_dcfs.each_with_index do |h, i|
+        pkg = h["Package"]
+        temp = ranking_list.keys.index(pkg)
+        if temp.nil?
+            rank = nil
+        else
+            temp = temp + 1
+            #rank = "#{temp} / #{len}"
+            rank = temp
+        end
+        h["Rank"] = rank
+        view_dcfs[i] = h
     end
     return clean_dcfs(view_dcfs)
   end

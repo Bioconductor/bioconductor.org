@@ -265,6 +265,7 @@ task :json2js do
 	  line.push v['Package']
 	  line.push v['Maintainer']
 	  line.push v['Title']
+          line.push v['Rank']
 	  ret.push line
 	end
 
