@@ -21,7 +21,7 @@ var displayPackages = function(packageList, nodeName) {
     }
     jQuery(".jstree li:not([id])").hide(); // hide childless views
 
-    var html = "<h3>Packages found under " + nodeName + ":</h3>\n<small>Rank based on number of downloads: lower numbers are more frequently downloaded.</small>\n\n";
+    var html = "<h3>Packages found under " + nodeName + ":</h3>\n<p>Rank based on number of downloads: lower numbers are more frequently downloaded.</p>\n";
     var parents = findParents(nodeName);
 
     var category = parents[0];
