@@ -28,7 +28,7 @@ This release will use R-3.5.1 ("Feather Spray").
 * Stop building BioC 3.7, current release. Commits to this branch will be
   disabled.
 
-* Start building BioC 3.8, new devel.
+* Start building BioC 3.9, new devel.
 
 ### Wednesday October 24 
 
@@ -71,8 +71,6 @@ This release will use R-3.5.1 ("Feather Spray").
 
 
 ## Post-release
-
-### Thursday November 1 - Wednesday May 2 
 
 * Build AMIs for release and devel
 
