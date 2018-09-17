@@ -20,9 +20,6 @@ This release will use R-3.5.1 ("Feather Spray").
 
 * .db0 packages available for developers.
 
-* Update package NEWS files. Latest NEWS will be collated 
-  and included in release announcement.
-
 ### Monday October 15 
 
 * Stop building BioC 3.7, current release. Commits to this branch will be
@@ -30,13 +27,15 @@ This release will use R-3.5.1 ("Feather Spray").
 
 * Start building BioC 3.9, new devel.
 
+### Friday October 19 
+
+* TxDb, OrgDb packages built and posted to devel annotation data repository.
+
 ### Wednesday October 24 
 
 * No API changes to BioC 3.8.
 
 * Deadline to add new packages to the BiocC 3.8 manifest.
-
-* TxDb, OrgDb packages built and posted to devel annotation data repository.
 
 * Contributed annotation packages posted to devel annotation data repository.
 
@@ -47,18 +46,19 @@ This release will use R-3.5.1 ("Feather Spray").
   and workflow packages. Some warnings will be accepted, clarification 
   on the bioc-devel mailing list.
 
-* Deadline for NEWS files to be updated.
-
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
 ### Monday October 29
 
-* Last day to commit changes to the Bioc 3.8 devel branch. The branch will be
-  frozen prior to creating the release branch on Tuesday, October 30.
-  Committing last minute changes could break your package in both release and
-  devel! Be sure to run 'R CMD build' and 'R CMD check' locally before
-  committing any changes.
+* Last day to commit changes to the Bioc 3.8 devel branch. NEWS files
+  must be updated before the builds start at 4:45pm EST or they will
+  not be included in the release announcement.
+
+  The branch will be frozen prior to creating the release branch on Tuesday,
+  October 30.  Committing last minute changes could break your package in both
+  release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
+  before committing any changes.
 
 ### Tuesday October 30 
 
