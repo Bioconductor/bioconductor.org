@@ -112,7 +112,7 @@ def getRanking(repo, release=false)
 
   d = Date.parse(Time.now.to_s)
   last6 = []
-  for i in 1..6 do
+  for i in 1..12 do
     x = d << i
     last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
   end
@@ -126,7 +126,7 @@ def getRanking(repo, release=false)
       next if line =~ /^Package\tYear/ # skip header
       package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
       if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
-        raw_data[package] = (raw_data[package] + Integer(downloads))
+        raw_data[package] = (raw_data[package] + Integer(distinct_ips))
       end
     end
   end
