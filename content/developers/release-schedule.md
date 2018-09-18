@@ -25,7 +25,7 @@ This release will use R-3.5.1 ("Feather Spray").
 * Stop building BioC 3.7, current release. Commits to this branch will be
   disabled.
 
-* Start building BioC 3.9, new devel.
+* Start building BioC 3.10, new devel.
 
 ### Friday October 19 
 
@@ -51,7 +51,7 @@ This release will use R-3.5.1 ("Feather Spray").
 
 ### Monday October 29
 
-* Last day to commit changes to the Bioc 3.8 devel branch. NEWS files
+* Last day to commit changes to the Bioc 3.8 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
   not be included in the release announcement.
 
@@ -79,5 +79,5 @@ This release will use R-3.5.1 ("Feather Spray").
 * Packages marked as deprecated in BioC 3.8 are now removed from the
   BioC 3.8 nightly builds.
 
-* Identify packages to be deprecated in the new devel, BioC 3.8.
+* Identify packages to be deprecated in the new devel, BioC 3.10.
   This includes packages with errors and unresponsive maintainers.
