@@ -126,12 +126,10 @@ class GetJson
     end
     view_dcfs.each_with_index do |h, i|
         pkg = h["Package"]
-        temp = ranking_list.keys.index(pkg)
+        temp = ranking_list[pkg]
         if temp.nil?
             rank = nil
         else
-            temp = temp + 1
-            #rank = "#{temp} / #{len}"
             rank = temp
         end
         h["Rank"] = rank

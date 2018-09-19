@@ -83,10 +83,9 @@ def downloadBadge(repo, destdir, release=false)
   len = filtered_data.length.to_s
 
   filtered_data.each_with_index { |(key, value), index|
-    dx = (index + 1).to_s
     pkg =  key
     shield = File.join(destdir, "#{pkg}.svg")
-    rank = "#{dx} / #{len}"
+    rank = "#{value} / #{len}"
     puts pkg
     puts rank
     resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
@@ -98,37 +97,28 @@ def downloadBadge(repo, destdir, release=false)
       FileUtils.cp(File.join('assets', 'images', 'shields',
        'downloads', "unknown-downloads.svg"), shield)
     end
+    puts "done"
   }
 
 end
 
 def getRanking(repo, release=false)
   if ["bioc", "workflows"].include? repo
-     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_stats.tab"))
+     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_scores.tab"))
   else
-     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_stats.tab"))
+     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_scores.tab"))
   end
   urls = [url]
 
-  d = Date.parse(Time.now.to_s)
-  last6 = []
-  for i in 1..12 do
-    x = d << i
-    last6 << [x.year.to_s, Date::ABBR_MONTHNAMES[x.month]]
-  end
-
   raw_data = Hash.new(0)
-  percentiles = {}
 
   urls.each do |url|
     lines = HTTParty.get(url).split("\n")
     for line in lines
-      next if line =~ /^Package\tYear/ # skip header
-      package, year, month, distinct_ips, downloads = line.strip.split(/\t/)
-      if last6.find{|i| i == [year, month]} # was it in the last 6 full months?
-        raw_data[package] = (raw_data[package] + Integer(distinct_ips))
-      end
-    end
+      next if line =~ /^Package\tDownload_score/ # skip header
+      package, distinct_ips = line.strip.split(/\t/)
+      raw_data[package] = Integer(distinct_ips)
+     end
   end
 
   sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
@@ -146,5 +136,20 @@ def getRanking(repo, release=false)
   end
 
   filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
-  filtered_data
+
+  # add sorting ranking for ties
+  # ties will have highest rank, i.e  if 1:3 are all the same
+  # 1:3 get ranked 1/4 then 4 would rank 4/4 etc ...
+  preVal = 0
+  rankHash = Hash.new(0)
+  filtered_data.each_with_index { |(key, value), index|
+    if preVal != value
+      rankHash["#{key}"] = index+1
+      preVal = value
+    else
+      rankHash["#{key}"] = rankHash[rankHash.keys[index-1]]
+    end
+  }
+  rankHash
+
 end
