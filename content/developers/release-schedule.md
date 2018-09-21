@@ -1,4 +1,3 @@
-# ** DRAFT ** 
 # Bioconductor 3.8 Release Schedule
 
 This release will use R-3.5.1 ("Feather Spray").
