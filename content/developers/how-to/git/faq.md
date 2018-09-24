@@ -8,7 +8,7 @@
     [Maintain GitHub and _Bioconductor_ repositories][]. This will give
     you the information needed.
 
-2. I have a GitHub repository already set up for my _Bioconductor_
+1. I have a GitHub repository already set up for my _Bioconductor_
    package at `www.github.com/<developer>/<ExamplePackage>` , how do I
    link my repository in GitHub and https://git.bioconductor.org ?
 
@@ -16,7 +16,7 @@
     information on how to add the remote and link both GitHub and
     _Bioconductor_ repositories.
 
-3. I'm unable to `push` or `merge` my updates from my GitHub
+1. I'm unable to `push` or `merge` my updates from my GitHub
    repository to my _Bioconductor_ package on
    `git@git.bioconductor.org`, how do I go about this?
 
@@ -29,13 +29,13 @@
     correctly on GitHub. Follow
     [Adding an SSH key to your GitHub account][].
 
-4. I'm not sure how to fetch the updates from `git.bioconductor.org`
+1. I'm not sure how to fetch the updates from `git.bioconductor.org`
    with regards to my package, how do I do this?
 
     Take a look at [Sync existing repositories][]. This will give you
     the information needed.
 
-5. I'm just a package user, do I need to do any of this?
+1. I'm just a package user, do I need to do any of this?
 
     As a package user, you do not need any of these __developer__
     related documentation. Although, it is a good primer if you want
@@ -45,7 +45,7 @@
     _Bioconductor_ packages you use, __if__ they have a GitHub
     repository.
 
-6. I'm new to git and GitHub, where should I learn?
+1. I'm new to git and GitHub, where should I learn?
 
     There are many resources where you can learn about git and GitHub.
 
@@ -53,14 +53,7 @@
     * [git-scm][]
     * [Guides][]
 
-7. SVN was working well for me, why do we have to move?
-
-   We believe that git, and social coding are the way forward for open
-   source projects. They enable participation from a larger
-   audience. Switching from SVN allows us to better manage the
-   packages being contributed to _Bioconductor_.
-
-8. I'm a _Bioconductor_ package maintainer, but I don't have access to
+1. I'm a _Bioconductor_ package maintainer, but I don't have access to
    the _Bioconductor_ server where my packages are being maintained. How
    do I gain access?
 
@@ -72,7 +65,7 @@
     if they don't already have access. Please identify which packages
     you need read/write access to in the email.
 
-9. What is the relationship between the `origin` and `upstream` remote?
+1. What is the relationship between the `origin` and `upstream` remote?
 
     In `git` lingo __origin__ is just the default name for a remote
     from which a repository was originally cloned. It might equally
@@ -94,14 +87,14 @@
 
     ![](/images/git/github-bioc-relationship.png)
 
-10. Can I have more than one upstream remote, if yes, is this recommended?
+1. Can I have more than one upstream remote, if yes, is this recommended?
 
     You can have as many remotes as you please. But you can have only
     one remote with the name __upstream__. We recommend having the
     remote `origin` set to GitHub, and `upstream` set to the
     _Bioconductor_ git server to avoid confusion.
 
-11. Common names used in the scenario's
+1. Common names used in the scenario's
 
     `developer`: This should be your GitHub username, e.g., mine is
     `nturaga`.
@@ -115,7 +108,7 @@
     SVN `trunk` and git `master` branch are now the development
     branches.
 
-13. I'm a _Bioconductor_ developer only on the _Bioconductor_ server. I do
+1. I'm a _Bioconductor_ developer only on the _Bioconductor_ server. I do
     not have/want a GitHub account. What should I do?
 
     You do not have to get a Github account if you do not want
@@ -125,7 +118,7 @@
 
     We highlight this in [Maintain a _Bioconductor_-only repository][]
 
-14. I cannot push to my package. I get the error,
+1. I cannot push to my package. I get the error,
 
         $ git push origin master
         fatal: remote error: FATAL: W any packages/myPackage nobody DENIED by fallthru
@@ -151,7 +144,7 @@
     If your remote is corret and you still see the message, then your
     SSH key is invalid. See the next FAQ.
 
-15. Before sending a question to the Bioc-devel mailing list about
+1. Before sending a question to the Bioc-devel mailing list about
     git, please check the output of the following commands for
     correctness so that we can help you better.
 
@@ -189,7 +182,7 @@
             R  	packages/ADaCGH2
             R  	packages/AGDEX
 
-16. SSH key not being recognized because of different name?
+1. SSH key not being recognized because of different name?
 
     If you have named your SSH public key differently from `id_rsa` as
     suggested by `ssh-keygen`, you may find it useful to set up a
@@ -204,7 +197,7 @@
     In this example, my private key is called `id_rsa_bioconductor`
     instead of `id_rsa`.
 
-17. SSH key asking for a password and I don't know it? How do I
+1. SSH key asking for a password and I don't know it? How do I
     retrieve it?
 
     There are a few possibilities here,
@@ -225,7 +218,7 @@
     server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
-18. After submitting my SSH key through the BiocCredentials app, I did not
+1. After submitting my SSH key through the BiocCredentials app, I did not
     receive a reply. How do I check?
 
     Once you submit your SSH key through the app, you can check what
@@ -239,7 +232,7 @@
     If this suceeds via the SSH protocol, then it means that you have
     access to your package.
 
-19. Can I create and push new branches to my repository on git.bioconductor.org?
+1. Can I create and push new branches to my repository on git.bioconductor.org?
 
     No. Maintainers only have access to `master` and the current `RELEASE_X_Y`.
     New branches cannot be created and pushed to the bioconductor server. We 
@@ -247,7 +240,7 @@
     if they are maintaining one.
 
 
-20. How can I fix my duplicate commits issue and find the required
+1. How can I fix my duplicate commits issue and find the required
     documentation?
 
 	The detailed documentation to [resolve duplicate commits][] 
