@@ -45,7 +45,7 @@ Github scenarios
 - [Change Package Maintainer][]
 - [Remove Large Data Files][] and clean git tree
 
-See other [frequently asked questions][].
+See other **[frequently asked questions][]**.
 
 [Add collaborators]: add-collaborators
 [Change Package Maintainer]: change-maintainer
