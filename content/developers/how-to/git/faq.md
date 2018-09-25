@@ -1,5 +1,24 @@
 # Frequently asked questions
 
+1. I can't access my package.
+
+   You will need to log in to the [BiocCredentials][] app. If you have
+   not logged in before, you must first **activate** your account.
+
+   There are two steps, 
+
+   1. If there is no SSH key registered, you must add one. 
+
+   1. If there is already an SSH key registerd, check the packages you
+      have access to in the 'Profile' interface.
+
+  You can alternatively check if you have access to your package using
+  the command line
+
+		ssh -T git@git.bioconductor.org 
+
+  If you have access to your package, but cannot git `pull` or `push`, please
+  check FAQ #13, #14, and #15.
 
 1. I'm a developer for _Bioconductor_, my package `ExamplePackage` is on
    the new server https://git.bioconductor.org. What do I do next?
@@ -23,7 +42,8 @@
     If you are unable to `push` or `merge` to either your GitHub
     account or _Bioconductor_ repository, it means you do not have the
     correct access rights. If you are a developer for _Bioconductor_,
-    you will need to [submit your SSH public key][].
+    you will need to [submit your SSH public key][] to the
+    [BiocCredentials][] app.
 
     You should also make sure to check that your public key is set up
     correctly on GitHub. Follow
@@ -57,14 +77,14 @@
    the _Bioconductor_ server where my packages are being maintained. How
    do I gain access?
 
-    Please [submit your SSH public key][] or Github ID. Your key will
-    be added to your our server and you will get read+ write access to
-    your package.
+    Please submit your SSH public key using the [BiocCredentials][]
+    app. Your key will be added to your our server and you will get
+    read+ write access to your package.
 
     All developers of _Bioconductor_ packages are required to do this,
     if they don't already have access. Please identify which packages
     you need read/write access to in the email.
-
+	
 1. What is the relationship between the `origin` and `upstream` remote?
 
     In `git` lingo __origin__ is just the default name for a remote
@@ -197,13 +217,17 @@
     In this example, my private key is called `id_rsa_bioconductor`
     instead of `id_rsa`.
 
+	You may find it useful to check the [BiocCredentials][] app to see
+    what SSH key you have registered.
+
 1. SSH key asking for a password and I don't know it? How do I
     retrieve it?
 
     There are a few possibilities here,
 
     * You have set a password. The bioc-devel mailing list cannot help
-    you with this.  You have to submit a new key on the BiocCredentials app.
+    you with this.  You have to submit a new key on the
+    [BiocCredentials][] app.
 
     * The permissions on your SSH key are wrong. Verify that the
     permissions on SSH IdentityFile are `400`. SSH will reject, in a
@@ -218,19 +242,6 @@
     server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
-1. After submitting my SSH key through the BiocCredentials app, I did not
-    receive a reply. How do I check?
-
-    Once you submit your SSH key through the app, you can check what
-    keys we have on file in the 'Profile' interface.
-    
-
-    ```
-    git clone git@git.bioconductor.org:packages/<myPackage>
-    ```
-
-    If this suceeds via the SSH protocol, then it means that you have
-    access to your package.
 
 1. Can I create and push new branches to my repository on git.bioconductor.org?
 
@@ -270,12 +281,19 @@ _Bioconductor_ [source control][] overview.
 [GitHub Guides](https://guides.github.com/)
 
 [source control]: ../
+
 [New package workflow]: ../new-package-workflow
+
 [Maintain GitHub and _Bioconductor_ repositories]: ../maintain-github-bioc
+
 [Maintain a _Bioconductor_-only repository]: ../maintain-bioc-only
+
 [Sync existing repositories]: ../sync-existing-repositories
+
 [Adding an SSH key to your GitHub account]: https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/
+
 [submit your SSH public key]: https://git.bioconductor.org/BiocCredentials/
+
 [resolve duplicate commits]: ../resolve-duplicate-commits
 
 [Pull requests]: https://help.github.com/articles/creating-a-pull-request/
@@ -287,3 +305,5 @@ _Bioconductor_ [source control][] overview.
 [git-scm]: https://git-scm.com/
 
 [Guides]: https://guides.github.com/
+
+[BiocCredentials]: https://git.bioconductor.org/BiocCredentials
