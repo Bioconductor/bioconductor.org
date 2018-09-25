@@ -83,7 +83,7 @@ your edits.
 ## Where to Commit Changes
 
 New features and bug fixes are introduced on the master ('devel')
-branch of the GIT repository. 
+branch of the GIT repository.
 
     BiocGenerics$ git checkout master
     BiocGenerics$ git pull
@@ -121,13 +121,13 @@ Builds occur once per day, and take approximately 24 hours. See the
 
 [versioning scheme]: /developers/how-to/version-numbering/
 [build report]: https://bioconductor.org/checkResults/devel/bioc-LATEST/
- 
+
 ## Annotation packages
 
-Due to the size of the Annotation files these packages are not stored in svn.
-To update an existing Annotation package please make the new version available 
-in dropbox (or similar) and send an email to maintainer@bioconductor.org. A 
-member of the Bioconductor team will add the package to the appropriate 
+Due to the size of the Annotation files these packages are not stored in GIT.
+To update an existing Annotation package please make the new version available
+in dropbox (or similar) and send an email to maintainer@bioconductor.org. A
+member of the Bioconductor team will add the package to the appropriate
 repository.
 
 To contribute a new Annotation package please contact packages@bioconductor.org
