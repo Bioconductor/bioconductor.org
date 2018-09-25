@@ -1,8 +1,7 @@
 # Fix bugs in `devel` and  `release`
 
 __Goal:__ Maintainers will have to fix bugs from time to time, and
-make sure the patch is available both in the `master` branch (svn
-devel) and the current `release` branch.
+make sure the patch is available both in the `master` branch and the current `release` branch.
 
 ## Steps:
 

@@ -5,27 +5,30 @@
    You will need to log in to the [BiocCredentials][] app. If you have
    not logged in before, you must first **activate** your account.
 
-   There are two steps, 
+   There are two steps,
 
-   1. If there is no SSH key registered, you must add one. 
+   1. If there is no SSH key registered, you must add one.
 
    1. If there is already an SSH key registerd, check the packages you
       have access to in the 'Profile' interface.
 
-  You can alternatively check if you have access to your package using
-  the command line
+	You can alternatively check if you have access to your package
+	using the command line
 
-		ssh -T git@git.bioconductor.org 
+		  ssh -T git@git.bioconductor.org
 
-  If you have access to your package, but cannot git `pull` or `push`, please
-  check FAQ #13, #14, and #15.
+	If you have access to your package, but cannot git `pull` or `push`,
+	please check FAQ #13, #14, and #15.
 
 1. I'm a developer for _Bioconductor_, my package `ExamplePackage` is on
    the new server https://git.bioconductor.org. What do I do next?
 
-    Take a look at
-    [Maintain GitHub and _Bioconductor_ repositories][]. This will give
-    you the information needed.
+    Take a look at [Maintain GitHub and _Bioconductor_ repositories][].
+	This will give you the information needed.
+
+	NOTE: This situation is for packages which were previously
+	maintained on SVN and have never been acccessed through GIT. It is
+	not for newly accepted packages through Github.
 
 1. I have a GitHub repository already set up for my _Bioconductor_
    package at `www.github.com/<developer>/<ExamplePackage>` , how do I
@@ -84,7 +87,7 @@
     All developers of _Bioconductor_ packages are required to do this,
     if they don't already have access. Please identify which packages
     you need read/write access to in the email.
-	
+
 1. What is the relationship between the `origin` and `upstream` remote?
 
     In `git` lingo __origin__ is just the default name for a remote
@@ -153,14 +156,14 @@
 
     As a developer you should be using the SSH protocol, but the
     `origin` remote is HTTPS. Use
-    
+
         git remote add origin git@git.bioconductor.org:packages/myPackage
-        
+
     to change the remote to the SSH protocol. Note the `:` after the
     host name in the SSH protocol, rather than the `/` in the HTTPS
     protocol. Confirm that the remote has been updated correctly with
     `git remote -v`.
-    
+
     If your remote is corret and you still see the message, then your
     SSH key is invalid. See the next FAQ.
 
@@ -182,7 +185,7 @@
             origin  git@github.com:<github username>/myPackage.git (push)
             upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
             upstream  git@git.bioconductor.org/packages/myPackage.git (push)
- 
+
     * Check if you have access to the bioc-git server
       (git@git.bioconductor.org), by using `ssh -T
       git@git.bioconductor.org`.  This will show you a list of
@@ -242,19 +245,17 @@
     server remote, should be
     `git@git.bioconductor.org:packages/myPackage`.
 
-
 1. Can I create and push new branches to my repository on git.bioconductor.org?
 
     No. Maintainers only have access to `master` and the current `RELEASE_X_Y`.
-    New branches cannot be created and pushed to the bioconductor server. We 
-    recommend maintainers have additional branches on their Github repository 
+    New branches cannot be created and pushed to the bioconductor server. We
+    recommend maintainers have additional branches on their Github repository
     if they are maintaining one.
-
 
 1. How can I fix my duplicate commits issue and find the required
     documentation?
 
-	The detailed documentation to [resolve duplicate commits][] 
+	The detailed documentation to [resolve duplicate commits][]
 	can be found at the link.
 
 ## More questions?
