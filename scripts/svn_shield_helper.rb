@@ -88,7 +88,7 @@ def downloadBadge(repo, destdir, release=false)
     rank = "#{value} / #{len}"
     puts pkg
     puts rank
-    resp = HTTParty.get("https://img.shields.io/badge/downloads-#{URI::encode(rank)}-blue.svg")
+    resp = HTTParty.get("https://img.shields.io/badge/rank-#{URI::encode(rank)}-blue.svg")
     if (resp.code == 200)
       fh = File.open(shield, 'w')
       fh.write(resp.to_s)
