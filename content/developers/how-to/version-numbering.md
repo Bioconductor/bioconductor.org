@@ -45,8 +45,8 @@ New packages
 -----------------
 
 New packages submitted to _Bioconductor_ should set Version: 0.99.0 in the
-DESCRIPTION file. Specifying "y=99" triggers a bump in "x" at the next release
-which in this case results in version "1.0.0".
+DESCRIPTION file. Specifying y=99 triggers a bump in x at the next release
+which in this case results in version 1.0.0.
 
 See additional details on 
 the [Package Submission](/developers/package-submission) page.
@@ -61,17 +61,17 @@ Summary
 Bumps "at release time" are done by the _Bioconductor_ team and not
 the maintainer.
 
-- "x" 
+- x 
     - only modified by the _Bioconductor_ team
-    - bumped to "x+1" at release time if "y=99"
-- "y" 
+    - bumped to x+1 at release time if y=99
+- y 
     - must be even in release and odd in devel
     - must be <=99
     - bumped at release time for all packages to the next
       even number in release and the next odd in devel
-- "z"
+- z
     - should be incremented sequentially during regular package development
-    - no limitation on the size of "z"
+    - no limitation on the size of z
     - bumped at release time to 0 for all packages.
 
 Examples
@@ -79,13 +79,13 @@ Examples
 
 1. Normal Case. Suppose a package in the devel branch has version
    number 1.1.25. The new release branch now contains a copy of the
-   package with version "1.2.0".  The devel branch of _Bioconductor_
+   package with version 1.2.0.  The devel branch of _Bioconductor_
    contains the package whose version number has been bumped to
-   "1.3.0"
+   1.3.0
 
 2. Special Case.  The "0.99.2" version of our package is copied by the
    _Bioconductor_ team to the release branch with version number
-   "1.0.0". The package version is bumped to "1.1.0" in the devel
+   1.0.0. The package version is bumped to 1.1.0 in the devel
    branch.
 
 Examples of the version bumping scheme:
