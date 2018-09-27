@@ -55,25 +55,6 @@ See also the instructions for [Using Bioc Devel][].
 
 [Using Bioc Devel]: /developers/how-to/useDevel/
 
-Summary
------------------
-
-Bumps "at release time" are done by the _Bioconductor_ team and not
-the maintainer.
-
-- x 
-    - only modified by the _Bioconductor_ team
-    - bumped to x+1 at release time if y=99
-- y 
-    - must be even in release and odd in devel
-    - must be <=99
-    - bumped at release time for all packages to the next
-      even number in release and the next odd in devel
-- z
-    - should be incremented sequentially during regular package development
-    - no limitation on the size of z
-    - bumped at release time to 0 for all packages.
-
 Examples
 -----------------
 
@@ -119,3 +100,23 @@ Examples of the version bumping scheme:
 </tbody>
 </table>
 <br />
+
+Summary
+-----------------
+
+Bumps "at release time" are done by the _Bioconductor_ team and not
+the maintainer.
+
+- x 
+    - only modified by the _Bioconductor_ team
+    - bumped to x+1 at release time if y=99
+- y 
+    - must be even in release and odd in devel
+    - must be <=99
+    - bumped at release time for all packages to the next
+      even number in release and the next odd in devel
+- z
+    - should be incremented sequentially during regular package development
+    - no limitation on the size of z
+    - bumped at release time to 0 for all packages.
+
