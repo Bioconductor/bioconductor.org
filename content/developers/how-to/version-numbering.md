@@ -105,7 +105,7 @@ Summary
 -----------------
 
 Bumps "at release time" are done by the _Bioconductor_ team and not
-the maintainer.
+the package maintainer.
 
 - x 
     - only modified by the _Bioconductor_ team
