@@ -1,22 +1,16 @@
 ![](/images/icons/magnifier.gif)Version Numbering
 =================
 
-All _Bioconductor_ packages should have a version number like x.y.z.
-Here are examples of good version numbers:
+Version Format
+-----------------
+All _Bioconductor_ packages should have a version number in x.y.z format.
+
+Examples of good version numbers:
 
     1.2.3
-    0.0.1
     0.99.5
     2.3.0
     3.12.44
-    
-First time developers (submitting a package to _Bioconductor_) should
-set Version: 0.99.0 in the DESCRIPTION file; see additional details on
-the [Package Submission](/developers/package-submission) page.
-
-See also the instructions for [Using Bioc Devel][].
-
-[Using Bioc Devel]: /developers/how-to/useDevel/
 
 Even Odd Schedule
 -----------------
@@ -47,7 +41,41 @@ At the time of a release, the _Bioconductor_ team arranges to:
   signify a major change to their package should set y to 99 in their
   devel package.
 
-Example
+New packages
+-----------------
+
+New packages submitted to _Bioconductor_ should set Version: 0.99.0 in the
+DESCRIPTION file. Specifying "y=99" triggers a bump in "x" at the next release
+which in this case results in version "1.0.0".
+
+See additional details on 
+the [Package Submission](/developers/package-submission) page.
+
+See also the instructions for [Using Bioc Devel][].
+
+[Using Bioc Devel]: /developers/how-to/useDevel/
+
+Summary
+-----------------
+
+Bumps "at release time" are done by the _Bioconductor_ team and not
+the maintainer.
+
+- "x" 
+    - only modified by the _Bioconductor_ team
+    - bumped to "x+1" at release time if "y=99"
+- "y" 
+    - must be even in release and odd in devel
+    - must be <=99
+    - bumped at release time for all packages to the next
+      even number in release and the next odd in devel
+- "z"
+    - should be incremented sequentially during regular package development
+    - no limitation on the size of "z"
+    - bumped at release time to 0 for all packages.
+
+Examples
+-----------------
 
 1. Normal Case. Suppose a package in the devel branch has version
    number 1.1.25. The new release branch now contains a copy of the
@@ -60,7 +88,7 @@ Example
    "1.0.0". The package version is bumped to "1.1.0" in the devel
    branch.
 
-Here is a table showing examples of the version bumping scheme:
+Examples of the version bumping scheme:
 
 <table border="1" cellpadding="5" cellspacing="0">
 <thead valign="bottom">
