@@ -258,7 +258,7 @@ Following acceptance of a package:
 * Packages are then built by the _Bioconductor_ nightly build
   process. If the build is successful, the package has its own
   'landing page' created, and the package is made available to users
-  of the 'devel' branch of _Bioconductor_ via `biocLite()`.
+  of the 'devel' branch of _Bioconductor_ via `BiocManager::install()`.
 * Developers may continue to make changes to their package, but now do
   so to the version in the [_Bioconductor_ git server][11].
 * Developers should bump the `z` portion of their version number every

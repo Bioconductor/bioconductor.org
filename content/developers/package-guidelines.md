@@ -136,9 +136,9 @@ associated files.
    the following command fails
 
     ```
-    ## try http:// if https:// URLs are not supported
-    source("https://bioconductor.org/biocLite.R")
-    biocLite("MyPackage")
+    if (!requireNamespace("BiocManager"))
+        install.packages("BiocManager")
+    BiocManager::install("MyPackage")
     ```
 
 2. "Title:" field:  Have a brief but descriptive Title

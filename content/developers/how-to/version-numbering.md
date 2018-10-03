@@ -30,7 +30,7 @@ During regular development of new features
 * Any bug fixes ported to the release branch are similarly
   incremented, 1.0.1, 1.0.2, ...
 * Changes made to GIT without a corresponding version bump **do not
-  propagate** to the repository visible to `biocLite()`.
+  propagate** to the repository visible to `BiocManager::install()`.
 
 At the time of a release, the _Bioconductor_ team arranges to:
 
