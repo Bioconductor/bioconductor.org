@@ -64,8 +64,8 @@ party) the warning is removed.
 
 When a package has gone through one development cycle as 'deprecated' without
 remedial action, the package is marked as 'Defunct'. The package is removed
-from the nightly build system, is no longer available through 'biocLite()', and
-does not have a current 'landing page'.
+from the nightly build system, is no longer available through
+'BiocManager::install()', and does not have a current 'landing page'.
 
 The package remains available in the subversion archive, and in previous
 versions of Bioconductor.

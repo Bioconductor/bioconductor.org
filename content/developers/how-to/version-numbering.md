@@ -30,7 +30,7 @@ During regular development of new features
 * Any bug fixes ported to the release branch are similarly
   incremented, 1.0.1, 1.0.2, ...
 * Changes made to GIT without a corresponding version bump **do not
-  propagate** to the repository visible to `biocLite()`.
+  propagate** to the repository visible to `BiocManager::install()`.
 
 At the time of a release, the _Bioconductor_ team arranges to:
 
@@ -104,19 +104,19 @@ Examples of the version bumping scheme:
 Summary
 -----------------
 
-Bumps "at release time" are done by the _Bioconductor_ team and not
-the maintainer.
+Below is a summary of how version components are bumped and the
+key limitations. Bumps "at release time" are done by the _Bioconductor_ 
+team and not the package maintainer.
 
-- x 
+`x` 
     - only modified by the _Bioconductor_ team
     - bumped to x+1 at release time if y=99
-- y 
+`y` 
     - must be even in release and odd in devel
     - must be <=99
     - bumped at release time for all packages to the next
       even number in release and the next odd in devel
-- z
+`z`
     - should be incremented sequentially during regular package development
     - no limitation on the size of z
     - bumped at release time to 0 for all packages.
-
