@@ -8,7 +8,7 @@ This release will use R-3.5.1 ("Feather Spray").
 
 ### Monday October 1 
 
-* Announce deprecated packages for BioC 3.8. They'll be removed from BioC 3.8.
+* Announce deprecated packages for BioC 3.8. They'll be removed from BioC 3.9.
   See [End of Life](/developers/package-end-of-life) for details.
 
 ### Friday October 5 
