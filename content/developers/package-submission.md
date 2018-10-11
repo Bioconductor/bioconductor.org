@@ -5,7 +5,7 @@ principles to follow. See also [Package Guidelines][guidelines] for
 package specific guidelines and requirement and the
 [_Bioconductor_ new package submission tracker][tracker].
 
-[guidelines]: http://bioconductor.org/developers/package-guidelines/
+[guidelines]: https://bioconductor.org/developers/package-guidelines/
 [tracker]: https://github.com/Bioconductor/Contributions
 
 <a name="top"></a>
@@ -14,6 +14,8 @@ package specific guidelines and requirement and the
 - [Types of Packages](#type)
 - [Author/Maintainer Expectations](#author)
 - [Submission](#submission)
+- [Experiment data package](#experPackage)
+- [Annotation package](#annPackage)
 - [Review Process](#whattoexpect)
 - [Following Acceptance](#afteraccept)
 - [Additonal Support](#support)
@@ -22,26 +24,26 @@ package specific guidelines and requirement and the
 
 ## Introduction
 
-_Bioconductor_ Packages should
+To submit a package to _Bioconductor_ the package should:
 
-* Address areas of high-throughput genomic analysis where _Bioconductor_
-  already makes significant contributions, e.g., sequencing,
+* Address areas of high-throughput analysis, e.g., sequencing,
   expression and other microarrays, flow cytometry, mass spectrometry,
   image analysis; see [biocViews][].
-* Interoperate with other _Bioconductor_ packages, re-using common data
-  structures ([S4 classes and methods][]) and existing infrastructure
+* Interoperate with other _Bioconductor_ packages, _re-using common data
+  structures_ (see [S4 classes and methods][]) and existing infrastructure
   (e.g., `rtracklayer::import()` for input of common genomic files).
 * Adopt software best practices that enable reproducible research and
   use, such as full documentation and vignettes (including fully
   evaluated code) as well as commitment to long-term user support
-  through the _Bioconductor_ [support site](https://support.bioconductor.org).
+  through the _Bioconductor_ [support site][support].
 * Not exist on CRAN. A package can only be submitted to one or the other.
 * Comply with [Package Guidelines][guidelines].
 * Your package cannot depend on any package (or version of a package)
   that is not (yet) available on CRAN or _Bioconductor_.
 
-[biocViews]: http://bioconductor.org/packages/devel/BiocViews.html#___Software
-[S4 classes and methods]: http://bioconductor.org/developers/how-to/commonMethodsAndClasses/
+In _Bioconductor_ three types of packages are accepted (see [Types of Packages](#types)). 
+[biocViews]: https://bioconductor.org/packages/devel/BiocViews.html
+[S4 classes and methods]: https://bioconductor.org/developers/how-to/commonMethodsAndClasses/
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -50,39 +52,45 @@ _Bioconductor_ Packages should
 ## Types of Packages
 
 _Bioconductor_ packages are broadly defined by three main package types:
-Software, Experiment Data, and Annotation. Most packages contributed
+**Software**, **Experiment Data**, and **Annotation**. Most packages contributed
 by users are [software][software-pkgs] packages that perform analytic
 calculations. Users also contribute [annotation][annotation-pkgs] and
 [experiment data][exptdata-pkgs] packages.
 
-Annotation packages are database-like packages that provide
-information linking identifiers (e.g., Entrez gene names or Affymetrix
-probe ids) to other information (e.g., chromosomal location, Gene
-Ontology category). It is also encouraged to utilize AnnotationHub for
-storage and access to large raw data files and their conversion to
-standard R formats. Instructions for adding data to AnnotationHub and
-designing a annotaiton package to use AnnotationHub can be found here:
-[Creating AnnotationHub Packages][annoHowTo].
+* Software packages are packages that provide implementation of algorithms 
+  (e.g. statistical analysis, ), access to resources (e.g. biomart, or NCBI)
+  or visualizations (e.g. volcano plots, pathways plots). Instructions for 
+  creating Software packages can be found  here:
+  [Package guidelines][guidelines].
 
-Experiment data packages provide data sets that are used, often by
-software packages, to illustrate particular analyses. These packages
-contain curated data from an experiment, teaching course or
-publication and in most cases contain a single data set. It is also
-encouraged to utilize ExperimentHub for storage and access to larger
-data files. ExperimentHub is also particularly useful for hosting
-collections of related data sets. Instructions for adding data to
-ExperimentHub and designing an experiment data package to use
-ExperimentHub can be found here:
-[Creating ExperimentHub Packages][expHowTo].
+* [Annotation packages](#annPackage) are database-like packages that provide
+  information linking identifiers (e.g., Entrez gene names or Affymetrix
+  probe ids) to other information (e.g., chromosomal location, Gene
+  Ontology category). It is also encouraged to utilize AnnotationHub for
+  storage and access to large raw data files and their conversion to
+  standard R formats. Instructions for adding data to AnnotationHub and
+  designing a annotation package to use AnnotationHub can be found here:
+  [Creating AnnotationHub Packages][annoHowTo].
 
-See [Package Guidelines][] for details on package format and syntax.
+* [Experiment data packages](#experPackage) provide data sets that are used, often by
+  software packages, to illustrate particular analyses. These packages
+  contain curated data from an experiment, teaching course or
+  publication and in most cases contain a single data set. It is also
+  encouraged to utilize ExperimentHub for storage and access to larger
+  data files. ExperimentHub is also particularly useful for hosting
+  collections of related data sets. Instructions for adding data to
+  ExperimentHub and designing an experiment data package to use
+  ExperimentHub can be found here:
+  [Creating ExperimentHub Packages][expHowTo].
+
+See [Package Guidelines][guidelines] for details on package format and syntax.
 
 [software-pkgs]: /packages/release/bioc/
 [annotation-pkgs]: /packages/release/data/annotation/
 [exptdata-pkgs]: /packages/release/data/experiment/
 [annoHowTo]: /packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
 [expHowTo]: /packages/devel/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
-[Package Guidelines]: http://bioconductor.org/developers/package-guidelines/
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -94,31 +102,54 @@ Acceptance of packages into _Bioconductor_ brings with it ongoing
 responsibility for package maintenance. These responsibilities
 include:
 
-* Be familiar with the ‘devel’ and ‘release’ branch concepts used in
-  the project.  New packages and features are added to the ‘devel’
-  branch. The current devel branch becomes the next release, with a
-  release in April and October. Once your package has been accepted,
-  it will initially be in the ‘devel’ branch. Most users are expected
-  to use the release branch, so will not immediately have access to
-  your package.
-* Realize _Bioconductor_, unlike CRAN, maintains all package source code
-  under git version control. This means that you make changes to your
-  package using [git][11].
-* Package maintenance through software release cycles, including
-  prompt updates to software and documentation necessitated by
-  underlying changes in R.
-* Subscription to the [bioc-devel](/help/mailing-list/) mailing list.
-* [Registration][support-register] on the [support site][support].
-* Response to bug reports and questions from users regarding your
-  package, as posted on the [_Bioconductor_ support site][support] or
-  directly to developers. Add a `BugReports:` field to the DESCRIPTION
-  file if reports should be directed to a particular web page rather
-  than the package maintainer. You should register on the
-  [support site][support] and edit your
-  profile, changing the "Watched Tags" field to include all packages
-  you maintain, so you will be notified when anyone posts a question
-  about your package.
+* Follow Bioconductor guidelines.
 
+  Like the [guideline](guidelines) or the [version numbering][versioning], 
+  coding style, code performance requirements, memory usage and class reuse or 
+  the other requirements described below.
+* Follow the release cycle of Bioconductor.
+
+  There are two releases each year, around April and October. Follow 
+  [Release schedule][release-schedule] to know when will be 
+  the next one. The release cycle mean that there are two versions 
+  of the packages ‘devel’ and ‘release’. Be familiar with these branch
+  concepts used in the project.  
+  Once your package has been accepted, it will initially be in the ‘devel’ branch.
+  The current devel branch becomes the next release. 
+  Most users are expected to use the release branch, so will not 
+  immediately have access to your package until the next release.
+  Bug fixes can be fixed in both branches, while new features should only 
+  be added to the devel branch.
+  
+* Maintain the package using version control.
+
+  Realize _Bioconductor_, unlike CRAN, maintains all package source code
+  under git version control. This means that you make changes to your
+  package using [git][11]. If your package is accepted you will get 
+  instructions on how to do this (see after [acceptance section](#afteraccept).
+  Package maintenance through software release cycles, including
+  prompt updates to software and documentation necessitated by
+  underlying changes in R or other packages.
+* Subscribe to the [bioc-devel](/help/mailing-list/) mailing list.
+
+  The Bioconductor team communicates with developers through the list. 
+  It is also a good channel to communicate changes to other developers. 
+  Addressing Bioconductor team request in timely manner garantees that 
+  your package remains available in Bioconductor.
+* [Register][support-register] on the [support site][support].
+
+  It is the official support channel to users.  
+  Response to bug reports and questions from users regarding your
+  package, as posted on the [_Bioconductor_ support site][support] or
+  directly to developers.  
+  Add a `BugReports:` field to the DESCRIPTION
+  file if reports should be directed to a particular web page rather
+  than the package maintainer. 
+  In the [support site][support] edit your profile, changing the 
+  "Watched Tags" field to include all packages you maintain, so you will 
+  be notified when anyone posts a question about your package.
+  
+[release-schedule]:https://bioconductor.org/developers/release-schedule/
 [support-register]: https://support.bioconductor.org/accounts/signup/
 [support]: https://support.bioconductor.org/
 
@@ -128,16 +159,22 @@ include:
 
 ## Submission
 
-* Submit by opening a new issue at the _Bioconductor_
-  [Contributions][issues] repository.
 * Read the [Contribution Guidelines][guidelines] for full
-  instructions.
-* Assuming your package is in a [GitHub Repository][git-repo-create],
+  instructions, and make yourself familiar with 
+  [Bioconductor Developer](https://bioconductor.org/developers/) pages.
+  Make sure to follow the advice on the pages 
+* Submit by opening a new issue at the _Bioconductor_
+  [Contributions][issues] repository, following the [guidelines][tracker] of the README.md. 
+  Assuming your package is in a [GitHub Repository][git-repo-create],
   under a default 'master' branch, add the link to your repository to
   the issue you are submitting.
 
 [issues]: https://github.com/Bioconductor/Contributions/issues/new
 [git-repo-create]: https://help.github.com/articles/create-a-repo/
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="experPackage"></a>
 
 ## Experiment Data Packages
 
@@ -155,6 +192,10 @@ issue as the software package.  The process for doing this is
 documented [here][].
 
 [here]: https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md#submitting-related-packages
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="annPackage"></a>
 
 ## Annotation Packages
 
@@ -240,9 +281,9 @@ Review Process
   closed. All updates to your package will be through the
   [_Bioconductor_ Git Server][11].
 
-[4]: https://bioconductor.org/packages/devel/bioc/html/BiocCheck.html
+[4]: https://bioconductor.org/packages/BiocCheck/
 [9]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
-[11]: http://bioconductor.org/developers/how-to/git/
+[11]: https://bioconductor.org/developers/how-to/git/
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -259,14 +300,15 @@ Following acceptance of a package:
   process. If the build is successful, the package has its own
   'landing page' created, and the package is made available to users
   of the 'devel' branch of _Bioconductor_ via `BiocManager::install()`.
-* Developers may continue to make changes to their package, but now do
-  so to the version in the [_Bioconductor_ git server][11].
+* Changes to their package (if any), should be done to version in the 
+  [_Bioconductor_ git server][11].
 * Developers should bump the `z` portion of their version number every
   time they commit changes to their package, following the
-  [Version numbering](/developers/how-to/version-numbering/)
-  guidelines. If developers don't bump the version, the changes made
-  to their package *do not propagate* to the _Bioconductor_ web site and
-  package repository.
+  [Version numbering][versioning] guidelines. If developers don't 
+  bump the version, the changes made to their package *do not propagate* 
+  to the _Bioconductor_ web site and package repository.
+  
+  [versioning]:/developers/how-to/version-numbering/
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
