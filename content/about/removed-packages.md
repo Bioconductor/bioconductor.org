@@ -3,9 +3,32 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.8 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.4/bioc/html/BrowserVizDemo.html">BrowserVizDemo</a></li>
+<li><a href="/packages/3.6/bioc/html/DASC.html">DASC</a></li>
+<li><a href="/packages/3.6/bioc/html/mvGST.html">mvGST</a></li>
+<li><a href="/packages/3.4/bioc/html/ontoCAT.html">ontoCAT</a></li>
+<li><a href="/packages/3.4/bioc/html/OperaMate.html">OperaMate</a></li>
+<li><a href="/packages/3.4/bioc/html/PAnnBuilder.html">PAnnBuilder</a></li>
+<li><a href="/packages/3.4/bioc/html/phenoDist.html">phenoDist</a></li>
+<li><a href="/packages/3.7/bioc/html/spliceR.html">spliceR</a></li>
+</ul>
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.7/data/experiment/html/cheung2010.html">cheung2010</a></li>
+<li><a href="/packages/3.7/data/experiment/html/MEALData.html">MEALData</a></li>
+<li><a href="/packages/3.4/data/experiment/html/RnaSeqTutorial.html">RnaSeqTutorial</a></li>
+</ul>
+
 ## Packages removed with Bioconductor 3.7 release
 
-Software Packages: 
+Software Packages:
 
 <ul class="inline_list">
 <li><a href="/packages/3.5/bioc/html/BioMedR.html">BioMedR</a></li>
@@ -28,7 +51,7 @@ Annotation Data Packages:
 
 ## Packages removed with Bioconductor 3.6 release
 
-Software Packages: 
+Software Packages:
 
 <ul class="inline_list">
 <li><a href="/packages/3.4/bioc/html/AtlasRDF.html">AtlasRDF</a></li>
@@ -56,14 +79,14 @@ Software Packages:
 <li><a href="/packages/3.4/bioc/html/betr.html">betr</a></li>
 </ul>
 
-Experimental Data Packages: 
+Experimental Data Packages:
 
 <ul class="inline_list">
 <li><a href="/packages/3.4/data/experiment/html/encoDnaseI.html">encoDnaseI</a></li>
 <li><a href="/packages/3.2/data/experiment/html/ggtut.html">ggtut</a></li>
 </ul>
 
-Annotation Packages: 
+Annotation Packages:
 
 <ul class="inline_list">
 <li><a href="/packages/3.4/data/annotation/html/gahgu133a.db.html">gahgu133a.db</a></li>
@@ -96,7 +119,7 @@ Annotation Packages:
 </ul>
 
 9 software package and 1 experimental data packages were marked as deprecated,
-to be removed in the next release. 
+to be removed in the next release.
 
 
 ## Packages removed with Bioconductor 3.4 release
@@ -130,7 +153,7 @@ Experimental Data Packages:
 </ul>
 
 1 software package and 2 experimental data packages were marked as deprecated,
-to be removed in the next release. 
+to be removed in the next release.
 
 ## Packages removed with Bioconductor 3.3 release
 
