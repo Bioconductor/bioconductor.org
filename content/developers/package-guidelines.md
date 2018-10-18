@@ -299,6 +299,54 @@ Changes in version 1.1.1 (2018-06-15)
   o added a new field to database
 ```
 
+The following can be run on the news file to see if it is properly formatted:
+
+```
+news = <path to news file>
+
+if (grepl("Rd$", news)){
+        tools:::.build_news_db_from_package_NEWS_Rd(news)
+}else {
+        tools:::.news_reader_default(news)
+}
+
+```
+
+The output should look similar to the following
+
+```
+Changes in version 1.1.1 (2018-06-15):
+
+    o   Fixed bug. Begin indexing from 1 instead of 2
+
+    o   Made the following significant changes
+	o added a subsetting method
+	o added a new field to database
+
+Changes in version 0.99.0 (2018-05-15):
+
+    o   Submitted to Bioconductor
+
+```
+
+If you get something like the following there are formatting ERRORS that need to
+be corrected:
+
+```
+Version: 0.99.0
+Date: 2018-05-15
+Text: Submitted to Bioconductor
+
+Version: 1.1.1
+Date: 2018-06-15
+Text: Fixed bug. Begin indexing from 1 instead of 2
+
+Version: 1.1.1
+Date: 2018-06-15
+Text: Made the following significant changes o added a subsetting
+        method o added a new field to database
+```
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="citation"></a>
