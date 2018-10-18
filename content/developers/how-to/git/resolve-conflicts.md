@@ -32,11 +32,11 @@ _Bioconductor_ repositories.
 	    On branch master
 	    Your branch is ahead of 'origin/master' by 1 commit.
           (use "git push" to publish your local commits)
-	    You have unmerged paths.
+	    You have un-merged paths.
 	      (fix conflicts and run "git commit")
 	      (use "git merge --abort" to abort the merge)
 
-	    Unmerged paths:
+	    Un-merged paths:
 	      (use "git add <file>..." to mark resolution)
 
           both modified:   DESCRIPTION

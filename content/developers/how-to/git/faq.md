@@ -9,7 +9,7 @@
 
    1. If there is no SSH key registered, you must add one.
 
-   1. If there is already an SSH key registerd, check the packages you
+   1. If there is already an SSH key registered, check the packages you
       have access to in the 'Profile' interface.
 
 	You can alternatively check if you have access to your package
@@ -27,7 +27,7 @@
 	This will give you the information needed.
 
 	NOTE: This situation is for packages which were previously
-	maintained on SVN and have never been acccessed through GIT. It is
+	maintained on SVN and have never been accessed through GIT. It is
 	not for newly accepted packages through Github.
 
 1. I have a GitHub repository already set up for my _Bioconductor_
@@ -164,7 +164,7 @@
     protocol. Confirm that the remote has been updated correctly with
     `git remote -v`.
 
-    If your remote is corret and you still see the message, then your
+    If your remote is correct and you still see the message, then your
     SSH key is invalid. See the next FAQ.
 
 1. Before sending a question to the Bioc-devel mailing list about

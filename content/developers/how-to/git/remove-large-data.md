@@ -3,7 +3,7 @@
 __Goal:__ Git remembers. Sometimes large data files are added to git
 repository (intentionally or unintentionally) causing the size of the repository
 to become large. It is necessary to remove the files and clean the git tree from
-tracking in order to reduce the size. 
+tracking in order to reduce the size.
 
 These steps should be run on your local copy and (if necessary) pushed to your
 own github repository. The steps below assume origin is a user maintained github
@@ -12,10 +12,10 @@ repository.
 **NOTE:** Anyone that is maintaining the package repository (with a local copy)
   should run steps 1-3.
 
-  
+
 1. Download [BFG Repo-Cleaner](https://rtyley.github.io/bfg-repo-cleaner/)
 
-2. Run BFG Repo-Cleaner on your package directory 
+2. Run BFG Repo-Cleaner on your package directory
 
    In the location of your package, run the following command
    ```
@@ -37,9 +37,9 @@ repository.
    git push -f origin
    ```
 
-5. Request updates on the git.bioconductor.org repository location. 
+5. Request updates on the git.bioconductor.org repository location.
 
    The Bioconductor git server does not allow `-f` or to force push to the
    git.bioconductor.org location. Please email <bioc-devel@r-project.org>
    explaining the package has been cleaned for large data files and needs to be
-   reset. 
+   reset.
