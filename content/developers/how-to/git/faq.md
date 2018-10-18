@@ -176,8 +176,8 @@
       consistency. Include this in your email to bioc-devel, if you
       are unsure. The remote should look like,
 
-            origin  git@git.bioconductor.org/packages/myPackage.git (fetch)
-            origin  git@git.bioconductor.org/packages/myPackage.git (push)
+            origin  git@git.bioconductor.org:packages/myPackage.git (fetch)
+            origin  git@git.bioconductor.org:packages/myPackage.git (push)
 
        or
 
