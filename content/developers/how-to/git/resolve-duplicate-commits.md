@@ -18,7 +18,7 @@ Bioconductor.
    On master, (make sure you are on master by `git checkout master`)
 
 		git branch master_backup
-		
+
 
 2. Identify the commit from which the duplicates have
    originated. These commits are more often than not, `merge` commits.
@@ -27,13 +27,13 @@ Bioconductor.
 
 		git reset —hard <commit_id>
 
-4. Now cherry pick your commits from the `master_backup` branch. 
+4. Now cherry pick your commits from the `master_backup` branch.
 
 		git cherry-pick <commit_id>
 
 	a. The commits you cherry-pick should be only 1 version of the
     duplicate commit, i.e don’t cherry-pick the same commit twice.
-	
+
 	b. Include the branching and version bump commits in your
     cherry-pick. Make the package history look as normal as possible.
 
@@ -53,7 +53,7 @@ One way is to check the log. You should see the same commit message
 with the same changes, but with a different commit ID, if you try
 
 	git log
-	
+
 or
 
 	git log --oneline
@@ -64,9 +64,9 @@ Run this script written in python to [detect duplicate commits][]
 which are specific to Bioconductor repositories.
 
 Usage example:
-	
+
 	python detect_duplicate_commits.py /BiocGenerics 1000
-	
+
 	python detect_duplicate_commits.py <path_to_package> <number of commits to check>'
 
 

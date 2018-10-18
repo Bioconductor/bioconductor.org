@@ -17,7 +17,7 @@ After your package has been accepted, it is visible on the
 
 1. _Bioconductor_ needs to know your SSH 'public key'. _Bioconductor_
    will use keys in `https://github.com/<your-github-id>.keys`.
-   
+
    Alternatively, [submit your SSH public key][submit-keys] or github
    id to _Bioconductor_.
 

@@ -34,7 +34,7 @@ GitHub, you can push these changes to _Bioconductor_.
 1. Push your local repository to the upstream _Bioconductor_ repository.
 
         git push upstream master
-    
+
     To push GitHub release branch updates to the _Bioconductor_
     release branch, replace `master` with name of the release branch,
     e.g.: `RELEASE_3_6`.

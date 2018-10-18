@@ -33,9 +33,9 @@ without using GitHub.
 1. In other work flows, the `origin` remote has been renamed to
    `upstream`. It may be convenient to make this change to your own
    repository
-   
+
         git remote rename origin upstream
-        
+
     and confirm that `git remote -v` now associates the `upstream`
     repository name with `git@git.bioconductor.org`.
 
