@@ -142,8 +142,7 @@ that you have the necessary compilers installed.
 
 Use the commands
 
-    library(BiocManager)
-	valid()             ## R version 3.5 or later
+    BiocManager::valid()     ## R version 3.5 or later
 
 to flag packages that are either out-of-date or too new for your
 version of _Bioconductor_. The output suggests ways to solve identified
@@ -218,7 +217,7 @@ version relevant at the time of the release of R.
 default checking for out-of-date packages and asking if the user would
 like to update
 
-    > install()
+    > BiocManager::install()
     Bioconductor version 3.8 (BiocManager 1.30.3), R 3.5.1 Patched
     (2018-10-20 r75479)
     Update old packages: 'BBmisc', 'genefilter', 'GenomicAlignments',
@@ -257,7 +256,7 @@ installed packages are not a hodgepodge from different _Bioconductor_
 releases (the 'too new' packages have been installed from source
 rather than a repository; regular users would seldom have these).
 
-    > valid()
+    > BiocManager::valid()
 
     * sessionInfo()
 
