@@ -34,12 +34,12 @@ During regular development of new features
 
 At the time of a release, the _Bioconductor_ team arranges to:
 
-* Create a release branch package with version x.y+1.0
-* Increment the devel branch package version to x.y+2.0
+* Create a release branch package with version: x*.*(y+1)*.*(z-z)
+* Increment the devel branch package version to: x*.*(y+2)*.*(z-z)
 * As a special case, any package with version x.99.z is bumped to
-  x+1.0.0 in release, and x+1.1.0 in devel. Thus authors wishing to
-  signify a major change to their package should set y to 99 in their
-  devel package.
+  (x+1)*.*0*.*(z-z) in release, and (x+1)*.*1*.*0 in devel. Thus authors
+  wishing to signify a major change to their package should set y to 99 in
+  their devel package.
 
 New packages
 -----------------
