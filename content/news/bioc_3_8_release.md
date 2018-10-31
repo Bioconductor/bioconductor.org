@@ -2660,6 +2660,141 @@ Changes in version 1.34.1:
 
 - remove function samWrapper
 
+[DelayedArray](https://bioconductor.org/packages/DelayedArray)
+------
+
+Changes in version 0.8.0:
+
+NEW FEATURES
+
+- Add get/setAutoBlockSize(), getAutoBlockLength(),
+      get/setAutoBlockShape() and get/setAutoGridMaker().
+
+- Add rowGrid() and colGrid(), in addition to blockGrid().
+
+- Add get/setAutoBPPARAM() to control the automatic 'BPPARAM' used by
+      blockApply().
+
+- Reduce memory usage when realizing a sparse DelayedArray to disk
+    
+      + On-disk realization of a DelayedArray object that is reported to be sparse
+      (by is_sparse()) to a "sparsity-optimized" backend (i.e. to a backend with
+      a memory efficient write_sparse_block() like the TENxMatrix backend imple-
+      mented in the HDF5Array package) now preserves sparse representation of
+      the data all the way. More precisely, each block of data is now kept in
+      a sparse form during the 3 steps that it goes thru: read from seed,
+      realize in memory, and write to disk.
+
+- showtree() now displays whether a tree node or leaf is considered sparse
+      or not.
+
+- Enhance "aperm" method and dim() setter for DelayedArray objects. In
+      addition to allowing dropping "ineffective dimensions" (i.e. dimensions
+      equal to 1) from a DelayedArray object, aperm() and the dim() setter now
+      allow adding "ineffective dimensions" to it.
+
+- Enhance subassignment to a DelayedArray object.
+    
+      + So far subassignment to a DelayedArray object only supported the **linear
+      form** (i.e. x[i] <- value) with strong restrictions (the subscript 'i'
+      must be a logical DelayedArray of the same dimensions as 'x', and 'value'
+      must be an ordinary vector of length 1).
+    
+      + In addition to this linear form, subassignment to a DelayedArray object
+      now supports the **multi-dimensional form** (e.g. x[3:1, , 6] <- 0). In
+      this form, one subscript per dimension is supplied, and each subscript
+      can be missing or be anything that multi-dimensional subassignment to
+      an ordinary array supports. The replacement value (a.k.a. the right
+      value) can be an array-like object (e.g. ordinary array, dgCMatrix object,
+      DelayedArray object, etc...) or an ordinary vector of length 1. Like the
+      linear form, the multi-dimensional form is also implemented as a delayed
+      operation.
+
+- Re-implement internal helper simple_abind() in C and support long arrays.
+      simple_abind() is the workhorse behind realization of arbind() and
+      acbind() operations on DelayedArray objects.
+
+- Add "table" and (restricted) "unique" methods for DelayedArray objects,
+      both block-processed.
+
+- range() (block-processed) now supports the 'finite' argument on a
+      DelayedArray object.
+
+- %*% (block-processed) now works between a DelayedMatrix object and an
+      ordinary vector.
+
+- Improve support for DelayedArray of type "list".
+
+- Add TENxMatrix to list of supported realization backends.
+
+- Add backend-agnostic RealizationSink() constructor.
+
+- Add linearInd() utility for turning array indices into linear indices.
+      Note that linearInd() performs the reverse transformation of
+      base::arrayInd().
+
+- Add low-level utilities mapToGrid() and mapToRef() for mapping reference
+      array positions to grid positions and vice-versa.
+
+- Add downsample() for reducing the "resolution" of an ArrayGrid object.
+
+- Add maxlength() generic and methods for ArrayGrid objects.
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Multi-dimensional subsetting is no more delayed when drop=TRUE and the
+      result has only one dimension. In this case the result now is returned
+      as an **ordinary** vector (atomic or list). This is the only case of
+      multi-dimensional single bracket subsetting that is not delayed.
+
+- Rename defaultGrid() -> blockGrid(). The 'max.block.length' argument
+      is replaced with the 'block.length' argument. 2 new arguments are
+      added: 'chunk.grid' and 'block.shape'.
+
+- Major improvements to the block processing mechanism.
+      All block-processed operations (except realization by block) now support
+      blocks of **arbitrary** geometry instead of column-oriented blocks only.
+      'blockGrid(x)', which is called by the block-processed operations to get
+      the grid of blocks to use on 'x', has the following new features:
+      + It's "chunk aware". This means that, when the chunk grid is known (i.e.
+         when 'chunkGrid(x)' is not NULL), 'blockGrid(x)' defines blocks that
+         are "compatible" with the chunks i.e. that any chunk is fully contained
+         in a block. In other words, blocks are chosen so that chunks don't
+         cross their boundaries.
+      + When the chunk grid is unknown (i.e. when 'chunkGrid(x)' is NULL),
+         blocks are "isotropic", that is, they're as close as possible to an
+         hypercube instead of being "column-oriented" (column-oriented blocks,
+         also known as "linear blocks", are elongated along the 1st dimension,
+         then along the 2nd dimension, etc...)
+      + The returned grid has the lowest "resolution" compatible with
+         'getAutoBlockSize()', that is, the blocks are made as big as possible
+         as long as their size in memory doesn't exceed 'getAutoBlockSize()'.
+         Note that this is not a new feature. What is new though is that an
+         exception now is made when the chunk grid is known and some chunks
+         are >= 'getAutoBlockSize()', in which case 'blockGrid(x)' returns a
+         grid that is the same as the chunk grid.
+      + These new features are supposed to make the returned grid "optimal" for
+      block processing. (Some benchmarks still need to be done to
+      confirm/quantify this.)
+
+- The automatic block size now is set to 100 Mb (instead of 4.5 Mb
+      previously) at package startup. Use setAutoBlockSize() to change the
+      automatic block size.
+
+- No more 'BPREDO' argument to blockApply().
+
+- Replace block_APPLY_and_COMBINE() with blockReduce().
+
+BUG FIXES
+
+- No-op operations on a DelayedArray derivative really act like no-ops.
+      Operating on a DelayedArray derivative (e.g. RleArray, HDF5Array or
+      GDSArray) will now return an objet of the original class if the result
+      is "pristine" (i.e. if it doesn't carry delayed operations) instead of
+      degrading the object to a DelayedArray instance. This applies for example
+      to 't(t(x))' or 'dimnames(x) <- dimnames(x)' etc...
+
+
 [derfinder](https://bioconductor.org/packages/derfinder)
 ---------
 
@@ -3533,12 +3668,44 @@ Changes in version 2.11.4:
 - Added assocTestSingle and fitNullModel methods for GenotypeData
   objects.
 
+[GenomeInfoDb](https://bioconductor.org/packages/GenomeInfoDb)
+------------------
+
+Changes in version 1.18.0
+
+NEW FEATURES
+
+- Add checkCompatibleSeqinfo().
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Update genomeMappingTbl.csv, the db used internally by genomeBuilds()
+      and family.
+
+
 [GenomicDataCommons](https://bioconductor.org/packages/GenomicDataCommons)
 ------------------
 
 Changes in version 1.5.8:
 
 - filters are now chainable with pipes
+
+[GenomicFeatures](https://bioconductor.org/packages/GenomicFeatures)
+------------
+
+Changes in version 1.34.0:
+
+NEW FEATURES
+
+- 2 changes to makeTxDbFromGFF() / makeTxDbFromGRanges():
+      + Now they support GFF3 files where the CDS parent is an exon instead
+        of a transcript. Note that such GFF3 files are rare and not following
+        the well established convention documented in the GFF3 specs:
+        https://github.com/The-Sequence-Ontology/Specifications/blob/master/gff3.md
+      + Now they accept missing/invalid CDS phases (with a warning).
+
+- makeTxDb() now accepts missing CDS phases.
+
 
 [GenomicFiles](https://bioconductor.org/packages/GenomicFiles)
 ------------
@@ -3548,6 +3715,43 @@ Changes in version 1.18.0:
 NEW FEATURES
 
 - (v. 1.17.3) Add vcfFields,VcfStack-method.
+
+[GenomicRanges](https://bioconductor.org/packages/GenomicRanges)
+-------------
+
+Changes in version 1.34.0:
+
+NEW FEATURES
+
+- Add coercions from GenomicRanges to IRangesList and from GenomicRanges
+      to CompressedIRangesList. These 2 new coercions are equivalent to
+      coercion from GenomicRanges to IntegerRangesList, that is, if 'gr' is
+      a GenomicRanges object, the 3 following coercions are equivalent and
+      return the same CompressedIRangesList object:
+          as(gr, "IntegerRangesList")
+          as(gr, "IRangesList")
+          as(gr, "CompressedIRangesList")
+
+DEPRECATED AND DEFUNCT
+
+- Deprecate several RangedData methods: seqinfo, seqinfo<-, seqnames, and
+      findOverlaps#RangedData#GenomicRanges
+
+      + RangedData objects will be deprecated in BioC 3.9 (their use has been
+      discouraged since BioC 2.12, that is, since 2014). Package developers
+      that are still using RangedData objects need to migrate their code to
+      use GRanges or GRangesList objects instead.
+
+BUG FIXES
+
+- Make [[, as.list(), lapply(), and unlist() fail more graciously on
+      a GenomicRanges object.
+
+- Make "show" methods for GenomicRanges and GPos objects robust to
+      special metadata column names like "stringsAsFactors".
+
+- Export the "update" method for GRanges objects. This addresses
+      https://github.com/Bioconductor/GenomicRanges/issues/7
 
 [GenomicScores](https://bioconductor.org/packages/GenomicScores)
 -------------
@@ -3695,6 +3899,33 @@ Changes in version 1.27.1:
 
 - Add GenotypeIterator and GenotypeBlockIterator classes. These classes
   allow returning blocks of SNPs with each call to iterateFilter.
+
+[HDF5Array](https://bioconductor.org/packages/HDF5Array)
+-----
+
+Changes in version 1.10.0:
+
+NEW FEATURES
+
+- Implement the TENxMatrix container (DelayedArray backend for the
+      HDF5-based sparse matrix representation used by 10x Genomics).
+      Also add writeTENxMatrix() and coercion to TENxMatrix.
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- By default automatic HDF5 datasets (e.g. the dataset that gets written
+      to disk when calling 'as(x, "HDF5Array")') now are created with chunks
+      of 1 million array elements (revious default was 1/75 of
+      'getAutoBlockLength(x)'). This can be controlled with new low-level
+      utilities get/setHDF5DumpChunkLength().
+
+- By default automatic HDF5 datasets now are created with chunks of
+      shape "scale" instead of "first-dim-grows-first". This can be
+      controlled with new low-level utilities get/setHDF5DumpChunkShape().
+
+- getHDF5DumpChunkDim() looses the 'type' and 'ratio' arguments (only 'dim'
+      is left).
+
 
 [HIBAG](https://bioconductor.org/packages/HIBAG)
 -----
@@ -3962,6 +4193,43 @@ Changes in version 1.6.2:
 Changes in version 1.6.1:
 
 - Added installation script and installation description in vignette
+
+[IRanges](https://bioconductor.org/packages/IRanges)
+----
+
+Changes in version  2.16.0
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Optimize unlist() on Views objects.
+
+- Optimize range(), any() and all() on CompressedRleList objects.
+
+- Optimize start(), end(), width() setters on CompressedRangesList objects.
+
+DEPRECATED AND DEFUNCT
+
+- Deprecate several RangedData methods:
+      + score, score<-, lapply, within, countOverlaps;
+      + coercions from list, data.frame, DataTable, Rle, RleList, RleViewsList,
+        IntegerRanges, or IntegerRangesList to RangedData.
+      + RangedData objects will be deprecated in BioC 3.9 (their use has been
+      discouraged since BioC 2.12, that is, since 2014). Package developers
+      that are still using RangedData objects need to migrate their code to
+      use GRanges or GRangesList objects instead.
+
+     + The RangesList() constructor is now defunct (after being deprecated in
+      BioC 3.7).
+
+BUG FIXES
+
+- Fix DF[IRanges(...), ] on a DataFrame with data.frame columns.
+
+- Make [[, as.list(), lapply(), and unlist() fail more graciously on
+      a IRanges object.
+
+- NCList objects now properly support c().
+
 
 [iSEE](https://bioconductor.org/packages/iSEE)
 ----
@@ -5939,6 +6207,61 @@ Changes in version 1.6.0:
 - Improved workflow, integration with derivative packages (RTN /
   RTNsurvival).
 
+[S4Vectors](https://bioconductor.org/packages/S4Vectors)
+------
+
+Changes in version 0.20.0
+
+NEW FEATURES
+
+- rbind() now supports DataFrame objects with the same column names
+      but in different order, even when some of the column names are
+      duplicated. How rbind() re-aligns the columns of the various objects
+      to bind with those of the first object is consistent with what
+      base:::rbind.data.frame() does.
+
+- Add isSequence() low-level helper.
+
+- Add 'nodup' argument to selectHits().
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- The rownames of a DataFrame are no more required to be unique.
+
+- Change 'use.names' default from FALSE to TRUE in mcols() getter.
+
+- Coercion to DataFrame now **always** propagates the names.
+
+- Rename low-level generic concatenateObjects() -> bindROWS().
+
+- replaceROWS() now dispatches on 'x' and 'i' instead of 'x' only.
+
+- Speedup row subsetting of DataFrame with many columns.
+
+DEPRECATED AND DEFUNCT
+
+- phead(), ptail(), and strsplitAsListOfIntegerVectors() are now defunct
+      (after being deprecated in BioC 3.7).
+
+BUG FIXES
+
+- Fix window() on a DataFrame with data.frame columns.
+
+- 2 fixes to "rbind" method for DataFrame objects:
+      + It now properly handles DataFrame objects with duplicated colnames.
+        Note that the new behavior is consistent with base::rbind.data.frame().
+      + It now properly handles DataFrame objects with columns that are 1D
+        arrays.
+
+- Fix showAsCell() on nested data-frame-like objects.
+
+- 2 fixes to "as.data.frame" method for DataFrame objects:
+      + It now works if the DataFrame object contains nested data-frame-like
+        objects or other complicated S4 objects (as long as these complicated
+        objects in turn support as.data.frame()).
+      + It now handles 'stringsAsFactors' argument properly. Originally
+        reported here: https://github.com/Bioconductor/GenomicRanges/issues/18
+
 
 [scater](https://bioconductor.org/packages/scater)
 ------
@@ -6466,11 +6789,25 @@ Changes in version 0.99.16:
 
 Changes in version 1.12.0:
 
+NEW FEATURES
+
+- The package has a new vignette "Extending the SummarizedExperiment class"
+      by Aaron Lun intended for developers. It documents in great details the
+      process of implementing a SummarizedExperiment extension (a.k.a.
+      subclass).
+
 SIGNIFICANT USER-VISIBLE CHANGES
 
 - rowData() gains use.names=TRUE argument; prior behavior was to
   use.names=FALSE. rowData() by default fails when rownames() contains
   NAs.
+  
+BUG FIXES
+
+- Better error handling in SummarizedExperiment() constructor.
+      SummarizedExperiment() now prints an informative error message when
+      the supplied assays have insane rownames or colnames. This addresses
+      https://github.com/Bioconductor/SummarizedExperiment/issues/7
 
 [SWATH2stats](https://bioconductor.org/packages/SWATH2stats)
 -----------
