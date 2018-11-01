@@ -398,7 +398,7 @@ task :get_build_dbs do
 	fh = File.open(dest_file_name, "w")
 	fh.write(body)
 	fh.close
-	url2 = url.sub "STATUS_DB", 'meat-index'
+	url2 = url.sub "STATUS_DB.txt", 'meat-index.dcf'
 	body2 = HTTParty.get(url2).to_s
 	fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
 	fh2.write(body2)
