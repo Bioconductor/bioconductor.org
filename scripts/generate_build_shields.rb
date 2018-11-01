@@ -33,7 +33,7 @@ def generate_build_shields(outdir, build_db)
       raise "Logic fail!"
     end
     color = colors[final_status]
-    puts "creating shield for #{package} in #{outdir}..." # remove me?
+    puts("creating shield for #{package} in #{outdir}...") # remove me?
     FileUtils.cp(File.join(srcdir, "#{final_status}.svg"), File.join(outdir, "#{package}.svg"))
   end
 end
