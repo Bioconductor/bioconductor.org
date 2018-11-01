@@ -136,6 +136,11 @@ def getRanking(repo, release=false)
   end
 
   filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
+  # add packages with no download stats yet
+  nostats = pkgs.reject{|x| filtered_data.keys.include? x}
+  nostats.each do |pkg|
+      filtered_data[pkg] = 0
+  end
 
   # add sorting ranking for ties
   # ties will have highest rank, i.e  if 1:3 are all the same
