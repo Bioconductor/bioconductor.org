@@ -8,6 +8,7 @@
 	<li><a href="#troubleshoot-bioconductor-packages">Troubleshoot&nbsp;Package&nbsp;Installations</a></li>
 	<li><a href="#why-biocmanagerinstall">Why&nbsp;BiocManager::install()?</a></li>
 	<li><a href="#preconfigured">Pre-configured&nbsp;Bioconductor</a></li>
+	<li><a href="#Legacy">Legacy&nbsp;and&nbsp;Older&nbsp;R&nbsp;Versions</a></li>
 </ul>
 
 
@@ -291,5 +292,20 @@ preferred to `install.packages()`.
 _Bioconductor_ is also available as a set of
 [Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
 [Docker images](/help/docker/).
+
+<h2 id="Legacy">Legacy and Older R Versions</h2>
+
+It is always recommended to update to the most current version of <em>R</em> and
+<em>Bioconductor</em>.  If this is not possible and `R < 3.5.0` , please use the following
+for installing <em>Bioconductor</em> packages
+
+To install core packages, type the following in an R command window:
+
+    source("https://bioconductor.org/biocLite.R")
+
+Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
+
+    BiocInstaller::biocLite(c("GenomicFeatures", "AnnotationDbi"))
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
