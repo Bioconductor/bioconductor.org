@@ -68,7 +68,8 @@ ami_ids:
  bioc3_5: ami-279a315d
  bioc3_6: ami-ac5df1d3
  bioc3_7: ami-01bcd08e357360496
- bioc3_8: ami-c8dde6b7
+ bioc3_8: ami-080de6eb2e330eb32
+ bioc3_9: ami-0bd5087e690c7854d
 string_pattern_type: legacy
 data_sources:
 - items_root: /
