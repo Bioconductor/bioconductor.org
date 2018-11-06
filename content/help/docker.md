@@ -45,8 +45,8 @@ For each supported version of Bioconductor, we provide several
 images:
 
 * *base2*: Contains R, RStudio, and a single Bioconductor
-  package (`BiocInstaller`,
-  providing the `biocLite()` function for installing additional
+  package (`BiocManager`,
+  providing the `install()` function for installing additional
   packages).
   Also contains many system dependencies for Bioconductor packages.
   Useful when you want a relatively blank slate for testing purposes.
@@ -164,7 +164,7 @@ The second way is the recommended way. Both ways are
 These packages, plus their dependencies, are installed:
 
 <ul class="inline_list">
-<li>BiocInstaller</li>
+<li>BiocManager</li>
 <li>OrganismDbi</li>
 <li>ExperimentHub</li>
 <li>Biobase</li>
