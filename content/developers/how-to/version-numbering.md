@@ -34,12 +34,12 @@ During regular development of new features
 
 At the time of a release, the _Bioconductor_ team arranges to:
 
-* Create a release branch package with version x.y+1.0
-* Increment the devel branch package version to x.y+2.0
+* Create a release branch package with version: x **.** (y+1) **.** (z-z)
+* Increment the devel branch package version to: x **.** (y+2) **.** (z-z)
 * As a special case, any package with version x.99.z is bumped to
-  x+1.0.0 in release, and x+1.1.0 in devel. Thus authors wishing to
-  signify a major change to their package should set y to 99 in their
-  devel package.
+  (x+1) **.** 0 **.** (z-z) in release, and (x+1) **.** 1 **.** 0 in devel.
+  Thus authors wishing to signify a major change to their package should set y
+  to 99 in their devel package.
 
 New packages
 -----------------
@@ -48,7 +48,7 @@ New packages submitted to _Bioconductor_ should set Version: 0.99.0 in the
 DESCRIPTION file. Specifying y=99 triggers a bump in x at the next release
 which in this case results in version 1.0.0.
 
-See additional details on 
+See additional details on
 the [Package Submission](/developers/package-submission) page.
 
 See also the instructions for [Using Bioc Devel][].
@@ -105,13 +105,13 @@ Summary
 -----------------
 
 Below is a summary of how version components are bumped and the
-key limitations. Bumps "at release time" are done by the _Bioconductor_ 
+key limitations. Bumps "at release time" are done by the _Bioconductor_
 team and not the package maintainer.
 
-`x` 
+`x`
     - only modified by the _Bioconductor_ team
     - bumped to x+1 at release time if y=99
-`y` 
+`y`
     - must be even in release and odd in devel
     - must be <=99
     - bumped at release time for all packages to the next
