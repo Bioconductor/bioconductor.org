@@ -25,18 +25,18 @@ This is the FAQ, currently under construction.
 
 <h2 id="install-packages-faq">Package Installation</h2>
 
-<h3 class="faq" id="30">biocLite() warns that a package is not available</h3>
+<h3 class="faq" id="30">BiocManager::install() warns that a package is not available</h3>
 
 _Bioconductor_ has a 'release' and a 'devel' branch. The 'release'
 branch is intended for most users, and is available using the
 **current version of _R_**. New packages are first added to the
 'devel' branch, and then become available after the next
 _Bioconductor_ release, typically in April and October.  See
-[Why use biocLite()?][1] for more information about our release
+[Why use BiocManager::install()?][1] for more information about our release
 policy, and [these instructions][2] if you wish to use the devel
 branch.
 
-[1]: https://bioconductor.org/install#why-biocLite
+[1]: https://bioconductor.org/install#why-biocmanagerinstall
 [2]: https://bioconductor.org/developers/how-to/useDevel/
 
 Most Bioconductor packages are available for Windows, Mac OS, and
@@ -46,14 +46,12 @@ additional software that is not available for the operating
 system. For instance, a user trying to install `GeneRfold`
 encountered this message:
 
-    > biocLite("GeneRfold")
-    Using R version 2.11.1, biocinstall version 2.6.8.
-    Installing Bioconductor version 2.6 packages:
-    [1] "GeneRfold"
-    Please wait...
+    > BiocManager::install("GeneRfold")
+    Bioconductor version 3.9 (BiocManager 1.30.3), R Under development (unstable)
+      (2018-11-02 r75536)
+    Installing package(s) 'GeneRfold'
     Warning message:
-    In getDependencies(pkgs, dependencies, available, lib) :
-      package 'GeneRfold' is not available
+    package 'GeneRfold' is not available (for R Under development)
 
 Visiting the list of [package home pages][home-pages]
 shows that the package was not available on Windows, the platform on
@@ -77,7 +75,7 @@ from a user trying to install the `affyPLM` package:
     Execution halted
     ERROR: lazy loading failed for package 'affyPLM'
 
-Be sure to use `biocLite` to [install packages][4] that are
+Be sure to use `BiocManager::install` to [install packages][4] that are
 appropriate for your system and version of `R`.  Be sure that your
 installed packages are up-to-date by following [update packages][3].
 
@@ -85,7 +83,7 @@ Less commonly, packages may install but then fail to load, as here
 with the `Rsamtools` package:
 
     Error in dyn.load(file, DLLpath = DLLpath, ...) :
-    unable to load shared library 
+    unable to load shared library
     '/usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so':
       /usr/local/lib64/R/library/Rsamtools/libs/Rsamtools.so: undefined symbol: ecrc32
 
@@ -113,9 +111,10 @@ the assistance of the Bioconductor [support site](/help/support/).
 <h3 class="faq" id="80">Installing packages from the development repository</h3>
 
 To install a package from the development version of the Bioconductor repository,
-install and use the development version of R. <code>biocLite()</code> will automatically
-download packages from the correct repository. Similarly, if using older versions
-of R, <code>biocLite()</code> will install the appropriate version of packages.
+install and use the development version of R. <code>BiocManager::install()</code>
+will automatically download packages from the correct repository. Similarly, if
+using older versions of R, <code>BiocManager::install()</code> will install the
+appropriate version of packages.
 
 <h2 id="use-packages-faq">Package Use</h2>
 
