@@ -47,11 +47,11 @@ system. For instance, a user trying to install `GeneRfold`
 encountered this message:
 
     > BiocManager::install("GeneRfold")
-    Bioconductor version 3.9 (BiocManager 1.30.3), R Under development (unstable)
-      (2018-11-02 r75536)
+    Bioconductor version 3.8 (BiocManager 1.30.3), R 3.5.1 Patched (2018-07-30
+      r75013)
     Installing package(s) 'GeneRfold'
     Warning message:
-    package 'GeneRfold' is not available (for R Under development)
+    package 'GeneRfold' is not available (for R version 3.5.1 Patched)
 
 Visiting the list of [package home pages][home-pages]
 shows that the package was not available on Windows, the platform on
