@@ -74,6 +74,10 @@ Install specific packages, e.g., "GenomicFeatures" and "AnnotationDbi", with
 The `install()` function (in the BiocManager package) has arguments that change
 its default behavior; type `?install` for further help.
 
+For a more detailed explanation on using BiocManager and its advanced usage,
+such as version switching, please refer to the
+[BiocManager vignette](https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html).
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <h2 id="find-bioconductor-packages">Find <em>Bioconductor</em> Packages</h2>
