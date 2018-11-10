@@ -7231,7 +7231,7 @@ Changes in version 1.1.19:
 Changes in version 1.1.18:
 
 - Update lgg and gbm subtype information. Source:
-  http://dx.doi.org/10.1016/j.cell.2015.12.028
+  https://doi.org/10.1016/j.cell.2015.12.028
 
 Changes in version 1.1.17:
 

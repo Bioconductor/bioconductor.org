@@ -10,14 +10,14 @@ launched!
 
 <div class="grey_box">
 Ramos, M, et al. (2017) <a
-href="https://dx.doi.org/10.1158/0008-5472.CAN-17-0344">Software for
+href="https://doi.org/10.1158/0008-5472.CAN-17-0344">Software for
 the Integration of Multiomics Experiments in Bioconductor</a>
 Cancer Research 77:e39-e42.
 doi:10.1158/0008-5472.CAN-17-0344
 </div>
 
 <div class="white_box">
-Pasolli, E, et al. (2017) <a href="https://dx.doi.org/10.1038/nmeth.4468">
+Pasolli, E, et al. (2017) <a href="https://doi.org/10.1038/nmeth.4468">
 Accessible, curated metagenomic data through ExperimentHub</a>
 Nature Methods 14, 1023–1024. doi:10.1038/nmeth.4468
 </div>
@@ -31,7 +31,7 @@ doi:10.1038/nmeth.3252 (full-text free with registration).
 
 <div class="white_box">
 Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
-href="http://dx.doi.org/10.1371/journal.pcbi.1003118">Software for
+href="https://doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
 </div>
