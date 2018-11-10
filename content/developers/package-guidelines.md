@@ -576,7 +576,8 @@ some best practice guidelines that _Bioconductor_ will look for (see
 
 2. Many common coding and sytax issues are flagged in `R CMD check`,
    and `R CMD BiocCheck`. (see the `R CMD check` [cheatsheet][] and
-   [BiocCheck][] vignette. Some of the more promenient offenders:
+   [BiocCheck][BiocCheck-vignette] vignette. Some of
+   the more promenient offenders:
 
     + Use `vapply()` instead of `sapply()` and use the various apply
       functions instead of for loops.
@@ -640,7 +641,7 @@ some best practice guidelines that _Bioconductor_ will look for (see
     [Robust and Efficient Code][].
 
 [cheatsheet]: http://r-pkgs.had.co.nz/check.html
-[BiocCheck]:  https://bioconductor.org/packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
+[BiocCheck-vignette]:  https://bioconductor.org/packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
 
 [style]: http://bioconductor.org/developers/how-to/coding-style/
 [webre]: http://bioconductor.org/developers/how-to/web-query/
@@ -692,7 +693,7 @@ Extensions manual. In particular:
 
 [Registering native routines]: http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines
 
-<a name="third-party-code">
+<a name="third-party-code"></a>
 
 ## Third-party code
 
@@ -756,6 +757,6 @@ _Bioconductor_ Team Reviewer. An overview of the submission process may
 be found [here][submission] and a package may be submitted to the
 [new package tracker][tracker].
 
-[How to Build Bioconductor Package with RStudio]: http://bioconductor.org/developers/how-to/buildingPackagesForBioc/
+[How to Build _Bioconductor_ Package with RStudio]: http://bioconductor.org/developers/how-to/buildingPackagesForBioc/
 [submission]: http://bioconductor.org/developers/package-submission/
 [tracker]: https://github.com/Bioconductor/Contributions
