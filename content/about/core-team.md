@@ -5,9 +5,9 @@
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/coreTeamPic/HervePages.jpg"
-           width="100%" alt="Herve Pages" title="Herve Pages"/>
-      <br>Herv&eacute; Pag&egrave;s
+      <img src="/images/coreTeamPic/KaylaInterdonato.jpeg"
+           width="100%" alt="Kayla Interdonato" title="Kayla Interdonato"/>
+      <br>Kayla Interdonato
     </td>
     <td width="33%">
       <img src="/images/coreTeamPic/MichaelLawrence.jpg"
@@ -46,18 +46,23 @@
       <br>Andrzej Ole&#347;
     </td>
     <td width="33%">
+      <img src="/images/coreTeamPic/HervePages.jpg"
+           width="100%" alt="Herve Pages" title="Herve Pages"/>
+      <br>Herv&eacute; Pag&egrave;s
+    </td>
+    <td width="33%">
       <img src="/images/coreTeamPic/MarcelRamos.JPG"
            width="100%" alt="Marcel Ramos" title="Marcel Ramos"/>
       <br>Marcel Ramos
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/LoriShepherd.jpg"
            width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
       <br>Lori Ann Shepherd
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
            width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
@@ -67,6 +72,14 @@
       <img src="/images/coreTeamPic/DanielVanTwisk.jpeg"
            width="100%" alt="Daniel van Twisk" title="Daniel van Twisk"/>
       <br>Daniel van Twisk
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/JiefeiWang.jpeg"
+           width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
+      <br>Jiefei Wang
     </td>
   </tr>
 
