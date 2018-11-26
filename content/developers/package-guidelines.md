@@ -90,7 +90,7 @@ not involve also using the devel version of R. See the how-to on
    systems are case sensitive.
 
 4. The source package resulting from running `R CMD build` should
-   occupy less than 4MB on disk.
+   occupy less than 5MB on disk.
 
 5. The package should require less than 5 minutes to run `R CMD check
    --no-build-vignettes`. Using the `--no-build-vignettes` option
