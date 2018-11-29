@@ -1217,6 +1217,7 @@ def package_has_source_url(item, software_only=false)
     return true if segs[5] == "bioc"
     unless software_only
       return true if segs[5] == "data" and segs[6] == "experiment"
+      return true if segs[5] == "workflows"
     end
     return false
 end

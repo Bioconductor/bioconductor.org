@@ -304,4 +304,52 @@ BiocManager::install("<%=@package[:Package]%>", version = "<%=@package[:bioc_ver
 
     </table>
 
+    <h3 id="archives">Package Archives</h3>
+
+    <p>Follow <a href="/install/#install-bioconductor-packages">
+    Installation</a> instructions to use this
+    package in your R session.</p>
+
+    <%
+    ri = RowIndexer.new
+    %>
+
+    <table>
+	<tr class="<%=ri.rowclass%>">
+	    <td>Source Package</td>
+	    <td class="rpack"><a href="../<%=@package[:"source.ver"]%>">
+		<%= base_filename(@package[:"source.ver"]) %></a></td>
+	    </tr>
+		<% if package_has_source_url(@item) %>
+		    <tr class="<%=ri.rowclass%>">
+			<td id="svn_source">Source Repository</td>
+			<td>git clone <%=get_source_url(@package, @item, @item_rep, "https")%></td>
+		    </tr>
+		    <tr class="<%=ri.rowclass%>">
+			<td id="svn_source">Source Repository (Developer Access)</td>
+			<td>git clone <%=get_source_url(@package, @item, @item_rep, "ssh")%></td>
+		    </tr>
+		<% end %>
+
+		    <tr class="<%=ri.rowclass%>">
+			<td>Package Short Url</td>
+			<td><a title="For citation in publications, etc., please use DOI: 10.18129/B9.bioc.<%=@package[:Package]%>" href="<%=get_short_url(@package)%>"><%=get_short_url(@package, true)%></a></td>
+		    </tr>
+
+
+		    <tr class="<%=ri.rowclass%>">
+			<td>Package Downloads Report</td>
+			<td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
+		    </tr>
+
+		<% if package_has_archive(@package) %>
+		    <tr class="<%=ri.rowclass%>">
+			<td>Old Source Packages for BioC <%=@package[:bioc_version_num]%></td>
+			<td><a href="<%=get_archive_url(@package)%>"><%=get_archive_url(@package, true)%></a></td>
+		    </tr>
+		<% end %>
+
+		</table>
+
+
 </div>
