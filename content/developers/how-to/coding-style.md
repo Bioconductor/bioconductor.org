@@ -9,6 +9,10 @@ guidelines are preferences and strongly encouraged.
 * See also: [package guidelines](/developers/package-guidelines)
   and [Hadley Wickhams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
 
+* See also:
+  [formatR](https://cran.r-project.org/web/packages/formatR/index.html) a
+  package that assists with formatting.
+
 Indentation
 
 * Use 4 spaces for indenting.  No tabs.
