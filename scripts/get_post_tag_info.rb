@@ -17,6 +17,7 @@ def get_post_tag_info()
   [true, false].each do |state|
     pkgs += get_list_of_packages(state)
     pkgs += get_annotation_package_list(state)
+    pkgs += get_list_of_workflows(state)
   end
 
   pkgs = pkgs.uniq

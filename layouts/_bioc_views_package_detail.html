@@ -8,15 +8,15 @@
     <tr>
 
       <%# Shield 1. Availability %>
-      <% if ['data/annotation/', 'data/experiment/'].include? @package[:repo] %>
+      <% if ['data/annotation/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
 	 <% av_img = "/images/shields/availability/all.svg" %>
       <% else %>
-         <% path = "assets"+"/shields/availability/"+@package[:bioc_version_num]+"/"+@package[:Package]+".svg" %>
-         <% if File.exist?(path) %>
+	 <% path = "assets"+"/shields/availability/"+@package[:bioc_version_num]+"/"+@package[:Package]+".svg" %>
+	 <% if File.exist?(path) %>
 	     <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
-         <% else %>
+	 <% else %>
 	     <% av_img = "/images/shields/availability/unknown-build.svg" %>
-         <% end %>
+	 <% end %>
       <% end %>
 
       <td>
@@ -30,9 +30,9 @@
       <% res = isReleaseOrDevel(@package) %>
       <% path = "assets"+"/shields/downloads/"+res+"/"+@package[:Package]+".svg" %>
       <% if File.exist?(path) %>
-           <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=isReleaseOrDevel(@package)%>/<%=@package[:Package]%>.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow) and uses the number of distinct IPs for the last 12 months."/></a>
+	   <a href="<%=get_stats_url(@package)%>"><img border='0' src="/shields/downloads/<%=isReleaseOrDevel(@package)%>/<%=@package[:Package]%>.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow) and uses the number of distinct IPs for the last 12 months."/></a>
       <% else %>
-           <a href="<%=get_stats_url(@package)%>"><img border='0'
+	   <a href="<%=get_stats_url(@package)%>"><img border='0'
       src="/images/shields/downloads/unknown-downloads.svg" title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow) and uses the number of distinct IPs for the last 12 months."/></a>
       <% end %>
       </td>
@@ -43,9 +43,9 @@
       <td>
       <% path = "assets"+"/shields/posts/"+@package[:Package]+".svg" %>
       <% if File.exist?(path) %>
-          <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
       <% else %>
-          <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/images/shields/posts/unknown-posts.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/images/shields/posts/unknown-posts.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
       <% end %>
       </td>
       <%= tr.betweencells %>
@@ -70,27 +70,27 @@
       <% res = get_build_results(@package) %>
       <% unless res.nil? %>
 	  <td>
-          <% path = "assets"+"/shields/build/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
-          <% if File.exist?(path) %>
+	  <% path = "assets"+"/shields/build/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
+	  <% if File.exist?(path) %>
 	      <a href="<%=res[:report_url]%>"><img border='0' src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="build results; click for full report"/></a>
 	  <% else %>
 	      <a href="<%=res[:report_url]%>"><img border='0' src="/images/shields/builds/unknown-builds.svg" title="build results; click for full report"/></a>
-          <% end %>
+	  <% end %>
 	  </td>
 	  <%= tr.betweencells %>
       <% end %>
 
      <%# shield 6: last commit %>
      <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
-         <td>
-         <% path = "assets"+"/shields/lastcommit/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
-         <% if File.exist?(path) %>
-             <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
+	 <td>
+	 <% path = "assets"+"/shields/lastcommit/"+res[:version]+"/"+res[:repo]+"/"+@package[:Package]+".svg" %>
+	 <% if File.exist?(path) %>
+	     <a href="<%=res[:report_url]%>"><img border='0' src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@package[:Package]%>.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
 	 <% else %>
 	      <a href="<%=res[:report_url]%>"><img border='0' src="/images/shields/lastcommit/Unknown.svg" title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"/></a>
-         <% end %>
-         </td>
-         <%= tr.betweencells %>
+	 <% end %>
+	 </td>
+	 <%= tr.betweencells %>
      <% end %>
 
 
@@ -103,8 +103,9 @@
 
 <div class='do_not_rebase'>
 
-    DOI: <a title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="https://doi.org/doi:10.18129/B9.bioc.<%=@package[:Package]%>">10.18129/B9.bioc.<%=@package[:Package]%></a> &nbsp;
-
+    <% if @package[:repo] != "workflows/" %>
+        DOI: <a title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="https://doi.org/doi:10.18129/B9.bioc.<%=@package[:Package]%>">10.18129/B9.bioc.<%=@package[:Package]%></a> &nbsp;
+    <% end %>
 <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= get_socialized_url item.identifier %>"><img height="16" width="16" src="/images/facebook.png"/></a> &nbsp;
 <a title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<%= get_socialized_url item.identifier %>&text=<%= get_social_title(item, @package) %>"><img height="16" width="16" src="/images/twitter.png"/></a>
 
@@ -152,7 +153,7 @@
 BiocManager::install("<%=@package[:Package]%>", version = "<%=@package[:bioc_version_num]%>")</pre>
 
     <p>For older versions of R, please refer to the appropriate
-        <a href="/about/release-announcements/">Bioconductor release</a>.
+	<a href="/about/release-announcements/">Bioconductor release</a>.
     </p>
 
     <h3>Documentation</h3>
@@ -195,6 +196,8 @@ BiocManager::install("<%=@package[:Package]%>", version = "<%=@package[:bioc_ver
 
 
 	    <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
+
+	    <% if @package[:repo] != "workflows/" %>
 	    <tr class="<%= row_class %>">
 		<td class="docFixedWidth">
 		    <a href="../manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
@@ -203,7 +206,7 @@ BiocManager::install("<%=@package[:Package]%>", version = "<%=@package[:bioc_ver
 		<td>Reference Manual</td>
 		<% rowindex += 1 %>
 	    </tr>
-
+	    <% end %>
 
 	    <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
 	    <% row_class = (rowindex % 2 == 1) ? "row_odd" : "row_even" %>
