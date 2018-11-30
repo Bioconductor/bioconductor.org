@@ -21,11 +21,7 @@ prefix="og: http://ogp.me/ns#">
 	    <%= render("/_pkg_idx/", :info => @item.attributes)%>
 	<% end %>
 	<% if @item.attributes.has_key?(:Package)%>
-	    <% if (@item.attributes[:repo] != "workflows/")%>
-		<%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
-	    <% else %>
-		<%= render("/_workflows_biocview_detail/", :package => @item.attributes)%>
-	    <% end %>
+	    <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
 	<% end %>
 	<%# end hack%>
 
