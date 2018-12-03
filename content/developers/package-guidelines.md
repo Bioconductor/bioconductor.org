@@ -137,7 +137,7 @@ associated files.
 
     ```
     if (!requireNamespace("BiocManager"))
-        install.packages("BiocManager")
+	install.packages("BiocManager")
     BiocManager::install("MyPackage")
     ```
 
@@ -212,18 +212,18 @@ associated files.
       package based on the following guidelines:
 
       + **Imports:** is for packages that provide functions, methods,
-        or classes that are used inside your package name space. Most
-        packages are listed here.
+	or classes that are used inside your package name space. Most
+	packages are listed here.
       + **Depends:** is for packages that provide essential
-        functionality for users of your package, e.g., the
-        `GenomicRanges` package is listed in the Depends: field of
-        `GenomicAlignments`.  It is unusual for more than three
-        packages to be listed as 'Depends:'.
+	functionality for users of your package, e.g., the
+	`GenomicRanges` package is listed in the Depends: field of
+	`GenomicAlignments`.  It is unusual for more than three
+	packages to be listed as 'Depends:'.
       + **Suggests:** is for packages used in vignettes or examples,
-        or in conditional code.
+	or in conditional code.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
-        that enhance the performance of your package, but are not
-        strictly needed for its functionality.
+	that enhance the performance of your package, but are not
+	strictly needed for its functionality.
 
 9. "SystemRequirements:" field: This field is for listing any external
    software which is required, but not automatically installed by the
@@ -305,9 +305,25 @@ The following can be run on the news file to see if it is properly formatted:
 news = <path to news file>
 
 if (grepl("Rd$", news)){
-        tools:::.build_news_db_from_package_NEWS_Rd(news)
+	tools:::.build_news_db_from_package_NEWS_Rd(news)
 }else {
-        tools:::.news_reader_default(news)
+	tools:::.news_reader_default(news)
+}
+
+```
+
+**Note:** As of R3.6 NEWS.md is a supported NEWS format in addition to the previously
+valid formats. If using a NEWS.md file and R >= 3.6 test with
+
+```
+news = <path to news file>
+
+if (grepl("Rd$", news)){
+	tools:::.build_news_db_from_package_NEWS_Rd(news)
+} else if (grepl("md$", news)){
+	tools:::.build_news_db_from_package_NEWS_md(news)
+}else {
+	tools:::.news_reader_default(news)
 }
 
 ```
@@ -329,6 +345,34 @@ Changes in version 0.99.0 (2018-05-15):
 
 ```
 
+or if using NEWS.md file
+
+```
+	 Changes in version 0.3.0 (1960-01-30)
+
+Added
+
+  - Foo
+
+  - Foo2
+
+Changed
+
+  - Bar
+
+		       Changes in version 0.2.0
+
+Added
+
+  - Foo3
+
+
+Removed
+
+  - Lisp
+
+```
+
 If you get something like the following there are formatting ERRORS that need to
 be corrected:
 
@@ -344,7 +388,7 @@ Text: Fixed bug. Begin indexing from 1 instead of 2
 Version: 1.1.1
 Date: 2018-06-15
 Text: Made the following significant changes o added a subsetting
-        method o added a new field to database
+	method o added a new field to database
 ```
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
@@ -681,15 +725,15 @@ Extensions manual. In particular:
 
   - Example for gcc/g++:
 
-        CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-        CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-        FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+	FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 
   - Example for clang/clang++:
 
-        CFLAGS=-Weverything -O0 -g
-        CXXFLAGS=-Weverything -O0 -g
-        FFLAGS=-Wall -Wextra -pedantic -O0 -g
+	CFLAGS=-Weverything -O0 -g
+	CXXFLAGS=-Weverything -O0 -g
+	FFLAGS=-Wall -Wextra -pedantic -O0 -g
 
 [Registering native routines]: http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines
 

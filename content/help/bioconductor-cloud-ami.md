@@ -694,16 +694,9 @@ Use the steps described here to ensure that your changes are persistent.
 If the AMI is missing some packages or features you think it should have, please let us know.
 
 If you want to customize the AMI for your own purposes, it is simple. Just go ahead and customize your
-running instance as you see fit. Typically this will involve installing R packages with <code>biocLite()</code>,
+running instance as you see fit. Typically this will involve installing R packages with <code>BiocManager::install()</code>,
 and software packages (at the operating system level) with the Ubuntu package manager <code>apt-get</code>.
 
-When your instance is customized to your liking, issue the following commands:
-
-
-	sudo clean_ami
-	exit
-
-This will remove unneeded files from your AMI, clear your shell history, and log you out of your instance.
 You may also want to change the password of the "ubuntu" user (because the default password
 is publicly known, in order to run RStudio Server) with the command:
 
