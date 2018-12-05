@@ -182,7 +182,10 @@ analysis or experiment. They often accompany a software package for
 use in the examples and vignettes and in general are not updated
 regularly.  If you need a general subset of data for workflows or
 examples first check the AnnotationHub resource for available files
-(e.g., BAM, FASTA, BigWig, etc.).
+(e.g., BAM, FASTA, BigWig, etc.) or ExperimentHub for available processed
+example data set already included in _Bioconductor_. If no current files or data
+sets are appropriate consider an associated Experiment Data Package that
+utilizes [ExperimentHub][].
 
 If you have an associated data package for your software package,
 please do *NOT* create a separate issue in the our tracker repository
@@ -190,6 +193,7 @@ for that. Instead, please add the data package repository to the same
 issue as the software package.  The process for doing this is
 documented [here][].
 
+[ExperimentHub]: https://bioconductor.org/packages/devel/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
 [here]: https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md#submitting-related-packages
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
@@ -208,7 +212,10 @@ AnnotationDbi.
 Annotation packages should *NOT* be posted to the tracker repository.
 Instead send an email to <packages@bioconductor.org> with a
 description of the proposed annotation package and futher instructions
-of where to send the package will be provided.
+of where to send the package will be provided. Whenever possible Annotation
+Packages should use the [AnnotationHub][] for managing files.
+
+[AnnotationHub]: https://bioconductor.org/packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -230,10 +237,11 @@ Review Process
   then run `R CMD build` to create a 'tarball' of your source code,
   vignettes, and man pages. It will run `R CMD check` on the tarball,
   to ensure that the package conforms to standard _R_ programming best
-  practices. Finally, the build system will run `R CMD BiocCheck` to
-  ensure that the package conforms to _Bioconductor_ [BiocCheck][4]
-  standards. The system will perform these steps using the
-  ['devel' version](/developers/how-to/useDevel/)
+  practices. _Bioconductor_ has chosen to utilize a custom `R CMD check`
+  environment; See [R CMD check environment][] for more details. Finally, the
+  build system will run `R CMD BiocCheck` to ensure that the package conforms to
+  _Bioconductor_ [BiocCheck][4] standards. The system will perform these steps
+  using the ['devel' version](/developers/how-to/useDevel/)
   of _Bioconductor_, on three platforms (Linux, Mac OS X, and
   Windows).  After these steps are complete, a link to a build report
   will be appended to the new package issue. Avoid surprises by
@@ -283,6 +291,7 @@ Review Process
 [4]: /packages/BiocCheck/
 [9]: https://stat.ethz.ch/mailman/listinfo/bioc-devel
 [11]: /developers/how-to/git/
+[R CMD check environment]: https://bioconductor.org/developers/package-guidelines/#checkingenv
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
