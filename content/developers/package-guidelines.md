@@ -11,6 +11,11 @@ _Bioconductor_ maintainer.
 
 - [Introduction](#intro)
 - [General Package Development](#devel)
+
+  * [Versions of R and _Bioconductor_](#version)
+  * [Correctness, Space, and Time](#correctness)
+  * [R CMD check environment](#checkingenv)
+
 - [DESCRIPTION](#description)
 - [NAMESPACE](#namespace)
 - [NEWS](#news)
@@ -114,6 +119,27 @@ not involve also using the devel version of R. See the how-to on
 [^1]: The _Bioconductor_ team member assigned to review the package during the submission process will expect all ERROR, WARNINGS, and NOTES to be addressed. If there are any remaining, a justification of why they are not corrected will be expected.
 
 [^2]: This is true for Software Packages. Experiment Data, Annotation, and Workflow packages are allowed additional space and check time.
+
+<a name="checkingenv"></a>
+
+### R CMD check environment
+
+It is possible to activate or deactivate a number of options in `R CMD build`
+and `R CMD check`. Options can be set as individual environment variables or
+they can be [listed in a file](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages). 
+Descriptions of all the different options available can be found [here](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html#Tools).
+_Bioconductor_ has chosen to customize some of these options for incoming
+submission during `R CMD check`. The file of utilized flags can be downloaded
+from
+[Github](https://github.com/Bioconductor/packagebuilder/blob/master/check.Renviron). The
+file can either be place in a default directory as directed
+[here](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages)
+or can be set through environment variable `R_CHECK_ENVIRON` with a command
+similar to 
+
+```
+export R_CHECK_ENVIRON = <path to downloaded file>
+```
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
