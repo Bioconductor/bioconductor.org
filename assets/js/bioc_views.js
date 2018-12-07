@@ -76,6 +76,7 @@ var displayPackages = function(packageList, nodeName) {
      null,
      { "sType" : "numWithNull" }
     ],
+    "aaSorting": [[3, 'asc']], 
     "oLanguage": {
         "sSearch": "Search table:"
      }
