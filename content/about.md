@@ -1,35 +1,42 @@
-Bioconductor is an open source, open development software project to
+_Bioconductor_ is an open source, open development software project to
 provide tools for the analysis and comprehension of high-throughput
 genomic data.  It is based primarily on the
 [R](http://www.r-project.org) programming language.
 
-The Bioconductor [release version](/packages/release/bioc/) is updated
+The _Bioconductor_ [release version](/packages/release/bioc/) is updated
 twice each year, and is appropriate for most users. There is also a
 [development version](/packages/devel/bioc), to which new features and
 packages are added prior to incorporation in the release. A large
 number of [meta-data packages](/packages/release/data/annotation)
 provide pathway, organism, microarray and other annotations.
 
-The Bioconductor project started in 2001 and is overseen by a
-[core team](/about/core-team/), based primarily at 
-[Roswell Park Cancer Institute](https://www.roswellpark.org), and by
-other members coming from US and international institutions. 
+The _Bioconductor_ project started in 2001 and is overseen by a [core
+team](/about/core-team/), based primarily at [Roswell Park Cancer
+Institute](https://www.roswellpark.org), and by other members coming
+from US and international institutions. A Technical Advisory Board of
+key participants meets monthly to support the _Bioconductor_ mission
+by developing strategies to ensure long-term technical suitability of
+core infrastructure, and to identify and enable funding strategies for
+long-term viability. A Scientific Advisory Board including external
+experts provides annual guidance and accountability.
 
-Key citations to the project include Huber et al., 2015
-[Nature Methods 12:115-121](http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html)
-and Gentleman et al., 2004
-[Genome Biology 5:R80](http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf)
+Key citations to the project include Huber et al., 2015 [Nature
+Methods 12:115-121][1] and Gentleman et al., 2004 [Genome Biology
+5:R80][2]
 
-## Bioconductor Packages
+[1]: http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html
+[2]: http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf
 
-Most Bioconductor components are distributed as [R
+## _Bioconductor_ Packages
+
+Most _Bioconductor_ components are distributed as [R
 packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages).
 The functional scope of [Bioconductor packages](/packages/release/bioc/)
 includes the analysis of DNA microarray, sequence, flow, SNP, and other data.
 
 ## Project Goals
 
-The broad goals of the Bioconductor project are:
+The broad goals of the _Bioconductor_ project are:
 
 * To provide widespread access to a broad range of powerful statistical
   and graphical methods for the analysis of genomic data.
@@ -47,7 +54,7 @@ The broad goals of the Bioconductor project are:
 
 * **The R Project for Statistical Computing**. Using
   [R](http://www.r-project.org) provides a broad range of advantages
-  to the Bioconductor project, including:
+  to the _Bioconductor_ project, including:
   * A high-level interpreted language to easily and quickly prototype
     new computational methods.
   * A well established system for packaging together software with
@@ -69,7 +76,7 @@ The broad goals of the Bioconductor project are:
   Others provide a more thorough overview of the package or discuss general
   issues related to the package.
 
-* **Statistical and graphical methods**. The Bioconductor project
+* **Statistical and graphical methods**. The _Bioconductor_ project
   provides access to powerful statistical and graphical methods for
   the analysis of genomic data.
   [Analysis packages](/packages/release/bioc/) address
@@ -82,7 +89,7 @@ The broad goals of the Bioconductor project are:
   linear and non-linear modeling, cluster analysis, prediction,
   resampling, survival analysis, and time-series analysis.
 
-* **Annotation**. The Bioconductor project provides software for
+* **Annotation**. The _Bioconductor_ project provides software for
   associating microarray and other genomic data in real time with
   biological metadata from web databases such as GenBank, Entrez genes
   and PubMed ([annotate](/packages/release/bioc/html/annotate.html)
@@ -98,14 +105,14 @@ The broad goals of the Bioconductor project are:
   identifiers (e.g. Affy IDs, Entrez genes, PubMed). Customized
   annotation libraries can also be assembled.
 
-* **Bioconductor short courses**. The Bioconductor project has developed a
+* **Bioconductor short courses**. The _Bioconductor_ project has developed a
   program of [short courses](/help/course-materials/) on software and
   statistical methods for the analysis of genomic data. Courses have been
   given for audiences with backgrounds in either biology or statistics. All
   [course materials](/help/course-materials/) (lectures and computer labs)
   are available on this site.
 
-* **Open source**. The Bioconductor project has a commitment to full
+* **Open source**. The _Bioconductor_ project has a commitment to full
   open source discipline, with distribution via a public subversion
   (version control) server. Almost all contributions exist under an
   open source license. There are many different reasons why open
@@ -129,6 +136,6 @@ The broad goals of the Bioconductor project are:
 * **Open development**. Users are encouraged to become developers, either
   by contributing
   [Bioconductor compliant packages](/developers/package-guidelines/)
-  or documentation. Additionally Bioconductor provides a mechanism for
+  or documentation. Additionally _Bioconductor_ provides a mechanism for
   linking together different groups with common goals to foster
   collaboration on software, often at the level of shared development.
