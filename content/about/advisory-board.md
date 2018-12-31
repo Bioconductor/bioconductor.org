@@ -35,5 +35,8 @@ flexible term. Current members are:
   Dana-Farber Cancer Institute, USA
 * [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech
   Research and Early Development, USA.
+* [Matt Ritchie](https://www.wehi.edu.au/people/matthew-ritchie),
+  Walter and Eliza Hall Institute of Medical Research, Melbourne,
+  Australia.
 * [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
   at Hunter College, New York, NY.
