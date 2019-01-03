@@ -325,33 +325,11 @@ Changes in version 1.1.1 (2018-06-15)
   o added a new field to database
 ```
 
-The following can be run on the news file to see if it is properly formatted:
+After you install your package, the following can be run to see if the NEWS is
+properly formatted:
 
 ```
-news = <path to news file>
-
-if (grepl("Rd$", news)){
-	tools:::.build_news_db_from_package_NEWS_Rd(news)
-}else {
-	tools:::.news_reader_default(news)
-}
-
-```
-
-**Note:** As of R3.6 NEWS.md is a supported NEWS format in addition to the previously
-valid formats. If using a NEWS.md file and R >= 3.6 test with
-
-```
-news = <path to news file>
-
-if (grepl("Rd$", news)){
-	tools:::.build_news_db_from_package_NEWS_Rd(news)
-} else if (grepl("md$", news)){
-	tools:::.build_news_db_from_package_NEWS_md(news)
-}else {
-	tools:::.news_reader_default(news)
-}
-
+utils::news(package="<name of your package>")
 ```
 
 The output should look similar to the following
@@ -368,34 +346,6 @@ Changes in version 1.1.1 (2018-06-15):
 Changes in version 0.99.0 (2018-05-15):
 
     o   Submitted to Bioconductor
-
-```
-
-or if using NEWS.md file
-
-```
-	 Changes in version 0.3.0 (1960-01-30)
-
-Added
-
-  - Foo
-
-  - Foo2
-
-Changed
-
-  - Bar
-
-		       Changes in version 0.2.0
-
-Added
-
-  - Foo3
-
-
-Removed
-
-  - Lisp
 
 ```
 
