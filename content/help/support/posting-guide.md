@@ -1,6 +1,23 @@
 # ![](/images/icons/magnifier.gif)Posting guide
 
+General advise to posting on the _Bioconductor_ help sites. 
+
 Revised: 9 May, 2018
+
+<a name="top"></a>
+
+- [Why](#why)
+- [Key points](#keypoints)
+- [Communication with Package Maintainers](#maintainers)
+- [Before Posting](#before)
+- [Composing](#composing)
+- [Replying](#replying)
+- [Replying](#replying)
+- [Acknowledgments and Further Reading](#acknowledgments)
+
+
+
+<a name="why"></a>
 
 ## Why?
 
@@ -13,6 +30,9 @@ Revised: 9 May, 2018
   key points below are intended to help you give enough information
   that an experienced person could provide a useful answer without
   requesting more information.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="keypoints"></a>
 
 ## Key points
 
@@ -41,6 +61,9 @@ Revised: 9 May, 2018
 [up-to-date]: /install#update-bioconductor-packages
 [sample-level covariate data]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4509590/figure/F2/
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="maintainers"></a>
+
 ## Communication with package maintainers
 
 * Tag your post with the names of the appropriate packages. Putting
@@ -57,6 +80,9 @@ Revised: 9 May, 2018
 * Why? Because the support site is public and searchable, it acts as
   an archive providing benefit to other users who may face similar
   errors or issues.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="before"></a>
 
 ## Before posting
 
@@ -88,6 +114,9 @@ Revised: 9 May, 2018
   bioinformatics in general, but not about _Bioconductor_ packages can
   be posted to [Biostars](https://www.biostars.org/).
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="composing"></a>
+
 ## Composing
 
 * Use an informative post title. This will help attract responders and
@@ -108,9 +137,20 @@ Revised: 9 May, 2018
 * As mentioned above, tag your post with the names of the appropriate
   packages.
 
+* Include code chunks with all output. Use a leading and trailing triple
+  backtick to indicate a code chunk (<code>```</code>). You can directly copy and paste code
+  from your console inbetween the backticks. 
+
+* Always include a code chunk with the results of `sessionInfo()`. This will
+  indicate what os platform version you are running as well as your versions of
+  R and R/_Bioconductor_ package versions. 
+
 * Read over your post. Is it polite and easy to understand? Remember
   that responses on the _Bioconductor_ support site are from volunteers
   trying to help.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="replying"></a>
 
 ## Replying
 
@@ -137,6 +177,9 @@ Revised: 9 May, 2018
   you may be very helpful to others.
 
 * Provide URLs to other relevant threads or web sites.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="acknowledgments"></a>
 
 ## Acknowledgments
 
