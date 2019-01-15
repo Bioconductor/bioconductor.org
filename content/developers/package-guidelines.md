@@ -238,18 +238,26 @@ associated files.
       package based on the following guidelines:
 
       + **Imports:** is for packages that provide functions, methods,
-	or classes that are used inside your package name space. Most
-	packages are listed here.
+        or classes that are used inside your package name space. Most
+        packages are listed here.
       + **Depends:** is for packages that provide essential
-	functionality for users of your package, e.g., the
-	`GenomicRanges` package is listed in the Depends: field of
-	`GenomicAlignments`.  It is unusual for more than three
-	packages to be listed as 'Depends:'.
+        functionality for users of your package, e.g., the
+        `GenomicRanges` package is listed in the Depends: field of
+        `GenomicAlignments`.  It is unusual for more than three
+        packages to be listed as 'Depends:'.
       + **Suggests:** is for packages used in vignettes or examples,
-	or in conditional code.
+        or in conditional code.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
-	that enhance the performance of your package, but are not
-	strictly needed for its functionality.
+        that enhance the performance of your package, but are not
+        strictly needed for its functionality.
+
+   * It is seldom necessary to specify _R_ or specific versions as
+     dependencies, since the _Bioconductor_ release strategy and
+     standard installation instructions guarantee these
+     constraints. Repositories mirrored outside _Bioconductor_ should
+     include branches for each _Bioconductor_ release, and may find it
+     useful to fully specify versions to enforce constraints otherwise
+     guaranteed by _Bioconductor_ installation practices.
 
 9. "SystemRequirements:" field: This field is for listing any external
    software which is required, but not automatically installed by the
