@@ -1,4 +1,4 @@
-## Docker containers for Bioconductor
+# Docker containers for Bioconductor
 
 [Docker](https://www.docker.com) allows software to be packaged into
 containers: self-contained environments that contain everything
@@ -9,6 +9,23 @@ on Windows and Mac as well using a virtual machine called
 Containers can also be deployed in the cloud using
 [Amazon EC2 Container Service](https://aws.amazon.com/ecs/)
 or other cloud providers.
+
+
+<a name="top"></a>
+
+- [Why Use Containers](#intro)
+- [Current Containers](#current)
+- [Legacy Containers](#legacy)
+- [Using Containers](#usage)
+  * [Running Containers](#running)
+  * [Mounting Additional Volume](#mounting)
+- [Modifying Image Container](#modify)
+- [Default package with Core2 Container](#core)
+- [Acknowledgements](#acknowledgements)
+
+<a name="intro"></a>
+
+## Why use Bioconductor containers
 
 With Bioconductor containers, we hope to enhance
 
@@ -60,6 +77,10 @@ images:
 * *metabolomics2*: everything in *protmetcore2*, plus select packages from the
   [Metabolomics](/packages/release/BiocViews.html#___Metabolomics) biocView.
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="current"></a>
+
 ## Current Containers
 
 
@@ -85,7 +106,10 @@ Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
 * [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
 * [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
 
- 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="legacy"></a>
+
 ## Legacy Containers
 
 The following containers are legacy and no longer updated. They have been kept
@@ -106,16 +130,60 @@ to retain previous versions available via tags:
 * bioconductor/release_sequencing
 * bioconductor/release_metabolomics
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="usage"></a>
+
 ## Using the containers
 
-The following examples use the `bioconductor/devel_base2` container.
-Note that you may need to prepend `sudo` to all `docker` commands.
+A well organized guide to popular docker commands can be found
+[here](https://github.com/wsargent/docker-cheat-sheet). For convenience, below
+are some commands to get you started. The following examples use the
+`bioconductor/devel_base2` image.
+
+**Note:** that you may need to prepend `sudo` to all `docker` commands.
+
 
 **Prerequisites**: On Linux, you need Docker
 [installed](https://docs.docker.com/installation/) and
 on [Mac](http://docs.docker.com/installation/mac/)
 or [Windows](http://docs.docker.com/installation/windows/)
 you need Docker Toolbox installed and running.
+
+
+##### List which docker machines are available locally
+    docker images
+
+##### List running containers
+    docker ps
+
+##### List all containers
+    docker ps -a
+
+##### Resume a stopped container
+    docker start <CONTAINER ID>
+
+##### Shell into a running container
+    docker exec -it <CONTAINER ID> /bin/bash
+
+##### Shutdown container
+    docker stop <CONTAINER ID>
+
+##### Delete container
+    docker rm <CONTAINER ID>
+
+##### Delete image
+    docker rmi bioconductor/devel_base2
+
+<a name="running"></a>
+
+#### Running the container
+
+The above commands can be helpful but the real basics of running a Bioconductor
+docker involves pulling the public image and running the container. 
+
+##### Get a copy of public docker image 
+    docker pull bioconductor/devel_base2
 
 ##### To run RStudio Server:
 
@@ -142,9 +210,32 @@ to read/write files in a host directory, please
 
     docker run -ti bioconductor/devel_base2 bash
 
-*Note*: The `docker run` command is very powerful and versatile.
+
+**Note**: The `docker run` command is very powerful and versatile.
 For full documentation, type `docker run --help` or visit
 the [help page](https://docs.docker.com/reference/run/).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="mounting"></a>
+
+##### Mounting Additional Volume
+
+One such option for `docker run` is `-v` to mount an
+additional volume to the docker image. This might be useful for say mounting a
+local R install directory for use on the docker. The path on the docker image
+that should be mapped to a local R library directory is
+`/usr/local/lib/R/host-site-library`.  The follow example would mount my locally
+installed packages to this docker directory. In turn, that path is automatically
+loaded in the R `.libPaths` on the docker image and all of my locally installed
+package would be available for use.
+
+    docker run -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library -it bioconductor/devel_base2 R 
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="modify"></a>
+
 
 ## Modifying the images
 
@@ -152,12 +243,19 @@ There are two ways to modify these images:
 
 1. Making changes in a running container and then committing them
    using the `docker commit` command.
+```
+      docker commit <CONTAINER ID> <name for new image> 
+```
 2. Using a Dockerfile to declare the changes you want to make.
 
 The second way is the recommended way. Both ways are
 [documented here](https://docs.docker.com/userguide/dockerimages/#creating-our-own-images).
 
 <a name="the-full-list"></a>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="core"></a>
 
 ## List of packages installed on the *core2* container
 
@@ -190,6 +288,10 @@ These packages, plus their dependencies, are installed:
 <li>knitr</li>
 <li>BiocStyle</li>
 </ul>
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="acknowledgements"></a>
 
 ### Acknowledgements
 

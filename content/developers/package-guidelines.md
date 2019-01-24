@@ -265,7 +265,7 @@ associated files.
    non-trivial, a top-level README file should be included to document
    the process.
 
-10. "biocViews:" field: REQUIRED! Specify one or more
+10. "biocViews:" field: REQUIRED! Specify at least two
     [biocViews categories][BioC]. Multiple terms are encouraged but
     terms must come from the same package type (Software,
     AnnotationData, ExperimentData, Workflow).
