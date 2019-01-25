@@ -230,7 +230,9 @@ installed packages to this docker directory. In turn, that path is automatically
 loaded in the R `.libPaths` on the docker image and all of my locally installed
 package would be available for use.
 
-    docker run -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library -it bioconductor/devel_base2 R 
+    docker run \
+        -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library \
+        -it bioconductor/devel_base2 R 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
