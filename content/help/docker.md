@@ -187,16 +187,19 @@ docker involves pulling the public image and running the container.
 
 ##### To run RStudio Server:
 
-    docker run -p 8787:8787 bioconductor/devel_base2
+    docker run -e PASSWORD=<pickYourPassword> -p 8787:8787 bioconductor/devel_base2
 
 You can then open a web browser pointing to your docker host on port 8787.
 If you're on Linux and using default settings, the docker host is
 `127.0.0.1` (or `localhost`, so the full URL to RStudio would be
 `http://localhost:8787)`. If you are on Mac or Windows and running
 `Docker Toolbox`, you can determine the docker host with the
-`docker-machine ip default` command.
+`docker-machine ip default` command. 
 
-Log in to RStudio with the username `rstudio` and password `rstudio`.
+In the above command `-e PASSWORD=` is
+setting the rstudio password and is required by the rstudio docker image. It can
+be whatever you like except it cannot be `rstudio`.
+Log in to RStudio with the username `rstudio` and whatever password was specified.
 
 If you want to run RStudio as a user on your host machine, in order
 to read/write files in a host directory, please
@@ -230,7 +233,9 @@ installed packages to this docker directory. In turn, that path is automatically
 loaded in the R `.libPaths` on the docker image and all of my locally installed
 package would be available for use.
 
-    docker run -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library -it bioconductor/devel_base2 R 
+    docker run \
+        -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library \
+        -it bioconductor/devel_base2 R 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
