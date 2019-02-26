@@ -76,6 +76,8 @@ images:
   metabolomics analysis.
 * *metabolomics2*: everything in *protmetcore2*, plus select packages from the
   [Metabolomics](/packages/release/BiocViews.html#___Metabolomics) biocView.
+* *cytometry2*: Built on *base2*, so it contains everything in *base2*, plus
+  [CytoML](/packages/release/bioc/html/CytoML.html) and needed dependencies.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -105,6 +107,11 @@ Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
 * [bioconductor/release_mscore2](https://hub.docker.com/r/bioconductor/release_mscore2/)
 * [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
 * [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
+
+#### Maintained by RGLab: wjiang2@fredhutch.org
+* [bioconductor/devel_cytometry2](https://hub.docker.com/r/bioconductor/devel_cytometry2/)
+* [bioconductor/release_cytometry2](https://hub.docker.com/r/bioconductor/release_cytometry2/)
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
