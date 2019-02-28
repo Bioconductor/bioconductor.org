@@ -8,11 +8,13 @@ participate for a flexible term. Current members are:
 
 * Robert Gentleman (Advisory Board Chair, 23andMe)
 * Vincent Carey (Brigham &amp; Women's)
+* Valentina di Francesco (NHGRI)
 * Wolfgang Huber (European Molecular Biology Laboratory)
 * Rafael Irizarry (Dana Farber)
 * Jan Vitek (Northeastern University)
 * Jenny Bryan (RStudio)
 * James Taylor (Johns Hopkins University)
+* Levi Waldron (CUNY School of Public Health)
 
 ## Technical Advisory Board
 
