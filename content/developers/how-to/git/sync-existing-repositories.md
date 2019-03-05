@@ -57,6 +57,19 @@ repositories are all in sync.
         git push upstream RELEASE_3_6
         git push origin RELEASE_3_6
 
+    NOTE: If you are syncing your release branch for the first time,
+    you have to make a local copy of the `RELEASE_X_Y` branch, by
+
+        git checkout -b <RELEASE_X_Y> upstream/<RELEASE_X_Y>
+
+    Following this one time local checkout, you may switch between
+    `RELEASE_X_Y` and `master` with `git checkout <RELEASE_X_Y>`. If you do
+    not use the command to get a local copy of the release branch, you
+    will get the message,
+
+       (HEAD detached from origin/RELEASE_X_Y)
+
+
    Remember that only `master` and the current release branch of
    _Bioconductor_ repositories can be updated.
 
