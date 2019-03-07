@@ -2,21 +2,13 @@
 
 This release will use R-3.6.0 ("Planting of a Tree").
 
-Bioconductor has decided to move forward with labelling releases with an even
-number and keeping the development branch odd.
-Therefore in this documentation we will be referencing the current development branch
-3.9, the new Bioconductor Release 3.10 and reference to the next development
-branch as 3.11 (to be release 3.12).
-
-# Bioconductor 3.10 Release Schedule
-
 ### Friday March 22
 
 * Announce new package submission deadline of April 5.
 
 ### Monday April 1
 
-* Announce deprecated packages for Bioc 3.10. They'll be removed from Bioc 3.11.
+* Announce deprecated packages for Bioc 3.9. They'll be removed from Bioc 3.10.
   See [End of Life](/developers/package-end-of-life) for details.
 
 ### Friday April 5
@@ -32,7 +24,7 @@ branch as 3.11 (to be release 3.12).
 * Stop building Bioc 3.8, current release. Commits to this branch will be
   disabled.
 
-* Start building Bioc 3.11, new devel.
+* Start building Bioc 3.10, new devel.
 
 ### Friday April 19
 
@@ -69,12 +61,12 @@ branch as 3.11 (to be release 3.12).
 
 ### Tuesday April 30
 
-* Creation of the Bioc 3.10 release branch. Development can resume on
+* Creation of the Bioc 3.9 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
 ### Wednesday May 1
 
-* Bioconductor Release 3.10.
+* Bioconductor Release 3.9.
 
 
 ## Post-release
@@ -83,8 +75,8 @@ branch as 3.11 (to be release 3.12).
 
 * Build Dockers for release and devel
 
-* Packages marked as deprecated in Bioc 3.10 are now removed from the
-  Bioc 3.10/3.11 nightly builds.
+* Packages marked as deprecated in Bioc 3.9 are now removed from the
+  Bioc 3.9/3.10 nightly builds.
 
-* Identify packages to be deprecated in the new devel, Bioc 3.11.
+* Identify packages to be deprecated in the new devel, Bioc 3.10.
   This includes packages with errors and unresponsive maintainers.
