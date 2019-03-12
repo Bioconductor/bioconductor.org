@@ -13,6 +13,7 @@ participate for a flexible term. Current members are:
 * Wolfgang Huber (European Molecular Biology Laboratory)
 * Rafael Irizarry (Dana Farber)
 * Martin Morgan (Roswell Park)
+* Benjamin Neale (Broad Institute)
 * James Taylor (Johns Hopkins University)
 * Jan Vitek (Northeastern University)
 * Levi Waldron (CUNY School of Public Health)
