@@ -187,9 +187,14 @@ associated files.
 
 5. "Authors@R or Author/Maintainer:" fields: Use either `Authors@R`
    field or `Author:` and `Maintainer:` fields, not both. A maintainer
-   designation is required with an actively maintained email. This
-   email will be used for contact regarding an issues that arise with
-   your package in the future.
+   designation (`cre` for Authors@R ) is required with an actively maintained
+   email. This email will be used for contact regarding an issues that arise
+   with your package in the future. We prefer the Authors@R format giving all
+   the authors with appropriate roles. For persons with an ORCID identifier (See
+   [ORCiD](https://orcid.org/) for more information) provide the identifier via
+   an element named "ORCID" in the comment argument of person(). Example:
+   `person("Lori", "Shepherd", email=Lori.Shepherd@roswellpark.org,
+   role=c("cre", aut"), comment = c(ORCID = "0000-0002-5910-4010"))`.
 
    Only one person should be listed in the `Maintainer` field to ensure a
    single point of contact. This person by default will have commit access to
