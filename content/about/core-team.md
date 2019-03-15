@@ -109,7 +109,7 @@ Recent alumni
   Biostatistics, UC Berkeley, USA.
 * Byron Ellis, AdBrite, USA.
 * Seth Falcon, Opscode, USA.
-* [Laurent Gatto](http://proteome.sysbiol.cam.ac.uk/lgatto/), University of Cambridge, UK.
+* [Laurent Gatto](https://www.deduveinstitute.be/computational-biology), de Duve Institute, UCLouvain, Belgium.
 * Laurent Gautier, DTU Multi-Assay Core (DMAC), Denmark.
 * Jeff Gentry, Dana-Farber Cancer Institute, USA.
 * Florian Hahne, Novartis Institute of Biomedical Research, Switzerland.
