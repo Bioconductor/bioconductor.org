@@ -191,7 +191,7 @@ Our AMIs have the following IDs.
     </tr>
     <tr>
         <td>3.8 (release, <b>recommended</b>)</td>
-        <td>3.5.1</td>
+        <td>3.5.3</td>
         <td><%= ami_url config[:ami_ids][:bioc3_8]%></td>
     </tr>
     <tr>
