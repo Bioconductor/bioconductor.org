@@ -1,6 +1,8 @@
-# Bioconductor 3.9 Release Schedule (Tentative subject to change based on R release)
+# Bioconductor 3.9 Release Schedule 
 
 This release will use R-3.6.0 ("Planting of a Tree").
+The official release date is schedule for Tuesday April 30th. 
+The following highlights important deadlines for the release.
 
 ### Friday March 22
 
@@ -48,23 +50,23 @@ This release will use R-3.6.0 ("Planting of a Tree").
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Monday April 29
+### Sunday April 28
 
 * Last day to commit changes to the Bioc 3.9 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
   not be included in the release announcement.
 
-  The branch will be frozen prior to creating the release branch on Tuesday,
-  April 30.  Committing last minute changes could break your package in both
+  The branch will be frozen prior to creating the release branch on Monday,
+  April 29.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Tuesday April 30
+### Monday April 29
 
 * Creation of the Bioc 3.9 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
-### Wednesday May 1
+### Tuesday April 30
 
 * Bioconductor Release 3.9.
 
