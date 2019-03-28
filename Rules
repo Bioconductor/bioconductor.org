@@ -110,32 +110,38 @@ layout '*', :erb
 
 preprocess do 
   unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
-    #todo - skip this gracefully if no internet connection
-    puts "Getting manifest information..."
-    url = "https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/"
-    branch_url = "https://hedgehog.fhcrc.org/bioconductor/branches/RELEASE_"
-    auth = {:username => "readonly", :password => "readonly"}
-    page = HTTParty.get("https://hedgehog.fhcrc.org/bioconductor/trunk/madman/Rpacks/",
-      :basic_auth => auth, :verify => false).body
+    puts "Getting manifest files..."
+    sconfig = YAML.load_file("./config.yaml")
+    sconfig[:release_dates] = sconfig["release_dates"]
+    sconfig[:release_dates] = sconfig[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+    rel_ver = sconfig["release_version"]
+    dev_ver = sconfig["devel_version"]
+    all_ver = sconfig["release_dates"].keys
+    all_ver.push dev_ver
+    man_path = "../manifest/"
+
     manifests = {}
-    for line in page.split("\n")
-      if line =~ /bioc_([0123456789.]+)\.manifest/
-        ver = $1
-        manifests[ver] = []
-        if ver == config[:devel_version]
-          manifest_url = "#{url}bioc_#{ver}.manifest"
-        else
-          manifest_url = "#{branch_url}#{ver.gsub(".", "_")}/madman/Rpacks/bioc_#{ver}.manifest"
-        end
-        manifest = HTTParty.get(manifest_url, :basic_auth => auth, :verify=>false).body
-        for l in manifest.split("\n")
-          next unless l =~ /^Package: /
-          manifests[ver].push l.chomp.sub(/^Package: /, "").strip
+
+    all_ver.each { |v|
+      ver = v.gsub(/\./,"_")
+      manifests[v] = []
+      if v == dev_ver
+        system("git -C #{man_path} checkout master")
+      else
+        system("git -C #{man_path} checkout RELEASE_#{ver}")
+      end
+      if $? == 0
+        soft="#{man_path}/software.txt"
+        File.open(soft, "r") do |f|
+	  f.each_line do |line|
+	    next unless line =~ /^Package: /
+	    manifests[v].push line.chomp.sub(/^Package: /, "").strip
+	  end
         end
       end
-    end
+    }
     config[:manifests] = manifests
-    
+
     config[:manifest_keys] = manifests.keys.sort do |a,b|
       amaj, amin = a.split(".")
       bmaj, bmin = b.split(".")
@@ -149,7 +155,6 @@ preprocess do
         amaj <=> bmaj
       end
     end
-    
     puts "Processing site pages..."
   end
 end
