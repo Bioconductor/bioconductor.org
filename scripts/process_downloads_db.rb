@@ -1,8 +1,5 @@
 #!/usr/bin/env ruby
 
-# This script should eventually be available at
-# https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org/scripts
-
 require 'date'
 
 # assuming we are in the same dir as the DB...

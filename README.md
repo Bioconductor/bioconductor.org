@@ -141,24 +141,16 @@ for more information.
    of the web site to work.
 
 
-4. Install subversion client package. Windows packages are listed
-   here:
-
-       http://subversion.tigris.org/getting.html#binary-packages
-
-   I installed the collabnet package, but had to go through an annoying
-   registration process. The other binaries should be fine and might
-   require less hoop jumping. You will need to open a new terminal
-   window to pickup the updated config after installing so that you
-   will be able to use the svn command.
+4. Install git client. https://git-scm.com/downloads
 
 5. Follow the developer setup instructions below.
 
 ## Developer Setup
 
-### Checkout the bioconductor.org codebase
+### Checkout the bioconductor.org codebase and set up upstream remote
 
-    svn co https://hedgehog.fhcrc.org/bioconductor/trunk/bioconductor.org
+    git clone https://github.com/Bioconductor/bioconductor.org
+    git remote add upstream git@git.bioconductor.org:admin/bioconductor.org
 
 ### Installing Necessary Ruby Packages
 

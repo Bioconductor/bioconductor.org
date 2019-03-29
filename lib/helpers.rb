@@ -1222,42 +1222,13 @@ def package_has_source_url(item, software_only=false)
     return false
 end
 
-def get_svn_source_url(package, item, item_rep)
-    url = "https://hedgehog.fhcrc.org/"
-    segs = item.identifier.to_s.split("/")
-    repos = segs[5]
-    repos = segs[5] + "/" + segs[6] if segs[5] == "data" \
-      and segs[6] == "experiment"
-    if repos == "bioc"
-        url += "bioconductor/"
-    else
-        url += "bioc-data/"
-    end
-    if is_devel?(item)
-        url += "trunk/"
-    else
-        pkg_version = segs[4].sub(".", "_")
-        url += "branches/RELEASE_#{pkg_version}/"
-    end
-    if repos == "bioc"
-        url += "madman/Rpacks/"
-    else
-        url += "experiment/pkgs/"
-    end
-    url += package[:Package] + "/"
-    url
-end
 
 def get_source_url(package, item, item_rep, access_type)
     segs = item.identifier.to_s.split('/')
-    if segs[4] < "3.5"
-        get_svn_source_url(package, item, item_rep)
-    else      
-        if access_type == "ssh"
-            "git@git.bioconductor.org:packages/" + package[:Package]
-        else
-            "https://git.bioconductor.org/packages/" + package[:Package]
-        end
+    if access_type == "ssh"
+        "git@git.bioconductor.org:packages/" + package[:Package]
+    else
+        "https://git.bioconductor.org/packages/" + package[:Package]
     end
 end
 
