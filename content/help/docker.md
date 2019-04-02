@@ -214,11 +214,11 @@ to read/write files in a host directory, please
 
 ##### To run R from the command line:
 
-    docker run -ti bioconductor/devel_base2 R
+    docker run -ti --user bioc bioconductor/devel_base2 R
 
 ##### To open a Bash shell on the container:
 
-    docker run -ti bioconductor/devel_base2 bash
+    docker run -ti --user bioc bioconductor/devel_base2 bash
 
 
 **Note**: The `docker run` command is very powerful and versatile.
@@ -242,7 +242,7 @@ package would be available for use.
 
     docker run \
         -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library \
-        -it bioconductor/devel_base2 R 
+        -it --user bioc bioconductor/devel_base2 R
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
