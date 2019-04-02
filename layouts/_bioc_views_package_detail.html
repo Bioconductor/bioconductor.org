@@ -2,6 +2,19 @@
 
   <% if current? @package %>
 
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org/",
+  "@type":"Tool",
+  "name":"<%=@package[:Package]%>",
+  "description":"<%= @package[:Description]%>",
+  "url":[
+    "<%=get_short_url(@package)%>"
+  ],
+  "softwareVersion":"<%= @package[:Version]%>"
+}
+</script>
+
     <% tr = TableRower.new %>
 
     <table border="0">
