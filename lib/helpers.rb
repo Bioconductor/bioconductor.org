@@ -184,14 +184,20 @@ end
 
 
 def munge_email(email)
-  @coder = HTMLEntities.new unless defined? @coder
-  ret = ""
-  email.gsub(/@/, " at ").split("").each do |char|
-    if char.ord > 128 # ?
-      ret += @coder.encode(char, :hexadecimal)
-    else
-      ret += "&#x#{char.bytes.first.to_s(16)};"
+  if email.include? "@"
+    @coder = HTMLEntities.new unless defined? @coder
+    ret = ""
+    email.gsub(/@/, " at ").split("").each do |char|
+      if char.ord > 128 # ?
+        ret += @coder.encode(char, :hexadecimal)
+      else
+        ret += "&#x#{char.bytes.first.to_s(16)};"
+      end
     end
+  elsif email.include? "orcid"
+    ret="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
+  else
+    ret = email
   end
   ret
 end
