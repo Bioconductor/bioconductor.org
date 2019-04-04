@@ -195,7 +195,7 @@ def munge_email(email)
       end
     end
   elsif email.include? "orcid"
-    ret="<a href="+email[1...-1]+">orcid</a>"
+    ret="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
   else
     ret = email
   end
