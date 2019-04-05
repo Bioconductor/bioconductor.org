@@ -184,20 +184,14 @@ end
 
 
 def munge_email(email)
-  if email.include? "@"
-    @coder = HTMLEntities.new unless defined? @coder
-    ret = ""
-    email.gsub(/@/, " at ").split("").each do |char|
-      if char.ord > 128 # ?
-        ret += @coder.encode(char, :hexadecimal)
-      else
-        ret += "&#x#{char.bytes.first.to_s(16)};"
-      end
+  @coder = HTMLEntities.new unless defined? @coder
+  ret = ""
+  email.gsub(/@/, " at ").split("").each do |char|
+    if char.ord > 128 # ?
+      ret += @coder.encode(char, :hexadecimal)
+    else
+      ret += "&#x#{char.bytes.first.to_s(16)};"
     end
-  elsif email.include? "orcid"
-    ret="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
-  else
-    ret = email
   end
   ret
 end
@@ -207,7 +201,13 @@ def filter_emails(str)
   return str if str.nil?
   emails = str.scan( /(<[^>]*>)/).flatten
   for email in emails
-    str = str.gsub(email, munge_email(email))
+    if email.include? "orcid"
+      email2="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
+      email1="("+email+")"
+      str = str.gsub(email1, email2)
+    else
+      str = str.gsub(email, munge_email(email))
+    end
   end
   str
 end
