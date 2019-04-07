@@ -15,11 +15,17 @@
 <h2 id="bioc-version">Using <em>Bioconductor</em></h2>
 
 The current release of _Bioconductor_ is version
-<%=config[:release_version] %>; it works with R version
+<%=config[:release_version] %>; it works with _R_ version
 <%=config[:r_version_associated_with_release]%>. Users of older R and
 _Bioconductor_ must update their installation to take advantage
 of new features and to access packages that have been added to
 _Bioconductor_ since the last release.
+
+The development version of _Bioconductor_ is version
+<%=config[:devel_version] %>; it works with _R_ version
+<%=config[:r_version_associated_with_devel]%>. More recent 'devel'
+versions of _R_ (if available) will be supported during the next
+_Bioconductor_ release cycle.
 
 [Install](#install-R) the latest release of R, then get the latest version of
 _Bioconductor_ by starting R and entering the commands
