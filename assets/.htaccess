@@ -66,9 +66,9 @@ RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/$1/ [L,R]
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
-RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/annotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
+RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/annotation/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
 RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/src/$2
-RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/experiment/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
+RedirectMatch 301 /packages/(1.[8-9]|2.[0-9])/data/experiment/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
 # BioC 2.1 has an additional extannotation/ directory
 RedirectMatch 301 /packages/2.1/data/extannotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/src/$1
 RedirectMatch 301 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/bin/$1
