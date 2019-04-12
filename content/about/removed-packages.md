@@ -3,6 +3,33 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.9 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.6/bioc/html/ampliQueso.html">ampliQueso</a></li>
+<li><a href="/packages/3.7/bioc/html/BiocInstaller.html">BiocInstaller</a> (Replaced by BiocManager)</li>
+<li><a href="/packages/3.6/bioc/html/cytofkit.html">cytofkit</a></li>
+<li><a href="/packages/3.6/bioc/html/facopy.html">facopy</a></li>
+<li><a href="/packages/3.6/bioc/html/gaucho.html">gaucho</a></li>
+<li><a href="/packages/3.6/bioc/html/GeneSelector.html">GeneSelector</a></li>
+<li><a href="/packages/3.7/bioc/html/GoogleGenomics.html">GoogleGenomics</a></li>
+<li><a href="/packages/3.7/bioc/html/IrisSpatialFeatures.html">IrisSpatialFeatures</a></li>
+<li><a href="/packages/3.6/bioc/html/mQTL.NMR.html">mQTL.NMR</a></li>
+<li><a href="/packages/3.6/bioc/html/nudge.html">nudge</a></li>
+<li><a href="/packages/3.6/bioc/html/pbcmc.html">pbcmc</a></li>
+<li><a href="/packages/3.6/bioc/html/prot2D.html">prot2D</a></li>
+<li><a href="/packages/3.5/bioc/html/RamiGO.html">RamiGO</a></li>
+</ul>
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.7/data/experiment/html/iontreeData.html">iontreeData</a></li>
+<li><a href="/packages/3.7/data/experiment/html/MSBdata.html">MSBdata</a> (Renamed to MSMB)</li>
+</ul>
+
 ## Packages removed with Bioconductor 3.8 release
 
 Software Packages:
