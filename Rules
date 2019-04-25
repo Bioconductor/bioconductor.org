@@ -141,6 +141,7 @@ preprocess do
       end
     }
     config[:manifests] = manifests
+    system("git -C #{man_path} checkout master")
 
     config[:manifest_keys] = manifests.keys.sort do |a,b|
       amaj, amin = a.split(".")
@@ -157,4 +158,5 @@ preprocess do
     end
     puts "Processing site pages..."
   end
+
 end

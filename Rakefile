@@ -512,6 +512,7 @@ task :get_years_in_bioc_shields do
     end
   }
   sconfig[:manifests] = manifests
+  system("git -C #{man_path} checkout master")
 
   sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
     amaj, amin = a.split(".")
