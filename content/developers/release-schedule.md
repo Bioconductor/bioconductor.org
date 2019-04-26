@@ -50,7 +50,7 @@ The following highlights important deadlines for the release.
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Sunday April 28
+### Wednesday May 1
 
 * Last day to commit changes to the Bioc 3.9 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
@@ -61,12 +61,12 @@ The following highlights important deadlines for the release.
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Monday April 29
+### Thursday May 2
 
 * Creation of the Bioc 3.9 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
-### Tuesday April 30
+### Friday May 3
 
 * Bioconductor Release 3.9.
 
