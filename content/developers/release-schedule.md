@@ -40,7 +40,7 @@ The following highlights important deadlines for the release.
 
 * Contributed annotation packages posted to devel annotation data repository.
 
-### Friday April 26
+### Monday April 29
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
@@ -56,8 +56,8 @@ The following highlights important deadlines for the release.
   must be updated before the builds start at 4:45pm EST or they will
   not be included in the release announcement.
 
-  The branch will be frozen prior to creating the release branch on Monday,
-  April 29.  Committing last minute changes could break your package in both
+  The branch will be frozen prior to creating the release branch on Thursday,
+  May 2.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
