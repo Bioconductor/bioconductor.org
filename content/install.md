@@ -30,7 +30,7 @@ _Bioconductor_ release cycle.
 [Install](#install-R) the latest release of R, then get the latest version of
 _Bioconductor_ by starting R and entering the commands
 
-    if (!requireNamespace("BiocManager"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install()
 
@@ -69,7 +69,7 @@ the main ones).
 
 To install core packages, type the following in an R command window:
 
-    if (!requireNamespace("BiocManager"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install()
 
@@ -116,7 +116,7 @@ prompted.  Read the help page for `?install` for additional details.
 Some versions of R support more than one version of _Bioconductor_. To
 use the latest version of _Bioconductor_ for your version of R, enter
 
-    if (!requireNamespace("BiocManager"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install()
 
@@ -136,10 +136,10 @@ installed packages to be recompiled for source (C or Fortran)
 compatibility. One way to address this might be to start a new R
 session and enter
 
-    if (!requireNamespace("BiocManager"))
+    if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     pkgs <- rownames(installed.packages())
-    BiocManager::install(pkgs, type = "source")
+    BiocManager::install(pkgs, type = "source", checkBuilt = TRUE)
 
 As this will reinstall all currently installed packages, it likely
 involves a significant amount of network bandwidth and compilation
@@ -216,7 +216,7 @@ to the version of R in use regardless of the R and _Bioconductor_
 release cycles.
 
     > library(BiocManager)
-    Bioconductor version 3.8 (BiocManager 1.30.3), ?BiocManager::install
+    Bioconductor version 3.9 (BiocManager 1.30.4), ?BiocManager::install
     for help
 
 The `install()` function is provided by BiocManager. This is a
@@ -229,8 +229,8 @@ default checking for out-of-date packages and asking if the user would
 like to update
 
     > BiocManager::install()
-    Bioconductor version 3.8 (BiocManager 1.30.3), R 3.5.1 Patched
-    (2018-10-20 r75479)
+    Bioconductor version 3.9 (BiocManager 1.30.4), R 3.6.0 Patched
+    (2019-05-02 r76454)
     Update old packages: 'BBmisc', 'genefilter', 'GenomicAlignments',
       'GenomicRanges', 'IRanges', 'MASS', 'reshape2', 'Rgraphviz',
       'RJSONIO', 'rtracklayer'
@@ -240,9 +240,9 @@ The BiocManager package provides facilities for switching to the
 'devel' version of _Bioconductor_
 
     > BiocManager::install(version = "devel")
-    Upgrade 89 packages to Bioconductor version '3.9'? [y/n]: y
+    Upgrade 89 packages to Bioconductor version '3.10'? [y/n]: y
     Installing package(s) 'BiocVersion'
-    trying URL 'https://bioconductor.org/packages/3.9/bioc/src/contrib/BiocVersion_3.9.0.tar.gz'
+    trying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/BiocVersion_3.10.0.tar.gz'
     Content type 'application/x-gzip' length 987 bytes
     ==================================================
     downloaded 987 bytes
@@ -255,7 +255,7 @@ The BiocManager package provides facilities for switching to the
     * DONE (BiocVersion)
 
     ...
-    Bioconductor version 3.9 (BiocManager 1.30.3), ?BiocManager::install for
+    Bioconductor version 3.10 (BiocManager 1.30.4), ?BiocManager::install for
     help
 
 (at some points in the R / _Bioconductor_ release cycle use of 'devel'
@@ -271,11 +271,11 @@ rather than a repository; regular users would seldom have these).
 
     * sessionInfo()
 
-    R version 3.5.1 Patched (2018-10-20 r75479)
+    R version 3.6.0 Patched (2019-05-02 r76454)
     Platform: x86_64-pc-linux-gnu (64-bit)
     ...
 
-    Bioconductor version '3.8'
+    Bioconductor version '3.9'
 
       * 2 packages out-of-date
       * 0 package too new
