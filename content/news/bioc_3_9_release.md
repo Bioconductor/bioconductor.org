@@ -202,8 +202,7 @@ There are 105 new software packages in this release of Bioconductor.
   subgroups when there is nothing known about the data or it can test
   consistency between predicted subgroups with known annotations. The
   cola package provides a general framework for subgroup
-  classification by consensus clustering. It has following features:
-  1. It modularizes the consensus clustering processes that various
+  classification by consensus clustering. It has following features: 1. It modularizes the consensus clustering processes that various
   methods can be easily integrated. 2. It provides rich
   visualizations for interpreting the results. 3. It allows running
   multiple methods at the same time and provides functionalities to
@@ -213,8 +212,7 @@ There are 105 new software packages in this release of Bioconductor.
   detect subgroups with relatively smaller difference. 6. It
   generates detailed reports for the complete analysis.
 
--
-  [CopyNumberPlots](https://bioconductor.org/packages/CopyNumberPlots)
+- [CopyNumberPlots](https://bioconductor.org/packages/CopyNumberPlots)
   CopyNumberPlots have a set of functions extending karyoploteRs
   functionality to create beautiful, customizable and flexible plots
   of copy-number related data.
@@ -246,8 +244,7 @@ There are 105 new software packages in this release of Bioconductor.
   DECO reveals feature associations to hidden subclasses not
   exclusively related to higher deregulation levels.
 
--
-  [decompTumor2Sig](https://bioconductor.org/packages/decompTumor2Sig)
+- [decompTumor2Sig](https://bioconductor.org/packages/decompTumor2Sig)
   Uses quadratic programming for signature refitting, i.e., to
   decompose the mutation catalog from an individual tumor sample into
   a set of given mutational signatures (either Alexandrov-model
@@ -255,8 +252,7 @@ There are 105 new software packages in this release of Bioconductor.
   reflect the contributions of the signatures to the mutation load of
   the tumor.
 
--
-  [DelayedDataFrame](https://bioconductor.org/packages/DelayedDataFrame)
+- [DelayedDataFrame](https://bioconductor.org/packages/DelayedDataFrame)
   Based on the standard DataFrame metaphor, we are trying to
   implement the feature of delayed operation on the DelayedDataFrame,
   with a slot of lazyIndex, which saves the mapping indexes for each
@@ -298,8 +294,7 @@ There are 105 new software packages in this release of Bioconductor.
   specified baseline group with the same univariate or multivariate
   features.
 
--
-  [DNABarcodeCompatibility](https://bioconductor.org/packages/DNABarcodeCompatibility)
+- [DNABarcodeCompatibility](https://bioconductor.org/packages/DNABarcodeCompatibility)
   The package allows one to obtain optimized combinations of DNA
   barcodes to be used for multiplex sequencing. In each barcode
   combination, barcodes are pooled with respect to Illumina chemistry
@@ -404,8 +399,7 @@ There are 105 new software packages in this release of Bioconductor.
   data portal. Development of this package is supported through funds
   from the Chan / Zuckerberg initiative.
 
--
-  [HumanTranscriptomeCompendium](https://bioconductor.org/packages/HumanTranscriptomeCompendium)
+- [HumanTranscriptomeCompendium](https://bioconductor.org/packages/HumanTranscriptomeCompendium)
   Provide tools for working with a compendium of human transcriptome
   sequences (originally htxcomp).
 
@@ -415,8 +409,7 @@ There are 105 new software packages in this release of Bioconductor.
 - [infercnv](https://bioconductor.org/packages/infercnv) Using
   single-cell RNA-Seq expression to visualize CNV in cells.
 
--
-  [IsoCorrectoRGUI](https://bioconductor.org/packages/IsoCorrectoRGUI)
+- [IsoCorrectoRGUI](https://bioconductor.org/packages/IsoCorrectoRGUI)
   IsoCorrectoRGUI is a Graphical User Interface for the IsoCorrectoR
   package. IsoCorrectoR performs the correction of mass spectrometry
   data from stable isotope labeling/tracing metabolomics experiments
@@ -653,8 +646,7 @@ There are 105 new software packages in this release of Bioconductor.
   regions, extracting and pooling related RNA-seq alignments,
   predicting, selected, and evaluating transcript models.
 
--
-  [PrecisionTrialDrawer](https://bioconductor.org/packages/PrecisionTrialDrawer)
+- [PrecisionTrialDrawer](https://bioconductor.org/packages/PrecisionTrialDrawer)
   A suite of methods to design umbrella and basket trials for
   preision oncology.
 
@@ -845,8 +837,7 @@ There are 105 new software packages in this release of Bioconductor.
   conversion is implemented in C, inspired to a large extend by the
   ViennaRNA package.
 
--
-  [StructuralVariantAnnotation](https://bioconductor.org/packages/StructuralVariantAnnotation)
+- [StructuralVariantAnnotation](https://bioconductor.org/packages/StructuralVariantAnnotation)
   StructuralVariantAnnotation contains useful helper functions for
   dealing with structural variants in VCF format. The packages
   contains functions for parsing VCFs from a number of popular
@@ -889,8 +880,7 @@ There are 105 new software packages in this release of Bioconductor.
   analysis of 2D-TPP experiments by functional analysis of
   dose-response curves across temperatures.
 
--
-  [TreeSummarizedExperiment](https://bioconductor.org/packages/TreeSummarizedExperiment)
+- [TreeSummarizedExperiment](https://bioconductor.org/packages/TreeSummarizedExperiment)
   TreeSummarizedExperiment has extended SingleCellExperiment to
   include hierarchical information on the rows or columns of the
   rectangular data.
@@ -934,8 +924,7 @@ There are 13 new data experiment packages in this release of Bioconductor.
   package contains various LC-MS/MS and GC-MS data that is used in
   vignettes and examples in the CluMSID package.
 
--
-  [curatedAdipoChIP](https://bioconductor.org/packages/curatedAdipoChIP)
+- [curatedAdipoChIP](https://bioconductor.org/packages/curatedAdipoChIP)
   A curated dataset of publicly available ChIP-sequencing of
   transcription factors, chromatin remodelers and histone
   modifications in the 3T3-L1 pre-adipocyte cell line. The package
@@ -943,8 +932,7 @@ There are 13 new data experiment packages in this release of Bioconductor.
   data. In addition to the documentation, the package contains the
   scripts that was used to generated the data.
 
--
-  [curatedAdipoRNA](https://bioconductor.org/packages/curatedAdipoRNA)
+- [curatedAdipoRNA](https://bioconductor.org/packages/curatedAdipoRNA)
   A curated dataset of RNA-Seq samples. The samples are MDI-induced
   pre-phagocytes (3T3-L1) at different time points/stage of
   differentiation. The package document the data collection,
@@ -952,8 +940,7 @@ There are 13 new data experiment packages in this release of Bioconductor.
   the package contains the scripts that was used to generated the
   data.
 
--
-  [FlowSorted.CordBloodCombined.450k](https://bioconductor.org/packages/FlowSorted.CordBloodCombined.450k)
+- [FlowSorted.CordBloodCombined.450k](https://bioconductor.org/packages/FlowSorted.CordBloodCombined.450k)
   Raw data objects to be used for umbilical cord blood cell
   proportion estimation in minfi and similar packages. The
   FlowSorted.CordBloodCombined.450k object is based in samples
@@ -997,8 +984,7 @@ There are 13 new data experiment packages in this release of Bioconductor.
   provides the output of running Salmon on a set of 12 RNA-seq
   samples from King & Klose, "The pioneer factor OCT4 requires the
   chromatin remodeller BRG1 to support gene regulatory element
-  function in mouse embryonic stem cells", published in eLIFE, March
-  2017. For details on version numbers and how the samples were
+  function in mouse embryonic stem cells", published in eLIFE, March 2017. For details on version numbers and how the samples were
   processed see the package vignette.
 
 
@@ -1030,8 +1016,7 @@ There are 4 new workflow packages in this release of Bioconductor.
   consolidation of per-window results to obtain per-region
   statistics, and annotation and visualization of the DB results.
 
--
-  [SingscoreAMLMutations](https://bioconductor.org/packages/SingscoreAMLMutations)
+- [SingscoreAMLMutations](https://bioconductor.org/packages/SingscoreAMLMutations)
   This workflow package shows how transcriptomic signatures can be
   used to infer phenotypes. The workflow begins by showing how the
   TCGA AML transcriptomic data can be downloaded and processed using
