@@ -26,7 +26,7 @@ Contents
 * [Getting Started with Bioconductor 3.9](#getting-started-with-bioconductor-35)
 * [New Software Packages](#new-software-packages)
 * [New Data Experiment Packages](#new-data-experiment-packages)
-* [New Workflows](#new-Workflows)
+* [New Workflows](#new-workflows)
 * [NEWS from new and existing software packages](#news-from-new-and-existing-software-packages)
 * [NEWS from new and existing data experiment packages](#news-from-new-and-existing-data-experiment-packages)
 * [NEWS from new and existing workflows](#news-from-new-and-existing-workflows)
