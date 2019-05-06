@@ -1042,24 +1042,24 @@ end
 
 def get_mac_packs(package, item)
 
-   version = item.identifier.to_s.split("/")[4].to_f
-
     res = []
 
     os = []
     osvers = []
 
-    if version < 3.3
+    version =  Gem::Version.new(package[:bioc_version_num])
+
+    if version < Gem::Version.new('3.3')
       os <<  "Mac OS X 10.6 (Snow Leopard)"
       osvers << "mac.binary.ver"
     end
 
-    if version > 2.13 and version < 3.5
+    if version > Gem::Version.new('2.13') and version < Gem::Version.new('3.5')
         os <<  "Mac OS X 10.9 (Mavericks)"
         osvers << "mac.binary.mavericks.ver"
     end
 
-    if version >= 3.5
+    if version >= Gem::Version.new('3.5')
         os <<  "Mac OS X 10.11 (El Capitan)"
         osvers << "mac.binary.el-capitan.ver"
     end
