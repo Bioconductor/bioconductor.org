@@ -1,7 +1,19 @@
-_Bioconductor_ is an open source, open development software project to
-provide tools for the analysis and comprehension of high-throughput
-genomic data.  It is based primarily on the
-[R](http://www.r-project.org) programming language.
+# _Bioconductor_
+
+The _Bioconductor_ mission is to promote the statistical analysis and
+comprehension of current and emerging high-throughput biological
+assays. _Bioconductor_ is based on packages written primarily in the
+[R][] programming language. Bioconductor is committed to open source,
+collaborative, distributed software development and literate,
+reproducible research. Enabling user and developer communities is an
+essential part of our mission. [Scientific][] and [Technical][]
+Advisory Boards provide project oversight.
+
+[R]: http://www.r-project.org
+[Technical]: technical-advisory-board/
+[Scientific]: scientific-advisory-board/
+
+## Release and core development
 
 The _Bioconductor_ [release version](/packages/release/bioc/) is updated
 twice each year, and is appropriate for most users. There is also a

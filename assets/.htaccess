@@ -148,7 +148,8 @@ RewriteRule ^download/mirrors(.*)$ /about/mirrors$1 [R=301]
 ## overview
 RewriteRule ^overview/coredevs.*$ /about/core-team/ [R=301]
 RewriteRule ^overview/related.*$ /about/related-projects/ [R=301]
-RewriteRule ^overview/advisoryboard.*$ /about/advisory-board/ [R=301]
+RewriteRule ^overview/advisoryboard.*$ /about/ [R=301]
+RewriteRule ^about/advisory-board/.*$ /about/ [R=301]
 RewriteRule ^overview/acks.html$ /about/ [R=301]
 RewriteRule ^overview(.*)$ /about$1 [R=301]
 

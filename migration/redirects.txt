@@ -9,7 +9,7 @@
 /docs/install/	/install/
 /download/	/releases/
 /download/oldrelease/BioC2.4/	/releases/Bioconductor-2.4/
-/overview/advisoryboard/	/about/advisory-board/
+/overview/advisoryboard/	/about/
 /docs/annualreports/	/about/annual-reports/
 /overview/coredevs/	/about/core-team/
 /download/mirrors/	/about/mirrors/
