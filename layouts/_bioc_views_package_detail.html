@@ -104,7 +104,7 @@
 <div class='do_not_rebase'>
 
     <% if @package[:repo] != "workflows/" %>
-        DOI: <a title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="https://doi.org/doi:10.18129/B9.bioc.<%=@package[:Package]%>">10.18129/B9.bioc.<%=@package[:Package]%></a> &nbsp;
+	DOI: <a title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="https://doi.org/doi:10.18129/B9.bioc.<%=@package[:Package]%>">10.18129/B9.bioc.<%=@package[:Package]%></a> &nbsp;
     <% end %>
 <a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= get_socialized_url item.identifier %>"><img height="16" width="16" src="/images/facebook.png"/></a> &nbsp;
 <a title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<%= get_socialized_url item.identifier %>&text=<%= get_social_title(item, @package) %>"><img height="16" width="16" src="/images/twitter.png"/></a>
@@ -150,6 +150,10 @@
 
     <pre>if (!requireNamespace("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
+<% if (@package[:bioc_version_str] == "Development") %>
+# The following initializes usage of Bioc devel
+BiocManager::install(version='devel')
+<% end %>
 BiocManager::install("<%=@package[:Package]%>")</pre>
 
     <p>For older versions of R, please refer to the appropriate

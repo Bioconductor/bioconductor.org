@@ -376,7 +376,8 @@ task :get_build_result_dcfs, :repo do |t, args|
     end
 end
 
-# should be run via cron every 15 minutes
+# originally run every 15 minutes - but it will only change with build report so
+# now once a day
 desc "download build system databases and get build shields"
 task :get_build_dbs do
   build_dbs_dir = File.join(%w(tmp build_dbs))
@@ -412,7 +413,7 @@ task :get_build_dbs do
   end
 end
 
-# run me with cron every day or so...
+# off download stats which are generated tue/fri so run wed/sat
 desc "process downloads data"
 task :process_downloads_data do
 
@@ -479,7 +480,7 @@ task :pull_manifests do
   system("git -C ../manifest/ pull --all")
 end
 
-# run me in crontab daily
+# shouldn't be run daily - will update minimally
 desc "get years-in-bioc shields"
 task :get_years_in_bioc_shields do
   sconfig = YAML.load_file("./config.yaml")
@@ -533,7 +534,8 @@ task :get_years_in_bioc_shields do
   end
 end
 
-# run me in crontab daily - or more frequent?
+# run crontab daily - only off VIEWS file creation so will not update
+# more frequent than build report
 desc "get last commit date shields"
 task :get_last_commit_date_shields do
 
