@@ -1,28 +1,25 @@
-# ![](/images/icons/magnifier.gif)Advisory Boards
+# ![](/images/icons/magnifier.gif)Technical Advisory Board
 
-## Scientific Advisory Board
+The Technical Advisory Board purpose is to support the _Bioconductor_
+mission by
 
-Bioconductor has a scientific advisory board composed of leaders in the
-statistical analysis of high-throughput genomic data. Board members
-participate for a flexible term. Current members are:
+- Developing strategies to ensure long-term technical suitability of
+  core infrastructure for the _Bioconductor_ mission. Core
+  infrastructure includes: all aspects of package addition,
+  management, and distribution; end-user engagement (e.g., web,
+  support site, and slack); developer support; and development of
+  packages for use by the broader developer community.
 
-* Robert Gentleman (Advisory Board Chair, 23andMe)
-* Jenny Bryan (RStudio)
-* Vincent Carey (Brigham &amp; Women's)
-* Valentina di Francesco (NHGRI)
-* Wolfgang Huber (European Molecular Biology Laboratory)
-* Rafael Irizarry (Dana Farber)
-* Martin Morgan (Roswell Park)
-* Benjamin Neale (Broad Institute)
-* James Taylor (Johns Hopkins University)
-* Jan Vitek (Northeastern University)
-* Levi Waldron (CUNY School of Public Health)
+- Identifying and pursuing technical and scientific aspects of funding
+  strategies for long-term viability of _Bioconductor_.
 
-## Technical Advisory Board
+The Technical Advisory Board governance document ([PDF][1]) outlines
+membership, procedures, and committees and working groups of the
+board. Governance was formalized in February, 2019.
 
-The technical advisory board provides guidance and direction through
-monthly telephone conferences. Board members participate for a
-flexible term. Current members are:
+[1]: TAB-Governance.pdf
+
+## Current members
 
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
@@ -44,3 +41,9 @@ flexible term. Current members are:
   Australia.
 * [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
   at Hunter College, New York, NY.
+
+## Meeting minutes
+
+The Technical Advisory Board meets monthly. Minutes are available
+within 30 days of each meeting. The first meeting for which public
+minutes were maintained was on 2 May, 2019.
