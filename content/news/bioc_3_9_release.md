@@ -9510,3 +9510,10 @@ deprecated in BioC 3.8): iontreeData, MSBdata.
 Two experimental data packages are deprecated in this release and will be
 removed in Bioc 3.10: PGPC, flowQBData
 
+Two annotation packages were removed this release: MafDb.gnomADex.r2.0.1.hs37d5,
+MafDb.gnomAD.r2.0.1.hs37d5 (they were replaced with MafDb.gnomADex.r2.1.hs37d5,
+MafDb.gnomAD.r2.1.hs37d5)
+
+Two annotation packages are deprecated in this release and will be removed
+in Bioc 3.10: MafDb.gnomADex.r2.0.1.GRCh38, MafDb.gnomAD.r2.0.1.GRCh38 (they
+have been replaced with MafDb.gnomADex.r2.1.GRCh38, MafDb.gnomAD.r2.1.GRCh38)
