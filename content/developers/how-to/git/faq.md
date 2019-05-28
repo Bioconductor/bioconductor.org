@@ -183,8 +183,8 @@
 
             origin  git@github.com:<github username>/myPackage.git (fetch)
             origin  git@github.com:<github username>/myPackage.git (push)
-            upstream  git@git.bioconductor.org/packages/myPackage.git (fetch)
-            upstream  git@git.bioconductor.org/packages/myPackage.git (push)
+            upstream  git@git.bioconductor.org:packages/myPackage.git (fetch)
+            upstream  git@git.bioconductor.org:packages/myPackage.git (push)
 
     * Check if you have access to the bioc-git server
       (git@git.bioconductor.org), by using `ssh -T
