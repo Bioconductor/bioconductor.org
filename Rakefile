@@ -424,6 +424,7 @@ task :process_downloads_data do
 
   repos = ["bioc", "annotation", "experiment", "workflows"]
   repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", devel"
     downloadBadge(repo, destdir, false)
   end
 
@@ -432,6 +433,7 @@ task :process_downloads_data do
   FileUtils.mkdir_p destdir
 
   repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", release"
     downloadBadge(repo, destdir, true)
   end
 
