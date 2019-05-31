@@ -422,20 +422,18 @@ task :process_downloads_data do
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", destdir, false)
-  downloadBadge("annotation", destdir, false)
-  downloadBadge("experiment", destdir, false)
-  downloadBadge("workflows", destdir, false)
+  repos = ["bioc", "annotation", "experiment", "workflows"]
+  repos.each do |repo|
+    downloadBadge(repo, destdir, false)
+  end
 
   destdir = File.join('assets', 'shields', 'downloads', 'release')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", destdir, true)
-  downloadBadge("annotation", destdir, true)
-  downloadBadge("experiment", destdir, true)
-  downloadBadge("workflows", destdir, true)
-
+  repos.each do |repo|
+    downloadBadge(repo, destdir, true)
+  end
 
 end
 
@@ -543,7 +541,7 @@ task :get_last_commit_date_shields do
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
      for repo in ['bioc', 'data-experiment', 'workflows']
-	puts "writing badges for #{reldev} #{repo}"
+        puts "writing badges for #{reldev} #{repo}"
 	numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
 	unsupported_platforms = {}
 	json_file = (repo == 'data-experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
@@ -631,23 +629,20 @@ task :process_dependency_badge do
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  puts "GENERATING BADGES:  bioc, devel"
-  dependencyBadge("bioc", destdir, false)
-  puts "GENERATING BADGES:  experiment, devel"
-  dependencyBadge("experiment", destdir, false)
-  puts "GENERATING BADGES:  workflows, devel"
-  dependencyBadge("workflows", destdir, false)
+  repos = ["bioc", "experiment", "workflows"]
+  repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", devel"
+    dependencyBadge(repo, destdir, false)
+  end
 
   destdir = File.join('assets', 'shields', 'dependencies', 'release')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  puts "GENERATING BADGES:  bioc, release"
-  dependencyBadge("bioc", destdir, true)
-  puts "GENERATING BADGES:  experiment, release"
-  dependencyBadge("experiment", destdir, true)
-  puts "GENERATING BADGES:  workflows, release"
-  dependencyBadge("workflows", destdir, true)
+  repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", release"
+    dependencyBadge(repo, destdir, true)
+  end
 
 end
 
