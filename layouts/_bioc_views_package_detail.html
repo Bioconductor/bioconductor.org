@@ -93,6 +93,21 @@
 	 <%= tr.betweencells %>
      <% end %>
 
+     <%# shield 7: dependencies %>
+     <% if ['bioc/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
+	 <% path = "assets"+"/shields/dependencies/"+res[:version]+"/"+@package[:Package]+".svg" %>
+	 <% if File.exist?(path) %>
+	   <td>
+	   <span class="do_not_rebase"><a href="#since"><img border="0" src="/shields/dependencies/<%=res[:version]%>/<%=@package[:Package]%>.svg" title="Number of recursive dependencies need to install package."/></a></span>
+	   </td>
+	   <%= tr.betweencells %>
+	 <% else %>
+	   <td>
+	   <span class="do_not_rebase"><a href="#since"><img border="0" src="/images/shields/unknown-dependencies.svg" title="Number of recursive dependencies need to install package."/></a></span>
+	   </td>
+	   <%= tr.betweencells %>
+	 <% end %>
+     <% end %>
 
     </tr>
     </table>
@@ -280,7 +295,7 @@ BiocManager::install("<%=@package[:Package]%>")</pre>
 
     </table>
 
-    <h3>Details</h3>
+    <h3 id="details">Details</h3>
     <%
     ri = RowIndexer.new
     %>

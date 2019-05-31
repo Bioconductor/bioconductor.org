@@ -265,7 +265,8 @@ task :json2js do
 	  line.push v['Package']
 	  line.push v['Maintainer']
 	  line.push v['Title']
-          line.push v['Rank']
+	  line.push v['Rank']
+	  line.push v['dependencyCount']
 	  ret.push line
 	end
 
@@ -542,7 +543,7 @@ task :get_last_commit_date_shields do
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
      for repo in ['bioc', 'data-experiment', 'workflows']
-        puts "writing badges for #{reldev} #{repo}"
+	puts "writing badges for #{reldev} #{repo}"
 	numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
 	unsupported_platforms = {}
 	json_file = (repo == 'data-experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
@@ -622,11 +623,40 @@ task :get_last_commit_date_shields do
 end # task
 
 
+# this shouldn't update very often, run crontab once a month
+desc "process dependency badge"
+task :process_dependency_badge do
+
+  destdir = File.join('assets', 'shields', 'dependencies', 'devel')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+
+  puts "GENERATING BADGES:  bioc, devel"
+  dependencyBadge("bioc", destdir, false)
+  puts "GENERATING BADGES:  experiment, devel"
+  dependencyBadge("experiment", destdir, false)
+  puts "GENERATING BADGES:  workflows, devel"
+  dependencyBadge("workflows", destdir, false)
+
+  destdir = File.join('assets', 'shields', 'dependencies', 'release')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+
+  puts "GENERATING BADGES:  bioc, release"
+  dependencyBadge("bioc", destdir, true)
+  puts "GENERATING BADGES:  experiment, release"
+  dependencyBadge("experiment", destdir, true)
+  puts "GENERATING BADGES:  workflows, release"
+  dependencyBadge("workflows", destdir, true)
+
+end
+
 desc "get all shields"
 task :get_all_shields => [:get_build_dbs,
   :process_downloads_data, :get_post_tag_info,
   :get_years_in_bioc_shields, :copy_assets,
-  :get_availability_shields, :get_last_commit_date_shields]
+  :get_availability_shields, :get_last_commit_date_shields,
+  :process_dependency_badge]
 
 # should be run every time mirror info in config.yaml changes
 # that's hard to remember do to, so

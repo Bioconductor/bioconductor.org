@@ -159,3 +159,34 @@ def getRanking(repo, release=false)
   rankHash
 
 end
+
+
+def dependencyBadge(repo, destdir, release=false)
+  site_config = YAML.load_file("./config.yaml")
+  numeric_version = (release) ? site_config['release_version'] : site_config['devel_version']
+  json_file = (repo == 'experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
+  json_obj = JSON.parse(File.read(json_file))
+  for pkg in json_obj.keys
+    puts "#{pkg}"
+    info = json_obj[pkg]
+    shield = File.join(destdir, "#{pkg}.svg")
+    if (info.key?("dependencyCount"))
+      cnt = info["dependencyCount"]
+      puts "#{pkg} : #{cnt}"
+      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-blue.svg")
+      if (resp.code == 200)
+        fh = File.open(shield, 'w')
+        fh.write(resp.to_s)
+        fh.close
+      else
+        puts "ERROR: "+resp.code.to_s
+        FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
+      end
+    else
+      puts "#{pkg} : dependencies not found"
+      FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
+    end
+  end
+  puts "done"
+
+end
