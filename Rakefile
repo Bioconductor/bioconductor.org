@@ -265,7 +265,8 @@ task :json2js do
 	  line.push v['Package']
 	  line.push v['Maintainer']
 	  line.push v['Title']
-          line.push v['Rank']
+	  line.push v['Rank']
+	  line.push v['dependencyCount']
 	  ret.push line
 	end
 
@@ -421,20 +422,18 @@ task :process_downloads_data do
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", destdir, false)
-  downloadBadge("annotation", destdir, false)
-  downloadBadge("experiment", destdir, false)
-  downloadBadge("workflows", destdir, false)
+  repos = ["bioc", "annotation", "experiment", "workflows"]
+  repos.each do |repo|
+    downloadBadge(repo, destdir, false)
+  end
 
   destdir = File.join('assets', 'shields', 'downloads', 'release')
   FileUtils.rm_rf destdir
   FileUtils.mkdir_p destdir
 
-  downloadBadge("bioc", destdir, true)
-  downloadBadge("annotation", destdir, true)
-  downloadBadge("experiment", destdir, true)
-  downloadBadge("workflows", destdir, true)
-
+  repos.each do |repo|
+    downloadBadge(repo, destdir, true)
+  end
 
 end
 
@@ -622,11 +621,37 @@ task :get_last_commit_date_shields do
 end # task
 
 
+# this shouldn't update very often, run crontab once a month
+desc "process dependency badge"
+task :process_dependency_badge do
+
+  destdir = File.join('assets', 'shields', 'dependencies', 'devel')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+
+  repos = ["bioc", "experiment", "workflows"]
+  repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", devel"
+    dependencyBadge(repo, destdir, false)
+  end
+
+  destdir = File.join('assets', 'shields', 'dependencies', 'release')
+  FileUtils.rm_rf destdir
+  FileUtils.mkdir_p destdir
+
+  repos.each do |repo|
+    puts "GENERATING BADGES: " + repo + ", release"
+    dependencyBadge(repo, destdir, true)
+  end
+
+end
+
 desc "get all shields"
 task :get_all_shields => [:get_build_dbs,
   :process_downloads_data, :get_post_tag_info,
   :get_years_in_bioc_shields, :copy_assets,
-  :get_availability_shields, :get_last_commit_date_shields]
+  :get_availability_shields, :get_last_commit_date_shields,
+  :process_dependency_badge]
 
 # should be run every time mirror info in config.yaml changes
 # that's hard to remember do to, so
