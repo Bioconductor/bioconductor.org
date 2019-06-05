@@ -649,12 +649,14 @@ def get_year_shield(package, make_shield=false, conf=nil)
     else
       if make_shield
         puts "Downloading years-in-bioc shield for #{package}..."
+        puts "#{yib}"
         resp = HTTParty.get("https://img.shields.io/badge/in_Bioc-#{URI::encode(yib)}-87b13f.svg")
         if (resp.code == 200)
           fh = File.open(shield, 'w')
           fh.write(resp.to_s)
           fh.close
         else
+          puts "ERROR: "+resp.code.to_s
           FileUtils.cp(File.join('assets', 'images', 'shields',
             'in_bioc', "unknown-bioc.svg"), shield)
         end

@@ -385,6 +385,7 @@ task :get_build_dbs do
   FileUtils.mkdir_p(build_dbs_dir)
   %w(release devel).each do |version|
     %w(bioc data-experiment workflows).each do |repo|
+      puts "Working On: #{version} #{repo}"
       url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt"
       dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
       dest_etag_name = dest_file_name.sub("dcf", "etag")
@@ -594,32 +595,60 @@ task :get_last_commit_date_shields do
 	shield_dir = File.join("assets", "shields", "lastcommit", reldev, repo)
 	FileUtils.mkdir_p shield_dir
 	if (not day.empty?)
+            puts "DAY"
 	    img = File.join("assets","images","shields","lastcommit", "Day.svg")
-	    day.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    day.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not week.empty?)
+            puts "WEEK"
 	    img = File.join("assets","images","shields","lastcommit", "Week.svg")
-	    week.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    week.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not month.empty?)
+            puts "MONTH"
 	    img = File.join("assets","images","shields","lastcommit", "Month.svg")
-	    month.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    month.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not three.empty?)
+            "THREE MONTHS"
 	    img = File.join("assets","images","shields","lastcommit", "ThreeMonths.svg")
-	    three.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    three.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not release.empty?)
+            "SINCE RELEASE"
 	    img = File.join("assets","images","shields","lastcommit", "LastRelease.svg")
-	    release.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    release.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not none.empty?)
+            "NONE"
 	    img = File.join("assets","images","shields","lastcommit", "None.svg")
-	    none.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    none.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 	if (not unknown.empty?)
+            "UNKNOWN"
 	    img = File.join("assets","images","shields","lastcommit", "Unknown.svg")
-	    unknown.each{|pkg| FileUtils.cp img, File.join(shield_dir, (pkg+".svg")) }
+	    unknown.each{|pkg|
+                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+                puts "    #{pkg}"
+            }
 	end
 
      end # repo
