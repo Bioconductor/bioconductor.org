@@ -166,6 +166,13 @@ def dependencyBadge(repo, destdir, release=false)
   numeric_version = (release) ? site_config['release_version'] : site_config['devel_version']
   json_file = (repo == 'experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
   json_obj = JSON.parse(File.read(json_file))
+  counts = []
+  json_obj.each_key { |key| 
+    dep = json_obj[key]["dependencyCount"]
+    if not dep.nil?
+      counts.push(dep.to_i)
+    end
+  }
   for pkg in json_obj.keys
     puts "#{pkg}"
     info = json_obj[pkg]
@@ -173,7 +180,14 @@ def dependencyBadge(repo, destdir, release=false)
     if (info.key?("dependencyCount"))
       cnt = info["dependencyCount"]
       puts "#{pkg} : #{cnt}"
-      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-blue.svg")
+      clr = "blue"
+      if counts.percentile(80).floor <= cnt.to_i
+        clr = "orange"
+      end
+      if counts.percentile(95).floor <= cnt.to_i
+         clr =  "red"
+      end
+      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-#{clr}.svg")
       if (resp.code == 200)
         fh = File.open(shield, 'w')
         fh.write(resp.to_s)
@@ -188,5 +202,45 @@ def dependencyBadge(repo, destdir, release=false)
     end
   end
   puts "done"
+
+end
+
+
+def platform_availability(item)
+
+  pkg = item['Package']
+  unsupported = item['UnsupportedPlatforms']
+  status = item['PackageStatus']
+  img = "unknown-build"
+  if status == "Deprecated"
+    img = "none"
+  else
+    if unsupported == "None"
+      img = "all"
+    else
+      img = "some"
+    end
+  end
+  return(img)
+
+end
+
+def get_availability(item, numeric_version)
+
+  img = platform_availability(item)
+  availabilityBadge(item['Package'], img, numeric_version)
+
+end
+
+def availabilityBadge(pkg, img, numeric_version)
+
+  puts "Creating badge for #{pkg} :  #{img}"
+  srcdir = File.join('assets', 'images', 'shields', 'availability')
+  destdir = File.join('assets', 'shields', 'availability', numeric_version)
+  FileUtils.mkdir_p destdir
+  src = File.join(srcdir, "#{img}.svg")
+  dest = File.join(destdir, "#{pkg}.svg")
+  res = FileUtils.copy(src, dest)
+  puts("    copied #{src} to #{dest}")
 
 end

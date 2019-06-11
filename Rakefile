@@ -448,28 +448,41 @@ end
 # set this to run in crontab
 desc "get pkg availability info"
 task :get_availability_shields  do
-#  dante
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
+    puts "Working on #{reldev}"
     numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
-    unsupported_platforms = {}
     meat_index_file = File.join("tmp", "build_dbs","#{reldev}-bioc.meat-index.txt")
-    json_file = File.join("assets", "packages", "json", numeric_version, "bioc",
-      "packages.json")
+    json_file = File.join("assets", "packages", "json", numeric_version, "bioc", "packages.json")
+
+    indexList=[]
     if File.exists? meat_index_file
+
       mitxt = File.readlines(meat_index_file).join
       meat_index = Dcf.parse(mitxt)
       json_obj = JSON.parse(File.read(json_file))
+
       if (not meat_index.nil?)
 	for item in meat_index
-	  view = json_obj[item['Package']]
-	  next if view.nil?
-	  get_available(item, numeric_version, view)
+	  get_availability(item, numeric_version)
+	  indexList.push(item['Package'])
 	end
+	unknown = json_obj.keys.sort - indexList.sort
+	if unknown.length != 0
+	  for item in unknown
+	    availabilityBadge(item, "unknown-build", numeric_version)
+	  end
+	end
+      else
+	puts "ERROR meat_index nil"
       end
+    else
+      puts "ERROR meat_index doesn't exist"
     end
   end
 end
+
+
 
 # set this to run in crontab
 desc "get info about post tags"
@@ -548,7 +561,7 @@ task :get_last_commit_date_shields do
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
      for repo in ['bioc', 'data-experiment', 'workflows']
-        puts "writing badges for #{reldev} #{repo}"
+	puts "writing badges for #{reldev} #{repo}"
 	numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
 	unsupported_platforms = {}
 	json_file = (repo == 'data-experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
@@ -595,60 +608,60 @@ task :get_last_commit_date_shields do
 	shield_dir = File.join("assets", "shields", "lastcommit", reldev, repo)
 	FileUtils.mkdir_p shield_dir
 	if (not day.empty?)
-            puts "DAY"
+	    puts "DAY"
 	    img = File.join("assets","images","shields","lastcommit", "Day.svg")
 	    day.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not week.empty?)
-            puts "WEEK"
+	    puts "WEEK"
 	    img = File.join("assets","images","shields","lastcommit", "Week.svg")
 	    week.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not month.empty?)
-            puts "MONTH"
+	    puts "MONTH"
 	    img = File.join("assets","images","shields","lastcommit", "Month.svg")
 	    month.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not three.empty?)
-            "THREE MONTHS"
+	    "THREE MONTHS"
 	    img = File.join("assets","images","shields","lastcommit", "ThreeMonths.svg")
 	    three.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not release.empty?)
-            "SINCE RELEASE"
+	    "SINCE RELEASE"
 	    img = File.join("assets","images","shields","lastcommit", "LastRelease.svg")
 	    release.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not none.empty?)
-            "NONE"
+	    "NONE"
 	    img = File.join("assets","images","shields","lastcommit", "None.svg")
 	    none.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 	if (not unknown.empty?)
-            "UNKNOWN"
+	    "UNKNOWN"
 	    img = File.join("assets","images","shields","lastcommit", "Unknown.svg")
 	    unknown.each{|pkg|
-                FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
-                puts "    #{pkg}"
-            }
+		FileUtils.cp img, File.join(shield_dir, (pkg+".svg"))
+		puts "    #{pkg}"
+	    }
 	end
 
      end # repo
