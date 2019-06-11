@@ -166,6 +166,13 @@ def dependencyBadge(repo, destdir, release=false)
   numeric_version = (release) ? site_config['release_version'] : site_config['devel_version']
   json_file = (repo == 'experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
   json_obj = JSON.parse(File.read(json_file))
+  counts = []
+  json_obj.each_key { |key| 
+    dep = json_obj[key]["dependencyCount"]
+    if not dep.nil?
+      counts.push(dep.to_i)
+    end
+  }
   for pkg in json_obj.keys
     puts "#{pkg}"
     info = json_obj[pkg]
@@ -173,7 +180,14 @@ def dependencyBadge(repo, destdir, release=false)
     if (info.key?("dependencyCount"))
       cnt = info["dependencyCount"]
       puts "#{pkg} : #{cnt}"
-      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-blue.svg")
+      clr = "blue"
+      if counts.percentile(80).floor <= cnt.to_i
+        clr = "orange"
+      end
+      if counts.percentile(95).floor <= cnt.to_i
+         clr =  "red"
+      end
+      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-#{clr}.svg")
       if (resp.code == 200)
         fh = File.open(shield, 'w')
         fh.write(resp.to_s)
