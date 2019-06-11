@@ -448,28 +448,63 @@ end
 # set this to run in crontab
 desc "get pkg availability info"
 task :get_availability_shields  do
-#  dante
   site_config = YAML.load_file("./config.yaml")
   for reldev in ['release', 'devel']
+    puts "Working on #{reldev}"
     numeric_version = (reldev == 'release') ? site_config['release_version'] : site_config['devel_version']
-    unsupported_platforms = {}
     meat_index_file = File.join("tmp", "build_dbs","#{reldev}-bioc.meat-index.txt")
-    json_file = File.join("assets", "packages", "json", numeric_version, "bioc",
-      "packages.json")
+    json_file = File.join("assets", "packages", "json", numeric_version, "bioc", "packages.json")
+    json_obj = JSON.parse(File.read(json_file))
+    indexList=[]
     if File.exists? meat_index_file
       mitxt = File.readlines(meat_index_file).join
       meat_index = Dcf.parse(mitxt)
-      json_obj = JSON.parse(File.read(json_file))
       if (not meat_index.nil?)
-	for item in meat_index
-	  view = json_obj[item['Package']]
-	  next if view.nil?
-	  get_available(item, numeric_version, view)
-	end
+        for item in meat_index
+          pkg = item['Package']
+          unsupported = item['UnsupportedPlatforms']
+          status = item['PackageStatus']
+          if status == "Deprecated"
+            img = "none"
+          else
+            if unsupported == "None"
+              img = "all"
+            else
+              img = "some"
+            end
+          end
+          puts "Creating badge for #{pkg} :  #{img}"
+          srcdir = File.join('assets', 'images', 'shields', 'availability')
+          destdir = File.join('assets', 'shields', 'availability', numeric_version)
+          FileUtils.mkdir_p destdir
+          src = File.join(srcdir, "#{img}.svg")
+          dest = File.join(destdir, "#{pkg}.svg")
+          res = FileUtils.copy(src, dest)
+          puts("    copied #{src} to #{dest}")
+          indexList.push(pkg)
+        end
+        unknown = json_obj.keys.sort - indexList.sort
+        if unknown.length != 0
+          for item in unknown
+            puts "Creating badge for #{item} :  unknown"
+            srcdir = File.join('assets', 'images', 'shields', 'availability')
+            destdir = File.join('assets', 'shields', 'availability', numeric_version)
+            src = File.join(srcdir, "unknown-build.svg")
+            dest = File.join(destdir, "#{item}.svg")
+            res = FileUtils.copy(src, dest)
+            puts("    copied #{src} to #{dest}")
+          end
+        end
+      else
+        puts "ERROR meat_index nil"
       end
+    else
+      puts "ERROR meat_index doesn't exist"
     end
   end
 end
+
+
 
 # set this to run in crontab
 desc "get info about post tags"
