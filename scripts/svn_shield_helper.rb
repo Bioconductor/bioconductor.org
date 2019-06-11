@@ -204,3 +204,43 @@ def dependencyBadge(repo, destdir, release=false)
   puts "done"
 
 end
+
+
+def platform_availability(item)
+
+  pkg = item['Package']
+  unsupported = item['UnsupportedPlatforms']
+  status = item['PackageStatus']
+  img = "unknown-build"
+  if status == "Deprecated"
+    img = "none"
+  else
+    if unsupported == "None"
+      img = "all"
+    else
+      img = "some"
+    end
+  end
+  return(img)
+
+end
+
+def get_availability(item, numeric_version)
+
+  img = platform_availability(item)
+  availabilityBadge(item['Package'], img, numeric_version)
+
+end
+
+def availabilityBadge(pkg, img, numeric_version)
+
+  puts "Creating badge for #{pkg} :  #{img}"
+  srcdir = File.join('assets', 'images', 'shields', 'availability')
+  destdir = File.join('assets', 'shields', 'availability', numeric_version)
+  FileUtils.mkdir_p destdir
+  src = File.join(srcdir, "#{img}.svg")
+  dest = File.join(destdir, "#{pkg}.svg")
+  res = FileUtils.copy(src, dest)
+  puts("    copied #{src} to #{dest}")
+
+end
