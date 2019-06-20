@@ -48,6 +48,4 @@ The Technical Advisory Board meets monthly. Minutes are available
 within 30 days of each meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-<!--
 - [2019-05-02](2019-05-02-minutes.pdf)
--->
