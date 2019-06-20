@@ -72,6 +72,7 @@ def get_post_tag_info()
   FileUtils.mkdir_p dest_dir
 
   for pkg in pkgs
+    puts "getting shield for #{pkg}"
     if hsh.has_key? pkg.downcase
       num = hsh[pkg.downcase].length
       relevant = res.find_all{|i| hsh[pkg.downcase].include? i[:id]}
@@ -91,15 +92,18 @@ def get_post_tag_info()
       a_avg =  sprintf("%0.1g", answers.inject(0.0) { |sum, el| sum + el } / answers.size)
       c_avg =  sprintf("%0.1g", comments.inject(0.0) { |sum, el| sum + el } / comments.size)
       shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}".gsub(' ', '%20')
-      puts "getting shield for #{pkg}"
       response = HTTParty.get("https://img.shields.io/badge/posts-#{shield_text}-87b13f.svg")
       if response.code == 200
+        puts "#{shield_text}"
         sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
         sf.write(response.to_s)
         sf.close
+      else
+        puts "ERROR: "+resp.code.to_s
       end
 
     else
+      puts "zero_shield"
       FileUtils.cp zero_shield, File.join(dest_dir, "#{pkg}.svg")
     end
   end
