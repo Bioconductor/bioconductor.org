@@ -25,11 +25,11 @@ provide pathway, organism, microarray and other annotations.
 The _Bioconductor_ project started in 2001 and is overseen by a [core
 team](/about/core-team/), based primarily at [Roswell Park Cancer
 Institute](https://www.roswellpark.org), and by other members coming
-from US and international institutions. A Technical Advisory Board of
+from US and international institutions. A [Technical Advisory Board][Technical] of
 key participants meets monthly to support the _Bioconductor_ mission
 by developing strategies to ensure long-term technical suitability of
 core infrastructure, and to identify and enable funding strategies for
-long-term viability. A Scientific Advisory Board including external
+long-term viability. A [Scientific Advisory Board][Scientific] including external
 experts provides annual guidance and accountability.
 
 Key citations to the project include Huber et al., 2015 [Nature
