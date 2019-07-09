@@ -1254,8 +1254,10 @@ def render_courses()
 
     lines = lines.sort do |a,b|
         d1 = a.split("\t").first.split(" ").last.strip
+        t1 = a.split("\t")[3]
         d2 = b.split("\t").first.split(" ").last.strip
-        d2 <=> d1
+        t2 = b.split("\t")[3]
+        [d2, t1] <=> [d1, t2]   # most recent date, then alpha by title
     end
 
 
