@@ -92,7 +92,7 @@ without using GitHub.
 A new commit message will show up after this step, with the
 message `Merge branch 'master' into <RELEASE_X_Y>`. It will be
 committed to `<RELEASE_X_Y>` branch when you save. Update the
-version number so that it is correct for the release, and commit
+[version number][] so that it is correct for the release, and commit
 the modified DESCRIPTION file
 
 	git add DESCRIPTION
@@ -103,3 +103,5 @@ the modified DESCRIPTION file
 		git push upstream <RELEASE_X_Y>
 
 [submit-keys]: https://git.bioconductor.org/BiocCredentials
+
+[version number]: https://bioconductor.org/developers/how-to/version-numbering/
