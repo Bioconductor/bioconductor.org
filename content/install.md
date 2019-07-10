@@ -125,9 +125,9 @@ version of R is out-of-date.
 
 For more details on <em>Bioconductor</em> approaches to versioning, see
 the <a
-href="/help/newsletters/2016_January/#managing-package-versions-with-">newsletter</a>
-and version numbering <a
-href="/developers/how-to/version-numbering/">developer reference</a>.
+href="https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html#managing-multiple-versions">advanced section</a>
+in the vignette and version numbering in the <a
+href="/developers/how-to/version-numbering/">developer reference</a> section.
 
 <h3>Recompiling installed <em>Bioconductor</em> packages</h3>
 
