@@ -45,7 +45,7 @@ board. Governance was formalized in February, 2019.
 ## Meeting minutes
 
 The Technical Advisory Board meets monthly. Minutes of the last meeting are made available
-after being approved by the board on the following meeting. The first meeting for which public
+within 1 week, by approval via anonymous doodle poll. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
 - [2019-07-10](2019-07-10-minutes.pdf) [2019-06-06](2019-06-06-minutes.pdf), [2019-05-02](2019-05-02-minutes.pdf)
