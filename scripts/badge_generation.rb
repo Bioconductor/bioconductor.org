@@ -1,0 +1,491 @@
+#!/usr/bin/env ruby
+
+require 'yaml'
+require 'httparty'
+require 'date'
+require 'fileutils'
+require 'descriptive_statistics'
+require 'sequel'
+
+################################################################
+#
+# This script contains main functions and helper functions 
+# to generate the badges on the package landing pages
+#
+################################################################
+
+
+############################################
+#
+# 1. Platforms:  
+#    Also known as availability
+#
+#  See Rake task: get_availability_shields 
+#
+############################################
+
+def get_availability(item, numeric_version)
+
+  img = platform_availability(item)
+  availabilityBadge(item['Package'], img, numeric_version)
+
+end
+
+def availabilityBadge(pkg, img, numeric_version)
+
+  puts "Creating badge for #{pkg} :  #{img}"
+  srcdir = File.join('assets', 'images', 'shields', 'availability')
+  destdir = File.join('assets', 'shields', 'availability', numeric_version)
+  FileUtils.mkdir_p destdir
+  src = File.join(srcdir, "#{img}.svg")
+  dest = File.join(destdir, "#{pkg}.svg")
+  res = FileUtils.copy(src, dest)
+  puts("    copied #{src} to #{dest}")
+
+end
+
+def platform_availability(item)
+
+  pkg = item['Package']
+  unsupported = item['UnsupportedPlatforms']
+  status = item['PackageStatus']
+  img = "unknown-build"
+  if status == "Deprecated"
+    img = "none"
+  else
+    if unsupported == "None"
+      img = "all"
+    else
+      img = "some"
+    end
+  end
+  return(img)
+
+end
+
+#########################################
+#
+# 2. Rank:  
+#    lower number more downloads
+#
+#  See rake task:  process_downloads_data   
+#
+#########################################
+
+
+def downloadBadge(repo, destdir, release=false)
+
+  filtered_data = getRanking(repo, release)
+  len = filtered_data.length.to_s
+
+  filtered_data.each_with_index { |(key, value), index|
+    pkg =  key
+    shield = File.join(destdir, "#{pkg}.svg")
+    rank = "#{value} / #{len}"
+    puts pkg
+    puts rank
+    resp = HTTParty.get("https://img.shields.io/badge/rank-#{URI::encode(rank)}-blue.svg")
+    if (resp.code == 200)
+      fh = File.open(shield, 'w')
+      fh.write(resp.to_s)
+      fh.close
+    else
+      puts "ERROR: "+resp.code.to_s
+      FileUtils.cp(File.join('assets', 'images', 'shields',
+       'downloads', "unknown-downloads.svg"), shield)
+    end
+    puts "done"
+  }
+
+end
+
+def getRanking(repo, release=false)
+  if ["bioc", "workflows"].include? repo
+     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_scores.tab"))
+  else
+     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_scores.tab"))
+  end
+  urls = [url]
+
+  raw_data = Hash.new(0)
+
+  urls.each do |url|
+    lines = HTTParty.get(url).split("\n")
+    for line in lines
+      next if line =~ /^Package\tDownload_score/ # skip header
+      package, distinct_ips = line.strip.split(/\t/)
+      raw_data[package] = Integer(distinct_ips)
+     end
+  end
+
+  sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
+
+  # filter on above helpers for active packages
+  case repo
+  when "workflows"
+      pkgs = get_list_of_workflows(release=release)
+  when "annotation"
+      pkgs = get_annotation_package_list(release=release)
+  when "experiment"
+      pkgs = get_list_of_packages(bioc=false, release=release)
+  when "bioc"
+      pkgs = get_list_of_packages(bioc=true, release=release)
+  end
+
+  filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
+  # add packages with no download stats yet
+  nostats = pkgs.reject{|x| filtered_data.keys.include? x}
+  nostats.each do |pkg|
+      filtered_data[pkg] = 0
+  end
+
+  # add sorting ranking for ties
+  # ties will have highest rank, i.e  if 1:3 are all the same
+  # 1:3 get ranked 1/4 then 4 would rank 4/4 etc ...
+  preVal = 0
+  rankHash = Hash.new(0)
+  filtered_data.each_with_index { |(key, value), index|
+    if preVal != value
+      rankHash["#{key}"] = index+1
+      preVal = value
+    else
+      rankHash["#{key}"] = rankHash[rankHash.keys[index-1]]
+    end
+  }
+  rankHash
+
+end
+
+######################################
+#
+# 3. Posts:  
+#    support site tags
+#
+#  See rake task: get_post_tag_info
+#
+######################################
+
+
+DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@support.bioconductor.org:6432/biostar")
+
+
+def get_post_tag_info()
+
+  pkgs = []
+
+  [true, false].each do |state|
+    pkgs += get_list_of_packages(state)
+    pkgs += get_annotation_package_list(state)
+    pkgs += get_list_of_workflows(state)
+  end
+
+  pkgs = pkgs.uniq
+
+  posts_post = DB[:posts_post]
+
+
+  today = Date.today
+  now = DateTime.new(today.year, today.month, today.day)
+  sixmonthsago = now
+  months = [now]
+
+  6.times do
+    tmp = sixmonthsago.prev_month
+    months << tmp
+    sixmonthsago = tmp
+  end
+  months.reverse!
+  ranges = []
+  for i in 0..(months.length()-2)
+    ranges.push months[i]..months[i+1]  
+  end
+  new_range = ranges.last.first..ranges.last.last.next_day
+  ranges.pop
+  ranges.push new_range
+
+
+  res = posts_post.where(Sequel.lit("lastedit_date > ?", sixmonthsago)).select(:id, :tag_val, :status, :type, :has_accepted, :root_id, :parent_id, :reply_count).all
+
+
+  hsh = Hash.new { |h, k| h[k] = [] }
+
+  for item in res
+    id = item[:id].to_i
+    tags = item[:tag_val].split(',')
+    for tag in tags
+      tag.strip!
+      tag.downcase!
+      hsh[tag] << id
+    end
+  end
+
+  hsh.each_pair {|k,v| hsh[k] = v.sort.uniq}
+
+  # Support activity: tagged questions, answers / comments per question;
+  # % closed, 6 month rolling average
+
+  zero_shield = File.join("assets", "images", "shields", "posts",
+    "zero.svg")
+  dest_dir = File.join("assets", "shields", "posts")
+  # remove dir first?
+  FileUtils.mkdir_p dest_dir
+
+  for pkg in pkgs
+    puts "getting shield for #{pkg}"
+    if hsh.has_key? pkg.downcase
+      num = hsh[pkg.downcase].length
+      relevant = res.find_all{|i| hsh[pkg.downcase].include? i[:id]}
+      questions = relevant.find_all{|i| i[:id] == i[:parent_id]}
+
+      q = questions.length
+      closed = questions.find_all{|i| i[:has_accepted] == true}.length
+      answers = []
+      comments = []
+
+      for question in questions
+        answers << res.find_all{|i| question[:id] == i[:root_id] and i[:type] == 1}.length
+        comments << res.find_all{|i| question[:id] == i[:root_id] and i[:type] == 6}.length
+      end
+
+
+      a_avg =  sprintf("%0.1g", answers.inject(0.0) { |sum, el| sum + el } / answers.size)
+      c_avg =  sprintf("%0.1g", comments.inject(0.0) { |sum, el| sum + el } / comments.size)
+      shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}".gsub(' ', '%20')
+      response = HTTParty.get("https://img.shields.io/badge/posts-#{shield_text}-87b13f.svg")
+      if response.code == 200
+        puts "#{shield_text}"
+        sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
+        sf.write(response.to_s)
+        sf.close
+      else
+        puts "ERROR: "+resp.code.to_s
+      end
+
+    else
+      puts "zero_shield"
+      FileUtils.cp zero_shield, File.join(dest_dir, "#{pkg}.svg")
+    end
+  end
+
+end
+
+if __FILE__ == $0
+  do_it()
+end
+
+############################################
+#
+# 4. In Bioc: 
+#    in bioconductor since 
+#
+#  See rake task: get_years_in_bioc_shields
+#
+############################################
+
+# See lib/helpers.rb 
+# get_year_shield / years_in_bioc / since
+# That code remains there so it is accessible when used for 
+# package landing page
+
+
+
+######################################
+#
+# 5. build:  
+#    build status 
+#
+#   See rake task: get_build_dbs
+#
+######################################
+
+def generate_build_shields(outdir, build_db)
+  FileUtils.rm_rf outdir
+  FileUtils.mkdir_p  outdir
+  data = File.readlines(build_db)
+  packages = data.map{|i| i.split('#').first}.uniq
+
+  colors = {"OK" => "green", "WARNINGS" => "yellow",
+    "ERROR" => "red", "TIMEOUT" => "AA0088"}
+
+  srcdir = File.join("assets", "images", "shields", "builds")
+
+  for package in packages
+    relevant = data.find_all{|i| i =~ /^#{package}#/}
+    statuses = relevant.map {|i| i.split(' ').last.strip}
+    statuses = statuses.reject{|i| i == "NotNeeded"}
+    statuses = statuses.uniq
+    if statuses.length == 1 and statuses.first == "OK"
+      final_status = "OK"
+    elsif statuses.include? "ERROR"
+      final_status = "ERROR"
+    elsif statuses.include? "TIMEOUT"
+      final_status = "TIMEOUT"
+    elsif statuses.include? "WARNINGS"
+      final_status = "WARNINGS"
+    elsif statuses.include? "NA"
+      final_status = "OK"
+    elsif statuses.include? "skipped"
+      final_status = "OK"
+    else
+      raise "Logic fail!"
+    end
+    color = colors[final_status]
+    puts("creating shield for #{package} in #{outdir}...") # remove me?
+    FileUtils.cp(File.join(srcdir, "#{final_status}.svg"), File.join(outdir, "#{package}.svg"))
+  end
+end
+
+
+###############################################
+#
+# 6. updates:  
+#    last commit date 
+#
+#  See rake task: get_last_commit_date_shields
+#
+###############################################
+
+#
+# All badge generation task executed
+# by Rake task
+#
+
+
+###########################################
+#
+# 7. dependencies:  
+#    dependency count
+#
+#  See rake task: process_dependency_badge
+#
+###########################################
+
+def dependencyBadge(repo, destdir, release=false)
+  site_config = YAML.load_file("./config.yaml")
+  numeric_version = (release) ? site_config['release_version'] : site_config['devel_version']
+  json_file = (repo == 'experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
+  json_obj = JSON.parse(File.read(json_file))
+  counts = []
+  json_obj.each_key { |key| 
+    dep = json_obj[key]["dependencyCount"]
+    if not dep.nil?
+      counts.push(dep.to_i)
+    end
+  }
+  for pkg in json_obj.keys
+    puts "#{pkg}"
+    info = json_obj[pkg]
+    shield = File.join(destdir, "#{pkg}.svg")
+    if (info.key?("dependencyCount"))
+      cnt = info["dependencyCount"]
+      puts "#{pkg} : #{cnt}"
+      clr = "blue"
+      if counts.percentile(80).floor <= cnt.to_i
+        clr = "orange"
+      end
+      if counts.percentile(95).floor <= cnt.to_i
+         clr =  "red"
+      end
+      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-#{clr}.svg")
+      if (resp.code == 200)
+        fh = File.open(shield, 'w')
+        fh.write(resp.to_s)
+        fh.close
+      else
+        puts "ERROR: "+resp.code.to_s
+        FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
+      end
+    else
+      puts "#{pkg} : dependencies not found"
+      FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
+    end
+  end
+  puts "done"
+
+end
+
+
+
+
+######################################
+#
+#
+# Other helper functions
+#
+#
+######################################
+
+def get_list_of_packages(bioc=true, release=false)
+    config = YAML.load_file("./config.yaml")
+    path = "../manifest"
+
+    if release
+      version = config['release_version']
+      branch = "RELEASE_#{version.sub('.', '_')}"
+    else
+      version = config['devel_version']
+      branch = 'master'
+    end
+
+    if bioc
+      manifest_file = "software.txt"
+    else
+      manifest_file = "data-experiment.txt"
+    end
+
+    filepath = "#{path}/#{manifest_file}"
+    # check about git pull and forcing overwrite
+    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
+
+    file = File.open(filepath, "rb")
+    contents = file.read
+    pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
+    file.close
+    system("git -C #{path} checkout master")
+    pkgs
+end
+
+def get_annotation_package_list(release=false)
+  pkgs = []
+  if release
+    version = 'release'
+  else
+    version = 'devel'
+  end
+  url = "http://bioconductor.org/packages/#{version}/data/annotation/src/contrib/PACKAGES"
+  res = HTTParty.get(url).to_s
+  res.split("\n").each do |line|
+    if line =~ /^Package: /
+      pkgs << line.strip.sub(/^Package: /, "")
+    end
+  end
+  pkgs
+end
+
+def get_list_of_workflows(release=false)
+    config = YAML.load_file("./config.yaml")
+    path = "../manifest"
+
+    if release
+      version = config['release_version']
+      branch = "RELEASE_#{version.sub('.', '_')}"
+    else
+      version = config['devel_version']
+      branch = 'master'
+    end
+
+    manifest_file = "workflows.txt"
+
+    filepath = "#{path}/#{manifest_file}"
+    # check about git pull and forcing overwrite
+    system("git -C #{path} checkout #{branch} && git -C #{path} pull")
+
+    file = File.open(filepath, "rb")
+    contents = file.read
+    pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
+    file.close
+    system("git -C #{path} checkout master")
+    pkgs
+end
+
+

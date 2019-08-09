@@ -6,8 +6,7 @@ require './lib/data_sources/gmane_list.rb'
 require './scripts/search_indexer.rb'
 require './scripts/parse_bioc_views.rb'
 require './scripts/get_json.rb'
-require './scripts/generate_build_shields.rb'
-require './scripts/svn_shield_helper.rb'
+require './scripts/badge_generation.rb'
 require 'open3'
 require 'find'
 require 'pathname'
@@ -377,6 +376,14 @@ task :get_build_result_dcfs, :repo do |t, args|
     end
 end
 
+desc "do push tasks"
+task :push => [:copy_assets, :deploy_staging, :deploy_production]
+
+desc "pull manifests"
+task :pull_manifests do
+  system("git -C ../manifest/ pull --all")
+end
+
 # originally run every 15 minutes - but it will only change with build report so
 # now once a day
 desc "download build system databases and get build shields"
@@ -487,17 +494,10 @@ end
 # set this to run in crontab
 desc "get info about post tags"
 task :get_post_tag_info do
-  require './scripts/get_post_tag_info.rb'
+  require './scripts/badge_generation.rb'
   get_post_tag_info()
 end
 
-desc "do push tasks"
-task :push => [:copy_assets, :deploy_staging, :deploy_production]
-
-desc "pull manifests"
-task :pull_manifests do
-  system("git -C ../manifest/ pull --all")
-end
 
 # shouldn't be run daily - will update minimally
 desc "get years-in-bioc shields"
