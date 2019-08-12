@@ -9,7 +9,7 @@ require 'sequel'
 
 ################################################################
 #
-# This script contains main functions and helper functions 
+# This script contains main functions and helper functions
 # to generate the badges on the package landing pages
 #
 ################################################################
@@ -17,10 +17,10 @@ require 'sequel'
 
 ############################################
 #
-# 1. Platforms:  
+# 1. Platforms:
 #    Also known as availability
 #
-#  See Rake task: get_availability_shields 
+#  See Rake task: get_availability_shields
 #
 ############################################
 
@@ -65,10 +65,10 @@ end
 
 #########################################
 #
-# 2. Rank:  
+# 2. Rank:
 #    lower number more downloads
 #
-#  See rake task:  process_downloads_data   
+#  See rake task:  process_downloads_data
 #
 #########################################
 
@@ -158,141 +158,43 @@ end
 
 ######################################
 #
-# 3. Posts:  
+# 3. Posts:
 #    support site tags
 #
 #  See rake task: get_post_tag_info
 #
 ######################################
 
+# tried to move code to this file
+# however then requires knowledge of
+# Bioconductor sql password for the support
+# site.
+# moved back to separate file which requires
+# the script only when trying to generate the
+# badge
 
-DB = Sequel.connect("postgres://biostar:#{ENV['POSTGRESQL_PASSWORD']}@support.bioconductor.org:6432/biostar")
-
-
-def get_post_tag_info()
-
-  pkgs = []
-
-  [true, false].each do |state|
-    pkgs += get_list_of_packages(state)
-    pkgs += get_annotation_package_list(state)
-    pkgs += get_list_of_workflows(state)
-  end
-
-  pkgs = pkgs.uniq
-
-  posts_post = DB[:posts_post]
-
-
-  today = Date.today
-  now = DateTime.new(today.year, today.month, today.day)
-  sixmonthsago = now
-  months = [now]
-
-  6.times do
-    tmp = sixmonthsago.prev_month
-    months << tmp
-    sixmonthsago = tmp
-  end
-  months.reverse!
-  ranges = []
-  for i in 0..(months.length()-2)
-    ranges.push months[i]..months[i+1]  
-  end
-  new_range = ranges.last.first..ranges.last.last.next_day
-  ranges.pop
-  ranges.push new_range
-
-
-  res = posts_post.where(Sequel.lit("lastedit_date > ?", sixmonthsago)).select(:id, :tag_val, :status, :type, :has_accepted, :root_id, :parent_id, :reply_count).all
-
-
-  hsh = Hash.new { |h, k| h[k] = [] }
-
-  for item in res
-    id = item[:id].to_i
-    tags = item[:tag_val].split(',')
-    for tag in tags
-      tag.strip!
-      tag.downcase!
-      hsh[tag] << id
-    end
-  end
-
-  hsh.each_pair {|k,v| hsh[k] = v.sort.uniq}
-
-  # Support activity: tagged questions, answers / comments per question;
-  # % closed, 6 month rolling average
-
-  zero_shield = File.join("assets", "images", "shields", "posts",
-    "zero.svg")
-  dest_dir = File.join("assets", "shields", "posts")
-  # remove dir first?
-  FileUtils.mkdir_p dest_dir
-
-  for pkg in pkgs
-    puts "getting shield for #{pkg}"
-    if hsh.has_key? pkg.downcase
-      num = hsh[pkg.downcase].length
-      relevant = res.find_all{|i| hsh[pkg.downcase].include? i[:id]}
-      questions = relevant.find_all{|i| i[:id] == i[:parent_id]}
-
-      q = questions.length
-      closed = questions.find_all{|i| i[:has_accepted] == true}.length
-      answers = []
-      comments = []
-
-      for question in questions
-        answers << res.find_all{|i| question[:id] == i[:root_id] and i[:type] == 1}.length
-        comments << res.find_all{|i| question[:id] == i[:root_id] and i[:type] == 6}.length
-      end
-
-
-      a_avg =  sprintf("%0.1g", answers.inject(0.0) { |sum, el| sum + el } / answers.size)
-      c_avg =  sprintf("%0.1g", comments.inject(0.0) { |sum, el| sum + el } / comments.size)
-      shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}".gsub(' ', '%20')
-      response = HTTParty.get("https://img.shields.io/badge/posts-#{shield_text}-87b13f.svg")
-      if response.code == 200
-        puts "#{shield_text}"
-        sf = File.open(File.join(dest_dir, "#{pkg}.svg"), "w")
-        sf.write(response.to_s)
-        sf.close
-      else
-        puts "ERROR: "+resp.code.to_s
-      end
-
-    else
-      puts "zero_shield"
-      FileUtils.cp zero_shield, File.join(dest_dir, "#{pkg}.svg")
-    end
-  end
-
-end
-
-if __FILE__ == $0
-  do_it()
-end
+# See get_post_tag_info.rb
 
 ############################################
 #
-# 4. In Bioc: 
-#    in bioconductor since 
+# 4. In Bioc:
+#    in bioconductor since
 #
 #  See rake task: get_years_in_bioc_shields
 #
 ############################################
 
-# See lib/helpers.rb 
+# See lib/helpers.rb
 # get_year_shield / years_in_bioc / since
-# That code remains there so it is accessible when used for 
+# That code remains there so it is accessible when used for
 # package landing page
 
 
 
 ######################################
 #
-# 5. build:  
-#    build status 
+# 5. build:
+#    build status
 #
 #   See rake task: get_build_dbs
 #
@@ -338,8 +240,8 @@ end
 
 ###############################################
 #
-# 6. updates:  
-#    last commit date 
+# 6. updates:
+#    last commit date
 #
 #  See rake task: get_last_commit_date_shields
 #
@@ -353,7 +255,7 @@ end
 
 ###########################################
 #
-# 7. dependencies:  
+# 7. dependencies:
 #    dependency count
 #
 #  See rake task: process_dependency_badge
@@ -366,7 +268,7 @@ def dependencyBadge(repo, destdir, release=false)
   json_file = (repo == 'experiment') ? File.join("assets", "packages", "json", numeric_version, "data", "experiment","packages.json") : File.join("assets", "packages", "json", numeric_version, repo, "packages.json")
   json_obj = JSON.parse(File.read(json_file))
   counts = []
-  json_obj.each_key { |key| 
+  json_obj.each_key { |key|
     dep = json_obj[key]["dependencyCount"]
     if not dep.nil?
       counts.push(dep.to_i)
@@ -487,5 +389,3 @@ def get_list_of_workflows(release=false)
     system("git -C #{path} checkout master")
     pkgs
 end
-
-
