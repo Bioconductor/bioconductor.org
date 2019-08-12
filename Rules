@@ -118,7 +118,7 @@ preprocess do
     dev_ver = sconfig["devel_version"]
     all_ver = sconfig["release_dates"].keys
     all_ver.push dev_ver
-    man_path = "../manifest/"
+    man_path = "manifest/"
 
     manifests = {}
 
