@@ -278,7 +278,7 @@ def dependencyBadge(repo, destdir, release=false)
     if (info.key?("dependencyCount"))
       cnt = info["dependencyCount"]
       puts "#{pkg} : #{cnt}"
-      template = File.read("/home/lori/a/bioconductor.org/assets/images/shields/dependencies/dependency-temp.svg")
+      template = File.read(File.join('assets', 'images', 'shields', 'dependencies', 'dependency-temp.svg'))
       newbadge = template.gsub(/9999/, cnt)
       if counts.percentile(80).floor <= cnt.to_i
         newbadge = newbadge.gsub(/#007ec6/, '#dd8822')
