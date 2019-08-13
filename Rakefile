@@ -434,8 +434,6 @@ task :process_downloads_data do
   repos.each do |repo|
     puts "GENERATING BADGES: " + repo + ", devel"
     downloadBadge(repo, destdir, false)
-    puts "sleeping for 1 minute"
-    sleep(60)
   end
 
   destdir = File.join('assets', 'shields', 'downloads', 'release')
@@ -445,8 +443,6 @@ task :process_downloads_data do
   repos.each do |repo|
     puts "GENERATING BADGES: " + repo + ", release"
     downloadBadge(repo, destdir, true)
-    puts "sleeping for 1 minute"
-    sleep(60)
   end
 
 end
@@ -681,8 +677,6 @@ task :process_dependency_badge do
   repos.each do |repo|
     puts "GENERATING BADGES: " + repo + ", devel"
     dependencyBadge(repo, destdir, false)
-    puts "sleeping for 1 minute"
-    sleep(60)
   end
 
   destdir = File.join('assets', 'shields', 'dependencies', 'release')
@@ -692,8 +686,6 @@ task :process_dependency_badge do
   repos.each do |repo|
     puts "GENERATING BADGES: " + repo + ", release"
     dependencyBadge(repo, destdir, true)
-    puts "sleeping for 1 minute"
-    sleep(60)
   end
 
 end

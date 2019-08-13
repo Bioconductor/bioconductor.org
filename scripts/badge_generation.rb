@@ -84,16 +84,13 @@ def downloadBadge(repo, destdir, release=false)
     rank = "#{value} / #{len}"
     puts pkg
     puts rank
-    resp = HTTParty.get("https://img.shields.io/badge/rank-#{URI::encode(rank)}-blue.svg")
-    if (resp.code == 200)
-      fh = File.open(shield, 'w')
-      fh.write(resp.to_s)
-      fh.close
-    else
-      puts "ERROR: "+resp.code.to_s
-      FileUtils.cp(File.join('assets', 'images', 'shields',
-       'downloads', "unknown-downloads.svg"), shield)
-    end
+
+    template = File.read(File.join('assets', 'images', 'shields', 'downloads', 'download-temp.svg'))
+    newbadge = template.gsub(/99999\/99999/,rank)
+    newbadge = newbadge.gsub(/x=\"(765)\"/, 'x="700"')
+    newbadge = newbadge.gsub(/width=\"(120)\"/, 'width="110"')
+    File.open(shield, "w") { |file| file.write(newbadge) }
+
     puts "done"
   }
 
@@ -281,25 +278,18 @@ def dependencyBadge(repo, destdir, release=false)
     if (info.key?("dependencyCount"))
       cnt = info["dependencyCount"]
       puts "#{pkg} : #{cnt}"
-      clr = "blue"
+      template = File.read("/home/lori/a/bioconductor.org/assets/images/shields/dependencies/dependency-temp.svg")
+      newbadge = template.gsub(/9999/, cnt)
       if counts.percentile(80).floor <= cnt.to_i
-        clr = "orange"
+        newbadge = newbadge.gsub(/#007ec6/, '#dd8822')
       end
       if counts.percentile(95).floor <= cnt.to_i
-         clr =  "red"
+        newbadge = newbadge.gsub(/#dd8822/, '#bb3333')
       end
-      resp = HTTParty.get("https://img.shields.io/badge/dependencies-#{cnt}-#{clr}.svg")
-      if (resp.code == 200)
-        fh = File.open(shield, 'w')
-        fh.write(resp.to_s)
-        fh.close
-      else
-        puts "ERROR: "+resp.code.to_s
-        FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
-      end
+      File.open(shield, "w") { |file| file.write(newbadge) }
     else
       puts "#{pkg} : dependencies not found"
-      FileUtils.cp(File.join('assets', 'images', 'shields', 'unknown-dependencies.svg'), shield)
+      FileUtils.cp(File.join('assets', 'images', 'shields', 'dependencies', 'unknown-dependencies.svg'), shield)
     end
   end
   puts "done"
