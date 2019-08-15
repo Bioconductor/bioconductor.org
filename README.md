@@ -182,15 +182,6 @@ to install all dependencies, again prepending `sudo` if necessary:
 NOTE: this failed installing the pg gem on Ubuntu 14.04; fixed
 with `sudo apt-get install libpq-dev`
 
-### Obtain manifest git repository.
-
-The `manifest` git repository is available from the Bioconductor git server.
-It contains a list of all current Bioconductor packages. Clone a copy with the
-code source base.
-
-    cd bioconductor.org # if you aren't already in the working copy
-    git clone git@git.bioconductor.org:admin/manifest.git
-
 
 ### Build the site
 
