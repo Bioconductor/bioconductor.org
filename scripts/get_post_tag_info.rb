@@ -88,7 +88,7 @@ def get_post_tag_info()
       shield_text = "#{q} / #{a_avg} / #{c_avg} / #{closed}"
       puts "#{shield_text}"
       shield = File.join(dest_dir, "#{pkg}.svg")
-      template = File.read(File.join('assets', 'images', 'shields', 'posts', 'posts-temp.svg'))
+      template = File.read(File.join('assets', 'images', 'shields', 'posts', 'posts-template.svg'))
       newbadge = template.gsub(/9999\/9999\/9999\/9999/, shield_text)
       newbadge = newbadge.gsub(/x=\"(1065)\"/, 'x="900"')
       newbadge = newbadge.gsub(/width=\"(176)\"/, 'width="140"')

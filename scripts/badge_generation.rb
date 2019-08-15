@@ -85,7 +85,7 @@ def downloadBadge(repo, destdir, release=false)
     puts pkg
     puts rank
 
-    template = File.read(File.join('assets', 'images', 'shields', 'downloads', 'download-temp.svg'))
+    template = File.read(File.join('assets', 'images', 'shields', 'downloads', 'download-template.svg'))
     newbadge = template.gsub(/99999\/99999/,rank)
     newbadge = newbadge.gsub(/x=\"(765)\"/, 'x="700"')
     newbadge = newbadge.gsub(/width=\"(120)\"/, 'width="110"')
@@ -278,7 +278,7 @@ def dependencyBadge(repo, destdir, release=false)
     if (info.key?("dependencyCount"))
       cnt = info["dependencyCount"]
       puts "#{pkg} : #{cnt}"
-      template = File.read(File.join('assets', 'images', 'shields', 'dependencies', 'dependency-temp.svg'))
+      template = File.read(File.join('assets', 'images', 'shields', 'dependencies', 'dependency-template.svg'))
       newbadge = template.gsub(/9999/, cnt)
       if counts.percentile(80).floor <= cnt.to_i
         newbadge = newbadge.gsub(/#007ec6/, '#dd8822')
