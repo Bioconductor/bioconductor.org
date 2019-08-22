@@ -14,7 +14,7 @@ searching in [BiocViews](/packages) for your data type.
   [GenomicAlignments][]`::readGAlignment*()`
 + FASTA -- [Biostrings][]`::readDNAStringSet()`
 + FASTQ -- [ShortRead][]`::readFastq()`
-+ MS data (XML-based and mfg formats) -- [MSnbase][]`::readMSData()`,
++ MS data (XML-based and mgf formats) -- [MSnbase][]`::readMSData()`,
   [MSnbase][]`::readMgfData()`
 
 ## Common Classes
