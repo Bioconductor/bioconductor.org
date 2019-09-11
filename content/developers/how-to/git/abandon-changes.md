@@ -66,10 +66,14 @@ Example:
     HEAD is now at e02e4d8 version bump by bioc core
 
 To make the changes permanent, you will then need to push the changes
-to both GitHub and _Bioconductor_:
+to GitHub, and then email the Bioconductor core team to force push to
+the repository on Bioconductor.
 
-    git push -f origin
-    git push -f upstream
+	## You
+	
+	git push -f origin 
+
+Bioconductor core team will do the rest after you email.
 
 ## Delete your local copy and GitHub repo, because nothing is working
 
