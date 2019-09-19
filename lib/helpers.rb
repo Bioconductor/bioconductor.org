@@ -1657,7 +1657,7 @@ end
 def get_short_url(package, full=false)
   url =  "/packages/#{package[:Package]}/"
   if full
-    "http://bioconductor.org#{url}"
+    "https://bioconductor.org#{url}"
   else
     url
   end
