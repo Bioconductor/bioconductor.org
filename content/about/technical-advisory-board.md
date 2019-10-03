@@ -27,18 +27,26 @@ board. Governance was formalized in February, 2019.
   Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
 * [Sean Davis](http://watson.nci.nih.gov/~sdavis), National
   Cancer Institute, USA.
+* [Laurent Gatto](https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto)
+  Institut de Duve, Belgium.
 * Robert Gentleman, Computational Biology, 23andMe, USA.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
   Bloomberg School of Public Health, Johns Hopkins University.
+* [Stephanie Hicks](https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks)
+  Department of Biostatistics, Johns Hopkins Bloomberg School of
+  Public Health, USA.
 * [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/)
   European Molecular Biology Laboratory, Heidelberg, Germany.
 * [Rafael Irizarry](http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281)
   Dana-Farber Cancer Institute, USA
 * [Michael Lawrence](mailto:lawrence.michael@gene.com), Genentech
   Research and Early Development, USA.
+* [Aaron Lun](mailto:infinite.monkeys.with.keyboards@gmail.com),
+  Genentech Research and Early Development, USA.
 * [Matt Ritchie](https://www.wehi.edu.au/people/matthew-ritchie),
   Walter and Eliza Hall Institute of Medical Research, Melbourne,
   Australia.
+* [Charlotte Soneson](https://csoneson.github.io/), Friedrich Miescher Institute, Basel, Switzerland.
 * [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
   at Hunter College, New York, NY.
 
