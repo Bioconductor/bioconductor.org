@@ -14,7 +14,7 @@ The following highlights important deadlines for the release.
 * Announce deprecated packages for Bioc 3.10. They'll be removed from Bioc 3.11.
   See [End of Life](/developers/package-end-of-life) for details.
 
-### Monday October 14
+### Tuesday October 15
 
 * Stop building Bioc 3.9, current release. Commits to this branch will be
   disabled.
