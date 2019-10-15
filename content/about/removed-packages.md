@@ -3,6 +3,33 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.10 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.7/bioc/html/flowQ.html">flowQ</a></li>
+<li><a href="/packages/3.8/bioc/html/flowQB.html">flowQB</a></li>
+<li><a href="/packages/3.7/bioc/html/ProCoNA.html">ProCoNA</a></li>
+<li><a href="/packages/3.8/bioc/html/htSeqTools.html">htSeqTools</a></li>
+<li><a href="/packages/3.8/bioc/html/rMAT.html">rMAT</a></li>
+<li><a href="/packages/3.8/bioc/html/TSSi.html">TSSi</a></li>
+<li><a href="/packages/3.8/bioc/html/NGScopy.html">NGScopy</a></li>
+<li><a href="/packages/3.8/bioc/html/spliceSites.html">spliceSites</a></li>
+<li><a href="/packages/3.8/bioc/html/SVM2CRM.html">SVM2CRM</a></li>
+<li><a href="/packages/3.8/bioc/html/rSFFreader.html">rSFFreader</a></li>
+<li><a href="/packages/3.8/bioc/html/DOQTL.html">DOQTL</a></li>
+<li><a href="/packages/3.9/bioc/html/miRsponge.html">miRsponge</a> (renamed to miRspongeR) </li>
+</ul>
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.7/data/experiment/html/PGPC.html">PGPC</a></li>
+<li><a href="/packages/3.9/data/experiment/html/flowQBData.html">flowQBData</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.9 release
 
 Software Packages:
