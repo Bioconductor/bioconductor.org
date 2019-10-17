@@ -92,6 +92,7 @@ def get_post_tag_info()
       newbadge = template.gsub(/9999\/9999\/9999\/9999/, shield_text)
       newbadge = newbadge.gsub(/x=\"(1065)\"/, 'x="900"')
       newbadge = newbadge.gsub(/width=\"(176)\"/, 'width="140"')
+      newbadge = newbadge.gsub(/textLength=\"(1270)\"/, '')
       File.open(shield, "w") { |file| file.write(newbadge) }
 
     else

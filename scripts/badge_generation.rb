@@ -89,6 +89,7 @@ def downloadBadge(repo, destdir, release=false)
     newbadge = template.gsub(/99999\/99999/,rank)
     newbadge = newbadge.gsub(/x=\"(765)\"/, 'x="700"')
     newbadge = newbadge.gsub(/width=\"(120)\"/, 'width="110"')
+    newbadge = newbadge.gsub(/textLength=\"(750)\"/, '')
     File.open(shield, "w") { |file| file.write(newbadge) }
 
     puts "done"
@@ -286,6 +287,7 @@ def dependencyBadge(repo, destdir, release=false)
       if counts.percentile(95).floor <= cnt.to_i
         newbadge = newbadge.gsub(/#dd8822/, '#bb3333')
       end
+      newbadge = newbadge.gsub(/textLength=\"(270)\"/, '')
       File.open(shield, "w") { |file| file.write(newbadge) }
     else
       puts "#{pkg} : dependencies not found"
