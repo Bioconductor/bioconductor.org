@@ -655,6 +655,7 @@ def get_year_shield(package, make_shield=false, conf=nil)
         template = File.read(File.join('assets', 'images',
         'shields', 'in_bioc', 'inbioc-template.svg'))
         newbadge = template.gsub(/9999 years/,  yib)
+        newbadge = newbadge.gsub(/textLength=\"(610)\"/, '')
         File.open(shield, "w") { |file| file.write(newbadge) }
 
       end
