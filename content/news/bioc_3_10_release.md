@@ -7,7 +7,7 @@ software packages, 385 experiment data packages, 952 annotation
 packages, and 27 workflows.
 
 There are 93 new software packages, 15 new data experiment packages, 
-1 new annotation package, and many updates and improvements
+2 new annotation packages, and many updates and improvements
 to existing packages; Bioconductor 3.10 is compatible with R 3.6.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -929,9 +929,10 @@ There are 15 new data experiment packages in this release of Bioconductor.
 New Annotation Packages
 =====================
 
-There is 1 new annotation packages in this release of Bioconductor.
+There are 2 new annotation packages in this release of Bioconductor.
 
-- MafDb.gnomAD.r3.0.GRCh38
+- [MafDb.gnomAD.r3.0.GRCh38](https://bioconductor.org/packages/MafDb.gnomAD.r3.0.GRCh38)
+- [org.Mxanthus.db](https://bioconductor.org/packages/org.Mxanthus.db)
 
 
 
