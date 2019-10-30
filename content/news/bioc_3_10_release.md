@@ -6,7 +6,7 @@ We are pleased to announce Bioconductor 3.10, consisting of 1822
 software packages, 385 experiment data packages, 952 annotation
 packages, and 27 workflows.
 
-There are 93 new software packages, 15 new data experiment packages, 
+There are 93 new software packages, 15 new data experiment packages,
 2 new annotation packages, and many updates and improvements
 to existing packages; Bioconductor 3.10 is compatible with R 3.6.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
@@ -766,8 +766,7 @@ There are 93 new software packages in this release of Bioconductor.
   (GAM) for each gene, and performs inference on the parameters of
   the GAM.
 
--
-  [VariantExperiment](https://bioconductor.org/packages/VariantExperiment)
+- [VariantExperiment](https://bioconductor.org/packages/VariantExperiment)
   VariantExperiment is a Bioconductor package for saving data in
   VCF/GDS format into RangedSummarizedExperiment object. The
   high-throughput genetic/genomic data are saved in GDSArray objects.
@@ -943,7 +942,7 @@ NEWS from new and existing Software Packages
 [AffiXcan](https://bioconductor.org/packages/AffiXcan)
 --------
 
-                        Changes in version 1.3.7                        
+Changes in version 1.3.7
 
 UPDATED VIGNETTE
 
@@ -967,7 +966,7 @@ ALSO MODELS' P-VALUES AND RHO ARE RETURNED IN CROSS-VALIDATION
 - P-value of the correlation test of the model's predictions with
   validation data
 
-                        Changes in version 1.3.5                        
+Changes in version 1.3.5
 
 P-VALUE OF THE CORRELATION TEST
 
@@ -978,7 +977,7 @@ P-VALUE OF THE CORRELATION TEST
   for each gene are therefore returned: rho and rho squared (see
   changes in v 1.3.1), and the p-value of cor.test()
 
-                        Changes in version 1.3.3                        
+Changes in version 1.3.3
 
 UPDATED DOCUMENTATION
 
@@ -986,14 +985,14 @@ UPDATED DOCUMENTATION
 
 - Important: vignette is still outdated (AffiXcan 1.2.0)
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 POPULATION STRUCTURE COVARIATES ARE OPTIONAL
 
 - Providing population structure covariates is now not mandatory to
   perform models training
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 K-FOLD CROSS-VALIDATION IS SUPPORTED
 
@@ -1014,14 +1013,14 @@ K-FOLD CROSS-VALIDATION IS SUPPORTED
 [alevinQC](https://bioconductor.org/packages/alevinQC)
 --------
 
-                         Changes in version 1.1                         
+Changes in version 1.1
 
 - Added ability to process output from Salmon v0.14 or later
 
 [AlphaBeta](https://bioconductor.org/packages/AlphaBeta)
 ---------
 
-                 Changes in version 0.99.2 (2019-08-15)                 
+Changes in version 0.99.2 (2019-08-15)
 
 - Fixed bugs.
 
@@ -1031,22 +1030,22 @@ K-FOLD CROSS-VALIDATION IS SUPPORTED
 [ALPS](https://bioconductor.org/packages/ALPS)
 ----
 
-                       Changes in version 0.99.8                        
+Changes in version 0.99.8
 
 - Bioc review fixes
 
-                       Changes in version 0.99.7                        
+Changes in version 0.99.7
 
 - Bioc review fixes
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - FIRST RELEASE
 
 [AneuFinder](https://bioconductor.org/packages/AneuFinder)
 ----------
 
-                       Changes in version 1.12.1                        
+Changes in version 1.12.1
 
 BUG FIXES
 
@@ -1056,7 +1055,7 @@ BUG FIXES
 [AnnotationForge](https://bioconductor.org/packages/AnnotationForge)
 ---------------
 
-                       Changes in version 1.28.0                        
+Changes in version 1.28.0
 
 NEW FEATURES
 
@@ -1065,7 +1064,7 @@ NEW FEATURES
 [AnnotationHub](https://bioconductor.org/packages/AnnotationHub)
 -------------
 
-                       Changes in version 2.17.0                        
+Changes in version 2.17.0
 
 NEW FEATURES
 
@@ -1100,7 +1099,7 @@ BUG FIXES
 [AnnotationHubData](https://bioconductor.org/packages/AnnotationHubData)
 -----------------
 
-                       Changes in version 1.15.0                        
+Changes in version 1.15.0
 
 MODIFICATIONS
 
@@ -1127,20 +1126,20 @@ INTERNAL BUG CORRECTION
 [APAlyzer](https://bioconductor.org/packages/APAlyzer)
 --------
 
-                 Changes in version 0.99.2 (2019-08-18)                 
+Changes in version 0.99.2 (2019-08-18)
 
 - Revise formats to consistent with Bioconductor coding styles.
 
 - Added unit tests
 
-                 Changes in version 0.99.1 (2019-07-14)                 
+Changes in version 0.99.1 (2019-07-14)
 
 - Submitted to Bioconductor
 
 [apeglm](https://bioconductor.org/packages/apeglm)
 ------
 
-                        Changes in version 1.8.0                        
+Changes in version 1.8.0
 
 - Bringing in Josh Zitovsky's work on fast beta binomial GLM fitting in
   C++.
@@ -1148,13 +1147,13 @@ INTERNAL BUG CORRECTION
 [aroma.light](https://bioconductor.org/packages/aroma.light)
 -----------
 
-                 Changes in version 3.15.1 (2019-08-28)                 
+Changes in version 3.15.1 (2019-08-28)
 
 BUG FIXES
 
 - wpca() for matrices had a 'length > 1 in coercion to logical' bug.
 
-                 Changes in version 3.15.0 (2019-05-02)                 
+Changes in version 3.15.0 (2019-05-02)
 
 - The version number was bumped for the Bioconductor devel version,
   which is now BioC 3.10 for R (>= 3.6.0).
@@ -1162,54 +1161,54 @@ BUG FIXES
 [ASpediaFI](https://bioconductor.org/packages/ASpediaFI)
 ---------
 
-                Changes in version 0.99.10 (2019-10-25)                 
+Changes in version 0.99.10 (2019-10-25)
 
 - Fixed issue from quantifying RI and ALSS
 
-                 Changes in version 0.99.9 (2019-10-22)                 
+Changes in version 0.99.9 (2019-10-22)
 
 - Fixed issue from quantifying single-end reads
 
-                 Changes in version 0.99.8 (2019-10-17)                 
+Changes in version 0.99.8 (2019-10-17)
 
 - Made additional changes to conform to Bioconductor guidelines
 
-                 Changes in version 0.99.7 (2019-10-17)                 
+Changes in version 0.99.7 (2019-10-17)
 
 - Made changes to conform to Bioconductor guidelines
 
-                 Changes in version 0.99.6 (2019-10-16)                 
+Changes in version 0.99.6 (2019-10-16)
 
 - Replaced "1:" with "seq_len".
 
-                 Changes in version 0.99.5 (2019-10-15)                 
+Changes in version 0.99.5 (2019-10-15)
 
 - Implemented S4 class instead of reference class.
 
-                 Changes in version 0.99.4 (2019-10-01)                 
+Changes in version 0.99.4 (2019-10-01)
 
 - Fixed vignette issue.
 
-                 Changes in version 0.99.3 (2019-10-01)                 
+Changes in version 0.99.3 (2019-10-01)
 
 - Fixed package loading issue.
 
-                 Changes in version 0.99.2 (2019-10-01)                 
+Changes in version 0.99.2 (2019-10-01)
 
 - Removed .Rproj file
 
-                 Changes in version 0.99.1 (2019-10-01)                 
+Changes in version 0.99.1 (2019-10-01)
 
 - Added NEWS file.
 
-                 Changes in version 0.99.0 (2019-10-01)                 
+Changes in version 0.99.0 (2019-10-01)
 
 - Submitted to Bioconductor.
 
 [AssessORF](https://bioconductor.org/packages/AssessORF)
 ---------
 
-                 Changes in version 1.3.1 (2019-10-22)                  
+Changes in version 1.3.1 (2019-10-22)
 
 - Data for six new strains, S. pyogenes AP1, E. coli BW25113, S. aureus
   HG001, L. lactis MG1363, B. subtilis NCIB 3610, and L. monocytogenes
@@ -1223,42 +1222,42 @@ BUG FIXES
 [ATACseqQC](https://bioconductor.org/packages/ATACseqQC)
 ---------
 
-                        Changes in version 1.9.9                        
+Changes in version 1.9.9
 
 - export prepareBindingSitesList function.  - Add rownames for
 footprintsScanner counts data.
 
-                        Changes in version 1.9.8                        
+Changes in version 1.9.8
 
 - Add error message for vPlot when no paired reads in bam file.
 
-                        Changes in version 1.9.7                        
+Changes in version 1.9.7
 
 - Fix the bug that gscore changed the output for
 splitGAlignmentsByCut.
 
-                        Changes in version 1.9.6                        
+Changes in version 1.9.6
 
 - Try to decrease the memory cost for splitGAlignmentsByCut.
 
-                        Changes in version 1.9.5                        
+Changes in version 1.9.5
 
 - Try to decrease the memory cost for splitGAlignmentsByCut.
 
-                        Changes in version 1.9.4                        
+Changes in version 1.9.4
 
 - Add the error handle if not enough mononucleosome reads for
 splitGAlignmentsByCut.
 
-                        Changes in version 1.9.3                        
+Changes in version 1.9.3
 
 - Try to decrease the memory cost for splitGAlignmentsByCut.
 
-                        Changes in version 1.9.2                        
+Changes in version 1.9.2
 
 - Fix the bug if the bam file containsupplementary alignments.
 
-                        Changes in version 1.9.1                        
+Changes in version 1.9.1
 
 - Fix the bug if the bam file contain mix of single ends and paired
 ends.
@@ -1266,33 +1265,33 @@ ends.
 [AUCell](https://bioconductor.org/packages/AUCell)
 ------
 
-                         Changes in version 1.7                         
+Changes in version 1.7
 
 - Added function cbind()
 
 [Autotuner](https://bioconductor.org/packages/Autotuner)
 ---------
 
-                 Changes in version 1.0.1 (2019-07-06)                  
+Changes in version 1.0.1 (2019-07-06)
 
 - Added DOI to cite code through zenodo.
 
-                 Changes in version 1.0.0 (2019-07-06)                  
+Changes in version 1.0.0 (2019-07-06)
 
 - Introduced first official release of AutoTuner.
 
-                 Changes in version 0.99.9 (2019-08-06)                 
+Changes in version 0.99.9 (2019-08-06)
 
 - Added changes to satisfy second round of bioc review o Fixed source
   path for mzDb data object o Removed redundant table of contents o
   Removed non used redundant data object eicParamEsts.rds
 
-                 Changes in version 0.99.8 (2019-08-02)                 
+Changes in version 0.99.8 (2019-08-02)
 
 - Added changes to fix warnings o Replaced class == to is(). o Added
   corrections to dependencies regarding xcms.
 
-                 Changes in version 0.99.7 (2019-08-02)                 
+Changes in version 0.99.7 (2019-08-02)
 
 - Introduced changes as part of bioconductor review process. o Added
   Author info to vignette. o Added installation instructions for
@@ -1310,14 +1309,14 @@ ends.
 [AWFisher](https://bioconductor.org/packages/AWFisher)
 --------
 
-                 Changes in version 0.99.2 (2019-06-14)                 
+Changes in version 0.99.2 (2019-06-14)
 
 - Submitted to Bioconductor
 
 [bamsignals](https://bioconductor.org/packages/bamsignals)
 ----------
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - DESCRIPTION updated
 
@@ -1329,14 +1328,14 @@ ends.
   value of function declared with 'warn_unused_result' attribute
   [-Wunused-result]
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - Maintainer E-mail adress updated
 
 [BANDITS](https://bioconductor.org/packages/BANDITS)
 -------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - Added mean and standard deviation estimates of the precision
   parameter
@@ -1351,18 +1350,18 @@ ends.
 [BASiCS](https://bioconductor.org/packages/BASiCS)
 ------
 
-                 Changes in version 1.7.20 (2019-10-17)                 
+Changes in version 1.7.20 (2019-10-17)
 
 - Bumps version number to trigger new build.
 
-                 Changes in version 1.7.19 (2019-10-08)                 
+Changes in version 1.7.19 (2019-10-08)
 
 - BASiCS_TestDE now checks to ensure that both input chains have been
   run with Regression = FALSE or both with Regression = TRUE.
 
 - Remove duplicated text from `BASiCS_Chain`'s show method.
 
-                 Changes in version 1.7.18 (2019-10-06)                 
+Changes in version 1.7.18 (2019-10-06)
 
 - Refactor HVG/LVG plots code to use `ggplot2`.  When calling
   `BASiCS_DetectHVG` or `BASiCS_DetectLVG`, the plots are now stored in
@@ -1387,42 +1386,42 @@ ends.
 - Remove exportPattern("^[^\\Hidden]") meaning functions must be
   explicitly exported using roxygen tags.
 
-                 Changes in version 1.7.17 (2019-10-04)                 
+Changes in version 1.7.17 (2019-10-04)
 
 - Minor change in `newBASiCS_Data` to avoid missing `colnames` when
   adding `colData`
 
 - New unit test to verify that `colnames` are not lost
 
-                 Changes in version 1.7.16 (2019-10-04)                 
+Changes in version 1.7.16 (2019-10-04)
 
 - Minor changes to NAMESPACE to pass R CMD Check
 
-                 Changes in version 1.7.15 (2019-09-30)                 
+Changes in version 1.7.15 (2019-09-30)
 
 - Swtich from `matrixStats` dependency to `Matrix` as it supports more
   general input classes (including sparse matrices)
 
 - `newBASiCS_Data` now requires input counts to be a `matrix`.
 
-                 Changes in version 1.7.14 (2019-09-27)                 
+Changes in version 1.7.14 (2019-09-27)
 
 - Changed internal functions from `matrixStats` to `Matrix` to support
   more classes of matrix (eg, `dgCMatrix`). BASiCS_MCMC now supports
   DelayedArray, dgEMatrix, dgCMatrix objects and likely more.
 
-                 Changes in version 1.7.13 (2019-09-25)                 
+Changes in version 1.7.13 (2019-09-25)
 
 - Updated unit tests to account for new default choice for `min.mean`
   parameter in `scran::computeSumFactors`
 
 - New unit test to check for changes in `scran::computeSumFactors`
 
-                 Changes in version 1.7.12 (2019-09-15)                 
+Changes in version 1.7.12 (2019-09-15)
 
 - changes maintainer's email address
 
-                 Changes in version 1.7.11 (2019-09-15)                 
+Changes in version 1.7.11 (2019-09-15)
 
 - `Uncertainty` parameter added to `BASiCS_showFit`. This enables
   optional inclusion of uncertainty measure around the regression
@@ -1441,7 +1440,7 @@ ends.
 - Adds missing parameters to the documentation of
   `BASiCS_CorrectOffset`
 
-                       Changes in version 1.7.10                        
+Changes in version 1.7.10
 
 - `metadata(Data)$SpikeInput` is now required to be a `data.frame`.
   This allows us to verify the correct order in spike-in inputs when
@@ -1457,7 +1456,7 @@ ends.
 
 - Some unit tests adapted accordingly
 
-                 Changes in version 1.7.9 (2019-09-05)                  
+Changes in version 1.7.9 (2019-09-05)
 
 - `newBASiCS_Data`, `HiddenBASiCS_MCMC_InputCheck`,
   `HiddenChecksBASiCS_Data` and `BASiCS_MCMC` modified to replace
@@ -1465,30 +1464,30 @@ ends.
 
 - WIP - unit test do not pass
 
-                 Changes in version 1.7.8 (2019-08-20)                  
+Changes in version 1.7.8 (2019-08-20)
 
 - `min.mean` parameter exposed in `BASiCS_CorrectOffset` and
   `BASiCS_TestDE`
 
-                 Changes in version 1.7.7 (2019-08-20)                  
+Changes in version 1.7.7 (2019-08-20)
 
 - Preliminary version of `BASiCS_CorrectOffset` has been added. This
   includes a trimmed option for the offset calculation that excludes
   lowly expressed genes. This is similar to what is implemented in
   `scran:::.rescale_clusters
 
-                 Changes in version 1.7.6 (2019-08-19)                  
+Changes in version 1.7.6 (2019-08-19)
 
 - Offset correction within `BASiCS_TestDE` modified to use `rowMedians`
   instead of `rowSums2`. This makes it more robust to outlier genes.
 
 - Unit tests updated accordingly.
 
-                 Changes in version 1.7.5 (2019-07-30)                  
+Changes in version 1.7.5 (2019-07-30)
 
 - Returns to original updates for X (fixed after burn-in)
 
-                 Changes in version 1.7.4 (2019-07-30)                  
+Changes in version 1.7.4 (2019-07-30)
 
 - Show method for regression objects now correctly shows number of
   cells.
@@ -1499,11 +1498,11 @@ ends.
 
 - Unit tests updated accordingly.
 
-                 Changes in version 1.7.3 (2019-07-29)                  
+Changes in version 1.7.3 (2019-07-29)
 
 - Minor typo fixed in `BASiCS_MCMC`.
 
-                 Changes in version 1.7.2 (2019-07-28)                  
+Changes in version 1.7.2 (2019-07-28)
 
 - Specific minimum tolerance thresholds (e.g. 1e-3 for mu updates)
   replaced by global parameters (e.g. `mintol_mu`). Optional
@@ -1514,7 +1513,7 @@ ends.
 
 - `HiddenBASiCS_MCMC_GlobalParams` created to facilitate clean-up above
 
-                 Changes in version 1.7.1 (2019-07-27)                  
+Changes in version 1.7.1 (2019-07-27)
 
 - `is_true` deprecated in `testthat`. Unit tests updated to use
   `expect_true`
@@ -1522,7 +1521,7 @@ ends.
 [batchelor](https://bioconductor.org/packages/batchelor)
 ---------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - Deprecated rotate.all= in favour of get.all.genes= in
   multiBatchPCA().
@@ -1553,7 +1552,7 @@ ends.
 [bcSeq](https://bioconductor.org/packages/bcSeq)
 -----
 
-                        Changes in version 1.7.1                        
+Changes in version 1.7.1
 
 - using array back structure for the library to speed up the mapping
   process
@@ -1566,27 +1565,27 @@ ends.
 [BEclear](https://bioconductor.org/packages/BEclear)
 -------
 
-                 Changes in version 2.1.4 (2019-05-17)                  
+Changes in version 2.1.4 (2019-05-17)
 
 - minor changes
 
-                 Changes in version 2.1.3 (2019-05-13)                  
+Changes in version 2.1.3 (2019-05-13)
 
 - Performance improvments o regarding function calcSummary o and
   calcScore
 
-                 Changes in version 2.1.2 (2019-05-10)                  
+Changes in version 2.1.2 (2019-05-10)
 
 - New feature o y-axis in boxplot function can now be logged
 
-                 Changes in version 2.1.1 (2019-05-09)                  
+Changes in version 2.1.1 (2019-05-09)
 
 - New feature o Implementation of outlier detection
 
 [BiocNeighbors](https://bioconductor.org/packages/BiocNeighbors)
 -------------
 
-                        Changes in version 1.4.0                        
+Changes in version 1.4.0
 
 - Allow memory-efficient retrieval of the distance to the furthest
   neighbors.
@@ -1600,11 +1599,11 @@ ends.
 [BioCor](https://bioconductor.org/packages/BioCor)
 ------
 
-                       Changes in version 1.10.1                        
+Changes in version 1.10.1
 
 - Added a pkgdown website
 
-                        Changes in version 1.8.1                        
+Changes in version 1.8.1
 
 - Exported inverseList function
 
@@ -1615,7 +1614,7 @@ ends.
 [BiocParallel](https://bioconductor.org/packages/BiocParallel)
 ------------
 
-                        Changes in version 1.20                         
+Changes in version 1.20
 
 BUG FIXES
 
@@ -1625,7 +1624,7 @@ BUG FIXES
 [BiocSingular](https://bioconductor.org/packages/BiocSingular)
 ------------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - Added the ResidualMatrix class for computing PCA on residuals
   efficiently.
@@ -1641,7 +1640,7 @@ BUG FIXES
 [biomaRt](https://bioconductor.org/packages/biomaRt)
 -------
 
-                       Changes in version 2.42.0                        
+Changes in version 2.42.0
 
 NEW FEATURES
 
@@ -1670,28 +1669,28 @@ BUG FIXES
 [BioMM](https://bioconductor.org/packages/BioMM)
 -----
 
-                       Changes in version 1.1.10                        
+Changes in version 1.1.10
 
 - updated tutorial: added circular plot
 
-                        Changes in version 1.1.9                        
+Changes in version 1.1.9
 
 - updated tutorial: updated description for two parallel computing;
   cirPlot4pathway() example added; seeds added
 
 - updated plotRankedFeature().
 
-                        Changes in version 1.1.8                        
+Changes in version 1.1.8
 
 - updated tutorial: fixed typo 'param1' to 'param2'
 
 - added a new function cirPlot4pathway()
 
-                        Changes in version 1.1.7                        
+Changes in version 1.1.7
 
 - updated tutorial
 
-                        Changes in version 1.1.6                        
+Changes in version 1.1.6
 
 - improved plotVarExplained() and plotRankedFeature()
 
@@ -1703,36 +1702,36 @@ BUG FIXES
 - updated tutorial to adapt the usage of the parallel package installed
   from Github
 
-                        Changes in version 1.1.5                        
+Changes in version 1.1.5
 
 - updated BioMM(); 'dataMode' added.
 
 - fixed roc() in getMetrics()
 
-                        Changes in version 1.1.4                        
+Changes in version 1.1.4
 
 - removed the examples with omcis2chrlist()
 
 - updated the omics2pathlist()
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 - added required package pROC for getMetrics()
 
 - updated NAMESPACE and Rd file.
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 - added the library pROC in the tutorial.
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - updated functions getMetrics(), plotVarExplained() and
   plotRankedFeature(); to focus on pathway based result report.
 
 - updated BioMMtutorial.Rmd
 
-                        Changes in version 1.1.0                        
+Changes in version 1.1.0
 
 - removed gene and chromosome based stratification methods.
 
@@ -1745,7 +1744,7 @@ BUG FIXES
 [BioQC](https://bioconductor.org/packages/BioQC)
 -----
 
-                       Changes in version 1.13.1                        
+Changes in version 1.13.1
 
 - Functions to manipulate GmtList objects are considerably expanded
 
@@ -1756,50 +1755,50 @@ BUG FIXES
 [biosigner](https://bioconductor.org/packages/biosigner)
 ---------
 
-                       Changes in version 1.13.20                       
+Changes in version 1.13.20
 
 BUG FIXED
 
 - plot.biosignMultiDataSet correction to include all plots in the .pdf
   file
 
-                       Changes in version 1.13.18                       
+Changes in version 1.13.18
 
 MINOR MODIFICATION
 
 - Minor correction in the plot.biosignMultiDataSet documentation
 
-                       Changes in version 1.13.16                       
+Changes in version 1.13.16
 
 MINOR MODIFICATION
 
 - Minor correction in the biosignMultiDataSet class documentation
 
-                       Changes in version 1.13.14                       
+Changes in version 1.13.14
 
 MINOR MODIFICATION
 
 - Minor correction in the biosignMultiDataSet class documentation
 
-                       Changes in version 1.13.12                       
+Changes in version 1.13.12
 
 INTERNAL MODIFICATION
 
 - Minor internal modification
 
-                       Changes in version 1.13.10                       
+Changes in version 1.13.10
 
 INTERNAL MODIFICATION
 
 - Minor internal modification
 
-                       Changes in version 1.13.8                        
+Changes in version 1.13.8
 
 NEW FEATURE
 
 - final call to warnings() omitted
 
-                       Changes in version 1.13.6                        
+Changes in version 1.13.6
 
 NEW FEATURES
 
@@ -1808,13 +1807,13 @@ NEW FEATURES
 - biosign can now be applied to MultiDataSet objects (getMset method to
   get the updated MultiDataSet back)
 
-                       Changes in version 1.13.4                        
+Changes in version 1.13.4
 
 MINOR MODIFICATION
 
 - minor internal modification
 
-                       Changes in version 1.13.2                        
+Changes in version 1.13.2
 
 NEW FEATURE
 
@@ -1824,13 +1823,13 @@ NEW FEATURE
 [blacksheepr](https://bioconductor.org/packages/blacksheepr)
 -----------
 
-                Changes in version 0.99.13 (2019-10-11)                 
+Changes in version 0.99.13 (2019-10-11)
 
 - Final Clean up of code
 
 - Added normalization helper function
 
-                 Changes in version 0.99.9 (2019-09-30)                 
+Changes in version 0.99.9 (2019-09-30)
 
 - Major rewrite to functionalize outlier_analysis and reduce redundant
   code
@@ -1838,7 +1837,7 @@ NEW FEATURE
 - Fixed Reviewer suggestions o changed assigner symbol o renamed
   vignette o changed getwd() -> tempdir()
 
-                 Changes in version 0.99.7 (2019-09-10)                 
+Changes in version 0.99.7 (2019-09-10)
 
 - Submitted to Bioconductor
 
@@ -1848,7 +1847,7 @@ NEW FEATURE
 [breakpointR](https://bioconductor.org/packages/breakpointR)
 -----------
 
-                        Changes in version 1.2.1                        
+Changes in version 1.2.1
 
 - Added new genotyping method based on binomial probabilities see
   parameter genoT = 'fisher' or 'binom'; default: 'fisher'
@@ -1856,11 +1855,11 @@ NEW FEATURE
 [brendaDb](https://bioconductor.org/packages/brendaDb)
 --------
 
-                Changes in version 0.99.21 (2019-10-17)                 
+Changes in version 0.99.21 (2019-10-17)
 
 - Fix: BiocycPathwayGenes now deals with finding multiple Ensembl IDs
 
-                Changes in version 0.99.20 (2019-08-16)                 
+Changes in version 0.99.20 (2019-08-16)
 
 - Feature: function to extract field information from brenda.entries
   objects
@@ -1869,31 +1868,31 @@ NEW FEATURE
 
 - Performance: ReadBrenda is now 50% faster
 
-                Changes in version 0.99.10 (2019-08-12)                 
+Changes in version 0.99.10 (2019-08-12)
 
 - Doc: updated the vignette, readme and package help page
 
 - Doc: added documentation for data file acronyms.RData
 
-                 Changes in version 0.99.0 (2019-07-22)                 
+Changes in version 0.99.0 (2019-07-22)
 
 - Submitted to Bioconductor
 
 [BUSpaRse](https://bioconductor.org/packages/BUSpaRse)
 --------
 
-                Changes in version 0.99.25 (2019-09-11)                 
+Changes in version 0.99.25 (2019-09-11)
 
 - Added message to indicate when get_velocity_files is extracting
 exon-exon junctions.  - Restored "separate" to be default
 isoform_action in get_velocity_files.
 
-                Changes in version 0.99.24 (2019-09-06)                 
+Changes in version 0.99.24 (2019-09-06)
 
 - When sorting tr2g from file, now the file must be formatted in ways
 required by bustools.
 
-                Changes in version 0.99.23 (2019-09-06)                 
+Changes in version 0.99.23 (2019-09-06)
 
 - Previous two version bumps did not accompany changes; those were
 used to trigger rebuilds on Bioconductor.  - Added the functionality
@@ -1906,27 +1905,27 @@ the method to get flanked intronic ranges.  - Changed default
 isoform_action to "collapse".  - Make sure that all transcripts in
 tr2g.tsv from get_velocity_files are in the transcriptome.
 
-                Changes in version 0.99.20 (2019-08-26)                 
+Changes in version 0.99.20 (2019-08-26)
 
 - Addressed Bioconductor review.
 
-                Changes in version 0.99.19 (2019-07-23)                 
+Changes in version 0.99.19 (2019-07-23)
 
 - Finished get_velocity_files to generate files required for kallisto
 | bustools RNA velocity.
 
-                 Changes in version 0.99.0 (2019-06-21)                 
+Changes in version 0.99.0 (2019-06-21)
 
 - Submitted package to Bioconductor for review
 
 [CAGEfightR](https://bioconductor.org/packages/CAGEfightR)
 ----------
 
-                        Changes in version 1.5.3                        
+Changes in version 1.5.3
 
 - Added citation to BMC Bioinformatics paper.
 
-                         Changes in version 1.5                         
+Changes in version 1.5
 
 - Added new functions for spatial analysis of clusters: findLinks finds
   nearby pairs of clusters (for example TSSs and enhancers) and
@@ -1960,7 +1959,7 @@ tr2g.tsv from get_velocity_files are in the transcriptome.
 [CAGEr](https://bioconductor.org/packages/CAGEr)
 -----
 
-                       Changes in version 1.28.0                        
+Changes in version 1.28.0
 
 BACKWARDS-INCOMPATIBLE CHANGES
 
@@ -1980,14 +1979,14 @@ BUG FIXES
 [calm](https://bioconductor.org/packages/calm)
 ----
 
-                 Changes in version 0.99.0 (2019-07-18)                 
+Changes in version 0.99.0 (2019-07-18)
 
 - Submitted to Bioconductor
 
 [CAMERA](https://bioconductor.org/packages/CAMERA)
 ------
 
-                       Changes in version 1.41.1                        
+Changes in version 1.41.1
 
 NEW FEATURES
 
@@ -1996,25 +1995,25 @@ NEW FEATURES
 [canceR](https://bioconductor.org/packages/canceR)
 ------
 
-                       Changes in version 1.19.05                       
+Changes in version 1.19.05
 
 - move vignette to inst/doc
 
-                       Changes in version 1.19.04                       
+Changes in version 1.19.04
 
 - omit GSEAlm dependency
 
 - include used functions from gsealm to canceR package in gsealm.R
   file.
 
-                       Changes in version 1.19.03                       
+Changes in version 1.19.03
 
 - compress RData files to RDS and move them from /data to
   /extdata/rdata
 
 - update running examples
 
-                       Changes in version 1.19.02                       
+Changes in version 1.19.02
 
 - remove /extdata/gct_cls
 
@@ -2022,7 +2021,7 @@ NEW FEATURES
 
 - add empty line in test functions
 
-                       Changes in version 1.19.01                       
+Changes in version 1.19.01
 
 - remove .txt file from /data.
 
@@ -2033,7 +2032,7 @@ NEW FEATURES
 [Cardinal](https://bioconductor.org/packages/Cardinal)
 --------
 
-                 Changes in version 2.3.18 (2019-10-27)                 
+Changes in version 2.3.18 (2019-10-27)
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2045,7 +2044,7 @@ BUG FIXES
 
 - Fixed some errors in user messages during peak processing
 
-                 Changes in version 2.3.17 (2019-10-25)                 
+Changes in version 2.3.17 (2019-10-25)
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2057,7 +2056,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - In 'peakAlign()', peak centers are now calculated as weighted average
   mass rather than the highest point
 
-                 Changes in version 2.3.16 (2019-10-14)                 
+Changes in version 2.3.16 (2019-10-14)
 
 NEW FEATURES
 
@@ -2072,14 +2071,14 @@ SIGNIFICANT USER-VISIBLE CHANGES
   principles by returning an object of a similar class; the previous
   behavior can be reproduced by specifying '.as="DataFrame"'
 
-                 Changes in version 2.3.15 (2019-10-13)                 
+Changes in version 2.3.15 (2019-10-13)
 
 NEW FEATURES
 
 - For methods requiring 'resolution' or 'tolerance', the default
   arguments have been updated to automatically guess based on the data
 
-                       Changes in version 2.3.14                        
+Changes in version 2.3.14
 
 NEW FEATURES
 
@@ -2106,7 +2105,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - Log more pre-processing information (e.g., method name)
 
-                       Changes in version 2.3.13                        
+Changes in version 2.3.13
 
 BUG FIXES
 
@@ -2115,7 +2114,7 @@ BUG FIXES
 
 - Fix weird 'iData()<-' missing argument 'i' bug
 
-                       Changes in version 2.3.12                        
+Changes in version 2.3.12
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2135,7 +2134,7 @@ BUG FIXES
 - In 'normalize()' method 'reference', provide a warning if the
   reference value is 0 for a pixel
 
-                       Changes in version 2.3.11                        
+Changes in version 2.3.11
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2150,7 +2149,7 @@ BUG FIXES
 
 - Fix error in 'print()' for facet plots where lims=NULL
 
-                       Changes in version 2.3.10                        
+Changes in version 2.3.10
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2160,7 +2159,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - Linesearch in 'spatialDGMM()' now uses 'optimize()' rather than
   'optim()' -- results may differ slightly
 
-                        Changes in version 2.3.9                        
+Changes in version 2.3.9
 
 NEW FEATURES
 
@@ -2174,7 +2173,7 @@ BUG FIXES
 
 - Cleaned up generics to reflect ProtGenerics >= 1.17.2
 
-                        Changes in version 2.3.8                        
+Changes in version 2.3.8
 
 NEW FEATURES
 
@@ -2197,7 +2196,7 @@ BUG FIXES
 
 - Various bug fixes in object printing and plot auto-layout
 
-                        Changes in version 2.3.7                        
+Changes in version 2.3.7
 
 NEW FEATURES
 
@@ -2207,7 +2206,7 @@ BUG FIXES
 
 - Plotting with 'add=TRUE' now respects 'par('usr')' coordinates
 
-                        Changes in version 2.3.6                        
+Changes in version 2.3.6
 
 NEW FEATURES
 
@@ -2228,7 +2227,7 @@ BUG FIXES
 - Respect 'layout' and 'byrow' passed through ... args to 'print()'
   method on facet plot objects
 
-                        Changes in version 2.3.5                        
+Changes in version 2.3.5
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2240,13 +2239,13 @@ BUG FIXES
 
 - Pass more ... args through to 'par()' in plotting functions
 
-                        Changes in version 2.3.4                        
+Changes in version 2.3.4
 
 NEW FEATURES
 
 - Added 'AnnotatedImage' class for optical images
 
-                        Changes in version 2.3.3                        
+Changes in version 2.3.3
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -2256,13 +2255,13 @@ BUG FIXES
 
 - Better 'cex.axis' defaults and user setting for colorkeys
 
-                        Changes in version 2.3.2                        
+Changes in version 2.3.2
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
 - Improved 'writeMSIData()' for 3D and non-gridded data
 
-                        Changes in version 2.3.1                        
+Changes in version 2.3.1
 
 NEW FEATURES
 
@@ -2274,25 +2273,25 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - Added 'parse.only' option to 'readImzML()' for parsing only
 
-                        Changes in version 2.2.4                        
+Changes in version 2.2.4
 
 BUG FIXES
 
 - Fix large external array offsets in 'writeImzML'
 
-                        Changes in version 2.2.3                        
+Changes in version 2.2.3
 
 BUG FIXES
 
 - Cleaned up some 'writeImzML' mapping validity issues
 
-                        Changes in version 2.2.2                        
+Changes in version 2.2.2
 
 BUG FIXES
 
 - Removed curly braces around UUID when writing imzML
 
-                        Changes in version 2.2.1                        
+Changes in version 2.2.1
 
 BUG FIXES
 
@@ -2302,7 +2301,7 @@ BUG FIXES
 [cbaf](https://bioconductor.org/packages/cbaf)
 ----
 
-                 Changes in version 1.8.0 (2019-10-28)                  
+Changes in version 1.8.0 (2019-10-28)
 
 New Features
 
@@ -2322,7 +2321,7 @@ New Features
 [ccfindR](https://bioconductor.org/packages/ccfindR)
 -------
 
-                        Changes in version 1.5.0                        
+Changes in version 1.5.0
 
 Changes
 
@@ -2330,7 +2329,7 @@ Changes
 
 - Added assignCelltype(...)
 
-                        Changes in version 1.4.1                        
+Changes in version 1.4.1
 
 Changes
 
@@ -2343,37 +2342,37 @@ Changes
 [celda](https://bioconductor.org/packages/celda)
 -----
 
-                 Changes in version 1.1.6 (2019-07-16)                  
+Changes in version 1.1.6 (2019-07-16)
 
 - Add multiclass decision tree
 
-                 Changes in version 1.1.4 (2019-05-28)                  
+Changes in version 1.1.4 (2019-05-28)
 
 - Add Alternate headings support for plotDimReduceFeature
 
-                 Changes in version 1.1.3 (2019-05-14)                  
+Changes in version 1.1.3 (2019-05-14)
 
 - Add multiclass decision tree (MCDT) cell cluster annotation
 
-                 Changes in version 1.1.2 (2019-05-14)                  
+Changes in version 1.1.2 (2019-05-14)
 
 - Fix a bug in celdaHeatmap
 
-                 Changes in version 1.1.1 (2019-05-09)                  
+Changes in version 1.1.1 (2019-05-09)
 
 - Default seed setting to maintain reproducibility
 
 [CellBench](https://bioconductor.org/packages/CellBench)
 ---------
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 Bug Fixes
 
 - Data loading functions now appear in package index and
 documentation
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 Bug Fixes
 
@@ -2384,7 +2383,7 @@ Modifications
 - Updated the WritingWrappers vignette.  - Added a case study
 precompiled vignette.
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 New Features
 
@@ -2394,7 +2393,7 @@ benchmark tibble.
 [CellMixS](https://bioconductor.org/packages/CellMixS)
 --------
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 - Add entropy and weighted isi function
 
@@ -2406,7 +2405,7 @@ benchmark tibble.
 [ChAMP](https://bioconductor.org/packages/ChAMP)
 -----
 
-                       Changes in version 2.15.1                        
+Changes in version 2.15.1
 
 - Added scree plot into champ.SVD() function.
 
@@ -2428,7 +2427,7 @@ Text:
 [chipenrich](https://bioconductor.org/packages/chipenrich)
 ----------
 
-                       Changes in version 2.10.0                        
+Changes in version 2.10.0
 
 NEW FEATURES
 
@@ -2450,32 +2449,32 @@ BUG FIXES
 [ChIPpeakAnno](https://bioconductor.org/packages/ChIPpeakAnno)
 ------------
 
-                       Changes in version 3.19.5                        
+Changes in version 3.19.5
 
 - fix the issue that findOverlapsOfPeaks will connect the peaks in same
   peak list.
 
-                       Changes in version 3.19.4                        
+Changes in version 3.19.4
 
 - add last choice for xget.
 
-                       Changes in version 3.19.3                        
+Changes in version 3.19.3
 
 - fix the colnames of addMetadata.
 
-                       Changes in version 3.19.2                        
+Changes in version 3.19.2
 
 - fix the issue that seqlevelsStyle(peak) == seqlevelsStyle(annotation)
   are not all TRUE
 
-                       Changes in version 3.19.1                        
+Changes in version 3.19.1
 
 - remove RangedData
 
 [ChIPseeker](https://bioconductor.org/packages/ChIPseeker)
 ----------
 
-                       Changes in version 1.21.1                        
+Changes in version 1.21.1
 
 - new implementation of upsetplot (2019-08-29, Thu) - use ggupset,
 ggimage and ggplotify - subset method for csAnno object (2019-08-27,
@@ -2484,7 +2483,7 @@ Tue)
 [chromstaR](https://bioconductor.org/packages/chromstaR)
 ---------
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 BUGFIXES
 
@@ -2493,27 +2492,27 @@ BUGFIXES
 [circRNAprofiler](https://bioconductor.org/packages/circRNAprofiler)
 ---------------
 
-                 Changes in version 0.1.1 (2019-05-30)                  
+Changes in version 0.1.1 (2019-05-30)
 
 - First releaase
 
 [cleanUpdTSeq](https://bioconductor.org/packages/cleanUpdTSeq)
 ------------
 
-                       Changes in version 1.23.1                        
+Changes in version 1.23.1
 
 - update citation.
 
 [clusterExperiment](https://bioconductor.org/packages/clusterExperiment)
 -----------------
 
-                        Changes in version 2.5.7                        
+Changes in version 2.5.7
 
-Bugs: 
+Bugs:
 
 - Fix logical precedence error in C++ code for subsample loop
 
-                        Changes in version 2.5.3                        
+Changes in version 2.5.3
 
 Changes
 
@@ -2537,7 +2536,7 @@ Bugs
 [CNVRanger](https://bioconductor.org/packages/CNVRanger)
 ---------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - New function `plotRecurrentRegions` to visualize the landscape of
   recurrent CNV regions
@@ -2552,11 +2551,11 @@ Bugs
 [cola](https://bioconductor.org/packages/cola)
 ----
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 - improve documentations
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - add `GO_enrichment()` and `map_to_entrez_id()`.
 
@@ -2570,7 +2569,7 @@ Bugs
 [ComplexHeatmap](https://bioconductor.org/packages/ComplexHeatmap)
 --------------
 
-                        Changes in version 2.1.1                        
+Changes in version 2.1.1
 
 - `Heatmap()`: give error when heatmap has empty string as its name.
 
@@ -2579,7 +2578,7 @@ Bugs
 
 - The order of legend labels are ordered by either `sort` or `levels`.
 
-                        Changes in version 2.1.0                        
+Changes in version 2.1.0
 
 - check the length of the clustering objects and the matrix
   rows/columns
@@ -2610,24 +2609,24 @@ Bugs
 [consensusDE](https://bioconductor.org/packages/consensusDE)
 -----------
 
-                 Changes in version 1.3.4 (2019-09-16)                  
+Changes in version 1.3.4 (2019-09-16)
 
 - table_means function of multi_de_pairs updated to be n=1 aware
 
 - add warning when less than two biological replicates
 
-                 Changes in version 1.3.3 (2019-06-27)                  
+Changes in version 1.3.3 (2019-06-27)
 
 - norm_method paramter in multi_de_pairs to allow only EDASeq
   normalisation
 
-                 Changes in version 1.3.2 (2019-06-21)                  
+Changes in version 1.3.2 (2019-06-21)
 
 - make character output for annotation
 
 - remove prior normalisation for RUVr
 
-                 Changes in version 1.3.1 (2019-06-18)                  
+Changes in version 1.3.1 (2019-06-18)
 
 - fix buildSummarized bug in detection of minimum paired numbers
 
@@ -2664,7 +2663,7 @@ Bugs
 [consensusOV](https://bioconductor.org/packages/consensusOV)
 -----------
 
-                        Changes in version 1.8.0                        
+Changes in version 1.8.0
 
 - New function `get.hao.subtypes` to predict the tissue of origin of
   ovarian tumors as either fallopian tube (FT) or ovarian surface
@@ -2673,20 +2672,20 @@ Bugs
 [CRISPRseek](https://bioconductor.org/packages/CRISPRseek)
 ----------
 
-                       Changes in version 1.25.6                        
+Changes in version 1.25.6
 
 - added parameter ignore.strand to indidate whether gene annotation
   should be strand-specific
 
-                       Changes in version 1.25.5                        
+Changes in version 1.25.5
 
 - efficacy is calculated only for on-target
 
-                       Changes in version 1.25.4                        
+Changes in version 1.25.4
 
 - annotation is now strand-specific
 
-                       Changes in version 1.25.1                        
+Changes in version 1.25.1
 
 NEW FEATURES
 
@@ -2695,21 +2694,21 @@ NEW FEATURES
 [CrossICC](https://bioconductor.org/packages/CrossICC)
 --------
 
-                Changes in version 0.99.27 (2019-10-22)                 
+Changes in version 0.99.27 (2019-10-22)
 
 - Use tempdir() in test to avoid using home dir of bioconductor build
   machine
 
-                Changes in version 0.99.26 (2019-09-23)                 
+Changes in version 0.99.26 (2019-09-23)
 
 - Use tempdir() in examples and vignette to prevent from contaminating
   Bioc and users' machine
 
-                Changes in version 0.99.24 (2019-09-23)                 
+Changes in version 0.99.24 (2019-09-23)
 
 - Update source code for robustness
 
-                Changes in version 0.99.23 (2019-09-14)                 
+Changes in version 0.99.23 (2019-09-14)
 
 - Add support for type SummarizedExperiment in function predictor()
 
@@ -2717,55 +2716,55 @@ NEW FEATURES
 
 - Remove some unused functions
 
-                Changes in version 0.99.22 (2019-09-06)                 
+Changes in version 0.99.22 (2019-09-06)
 
 - Fix bugs by removing lazy load
 
-                Changes in version 0.99.21 (2019-09-06)                 
+Changes in version 0.99.21 (2019-09-06)
 
 - Add overwrite function for main function
 
 - Optimize packages suggested checking
 
-                Changes in version 0.99.20 (2019-07-30)                 
+Changes in version 0.99.20 (2019-07-30)
 
 - Fix predictor() error by complete cases
 
-                Changes in version 0.99.19 (2019-07-29)                 
+Changes in version 0.99.19 (2019-07-29)
 
 - Fix m.f.s bug when calculating centroid of new matrix
 
-                Changes in version 0.99.18 (2019-07-29)                 
+Changes in version 0.99.18 (2019-07-29)
 
 - Add a choice for using kmeans() for super-clustering
 
-                Changes in version 0.99.17 (2019-07-29)                 
+Changes in version 0.99.17 (2019-07-29)
 
 - Add a parameter allowing keep rows with no variance
 
 - List for centroid2exp() should not be filtered by variance
 
-                Changes in version 0.99.16 (2019-07-29)                 
+Changes in version 0.99.16 (2019-07-29)
 
 - CrossICC now need R version >= 3.5
 
 - Update ssGSEA function
 
-                Changes in version 0.99.15 (2019-07-28)                 
+Changes in version 0.99.15 (2019-07-28)
 
 - CrossICC now need R version >= 3.6
 
 - Fix NAMESPACE bug
 
-                Changes in version 0.99.14 (2019-07-28)                 
+Changes in version 0.99.14 (2019-07-28)
 
 - Update vignette and man pages
 
-                Changes in version 0.99.13 (2019-07-28)                 
+Changes in version 0.99.13 (2019-07-28)
 
 - Update vignette and man pages
 
-                Changes in version 0.99.12 (2019-07-28)                 
+Changes in version 0.99.12 (2019-07-28)
 
 - Fix ssGSEA() bug
 
@@ -2773,54 +2772,54 @@ NEW FEATURES
 
 - CrossICC() can reset working directory to previous one now
 
-                Changes in version 0.99.11 (2019-07-28)                 
+Changes in version 0.99.11 (2019-07-28)
 
 - Add sankey plot to shiny app
 
 - Optimize the main function
 
-                Changes in version 0.99.10 (2019-07-27)                 
+Changes in version 0.99.10 (2019-07-27)
 
 - Update ssGSEA man page
 
-                 Changes in version 0.99.9 (2019-07-27)                 
+Changes in version 0.99.9 (2019-07-27)
 
 - Label ssGSEA examples as donttest
 
-                 Changes in version 0.99.8 (2019-07-27)                 
+Changes in version 0.99.8 (2019-07-27)
 
 - Update help page of function CrossICCInput(): example should contain
   file name pattern
 
-                 Changes in version 0.99.7 (2019-07-26)                 
+Changes in version 0.99.7 (2019-07-26)
 
 - Update man pages
 
-                 Changes in version 0.99.6 (2019-07-26)                 
+Changes in version 0.99.6 (2019-07-26)
 
 - Use all functions in reloaded MergeMaid code
 
 - To test all examples in exported function
 
-                 Changes in version 0.99.5 (2019-07-26)                 
+Changes in version 0.99.5 (2019-07-26)
 
 - Turn off default shiny calling
 
-                 Changes in version 0.99.4 (2019-07-26)                 
+Changes in version 0.99.4 (2019-07-26)
 
 - Update some man pages
 
-                 Changes in version 0.99.3 (2019-07-26)                 
+Changes in version 0.99.3 (2019-07-26)
 
 - Update examples for most functions
 
 - Remove random seed of ConcensusClusterPlus function
 
-                 Changes in version 0.99.2 (2019-07-25)                 
+Changes in version 0.99.2 (2019-07-25)
 
 - Fix some mistakes in Rd files
 
-                 Changes in version 0.99.1 (2019-07-25)                 
+Changes in version 0.99.1 (2019-07-25)
 
 - Main function CrossICC will not use shiny app by default
 
@@ -2830,11 +2829,11 @@ NEW FEATURES
 
 - Fix some check error and warnings
 
-                 Changes in version 0.1.1 (2019-06-25)                  
+Changes in version 0.1.1 (2019-06-25)
 
 - Update vignette and some man pages for functions
 
-                 Changes in version 0.1.0 (2019-06-25)                  
+Changes in version 0.1.0 (2019-06-25)
 
 - The first version of CrossICC
 
@@ -2843,7 +2842,7 @@ NEW FEATURES
 [csaw](https://bioconductor.org/packages/csaw)
 ----
 
-                       Changes in version 1.20.0                        
+Changes in version 1.20.0
 
 - Removed deprecated functionality in normOffsets(), readParam(),
   scaledAverage().
@@ -2873,7 +2872,7 @@ NEW FEATURES
 [cTRAP](https://bioconductor.org/packages/cTRAP)
 -----
 
-                         Changes in version 1.4                         
+Changes in version 1.4
 
 New features
 
@@ -2987,20 +2986,20 @@ documentation - Include license and copyright text for cmapR code
 [dagLogo](https://bioconductor.org/packages/dagLogo)
 -------
 
-                       Changes in version 1.23.5                        
+Changes in version 1.23.5
 
 - add dontrun for prepareProteomeByFTP in case there is net connection
   issue.
 
-                       Changes in version 1.23.4                        
+Changes in version 1.23.4
 
 - return errors when type of getSequence is not correct.
 
-                       Changes in version 1.23.3                        
+Changes in version 1.23.3
 
 - Update documentation.
 
-                       Changes in version 1.23.1                        
+Changes in version 1.23.1
 
 - Add function prepareProteomeByFTP
 
@@ -3009,11 +3008,11 @@ documentation - Include license and copyright text for cmapR code
 [debCAM](https://bioconductor.org/packages/debCAM)
 ------
 
-                 Changes in version 1.3.3 (2019-10-28)                  
+Changes in version 1.3.3 (2019-10-28)
 
 - Change package name from CAMTHC to debCAM
 
-                 Changes in version 1.1.1 (2018-12-28)                  
+Changes in version 1.1.1 (2018-12-28)
 
 - Add reselectMG() to help select markers from all probes
 
@@ -3040,14 +3039,14 @@ documentation - Include license and copyright text for cmapR code
 [debrowser](https://bioconductor.org/packages/debrowser)
 ---------
 
-                       Changes in version 1.12.2                        
+Changes in version 1.12.2
 
 - Bar bax plot name fix
 
 [deco](https://bioconductor.org/packages/deco)
 ----
 
-                        Changes in version 1.0.1                        
+Changes in version 1.0.1
 
 - Release 3.9 Bioconductor
 
@@ -3056,7 +3055,7 @@ documentation - Include license and copyright text for cmapR code
 [decompTumor2Sig](https://bioconductor.org/packages/decompTumor2Sig)
 ---------------
 
-                 Changes in version 2.1.0 (2019-08-18)                  
+Changes in version 2.1.0 (2019-08-18)
 
 - adapted readAlexandrovSignatures to read the file format used by the
   COSMIC mutational signatures version 3 (May 2019; Single Base
@@ -3065,7 +3064,7 @@ documentation - Include license and copyright text for cmapR code
 [deepSNV](https://bioconductor.org/packages/deepSNV)
 -------
 
-                 Changes in version 1.99.3 (2013-07-25)                 
+Changes in version 1.99.3 (2013-07-25)
 
 Updates
 
@@ -3077,7 +3076,7 @@ Bugfixes
 
 - Fixed bug in bf2Vcf() when no variant is called
 
-                 Changes in version 1.99.2 (2013-07-11)                 
+Changes in version 1.99.2 (2013-07-11)
 
 Updates
 
@@ -3091,7 +3090,7 @@ Bugfixes
 
 - Fixed bug when only one variant is called in bf2Vcf()
 
-                 Changes in version 1.99.1 (2013-06-25)                 
+Changes in version 1.99.1 (2013-06-25)
 
 Updates
 
@@ -3105,7 +3104,7 @@ Bugfixes
 
 - makePrior() adds background on all sites
 
-                 Changes in version 1.99.0 (2013-04-30)                 
+Changes in version 1.99.0 (2013-04-30)
 
 Updates
 
@@ -3116,7 +3115,7 @@ Updates
 [DEGreport](https://bioconductor.org/packages/DEGreport)
 ---------
 
-                       Changes in version 1.21.1                        
+Changes in version 1.21.1
 
 - Fix: call summary from DESeq2
 
@@ -3132,7 +3131,7 @@ Updates
 [DelayedArray](https://bioconductor.org/packages/DelayedArray)
 ------------
 
-                       Changes in version 0.12.0                        
+Changes in version 0.12.0
 
 NEW FEATURES
 
@@ -3161,17 +3160,17 @@ BUG FIXES
 [DepecheR](https://bioconductor.org/packages/DepecheR)
 --------
 
-                 Changes in version 1.1.9 (2019-10-06)                  
+Changes in version 1.1.9 (2019-10-06)
 
 - Two changes making package more BioConductor compliant: o
   Introduction of a "Installation" and a "Session info" slot in the
   vinjette o Formatting change of this NEWS file.
 
-                 Changes in version 1.1.8 (2019-09-12)                  
+Changes in version 1.1.8 (2019-09-12)
 
 - Bug fixes. True also for last version.
 
-                 Changes in version 1.1.6 (2019-09-12)                  
+Changes in version 1.1.6 (2019-09-12)
 
 - Adding export option for the vector created by groupProbPlot
 
@@ -3192,7 +3191,7 @@ BUG FIXES
 
 - its sparsity.
 
-                 Changes in version 1.1.5 (2019-08-07)                  
+Changes in version 1.1.5 (2019-08-07)
 
 - 4x speedup of the new groupProbPlot.
 
@@ -3203,7 +3202,7 @@ BUG FIXES
 
 - Bug fixes of the groupProbPlot.
 
-                 Changes in version 1.1.4 (2019-07-30)                  
+Changes in version 1.1.4 (2019-07-30)
 
 - A brand new function is added! Here, the user can get single-cell
   resolution
@@ -3218,12 +3217,12 @@ BUG FIXES
 
 - most grateful for.
 
-                 Changes in version 1.1.3 (2019-06-28)                  
+Changes in version 1.1.3 (2019-06-28)
 
 - dResidualPlot bug making colors sometimes represent the wrong group
   fixed.
 
-                 Changes in version 1.1.2 (2019-06-28)                  
+Changes in version 1.1.2 (2019-06-28)
 
 - Fixing the dColorPlot and the dDensityPlot functions, so that
   original names
@@ -3233,7 +3232,7 @@ BUG FIXES
 [derfinder](https://bioconductor.org/packages/derfinder)
 ---------
 
-                       Changes in version 1.19.9                        
+Changes in version 1.19.9
 
 BUG FIXES
 
@@ -3251,11 +3250,11 @@ be re-computed with the fixed version.  - Changed some internal tests
 to check bumphunter::loessByCluster() instead of
 bumphunter::runmedByCluster() given some issues with the second one.
 
-                       Changes in version 1.19.8                        
+Changes in version 1.19.8
 
 - Added a NEWS.md file to track changes to the package.
 
-                       Changes in version 1.19.4                        
+Changes in version 1.19.4
 
 BUG FIXES
 
@@ -3272,7 +3271,7 @@ rtracklayer::import(sampleFile, selection = regs, as = 'RleList')
 This error affected recount and other reverse dependencies that use
 derfinder for processing BigWig files.
 
-                       Changes in version 1.19.2                        
+Changes in version 1.19.2
 
 BUG FIXES
 
@@ -3286,21 +3285,21 @@ issues.
 [derfinderHelper](https://bioconductor.org/packages/derfinderHelper)
 ---------------
 
-                       Changes in version 1.19.3                        
+Changes in version 1.19.3
 
 - Added a NEWS.md file to track changes to the package.
 
 [derfinderPlot](https://bioconductor.org/packages/derfinderPlot)
 -------------
 
-                       Changes in version 1.19.3                        
+Changes in version 1.19.3
 
 - Added a NEWS.md file to track changes to the package.
 
 [DESeq2](https://bioconductor.org/packages/DESeq2)
 ------
 
-                       Changes in version 1.26.0                        
+Changes in version 1.26.0
 
 - Incorporation of fast code from Constantin Ahlmann-Eltze which speeds
   up DESeq2 for large sample sizes (n > 100) by at least an order of
@@ -3318,21 +3317,21 @@ issues.
 [DEWSeq](https://bioconductor.org/packages/DEWSeq)
 ------
 
-                 Changes in version 0.99.0 (2019-09-23)                 
+Changes in version 0.99.0 (2019-09-23)
 
 - Submitted to Bioconductor
 
 [DiffBind](https://bioconductor.org/packages/DiffBind)
 --------
 
-                       Changes in version 3.13.1                        
+Changes in version 3.13.1
 
 - Change dba.plotPCA to use proper loading
 
 [diffcyt](https://bioconductor.org/packages/diffcyt)
 -------
 
-                        Changes in version 1.5.6                        
+Changes in version 1.5.6
 
 - Update 'diffcyt()' wrapper function to handle new
   SingleCellExperiment object structure from CATALYST.
@@ -3340,7 +3339,7 @@ issues.
 [DiscoRhythm](https://bioconductor.org/packages/DiscoRhythm)
 -----------
 
-                 Changes in version 1.1.1 (2019-09-27)                  
+Changes in version 1.1.1 (2019-09-27)
 
 - Added report execution mode with zip archive of results. Results can
   now be emailed from the public server.
@@ -3356,7 +3355,7 @@ issues.
 [DMCFB](https://bioconductor.org/packages/DMCFB)
 -----
 
-                       Changes in version 0.99.1                        
+Changes in version 0.99.1
 
 New Features
 
@@ -3383,7 +3382,7 @@ Fixed
 [DMRcate](https://bioconductor.org/packages/DMRcate)
 -------
 
-                        Changes in version 2.0.0                        
+Changes in version 2.0.0
 
 - Full utility for WGBS and RRBS assays implemented using
   sequencing.annotate(): Users can either input a) A BSseq object and
@@ -3430,7 +3429,7 @@ Fixed
 [DominoEffect](https://bioconductor.org/packages/DominoEffect)
 ------------
 
-                        Changes in version 1.5.2                        
+Changes in version 1.5.2
 
 UDPATE
 
@@ -3438,13 +3437,13 @@ UDPATE
 
 - Change class() == to is()
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 UDPATE
 
 - Adapt to new GenomicRanges::GPo function
 
-                        Changes in version 1.5.0                        
+Changes in version 1.5.0
 
 UDPATE
 
@@ -3453,7 +3452,7 @@ UDPATE
 [DOSE](https://bioconductor.org/packages/DOSE)
 ----
 
-                       Changes in version 3.11.2                        
+Changes in version 3.11.2
 
 - ignore universe and print a waring message if users passing
 accidentally passing wrong input (2019-10-24, Thu) -
@@ -3461,19 +3460,19 @@ https://github.com/YuLab-SMU/clusterProfiler/issues/217 - gene with
 minimal ES value (NES < 0) will be reported in core_enrichment
 (2019-07-31, Wed)
 
-                       Changes in version 3.11.1                        
+Changes in version 3.11.1
 
 - build_Anno now compatible with tibble (2019-05-28, Tue)
 
 [DropletUtils](https://bioconductor.org/packages/DropletUtils)
 ------------
 
-                        Changes in version 1.8.0                        
+Changes in version 1.8.0
 
 - Added the downsampleBatches() function for convenient downsampling of
   batches.
 
-                        Changes in version 1.6.0                        
+Changes in version 1.6.0
 
 - Switched emptyDrops() to use Boost's discrete_distribution for
   weighted sampling.  This results in some minor stochastic changes to
@@ -3483,7 +3482,7 @@ minimal ES value (NES < 0) will be reported in core_enrichment
 [edgeR](https://bioconductor.org/packages/edgeR)
 -----
 
-                       Changes in version 3.28.0                        
+Changes in version 3.28.0
 
 - Add head() and tail() methods for edgeR classes.
 
@@ -3512,7 +3511,7 @@ minimal ES value (NES < 0) will be reported in core_enrichment
 [EnhancedVolcano](https://bioconductor.org/packages/EnhancedVolcano)
 ---------------
 
-                         Changes in version 1.4                         
+Changes in version 1.4
 
 - modified behaviour where a p-value of 0 is found: now converts these
   to 10^-1 * lowest non-zero p-value
@@ -3534,7 +3533,7 @@ minimal ES value (NES < 0) will be reported in core_enrichment
 [enrichplot](https://bioconductor.org/packages/enrichplot)
 ----------
 
-                        Changes in version 1.5.2                        
+Changes in version 1.5.2
 
 - update node_label parameter in cnetplot to support selection of
 subset to be labeled (2019-09-27, Fri) -
@@ -3542,7 +3541,7 @@ https://yulab-smu.github.io/clusterProfiler-book/chapter12.html#fig:cnetNodeLabe
 - upsetplot for gseaResult (2019-09-25, Wed) - reimplement upsetplot
 based on ggupset
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 - gseadist for plotting logFC distribution of selected gene sets.
 (2019-06-25, Tue)
@@ -3550,14 +3549,14 @@ based on ggupset
 [ensemblVEP](https://bioconductor.org/packages/ensemblVEP)
 ----------
 
-                       Changes in version 1.28.0                        
+Changes in version 1.28.0
 
 - add support for Ensembl release 97/98
 
 [epivizrServer](https://bioconductor.org/packages/epivizrServer)
 -------------
 
-                       Changes in version 999.999                       
+Changes in version 999.999
 
 - This NEWS file is only a placeholder. The version 999.999 does not
   really exist. Please read the NEWS on Github: <URL:
@@ -3566,7 +3565,7 @@ based on ggupset
 [ExperimentHub](https://bioconductor.org/packages/ExperimentHub)
 -------------
 
-                       Changes in version 1.11.0                        
+Changes in version 1.11.0
 
 NEW FEATURES
 
@@ -3585,7 +3584,7 @@ BUG FIXES
 [FamAgg](https://bioconductor.org/packages/FamAgg)
 ------
 
-                       Changes in version 1.13.1                        
+Changes in version 1.13.1
 
 - Parameters id.col, father.col, mother.col, family.col and sex.col for
   FAData allow now to specify the column names for the respective
@@ -3594,14 +3593,14 @@ BUG FIXES
 [fcScan](https://bioconductor.org/packages/fcScan)
 ------
 
-                        Changes in version 0.99                         
+Changes in version 0.99
 
 - Fixing bugs and preparing for submission
 
 [FELLA](https://bioconductor.org/packages/FELLA)
 -----
 
-                        Changes in version 1.5.3                        
+Changes in version 1.5.3
 
 - Changed `buildDataFromGraph()` so that it looks for organismal
   annotations in `keggInfo()`.
@@ -3614,34 +3613,34 @@ BUG FIXES
 
 - Small update on `sanitise()`
 
-                        Changes in version 1.4.2                        
+Changes in version 1.4.2
 
 - **The REST KEGG service changed and modules are no longer listable by
   organism**. `FELLA` now chooses modules that have at least one
   organismal gene. This seems equivalent to picking the modules from
   `keggLink("genome", "module")`, but the latter is slow (90s).
 
-                        Changes in version 1.4.1                        
+Changes in version 1.4.1
 
 - Fixed bug in vignette due to changes in `biomaRt`
 
 [fgsea](https://bioconductor.org/packages/fgsea)
 -----
 
-                       Changes in version 1.11.2                        
+Changes in version 1.11.2
 
 - Simpler handling of conditional probabilities
 
 - Added the exact algorithm to inst folder
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 - Proper absEps handling
 
 [fishpond](https://bioconductor.org/packages/fishpond)
 --------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - Switching to a faster version of Swish which only computes the ranks
   of the data once, and then re-uses this for the permutation
@@ -3670,7 +3669,7 @@ BUG FIXES
 [flowcatchR](https://bioconductor.org/packages/flowcatchR)
 ----------
 
-                       Changes in version 1.20.0                        
+Changes in version 1.20.0
 
 Bug fixes
 
@@ -3679,7 +3678,7 @@ Bug fixes
 [flowDensity](https://bioconductor.org/packages/flowDensity)
 -----------
 
-                       Changes in version 1.19.8                        
+Changes in version 1.19.8
 
 - -Adding densityoverlay option to plotDens, and changing sweave to
   markdown
@@ -3687,30 +3686,30 @@ Bug fixes
 [flowSpecs](https://bioconductor.org/packages/flowSpecs)
 ---------
 
-                 Changes in version 0.99.4 (2019-09-30)                 
+Changes in version 0.99.4 (2019-09-30)
 
 - responses to BioConductor review #1
 
-                 Changes in version 0.99.3 (2019-09-18)                 
+Changes in version 0.99.3 (2019-09-18)
 
 - Submitted to BioConductor
 
-                 Changes in version 0.99.2 (2019-09-18)                 
+Changes in version 0.99.2 (2019-09-18)
 
 - Diminishing the size of the example data, to fit all size
   requirements.
 
-                 Changes in version 0.99.1 (2019-09-18)                 
+Changes in version 0.99.1 (2019-09-18)
 
 - Version change, to suit BioConductor.
 
-                 Changes in version 0.9.2 (2019-09-17)                  
+Changes in version 0.9.2 (2019-09-17)
 
 - Formal tests included for all user functions.
 
 - Using specMatCalc with one color is deprecated.
 
-                 Changes in version 0.9.1 (2019-09-16)                  
+Changes in version 0.9.1 (2019-09-16)
 
 - The name "flowSpecs" is introduced.
 
@@ -3740,22 +3739,22 @@ Text:
 [FoldGO](https://bioconductor.org/packages/FoldGO)
 ------
 
-                 Changes in version 1.2.3 (2019-07-17)                  
+Changes in version 1.2.3 (2019-07-17)
 
 - issue with wrong amount of tests fixed
 
-                 Changes in version 1.2.2 (2019-07-16)                  
+Changes in version 1.2.2 (2019-07-16)
 
 - Multiple testing procedure corrected
 
-                        Changes in version 1.2.1                        
+Changes in version 1.2.1
 
 - Bug with wrong arguments order in plotting functions fixed
 
 [GCSscore](https://bioconductor.org/packages/GCSscore)
 --------
 
-                        Changes in version 1.0.0                        
+Changes in version 1.0.0
 
 - All GCSscore probe packages are now automatically generated from
   Bioconductor sources (platform design (pd) and annotation (.db)
@@ -3776,7 +3775,7 @@ Text:
 [GDSArray](https://bioconductor.org/packages/GDSArray)
 --------
 
-                        Changes in version 1.5.3                        
+Changes in version 1.5.3
 
 NEW FEATURES
 
@@ -3790,7 +3789,7 @@ BUG FIXES
 [gdsfmt](https://bioconductor.org/packages/gdsfmt)
 ------
 
-                       Changes in version 1.22.0                        
+Changes in version 1.22.0
 
 NEW FEATURES
 
@@ -3816,7 +3815,7 @@ BUG FIXES
 [gemini](https://bioconductor.org/packages/gemini)
 ------
 
-                        Changes in version 0.3.0                        
+Changes in version 0.3.0
 
 - 6-01-19: Introducing GEMINI, a variational Bayesian approach to
 analyze pairwise CRISPR screens.
@@ -3840,7 +3839,7 @@ vignette
 [geneClassifiers](https://bioconductor.org/packages/geneClassifiers)
 ---------------
 
-                        Changes in version 1.9.0                        
+Changes in version 1.9.0
 
 - Bugfix: Added signature( "FixedExpressionData", i=ANY, j=missing )
   for the "[" and "[[" functions
@@ -3852,7 +3851,7 @@ vignette
 [GENESIS](https://bioconductor.org/packages/GENESIS)
 -------
 
-                       Changes in version 2.15.3                        
+Changes in version 2.15.3
 
 - Add option "fastSKAT" to assocTestAggregate. Some other arguments and
   names of output columns for SKAT tests have also changed. This update
@@ -3863,7 +3862,7 @@ vignette
 [GenomicAlignments](https://bioconductor.org/packages/GenomicAlignments)
 -----------------
 
-                       Changes in version 1.22.0                        
+Changes in version 1.22.0
 
 NEW FEATURES
 
@@ -3879,7 +3878,7 @@ BUG FIXES
 [GenomicFeatures](https://bioconductor.org/packages/GenomicFeatures)
 ---------------
 
-                       Changes in version 1.38.0                        
+Changes in version 1.38.0
 
 NEW FEATURES
 
@@ -3905,7 +3904,7 @@ BUG FIXES
 [GenomicOZone](https://bioconductor.org/packages/GenomicOZone)
 ------------
 
-                       Changes in version 0.99.9                        
+Changes in version 0.99.9
 
 - Added clutering method: Multi-channel weighted univariate clustering.
 
@@ -3917,30 +3916,30 @@ BUG FIXES
 
 - Fixed the mal-formated NEWS file.
 
-                       Changes in version 0.99.8                        
+Changes in version 0.99.8
 
 - Solved problem connecting to GitHub and bioconductor git server.
 
-                       Changes in version 0.99.7                        
+Changes in version 0.99.7
 
 - Solved problem connecting to GitHub and bioconductor git server.
 
-                       Changes in version 0.99.6                        
+Changes in version 0.99.6
 
 - Solved problem connecting to GitHub and bioconductor git server.
 
-                       Changes in version 0.99.5                        
+Changes in version 0.99.5
 
 - Solved problem connecting to GitHub and bioconductor git server.
 
-                       Changes in version 0.99.4                        
+Changes in version 0.99.4
 
 - Modified R document files. + Corrected typos. + Replaceded
   "expression" with "activity", because not only expression can be
   analyzed, but also all kinds of gene activity. + Replaced the
   "GenomicOZone list" with "GenomicOZone object".
 
-                       Changes in version 0.99.3                        
+Changes in version 0.99.3
 
 - Replaced c(1:nrow()) into seq_len(nrow()) to avoid potential issues.
 
@@ -3965,19 +3964,19 @@ BUG FIXES
 
 - Updated R documents.
 
-                       Changes in version 0.99.2                        
+Changes in version 0.99.2
 
 - Submitted on 2019-08-18
 
 - Added joemsong as a coresponding auther to the submission.
 
-                       Changes in version 0.99.1                        
+Changes in version 0.99.1
 
 - Submitted on 2019-08-17
 
 - Reformatted the package for Bioconductor submission.
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Submitted on 2019-08-17
 
@@ -3986,7 +3985,7 @@ BUG FIXES
 [GenomicRanges](https://bioconductor.org/packages/GenomicRanges)
 -------------
 
-                       Changes in version 1.38.0                        
+Changes in version 1.38.0
 
 NEW FEATURES
 
@@ -4034,7 +4033,7 @@ BUG FIXES
 [GenomicScores](https://bioconductor.org/packages/GenomicScores)
 -------------
 
-                       Changes in version 1.10.0                        
+Changes in version 1.10.0
 
 USER VISIBLE CHANGES
 
@@ -4061,7 +4060,7 @@ BUG FIXES
 [ggtree](https://bioconductor.org/packages/ggtree)
 ------
 
-                       Changes in version 1.99.1                        
+Changes in version 1.99.1
 
 - bug fixed of geom_hilight for tree$edge.length = NULL (2019-10-16,
 Wed) -
@@ -4072,11 +4071,11 @@ https://github.com/YuLab-SMU/ggtree/pull/253 -
 https://github.com/YuLab-SMU/ggtree/pull/255 -
 https://yulab-smu.github.io/treedata-book/chapter4.html#visualize-a-list-of-trees
 
-                       Changes in version 1.99.0                        
+Changes in version 1.99.0
 
 - prepare for ggtree v=2.0.0
 
-                       Changes in version 1.17.5                        
+Changes in version 1.17.5
 
 - fortify methods for hierarchical clustering objects, including
 agnes, diana and twins (2019-08-30, Fri) - now geom_hilight supports
@@ -4089,7 +4088,7 @@ strip, either input taxa using name or id.  - support phylog defined
 in ade4 package (2019-08-14, Wed) -
 https://yulab-smu.github.io/treedata-book/chapter9.html#phylog
 
-                       Changes in version 1.17.4                        
+Changes in version 1.17.4
 
 - now geom_cladelabel supports unrooted and daylight layouts
 (2019-08-14, Wed) - by integrating geom_cladelabel2 - defined nodelab
@@ -4106,7 +4105,7 @@ support collapsed node (2019-08-06, Tue) -
 https://github.com/GuangchuangYu/ggtree/pull/243 - support hclust and
 dendrogram (2019-07-31, Wed)
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - remove re-export treeio parser function, user now need to load
 treeio explictly (2019-07-24, Wed) - export layout_circular,
@@ -4116,14 +4115,14 @@ https://yulab-smu.github.io/treedata-book/chapter10.html#dendrogram -
 scale_x_range for adding second x-axis for geom_range (2019-07-23,
 Tue) - change branch.length parameter to center for geom_range
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - extend expand according to the change of collapse (2019-07-11, Thu)
 - mode parameter in collapse - geom_tiplab now works with 'circular'
 and 'fan' layouts (2019-07-05, Fri) - geom_inset for adding subplots
 to specific nodes (see also the inset function introduced in v=1.3.8)
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - facet_data to extract data used in facet_plot or geom_facet
 (2019-07-02, Tue) - continuous parameter in geom_tree to to
@@ -4140,28 +4139,28 @@ add legend_title variable in gheatmap (2019-05-16, Thu)
 [GNET2](https://bioconductor.org/packages/GNET2)
 -----
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 - Fix module capatiblality issue.
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 - Update plot format.
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - Fix several conditions that may cause error in tree construction.
 
 [GOfuncR](https://bioconductor.org/packages/GOfuncR)
 -------
 
-                        Changes in version 1.5.2                        
+Changes in version 1.5.2
 
 USER-LEVEL CHANGES
 
 - update GO-graph (version 07-Oct-2019)
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 NEW FEATURES
 
@@ -4171,7 +4170,7 @@ NEW FEATURES
 [graphite](https://bioconductor.org/packages/graphite)
 --------
 
-                 Changes in version 1.31.1 (2019-10-24)                 
+Changes in version 1.31.1 (2019-10-24)
 
 - Updated all pathway data.
 
@@ -4180,7 +4179,7 @@ NEW FEATURES
 [gscreend](https://bioconductor.org/packages/gscreend)
 --------
 
-                       Changes in version 0.99.4                        
+Changes in version 0.99.4
 
 - Replaced parallel::mclapply() with BiocParallel::bplapply()
 
@@ -4190,7 +4189,7 @@ NEW FEATURES
 [GSEABenchmarkeR](https://bioconductor.org/packages/GSEABenchmarkeR)
 ---------------
 
-                        Changes in version 1.6.0                        
+Changes in version 1.6.0
 
 - New function `evalTypeIError` for type I error rate evalution by
   sample permutation: - evaluation of one or more enrichment methods on
@@ -4226,7 +4225,7 @@ NEW FEATURES
 [GSVA](https://bioconductor.org/packages/GSVA)
 ----
 
-                        Changes in version 1.34                         
+Changes in version 1.34
 
 BUG FIXES
 
@@ -4242,14 +4241,14 @@ BUG FIXES
 [gtrellis](https://bioconductor.org/packages/gtrellis)
 --------
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - fixed a bug of selecting chromosomes.
 
 [Gviz](https://bioconductor.org/packages/Gviz)
 ----
 
-                       Changes in version 1.29.1                        
+Changes in version 1.29.1
 
 NEW FEATURES
 
@@ -4270,7 +4269,7 @@ BUG FIXES
 [HDF5Array](https://bioconductor.org/packages/HDF5Array)
 ---------
 
-                       Changes in version 1.14.0                        
+Changes in version 1.14.0
 
 NEW FEATURES
 
@@ -4288,7 +4287,7 @@ BUG FIXES
 [HDTD](https://bioconductor.org/packages/HDTD)
 ----
 
-                 Changes in version 1.19.1 (2019-10-24)                 
+Changes in version 1.19.1 (2019-10-24)
 
 - Updated CITATION FILES.
 
@@ -4297,7 +4296,7 @@ BUG FIXES
 [hiAnnotator](https://bioconductor.org/packages/hiAnnotator)
 -----------
 
-                       Changes in version 1.19.0                        
+Changes in version 1.19.0
 
 - Drop forced strand conversion to '+' and makeGRanges with add strand
   as '*' if none was found.
@@ -4305,7 +4304,7 @@ BUG FIXES
 [HIBAG](https://bioconductor.org/packages/HIBAG)
 -----
 
-                       Changes in version 1.22.0                        
+Changes in version 1.22.0
 
 - change the file name "vignettes/HIBAG_Tutorial.Rmd" to
   "vignettes/HIBAG.Rmd", so `vignette("HIBAG")` can work directly
@@ -4313,54 +4312,54 @@ BUG FIXES
 [HiLDA](https://bioconductor.org/packages/HiLDA)
 -----
 
-                Changes in version 0.99.11 (2019-09-10)                 
+Changes in version 0.99.11 (2019-09-10)
 
 - Update the CITATION after the paper has been accepted by PeerJ
 
-                Changes in version 0.99.10 (2019-07-24)                 
+Changes in version 0.99.10 (2019-07-24)
 
 - Fix the issues commented by the Bioconductor reviewer
 
-                 Changes in version 0.99.9 (2019-07-24)                 
+Changes in version 0.99.9 (2019-07-24)
 
 - Fix the issues commented by the Bioconductor reviewer
 
-                 Changes in version 0.99.8 (2019-06-22)                 
+Changes in version 0.99.8 (2019-06-22)
 
 - Remove git tracking .o and .dll files
 
-                 Changes in version 0.99.7 (2019-06-22)                 
+Changes in version 0.99.7 (2019-06-22)
 
 - Remove git tracking .o and .dll files
 
-                 Changes in version 0.99.6 (2019-06-22)                 
+Changes in version 0.99.6 (2019-06-22)
 
 - Remove git tracking .o and .dll files
 
-                 Changes in version 0.99.5 (2019-06-22)                 
+Changes in version 0.99.5 (2019-06-22)
 
 - Remove git tracking .o and .dll files
 
-                 Changes in version 0.99.4 (2019-06-22)                 
+Changes in version 0.99.4 (2019-06-22)
 
 - Remove git tracking .o and .dll files
 
-                 Changes in version 0.99.3 (2019-06-21)                 
+Changes in version 0.99.3 (2019-06-21)
 
 - Fix the issues commented by the Bioconductor reviewer
 
-                 Changes in version 0.99.2 (2019-06-05)                 
+Changes in version 0.99.2 (2019-06-05)
 
 - Remove pmsignature dependency
 
-                 Changes in version 0.99.1 (2019-06-04)                 
+Changes in version 0.99.1 (2019-06-04)
 
 - Submitted to Bioconductor
 
 [hipathia](https://bioconductor.org/packages/hipathia)
 --------
 
-                 Changes in version 2.1.1 (2019-05-17)                  
+Changes in version 2.1.1 (2019-05-17)
 
 - Adding function mgi_from_sif, which allows to create a pathways
   object from SIF + ATT files.
@@ -4368,38 +4367,38 @@ BUG FIXES
 [HIREewas](https://bioconductor.org/packages/HIREewas)
 --------
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 - Added the citation file.
 
 [HPAanalyze](https://bioconductor.org/packages/HPAanalyze)
 ----------
 
-                         Changes in version 1.3                         
+Changes in version 1.3
 
-- Changes in version 1.3.3 
-    + Fix sn error introduced in version 1.3.2 where hpaVisPatho plotted incorrectly. 
+- Changes in version 1.3.3
+    + Fix sn error introduced in version 1.3.2 where hpaVisPatho plotted incorrectly.
     + Added a vignette with codes for figures in the HPAanalyze manuscript.
 
-- Changes in version 1.3.2 
-    + To reduce dependency, hpaVis now use gridExtra for multiple plots instead of cowplot 
+- Changes in version 1.3.2
+    + To reduce dependency, hpaVis now use gridExtra for multiple plots instead of cowplot
     + Removed dependency on reshape2
 
-- Changes in version 1.3.1 
-    + hpaExport is now supporting csv and tsv. 
-    + Support for JSON export is added via vignette. 
-    + Fix the error where hpaXmlGet give an error when curl is not installed. 
-    + Most functions with now take both HGNC gene names and ensemble ids. 
-    + hpaVisSubcell now allows user to choose reliability scores. 
+- Changes in version 1.3.1
+    + hpaExport is now supporting csv and tsv.
+    + Support for JSON export is added via vignette.
+    + Fix the error where hpaXmlGet give an error when curl is not installed.
+    + Most functions with now take both HGNC gene names and ensemble ids.
+    + hpaVisSubcell now allows user to choose reliability scores.
     + Removed dependency on magrittr
 
-- Changes in version 1.3.0 
+- Changes in version 1.3.0
     + Starting devel for Bioconductor 3.10
 
 [ideal](https://bioconductor.org/packages/ideal)
 -----
 
-                       Changes in version 1.10.0                        
+Changes in version 1.10.0
 
 New features
 
@@ -4420,13 +4419,13 @@ Other notes
 [idr2d](https://bioconductor.org/packages/idr2d)
 -----
 
-                       Changes in version 0.99.2                        
+Changes in version 0.99.2
 
 - added consistent ticks and limits to IDR plot functions
 
 - updated function documentation
 
-                       Changes in version 0.99.1                        
+Changes in version 0.99.1
 
 - added reference to Li et al. paper
 
@@ -4438,21 +4437,21 @@ Other notes
 
 - fixed local / global IDR issue
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - initial release
 
 [IgGeneUsage](https://bioconductor.org/packages/IgGeneUsage)
 -----------
 
-                 Changes in version 0.99.0 (2019-07-15)                 
+Changes in version 0.99.0 (2019-07-15)
 
 - Submitted to Bioconductor
 
 [igvR](https://bioconductor.org/packages/igvR)
 ----
 
-                         Changes in version 1.6                         
+Changes in version 1.6
 
 NEW FEATURES
 
@@ -4476,11 +4475,11 @@ NEW FEATURES
 [immunoClust](https://bioconductor.org/packages/immunoClust)
 -----------
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - CHANGES * bugfix in subset.immunoMeta
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - NEW FEATURES * introducing immunoMeta-class on meta-clustering
   results to buildup and annotate a hierachical
@@ -4494,7 +4493,7 @@ NEW FEATURES
   routines. To obtain reproducable results with cell.process function
   set.seed has to set explicit before.
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - CHANGES * minor bugfixes and code cleaning * minor additional options
   for immunoClust.plot/splom
@@ -4502,7 +4501,7 @@ NEW FEATURES
 [infercnv](https://bioconductor.org/packages/infercnv)
 --------
 
-                 Changes in version 1.1.4 (2019-10-29)                  
+Changes in version 1.1.4 (2019-10-29)
 
 - Fix reading of input annotations when some are only digits to be
   properly read as characters.
@@ -4513,7 +4512,7 @@ NEW FEATURES
 - Fix reading of bayesian filtered HMM results in add_to_seurat after
   previous version changes to keep CNV ids and states scale.
 
-                 Changes in version 1.1.3 (2019-09-16)                  
+Changes in version 1.1.3 (2019-09-16)
 
 - Fix to reload checks on HMM steps. +Added new smoothing method,
   'coordinates", that smooths the per cell data using a window based on
@@ -4552,7 +4551,7 @@ NEW FEATURES
 
 - Allow HMM steps to be resumed if needed even if steps 20/21 are done.
 
-                 Changes in version 1.1.2 (2019-07-08)                  
+Changes in version 1.1.2 (2019-07-08)
 
 - Added method to write table of wide array of predicted features from
   HMM results to file or add them as meta.data to a Seurat object if
@@ -4566,7 +4565,7 @@ NEW FEATURES
 - Added linking of image() option useRaster to run() and plot_cnv() to
   be able to enable by default, speeding up plotting significantly.
 
-                 Changes in version 1.1.1 (2019-05-20)                  
+Changes in version 1.1.1 (2019-05-20)
 
 - Added method to sample an infercnv object to a given number of cells,
   or at a given frequency, per annotation group. This is to make it
@@ -4582,7 +4581,7 @@ NEW FEATURES
 - Added support for output_format option within run() to link to
   plot_cnv() to support only writting text outputs during the analysis.
 
-                 Changes in version 1.0.4 (2019-09-16)                  
+Changes in version 1.0.4 (2019-09-16)
 
 - Fix check that contig to cluster by was found when specified.
 
@@ -4604,7 +4603,7 @@ NEW FEATURES
 
 - Bayesian filtering now preserves CNV ids in outputs
 
-                 Changes in version 1.0.3 (2019-07-05)                  
+Changes in version 1.0.3 (2019-07-05)
 
 - Fix missing dendrograms in text output when drawing figures.
 
@@ -4618,14 +4617,14 @@ NEW FEATURES
 
 - Fix to support of data.frame as input type for counts matrix.
 
-                 Changes in version 1.0.2 (2019-05-21)                  
+Changes in version 1.0.2 (2019-05-21)
 
 - Reduce peak memory usage.
 
 - Fix to subclusters definition when using a sparse matrix and a non
   random trees method with no references.
 
-                 Changes in version 1.0.1 (2019-05-20)                  
+Changes in version 1.0.1 (2019-05-20)
 
 - Improved when the clustering is defined for groups when running in
   sample mode.
@@ -4648,18 +4647,18 @@ NEW FEATURES
 [InPAS](https://bioconductor.org/packages/InPAS)
 -----
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - update documentation.
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - add citation of cleanUpdTSeq.
 
 [IRanges](https://bioconductor.org/packages/IRanges)
 -------
 
-                       Changes in version 2.20.0                        
+Changes in version 2.20.0
 
 NEW FEATURES
 
@@ -4712,15 +4711,15 @@ BUG FIXES
 [iSEE](https://bioconductor.org/packages/iSEE)
 ----
 
-                       Changes in version 1.5.13                        
+Changes in version 1.5.13
 
 - Order features selected in heat map selectize from top to bottom.
 
-                       Changes in version 1.5.12                        
+Changes in version 1.5.12
 
 - Support gene list input from aceEditor and fileInput.
 
-                       Changes in version 1.5.11                        
+Changes in version 1.5.11
 
 - Rename isColorMapCompatible to checkColormapCompatibility.
 
@@ -4728,35 +4727,35 @@ BUG FIXES
 
 - Update documentation about panel organisation in vignette.
 
-                       Changes in version 1.5.10                        
+Changes in version 1.5.10
 
 - Fix test to provide a non-empty selection to custom plot function.
 
-                        Changes in version 1.5.9                        
+Changes in version 1.5.9
 
 - Introduce Bugs Easter egg.
 
-                        Changes in version 1.5.8                        
+Changes in version 1.5.8
 
 - Substitute deprecated scater::normalize by logNormCounts.
 
-                        Changes in version 1.5.7                        
+Changes in version 1.5.7
 
 - Simplify protection of redDimPlotDefaults against empty reducedDims.
 
 - Fix to declare all panel types not available.
 
-                        Changes in version 1.5.6                        
+Changes in version 1.5.6
 
 - Updates following deprecation of isSpike and sizeFactorNames.
 
-                        Changes in version 1.5.5                        
+Changes in version 1.5.5
 
 - Add modeEmpty().
 
 - Support zero-row initialPanels argument.
 
-                        Changes in version 1.5.4                        
+Changes in version 1.5.4
 
 - Added support for file upload with server re-initialization.
 
@@ -4765,11 +4764,11 @@ BUG FIXES
 - Updating calls to ReprocessedAllenData() to load only tophat_counts
   assay.
 
-                        Changes in version 1.5.3                        
+Changes in version 1.5.3
 
 - Use ReprocessedAllenData() following the deprecation of data(allen).
 
-                        Changes in version 1.5.2                        
+Changes in version 1.5.2
 
 - Minor doc fix..
 
@@ -4777,18 +4776,18 @@ BUG FIXES
 
 - Downsample points randomly.
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 - Fix report of table links.
 
-                        Changes in version 1.5.0                        
+Changes in version 1.5.0
 
 - Bioconductor release.
 
 [IsoformSwitchAnalyzeR](https://bioconductor.org/packages/IsoformSwitchAnalyzeR)
 ---------------------
 
-                 Changes in version 1.7.2 (2019-10-18)                  
+Changes in version 1.7.2 (2019-10-18)
 
 - Update type: Major.
 
@@ -4846,7 +4845,7 @@ BUG FIXES
 
 - Error message improvements.
 
-                 Changes in version 1.7.1 (2019-07-19)                  
+Changes in version 1.7.1 (2019-07-19)
 
 - Update type: Minor.
 
@@ -4921,37 +4920,37 @@ BUG FIXES
 [kebabs](https://bioconductor.org/packages/kebabs)
 ------
 
-                       Changes in version 1.20.0                        
+Changes in version 1.20.0
 
 - release as part of Bioconductor 3.10
 
-                       Changes in version 1.19.1                        
+Changes in version 1.19.1
 
 - removed change history from package vignette for easier maintenance
 
-                       Changes in version 1.19.0                        
+Changes in version 1.19.0
 
 - new branch for Bioconductor 3.10 devel
 
 [KEGGprofile](https://bioconductor.org/packages/KEGGprofile)
 -----------
 
-                       Changes in version 1.27.4                        
+Changes in version 1.27.4
 
 - Fix bugs in vignette
 
 - Improvements for notes and warnings in R cmd check
 
-                       Changes in version 1.27.3                        
+Changes in version 1.27.3
 
 - Improvement for plot_pathway_overall function
 
-                       Changes in version 1.27.2                        
+Changes in version 1.27.2
 
 - Fix bugs in convertId function, which was caused by the updates of
   biomaRt package
 
-                       Changes in version 1.27.1                        
+Changes in version 1.27.1
 
 - Fix bugs in download_KEGGfile function, which was caused by the
   updates of KEGG web site.
@@ -4964,7 +4963,7 @@ BUG FIXES
 [KnowSeq](https://bioconductor.org/packages/KnowSeq)
 -------
 
-                Changes in version 0.99.55 (2019-10-09)                 
+Changes in version 0.99.55 (2019-10-09)
 
 - Several minor bug fixes and enhancements and xgrid/ygrid added to
   classification plots Further versions
@@ -4973,20 +4972,20 @@ BUG FIXES
 
 - Incorporation of RUV to batch effect methods
 
-                Changes in version 0.99.51 (2019-08-19)                 
+Changes in version 0.99.51 (2019-08-19)
 
 - New method web platform added (targetValidation) to retrieve the
   diseases in the DEGsToDiseases function
 
-                       Changes in version 0.99.42                       
+Changes in version 0.99.42
 
 - dataPlots genesBoxplot mode improvements
 
-                Changes in version 0.99.31 (2019-07-17)                 
+Changes in version 0.99.31 (2019-07-17)
 
 - Best tunning parameters for SVM functions
 
-                Changes in version 0.99.30 (2019-06-05)                 
+Changes in version 0.99.30 (2019-06-05)
 
 - Initial release with Bioconductor
 
@@ -4998,7 +4997,7 @@ BUG FIXES
 [limma](https://bioconductor.org/packages/limma)
 -----
 
-                       Changes in version 3.42.0                        
+Changes in version 3.42.0
 
 - New head() and tail() methods for all limma data classes.
 
@@ -5074,7 +5073,7 @@ BUG FIXES
 [lionessR](https://bioconductor.org/packages/lionessR)
 --------
 
-                 Changes in version 0.99.2 (2019-09-30)                 
+Changes in version 0.99.2 (2019-09-30)
 
 - Modify behaviour when SummarizedExperiment object used as input
 
@@ -5084,20 +5083,20 @@ BUG FIXES
 
 - Change examples in manual for lioness function
 
-                 Changes in version 0.99.1 (2019-09-05)                 
+Changes in version 0.99.1 (2019-09-05)
 
 - Bug fixed for matrix without column names
 
 - Accept SummarizedExperiment object as input
 
-                 Changes in version 0.99.0 (2019-08-19)                 
+Changes in version 0.99.0 (2019-08-19)
 
 - Submitted to Bioconductor
 
 [lipidr](https://bioconductor.org/packages/lipidr)
 ------
 
-                       Changes in version 1.99.2                        
+Changes in version 1.99.2
 
 - Breaking changes: changed the core object to LipidomicsExperiment.
 
@@ -5111,26 +5110,26 @@ BUG FIXES
 [Maaslin2](https://bioconductor.org/packages/Maaslin2)
 --------
 
-                Changes in version 0.99.15 (2019-08-05)                 
+Changes in version 0.99.15 (2019-08-05)
 
 - Add value to categorical plots.
 
 - Adding another dependency required by bioconductor MacOS automated
   build/test
 
-                Changes in version 0.99.14 (2019-07-31)                 
+Changes in version 0.99.14 (2019-07-31)
 
 - Adding two more dependencies required by bioconductor MacOS automated
   build/test
 
-                Changes in version 0.99.13 (2019-07-31)                 
+Changes in version 0.99.13 (2019-07-31)
 
 - Iterations for addition to bioconductor: Add back in license file and
   small changes to coding sections of vignette.
 
 - Modifications to man page to include new option.
 
-                Changes in version 0.99.12 (2019-07-26)                 
+Changes in version 0.99.12 (2019-07-26)
 
 - Add new option to set the max number of features shown in heatmap.
 
@@ -5138,44 +5137,44 @@ BUG FIXES
   features instead of only including the rows after finding the top N
   features.
 
-                Changes in version 0.99.11 (2019-07-24)                 
+Changes in version 0.99.11 (2019-07-24)
 
 - Update demo to data from HMP2 (provided by Himel).
 
-                Changes in version 0.99.10 (2019-07-19)                 
+Changes in version 0.99.10 (2019-07-19)
 
 - Small modifications to documentation to update dependency install
   notes to match bioconductor.
 
-                 Changes in version 0.99.9 (2019-07-18)                 
+Changes in version 0.99.9 (2019-07-18)
 
 - Add dependency to namespace for automated tests.
 
-                 Changes in version 0.99.8 (2019-07-18)                 
+Changes in version 0.99.8 (2019-07-18)
 
 - Add one more dependency for bioconductor MacOS build tests
 
-                 Changes in version 0.99.7 (2019-07-17)                 
+Changes in version 0.99.7 (2019-07-17)
 
 - Change file paths to relative to package for windows tests.
 
-                 Changes in version 0.99.6 (2019-07-17)                 
+Changes in version 0.99.6 (2019-07-17)
 
 - Fix format of R sections in vignette to pass tests.
 
-                 Changes in version 0.99.5 (2019-07-17)                 
+Changes in version 0.99.5 (2019-07-17)
 
 - Update R sections of vignette format.
 
 - Change test paths for windows.
 
-                 Changes in version 0.99.4 (2019-07-17)                 
+Changes in version 0.99.4 (2019-07-17)
 
 - Update required R version.
 
 - Modifications in vignette format for bioconductor build.
 
-                 Changes in version 0.99.3 (2019-07-17)                 
+Changes in version 0.99.3 (2019-07-17)
 
 - Modifications to package based on feedback from bioconductor review
   (additions to description, notes on data files, update testing to
@@ -5183,15 +5182,15 @@ BUG FIXES
   bioconductor method, remove tests for packages, use seq_len and
   lapply)
 
-                 Changes in version 0.99.2 (2019-06-27)                 
+Changes in version 0.99.2 (2019-06-27)
 
 - Show top N features in heatmap instead of top N associations
 
-                 Changes in version 0.99.1 (2019-06-05)                 
+Changes in version 0.99.1 (2019-06-05)
 
 - Fix plots to allow for NAs in values
 
-                 Changes in version 0.99.0 (2019-05-24)                 
+Changes in version 0.99.0 (2019-05-24)
 
 - Only show the top 50 associations in the heatmaps
 
@@ -5205,19 +5204,19 @@ BUG FIXES
 - Add Ns to plots in annotation for continuous and x axis label for
   categorical
 
-                 Changes in version 0.3.0 (2019-05-20)                  
+Changes in version 0.3.0 (2019-05-20)
 
 - Plots now show normalized/filtered/transformed data
 
 - Package modifications for submission to bioconductor
 
-                 Changes in version 0.2.3 (2018-12-20)                  
+Changes in version 0.2.3 (2018-12-20)
 
 - Move filtering to after normalization
 
 - Updates to barplots
 
-                 Changes in version 0.2.2 (2018-11-15)                  
+Changes in version 0.2.2 (2018-11-15)
 
 - Fix issue with single column in visualizations (Thanks, sma!)
 
@@ -5235,11 +5234,11 @@ BUG FIXES
 
 - Rotate heatmap column names by 45 degrees
 
-                 Changes in version 0.2.1 (2018-10-10)                  
+Changes in version 0.2.1 (2018-10-10)
 
 - Update read/slicing to support input files with a single feature.
 
-                 Changes in version 0.2.0 (2018-10-09)                  
+Changes in version 0.2.0 (2018-10-09)
 
 - Group boxplots/scatter plots by metadata name.
 
@@ -5255,21 +5254,21 @@ BUG FIXES
 
 - Set na.action default in model fit to na.exclude.
 
-                 Changes in version 0.1.0 (2018-09-27)                  
+Changes in version 0.1.0 (2018-09-27)
 
 - Initial tagged release.
 
 [MACSQuantifyR](https://bioconductor.org/packages/MACSQuantifyR)
 -------------
 
-                 Changes in version 0.99.0 (2018-11-14)                 
+Changes in version 0.99.0 (2018-11-14)
 
 - Not submitted o GUI interface o Sort o Statistics o Graphics
 
 [maftools](https://bioconductor.org/packages/maftools)
 --------
 
-                        Changes in version 2.2.0                        
+Changes in version 2.2.0
 
 NEW FUNCTIONS AND FEATURES
 
@@ -5323,7 +5322,7 @@ BUG FIX
 [MAGeCKFlute](https://bioconductor.org/packages/MAGeCKFlute)
 -----------
 
-                        Changes in version 1.4.3                        
+Changes in version 1.4.3
 
 - Remove bugs when perform enrichment analysis based on use-defined
   gene sets.
@@ -5332,21 +5331,21 @@ BUG FIX
 
 - Customize KEGG pathways (04***).
 
-                        Changes in version 1.4.1                        
+Changes in version 1.4.1
 
 - Prioritize many functions.
 
 [matter](https://bioconductor.org/packages/matter)
 ------
 
-                 Changes in version 1.11.7 (2019-10-25)                 
+Changes in version 1.11.7 (2019-10-25)
 
 BUG FIXES
 
 - Fixed errors in 'rowStats()' and 'colStats()' when calculating group
   statistics over minor dimensions
 
-                 Changes in version 1.11.6 (2019-10-23)                 
+Changes in version 1.11.6 (2019-10-23)
 
 NEW FEATURES
 
@@ -5354,14 +5353,14 @@ NEW FEATURES
 
 - Added 'binvec()' function for binning vectors
 
-                 Changes in version 1.11.5 (2019-10-13)                 
+Changes in version 1.11.5 (2019-10-13)
 
 NEW FEATURES
 
 - Exposed 'chunk_apply()' for applying functions over parallelized
   chunks of vectors and matrices
 
-                 Changes in version 1.11.4 (2019-10-13)                 
+Changes in version 1.11.4 (2019-10-13)
 
 NEW FEATURES
 
@@ -5376,7 +5375,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - Added getOption('matter.default.chunksize') for setting default
   chunksize for matter objects
 
-                       Changes in version 1.11.3                        
+Changes in version 1.11.3
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -5387,7 +5386,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - Added getOption('matter.dump.dir') to control where temporary files
   are stored for matter objects
 
-                       Changes in version 1.11.2                        
+Changes in version 1.11.2
 
 NEW FEATURES
 
@@ -5413,7 +5412,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - Printing of data can be controlled with new options
   getOption('matter.show.head') and getOption('matter.show.head.n')
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 NEW FEATURES
 
@@ -5423,20 +5422,20 @@ NEW FEATURES
 [MEB](https://bioconductor.org/packages/MEB)
 ---
 
-                       Changes in version 0.99.3                        
+Changes in version 0.99.3
 
 - The latest one.
 
-                       Changes in version 0.99.2                        
+Changes in version 0.99.2
 
 - Update package to build NAMESPACE with roxygen and use seq_len() in
   MEB function.
 
-                       Changes in version 0.99.1                        
+Changes in version 0.99.1
 
 - Update package.
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Update package to transform data format so that the data inputs and
   outputs are consistent with standard Bioconductor representations
@@ -5445,7 +5444,7 @@ NEW FEATURES
 [MetaboSignal](https://bioconductor.org/packages/MetaboSignal)
 ------------
 
-                       Changes in version 1.14.1                        
+Changes in version 1.14.1
 
 - MS_keggNetwork returns interaction subtype (e.g. activation) instead
   of type (e.g. PPrel). Thank you Shilpa Harshan for noticing this!
@@ -5453,58 +5452,58 @@ NEW FEATURES
 [metagene2](https://bioconductor.org/packages/metagene2)
 ---------
 
-                 Changes in version 1.1.4 (2019-07-12)                  
+Changes in version 1.1.4 (2019-07-12)
 
 - Improved documentation of control samples in design.
 
-                 Changes in version 1.1.3 (2019-05-13)                  
+Changes in version 1.1.3 (2019-05-13)
 
 - When parameter validation fails, the metagene2 object will now fall
   back to the previous set of parameters, instead of ending up in an
   invalid state.
 
-                 Changes in version 1.1.2 (2019-05-09)                  
+Changes in version 1.1.2 (2019-05-09)
 
 - rnaseq mode now sets strand_specific to TRUE by default.
 
-                 Changes in version 1.1.1 (2019-05-03)                  
+Changes in version 1.1.1 (2019-05-03)
 
 - Added log2_ratio normalization option.
 
 - Fix a bug that prevented strand_specific and stitch mode to work
   together.
 
-                 Changes in version 1.1.0 (2019-04-05)                  
+Changes in version 1.1.0 (2019-04-05)
 
 - Submitted package to Bioconductor.
 
 [metaMS](https://bioconductor.org/packages/metaMS)
 ------
 
-                       Changes in version 1.21.4                        
+Changes in version 1.21.4
 
 - Pull request accepted bug correction in annotation pipeline
 
-                       Changes in version 1.21.2                        
+Changes in version 1.21.2
 
 - change Maintainer
 
 [MetCirc](https://bioconductor.org/packages/MetCirc)
 -------
 
-                 Changes in version 1.15.2 (2019-09-09)                 
+Changes in version 1.15.2 (2019-09-09)
 
 - add codecov
 
 - add Travis-CI for continuous integration
 
-                 Changes in version 1.15.1 (2019-08-29)                 
+Changes in version 1.15.1 (2019-08-29)
 
 - add ggplot2 in dependencies
 
 - change GPL-2 to GPL-3 license
 
-                 Changes in version 1.15.0 (2019-04-23)                 
+Changes in version 1.15.0 (2019-04-23)
 
 - implement the MSnbase Spectra/Spectrum2 as the container for MS2
   spectra, change all functions that they accept Spectra objects
@@ -5520,36 +5519,36 @@ NEW FEATURES
 [MethCP](https://bioconductor.org/packages/MethCP)
 ------
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
 [methrix](https://bioconductor.org/packages/methrix)
 -------
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 o Submission to Bioconductor
 
 [methylGSA](https://bioconductor.org/packages/methylGSA)
 ---------
 
-                        Changes in version 1.3.5                        
+Changes in version 1.3.5
 
 - Using IlluminaHumanMethylationEPICanno.ilm10b4.hg19
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 - Shiny app is available within the package
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 - Bug fixes in methylgometh
 
 [MGFR](https://bioconductor.org/packages/MGFR)
 ----
 
-                       Changes in version 1.10.1                        
+Changes in version 1.10.1
 
 - fixed the error that caused failed build of the package as follows:
   Changed the argument "entrezgene" used in getBM() to "entrezgene_id",
@@ -5559,7 +5558,7 @@ o Submission to Bioconductor
 [microbiome](https://bioconductor.org/packages/microbiome)
 ----------
 
-                  Changes in version 2.0 (2019-08-20)                   
+Changes in version 2.0 (2019-08-20)
 
 - spreadplot function added
 
@@ -5582,32 +5581,32 @@ o Submission to Bioconductor
 [microbiomeDASim](https://bioconductor.org/packages/microbiomeDASim)
 ---------------
 
-                 Changes in version 0.99.0 (2019-08-26)                 
+Changes in version 0.99.0 (2019-08-26)
 
 - Submitted to Bioconductor
 
 [miRSM](https://bioconductor.org/packages/miRSM)
 -----
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 - Update miRSM function <2019-09-11, Wed>
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 - Add modular analysis <2019-08-12, Mon>
 
 [miRspongeR](https://bioconductor.org/packages/miRspongeR)
 ----------
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 - Add citation <2019-05-10, Fri>.
 
 [mixOmics](https://bioconductor.org/packages/mixOmics)
 --------
 
-                        Changes in version 6.8.6                        
+Changes in version 6.8.6
 
 new features / enhancements
 
@@ -5623,13 +5622,13 @@ minor improvements
 - missing values in plotIndiv's group argument no more throws error -
 mixOmics::predict function documentation now more accessible
 
-                        Changes in version 6.8.5                        
+Changes in version 6.8.5
 
 bug fixes
 
 - names of linnerud datasets fixed.
 
-                        Changes in version 6.8.4                        
+Changes in version 6.8.4
 
 minor improvements
 
@@ -5637,7 +5636,7 @@ minor improvements
 mixOmics function documentation disambiguated with instruction on how
 to get package help.
 
-                        Changes in version 6.8.3                        
+Changes in version 6.8.3
 
 new features / enhancements
 
@@ -5653,14 +5652,14 @@ minor improvements
 
 - auroc help files now updated with latest changes
 
-                        Changes in version 6.8.2                        
+Changes in version 6.8.2
 
 minor improvements
 
 - Updated onLoad message with discussion forum info, bug reports, and
 more - Dropped legacy comp.tol argument from pca
 
-                        Changes in version 6.8.1                        
+Changes in version 6.8.1
 
 bug fixes
 
@@ -5676,83 +5675,83 @@ code of conduct - Updated DESCRIPTION with bug reports and biocViews
 [MMAPPR2](https://bioconductor.org/packages/MMAPPR2)
 -------
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
 [MMUPHin](https://bioconductor.org/packages/MMUPHin)
 -------
 
-                 Changes in version 0.99.2 (2019-10-21)                 
+Changes in version 0.99.2 (2019-10-21)
 
 - Changed default output of Maaslin2_wrapper and rma_wrapper to
   tempdir()
 
-                 Changes in version 0.99.1 (2019-10-15)                 
+Changes in version 0.99.1 (2019-10-15)
 
 - Switched reference links for igraph and fpc in Rd documents.
 
-                 Changes in version 0.99.0 (2019-10-15)                 
+Changes in version 0.99.0 (2019-10-15)
 
 - Initial submission to Bioconductor.
 
 [MOSim](https://bioconductor.org/packages/MOSim)
 -----
 
-                 Changes in version 0.99.0 (2019-06-13)                 
+Changes in version 0.99.0 (2019-06-13)
 
 - Submitted to Bioconductor
 
 [motifStack](https://bioconductor.org/packages/motifStack)
 ----------
 
-                       Changes in version 1.29.8                        
+Changes in version 1.29.8
 
 - remove google scholar from vignette.
 
-                       Changes in version 1.29.7                        
+Changes in version 1.29.7
 
 - Add google scholar in vignette.
 
-                       Changes in version 1.29.6                        
+Changes in version 1.29.6
 
 - fix a bug that 'grid' and 'graphics' output mixed for
   plotMotifStackWithPhylog
 
-                       Changes in version 1.29.5                        
+Changes in version 1.29.5
 
 - fix a bug that importMatrix can not handle empty matrix.
 
-                       Changes in version 1.29.4                        
+Changes in version 1.29.4
 
 - fix a bug that markers shift position when alignment.
 
-                       Changes in version 1.29.3                        
+Changes in version 1.29.3
 
 - accept pcm for plotMotifLogoA
 
 - geom_motif accept x,y,width,height
 
-                       Changes in version 1.29.2                        
+Changes in version 1.29.2
 
 - add markers
 
-                       Changes in version 1.29.1                        
+Changes in version 1.29.1
 
 - add function geom_motif
 
 [msa](https://bioconductor.org/packages/msa)
 ---
 
-                       Changes in version 1.18.0                        
+Changes in version 1.18.0
 
 - release as part of Bioconductor 3.10
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - removed change history from package vignette for easier maintenance
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - fixed regular expression to comply with PCRE2
 
@@ -5762,14 +5761,14 @@ code of conduct - Updated DESCRIPTION with bug reports and biocViews
 
 - fixed src/Makevars.win
 
-                       Changes in version 1.17.0                        
+Changes in version 1.17.0
 
 - new branch for Bioconductor 3.10 devel
 
 [MSnbase](https://bioconductor.org/packages/MSnbase)
 -------
 
-                        Changes in version 2.11                         
+Changes in version 2.11
 
 Changes in 2.11.13
 
@@ -5853,13 +5852,13 @@ Changes in 2.11.0
 [msPurity](https://bioconductor.org/packages/msPurity)
 --------
 
-                       Changes in version 1.11.5                        
+Changes in version 1.11.5
 
 - frag4feature fileid fix for conversion from factor to character
 
 - Add missing plyr:: reference (thanks jsaintvanne)
 
-                       Changes in version 1.11.3                        
+Changes in version 1.11.3
 
 - Overhaul of combineAnnotation function. Uses local database now as
   previously API calls would take too much time to finish and was not
@@ -5877,11 +5876,11 @@ Changes in 2.11.0
 - Update of spectralMatching so that either PostgreSQL or MySQL
   database can be used as input to either query or library
 
-                       Changes in version 1.11.2                        
+Changes in version 1.11.2
 
 - Bug fix for EIC with MSMS data
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 - Bug fix for duplicate MSP spectra when not using metadata table
 
@@ -5889,7 +5888,7 @@ Changes in 2.11.0
 
 - Fix for sirius combine annotations (incorrect column format)
 
-                       Changes in version 1.11.0                        
+Changes in version 1.11.0
 
 - Bioconductor dev (automatic version bump)
 
@@ -5897,7 +5896,7 @@ Changes in 2.11.0
 [mzR](https://bioconductor.org/packages/mzR)
 ---
 
-                       Changes in version 2.19.6                        
+Changes in version 2.19.6
 
 - header for the pwiz backend returns NA instead of 0 for not defined
   or missing information <2019-09-24 Tue>.
@@ -5905,43 +5904,43 @@ Changes in 2.11.0
 - peaks for pwiz backend rewritten (small performance improvement)
   <2019-09-26 Thu>.
 
-                       Changes in version 2.19.5                        
+Changes in version 2.19.5
 
 - version bump to force build with latest Rcpp
 
-                       Changes in version 2.19.4                        
+Changes in version 2.19.4
 
 - Add header columns scanWindowLowerLimit and scanWindowUpperLimit
 
-                       Changes in version 2.19.3                        
+Changes in version 2.19.3
 
 - use ProtGenerics::tolerance generic <2019-08-16 Fri>
 
-                       Changes in version 2.19.2                        
+Changes in version 2.19.2
 
 - Fix issue 190, compiles on clang-8.0
 
-                       Changes in version 2.19.1                        
+Changes in version 2.19.1
 
 - Remove analyzer generics, now in ProtGenerics <2019-05-13 Mon>
 
 [NADfinder](https://bioconductor.org/packages/NADfinder)
 ---------
 
-                        Changes in version 1.9.2                        
+Changes in version 1.9.2
 
 - Update citation.  - Update trimPeaks.R to filter peaks using
 adjusted pvalues and trimmed peaks by removing windows with zscore <
 1.696
 
-                        Changes in version 1.9.1                        
+Changes in version 1.9.1
 
 - Add citation.
 
 [NBAMSeq](https://bioconductor.org/packages/NBAMSeq)
 -------
 
-                 Changes in version 1.1.1 (2019-08-16)                  
+Changes in version 1.1.1 (2019-08-16)
 
 - Added a new function makeplot
 
@@ -5950,34 +5949,34 @@ adjusted pvalues and trimmed peaks by removing windows with zscore <
 [ncGTW](https://bioconductor.org/packages/ncGTW)
 -----
 
-                 Changes in version 0.99.7 (2019-08-22)                 
+Changes in version 0.99.7 (2019-08-22)
 
 - Added citaion
 
-                 Changes in version 0.99.2 (2019-06-19)                 
+Changes in version 0.99.2 (2019-06-19)
 
 - Submitted to Bioconductor
 
-                 Changes in version 0.5.0 (2019-04-02)                  
+Changes in version 0.5.0 (2019-04-02)
 
 - Uploaded to GitHub
 
 [netboost](https://bioconductor.org/packages/netboost)
 --------
 
-                 Changes in version 1.1.3 (2019-08-01)                  
+Changes in version 1.1.3 (2019-08-01)
 
 - Introduction of the fully rank based extension
   (netboost(...,robust_PCs=TRUE,filter_method="spearman",method="spearman")).
 
-                 Changes in version 1.1.1 (2019-05-06)                  
+Changes in version 1.1.1 (2019-05-06)
 
 - Introduction of Pearson-, Spearman- and Kendall-based filtering.
 
 [ngsReports](https://bioconductor.org/packages/ngsReports)
 ----------
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - Added plotAlignmentSummary()
 
@@ -5988,12 +5987,12 @@ adjusted pvalues and trimmed peaks by removing windows with zscore <
 
 - Enabled auto detection for report type for importNgsLogs()
 
-                        Changes in version 1.0.2                        
+Changes in version 1.0.2
 
 - Added Transcriptomic GC Content for A.thaliana to default
   gcTheoretical object
 
-                        Changes in version 1.0.1                        
+Changes in version 1.0.1
 
 - Table in default FastQC template now scroll for larger datasets
 
@@ -6007,35 +6006,35 @@ adjusted pvalues and trimmed peaks by removing windows with zscore <
 [NormalyzerDE](https://bioconductor.org/packages/NormalyzerDE)
 ------------
 
-                        Changes in version 1.3.3                        
+Changes in version 1.3.3
 
 - Extended input validation when executing NormalyzerDE using
   experimentObj
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 - Correctly showing the number of values replaced with NA in status
   text
 
-                        Changes in version 1.3.0                        
+Changes in version 1.3.0
 
 - Sync with Bioconductor changes
 
 [normr](https://bioconductor.org/packages/normr)
 -----
 
-                       Changes in version 1.11.2                        
+Changes in version 1.11.2
 
 - Added correct CITATION
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 - Maintainer E-mail adress updated
 
 [omicplotR](https://bioconductor.org/packages/omicplotR)
 ---------
 
-                        Changes in version 1.5.4                        
+Changes in version 1.5.4
 
 - explicitly calling some functions to prevent conflicts
   (jsonlite::fromJSON)
@@ -6051,7 +6050,7 @@ adjusted pvalues and trimmed peaks by removing windows with zscore <
 
 - changed T to TRUE in rab_script and server.R
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 - choice of pseudocount or CZM
 
@@ -6068,34 +6067,34 @@ adjusted pvalues and trimmed peaks by removing windows with zscore <
 [OmnipathR](https://bioconductor.org/packages/OmnipathR)
 ---------
 
-                Changes in version 0.99.12 (2019-10-21)                 
+Changes in version 0.99.12 (2019-10-21)
 
 - Modification in the separation between genes within a complex (From
 dash) to Underscore
 
-                 Changes in version 0.99.0 (2019-10-10)                 
+Changes in version 0.99.0 (2019-10-10)
 
 - Submitted to Bioconductor
 
 [OncoSimulR](https://bioconductor.org/packages/OncoSimulR)
 ----------
 
-                 Changes in version 2.15.2 (2019-08-14)                 
+Changes in version 2.15.2 (2019-08-14)
 
 - Trying to prevent fscanf warning in FitnessLandscape/input.c
 
-                 Changes in version 2.15.1 (2019-06-06)                 
+Changes in version 2.15.1 (2019-06-06)
 
 - Added MAGELLAN's sources and functionality from MAGELLAN.
 
-                 Changes in version 2.15.0 (2019-06-06)                 
+Changes in version 2.15.0 (2019-06-06)
 
 - Bumped version to match current Biocdevel.
 
 [onlineFDR](https://bioconductor.org/packages/onlineFDR)
 ---------
 
-                        Changes in version 1.4.0                        
+Changes in version 1.4.0
 
 MODIFICATIONS
 
@@ -6127,7 +6126,7 @@ MODIFICATIONS
 [oppti](https://bioconductor.org/packages/oppti)
 -----
 
-                       Changes in version 0.99.13                       
+Changes in version 0.99.13
 
 Features in the first version, Bioconductor 3.10 Release (September 2019
 
@@ -6155,7 +6154,7 @@ Features in the first version, Bioconductor 3.10 Release (September 2019
 [Organism.dplyr](https://bioconductor.org/packages/Organism.dplyr)
 --------------
 
-                       Changes in version 1.14.0                        
+Changes in version 1.14.0
 
 NEW FEATURES
 
@@ -6168,7 +6167,7 @@ NEW FEATURES
 [OUTRIDER](https://bioconductor.org/packages/OUTRIDER)
 --------
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 - Documentation
 
@@ -6225,7 +6224,7 @@ NEW FEATURES
 [pathwayPCA](https://bioconductor.org/packages/pathwayPCA)
 ----------
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 2019-06-06
 
@@ -6235,7 +6234,7 @@ This patch resolves this issue.
 [Pbase](https://bioconductor.org/packages/Pbase)
 -----
 
-                       Changes in version 0.25.1                        
+Changes in version 0.25.1
 
 - Removing mapping functions, moved to the ensembldb package.
   <2019-08-08 Thu>
@@ -6245,7 +6244,7 @@ This patch resolves this issue.
 [pcaExplorer](https://bioconductor.org/packages/pcaExplorer)
 -----------
 
-                       Changes in version 2.12.0                        
+Changes in version 2.12.0
 
 Bug fixes
 
@@ -6264,7 +6263,7 @@ published manuscript - https://doi.org/10.1186/s12859-019-2879-1
 [PCAtools](https://bioconductor.org/packages/PCAtools)
 --------
 
-                        Changes in version 2.0.0                        
+Changes in version 2.0.0
 
 - added parallelPCA function to perform Horn's parallel analysis, which
   chooses an ideal number of principal components to retain (courtesy
@@ -6282,41 +6281,41 @@ published manuscript - https://doi.org/10.1186/s12859-019-2879-1
 [peakPantheR](https://bioconductor.org/packages/peakPantheR)
 -----------
 
-                 Changes in version 0.99.3 (2019-10-01)                 
+Changes in version 0.99.3 (2019-10-01)
 
 - Revisions for Bioconductor submission
 
-                 Changes in version 0.99.2 (2019-09-10)                 
+Changes in version 0.99.2 (2019-09-10)
 
 - Revisions for Bioconductor submission
 
-                 Changes in version 0.99.0 (2019-06-09)                 
+Changes in version 0.99.0 (2019-06-09)
 
 - Submitted to Bioconductor
 
 [PERFect](https://bioconductor.org/packages/PERFect)
 -------
 
-                Changes in version 0.99.11 (2019-09-19)                 
+Changes in version 0.99.11 (2019-09-19)
 
 - Fixed bugs
 
 - Made the following significant changes o Removed Knight dataset
 
-                Changes in version 0.99.10 (2019-09-17)                 
+Changes in version 0.99.10 (2019-09-17)
 
 - Submitted to Bioconductor
 
 [PGA](https://bioconductor.org/packages/PGA)
 ---
 
-                       Changes in version 1.15.1                        
+Changes in version 1.15.1
 
 - Implementation for the protein database construction from fusion
   events(buildFusionProteinDB). Currently, this function only supports
   the calling result from STAR-fusion.
 
-                       Changes in version 1.14.1                        
+Changes in version 1.14.1
 
 - Add a parameter to set FDR
 
@@ -6325,20 +6324,20 @@ published manuscript - https://doi.org/10.1186/s12859-019-2879-1
 [PhyloProfile](https://bioconductor.org/packages/PhyloProfile)
 ------------
 
-                       Changes in version 0.99.31                       
+Changes in version 0.99.31
 
 - Submitted to Bioconductor
 
 [piano](https://bioconductor.org/packages/piano)
 -----
 
-                        Changes in version 2.2.0                        
+Changes in version 2.2.0
 
 BUG FIXES
 
 - Fix import exprs<- bug in loadMAdata.
 
-                        Changes in version 2.0.1                        
+Changes in version 2.0.1
 
 BUG FIXES
 
@@ -6347,33 +6346,33 @@ BUG FIXES
 [Pigengene](https://bioconductor.org/packages/Pigengene)
 ---------
 
-                Changes in version 1.11.34 (2019-10-21)                 
+Changes in version 1.11.34 (2019-10-21)
 
 General
 
 - The pipeline is now explained step by step in the vignette.
 
-                Changes in version 1.11.32 (2019-10-18)                 
+Changes in version 1.11.32 (2019-10-18)
 
 Changes in existing functions
 
 - The Data argument of compute.pigengene can now be a matrix with only
   1 column.
 
-                Changes in version 1.11.30 (2019-10-02)                 
+Changes in version 1.11.30 (2019-10-02)
 
 Changes in existing functions
 
 - The doRetuNetworks argument is now added to the combine.networks
   function.
 
-                Changes in version 1.11.28 (2019-10-01)                 
+Changes in version 1.11.28 (2019-10-01)
 
 New functions
 
 - message.if() is now exported.
 
-                Changes in version 1.11.26 (2019-09-26)                 
+Changes in version 1.11.26 (2019-09-26)
 
 Changes in existing functions
 
@@ -6384,7 +6383,7 @@ New functions
 
 - save.if() is now exported.
 
-                Changes in version 1.11.24 (2019-09-03)                 
+Changes in version 1.11.24 (2019-09-03)
 
 Bug Fixes
 
@@ -6392,14 +6391,14 @@ Bug Fixes
   be "All". Also, if saveFile=NULL, nothing will be saved without any
   error.
 
-                Changes in version 1.11.20 (2019-05-15)                 
+Changes in version 1.11.20 (2019-05-15)
 
 Changes in existing functions
 
 - Data and Labels can now be lists, which will be combined using
   combine.network() before analysis.
 
-                 Changes in version 1.11.4 (2019-05-02)                 
+Changes in version 1.11.4 (2019-05-02)
 
 Bug Fixes
 
@@ -6408,40 +6407,40 @@ Bug Fixes
 [podkat](https://bioconductor.org/packages/podkat)
 ------
 
-                       Changes in version 1.18.0                        
+Changes in version 1.18.0
 
 - release as part of Bioconductor 3.10
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - removed change history from package vignette for easier maintenance
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - minor changes to DESCRIPTION file (system requirement GNU make) and
   src/Makevars
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - changed summary() method for VariantAnnotation class in order to stay
   compatible with print() method in GenomicRanges package
 
 - corresponding minor adaptations in documentation and package vignette
 
-                       Changes in version 1.17.0                        
+Changes in version 1.17.0
 
 - new branch for Bioconductor 3.10 devel
 
 [polyester](https://bioconductor.org/packages/polyester)
 ---------
 
-                       Changes in version 1.99.3                        
+Changes in version 1.99.3
 
 - NB function now exported
 
 - note that version 1.99.3 on GitHub was version 1.1.0 on Bioconductor.
 
-                       Changes in version 1.99.2                        
+Changes in version 1.99.2
 
 - bug fix in fragment generation (last 2 bases of transcript were never
   sequenced)
@@ -6449,7 +6448,7 @@ Bug Fixes
 [pqsfinder](https://bioconductor.org/packages/pqsfinder)
 ---------
 
-                         Changes in version 2.2                         
+Changes in version 2.2
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -6465,14 +6464,14 @@ BUG FIXES
 [proDA](https://bioconductor.org/packages/proDA)
 -----
 
-                 Changes in version 0.99.0 (2019-06-02)                 
+Changes in version 0.99.0 (2019-06-02)
 
 - Initial submission
 
 [pRoloc](https://bioconductor.org/packages/pRoloc)
 ------
 
-                        Changes in version 1.25                         
+Changes in version 1.25
 
 Changes in version 1.25.2
 
@@ -6491,27 +6490,27 @@ Changes in version 1.25.0
 [ProtGenerics](https://bioconductor.org/packages/ProtGenerics)
 ------------
 
-                       Changes in version 1.17.4                        
+Changes in version 1.17.4
 
 - New generics needed in Spectra and Chromatograms packages <2019-08-20
   Tue>
 
-                       Changes in version 1.17.3                        
+Changes in version 1.17.3
 
 - New tolerance generic <2019-08-16 Fri>
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 - New generics (see issue #8) <2019-05-12 Sun>
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - Move many generics from MSnbase <2019-05-11 Sat>
 
 [PureCN](https://bioconductor.org/packages/PureCN)
 ------
 
-                       Changes in version 1.16.0                        
+Changes in version 1.16.0
 
 NEW FEATURES
 
@@ -6588,20 +6587,20 @@ BUGFIXES
 [pwrEWAS](https://bioconductor.org/packages/pwrEWAS)
 -------
 
-                        Changes in version 0.1.0                        
+Changes in version 0.1.0
 
 - Initial version
 
 [QDNAseq](https://bioconductor.org/packages/QDNAseq)
 -------
 
-                 Changes in version 1.21.6 (2019-09-25)                 
+Changes in version 1.21.6 (2019-09-25)
 
 BUG FIXES
 
 - Link to the 'GEM library' tool was broken.
 
-                 Changes in version 1.21.5 (2019-09-09)                 
+Changes in version 1.21.5 (2019-09-09)
 
 BUG FIXES
 
@@ -6609,7 +6608,7 @@ BUG FIXES
   position segments that were out of range incorrectly, because it
   forgot to take the log transform on those outliers.
 
-                 Changes in version 1.21.4 (2019-09-06)                 
+Changes in version 1.21.4 (2019-09-06)
 
 SIGNIFICANT CHANGES
 
@@ -6620,7 +6619,7 @@ SIGNIFICANT CHANGES
   this change, is that the QDNAseq maintainers will no longer host
   QDNAseq bin annotation files online (in the cloud).
 
-                 Changes in version 1.21.3 (2019-09-04)                 
+Changes in version 1.21.3 (2019-09-04)
 
 NEW FEATURES
 
@@ -6642,7 +6641,7 @@ DEPRECATION AND DEFUNCT
   use proper parallel random number generation (RNG).  We now instead
   rely on future.apply::future_lapply(..., future.seed=TRUE) for this.
 
-                 Changes in version 1.21.2 (2019-09-03)                 
+Changes in version 1.21.2 (2019-09-03)
 
 SIGNIFICANT CHANGES
 
@@ -6672,7 +6671,7 @@ SOFTWARE QUALITY
 - TESTS: Now asserting numerical reproducibility of also segmentBins()
   and callBins().
 
-                 Changes in version 1.21.1 (2019-08-30)                 
+Changes in version 1.21.1 (2019-08-30)
 
 SIGNIFICANT CHANGES
 
@@ -6682,11 +6681,11 @@ SIGNIFICANT CHANGES
 [qPLEXanalyzer](https://bioconductor.org/packages/qPLEXanalyzer)
 -------------
 
-                        Changes in version 1.3.2                        
+Changes in version 1.3.2
 
 - Added mergePeptides to NAMESPACE
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 - Added mergePeptides function to summarize identical peptides to
   single peptide for specific protein.
@@ -6694,53 +6693,53 @@ SIGNIFICANT CHANGES
 [Qtlizer](https://bioconductor.org/packages/Qtlizer)
 -------
 
-                Changes in version 0.99.12 (2019-09-06)                 
+Changes in version 0.99.12 (2019-09-06)
 
 - eval=false for package installation in vignette
 
 - Title change in vignette
 
-                Changes in version 0.99.11 (2019-09-03)                 
+Changes in version 0.99.11 (2019-09-03)
 
 - Incorporated Bioconductor reviewer comments
 
-                Changes in version 0.99.10 (2019-08-27)                 
+Changes in version 0.99.10 (2019-08-27)
 
 - Minor
 
-                 Changes in version 0.99.9 (2019-08-27)                 
+Changes in version 0.99.9 (2019-08-27)
 
 - Bugfixes, error handling
 
-                 Changes in version 0.99.8 (2019-08-27)                 
+Changes in version 0.99.8 (2019-08-27)
 
 - Additional HTTP error handling
 
-                 Changes in version 0.99.7 (2019-08-27)                 
+Changes in version 0.99.7 (2019-08-27)
 
 - Minor
 
-                 Changes in version 0.99.6 (2019-08-27)                 
+Changes in version 0.99.6 (2019-08-27)
 
 - Code revised
 
-                 Changes in version 0.99.5 (2019-08-27)                 
+Changes in version 0.99.5 (2019-08-27)
 
 - Added parameter return_obj to have the possibility to get a
   GenomicRanges::GRanges object
 
-                 Changes in version 0.99.4 (2019-08-14)                 
+Changes in version 0.99.4 (2019-08-14)
 
 - Added parameter ld_method and corr
 
-                 Changes in version 0.99.0 (2019-08-12)                 
+Changes in version 0.99.0 (2019-08-12)
 
 - Submitted to Bioconductor
 
 [RaggedExperiment](https://bioconductor.org/packages/RaggedExperiment)
 ----------------
 
-                       Changes in version 1.10.0                        
+Changes in version 1.10.0
 
 Bug fixes and minor improvements
 
@@ -6752,7 +6751,7 @@ vignette
 [Rcpi](https://bioconductor.org/packages/Rcpi)
 ----
 
-                 Changes in version 1.21.1 (2019-05-17)                 
+Changes in version 1.21.1 (2019-05-17)
 
 Improvements
 
@@ -6764,27 +6763,27 @@ Updated the vignette style.
 [Rcwl](https://bioconductor.org/packages/Rcwl)
 ----
 
-                 Changes in version 1.1.12 (2019-09-09)                 
+Changes in version 1.1.12 (2019-09-09)
 
 - Add ExpressionTool, Extensions and Metadata
 
-                 Changes in version 1.1.7 (2019-07-25)                  
+Changes in version 1.1.7 (2019-07-25)
 
 - New feature, baseCommand works with R function
 
 [RcwlPipelines](https://bioconductor.org/packages/RcwlPipelines)
 -------------
 
-                 Changes in version 1.1.14 (2019-10-21)                 
+Changes in version 1.1.14 (2019-10-21)
 
 - Add pvactools neoantigen prediction pipeline
 
-                 Changes in version 1.1.8 (2019-08-22)                  
+Changes in version 1.1.8 (2019-08-22)
 
 - Add more Somatic Variant Callers: VarScan2, LoFreq, MuSE,
   SomaticSniper, VarDict, lancet, manta, strelka2
 
-                 Changes in version 1.1.5 (2019-07-19)                  
+Changes in version 1.1.5 (2019-07-19)
 
 - Structure updates: export all tools and pipelines.
 
@@ -6794,14 +6793,14 @@ Updated the vignette style.
 
 - Vignette updated.
 
-                 Changes in version 1.1.2 (2019-05-22)                  
+Changes in version 1.1.2 (2019-05-22)
 
 - fix samtools index bug for cwltool 2019
 
 [RCy3](https://bioconductor.org/packages/RCy3)
 ----
 
-                        Changes in version 2.6.0                        
+Changes in version 2.6.0
 
 - New functions: - createGroupByColumn - clearEdgeBends -
   getNodePosition
@@ -6822,19 +6821,19 @@ Updated the vignette style.
 - Doc Fixes - added Filters to Overview vignette - improved file type
   handling descriptions
 
-                        Changes in version 2.4.4                        
+Changes in version 2.4.4
 
 - Bug Fixes - filter functions -- #73 wrong params
 
-                        Changes in version 2.4.3                        
+Changes in version 2.4.3
 
 - Bug Fixes - import functions -- #62 fixed default directory
 
-                        Changes in version 2.4.2                        
+Changes in version 2.4.2
 
 - Bug Fixes - getEdgeInfo -- #61 missing function
 
-                        Changes in version 2.4.1                        
+Changes in version 2.4.1
 
 - Bug Fixes - getLayoutPropertyNames -- #59 fixed returned values -
   createNetworkFromIgraph -- #58 flatten list attributes to strings
@@ -6842,7 +6841,7 @@ Updated the vignette style.
 [ReactomeGSA](https://bioconductor.org/packages/ReactomeGSA)
 -----------
 
-                 Changes in version 0.99.8 (2019-08-13)                 
+Changes in version 0.99.8 (2019-08-13)
 
 - Removed package startup message
 
@@ -6852,18 +6851,18 @@ Updated the vignette style.
 
 - Added constructor function for the ReactomeAnalysisRequest class.
 
-                 Changes in version 0.99.7 (2019-07-22)                 
+Changes in version 0.99.7 (2019-07-22)
 
 - Adapted the get_reactome_methods function to provide a more readable
   overview
 
 - Changed to reactome analysis service API URL to the new domain name.
 
-                 Changes in version 0.99.6 (2019-07-09)                 
+Changes in version 0.99.6 (2019-07-09)
 
 - Minor bugfixes in examples
 
-                 Changes in version 0.99.5 (2019-07-09)                 
+Changes in version 0.99.5 (2019-07-09)
 
 - Updated vignette to new API data types
 
@@ -6873,18 +6872,18 @@ Updated the vignette style.
 
 - Fixed bug that pathways function did not sort the pathway table
 
-                 Changes in version 0.99.0 (2019-07-01)                 
+Changes in version 0.99.0 (2019-07-01)
 
 - Submitted to Bioconductor
 
 [recount](https://bioconductor.org/packages/recount)
 -------
 
-                       Changes in version 1.11.14                       
+Changes in version 1.11.14
 
 - Added a NEWS.md file to track changes to the package.
 
-                       Changes in version 1.11.13                       
+Changes in version 1.11.13
 
 NEW FEATURES
 
@@ -6892,14 +6891,14 @@ NEW FEATURES
 https://support.bioconductor.org/p/124265 and based on Sonali Arora
 et al https://www.biorxiv.org/content/10.1101/445601v2.
 
-                       Changes in version 1.11.12                       
+Changes in version 1.11.12
 
 BUG FIXES
 
 - Now geo_characteristics() can deal with the scenario reported at
 https://support.bioconductor.org/p/116480/ by @Jacques.van-Helden.
 
-                       Changes in version 1.11.7                        
+Changes in version 1.11.7
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -6910,7 +6909,7 @@ are missing instead of installing them automatically. This complies
 with Marcel Ramos' request at
 https://github.com/leekgroup/recount/issues/14.
 
-                       Changes in version 1.11.4                        
+Changes in version 1.11.4
 
 NEW FEATURES
 
@@ -6923,7 +6922,7 @@ occasional failed Bioconductor nightly checks.
 [regioneR](https://bioconductor.org/packages/regioneR)
 --------
 
-                       Changes in version 1.18.0                        
+Changes in version 1.18.0
 
 NEW FEATURES
 
@@ -6942,7 +6941,7 @@ BUG FIXES
 [regionReport](https://bioconductor.org/packages/regionReport)
 ------------
 
-                       Changes in version 1.19.2                        
+Changes in version 1.19.2
 
 - Added a NEWS.md file to track changes to the package.
 
@@ -6958,7 +6957,7 @@ https://github.com/leekgroup/recount/issues/14.
 [rGREAT](https://bioconductor.org/packages/rGREAT)
 ------
 
-                       Changes in version 1.17.1                        
+Changes in version 1.17.1
 
 - assign to foreName and backName when querying GREAT
 
@@ -6971,7 +6970,7 @@ https://github.com/leekgroup/recount/issues/14.
 [rhdf5](https://bioconductor.org/packages/rhdf5)
 -----
 
-                       Changes in version 2.30.0                        
+Changes in version 2.30.0
 
 NEW FEATURES
 
@@ -6987,7 +6986,7 @@ BUG FIXES
 [Rhdf5lib](https://bioconductor.org/packages/Rhdf5lib)
 --------
 
-                         Changes in version 1.8                         
+Changes in version 1.8
 
 New features
 
@@ -7001,7 +7000,7 @@ Bug fixes
 [Rhtslib](https://bioconductor.org/packages/Rhtslib)
 -------
 
-                       Changes in version 1.18.0                        
+Changes in version 1.18.0
 
 NEW FEATURES
 
@@ -7029,39 +7028,39 @@ BUG FIXES
 [RNAmodR](https://bioconductor.org/packages/RNAmodR)
 -------
 
-                 Changes in version 0.99.0 (2019-04-29)                 
+Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
 [RNAmodR.AlkAnilineSeq](https://bioconductor.org/packages/RNAmodR.AlkAnilineSeq)
 ---------------------
 
-                 Changes in version 0.99.0 (2019-04-29)                 
+Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
 [RNAmodR.ML](https://bioconductor.org/packages/RNAmodR.ML)
 ----------
 
-                 Changes in version 0.99.0 (2019-04-29)                 
+Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
 [RNAmodR.RiboMethSeq](https://bioconductor.org/packages/RNAmodR.RiboMethSeq)
 -------------------
 
-                 Changes in version 0.99.0 (2019-04-29)                 
+Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
 [RnBeads](https://bioconductor.org/packages/RnBeads)
 -------
 
-                        Changes in version 2.3.3                        
+Changes in version 2.3.3
 
 - Fixed non ASCII column names in age prediction and immune estimation
 
-                        Changes in version 2.3.2                        
+Changes in version 2.3.2
 
 - Added stratification plots for inferred covariates in different
   sample groups
@@ -7069,7 +7068,7 @@ BUG FIXES
 [rols](https://bioconductor.org/packages/rols)
 ----
 
-                        Changes in version 2.13                         
+Changes in version 2.13
 
 CHANGES IN VERSION 2.13.2
 
@@ -7082,51 +7081,51 @@ CHANGES IN VERSION 2.13.1
 [ropls](https://bioconductor.org/packages/ropls)
 -----
 
-                       Changes in version 1.17.34                       
+Changes in version 1.17.34
 
 NEW FEATURE
 
 - 'view' method (wrapper of the imageF and strF functions)
 
-                       Changes in version 1.17.32                       
+Changes in version 1.17.32
 
 BUG FIXED
 
 - plot.oplsMultiDataSet correction to include all plots in the .pdf
   file
 
-                       Changes in version 1.17.30                       
+Changes in version 1.17.30
 
 MINOR MODIFICATION
 
 - Additional correction in getMset documentation (example)
 
-                       Changes in version 1.17.28                       
+Changes in version 1.17.28
 
 MINOR MODIFICATION
 
 - Correcting typo in getMset documentation (example)
 
-                       Changes in version 1.17.26                       
+Changes in version 1.17.26
 
 MINOR MODIFICATION
 
 - Including the set name in the figure of MultiDataSet models
 
-                       Changes in version 1.17.24                       
+Changes in version 1.17.24
 
 MINOR MODIFICATION
 
 - Correction of the documentation for 'residuals' and
   'plot-oplsMultidDataSet'
 
-                       Changes in version 1.17.22                       
+Changes in version 1.17.22
 
 INTERNAL MODIFICATION
 
 - Correction of the example in the oplsMultiDataSet class documentation
 
-                       Changes in version 1.17.20                       
+Changes in version 1.17.20
 
 NEW FEATURE
 
@@ -7134,57 +7133,57 @@ NEW FEATURE
   column from the pData data frame when the opls method has been
   applied to an ExpresssionSet
 
-                       Changes in version 1.17.18                       
+Changes in version 1.17.18
 
 INTERNAL MODIFICATION
 
 - Minor internal modification
 
-                       Changes in version 1.17.16                       
+Changes in version 1.17.16
 
 INTERNAL MODIFICATION
 
 - Minor internal modification
 
-                       Changes in version 1.17.14                       
+Changes in version 1.17.14
 
 NEW FEATURE
 
 - Example of the analyis of a MultiDataSet ('NCI60_4arrays' from the
   'omicade4' package)
 
-                       Changes in version 1.17.12                       
+Changes in version 1.17.12
 
 NEW FEATURE
 
 - Multi data set names display on graphics
 
-                       Changes in version 1.17.10                       
+Changes in version 1.17.10
 
 NEW FEATURE
 
 - plot method for oplsMultiDataSet objects
 
-                       Changes in version 1.17.8                        
+Changes in version 1.17.8
 
 NEW FEATURE
 
 - opls can now be applied to MultiDataSet objects; getMset method to
   extract the complemented MultiDataSet
 
-                       Changes in version 1.17.6                        
+Changes in version 1.17.6
 
 INTERNAL MODIFICATION
 
 - minor internal modification
 
-                       Changes in version 1.17.4                        
+Changes in version 1.17.4
 
 INTERNAL MODIFICATION
 
 - minor internal modification
 
-                       Changes in version 1.17.2                        
+Changes in version 1.17.2
 
 NEW FEATURE
 
@@ -7194,7 +7193,7 @@ NEW FEATURE
 [rpx](https://bioconductor.org/packages/rpx)
 ---
 
-                        Changes in version 1.21                         
+Changes in version 1.21
 
 Changes in version 1.21.3
 
@@ -7212,7 +7211,7 @@ Changes in version 1.21.1
 [Rsubread](https://bioconductor.org/packages/Rsubread)
 --------
 
-                        Changes in version 2.0.0                        
+Changes in version 2.0.0
 
 - Rsubread package is ported to Windows OS.
 
@@ -7243,7 +7242,7 @@ Changes in version 1.21.1
 [RTCA](https://bioconductor.org/packages/RTCA)
 ----
 
-                     Changes in version 2009-07-13                      
+Changes in version 2009-07-13
 
 - combineRTCA(list): Additional column is renamed into Plate. The vlues
   is evaluated from list item names. When the list has no name, an
@@ -7270,7 +7269,7 @@ Changes in version 1.21.1
 [RTCGAToolbox](https://bioconductor.org/packages/RTCGAToolbox)
 ------------
 
-                       Changes in version 2.16.0                        
+Changes in version 2.16.0
 
 New features
 
@@ -7290,11 +7289,11 @@ hosted locations - Check file sizes using httr instead of
 [rWikiPathways](https://bioconductor.org/packages/rWikiPathways)
 -------------
 
-                        Changes in version 1.6.0                        
+Changes in version 1.6.0
 
 - Minor updates to the Pathway Analysis vignette
 
-                        Changes in version 1.4.1                        
+Changes in version 1.4.1
 
 - Bug fixes - Updated the findPathwaysByLiterature test case (fixing a
   false positive fail) - Removed tests for unavailable service:
@@ -7303,7 +7302,7 @@ hosted locations - Check file sizes using httr instead of
 [S4Vectors](https://bioconductor.org/packages/S4Vectors)
 ---------
 
-                       Changes in version 0.24.0                        
+Changes in version 0.24.0
 
 NEW FEATURES
 
@@ -7368,19 +7367,19 @@ BUG FIXES
 [SAIGEgds](https://bioconductor.org/packages/SAIGEgds)
 --------
 
-                        Changes in version 1.0.0                        
+Changes in version 1.0.0
 
 - first Bioconductor release
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - package submitted to Bioconductor
 
-                       Changes in version 0.9.10                        
+Changes in version 0.9.10
 
 - SAIGE algorithm implementation for quantitative outcomes
 
-                        Changes in version 0.9.9                        
+Changes in version 0.9.9
 
 - add a vignette to the package
 
@@ -7390,18 +7389,18 @@ BUG FIXES
   v3.6.0), please use `RNGkind("Mersenne-Twister", "Inversion",
   "Rounding")` in R (>= v3.6.0)
 
-                        Changes in version 0.9.7                        
+Changes in version 0.9.7
 
 - seqAssocGLMM_SPA(): load balancing in parallel
 
-                        Changes in version 0.9.0                        
+Changes in version 0.9.0
 
 - first version of SAIGEgds
 
 [scater](https://bioconductor.org/packages/scater)
 ------
 
-                       Changes in version 1.14.0                        
+Changes in version 1.14.0
 
 - Removed deprecated dplyr verbs.
 
@@ -7473,7 +7472,7 @@ BUG FIXES
 [scds](https://bioconductor.org/packages/scds)
 ----
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - cxds performance improvement
 
@@ -7482,19 +7481,19 @@ BUG FIXES
 [schex](https://bioconductor.org/packages/schex)
 -----
 
-                       Changes in version 0.99.7                        
+Changes in version 0.99.7
 
 - Changed sapply to vapply in utility-function.
 
-                       Changes in version 0.99.6                        
+Changes in version 0.99.6
 
 - Changed the link from Seurat to Seurat-class.
 
-                       Changes in version 0.99.5                        
+Changes in version 0.99.5
 
 - Fixed error introduced through merge conflict.
 
-                       Changes in version 0.99.4                        
+Changes in version 0.99.4
 
 - Fixed typos in vignettes.  - Added explanation of ggplot connection
 to vignettes.  - Added explanation for interactivity in iSEE to
@@ -7502,7 +7501,7 @@ vignette.  - Fixed global variables.  - Fixed documentation in
 plot_hexbin_gene.  - Reformatted news.  - Added packages to suggests
 in description.
 
-                       Changes in version 0.99.3                        
+Changes in version 0.99.3
 
 - Minimal functioning package created.  - Mostly compliant with
 BiocCheck::BiocCheck() and goodpractice::goodpractice().
@@ -7510,7 +7509,7 @@ BiocCheck::BiocCheck() and goodpractice::goodpractice().
 [scMerge](https://bioconductor.org/packages/scMerge)
 -------
 
-                        Changes in version 1.1.6                        
+Changes in version 1.1.6
 
 - Accepts DelayedArray, HDF5Array and dgCMatrix inputs in the slots
 of input SCE objects.  - Significant speed optimisation on scSEGIndex
@@ -7521,40 +7520,40 @@ approximation for large dataset.  - Now using BiocSingular to manage
 all SVD components.  - Now automatically remove zeroes in the rows
 and columns of the SCE.
 
-                        Changes in version 1.1.5                        
+Changes in version 1.1.5
 
 - Adding version restrictions on S4Vectors and SingleCellExperiment
 dependent packages.
 
-                        Changes in version 1.1.4                        
+Changes in version 1.1.4
 
 - plot_igraph would allow suppression of igraph output during
 unsupervised scMerge
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 - Column name must be non-NULL and without duplicates
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 - Resolved problems with only a single linking cell-type across
 multiple batches
 
-                        Changes in version 1.1.0                        
+Changes in version 1.1.0
 
 - Accepted by Bioconductor
 
 [scPCA](https://bioconductor.org/packages/scPCA)
 -----
 
-                 Changes in version 0.99.0 (2019-09-13)                 
+Changes in version 0.99.0 (2019-09-13)
 
 - Submitted to Bioconductor
 
 [scran](https://bioconductor.org/packages/scran)
 -----
 
-                       Changes in version 1.14.0                        
+Changes in version 1.14.0
 
 - Removed deprecated approximate= and pc.approx= arguments.
 
@@ -7652,7 +7651,7 @@ multiple batches
 [scTensor](https://bioconductor.org/packages/scTensor)
 --------
 
-                        Changes in version 1.2.0                        
+Changes in version 1.2.0
 
 - goenrich, meshenrich, reactomeenrich, doenrich, ncgenrich, and
   dgnenrich in cellCellReport are added
@@ -7668,14 +7667,14 @@ multiple batches
 [scTGIF](https://bioconductor.org/packages/scTGIF)
 ------
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Package released
 
 [SeqArray](https://bioconductor.org/packages/SeqArray)
 --------
 
-                       Changes in version 1.26.0                        
+Changes in version 1.26.0
 
 NEW FEATURES
 
@@ -7699,7 +7698,7 @@ CHANGES
 
 - use a svg file instead of png in vignettes
 
-                       Changes in version 1.24.2                        
+Changes in version 1.24.2
 
 NEW FEATURES
 
@@ -7719,7 +7718,7 @@ BUG FIXES
 [seqCAT](https://bioconductor.org/packages/seqCAT)
 ------
 
-                        Changes in version 1.8.0                        
+Changes in version 1.8.0
 
 Features
 
@@ -7754,7 +7753,7 @@ Features
 [sevenbridges](https://bioconductor.org/packages/sevenbridges)
 ------------
 
-                       Changes in version 1.15.1                        
+Changes in version 1.15.1
 
 Improvements
 
@@ -7766,22 +7765,22 @@ details.
 [SharedObject](https://bioconductor.org/packages/SharedObject)
 ------------
 
-                       Changes in version 0.99.2                        
+Changes in version 0.99.2
 
 - Clean some formating issues
 
-                 Changes in version 0.99.0 (2019-05-16)                 
+Changes in version 0.99.0 (2019-05-16)
 
 - Submitted to Bioconductor
 
 [signatureSearch](https://bioconductor.org/packages/signatureSearch)
 ---------------
 
-                 Changes in version 1.1.0 (2019-10-23)                  
+Changes in version 1.1.0 (2019-10-23)
 
 - Initial version
 
-                Changes in version 0.99.20 (2019-10-22)                 
+Changes in version 0.99.20 (2019-10-22)
 
 - Submitted to Bioconductor - Major changes - used HDF5 file to read
 and write the matrix in batches - data stored in ExperimentHub
@@ -7789,21 +7788,21 @@ and write the matrix in batches - data stored in ExperimentHub
 [signeR](https://bioconductor.org/packages/signeR)
 ------
 
-                       Changes in version 1.11.1                        
+Changes in version 1.11.1
 
 - ignore mutations on edges of chromosomes
 
 [SIMLR](https://bioconductor.org/packages/SIMLR)
 -----
 
-                 Changes in version 1.11.1 (2019-10-13)                 
+Changes in version 1.11.1 (2019-10-13)
 
 - Fix C++ bug.
 
 [SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment)
 --------------------
 
-                        Changes in version 1.8.0                        
+Changes in version 1.8.0
 
 - Added altExp() and related methods to get and set alternative
   Experiments.
@@ -7827,7 +7826,7 @@ and write the matrix in batches - data stored in ExperimentHub
 [singscore](https://bioconductor.org/packages/singscore)
 ---------
 
-                        Changes in version 1.5.1                        
+Changes in version 1.5.1
 
 - added link to the F1000research published workflow that
 demonstrates usage of singscore on a real dataset
@@ -7838,16 +7837,16 @@ landscape plots (projectScoreLandscape)
 [sitePath](https://bioconductor.org/packages/sitePath)
 --------
 
-                       Changes in version 1.1.10                        
+Changes in version 1.1.10
 
 - Allow user to choose whether to show tip labels in the plot functions
 
-                        Changes in version 1.1.9                        
+Changes in version 1.1.9
 
 - Add progress bar for the resampling and summarizing step of the
   function 'multiFixationSites'
 
-                        Changes in version 1.1.8                        
+Changes in version 1.1.8
 
 - Add 'plot' function for directly plotting the return of 'extractSite'
 
@@ -7855,43 +7854,43 @@ landscape plots (projectScoreLandscape)
 
 - The function 'fixationSites' applys the old 'multiFixationSites'
 
-                        Changes in version 1.1.7                        
+Changes in version 1.1.7
 
 - Add functionality 'extractSite' to allow accessing a single site from
   the result of 'fixationSites' and 'multiFixationSites'
 
-                        Changes in version 1.1.6                        
+Changes in version 1.1.6
 
 - Add functionality 'setSiteNumbering' to allow manipulating the
   reference of site numbering
 
-                        Changes in version 1.1.5                        
+Changes in version 1.1.5
 
 - Move similarity calculation to 'addMSA'. This will slow the function
 
-                        Changes in version 1.1.4                        
+Changes in version 1.1.4
 
 - Use total number of tips divided by number of nodes as
   'minEffectiveSize'
 
 - Ignore invariant sites when search for fixation sites
 
-                        Changes in version 1.1.3                        
+Changes in version 1.1.3
 
 - Expose 'searchDepath' for 'multiFixationSites'
 
-                        Changes in version 1.1.2                        
+Changes in version 1.1.2
 
 - Use 'multiFixationSites' for both single and multiple fixation sites
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - Bug fix: Error when adding new result in 'fixationSites'
 
 [SNPRelate](https://bioconductor.org/packages/SNPRelate)
 ---------
 
-                       Changes in version 1.20.0                        
+Changes in version 1.20.0
 
 - a leading tilde in the file path is allowed in `snpgdsGDS2BED()`
 
@@ -7899,61 +7898,61 @@ landscape plots (projectScoreLandscape)
   "vignettes/SNPRelate.Rmd", so `vignette("SNPRelate")` can work
   directly
 
-                       Changes in version 1.18.1                        
+Changes in version 1.18.1
 
 - support long vector in `snpgdsIBDSelection()`
 
 [sojourner](https://bioconductor.org/packages/sojourner)
 ---------
 
-                       Changes in version 0.99.8                        
+Changes in version 0.99.8
 
 - added unit test - createTrackll() and msd() in this version
 
-                       Changes in version 0.99.7                        
+Changes in version 0.99.7
 
 - fixed BiocCheck error checkForSupportSiteRegistration - unblocked
 maintainer email account
 
-                       Changes in version 0.99.6                        
+Changes in version 0.99.6
 
 - fixed BiocCheck warning - revised sojourner.r
 
-                       Changes in version 0.99.5                        
+Changes in version 0.99.5
 
 - fixed various issues raised in review for Bioconductor submission.
 
-                       Changes in version 0.99.4                        
+Changes in version 0.99.4
 
 - fixed Linux build error and removed extraneous .pdf files
 
-                       Changes in version 0.99.3                        
+Changes in version 0.99.3
 
 - fixed git clone issues for Windows
 
-                       Changes in version 0.99.2                        
+Changes in version 0.99.2
 
 - reduced time runing for examples
 
-                       Changes in version 0.99.1                        
+Changes in version 0.99.1
 
 - changed system.time() format
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
 [Spaniel](https://bioconductor.org/packages/Spaniel)
 -------
 
-                       Changes in version 0.99.0                        
+Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
 [SpatialCPie](https://bioconductor.org/packages/SpatialCPie)
 -----------
 
-                         Changes in version 1.1                         
+Changes in version 1.1
 
 - (1.1.9) Added example on how to customize resolutions and assignment
   function to vignette
@@ -7977,7 +7976,7 @@ maintainer email account
 [splatter](https://bioconductor.org/packages/splatter)
 --------
 
-                 Changes in version 1.10.0 (2019-10-20)                 
+Changes in version 1.10.0 (2019-10-20)
 
 - Add the (experimental) Kersplat simulation model. This model
   incorporates a gene network and other useful features.
@@ -8006,7 +8005,7 @@ maintainer email account
 [SQLDataFrame](https://bioconductor.org/packages/SQLDataFrame)
 ------------
 
-                 Changes in version 1.0.0 (2019-10-01)                  
+Changes in version 1.0.0 (2019-10-01)
 
 NEW FEATURES
 
@@ -8022,18 +8021,18 @@ BUG FIXES
 
 - Fixed bugs for single square bracket subsetting with key column(s).
 
-                 Changes in version 0.99.0 (2019-04-05)                 
+Changes in version 0.99.0 (2019-04-05)
 
 - Submitted to Bioconductor
 
 [sRACIPE](https://bioconductor.org/packages/sRACIPE)
 -------
 
-                 Changes in version 1.1.3 (2019-10-17)                  
+Changes in version 1.1.3 (2019-10-17)
 
 - GeneEx added to inst
 
-                 Changes in version 1.1.2 (2019-10-17)                  
+Changes in version 1.1.2 (2019-10-17)
 
 - Time series option added to sracipeSimulate
 
@@ -8042,7 +8041,7 @@ BUG FIXES
 [ssrch](https://bioconductor.org/packages/ssrch)
 -----
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - parseDoc did not handle doctitles correctly, fixed
 
@@ -8060,7 +8059,7 @@ BUG FIXES
 [statTarget](https://bioconductor.org/packages/statTarget)
 ----------
 
-                         Changes in version 2.0                         
+Changes in version 2.0
 
 NEW FEATURES
 
@@ -8076,14 +8075,14 @@ NEW FEATURES
 - New data preprocessing o PQN/SUM/none normalization o center/none
   Scaling method
 
-                       Changes in version 1.15.4                        
+Changes in version 1.15.4
 
 - edit colum name for the result table
 
 - skip the roc analysis once the number of samples in any groups was
   less than 5.
 
-                       Changes in version 1.15.3                        
+Changes in version 1.15.3
 
 - odds.ratio.  Add the ratio of the odds of an event occurring in one
   group (A) to the odds of it occurring in reference group (B), such as
@@ -8092,7 +8091,7 @@ NEW FEATURES
 [Structstrings](https://bioconductor.org/packages/Structstrings)
 -------------
 
-                 Changes in version 1.1.6 (2019-09-23)                  
+Changes in version 1.1.6 (2019-09-23)
 
 - DotBracketDataFrame refactored to split concept from data
   implementation
@@ -8103,19 +8102,19 @@ NEW FEATURES
 [SummarizedBenchmark](https://bioconductor.org/packages/SummarizedBenchmark)
 -------------------
 
-                 Changes in version 2.3.7 (2019-09-18)                  
+Changes in version 2.3.7 (2019-09-18)
 
 - Bug fix: update call on `tidyr::gather` in `tidyUpMetrics` to work
   after bump in `tidyr` version to 1.0.0 on CRAN
 
-                 Changes in version 2.3.6 (2019-09-06)                  
+Changes in version 2.3.6 (2019-09-06)
 
 - Replace `sc_example_counts` dataset from `scater` with call to
   `scater::mockSCE`
 
 - Fix error thrown by `show.BDData` when dataset is a list
 
-                 Changes in version 2.3.5 (2019-06-22)                  
+Changes in version 2.3.5 (2019-06-22)
 
 - Fix index title for "Feature: Error Handling" vignette
 
@@ -8124,7 +8123,7 @@ NEW FEATURES
 
 - Update pkgdown site with latest devel docs
 
-                 Changes in version 2.3.4 (2019-06-18)                  
+Changes in version 2.3.4 (2019-06-18)
 
 - Fix scRNAseq simulation case study vignette to work with changes in
   `scRNAseq` package
@@ -8133,7 +8132,7 @@ NEW FEATURES
 
 - Update pkgdown site with latest devel docs
 
-                 Changes in version 2.3.3 (2019-06-14)                  
+Changes in version 2.3.3 (2019-06-14)
 
 - Added NEWS file to track changes
 
@@ -8144,7 +8143,7 @@ NEW FEATURES
 [SummarizedExperiment](https://bioconductor.org/packages/SummarizedExperiment)
 --------------------
 
-                       Changes in version 1.16.0                        
+Changes in version 1.16.0
 
 NEW FEATURES
 
@@ -8173,33 +8172,33 @@ BUG FIXES
 [SynMut](https://bioconductor.org/packages/SynMut)
 ------
 
-                 Changes in version 1.1.3 (2019-05-08)                  
+Changes in version 1.1.3 (2019-05-08)
 
 - Revise dinu_to.keep algorithm, enhance performance.
 
-                 Changes in version 1.1.2 (2019-05-08)                  
+Changes in version 1.1.2 (2019-05-08)
 
 - Bug fix: "dinu_to" ifelse issue in get_optimal_codon.
 
-                 Changes in version 1.1.1 (2019-05-06)                  
+Changes in version 1.1.1 (2019-05-06)
 
 - Bug fix: "dinu_to" fix wrong result with "keep == TRUE" parameter.
 
-                 Changes in version 1.1.0 (2019-05-06)                  
+Changes in version 1.1.0 (2019-05-06)
 
 - Bump
 
 [target](https://bioconductor.org/packages/target)
 ------
 
-                        Changes in version 0.1.0                        
+Changes in version 0.1.0
 
 - Submit to Bioconductor
 
 [TargetSearch](https://bioconductor.org/packages/TargetSearch)
 ------------
 
-                       Changes in version 1.42.0                        
+Changes in version 1.42.0
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -8234,7 +8233,7 @@ BUG FIXES
 [TCGAutils](https://bioconductor.org/packages/TCGAutils)
 ---------
 
-                        Changes in version 1.6.0                        
+Changes in version 1.6.0
 
 New features
 
@@ -8254,12 +8253,12 @@ S4Vectors::splitAsList (@hpages)
 [TOAST](https://bioconductor.org/packages/TOAST)
 -----
 
-                       Changes in version 0.99.7                        
+Changes in version 0.99.7
 
 - Add options to improve feature selections in reference-free
   deconvolution.
 
-                        Changes in version 0.99                         
+Changes in version 0.99
 
 NEW FEATURES
 
@@ -8268,7 +8267,7 @@ NEW FEATURES
 [tofsims](https://bioconductor.org/packages/tofsims)
 -------
 
-                        Changes in version 099.1                        
+Changes in version 099.1
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
@@ -8284,16 +8283,16 @@ INTERNALS
 [topconfects](https://bioconductor.org/packages/topconfects)
 -----------
 
-                 Changes in version 1.1.4 (2018-12-29)                  
+Changes in version 1.1.4 (2018-12-29)
 
 - Prepare for Bioconductor submission.
 
-                 Changes in version 1.1.3 (2018-11-14)                  
+Changes in version 1.1.3 (2018-11-14)
 
 - Add "full" output option for limma_confects and normal_confects,
   which adds se, df, and fdr_zero columns.
 
-                 Changes in version 1.1.2 (2018-06-30)                  
+Changes in version 1.1.2 (2018-06-30)
 
 - Add DESeq2 support.
 
@@ -8301,18 +8300,18 @@ INTERNALS
   branch on github, pending publication of the basic method and a
   possible rethink and use of a simpler method.
 
-                 Changes in version 1.1.1 (2019-09-20)                  
+Changes in version 1.1.1 (2019-09-20)
 
 - Update citation information.
 
-                 Changes in version 1.0.1 (2018-02-04)                  
+Changes in version 1.0.1 (2018-02-04)
 
 - Initial release.
 
 [topdownr](https://bioconductor.org/packages/topdownr)
 --------
 
-                         Changes in version 1.7                         
+Changes in version 1.7
 
 - New version for Bioc 3.10 (devel)
 
@@ -8331,146 +8330,146 @@ to read scan conditions (see #80/#81) [2019-08-08].
 [TPP](https://bioconductor.org/packages/TPP)
 ---
 
-                       Changes in version 3.13.3                        
+Changes in version 3.13.3
 
 - defunct the following functions: tpp2dPlotCCRGoodCurves,
   tpp2dPlotCCRAllCurves, tpp2dPlotCCRSingleCurves,
   tpp2dEvalConfigTable, tpp2dRemoveZeroSias, tpp2dReplaceColNames,
   tpp2dCreateCCRConfigFile
 
-                       Changes in version 3.13.2                        
+Changes in version 3.13.2
 
 - Revise vignette
 
-                       Changes in version 3.13.1                        
+Changes in version 3.13.1
 
 - Avoid warnings due to factor/character conversions in vignette
 
 [TPP2D](https://bioconductor.org/packages/TPP2D)
 -----
 
-                 Changes in version 1.1.0 (2019-05-06)                  
+Changes in version 1.1.0 (2019-05-06)
 
 - Carry-over detection now works via a LDA model
 
 [trackViewer](https://bioconductor.org/packages/trackViewer)
 -----------
 
-                       Changes in version 1.21.18                       
+Changes in version 1.21.18
 
 - update NEWS file from "CHANGES IN VERSION" to "Changes in version".
 
-                       Changes in version 1.21.17                       
+Changes in version 1.21.17
 
 - remove google scholar in vignette.
 
-                       Changes in version 1.21.16                       
+Changes in version 1.21.16
 
 - Try to avoid the error introduced by BiocStyle: Invalid Parameter -
   /figure-html.
 
-                       Changes in version 1.21.15                       
+Changes in version 1.21.15
 
 - Add google scholar in vignette.
 
-                       Changes in version 1.21.14                       
+Changes in version 1.21.14
 
 - Update the citation in readme file.
 
-                       Changes in version 1.21.13                       
+Changes in version 1.21.13
 
 - Fix a typo in plotLollipops.
 
-                       Changes in version 1.21.12                       
+Changes in version 1.21.12
 
 - setTrackXscaleParam accept position attribute.
 
-                       Changes in version 1.21.11                       
+Changes in version 1.21.11
 
 - set rescale of lolliplot by precentage.
 
-                       Changes in version 1.21.10                       
+Changes in version 1.21.10
 
 - fix the bug of score is NumericList.
 
-                       Changes in version 1.21.9                        
+Changes in version 1.21.9
 
 - accept negative values for bigwig files.
 
-                       Changes in version 1.21.8                        
+Changes in version 1.21.8
 
 - update legend method.
 
-                       Changes in version 1.21.7                        
+Changes in version 1.21.7
 
 - fix the label label.parameters.gp.
 
-                       Changes in version 1.21.6                        
+Changes in version 1.21.6
 
 - add sample code of Proteins API.
 
-                       Changes in version 1.21.5                        
+Changes in version 1.21.5
 
 - fix the bug that lollipop stem is too long.
 
-                       Changes in version 1.21.4                        
+Changes in version 1.21.4
 
 - add shape for lolliplot.
 
-                       Changes in version 1.21.3                        
+Changes in version 1.21.3
 
 - add shinyApp video.
 
-                       Changes in version 1.21.2                        
+Changes in version 1.21.2
 
 - add citation.
 
-                       Changes in version 1.21.1                        
+Changes in version 1.21.1
 
 - fix the bug if condiction with multiple logical values.
 
 [tradeSeq](https://bioconductor.org/packages/tradeSeq)
 --------
 
-               Changes in version 0.99.9902 (2019-10-23)                
+Changes in version 0.99.9902 (2019-10-23)
 
 - tradeSeq's fitGam and evaluateK functions do not have a seed argument
   anymore, as per Bioconductor's guidelines. Users are encouraged to
   set the seed manually with the set.seed function before running those
   functions for reproducibility purposes.
 
-                Changes in version 0.99.47 (2019-09-02)                 
+Changes in version 0.99.47 (2019-09-02)
 
 - tradeSeq now provides `singleCellExperiment` output o fitGam now
   accepts a `slingshotDataSet` object as input o All tests and plotting
   functions accept a `singleCellExperiment` object that contain
   tradeSeq output
 
-                 Changes in version 0.99.0 (2019-06-22)                 
+Changes in version 0.99.0 (2019-06-22)
 
 - Submitted to Bioconductor
 
-                 Changes in version 0.9.0 (2019-03-15)                  
+Changes in version 0.9.0 (2019-03-15)
 
 - Reformatted to fulfill Bioconductor guidelines
 
 [transite](https://bioconductor.org/packages/transite)
 --------
 
-                        Changes in version 1.2.1                        
+Changes in version 1.2.1
 
 - updated author list
 
 [treeio](https://bioconductor.org/packages/treeio)
 ------
 
-                        Changes in version 1.9.3                        
+Changes in version 1.9.3
 
 - add citation information (2019-10-05, Sta) - rename phyPML to
 as.treedata.pml (2019-10-01, Tue) - as.phylo method for igraph (only
 work with tree graph) (2019-09-28, Sat)
 
-                        Changes in version 1.9.2                        
+Changes in version 1.9.2
 
 - nodeid and nodelab methods for converting between node number and
 labels (2019-08-09, Fri) - parent, 'ancestor, child,
@@ -8478,7 +8477,7 @@ offspringandrootnodemethods fortreedata` (2019-08-07, Wed) -
 read.mega_tabular to parse MEGA Tabular output (2019-07-16, Tue) -
 read.mega to parse MEGA NEXUS (actually BEAST compatible)
 
-                        Changes in version 1.9.1                        
+Changes in version 1.9.1
 
 - rename_taxa now use 1st column as key and 2nd column as value by
 default (2019-05-28, Tue) - enable tree_subset to specify group_name
@@ -8491,7 +8490,7 @@ https://github.com/GuangchuangYu/treeio/issues/18
 [tRNAscanImport](https://bioconductor.org/packages/tRNAscanImport)
 --------------
 
-                 Changes in version 1.5.3 (2019-08-25)                  
+Changes in version 1.5.3 (2019-08-25)
 
 - added get.tRNAprecursor function to retrieve tRNA precursor sequences
   in combination with genomic sequences
@@ -8504,7 +8503,7 @@ https://github.com/GuangchuangYu/treeio/issues/18
 [TSRchitect](https://bioconductor.org/packages/TSRchitect)
 ----------
 
-                       Changes in version 1.11.12                       
+Changes in version 1.11.12
 
 - Updates to include 3'-read capturing from bam input files and data
   structures to allow ignoring spurious TSSs.
@@ -8528,7 +8527,7 @@ https://github.com/GuangchuangYu/treeio/issues/18
 [tximeta](https://bioconductor.org/packages/tximeta)
 -------
 
-                        Changes in version 1.4.0                        
+Changes in version 1.4.0
 
 - tximeta will now pull down RefSeq seqinfo, using the dirname() of the
   GTF location, and assuming some consistency in the structure of the
@@ -8553,7 +8552,7 @@ https://github.com/GuangchuangYu/treeio/issues/18
 [tximport](https://bioconductor.org/packages/tximport)
 --------
 
-                       Changes in version 1.14.0                        
+Changes in version 1.14.0
 
 - Alevin count and inferential variance can be imported now ~40x faster
   for large number of cells, leveraging C++ code from the fishpond
@@ -8565,7 +8564,7 @@ https://github.com/GuangchuangYu/treeio/issues/18
 [Ularcirc](https://bioconductor.org/packages/Ularcirc)
 --------
 
-                       Changes in version 1.3.22                        
+Changes in version 1.3.22
 
 NEW FEATURES
 
@@ -8578,7 +8577,7 @@ BUG FIXES
 
 - BUG fix: Added dependencies to DESCRIPTION to allow automatic install
 
-                        Changes in version 1.3.1                        
+Changes in version 1.3.1
 
 BUG FIXES
 
@@ -8588,7 +8587,7 @@ BUG FIXES
 [universalmotif](https://bioconductor.org/packages/universalmotif)
 --------------
 
-                        Changes in version 1.4.0                        
+Changes in version 1.4.0
 
 NEW FEATURES
 
@@ -8707,7 +8706,7 @@ BUG FIXES
   would simply assume the log threshold value was the P-value. Now
   motif_pvalue() is used to properly calculate a P-value.
 
-                        Changes in version 1.2.1                        
+Changes in version 1.2.1
 
 BUG FIXES
 
@@ -8716,7 +8715,7 @@ BUG FIXES
 [variancePartition](https://bioconductor.org/packages/variancePartition)
 -----------------
 
-                       Changes in version 1.15.8                        
+Changes in version 1.15.8
 
 - Replace cat() with message()
 
@@ -8724,37 +8723,37 @@ BUG FIXES
 
 - dream() does not call eBayes() when lmFit is used
 
-                       Changes in version 1.15.7                        
+Changes in version 1.15.7
 
 - Official release to development branch
 
-                       Changes in version 1.15.6                        
+Changes in version 1.15.6
 
 - fix convergence errror when recycling parameters values from first
   gene
 
 - add column z.std and F.std to topTable
 
-                       Changes in version 1.15.4                        
+Changes in version 1.15.4
 
 - Add error message when scale of fixed effects causes a problem
 
-                       Changes in version 1.15.3                        
+Changes in version 1.15.3
 
 - Try changing order of eBayes
 
-                       Changes in version 1.15.2                        
+Changes in version 1.15.2
 
 - Update vignette
 
-                       Changes in version 1.15.0                        
+Changes in version 1.15.0
 
 - Push changes to Bioconductor devel
 
 [VariantExperiment](https://bioconductor.org/packages/VariantExperiment)
 -----------------
 
-                       Changes in version 0.99.8                        
+Changes in version 0.99.8
 
 - `saveVariantExperiment` returns newly generated VariantExperiment
   object by calling `loadVariantExperiment`
@@ -8762,69 +8761,69 @@ BUG FIXES
 [ViSEAGO](https://bioconductor.org/packages/ViSEAGO)
 -------
 
-                       Changes in version 0.99.42                       
+Changes in version 0.99.42
 
 - remove environment signature in merge_enrich_terms
 
-                       Changes in version 0.99.41                       
+Changes in version 0.99.41
 
 - keep require("topGO") in create_topGOdata method
 
-                       Changes in version 0.99.40                       
+Changes in version 0.99.40
 
 - add attachNamespace("topGO") instead require("topGO") in
   create_topGOdata method for prevent build check warnings
 
-                       Changes in version 0.99.39                       
+Changes in version 0.99.39
 
 - check gene background in merge_enrich_terms upgrade
 
-                       Changes in version 0.99.38                       
+Changes in version 0.99.38
 
 - show method for GO_cluster print bug correction
 
-                       Changes in version 0.99.37                       
+Changes in version 0.99.37
 
 - add environment option for merge_enrich_terms
 
-                       Changes in version 0.99.36                       
+Changes in version 0.99.36
 
 - annotate id argument signature with "NULL"
 
-                       Changes in version 0.99.35                       
+Changes in version 0.99.35
 
 - README update
 
-                       Changes in version 0.99.34                       
+Changes in version 0.99.34
 
 - README update (download from Bioconductor and forgeMIA gitlab)
 
 - add require("topGO") in create_topGOdata method
 
-                       Changes in version 0.99.33                       
+Changes in version 0.99.33
 
 - merge_enrich_terms exemple update.
 
-                       Changes in version 0.99.32                       
+Changes in version 0.99.32
 
 - GOterms_heatmap GO.clusters column convert to character in order to
   prevent data.table merge error.
 
-                       Changes in version 0.99.30                       
+Changes in version 0.99.30
 
 - ViSEAGO citation update
 
 [waddR](https://bioconductor.org/packages/waddR)
 -----
 
-                 Changes in version 0.99.6 (2019-10-28)                 
+Changes in version 0.99.6 (2019-10-28)
 
 - P-value reproducibility feature: o Now using nextRNGstream to
   generate independent seeds for each gene o Setting the seed (with
   set.seed()) only in .testWass o Removed use of seeds and the seed
   argument everywhere in WassersteinTest.R
 
-                 Changes in version 0.99.5 (2019-10-14)                 
+Changes in version 0.99.5 (2019-10-14)
 
 - P-value reproducibility feature for the permutation procedure: o as
   described
@@ -8836,7 +8835,7 @@ BUG FIXES
   wasserstein.sc and wasserstein.test that have become unnecessary with
   the use of match.arg have been removed
 
-                 Changes in version 0.99.4 (2019-10-01)                 
+Changes in version 0.99.4 (2019-10-01)
 
 - Fixes: o Fixed a bug in .wassersteinTestSp where the names in the
   output vector were changed unexpectedly and added a test for this bug
@@ -8853,7 +8852,7 @@ BUG FIXES
   functions .fishersCombinedPval and .combinePVal from NAMESPACE by
   removing @export decorators
 
-                 Changes in version 0.99.3 (2019-08-30)                 
+Changes in version 0.99.3 (2019-08-30)
 
 - Fixes: o Fixed a bug in wasserstein.test that led to NAs during gpd
   fitting o Fixed a bug in .gpdFittedPValue that led to NAs during gpd
@@ -8869,13 +8868,13 @@ BUG FIXES
 
 - Swapped 'true' and 'test' values in call to .relativeError
 
-                 Changes in version 0.99.2 (2019-08-27)                 
+Changes in version 0.99.2 (2019-08-27)
 
 - Changes to DESCRIPTION: o removed the "Maintainer" field in favor of
   "Authors@R" to address build warnings o Changed roles: 'cre' =
   Maintainer, 'aut' = author
 
-                 Changes in version 0.99.0 (2019-08-27)                 
+Changes in version 0.99.0 (2019-08-27)
 
 - Version Bump for BioC Submission
 
@@ -8886,7 +8885,7 @@ BUG FIXES
   o file renaming to uniform upper camel-case o comments edited o
   additional helper functions introduced
 
-                 Changes in version 0.2.8 (2019-08-19)                  
+Changes in version 0.2.8 (2019-08-19)
 
 - R Code redesign: o new unexported functions to help avoiding repeats
   o Redesign of all single-cell methods as S4 methods that are also
@@ -8898,14 +8897,14 @@ BUG FIXES
 
 - Descriptions changed to match altered code
 
-                 Changes in version 0.2.7 (2019-08-13)                  
+Changes in version 0.2.7 (2019-08-13)
 
 - Bug fix in interval table / wasserstein_metric causing wasserstein.sc
   runs to fail
 
 - Tests for that bug added
 
-                 Changes in version 0.2.6 (2019-08-08)                  
+Changes in version 0.2.6 (2019-08-08)
 
 - Fix in wasserstein_metric where a result was squared
 
@@ -8915,7 +8914,7 @@ BUG FIXES
 
 - Now using wasserstein_metric in two sample testing procedures
 
-                 Changes in version 0.2.5 (2019-08-06)                  
+Changes in version 0.2.5 (2019-08-06)
 
 - Fixing R CMD check size error by reducing package size: Brownian
   bridge distribution, used in the asymptotic implementation of
@@ -8925,7 +8924,7 @@ BUG FIXES
 
 - Fixed Bug in wasserstein.test
 
-                 Changes in version 0.2.4 (2019-07-31)                  
+Changes in version 0.2.4 (2019-07-31)
 
 - Added Vignettes for wasserstein distance, wasserstein.test, and
   wasserstein.sc
@@ -8937,14 +8936,14 @@ BUG FIXES
   changed the signature of testing functions o Using 4 spaces instead
   of tabs and multiples of 4 spaces for indentation
 
-                 Changes in version 0.2.3 (2019-07-29)                  
+Changes in version 0.2.3 (2019-07-29)
 
 - Adressing Notes and Warnings of R CMD check ...: o Reverted changes
   of BiocParallel from Import to Enhancement o Removed redundant
   imports of arm, eva, BiocParallel o Removed CITATION, as it could be
   formatted to satisfy the checks without naming a paper
 
-                 Changes in version 0.2.2 (2019-07-29)                  
+Changes in version 0.2.2 (2019-07-29)
 
 - Added this NEWS file for change announcements
 
@@ -8965,29 +8964,29 @@ BUG FIXES
 [xcms](https://bioconductor.org/packages/xcms)
 ----
 
-                        Changes in version 3.7.5                        
+Changes in version 3.7.5
 
 - Remove xcmsMSn vignette (based on old xcms).
 
-                        Changes in version 3.7.4                        
+Changes in version 3.7.4
 
 - mzClust correspondence analysis: check and fix missing values in
   column mz of the peaks matrix (issue #416).
 
-                        Changes in version 3.7.3                        
+Changes in version 3.7.3
 
 - plot type = "XIC" on an XCMSnExp object will draw rectangles
   indicating the identified chromatographic peaks.
 
 - Add a vignette describing LC-MS/MS data analysis with xcms.
 
-                        Changes in version 3.7.2                        
+Changes in version 3.7.2
 
 - Fix documentation (issue #401).
 
 - Add support for SWATH data analysis.
 
-                        Changes in version 3.7.1                        
+Changes in version 3.7.1
 
 - Add correlate method for Chromatogram objects.
 
@@ -9009,7 +9008,7 @@ BUG FIXES
 [zinbwave](https://bioconductor.org/packages/zinbwave)
 --------
 
-                 Changes in version 1.7.5 (2019-10-08)                  
+Changes in version 1.7.5 (2019-10-08)
 
 - Changed default of `zinbwave` to `observationalWeights=FALSE` to
   speed up computations when weights are not needed.
@@ -9028,15 +9027,15 @@ NEWS from new and existing Data Experiment Packages
 [benchmarkfdrData2019](https://bioconductor.org/packages/benchmarkfdrData2019)
 --------------------
 
-                Changes in version 0.99.15 (2019-06-06)                 
+Changes in version 0.99.15 (2019-06-06)
 
 - Updated vignette to remove excessive printing of data objects
 
-                Changes in version 0.99.14 (2019-05-08)                 
+Changes in version 0.99.14 (2019-05-08)
 
 - bioc4: Added non-eval code chuck to vignette for installing package
 
-                Changes in version 0.99.13 (2019-05-08)                 
+Changes in version 0.99.13 (2019-05-08)
 
 - Changes based on feedback from Bioconductor review
 
@@ -9047,62 +9046,62 @@ NEWS from new and existing Data Experiment Packages
 - bioc3: Added details to vignette for alt approach to load resource
   from ExperimentHub
 
-                Changes in version 0.99.12 (2019-05-07)                 
+Changes in version 0.99.12 (2019-05-07)
 
 - Explicitly add metadata param documentation to each Rd
 
 - Update description in DESCRIPTION file
 
-                Changes in version 0.99.11 (2019-05-06)                 
+Changes in version 0.99.11 (2019-05-06)
 
 - Fixed typo in one doc reference again
 
-                Changes in version 0.99.10 (2019-05-06)                 
+Changes in version 0.99.10 (2019-05-06)
 
 - Added `metadata` parameter to docs
 
 - Changed examples to just load metadata
 
-                 Changes in version 0.99.9 (2019-05-06)                 
+Changes in version 0.99.9 (2019-05-06)
 
 - Added running examples to all docs
 
 - Fixed typo in one doc reference
 
-                 Changes in version 0.99.8 (2019-05-04)                 
+Changes in version 0.99.8 (2019-05-04)
 
 - Added documentation for all data objects with roxygen2 code in R
   files
 
-                 Changes in version 0.99.7 (2019-04-24)                 
+Changes in version 0.99.7 (2019-04-24)
 
 - Changed NEWS message for 0.99.6 to prevent BiocCheck warning
 
-                 Changes in version 0.99.6 (2019-04-24)                 
+Changes in version 0.99.6 (2019-04-24)
 
 - Changed T/F to TRUE/FALSE in make-data Rmd files
 
 - Changed how object class is checked in plotMethodRank code
 
-                 Changes in version 0.99.5 (2019-04-23)                 
+Changes in version 0.99.5 (2019-04-23)
 
 - Deleted and untracked .Rproj file
 
-                 Changes in version 0.99.4 (2019-04-23)                 
+Changes in version 0.99.4 (2019-04-23)
 
 - Removed .Rproj file from git tracking
 
-                 Changes in version 0.99.3 (2019-04-23)                 
+Changes in version 0.99.3 (2019-04-23)
 
 - Fixed typo in DESCRIPTION file
 
 - Added NAMESPACE file
 
-                 Changes in version 0.99.2 (2019-04-23)                 
+Changes in version 0.99.2 (2019-04-23)
 
 - Triggering new build after adding webhook
 
-                 Changes in version 0.99.1 (2019-04-23)                 
+Changes in version 0.99.1 (2019-04-23)
 
 - Updating vignette and triggering new build after data have been moved
   into ExperimentHub
@@ -9111,14 +9110,14 @@ NEWS from new and existing Data Experiment Packages
 
 - Adding ORCID for authors
 
-                 Changes in version 0.99.0 (2019-04-09)                 
+Changes in version 0.99.0 (2019-04-09)
 
 - Submitted to Bioconductor
 
 [chipenrich.data](https://bioconductor.org/packages/chipenrich.data)
 ---------------
 
-                       Changes in version 2.10.0                        
+Changes in version 2.10.0
 
 - Added data required for proxReg: enhancers.dnase_thurman.0,
   gene.enh.desc, spline.log_dtss.90ENCODE
@@ -9127,14 +9126,14 @@ NEWS from new and existing Data Experiment Packages
 ------
 
 
-                        Changes in version 0.99.6                        
+Changes in version 0.99.6
 
 - 19Q3 data
 - New data loading functions
 
 
 
-                        Changes in version 0.99.0                  
+Changes in version 0.99.0
 
 - Preparing for Bioconductor submission
 
@@ -9142,14 +9141,14 @@ NEWS from new and existing Data Experiment Packages
 [derfinderData](https://bioconductor.org/packages/derfinderData)
 -------------
 
-                        Changes in version 2.3.4                        
+Changes in version 2.3.4
 
 - Added a NEWS.md file to track changes to the package.
 
 [DMRcatedata](https://bioconductor.org/packages/DMRcatedata)
 -----------
 
-                        Changes in version 2.0.0                        
+Changes in version 2.0.0
 
 - Data package now uses ExperimentHub
 
@@ -9162,7 +9161,7 @@ NEWS from new and existing Data Experiment Packages
 [dsQTL](https://bioconductor.org/packages/dsQTL)
 -----
 
-                        Changes in version 2.17                         
+Changes in version 2.17
 
 USER VISIBLE CHANGES
 
@@ -9178,7 +9177,7 @@ USER VISIBLE CHANGES
 [HDCytoData](https://bioconductor.org/packages/HDCytoData)
 ----------
 
-                        Changes in version 1.5.4                        
+Changes in version 1.5.4
 
 - Add Weber_AML_sim and Weber_BCR_XL_sim datasets
 
@@ -9187,7 +9186,7 @@ USER VISIBLE CHANGES
 [MMAPPR2data](https://bioconductor.org/packages/MMAPPR2data)
 -----------
 
-                Changes in version 0.99.20 (2019-05-30)                 
+Changes in version 0.99.20 (2019-05-30)
 
 - Submitted to Bioconductor, nearing end of review process
 
@@ -9196,56 +9195,56 @@ USER VISIBLE CHANGES
 [MouseGastrulationData](https://bioconductor.org/packages/MouseGastrulationData)
 ---------------------
 
-                 Changes in version 0.99.0 (2019-06-17)                 
+Changes in version 0.99.0 (2019-06-17)
 
 - Submitted to Bioconductor
 
 [PhyloProfileData](https://bioconductor.org/packages/PhyloProfileData)
 ----------------
 
-                 Changes in version 0.99.0 (2019-05-30)                 
+Changes in version 0.99.0 (2019-05-30)
 
 - Submitted to Bioconductor
 
 [PtH2O2lipids](https://bioconductor.org/packages/PtH2O2lipids)
 ------------
 
-                     Changes in version 2016-04-21                      
+Changes in version 2016-04-21
 
 - Initial release for Bioconductor
 
 [pwrEWAS.data](https://bioconductor.org/packages/pwrEWAS.data)
 ------------
 
-                        Changes in version 0.1.0                        
+Changes in version 0.1.0
 
 - Initial version
 
 [RforProteomics](https://bioconductor.org/packages/RforProteomics)
 --------------
 
-                       Changes in version 1.23.1                        
+Changes in version 1.23.1
 
 - remove getThermoHelaPRTC function (server down) <2019-10-24 Thu>
 
 [RNAmodR.Data](https://bioconductor.org/packages/RNAmodR.Data)
 ------------
 
-                 Changes in version 0.99.0 (2019-04-29)                 
+Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
 [SBGNview.data](https://bioconductor.org/packages/SBGNview.data)
 -------------
 
-                       Changes in version 0.99.10                       
+Changes in version 0.99.10
 
 - Added gene expression demo datasets.
 
 [scRNAseq](https://bioconductor.org/packages/scRNAseq)
 --------
 
-                        Changes in version 2.0.0                        
+Changes in version 2.0.0
 
 - Added lots of new ExperimentHub datasets, inspired by
   simpleSingleCell use cases and Martin Hemberg's website.
@@ -9258,11 +9257,11 @@ USER VISIBLE CHANGES
 [signatureSearchData](https://bioconductor.org/packages/signatureSearchData)
 -------------------
 
-                 Changes in version 1.1.0 (2019-10-23)                  
+Changes in version 1.1.0 (2019-10-23)
 
 - Initial version
 
-                Changes in version 0.99.10 (2019-10-22)                 
+Changes in version 0.99.10 (2019-10-22)
 
 - Stored data in ExperimentHub
 
@@ -9274,7 +9273,7 @@ USER VISIBLE CHANGES
 
 - hdf5 file includes matrix, rownames and colnames
 
-                 Changes in version 0.99.0 (2019-04-02)                 
+Changes in version 0.99.0 (2019-04-02)
 
 - Needed 50Gb memory to load matrix in LINCS gctx file and save as HDF5
   backed SE object
@@ -9282,7 +9281,7 @@ USER VISIBLE CHANGES
 [TENxBUSData](https://bioconductor.org/packages/TENxBUSData)
 -----------
 
-                 Changes in version 0.99.0 (2019-01-08)                 
+Changes in version 0.99.0 (2019-01-08)
 
 - Submitted to Bioconductor for review
 
@@ -9294,7 +9293,7 @@ NEWS from new and existing Workflows
 [BgeeCall](https://bioconductor.org/packages/BgeeCall)
 --------
 
-                        Changes in version 1.1.1                        
+Changes in version 1.1.1
 
 - Better manage transcript version
 
@@ -9304,7 +9303,7 @@ NEWS from new and existing Workflows
 - Manage transcript version when calls are generated for several
   libraries
 
-                        Changes in version 1.1.0                        
+Changes in version 1.1.0
 
 - Change kmer size of kallisto index from 21 to 15 for libraries with
   readLength <= 50bp
@@ -9320,7 +9319,7 @@ NEWS from new and existing Workflows
 [CAGEWorkflow](https://bioconductor.org/packages/CAGEWorkflow)
 ------------
 
-                        Changes in version 1.1.5                        
+Changes in version 1.1.5
 
 - Updated main text with suggestions from F1000 reviewers.
 
@@ -9338,8 +9337,8 @@ in Bioc 3.9): flowQ, rMAT, TSSi, flowQB, rSFFreader, ProCoNA, spliceSites, DOQTL
 NGScopy, SVM2CRM, miRsponge, htSeqTools
 
 Nineteen software are deprecated in this release and will be removed in Bioc 3.11:
-SNPchip, rHVDM, GenomeGraphs, plateCore, charm, HTSanalyzeR, PathNet, Rchemcpp, 
-exomePeak, flipflop, Pbase, RnaSeqSampleSize, birte, SEPA, CNPBayes, dSimer, 
+SNPchip, rHVDM, GenomeGraphs, plateCore, charm, HTSanalyzeR, PathNet, Rchemcpp,
+exomePeak, flipflop, Pbase, RnaSeqSampleSize, birte, SEPA, CNPBayes, dSimer,
 mlm4omics, condcomp, brainImageR
 
 Two experimental data packages were removed in this release (after being
@@ -9348,9 +9347,9 @@ deprecated in BioC 3.9): PGPC, flowQBData.
 Three experimental data packages are deprecated in this release and will be
 removed in Bioc 3.11: charmData, facopy.annot, allenpvc.
 
-Two annotation packages were removed this release: MafDb.gnomADex.r2.0.1.GRCh38, 
+Two annotation packages were removed this release: MafDb.gnomADex.r2.0.1.GRCh38,
 MafDb.gnomAD.r2.0.1.GRCh38 (they have been replaced with
-MafDb.gnomADex.r2.1.GRCh38, 
+MafDb.gnomADex.r2.1.GRCh38,
 MafDb.gnomAD.r2.1.GRCh38)
 
 Two annotation packages are deprecated in this release and will be removed
