@@ -3,7 +3,7 @@ October 30, 2019
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.10, consisting of 1822
-software packages, 385 experiment data packages, 952 annotation
+software packages, 384 experiment data packages, 952 annotation
 packages, and 27 workflows.
 
 There are 93 new software packages, 15 new data experiment packages,
