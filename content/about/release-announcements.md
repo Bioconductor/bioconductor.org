@@ -9,8 +9,8 @@ _Bioconductor_ versions are linked to their release announcement (when
 available). Release announcements summarize new package additions,
 updates to existing packages, and package removals.
 
-| Release                         | Date              | Package Count                               | R    |
-|:--------------------------------|:------------------|:--------------------------------------------|:-----|
+| Release                         | Date              | Software packages                           | R    |
+|:--------------------------------|:------------------|--------------------------------------------:|:-----|
 | [3.10](/news/bioc_3_10_release) | October 30, 2019  | [1822](/packages/3.10/)                     | 3.6  |
 | [3.9](/news/bioc_3_9_release)   | May 3, 2019       | [1741](/packages/3.9/)                      | 3.6  |
 | [3.8](/news/bioc_3_8_release)   | October 31, 2018  | [1649](/packages/3.8/)                      | 3.5  |
