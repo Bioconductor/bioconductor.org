@@ -128,9 +128,12 @@ class GetJson
         pkg = h["Package"]
         temp = ranking_list[pkg]
         if temp.nil?
-            rank = nil
+            rank = ranking_list.values.max
         else
             rank = temp
+        end
+        if !ranking_list.keys.include? pkg
+            rank = ranking_list.values.max
         end
         h["Rank"] = rank
         view_dcfs[i] = h
