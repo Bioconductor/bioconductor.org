@@ -34,6 +34,12 @@ _Bioconductor_ by starting R and entering the commands
         install.packages("BiocManager")
     BiocManager::install()
 
+It may be possible to change the _Bioconductor_ version of an existing
+installation; see the '[Changing version][]' section of the BiocManager
+vignette.
+
+[Changing version]: https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html
+
 Details, including instructions to
 [install additional packages](#install-bioconductor-packages) and to
 [update](#update-bioconductor-packages),
