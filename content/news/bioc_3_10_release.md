@@ -2,12 +2,12 @@ October 30, 2019
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.10, consisting of 1822
-software packages, 384 experiment data packages, 952 annotation
+We are pleased to announce Bioconductor 3.10, consisting of 1823
+software packages, 384 experiment data packages, 953 annotation
 packages, and 27 workflows.
 
-There are 93 new software packages, 15 new data experiment packages,
-2 new annotation packages, and many updates and improvements
+There are 94 new software packages, 15 new data experiment packages,
+3 new annotation packages, and many updates and improvements
 to existing packages; Bioconductor 3.10 is compatible with R 3.6.1,
 and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
@@ -158,6 +158,18 @@ There are 93 new software packages in this release of Bioconductor.
   covers different aspects of circRNAs analysis from differential
   expression analysis, evolutionary conservation, biogenesis to
   functional analysis.
+
+- [cliqueMS](https://bioconductor.org/packages/cliqueMS) Annotates data from
+  liquid chromatography coupled to mass spectrometry (LC/MS) metabolomics
+  experiments. Based on a network algorithm (O.Senan, A. Aguilar- Mogas,
+  M. Navarro, O. Yanes, R.Guimerà and M. Sales-Pardo, Metabolomics Conference
+  (2016), Dublin), 'CliqueMS' builds a weighted similarity network where nodes
+  are features and edges are weighted according to the similarity of this
+  features. Then it searches for the most plausible division of the similarity
+  network into cliques (fully connected components). Finally it annotates
+  metabolites within each clique, obtaining for each annotated metabolite the
+  neutral mass and their features, corresponding to isotopes, ionization adducts
+  and fragmentation adducts of that metabolite.
 
 - [CNVfilteR](https://bioconductor.org/packages/CNVfilteR) CNVfilteR
   identifies those CNVs that can be discarded by using the single
@@ -928,11 +940,11 @@ There are 15 new data experiment packages in this release of Bioconductor.
 New Annotation Packages
 =====================
 
-There are 2 new annotation packages in this release of Bioconductor.
+There are 3 new annotation packages in this release of Bioconductor.
 
 - [MafDb.gnomAD.r3.0.GRCh38](https://bioconductor.org/packages/MafDb.gnomAD.r3.0.GRCh38)
 - [org.Mxanthus.db](https://bioconductor.org/packages/org.Mxanthus.db)
-
+- [GenomicState](https://bioconductor.org/packages/GenomicState)
 
 
 NEWS from new and existing Software Packages
