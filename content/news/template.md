@@ -13,12 +13,12 @@ and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
 release will include an updated Bioconductor [Amazon Machine Image][1]
 and [Docker containers][2].
 
-Visit [https://bioconductor.org][3]
+Visit [Bioconductor BiocViews][3]
 for details and downloads.
 
-[1]: https://bioconductor.org/help/bioconductor-cloud-ami/
-[2]: https://bioconductor.org/help/docker/
-[3]: https://bioconductor.org
+[1]: /help/bioconductor-cloud-ami/
+[2]: /help/docker/
+[3]: /packages/release/BiocViews.html
 
 Contents
 --------
@@ -41,7 +41,7 @@ To update to or install Bioconductor 3.8:
    this version of R.
 
 2. Follow the instructions at
-   [http://bioconductor.org/install/](http://bioconductor.org/install/).
+   [Installing Bioconductor](/install/).
 
 New Software Packages
 =====================

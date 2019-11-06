@@ -15,12 +15,12 @@ and [Docker containers][2].
 
 Thank you to everyone for your contribution to Bioconductor
 
-Visit [https://bioconductor.org][3]
+Visit [Bioconductor BiocViews][3]
 for details and downloads.
 
-[1]: https://bioconductor.org/help/bioconductor-cloud-ami/
-[2]: https://bioconductor.org/help/docker/
-[3]: https://bioconductor.org
+[1]: /help/bioconductor-cloud-ami/
+[2]: /help/docker/
+[3]: /packages/release/BiocViews.html
 
 Contents
 --------
@@ -43,14 +43,14 @@ To update to or install Bioconductor 3.10:
    this version of R.
 
 2. Follow the instructions at
-   [http://bioconductor.org/install/](http://bioconductor.org/install/).
+   [Installing Bioconductor](/install/).
 
 New Software Packages
 =====================
 
 There are 93 new software packages in this release of Bioconductor.
 
-- [AlphaBeta](https://bioconductor.org/packages/AlphaBeta) AlphaBeta
+- [AlphaBeta](/packages/AlphaBeta) AlphaBeta
   is a computational method for estimating epimutation rates and
   spectra from high-throughput DNA methylation data in plants. The
   method has been specifically designed to: 1. analyze 'germline'
@@ -58,7 +58,7 @@ There are 93 new software packages in this release of Bioconductor.
   accumulation lines (MA-lines). 2. analyze 'somatic' epimutations in
   the context of plant development and aging.
 
-- [ALPS](https://bioconductor.org/packages/ALPS) The package provides
+- [ALPS](/packages/ALPS) The package provides
   analysis and publication quality visualization routines for
   genome-wide epigenomics data such as histone modification or
   transcription factor ChIP-seq, ATAC-seq, DNase-seq etc. The
@@ -69,27 +69,27 @@ There are 93 new software packages in this release of Bioconductor.
   require a minimal input that can be prepared with basic R, unix or
   excel skills.
 
-- [APAlyzer](https://bioconductor.org/packages/APAlyzer) Perform
+- [APAlyzer](/packages/APAlyzer) Perform
   3'UTR APA, Intronic APA and gene expression analysis using RNA-seq
   data.
 
-- [ASpediaFI](https://bioconductor.org/packages/ASpediaFI) This
+- [ASpediaFI](/packages/ASpediaFI) This
   package provides functionalities for a systematic and integrative
   analysis of alternative splicing events and their functional
   interactions.
 
-- [Autotuner](https://bioconductor.org/packages/Autotuner) This
+- [Autotuner](/packages/Autotuner) This
   package is designed to help faciliate data processing in untargeted
   metabolomics. To do this, the algorithm contained within the
   package performs statistical inference on raw data to come up with
   the best set of parameters to process the raw data.
 
-- [AWFisher](https://bioconductor.org/packages/AWFisher)
+- [AWFisher](/packages/AWFisher)
   Implementation of the adaptively weighted fisher's method,
   including fast p-value computing, variability index, and
   meta-pattern.
 
-- [BiocSet](https://bioconductor.org/packages/BiocSet) BiocSet
+- [BiocSet](/packages/BiocSet) BiocSet
   displays different biological sets in a triple tibble format. These
   three tibbles are `element`, `set`, and `elementset`. The user has
   the abilty to activate one of these three tibbles to perform common
@@ -97,16 +97,16 @@ There are 93 new software packages in this release of Bioconductor.
   accessing web references for elements/sets are also available in
   BiocSet.
 
-- [BioTIP](https://bioconductor.org/packages/BioTIP) Adopting
+- [BioTIP](/packages/BioTIP) Adopting
   tipping-point theory to transcriptome profiles to unravel disease
   regulatory trajectory.
 
-- [biscuiteer](https://bioconductor.org/packages/biscuiteer) A test
+- [biscuiteer](/packages/biscuiteer) A test
   harness for bsseq loading of Biscuit output, summarization of WGBS
   data over defined regions and in mappable samples, with or without
   imputation, dropping of mostly-NA rows, age estimates, etc.
 
-- [blacksheepr](https://bioconductor.org/packages/blacksheepr)
+- [blacksheepr](/packages/blacksheepr)
   Blacksheep is a tool designed for outlier analysis in the context
   of pairwise comparisons in an effort to find distinguishing
   characteristics from two groups. This tool was designed to be
@@ -115,15 +115,15 @@ There are 93 new software packages in this release of Bioconductor.
   represented by a 2D table, and has two sub populations within the
   table to compare.
 
-- [brainflowprobes](https://bioconductor.org/packages/brainflowprobes)
+- [brainflowprobes](/packages/brainflowprobes)
   Use these functions to characterize genomic regions for BrainFlow
   target probe design.
 
-- [brendaDb](https://bioconductor.org/packages/brendaDb) R interface
+- [brendaDb](/packages/brendaDb) R interface
   for importing and analyzing enzyme information from the BRENDA
   database.
 
-- [BUSpaRse](https://bioconductor.org/packages/BUSpaRse) The kallisto
+- [BUSpaRse](/packages/BUSpaRse) The kallisto
   | bustools pipeline is a fast and modular set of tools to convert
   single cell RNA-seq reads in fastq files into gene count or
   transcript compatibility counts (TCC) matrices for downstream
@@ -143,14 +143,14 @@ There are 93 new software packages in this release of Bioconductor.
   information in the format required by bustools, and to read output
   of bustools into R as sparses matrices.
 
-- [calm](https://bioconductor.org/packages/calm) Statistical methods
+- [calm](/packages/calm) Statistical methods
   for multiple testing with covariate information. Traditional
   multiple testing methods only consider a list of test statistics,
   such as p-values. Our methods incorporate the auxiliary
   information, such as the lengths of gene coding regions or the
   minor allele frequencies of SNPs, to improve power.
 
-- [circRNAprofiler](https://bioconductor.org/packages/circRNAprofiler)
+- [circRNAprofiler](/packages/circRNAprofiler)
   R-based computational framework for a comprehensive in silico
   analysis of circRNAs. This computational framework allows to
   combine and analyze circRNAs previously detected by multiple
@@ -159,7 +159,7 @@ There are 93 new software packages in this release of Bioconductor.
   expression analysis, evolutionary conservation, biogenesis to
   functional analysis.
 
-- [cliqueMS](https://bioconductor.org/packages/cliqueMS) Annotates data from
+- [cliqueMS](/packages/cliqueMS) Annotates data from
   liquid chromatography coupled to mass spectrometry (LC/MS) metabolomics
   experiments. Based on a network algorithm (O.Senan, A. Aguilar- Mogas,
   M. Navarro, O. Yanes, R.Guimerà and M. Sales-Pardo, Metabolomics Conference
@@ -171,12 +171,12 @@ There are 93 new software packages in this release of Bioconductor.
   neutral mass and their features, corresponding to isotopes, ionization adducts
   and fragmentation adducts of that metabolite.
 
-- [CNVfilteR](https://bioconductor.org/packages/CNVfilteR) CNVfilteR
+- [CNVfilteR](/packages/CNVfilteR) CNVfilteR
   identifies those CNVs that can be discarded by using the single
   nucleotide variant (SNV) calls that are usually obtained in common
   NGS pipelines.
 
-- [CrossICC](https://bioconductor.org/packages/CrossICC) CrossICC
+- [CrossICC](/packages/CrossICC) CrossICC
   utilizes an iterative strategy to derive the optimal gene set and
   cluster number from consensus similarity matrix generated by
   consensus clustering and it is able to deal with multiple cross
@@ -186,7 +186,7 @@ There are 93 new software packages in this release of Bioconductor.
   cancer-related analysis methods are embedded to facilitate the
   clinical translation of the identified cancer subtypes.
 
-- [debCAM](https://bioconductor.org/packages/debCAM) An R package for
+- [debCAM](/packages/debCAM) An R package for
   fully unsupervised deconvolution of complex tissues. It provides
   basic functions to perform unsupervised deconvolution on mixture
   expression profiles by Convex Analysis of Mixtures (CAM) and some
@@ -197,7 +197,7 @@ There are 93 new software packages in this release of Bioconductor.
   prior knowledge can achieve semi-supervised deconvolution of
   mixtures.
 
-- [deltaCaptureC](https://bioconductor.org/packages/deltaCaptureC)
+- [deltaCaptureC](/packages/deltaCaptureC)
   This package discovers meso-scale chromatin remodelling from 3C
   data.  3C data is local in nature.  It givens interaction counts
   between restriction enzyme digestion fragments and a preferred
@@ -206,11 +206,11 @@ There are 93 new software packages in this release of Bioconductor.
   significant changes in the interaction counts between the data from
   two cell types or two treatments.
 
-- [DEWSeq](https://bioconductor.org/packages/DEWSeq) Differential
+- [DEWSeq](/packages/DEWSeq) Differential
   expression analysis of windows for next-generation sequencing data
   like eCLIP or iCLIP data.
 
-- [DMCFB](https://bioconductor.org/packages/DMCFB) DMCFB is a
+- [DMCFB](/packages/DMCFB) DMCFB is a
   pipeline for identifying differentially methylated cytosines using
   a Bayesian functional regression model in bisulfite sequencing
   data. By using a functional regression data model, it tries to
@@ -223,7 +223,7 @@ There are 93 new software packages in this release of Bioconductor.
   Bayesian approach is adopted for estimation and inference in the
   proposed method.
 
-- [fcoex](https://bioconductor.org/packages/fcoex) The fcoex package
+- [fcoex](/packages/fcoex) The fcoex package
   implements an easy-to use interface to co-expression analysisbased
   on the FCBF (Fast Correlation-Based Filter) algorithm. it was
   implemented especifically to deal with single-cell data. The
@@ -232,7 +232,7 @@ There are 93 new software packages in this release of Bioconductor.
   guilt-by-association. The package structure is based on the
   CEMiTool package.
 
-- [fcScan](https://bioconductor.org/packages/fcScan) This package is
+- [fcScan](/packages/fcScan) This package is
   used to detect combination of genomic coordinates falling within a
   user defined window size along with user defined overlap between
   identified neighboring clusters. It can be used for genomic data
@@ -241,7 +241,7 @@ There are 93 new software packages in this release of Bioconductor.
   thus the presence of additional sites within the allowed window
   size.
 
-- [flowSpecs](https://bioconductor.org/packages/flowSpecs) This
+- [flowSpecs](/packages/flowSpecs) This
   package is intended to fill the role of conventional cytometry
   pre-processing software, for spectral decomposition,
   transformation, visualization and cleanup, and to aid further
@@ -252,7 +252,7 @@ There are 93 new software packages in this release of Bioconductor.
   with spectral cytometry and as it will hopefully give the user a
   nice pair of spectacles through which to view their data.
 
-- [flowSpy](https://bioconductor.org/packages/flowSpy) A trajectory
+- [flowSpy](/packages/flowSpy) A trajectory
   inference and visualization toolkit for flow and mass cytometry
   data. flowSpy offers complete analyzing workflow for flow and mass
   cytometry data. flowSpy can be a valuable tool for application
@@ -260,19 +260,19 @@ There are 93 new software packages in this release of Bioconductor.
   reconstruction and pseudotime estimation for flow and mass
   cytometry data.
 
-- [GCSscore](https://bioconductor.org/packages/GCSscore) For
+- [GCSscore](/packages/GCSscore) For
   differential expression analysis of 3'IVT and WT-style microarrays
   from Affymetrix/Thermo-Fisher.  Based on S-score algorithm
   originally described by Zhang et al 2002.
 
-- [gemini](https://bioconductor.org/packages/gemini) GEMINI uses
+- [gemini](/packages/gemini) GEMINI uses
   log-fold changes to model sample-dependent and independent effects,
   and uses a variational Bayes approach to infer these effects. The
   inferred effects are used to score and identify genetic
   interactions, such as lethality and recovery. More details can be
   found in Zamanighomi et al. 2019 (in press).
 
-- [GenomicOZone](https://bioconductor.org/packages/GenomicOZone) The
+- [GenomicOZone](/packages/GenomicOZone) The
   package clusters gene activity along chromosome into zones, detects
   differential zones as outstanding, and visualizes maps of
   outstanding zones across the genome. The method guarantees cluster
@@ -280,41 +280,41 @@ There are 93 new software packages in this release of Bioconductor.
   enables new characterization of effects due to genome
   reorganization, structural variation, and epigenome alteration.
 
-- [GmicR](https://bioconductor.org/packages/GmicR) This package uses
+- [GmicR](/packages/GmicR) This package uses
   bayesian network learning to detect relationships between Gene
   Modules detected by WGCNA and immune cell signatures defined by
   xCell. It is a hypothesis generating tool.
 
-- [gramm4R](https://bioconductor.org/packages/gramm4R) Generalized
+- [gramm4R](/packages/gramm4R) Generalized
   Correlation Analysis for Metabolome and Microbiome (GRaMM), for
   inter-correlation pairs discovery among metabolome and microbiome.
 
-- [gscreend](https://bioconductor.org/packages/gscreend) Package for
+- [gscreend](/packages/gscreend) Package for
   the analysis of pooled genetic screens (e.g. CRISPR-KO). The
   analysis of such screens is based on the comparison of gRNA
   abundances before and after a cell proliferation phase. The
   gscreend packages takes gRNA counts as input and allows detection
   of genes whose knockout decreases or increases cell proliferation.
 
-- [HCAExplorer](https://bioconductor.org/packages/HCAExplorer)
+- [HCAExplorer](/packages/HCAExplorer)
   Search, browse, reference, and download resources from the Human
   Cell Atlas data portal. Development of this package is supported
   through funds from the Chan / Zuckerberg initiative.
 
-- [HiLDA](https://bioconductor.org/packages/HiLDA) A package built
+- [HiLDA](/packages/HiLDA) A package built
   under the Bayesian framework of applying hierarchical latent
   Dirichlet allocation to statistically test whether the mutational
   exposures of mutational signatures (Shiraishi-model signatures) are
   different between two groups.
 
-- [idr2d](https://bioconductor.org/packages/idr2d) A tool to measure
+- [idr2d](/packages/idr2d) A tool to measure
   reproducibility between genomic experiments that produce
   two-dimensional peaks (interactions between peaks), such as
   ChIA-PET, HiChIP, and HiC. idr2d is an extension of the original
   idr package, which is intended for (one-dimensional) ChIP-seq
   peaks.
 
-- [IgGeneUsage](https://bioconductor.org/packages/IgGeneUsage)
+- [IgGeneUsage](/packages/IgGeneUsage)
   Decoding the properties of immune repertoires is key in
   understanding the response of adaptive immunity to challenges such
   as viral infection. One important task in immune repertoire
@@ -325,7 +325,7 @@ There are 93 new software packages in this release of Bioconductor.
   from immune repertoire sequencing experiments and quantifies Ig
   gene usage biases as probabilities.
 
-- [KnowSeq](https://bioconductor.org/packages/KnowSeq) KnowSeq
+- [KnowSeq](/packages/KnowSeq) KnowSeq
   proposes a whole pipeline that comprises the most relevant steps in
   the RNA-seq gene expression analysis, with the main goal of
   extracting biological knowledge from raw data (Differential
@@ -347,7 +347,7 @@ There are 93 new software packages in this release of Bioconductor.
   community containing all the necessary steps to carry out complete
   studies in a simple and fast way.
 
-- [LinkHD](https://bioconductor.org/packages/LinkHD) Here we present
+- [LinkHD](/packages/LinkHD) Here we present
   Link-HD, an approach to integrate heterogeneous datasets, as a
   generalization of STATIS-ACT (“Structuration des Tableaux A Trois
   Indices de la Statistique–Analyse Conjointe de Tableaux”), a family
@@ -359,7 +359,7 @@ There are 93 new software packages in this release of Bioconductor.
   Biplot model in order to stablish relationships between
   observations and variable and perform variable selection.
 
-- [lionessR](https://bioconductor.org/packages/lionessR) LIONESS, or
+- [lionessR](/packages/lionessR) LIONESS, or
   Linear Interpolation to Obtain Network Estimates for Single
   Samples, can be used to reconstruct single-sample networks
   (https://arxiv.org/abs/1505.06440). This code implements the
@@ -370,7 +370,7 @@ There are 93 new software packages in this release of Bioconductor.
   weighted adjacency matrix. lionessR works for both unipartite and
   bipartite networks.
 
-- [Maaslin2](https://bioconductor.org/packages/Maaslin2) MaAsLin2 is
+- [Maaslin2](/packages/Maaslin2) MaAsLin2 is
   comprehensive R package for efficiently determining multivariable
   association between clinical metadata and microbial meta'omic
   features. MaAsLin2 relies on general linear models to accommodate
@@ -379,17 +379,17 @@ There are 93 new software packages in this release of Bioconductor.
   exploration, normalization, and transformation methods. MaAsLin2 is
   the next generation of MaAsLin.
 
-- [MACSQuantifyR](https://bioconductor.org/packages/MACSQuantifyR)
+- [MACSQuantifyR](/packages/MACSQuantifyR)
   Automatically process the metadata of MACSQuantify FACS sorter. It
   runs multiple modules: i) imports of raw file and graphical
   selection of duplicates in well plate, ii) computates statistics on
   data and iii) can compute combination index.
 
-- [MBQN](https://bioconductor.org/packages/MBQN) Modified quantile
+- [MBQN](/packages/MBQN) Modified quantile
   normalization for omics or other matrix-like data distorted in
   location and scale.
 
-- [MEB](https://bioconductor.org/packages/MEB) Identifying
+- [MEB](/packages/MEB) Identifying
   differential expression genes between the same or different species
   is an urgent demand for biological research. In most of cases,
   normalization is the first step to solve this problem, then by
@@ -412,7 +412,7 @@ There are 93 new software packages in this release of Bioconductor.
   be easily applied to the same or different species data and without
   changing too much.
 
-- [MetaVolcanoR](https://bioconductor.org/packages/MetaVolcanoR) This
+- [MetaVolcanoR](/packages/MetaVolcanoR) This
   package combines differential gene expression results. It
   implements three strategies to summarize differential gene
   expression from different studies. i) Random Effects Model (REM)
@@ -421,7 +421,7 @@ There are 93 new software packages in this release of Bioconductor.
   Volcano plot reasoning to visualize the gene expression
   meta-analysis results.
 
-- [MethCP](https://bioconductor.org/packages/MethCP) MethCP is a
+- [MethCP](/packages/MethCP) MethCP is a
   differentially methylated region (DMR) detecting method for
   whole-genome bisulfite sequencing (WGBS) data, which is applicable
   for a wide range of experimental designs beyond the two-group
@@ -429,17 +429,17 @@ There are 93 new software packages in this release of Bioconductor.
   on change point detection, which naturally segments the genome and
   provides region-level differential analysis.
 
-- [methrix](https://bioconductor.org/packages/methrix) Bedgraph files
+- [methrix](/packages/methrix) Bedgraph files
   generated by Bisulfite pipelines often come in various flavors.
   Critical downstream step requires summarization of these files into
   methylation/coverage matrices. This step of data aggregation is
   done by Methrix, including many other useful downstream functions.
 
-- [methylCC](https://bioconductor.org/packages/methylCC) A tool to
+- [methylCC](/packages/methylCC) A tool to
   estimate the cell composition of DNA methylation whole blood sample
   measured on any platform technology (microarray and sequencing).
 
-- [microbiomeDASim](https://bioconductor.org/packages/microbiomeDASim)
+- [microbiomeDASim](/packages/microbiomeDASim)
   A toolkit for simulating differential microbiome data designed for
   longitudinal analyses. Several functional forms may be specified
   for the mean trend. Observations are drawn from a multivariate
@@ -447,7 +447,7 @@ There are 93 new software packages in this release of Bioconductor.
   simulate data in order to accurately compare different longitudinal
   methods for differential abundance.
 
-- [MMAPPR2](https://bioconductor.org/packages/MMAPPR2) MMAPPR2 maps
+- [MMAPPR2](/packages/MMAPPR2) MMAPPR2 maps
   mutations resulting from pooled RNA-seq data from the F2 cross of
   forward genetic screens. Its predecessor is described in a paper
   published in Genome Research (Hill et al. 2013). MMAPPR2 accepts
@@ -457,7 +457,7 @@ There are 93 new software packages in this release of Bioconductor.
   Variant Effect Predictor, and outputs a ranked list of candidate
   mutations.
 
-- [MMUPHin](https://bioconductor.org/packages/MMUPHin) MMUPHin is an
+- [MMUPHin](/packages/MMUPHin) MMUPHin is an
   R package for meta-analysis tasks of microbiome cohorts. It has
   function interfaces for: a) covariate-controlled batch- and cohort
   effect adjustment, b) meta-analysis differential abundance testing,
@@ -465,52 +465,52 @@ There are 93 new software packages in this release of Bioconductor.
   discovery, and d) meta-analysis unsupervised continuous structure
   discovery.
 
-- [MOSim](https://bioconductor.org/packages/MOSim) MOSim package
+- [MOSim](/packages/MOSim) MOSim package
   simulates multi-omic experiments that mimic regulatory mechanisms
   within the cell, allowing flexible experimental design including
   time course and multiple groups.
 
-- [MSstatsSampleSize](https://bioconductor.org/packages/MSstatsSampleSize)
+- [MSstatsSampleSize](/packages/MSstatsSampleSize)
   The packages estimates the variance in the input protein abundance
   data and simulates data with predefined number of biological
   replicates based on the variance estimation. It reports the mean
   predictive accuracy of the classifier and mean protein importance
   over multiple iterations of the simulation.
 
-- [muscat](https://bioconductor.org/packages/muscat) `muscat`
+- [muscat](/packages/muscat) `muscat`
   provides various methods and visualization tools for DS analysis in
   multi-sample, multi-group, multi-(cell-)subpopulation scRNA-seq
   data, including cell-level mixed models and methods based on
   aggregated “pseudobulk” data, as well as a flexible simulation
   platform that mimics both single and multi-sample scRNA-seq data.
 
-- [ncGTW](https://bioconductor.org/packages/ncGTW) The purpose of
+- [ncGTW](/packages/ncGTW) The purpose of
   ncGTW is to help XCMS for LC-MS data alignment. Currently, ncGTW
   can detect the misaligned feature groups by XCMS, and the user can
   choose to realign these feature groups by ncGTW or not.
 
-- [OmnipathR](https://bioconductor.org/packages/OmnipathR) Import
+- [OmnipathR](/packages/OmnipathR) Import
   data from https://www.omnipathdb.org webservice. It also includes
   functions to transform and print this data.
 
-- [oppti](https://bioconductor.org/packages/oppti) The aim of oppti
+- [oppti](/packages/oppti) The aim of oppti
   is to analyze protein (and phosphosite) expressions to find
   outlying markers for each sample in the given cohort(s) for the
   discovery of personalized actionable targets.
 
-- [peakPantheR](https://bioconductor.org/packages/peakPantheR) An
+- [peakPantheR](/packages/peakPantheR) An
   automated pipeline for the detection, integration and reporting of
   predefined features across a large number of mass spectrometry data
   files.
 
-- [PERFect](https://bioconductor.org/packages/PERFect) PERFect is a
+- [PERFect](/packages/PERFect) PERFect is a
   novel permutation filtering approach designed to address two
   unsolved problems in microbiome data processing: (i) define and
   quantify loss due to filtering by implementing thresholds, and (ii)
   introduce and evaluate a permutation test for filtering loss to
   provide a measure of excessive filtering.
 
-- [PhyloProfile](https://bioconductor.org/packages/PhyloProfile)
+- [PhyloProfile](/packages/PhyloProfile)
   PhyloProfile is a tool for exploring complex phylogenetic profiles.
   Phylogenetic profiles, presence/absence patterns of genes over a
   set of species, are commonly used to trace the functional and
@@ -522,14 +522,14 @@ There are 93 new software packages in this release of Bioconductor.
   further analysis features to gain insights like the gene age
   estimation or core gene identification.
 
-- [proDA](https://bioconductor.org/packages/proDA) Account for
+- [proDA](/packages/proDA) Account for
   missing values in label-free mass spectrometry data without
   imputation. The package implements a probabilistic dropout model
   that ensures that the information from observed and missing values
   are properly combined. It adds empirical Bayesian priors to
   increase power to detect differentially abundant proteins.
 
-- [pulsedSilac](https://bioconductor.org/packages/pulsedSilac) This
+- [pulsedSilac](/packages/pulsedSilac) This
   package provides several tools for pulsed-SILAC data analysis.
   Functions are provided to organize the data, calculate isotope
   ratios, isotope fractions, model protein turnover, compare turnover
@@ -538,17 +538,17 @@ There are 93 new software packages in this release of Bioconductor.
   exploration, quality control, condition comparison, individual
   model inspection and model comparison.
 
-- [pwrEWAS](https://bioconductor.org/packages/pwrEWAS) pwrEWAS is a
+- [pwrEWAS](/packages/pwrEWAS) pwrEWAS is a
   user-friendly tool to assists researchers in the design and
   planning of EWAS to help circumvent under- and overpowered studies.
 
-- [Qtlizer](https://bioconductor.org/packages/Qtlizer) This R package
+- [Qtlizer](/packages/Qtlizer) This R package
   provides access to the Qtlizer web server. Qtlizer annotates lists
   of common small variants (mainly SNPs) and genes in humans with
   associated changes in gene expression using the most comprehensive
   database of published quantitative trait loci (QTLs).
 
-- [ReactomeGSA](https://bioconductor.org/packages/ReactomeGSA) The
+- [ReactomeGSA](/packages/ReactomeGSA) The
   ReactomeGSA packages uses Reactome's online analysis service to
   perform a multi-omics gene set analysis. The main advantage of this
   package is, that the retrieved results can be visualized using
@@ -558,7 +558,7 @@ There are 93 new software packages in this release of Bioconductor.
   limma and edgeR) locally. Therefore, if you only require a gene set
   analysis, different packages are more suited.
 
-- [RNAmodR](https://bioconductor.org/packages/RNAmodR) RNAmodR
+- [RNAmodR](/packages/RNAmodR) RNAmodR
   provides classes and workflows for loading/aggregation data from
   high througput sequencing aimed at detecting post-transcriptional
   modifications through analysis of specific patterns. In addition,
@@ -567,28 +567,28 @@ There are 93 new software packages in this release of Bioconductor.
   analysis strategies can be easily implemented as a seperate
   package.
 
-- [RNAmodR.AlkAnilineSeq](https://bioconductor.org/packages/RNAmodR.AlkAnilineSeq)
+- [RNAmodR.AlkAnilineSeq](/packages/RNAmodR.AlkAnilineSeq)
   RNAmodR.AlkAnilineSeq implements the detection of m7G, m3C and D
   modifications on RNA from experimental data generated with the
   AlkAnilineSeq protocol. The package builds on the core
   functionality of the RNAmodR package to detect specific patterns of
   the modifications in high throughput sequencing data.
 
-- [RNAmodR.ML](https://bioconductor.org/packages/RNAmodR.ML)
+- [RNAmodR.ML](/packages/RNAmodR.ML)
   RNAmodR.ML extend the functionality of the RNAmodR package and
   classical detection strategies towards detection through machine
   learning models. RNAmodR.ML provides classes, functions and an
   example workflow to establish a detection stratedy, which can be
   packaged.
 
-- [RNAmodR.RiboMethSeq](https://bioconductor.org/packages/RNAmodR.RiboMethSeq)
+- [RNAmodR.RiboMethSeq](/packages/RNAmodR.RiboMethSeq)
   RNAmodR.RiboMethSeq implements the detection of 2'-O methylations
   on RNA from experimental data generated with the RiboMethSeq
   protocol. The package builds on the core functionality of the
   RNAmodR package to detect specific patterns of the modifications in
   high throughput sequencing data.
 
-- [RNAsense](https://bioconductor.org/packages/RNAsense) RNA-sense
+- [RNAsense](/packages/RNAsense) RNA-sense
   tool compares RNA-seq time curves in two experimental conditions,
   i.e. wild-type and mutant, and works in three steps. At Step 1, it
   builds expression profile for each transcript in one condition
@@ -606,7 +606,7 @@ There are 93 new software packages in this release of Bioconductor.
   differential expression groups at y- and x-axis, respectively, and
   facilitates the biological interpretation of the data.
 
-- [SAIGEgds](https://bioconductor.org/packages/SAIGEgds) Scalable
+- [SAIGEgds](/packages/SAIGEgds) Scalable
   implementation of generalized mixed models with highly optimized
   C++ implementation and integration with Genomic Data Structure
   (GDS) files. It is designed for single variant tests in large-scale
@@ -618,7 +618,7 @@ There are 93 new software packages in this release of Bioconductor.
   approximation. Benchmarks show that SAIGEgds is 5 to 6 times faster
   than the original SAIGE R package.
 
-- [SBGNview](https://bioconductor.org/packages/SBGNview) SBGNview is
+- [SBGNview](/packages/SBGNview) SBGNview is
   an R package for visualizing omics data on SBGN pathway maps. Given
   omics data and a SBGN-ML file with layout information, SBGNview can
   display omics data as colors on glyphs and output image files.
@@ -628,7 +628,7 @@ There are 93 new software packages in this release of Bioconductor.
   from SBGN-ML files. SBGNview can map a large collection of gene,
   protein and compound ID typs to glyphs.
 
-- [SCANVIS](https://bioconductor.org/packages/SCANVIS) SCANVIS is a
+- [SCANVIS](/packages/SCANVIS) SCANVIS is a
   set of annotation-dependent tools for analyzing splice junctions
   and their read support as predetermined by an alignment tool of
   choice (for example, STAR aligner). SCANVIS assesses each
@@ -654,58 +654,58 @@ There are 93 new software packages in this release of Bioconductor.
   sashimi plot, which is useful when contrasting cohorots (eg.
   disease vs control).
 
-- [scBFA](https://bioconductor.org/packages/scBFA) This package is
+- [scBFA](/packages/scBFA) This package is
   designed to model gene detection pattern of scRNA-seq through a
   binary factor analysis model. This model allows user to pass into a
   cell level covariate matrix X and gene level covariate matrix Q to
   account for nuisance variance(e.g batch effect), and it will output
   a low dimensional embedding matrix for downstream analysis.
 
-- [scDblFinder](https://bioconductor.org/packages/scDblFinder)
+- [scDblFinder](/packages/scDblFinder)
   Efficient identification of doublets in single-cell RNAseq directly
   from counts using overclustering-based generation of artifical
   doublets.
 
-- [scGPS](https://bioconductor.org/packages/scGPS) The package
+- [scGPS](/packages/scGPS) The package
   implements two main algorithms to answer two key questions: a SCORE
   (Stable Clustering at Optimal REsolution) to find subpopulations,
   followed by scGPS to investigate the relationships between
   subpopulations.
 
-- [schex](https://bioconductor.org/packages/schex) Builds hexbin
+- [schex](/packages/schex) Builds hexbin
   plots for variables and dimension reduction stored in single cell
   omics data such as SingleCellExperiment and SeuratObject. The ideas
   used in this package are based on the excellent work of Dan Carr,
   Nicholas Lewin-Koh, Martin Maechler and Thomas Lumley.
 
-- [scPCA](https://bioconductor.org/packages/scPCA) A toolbox for
+- [scPCA](/packages/scPCA) A toolbox for
   sparse contrastive principal component analysis (scPCA) of
   high-dimensional biological data. scPCA combines the stability and
   interpretability of sparse PCA with contrastive PCA's ability to
   disentangle biological signal from techical noise through the use
   of control data. Also implements and extends cPCA.
 
-- [scTGIF](https://bioconductor.org/packages/scTGIF) scTGIF connects
+- [scTGIF](/packages/scTGIF) scTGIF connects
   the cells and the related gene functions without cell type label.
 
-- [SEtools](https://bioconductor.org/packages/SEtools) This includes
+- [SEtools](/packages/SEtools) This includes
   a set of tools for working with the SummarizedExperiment class,
   including handy merging and plotting functions.
 
-- [SharedObject](https://bioconductor.org/packages/SharedObject) This
+- [SharedObject](/packages/SharedObject) This
   package is developed for facilitating parallel computing in R. It
   is capable to create an R object in the shared memory space and
   share the data across multiple R processes. It avoids the overhead
   of memory dulplication and data transfer, which make sharing big
   data object across many clusters possible.
 
-- [signatureSearch](https://bioconductor.org/packages/signatureSearch)
+- [signatureSearch](/packages/signatureSearch)
   This package implements algorithms and data structures for
   performing gene expression signature (GES) searches, and
   subsequently interpreting the results functionally with specialized
   enrichment methods.
 
-- [SigsPack](https://bioconductor.org/packages/SigsPack) Single
+- [SigsPack](/packages/SigsPack) Single
   sample estimation of exposure to mutational signatures. Exposures
   to known mutational signatures are estimated for single samples,
   based on quadratic programming algorithms. Bootstrapping the input
@@ -714,13 +714,13 @@ There are 93 new software packages in this release of Bioconductor.
   mutational context can be taken into account by normalising the
   catalogues.
 
-- [SingleR](https://bioconductor.org/packages/SingleR) Performs
+- [SingleR](/packages/SingleR) Performs
   unbiased cell type recognition from single-cell RNA sequencing
   data, by leveraging reference transcriptomic datasets of pure cell
   types to infer the cell of origin of each single cell
   independently.
 
-- [sojourner](https://bioconductor.org/packages/sojourner) Single
+- [sojourner](/packages/sojourner) Single
   molecule tracking has evolved as a novel new approach complementing
   genomic sequencing, it reports live biophysical properties of
   molecules being investigated besides properties relating their
@@ -728,7 +728,7 @@ There are 93 new software packages in this release of Bioconductor.
   statistical and bioinformatic needs related to the analysis and
   comprehension of high throughput single molecule tracking data.
 
-- [Spaniel](https://bioconductor.org/packages/Spaniel) Spaniel
+- [Spaniel](/packages/Spaniel) Spaniel
   includes a series of tools to aid the quality control and analysis
   of Spatial Transcriptomics data. The package contains functions to
   create either a Seurat object or SingleCellExperiment from a count
@@ -737,7 +737,7 @@ There are 93 new software packages in this release of Bioconductor.
   visualisation of metrics contained within the S4 object overlaid
   onto the image of the tissue.
 
-- [SQLDataFrame](https://bioconductor.org/packages/SQLDataFrame)
+- [SQLDataFrame](/packages/SQLDataFrame)
   SQLDataFrame is developed to lazily represent and efficiently
   analyze SQL-based tables in _R_. SQLDataFrame supports common and
   familiar 'DataFrame' operations such as '[' subsetting, rbind,
@@ -746,7 +746,7 @@ There are 93 new software packages in this release of Bioconductor.
   text files (.txt, .csv, etc.) could also be easily converted into
   SQLDataFrames objects (which generates a new database on-disk).
 
-- [ssPATHS](https://bioconductor.org/packages/ssPATHS) This package
+- [ssPATHS](/packages/ssPATHS) This package
   generates pathway scores from expression data for single samples
   after training on a reference cohort. The score is generated by
   taking the expression of a gene set (pathway) from a reference
@@ -754,21 +754,21 @@ There are 93 new software packages in this release of Bioconductor.
   samples in the cohort that have the pathway augmented and not. The
   separating hyperplane is then used to score new samples.
 
-- [target](https://bioconductor.org/packages/target) Implement the
+- [target](/packages/target) Implement the
   BETA algorithm for infering direct target genes from DNA-binding
   and perturbation expression data Wang et al. (2013) <doi:
   10.1038/nprot.2013.150>. Extend the algorithm to predict the
   combined function of two DNA-binding elements from comprable
   binding and expression data.
 
-- [TOAST](https://bioconductor.org/packages/TOAST) This package is
+- [TOAST](/packages/TOAST) This package is
   devoted to analyzing high-throughput data (e.g. gene expression
   microarray, DNA methylation microarray, RNA-seq) from complex
   tissues. Current functionalities include 1. detect cell-type
   specific or cross-cell type differential signals 2. improve
   variable selection in reference-free deconvolution.
 
-- [tradeSeq](https://bioconductor.org/packages/tradeSeq) tradeSeq
+- [tradeSeq](/packages/tradeSeq) tradeSeq
   provides a flexible method for finding genes that are
   differentially expressed along one or multiple trajectories, using
   a variety of tests suited to answer questions of interest, e.g. the
@@ -778,7 +778,7 @@ There are 93 new software packages in this release of Bioconductor.
   (GAM) for each gene, and performs inference on the parameters of
   the GAM.
 
-- [VariantExperiment](https://bioconductor.org/packages/VariantExperiment)
+- [VariantExperiment](/packages/VariantExperiment)
   VariantExperiment is a Bioconductor package for saving data in
   VCF/GDS format into RangedSummarizedExperiment object. The
   high-throughput genetic/genomic data are saved in GDSArray objects.
@@ -791,7 +791,7 @@ There are 93 new software packages in this release of Bioconductor.
   manipulations for high-throughput genetic/genomic data with common
   SummarizedExperiment metaphor in R and Bioconductor.
 
-- [ViSEAGO](https://bioconductor.org/packages/ViSEAGO) The main
+- [ViSEAGO](/packages/ViSEAGO) The main
   objective of ViSEAGO package is to carry out a data mining of
   biological functions and establish links between genes involved in
   the study. We developed ViSEAGO in R to facilitate functional Gene
@@ -814,14 +814,14 @@ There are 93 new software packages in this release of Bioconductor.
   easily shared between bioinformaticians and biologists, enhancing
   reporting capabilities while maintaining reproducibility.
 
-- [waddR](https://bioconductor.org/packages/waddR) Wasserstein
+- [waddR](/packages/waddR) Wasserstein
   distance based statistical test for detecting and describing
   differential distributions in one-dimensional data. Functions for
   wasserstein distance calculation, differential distribution
   testing, and a specialized test for differential expression in
   scRNA data are provided.
 
-- [XCIR](https://bioconductor.org/packages/XCIR) Models and tools for
+- [XCIR](/packages/XCIR) Models and tools for
   subject level analysis of X chromosome inactivation (XCI) and
   XCI-escape inference.
 
@@ -830,16 +830,16 @@ New Data Experiment Packages
 
 There are 15 new data experiment packages in this release of Bioconductor.
 
-- [benchmarkfdrData2019](https://bioconductor.org/packages/benchmarkfdrData2019)
+- [benchmarkfdrData2019](/packages/benchmarkfdrData2019)
   Benchmarking results for experimental and simulated data sets used
   in Korthauer and Kimes et al. (2019) to compare methods for
   controlling the false discovery rate.
 
-- [biscuiteerData](https://bioconductor.org/packages/biscuiteerData)
+- [biscuiteerData](/packages/biscuiteerData)
   Contains default datasets used by the Bioconductor package
   biscuiteer.
 
-- [depmap](https://bioconductor.org/packages/depmap) The depmap
+- [depmap](/packages/depmap) The depmap
   package is a data package that accesses datsets from the Broad
   Institute DepMap cancer dependency study using ExperimentHub.
   Datasets from the most current release are available, including
@@ -860,48 +860,48 @@ There are 15 new data experiment packages in this release of Bioconductor.
   This data is distributed under the Creative Commons license
   (Attribution 4.0 International (CC BY 4.0)).
 
-- [HMP2Data](https://bioconductor.org/packages/HMP2Data) HMP2Data is
+- [HMP2Data](/packages/HMP2Data) HMP2Data is
   a Bioconductor package of the Human Microbiome Project 2 (HMP2) 16S
   rRNA sequencing data. Processed data is provided as phyloseq,
   SummarizedExperiment, and MultiAssayExperiment class objects.
   Individual matrices and data.frames used for building these S4
   class objects are also provided in the package.
 
-- [MMAPPR2data](https://bioconductor.org/packages/MMAPPR2data)
+- [MMAPPR2data](/packages/MMAPPR2data)
   Contains data for illustration purposes in the MMAPPR2 package,
   namely simulated BAM files containing RNA-Seq data for a mutation
   in the slc24a5 gene, taken from the GRCz11 genome. Also contains
   reference sequence and annotation files for the region.
 
-- [MouseGastrulationData](https://bioconductor.org/packages/MouseGastrulationData)
+- [MouseGastrulationData](/packages/MouseGastrulationData)
   Provides processed and raw count matrices for single-cell RNA
   sequencing data from a timecourse of mouse gastrulation and early
   organogenesis.
 
-- [muscData](https://bioconductor.org/packages/muscData) Data package
+- [muscData](/packages/muscData) Data package
   containing a collection of multi-sample multi-group scRNA-seq
   datasets in SingleCellExperiment Bioconductor object format.
 
-- [PhyloProfileData](https://bioconductor.org/packages/PhyloProfileData)
+- [PhyloProfileData](/packages/PhyloProfileData)
   Two experimental datasets to illustrate running and analysing
   phylogenetic profiles with PhyloProfile package.
 
-- [pwrEWAS.data](https://bioconductor.org/packages/pwrEWAS.data) This
+- [pwrEWAS.data](/packages/pwrEWAS.data) This
   package provides reference data required for pwrEWAS. pwrEWAS is a
   user-friendly tool to estimate power in EWAS as a function of
   sample and effect size for two-group comparisons of DNAm (e.g.,
   case vs control, exposed vs non-exposed, etc.).
 
-- [ReactomeGSA.data](https://bioconductor.org/packages/ReactomeGSA.data)
+- [ReactomeGSA.data](/packages/ReactomeGSA.data)
   Companion data sets to showcase the functionality of the
   ReactomeGSA package. This package contains proteomics and RNA-seq
   data of the melanoma B-cell induction study by Griss et al.
 
-- [RNAmodR.Data](https://bioconductor.org/packages/RNAmodR.Data)
+- [RNAmodR.Data](/packages/RNAmodR.Data)
   RNAmodR.Data contains example data, which is used for vignettes and
   example workflows in the RNAmodR and dependent packages.
 
-- [SBGNview.data](https://bioconductor.org/packages/SBGNview.data)
+- [SBGNview.data](/packages/SBGNview.data)
   This package contains: 1. A microarray gene expression dataset from
   a human breast cancer study. 2. A RNA-Seq gene expression dataset
   from a mouse study on IFNG knockout. 3. ID mapping tables between
@@ -911,11 +911,11 @@ There are 15 new data experiment packages in this release of Bioconductor.
   species. 5. XML text of SBGN-ML files for all pre-collected
   pathways.
 
-- [signatureSearchData](https://bioconductor.org/packages/signatureSearchData)
+- [signatureSearchData](/packages/signatureSearchData)
   CMAP/LINCS hdf5 databases and other annotations used for
   signatureSearch software package.
 
-- [tartare](https://bioconductor.org/packages/tartare) provides raw
+- [tartare](/packages/tartare) provides raw
   files (size=278MBytes) recorded on different Liquid Chromatography
   Mass Spectrometry (LC-MS) instruments. All included MS instruments
   are manufactured by Thermo Fisher Scientific and belong to the
@@ -930,7 +930,7 @@ There are 15 new data experiment packages in this release of Bioconductor.
   package (Trachsel, 2018 <doi:10.1021/acs.jproteome.8b00173>) and
   the Spectra MsBackends.
 
-- [TENxBUSData](https://bioconductor.org/packages/TENxBUSData)
+- [TENxBUSData](/packages/TENxBUSData)
   Download Barcode, UMI, and Set (BUS) format of 10x datasets from
   within R. This package accompanies the package BUSpaRse, which can
   load BUS format into R as a sparse matrix, and which has utility
@@ -942,16 +942,16 @@ New Annotation Packages
 
 There are 3 new annotation packages in this release of Bioconductor.
 
-- [MafDb.gnomAD.r3.0.GRCh38](https://bioconductor.org/packages/MafDb.gnomAD.r3.0.GRCh38)
-- [org.Mxanthus.db](https://bioconductor.org/packages/org.Mxanthus.db)
-- [GenomicState](https://bioconductor.org/packages/GenomicState)
+- [MafDb.gnomAD.r3.0.GRCh38](/packages/MafDb.gnomAD.r3.0.GRCh38)
+- [org.Mxanthus.db](/packages/org.Mxanthus.db)
+- [GenomicState](/packages/GenomicState)
 
 
 NEWS from new and existing Software Packages
 ===================================
 
 
-[AffiXcan](https://bioconductor.org/packages/AffiXcan)
+[AffiXcan](/packages/AffiXcan)
 --------
 
 Changes in version 1.3.7
@@ -1022,14 +1022,14 @@ K-FOLD CROSS-VALIDATION IS SUPPORTED
   0.01 are considered non-randomly predicted, according to the new
   benchmarking standards [ref]
 
-[alevinQC](https://bioconductor.org/packages/alevinQC)
+[alevinQC](/packages/alevinQC)
 --------
 
 Changes in version 1.1
 
 - Added ability to process output from Salmon v0.14 or later
 
-[AlphaBeta](https://bioconductor.org/packages/AlphaBeta)
+[AlphaBeta](/packages/AlphaBeta)
 ---------
 
 Changes in version 0.99.2 (2019-08-15)
@@ -1039,7 +1039,7 @@ Changes in version 0.99.2 (2019-08-15)
 - Made the following significant changes o Using BiocParallel for
   parallel evaulation. o Updated documentation file.
 
-[ALPS](https://bioconductor.org/packages/ALPS)
+[ALPS](/packages/ALPS)
 ----
 
 Changes in version 0.99.8
@@ -1054,7 +1054,7 @@ Changes in version 0.99.0
 
 - FIRST RELEASE
 
-[AneuFinder](https://bioconductor.org/packages/AneuFinder)
+[AneuFinder](/packages/AneuFinder)
 ----------
 
 Changes in version 1.12.1
@@ -1064,7 +1064,7 @@ BUG FIXES
 - Moved ggplot2 from Imports to Depends. This was necessary because
   cowplot doesn't call ggplot2 explicitly anymore.
 
-[AnnotationForge](https://bioconductor.org/packages/AnnotationForge)
+[AnnotationForge](/packages/AnnotationForge)
 ---------------
 
 Changes in version 1.28.0
@@ -1073,7 +1073,7 @@ NEW FEATURES
 
 - (version 1.27.1) `makeOrgPackage()` supports GO ontologies.
 
-[AnnotationHub](https://bioconductor.org/packages/AnnotationHub)
+[AnnotationHub](/packages/AnnotationHub)
 -------------
 
 Changes in version 2.17.0
@@ -1108,7 +1108,7 @@ BUG FIXES
   Import BiocVersions and this is needed to get the correct BiocManager
   version of the snapshot date.
 
-[AnnotationHubData](https://bioconductor.org/packages/AnnotationHubData)
+[AnnotationHubData](/packages/AnnotationHubData)
 -----------------
 
 Changes in version 1.15.0
@@ -1135,7 +1135,7 @@ INTERNAL BUG CORRECTION
   generating non standard org dbs. 1.15.3 added try catch in case aws
   buckets unreachable.
 
-[APAlyzer](https://bioconductor.org/packages/APAlyzer)
+[APAlyzer](/packages/APAlyzer)
 --------
 
 Changes in version 0.99.2 (2019-08-18)
@@ -1148,7 +1148,7 @@ Changes in version 0.99.1 (2019-07-14)
 
 - Submitted to Bioconductor
 
-[apeglm](https://bioconductor.org/packages/apeglm)
+[apeglm](/packages/apeglm)
 ------
 
 Changes in version 1.8.0
@@ -1156,7 +1156,7 @@ Changes in version 1.8.0
 - Bringing in Josh Zitovsky's work on fast beta binomial GLM fitting in
   C++.
 
-[aroma.light](https://bioconductor.org/packages/aroma.light)
+[aroma.light](/packages/aroma.light)
 -----------
 
 Changes in version 3.15.1 (2019-08-28)
@@ -1170,7 +1170,7 @@ Changes in version 3.15.0 (2019-05-02)
 - The version number was bumped for the Bioconductor devel version,
   which is now BioC 3.10 for R (>= 3.6.0).
 
-[ASpediaFI](https://bioconductor.org/packages/ASpediaFI)
+[ASpediaFI](/packages/ASpediaFI)
 ---------
 
 Changes in version 0.99.10 (2019-10-25)
@@ -1217,7 +1217,7 @@ Changes in version 0.99.0 (2019-10-01)
 
 - Submitted to Bioconductor.
 
-[AssessORF](https://bioconductor.org/packages/AssessORF)
+[AssessORF](/packages/AssessORF)
 ---------
 
 Changes in version 1.3.1 (2019-10-22)
@@ -1231,7 +1231,7 @@ Changes in version 1.3.1 (2019-10-22)
 - Updated MapAssessmentData such that verbose output is cleaner and
   more informative # AssessORF 1.1
 
-[ATACseqQC](https://bioconductor.org/packages/ATACseqQC)
+[ATACseqQC](/packages/ATACseqQC)
 ---------
 
 Changes in version 1.9.9
@@ -1274,14 +1274,14 @@ Changes in version 1.9.1
 - Fix the bug if the bam file contain mix of single ends and paired
 ends.
 
-[AUCell](https://bioconductor.org/packages/AUCell)
+[AUCell](/packages/AUCell)
 ------
 
 Changes in version 1.7
 
 - Added function cbind()
 
-[Autotuner](https://bioconductor.org/packages/Autotuner)
+[Autotuner](/packages/Autotuner)
 ---------
 
 Changes in version 1.0.1 (2019-07-06)
@@ -1318,14 +1318,14 @@ Changes in version 0.99.7 (2019-08-02)
   Added and implemented accessor and setter functions for Autotuner
   slots o Added unit tests for accessor functions.
 
-[AWFisher](https://bioconductor.org/packages/AWFisher)
+[AWFisher](/packages/AWFisher)
 --------
 
 Changes in version 0.99.2 (2019-06-14)
 
 - Submitted to Bioconductor
 
-[bamsignals](https://bioconductor.org/packages/bamsignals)
+[bamsignals](/packages/bamsignals)
 ----------
 
 Changes in version 1.17.3
@@ -1344,7 +1344,7 @@ Changes in version 1.17.2
 
 - Maintainer E-mail adress updated
 
-[BANDITS](https://bioconductor.org/packages/BANDITS)
+[BANDITS](/packages/BANDITS)
 -------
 
 Changes in version 1.2.0
@@ -1359,7 +1359,7 @@ Changes in version 1.2.0
 
 - Added reference to BANDITS manuscript
 
-[BASiCS](https://bioconductor.org/packages/BASiCS)
+[BASiCS](/packages/BASiCS)
 ------
 
 Changes in version 1.7.20 (2019-10-17)
@@ -1530,7 +1530,7 @@ Changes in version 1.7.1 (2019-07-27)
 - `is_true` deprecated in `testthat`. Unit tests updated to use
   `expect_true`
 
-[batchelor](https://bioconductor.org/packages/batchelor)
+[batchelor](/packages/batchelor)
 ---------
 
 Changes in version 1.2.0
@@ -1561,7 +1561,7 @@ Changes in version 1.2.0
 - Added the prop.k= argument in all MNN-related functions, to allow the
   value of k to adapt asymmetrically to the size of each batch.
 
-[bcSeq](https://bioconductor.org/packages/bcSeq)
+[bcSeq](/packages/bcSeq)
 -----
 
 Changes in version 1.7.1
@@ -1574,7 +1574,7 @@ Changes in version 1.7.1
 
 - to a factor as much as 3.
 
-[BEclear](https://bioconductor.org/packages/BEclear)
+[BEclear](/packages/BEclear)
 -------
 
 Changes in version 2.1.4 (2019-05-17)
@@ -1594,7 +1594,7 @@ Changes in version 2.1.1 (2019-05-09)
 
 - New feature o Implementation of outlier detection
 
-[BiocNeighbors](https://bioconductor.org/packages/BiocNeighbors)
+[BiocNeighbors](/packages/BiocNeighbors)
 -------------
 
 Changes in version 1.4.0
@@ -1608,7 +1608,7 @@ Changes in version 1.4.0
 - Return neighbor counts in rangeFind*() and rangeQuery*() functions
   when get.index=FALSE and get.distance=FALSE.
 
-[BioCor](https://bioconductor.org/packages/BioCor)
+[BioCor](/packages/BioCor)
 ------
 
 Changes in version 1.10.1
@@ -1623,7 +1623,7 @@ Changes in version 1.8.1
 
 - Corrected a bug related to logical coercion of length greater than 1.
 
-[BiocParallel](https://bioconductor.org/packages/BiocParallel)
+[BiocParallel](/packages/BiocParallel)
 ------------
 
 Changes in version 1.20
@@ -1633,7 +1633,7 @@ BUG FIXES
 - (v 1.19.2) Improve efficiency of MulticoreParam() when state does not
   persist across calls to bplapply().
 
-[BiocSingular](https://bioconductor.org/packages/BiocSingular)
+[BiocSingular](/packages/BiocSingular)
 ------------
 
 Changes in version 1.2.0
@@ -1649,7 +1649,7 @@ Changes in version 1.2.0
 - Added the bsparam() function to quickly set or get a global default
   algorithm choice.
 
-[biomaRt](https://bioconductor.org/packages/biomaRt)
+[biomaRt](/packages/biomaRt)
 -------
 
 Changes in version 2.42.0
@@ -1678,7 +1678,7 @@ BUG FIXES
 - Results that contain unescaped new line characters are now returned
   successfully.
 
-[BioMM](https://bioconductor.org/packages/BioMM)
+[BioMM](/packages/BioMM)
 -----
 
 Changes in version 1.1.10
@@ -1753,7 +1753,7 @@ Changes in version 1.1.0
 
 - updated BioMMtutorial.Rmd
 
-[BioQC](https://bioconductor.org/packages/BioQC)
+[BioQC](/packages/BioQC)
 -----
 
 Changes in version 1.13.1
@@ -1764,7 +1764,7 @@ Changes in version 1.13.1
 
 - readGmt by default read unique genes from GMT files
 
-[biosigner](https://bioconductor.org/packages/biosigner)
+[biosigner](/packages/biosigner)
 ---------
 
 Changes in version 1.13.20
@@ -1832,7 +1832,7 @@ NEW FEATURE
 - info.txtC and fig.pdfC argument values NULL and NA replaced by 'none'
   and 'interactive', respectively
 
-[blacksheepr](https://bioconductor.org/packages/blacksheepr)
+[blacksheepr](/packages/blacksheepr)
 -----------
 
 Changes in version 0.99.13 (2019-10-11)
@@ -1856,7 +1856,7 @@ Changes in version 0.99.7 (2019-09-10)
 - Fixed Reviewer suggestions o Got rid of lazydata loading in
   DESCRIPTION o properly formetted NEWS object
 
-[breakpointR](https://bioconductor.org/packages/breakpointR)
+[breakpointR](/packages/breakpointR)
 -----------
 
 Changes in version 1.2.1
@@ -1864,7 +1864,7 @@ Changes in version 1.2.1
 - Added new genotyping method based on binomial probabilities see
   parameter genoT = 'fisher' or 'binom'; default: 'fisher'
 
-[brendaDb](https://bioconductor.org/packages/brendaDb)
+[brendaDb](/packages/brendaDb)
 --------
 
 Changes in version 0.99.21 (2019-10-17)
@@ -1890,7 +1890,7 @@ Changes in version 0.99.0 (2019-07-22)
 
 - Submitted to Bioconductor
 
-[BUSpaRse](https://bioconductor.org/packages/BUSpaRse)
+[BUSpaRse](/packages/BUSpaRse)
 --------
 
 Changes in version 0.99.25 (2019-09-11)
@@ -1930,7 +1930,7 @@ Changes in version 0.99.0 (2019-06-21)
 
 - Submitted package to Bioconductor for review
 
-[CAGEfightR](https://bioconductor.org/packages/CAGEfightR)
+[CAGEfightR](/packages/CAGEfightR)
 ----------
 
 Changes in version 1.5.3
@@ -1968,7 +1968,7 @@ Changes in version 1.5
 - Added new check-functions to make it easier to check if objects are
   formatted correctly
 
-[CAGEr](https://bioconductor.org/packages/CAGEr)
+[CAGEr](/packages/CAGEr)
 -----
 
 Changes in version 1.28.0
@@ -1988,14 +1988,14 @@ BUG FIXES
 
 - Correct strand in .remove.added.G private function (PR#26).
 
-[calm](https://bioconductor.org/packages/calm)
+[calm](/packages/calm)
 ----
 
 Changes in version 0.99.0 (2019-07-18)
 
 - Submitted to Bioconductor
 
-[CAMERA](https://bioconductor.org/packages/CAMERA)
+[CAMERA](/packages/CAMERA)
 ------
 
 Changes in version 1.41.1
@@ -2004,7 +2004,7 @@ NEW FEATURES
 
 - allow findAdducts alternative intval (thanks to Sunil Dhakad)
 
-[canceR](https://bioconductor.org/packages/canceR)
+[canceR](/packages/canceR)
 ------
 
 Changes in version 1.19.05
@@ -2041,7 +2041,7 @@ Changes in version 1.19.01
 
 - Adjust the vignetteEngine package
 
-[Cardinal](https://bioconductor.org/packages/Cardinal)
+[Cardinal](/packages/Cardinal)
 --------
 
 Changes in version 2.3.18 (2019-10-27)
@@ -2310,7 +2310,7 @@ BUG FIXES
 - Fixed bug in plotting results where 'column' argument would get
   matched before the 'col' argument
 
-[cbaf](https://bioconductor.org/packages/cbaf)
+[cbaf](/packages/cbaf)
 ----
 
 Changes in version 1.8.0 (2019-10-28)
@@ -2330,7 +2330,7 @@ New Features
   uses, AvailableData() has to check the availability of the data at
   two different levels.
 
-[ccfindR](https://bioconductor.org/packages/ccfindR)
+[ccfindR](/packages/ccfindR)
 -------
 
 Changes in version 1.5.0
@@ -2351,7 +2351,7 @@ Changes
 
 - Fixed filter_genes(...) for cases with non-expressed genes
 
-[celda](https://bioconductor.org/packages/celda)
+[celda](/packages/celda)
 -----
 
 Changes in version 1.1.6 (2019-07-16)
@@ -2374,7 +2374,7 @@ Changes in version 1.1.1 (2019-05-09)
 
 - Default seed setting to maintain reproducibility
 
-[CellBench](https://bioconductor.org/packages/CellBench)
+[CellBench](/packages/CellBench)
 ---------
 
 Changes in version 1.1.3
@@ -2402,7 +2402,7 @@ New Features
 - Added any_task_errors() function to check if any tasks failed in
 benchmark tibble.
 
-[CellMixS](https://bioconductor.org/packages/CellMixS)
+[CellMixS](/packages/CellMixS)
 --------
 
 Changes in version 1.1.3
@@ -2414,14 +2414,14 @@ Changes in version 1.1.3
 - Replace `metric_prefix` from plotting functions by `metric`
   parameter.
 
-[ChAMP](https://bioconductor.org/packages/ChAMP)
+[ChAMP](/packages/ChAMP)
 -----
 
 Changes in version 2.15.1
 
 - Added scree plot into champ.SVD() function.
 
-[Chicago](https://bioconductor.org/packages/Chicago)
+[Chicago](/packages/Chicago)
 -------
 
 Version: 1.13
@@ -2436,7 +2436,7 @@ Category: When using Chicago with four-cutter enzymes, make sure you
         itself
 Text:
 
-[chipenrich](https://bioconductor.org/packages/chipenrich)
+[chipenrich](/packages/chipenrich)
 ----------
 
 Changes in version 2.10.0
@@ -2458,7 +2458,7 @@ BUG FIXES
 - Poly-Enrich Approximate method that uses the score test now uses the
   correct formula.
 
-[ChIPpeakAnno](https://bioconductor.org/packages/ChIPpeakAnno)
+[ChIPpeakAnno](/packages/ChIPpeakAnno)
 ------------
 
 Changes in version 3.19.5
@@ -2483,7 +2483,7 @@ Changes in version 3.19.1
 
 - remove RangedData
 
-[ChIPseeker](https://bioconductor.org/packages/ChIPseeker)
+[ChIPseeker](/packages/ChIPseeker)
 ----------
 
 Changes in version 1.21.1
@@ -2492,7 +2492,7 @@ Changes in version 1.21.1
 ggimage and ggplotify - subset method for csAnno object (2019-08-27,
 Tue)
 
-[chromstaR](https://bioconductor.org/packages/chromstaR)
+[chromstaR](/packages/chromstaR)
 ---------
 
 Changes in version 1.11.1
@@ -2501,21 +2501,21 @@ BUGFIXES
 
 - Bugfix for error when exporting empty peaks in univariateHMM.
 
-[circRNAprofiler](https://bioconductor.org/packages/circRNAprofiler)
+[circRNAprofiler](/packages/circRNAprofiler)
 ---------------
 
 Changes in version 0.1.1 (2019-05-30)
 
 - First releaase
 
-[cleanUpdTSeq](https://bioconductor.org/packages/cleanUpdTSeq)
+[cleanUpdTSeq](/packages/cleanUpdTSeq)
 ------------
 
 Changes in version 1.23.1
 
 - update citation.
 
-[clusterExperiment](https://bioconductor.org/packages/clusterExperiment)
+[clusterExperiment](/packages/clusterExperiment)
 -----------------
 
 Changes in version 2.5.7
@@ -2545,7 +2545,7 @@ Bugs
 - Remove bug in built-in cluster function "kmeans" so as to not make
   unnecessary nxn distance matrix.
 
-[CNVRanger](https://bioconductor.org/packages/CNVRanger)
+[CNVRanger](/packages/CNVRanger)
 ---------
 
 Changes in version 1.2.0
@@ -2560,7 +2560,7 @@ Changes in version 1.2.0
   overview of key functions, - extended input data format description,
   - visualizations and dedicated Gviz plots to illustrate key concepts
 
-[cola](https://bioconductor.org/packages/cola)
+[cola](/packages/cola)
 ----
 
 Changes in version 1.1.2
@@ -2578,7 +2578,7 @@ Changes in version 1.1.1
 
 - simplified the rules for deciding the best k
 
-[ComplexHeatmap](https://bioconductor.org/packages/ComplexHeatmap)
+[ComplexHeatmap](/packages/ComplexHeatmap)
 --------------
 
 Changes in version 2.1.1
@@ -2618,7 +2618,7 @@ Changes in version 2.1.0
   stack overflow" when there are too many identical rows/columns for
   plotting the dendrograms.
 
-[consensusDE](https://bioconductor.org/packages/consensusDE)
+[consensusDE](/packages/consensusDE)
 -----------
 
 Changes in version 1.3.4 (2019-09-16)
@@ -2672,7 +2672,7 @@ Changes in version 1.3.1 (2019-06-18)
 
 - version 1.3.0 onwards is BioC 3.9
 
-[consensusOV](https://bioconductor.org/packages/consensusOV)
+[consensusOV](/packages/consensusOV)
 -----------
 
 Changes in version 1.8.0
@@ -2681,7 +2681,7 @@ Changes in version 1.8.0
   ovarian tumors as either fallopian tube (FT) or ovarian surface
   epithelium (OSE) based on Hao et al., Clin Cancer Res, 2017
 
-[CRISPRseek](https://bioconductor.org/packages/CRISPRseek)
+[CRISPRseek](/packages/CRISPRseek)
 ----------
 
 Changes in version 1.25.6
@@ -2703,7 +2703,7 @@ NEW FEATURES
 
 - added paired.orientation parameteter
 
-[CrossICC](https://bioconductor.org/packages/CrossICC)
+[CrossICC](/packages/CrossICC)
 --------
 
 Changes in version 0.99.27 (2019-10-22)
@@ -2851,7 +2851,7 @@ Changes in version 0.1.0 (2019-06-25)
 
 - Submitted to Bioconductor
 
-[csaw](https://bioconductor.org/packages/csaw)
+[csaw](/packages/csaw)
 ----
 
 Changes in version 1.20.0
@@ -2881,7 +2881,7 @@ Changes in version 1.20.0
 - Minor renaming of scaleControlInfo() arguments, added assay.data= and
   assay.back= arguments.
 
-[cTRAP](https://bioconductor.org/packages/cTRAP)
+[cTRAP](/packages/cTRAP)
 -----
 
 Changes in version 1.4
@@ -2995,7 +2995,7 @@ cmapPerturbationsCompounds and cmapPerturbationsKD datasets according
 to new internal changes and fix their respective code in the
 documentation - Include license and copyright text for cmapR code
 
-[dagLogo](https://bioconductor.org/packages/dagLogo)
+[dagLogo](/packages/dagLogo)
 -------
 
 Changes in version 1.23.5
@@ -3017,7 +3017,7 @@ Changes in version 1.23.1
 
 - fix the bug in addScheme
 
-[debCAM](https://bioconductor.org/packages/debCAM)
+[debCAM](/packages/debCAM)
 ------
 
 Changes in version 1.3.3 (2019-10-28)
@@ -3048,14 +3048,14 @@ Changes in version 1.1.1 (2018-12-28)
 
 - Enhance simplex plot
 
-[debrowser](https://bioconductor.org/packages/debrowser)
+[debrowser](/packages/debrowser)
 ---------
 
 Changes in version 1.12.2
 
 - Bar bax plot name fix
 
-[deco](https://bioconductor.org/packages/deco)
+[deco](/packages/deco)
 ----
 
 Changes in version 1.0.1
@@ -3064,7 +3064,7 @@ Changes in version 1.0.1
 
 - Changes in vignette.
 
-[decompTumor2Sig](https://bioconductor.org/packages/decompTumor2Sig)
+[decompTumor2Sig](/packages/decompTumor2Sig)
 ---------------
 
 Changes in version 2.1.0 (2019-08-18)
@@ -3073,7 +3073,7 @@ Changes in version 2.1.0 (2019-08-18)
   COSMIC mutational signatures version 3 (May 2019; Single Base
   Substitution/SBS signatures only)
 
-[deepSNV](https://bioconductor.org/packages/deepSNV)
+[deepSNV](/packages/deepSNV)
 -------
 
 Changes in version 1.99.3 (2013-07-25)
@@ -3124,7 +3124,7 @@ Updates
 
 - Including VCF output through summary(deepSNV, value="VCF")
 
-[DEGreport](https://bioconductor.org/packages/DEGreport)
+[DEGreport](/packages/DEGreport)
 ---------
 
 Changes in version 1.21.1
@@ -3140,7 +3140,7 @@ Changes in version 1.21.1
 
 - Fix: degMA used always raw table, now fixed to use the right one.
 
-[DelayedArray](https://bioconductor.org/packages/DelayedArray)
+[DelayedArray](/packages/DelayedArray)
 ------------
 
 Changes in version 0.12.0
@@ -3169,7 +3169,7 @@ BUG FIXES
 - Some fixes related to DelayedArray objects with list array seeds (see
   commit 6c94eac7)
 
-[DepecheR](https://bioconductor.org/packages/DepecheR)
+[DepecheR](/packages/DepecheR)
 --------
 
 Changes in version 1.1.9 (2019-10-06)
@@ -3241,7 +3241,7 @@ Changes in version 1.1.2 (2019-06-28)
 
 - in character vectors and factors are correctly displayed.
 
-[derfinder](https://bioconductor.org/packages/derfinder)
+[derfinder](/packages/derfinder)
 ---------
 
 Changes in version 1.19.9
@@ -3294,21 +3294,21 @@ https://github.com/leekgroup/recount/commit/8da982b309e2d19638166f263057d9f85bb6
 which will make these functions more robust to occasional web access
 issues.
 
-[derfinderHelper](https://bioconductor.org/packages/derfinderHelper)
+[derfinderHelper](/packages/derfinderHelper)
 ---------------
 
 Changes in version 1.19.3
 
 - Added a NEWS.md file to track changes to the package.
 
-[derfinderPlot](https://bioconductor.org/packages/derfinderPlot)
+[derfinderPlot](/packages/derfinderPlot)
 -------------
 
 Changes in version 1.19.3
 
 - Added a NEWS.md file to track changes to the package.
 
-[DESeq2](https://bioconductor.org/packages/DESeq2)
+[DESeq2](/packages/DESeq2)
 ------
 
 Changes in version 1.26.0
@@ -3326,21 +3326,21 @@ Changes in version 1.26.0
 - Updated vignette to discuss tximeta (workflow also updated to show
   use of tximeta instead of read counting).
 
-[DEWSeq](https://bioconductor.org/packages/DEWSeq)
+[DEWSeq](/packages/DEWSeq)
 ------
 
 Changes in version 0.99.0 (2019-09-23)
 
 - Submitted to Bioconductor
 
-[DiffBind](https://bioconductor.org/packages/DiffBind)
+[DiffBind](/packages/DiffBind)
 --------
 
 Changes in version 3.13.1
 
 - Change dba.plotPCA to use proper loading
 
-[diffcyt](https://bioconductor.org/packages/diffcyt)
+[diffcyt](/packages/diffcyt)
 -------
 
 Changes in version 1.5.6
@@ -3348,7 +3348,7 @@ Changes in version 1.5.6
 - Update 'diffcyt()' wrapper function to handle new
   SingleCellExperiment object structure from CATALYST.
 
-[DiscoRhythm](https://bioconductor.org/packages/DiscoRhythm)
+[DiscoRhythm](/packages/DiscoRhythm)
 -----------
 
 Changes in version 1.1.1 (2019-09-27)
@@ -3364,7 +3364,7 @@ Changes in version 1.1.1 (2019-09-27)
 
 - Bug fixes.
 
-[DMCFB](https://bioconductor.org/packages/DMCFB)
+[DMCFB](/packages/DMCFB)
 -----
 
 Changes in version 0.99.1
@@ -3391,7 +3391,7 @@ Fixed
 
 - None.
 
-[DMRcate](https://bioconductor.org/packages/DMRcate)
+[DMRcate](/packages/DMRcate)
 -------
 
 Changes in version 2.0.0
@@ -3438,7 +3438,7 @@ Changes in version 2.0.0
 - Multicore processing removed since WGBS DMRs should be able to be
   produced in serial in < 1 hour
 
-[DominoEffect](https://bioconductor.org/packages/DominoEffect)
+[DominoEffect](/packages/DominoEffect)
 ------------
 
 Changes in version 1.5.2
@@ -3461,7 +3461,7 @@ UDPATE
 
 - DominoEffect BioC 3.10 development version
 
-[DOSE](https://bioconductor.org/packages/DOSE)
+[DOSE](/packages/DOSE)
 ----
 
 Changes in version 3.11.2
@@ -3476,7 +3476,7 @@ Changes in version 3.11.1
 
 - build_Anno now compatible with tibble (2019-05-28, Tue)
 
-[DropletUtils](https://bioconductor.org/packages/DropletUtils)
+[DropletUtils](/packages/DropletUtils)
 ------------
 
 Changes in version 1.8.0
@@ -3491,7 +3491,7 @@ Changes in version 1.6.0
   the Monte Carlo p-values. Automatically round non-integer count
   matrices.
 
-[edgeR](https://bioconductor.org/packages/edgeR)
+[edgeR](/packages/edgeR)
 -----
 
 Changes in version 3.28.0
@@ -3520,7 +3520,7 @@ Changes in version 3.28.0
 - Bug fix to goana.DGELRT() and kegga.DGELRT() when the LRT was on more
   than 1 df.
 
-[EnhancedVolcano](https://bioconductor.org/packages/EnhancedVolcano)
+[EnhancedVolcano](/packages/EnhancedVolcano)
 ---------------
 
 Changes in version 1.4
@@ -3542,7 +3542,7 @@ Changes in version 1.4
 
 - boxedlabels now deprecated. Use boxedLabels
 
-[enrichplot](https://bioconductor.org/packages/enrichplot)
+[enrichplot](/packages/enrichplot)
 ----------
 
 Changes in version 1.5.2
@@ -3558,14 +3558,14 @@ Changes in version 1.5.1
 - gseadist for plotting logFC distribution of selected gene sets.
 (2019-06-25, Tue)
 
-[ensemblVEP](https://bioconductor.org/packages/ensemblVEP)
+[ensemblVEP](/packages/ensemblVEP)
 ----------
 
 Changes in version 1.28.0
 
 - add support for Ensembl release 97/98
 
-[epivizrServer](https://bioconductor.org/packages/epivizrServer)
+[epivizrServer](/packages/epivizrServer)
 -------------
 
 Changes in version 999.999
@@ -3574,7 +3574,7 @@ Changes in version 999.999
   really exist. Please read the NEWS on Github: <URL:
   https://github.com/epiviz/epivizrServer>
 
-[ExperimentHub](https://bioconductor.org/packages/ExperimentHub)
+[ExperimentHub](/packages/ExperimentHub)
 -------------
 
 Changes in version 1.11.0
@@ -3593,7 +3593,7 @@ BUG FIXES
   of isDevel was preventing Hub creation when no internet connection.
   Fixed by checking connection. This code pretained to orgDb filters
 
-[FamAgg](https://bioconductor.org/packages/FamAgg)
+[FamAgg](/packages/FamAgg)
 ------
 
 Changes in version 1.13.1
@@ -3602,14 +3602,14 @@ Changes in version 1.13.1
   FAData allow now to specify the column names for the respective
   content also if a data.frame is provided.
 
-[fcScan](https://bioconductor.org/packages/fcScan)
+[fcScan](/packages/fcScan)
 ------
 
 Changes in version 0.99
 
 - Fixing bugs and preparing for submission
 
-[FELLA](https://bioconductor.org/packages/FELLA)
+[FELLA](/packages/FELLA)
 -----
 
 Changes in version 1.5.3
@@ -3636,7 +3636,7 @@ Changes in version 1.4.1
 
 - Fixed bug in vignette due to changes in `biomaRt`
 
-[fgsea](https://bioconductor.org/packages/fgsea)
+[fgsea](/packages/fgsea)
 -----
 
 Changes in version 1.11.2
@@ -3649,7 +3649,7 @@ Changes in version 1.11.1
 
 - Proper absEps handling
 
-[fishpond](https://bioconductor.org/packages/fishpond)
+[fishpond](/packages/fishpond)
 --------
 
 Changes in version 1.2.0
@@ -3678,7 +3678,7 @@ Changes in version 1.2.0
 - removed 'samr' from Imports, as it required source installation,
   moved to Suggests, for optional qvalue calculation
 
-[flowcatchR](https://bioconductor.org/packages/flowcatchR)
+[flowcatchR](/packages/flowcatchR)
 ----------
 
 Changes in version 1.20.0
@@ -3687,7 +3687,7 @@ Bug fixes
 
 - In the shinyFlow app, include.area now defaults to FALSE
 
-[flowDensity](https://bioconductor.org/packages/flowDensity)
+[flowDensity](/packages/flowDensity)
 -----------
 
 Changes in version 1.19.8
@@ -3695,7 +3695,7 @@ Changes in version 1.19.8
 - -Adding densityoverlay option to plotDens, and changing sweave to
   markdown
 
-[flowSpecs](https://bioconductor.org/packages/flowSpecs)
+[flowSpecs](/packages/flowSpecs)
 ---------
 
 Changes in version 0.99.4 (2019-09-30)
@@ -3727,7 +3727,7 @@ Changes in version 0.9.1 (2019-09-16)
 
 - The older "theFlowSpec" is from now on deprecated.
 
-[flowSpy](https://bioconductor.org/packages/flowSpy)
+[flowSpy](/packages/flowSpy)
 -------
 
 Version: 2018-12-19
@@ -3748,7 +3748,7 @@ Text:
 Version: 2019-08-08
 Text:
 
-[FoldGO](https://bioconductor.org/packages/FoldGO)
+[FoldGO](/packages/FoldGO)
 ------
 
 Changes in version 1.2.3 (2019-07-17)
@@ -3763,7 +3763,7 @@ Changes in version 1.2.1
 
 - Bug with wrong arguments order in plotting functions fixed
 
-[GCSscore](https://bioconductor.org/packages/GCSscore)
+[GCSscore](/packages/GCSscore)
 --------
 
 Changes in version 1.0.0
@@ -3784,7 +3784,7 @@ Changes in version 1.0.0
   on the chip-type being analyzed by the end user on an as-needed
   basis.
 
-[GDSArray](https://bioconductor.org/packages/GDSArray)
+[GDSArray](/packages/GDSArray)
 --------
 
 Changes in version 1.5.3
@@ -3798,7 +3798,7 @@ BUG FIXES
 - dimnames() of GDSArray and GDSArraySeed is now list of all character
   vectors.
 
-[gdsfmt](https://bioconductor.org/packages/gdsfmt)
+[gdsfmt](/packages/gdsfmt)
 ------
 
 Changes in version 1.22.0
@@ -3824,7 +3824,7 @@ BUG FIXES
 - use O_CLOEXEC (the close-on-exec flag) when open and create files to
   avoid potentially leaking file descriptors in forked processes
 
-[gemini](https://bioconductor.org/packages/gemini)
+[gemini](/packages/gemini)
 ------
 
 Changes in version 0.3.0
@@ -3848,7 +3848,7 @@ pre-release.
 - Modified documentation for all functions and added a workable
 vignette
 
-[geneClassifiers](https://bioconductor.org/packages/geneClassifiers)
+[geneClassifiers](/packages/geneClassifiers)
 ---------------
 
 Changes in version 1.9.0
@@ -3860,7 +3860,7 @@ Changes in version 1.9.0
 
 - Additional unit tests
 
-[GENESIS](https://bioconductor.org/packages/GENESIS)
+[GENESIS](/packages/GENESIS)
 -------
 
 Changes in version 2.15.3
@@ -3871,7 +3871,7 @@ Changes in version 2.15.3
   (https://github.com/tslumley/bigQF). With the addition of C code,
   GENESIS now requires compliation.
 
-[GenomicAlignments](https://bioconductor.org/packages/GenomicAlignments)
+[GenomicAlignments](/packages/GenomicAlignments)
 -----------------
 
 Changes in version 1.22.0
@@ -3887,7 +3887,7 @@ BUG FIXES
 - Fix summarizeJunctions() error when no junctions are found and
   'genome' is specified.
 
-[GenomicFeatures](https://bioconductor.org/packages/GenomicFeatures)
+[GenomicFeatures](/packages/GenomicFeatures)
 ---------------
 
 Changes in version 1.38.0
@@ -3913,7 +3913,7 @@ BUG FIXES
 - Fix makeTxDbFromUCSC(..., "refGene") for
   bosTau9/galGal6/panTro6/rheMac10
 
-[GenomicOZone](https://bioconductor.org/packages/GenomicOZone)
+[GenomicOZone](/packages/GenomicOZone)
 ------------
 
 Changes in version 0.99.9
@@ -3994,7 +3994,7 @@ Changes in version 0.99.0
 
 - Packed the completed package.
 
-[GenomicRanges](https://bioconductor.org/packages/GenomicRanges)
+[GenomicRanges](/packages/GenomicRanges)
 -------------
 
 Changes in version 1.38.0
@@ -4042,7 +4042,7 @@ BUG FIXES
 - Fix bug in isSmallGenome() (introduced by change in sum() in R >=
   3.5)
 
-[GenomicScores](https://bioconductor.org/packages/GenomicScores)
+[GenomicScores](/packages/GenomicScores)
 -------------
 
 Changes in version 1.10.0
@@ -4069,7 +4069,7 @@ BUG FIXES
 - Bugfix in accessing MAF values from nonSNVs when multiallelic
   variants are stored in different records from the VCF file.
 
-[ggtree](https://bioconductor.org/packages/ggtree)
+[ggtree](/packages/ggtree)
 ------
 
 Changes in version 1.99.1
@@ -4148,7 +4148,7 @@ update scale_x_ggtree, now we can use gheatmap() + scale_x_ggtree()
 https://yulab-smu.github.io/treedata-book/chapter9.html#xlim_expand -
 add legend_title variable in gheatmap (2019-05-16, Thu)
 
-[GNET2](https://bioconductor.org/packages/GNET2)
+[GNET2](/packages/GNET2)
 -----
 
 Changes in version 1.1.3
@@ -4163,7 +4163,7 @@ Changes in version 1.1.1
 
 - Fix several conditions that may cause error in tree construction.
 
-[GOfuncR](https://bioconductor.org/packages/GOfuncR)
+[GOfuncR](/packages/GOfuncR)
 -------
 
 Changes in version 1.5.2
@@ -4179,7 +4179,7 @@ NEW FEATURES
 - add refine() function to restrict results from enrichment analysis to
   more specific categories
 
-[graphite](https://bioconductor.org/packages/graphite)
+[graphite](/packages/graphite)
 --------
 
 Changes in version 1.31.1 (2019-10-24)
@@ -4188,7 +4188,7 @@ Changes in version 1.31.1 (2019-10-24)
 
 - Removed HumanCyc pathways (database now requires subscription).
 
-[gscreend](https://bioconductor.org/packages/gscreend)
+[gscreend](/packages/gscreend)
 --------
 
 Changes in version 0.99.4
@@ -4198,7 +4198,7 @@ Changes in version 0.99.4
 - Updated stop/warning/message functions. Testing if sampling
   timepoints are named correctly.
 
-[GSEABenchmarkeR](https://bioconductor.org/packages/GSEABenchmarkeR)
+[GSEABenchmarkeR](/packages/GSEABenchmarkeR)
 ---------------
 
 Changes in version 1.6.0
@@ -4234,7 +4234,7 @@ Changes in version 1.6.0
   simplified plug-in of user-defined enrichment methods (thanks to
   Marcel Ramos @LiNk-NY)
 
-[GSVA](https://bioconductor.org/packages/GSVA)
+[GSVA](/packages/GSVA)
 ----
 
 Changes in version 1.34
@@ -4250,14 +4250,14 @@ BUG FIXES
   reporting thanks to Lena Morill
   (https://github.com/rcastelo/GSVA/issues/4).
 
-[gtrellis](https://bioconductor.org/packages/gtrellis)
+[gtrellis](/packages/gtrellis)
 --------
 
 Changes in version 1.17.1
 
 - fixed a bug of selecting chromosomes.
 
-[Gviz](https://bioconductor.org/packages/Gviz)
+[Gviz](/packages/Gviz)
 ----
 
 Changes in version 1.29.1
@@ -4278,7 +4278,7 @@ BUG FIXES
 - Changed the check for transparency support in currently opened device
   `supportsAlpha`, point moved from center to the left bottom corner
 
-[HDF5Array](https://bioconductor.org/packages/HDF5Array)
+[HDF5Array](/packages/HDF5Array)
 ---------
 
 Changes in version 1.14.0
@@ -4296,7 +4296,7 @@ BUG FIXES
 - h5mread() now supports datasets with contiguous layout (i.e. not
   chunked)
 
-[HDTD](https://bioconductor.org/packages/HDTD)
+[HDTD](/packages/HDTD)
 ----
 
 Changes in version 1.19.1 (2019-10-24)
@@ -4305,7 +4305,7 @@ Changes in version 1.19.1 (2019-10-24)
 
 - Fixed minor bug.
 
-[hiAnnotator](https://bioconductor.org/packages/hiAnnotator)
+[hiAnnotator](/packages/hiAnnotator)
 -----------
 
 Changes in version 1.19.0
@@ -4313,7 +4313,7 @@ Changes in version 1.19.0
 - Drop forced strand conversion to '+' and makeGRanges with add strand
   as '*' if none was found.
 
-[HIBAG](https://bioconductor.org/packages/HIBAG)
+[HIBAG](/packages/HIBAG)
 -----
 
 Changes in version 1.22.0
@@ -4321,7 +4321,7 @@ Changes in version 1.22.0
 - change the file name "vignettes/HIBAG_Tutorial.Rmd" to
   "vignettes/HIBAG.Rmd", so `vignette("HIBAG")` can work directly
 
-[HiLDA](https://bioconductor.org/packages/HiLDA)
+[HiLDA](/packages/HiLDA)
 -----
 
 Changes in version 0.99.11 (2019-09-10)
@@ -4368,7 +4368,7 @@ Changes in version 0.99.1 (2019-06-04)
 
 - Submitted to Bioconductor
 
-[hipathia](https://bioconductor.org/packages/hipathia)
+[hipathia](/packages/hipathia)
 --------
 
 Changes in version 2.1.1 (2019-05-17)
@@ -4376,14 +4376,14 @@ Changes in version 2.1.1 (2019-05-17)
 - Adding function mgi_from_sif, which allows to create a pathways
   object from SIF + ATT files.
 
-[HIREewas](https://bioconductor.org/packages/HIREewas)
+[HIREewas](/packages/HIREewas)
 --------
 
 Changes in version 1.3.1
 
 - Added the citation file.
 
-[HPAanalyze](https://bioconductor.org/packages/HPAanalyze)
+[HPAanalyze](/packages/HPAanalyze)
 ----------
 
 Changes in version 1.3
@@ -4407,7 +4407,7 @@ Changes in version 1.3
 - Changes in version 1.3.0
     + Starting devel for Bioconductor 3.10
 
-[ideal](https://bioconductor.org/packages/ideal)
+[ideal](/packages/ideal)
 -----
 
 Changes in version 1.10.0
@@ -4428,7 +4428,7 @@ Other notes
 
 - Better class checks via is(...) as per BiocCheck suggestion
 
-[idr2d](https://bioconductor.org/packages/idr2d)
+[idr2d](/packages/idr2d)
 -----
 
 Changes in version 0.99.2
@@ -4453,14 +4453,14 @@ Changes in version 0.99.0
 
 - initial release
 
-[IgGeneUsage](https://bioconductor.org/packages/IgGeneUsage)
+[IgGeneUsage](/packages/IgGeneUsage)
 -----------
 
 Changes in version 0.99.0 (2019-07-15)
 
 - Submitted to Bioconductor
 
-[igvR](https://bioconductor.org/packages/igvR)
+[igvR](/packages/igvR)
 ----
 
 Changes in version 1.6
@@ -4484,7 +4484,7 @@ NEW FEATURES
 
 - built with version 2.3.2 of igv.js
 
-[immunoClust](https://bioconductor.org/packages/immunoClust)
+[immunoClust](/packages/immunoClust)
 -----------
 
 Changes in version 1.17.3
@@ -4510,7 +4510,7 @@ Changes in version 1.17.1
 - CHANGES * minor bugfixes and code cleaning * minor additional options
   for immunoClust.plot/splom
 
-[infercnv](https://bioconductor.org/packages/infercnv)
+[infercnv](/packages/infercnv)
 --------
 
 Changes in version 1.1.4 (2019-10-29)
@@ -4656,7 +4656,7 @@ Changes in version 1.0.1 (2019-05-20)
   references are not clusterd, and a single reference group with a
   single cell.
 
-[InPAS](https://bioconductor.org/packages/InPAS)
+[InPAS](/packages/InPAS)
 -----
 
 Changes in version 1.17.3
@@ -4667,7 +4667,7 @@ Changes in version 1.17.2
 
 - add citation of cleanUpdTSeq.
 
-[IRanges](https://bioconductor.org/packages/IRanges)
+[IRanges](/packages/IRanges)
 -------
 
 Changes in version 2.20.0
@@ -4720,7 +4720,7 @@ BUG FIXES
 
 - Fix integer overflow issue in end() setter for IRanges objects.
 
-[iSEE](https://bioconductor.org/packages/iSEE)
+[iSEE](/packages/iSEE)
 ----
 
 Changes in version 1.5.13
@@ -4796,7 +4796,7 @@ Changes in version 1.5.0
 
 - Bioconductor release.
 
-[IsoformSwitchAnalyzeR](https://bioconductor.org/packages/IsoformSwitchAnalyzeR)
+[IsoformSwitchAnalyzeR](/packages/IsoformSwitchAnalyzeR)
 ---------------------
 
 Changes in version 1.7.2 (2019-10-18)
@@ -4929,7 +4929,7 @@ Changes in version 1.7.1 (2019-07-19)
 
 - Various stability updates.
 
-[kebabs](https://bioconductor.org/packages/kebabs)
+[kebabs](/packages/kebabs)
 ------
 
 Changes in version 1.20.0
@@ -4944,7 +4944,7 @@ Changes in version 1.19.0
 
 - new branch for Bioconductor 3.10 devel
 
-[KEGGprofile](https://bioconductor.org/packages/KEGGprofile)
+[KEGGprofile](/packages/KEGGprofile)
 -----------
 
 Changes in version 1.27.4
@@ -4972,7 +4972,7 @@ Changes in version 1.27.1
 
 - Improvement for documents and examples.
 
-[KnowSeq](https://bioconductor.org/packages/KnowSeq)
+[KnowSeq](/packages/KnowSeq)
 -------
 
 Changes in version 0.99.55 (2019-10-09)
@@ -5006,7 +5006,7 @@ Changes in version 0.99.30 (2019-06-05)
 - The rest of the pipeline is completely functional for all the OS
   including windows and MAC_OS
 
-[limma](https://bioconductor.org/packages/limma)
+[limma](/packages/limma)
 -----
 
 Changes in version 3.42.0
@@ -5082,7 +5082,7 @@ Changes in version 3.42.0
 - Fix bug in barcodeplot() when `index` or `index2` are character
   vectors.
 
-[lionessR](https://bioconductor.org/packages/lionessR)
+[lionessR](/packages/lionessR)
 --------
 
 Changes in version 0.99.2 (2019-09-30)
@@ -5105,7 +5105,7 @@ Changes in version 0.99.0 (2019-08-19)
 
 - Submitted to Bioconductor
 
-[lipidr](https://bioconductor.org/packages/lipidr)
+[lipidr](/packages/lipidr)
 ------
 
 Changes in version 1.99.2
@@ -5119,7 +5119,7 @@ Changes in version 1.99.2
 - Added integration with Metabolomics Workbench API for enable data
   mining.
 
-[Maaslin2](https://bioconductor.org/packages/Maaslin2)
+[Maaslin2](/packages/Maaslin2)
 --------
 
 Changes in version 0.99.15 (2019-08-05)
@@ -5270,14 +5270,14 @@ Changes in version 0.1.0 (2018-09-27)
 
 - Initial tagged release.
 
-[MACSQuantifyR](https://bioconductor.org/packages/MACSQuantifyR)
+[MACSQuantifyR](/packages/MACSQuantifyR)
 -------------
 
 Changes in version 0.99.0 (2018-11-14)
 
 - Not submitted o GUI interface o Sort o Statistics o Graphics
 
-[maftools](https://bioconductor.org/packages/maftools)
+[maftools](/packages/maftools)
 --------
 
 Changes in version 2.2.0
@@ -5331,7 +5331,7 @@ BUG FIX
 
 - `annovarToMaf` annotating variants with MNPs. Issue: #335
 
-[MAGeCKFlute](https://bioconductor.org/packages/MAGeCKFlute)
+[MAGeCKFlute](/packages/MAGeCKFlute)
 -----------
 
 Changes in version 1.4.3
@@ -5347,7 +5347,7 @@ Changes in version 1.4.1
 
 - Prioritize many functions.
 
-[matter](https://bioconductor.org/packages/matter)
+[matter](/packages/matter)
 ------
 
 Changes in version 1.11.7 (2019-10-25)
@@ -5431,7 +5431,7 @@ NEW FEATURES
 - Added 'stream_stat' class for streaming statistics with functions
   s_mean(), s_var(), s_sd(), etc.
 
-[MEB](https://bioconductor.org/packages/MEB)
+[MEB](/packages/MEB)
 ---
 
 Changes in version 0.99.3
@@ -5453,7 +5453,7 @@ Changes in version 0.99.0
   outputs are consistent with standard Bioconductor representations
   such as SummarizedExperiment.
 
-[MetaboSignal](https://bioconductor.org/packages/MetaboSignal)
+[MetaboSignal](/packages/MetaboSignal)
 ------------
 
 Changes in version 1.14.1
@@ -5461,7 +5461,7 @@ Changes in version 1.14.1
 - MS_keggNetwork returns interaction subtype (e.g. activation) instead
   of type (e.g. PPrel). Thank you Shilpa Harshan for noticing this!
 
-[metagene2](https://bioconductor.org/packages/metagene2)
+[metagene2](/packages/metagene2)
 ---------
 
 Changes in version 1.1.4 (2019-07-12)
@@ -5489,7 +5489,7 @@ Changes in version 1.1.0 (2019-04-05)
 
 - Submitted package to Bioconductor.
 
-[metaMS](https://bioconductor.org/packages/metaMS)
+[metaMS](/packages/metaMS)
 ------
 
 Changes in version 1.21.4
@@ -5500,7 +5500,7 @@ Changes in version 1.21.2
 
 - change Maintainer
 
-[MetCirc](https://bioconductor.org/packages/MetCirc)
+[MetCirc](/packages/MetCirc)
 -------
 
 Changes in version 1.15.2 (2019-09-09)
@@ -5528,21 +5528,21 @@ Changes in version 1.15.0 (2019-04-23)
 
 - remove data files: binnedMSP.RData, idMSMStoMSP.RData
 
-[MethCP](https://bioconductor.org/packages/MethCP)
+[MethCP](/packages/MethCP)
 ------
 
 Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
-[methrix](https://bioconductor.org/packages/methrix)
+[methrix](/packages/methrix)
 -------
 
 Changes in version 0.99.0
 
 o Submission to Bioconductor
 
-[methylGSA](https://bioconductor.org/packages/methylGSA)
+[methylGSA](/packages/methylGSA)
 ---------
 
 Changes in version 1.3.5
@@ -5557,7 +5557,7 @@ Changes in version 1.3.1
 
 - Bug fixes in methylgometh
 
-[MGFR](https://bioconductor.org/packages/MGFR)
+[MGFR](/packages/MGFR)
 ----
 
 Changes in version 1.10.1
@@ -5567,7 +5567,7 @@ Changes in version 1.10.1
   since this was changed in the Ensembl database and caused an error in
   the internal function '.get.genes.rnaseq()'.
 
-[microbiome](https://bioconductor.org/packages/microbiome)
+[microbiome](/packages/microbiome)
 ----------
 
 Changes in version 2.0 (2019-08-20)
@@ -5590,14 +5590,14 @@ Changes in version 2.0 (2019-08-20)
 
 - Support removed from R-3.3.3 and lower
 
-[microbiomeDASim](https://bioconductor.org/packages/microbiomeDASim)
+[microbiomeDASim](/packages/microbiomeDASim)
 ---------------
 
 Changes in version 0.99.0 (2019-08-26)
 
 - Submitted to Bioconductor
 
-[miRSM](https://bioconductor.org/packages/miRSM)
+[miRSM](/packages/miRSM)
 -----
 
 Changes in version 1.3.2
@@ -5608,14 +5608,14 @@ Changes in version 1.3.1
 
 - Add modular analysis <2019-08-12, Mon>
 
-[miRspongeR](https://bioconductor.org/packages/miRspongeR)
+[miRspongeR](/packages/miRspongeR)
 ----------
 
 Changes in version 1.11.1
 
 - Add citation <2019-05-10, Fri>.
 
-[mixOmics](https://bioconductor.org/packages/mixOmics)
+[mixOmics](/packages/mixOmics)
 --------
 
 Changes in version 6.8.6
@@ -5684,14 +5684,14 @@ minor improvements
 code of conduct - Updated DESCRIPTION with bug reports and biocViews
 - Updated README
 
-[MMAPPR2](https://bioconductor.org/packages/MMAPPR2)
+[MMAPPR2](/packages/MMAPPR2)
 -------
 
 Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
-[MMUPHin](https://bioconductor.org/packages/MMUPHin)
+[MMUPHin](/packages/MMUPHin)
 -------
 
 Changes in version 0.99.2 (2019-10-21)
@@ -5707,14 +5707,14 @@ Changes in version 0.99.0 (2019-10-15)
 
 - Initial submission to Bioconductor.
 
-[MOSim](https://bioconductor.org/packages/MOSim)
+[MOSim](/packages/MOSim)
 -----
 
 Changes in version 0.99.0 (2019-06-13)
 
 - Submitted to Bioconductor
 
-[motifStack](https://bioconductor.org/packages/motifStack)
+[motifStack](/packages/motifStack)
 ----------
 
 Changes in version 1.29.8
@@ -5752,7 +5752,7 @@ Changes in version 1.29.1
 
 - add function geom_motif
 
-[msa](https://bioconductor.org/packages/msa)
+[msa](/packages/msa)
 ---
 
 Changes in version 1.18.0
@@ -5777,7 +5777,7 @@ Changes in version 1.17.0
 
 - new branch for Bioconductor 3.10 devel
 
-[MSnbase](https://bioconductor.org/packages/MSnbase)
+[MSnbase](/packages/MSnbase)
 -------
 
 Changes in version 2.11
@@ -5861,7 +5861,7 @@ Changes in 2.11.0
 
 - Bioconductor 3.10 (devel)
 
-[msPurity](https://bioconductor.org/packages/msPurity)
+[msPurity](/packages/msPurity)
 --------
 
 Changes in version 1.11.5
@@ -5905,7 +5905,7 @@ Changes in version 1.11.0
 - Bioconductor dev (automatic version bump)
 
 
-[mzR](https://bioconductor.org/packages/mzR)
+[mzR](/packages/mzR)
 ---
 
 Changes in version 2.19.6
@@ -5936,7 +5936,7 @@ Changes in version 2.19.1
 
 - Remove analyzer generics, now in ProtGenerics <2019-05-13 Mon>
 
-[NADfinder](https://bioconductor.org/packages/NADfinder)
+[NADfinder](/packages/NADfinder)
 ---------
 
 Changes in version 1.9.2
@@ -5949,7 +5949,7 @@ Changes in version 1.9.1
 
 - Add citation.
 
-[NBAMSeq](https://bioconductor.org/packages/NBAMSeq)
+[NBAMSeq](/packages/NBAMSeq)
 -------
 
 Changes in version 1.1.1 (2019-08-16)
@@ -5958,7 +5958,7 @@ Changes in version 1.1.1 (2019-08-16)
 
 - Visualization part in vignette is modified
 
-[ncGTW](https://bioconductor.org/packages/ncGTW)
+[ncGTW](/packages/ncGTW)
 -----
 
 Changes in version 0.99.7 (2019-08-22)
@@ -5973,7 +5973,7 @@ Changes in version 0.5.0 (2019-04-02)
 
 - Uploaded to GitHub
 
-[netboost](https://bioconductor.org/packages/netboost)
+[netboost](/packages/netboost)
 --------
 
 Changes in version 1.1.3 (2019-08-01)
@@ -5985,7 +5985,7 @@ Changes in version 1.1.1 (2019-05-06)
 
 - Introduction of Pearson-, Spearman- and Kendall-based filtering.
 
-[ngsReports](https://bioconductor.org/packages/ngsReports)
+[ngsReports](/packages/ngsReports)
 ----------
 
 Changes in version 1.1.1
@@ -6015,7 +6015,7 @@ Changes in version 1.0.1
 
 - Corrected dependencies for writeHtmlReport
 
-[NormalyzerDE](https://bioconductor.org/packages/NormalyzerDE)
+[NormalyzerDE](/packages/NormalyzerDE)
 ------------
 
 Changes in version 1.3.3
@@ -6032,7 +6032,7 @@ Changes in version 1.3.0
 
 - Sync with Bioconductor changes
 
-[normr](https://bioconductor.org/packages/normr)
+[normr](/packages/normr)
 -----
 
 Changes in version 1.11.2
@@ -6043,7 +6043,7 @@ Changes in version 1.11.1
 
 - Maintainer E-mail adress updated
 
-[omicplotR](https://bioconductor.org/packages/omicplotR)
+[omicplotR](/packages/omicplotR)
 ---------
 
 Changes in version 1.5.4
@@ -6076,7 +6076,7 @@ Changes in version 1.5.1
 
 - currently depends on specific version of ALDEx2 (temporary)
 
-[OmnipathR](https://bioconductor.org/packages/OmnipathR)
+[OmnipathR](/packages/OmnipathR)
 ---------
 
 Changes in version 0.99.12 (2019-10-21)
@@ -6088,7 +6088,7 @@ Changes in version 0.99.0 (2019-10-10)
 
 - Submitted to Bioconductor
 
-[OncoSimulR](https://bioconductor.org/packages/OncoSimulR)
+[OncoSimulR](/packages/OncoSimulR)
 ----------
 
 Changes in version 2.15.2 (2019-08-14)
@@ -6103,7 +6103,7 @@ Changes in version 2.15.0 (2019-06-06)
 
 - Bumped version to match current Biocdevel.
 
-[onlineFDR](https://bioconductor.org/packages/onlineFDR)
+[onlineFDR](/packages/onlineFDR)
 ---------
 
 Changes in version 1.4.0
@@ -6135,7 +6135,7 @@ MODIFICATIONS
 
 - updated authors
 
-[oppti](https://bioconductor.org/packages/oppti)
+[oppti](/packages/oppti)
 -----
 
 Changes in version 0.99.13
@@ -6163,7 +6163,7 @@ Features in the first version, Bioconductor 3.10 Release (September 2019
 
 - statTest Analyze dysregulation significance
 
-[Organism.dplyr](https://bioconductor.org/packages/Organism.dplyr)
+[Organism.dplyr](/packages/Organism.dplyr)
 --------------
 
 Changes in version 1.14.0
@@ -6176,7 +6176,7 @@ NEW FEATURES
 
 - src_organism() supports construction from a TxDb object.
 
-[OUTRIDER](https://bioconductor.org/packages/OUTRIDER)
+[OUTRIDER](/packages/OUTRIDER)
 --------
 
 Changes in version 1.3.2
@@ -6233,7 +6233,7 @@ Changes in version 1.3.2
 
 - Added autoCorrect (Auto Encoder) as normalization function
 
-[pathwayPCA](https://bioconductor.org/packages/pathwayPCA)
+[pathwayPCA](/packages/pathwayPCA)
 ----------
 
 Changes in version 1.1.1
@@ -6243,7 +6243,7 @@ Changes in version 1.1.1
 Our build on Bioconductor 3.9 devel fails for the second vignette.
 This patch resolves this issue.
 
-[Pbase](https://bioconductor.org/packages/Pbase)
+[Pbase](/packages/Pbase)
 -----
 
 Changes in version 0.25.1
@@ -6253,7 +6253,7 @@ Changes in version 0.25.1
 
 - Marking package for deprecation <2019-08-08 Thu>
 
-[pcaExplorer](https://bioconductor.org/packages/pcaExplorer)
+[pcaExplorer](/packages/pcaExplorer)
 -----------
 
 Changes in version 2.12.0
@@ -6272,7 +6272,7 @@ are now correctly referring to the type they contain - e.g. the p
 values are now stored as numeric values - Citation now refers to the
 published manuscript - https://doi.org/10.1186/s12859-019-2879-1
 
-[PCAtools](https://bioconductor.org/packages/PCAtools)
+[PCAtools](/packages/PCAtools)
 --------
 
 Changes in version 2.0.0
@@ -6290,7 +6290,7 @@ Changes in version 2.0.0
 - fixed bug with singlecol parameter for biplot colouring everything
   black
 
-[peakPantheR](https://bioconductor.org/packages/peakPantheR)
+[peakPantheR](/packages/peakPantheR)
 -----------
 
 Changes in version 0.99.3 (2019-10-01)
@@ -6305,7 +6305,7 @@ Changes in version 0.99.0 (2019-06-09)
 
 - Submitted to Bioconductor
 
-[PERFect](https://bioconductor.org/packages/PERFect)
+[PERFect](/packages/PERFect)
 -------
 
 Changes in version 0.99.11 (2019-09-19)
@@ -6318,7 +6318,7 @@ Changes in version 0.99.10 (2019-09-17)
 
 - Submitted to Bioconductor
 
-[PGA](https://bioconductor.org/packages/PGA)
+[PGA](/packages/PGA)
 ---
 
 Changes in version 1.15.1
@@ -6333,14 +6333,14 @@ Changes in version 1.14.1
 
 - Update parser program V
 
-[PhyloProfile](https://bioconductor.org/packages/PhyloProfile)
+[PhyloProfile](/packages/PhyloProfile)
 ------------
 
 Changes in version 0.99.31
 
 - Submitted to Bioconductor
 
-[piano](https://bioconductor.org/packages/piano)
+[piano](/packages/piano)
 -----
 
 Changes in version 2.2.0
@@ -6355,7 +6355,7 @@ BUG FIXES
 
 - Fix error message handling in network plot in exploreGSAres().
 
-[Pigengene](https://bioconductor.org/packages/Pigengene)
+[Pigengene](/packages/Pigengene)
 ---------
 
 Changes in version 1.11.34 (2019-10-21)
@@ -6416,7 +6416,7 @@ Bug Fixes
 
 - repeat.data(times=1,...) now produces valid output.
 
-[podkat](https://bioconductor.org/packages/podkat)
+[podkat](/packages/podkat)
 ------
 
 Changes in version 1.18.0
@@ -6443,7 +6443,7 @@ Changes in version 1.17.0
 
 - new branch for Bioconductor 3.10 devel
 
-[polyester](https://bioconductor.org/packages/polyester)
+[polyester](/packages/polyester)
 ---------
 
 Changes in version 1.99.3
@@ -6457,7 +6457,7 @@ Changes in version 1.99.2
 - bug fix in fragment generation (last 2 bases of transcript were never
   sequenced)
 
-[pqsfinder](https://bioconductor.org/packages/pqsfinder)
+[pqsfinder](/packages/pqsfinder)
 ---------
 
 Changes in version 2.2
@@ -6473,14 +6473,14 @@ BUG FIXES
 - Fixed bug allowing unlimited length of third loop leading to invalid
   memory access and random scores.
 
-[proDA](https://bioconductor.org/packages/proDA)
+[proDA](/packages/proDA)
 -----
 
 Changes in version 0.99.0 (2019-06-02)
 
 - Initial submission
 
-[pRoloc](https://bioconductor.org/packages/pRoloc)
+[pRoloc](/packages/pRoloc)
 ------
 
 Changes in version 1.25
@@ -6499,7 +6499,7 @@ Changes in version 1.25.0
 
 - Version bump for Bioc 3.10 (devel)
 
-[ProtGenerics](https://bioconductor.org/packages/ProtGenerics)
+[ProtGenerics](/packages/ProtGenerics)
 ------------
 
 Changes in version 1.17.4
@@ -6519,7 +6519,7 @@ Changes in version 1.17.1
 
 - Move many generics from MSnbase <2019-05-11 Sat>
 
-[PureCN](https://bioconductor.org/packages/PureCN)
+[PureCN](/packages/PureCN)
 ------
 
 Changes in version 1.16.0
@@ -6596,14 +6596,14 @@ BUGFIXES
 - Fixed a crash in Varscan2 produced VCFs when ALT field missed ref
   counts (#109)
 
-[pwrEWAS](https://bioconductor.org/packages/pwrEWAS)
+[pwrEWAS](/packages/pwrEWAS)
 -------
 
 Changes in version 0.1.0
 
 - Initial version
 
-[QDNAseq](https://bioconductor.org/packages/QDNAseq)
+[QDNAseq](/packages/QDNAseq)
 -------
 
 Changes in version 1.21.6 (2019-09-25)
@@ -6690,7 +6690,7 @@ SIGNIFICANT CHANGES
 - exportVCF() is no longer exported. Use exportBins(..., format="vcf")
   instead.
 
-[qPLEXanalyzer](https://bioconductor.org/packages/qPLEXanalyzer)
+[qPLEXanalyzer](/packages/qPLEXanalyzer)
 -------------
 
 Changes in version 1.3.2
@@ -6702,7 +6702,7 @@ Changes in version 1.3.1
 - Added mergePeptides function to summarize identical peptides to
   single peptide for specific protein.
 
-[Qtlizer](https://bioconductor.org/packages/Qtlizer)
+[Qtlizer](/packages/Qtlizer)
 -------
 
 Changes in version 0.99.12 (2019-09-06)
@@ -6748,7 +6748,7 @@ Changes in version 0.99.0 (2019-08-12)
 
 - Submitted to Bioconductor
 
-[RaggedExperiment](https://bioconductor.org/packages/RaggedExperiment)
+[RaggedExperiment](/packages/RaggedExperiment)
 ----------------
 
 Changes in version 1.10.0
@@ -6760,7 +6760,7 @@ Bug fixes and minor improvements
 - Include class and assay operations overview schematic in the
 vignette
 
-[Rcpi](https://bioconductor.org/packages/Rcpi)
+[Rcpi](/packages/Rcpi)
 ----
 
 Changes in version 1.21.1 (2019-05-17)
@@ -6772,7 +6772,7 @@ and dependency issues which are not related to the package itself.  -
 Updated GitHub repository links due to the recent handle change.  -
 Updated the vignette style.
 
-[Rcwl](https://bioconductor.org/packages/Rcwl)
+[Rcwl](/packages/Rcwl)
 ----
 
 Changes in version 1.1.12 (2019-09-09)
@@ -6783,7 +6783,7 @@ Changes in version 1.1.7 (2019-07-25)
 
 - New feature, baseCommand works with R function
 
-[RcwlPipelines](https://bioconductor.org/packages/RcwlPipelines)
+[RcwlPipelines](/packages/RcwlPipelines)
 -------------
 
 Changes in version 1.1.14 (2019-10-21)
@@ -6809,7 +6809,7 @@ Changes in version 1.1.2 (2019-05-22)
 
 - fix samtools index bug for cwltool 2019
 
-[RCy3](https://bioconductor.org/packages/RCy3)
+[RCy3](/packages/RCy3)
 ----
 
 Changes in version 2.6.0
@@ -6850,7 +6850,7 @@ Changes in version 2.4.1
 - Bug Fixes - getLayoutPropertyNames -- #59 fixed returned values -
   createNetworkFromIgraph -- #58 flatten list attributes to strings
 
-[ReactomeGSA](https://bioconductor.org/packages/ReactomeGSA)
+[ReactomeGSA](/packages/ReactomeGSA)
 -----------
 
 Changes in version 0.99.8 (2019-08-13)
@@ -6888,7 +6888,7 @@ Changes in version 0.99.0 (2019-07-01)
 
 - Submitted to Bioconductor
 
-[recount](https://bioconductor.org/packages/recount)
+[recount](/packages/recount)
 -------
 
 Changes in version 1.11.14
@@ -6931,7 +6931,7 @@ download_file() and other recount functions will re-try to download a
 file 3 times before giving up. This should help reduce the number of
 occasional failed Bioconductor nightly checks.
 
-[regioneR](https://bioconductor.org/packages/regioneR)
+[regioneR](/packages/regioneR)
 --------
 
 Changes in version 1.18.0
@@ -6950,7 +6950,7 @@ BUG FIXES
 
 - Multiple bug fixes
 
-[regionReport](https://bioconductor.org/packages/regionReport)
+[regionReport](/packages/regionReport)
 ------------
 
 Changes in version 1.19.2
@@ -6966,7 +6966,7 @@ are missing instead of installing them automatically. This complies
 with Marcel Ramos' request at
 https://github.com/leekgroup/recount/issues/14.
 
-[rGREAT](https://bioconductor.org/packages/rGREAT)
+[rGREAT](/packages/rGREAT)
 ------
 
 Changes in version 1.17.1
@@ -6979,7 +6979,7 @@ Changes in version 1.17.1
 
 - add startup messages
 
-[rhdf5](https://bioconductor.org/packages/rhdf5)
+[rhdf5](/packages/rhdf5)
 -----
 
 Changes in version 2.30.0
@@ -6995,7 +6995,7 @@ BUG FIXES
 - NA values in a character() vector can now be written to an HDF5
   dataset.
 
-[Rhdf5lib](https://bioconductor.org/packages/Rhdf5lib)
+[Rhdf5lib](/packages/Rhdf5lib)
 --------
 
 Changes in version 1.8
@@ -7009,7 +7009,7 @@ Bug fixes
 - Quote paths reported by pkgconfig() to allow installation in librarys
   with whitespace in the path.
 
-[Rhtslib](https://bioconductor.org/packages/Rhtslib)
+[Rhtslib](/packages/Rhtslib)
 -------
 
 Changes in version 1.18.0
@@ -7037,35 +7037,35 @@ BUG FIXES
 - Don't overwrite CPPFLAGS, CFLAGS, or LDFLAGS values set in
   ${R_HOME}/etc/Makeconf on Linux or Mac
 
-[RNAmodR](https://bioconductor.org/packages/RNAmodR)
+[RNAmodR](/packages/RNAmodR)
 -------
 
 Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
-[RNAmodR.AlkAnilineSeq](https://bioconductor.org/packages/RNAmodR.AlkAnilineSeq)
+[RNAmodR.AlkAnilineSeq](/packages/RNAmodR.AlkAnilineSeq)
 ---------------------
 
 Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
-[RNAmodR.ML](https://bioconductor.org/packages/RNAmodR.ML)
+[RNAmodR.ML](/packages/RNAmodR.ML)
 ----------
 
 Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
-[RNAmodR.RiboMethSeq](https://bioconductor.org/packages/RNAmodR.RiboMethSeq)
+[RNAmodR.RiboMethSeq](/packages/RNAmodR.RiboMethSeq)
 -------------------
 
 Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
-[RnBeads](https://bioconductor.org/packages/RnBeads)
+[RnBeads](/packages/RnBeads)
 -------
 
 Changes in version 2.3.3
@@ -7077,7 +7077,7 @@ Changes in version 2.3.2
 - Added stratification plots for inferred covariates in different
   sample groups
 
-[rols](https://bioconductor.org/packages/rols)
+[rols](/packages/rols)
 ----
 
 Changes in version 2.13
@@ -7090,7 +7090,7 @@ CHANGES IN VERSION 2.13.1
 
 - Fix failing test <2019-08-12 Mon>
 
-[ropls](https://bioconductor.org/packages/ropls)
+[ropls](/packages/ropls)
 -----
 
 Changes in version 1.17.34
@@ -7202,7 +7202,7 @@ NEW FEATURE
 - info.txtC and fig.pdfC argument values NULL and NA replaced by 'none'
   and 'interactive', respectively
 
-[rpx](https://bioconductor.org/packages/rpx)
+[rpx](/packages/rpx)
 ---
 
 Changes in version 1.21
@@ -7220,7 +7220,7 @@ Changes in version 1.21.1
 
 - Don't set old class <2019-08-09 Fri>
 
-[Rsubread](https://bioconductor.org/packages/Rsubread)
+[Rsubread](/packages/Rsubread)
 --------
 
 Changes in version 2.0.0
@@ -7251,7 +7251,7 @@ Changes in version 2.0.0
 - Limit on the length of input file names is increased to 1000 bytes
   for all functions.
 
-[RTCA](https://bioconductor.org/packages/RTCA)
+[RTCA](/packages/RTCA)
 ----
 
 Changes in version 2009-07-13
@@ -7278,7 +7278,7 @@ Changes in version 2009-07-13
 - plotRTCA: is removed from the package and is substituted by the plot
   function.
 
-[RTCGAToolbox](https://bioconductor.org/packages/RTCGAToolbox)
+[RTCGAToolbox](/packages/RTCGAToolbox)
 ------------
 
 Changes in version 2.16.0
@@ -7298,7 +7298,7 @@ Read files from the appropriate download location in getFirehoseData
 hosted locations - Check file sizes using httr instead of
 'canevolve.org' query (@mksamur, #32)
 
-[rWikiPathways](https://bioconductor.org/packages/rWikiPathways)
+[rWikiPathways](/packages/rWikiPathways)
 -------------
 
 Changes in version 1.6.0
@@ -7311,7 +7311,7 @@ Changes in version 1.4.1
   false positive fail) - Removed tests for unavailable service:
   getColoredPathway
 
-[S4Vectors](https://bioconductor.org/packages/S4Vectors)
+[S4Vectors](/packages/S4Vectors)
 ---------
 
 Changes in version 0.24.0
@@ -7376,7 +7376,7 @@ BUG FIXES
 
 - All show() methods now return an invisible NULL (commit f4b4ee76)
 
-[SAIGEgds](https://bioconductor.org/packages/SAIGEgds)
+[SAIGEgds](/packages/SAIGEgds)
 --------
 
 Changes in version 1.0.0
@@ -7409,7 +7409,7 @@ Changes in version 0.9.0
 
 - first version of SAIGEgds
 
-[scater](https://bioconductor.org/packages/scater)
+[scater](/packages/scater)
 ------
 
 Changes in version 1.14.0
@@ -7481,7 +7481,7 @@ Changes in version 1.14.0
 
 - Dropped default nmads= to 3 in isOutlier().
 
-[scds](https://bioconductor.org/packages/scds)
+[scds](/packages/scds)
 ----
 
 Changes in version 1.2.0
@@ -7490,7 +7490,7 @@ Changes in version 1.2.0
 
 - Added heuristics to estimate number of doublets
 
-[schex](https://bioconductor.org/packages/schex)
+[schex](/packages/schex)
 -----
 
 Changes in version 0.99.7
@@ -7518,7 +7518,7 @@ Changes in version 0.99.3
 - Minimal functioning package created.  - Mostly compliant with
 BiocCheck::BiocCheck() and goodpractice::goodpractice().
 
-[scMerge](https://bioconductor.org/packages/scMerge)
+[scMerge](/packages/scMerge)
 -------
 
 Changes in version 1.1.6
@@ -7555,14 +7555,14 @@ Changes in version 1.1.0
 
 - Accepted by Bioconductor
 
-[scPCA](https://bioconductor.org/packages/scPCA)
+[scPCA](/packages/scPCA)
 -----
 
 Changes in version 0.99.0 (2019-09-13)
 
 - Submitted to Bioconductor
 
-[scran](https://bioconductor.org/packages/scran)
+[scran](/packages/scran)
 -----
 
 Changes in version 1.14.0
@@ -7660,7 +7660,7 @@ Changes in version 1.14.0
 - Switched to using only the top 10% of HVGs for the internal PCA in
   quickCluster().
 
-[scTensor](https://bioconductor.org/packages/scTensor)
+[scTensor](/packages/scTensor)
 --------
 
 Changes in version 1.2.0
@@ -7676,14 +7676,14 @@ Changes in version 1.2.0
 
 - Some bugs are fixed
 
-[scTGIF](https://bioconductor.org/packages/scTGIF)
+[scTGIF](/packages/scTGIF)
 ------
 
 Changes in version 0.99.0
 
 - Package released
 
-[SeqArray](https://bioconductor.org/packages/SeqArray)
+[SeqArray](/packages/SeqArray)
 --------
 
 Changes in version 1.26.0
@@ -7727,7 +7727,7 @@ BUG FIXES
 
 - fix `seqSummary()` when no phase data
 
-[seqCAT](https://bioconductor.org/packages/seqCAT)
+[seqCAT](/packages/seqCAT)
 ------
 
 Changes in version 1.8.0
@@ -7762,7 +7762,7 @@ Features
 - Removal of non-standard chromosomes and variant de-duplication is now
   optional, and filtration documentation has been extended
 
-[sevenbridges](https://bioconductor.org/packages/sevenbridges)
+[sevenbridges](/packages/sevenbridges)
 ------------
 
 Changes in version 1.15.1
@@ -7774,7 +7774,7 @@ Project class following the recent API improvements. This enables
 better project filtering when querying projects. See the vignette for
 details.
 
-[SharedObject](https://bioconductor.org/packages/SharedObject)
+[SharedObject](/packages/SharedObject)
 ------------
 
 Changes in version 0.99.2
@@ -7785,7 +7785,7 @@ Changes in version 0.99.0 (2019-05-16)
 
 - Submitted to Bioconductor
 
-[signatureSearch](https://bioconductor.org/packages/signatureSearch)
+[signatureSearch](/packages/signatureSearch)
 ---------------
 
 Changes in version 1.1.0 (2019-10-23)
@@ -7797,21 +7797,21 @@ Changes in version 0.99.20 (2019-10-22)
 - Submitted to Bioconductor - Major changes - used HDF5 file to read
 and write the matrix in batches - data stored in ExperimentHub
 
-[signeR](https://bioconductor.org/packages/signeR)
+[signeR](/packages/signeR)
 ------
 
 Changes in version 1.11.1
 
 - ignore mutations on edges of chromosomes
 
-[SIMLR](https://bioconductor.org/packages/SIMLR)
+[SIMLR](/packages/SIMLR)
 -----
 
 Changes in version 1.11.1 (2019-10-13)
 
 - Fix C++ bug.
 
-[SingleCellExperiment](https://bioconductor.org/packages/SingleCellExperiment)
+[SingleCellExperiment](/packages/SingleCellExperiment)
 --------------------
 
 Changes in version 1.8.0
@@ -7835,7 +7835,7 @@ Changes in version 1.8.0
 - Internal change to the representation of reducedDims() to streamline
   subsetting and combining.
 
-[singscore](https://bioconductor.org/packages/singscore)
+[singscore](/packages/singscore)
 ---------
 
 Changes in version 1.5.1
@@ -7846,7 +7846,7 @@ demonstrates usage of singscore on a real dataset
 samples on dispersion plots (plotDispersion) in a similar manner to
 landscape plots (projectScoreLandscape)
 
-[sitePath](https://bioconductor.org/packages/sitePath)
+[sitePath](/packages/sitePath)
 --------
 
 Changes in version 1.1.10
@@ -7899,7 +7899,7 @@ Changes in version 1.1.1
 
 - Bug fix: Error when adding new result in 'fixationSites'
 
-[SNPRelate](https://bioconductor.org/packages/SNPRelate)
+[SNPRelate](/packages/SNPRelate)
 ---------
 
 Changes in version 1.20.0
@@ -7914,7 +7914,7 @@ Changes in version 1.18.1
 
 - support long vector in `snpgdsIBDSelection()`
 
-[sojourner](https://bioconductor.org/packages/sojourner)
+[sojourner](/packages/sojourner)
 ---------
 
 Changes in version 0.99.8
@@ -7954,14 +7954,14 @@ Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
-[Spaniel](https://bioconductor.org/packages/Spaniel)
+[Spaniel](/packages/Spaniel)
 -------
 
 Changes in version 0.99.0
 
 - Submitted to Bioconductor
 
-[SpatialCPie](https://bioconductor.org/packages/SpatialCPie)
+[SpatialCPie](/packages/SpatialCPie)
 -----------
 
 Changes in version 1.1
@@ -7985,7 +7985,7 @@ Changes in version 1.1
 
 - (1.1.1) Added "top features" barplot in cluster tree tooltip
 
-[splatter](https://bioconductor.org/packages/splatter)
+[splatter](/packages/splatter)
 --------
 
 Changes in version 1.10.0 (2019-10-20)
@@ -8014,7 +8014,7 @@ Changes in version 1.10.0 (2019-10-20)
 
 - Various fixes for compatibility with updates to other packages.
 
-[SQLDataFrame](https://bioconductor.org/packages/SQLDataFrame)
+[SQLDataFrame](/packages/SQLDataFrame)
 ------------
 
 Changes in version 1.0.0 (2019-10-01)
@@ -8037,7 +8037,7 @@ Changes in version 0.99.0 (2019-04-05)
 
 - Submitted to Bioconductor
 
-[sRACIPE](https://bioconductor.org/packages/sRACIPE)
+[sRACIPE](/packages/sRACIPE)
 -------
 
 Changes in version 1.1.3 (2019-10-17)
@@ -8050,7 +8050,7 @@ Changes in version 1.1.2 (2019-10-17)
 
 - Minor bug fixes
 
-[ssrch](https://bioconductor.org/packages/ssrch)
+[ssrch](/packages/ssrch)
 -----
 
 Changes in version 1.1.1
@@ -8068,7 +8068,7 @@ Changes in version 1.1.1
 
 - for 1.1.2, adding title as a string into searchable 'token' set
 
-[statTarget](https://bioconductor.org/packages/statTarget)
+[statTarget](/packages/statTarget)
 ----------
 
 Changes in version 2.0
@@ -8100,7 +8100,7 @@ Changes in version 1.15.3
   group (A) to the odds of it occurring in reference group (B), such as
   odds_of_AtoB.
 
-[Structstrings](https://bioconductor.org/packages/Structstrings)
+[Structstrings](/packages/Structstrings)
 -------------
 
 Changes in version 1.1.6 (2019-09-23)
@@ -8111,7 +8111,7 @@ Changes in version 1.1.6 (2019-09-23)
 - fixed sequence column not returned when calling getBasePairing with a
   StructuredXStringSet
 
-[SummarizedBenchmark](https://bioconductor.org/packages/SummarizedBenchmark)
+[SummarizedBenchmark](/packages/SummarizedBenchmark)
 -------------------
 
 Changes in version 2.3.7 (2019-09-18)
@@ -8152,7 +8152,7 @@ Changes in version 2.3.3 (2019-06-14)
 
 - Added pkgdown site
 
-[SummarizedExperiment](https://bioconductor.org/packages/SummarizedExperiment)
+[SummarizedExperiment](/packages/SummarizedExperiment)
 --------------------
 
 Changes in version 1.16.0
@@ -8181,7 +8181,7 @@ BUG FIXES
 - Address all.equal() false positives on SummarizedExperiment objects
   (see issue #16 for the details)
 
-[SynMut](https://bioconductor.org/packages/SynMut)
+[SynMut](/packages/SynMut)
 ------
 
 Changes in version 1.1.3 (2019-05-08)
@@ -8200,14 +8200,14 @@ Changes in version 1.1.0 (2019-05-06)
 
 - Bump
 
-[target](https://bioconductor.org/packages/target)
+[target](/packages/target)
 ------
 
 Changes in version 0.1.0
 
 - Submit to Bioconductor
 
-[TargetSearch](https://bioconductor.org/packages/TargetSearch)
+[TargetSearch](/packages/TargetSearch)
 ------------
 
 Changes in version 1.42.0
@@ -8242,7 +8242,7 @@ BUG FIXES
 
 - Mostly code refactoring and house-keeping.
 
-[TCGAutils](https://bioconductor.org/packages/TCGAutils)
+[TCGAutils](/packages/TCGAutils)
 ---------
 
 Changes in version 1.6.0
@@ -8262,7 +8262,7 @@ mergeColData - Added informative error when query results are empty
 in UUIDtoBarcode - Updates to makeGRangesListFromExonFiles to use
 S4Vectors::splitAsList (@hpages)
 
-[TOAST](https://bioconductor.org/packages/TOAST)
+[TOAST](/packages/TOAST)
 -----
 
 Changes in version 0.99.7
@@ -8276,7 +8276,7 @@ NEW FEATURES
 
 - Initial release.
 
-[tofsims](https://bioconductor.org/packages/tofsims)
+[tofsims](/packages/tofsims)
 -------
 
 Changes in version 099.1
@@ -8292,7 +8292,7 @@ INTERNALS
 
 - exchanged various print() with message()
 
-[topconfects](https://bioconductor.org/packages/topconfects)
+[topconfects](/packages/topconfects)
 -----------
 
 Changes in version 1.1.4 (2018-12-29)
@@ -8320,7 +8320,7 @@ Changes in version 1.0.1 (2018-02-04)
 
 - Initial release.
 
-[topdownr](https://bioconductor.org/packages/topdownr)
+[topdownr](/packages/topdownr)
 --------
 
 Changes in version 1.7
@@ -8339,7 +8339,7 @@ Changes in version 1.7.2
 - Add readTopDownSet(..., conditions="ScanDescription") as a new way
 to read scan conditions (see #80/#81) [2019-08-08].
 
-[TPP](https://bioconductor.org/packages/TPP)
+[TPP](/packages/TPP)
 ---
 
 Changes in version 3.13.3
@@ -8357,14 +8357,14 @@ Changes in version 3.13.1
 
 - Avoid warnings due to factor/character conversions in vignette
 
-[TPP2D](https://bioconductor.org/packages/TPP2D)
+[TPP2D](/packages/TPP2D)
 -----
 
 Changes in version 1.1.0 (2019-05-06)
 
 - Carry-over detection now works via a LDA model
 
-[trackViewer](https://bioconductor.org/packages/trackViewer)
+[trackViewer](/packages/trackViewer)
 -----------
 
 Changes in version 1.21.18
@@ -8440,7 +8440,7 @@ Changes in version 1.21.1
 
 - fix the bug if condiction with multiple logical values.
 
-[tradeSeq](https://bioconductor.org/packages/tradeSeq)
+[tradeSeq](/packages/tradeSeq)
 --------
 
 Changes in version 0.99.9902 (2019-10-23)
@@ -8465,14 +8465,14 @@ Changes in version 0.9.0 (2019-03-15)
 
 - Reformatted to fulfill Bioconductor guidelines
 
-[transite](https://bioconductor.org/packages/transite)
+[transite](/packages/transite)
 --------
 
 Changes in version 1.2.1
 
 - updated author list
 
-[treeio](https://bioconductor.org/packages/treeio)
+[treeio](/packages/treeio)
 ------
 
 Changes in version 1.9.3
@@ -8499,7 +8499,7 @@ Wed) - redefined root method to wrape ape::root.phylo for
 compatibility (2019-05-20, Mon) -
 https://github.com/GuangchuangYu/treeio/issues/18
 
-[tRNAscanImport](https://bioconductor.org/packages/tRNAscanImport)
+[tRNAscanImport](/packages/tRNAscanImport)
 --------------
 
 Changes in version 1.5.3 (2019-08-25)
@@ -8512,7 +8512,7 @@ Changes in version 1.5.3 (2019-08-25)
 - updated tRNAscan example file for human (the high confidence set is
   now included)
 
-[TSRchitect](https://bioconductor.org/packages/TSRchitect)
+[TSRchitect](/packages/TSRchitect)
 ----------
 
 Changes in version 1.11.12
@@ -8536,7 +8536,7 @@ Changes in version 1.11.12
 - Necessary updates to the Singularity recipe to reflect the above
   changes.
 
-[tximeta](https://bioconductor.org/packages/tximeta)
+[tximeta](/packages/tximeta)
 -------
 
 Changes in version 1.4.0
@@ -8561,7 +8561,7 @@ Changes in version 1.4.0
 - add 'skipSeqinfo' argument, which avoids attempting to fetch
   chromosome information (from UCSC) if set to TRUE.
 
-[tximport](https://bioconductor.org/packages/tximport)
+[tximport](/packages/tximport)
 --------
 
 Changes in version 1.14.0
@@ -8573,7 +8573,7 @@ Changes in version 1.14.0
 - Alevin inferential replicates can be imported (also sparse). To not
   import the inferential replicates, set dropInfReps=TRUE.
 
-[Ularcirc](https://bioconductor.org/packages/Ularcirc)
+[Ularcirc](/packages/Ularcirc)
 --------
 
 Changes in version 1.3.22
@@ -8596,7 +8596,7 @@ BUG FIXES
 - BUG fix: Fixed code in Compatible_Annotation_DBs examples that was
   causing error in bioconductor builds.
 
-[universalmotif](https://bioconductor.org/packages/universalmotif)
+[universalmotif](/packages/universalmotif)
 --------------
 
 Changes in version 1.4.0
@@ -8724,7 +8724,7 @@ BUG FIXES
 
 - Mispelled variable in enrich_motifs()
 
-[variancePartition](https://bioconductor.org/packages/variancePartition)
+[variancePartition](/packages/variancePartition)
 -----------------
 
 Changes in version 1.15.8
@@ -8762,7 +8762,7 @@ Changes in version 1.15.0
 
 - Push changes to Bioconductor devel
 
-[VariantExperiment](https://bioconductor.org/packages/VariantExperiment)
+[VariantExperiment](/packages/VariantExperiment)
 -----------------
 
 Changes in version 0.99.8
@@ -8770,7 +8770,7 @@ Changes in version 0.99.8
 - `saveVariantExperiment` returns newly generated VariantExperiment
   object by calling `loadVariantExperiment`
 
-[ViSEAGO](https://bioconductor.org/packages/ViSEAGO)
+[ViSEAGO](/packages/ViSEAGO)
 -------
 
 Changes in version 0.99.42
@@ -8825,7 +8825,7 @@ Changes in version 0.99.30
 
 - ViSEAGO citation update
 
-[waddR](https://bioconductor.org/packages/waddR)
+[waddR](/packages/waddR)
 -----
 
 Changes in version 0.99.6 (2019-10-28)
@@ -8973,7 +8973,7 @@ Changes in version 0.2.2 (2019-07-29)
 - Changed all code files in the package to have max. 80 Character per
   line
 
-[xcms](https://bioconductor.org/packages/xcms)
+[xcms](/packages/xcms)
 ----
 
 Changes in version 3.7.5
@@ -9017,7 +9017,7 @@ Changes in version 3.7.1
 
 - Improve performance of chromPeakSpectra and featureSpectra.
 
-[zinbwave](https://bioconductor.org/packages/zinbwave)
+[zinbwave](/packages/zinbwave)
 --------
 
 Changes in version 1.7.5 (2019-10-08)
@@ -9036,7 +9036,7 @@ NEWS from new and existing Data Experiment Packages
 ===================================
 
 
-[benchmarkfdrData2019](https://bioconductor.org/packages/benchmarkfdrData2019)
+[benchmarkfdrData2019](/packages/benchmarkfdrData2019)
 --------------------
 
 Changes in version 0.99.15 (2019-06-06)
@@ -9126,7 +9126,7 @@ Changes in version 0.99.0 (2019-04-09)
 
 - Submitted to Bioconductor
 
-[chipenrich.data](https://bioconductor.org/packages/chipenrich.data)
+[chipenrich.data](/packages/chipenrich.data)
 ---------------
 
 Changes in version 2.10.0
@@ -9134,7 +9134,7 @@ Changes in version 2.10.0
 - Added data required for proxReg: enhancers.dnase_thurman.0,
   gene.enh.desc, spline.log_dtss.90ENCODE
 
-[depmap](https://bioconductor.org/packages/depmap)
+[depmap](/packages/depmap)
 ------
 
 
@@ -9150,14 +9150,14 @@ Changes in version 0.99.0
 - Preparing for Bioconductor submission
 
 
-[derfinderData](https://bioconductor.org/packages/derfinderData)
+[derfinderData](/packages/derfinderData)
 -------------
 
 Changes in version 2.3.4
 
 - Added a NEWS.md file to track changes to the package.
 
-[DMRcatedata](https://bioconductor.org/packages/DMRcatedata)
+[DMRcatedata](/packages/DMRcatedata)
 -----------
 
 Changes in version 2.0.0
@@ -9170,7 +9170,7 @@ Changes in version 2.0.0
   mm10.generanges and mm10.grt have been added as annotation for
   extractRanges() and DMR.plot()
 
-[dsQTL](https://bioconductor.org/packages/dsQTL)
+[dsQTL](/packages/dsQTL)
 -----
 
 Changes in version 2.17
@@ -9186,7 +9186,7 @@ USER VISIBLE CHANGES
   SNPlocs...20111119, but now they come directly from the Chicago text
   file.
 
-[HDCytoData](https://bioconductor.org/packages/HDCytoData)
+[HDCytoData](/packages/HDCytoData)
 ----------
 
 Changes in version 1.5.4
@@ -9195,7 +9195,7 @@ Changes in version 1.5.4
 
 - Update documentation
 
-[MMAPPR2data](https://bioconductor.org/packages/MMAPPR2data)
+[MMAPPR2data](/packages/MMAPPR2data)
 -----------
 
 Changes in version 0.99.20 (2019-05-30)
@@ -9204,56 +9204,56 @@ Changes in version 0.99.20 (2019-05-30)
 
 - See NEWS in MMAPPR2 package for relevant updates
 
-[MouseGastrulationData](https://bioconductor.org/packages/MouseGastrulationData)
+[MouseGastrulationData](/packages/MouseGastrulationData)
 ---------------------
 
 Changes in version 0.99.0 (2019-06-17)
 
 - Submitted to Bioconductor
 
-[PhyloProfileData](https://bioconductor.org/packages/PhyloProfileData)
+[PhyloProfileData](/packages/PhyloProfileData)
 ----------------
 
 Changes in version 0.99.0 (2019-05-30)
 
 - Submitted to Bioconductor
 
-[PtH2O2lipids](https://bioconductor.org/packages/PtH2O2lipids)
+[PtH2O2lipids](/packages/PtH2O2lipids)
 ------------
 
 Changes in version 2016-04-21
 
 - Initial release for Bioconductor
 
-[pwrEWAS.data](https://bioconductor.org/packages/pwrEWAS.data)
+[pwrEWAS.data](/packages/pwrEWAS.data)
 ------------
 
 Changes in version 0.1.0
 
 - Initial version
 
-[RforProteomics](https://bioconductor.org/packages/RforProteomics)
+[RforProteomics](/packages/RforProteomics)
 --------------
 
 Changes in version 1.23.1
 
 - remove getThermoHelaPRTC function (server down) <2019-10-24 Thu>
 
-[RNAmodR.Data](https://bioconductor.org/packages/RNAmodR.Data)
+[RNAmodR.Data](/packages/RNAmodR.Data)
 ------------
 
 Changes in version 0.99.0 (2019-04-29)
 
 - Submitted to Bioconductor
 
-[SBGNview.data](https://bioconductor.org/packages/SBGNview.data)
+[SBGNview.data](/packages/SBGNview.data)
 -------------
 
 Changes in version 0.99.10
 
 - Added gene expression demo datasets.
 
-[scRNAseq](https://bioconductor.org/packages/scRNAseq)
+[scRNAseq](/packages/scRNAseq)
 --------
 
 Changes in version 2.0.0
@@ -9266,7 +9266,7 @@ Changes in version 2.0.0
 
 - Deprecated inbuilt datasets in favor of ExperimentHub equivalents.
 
-[signatureSearchData](https://bioconductor.org/packages/signatureSearchData)
+[signatureSearchData](/packages/signatureSearchData)
 -------------------
 
 Changes in version 1.1.0 (2019-10-23)
@@ -9290,7 +9290,7 @@ Changes in version 0.99.0 (2019-04-02)
 - Needed 50Gb memory to load matrix in LINCS gctx file and save as HDF5
   backed SE object
 
-[TENxBUSData](https://bioconductor.org/packages/TENxBUSData)
+[TENxBUSData](/packages/TENxBUSData)
 -----------
 
 Changes in version 0.99.0 (2019-01-08)
@@ -9302,7 +9302,7 @@ NEWS from new and existing Workflows
 ===================================
 
 
-[BgeeCall](https://bioconductor.org/packages/BgeeCall)
+[BgeeCall](/packages/BgeeCall)
 --------
 
 Changes in version 1.1.1
@@ -9328,7 +9328,7 @@ Changes in version 1.1.0
 
 - Can use custom reference intergenic sequences from a local fastq file
 
-[CAGEWorkflow](https://bioconductor.org/packages/CAGEWorkflow)
+[CAGEWorkflow](/packages/CAGEWorkflow)
 ------------
 
 Changes in version 1.1.5
