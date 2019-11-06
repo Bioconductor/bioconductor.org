@@ -74,7 +74,7 @@ where there is enough free space).
 
 ### Bioconductor release Software repo ###
 
-    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/bioc /dest/packages/release /bioc
+    rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/bioc /dest/packages/release/bioc
 
 ### Bioconductor release Data repos ###
 
@@ -90,7 +90,7 @@ please use the following commands:
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel /dest/packages/devel
 
-### Bioconductor release Software repo ###
+### Bioconductor devel Software repo ###
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/bioc /dest/packages/devel/bioc
 
