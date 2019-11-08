@@ -31,7 +31,7 @@ versions:
 devel_repos:
 - "bioc"
 - "data/experiment"
-#- "data/annotation"
+- "data/annotation"
 - "workflows"
 
 ## CHANGE this when the build machines change:
@@ -42,8 +42,8 @@ active_release_builders:
   mac_elcapitan: "merida1"
 active_devel_builders:
   linux: "malbec2"
-#  windows: "tokay2"
-#  mac_elcapitan: "celaya2"
+  windows: "tokay2"
+  mac_elcapitan: "celaya2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
