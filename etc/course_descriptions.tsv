@@ -1,4 +1,6 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2019-11-21 - 2019-11-21	[BiocDevelForum](https://www.youtube.com/watch?v=wXswaDt_ax4&t=24s)	Talk	Improving findability of BioC packages	Steffen Neumann 	[pdf](2019/BiocDevelForum/04-Findability.pdf)	3.10	3.6
+2019-11-21 - 2019-11-21	[BiocDevelForum](https://www.youtube.com/watch?v=wXswaDt_ax4&t=24s)	Talk	Bioconductor and R 4.0	Lori Shepherd, Herv&eacute; Pag&egrave;s 	[pdf](2019/BiocDevelForum/04-BiocandR.pdf)	3.10	3.6
 2019-11-18 - 2019-11-18	[CMCM](https://www.iotnmoonshot.org/en/calendar/iotn-november-conference/workshop/)	Workshop	Cancer Immuno-Oncology: Bioconductor and beyond	Martin Morgan	[Rmd](2019/CMCM/01-Workshop.Rmd), [html](2019/CMCM/01-Workshop.html)	3.10	3.6
 2019-10-17 - 2019-10-17	[BiocDevelForum](https://www.youtube.com/watch?v=1iwhQuuHIK0)	Talk	Discussion: Guidelines for submitting data to ExperimentHub	 Stephanie Hicks	[pdf](/help/course-materials/2019/BiocDevelForum/03-ExperimentHub.pdf)	3.9	3.6
 2019-10-10 - 2019-10-10	[OSCA](https://osca.bioconductor.org/)	Workflow	Orchestrating Single-Cell Analysis with Bioconductor	Various authors	[online book](https://osca.bioconductor.org/)	3.9	3.6
