@@ -64,7 +64,7 @@ at different stages of their package.
 
     <ul>
       <li><a class="symlink" href="/developers/how-to/workflows/">Creating Workflow Vignettes</a></li>
-      <li><a class="symlink" href="/developers/how-to/troubleshootBuildReport/">Troubleshooting Build Report</a></li>
+      <li><a class="symlink" href="/developers/how-to/troubleshoot-build-report/">Troubleshooting Build Report</a></li>
     </ul>
 
   </div>
