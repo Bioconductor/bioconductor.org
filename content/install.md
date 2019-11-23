@@ -32,7 +32,7 @@ _Bioconductor_ by starting R and entering the commands
 
     if (!requireNamespace("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
-    BiocManager::install()
+    BiocManager::install(version = "<%=config[:release_version] %>")
 
 It may be possible to change the _Bioconductor_ version of an existing
 installation; see the '[Changing version][]' section of the BiocManager
