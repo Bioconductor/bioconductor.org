@@ -41,8 +41,8 @@ is [here][release-LongTests-report].
 
 ## "Short tests" vs "long tests"
 
-The _Long Tests_ setup forces the developer to split the testing code
-in her package between "short tests" and "long tests". The former go in
+The _Long Tests_ setup forces developers to split the testing code
+in their package between "short tests" and "long tests". The former go in
 the `tests` subdirectory and must be able to run in less than 40 min (this
 limit is actually for the full `R CMD check` command which runs other
 possibly time-consuming things in addition to the code in `tests`).
