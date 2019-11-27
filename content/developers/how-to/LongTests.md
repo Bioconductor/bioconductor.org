@@ -39,7 +39,7 @@ Note that we also run the _Long Tests builds_ for the current release
 branch once a week (every Saturday). The latest report for these builds
 is [here][release-LongTests-report].
 
-## "Long tests" vs "short tests"
+## "Short tests" vs "long tests"
 
 The _Long Tests_ setup forces the developer to split the testing code
 in her package between "short tests" and "long tests". The former go in
