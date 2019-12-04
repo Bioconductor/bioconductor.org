@@ -590,9 +590,14 @@ roughly reproduce the file or object that is present as data.
 Unit tests are highly recommended.  We find them indispensable for
 both package development and maintenance. Two of the main frameworks
 for testing are `RUnit` and `testthat`. Examples and explanations are
-provided [here][].
+provided [here][]. There is also the opportunity to create a full testing suite
+more in depth than traditional testing guidelines but this will require the use
+of [long tests][]. If a package developer is considering the use of long tests
+we highly recommend reaching out on the bioc-devel mailing list to ensure proper
+use and justification.
 
 [here]: http://bioconductor.org/developers/unitTesting-guidelines
+[long tests]: /developers/how-to/long-tests
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 

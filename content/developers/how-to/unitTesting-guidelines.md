@@ -356,6 +356,13 @@ could mean:
   if you have questions about this.
 
 
+If tests are taking too long to achieve full test coverage, see [long
+tests][]. Before implementing long tests we highly recommend reaching out to the
+bioconductor team on the mailing list to ensure proper use and justification.
+
+[long tests]: /developers/how-to/long-tests
+
+
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 
