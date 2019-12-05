@@ -37,14 +37,15 @@ Lookup](https://developer.r-project.org/Blog/public/2019/08/19/s3-method-lookup/
 This ERROR takes many different forms on the build report. Some of the more
 common forms include
 
-* Cannot coerce class <structure> to a data.frame
+* Cannot coerce class \<structure\> to a data.frame
 * Cannot coerce type ‘S4’ to vector of type ‘double’
-* No applicable method for <foo> applied to an object of class <bar>
+* No applicable method for \<foo\> applied to an object of
+  class \<bar\>
 * ‘X’ is a list, but does not have components ‘x’ and ‘y’
 * Error in colMeans(x, na.rm = TRUE) : 'x' must be numeric
-* Error in RG[1:2, ] : incorrect number of dimensions
-* formal argument <foo> matched by multiple actual arguments
-* object <foo> of mode 'function' was not found
+* Error in RG\[1:2, \] : incorrect number of dimensions
+* formal argument \<foo\> matched by multiple actual arguments
+* object \<foo\> of mode 'function' was not found
 * 'x' and 'y' lengths differ
 
 <b>Solution:</b> Register the S3 method in the NAMESPACE
