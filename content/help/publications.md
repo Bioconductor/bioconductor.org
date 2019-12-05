@@ -8,35 +8,34 @@ launched!
 
 <div>
 
-<div class="grey_box">
-Ramos, M, et al. (2017) <a
-href="https://doi.org/10.1158/0008-5472.CAN-17-0344">Software for
-the Integration of Multiomics Experiments in Bioconductor</a>
-Cancer Research 77:e39-e42.
-doi:10.1158/0008-5472.CAN-17-0344
+<div class="white_box">
+Amezquita, R.A., Lun, A.T.L., Becht, E. et al. <a
+href="https://doi.org/10.1038/s41592-019-0654-x">Orchestrating
+single-cell analysis with Bioconductor</a>. Nature Methods (2019)
+doi:10.1038/s41592-019-0654-x
 </div>
 
-<div class="white_box">
+<div class="grey_box">
 Pasolli, E, et al. (2017) <a href="https://doi.org/10.1038/nmeth.4468">
 Accessible, curated metagenomic data through ExperimentHub</a>
 Nature Methods 14, 1023–1024. doi:10.1038/nmeth.4468
 </div>
 
-<div class="grey_box"> Huber W, et al. (2015) <a
+<div class="white_box"> Huber W, et al. (2015) <a
 href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrating
 high-throughput genomic analysis with
 <em>Bioconductor</em></a>. Nature Methods 12:115-121;
 doi:10.1038/nmeth.3252 (full-text free with registration).
 </div>
 
-<div class="white_box">
+<div class="grey_box">
 Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
 href="https://doi.org/10.1371/journal.pcbi.1003118">Software for
 Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
 e1003118. doi: 10.1371/journal.pcbi.1003118
 </div>
 
-<div class="grey_box">
+<div class="white_box">
 Irizarry R, et al. (2015) <a
 href="http://genomicsclass.github.io/book/">Biomedical Data
 Science</a>. Course Notes, EdX PH525.1x.

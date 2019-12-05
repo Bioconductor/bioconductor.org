@@ -1,4 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2019-12-05 - 2019-12-06	[BiocAsia](https://bioconductor.github.io/BiocAsia)	Talk	How to advance science using Bioconductor	Martin Morgan	[slides](https://docs.google.com/presentation/d/e/2PACX-1vRf4SGj0Bfi-0i2Ni94EdSqghivfOWqEOvaI2eYCXNEdmr4dMEFhZnnHKVn9kzWwfg1ECcX9xpvsZ9y/pub)	3.10	3.6.1
 2019-12-05 - 2019-12-06	[BiocAsia](https://bioconductor.github.io/BiocAsia)	Talk	Bioconductor updates	Martin Morgan	[slides](https://docs.google.com/presentation/d/e/2PACX-1vSDB3BZ711d7-2yoCZmd_2MgcNeAlZyGNOIFyVSRPvZmu2Z887alznon0J8RW6O5towyJdjoUbvoL0D/pub)	3.10	3.6.1
 2019-12-05 - 2019-12-06	[BiocAsia](https://bioconductor.github.io/BiocAsia)	Workshop	R and Bioconductor for Genomic Analysis	Martin Morgan	[Rmd](2019/BiocAsia/02-Workshop.Rmd); [html](2019/BiocAsia/02-Workshop.html)	3.10	3.6.1
 2019-11-21 - 2019-11-21	[BiocDevelForum](https://www.youtube.com/watch?v=wXswaDt_ax4&t=24s)	Talk	Improving findability of BioC packages	Steffen Neumann 	[pdf](2019/BiocDevelForum/04-Findability.pdf), [video](2019/BiocDevelForum/04-Findability.mp4)	3.10	3.6
