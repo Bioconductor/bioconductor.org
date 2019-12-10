@@ -126,7 +126,7 @@ not involve also using the devel version of R. See the how-to on
 
 It is possible to activate or deactivate a number of options in `R CMD build`
 and `R CMD check`. Options can be set as individual environment variables or
-they can be [listed in a file](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages). 
+they can be [listed in a file](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages).
 Descriptions of all the different options available can be found [here](https://cran.r-project.org/doc/manuals/r-devel/R-ints.html#Tools).
 _Bioconductor_ has chosen to customize some of these options for incoming
 submission during `R CMD check`. The file of utilized flags can be downloaded
@@ -135,7 +135,7 @@ from
 file can either be place in a default directory as directed
 [here](https://cran.r-project.org/doc/manuals/r-release/R-exts.html#Checking-and-building-packages)
 or can be set through environment variable `R_CHECK_ENVIRON` with a command
-similar to 
+similar to
 
 ```
 export R_CHECK_ENVIRON = <path to downloaded file>
@@ -251,7 +251,11 @@ associated files.
         `GenomicAlignments`.  It is unusual for more than three
         packages to be listed as 'Depends:'.
       + **Suggests:** is for packages used in vignettes or examples,
-        or in conditional code.
+        or in conditional code. This includes examples that make use
+        of annotation and/or experiment packages (e.g., `TxDb*`).
+        In cases where an external one-off function is required,
+        the use of conditional code is best practice. External package
+        availability can be conditionally checked via `requireNamespace()`.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
         that enhance the performance of your package, but are not
         strictly needed for its functionality.
