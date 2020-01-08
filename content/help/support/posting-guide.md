@@ -12,7 +12,6 @@ Revised: 9 May, 2018
 - [Before Posting](#before)
 - [Composing](#composing)
 - [Replying](#replying)
-- [Replying](#replying)
 - [Acknowledgments and Further Reading](#acknowledgments)
 
 
@@ -148,6 +147,9 @@ Revised: 9 May, 2018
 * Read over your post. Is it polite and easy to understand? Remember
   that responses on the _Bioconductor_ support site are from volunteers
   trying to help.
+
+* There is also a helpful tutorial to using/formatting with the markdown
+  editor. This can be found [here](https://support.bioconductor.org/p/117436/)
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 <a name="replying"></a>
