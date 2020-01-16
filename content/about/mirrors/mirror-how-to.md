@@ -15,7 +15,7 @@ page](/about/mirrors/). Public site maintainers must support https on their
 site and use secure rsync when retrieving packages from the master. If you are
 interested in hosting a publicly available mirror site, please send a suitable
 public key to
-[hpages@fredhutch.org](mailto:hpages@fredhutch.org).
+[webmaster@bioconductor.org](mailto:webmaster@bioconductor.org).
 
 Once your key is added to the `bioc-rsync` account you can `rsync` from
 master.bioconductor.org as this user. You can use a config file to manage your
