@@ -1,6 +1,9 @@
 # Docker containers for Bioconductor
 
-[![Docker Build Status](https://img.shields.io/docker/cloud/build/bioconductor/bioconductor_docker.svg)](https://hub.docker.com/r/bioconductor/bioconductor_docker/builds/)
+<a href="https://hub.docker.com/r/bioconductor/bioconductor_docker/builds/">
+<img src="https://img.shields.io/docker/cloud/build/bioconductor/bioconductor_docker.svg" alt="Docker Build Status">
+</a>
+
 
 [Docker](https://docs.docker.com/engine/docker-overview/) packages software
 into self-contained environments, called containers, that include necessary
