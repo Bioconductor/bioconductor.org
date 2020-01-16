@@ -1,106 +1,161 @@
 # Docker containers for Bioconductor
 
-[Docker](https://www.docker.com) allows software to be packaged into
-containers: self-contained environments that contain everything
-needed to run the software. Containers can be run anywhere
-(containers run in modern Linux kernels, but can be run
-on Windows and Mac as well using a virtual machine called
-[Docker Toolbox](https://www.docker.com/products/docker-toolbox).
-Containers can also be deployed in the cloud using
-[Amazon EC2 Container Service](https://aws.amazon.com/ecs/)
-or other cloud providers.
+[![Docker Build Status](https://img.shields.io/docker/cloud/build/bioconductor/bioconductor_docker.svg)](https://hub.docker.com/r/bioconductor/bioconductor_docker/builds/)
 
+[Docker](https://docs.docker.com/engine/docker-overview/) packages software
+into self-contained environments, called containers, that include necessary
+dependencies to run. Containers can run on any operating system including
+Windows and Mac (using modern Linux kernels) via the
+[Docker engine](https://docs.docker.com/engine/).
+
+Containers can also be deployed in the cloud using
+[Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 
 <a name="top"></a>
 
+- [Quick start](#quickstart)
 - [Why Use Containers](#intro)
+  * [Goals for new containers](#goals)
 - [Current Containers](#current)
-- [Legacy Containers](#legacy)
+- [Deprecation Notice](#deprecation)
+  * [Legacy Containers](#legacy)
+  * [Reason for deprecation](#reason)
+  * [Reporting issues](#issues)
 - [Using Containers](#usage)
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
 - [Modifying Image Container](#modify)
-- [Default package with Core2 Container](#core)
+- [Singularity](#singularity)
 - [Acknowledgements](#acknowledgements)
+
+<a name="quickstart"></a>
+
+## Quick start
+
+1. Install Docker
+
+1. Run container with Bioconductor and RStudio
+
+		docker run \
+			-e PASSWORD=bioc \
+			-p 8787:8787 \
+			bioconductor/bioconductor_docker:devel
+
+	This command will run the docker container
+	`bioconductor/bioconductor_docker:devel` on your local machine.
+
+	RStudio will be available on your web browser at
+	`https://localhost:8787`. The USER is fixed to always being
+	`bioc`. The password in the above command is given as `bioc` but
+	it can be set to anything. `8787` is the port being mapped between
+	the docker container and your host machine. NOTE: password cannot
+	be `rstudio`.
+
+	The user is logged into the `bioc` user by default.
 
 <a name="intro"></a>
 
-## Why use Bioconductor containers
+## Why use Containers
 
 With Bioconductor containers, we hope to enhance
 
-* *reproducibility*: If you run some code in a container today,
+* **Reproducibility**: If you run some code in a container today,
   you can run it again in the same container (with the same
   [tag](https://docs.docker.com/userguide/dockerimages/#setting-tags-on-an-image))
   years later and know that nothing in the container has changed.
   You should always take note of the tag you used if you think
   you might want to reproduce some work later.
-* *ease of use*: With one command, you can be running the
+
+* **Ease of use**: With one command, you can be running the
   latest release or devel Bioconductor. No need to worry
   about whether packages and system dependencies are
   installed.
-* *convenience*: Sometimes you just want a fresh R with
-  no packages installed, in order to test something; or
-  you typically don't have microarray packages installed
-  but suddenly you need to do a microarray analysis.
-  Containers make this easy.
 
-Our aim is to provide up-to-date containers for the current
-release and devel versions of Bioconductor, and some older
-versions. Bioconductor's Docker images are stored in [Docker
-Hub](https://hub.docker.com/u/bioconductor/); 
-the source Dockerfiles are in
-[Github](https://github.com/Bioconductor/bioc_docker).
+* **Convenience**: Easily start a fresh R session with
+  no packages installed for testing. Quickly run an analysis with package
+  dependencies not typical of your workflow. Containers make this easy.
 
-Our release images are based on
-[rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio) and
-built when a Biocondcutor Release occurs. Our devel images are based on
-[rocker/rstudio-daily](https://github.com/rocker-org/rstudio-daily) and built
-weekly with the latest versions of R and Bioconductor packages.
+Our aim is to provide up-to-date containers for the current release
+and devel versions of Bioconductor, and some older
+versions. Bioconductor’s Docker images are stored in Docker Hub; the
+source Dockerfile(s) are on Github.
 
-For each supported version of Bioconductor, we provide several
-images:
+Our release images and devel images are based on the [Rocker Project](https://www.rocker-project.org/) -
+[rocker/rstudio](https://github.com/rocker-org/rocker/tree/master/rstudio)
+image and built when a Bioconductor release occurs.
 
-* *base2*: Contains R, RStudio, and a single Bioconductor
-  package (`BiocManager`,
-  providing the `install()` function for installing additional
-  packages).
-  Also contains many system dependencies for Bioconductor packages.
-  Useful when you want a relatively blank slate for testing purposes.
-  R is accessible via the command line or via RStudio Server.
-* *core2*: Built on *base2*, so it contains everything in *base2*, plus
-  a selection of core Bioconductor packages.
-  See [the full list](#the-full-list).
-* *protmetcore2*: Built on *core2*, so it contains everything in *core2*, plus
-  a selection of core Bioconductor packages recommended for proteomic and
-  metabolomics analysis.
-* *metabolomics2*: everything in *protmetcore2*, plus select packages from the
-  [Metabolomics](/packages/release/BiocViews.html#___Metabolomics) biocView.
-* *cytometry2*: Built on *base2*, so it contains everything in *base2*, plus
-  [CytoML](/packages/release/bioc/html/CytoML.html) and needed dependencies.
+<a name="goals"></a>
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+### Goals for new container architecture
+
+A few of our key goals to migrate to a new set of Docker containers are,
+
+ - to keep the image size being shipped by the Bioconductor team at a
+   manageable size.
+
+ - easy to extend, so developers can just use a single image to
+   inherit and build their docker image.
+
+ - easy to maintain, by streamlining the docker inheritance chain.
+
+ - Adopt a "best practices" outline so that new community contributed
+   docker images get reviewed and follow standards.
+
+ - Adopt a deprecation policy and life cycle for images similar to
+   Bioconductor packages.
+
+ - Replicate the Linux build machines (_malbec2_) on the
+   `bioconductor/bioconductor_docker:devel` image as closely as
+   possible. While this is not fully possible just yet, this image can
+   be used by maintainers who wish to reproduce errors seen on the
+   Bioconductor Linux build machine and as a helpful debugging tool.
 
 <a name="current"></a>
 
 ## Current Containers
 
+For each supported version of Bioconductor, we provide
 
-###### Maintained by the Bioconductor Core Team: bioc-issue-bot@bioconductor.org
+- **bioconductor/bioconductor_docker:RELEASE_X_Y**
+
+- **bioconductor/bioconductor_docker:devel**
+
+Bioconductor's Docker images are stored in [Docker Hub](https://hub.docker.com/u/bioconductor/);
+the source Dockerfile(s) are in [Github](https://github.com/Bioconductor/bioconductor_docker).
+
+<a name="deprecation"></a>
+
+## Deprecation Notice
+
+For previous users of docker containers for Bioconductor, please note
+that we are deprecating the following images. These images were
+maintained by Bioconductor Core, and also the community.
+
+<a name="legacy"></a>
+
+### Legacy Containers
+
+These images are NO LONGER MAINTAINED and updated. They will however
+be available to use should a user choose. They are not
+supported anymore by the Bioconductor Core team.
+
+Bioconductor Core Team: bioc-issue-bot@bioconductor.org
+
 * [bioconductor/devel_base2](https://hub.docker.com/r/bioconductor/devel_base2/)
 * [bioconductor/devel_core2](https://hub.docker.com/r/bioconductor/devel_core2/)
 * [bioconductor/release_base2](https://hub.docker.com/r/bioconductor/release_base2/)
 * [bioconductor/release_core2](https://hub.docker.com/r/bioconductor/release_core2/)
 
-###### Maintained by Steffen Neumann: sneumann@ipb-halle.de
-Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
+Steffen Neumann: sneumann@ipb-halle.de, Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
 
 * [bioconductor/devel_protmetcore2](https://hub.docker.com/r/bioconductor/devel_protmetcore2/)
 * [bioconductor/devel_metabolomics2](https://hub.docker.com/r/bioconductor/devel_metabolomics2/)
 * [bioconductor/release_protmetcore2](https://hub.docker.com/r/bioconductor/release_protmetcore2/)
 * [bioconductor/release_metabolomics2](https://hub.docker.com/r/bioconductor/release_metabolomics2/)
 
-###### Maintained by Laurent Gatto: lg390@cam.ac.uk
+Laurent Gatto: lg390@cam.ac.uk
+
 * [bioconductor/devel_mscore2](https://hub.docker.com/r/bioconductor/devel_mscore2/)
 * [bioconductor/devel_protcore2](https://hub.docker.com/r/bioconductor/devel_protcore2/)
 * [bioconductor/devel_proteomics2](https://hub.docker.com/r/bioconductor/devel_proteomics2/)
@@ -108,19 +163,12 @@ Maintained as part of the "PhenoMeNal, funded by Horizon2020 grant 654241"
 * [bioconductor/release_protcore2](https://hub.docker.com/r/bioconductor/release_protcore2/)
 * [bioconductor/release_proteomics2](https://hub.docker.com/r/bioconductor/release_proteomics2/)
 
-#### Maintained by RGLab: wjiang2@fredhutch.org
+RGLab: wjiang2@fredhutch.org
+
 * [bioconductor/devel_cytometry2](https://hub.docker.com/r/bioconductor/devel_cytometry2/)
 * [bioconductor/release_cytometry2](https://hub.docker.com/r/bioconductor/release_cytometry2/)
 
-
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-
-<a name="legacy"></a>
-
-## Legacy Containers
-
-The following containers are legacy and no longer updated. They have been kept
-to retain previous versions available via tags:
+First iteration containers
 
 * bioconductor/devel_base
 * bioconductor/devel_core
@@ -137,89 +185,135 @@ to retain previous versions available via tags:
 * bioconductor/release_sequencing
 * bioconductor/release_metabolomics
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+<a name="reason"></a>
+
+### Reason for deprecation
+
+The new Bioconductor Docker image `bioconductor/bioconductor_docker`
+makes it possible to easily install any package the user chooses since
+all the system dependencies are built in to this new image. The
+previous images did not have all the system dependencies built in to
+the image. The new installation of packages can be done with,
+
+	BiocManager::install(c("package_name", "package_name"))
+
+Other reasons for deprecation:
+
+ - the chain of inheritance of Docker images was too complex and hard
+   to maintain.
+
+ - Hard to extend because there were multiple flavors of images.
+
+ - Naming convention was making things harder to use.
+
+ - Images which were not maintained were not deprecated.
+
+<a name="issues"></a>
+
+### Reporting Issues
+
+Please report issues with the new set of images on [GitHub Issues](https://github.com/Bioconductor/bioconductor_docker/issues) or
+the [Bioc-devel](mailto:bioc-devel@r-project.org) mailing list.
+
+These issues can be questions about anything related to this piece of
+software such as, usage, extending Docker images, enhancements, and
+bug reports.
 
 <a name="usage"></a>
 
 ## Using the containers
 
 A well organized guide to popular docker commands can be found
-[here](https://github.com/wsargent/docker-cheat-sheet). For convenience, below
-are some commands to get you started. The following examples use the
-`bioconductor/devel_base2` image.
+[here](https://github.com/wsargent/docker-cheat-sheet). For
+convenience, below are some commands to get you started. The following
+examples use the `bioconductor/bioconductor_docker:devel` image.
 
-**Note:** that you may need to prepend `sudo` to all `docker` commands.
-
+**Note:** that you may need to prepend `sudo` to all `docker`
+commands. But try them without first.
 
 **Prerequisites**: On Linux, you need Docker
-[installed](https://docs.docker.com/installation/) and
-on [Mac](http://docs.docker.com/installation/mac/)
-or [Windows](http://docs.docker.com/installation/windows/)
-you need Docker Toolbox installed and running.
-
+[installed](https://docs.docker.com/installation/) and on
+[Mac](http://docs.docker.com/installation/mac/) or
+[Windows](http://docs.docker.com/installation/windows/) you need
+Docker Toolbox installed and running.
 
 ##### List which docker machines are available locally
-    docker images
+
+	docker images
 
 ##### List running containers
-    docker ps
+
+	docker ps
 
 ##### List all containers
-    docker ps -a
+
+	docker ps -a
 
 ##### Resume a stopped container
-    docker start <CONTAINER ID>
+
+	docker start <CONTAINER ID>
 
 ##### Shell into a running container
-    docker exec -it <CONTAINER ID> /bin/bash
+
+	docker exec -it <CONTAINER ID> /bin/bash
 
 ##### Shutdown container
-    docker stop <CONTAINER ID>
+
+	docker stop <CONTAINER ID>
 
 ##### Delete container
-    docker rm <CONTAINER ID>
+
+	docker rm <CONTAINER ID>
 
 ##### Delete image
-    docker rmi bioconductor/devel_base2
+
+	docker rmi bioconductor/bioconductor_docker:devel
 
 <a name="running"></a>
 
-#### Running the container
+### Running the container
 
-The above commands can be helpful but the real basics of running a Bioconductor
-docker involves pulling the public image and running the container. 
+The above commands can be helpful but the real basics of running a
+Bioconductor Docker involves pulling the public image and running the
+container.
 
-##### Get a copy of public docker image 
-    docker pull bioconductor/devel_base2
+##### Get a copy of public docker image
+
+	docker pull bioconductor/bioconductor_docker:devel
 
 ##### To run RStudio Server:
 
-    docker run -e PASSWORD=<pickYourPassword> -p 8787:8787 bioconductor/devel_base2
+	docker run -e PASSWORD=<password> \
+		-p 8787:8787 \
+		bioconductor/bioconductor_docker:devel
 
-You can then open a web browser pointing to your docker host on port 8787.
-If you're on Linux and using default settings, the docker host is
-`127.0.0.1` (or `localhost`, so the full URL to RStudio would be
-`http://localhost:8787)`. If you are on Mac or Windows and running
+You can then open a web browser pointing to your docker host on
+port 8787.  If you're on Linux and using default settings, the docker
+host is `127.0.0.1` (or `localhost`, so the full URL to RStudio would
+be `http://localhost:8787)`. If you are on Mac or Windows and running
 `Docker Toolbox`, you can determine the docker host with the
-`docker-machine ip default` command. 
+`docker-machine ip default` command.
 
-In the above command `-e PASSWORD=` is
-setting the rstudio password and is required by the rstudio docker image. It can
-be whatever you like except it cannot be `rstudio`.
-Log in to RStudio with the username `rstudio` and whatever password was specified.
+In the above command, `-e PASSWORD=` is setting the RStudio password
+and is required by the RStudio Docker image. It can be whatever you
+like except it cannot be `rstudio`.  Log in to RStudio with the
+username `rstudio` and whatever password was specified.
 
-If you want to run RStudio as a user on your host machine, in order
-to read/write files in a host directory, please
-[read this](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine).
+If you want to run RStudio as a user on your host machine, in order to
+read/write files in a host directory, please [read this](https://github.com/rocker-org/rocker/wiki/Sharing-files-with-host-machine).
+
+NOTE: If you forget to add the tag `devel` or `RELEASE_X_Y` while
+using the `bioconductor/bioconductor_docker` image, it will
+automatically use the `latest` tag which points to the latest RELEASE
+version of Bioconductor.
 
 ##### To run R from the command line:
 
-    docker run -ti --user bioc bioconductor/devel_base2 R
+	docker run -it --user bioc bioconductor/bioconductor_docker:devel R
 
 ##### To open a Bash shell on the container:
 
-    docker run -ti --user bioc bioconductor/devel_base2 bash
-
+	docker run -it --user bioc bioconductor/bioconductor_docker:devel bash
 
 **Note**: The `docker run` command is very powerful and versatile.
 For full documentation, type `docker run --help` or visit
@@ -229,25 +323,44 @@ the [help page](https://docs.docker.com/reference/run/).
 
 <a name="mounting"></a>
 
-##### Mounting Additional Volume
+### Mounting Additional Volume
 
-One such option for `docker run` is `-v` to mount an
-additional volume to the docker image. This might be useful for say mounting a
-local R install directory for use on the docker. The path on the docker image
+One such option for `docker run` is `-v` to mount an additional volume
+to the docker image. This might be useful for say mounting a local R
+install directory for use on the docker. The path on the docker image
 that should be mapped to a local R library directory is
-`/usr/local/lib/R/host-site-library`.  The follow example would mount my locally
-installed packages to this docker directory. In turn, that path is automatically
-loaded in the R `.libPaths` on the docker image and all of my locally installed
+`/usr/local/lib/R/host-site-library`.
+
+The follow example would mount my locally installed packages to this
+docker directory. In turn, that path is automatically loaded in the R
+`.libPaths` on the docker image and all of my locally installed
 package would be available for use.
 
-    docker run \
-        -v /home/lori/R/x86_64-pc-linux-gnu-library/3.6-BioC-3.9:/usr/local/lib/R/host-site-library \
-        -it --user bioc bioconductor/devel_base2 R
+* Running it interactively,
+
+		docker run \
+			-v /home/my-devel-library:/usr/local/lib/R/host-site-library \
+			-it \
+			--user bioc \
+			bioconductor/bioconductor_docker:devel
+
+  without the `--user bioc` option, the container is started and
+  logged in as the `root` user.
+
+  The `-it` flag gives you an interactive tty (shell/terminal) to the
+  docker container.
+
+* Running it with RStudio interface
+
+		docker run \
+			-v /home/my-devel-library:/usr/local/lib/R/host-site-library \
+			-e PASSWORD=password \
+			-p 8787:8787 \
+			bioconductor/bioconductor_docker:devel
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="modify"></a>
-
 
 ## Modifying the images
 
@@ -255,58 +368,121 @@ There are two ways to modify these images:
 
 1. Making changes in a running container and then committing them
    using the `docker commit` command.
-```
-      docker commit <CONTAINER ID> <name for new image> 
-```
+
+	  docker commit <CONTAINER ID> <name for new image>
+
 2. Using a Dockerfile to declare the changes you want to make.
 
 The second way is the recommended way. Both ways are
 [documented here](https://docs.docker.com/userguide/dockerimages/#creating-our-own-images).
 
-<a name="the-full-list"></a>
+Example 1:
+
+  My goal is to add a python package 'tensorflow' and to install a
+  Bioconductor package called 'scAlign' on top of the base docker
+  image i.e bioconductor/bioconductor_docker:devel.
+
+  As a first step, my Dockerfile should inherit from the
+  `bioconductor/bioconductor_docker:devel` image, and build from
+  there. Since all docker images are Linux environments, and this
+  container is specifically 'Debian', I need some knowledge on how to
+  install libraries on Linux machines.
+
+  In your new `Dockerfile`, you can have the following commands
+
+	# Docker inheritance
+	FROM bioconductor/bioconductor_docker:devel
+
+	# Update apt-get
+	RUN apt-get update \
+		## Install the python package tensorflow
+		&& pip install tensorflow		\
+		## Remove packages in '/var/cache/' and 'var/lib'
+		## to remove side-effects of apt-get update
+		&& apt-get clean \
+		&& rm -rf /var/lib/apt/lists/*
+
+	# Install required Bioconductor package
+	RUN R -e 'BiocManager::install("scAlign")'
+
+  This `Dockerfile` can be built with the command, (note: you can name
+  it however you want)
+
+	docker build -t bioconductor_docker_tensorflow:devel .
+
+  This will let you use the docker image with 'tensorflow' installed and
+  also `scAlign` package.
+
+	docker run -p 8787:8787 -e PASSWORD=bioc bioconductor_docker_tensorflow:devel
+
+Example 2:
+
+  My goal is to add all the required infrastructure to be able to
+  compile vignettes and knit documents into pdf files. My `Dockerfile`
+  will look like the following for this requirement,
+
+	# This docker image has LaTeX to build the vignettes
+	FROM bioconductor/bioconductor_docker:devel
+
+	# Update apt-get
+	RUN apt-get update \
+		&& apt-get install -y --no-install-recommends apt-utils \
+		&& apt-get install -y --no-install-recommends \
+		texlive \
+		texlive-latex-extra \
+		texlive-fonts-extra \
+		texlive-bibtex-extra \
+		texlive-science \
+		texi2html \
+		texinfo \
+		&& apt-get clean \
+		&& rm -rf /var/lib/apt/lists/*
+
+	## Install BiocStyle
+	RUN R -e 'BiocManager::install("BiocStyle")'
+
+  This `Dockerfile` can be built with the command,
+
+	docker build -t bioconductor_docker_latex:devel .
+
+  This will let you use the docker image as needed to build and
+  compile vignettes for packages.
+
+	docker run -p 8787:8787 -e PASSWORD=bioc bioconductor_docker_latex:devel
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-<a name="core"></a>
 
-## List of packages installed on the *core2* container
+## Singularity
 
-These packages, plus their dependencies, are installed:
+The latest `bioconductor/bioconductor_docker` images are available on
+Singularity Hub as well. Singularity is a container runtime just like
+Docker, and Singularity Hub is the host registry for Singularity
+containers.
 
-<ul class="inline_list">
-<li>BiocManager</li>
-<li>OrganismDbi</li>
-<li>ExperimentHub</li>
-<li>Biobase</li>
-<li>BiocParallel</li>
-<li>biomaRt</li>
-<li>Biostrings</li>
-<li>BSgenome</li>
-<li>ShortRead</li>
-<li>IRanges</li>
-<li>GenomicRanges</li>
-<li>GenomicAlignment</li>
-<li>GenomicFeatures</li>
-<li>SummarizedExperiment</li>
-<li>VariantAnnotation</li>
-<li>DelayedArray</li>
-<li>GSEABase</li>
-<li>Gviz</li>
-<li>graph</li>
-<li>RBGL</li>
-<li>Rgraphviz</li>
-<li>rmarkdown</li>
-<li>httr</li>
-<li>knitr</li>
-<li>BiocStyle</li>
-</ul>
+You can find the Singularity containers collection on this link
+https://singularity-hub.org/collections/3955.
 
-<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+These images are particularly useful on compute clusters where you
+don't need admin access. You need to have the module `singularity`
+installed. See https://singularity.lbl.gov/docs-installation (contact your
+IT department when in doubt).
 
-<a name="acknowledgements"></a>
+If you have Singularity installed on your machine or cluster are:
 
-### Acknowledgements
+Inspect available modules
 
-Thanks to the
-[rocker](https://github.com/rocker-org/rocker) project for providing the
-R/RStudio Server containers upon which ours are based.
+	module available
+
+If Singularity is available,
+
+	module load singularity
+
+Please check this link for specific usage instructions relevant to Singularity
+containers: https://singularity-hub.org/collections/3955/usage
+
+## Acknowledgements
+
+Thanks to the [rocker](https://github.com/rocker-org/rocker) project
+for providing the R/RStudio Server containers upon which ours are
+based.
