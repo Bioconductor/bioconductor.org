@@ -4,3 +4,6 @@ location: Basel, Switzerland
 event_host:
 start: 2016-12-06
 end:   2016-12-07
+link:
+  text: Additional details forthcoming
+  url: https://bioconductor.github.io/EuroBioc2016
