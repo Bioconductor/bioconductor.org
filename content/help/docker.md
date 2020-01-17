@@ -4,7 +4,6 @@
 <img src="https://img.shields.io/docker/cloud/build/bioconductor/bioconductor_docker.svg" alt="Docker Build Status">
 </a>
 
-
 [Docker](https://docs.docker.com/engine/docker-overview/) packages software
 into self-contained environments, called containers, that include necessary
 dependencies to run. Containers can run on any operating system including
@@ -34,7 +33,6 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 - [Acknowledgements](#acknowledgements)
 
 <a name="quickstart"></a>
-
 ## Quick start
 
 1. Install Docker
@@ -59,7 +57,6 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 	The user is logged into the `bioc` user by default.
 
 <a name="intro"></a>
-
 ## Why use Containers
 
 With Bioconductor containers, we hope to enhance
@@ -90,7 +87,6 @@ Our release images and devel images are based on the [Rocker Project](https://ww
 image and built when a Bioconductor release occurs.
 
 <a name="goals"></a>
-
 ### Goals for new container architecture
 
 A few of our key goals to migrate to a new set of Docker containers are,
@@ -116,7 +112,6 @@ A few of our key goals to migrate to a new set of Docker containers are,
    Bioconductor Linux build machine and as a helpful debugging tool.
 
 <a name="current"></a>
-
 ## Current Containers
 
 For each supported version of Bioconductor, we provide
@@ -129,7 +124,6 @@ Bioconductor's Docker images are stored in [Docker Hub](https://hub.docker.com/u
 the source Dockerfile(s) are in [Github](https://github.com/Bioconductor/bioconductor_docker).
 
 <a name="deprecation"></a>
-
 ## Deprecation Notice
 
 For previous users of docker containers for Bioconductor, please note
@@ -137,7 +131,6 @@ that we are deprecating the following images. These images were
 maintained by Bioconductor Core, and also the community.
 
 <a name="legacy"></a>
-
 ### Legacy Containers
 
 These images are NO LONGER MAINTAINED and updated. They will however
@@ -190,7 +183,6 @@ First iteration containers
 * bioconductor/release_metabolomics
 
 <a name="reason"></a>
-
 ### Reason for deprecation
 
 The new Bioconductor Docker image `bioconductor/bioconductor_docker`
@@ -213,7 +205,6 @@ Other reasons for deprecation:
  - Images which were not maintained were not deprecated.
 
 <a name="issues"></a>
-
 ### Reporting Issues
 
 Please report issues with the new set of images on [GitHub Issues](https://github.com/Bioconductor/bioconductor_docker/issues) or
@@ -224,7 +215,6 @@ software such as, usage, extending Docker images, enhancements, and
 bug reports.
 
 <a name="usage"></a>
-
 ## Using the containers
 
 A well organized guide to popular docker commands can be found
@@ -274,7 +264,6 @@ Docker Toolbox installed and running.
 	docker rmi bioconductor/bioconductor_docker:devel
 
 <a name="running"></a>
-
 ### Running the container
 
 The above commands can be helpful but the real basics of running a
@@ -326,7 +315,6 @@ the [help page](https://docs.docker.com/reference/run/).
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="mounting"></a>
-
 ### Mounting Additional Volume
 
 One such option for `docker run` is `-v` to mount an additional volume
@@ -365,7 +353,6 @@ package would be available for use.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="modify"></a>
-
 ## Modifying the images
 
 There are two ways to modify these images:
@@ -457,7 +444,6 @@ Example 2:
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="singularity"></a>
-
 ## Singularity
 
 The latest `bioconductor/bioconductor_docker` images are available on
@@ -487,7 +473,6 @@ Please check this link for specific usage instructions relevant to Singularity
 containers: https://singularity-hub.org/collections/3955/usage
 
 <a name="contribute"></a>
-
 ## How to Contribute
 
 There is a comprehensive list of best practices and standards on how
@@ -497,10 +482,8 @@ community members can contribute images
 link: https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md
 
 <a name="acknowledgements"></a>
-
 ## Acknowledgements
 
 Thanks to the [rocker](https://github.com/rocker-org/rocker) project
 for providing the R/RStudio Server containers upon which ours are
 based.
-OB
