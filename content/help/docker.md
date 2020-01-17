@@ -30,6 +30,7 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
   * [Mounting Additional Volume](#mounting)
 - [Modifying Image Container](#modify)
 - [Singularity](#singularity)
+- [How to contribute](#contribute)
 - [Acknowledgements](#acknowledgements)
 
 <a name="quickstart"></a>
@@ -455,6 +456,7 @@ Example 2:
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+<a name="singularity"></a>
 
 ## Singularity
 
@@ -484,8 +486,21 @@ If Singularity is available,
 Please check this link for specific usage instructions relevant to Singularity
 containers: https://singularity-hub.org/collections/3955/usage
 
+<a name="contribute"></a>
+
+## How to Contribute
+
+There is a comprehensive list of best practices and standards on how
+community members can contribute images
+[here](https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md).
+
+link: https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md
+
+<a name="acknowledgements"></a>
+
 ## Acknowledgements
 
 Thanks to the [rocker](https://github.com/rocker-org/rocker) project
 for providing the R/RStudio Server containers upon which ours are
 based.
+OB
