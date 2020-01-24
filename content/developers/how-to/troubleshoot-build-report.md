@@ -18,6 +18,7 @@ R switched from 3.x to 4.0 which generally means some significant changes.
 - [S3 method registration](#s3method)
 - [Removed Settings in R CMD config](#rcmdconfig)
 - [Conditional length > 1](#condLen)
+- [Scalar / Vector Logic](#scalarvec) 
 - [Class ==  vs  is/inherits](#classEq)
 - [Partial Argument Matching](#partMatch)
 - [Dependency Issues](#dep311)
@@ -109,6 +110,29 @@ appropriate to use an `any( )` or `all( )` surrounding the vector.
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
+<a name="scalarvec"></a>
+
+### Scalar / Vector Logic
+
+This is not a change in R yet but we have been notified that it is forth coming
+and have escalated to an ERROR on our daily builders in preparation. This type
+of ERROR occurs with the misuse of `&&` and `||`.  The double `&&` and `||`
+imply a scalar comparison rather than a vector comparison that the singular `&`
+and `|` expect. See the dummy example below:
+
+    > c(TRUE, TRUE) && TRUE
+    Error in c(TRUE, TRUE) && TRUE :
+       'length(x) = 2 > 1' in coercion to 'logical(1)'
+
+<b>Solution:</b>
+Most cases are misjudgment and misunderstanding of the use of a scalar
+comparison from a vector comparison. Changing the double `&&` / `||` to a singular
+`&` / `|` will generally be sufficient if a vector comparison is intended or having the vector argument use an
+appropriate `any( )` or `all( )` surrounding the vector will result in the
+appropriate scalar comparison. **Note:** If this comparison is in a conditional
+please see the section above; `any( )` or `all( )` will most likely be a better alternative. 
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
 <a name="classEq"></a>
 
