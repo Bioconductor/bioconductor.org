@@ -360,7 +360,7 @@ There are two ways to modify these images:
 1. Making changes in a running container and then committing them
    using the `docker commit` command.
 
-	  docker commit <CONTAINER ID> <name for new image>
+        docker commit <CONTAINER ID> <name for new image>
 
 2. Using a Dockerfile to declare the changes you want to make.
 
