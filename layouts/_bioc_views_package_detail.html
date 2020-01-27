@@ -335,7 +335,7 @@ BiocManager::install("<%=@package[:Package]%>")</pre>
 	<tr class="<%=ri.rowclass%>">
 	    <td>License</td>
 	    <% if @package.has_key? :hasLICENSE and @package[:hasLICENSE] == true%>
-                <td><a href="../licenses/<%=@package[:Package]%>/LICENSE"><%= @package[:License]%></a></td>
+                <td><%= linkify_license(@package)%></td>
             <% else %>
                 <td><%= @package[:License]%></td>
 	    <% end %>
