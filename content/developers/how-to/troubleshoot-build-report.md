@@ -18,9 +18,10 @@ R switched from 3.x to 4.0 which generally means some significant changes.
 - [S3 method registration](#s3method)
 - [Removed Settings in R CMD config](#rcmdconfig)
 - [Conditional length > 1](#condLen)
-- [Scalar / Vector Logic](#scalarvec) 
+- [Scalar / Vector Logic](#scalarvec)
 - [Class ==  vs  is/inherits](#classEq)
 - [Partial Argument Matching](#partMatch)
+- [Invalid UTF-8](#invalidUTF) 
 - [Dependency Issues](#dep311)
 - [Deprecated Functions](#depFun311)
 
@@ -175,6 +176,19 @@ part of best practices. For example
     
     mycoolfunction(x=2, myargum=1:2, secondarg=3)    # Good Practice!
 
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
+
+<a name="invalidUTF"></a>
+
+### Package inputenc Error: Invalid UTF-8
+
+This ERROR started to appear on tokay2 (windows) in Spring 2020. We are not sure
+the exact source of the ERROR (change in MiKTek, Change in R, other?) but the
+solution is simple:
+
+Please place `\usepackage[utf8]{inputenc}` in the beginning of your Sweave
+vignette right after the `\documentclass` line.  
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
