@@ -256,6 +256,11 @@ def linkify(sym, package)
   output.join(", ")
 end
 
+def linkify_license(package)
+  link = '<a href = "../licenses/%s/LICENSE">LICENSE</a>' % [ package[:Package] ]
+  package[:License].sub("LICENSE", link)
+end
+
 def doc_object(package)
 
   # return an array of hashes
