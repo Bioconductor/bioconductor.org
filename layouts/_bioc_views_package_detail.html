@@ -6,6 +6,12 @@
 {
   "@context":"http://schema.org/",
   "@type":"Tool",
+  "provider":[{
+    "@type"="Organization",
+    "name"="Bioconductor",
+    "url"="https://bioconductor.org/",
+  }],
+  "programmingLanguage":"R",
   "name":"<%=@package[:Package]%>",
   "description":"<%= @package[:Description]%>",
   "url":[
