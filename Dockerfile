@@ -1,8 +1,6 @@
-FROM ubuntu:bionic
+FROM ruby:2.5.1
 
-## Update apt
-## Source: https://linuxize.com/post/how-to-install-ruby-on-ubuntu-18-04/
-## Install rbenv essentials
+## bioconductor.org website requirements
 RUN apt-get update \
 	&& apt install -y git \
 	curl \
@@ -20,30 +18,26 @@ RUN apt-get update \
 	libpq-dev \
 	sqlite3 \
 	libsqlite3-dev \
-	rsync
+	rsync \
+	&& apt-get clean
 
-## Install rbenv and ruby-build
-RUN git clone https://github.com/rbenv/rbenv.git /root/.rbenv
-RUN git clone https://github.com/rbenv/ruby-build.git /root/.rbenv/plugins/ruby-build
-RUN /root/.rbenv/plugins/ruby-build/install.sh
-ENV PATH /root/.rbenv/bin:$PATH
-RUN echo 'eval "$(rbenv init -)"' >> /etc/profile.d/rbenv.sh # or /etc/profile
-RUN echo 'eval "$(rbenv init -)"' >> .bashrc
+## website
+RUN mkdir /myapp
+WORKDIR /myapp
 
-## Add $HOME/.rbenv/bin to the user PATH
-#RUN echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bashrc \
-#    && echo 'eval "$(rbenv init -)"' >> ~/.bashrc \
-#    && (source ~/.bashrc)
+## Install gems
+COPY Gemfile /myapp/Gemfile
+COPY Gemfile.lock /myapp/Gemfile.lock
+RUN bundle install
 
-## Install latest version of ruby
-RUN rbenv install 2.5.1 \
-    && rbenv global 2.5.1
+## Copy website into image
+COPY . /myapp
 
-RUN gem update --system \
-    && gem install bundler:1.16.1
+RUN rake
 
-## Clone repo
-RUN git clone https://github.com/Bioconductor/bioconductor.org \
-	&& cd bioconductor.org \
-	&& bundle install \
-	&& rake
+# Add a script to be executed every time the container starts.
+EXPOSE 3000
+
+WORKDIR /myapp/output
+
+CMD ["adsf"]
