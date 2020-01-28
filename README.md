@@ -23,11 +23,6 @@ git push
 
 ## Required software 
 
-NOTE: Before reading the following instructions you may want to consider 
-installing the web site as a Docker container. See the instructions
-[here](https://registry.hub.docker.com/u/dtenenba/bioconductor.org/).
-
-
 ### Ruby
 
 The site requires ruby 2.2.2 or newer.
