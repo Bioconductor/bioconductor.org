@@ -21,6 +21,8 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
+* [Martin Morgan](https://www.roswellpark.org/martin-morgan), Roswell
+  Park Comprehensive Cancer Center, Buffalo, NY, USA.
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
 * [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
