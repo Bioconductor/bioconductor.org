@@ -21,7 +21,32 @@ git push
 
  Unix-ish Developer Required Software
 
-## Required software 
+## Using Docker
+
+Before installing Ruby and other software required for the website, we
+recommend you install `docker` and use a docker image to test your
+changes.
+
+To build and locally test the website with Docker, You need to have
+docker installed.
+
+Step 1: Make your changes to the content
+
+Step 2: Build the `Dockerfile` available on the github repository. To
+build, do
+
+	docker build -t bioconductor_website:latest
+
+Step 3: Run the docker image. To test if your changes have made it
+into the website
+
+	docker run --rm -p 3000:3000 bioconductor_website:latest
+
+Step 4: Open your browser http://localhost:3000 and point it to the
+website hosted at from the docker container. Make sure your latest
+changes are present in the website at http://localhost:3000 .
+
+## Installing Locally - Required software
 
 ### Ruby
 
