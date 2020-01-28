@@ -17,11 +17,15 @@
   "url":[
     "<%=get_short_url(@package)%>"
   ],
+  "downloadUrl":[
+    "<%=get_short_url(@package)%>"
+  ],
   "license":[{
     @type:"CreativeWork",
     "name":"<%=@package[:License]%>"
   }],
-  "softwareVersion":"<%= @package[:version_num]%>"
+  "softwareVersion":"<%= @package[:version_num]%>",
+  "discussionUrl":["https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"]
 }
 </script>
 
