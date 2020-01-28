@@ -11,6 +11,10 @@
   "url":[
     "<%=get_short_url(@package)%>"
   ],
+  "license":[{
+    @type:"CreativeWork",
+    "name":"<%=@package[:License]%>"
+  }],
   "softwareVersion":"<%= @package[:Version]%>"
 }
 </script>
