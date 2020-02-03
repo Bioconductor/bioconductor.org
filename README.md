@@ -35,7 +35,7 @@ Step 1: Make your changes to the content
 Step 2: Build the `Dockerfile` available on the github repository. To
 build, do
 
-	docker build -t bioconductor_website:latest
+	docker build -t bioconductor_website:latest .
 
 Step 3: Run the docker image. To test if your changes have made it
 into the website
