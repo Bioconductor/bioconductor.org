@@ -21,6 +21,8 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
+* [Martin Morgan](https://www.roswellpark.org/martin-morgan), Roswell
+  Park Comprehensive Cancer Center, Buffalo, NY, USA.
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA.
 * [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
@@ -56,7 +58,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2019-11-07](2019-11-07-minutes.pdf),
+- [2019-12-05](2019-12-05-minutes.pdf),
+  [2019-11-07](2019-11-07-minutes.pdf),
   [2019-10-03](2019-10-03-minutes.pdf),
   [2019-09-05](2019-09-05-minutes.pdf), 
   [2019-08-01](2019-08-01-minutes.pdf), 
