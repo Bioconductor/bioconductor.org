@@ -1,4 +1,4 @@
-FROM ruby:2.5.1
+FROM ruby:2.7.0
 
 ## bioconductor.org website requirements
 RUN apt-get update && apt install -y \
@@ -29,11 +29,12 @@ WORKDIR /myapp
 ## Install gems
 COPY Gemfile /myapp/Gemfile
 COPY Gemfile.lock /myapp/Gemfile.lock
-RUN bundle install
+RUN bundle update --bundler
 
 ## Copy website into image
 COPY . /myapp
 
+RUN bundle update --bundler
 RUN rake
 
 # Add a script to be executed every time the container starts.

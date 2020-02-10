@@ -855,7 +855,7 @@ def get_build_summary(version, repo)
     url_without_protocol = url.sub(/^http:/i, "")
     css_url = "#{url_without_protocol}report.css"
     begin
-      html = open(url)
+      html = URI.open(url)
     rescue Exception => e
       puts "open(url) failed"
       puts "  url: " + url
