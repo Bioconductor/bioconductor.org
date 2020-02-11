@@ -2,17 +2,6 @@ FROM ruby:2.7.0
 
 ## bioconductor.org website requirements
 RUN apt-get update && apt install -y \
-	curl \
-	libssl-dev \
-	zlib1g-dev \
-	autoconf \
-	bison \
-	build-essential \
-	libyaml-dev \
-	libreadline-dev \
-	libncurses5-dev \
-	libffi-dev \
-	libgdbm-dev \
 	libpq-dev \
 	sqlite3 \
 	libsqlite3-dev \
