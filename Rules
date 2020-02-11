@@ -109,6 +109,11 @@ layout '*', :erb
 
 
 preprocess do 
+  man_path = "../manifest/"
+  if (!File.directory?(man_path))
+    puts "no ../manifest directory; skipping package landing pages"
+    next
+  end
   unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
     puts "Getting manifest files..."
     sconfig = YAML.load_file("./config.yaml")
@@ -118,7 +123,6 @@ preprocess do
     dev_ver = sconfig["devel_version"]
     all_ver = sconfig["release_dates"].keys
     all_ver.push dev_ver
-    man_path = "../manifest/"
 
     manifests = {}
 
