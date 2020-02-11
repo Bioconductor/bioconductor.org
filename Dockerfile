@@ -2,11 +2,7 @@ FROM ruby:2.7.0
 
 ## bioconductor.org website requirements
 RUN apt-get update && apt install -y \
-	libpq-dev \
-	sqlite3 \
-	libsqlite3-dev \
 	rsync \
-	&& apt-get clean \
 	&& rm -rf /var/lib/apt/lists/*
 
 ## website
