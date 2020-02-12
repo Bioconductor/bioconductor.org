@@ -1,4 +1,4 @@
-FROM ruby:2.7.0
+FROM ruby:2.6.5
 
 ## bioconductor.org website requirements
 RUN apt-get update && apt install -y \

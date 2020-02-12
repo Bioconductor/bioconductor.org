@@ -65,8 +65,8 @@ task :pre_compile do
     FileUtils.rm_f "output/packages/#{version}/BiocViews.html"
     FileUtils.mkdir_p "output/packages/#{version}/BiocViews"
     unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
-      FileUtils.cp "assets/help/bioc-views.html", "#{destdir}/BiocViews.html", preserve:false
-      FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", preserve:false
+      FileUtils.cp "assets/help/bioc-views.html", "#{destdir}/BiocViews.html", {:preserve => false}
+      FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", {:preserve => false}
     end
   end
 
