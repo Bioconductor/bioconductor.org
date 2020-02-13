@@ -26,11 +26,12 @@ git push
 NOTE: Before reading the following instructions you may want to consider
 installing the web site as a Docker container.
 
-1. On your git repository for bioconductor.org, checkout the branch
-   called `dockerfile`. (You might have to fetch all the branches
-   first with `git fetch --all`)
+1. On your git repository for bioconductor.org (`git clone
+   https://github.com/bioconductor/bioconductor.org`), checkout the
+   branch called `dockerfile`. (You might have to fetch all the
+   branches first with `git fetch --all`)
 
-		git checkout -b dockerfile
+		git checkout -b dockerfile origin/dockerfile
 
 2. Make your changes on this branch, add content or edit things.
 
