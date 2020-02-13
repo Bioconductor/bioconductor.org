@@ -36,14 +36,14 @@ installing the web site as a Docker container.
 2. Make your changes on this branch, add content or edit things.
 
 3. Once the changes are made, you need use the docker image
-   `bioconductor/bioconductor_website:latest` and run the
+   `bioconductor/website:latest` and run the
    container. The container has the dependencies installed to `rake`
    the ruby code and host the website on your local machine at
    https://localhost:3000.
 
 		docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
 			-p 3000:3000 \
-			bioconductor/bioconductor_website:latest
+			bioconductor/website:latest
 
 4. Then to kill the process, you need to get the CONTAINER ID with,
 
