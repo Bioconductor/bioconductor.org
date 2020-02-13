@@ -9,7 +9,8 @@ RUN apt-get update && apt install -y \
 
 ## Install gems
 
-COPY Gemfile Gemfile.lock /tmp
+COPY Gemfile /tmp
+COPY Gemfile.lock /tmp
 WORKDIR /tmp
 ## RUN bundle lock
 RUN bundle install --jobs=4 && bundle clean --force
