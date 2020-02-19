@@ -21,7 +21,7 @@ GEM
     domain_name (0.5.20170404)
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
-    ffi (1.9.24)
+    ffi (1.12.2)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -171,4 +171,4 @@ DEPENDENCIES
   uuid
 
 BUNDLED WITH
-   1.16.1
+   1.17.2
