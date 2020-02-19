@@ -25,8 +25,52 @@ git push
 
 NOTE: Before reading the following instructions you may want to consider 
 installing the web site as a Docker container. See the instructions
-[here](https://registry.hub.docker.com/u/dtenenba/bioconductor.org/).
+below.
 
+1. On your git repository for bioconductor.org (`git clone
+   https://github.com/bioconductor/bioconductor.org`), checkout the
+   branch called `dockerfile`. (You might have to fetch all the
+   branches first with `git fetch --all`)
+
+		git checkout -b dockerfile origin/dockerfile
+
+2. Make your changes on this branch, add content or edit things.
+
+3. Once the changes are made, you need use the docker image
+   `bioconductor/website:latest` and run the
+   container. The container has the dependencies installed to `rake`
+   the ruby code and host the website on your local machine at
+   https://localhost:3000.
+
+		docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
+			-p 3000:3000 \
+			bioconductor/website:latest
+
+4. Then to kill the process, you need to get the CONTAINER ID with,
+
+		docker ps
+
+	and,
+
+		docker kill <CONTAINER ID>
+
+5. Before you run the docker image again with more changes, make sure
+   to clean the artifacts produced by the `rake` command, with
+
+		git clean -xdf
+
+	The output should look like,
+
+		bioconductor.org ❯❯❯ git clean -xdf
+			Removing assets/bioc-devel-version
+			Removing assets/bioc-version
+			Removing assets/config.yaml
+			Removing content/packages/
+			Removing output/
+			Removing tmp/
+
+6. Once you are confident of your changes, make a new branch and pull
+   request to our `master`.
 
 ### Ruby
 
