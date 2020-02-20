@@ -23,17 +23,18 @@ git push
 
 ## Required software
 
-NOTE: Before reading the following instructions you may want to consider
-installing the web site as a Docker container.
+NOTE: Before reading the following instructions you may want to
+consider installing the web site as a Docker container. See the
+instructions below.
 
-1. On your git repository for bioconductor.org (`git clone
-   https://github.com/bioconductor/bioconductor.org`), checkout the
-   branch called `dockerfile`. (You might have to fetch all the
-   branches first with `git fetch --all`)
+1. Make a fork and clone the git repository for bioconductor.org and
+   create a new branch to make your changes,
 
-		git checkout -b dockerfile origin/dockerfile
+		git clone https://github.com/<your fork>/bioconductor.org
 
-2. Make your changes on this branch, add content or edit things.
+		git checkout -b my_changes
+
+2. Make your changes on this branch, add content or edit content.
 
 3. Once the changes are made, you need use the docker image
    `bioconductor/website:latest` and run the
@@ -44,6 +45,13 @@ installing the web site as a Docker container.
 		docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
 			-p 3000:3000 \
 			bioconductor/website:latest
+
+	where,
+	
+		-p is mapping the container's port 3000 to the host machine's port 
+		
+		-v mounting a volume, the website (bioconductor.org) directory 
+		   from your local machine is being mounted on the docker container
 
 4. Then to kill the process, you need to get the CONTAINER ID with,
 
@@ -69,7 +77,8 @@ installing the web site as a Docker container.
 			Removing tmp/
 
 6. Once you are confident of your changes, make a new branch and pull
-   request to our `master`.
+   request to our `master`. The pull request should be made from your 
+   `my_changes` branch to the master branch of the website on github.
 
 ### Ruby
 
