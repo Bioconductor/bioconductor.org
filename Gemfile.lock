@@ -41,7 +41,9 @@ GEM
     httparty (0.16.0)
       multi_xml (>= 0.5.2)
     json (2.1.0)
-    kramdown (1.16.2)
+    kramdown (2.1.0)
+    kramdown-parser-gfm (1.1.0)
+      kramdown (~> 2.0)
     lazy_priority_queue (0.1.1)
     macaddr (1.7.1)
       systemu (~> 2.6.2)
@@ -150,6 +152,7 @@ DEPENDENCIES
   httparty
   json
   kramdown
+  kramdown-parser-gfm
   mechanize
   mime-types
   nanoc (~> 4.0)
