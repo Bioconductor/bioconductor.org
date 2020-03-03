@@ -12,7 +12,7 @@ to 36-48 hours. The build reports for
 package version and commit id that is being reflected for that build. The
 [landing pages for
 packages](http://bioconductor.org/packages/release/BiocViews/) [Example
-[Biocbase](http://bioconductor.org/packages/release/bioc/html/Biobase.html)]
+[Biobase](http://bioconductor.org/packages/release/bioc/html/Biobase.html)]
 will not be updated until the package installs/build/checks without ERROR; We do
 not propagate broken packages. This could account for a different version on the
 landing page than was pushed to _Bioconductor_.  Please also remember a package
