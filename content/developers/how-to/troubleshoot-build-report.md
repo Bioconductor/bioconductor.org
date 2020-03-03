@@ -1,5 +1,25 @@
 # Troubleshooting Build Report
 
+Please remember the daily builder pulls, installs, builds, and checks package
+only once per day.  This process starts around 4:45 PM (16:45) EST everyday.  Changes
+pushed to Bioconductor before 4:45 will be reflected in the following day's build
+report that is posted around 1:00 PM EST; The build report has a time
+stamp at the top of the page when it was generated. Changes after 4:45 PM EST
+will not be reflect until the day after tomorrow, therefore possibly taking up
+to 36-48 hours. The build reports for
+[devel](http://bioconductor.org/checkResults/devel/bioc-LATEST/) and
+[release](http://bioconductor.org/checkResults/release/bioc-LATEST/) show the
+package version and commit id that is being reflected for that build. The
+[landing pages for
+packages](http://bioconductor.org/packages/release/BiocViews/) [Example
+[Biocbase](http://bioconductor.org/packages/release/bioc/html/Biobase.html)]
+will not be updated until the package installs/build/checks without ERROR; We do
+not propagate broken packages. This could account for a different version on the
+landing page than was pushed to _Bioconductor_.  Please also remember a package
+ALWAYS needs a valid version bump to propagate to users. 
+
+
+
 Often common Error's will arise as R develops and matures or as Bioconductor
 packages are modified and advance. This document provides some guidance on Error's
 and potential solutions.
@@ -20,6 +40,7 @@ R switched from 3.x to 4.0 which generally means some significant changes.
 - [Conditional length > 1](#condLen)
 - [Scalar / Vector Logic](#scalarvec)
 - [Class ==  vs  is/inherits](#classEq)
+  - [Matrix is now Array](#matarr)
 - [Partial Argument Matching](#partMatch)
 - [Invalid UTF-8](#invalidUTF) 
 - [Dependency Issues](#dep311)
@@ -147,6 +168,31 @@ The sum up is `class( x ) == "foo"` should be avoided. It can be misleading if c
 better option is to use `is( x , "foo")` or `inherits(x, "foo")`.
 
 This is also advised in [Bioconductor best practices](https://bioconductor.org/developers/package-guidelines/#rcode) 
+
+<a name="matarr"></a>
+
+Starting in R 4.0, a matrix is considered an extension of array. 
+
+```
+> m = matrix()
+> class(m)
+[1] "matrix" "array" 
+```
+This change along with the previous section regarding conditional length results
+in many errors where users were doing something along the lines of  `if
+(class(m) == "matrix")`; This is an excellent example where the following is
+the appropriate change `if(is(m, "matrix"))` or `if(inherits(m, "matrix"))` or
+`if(is.matrix(m))`.   
+
+Another common ERROR now occurring because of this change is something similar
+to the following:
+
+```
+Error in vapply(experiments(object), class, character(1)) : 
+  values must be length 1,
+ but FUN(X[[4]]) result is length 2
+```
+
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
