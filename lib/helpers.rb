@@ -28,6 +28,7 @@ require 'open3'
 require 'open-uri'
 require 'socket'
 require 'cgi'
+require 'octokit'
 
 include REXML
 
@@ -849,7 +850,6 @@ def make_package_url_links(url)
     out
 end
 
-#FIXME  should gracefully fail (and allow flow to continue) if no internet access
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
     url_without_protocol = url.sub(/^http:/i, "")
@@ -864,11 +864,11 @@ def get_build_summary(version, repo)
     end
     doc = Nokogiri::HTML(html.read)
     doc.encoding = "ascii"
-    dateline = doc.css %Q(p[style="text-align: center;"])
-    return "" if dateline.children[1].nil?
-    dateline = dateline.children[1].text
+    dateline = doc.css("p.time_stamp")
+    return "" if dateline.children[0].nil?
+    dateline = dateline.children[0].text
     dateline.sub!(/^This page was generated on /, "")
-    dateline = dateline.split("(").first.strip
+    #dateline = dateline.split("(").first.strip
 
     rows = doc.css("table.mainrep tr.summary")
 
@@ -894,55 +894,6 @@ def get_build_summary(version, repo)
     ret
 end
 
-# FIXME gracefully fail w/o internet access
-def get_new_packages_in_tracker()
-    return "" unless File.exists?("tracker.yaml")
-    url = "https://tracker.bioconductor.org/"
-    cfg = YAML::load(File.open("tracker.yaml"))
-    @agent = Mechanize.new
-    begin
-      page = @agent.post(url, {
-          "__login_name" => cfg['username'],
-          "__login_password" => cfg['password'],
-          "__came_from" => url,
-          "@action" => "login"
-      })
-   rescue
-    return ""
-   end
-   rows = page.search("table.list tr")
-    nr = []
-    #nr.push rows.first
-    header = <<-"EOT"
-    <tr>
-  <th>ID</th>
-
-   <th>Activity</th>
-
-
-   <th>Title</th>
-   <th>Status</th>
-  </tr>
-<tr>
-EOT
-    nr.push header
-    for i in 2..12
-      t = rows[i].to_s
-      t.gsub!(/<td>[^<]+<\/td>\s+<td>[^<]+<\/td>\s+<\/tr>/, "</tr>")
-
-        nr.push t
-    end
-    s = "<table>\n"
-    nr.each do |i|
-        #puts i.to_s
-        html = i.to_s.sub(%Q(a href="), # i.to_html.sub
-                %Q(a href="https://tracker.bioconductor.org/))
-        s += html
-    end
-    s += "</table></body>"
-    s
-end
-
 def get_mailing_list_link(devel=false)
     if devel
         list = "bioc-devel"
@@ -955,94 +906,8 @@ def get_mailing_list_link(devel=false)
     "https://stat.ethz.ch/pipermail/#{list}/#{year}-#{month}/thread.html"
 end
 
-def get_search_terms()
-    return "" unless File.exists? "analytics_py/client_secrets.json"
-    res = nil
-    FileUtils.mkdir_p "output/dashboard"
-
-    Dir.chdir("analytics_py") do
-        res = `python search_terms.py > ../output/dashboard/search_terms.tsv`
-    end
-    html=<<-"EOT"
-<meta charset="utf-8">
-<style>
-
-.bar {
-  fill: steelblue;
-}
-
-.bar:hover {
-  fill: brown;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<div id="search_terms_chart"></div>
-<script src="/js/search_terms.js"></script>
-    EOT
-    html
-end
-
-def get_hits()
-    return "" if true # bypass badness
-    return "" unless File.exists? "analytics_py/client_secrets.json"
-    FileUtils.mkdir_p "output/dashboard"
-    Dir.chdir("analytics_py") do
-        res = `python hits.py > ../output/dashboard/hits.tsv`
-    end
-    html=<<-"EOT"
-     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-     <script type="text/javascript" src="/js/hits.js"></script>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-
-    EOT
-    html
-end
-
 def get_current_time
   Time.now.utc.iso8601
-end
-
-def recent_spb_builds
-    begin
-      HTTParty.get("http://staging.bioconductor.org:8000/recent_builds").body
-    rescue Exception => ex
-      "Can't connect to staging.bioconductor.org, not building dashboard"
-    end
-end
-
-def get_last_svn_commit_time()
-
-  begin
-    ## FIXME: coming from master
-    xml = HTTParty.get("http://master.bioconductor.org/rss/gitlog.rss").body
-    doc = Document.new xml
-    items = []
-    doc.elements.each("rss/channel/item") {|i| items.push i}
-    date = nil
-    item = items.first
-    item.elements.each("pubDate") {|i| date = i.text}
-    rdate = DateTime.strptime(date, "%a, %e %b %Y %H:%M:%S %Z").iso8601
-    %Q(<abbr class="timeago" title="#{rdate}">#{rdate}</abbr>)
-  rescue Exception => ex
-    "Can't read / no records in rss feed, not report last svn commit time"
-  end
 end
 
 def get_mac_packs(package, item)
@@ -1763,4 +1628,121 @@ def get_archive_url(package, text=false)
   else
     url
   end
+end
+
+def get_last_git_commits(release=true)
+  if release
+    url = "https://master.bioconductor.org/developers/rss-feeds/gitlog.release.xml"
+  else
+    url = "https://master.bioconductor.org/developers/rss-feeds/gitlog.xml"
+  end
+  begin
+    xml = HTTParty.get(url).parsed_response["rss"]["channel"]["item"]
+    tbl_str = "<table>\n\n"
+    uni_pkg = []
+    dx = 0
+    while uni_pkg.length < 20 do
+      item = xml[dx]
+      if not uni_pkg.include?(item["title"])
+        uni_pkg.push(item["title"])
+        line = "<tr><td><a href="+item["link"]+">"+item["title"]+"</a></td><td>"+item["pubDate"]+"</td></tr>"
+        tbl_str += line
+      end
+      dx = dx + 1
+    end
+    tbl_str += "</table>"
+    tbl_str
+  rescue Exception => ex
+    "Can't read / no records in rss feed, not report last git commit time"
+  end
+
+end
+
+def recent_spb_builds
+    begin
+      HTTParty.get("http://staging.bioconductor.org:8000/recent_builds").body
+    rescue Exception => ex
+      "Can't connect to staging.bioconductor.org, not building dashboard"
+    end
+end
+
+def recent_spb_submissions
+  client = Octokit::Client.new(:access_token => ENV["GITHUB_TOKEN"])
+  issues = client.issues 'Bioconductor/Contributions'
+  issue_names = []
+  issue_url = []
+  issues.each do |item|
+    issue_names.push(item["title"])
+    issue_url.push(item["html_url"])
+  end
+  dx = 0
+  max_vl = [issue_names.length, 20].min
+  tbl_str = "<table>\n"
+  while dx < max_vl do
+    line = "<tr><td><a href="+issue_url[dx]+">"+issue_names[dx]+"</a></td></tr>\n"
+    tbl_str += line
+    dx = dx + 1
+  end
+  tbl_str += "</table>"
+  tbl_str
+end
+
+def get_search_terms()
+    return "" unless File.exists? "analytics_py/client_secrets.json"
+    res = nil
+    FileUtils.mkdir_p "output/dashboard"
+
+    Dir.chdir("analytics_py") do
+        res = `python search_terms.py > ../output/dashboard/search_terms.tsv`
+    end
+    html=<<-"EOT"
+<meta charset="utf-8">
+<style>
+
+.bar {
+  fill: steelblue;
+}
+
+.bar:hover {
+  fill: brown;
+}
+
+.axis {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+</style>
+
+<script src="http://d3js.org/d3.v3.min.js"></script>
+<div id="search_terms_chart"></div>
+<script src="/js/search_terms.js"></script>
+    EOT
+    html
+end
+
+def get_hits()
+    return "" if true # bypass badness
+    return "" unless File.exists? "analytics_py/client_secrets.json"
+    FileUtils.mkdir_p "output/dashboard"
+    Dir.chdir("analytics_py") do
+        res = `python hits.py > ../output/dashboard/hits.tsv`
+    end
+    html=<<-"EOT"
+     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+     <script type="text/javascript" src="/js/hits.js"></script>
+    <div id="chart_div" style="width: 900px; height: 500px;"></div>
+
+    EOT
+    html
 end

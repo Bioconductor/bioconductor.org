@@ -13,8 +13,11 @@
 
 
 
-  <div>
-    <p>Last SVN commit to Rpacks devel was  <%= get_last_svn_commit_time() %>.</p>
+  <div  style="float:left;width:50%;">
+    <p>Last 20 commit to Bioconductor release:  <%= get_last_git_commits(release=true) %>.</p>
+  </div>
+  <div  style="float:right;width:50%;">
+    <p>Last 20 commit to Bioconductor devel:  <%= get_last_git_commits(release=false) %>.</p>
   </div>
 
 
@@ -67,6 +70,12 @@
       </div>
 
        <div>
+            <p><a href="/checkResults/release/workflows-LATEST/">Release, Workflows</a></p>
+            <%= get_build_summary("release", "workflows") %>
+            <p>&nbsp;</p>
+      </div>
+
+       <div>
             <p><a href="/checkResults/devel/bioc-LATEST/">Devel, Software</a></p>
             <%= get_build_summary("devel", "bioc") %>
             <p>&nbsp;</p>
@@ -75,8 +84,14 @@
        <div>
             <p><a href="/checkResults/devel/data-experiment-LATEST/">Devel, Experiment Data</a></p>
             <%= get_build_summary("devel", "data-experiment") %>
+            <p>&nbsp;</p>
       </div>
 
+      <div>
+            <p><a href="/checkResults/devel/workflows-LATEST/">Devel, Workflows</a></p>
+            <%= get_build_summary("devel", "workflows") %>
+            <p>&nbsp;</p>
+      </div>
 
     </div>
 
@@ -84,14 +99,16 @@
 
 
   <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://tracker.bioconductor.org/">New Packages</a></h2>
-    <%=get_new_packages_in_tracker()%>
+      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>New Packages</h2>
   </div>
 
 
-  <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>
-        Single Package Builder</h2>
+   <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://github.com/Bioconductor/Contributions/issues">Single Package Builder</a></h2>
+   <div style="float:left;width:50%;">
+    Recent Submissions <br>
+    <%=recent_spb_submissions()%>
+  </div>
+   <div style="float:right;width:50%;">
     <%=recent_spb_builds()%>
   </div>
 
@@ -105,7 +122,6 @@
 
   <div style="float:right;width:50%;">
     <div style="padding:0 0 0 12px">
-
 
 <a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
