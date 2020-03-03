@@ -199,16 +199,6 @@ mirrors:
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
- - Brazil/Latin America:
-   - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
-     institution_url: http://rge.fmrp.usp.br/
-     contact: Houtan Noushmehr
-     contact_email: houtan@usp.br
-     mirror_url: http://bioconductor.fmrp.usp.br/bioc/
-     https_mirror_url: https://bioconductor.fmrp.usp.br/bioc/
-     rsync: secure_mirror_from_master
-     city: Ribeirão Preto
-     country_code: br
  - Germany:
    - institution: Department of Statistics, TU Dortmund
      institution_url: http://www.statistik.tu-dortmund.de/
@@ -238,36 +228,6 @@ mirrors:
      rsync: secure_mirror_from_master
      country_code: jp
      city: Wako
- - China:
-   - institution: University of Science and Technology of China
-     institution_url: http://en.ustc.edu.cn/
-     contact: Mirror Maintainer
-     contact_email: mirrors@ustc.edu.cn
-     mirror_url: http://mirrors.ustc.edu.cn/bioc/
-     https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
-     rsync: secure_mirror_from_master
-     country_code: cn
-     city: Anhui
- - Australia:
-   - institution: Australia's Academic and Research Network
-     institution_url: http://www.aarnet.edu.au/
-     contact: Alex Dodson
-     contact_email: alex.dodson@aarnet.edu.au
-     mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
-     https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor/
-     rsync: secure_mirror_from_master
-     country_code: au
-     city: Sydney
- - CRAN ASIA (Korea, Japan and Singapore):
-   - institution: Personnel Psychology Laboratory, Kwangwoon University 
-     institution_url: https://www.kw.ac.kr/en/index.do 
-     contact: Seongho Bae 
-     contact_email: admin@cran.asia 
-     mirror_url: http://cran.asia/ 
-     https_mirror_url: https://cran.asia/
-     rsync: secure_mirror_from_master
-     country_code: kr 
-     city: Seoul 
  - China:
    - institution: TUNA Mirror Site, Tsinghua University 
      institution_url: mirrors.tuna.tsinghua.edu.cn
