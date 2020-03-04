@@ -8,7 +8,7 @@ You can setup by cloning this repository and running
 git clone https://github.com/Bioconductor/bioconductor.org
 ```
 
-Then after committing code locally run the following to commit the changes SVN
+Then after committing code locally run the following to commit the changes
 and push the commits back to GitHub.
 
 ```bash
@@ -318,7 +318,7 @@ You will use a helper scripts `./scripts/add_event` to add event
 to the site using the following steps:
 
 0. Always run `./scripts/add_event` from the top-level of your
-   website Subversion working copy
+   website working copy
 1. Run `./scripts/add_event EVENT_NAME`
    This will create an EVENT_NAME.yaml file in the
    `./content/help/events/` directory
@@ -334,15 +334,15 @@ to the site using the following steps:
        url: https://secure.bioconductor.org/EVENT_NAME
 
 3. Edit the `EVENT_NAME.yaml` file 
-4. Use svn to commit changes and additions by `add_event`
+4. Use git to commit changes and additions by `add_event`
  
 ## How to add course material
 
 You will use a helper script `./scripts/course_mgr` to add course
 material to the site. PDF files for labs and presentations as well
-as course-specific packages and data are *not* stored in svn. The
+as course-specific packages and data are *not* stored in git. The
 index pages that describe the course and provide links to the
-materials *are* stored in svn. The `course_mgr` script will help
+materials *are* stored in git. The `course_mgr` script will help
 with index file creation and data transfer.
 
 ### `course_mgr` workflow and important tips
@@ -351,12 +351,12 @@ To add a course, you will typically perform the following steps
 (each described in detail below):
 
 0. Always run `./scripts/course_mgr` from the top-level of your
-   website Subversion working copy.
+   website working copy.
 1. Run `./scripts/course_mgr --create COURSE_NAME`
 2. Run `./scripts/course_mgr --index COURSE_NAME`
 3. Build and preview site
 4. Run `./scripts/course_mgr --push COURSE_NAME`
-5. Use svn to commit changes and additions made by `course_mgr`
+5. Use git to commit changes and additions made by `course_mgr`
 
 ### Using `course_mgr`
 
@@ -366,7 +366,7 @@ To add a course, you will typically perform the following steps
 
    This will create a `seattle-intro/` directory in the top-level
    of your website working copy -- do not add this directory or any
-   files within it to svn. Inside will be a `course_config.yaml`
+   files within it to git. Inside will be a `course_config.yaml`
    file that will look like this:
 
      title:
@@ -419,17 +419,17 @@ To add a course, you will typically perform the following steps
    preview after compiling the site.
 
 4. If everything looks good, you can sync the data files to the web
-   server (note that we do not put these files in svn because large
-   data files are not appropriate for svn and they are not likely to
+   server (note that we do not put these files in git because large
+   data files are not appropriate for git and they are not likely to
    change):
 
        ./scripts/course_mgr --push 2010/seattle-intro
        SYNC:
         src: ./seattle-intro
         dst: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
-       NEXT STEPS: svn add/checkin changes in contents
+       NEXT STEPS: git add/commit changes in contents
 
-5. Finally, "svn add" the new course index html and yaml files that were generated in the
+5. Finally, "git add" the new course index html and yaml files that were generated in the
    content directory and commit.
 
 ### Modifying an existing course
@@ -444,7 +444,7 @@ You can edit the pages for an existing course by editing the files in
 
     If you have changed the .md or .yaml files, do the following:
       cp course_to_modify/course_to_modify.* content/help/course_materials/2010
-      svn commit -m "made changes" content/help/course-materials/2010/course_to_modify
+      git commit -m "made changes" content/help/course-materials/2010/course_to_modify
 
 
 
@@ -468,28 +468,10 @@ show line numbers) fix these in a text editor before
 committing. Usually the culprit is a non-ascii
 hyphen that can be replaced with a regular hyphen.
 
-## http://bioconductor-test.fhcrc.org test site
-
-We run an inside FHCRC only test instance of the Bioconductor website
-at the above URL. The site is rebuilt every ten minutes. Here's an
-overview of the test site configuration:
-
-* bioconductor-test.fhcrc.org is a DNS CNAME for merlot2.fhcrc.org.
-
-* The site is served by the system installed Apache2 instance on
-  merlot2.
-
-* The scheduled svn checkout and rebuild is handled by the biocadmin
-  user's crontab.
-
-* biocadmin uses files under ~/bioc-test-web
-
-* Apache serves the site from /loc/www/bioconductor-test.fhcrc.org
-
 ### Staging site scheduled update
 
-The biocadmin user's crontab on merlot2 is used to schedule site
-updates every ten minutes. Below are some details on how the test
+The biocadmin user's crontab on staging.bioconductor.org is used to schedule site
+updates every twenty minutes. Below are some details on how the test
 site is configured.
 
 The site source is located at
@@ -500,35 +482,44 @@ Rake task deploys site content to the staging server root on staging.
       dst = '/loc/www/bioconductor.org'
       site_config = YAML.load_file("./config.yaml")
       output_dir = site_config["output_dir"]
-      system "rsync -gvprt --partial --exclude='.svn' #{output_dir}/ #{dst}"
+      system "rsync -gvprt --partial --exclude='.git' #{output_dir}/ #{dst}"
     end
 
-An `update_site` shell script updates from svn, builds the site,
+An `update_site` shell script updates from git, builds the site,
 and deploys it using Rake.
 
     #!/bin/bash
-    svn update && rake real_clean default deploy_staging
+    cd bioconductor.org && \
+      date && \
+      git pull && \
+      rake real_clean default deploy_staging deploy_production  && \
+      date
 
-We keep track of the output of in a local `cron.log` file and handle
+We keep track of the output of in a local `log/update_site.log` file and handle
 log rotation using `logrotate`. For this we need a config file:
 
     # logrotate.conf
-    /home/biocadmin/bioc-test-web/cron.log {
-      rotate 5
-      compress
+    /home/biocadmin/bioc-test-web/log/update_site.log {
       daily
-    }
+      copytruncate
+      rotate 30
+      dateext
+      compress
+      missingok
+      su biocadmin biocadmin
+     }
 
 The following crontab entries are used to schedule site update,
 deployment, and log rotation (biocadmin user):
 
     PATH=/usr/bin:/bin:/usr/sbin
-    MAILTO=devteam-bioc@fhcrc.org
+    MAILTO=lori.shepherd@roswellpark.org
 
     # bioconductor-test.fhcrc.org website publishing
-    ,*/10 * * * *  cd $HOME/bioc-test-web;./update_site >> cron.log 2>&1
-    0    0 * * *  logrotate -s $HOME/bioc-test-web/logrotate.state $HOME/bioc-test-web/logrotate.conf
+    */20 * * * *  cd $HOME/bioc-test-web;./update_site >> log/update_site.log 2>&1
+    59 23 * * * /usr/sbin/logrotate -f -s /home/biocadmin/bioc-test-web/logrotateState /home/biocadmin/bioc-test-web/logrotateFiles
 
+ 
 ### Staging site SuSE Apache Configuration
 
 A good resource is available [http://en.opensuse.org/Apache_Quickstart_HOWTO](here).
@@ -703,7 +694,7 @@ balancing would be a good next step.
 
 Currently the redirects are defined using Apache's mod_rewrite in a
 top-level `.htaccess` file. This has the advantage of allowing easy
-revision of the rewrite rules via svn that are picked up by Apache on
+revision of the rewrite rules via git that are picked up by Apache on
 site update. The downside is that using .htaccess files is suboptimal
 in terms of performance. So before the site is launched, consider the
 following changes:
@@ -806,7 +797,7 @@ that to an object and then renders the search response page.
 Note that you typically do not want to do this by hand as it is handled
 by cron jobs (see below). 
 
-On merlot2 (ssh to merlot2):
+On staging.bioconductor.org (ssh to staging.bioconductor.org):
 
     cd ~/biocadmin/bioc-test-web/bioconductor.org
     rake search_index
@@ -821,7 +812,7 @@ What this command does:
   (index.sh) which does the actual indexing, which is accomplished by using
   curl to post files to the SOLR web app.
 
-To re-index files on krait, ssh to merlot2 (not krait) and do this:
+To re-index files on master, ssh to staging (not master) and do this:
  
     cd ~/biocadmin/bioc-test-web/bioconductor.org
     rake index_production
@@ -829,17 +820,16 @@ To re-index files on krait, ssh to merlot2 (not krait) and do this:
 
 #### Cron jobs for rebuilding the search index/why it is decoupled from site update
 
-Doing "crontab l" on merlot2 shows how the index us updated 
-on both merlot2 and krait. Here are the relevant lines:
+Doing "crontab -l" on staging shows how the index us updated on master. Here are the relevant lines:
 
-    30 */1 * * * cd $HOME/bioc-test-web; ./index_staging.sh > $HOME/bioc-test-web/index_staging.log 2>&1
-    30 */4 * * * cd $HOME/bioc-test-web; rake index_production > $HOME/bioc-test-web/production_index.log 2>&1
+    # create search index:
+    30 */4 * * * cd $HOME/bioc-test-web/bioconductor.org && rake index_production > $HOME/bioc-test-web/production_index.log 2>&1
 
 Notice that the search indexing process is decoupled from the site building process
-(which takes place every 10 minutes). Site indexing can be a time-consuming 
-process (especially on krait) and the site rebuilding should be quick. So 
-the search indexing takes place every hour on merlot2 and every four hours on
-krait (where there are many more files to be indexed which originate from the build system).
+(which takes place every 20 minutes). Site indexing can be a time-consuming 
+process (especially on master) and the site rebuilding should be quick. So 
+the search indexing takes place every hour on staging and every four hours on
+master (where there are many more files to be indexed which originate from the build system).
 
 
 #### How to get search working on your own development machine
@@ -871,11 +861,10 @@ To clone it, first ensure appropriate access rights and then run:
 
 #### Step 1: rake get_json
 
-This is run by a cron job on merlot2 every day at 2PM (presumably
-after the build system has finished and copied all its output to
-krait). Here is the cron job:
+This is run by a cron job on staging every day at between 3-8 PM EST (presumably
+after the build system has finished and copied all its output to master). Here is the cron job:
 
-    0 14 * * * cd $HOME/bioc-test-web; rake get_json > $HOME/bioc-test-web/get_json.log 2>&1
+    */15 15-20 * * * cd $HOME/bioc-test-web; ./get_json.sh > $HOME/bioc-test-web/get_json.log 2>&1
 
 This Rake target runs some R code which calls code in the BiocViews
 package, extracting /packagesdata in JSON format and putting it in
@@ -915,22 +904,16 @@ Symptom: Commits you made are not going through, and/or
 the dashboard (http://bioconductor.org/dashboard/) says
 that the site has not been updated in over 20 minutes.
 It likely means that an error was introduced in a recent
-commit. (make sure you haven't forgotten to `svn add` any files).
+commit. (make sure you haven't forgotten to `git add` any files).
 
-Solution: ssh to biocadmin@merlot2 (ask Dan or Carl if 
+Solution: ssh to biocadmin@staging.bioconductor.org (ask Lori if 
 you don't have permission to do so). Change directories:
 
     cd ~/bioc-test-web
 
 Look at the 2015 Oct 29 10:22:19 AM
 then its contents are relevant. You can also look at the last
-few lines of `./cron.log`. 
-
-Note that there is a cron job that copies BiocInstaller/inst/scripts/biocLite.R
-from Rpacks (trunk) to ~/bioc-test-web/bioconductor.org/assets every 3
-minutes (then we rely on the normal rake tasks that run every 10 minutes
-to propagate this to the web site (krait)). So if there is a problem
-building the website this file will also fail to propagate.
+few lines of `./log/update_site.log`. 
 
 # Updating Ruby or Gems
 
