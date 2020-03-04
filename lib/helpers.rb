@@ -506,35 +506,6 @@ def get_updated_breadcrumbs(old_breadcrumbs, item)
   crumbs
 end
 
-def recent_packages()
-  begin
-    xml = HTTParty.get("http://master.bioconductor.org/rss/new_packages.rss").body
-    doc = Document.new xml
-    items = []
-    doc.elements.each("rss/channel/item") {|i| items.push i}
-    ret = []
-    for item in items#.reverse
-      h = {}
-      title = nil
-      item.elements.each("title") {|i|title = i.text}
-      description  = nil
-      item.elements.each("description") {|i|description = i.text}
-      title_segs = title.split(" ")
-      title_segs.shift # get rid of url
-      pkg = title_segs.shift # get pkg name
-      pkgtitle = title_segs.join " "
-      desc = description.split("<br/").first
-      h[:package] = pkg
-      h[:title] = pkgtitle
-      h[:description] = desc
-      ret.push h
-    end
-    return ret
-  rescue Exception => ex
-    return []
-  end
-end
-
 
 def get_git_commits()
    begin
@@ -1187,55 +1158,6 @@ def pad(input)
     input.to_s.rjust(2, '0')
 end
 
-def download_support_usage_data(year, month, day, overwrite=false)
-    # day should be either a number or "last"
-    suffix = nil
-    if day == "last"
-        suffix = "last"
-        day = pad(Date.civil(year, month, -1).mday)
-    else
-        suffix = pad(day)
-    end
-    url = "https://support.bioconductor.org/api/stats/date/#{pad(year)}/#{pad(month)}/#{pad(day)}/"
-    cachedir = File.join("tmp", "usage_stats")
-    FileUtils.mkdir_p cachedir
-    filename = cachedir + File::SEPARATOR + year.to_s + "_" + pad(month) + \
-        "_" + suffix + ".json"
-    #filename = "#{cachedir}/#{year}_#{pad(month)}_#{suffix}.json"
-    if overwrite or (!File.exists? filename)
-        response = HTTParty.get(url, :verify => false)
-        # "#{year}/#{month}/#{day}"
-        f = File.open(filename, "w")
-        f.write response.body
-        f.close
-    end
-end
-
-def cache_support_usage_info()
-    now = DateTime.now
-
-    download_support_usage_data(now.year, now.mon, 1)
-    download_support_usage_data(now.year, now.mon, now.mday)
-
-    for x in 1..12
-        thepast = now << x # subtract x months, unintuitively
-        download_support_usage_data(thepast.year, thepast.mon, 1)
-        download_support_usage_data(thepast.year, thepast.mon, "last")
-    end
-    # also need to download first & last of year for each year
-    # starting with last (complete) year, going back to 2002.
-    # probably should tweak download_support_usage_data()
-    # to support a "year" mode
-    lastyear = now.year - 1
-    firstyear = 2002
-    rng = lastyear..firstyear
-    (rng.first).downto(rng.last).each do |year|
-        download_support_usage_data(year, 1, 1)
-        download_support_usage_data(year, 12, 31)
-    end
-    nil
-end
-
 def iterate_month_mode(now, code)
     res = []
     month_mode  = true
@@ -1243,105 +1165,6 @@ def iterate_month_mode(now, code)
         res << code.call(offset, month_mode)
     end
     res
-end
-
-def iterate_year_mode(now, code)
-    res = []
-    month_mode = false
-    lastyear = now.year - 1
-    firstyear = 2002
-    rng = lastyear..firstyear
-    (rng.first).downto(rng.last).each do |year|
-        res << code.call(year, month_mode)
-    end
-    res
-end
-
-def cache_google_analytics_info()
-    now = DateTime.now
-    cachedir = File.join("tmp", "usage_stats")
-
-    block = Proc.new do |item, month_mode|
-        if month_mode
-            timethen = now << item
-            start_date = "#{timethen.year}-#{pad(timethen.mon)}-01"
-            end_date = "#{timethen.year}-#{pad(timethen.mon)}-#{pad(Date.civil(timethen.year, timethen.mon, -1).mday)}"
-            outfile = File.join(cachedir, "ga_#{timethen.year}_#{pad(timethen.mon)}.txt")
-        else
-            timethen = DateTime.new(item, 1, 1)
-            start_date = "#{timethen.year}-01-01"
-            end_date = "#{timethen.year}-12-31"
-            outfile = File.join(cachedir, "ga_#{timethen.year}.txt")
-        end
-        unless File.exists? outfile
-            Dir.chdir "analytics_py" do
-                Open3.popen3("python users.py #{start_date} #{end_date}") do |stdin, stdout, stderr, wait_thr|
-                    f = File.open(File.join("..", outfile), "w+")
-                    f.write(stdout.read.chomp)
-                    f.close
-                end
-            end
-        end
-    end
-
-    iterate_month_mode(now, block)
-    iterate_year_mode(now, block)
-
-end
-
-
-def get_stats()
-    return [] if true # while things are broken
-    return [] unless File.exists?(File.join("analytics_py", "client_secrets.json"))
-    cache_support_usage_info()
-    cache_google_analytics_info()
-    # start with current month and last 12 months before that
-    now = DateTime.now
-    cachedir = File.join("tmp", "usage_stats")
-    hsh = {:label => nil, :toplevel => nil, :questions => nil,
-        :answers => nil, :comments => nil, :new_visitors => nil, :returning_visitors => nil}
-
-    block = Proc.new do |item, month_mode|
-        if (month_mode)
-            timethen = now << item
-            label = "#{timethen.strftime("%b")} #{timethen.year}"
-            lastday = "last"
-            month = pad(timethen.mon)
-            file1 = cachedir + File::SEPARATOR + timethen.year.to_s + "_" +
-               month + "_01.json"
-            file2 = cachedir + File::SEPARATOR + timethen.year.to_s + "_" +
-               month +    "_" +  lastday + ".json"
-            gafile = cachedir + File::SEPARATOR + "ga_" + timethen.year.to_s + "_" +
-                month + ".txt"
-        else
-            timethen = DateTime.new(item, 1, 1)
-            label = timethen.year.to_s
-            month = pad(timethen.mon)
-            file1 = cachedir + File::SEPARATOR + timethen.year.to_s + "_01_01.json"
-            file2 = cachedir + File::SEPARATOR + timethen.year.to_s + "_12_31.json"
-            gafile = cachedir + File::SEPARATOR + "ga_" + timethen.year.to_s + ".txt"
-        end
-        obj1 = JSON.parse(IO.read(file1))
-        obj2 = JSON.parse(IO.read(file2))
-        FileUtils.rm file1 if obj1 == {}
-        FileUtils.rm file2 if obj2 == {}
-        row = hsh.dup
-        row[:label] =  label
-        for type in ["toplevel", "questions", "answers", "comments"]
-           row[type.to_sym] = (obj2[type]) - obj1[type]
-        end
-        row[:new_visitors], row[:returning_visitors] = File.readlines(gafile).first.split("\t")
-        row[:new_visitors] = row[:new_visitors].to_i
-        row[:returning_visitors] = row[:returning_visitors].to_i
-        row
-    end
-
-    results = []
-
-    results += iterate_month_mode(now, block)
-    results += iterate_year_mode(now, block)
-
-    results
 end
 
 def get_pubmed_cache_date
@@ -1448,25 +1271,6 @@ def get_build_results(package)
   version = h[package[:bioc_version_num]]
   res = {}
   res[:report_url] = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
-  # colors = {"OK" => "green", "WARNINGS" => "yellow",
-  #   "ERROR" => "red", "TIMEOUT" => "AA0088"}
-  # db_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
-  # data = File.readlines(db_file_name)
-  # relevant = data.find_all{|i| i =~ /^#{package[:Package]}#/}
-  # statuses = relevant.map {|i| i.split(' ').last.strip}
-  # statuses = statuses.reject{|i| i == "NotNeeded"}
-  # statuses = statuses.uniq
-  # if statuses.length == 1 and statuses.first == "OK"
-  #   final_status = "OK"
-  # elsif statuses.include? "ERROR"
-  #   final_status = "ERROR"
-  # elsif statuses.include? "TIMEOUT"
-  #   final_status = "TIMEOUT"
-  # elsif statuses.include? "WARNINGS"
-  #   final_status = "WARNINGS"
-  # end
-  # res[:status] = final_status
-  # res[:color] = colors[final_status]
   res[:repo] = repo
   res [:version] = version
   res
@@ -1687,62 +1491,70 @@ def recent_spb_submissions
   tbl_str
 end
 
-def get_search_terms()
-    return "" unless File.exists? "analytics_py/client_secrets.json"
-    res = nil
-    FileUtils.mkdir_p "output/dashboard"
+def latest_packages(repo)
 
-    Dir.chdir("analytics_py") do
-        res = `python search_terms.py > ../output/dashboard/search_terms.tsv`
+  repo_text = repo
+  if (repo_text == "bioc")
+    repo_text = "software"
+  end
+  base_url = repo.sub("-", "/")
+
+  path = Dir.pwd
+  manifest_path = "#{path}/../manifest/#{repo_text}.txt"
+  manifest = File.open("#{manifest_path}").read
+
+  lines = manifest.split("\n").drop(1) - [""]
+  pkgs = lines.map {|item| item.gsub("Package: ", "")}
+  pkgs.reverse!
+
+  trunc_pkgs = pkgs[0..19]
+  
+  tbl_str = "<table>\n"
+  trunc_pkgs.each do |pkg|
+    short_url = "https://bioconductor.org/packages/#{pkg}/"
+    long_url = "http://bioconductor.org/packages/devel/#{base_url}/html/#{pkg}.html"
+
+    url = URI.parse(long_url)
+    req = Net::HTTP.new(url.host, url.port)
+    res = req.request_head(url.path)
+    if res.code == "200"
+        line = "<tr><td><a href= #{short_url} > #{pkg} </a></td></tr>\n"
+    else
+        line = "<tr><td> #{pkg} </td></tr>\n"
     end
-    html=<<-"EOT"
-<meta charset="utf-8">
-<style>
-
-.bar {
-  fill: steelblue;
-}
-
-.bar:hover {
-  fill: brown;
-}
-
-.axis {
-  font: 10px sans-serif;
-}
-
-.axis path,
-.axis line {
-  fill: none;
-  stroke: #000;
-  shape-rendering: crispEdges;
-}
-
-.x.axis path {
-  display: none;
-}
-
-</style>
-
-<script src="http://d3js.org/d3.v3.min.js"></script>
-<div id="search_terms_chart"></div>
-<script src="/js/search_terms.js"></script>
-    EOT
-    html
+    tbl_str += line
+  end
+  tbl_str += "</table>"
+  tbl_str
 end
 
-def get_hits()
-    return "" if true # bypass badness
-    return "" unless File.exists? "analytics_py/client_secrets.json"
-    FileUtils.mkdir_p "output/dashboard"
-    Dir.chdir("analytics_py") do
-        res = `python hits.py > ../output/dashboard/hits.tsv`
+# this is an older function that is broken
+# but needed currently to rake website
+def recent_packages()
+  begin
+    xml = HTTParty.get("http://master.bioconductor.org/rss/new_packages.rss").body
+    doc = Document.new xml
+    items = []
+    doc.elements.each("rss/channel/item") {|i| items.push i}
+    ret = []
+    for item in items#.reverse
+      h = {}
+      title = nil
+      item.elements.each("title") {|i|title = i.text}
+      description  = nil
+      item.elements.each("description") {|i|description = i.text}
+      title_segs = title.split(" ")
+      title_segs.shift # get rid of url
+      pkg = title_segs.shift # get pkg name
+      pkgtitle = title_segs.join " "
+      desc = description.split("<br/").first
+      h[:package] = pkg
+      h[:title] = pkgtitle
+      h[:description] = desc
+      ret.push h
     end
-    html=<<-"EOT"
-     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-     <script type="text/javascript" src="/js/hits.js"></script>
-    <div id="chart_div" style="width: 900px; height: 500px;"></div>
-
-    EOT
-    html
+    return ret
+  rescue Exception => ex
+    return []
+  end
 end

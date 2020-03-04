@@ -72,8 +72,8 @@ def truncate(input)
     url = input.split(" ").first
     txt = input.sub(%r(^#{url}), "")
     tweet_length = (22 + txt.length)
-    return input if tweet_length <= 140
-    ok = 140 - 23
+    return input if tweet_length <= 280
+    ok = 280 - 23
     url + txt[0...ok]
 end
 
