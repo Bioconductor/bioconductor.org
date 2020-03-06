@@ -51,13 +51,18 @@
       <br>Lori Ann Shepherd
     </td>
     <td width="33%">
-      <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
-           width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
-      <br>Nitesh Turaga
+      <img src="/images/coreTeamPic/MikeSmith.jpg"
+           width="100%" alt="Mike Smith" title="Mike Smith"/>
+      <br>Mike Smith
     </td>
   </tr>
 
   <tr>
+    <td width="33%">
+      <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
+           width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
+      <br>Nitesh Turaga
+    </td>
     <td width="33%">
       <img src="/images/coreTeamPic/DanielVanTwisk.jpeg"
            width="100%" alt="Daniel van Twisk" title="Daniel van Twisk"/>
