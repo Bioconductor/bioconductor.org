@@ -87,7 +87,7 @@ On ubuntu, before proceeding, make sure the `libsqlite3-dev` package is
 installed (`sudo apt-get install libsqlite3-dev`).
 
 The following instructions are adapted from the 
-[rbenv page](https://github.com/sstephenson/rbenv). It's worth reading this
+[rbenv page](https://github.com/rbenv/rbenv). It's worth reading this
 to understand how rbenv works.
 
 *Important note*: Never use `sudo` when working with a ruby that has been
@@ -102,7 +102,7 @@ you should never need to become root or fiddle with permissions.
 1. Check out rbenv into `~/.rbenv`.
 
     ~~~ sh
-    $ git clone https://github.com/sstephenson/rbenv.git ~/.rbenv
+    $ git clone https://github.com/rbenv/rbenv.git ~/.rbenv
     ~~~
 
 2. Add `~/.rbenv/bin` to your `$PATH` for access to the `rbenv`
@@ -133,38 +133,32 @@ you should never need to become root or fiddle with permissions.
     ~~~
 
 5.  Install 
-[ruby-build](https://github.com/sstephenson/ruby-build),
+[ruby-build](https://github.com/rbenv/ruby-build),
 which provides the `rbenv install` command that simplifies the process of
 installing new Ruby versions:
 
     ~~~ sh
-    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
     ~~~
 
 Now you need to install ruby. Go to the 
 [Ruby Downloads Page](https://www.ruby-lang.org/en/downloads/)
-to find out what the current stable version is. As of 3/30/2014 it is
-2.1.1 so I will use that in further examples, but substitute the current
-stable version for 2.1.1 in what follows.
+to find out what the current stable version is. As of 3/06/2020 it is
+2.7.0 however that particular version still had issues with modules, so I will
+use 2.6.5 the current stable version we use for the website in further examples,
+but substitute the current stable version for 2.6.5 if you wish to use or test a
+different version.
 
 To install this version of ruby in rbenv, type
 
-    rbenv install 2.1.1
+    rbenv install 2.6.5
 
-NOTE: this failed for me under Ubuntu 14.04, somehow related to
-readline. The [solution][] was
+Then, to make this the version of ruby that you will use, type:
 
-    curl -fsSL https://gist.github.com/mislav/a18b9d7f0dc5b9efc162.txt | \
-	    rbenv install --patch 2.1.1
-
-[solution]: https://github.com/sstephenson/ruby-build/issues/526
-
-Then, to make this the only version of ruby that you will use, type:
-
-    rbenv global 2.1.1
+    rbenv global 2.6.5
 
 If you want to use different versions of ruby in different contexts, read the
-[rbenv page](https://github.com/sstephenson/rbenv)
+[rbenv page](https://github.com/rbenv/rbenv)
 for more information.
 
 
@@ -222,9 +216,6 @@ Then, assuming you are in the bioconductor.org working copy, issue this command
 to install all dependencies, again prepending `sudo` if necessary:
 
     bundle install
-
-NOTE: this failed installing the pg gem on Ubuntu 14.04; fixed
-with `sudo apt-get install libpq-dev`
 
 
 ### Build the site
@@ -520,41 +511,38 @@ deployment, and log rotation (biocadmin user):
     59 23 * * * /usr/sbin/logrotate -f -s /home/biocadmin/bioc-test-web/logrotateState /home/biocadmin/bioc-test-web/logrotateFiles
 
  
-### Staging site SuSE Apache Configuration
+### master.bioconductor.org Apache Configuration
 
 A good resource is available [http://en.opensuse.org/Apache_Quickstart_HOWTO](here).
+The staging.bioconductor.org builds and stages the website. The website is
+hosted on master.bioconductor.org through apache. This discusses some of the
+apache set up.
 
 #### Apache module config
 
-Edit /etc/sysconfig/apache2
-
-Make sure the following modules are listed in the APACHE_MODULES
-variable:
-
-* rewrite
-* deflate
-
-One way to add them is to do:
-
-   sudo /usr/sbin/a2enmod deflate
-   sudo /usr/sbin/a2enmod rewrite
-
 #### Apache vhosts config
 
-Edit /etc/apache2/vhosts.d/bioconductor-test.conf
+Edit /etc/apache2/sites-available/000-default.conf
 
     <VirtualHost *:80>
-      ServerAdmin devteam-bioc@fhcrc.org
-      ServerName bioconductor-test.fhcrc.org
+      ServerAdmin webmaster@localhost
+      ServerName master.bioconductor.org
+
+      # Customized ERROR responses
+      ErrorDocument 404 /help/404/index.html
+      ErrorDocument 403 /help/403/index.html
 
       # DocumentRoot: The directory out of which you will serve your
       # documents. By default, all requests are taken from this directory, but
       # symbolic links and aliases may be used to point to other locations.
-      DocumentRoot /loc/www/bioconductor-test.fhcrc.org
+      DocumentRoot /extra/www/bioc
 
       # if not specified, the global error log is used
-      ErrorLog /var/log/apache2/bioconductor-test.fhcrc.org-error_log
-      CustomLog /var/log/apache2/bioconductor-test.fhcrc.org-access_log combined
+      LogFormat "%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"" awstats
+      ErrorLog /var/log/apache2/bioconductor-error.log
+      CustomLog /var/log/apache2/bioconductor-access.log awstats
+      ScriptAlias /cgi-bin/ "/usr/local/awstats/wwwroot/cgi-bin/"
+      ScriptAlias /cgi/ "/usr/local/cgi/"
 
       # don't loose time with IP address lookups
       HostnameLookups Off
@@ -564,133 +552,91 @@ Edit /etc/apache2/vhosts.d/bioconductor-test.conf
 
       ServerSignature On
 
+        # For most configuration files from conf-available/, which are
+        # enabled or disabled at a global level, it is possible to
+        # include a line for only one particular virtual host. For example the
+        # following line enables the CGI configuration for this host only
+        # after it has been globally disabled with "a2disconf".
+        #Include conf-available/serve-cgi-bin.conf
+
       # doc root
-      <Directory "/loc/www/bioconductor-test.fhcrc.org">
-          # The Options directive is both complicated and important. Please see
-          # http://httpd.apache.org/docs-2.2/mod/core.html#options
-          # for more information.
+      <Directory /extra/www/bioc/>
           Options FollowSymLinks
+          AllowOverride All
+          #Controls who can get stuff from this server
+          #Order allow,deny
+          #Allow from all
+          Require all granted
 
-          # AllowOverride controls what directives may be placed in .htaccess files.
-          AllowOverride FileInfo Indexes
+         AddOutputFilterByType DEFLATE text/html text/css application/javascript text/x-js
+         BrowserMatch ^Mozilla/4 gzip-only-text/html
+         BrowserMatch ^Mozilla/4\.0[678] no-gzip
+         BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
 
-          # Controls who can get stuff from this server.
-          Order allow,deny
-          Allow from all
-
-          # output compression using mod deflate
-          AddOutputFilterByType DEFLATE text/html text/css application/javascript text/x-js
-          BrowserMatch ^Mozilla/4 gzip-only-text/html
-          BrowserMatch ^Mozilla/4\.0[678] no-gzip
-          BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
       </Directory>
-    </VirtualHost>
+ 
+      <Directory /extra/www/bioc/checkResults/>
+          Options Indexes FollowSymLinks
+      </Directory>
+      <Directory /extra/www/bioc/packages/submitted/>
+          Options Indexes
+      </Directory>
+      <Directory /extra/www/bioc/packages/misc/>
+          Options Indexes
+      </Directory>
+      <Directory /extra/www/bioc/pending/>
+          Options Indexes
+      </Directory>
+      <Directory /extra/www/bioc/data/>
+          Options Indexes
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.6/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.7/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.8/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.9/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.10/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
+      <Directory /extra/www/bioc/packages/3.11/bioc/src/contrib/Archive/>
+          Options Indexes FollowSymLinks MultiViews
+          AllowOverride All
+      </Directory>
 
-### TODO Add apache2 to rc startup config
+     # configure the Apache web server to work with Solr
+     ProxyRequests Off
+     <Proxy *>
+       Order deny,allow
+       Allow from all
+     </Proxy>
+     ProxyPass /solr/default/select http://localhost:8983/solr/default/select
+     ProxyPreserveHost On
+     ProxyStatus On
 
-### Start apache using /etc/init.d/apache2 re
+   </VirtualHost>
 
-### Staging site nginx installation
-
-We will most likely deploy the test and production sites using
-Apache2. A first test setup was configured using nginx. The details
-follow.
-
-    ./configure \
-      --user=nginx \
-      --group=nginx \
-      --with-http_ssl_module \
-      --with-http_gzip_static_module
-
-    make
-    sudo make install
-
-nginx paths:
-
-   path prefix: "/usr/local/nginx"
-   binary file: "/usr/local/nginx/sbin/nginx"
-   configuration file: "/usr/local/nginx/conf/nginx.conf"
-   error log file: "/usr/local/nginx/logs/error.log"
-   http access log file: "/usr/local/nginx/logs/access.log"
-
-### creating an nginx user (SuSE Linux)
-
-     sudo useradd -c "nginx worker" -d /usr/local/nginx -s /bin/false \
-                  -g www -G www nginx
-
-### nginx config
-
-Followed basic config.
-
-    user  nginx www;
-    gzip  on;
-    gzip_types text/plain text/css text/javascript;
-
-    server {
-        listen       80;
-        server_name  merlot2.fhcrc.org www.merlot2.fhcrc.org;
-
-        #charset koi8-r;
-
-        #access_log  logs/host.access.log  main;
-
-        location / {
-            root   sites/bioconductor.org;
-            index  index.html index.htm;
-        }
-
-Started nginx as: `sudo /usr/local/nginx/sbin/nginx`
 
 ## How to test for broken links
 
 You can run wget as shown below to get a report on 404s for the site. Note
 that this runs against the staging site so will have a lot of false positives.
 
-    wget -r --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
+    wget -r --spider -U "404 check with wget" -o wwwbioc.log http://master.bioconductor.org
 
-    *** 404 report for bioconductor-test.fhcrc.org (Tue May 25 09:07:49 2010)
 
-    # TO FIX
-    ## depends on packages, etc.
-    http://bioconductor-test.fhcrc.org/packages/release/bioc/
-    http://bioconductor-test.fhcrc.org/about/publications/compendia/genemetaex/GeneMetaEx_1.0.0.tar.gz
-    http://bioconductor-test.fhcrc.org/about/publications/compendia/golubrr/GolubRR_1.3.1.tar.gz
-    http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/flowWorkFlow.pdf
-    http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/CompStatViz_2.0.1.zip
-    http://bioconductor-test.fhcrc.org/about/publications/compendia/golubrr/GolubRR_1.3.1.zip
-    http://bioconductor-test.fhcrc.org/help/bioconductor-packages/
-    http://bioconductor-test.fhcrc.org/about/publications/compendia/CompStatViz/CompStatViz_2.0.1.tar.gz
-    http://bioconductor-test.fhcrc.org/help/docs/papers/2003/Compendium/golubEsets_1.0.tar.gz
-    http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/tutorial.mpeg
-    http://bioconductor-test.fhcrc.org/help/workflows/flowcytometry/dataFiles.tar
-
-## Note on launching the new site
-
-### Discuss production setup with Dirk
-
-#### DNS
-
-You want to set things up so that you can move to the new site or
-revert to current quickly. Dirk should be able to suggest a way to
-achieve this. Ideally, you would not change the bioconductor.org DNS
-record as this can take awhile to propagate and doesn't give a quick
-way to revert.
-
-#### Site monitoring and alerting
-
-I imagine PHS IT has some monitoring that can be put in place for the
-new site. Would also make sense to add an external monitor so that
-you will know if the site becomes unreachable from the outside.
-
-#### Squid
-
-I'm not sure what the current status is w.r.t. to Squid proxy/cache.
-With the new setup, I would anticipate that a reasonable web server
-running Apache will be enough for the load and that if more throughput
-or redundancy is desired, setting up a second server and load
-balancing would be a good next step.
-
-### Optimize redirects
+## Optimize redirects
 
 Currently the redirects are defined using Apache's mod_rewrite in a
 top-level `.htaccess` file. This has the advantage of allowing easy
@@ -708,44 +654,11 @@ following changes:
    top-level directory. This should disable .htaccess files as it
    isn't enough just to remove the .htaccess file itself.
 
-### Testing the staging site
-
-#### Use a few days worth of access logs
-
-Extract paths from a few days of access logs (make sure to filter for
-200 responses) and "replay" these against the staging site. This should
-give a good idea of whether the redirects are doing enough and whether
-or not basic repository structure has been appropriately mirrored.
-
-#### Use wget to test for broken links on the site
-
-    wget -r -l 20 --spider -U "404 check with wget" -o wwwbioc.log http://bioconductor-test.fhcrc.org
-
-#### Work with Dirk to make the staging site available on the internet
-
-Then you can ask Wolfgang to do some tests to see how the site
-performs from Europe. You could also run some site performance
-analysis tools like YSlow to get some suggestions for improvements.
-
-#### Staging site performance
-
-You might look into running some simple benchmarks with `ab` or
-`httperf`. Might be interesting to compare against the current
-Plone-based site.
-
-### Misc Concerns
-
-In trying to get some test data from the current site using wget,
-I've seen a number of cases where a wget request failed, but then
-works when I try in a browser. This makes me worried that the
-wget-based snapshot may not be as complete as thought. Not sure if
-the issue is wget config options or Plone getting overwhelmed with
-requests and failing to respond.
 
 ### Site Search
 
 The site search contains several moving parts. The search is built on 
-Apache Solr, which is in turn built on top of Apache Lucene. 
+Apache Solr, which is in turn built on top of Apache Lucene.
 
 #### How to configure Solr
 The default SOLR installation works fine, with the exception of the file
@@ -759,24 +672,22 @@ where the solr tarball has been expanded):
     cd $SOLR_HOME/example; java -jar start.jar
 
 
-#### How to ensure that Solr is started up at boot time (on merlot2 and krait)
-On both machines there is an /etc/rc.d/rc.local script (with symlink at
-/etc/rc.d/rclocal) which starts Solr as above. TODO: reboot (at least merlot2)
-and make sure this works.
+#### How to ensure that Solr is started up at boot time (on master and staging)
+On both machines there is an /etc/rc.local and /etc/init.d/rc.local script
+which starts Solr as above.
 
 #### How to configure the Apache web server to work with Solr
 
 Using a2enmod, we added support for the "proxy" and "proxy_http" modules
-to the Apache web server. Then we added the following to 
-/etc/apache2/vhosts.d/bioconductor-test.conf (merlot2) or
-bioconductor.conf (krait):
+to the Apache web server. Then we added the following if it hasn't already to
+/etc/apache2/sites-available/000-default.conf (master):
 
     ProxyRequests Off
     <Proxy *>
      Order deny,allow
      Allow from all
     </Proxy>
-    ProxyPass /solr http://localhost:8983/solr
+    ProxyPass /solr/default/select http://localhost:8983/solr/default/select
     ProxyPreserveHost On
     ProxyStatus On
 
@@ -792,11 +703,13 @@ arguments in the URL and then makes an AJAX request to the SOLR
 server which returns a JSON string. The javascript code converts
 that to an object and then renders the search response page.
 
-#### How to rebuild the search index (on your own machine, merlot2, or krait)
+#### How to rebuild the search index
 
 Note that you typically do not want to do this by hand as it is handled
 by cron jobs (see below). 
 
+# NOTE: this may need debugging for staging.bioconductor.org
+#       from transition from merlot2
 On staging.bioconductor.org (ssh to staging.bioconductor.org):
 
     cd ~/biocadmin/bioc-test-web/bioconductor.org
@@ -831,20 +744,6 @@ process (especially on master) and the site rebuilding should be quick. So
 the search indexing takes place every hour on staging and every four hours on
 master (where there are many more files to be indexed which originate from the build system).
 
-
-#### How to get search working on your own development machine
-
-You could set up apache as described above but I think that is overkill.
-I use pound (http://www.apsis.ch/pound/) as a simple front end to both
-adsf (serving static content built by nanoc on one port) and solr
-(java web app running on another). You can use "rake search_index"
-to build the search index. You need to define the shell variables
-SOLR_HOME and JAVA_HOME. The rake target may require slight modification
-to handle the hostname of your local machine.
-
-
---todo: make sure people can't do anything bad as solr admin (change password?)
-See http://wiki.apache.org/solr/SolrSecurity
 
 ### BiocViews Pages
 

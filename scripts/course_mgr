@@ -54,8 +54,8 @@ COURSENAME
     Step 1 (push course materials):
       ./scripts/course_mgr --push mycourse
     Step 2: (push course metadata (.yaml) and template (.md) files):
-      svn add content/help/course-materials/2011/mycourse.*
-      svn commit -m "added mycourse" content/help/course-materials/2011/mycourse.*
+      git add content/help/course-materials/2011/mycourse.*
+      git commit -m "added mycourse" content/help/course-materials/2011/mycourse.*
  You may remove the top-level "mycourse" directory at this point.
 
 
@@ -70,7 +70,7 @@ COURSENAME
     content/help/course-materials/2011/existing_course
     and commit your changes to subversion:
       cp existing_course/existing_course.* content/help/course-materials/2011/
-      svn commit -m "made changes" content/help/course/materials/2011/existing_course.*
+      git commit -m "made changes" content/help/course/materials/2011/existing_course.*
 
  You may remove the top-level "existing_course" directory at this point.
 
@@ -319,7 +319,7 @@ EOF
     run_cmd(cmd)
     msg = <<EOF
 NEXT STEPS:
-    - svn add/commit changes in contents/
+    - git add/commit changes in contents/
     - wait 10 minutes for changes to propagate
     - verify content on live site
 EOF
@@ -343,7 +343,7 @@ EOF
     content_dir = "content/help/course-materials/#{year}"
     pwd = FileUtils.pwd()
     FileUtils.cd(content_dir)
-    run_cmd("svn up")
+    run_cmd("git pull")
     FileUtils.cd(pwd)
     run_cmd("cp #{content_dir}/#{name}* #{dst}")
     deploy_root = "#{@config["staging_deploy_root"]}/help/course-materials/#{arg}"
@@ -372,7 +372,7 @@ EOF
     run_cmd(cmd)
         msg = <<EOF
 NEXT STEPS:
-    - svn add/commit changes in contents/
+    - git add/commit changes in contents/
     - wait 10 minutes for changes to propagate
     - verify content on live site
 EOF

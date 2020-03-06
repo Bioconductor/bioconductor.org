@@ -125,7 +125,7 @@ The broad goals of the _Bioconductor_ project are:
   are available on this site.
 
 * **Open source**. The _Bioconductor_ project has a commitment to full
-  open source discipline, with distribution via a public subversion
+  open source discipline, with distribution via a public git
   (version control) server. Almost all contributions exist under an
   open source license. There are many different reasons why open
   source software is beneficial to the analysis of microarray data and

@@ -131,7 +131,7 @@ EOF
     run_cmd(cmd)
     msg = <<EOF
 NEXT STEPS:
-    - svn add/commit changes in contents/
+    - git add/commit changes in contents/
     - wait 10 minutes for changes to propagate
     - verify content on live site
 EOF

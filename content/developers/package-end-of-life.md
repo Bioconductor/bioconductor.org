@@ -67,7 +67,7 @@ remedial action, the package is marked as 'Defunct'. The package is removed
 from the nightly build system, is no longer available through
 'BiocManager::install()', and does not have a current 'landing page'.
 
-The package remains available in the subversion archive, and in previous
+The package remains available in the git archive, and in previous
 versions of Bioconductor.
 
 Defunct packages cannot re-enter the Bioconductor repository except through
