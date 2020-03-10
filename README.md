@@ -27,14 +27,13 @@ NOTE: Before reading the following instructions you may want to consider
 installing the web site as a Docker container. See the instructions
 below.
 
-1. On your git repository for bioconductor.org (`git clone
-   https://github.com/bioconductor/bioconductor.org`), checkout the
-   branch called `dockerfile`. (You might have to fetch all the
-   branches first with `git fetch --all`)
+1. Make a fork and clone the git repository for bioconductor.org and
+   create a new branch to make your changes, (helpful documentation for
+   [Creating a pull request from a fork][])
 
-		git checkout -b dockerfile origin/dockerfile
+	git clone https://github.com/<your fork>/bioconductor.org
 
-2. Make your changes on this branch, add content or edit things.
+2. Make your changes on this branch, add content or edit content.
 
 3. Once the changes are made, you need use the docker image
    `bioconductor/website:latest` and run the
@@ -42,17 +41,24 @@ below.
    the ruby code and host the website on your local machine at
    https://localhost:3000.
 
-		docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
-			-p 3000:3000 \
-			bioconductor/website:latest
+	docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
+		-p 3000:3000 \
+		bioconductor/website:latest
+
+   where,
+
+        -p is mapping the container's port 3000 to the host machine's port
+
+        -v mounting a volume, the website (bioconductor.org) directory
+           from your local machine is being mounted on the docker container
 
 4. Then to kill the process, you need to get the CONTAINER ID with,
 
-		docker ps
+	docker ps
 
-	and,
+   and,
 
-		docker kill <CONTAINER ID>
+	docker kill <CONTAINER ID>
 
 5. Before you run the docker image again with more changes, make sure
    to clean the artifacts produced by the `rake` command, with
@@ -70,7 +76,10 @@ below.
 			Removing tmp/
 
 6. Once you are confident of your changes, make a new branch and pull
-   request to our `master`.
+   request to our `master`. The pull request shoul be made from your `my_changes`
+   branch to the master branch of bioconductor.org repo, on Github.
+
+[Creating a pull request from a fork]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork
 
 ### Ruby
 
