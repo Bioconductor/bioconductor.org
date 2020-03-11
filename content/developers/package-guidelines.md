@@ -256,7 +256,7 @@ associated files.
         included in this field thus avoiding users a costly download.
         In the case where an external one-off function is required for
         package code, external package availability can be checked via
-        `if (!requireNamespace('extraPKG')) ... else stop(...)`.
+        `if (!requireNamespace('extraPKG')) stop(...)`.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
         that enhance the performance of your package, but are not
         strictly needed for its functionality.
