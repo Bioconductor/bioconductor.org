@@ -250,12 +250,13 @@ associated files.
         `GenomicRanges` package is listed in the Depends: field of
         `GenomicAlignments`.  It is unusual for more than three
         packages to be listed as 'Depends:'.
-      + **Suggests:** is for packages used in vignettes or examples,
-        or in conditional code. This includes examples that make use
-        of annotation and/or experiment packages (e.g., `TxDb*`).
-        In cases where an external one-off function is required,
-        the use of conditional code is best practice. External package
-        availability can be conditionally checked via `requireNamespace()`.
+      + **Suggests:** is for packages used in vignettes, examples,
+        and in conditional code. Commonly, annotation and experiment
+        packages (e.g., `TxDb*`) used in vignette and example code are
+        included in this field thus avoiding users a costly download.
+        In the case where an external one-off function is required for
+        package code, external package availability can be checked via
+        `if (!requireNamespace('extraPKG')) ... else stop(...)`.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
         that enhance the performance of your package, but are not
         strictly needed for its functionality.
