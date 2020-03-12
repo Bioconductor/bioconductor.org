@@ -1457,7 +1457,15 @@ def get_last_git_commits(release=true)
     tbl_str += "</table>"
     tbl_str
   rescue Exception => ex
-    "Can't read / no records in rss feed, not report last git commit time"
+    tbl_str = "<table>\n<tr><td> Can't read / no records in rss feed, not report last git commit time </td></tr>\n"
+    i = 0
+    while i < 19
+      line = "<tr><td> . </td></tr>\n"
+      tbl_str += line
+      i += 1
+    end
+    tbl_str += "</table>"
+    tbl_str
   end
 
 end
@@ -1500,31 +1508,43 @@ def latest_packages(repo)
   base_url = repo.sub("-", "/")
 
   path = Dir.pwd
-  manifest_path = "#{path}/../manifest/#{repo_text}.txt"
-  manifest = File.open("#{manifest_path}").read
-
-  lines = manifest.split("\n").drop(1) - [""]
-  pkgs = lines.map {|item| item.gsub("Package: ", "")}
-  pkgs.reverse!
-
-  trunc_pkgs = pkgs[0..19]
-  
-  tbl_str = "<table>\n"
-  trunc_pkgs.each do |pkg|
-    short_url = "https://bioconductor.org/packages/#{pkg}/"
-    long_url = "http://bioconductor.org/packages/devel/#{base_url}/html/#{pkg}.html"
-
-    url = URI.parse(long_url)
-    req = Net::HTTP.new(url.host, url.port)
-    res = req.request_head(url.path)
-    if res.code == "200"
-        line = "<tr><td><a href= #{short_url} > #{pkg} </a></td></tr>\n"
-    else
-        line = "<tr><td> #{pkg} </td></tr>\n"
+  if (!File.directory?("#{path}/../manifest/"))
+    tbl_str = "<table>\n<tr><td> file not found. skipping information </td></tr>\n"
+    i = 0 
+    while i < 19
+      line = "<tr><td> . </td></tr>\n"
+      tbl_str += line
+      i += 1
     end
-    tbl_str += line
+     tbl_str += "</table>"   
+  else
+    manifest_path = "#{path}/../manifest/#{repo_text}.txt"
+    manifest = File.open("#{manifest_path}").read
+
+    lines = manifest.split("\n").drop(1) - [""]
+    pkgs = lines.map {|item| item.gsub("Package: ", "")}
+    pkgs.reverse!
+
+    trunc_pkgs = pkgs[0..19]
+  
+    tbl_str = "<table>\n"
+    trunc_pkgs.each do |pkg|
+      short_url = "https://bioconductor.org/packages/#{pkg}/"
+      long_url = "http://bioconductor.org/packages/devel/#{base_url}/html/#{pkg}.html"
+
+      url = URI.parse(long_url)
+      req = Net::HTTP.new(url.host, url.port)
+      res = req.request_head(url.path)
+      if res.code == "200"
+          line = "<tr><td><a href= #{short_url} > #{pkg} </a></td></tr>\n"
+      else
+          line = "<tr><td> #{pkg} </td></tr>\n"
+      end
+      tbl_str += line
+    end
+    tbl_str += "</table>"
+    tbl_str
   end
-  tbl_str += "</table>"
   tbl_str
 end
 
