@@ -394,7 +394,10 @@ Text: Made the following significant changes o added a subsetting
 Appropriate citations must be included in help pages (e.g., in the see
 also section) and vignettes; this aspect of documentation is no
 different from any scientific endeavor. The file `inst/CITATION` can
-be used to specify how a package is to be cited.
+be used to specify how a package is to be cited. If this option is utilized, 
+a maintainer can check proper formatting of the CITATION file by running
+`readCitationFile("inst/CITATION")`; This must run without ERROR for the 
+CITATION to be accurately displayed on the package landing pages. 
 
 Whether or not a CITATION file is present, an automatically-generated
 citation will appear on the package landing page on the _Bioconductor_
@@ -489,7 +492,7 @@ executable code that demonstrates how to use the package to accomplish
 a task, [man pages][man] for all exported functions with runnable
 examples, well documented data structures especially if not a
 [pre-exiting class][preclass], and well documented datasets for data
-in `data` and in `inst/extdata`. References to the methdos used as
+in `data` and in `inst/extdata`. References to the methods used as
 well as to other simlar or related project/packages is also
 expected. If data structures differ from similar packages,
 _Bioconductor_ reviewers will expect some justification as to why. Keep
@@ -565,7 +568,11 @@ package and links to the main functions. Data man pages must include
 source information and data structure information. Man pages
 describing new classes must be very detailed on the structure and what
 type of information is stored. All man pages should have an runnable
-examples. See Writing R Extensions section on [man pages][man] for
+examples. `donttest and dontrun` are discouraged and generally not allowed;
+exceptions can be made with proper justification and are at the _Bioconductor_
+Reviewers discretion. If this option is used it will also be preferrable to use
+`donttest` instead of `dontrun`; `donttest` requires valid R code while
+`dontrun` does not. See Writing R Extensions section on [man pages][man] for
 detailed instruction or format information for documenting a package,
 functions, classes, and data sets.  All help pages should be
 comprehensive.
