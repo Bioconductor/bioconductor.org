@@ -41,6 +41,8 @@ R switched from 3.x to 4.0 which generally means some significant changes.
 - [Scalar / Vector Logic](#scalarvec)
 - [Class ==  vs  is/inherits](#classEq)
   - [Matrix is now Array](#matarr)
+- [data.frame stringAsFactors](#stringsAsFactors)
+- [stats::smoorthEnds](#statsSmoothEnds)
 - [Partial Argument Matching](#partMatch)
 - [Invalid UTF-8](#invalidUTF) 
 - [Dependency Issues](#dep311)
@@ -196,6 +198,46 @@ Error in vapply(experiments(object), class, character(1)) :
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
+<a name="stringsAsFactors"></a>
+
+### data.frame stringsAsFactors
+
+In R 4.0, the default for data.frame argument `stringsAsFactors` changed from
+TRUE to FALSE.  This changes is causing the most breakage in tests where there
+are checks for particular factor levels or constructing factor levels. 
+The ERROR’s take many different forms. The simple solution is to change or add
+the `stringAsFactors=TRUE` to the data.frame call,  however maintainers may want
+to re-evaluate code for potential restructuring or ease of use. 
+
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
+
+<a name="statsSmoothEnds"></a>
+
+### stats::smoothEnds
+
+A recent change to `stats::smoothEnds()`, now returns an integer vector with the
+input is an integer vector. Previously it could return a number vector.
+
+Example R 3.6.3
+```
+> class(smoothEnds(c(401:403)))
+[1] "integer"
+> class(smoothEnds(c(401:403, 555L)))
+[1] "numeric"
+```
+
+Example from 4.0.0
+
+```
+> class(smoothEnds(c(401:403)))
+[1] "integer"
+> class(smoothEnds(c(401:403, 555L)))
+[1] "integer"
+```
+This has the potential to cause ERROR's if a class type was checked. 
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
 <a name="partMatch"></a>
 
