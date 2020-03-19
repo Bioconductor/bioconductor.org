@@ -1,5 +1,7 @@
 # Troubleshooting Build Report
 
+## How and When does the builder pull? When will my changes propagate? 
+
 Please remember the daily builder pulls, installs, builds, and checks package
 only once per day.  This process starts around 4:45 PM (16:45) EST everyday.  Changes
 pushed to Bioconductor before 4:45 will be reflected in the following day's build
@@ -19,10 +21,47 @@ landing page than was pushed to _Bioconductor_.  Please also remember a package
 ALWAYS needs a valid version bump to propagate to users. 
 
 
+## How do I reproduce the build system ERROR?
+
+In order to reproduce the ERROR's accuately locally, remember to be using the
+correct version of R and Bioconductor.  The version of R used for the build
+report can be found at the top of the
+[release](http://bioconductor.org/checkResults/release/bioc-LATEST/) and
+[devel](http://bioconductor.org/checkResults/devel/bioc-LATEST/) build
+reports. Once you are using the correct version of R make sure all your packages
+are up-to-date with `BiocManager::valid()` and `BiocManager::install()`. There
+are some additional environment variables the daily builder uses during `R CMD
+check`. Those are the following:
+```
+export _R_CHECK_EXECUTABLES_=false
+export _R_CHECK_EXECUTABLES_EXCLUSIONS_=false
+export _R_CHECK_LENGTH_1_CONDITION_=package:_R_CHECK_PACKAGE_NAME_,abort,verbose
+export _R_CHECK_LENGTH_1_LOGIC2_=package:_R_CHECK_PACKAGE_NAME_,abort,verbose
+export _R_CHECK_S3_METHODS_NOT_REGISTERED_=true
+```
+
+The Single Package build has some extra
+[documentation](https://github.com/Bioconductor/Contributions#r-cmd-check-environment)
+about how to set up your local system to use optional environment
+variables. Please note that if you look at the file listed on this page, it has
+many additional variables; _Bioconductor_ does a much more stringent check on
+incoming packages than on the daily builder (for now). You are welcome to use
+this file if you wish as it is a more comprehensive check but the above listed
+environment variables should be included minimally. 
+
+Another option to debug and test is to utilize the _Bioconductor_ docker
+image. The documentation for using docker images can be found
+[here](http://bioconductor.org/help/docker/). The docker image does contain the
+environment variable setting found on the daily builder. 
+
+
+
+## Common Build Report Errors 
 
 Often common Error's will arise as R develops and matures or as Bioconductor
 packages are modified and advance. This document provides some guidance on Error's
 and potential solutions.
+
 
 <a name="top"></a>
 
@@ -43,6 +82,8 @@ R switched from 3.x to 4.0 which generally means some significant changes.
   - [Matrix is now Array](#matarr)
 - [data.frame stringAsFactors](#stringsAsFactors)
 - [stats::smoorthEnds](#statsSmoothEnds)
+- [grid package changes](#grid)
+- [plot generic moved](#plot)
 - [Partial Argument Matching](#partMatch)
 - [Invalid UTF-8](#invalidUTF) 
 - [Dependency Issues](#dep311)
@@ -131,6 +172,7 @@ the length of the argument rather than intentional.  The code should be reviewed
 to see if argument is being assigned correctly.  In most cases it might be 
 appropriate to use an `any( )` or `all( )` surrounding the vector. 
 
+See also [mailing list post](https://stat.ethz.ch/pipermail/bioc-devel/2020-January/016081.html)
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
@@ -156,6 +198,8 @@ appropriate `any( )` or `all( )` surrounding the vector will result in the
 appropriate scalar comparison. **Note:** If this comparison is in a conditional
 please see the section above; `any( )` or `all( )` will most likely be a better alternative. 
 
+See also [mailing list post](https://stat.ethz.ch/pipermail/bioc-devel/2020-January/016081.html)
+
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
 <a name="classEq"></a>
@@ -179,6 +223,11 @@ Starting in R 4.0, a matrix is considered an extension of array.
 > m = matrix()
 > class(m)
 [1] "matrix" "array" 
+
+> class(m) == "matrix"
+[1]  TRUE FALSE
+> if ( class(m) == "matrix"){}
+Error in if (class(m) == "matrix") { : the condition has length > 1
 ```
 This change along with the previous section regarding conditional length results
 in many errors where users were doing something along the lines of  `if
@@ -236,6 +285,67 @@ Example from 4.0.0
 [1] "integer"
 ```
 This has the potential to cause ERROR's if a class type was checked. 
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
+
+<a name="grid"></a>
+
+### Grid package changes
+
+We do not have a lot of specifics on what has changed but were notified by
+email.  Important sections of the email as follows:
+
+```
+  	I am about to commit some internal changes to 'grid' units 
+        (for, in some cases, 100x speed-up of unit operations).
+    	A number of packages have already been fixed to work with these 
+        changes, but, according to my testing, the following CRAN 
+        packages will still fail R CMD check.
+	Some of those are cascades ('armada', 'countToFPKM', and 'wilson' 
+        from 'ComplexHeatmap' - see below - and 'fingertipscharts' from 'lemon' 
+        and 'xpose' is actually a 'ggforce' problem), but all of the other 
+        package authors have been notified and several are already working on 
+        fixes.
+    	The most serious of those is 'ComplexHeatmap' because it causes multiple 
+        follow-on failures, the CRAN ones above and others on BioConductor:
+	Again, the main package authors have been notified and the
+  	'ComplexHeatmap' author is working on an update.
+```
+
+<p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
+
+<a name="plot"></a>
+
+### plot generic moved
+
+The plot generic has moved from graphics to base.  The ERROR's seen from this
+change are non specific and can take many forms.  Some of the ERROR's we see 
+are 
+
+```
+Error in getGeneric(f, TRUE, envir, package) :
+ no generic function found for 'plot'
+```
+or
+```
+Error in as.double(y) :
+      cannot coerce type 'S4' to vector of type 'double'
+
+```
+
+The explanation given: 
+
+      “The namespace controls the search strategy for variables used by
+      functions in the package. If not found locally, R searches the package
+      namespace first, then the imports, then the base namespace and then  the
+      normal search path." as per
+      https://cran.r-project.org/doc/manuals/r-devel/R-exts.html#Package-namespaces):
+
+      CRAN and Bioconductor  had a few packages that "worked" because the right
+      plot() was found in the normal search path, but now fail because it's
+      calling the one in base instead. 
+
+
 
 <p class="back_to_top">[ <a href="#Bioc3.11R4.0">Back to Bioc 3.11 R 4.0</a> ]</p> 
 
