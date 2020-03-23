@@ -1,4 +1,6 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2020-03-19 - 2020-03-19	[BiocDevelForum](https://www.youtube.com/watch?v=6cXvIULNseM)	Talk	Bioc vs. CRAN build systems	Various 	[video](2020/BiocDevelForum/08-buildsystems.mp4)	3.11	4.0
+2020-03-19 - 2020-03-19	[BiocDevelForum](https://www.youtube.com/watch?v=6cXvIULNseM)	Talk	Bioconductor and R 4.0	Lori Shepherd 	[pdf](2020/BiocDevelForum/08-Rdevel.pdf), [video](2020/BiocDevelForum/08-Rdevel.mp4)	3.11	4.0
 2020-02-20 - 2020-02-20	[BiocDevelForum](https://www.youtube.com/watch?v=xsM4nN85cok)	Talk	Quantifying and lightening the package dependency burden	Robert Castelo 	[pdf](2020/BiocDevelForum/07-DependencyBurden.pdf), [video](2020/BiocDevelForum/07-DependencyBurden.mp4)	3.11	4.0
 2020-02-20 - 2020-02-20	[BiocDevelForum](https://www.youtube.com/watch?v=xsM4nN85cok)	Talk	Update: Bioconductor Images	Nitesh Turaga 	[pdf](2020/BiocDevelForum/07-BiocDocker.pdf), [video](2020/BiocDevelForum/07-BiocDocker.mp4)	3.11	4.0
 2020-01-23 - 2020-01-23	[BiocDevelForum](https://youtu.be/h3h7Oq3dPw0)	Talk	Windows and Rtools 4.0	Mike Smith 	[pdf](2020/BiocDevelForum/06-WinRtools.pdf), [video](https://youtu.be/h3h7Oq3dPw0)	3.11	4.0
