@@ -302,11 +302,11 @@ version of Bioconductor.
 
 ##### To run R from the command line:
 
-	docker run -it --user bioc bioconductor/bioconductor_docker:devel R
+	docker run -it --user rstudio bioconductor/bioconductor_docker:devel R
 
 ##### To open a Bash shell on the container:
 
-	docker run -it --user bioc bioconductor/bioconductor_docker:devel bash
+	docker run -it --user rstudio bioconductor/bioconductor_docker:devel bash
 
 **Note**: The `docker run` command is very powerful and versatile.
 For full documentation, type `docker run --help` or visit
@@ -333,10 +333,10 @@ package would be available for use.
 		docker run \
 			-v /home/my-devel-library:/usr/local/lib/R/host-site-library \
 			-it \
-			--user bioc \
+			--user rstudio \
 			bioconductor/bioconductor_docker:devel
 
-  without the `--user bioc` option, the container is started and
+  without the `--user rstudio` option, the container is started and
   logged in as the `root` user.
 
   The `-it` flag gives you an interactive tty (shell/terminal) to the
