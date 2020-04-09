@@ -43,7 +43,7 @@ active_release_builders:
 active_devel_builders:
   linux: "malbec2"
   windows: "tokay2"
-  mac_elcapitan: "celaya2"
+  mac_highsierra: "machv2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
