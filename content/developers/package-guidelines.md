@@ -327,7 +327,18 @@ users. _Bioconductor_ reviewers will be looking for:
 
 A NEWS file should be included to keep track of changes to the code
 from one version to the next. It can be a top level file or in the
-inst/ directory. Specifics on formatting can be found on the help page
+inst/ directory. Only one NEWS file should exist. The following are acceptable
+formats and locations:
+
+:--|:--------------|:-----------------
+1. |./inst/NEWS.Rd |  latex
+2. |./inst/NEWS    |  plain text
+3. |./inst/NEWS.md |  mardown
+4. |./NEWS.md      |  markdown
+5. |./NEWS         |  plain text
+
+
+Specifics on formatting can be found on the help page
 for `?news`. _Bioconductor_ uses the NEWS file to create the semi-annual
 release announcement. It must include list elements and cannot be a
 plain text file. An example format:
