@@ -754,7 +754,8 @@ end
 
 def mac_os(pkg)
   if pkg.has_key? :"mac.binary.ver"
-    return "Mac OS X 10.6 (Snow Leopard)"
+    #return "Mac OS X 10.6 (Snow Leopard)"
+    return "macOS 10.13 (High Sierra)"
   elsif pkg.has_key? :"mac.binary.mavericks.ver"
     return "Mac OS X 10.9 (Mavericks)"
   elsif pkg.has_key? :"mac.binary.el-capitan.ver"
@@ -900,9 +901,14 @@ def get_mac_packs(package, item)
         osvers << "mac.binary.mavericks.ver"
     end
 
-    if version >= Gem::Version.new('3.5')
+    if version >= Gem::Version.new('3.5') and version < Gem::Version.new('3.11')
         os <<  "Mac OS X 10.11 (El Capitan)"
         osvers << "mac.binary.el-capitan.ver"
+    end
+
+    if version >= Gem::Version.new('3.11')
+        os <<  "macOS 10.13 (High Sierra)"
+        osvers << "mac.binary.ver"
     end
 
     os.each_with_index do |this_os, i|
