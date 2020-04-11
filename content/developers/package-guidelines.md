@@ -330,18 +330,18 @@ from one version to the next. It can be a top level file or in the
 inst/ directory. Only one NEWS file should exist. The following are acceptable
 formats and locations:
 
-:--|:--------------|:-----------------
+:--|:--------------|:-----------------------------
 1. |./inst/NEWS.Rd |  latex
-2. |./inst/NEWS    |  plain text
+2. |./inst/NEWS    |  formatted text see ?news
 3. |./inst/NEWS.md |  mardown
 4. |./NEWS.md      |  markdown
-5. |./NEWS         |  plain text
+5. |./NEWS         |  formatted text see ?news
 
 
 Specifics on formatting can be found on the help page
-for `?news`. _Bioconductor_ uses the NEWS file to create the semi-annual
-release announcement. It must include list elements and cannot be a
-plain text file. An example format:
+for `?news`.  _Bioconductor_ uses the NEWS
+file to create the semi-annual release announcement. It must include list
+elements and **cannot** be a plain text file. An example format:
 
 ```
 Changes in version 0.99.0 (2018-05-15)
