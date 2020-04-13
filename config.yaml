@@ -238,3 +238,13 @@ mirrors:
      rsync: secure_mirror_from_master
      country_code: cn 
      city: Peking 
+ - Germany2:
+   - institution: GWDG
+     institution_url: https://ftp.gwdg.de/
+     contact: Tim Ehlers and Steffen Klemer
+     contact_email: ftpmaster@gwdg.de
+     mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
+     https_mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
+     rsync: secure_mirror_from_master
+     city: Gottingen
+     country_code: de
