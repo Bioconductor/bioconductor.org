@@ -1,4 +1,6 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2020-04-16 - 2020-04-16	[BiocDevelForum](https://www.youtube.com/watch?v=nIxscHDo61w)	Talk	Discussion about unit testing	Various 	[video](2020/BiocDevelForum/09-testing.mp4)	3.11	4.0
+2020-04-16 - 2020-04-16	[BiocDevelForum](https://www.youtube.com/watch?v=nIxscHDo61w)	Talk	Writing our first Bioconductor package as members of the CDSB community	Joselyn Chávez, Carmina Barberena Jonas, Emiliano Sotelo 	[pdf](2020/BiocDevelForum/09-regutools.pdf), [video](2020/BiocDevelForum/09-regutools.mp4)	3.11	4.0
 2020-03-19 - 2020-03-19	[BiocDevelForum](https://www.youtube.com/watch?v=6cXvIULNseM)	Talk	Bioc vs. CRAN build systems	Various 	[video](2020/BiocDevelForum/08-buildsystems.mp4)	3.11	4.0
 2020-03-19 - 2020-03-19	[BiocDevelForum](https://www.youtube.com/watch?v=6cXvIULNseM)	Talk	Bioconductor and R 4.0	Lori Shepherd 	[pdf](2020/BiocDevelForum/08-Rdevel.pdf), [video](2020/BiocDevelForum/08-Rdevel.mp4)	3.11	4.0
 2020-02-20 - 2020-02-20	[BiocDevelForum](https://www.youtube.com/watch?v=xsM4nN85cok)	Talk	Quantifying and lightening the package dependency burden	Robert Castelo 	[pdf](2020/BiocDevelForum/07-DependencyBurden.pdf), [video](2020/BiocDevelForum/07-DependencyBurden.mp4)	3.11	4.0
