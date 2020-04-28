@@ -1,4 +1,4 @@
-April 28, 2019
+April 28, 2020
 
 Bioconductors:
 
@@ -9880,7 +9880,7 @@ MaxContrastProjection, MCRestimate, MergeMaid, mitoODE, MoPS, motifRG, MTseeker,
 nem, PAPi, pcaGoPromoter, pint, plw, PowerExplorer, proteoQC, QUALIFIER, readat,
 RefNet, RIPSeeker, SANTA, scfind, splicegear, sRAP, triform, Vega, waveTiling
 
-DESeq has been deprecated in favor of DESeq2. Do to its high number of reverse
+DESeq has been deprecated in favor of DESeq2. Due to its high number of reverse
 dependencies it will remain deprecated in 3.12 to be removed in 3.13.
 
 Three experimental data packages were removed in this release (after being
