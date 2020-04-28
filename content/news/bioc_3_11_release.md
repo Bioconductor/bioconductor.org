@@ -9,7 +9,7 @@ packages, and 27 workflows.
 There are 98 new software packages, 10 new data experiment packages,
 5 new annotation packages, 1 new workflow, and many updates and improvements
 to existing packages; Bioconductor 3.11 is compatible with R 4.0.0,
-and is supported on Linux, 32- and 64-bit Windows, and MacOS 10.13 High Sierra
+and is supported on Linux, 32- and 64-bit Windows, and macOS 10.13 High Sierra
 or higher.  This release will include an updated Bioconductor [Amazon Machine
 Image][1] and [Docker containers][2].
 
@@ -25,7 +25,7 @@ for details and downloads.
 Contents
 --------
 
-* [Getting Started with Bioconductor 3.10](#getting-started-with-bioconductor-35)
+* [Getting Started with Bioconductor 3.11](#getting-started-with-bioconductor-35)
 * [New Software Packages](#new-software-packages)
 * [New Data Experiment Packages](#new-data-experiment-packages)
 * [New Annotation Packages](#new-annotation-packages)
@@ -40,7 +40,7 @@ Getting Started with Bioconductor 3.11
 
 To update to or install Bioconductor 3.11:
 
-1. Install R >=4.0.0.  Bioconductor 3.11 has been designed expressly for
+1. Install R 4.0.0. Bioconductor 3.11 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
