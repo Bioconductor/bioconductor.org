@@ -9,9 +9,9 @@ packages, and 27 workflows.
 There are 98 new software packages, 10 new data experiment packages,
 5 new annotation packages, 1 new workflow, and many updates and improvements
 to existing packages; Bioconductor 3.11 is compatible with R 4.0.0,
-and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
-release will include an updated Bioconductor [Amazon Machine Image][1]
-and [Docker containers][2].
+and is supported on Linux, 32- and 64-bit Windows, and MacOS 10.13 High Sierra
+or higher.  This release will include an updated Bioconductor [Amazon Machine
+Image][1] and [Docker containers][2].
 
 Thank you to everyone for your contribution to Bioconductor
 
@@ -9879,6 +9879,9 @@ IdMappingRetrieval, IPPD, kimod, LMGene, lol, LVSmiRNA, M3D, manta,
 MaxContrastProjection, MCRestimate, MergeMaid, mitoODE, MoPS, motifRG, MTseeker,
 nem, PAPi, pcaGoPromoter, pint, plw, PowerExplorer, proteoQC, QUALIFIER, readat,
 RefNet, RIPSeeker, SANTA, scfind, splicegear, sRAP, triform, Vega, waveTiling
+
+DESeq has been deprecated in favor of DESeq2. Do to its high number of reverse
+dependencies it will remain deprecated in 3.12 to be removed in 3.13.
 
 Three experimental data packages were removed in this release (after being
 deprecated in BioC 3.10): allenpvc, charmData, facopy.annot
