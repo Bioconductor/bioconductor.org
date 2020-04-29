@@ -1156,6 +1156,60 @@ CODE REFACTORING
 - The version number was bumped for the Bioconductor devel version,
   which is now BioC 3.11 for R (>= 3.6.1).
 
+[artMS](/packages/artMS)
+---------
+
+                        Changes in version 1.6.0                        
+
+- Major package updates. It addresses most of the warnings and messages from required packages
+
+- Analysis of Protein Acetylation now supported.
+
+- General to all Quality control plots: update default names for all pdf outputs
+
+- QC artmsQualityControlEvidenceExtended():
+
+    + New plots: peptide and protein overlap across bioreplicates and conditions (plotPEPTOVERLAP and plotPROTOVERLAP)
+    + Updates and improves all the plots, affecting font size and other
+    aesthetic options
+    + Change parameter "plotIC" to "plotPCA" in artmsQualityControlEvidenceExtended()
+
+- QC artmsQualityControlEvidenceBasic():
+
+   + Depracated: Plot correlation distributions
+   + Updated and improved all the plots, affecting font size and other aesthetic
+
+- More data testing datasets available:
+
+  + artms_data_ph_contrast: contrast object for available the PH example dataset
+  + artms_data_ph_config: configuration yaml object for the available PH example dataset
+  + artms_data_ph_msstats_results: results data object from running artmsQuantification
+  + artms_data_ph_msstats_modelqc: modelqc data object from running artmsQuantification
+
+- Vignette updated
+
+- Other minor fixes / improvements
+
+                 Changes in version 1.4.3 (2020-02-08)                  
+
+- artmsAnalysisQuantifications(), several updates:
+
+  + change default value for "l2fc_thres" to 1
+  + change defult value for "output_dir" to "analysis_quant"
+  + NEW option: "outliers". It allows to remove outliers from abundance data
+
+- Fix bug affecting artmsQualityControlSummaryExtended()
+
+                 Changes in version 1.4.2 (2019-12-06)                  
+
+- Fixed a crash when impute fails due to missing outlier data (part 2)
+
+                 Changes in version 1.4.1 (2019-12-06)                  
+
+- Fixed a crash when impute fails due to missing outlier data
+
+
+
 [ASpediaFI](/packages/ASpediaFI)
 ---------
 
@@ -1984,6 +2038,59 @@ access to .Random.seed
                         Changes in version 0.4.0                        
 
 - Added a NEWS.md file to track changes - Added support for bam files
+
+[BridgeDbR](/packages/BridgeDbR)
+--------
+                       Changes in version 1.21.6                        
+
+NEW FEATURES
+
+- adds a getProperties() method
+
+- adds a maps() method that can map multiple identifiers
+
+SIGNIFICANT USER-LEVEL CHANGES
+
+- the map() method now returns a data frame
+
+                       Changes in version 1.21.5                        
+
+BUG FIXES
+
+- fixed links in the Vignette and some further clarification
+
+                       Changes in version 1.21.4                        
+
+BUG FIXES
+
+- updated the Apache Derby library to 10.5.3.0 (fixing compatibility with newer ID mapping databases)
+
+- replaced RCurl with curl to fix downloading on Windows
+
+                       Changes in version 1.21.3                        
+
+BUG FIXES
+
+- force RCurl to use TSL1.2
+
+- added clarification of external data sources used
+
+                       Changes in version 1.21.2                        
+
+BUG FIXES
+
+- updated URL of the /data/gene_database/ location to point directly to bridgedb.github.io
+
+- now uses the smaller Bs mapping database as test data in the example
+
+- updated the code for getDatabase() to allow downloading data from any location provided by /data/gene_database/
+
+                       Changes in version 1.21.1                        
+
+BUG FIXES
+
+- no longer tries to get Derby file names online
+
 
 [BUSpaRse](/packages/BUSpaRse)
 --------
