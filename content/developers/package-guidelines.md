@@ -250,12 +250,13 @@ associated files.
         `GenomicRanges` package is listed in the Depends: field of
         `GenomicAlignments`.  It is unusual for more than three
         packages to be listed as 'Depends:'.
-      + **Suggests:** is for packages used in vignettes or examples,
-        or in conditional code. This includes examples that make use
-        of annotation and/or experiment packages (e.g., `TxDb*`).
-        In cases where an external one-off function is required,
-        the use of conditional code is best practice. External package
-        availability can be conditionally checked via `requireNamespace()`.
+      + **Suggests:** is for packages used in vignettes, examples,
+        and in conditional code. Commonly, annotation and experiment
+        packages (e.g., `TxDb*`) used in vignette and example code are
+        included in this field thus avoiding users a costly download.
+        In the case where an external one-off function is required for
+        package code, external package availability can be checked via
+        `if (!requireNamespace('extraPKG')) stop(...)`.
       + **Enhances:** is for packages such as `Rmpi` or `parallel`
         that enhance the performance of your package, but are not
         strictly needed for its functionality.
@@ -326,10 +327,21 @@ users. _Bioconductor_ reviewers will be looking for:
 
 A NEWS file should be included to keep track of changes to the code
 from one version to the next. It can be a top level file or in the
-inst/ directory. Specifics on formatting can be found on the help page
-for `?news`. _Bioconductor_ uses the NEWS file to create the semi-annual
-release announcement. It must include list elements and cannot be a
-plain text file. An example format:
+inst/ directory. Only one NEWS file should exist. The following are acceptable
+formats and locations:
+
+:--|:--------------|:-----------------------------
+1. |./inst/NEWS.Rd |  latex
+2. |./inst/NEWS    |  formatted text see ?news
+3. |./inst/NEWS.md |  mardown
+4. |./NEWS.md      |  markdown
+5. |./NEWS         |  formatted text see ?news
+
+
+Specifics on formatting can be found on the help page
+for `?news`.  _Bioconductor_ uses the NEWS
+file to create the semi-annual release announcement. It must include list
+elements and **cannot** be a plain text file. An example format:
 
 ```
 Changes in version 0.99.0 (2018-05-15)
@@ -393,7 +405,10 @@ Text: Made the following significant changes o added a subsetting
 Appropriate citations must be included in help pages (e.g., in the see
 also section) and vignettes; this aspect of documentation is no
 different from any scientific endeavor. The file `inst/CITATION` can
-be used to specify how a package is to be cited.
+be used to specify how a package is to be cited. If this option is utilized, 
+a maintainer can check proper formatting of the CITATION file by running
+`readCitationFile("inst/CITATION")`; This must run without ERROR for the 
+CITATION to be accurately displayed on the package landing pages. 
 
 Whether or not a CITATION file is present, an automatically-generated
 citation will appear on the package landing page on the _Bioconductor_
@@ -488,7 +503,7 @@ executable code that demonstrates how to use the package to accomplish
 a task, [man pages][man] for all exported functions with runnable
 examples, well documented data structures especially if not a
 [pre-exiting class][preclass], and well documented datasets for data
-in `data` and in `inst/extdata`. References to the methdos used as
+in `data` and in `inst/extdata`. References to the methods used as
 well as to other simlar or related project/packages is also
 expected. If data structures differ from similar packages,
 _Bioconductor_ reviewers will expect some justification as to why. Keep
@@ -564,7 +579,11 @@ package and links to the main functions. Data man pages must include
 source information and data structure information. Man pages
 describing new classes must be very detailed on the structure and what
 type of information is stored. All man pages should have an runnable
-examples. See Writing R Extensions section on [man pages][man] for
+examples. `donttest and dontrun` are discouraged and generally not allowed;
+exceptions can be made with proper justification and are at the _Bioconductor_
+Reviewers discretion. If this option is used it will also be preferrable to use
+`donttest` instead of `dontrun`; `donttest` requires valid R code while
+`dontrun` does not. See Writing R Extensions section on [man pages][man] for
 detailed instruction or format information for documenting a package,
 functions, classes, and data sets.  All help pages should be
 comprehensive.

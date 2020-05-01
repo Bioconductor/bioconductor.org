@@ -1,11 +1,11 @@
 # Package End of Life Policy
 
 Creation Date: 3 March, 2015.<br />
-Last Edit Date: 3 May, 2016
+Last Edit Date: 23 March, 2020
 
 The Bioconductor project strives to provide a software repository that is stable
 and relevant to users across the community. Each year 100-150 new software
-packages are added to the repository; as of Spring 2015 over 1000 packages are
+packages are added to the repository; as of Fall 2019 over 1800 packages are
 hosted. The Bioconductor build system builds and checks each software package
 every 24 hours. Regular execution of example, vignette and unit test code
 ensures the package is operating as expected and all required dependencies are
@@ -18,10 +18,10 @@ In an effort to maintain a high quality repository we have adopted a
 one-year end of life (EOL) process for packages that no longer pass
 build or check and do not have an active maintainer. Packages are
 assessed for EOL deprecation prior to each Bioconductor release; the
-EOL policies apply to software, annotation, and experiment data
+EOL policies apply to software, annotation, workflow, and experiment data
 packages.
 
-## Criteria for package deprecation
+## Criteria for package deprecation by Core Team 
 
 1. R CMD build or check errors on one or more platforms
 
@@ -42,8 +42,24 @@ packages.
    Bioconductor team members, package-related errors in the build
    system, and requests for bug fixes.
 
-Alternatively, a package maintainer may decide that they no longer
-wish to maintain their package.
+
+## User Requested Deprecation 
+
+Alternatively, a package maintainer may requestion package deprecation. The
+maintainer may have any number of reasons for deprecating their package. Some
+common reasons: 
+
+1. They no longer wish to maintain their package 
+
+2. The package has been superseded though other packages
+
+3. The package material has become out-dated and it makes sense to retire the
+package. 
+
+We ask that maintainers wishing to deprecate their package send an email
+notification to bioc-devel@r-project.org.  The core team will ensure all
+necessary steps and notifications can occur. 
+
 
 ## End of Life process
 
@@ -67,7 +83,7 @@ remedial action, the package is marked as 'Defunct'. The package is removed
 from the nightly build system, is no longer available through
 'BiocManager::install()', and does not have a current 'landing page'.
 
-The package remains available in the subversion archive, and in previous
+The package remains available in the git archive, and in previous
 versions of Bioconductor.
 
 Defunct packages cannot re-enter the Bioconductor repository except through
@@ -78,7 +94,6 @@ review as a 'new package'.
 A package identified for deprecation during Bioconductor release 3.2 / 
 devel 3.3 would make the following transitions:
 
-    - deprecate in release 3.2
     - deprecate in devel 3.3
     ** Bioc Release **
     - deprecate in release 3.3 (i.e., no change in release status)
@@ -121,4 +136,6 @@ devel 3.3 would make the following transitions:
 
 A deprecated package can be un-deprecated and removed from the End of Life
 process if it is fixed before the next Bioconductor release. To have a
-package un-deprecated, please contact maintainer@bioconductor.org.
+package un-deprecated, please contact maintainer@bioconductor.org. If a package
+is already in the defunct stage; the package will mostly likely be requested to
+go through the new package submission process again. 

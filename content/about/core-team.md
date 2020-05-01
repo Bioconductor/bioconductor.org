@@ -15,31 +15,18 @@
       <br>Michael Lawrence
     </td>
     <td width="33%">
-      <img src="/images/coreTeamPic/QianLiu.jpg"
-           width="100%" alt="Qian Liu" title="Qian Liu"/>
-      <br>Qian Liu
-    </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
       <img src="/images/coreTeamPic/JamesMacDonald.jpg"
            width="100%" alt="James MacDonald" title="James MacDonald"/>
       <br>James MacDonald
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/MartinMorgan.jpg"
            width="100%" alt="Martin Morgan" title="Martin Morgan"/>
       <br>Martin Morgan (Project Lead)
     </td>
-    <td width="33%">
-      <img src="/images/coreTeamPic/ValObenchain.jpeg"
-           width="100%" alt="Valerie Obenchain" title="Valerie Obenchain"/>
-      <br>Valerie Obenchain
-    </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/AndrzejOles.jpeg"
            width="100%" alt="Andrezej Oles" title="Andrezej Oles"/>
@@ -50,19 +37,27 @@
            width="100%" alt="Herve Pages" title="Herve Pages"/>
       <br>Herv&eacute; Pag&egrave;s
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/MarcelRamos.JPG"
            width="100%" alt="Marcel Ramos" title="Marcel Ramos"/>
       <br>Marcel Ramos
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/LoriShepherd.jpg"
            width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
       <br>Lori Ann Shepherd
     </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/MikeSmith.jpg"
+           width="100%" alt="Mike Smith" title="Mike Smith"/>
+      <br>Mike Smith
+    </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
            width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
@@ -73,20 +68,18 @@
            width="100%" alt="Daniel van Twisk" title="Daniel van Twisk"/>
       <br>Daniel van Twisk
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/JiefeiWang.jpeg"
            width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
       <br>Jiefei Wang
     </td>
   </tr>
-
 </table>
 
 Recent alumni
 
+* Qian Liu
+* Valerie Obenchain
 * Greg Wargula
 * Dan Tenenbaum
 * Brian Long

@@ -122,7 +122,7 @@ task :build => [ :compile, :copy_config, :copy_assets,
 
 task :default => :build
 
-desc "deploy (sync) to staging (run on merlot2)"
+desc "deploy (sync) to staging server root on staging"
 task :deploy_staging do
   dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")

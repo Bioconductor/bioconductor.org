@@ -3,6 +3,52 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.11 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.10/bioc/html/SNPchip.html">SNPchip</a></li>
+<li><a href="/packages/3.10/bioc/html/GenomeGraphs.html">GenomeGraphs</a></li>
+<li><a href="/packages/3.10/bioc/html/HTSanalyzeR.html">HTSanalyzeR</a></li>
+<li><a href="/packages/3.9/bioc/html/Rchemcpp.html">Rchemcpp</a></li>
+<li><a href="/packages/3.9/bioc/html/charm.html">charm</a></li>
+<li><a href="/packages/3.10/bioc/html/Pbase.html">Pbase</a></li>
+<li><a href="/packages/3.8/bioc/html/dSimer.html">dSimer</a></li>
+<li><a href="/packages/3.8/bioc/html/flipflop.html">flipflop</a></li>
+<li><a href="/packages/3.9/bioc/html/exomePeak.html">exomePeak</a></li>
+<li><a href="/packages/3.9/bioc/html/CNPBayes.html">CNPBayes</a></li>
+<li><a href="/packages/3.9/bioc/html/brainImageR.html">brainImageR</a></li>
+<li><a href="/packages/3.9/bioc/html/plateCore.html">plateCore</a></li>
+<li><a href="/packages/3.9/bioc/html/rHVDM.html">rHVDM</a></li>
+<li><a href="/packages/3.9/bioc/html/SEPA.html">SEPA</a></li>
+<li><a href="/packages/3.9/bioc/html/condcomp.html">condcomp</a></li>
+<li><a href="/packages/3.8/bioc/html/birte.html">birte</a></li>
+<li><a href="/packages/3.10/bioc/html/mlm4omics.html">mlm4omics</a></li>
+<li><a href="/packages/3.10/bioc/html/RnaSeqSampleSize.html">RnaSeqSampleSize</a></li>
+<li><a href="/packages/3.10/bioc/html/CAMTHC.html">CAMTHC</a> (renamed to debCAM)</li>
+</ul>
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.10/data/experiment/html/charmData.html">charmData</a></li>
+<li><a href="/packages/3.10/data/experiment/html/facopy.annot.html">facopy.annot</a></li>
+<li><a href="/packages/3.10/data/experiment/html/allenpvc.html">allenpvc</a></li>
+</ul>
+
+Annotation Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.10/data/annotation/html/MafDb.gnomADex.r2.0.1.GRCh38.html">MafDb.gnomADex.r2.0.1.GRCh38</a> (replaced with MafDb.gnomADex.r2.1.GRCh38)</li>
+<li><a href="/packages/3.10/data/annotation/html/MafDb.gnomAD.r2.0.1.GRCh38.html">MafDb.gnomAD.r2.0.1.GRCh38</a> (replaced witht MafDb.gnomAD.r2.1.GRCh38)</li>
+<li><a href="/packages/3.10/data/annotation/html/MafDb.gnomADex.r2.0.1.hs37d5.html">MafDb.gnomADex.r2.0.1.hs37d5</a> (replaced with MafDb.gnomADex.r2.1.hs37d5)</li>
+<li><a href="/packages/3.10/data/annotation/html/MafDb.gnomAD.r2.0.1.hs37d5.html">MafDb.gnomAD.r2.0.1.hs37d5</a> (replaced with MafDb.gnomAD.r2.1.hs37d5)</li>
+<li><a href="/packages/3.10/data/annotation/html/MafDb.ESP6500SI.V2.SSA137.hs37d5.html">MafDb.ESP6500SI.V2.SSA137.hs37d5</a></li>
+<li><a href="/packages/3.10/data/annotation/html/MafDb.EXP6500SI.V2.SSA137.GRCh38.html">MafDb.EXP6500SI.V2.SSA137.GRCh38</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.10 release
 
 Software Packages:

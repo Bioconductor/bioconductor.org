@@ -7,12 +7,12 @@ staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-te
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.10"
-r_version_associated_with_release: "3.6.0"
+release_version: "3.11"
+r_version_associated_with_release: "4.0.0"
 r_version_associated_with_devel: "4.0.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.11"
+devel_version: "3.12"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -23,27 +23,27 @@ devel_version: "3.11"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.10"
 - "3.11"
+- "3.12"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
 - "data/experiment"
-- "data/annotation"
 - "workflows"
+#- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
-  linux: "malbec1"
-  windows: "tokay1"
-  mac_elcapitan: "merida1"
-active_devel_builders:
   linux: "malbec2"
   windows: "tokay2"
-  mac_elcapitan: "celaya2"
+  mac_highsierra: "machv2"
+active_devel_builders:
+  linux: "malbec1"
+  windows: "tokay1"
+#  mac_highsierra: "machv2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
@@ -71,7 +71,7 @@ ami_ids:
  bioc3_7: ami-01bcd08e357360496
  bioc3_8: ami-0565362d8bfb9cbed
  bioc3_9: ami-0f5d1990d8c571cdf
- bioc3_10: ami-02da344e19bc0569d
+ bioc3_10: ami-0c5ab50ca03a54468
  bioc3_11: ami-006b0266cdd965cc4
 string_pattern_type: legacy
 data_sources:
@@ -150,6 +150,7 @@ r_ver_for_bioc_ver:
   "3.9": "3.6"
   "3.10": "3.6"
   "3.11": "4.0"
+  "3.12": "4.0"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -188,6 +189,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.8": "10/31/2018"
   "3.9": "05/03/2019"
   "3.10": "10/30/2019"
+  "3.11": "04/28/2020"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
@@ -199,16 +201,6 @@ mirrors:
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
- - Brazil/Latin America:
-   - institution: Department of Genetics, Medical School of Ribeirão Preto, University of São Paulo
-     institution_url: http://rge.fmrp.usp.br/
-     contact: Houtan Noushmehr
-     contact_email: houtan@usp.br
-     mirror_url: http://bioconductor.fmrp.usp.br/bioc/
-     https_mirror_url: https://bioconductor.fmrp.usp.br/bioc/
-     rsync: secure_mirror_from_master
-     city: Ribeirão Preto
-     country_code: br
  - Germany:
    - institution: Department of Statistics, TU Dortmund
      institution_url: http://www.statistik.tu-dortmund.de/
@@ -239,36 +231,6 @@ mirrors:
      country_code: jp
      city: Wako
  - China:
-   - institution: University of Science and Technology of China
-     institution_url: http://en.ustc.edu.cn/
-     contact: Mirror Maintainer
-     contact_email: mirrors@ustc.edu.cn
-     mirror_url: http://mirrors.ustc.edu.cn/bioc/
-     https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
-     rsync: secure_mirror_from_master
-     country_code: cn
-     city: Anhui
- - Australia:
-   - institution: Australia's Academic and Research Network
-     institution_url: http://www.aarnet.edu.au/
-     contact: Alex Dodson
-     contact_email: alex.dodson@aarnet.edu.au
-     mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor/
-     https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor/
-     rsync: secure_mirror_from_master
-     country_code: au
-     city: Sydney
- - CRAN ASIA (Korea, Japan and Singapore):
-   - institution: Personnel Psychology Laboratory, Kwangwoon University 
-     institution_url: https://www.kw.ac.kr/en/index.do 
-     contact: Seongho Bae 
-     contact_email: admin@cran.asia 
-     mirror_url: http://cran.asia/ 
-     https_mirror_url: https://cran.asia/
-     rsync: secure_mirror_from_master
-     country_code: kr 
-     city: Seoul 
- - China:
    - institution: TUNA Mirror Site, Tsinghua University 
      institution_url: mirrors.tuna.tsinghua.edu.cn
      contact: Miao Wang 
@@ -278,3 +240,13 @@ mirrors:
      rsync: secure_mirror_from_master
      country_code: cn 
      city: Peking 
+ - Germany2:
+   - institution: GWDG
+     institution_url: https://ftp.gwdg.de/
+     contact: Tim Ehlers and Steffen Klemer
+     contact_email: ftpmaster@gwdg.de
+     mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
+     https_mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
+     rsync: secure_mirror_from_master
+     city: Gottingen
+     country_code: de

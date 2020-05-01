@@ -13,8 +13,11 @@
 
 
 
-  <div>
-    <p>Last SVN commit to Rpacks devel was  <%= get_last_svn_commit_time() %>.</p>
+  <div  style="float:left;width:50%;">
+    <p>Last 20 commit to Bioconductor release:  <%= get_last_git_commits(release=true) %>.</p>
+  </div>
+  <div  style="float:right;width:50%;">
+    <p>Last 20 commit to Bioconductor devel:  <%= get_last_git_commits(release=false) %>.</p>
   </div>
 
 
@@ -67,6 +70,12 @@
       </div>
 
        <div>
+            <p><a href="/checkResults/release/workflows-LATEST/">Release, Workflows</a></p>
+            <%= get_build_summary("release", "workflows") %>
+            <p>&nbsp;</p>
+      </div>
+
+       <div>
             <p><a href="/checkResults/devel/bioc-LATEST/">Devel, Software</a></p>
             <%= get_build_summary("devel", "bioc") %>
             <p>&nbsp;</p>
@@ -75,23 +84,40 @@
        <div>
             <p><a href="/checkResults/devel/data-experiment-LATEST/">Devel, Experiment Data</a></p>
             <%= get_build_summary("devel", "data-experiment") %>
+            <p>&nbsp;</p>
       </div>
 
+      <div>
+            <p><a href="/checkResults/devel/workflows-LATEST/">Devel, Workflows</a></p>
+            <%= get_build_summary("devel", "workflows") %>
+            <p>&nbsp;</p>
+      </div>
 
     </div>
 
 </div>
 
 
-  <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://tracker.bioconductor.org/">New Packages</a></h2>
-    <%=get_new_packages_in_tracker()%>
+<div>
+  <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>Newest Packages</h2>
+   <div style="float:left;width:50%;">
+     <h4> Software Packages </h4> <br>
+     <%=latest_packages("bioc")%>
   </div>
+   <div style="float:right;width:50%;">
+     <h4> Data Experiment Packages </h4> <br>
+     <%=latest_packages("data-experiment")%>
+  </div>
+</div>
 
 
-  <div style="float:left;width:100%;">
-      <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>
-        Single Package Builder</h2>
+
+   <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://github.com/Bioconductor/Contributions/issues">Single Package Builder</a></h2>
+   <div style="float:left;width:50%;">
+    Recent Submissions <br>
+    <%=recent_spb_submissions()%>
+  </div>
+   <div style="float:right;width:50%;">
     <%=recent_spb_builds()%>
   </div>
 
@@ -106,7 +132,6 @@
   <div style="float:right;width:50%;">
     <div style="padding:0 0 0 12px">
 
-
 <a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
@@ -115,55 +140,6 @@
   </div>
 
 </div>
-
-
-  <div style="float:left;width:100%;">
-          <h2><img src="/images/icons/buildicon.gif" alt=""/>
-            Analytics</h2>
-    <p>Top search terms for past month:</p>
-    <%# get_search_terms()%>
-
-    <%= get_hits() %>
-
-  </div>
-
-
-
-
-
-<br clear="all"/>
-
-<div>
-    <h2>Support Site Usage Stats</h2>
-
-    <table id="support_site_usage">
-      <thead>
-        <tr>
-          <th>Period</th>
-          <th>Top-level posts</th>
-          <th>Answers</th>
-          <th>Comments</th>
-          <th>New Visitors</th>
-          <th>Returning Visitors</th>
-      </thead>
-      <tbody>
-        <% for row in get_stats %>
-          <tr>
-          <% require 'pry';binding.pry %>
-          <% for key in [:label, :toplevel, :answers, :comments, :new_visitors, :returning_visitors] %>
-            <td><%= row[key] %></td>
-          <% end %>
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-
-<p>&nbsp;</p>
-
-<p><i>Note</i>: Before mid-September, 2014, the support site was a mailing list, so the terms 'new visitors'
-and 'returning visitors' did not apply.</p>
-</div>
-
 
 <h2>Mirror Status</h2>
 
