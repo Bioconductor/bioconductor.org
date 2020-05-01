@@ -6,12 +6,14 @@ assays. _Bioconductor_ is based on packages written primarily in the
 [R][] programming language. Bioconductor is committed to open source,
 collaborative, distributed software development and literate,
 reproducible research. Enabling user and developer communities is an
-essential part of our mission. [Scientific][] and [Technical][]
+essential part of our mission. [Scientific][], [Technical][] and [Community][]
 Advisory Boards provide project oversight.
 
 [R]: http://www.r-project.org
 [Technical]: technical-advisory-board/
 [Scientific]: scientific-advisory-board/
+[Community]: community-advisory-board/
+
 
 ## Release and core development
 
@@ -23,13 +25,15 @@ number of [meta-data packages](/packages/release/data/annotation)
 provide pathway, organism, microarray and other annotations.
 
 The _Bioconductor_ project started in 2001 and is overseen by a [core
-team](/about/core-team/), based primarily at [Roswell Park Cancer
-Institute](https://www.roswellpark.org), and by other members coming
-from US and international institutions. A [Technical Advisory Board][Technical] of
-key participants meets monthly to support the _Bioconductor_ mission
-by developing strategies to ensure long-term technical suitability of
-core infrastructure, and to identify and enable funding strategies for
-long-term viability. A [Scientific Advisory Board][Scientific] including external
+team](/about/core-team/), based primarily at [Roswell Park Comprehensive Cancer
+Center](https://www.roswellpark.org), and by other members coming
+from US and international institutions. A [Community Advisory Board][Community] 
+and a [Technical Advisory Board][Technical] of key participants 
+meets monthly to support the _Bioconductor_ mission by coordinating 
+training and outreach activities, developing strategies to ensure long-term 
+technical suitability of core infrastructure, and to identify and enable 
+funding strategies for long-term viability. 
+A [Scientific Advisory Board][Scientific] including external
 experts provides annual guidance and accountability.
 
 Key citations to the project include Huber et al., 2015 [Nature
