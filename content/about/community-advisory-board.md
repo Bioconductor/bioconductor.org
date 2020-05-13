@@ -17,7 +17,7 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 * [Saskia Freytag](https://github.com/SaskiaFreytag), Harry Perkins Institute of Medical Research, Australia. 
 * [Susan Holmes](https://med.stanford.edu/profiles/susan-holmes), Stanford, USA.
 * [Kozo Nishida](https://github.com/kozo2), RIKEN Center for Biosystems Dynamics Research, Japan.
-* [Johannes Rainer](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084), EURAC, Italy.
+* [Johannes Rainer](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084), Eurac Research, Italy.
 * [Matt Ritchie](https://www.wehi.edu.au/people/matthew-ritchie), The Walter and Eliza Hall Institute of Medical Research, Melbourne, Australia.
 * [Lori Shepherd](https://www.linkedin.com/in/lori-shepherd-b49993172), Roswell Park Comprehensive Cancer Center, USA.
 
