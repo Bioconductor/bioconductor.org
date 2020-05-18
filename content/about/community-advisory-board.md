@@ -18,8 +18,10 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 * [Susan Holmes](https://med.stanford.edu/profiles/susan-holmes), Stanford, USA.
 * [Kozo Nishida](https://github.com/kozo2), RIKEN Center for Biosystems Dynamics Research, Japan.
 * [Johannes Rainer](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084), Eurac Research, Italy.
-* [Matt Ritchie](https://www.wehi.edu.au/people/matthew-ritchie), The Walter and Eliza Hall Institute of Medical Research, Melbourne, Australia.
+* [Matt Ritchie](https://www.wehi.edu.au/people/matthew-ritchie), The Walter and Eliza Hall Institute of Medical Research, Australia.
 * [Lori Shepherd](https://www.linkedin.com/in/lori-shepherd-b49993172), Roswell Park Comprehensive Cancer Center, USA.
 
 ## Meeting minutes
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
+
+- [2020-04-09](2020-04-09-minutes.pdf)
