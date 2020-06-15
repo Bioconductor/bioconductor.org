@@ -470,7 +470,7 @@ If Singularity is available,
 	module load singularity
 
 Please check this link for specific usage instructions relevant to Singularity
-containers: https://singularity-hub.org/collections/3955/usage
+containers and their usage https://www.rocker-project.org/use/singularity/.
 
 <a name="contribute"></a>
 ## How to Contribute
