@@ -25,3 +25,8 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
 
 - [2020-04-09](2020-04-09-minutes.pdf)
+- [2020-05-14](2020-05-14-minutes.pdf)
+
+## Contact
+
+If you would like to contact the Community Advisory Board please email:  cab at bioconductor.org
