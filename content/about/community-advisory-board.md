@@ -27,6 +27,23 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
 - [2020-04-09](2020-04-09-minutes.pdf)
 - [2020-05-14](2020-05-14-minutes.pdf)
 
+## Event Calendar
+
+The [Bioconductor Event
+Calendar](https://calendar.google.com/calendar/b/1?cid=YWtlczFvZGVsbW9kcDAzODV1ZHB2NDhpY29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ)
+is a public facing google calendar for Bioconductor and Bioconductor related
+events. The events posted on this calendar are managed by members of the
+Community Advisory Board.  If you would like an event added to the calendar
+please email: events at biocondutor.org
+
+Please include event details such as:
+ - event name 
+ - event type (workshop, hack-a-thon, meetup, lecture, etc)
+ - sponsor/organization
+ - event location 
+ - registration details (if applicable) 
+ - event website
+
 ## Contact
 
 If you would like to contact the Community Advisory Board please email:  cab at bioconductor.org
