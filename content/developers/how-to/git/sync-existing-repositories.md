@@ -5,7 +5,7 @@ repositories are all in sync.
 
 ## Steps:
 
-1. Clone the the GitHub repository to a local machine. Change into the
+1. Clone the GitHub repository to a local machine. Change into the
    directory containing the repository.
 
 1. Configure the "remotes" of the GitHub clone.

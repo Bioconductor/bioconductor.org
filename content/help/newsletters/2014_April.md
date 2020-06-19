@@ -343,7 +343,7 @@ ranges leaving only the "unshared" regions:
 
 
 To finish this off we make a `GRangesList` of the unshared regions.
-The list is length 3 corresponding the the 3 ranges in `gr1':
+The list is length 3 corresponding to the 3 ranges in `gr1':
 
 
     ans_eltlens <- countQueryHits(ov)
