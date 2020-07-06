@@ -37,6 +37,10 @@ it is available on the [_Bioconductor_ git server][].
    Add a remote to your package's local git repository using:
 
         git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY-NAME>.git
+        
+   NOTE: As a package developer, you must only use the SSH protocol to
+   gain read/write access to your package in the _Bioconductor_ git 
+   repository.
 
 1. **Start a new build**: Your package version number is in the format 
    'major.minor.patch'. To start a new build on our server, you must only
