@@ -2,73 +2,108 @@
 
 __Goal__: You developed a package in GitHub, following the
 _Bioconductor_ new package [Contributions README][] guidelines,
-[submitted it to _Bioconductor_][], and your package has been 
-moderated. As part of moderation process, the package to be 
-reviewed has been added to the _Bioconductor_ git repository. 
-Package authors will learn to push to the _Bioconductor_ git
-repository, from the time a package has been submitted to 
-_Bioconductor_.
+[submitted it to _Bioconductor_][], and your package has been
+moderated. As part of moderation process, the package to be reviewed
+has been added as a repository on the [_Bioconductor_ git server][1].
 
-After your package has been moderated and assigned a reviewer, 
-it is available on the [_Bioconductor_ git server][].
+During and after the review process, package authors must push changes
+that include a **version number 'bump'** to the _Bioconductor_ git
+repository. This causes the package to be built and checked on Linux,
+macOS, and Windows operating systems, and forms the basis for the
+review process.
 
-- __SSH (developer) read / write access:__ `git@git.bioconductor.org`
-
-- __HTTPS (public) read only access:__ `https://git.bioconductor.org`
+In this document, package authors will learn best practices for
+pushing to the _Bioconductor_ git repository.
 
 ## Steps:
 
-1. _Bioconductor_ needs to know your SSH 'public key'. _Bioconductor_
-   will use keys in `https://github.com/<your-github-id>.keys`. This step
-   is now mandated by the package submission process, so it should have been
-   completed if you have gone through the first step of the submission process.
+1. **SSH keys**. As part of the initial moderation step,
+   _Bioconductor_ will use SSH 'public key' keys available in
+   `https://github.com/<your-github-id>.keys`.
 
-   Alternatively, [submit your SSH public key][submit-keys] or github
-   id to _Bioconductor_ via the [BiocCredentials application][].
+   After the review process is over, additional SSH keys can be added
+   and contact information edited using the [BiocCredentials
+   application][].
 
-1. Configure the "remotes" of your local git repository. You will need
+1. **Configure the "remotes" of your local git repository**. You will need
    to push any future changes to your package to the _Bioconductor_ git
    repository to issue a new build of your package. 
    
-   Once the package is accepted, you pull changes the _Bioconductor_ core 
-   team will make (e.g., bug fixes or bumping a version number for a new
-   release). 
-   
-   Add a remote to your package's local git repository using:
+   Add a remote named `upstream` to your package's local git
+   repository using:
 
         git remote add upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY-NAME>.git
         
-   NOTE: As a package developer, you must only use the SSH protocol to
-   gain read/write access to your package in the _Bioconductor_ git 
-   repository.
-
-1. **Start a new build**: Your package version number is in the format 
-   'major.minor.patch'. To start a new build on our server, you must only
-   update the 'patch' version. Newly submitted packages will have versions
-   similar to `0.99.0`. Then, push to the _Bioconductor_ git repository. 
-
-   To push,
+   Check that you have updated the remotes in your repository; you'll
+   see an `origin` remote pointing to `github.com`, and an `upstream` remote
+   pointing to `bioconductor.org`
    
-        git add <files changed including version bump in DESCRIPTION file>
+        $ git remote -v
+
+        origin  <link to your github> (fetch)
+        origin  <link to your github> (push)
+        upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY-NAME>.git (fetch)
+        upstream git@git.bioconductor.org:packages/<YOUR-REPOSITORY-NAME>.git (push)
         
+   NOTE: As a package developer, you must use the SSH protocol (as in
+   the above command) to gain read/write access to your package in the
+   _Bioconductor_ git repository.
+
+1. **Add and commit changes to your local repository**. During the
+   review process you will likely need to update your package. Do this
+   in your local repository by first making sure your repository is
+   up-to-date with your `github.com` and `git.bioconductor.org`
+   repositories.
+
+        git fetch --all
+        git merge upstream/master    # merge changes from git.bioconductor.org
+        git merge origin/master      # merge changes from github.com
+
+   Make changes to your package master branch and commit them to your
+   local repository
+   
+        git add <files changed>
         git commit -m "<informative commit message>"
         
-        git push upstream master
+1. **'Bump' the package version**.  Your package version number is in
+   the format 'major.minor.patch'. When the review process starts, the
+   version number is `0.99.0`. Increment the `patch` version number by
+   1, e.g., to `0.99.1`, `0.99.2`, ..., `0.99.9`, `0.99.10`, ...
+   
+   Bumping the version number before pushing is essential. It ensures
+   that the package is built across platforms.
+   
+   Remember to add and commit these changes to your local repository.
 
-1. [Pull upstream changes][] made by the _Bioconductor_ core team
-   during addition of your repository. This step is relevant once you
-   package is accepted by Bioconductor. You will need to pull the changes
-   made by the Bioconductor team.
+1. **Push changes to the Bioconductor and github repositories**.  Push
+   the changes in your local repository to the _Bioconductor_ and
+   github repositories.
+
+        git push upstream master    # push to git@git.bioconductor.org
+        git push origin master      # push to your github repository
+
+1. **Check the updated build report**. If your push to
+   git.bioconductor.org included a version bump, you'll receive an
+   email directing you to visit your issue on github.com,
+   `https://github.com/Bioconductor/Contributions/issues/`; a comment
+   is also posted on the issue indicating that a build has started.
+   
+   After several minutes a second email and comment will indicate that
+   the build has completed, and that the build report is
+   available. The comment includes a link to the build report. Follow
+   the link to see whether further changes are necessary.
 
 1. See other scenarios for working with _Bioconductor_ and GitHub repositories, in particular:
 
     - [Maintain GitHub and _Bioconductor_ repositories][].
     - [Fix bugs in  devel and release][].
+    - [Resolve merge conflicts][].
 
 [submit-keys]: https://git.bioconductor.org/BiocCredentials/
 [Maintain GitHub and _Bioconductor_ repositories]: ../maintain-github-bioc
 [Pull upstream changes]: ../pull-upstream-changes
 [Fix bugs in devel and release]: ../bug-fix-in-release-and-devel
+[Resolve merge conflicts]: ../resolve-conflicts
 [Contributions README]: https://github.com/Bioconductor/Contributions
 [_Bioconductor_ git server]: https://git.bioconductor.org
 [submitted it to _Bioconductor_]: http://bioconductor.org/developers/package-submission/
