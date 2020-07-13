@@ -26,6 +26,7 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
 
 - [2020-04-09](2020-04-09-minutes.pdf)
 - [2020-05-14](2020-05-14-minutes.pdf)
+- [2020-06-11](2020-06-11-minutes.pdf)
 
 ## Event Calendar
 
