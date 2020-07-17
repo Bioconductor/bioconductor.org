@@ -23,6 +23,7 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 - [Using Containers](#usage)
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
+  * [Using containers hosted on Microsoft Container Registry](#mcr)
 - [Modifying Image Container](#modify)
 - [Singularity](#singularity)
 - [How to contribute](#contribute)
@@ -345,6 +346,46 @@ package would be available for use.
 			-e PASSWORD=password \
 			-p 8787:8787 \
 			bioconductor/bioconductor_docker:devel
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="mcr"></a>
+### Using containers hosted on Microsoft Container Registry
+
+If you are a Microsoft Azure user, you have an option to run your containers using images hosted on [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry). 
+
+> Microsoft Container Registry (MCR) is the primary Registry for all Microsoft Published docker images that offers a reliable and trustworthy delivery of container images with a syndicated catalog
+
+
+You can learn more about this image [here](https://hub.docker.com/_/microsoft-bioconductor/).
+
+*Pull the 'bioconductor_docker' image from Microsoft Container Registry, specifying your `tag` of choice: latest, devel, RELEASE_3_10, or RELEASE_3_11*:
+`docker pull mcr.microsoft.com/bioconductor/bioconductor_docker:<tag>`
+
+To pull the latest image:
+`docker pull mcr.microsoft.com/bioconductor/bioconductor_docker:latest`
+
+**Sample: Run RStudio interactively from your docker container**
+
+To run RStudio in a web browser session, run the following and access it from `127.0.0.1:8787`. The default user name is "rstudio" and you can specify your password as the example below (here, it is set to 'bioc'):
+```
+docker run --name bioconductor_docker_rstudio \
+      -v ~/host-site-library:/usr/local/lib/R/host-site-library \
+      -e PASSWORD='bioc'                               \
+      -p 8787:8787                                     \
+      mcr.microsoft.com/bioconductor/bioconductor_docker:latest
+```
+
+To run RStudio on your terminal:
+```
+docker run --name bioconductor_docker_rstudio \
+      -it                                            \
+      -v ~/host-site-library:/usr/local/lib/R/host-site-library \
+      -e PASSWORD='bioc'                               \
+      -p 8787:8787                                     \
+      mcr.microsoft.com/bioconductor/bioconductor_docker:latest R 
+```
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
