@@ -8,7 +8,8 @@ Windows and Mac (using modern Linux kernels) via the
 
 Containers can also be deployed in the cloud using
 [Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
-or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+[Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/)
+or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
 
 <a name="top"></a>
 
@@ -23,7 +24,7 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 - [Using Containers](#usage)
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
-  * [Using containers hosted on Microsoft Container Registry](#mcr)
+- [Using containers hosted on Microsoft Container Registry](#mcr)
 - [Modifying Image Container](#modify)
 - [Singularity](#singularity)
 - [How to contribute](#contribute)
@@ -350,7 +351,7 @@ package would be available for use.
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="mcr"></a>
-### Using containers hosted on Microsoft Container Registry
+## Using containers hosted on Microsoft Container Registry
 
 If you are a Microsoft Azure user, you have an option to run your containers using images hosted on [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry). 
 
