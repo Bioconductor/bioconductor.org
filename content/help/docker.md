@@ -7,7 +7,7 @@ Windows and Mac (using modern Linux kernels) via the
 [Docker engine](https://docs.docker.com/engine/).
 
 Containers can also be deployed in the cloud using
-[Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
+[Amazon Elastic Container Service](https://aws.amazon.com/ecs/),
 [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/)
 or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
 
@@ -360,7 +360,9 @@ If you are a Microsoft Azure user, you have an option to run your containers usi
 
 You can learn more about this image [here](https://hub.docker.com/_/microsoft-bioconductor/).
 
-*Pull the 'bioconductor_docker' image from Microsoft Container Registry, specifying your `tag` of choice: latest, devel, RELEASE_3_10, or RELEASE_3_11*:
+*Pull the 'bioconductor_docker' image from Microsoft Container Registry, specifying your `tag` of choice*.
+Check [here](https://hub.docker.com/_/microsoft-bioconductor-bioconductor-docker) for the list of tags under "Full Tag Listing":
+
 `docker pull mcr.microsoft.com/bioconductor/bioconductor_docker:<tag>`
 
 To pull the latest image:
