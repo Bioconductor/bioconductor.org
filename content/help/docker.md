@@ -7,8 +7,9 @@ Windows and Mac (using modern Linux kernels) via the
 [Docker engine](https://docs.docker.com/engine/).
 
 Containers can also be deployed in the cloud using
-[Amazon Elastic Container Service](https://aws.amazon.com/ecs/)
-or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
+[Amazon Elastic Container Service](https://aws.amazon.com/ecs/),
+[Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/)
+or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/services/container-instances/)
 
 <a name="top"></a>
 
@@ -23,6 +24,8 @@ or [Google Kubernetes Engine](https://cloud.google.com/kubernetes-engine/).
 - [Using Containers](#usage)
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
+- [Using containers hosted on Microsoft Container Registry](#mcr)
+- [Use Azure Container Instances to run bioconductor images on-demand on Azure](#aci)
 - [Modifying Image Container](#modify)
 - [Singularity](#singularity)
 - [How to contribute](#contribute)
@@ -346,6 +349,188 @@ package would be available for use.
 			-p 8787:8787 \
 			bioconductor/bioconductor_docker:devel
 
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="mcr"></a>
+## Using containers hosted on Microsoft Container Registry
+
+If you are a Microsoft Azure user, you have an option to run your containers using images hosted on [Microsoft Container Registry](https://github.com/microsoft/ContainerRegistry). 
+
+> Microsoft Container Registry (MCR) is the primary Registry for all Microsoft Published docker images that offers a reliable and trustworthy delivery of container images with a syndicated catalog
+
+
+You can learn more about this image [here](https://hub.docker.com/_/microsoft-bioconductor/).
+
+*Pull the 'bioconductor_docker' image from Microsoft Container Registry, specifying your `tag` of choice*.
+Check [here](https://hub.docker.com/_/microsoft-bioconductor-bioconductor-docker) for the list of tags under "Full Tag Listing":
+
+`docker pull mcr.microsoft.com/bioconductor/bioconductor_docker:<tag>`
+
+To pull the latest image:
+`docker pull mcr.microsoft.com/bioconductor/bioconductor_docker:latest`
+
+**Sample: Run RStudio interactively from your docker container**
+
+To run RStudio in a web browser session, run the following and access it from `127.0.0.1:8787`. The default user name is "rstudio" and you can specify your password as the example below (here, it is set to 'bioc'):
+```
+docker run --name bioconductor_docker_rstudio \
+      -v ~/host-site-library:/usr/local/lib/R/host-site-library \
+      -e PASSWORD='bioc'                               \
+      -p 8787:8787                                     \
+      mcr.microsoft.com/bioconductor/bioconductor_docker:latest
+```
+
+To run RStudio on your terminal:
+```
+docker run --name bioconductor_docker_rstudio \
+      -it                                            \
+      -v ~/host-site-library:/usr/local/lib/R/host-site-library \
+      -e PASSWORD='bioc'                               \
+      -p 8787:8787                                     \
+      mcr.microsoft.com/bioconductor/bioconductor_docker:latest R 
+```
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="aci"></a>
+## Use Azure Container Instances to run bioconductor images on-demand on Azure
+
+[Azure Container Instances or ACI](https://azure.microsoft.com/en-us/services/container-instances/#features) provide a way to run Docker containers on-demand in a managed, serverless Azure environment. To learn more, check out the documentation [here](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-overview).
+
+### Run bioconductor images using ACI
+
+**Prerequisites**:
+1. [An Azure account and a subscription](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) you can create resources in
+2. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+3. Create a [resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) within your subscription
+
+You can run [Azure CLI or "az cli" commands](https://docs.microsoft.com/en-us/cli/azure/?view=azure-cli-latest) to create, stop, restart or delete container instances running any bioconductor image - either official images by bioconductor or images available on [Microsoft Container Registry](https://hub.docker.com/_/microsoft-bioconductor).
+To get started, ensure you have an Azure account and a subscription or [create a free account](https://azure.microsoft.com/en-us/free/). 
+
+Follow [this tutorial](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart) to get familiar with Azure Container Instances.
+
+To run the bioconductor image hosted on Microsoft Container Registry or MCR, create a new resource group in your Azure subscription. Then run the following command using Azure CLI. You can customize any or all of the inputs. This command is adapted to run on an Ubuntu machine:
+
+```
+az container create \
+--resource-group resourceGroupName \
+--name mcr-bioconductor \
+--image mcr.microsoft.com/bioconductor/bioconductor_docker \
+--cpu 2 \
+--memory 4 \
+--dns-name-label mcr-bioconductor \
+--ports 8787 \
+--environment-variables 'PASSWORD'='bioc'
+```
+
+When completed, run this command to get the fully qualified domain name or FQDN:
+
+```
+az container show --resource-group resourceGroupName --name mcr-bioconductor --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" --out table
+```
+
+Here we expose port 8787 on this publicly accessible FQDN. You may have to choose a different "dns-name-label" to avoid conflicts. By default, the username for RStudio is "rstudio" (similar to the official bioconductor docker image). Here we set the password for RStudio to 'bioc' in the environment variable configuration. The "--cpu" and "--memory" (in GB) configurations can also be customized to your needs. By default, ACI have 1 cpu core and 1.5GB of memory assigned.
+
+To learn more about what you can configure and customize when creating an ACI, run:
+```
+az container create --help
+``` 
+
+### Mount Azure File Share to persist analysis data between sessions
+To ensure that the data persists between different analysis sessions when using Azure Container Instances, you can use the feature to [mount Azure file share to your container instance](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-volume-azure-files). In this example, we will create an ACI that mounts the "/home/rstudio" directory in RStudio to an [Azure File Share](https://docs.microsoft.com/en-us/azure/storage/files/storage-files-introduction).
+
+**Prerequisites**:
+1. [An Azure account and a subscription](https://docs.microsoft.com/en-us/azure/guides/developer/azure-developer-guide#understanding-accounts-subscriptions-and-billing) you can create resources in
+2. [Azure CLI](https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest)
+3. Create a [resource group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/manage-resource-groups-portal) within your subscription
+
+Now, run the following Azure CLI commands to:
+1. Create an [Azure Storage](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-create?toc=%2Fazure%2Fstorage%2Fblobs%2Ftoc.json&tabs=azure-cli) account
+2. Create an [Azure file share](https://docs.microsoft.com/en-us/azure/storage/files/storage-how-to-use-files-cli)
+3. Get the [storage account key](https://docs.microsoft.com/en-us/cli/azure/storage/account/keys?view=azure-cli-latest)
+
+```
+# Change these four parameters as needed
+ACI_PERS_RESOURCE_GROUP=resourceGroupName
+ACI_PERS_STORAGE_ACCOUNT_NAME=storageAccountName
+ACI_PERS_LOCATION=eastus
+ACI_PERS_SHARE_NAME=fileShareName
+
+# Create the storage account with the parameters
+az storage account create \
+    --resource-group $ACI_PERS_RESOURCE_GROUP \
+    --name $ACI_PERS_STORAGE_ACCOUNT_NAME \
+    --location $ACI_PERS_LOCATION \
+    --sku Standard_LRS
+
+# Create the file share
+az storage share create \
+  --name $ACI_PERS_SHARE_NAME \
+  --account-name $ACI_PERS_STORAGE_ACCOUNT_NAME
+
+# Get the storage account key
+STORAGE_KEY=$(az storage account keys list --resource-group $ACI_PERS_RESOURCE_GROUP --account-name $ACI_PERS_STORAGE_ACCOUNT_NAME --query "[0].value" --output tsv)
+echo $STORAGE_KEY
+
+```
+
+Here is an example command to mount an Azure file share to an ACI running bioconductor. This command is adapted to run on an Ubuntu machine:
+
+```
+az container create \
+> --resource-group resourceGroupName \
+> --name mcr-bioconductor-fs \
+> --image mcr.microsoft.com/bioconductor/bioconductor_docker \
+> --dns-name-label mcr-bioconductor-fs \
+> --cpu 2 \
+> --memory 4 \
+> --ports 8787 \
+> --environment-variables 'PASSWORD'='bioc' \
+> --azure-file-volume-account-name storageAccountName \
+> --azure-file-volume-account-key $STORAGE_KEY \
+> --azure-file-volume-share-name fileShareName \
+> --azure-file-volume-mount-path /home/rstudio
+```
+
+When completed, run this command to get the fully qualified domain name or FQDN:
+```
+az container show --resource-group resourceGroupName --name mcr-bioconductor-fs --query "{FQDN:ipAddress.fqdn,ProvisioningState:provisioningState}" --out table
+```
+
+Here we expose port 8787 on this publicly accessible FQDN. You may have to choose a different "dns-name-label" to avoid conflicts. By default, the username for RStudio is "rstudio" (similar to the official bioconductor docker image). Here we set the password for RStudio to 'bioc' in the environment variable configuration. The "--cpu" and "--memory" (in GB) configurations can also be customized to your needs. By default, ACI have 1 cpu core and 1.5GB of memory assigned. Here, we also mount RStudio "/home/rstudio" directory to a persistent Azure file share named "fileShareName" in the storage account specified. When you stop or restart an ACI, this data will not be lost.
+
+To learn more about what you can configure and customize when creating an ACI, run:
+```
+az container create --help
+```
+
+### Stop, Start, Restart or Delete containers running on ACI
+
+You can run Azure CLI commands to [stop, start, restart](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-stop-start) or [delete](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-quickstart#clean-up-resources) container instances on Azure. You can find all the commands and options [here](https://docs.microsoft.com/en-us/cli/azure/container?view=azure-cli-latest#commands).
+
+Replace "containerName" and "resourceGroupName" in the following CLI commands.
+
+#### Stop the container instance
+`az container stop -n containerName -g resourceGroupName`
+
+#### Start the container instance
+`az container start -n containerName -g resourceGroupName`
+
+#### Restart the container instance
+`az container restart -n containerName -g resourceGroupName`
+
+#### Delete the container instance
+```
+az container delete -n containerName -g resourceGroupName
+```
+
+To not be prompted for confirmation for deleting the ACI:
+
+```
+az container delete -n containerName -g resourceGroupName -y
+```
+
+To troubleshoot any issues when using Azure Container Instances, try out the recommendations [here](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-troubleshooting). For feedback or further issues, contact us via [email](mailto:genomics@microsoft.com).
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="modify"></a>
