@@ -725,8 +725,9 @@ To troubleshoot any issues when using Azure Container Instances, try
 out the recommendations
 [here](https://docs.microsoft.com/en-us/azure/container-instances/container-instances-troubleshooting). For
 feedback or further issues, contact us via
-[email](mailto:genomics@microsoft.com).  <p class="back_to_top">[ <a
-href="#top">Back to top</a> ]</p>
+[email](mailto:genomics@microsoft.com).
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="contribute"></a>
 ## How to Contribute
