@@ -185,24 +185,22 @@ associated files.
    but detailed overview of what the package functionality entails. It
    should be one or more complete sentences.
 
-5. "Authors@R or Author/Maintainer:" fields: Use either `Authors@R`
-   field or `Author:` and `Maintainer:` fields, not both. A maintainer
-   designation (`cre` for Authors@R ) is required with an actively maintained
-   email. This email will be used for contact regarding an issues that arise
-   with your package in the future. We prefer the Authors@R format giving all
-   the authors with appropriate roles. For persons with an ORCID identifier (See
-   [ORCiD](https://orcid.org/) for more information) provide the identifier via
-   an element named "ORCID" in the comment argument of person(). Example:
+5. "Authors@R or Author/Maintainer:" fields: The `Authors@R` field should be
+   used. A maintainer designation (`cre` for Authors@R ) is required with an
+   actively maintained email. This email will be used for contact regarding any
+   issues that arise with your package in the future. For persons with an ORCID
+   identifier (See [ORCiD](https://orcid.org/) for more information) provide the
+   identifier via an element named "ORCID" in the comment argument of person().
+   Example:
    `person("Lori", "Shepherd", email=Lori.Shepherd@roswellpark.org,
    role=c("cre", aut"), comment = c(ORCID = "0000-0002-5910-4010"))`.
 
-   Only one person should be listed in the `Maintainer` field to ensure a
-   single point of contact. This person by default will have commit access to
-   the git repository on git.bioconductor.org. Commit access can be given to
-   other developers by request on the `bioc-devel` mailing list.  Another
-   option is to add collaborators to the github repository. This approach
-   enables development by many but restricts push access to
-   git.bioconductor.org.
+   Only one person should be listed as the `Maintainer` to ensure a single point
+   of contact. This person by default will have commit access to the git
+   repository on git.bioconductor.org. Commit access can be given to other
+   developers by request on the `bioc-devel` mailing list.  Another option is
+   to add collaborators to the github repository. This approach enables
+   development by many but restricts push access to git.bioconductor.org.
 
 6. "License:" field: should preferably refer to a standard license
    (see [wikipedia][wikiLic]) using one of R's standard
