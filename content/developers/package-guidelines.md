@@ -185,13 +185,12 @@ associated files.
    but detailed overview of what the package functionality entails. It
    should be one or more complete sentences.
 
-5. "Authors@R or Author/Maintainer:" fields: The `Authors@R` field should be
-   used. A maintainer designation (`cre` for Authors@R ) is required with an
-   actively maintained email. This email will be used for contact regarding any
-   issues that arise with your package in the future. For persons with an ORCID
-   identifier (See [ORCiD](https://orcid.org/) for more information) provide the
-   identifier via an element named "ORCID" in the comment argument of person().
-   Example:
+5. "Authors@R:" field: The `Authors@R` field should be used. A maintainer
+   designation (`cre` for Authors@R ) is required with an actively maintained
+   email. This email will be used for contact regarding any issues that arise
+   with your package in the future. For persons with an ORCID identifier (See 
+   [ORCiD](https://orcid.org/) for more information) provide the identifier via
+   an element named "ORCID" in the comment argument of person(). Example: 
    `person("Lori", "Shepherd", email=Lori.Shepherd@roswellpark.org,
    role=c("cre", aut"), comment = c(ORCID = "0000-0002-5910-4010"))`.
 
