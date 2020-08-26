@@ -289,6 +289,10 @@ associated files.
 14. "Collates:" field: This may be necessary to order class and method
     definitions appropriately during package installation.
 
+15. "BiocType" field: This is required if submitting a `Docker` or
+    `Workflow`. Otherwise this field could optionally define the type of
+    Bioconductor package `Software`, `ExperimentData`, `Annotation`.
+
 [BioC]: https://bioconductor.org/packages/release/BiocViews.html
 [cran]: https://cran.r-project.org/web/packages/available_packages_by_name.html
 [wikiLic]: http://en.wikipedia.org/wiki/Comparison_of_free_software_licences

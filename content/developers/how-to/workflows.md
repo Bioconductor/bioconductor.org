@@ -35,7 +35,7 @@ Anyone who is a bioinformatics domain expert.
  ideally workflows make use of existing data in a Bioconductor repository or on
  the web; the workflow package itself should not contain large data files.
 
-* In the DESCRIPTION file, include the line "Workflow: True". Please also
+* In the DESCRIPTION file, include the line "BiocType: Workflow". Please also
   include a detailed Description field in the DESCRIPTION file. The DESCRIPTION
   file should contain biocViews which should be from the [Workflow
   branch](http://bioconductor.org/packages/devel/BiocViews.html#___Workflow). If
