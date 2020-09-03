@@ -1,37 +1,37 @@
-# Bioconductor 3.11 Release Schedule
+# Bioconductor 3.12 Release Schedule
 
-This release will use the latest R-4.0.0 (scheduled release Friday April 24th)
-The official release date is schedule for Tuesday April 28th.
+This release will use the latest R-4.0.0. 
+The official release date is schedule for Wednesday October 28th.
 The following highlights important deadlines for the release.
 
 
-### Friday April 3
+### Friday October 2
 
 * Deadline for new package submissions.
 
-### Monday April 6
+### Monday October 5
 
-* Announce deprecated packages for Bioc 3.11. They'll be removed from Bioc 3.12.
+* Announce deprecated packages for Bioc 3.12. They'll be removed from Bioc 3.13.
   See [End of Life](/developers/package-end-of-life) for details.
 
-### Tuesday April 14
+### Tuesday October 13
 
-* Stop building Bioc 3.10, current release. Commits to this branch will be
+* Stop building Bioc 3.11, current release. Commits to this branch will be
   disabled.
 
-* Start building Bioc 3.12, new devel.
+* Start building Bioc 3.13, new devel.
 
-### Wednesday April 22
+### Wednesday October 21
 
-* No API changes to Bioc 3.11.
+* No API changes to Bioc 3.12.
 
-* Deadline to add new packages to the BiocC 3.11 manifest. Package submitted to
+* Deadline to add new packages to the Bioc 3.12 manifest. Package submitted to
   tracker must have completed the review processes and been accepted to be added
   to the manifest
 
 * Contributed annotation packages posted to devel annotation data repository.
 
-### Friday April 24
+### Friday October 23
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
@@ -41,25 +41,25 @@ The following highlights important deadlines for the release.
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Sunday April 26
+### Monday October 26
 
-* Last day to commit changes to the Bioc 3.11 branch. NEWS files
+* Last day to commit changes to the Bioc 3.12 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
   not be included in the release announcement.
 
-  The branch will be frozen prior to creating the release branch on Monday,
-  April 27.  Committing last minute changes could break your package in both
+  The branch will be frozen prior to creating the release branch on Tuesday,
+  October 27.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Monday April 27
+### Tuesday October 27
 
-* Creation of the Bioc 3.11 release branch. Development can resume on
+* Creation of the Bioc 3.12 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
-### Tuesday April 28
+### Wednesday October 28
 
-* Bioconductor Release 3.11.
+* Bioconductor Release 3.12.
 
 
 ## Post-release
@@ -68,8 +68,8 @@ The following highlights important deadlines for the release.
 
 * Build Dockers for release and devel
 
-* Packages marked as deprecated in Bioc 3.11 are now removed from the
-  Bioc 3.11/3.12 nightly builds.
+* Packages marked as deprecated in Bioc 3.12 are now removed from the
+  Bioc 3.12/3.13 nightly builds.
 
-* Identify packages to be deprecated in the new devel, Bioc 3.12.
+* Identify packages to be deprecated in the new devel, Bioc 3.13.
   This includes packages with errors and unresponsive maintainers.
