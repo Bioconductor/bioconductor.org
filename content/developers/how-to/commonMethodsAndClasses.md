@@ -25,7 +25,8 @@ searching in [BiocViews](/packages) for your data type.
 + Genomic coordinates -- [GenomicRanges][]`::GRanges()` (1-based,
   closed interval)
 + DNA / RNA / AA sequences -- [Biostrings][]`::*StringSet()`
-+ Gene sets -- [GSEABase][]`::GeneSet()`
++ Gene sets -- [BiocSet][]`::BiocSet()`,
+  [GSEABase][]`::GeneSet()`,
   [GSEABase][]`::GeneSetCollection()`
 + Multi-omics data --
   [MultiAssayExperiment][]`::MultiAssayExperiment()`
@@ -42,6 +43,7 @@ searching in [BiocViews](/packages) for your data type.
 [MSnbase]: https://bioconductor.org/packages/MSnbase
 [SummarizedExperiment]: https://bioconductor.org/packages/SummarizedExperiment
 [GenomicRanges]: https://bioconductor.org/packages/GenomicRanges
+[BiocSet]: https://bioconductor.org/packages/BiocSet
 [GSEABase]: https://bioconductor.org/packages/GSEABase
 [MultiAssayExperiment]: https://bioconductor.org/packages/MultiAssayExperiment
 [SingleCellExperiment]: https://bioconductor.org/packages/SingleCellExperiment
