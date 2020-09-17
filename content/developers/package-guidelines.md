@@ -86,8 +86,8 @@ not involve also using the devel version of R. See the how-to on
    warnings using a recent R-devel.  Authors should also try to
    address all notes that arise during build or check.[^1]
 
-2. Packages must also pass `R CMD BiocCheck` with no errors and no
-   warnings. The [BiocCheck][] package is a set of tests that
+2. Packages must also pass `BiocCheckGitClone()` and `BiocCheck()` with no
+   errors and no warnings. The [BiocCheck][] package is a set of tests that
    encompass _Bioconductor_ Best Practices. Every effort should be made
    to address any notes that arise during this build or check.[^1]
 
@@ -637,7 +637,7 @@ some best practice guidelines that _Bioconductor_ will look for (see
    specified.
 
 2. Many common coding and sytax issues are flagged in `R CMD check`,
-   and `R CMD BiocCheck`. (see the `R CMD check` [cheatsheet][] and
+   and `BiocCheck()`. (see the `R CMD check` [cheatsheet][] and
    [BiocCheck][BiocCheck-vignette] vignette. Some of
    the more promenient offenders:
 
