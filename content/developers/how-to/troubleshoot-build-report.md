@@ -3,18 +3,18 @@
 ## How and When does the builder pull? When will my changes propagate? 
 
 Please remember the daily builder pulls, installs, builds, and checks package
-only once per day.  This process starts around 4:45 PM (16:45) EST everyday.  Changes
-pushed to Bioconductor before 4:45 will be reflected in the following day's build
-report that is posted around 1:00 PM EST; The build report has a time
-stamp at the top of the page when it was generated. Changes after 4:45 PM EST
-will not be reflect until the day after tomorrow, therefore possibly taking up
-to 36-48 hours. The build reports for
-[devel](http://bioconductor.org/checkResults/devel/bioc-LATEST/) and
-[release](http://bioconductor.org/checkResults/release/bioc-LATEST/) show the
-package version and commit id that is being reflected for that build. The
-[landing pages for
-packages](http://bioconductor.org/packages/release/BiocViews/) [Example
-[Biobase](http://bioconductor.org/packages/release/bioc/html/Biobase.html)]
+only once per day.  This process starts around 2:30 PM (14:30) EST everyday.
+Changes pushed to Bioconductor before 2:30 will be reflected in the following
+day's build report that is posted around 11:30 AM EST.  The build report has
+a time stamp at the top of the page when it was generated.  Changes after
+2:30 PM EST will not be reflect until the day after tomorrow, therefore
+possibly taking up to 36-48 hours.  The build reports for
+[devel](https://bioconductor.org/checkResults/devel/bioc-LATEST/) and
+[release](https://bioconductor.org/checkResults/release/bioc-LATEST/) show
+the package version and commit id that is being reflected for that build.
+The [landing pages for
+packages](https://bioconductor.org/packages/release/BiocViews/) [Example
+[Biobase](https://bioconductor.org/packages/release/bioc/html/Biobase.html)]
 will not be updated until the package installs/build/checks without ERROR; We do
 not propagate broken packages. This could account for a different version on the
 landing page than was pushed to _Bioconductor_.  Please also remember a package
@@ -26,8 +26,8 @@ ALWAYS needs a valid version bump to propagate to users.
 In order to reproduce the ERROR's accuately locally, remember to be using the
 correct version of R and Bioconductor.  The version of R used for the build
 report can be found at the top of the
-[release](http://bioconductor.org/checkResults/release/bioc-LATEST/) and
-[devel](http://bioconductor.org/checkResults/devel/bioc-LATEST/) build
+[release](https://bioconductor.org/checkResults/release/bioc-LATEST/) and
+[devel](https://bioconductor.org/checkResults/devel/bioc-LATEST/) build
 reports. Once you are using the correct version of R make sure all your packages
 are up-to-date with `BiocManager::valid()` and `BiocManager::install()`. There
 are some additional environment variables the daily builder uses during `R CMD
@@ -51,7 +51,7 @@ environment variables should be included minimally.
 
 Another option to debug and test is to utilize the _Bioconductor_ docker
 image. The documentation for using docker images can be found
-[here](http://bioconductor.org/help/docker/). The docker image does contain the
+[here](https://bioconductor.org/help/docker/). The docker image does contain the
 environment variable setting found on the daily builder. 
 
 
