@@ -1,4 +1,6 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Presentation on AnVIL	Martin Morgan	[video](2020/BiocDevelForum/14-AnVIL.mp4)	3.12	4.0
+2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Q&A about upcoming release	Lori Shepherd	[video](2020/BiocDevelForum/14-release.mp4)	3.12	4.0
 2020-07-27 - 2020-07-31	[BioC2020](http://bioc2020.bioconductor.org/)	Conference	Where Software and Biology Connect	Various	[Talks & Workshops](http://bioc2020.bioconductor.org/schedule)	3.12	4.0
 2020-08-20 - 2020-08-20	[BiocDevelForum](2020/BiocDevelForum/13-DevelForumFull.mp4)	Talk	Browsing and searching the Bioconductor codebase	Mike Smith 	[slides](2020/BiocDevelForum/13-BiocCodeTools.pdf), [video](2020/BiocDevelForum/13-DevelForum03.mp4)	3.12	4.0
 2020-08-20 - 2020-08-20	[BiocDevelForum](2020/BiocDevelForum/13-DevelForumFull.mp4)	Talk	Compiling the OSCA book on the Bioconductor build system	Aaron Lun 	[video](2020/BiocDevelForum/13-DevelForum02.mp4)	3.12	4.0
