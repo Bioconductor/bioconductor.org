@@ -671,7 +671,8 @@ some best practice guidelines that _Bioconductor_ will look for (see
    encourages interoperability and simplifies your own package
    development. If new representation is needed, see the
    [Essential S4 interface][RECEssentialS4] section of
-   [Robust and Efficient Code][].
+   [Robust and Efficient Code][]. In gerneally, Bioconductor will insist on
+   interoperability with [Common Classes][CommonMethods] for acceptance.
 
 5. Avoid large chunks of repeated code. If code is being repeated this
    is generally a good indication a helper function could be
