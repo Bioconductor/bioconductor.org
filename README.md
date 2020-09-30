@@ -21,7 +21,7 @@ git push
 
  Unix-ish Developer Required Software
 
-## Required software 
+## Required Software 
 
 NOTE: Before reading the following instructions you may want to consider 
 installing the web site as a Docker container. See the instructions
