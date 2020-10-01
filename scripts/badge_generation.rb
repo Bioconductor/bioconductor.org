@@ -232,6 +232,7 @@ def generate_build_shields(outdir, build_db)
     color = colors[final_status]
     puts("creating shield for #{package} in #{outdir}...") # remove me?
     FileUtils.cp(File.join(srcdir, "#{final_status}.svg"), File.join(outdir, "#{package}.svg"))
+    sleep(1)
   end
 end
 
