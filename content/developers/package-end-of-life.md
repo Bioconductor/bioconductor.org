@@ -40,12 +40,13 @@ packages.
    The maintainer listed in the DESCRIPTION file must be responsive to
    questions on the support site, package-related email from users and
    Bioconductor team members, package-related errors in the build
-   system, and requests for bug fixes.
+   system, and requests for bug fixes. The email in the DESCRIPTION must also
+   remain a valid, active email.
 
 
 ## User Requested Deprecation 
 
-Alternatively, a package maintainer may requestion package deprecation. The
+Alternatively, a package maintainer may request package deprecation. The
 maintainer may have any number of reasons for deprecating their package. Some
 common reasons: 
 
@@ -138,4 +139,19 @@ A deprecated package can be un-deprecated and removed from the End of Life
 process if it is fixed before the next Bioconductor release. To have a
 package un-deprecated, please contact maintainer@bioconductor.org. If a package
 is already in the defunct stage; the package will mostly likely be requested to
-go through the new package submission process again. 
+go through the new package submission process again.
+
+## 'Orphaned' packages
+
+An 'orphaned' package is a Bioconductor package with an inactive and
+non-responsive maintainer.  As described above, Bioconductor makes multiple
+efforts to reach out to package maintainers to fix broken packages. If there is
+no response from a maintainer to the emails sent out from the core team, the
+package is considered 'orphaned'. Occasionally, members of the Bioconductor
+community reach out to take over maintenance of an 'orphaned' package. The
+interested replacement maintainer is asked to email the original maintainer and
+maintainer@bioconductor.org, to formally request permission to take over. Unless
+there is an explicit request for a package to be retired, Bioconductor will
+grant access to the interested replacement maintainer in accordance with open
+source software licenses that Bioconductor packages require.
+
