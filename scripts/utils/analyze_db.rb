@@ -5,7 +5,7 @@ require 'sqlite3'
 require 'time'
 require 'pp'
 
-us = ["d.tenenbaum", "p.aboyoun", "n.gopalakrishnan", "hpages@fhcrc.org", "mtmorgan@fhcrc.org",
+us = ["d.tenenbaum", "p.aboyoun", "n.gopalakrishnan", "hpages.on.github@gmail.com", "mtmorgan@fhcrc.org",
   "v.obenchain", "c.wong", "m.carlson"]
 
 db = SQLite3::Database.new( "data.db" )
