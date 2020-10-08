@@ -66,10 +66,11 @@ pushing to the _Bioconductor_ git repository.
         git commit -m "<informative commit message>"
         
 1. **'Bump' the package version**.  Your package version number is in
-   the format 'major.minor.patch'. When the review process starts, the
-   version number is `0.99.0`. Increment the `patch` version number by
-   1, e.g., to `0.99.1`, `0.99.2`, ..., `0.99.9`, `0.99.10`, ...
-   
+   the format 'major.minor.patch'. Initial package submissions should have
+   a version number of `0.99.0`, as indicated by the `Version` field in the
+   `DESCRIPTION` file. Increment the `patch` version number by 1, e.g., to
+   `0.99.1`, `0.99.2`, ..., `0.99.9`, `0.99.10`, ...
+
    Bumping the version number before pushing is essential. It ensures
    that the package is built across platforms.
    
