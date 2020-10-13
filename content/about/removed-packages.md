@@ -3,6 +3,94 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.12 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.10/bioc/html/QUALIFIER.html">QUALIFIER</a></li>
+<li><a href="/packages/3.10/bioc/html/motifRG.html">motifRG</a></li>
+<li><a href="/packages/3.10/bioc/html/triform.html">triform</a></li>
+<li><a href="/packages/3.10/bioc/html/CVE.html">CVE</a></li>
+<li><a href="/packages/3.10/bioc/html/proteoQC.html">proteoQC</a></li>
+<li><a href="/packages/3.10/bioc/html/affypdnn.html">affypdnn</a></li>
+<li><a href="/packages/3.10/bioc/html/splicegear.html">splicegear</a></li>
+<li><a href="/packages/3.10/bioc/html/Genominator.html">Genominator</a></li>
+<li><a href="/packages/3.10/bioc/html/IdMappingAnalysis.html">IdMappingAnalysis</a></li>
+<li><a href="/packages/3.10/bioc/html/IdMappingRetrieval.html">IdMappingRetrieval</a></li>
+<li><a href="/packages/3.10/bioc/html/manta.html">manta</a></li>
+<li><a href="/packages/3.10/bioc/html/RefNet.html">RefNet</a></li>
+<li><a href="/packages/3.10/bioc/html/AnalysisPageServer.html">AnalysisPageServer</a></li>
+<li><a href="/packages/3.10/bioc/html/scfind.html">scfind</a></li>
+<li><a href="/packages/3.10/bioc/html/kimod.html">kimod</a></li>
+<li><a href="/packages/3.10/bioc/html/plw.html">plw</a></li>
+<li><a href="/packages/3.10/bioc/html/cobindR.html">cobindR</a></li>
+<li><a href="/packages/3.10/bioc/html/LMGene.html">LMGene</a></li>
+<li><a href="/packages/3.10/bioc/html/sRAP.html">sRAP</a></li>
+<li><a href="/packages/3.11/bioc/html/gCMAP.html">gCMAP</a></li>
+<li><a href="/packages/3.10/bioc/html/gCMAPWeb.html">gCMAPWeb</a></li>
+<li><a href="/packages/3.11/bioc/html/DChIPRep.html">DChIPRep</a></li>
+<li><a href="/packages/3.10/bioc/html/CTDquerier.html">CTDquerier</a></li>
+<li><a href="/packages/3.10/bioc/html/MTseeker.html">MTseeker</a></li>
+<li><a href="/packages/3.10/bioc/html/readat.html">readat</a></li>
+<li><a href="/packages/3.10/bioc/html/anamiR.html">anamiR</a></li>
+<li><a href="/packages/3.10/bioc/html/CALIB.html">CALIB</a></li>
+<li><a href="/packages/3.10/bioc/html/cellGrowth.html">cellGrowth</a></li>
+<li><a href="/packages/3.10/bioc/html/chroGPS.html">chroGPS</a></li>
+<li><a href="/packages/3.10/bioc/html/DEDS.html">DEDS</a></li>
+<li><a href="/packages/3.10/bioc/html/LVSmiRNA.html">LVSmiRNA</a></li>
+<li><a href="/packages/3.10/bioc/html/MCRestimate.html">MCRestimate</a></li>
+<li><a href="/packages/3.10/bioc/html/nem.html">nem</a></li>
+<li><a href="/packages/3.10/bioc/html/PAPi.html">PAPi</a></li>
+<li><a href="/packages/3.10/bioc/html/pcaGoPromoter.html">pcaGoPromoter</a></li>
+<li><a href="/packages/3.10/bioc/html/pint.html">pint</a></li>
+<li><a href="/packages/3.10/bioc/html/RIPSeeker.html">RIPSeeker</a></li>
+<li><a href="/packages/3.10/bioc/html/SANTA.html">SANTA</a></li>
+<li><a href="/packages/3.10/bioc/html/waveTiling.html">waveTiling</a></li>
+<li><a href="/packages/3.10/bioc/html/BayesPeak.html">BayesPeak</a></li>
+<li><a href="/packages/3.10/bioc/html/bgafun.html">bgafun</a></li>
+<li><a href="/packages/3.10/bioc/html/lol.html">lol</a></li>
+<li><a href="/packages/3.11/bioc/html/M3D.html">M3D</a></li>
+<li><a href="/packages/3.10/bioc/html/MergeMaid.html">MergeMaid</a></li>
+<li><a href="/packages/3.10/bioc/html/IPPD.html">IPPD</a></li>
+<li><a href="/packages/3.10/bioc/html/biosvd.html">biosvd</a></li>
+<li><a href="/packages/3.10/bioc/html/birta.html">birta</a></li>
+<li><a href="/packages/3.10/bioc/html/DupChecker.html">DupChecker</a></li>
+<li><a href="/packages/3.10/bioc/html/FEM.html">FEM</a></li>
+<li><a href="/packages/3.10/bioc/html/geecc.html">geecc</a></li>
+<li><a href="/packages/3.10/bioc/html/MaxContrastProjection.html">MaxContrastProjection</a></li>
+<li><a href="/packages/3.11/bioc/html/mitoODE.html">mitoODE</a></li>
+<li><a href="/packages/3.10/bioc/html/MoPS.html">MoPS</a></li>
+<li><a href="/packages/3.10/bioc/html/PowerExplorer.html">PowerExplorer</a></li>
+<li><a href="/packages/3.10/bioc/html/Vega.html">Vega</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.11/data/experiment/html/MTseekerData.html">MTseekerData</a></li>
+<li><a href="/packages/3.11/data/experiment/html/RIPSeekerData.html">RIPSeekerData</a></li>
+</ul>
+
+
+Annotation Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.11/data/annotation/html/hom.At.inp.db.html">hom.At.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Ce.inp.db.html">hom.Ce.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Dm.inp.db.html">hom.Dm.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Dr.inp.db.html">hom.Dr.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Hs.inp.db.html">hom.Hs.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Mm.inp.db.html">hom.Mm.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Rn.inp.db.html">hom.Rn.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/hom.Sc.inp.db.html">hom.Sc.inp.db</a></li>
+<li><a href="/packages/3.11/data/annotation/html/KEGG.db.html">KEGG.db</a>(use KEGGREST instead)</li>
+<li><a href="/packages/3.11/data/annotation/html/MafDb.ESP6500SI.V2.SSA137.hs37d5">MafDb.ESP6500SI.V2.SSA137.hs37d5</a></li>
+<li><a href="/packages/3.11/data/annotation/html/MafDb.ESP6500SI.V2.SSA137.GRCh38.html">MafDb.EXP6500SI.V2.SSA137.GRCh38</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.11 release
 
 Software Packages:
