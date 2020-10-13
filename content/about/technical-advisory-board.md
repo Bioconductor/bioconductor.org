@@ -23,8 +23,8 @@ board. Governance was formalized in February, 2019.
 
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA. Chair.
-* [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
-  at Hunter College, New York, NY. Vice-Chair.
+* [Levi Waldron](http://waldronlab.io/) CUNY Graduate School of Public Health
+  and Health Policy, New York, NY. Vice-Chair.
 * [Charlotte Soneson](https://csoneson.github.io/), Friedrich Miescher
   Institute, Basel, Switzerland. Secretary.
 * [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
