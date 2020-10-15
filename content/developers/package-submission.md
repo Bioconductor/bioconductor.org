@@ -165,8 +165,11 @@ package maintenance responsibilities. Package authors are expected to:
   [Contributions][issues] repository, following the [guidelines][tracker] of
   the `README.md` file.
   Assuming that your package is in a [GitHub Repository][git-repo-create] and
-  under the default 'master' branch, add the link to your repository to
-  the issue you are opening.
+  under the default branch, add the link to your repository to
+  the issue you are opening.  You cannot specify any alternative branches; the
+  default branch is utilized. The default branch must contain only package
+  code. Any files or directories for other applications (Github Actions,
+  devtool, etc) should be in a different branch.
 
 [issues]: https://github.com/Bioconductor/Contributions/issues/new
 [git-repo-create]: https://help.github.com/articles/create-a-repo/
