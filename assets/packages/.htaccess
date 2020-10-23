@@ -35,7 +35,7 @@ RewriteRule ^(.*)$ - [env=proto:http]
 RewriteEngine On
 RewriteBase /packages/
 
-RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=301]
+RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/packages/release/BiocViews.html#___Software [NE,R=302]
 
 ## Handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
@@ -52,16 +52,16 @@ RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/packages/$1/ [L,R]
 ##           where 'reposX' X is the first repo where xxx is found.
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/html/$2.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/workflows/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/workflows/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/workflows/html/$2.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/html/$2.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/html/$2\.html -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/html/$2.html [R=302]
 
 ## (2) /packages/xxx is internally rewritten to
 ##     /packages/release/reposX/html/xxx.html or 
@@ -71,31 +71,31 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.
 ##           where 'reposX' X is the first repo where xxx is found.
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/workflows/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/workflows/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/workflows/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/workflows/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/workflows/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/workflows/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/html/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/html/$1.html [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1 !-d 
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/about/removed-packages/ [R=301]
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/about/removed-packages/ [R=302]
 
 ## Short urls for vignettes:
 ##
@@ -107,16 +107,16 @@ RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/about/removed-packages/ 
 ##           'yyy' is the vignette file name with extension
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/vignettes/$2/inst/doc/$3 -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/vignettes/$2/inst/doc/$3 [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/vignettes/$2/inst/doc/$3 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/workflows/vignettes/$2/inst/doc/$3 -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/workflows/vignettes/$2/inst/doc/$3 [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/workflows/vignettes/$2/inst/doc/$3 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/annotation/vignettes/$2/inst/doc/$3 -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/vignettes/$2/inst/doc/$3 [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/annotation/vignettes/$2/inst/doc/$3 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/data/experiment/vignettes/$2/inst/doc/$3 -f
-RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/vignettes/$2/inst/doc/$3 [R=301]
+RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/data/experiment/vignettes/$2/inst/doc/$3 [R=302]
 
 ## (2) /packages/vignettes/xxx/yyy is internally rewritten to
 ##     /packages/<release or devel>/reposX/vignettes/xxx/inst/doc/yyy
@@ -128,25 +128,25 @@ RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/vignettes/([^/]+)/?$ %{ENV:prot
 ##           'yyy' is the vignette file name with extension
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/bioc/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/bioc/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/workflows/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/workflows/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/workflows/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/annotation/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/annotation/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/release/data/experiment/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/release/data/experiment/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/bioc/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/bioc/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/workflows/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/workflows/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/workflows/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/annotation/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/annotation/vignettes/$1/inst/doc/$2 [R=302]
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 -f
-RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=301]
+RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=302]
