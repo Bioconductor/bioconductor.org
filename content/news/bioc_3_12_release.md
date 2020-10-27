@@ -1970,7 +1970,6 @@ FUNCTIONS DEPRECATED
 
 - Fixed a bug that was causing an error when users attempted to zoom
   out ten-fold with the genome viewer plot
-  # AssessORF 1.3
 
 [ATACseqQC](https://bioconductor.org/packages/ATACseqQC)
 ---------
