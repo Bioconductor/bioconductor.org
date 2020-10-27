@@ -6,7 +6,7 @@ We are pleased to announce Bioconductor 3.12, consisting of
 1974 software packages, 398 experiment data packages, 968 annotation
 packages, and 28 workflows.
 
-There are 124 new software packages, 9 new data experiment packages,
+There are 125 new software packages, 9 new data experiment packages,
 2 new annotation packages, 1 new workflow, 2 books, and many updates and
 improvements to existing packages; Bioconductor 3.12 is compatible with R 4.0.0,
 and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
@@ -50,7 +50,7 @@ To update to or install Bioconductor 3.12:
 New Software Packages
 =====================
 
-There are 124 new software packages in this release of Bioconductor.
+There are 125 new software packages in this release of Bioconductor.
 
 - [ADImpute](/packages/ADImpute) Single-cell RNA sequencing
   (scRNA-seq) methods are typically unable to quantify the expression
