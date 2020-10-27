@@ -12434,7 +12434,7 @@ PathwaySplice, PGA, PGSEA, plrs, prada, Prize, Rariant, reb, Roleswitch,
 rTANDEM, sampleClassifier, sapFinder, scsR, shinyTANDEM, sigaR, signet,
 simpleaffy, spotSegmentation, Starr, SVAPLSseq, TxRegInfra, xps
 
-Two experimental data packages were removed in this release (after being
+Two experimental data packages were removed this release (after being
 deprecated in BioC 3.11): MTseekerData, RIPSeekerData
 
 Sixteen experimental data packages are deprecated in this release and will be
@@ -12443,12 +12443,15 @@ GGdata, methyvimData, mitoODEdata, Mulder2012, pathprintGEOData,
 pcaGoPromoter.Hs.hg19, pcaGoPromoter.Mm.mm9, pcaGoPromoter.Rn.rn4,
 RNAinteractMAPK, sampleClassifierData, waveTilingData, yriMulti
 
-Nine annotation packages were removed this release: 
+Nine annotation packages were supposed to be removed this release, however we
+decided to give an extra cycle for maintainers to adapt and will be removed in
+3.13: 
 hom.At.inp.db, hom.Ce.inp.db, hom.Dm.inp.db, hom.Dr.inp.db,
 hom.Hs.inp.db, hom.Mm.inp.db, hom.Rn.inp.db, hom.Sc.inp.db, KEGG.db. 
 
-No annotation packages are deprecated in this release and will be removed in
-Bioc 3.13.
+Four annotation packages are deprecated in this release and will be removed in
+Bioc 3.13:
+MeSH.Eco.55989.eg.db, MeSH.Eco.ED1a.eg.db, MeSH.Eco.IAI39.eg.db, MeSH.Eco.UMN026.eg.db
 
 No workflow package were removed in this release (after being deprecated in BioC
 3.11).
