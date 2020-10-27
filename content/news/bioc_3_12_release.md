@@ -25,7 +25,7 @@ for details and downloads.
 Contents
 --------
 
-* [Getting Started with Bioconductor 3.11](#getting-started-with-bioconductor-311)
+* [Getting Started with Bioconductor 3.12](#getting-started-with-bioconductor-312)
 * [New Software Packages](#new-software-packages)
 * [New Data Experiment Packages](#new-data-experiment-packages)
 * [New Annotation Packages](#new-annotation-packages)
