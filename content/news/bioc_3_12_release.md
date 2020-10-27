@@ -7,8 +7,8 @@ We are pleased to announce Bioconductor 3.12, consisting of
 packages, and 28 workflows.
 
 There are 124 new software packages, 9 new data experiment packages,
-2 new annotation packages, 1 new workflow, and many updates and improvements
-to existing packages; Bioconductor 3.12 is compatible with R 4.0.0,
+2 new annotation packages, 1 new workflow, 2 books, and many updates and
+improvements to existing packages; Bioconductor 3.12 is compatible with R 4.0.0,
 and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
 or higher.  This release will include an updated Bioconductor [Amazon Machine
 Image][1] and [Docker containers][2].
