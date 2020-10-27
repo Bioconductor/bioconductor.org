@@ -3,7 +3,7 @@ October 28, 2020
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.12, consisting of 
-1974 software packages, 398 experiment data packages, 967 annotation
+1974 software packages, 398 experiment data packages, 968 annotation
 packages, and 28 workflows.
 
 There are 124 new software packages, 9 new data experiment packages,
@@ -30,6 +30,7 @@ Contents
 * [New Data Experiment Packages](#new-data-experiment-packages)
 * [New Annotation Packages](#new-annotation-packages)
 * [New Workflow](#new-workflow-packages)
+* [New Books](#new-books)
 * [NEWS from new and existing software packages](#news-from-new-and-existing-software-packages)
 * [NEWS from new and existing data experiment packages](#news-from-new-and-existing-data-experiment-packages)
 * [NEWS from new and existing workflows](#news-from-new-and-existing-workflows)
@@ -1271,6 +1272,31 @@ There is 1 new workflow package in this release of Bioconductor.
   (NCBI). After a cup of tea or longer, you will get formated gene
   expression data as gene count and transcript count based on both
   alignment-based and alignment-free workflows.
+
+
+New Books
+=====================
+
+There are 2 new books in this release of Bioconductor. 
+
+- [OSCA](https://bioconductor.org/books/3.12/OSCA/) This is the website for
+  "Orchestrating Single-Cell Analysis with Bioconductor", a book that teaches
+  users some common workflows for the analysis of single-cell RNA-seq data
+  (scRNA-seq). This book will teach you how to make use of cutting-edge
+  Bioconductor tools to process, analyze, visualize, and explore scRNA-seq
+  data. Additionally, it serves as an online companion for the manuscript
+  "Orchestrating Single-Cell Analysis with Bioconductor".
+  
+
+- [SingleRBook](https://bioconductor.org/books/3.12/SingleRBook/) This book
+  covers the use of SingleR, one implementation of an automated annotation
+  method. If you want a survey of different annotation methods - this book is
+  not for you. If you want to create hand-crafted cluster definitions - this
+  book is not for you. (Read the other one instead.) If you want to use the
+  pre-Bioconductor version of the package - this book is not for you. But if
+  you’re tired of manually annotating your single-cell data and you want to do
+  something better with your life, then read on.
+  
 
 
 NEWS from new and existing Software Packages
