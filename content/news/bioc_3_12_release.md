@@ -12239,8 +12239,8 @@ adaptest, ArrayTV, BioSeqClass, CGEN, CHARGE, chimera, CNVtools, CorMut, DESeq,
 explorase, flowFit, flowSpy, flowType, flowVS, focalCall, FourCSeq, FunciSNP,
 GeneticsDesign, GenRank, GGBase, GGtools, GOFunction, gQTLBase, gQTLstats,
 hicrep, ImpulseDE, ImpulseDE2, joda, JunctionSeq, LINC, Logolas, mcaGUI,
-metaArray, metaseqR, methVisual, methyvim, Mirsynergy, MmPalateMiRNA, MOFA,
-MotIV, NarrowPeaks, netbenchmark, netReg, OGSA, OmicsMarkeR, pathprint,
+metaArray, metaseqR, methVisual, methyvim, Mirsynergy, MmPalateMiRNA, MOFA
+(Please see MOFA2), MotIV, NarrowPeaks, netbenchmark, netReg, OGSA, OmicsMarkeR, pathprint,
 PathwaySplice, PGA, PGSEA, plrs, prada, Prize, Rariant, reb, Roleswitch,
 rTANDEM, sampleClassifier, sapFinder, scsR, shinyTANDEM, sigaR, signet,
 simpleaffy, spotSegmentation, Starr, SVAPLSseq, TxRegInfra, xps
@@ -12260,11 +12260,11 @@ decided to give an extra cycle for maintainers to adapt and will be removed in
 hom.At.inp.db, hom.Ce.inp.db, hom.Dm.inp.db, hom.Dr.inp.db,
 hom.Hs.inp.db, hom.Mm.inp.db, hom.Rn.inp.db, hom.Sc.inp.db, KEGG.db. 
 
-Four annotation packages are deprecated in this release and will be removed in
+Five annotation packages are deprecated in this release and will be removed in
 Bioc 3.13:
-MeSH.Eco.55989.eg.db, MeSH.Eco.ED1a.eg.db, MeSH.Eco.IAI39.eg.db, MeSH.Eco.UMN026.eg.db
+MeSH.Eco.55989.eg.db, MeSH.Eco.ED1a.eg.db, MeSH.Eco.IAI39.eg.db, MeSH.Eco.UMN026.eg.db,
+MeSH.Eqc.eg.db (renamed to MeSH.Eca.eg.db)
 
-No workflow package were removed in this release (after being deprecated in BioC
-3.11).
+No workflow packages were removed in this release.
 
 No workflow packages were deprecated in this release.
