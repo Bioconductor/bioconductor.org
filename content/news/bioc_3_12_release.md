@@ -7,7 +7,7 @@ We are pleased to announce Bioconductor 3.12, consisting of
 packages, and 28 workflows.
 
 There are 125 new software packages, 9 new data experiment packages,
-2 new annotation packages, 1 new workflow, 2 books, and many updates and
+2 new annotation packages, 1 new workflow, 2 online books, and many updates and
 improvements to existing packages; Bioconductor 3.12 is compatible with R 4.0.0,
 and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
 or higher.  This release will include an updated Bioconductor [Amazon Machine
@@ -30,7 +30,7 @@ Contents
 * [New Data Experiment Packages](#new-data-experiment-packages)
 * [New Annotation Packages](#new-annotation-packages)
 * [New Workflow](#new-workflow-packages)
-* [New Books](#new-books)
+* [New Books](#new-online-books)
 * [NEWS from new and existing software packages](#news-from-new-and-existing-software-packages)
 * [NEWS from new and existing data experiment packages](#news-from-new-and-existing-data-experiment-packages)
 * [NEWS from new and existing workflows](#news-from-new-and-existing-workflows)
@@ -1277,7 +1277,10 @@ There is 1 new workflow package in this release of Bioconductor.
 New Books
 =====================
 
-There are 2 new books in this release of Bioconductor. 
+There are 2 online books in this release of Bioconductor. While the OSCA book
+has been around for a longer period of time than this release, this is the first
+release where the book is being hosted, built. and checked by the Bioconductor
+builders.
 
 - [OSCA](https://bioconductor.org/books/3.12/OSCA/) This is the website for
   "Orchestrating Single-Cell Analysis with Bioconductor", a book that teaches
