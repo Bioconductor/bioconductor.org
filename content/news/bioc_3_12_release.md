@@ -30,7 +30,7 @@ Contents
 * [New Data Experiment Packages](#new-data-experiment-packages)
 * [New Annotation Packages](#new-annotation-packages)
 * [New Workflow](#new-workflow-packages)
-* [New Books](#new-online-books)
+* [New Online Books](#new-online-books)
 * [NEWS from new and existing software packages](#news-from-new-and-existing-software-packages)
 * [NEWS from new and existing data experiment packages](#news-from-new-and-existing-data-experiment-packages)
 * [NEWS from new and existing workflows](#news-from-new-and-existing-workflows)
@@ -1274,7 +1274,7 @@ There is 1 new workflow package in this release of Bioconductor.
   alignment-based and alignment-free workflows.
 
 
-New Books
+New Online Books
 =====================
 
 There are 2 online books in this release of Bioconductor. While the OSCA book
