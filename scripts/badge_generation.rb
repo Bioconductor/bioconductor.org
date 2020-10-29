@@ -53,7 +53,7 @@ def platform_availability(item)
   if status == "Deprecated"
     img = "none"
   else
-    if unsupported == "None"
+    if unsupported == "None" || unsupported.nil?
       img = "all"
     else
       img = "some"
