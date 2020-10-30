@@ -8,7 +8,7 @@ packages, and 28 workflows.
 
 There are 125 new software packages, 9 new data experiment packages,
 2 new annotation packages, 1 new workflow, 2 online books, and many updates and
-improvements to existing packages; Bioconductor 3.12 is compatible with R 4.0.0,
+improvements to existing packages; Bioconductor 3.12 is compatible with R 4.0.3,
 and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
 or higher.  This release will include an updated Bioconductor [Amazon Machine
 Image][1] and [Docker containers][2].
@@ -41,7 +41,7 @@ Getting Started with Bioconductor 3.12
 
 To update to or install Bioconductor 3.12:
 
-1. Install R 4.0.0. Bioconductor 3.12 has been designed expressly for
+1. Install R 4.0.3. Bioconductor 3.12 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
