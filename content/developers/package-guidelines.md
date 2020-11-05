@@ -204,7 +204,9 @@ associated files.
 6. "License:" field: should preferably refer to a standard license
    (see [wikipedia][wikiLic]) using one of R's standard
    specifications. Be specific about any version that applies (e.g.,
-   GPL-2). Core _Bioconductor_ packages are typically licensed under
+   GPL-2). Licenses restricting use, e.g., to academic or non-profit
+   researchers, are not suitable for _Bioconductor_. Core
+   _Bioconductor_ packages are typically licensed under
    Artistic-2.0. To specify a non-standard license, include a file
    named LICENSE in your package (containing the full terms of your
    license) and use the string "file LICENSE" (without the double
