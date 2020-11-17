@@ -42,14 +42,14 @@ active_release_builders:
   mac_mojave: "merida1"
 active_devel_builders:
   linux: "malbec2"
-#  windows: "tokay1"
-#  mac_highsierra: "machv2"
+  windows: "tokay2"
+  mac_mojave: "machv2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.12"
-  r_version: "4.0"
+  bioc_version: "3.13"
+  r_version: "4.1"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
