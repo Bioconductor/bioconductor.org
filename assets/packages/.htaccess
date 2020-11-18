@@ -150,3 +150,24 @@ RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packag
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 -f
 RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=302]
+
+
+## Short urls for books:
+## This may need tweaking as we adjust for finally location
+
+## Handle omitted trailing slash:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/books/$1/ [L,R]
+
+##     /books/xxx is internally rewritten to
+##     /books/release/xxx.html or 
+##     /books/devel/xxx.html
+##     Note: Release repos are searched first, then devel.
+
+RewriteCond %{DOCUMENT_ROOT}/books/release/$1\.html -f
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/release/$1.html [R=302]
+
+RewriteCond %{DOCUMENT_ROOT}/books/devel/$1\.html -f
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/devel/$1.html [R=302]
