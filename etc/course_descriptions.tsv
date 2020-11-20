@@ -1,5 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
-2020-11-19 - 2020-11-19	[BiocDevelForum](https://youtu.be/8i7ziLqsE2s)	Talk	Alternate Representations of R Objects or ALTREP	Gabe Becker	[slides](2020/BiocDevelForum/16-ALTREP.pdf), [github](https://github.com/ALTREP-examples/vectorwindow), [video](https://www.youtube.com/watch?v=uw90J1Oy0Bc)	3.13	4.1
+2020-11-19 - 2020-11-19	[BiocDevelForum](https://youtu.be/8i7ziLqsE2s)	Talk	Alternate Representations of R Objects or ALTREP	Gabe Becker	[slides](2020/BiocDevelForum/16-ALTREP.pdf), [github](https://github.com/ALTREP-examples/vectorwindow), [video](https://youtu.be/8i7ziLqsE2s)	3.13	4.1
 2020-10-22 - 2020-10-22	[BiocDevelForum](https://www.youtube.com/watch?v=uw90J1Oy0Bc)	Talk	Presentation on sparseMatrixStats	Constantin Ahlmann-Eltze	[slides](2020/BiocDevelForum/15-sparseMatrixStats.pdf), [video](https://www.youtube.com/watch?v=uw90J1Oy0Bc)	3.12	4.0
 2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Presentation on AnVIL	Martin Morgan	[video](2020/BiocDevelForum/14-AnVIL.mp4)	3.12	4.0
 2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Q&A about upcoming release	Lori Shepherd	[video](2020/BiocDevelForum/14-release.mp4)	3.12	4.0
