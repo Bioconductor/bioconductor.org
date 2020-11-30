@@ -205,6 +205,8 @@ Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
 ## Short urls for books:
 ## This may need tweaking as we adjust for finally location
 
+RewriteBase /books/
+
 ## Handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} -d
