@@ -51,6 +51,7 @@ RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/packages/$1/ [L,R]
 ##     Note: Repo search order is bioc -> workflows -> annotation -> experiment
 ##           where 'reposX' X is the first repo where xxx is found.
 
+## packages/release/RSamtools -> /packages/release/bioc/html/Rsamtools.html
 RewriteCond %{DOCUMENT_ROOT}/packages/$1/bioc/html/$2\.html -f
 RewriteRule ^(release|devel|[.0-9]{3,4})/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/$1/bioc/html/$2.html [R=302]
 

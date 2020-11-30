@@ -201,25 +201,3 @@ RewriteRule ^BioC2015/$ http://bioconductor.org/help/course-materials/2015/BioC2
 Redirect /bioc2013 https://secure.bioconductor.org/BioC2013
 
 
-
-## Short urls for books:
-## This may need tweaking as we adjust for finally location
-
-RewriteBase /books/
-
-## Handle omitted trailing slash:
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} -d
-RewriteCond %{REQUEST_URI} !(.*)/$
-RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/books/$1/ [L,R]
-
-##     /books/xxx is internally rewritten to
-##     /books/release/xxx.html or 
-##     /books/devel/xxx.html
-##     Note: Release repos are searched first, then devel.
-
-RewriteCond %{DOCUMENT_ROOT}/books/release/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/release/$1.html [R=302]
-
-RewriteCond %{DOCUMENT_ROOT}/books/devel/$1\.html -f
-RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/devel/$1.html [R=302]
