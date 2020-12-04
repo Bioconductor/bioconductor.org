@@ -32,7 +32,7 @@ board. Governance was formalized in February, 2019.
 * Hector Corrada Bravo, Genentech Research and Early Development, USA.
 * [Laurent Gatto](https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto)
   Institut de Duve, Belgium.
-* Robert Gentleman, Computational Biology, 23andMe, USA.
+* Robert Gentleman, Harvard Medical School, Boston, USA.
 * [Shila Ghazanfar](https://shazanfar.github.io/), Cancer Research UK,
   Cambridge.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
@@ -57,7 +57,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2020-10-01](2020-10-01-minutes.pdf),
+- [2020-11-05](2020-11-05-minutes.pdf),
+  [2020-10-01](2020-10-01-minutes.pdf),
   [2020-09-03](2020-09-03-minutes.pdf),
   [2020-08-06](2020-08-06-minutes.pdf),
   [2020-07-02](2020-07-02-minutes.pdf),
