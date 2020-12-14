@@ -24,6 +24,7 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 ## Meeting minutes
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
 
+- [2020-11-12](2020-11-12-minutes.pdf)
 - [2020-10-08](2020-10-08-minutes.pdf)
 - [2020-09-10](2020-09-10-minutes.pdf)
 - [2020-08-13](2020-08-13-minutes.pdf)
