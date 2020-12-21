@@ -6,6 +6,8 @@ require 'date'
 require 'fileutils'
 require 'descriptive_statistics'
 require 'sequel'
+require 'net/http'
+require 'json'
 
 ################################################################
 #
@@ -98,22 +100,45 @@ def downloadBadge(repo, destdir, release=false)
 end
 
 def getRanking(repo, release=false)
+
+  site_config = YAML.load_file("./config.yaml")
+  if release
+    ver = site_config["release_version"]
+  else
+    ver = site_config["devel_version"]
+  end
+
   if ["bioc", "workflows"].include? repo
      url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_scores.tab"))
+     json_file = File.join("assets/packages/json/", ver, repo, "packages.json")
   else
      url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_scores.tab"))
+     json_file = File.join("assets/packages/json/", ver, "data", repo, "packages.json")
   end
   urls = [url]
 
   raw_data = Hash.new(0)
 
   urls.each do |url|
-    lines = HTTParty.get(url).split("\n")
-    for line in lines
-      next if line =~ /^Package\tDownload_score/ # skip header
-      package, distinct_ips = line.strip.split(/\t/)
-      raw_data[package] = Integer(distinct_ips)
-     end
+    url2 = URI.parse(url)
+    req = Net::HTTP.new(url2.host, url2.port)
+    req.use_ssl = true
+    res = req.request_head(url2.path)
+    if res.code == "200"
+      lines = HTTParty.get(url).split("\n")
+      for line in lines
+        next if line =~ /^Package\tDownload_score/ # skip header
+        package, distinct_ips = line.strip.split(/\t/)
+        raw_data[package] = Integer(distinct_ips)
+      end
+    else
+      if File.exists? json_file
+        json = JSON.parse(File.read(json_file))
+        json.keys.each do |pkg|
+          raw_data[pkg] = json[pkg]["Rank"]
+        end
+      end
+    end
   end
 
   sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
