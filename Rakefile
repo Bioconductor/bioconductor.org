@@ -486,14 +486,12 @@ task :get_availability_shields  do
 end
 
 
-
-# set this to run in crontab
-desc "get info about post tags"
-task :get_post_tag_info do
-  require './scripts/get_post_tag_info.rb'
-  get_post_tag_info()
+desc "get info about support site activity"
+task :get_supportsite_info_shield do
+  require './scripts/get_support_tag_info.rb'
+  create_package_list()
+  get_support_tag_info()
 end
-
 
 # shouldn't be run daily - will update minimally
 desc "get years-in-bioc shields"
