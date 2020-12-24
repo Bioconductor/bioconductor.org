@@ -4,8 +4,8 @@ The _Bioconductor_ project is maintained in a Git source control
 system. Package maintainers update their packages by pushing changes
 to their git repositories.
 
-The essential steps for transitioning from SVN to git are summarized
-in
+The essential steps for maintaining your package in _Bioconductor_'s
+git repository are summarized in
 
 - [New package workflow][]: update your GitHub repository after
   package acceptance.
@@ -21,9 +21,12 @@ More scenarios for repository creation:
 
 - [Sync an existing GitHub repository][] with _Bioconductor_.
 - [Create a local repository][] for private use.
+- [Remote and local branch names][] differ, e.g., _Bioconductor_
+  `master` corresponds to local `main`.
 
 [Sync an existing GitHub repository]: sync-existing-repositories
 [Create a local repository]: create-local-repository
+[Remote and local branch names]: master-main
 
 Scenarios for code update:
 
