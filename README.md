@@ -31,7 +31,7 @@ below.
    create a new branch to make your changes, (helpful documentation for
    [Creating a pull request from a fork][])
 
-	git clone https://github.com/<your fork>/bioconductor.org
+	    git clone https://github.com/<your fork>/bioconductor.org
 
 2. Make your changes on this branch, add content or edit content.
 
@@ -41,9 +41,9 @@ below.
    the ruby code and host the website on your local machine at
    https://localhost:3000.
 
-	docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
-		-p 3000:3000 \
-		bioconductor/website:latest
+	    docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
+		    -p 3000:3000 \
+		        bioconductor/website:latest
 
    where,
 
@@ -54,11 +54,11 @@ below.
 
 4. Then to kill the process, you need to get the CONTAINER ID with,
 
-	docker ps
+	    docker ps
 
    and,
 
-	docker kill <CONTAINER ID>
+	    docker kill <CONTAINER ID>
 
 5. Before you run the docker image again with more changes, make sure
    to clean the artifacts produced by the `rake` command, with
@@ -67,7 +67,7 @@ below.
 
 	The output should look like,
 
-		bioconductor.org ❯❯❯ git clean -xdf
+		bioconductor.org$ git clean -xdf
 			Removing assets/bioc-devel-version
 			Removing assets/bioc-version
 			Removing assets/config.yaml
@@ -175,17 +175,15 @@ for more information.
 ## Windows Developer Required Software
 
 1. Download and run the one-click ruby installer
-   http://rubyinstaller.org/downloads/. Accept all default
-   settings.
+   http://rubyinstaller.org/downloads/. Accept all default settings.
 
-2. Also download and install the Development Kit
-   from http://rubyinstaller.org/downloads/.
-   Be sure and add the bin dir to your path
-   (see devkitvars.bat)
+2. Also download and install the Development Kit from
+   http://rubyinstaller.org/downloads/.  Be sure and add the bin dir
+   to your path (see devkitvars.bat)
 
-3. If you don't already have it, be sure and install cygwin
-   and explicitly install rsync. rsync is required for parts
-   of the web site to work.
+3. If you don't already have it, be sure and install cygwin and
+   explicitly install rsync. rsync is required for parts of the web
+   site to work.
 
 
 4. Install git client. https://git-scm.com/downloads
@@ -236,7 +234,7 @@ One step in the build process runs 'nanoc',  "a Ruby web publishing system
 for building small to medium-sized websites"; it is one of the 
 gems you installed above.  If you ever need to run nanoc explicitly: 
 
-   nanoc compile
+    nanoc compile
 
 To run an abbreviated compile, which does not attempt to build all package pages:
 
@@ -267,9 +265,9 @@ you have been working in.
            is transformed from its source form into its output form
            (this is called filtering), what layout to use (layouts are
            the shared templates), and where to write the output (this
-           is called routing). See the
-           [http://nanoc.stoneship.org/tutorial/](nanoc tutorial) and the
-           [http://nanoc.stoneship.org/manual/](nanoc manual) for details.
+           is called routing). See the nanoc
+           [tutorial](http://nanoc.stoneship.org/tutorial/) and the
+           [manual](http://nanoc.stoneship.org/manual/) for details.
 
 * assets :: This directory is not managed by nanoc. It contains files
             that do not undergo any filtering, layout-ing, or routing.
@@ -277,7 +275,7 @@ you have been working in.
             directory using rsync.
 
 * config.yaml :: Nanoc configuration file for the bioconductor.org
-                 site. This file is written in [http://www.yaml.org/](YAML).
+                 site. This file is written in [YAML](http://www.yaml.org/).
 
 * content :: This is where the bulk of the raw (source form) site
              content lives. Important details:
@@ -317,24 +315,24 @@ you have been working in.
 You will use a helper scripts `./scripts/add_event` to add event
 to the site using the following steps:
 
-0. Always run `./scripts/add_event` from the top-level of your
+1. Always run `./scripts/add_event` from the top-level of your
    website working copy
 1. Run `./scripts/add_event EVENT_NAME`
    This will create an EVENT_NAME.yaml file in the
    `./content/help/events/` directory
-2. The default `EVENT_NAME.yaml` file will look like this:
+1. The default `EVENT_NAME.yaml` file will look like this:
+   
+        title: TITLE FOR EVENT_NAME
+        location: Seattle, WA, USA
+        event_host: FHCRC
+        start: 2010-06-29
+        end:   2010-06-29
+        link:
+            text: details and registration
+            url: https://secure.bioconductor.org/EVENT_NAME
 
-     title: TITLE FOR EVENT_NAME
-     location: Seattle, WA, USA
-     event_host: FHCRC
-     start: 2010-06-29
-     end:   2010-06-29
-     link:
-       text: details and registration
-       url: https://secure.bioconductor.org/EVENT_NAME
-
-3. Edit the `EVENT_NAME.yaml` file 
-4. Use git to commit changes and additions by `add_event`
+1. Edit the `EVENT_NAME.yaml` file 
+1. Use git to commit changes and additions by `add_event`
  
 ## How to add course material
 
@@ -362,54 +360,54 @@ To add a course, you will typically perform the following steps
 
 1. Generate a skeleton course directory structure.
 
-   ./scripts/course_mgr --create seattle-intro
+        ./scripts/course_mgr --create seattle-intro
 
    This will create a `seattle-intro/` directory in the top-level
    of your website working copy -- do not add this directory or any
    files within it to git. Inside will be a `course_config.yaml`
    file that will look like this:
 
-     title:
-       The title of the course goes here
-     start_date: 2010-01-27
-     end_date: 2010-01-29
-     instructors: ["Someone", "Another"]
-     location: "Seattle, USA"
-     url: https://secure.bioconductor.org/SeattleJan10/
-     tags: ["intro", "seattle", "package"]
-     description:
-       You can put some description text here.
-       Must be indented.
+         title:
+           The title of the course goes here
+         start_date: 2010-01-27
+         end_date: 2010-01-29
+         instructors: ["Someone", "Another"]
+         location: "Seattle, USA"
+         url: https://secure.bioconductor.org/SeattleJan10/
+         tags: ["intro", "seattle", "package"]
+         description:
+           You can put some description text here.
+           Must be indented.
 
 2. Put course materials as files and directories into the skeleton
    directory. For example, you might end up with a directory like
    that shown below with two subdirectories, `packages` and
    `presentation-slides`, each containing course materials.
 
-   seattle-intro
-   |-- course_config.yaml
-   |-- packages
-   |   |-- day1_0.0.1.tar.gz
-   |   |-- day2_0.0.1.tar.gz
-   |   `-- day3_0.0.1.tar.gz
-   `-- presentation-slides
-       |-- First-steps-presentation.pdf
-       |-- Microarray-presentation.pdf
-       |-- annotation-presentation.pdf
-       `-- sequence-presentation.pdf
+         seattle-intro
+         |-- course_config.yaml
+         |-- packages
+         |   |-- day1_0.0.1.tar.gz
+         |   |-- day2_0.0.1.tar.gz
+         |   `-- day3_0.0.1.tar.gz
+         `-- presentation-slides
+             |-- First-steps-presentation.pdf
+             |-- Microarray-presentation.pdf
+             |-- annotation-presentation.pdf
+             `-- sequence-presentation.pdf
 
 3. Now you are ready to create the index files.
 
-      ./scripts/course_mgr --index seattle-intro
-      CREATED: content/help/course-notes/2010/01/seattle-intro.(html|yaml)
-      COPIED for preview:
-        src: ./seattle-intro/*
-        dst: output/help/course-notes/2010/01/seattle-intro/
-      NEXT STEPS:
-      - preview site with 'rake devserver'
-        - Use URL: http://localhost:3000/help/course-materials/2010/seattle-intro/
-        - edit CREATED files to add descriptions for links
-        - if happy, run ./scripts/course_mgr --push 2010/seattle-intro
+          ./scripts/course_mgr --index seattle-intro
+          CREATED: content/help/course-notes/2010/01/seattle-intro.(html|yaml)
+          COPIED for preview:
+            src: ./seattle-intro/*
+            dst: output/help/course-notes/2010/01/seattle-intro/
+          NEXT STEPS:
+          - preview site with 'rake devserver'
+            - Use URL: http://localhost:3000/help/course-materials/2010/seattle-intro/
+            - edit CREATED files to add descriptions for links
+            - if happy, run ./scripts/course_mgr --push 2010/seattle-intro
 
 
    This will create a course index content item in content filed
@@ -423,11 +421,11 @@ To add a course, you will typically perform the following steps
    data files are not appropriate for git and they are not likely to
    change):
 
-       ./scripts/course_mgr --push 2010/seattle-intro
-       SYNC:
-        src: ./seattle-intro
-        dst: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
-       NEXT STEPS: git add/commit changes in contents
+           ./scripts/course_mgr --push 2010/seattle-intro
+           SYNC:
+            src: ./seattle-intro
+            dst: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test.fhcrc.org/help/course-materials/2010/
+           NEXT STEPS: git add/commit changes in contents
 
 5. Finally, "git add" the new course index html and yaml files that were generated in the
    content directory and commit.
