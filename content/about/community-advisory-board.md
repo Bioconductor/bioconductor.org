@@ -60,7 +60,7 @@ Saskia Freytag Harry Perkins Institute of Medical Research, Australia.
 [![Github][1.2]](https://github.com/SaskiaFreytag)
 ![Google][1.3]
 ![linkedin][1.4]
-[![website][1.5]]
+![website][1.5]
 
 
 ![Susan](/assets/images/cab/susan.png) 
@@ -80,7 +80,7 @@ Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
 [![Github][1.2]](https://github.com/kozo2),
 ![Google][1.3]
 ![linkedin][1.4]
-[![website][1.5]
+![website][1.5]
 
 ![Johannes](/assets/images/cab/johannes.png) 
 
@@ -107,7 +107,7 @@ Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
 ![Github][1.2]
 ![Google][1.3]
 [![linkedin][1.4]](https://www.linkedin.com/in/lori-shepherd-b49993172),
-[![website][1.5]
+![website][1.5]
 
 
 
