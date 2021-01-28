@@ -77,7 +77,7 @@ Susan Holmes, Stanford, USA
 
 Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
 ![Twitter][1.1]
-[![Github][1.2]](https://github.com/kozo2),
+[![Github][1.2]](https://github.com/kozo2)
 ![Google][1.3]
 ![linkedin][1.4]
 ![website][1.5]
@@ -89,7 +89,7 @@ Johannes Rainer, Eurac Research, Italy.
 ![Github][1.2]
 ![Google][1.3]
 ![linkedin][1.4]
-[![website][1.5]](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084), 
+[![website][1.5]](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084)
 
 ![Matt](/assets/images/cab/matt.png) 
 
@@ -106,7 +106,7 @@ Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
 ![Twitter][1.1]
 ![Github][1.2]
 ![Google][1.3]
-[![linkedin][1.4]](https://www.linkedin.com/in/lori-shepherd-b49993172),
+[![linkedin][1.4]](https://www.linkedin.com/in/lori-shepherd-b49993172)
 ![website][1.5]
 
 
