@@ -22,6 +22,7 @@ RewriteRule ^(.*)$ - [env=proto:http]
 RewriteEngine On
 RewriteBase /books/
 
+RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/books/release/index.html [NE,R=302]
 
 ## Handle omitted trailing slash:
 RewriteCond %{REQUEST_FILENAME} !-f
