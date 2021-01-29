@@ -12,108 +12,89 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 ## Current members
 <!--0. Image, 1. Twitter, 2. Github, 3. Google , 4. LinkedIn, 5. Vcard/website. and 0.x is icon, 1.1 is person link) -->
 
+<table width="100%">
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/yagoub.png"
+           width="100%" alt="Yagoub A. I. Adam" title="Yagoub A. I. Adam"/>
+      <figcaption>Yagoub A. I. Adam, Covenant University, Nigeria.
+      <a href="https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192">linkedin</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/benilton.png"
+           width="100%" alt="Benilton Carvalho" title="Benilton Carvalho"/>
+      <figcaption>Benilton Carvalho, University of Campinas, Brazil.
+      <a href="https://scholar.google.com/citations?user=44vQTS4AAAAJ&hl=en">Google</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/leonardo.png"
+           width="100%" alt="Leonardo Collado-Torres" title="Leonardo Collado-Torres"/>
+      <figcaption>Leonardo Collado-Torres, Lieber Institute for Brain Development, USA.
+      <a href="http://lcolladotor.github.io/">Github</a>
+      </figcaption>
+    </td>
+  </tr>
 
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/aedin.png"
+           width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
+      <figcaption>Aedin Culhane, Dana-Farber Cancer Institute, USA.
+      <a href="https://www.hsph.harvard.edu/aedin-culhane/">website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/sasika.png"
+           width="100%" alt="Saskia Freytag" title="Saskia Freytag"/>
+      <figcaption>Saskia Freytag, Harry Perkins Institute of Medical Research, Australia.
+      <a href="https://github.com/SaskiaFreytag">Github</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/susan.png"
+           width="100%" alt="Susan Holmes" title="Susan Holmes"/>
+      <figcaption>Susan Holmes, Stanford, USA.
+      <a href="https://med.stanford.edu/profiles/susan-holmes">website</a>
+      </figcaption>
+    </td>
+  </tr>
 
-![Yagoub A. I. Adam](/assets/images/cab/yagoub.png)
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/kozo.png"
+           width="100%" alt="Kozo Nishida" title="Kozo Nishida"/>
+      <figcaption>Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
+      <a href="https://github.com/kozo2">Github</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/johannes.png"
+           width="100%" alt="Johannes Rainer" title="Johannes Rainer"/>
+      <figcaption>Johannes Rainer, Eurac Research, Italy.
+      <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/matt.png"
+           width="100%" alt="Matt Ritchie" title="Matt Ritchie"/>
+      <figcaption>Matt Ritchie, The Walter and Eliza Hall Institute of Medical Research, Australia.
+      <a href="https://www.wehi.edu.au/people/matthew-ritchie">website</a>
+      </figcaption>
+    </td>
+  </tr>
 
-Yagoub A. I. Adam, Covenant University, Nigeria
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-[![linkedin][1.4]](https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192)
-![website][1.5]
-
-       
-![Benilton Carvalho](/assets/images/cab/benilton.png)
-
-Benilton Carvalho, University of Campinas, Brazil
-![Twitter][1.1]
-![Github][1.2]
-[![Google][1.3]](https://scholar.google.com/citations?user=44vQTS4AAAAJ&hl=en)
-![linkedin][1.4]
-![website][1.5]
-
-
-![Leonardo](/assets/images/cab/leonardo.png) 
-
-Leonardo Collado-Torres, Lieber Institute for Brain Development, USA.
-![Twitter][1.1]
-[![Github][1.2]](http://lcolladotor.github.io/)
-![Google][1.3]
-![linkedin][1.4]
-![website][1.5]
-
-![Aedin](/assets/images/cab/aedin.png) 
-
-Aedin Culhane, Dana-Farber Cancer Institute, USA.
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-![linkedin][1.4]
-[![website][1.5]](https://www.hsph.harvard.edu/aedin-culhane/)
-
-
-![Saskia](/assets/images/cab/sasika.png)
-
-Saskia Freytag Harry Perkins Institute of Medical Research, Australia. 
-![Twitter][1.1]
-[![Github][1.2]](https://github.com/SaskiaFreytag)
-![Google][1.3]
-![linkedin][1.4]
-![website][1.5]
-
-
-![Susan](/assets/images/cab/susan.png) 
-
-Susan Holmes, Stanford, USA
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-![linkedin][1.4]
-[![website][1.5]](https://med.stanford.edu/profiles/susan-holmes)
-
-
-![Kozo](/assets/images/cab/kozo.png) 
-
-Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
-![Twitter][1.1]
-[![Github][1.2]](https://github.com/kozo2)
-![Google][1.3]
-![linkedin][1.4]
-![website][1.5]
-
-![Johannes](/assets/images/cab/johannes.png) 
-
-Johannes Rainer, Eurac Research, Italy.
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-![linkedin][1.4]
-[![website][1.5]](http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084)
-
-![Matt](/assets/images/cab/matt.png) 
-
-Matt Ritchie, The Walter and Eliza Hall Institute of Medical Research, Australia.
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-![linkedin][1.4]
-[![website][1.5]](https://www.wehi.edu.au/people/matthew-ritchie)
-
-![Lori](/assets/images/cab/lori.png) 
-
-Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
-![Twitter][1.1]
-![Github][1.2]
-![Google][1.3]
-[![linkedin][1.4]](https://www.linkedin.com/in/lori-shepherd-b49993172)
-![website][1.5]
-
-
-
-
-
-
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/lori.png"
+           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
+      <figcaption>Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
+      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">linkedin</a>
+      </figcaption>
+    </td>
+  </tr>
+</table>
 
 
 ## Meeting minutes
