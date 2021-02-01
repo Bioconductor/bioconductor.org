@@ -15,7 +15,7 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/cab/yagoub.png"
+      <img src="assets/images/cab/yagoub.png"
            width="100%" alt="Yagoub A. I. Adam" title="Yagoub A. I. Adam"/>
       <figcaption>Yagoub A. I. Adam, Covenant University, Nigeria.
       <a href="https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192">linkedin</a>
