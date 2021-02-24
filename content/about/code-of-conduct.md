@@ -4,7 +4,7 @@
 
 # Code of Conduct
 
-**Version 1.0.0 (September 23, 2020)**
+**Version 1.0.1 (November 25, 2020)**
 
 * Initial project-wide Code of Conduct, expanded from previous conference-specific documents
 
@@ -14,21 +14,20 @@ The Bioconductor community values
 * an open approach to science that promotes the sharing of ideas, code, and expertise
 * collaboration
 * diversity and inclusivity
-* kindness and a welcoming environment
+* a kind and welcoming environment
 * community contributions
-* openness in regard to software implementations
 
-In line with these values, Bioconductor is dedicated to providing a welcoming, supportive, collegial, and harassment-free experience for community members (users, developers, conference and workshop attendees etc.), regardless of:
+In line with these values, Bioconductor is dedicated to providing a welcoming, supportive, collegial, experience free of harassment, intimidation, and bullying regardless of:
 
 * identity: gender, gender identity and expression, sexual orientation, disability, physical appearance, ethnicity, body size, race, age, religion, etc.
 * intellectual position: approaches to data analysis, software preferences, coding style, scientific perspective, etc.
 * stage of career
 
-By participating in this community, you agree to abide by the Code of Conduct, which applies to both in person and virtual events (e.g. talks, workshops, poster sessions, social activities) and electronic communication channels (including but not limited to community-bioc Slack, the support site, online forums and social media communications).
+By participating in this community, you agree not to engage in behavior contrary to these values at any Bioconductor-sponsored event (in person or virtual, including but not limited to talks, workshops, poster sessions, social activities) or electronic communication channel (including but not limited to community-bioc Slack, the support site, online forums and social media communications).
 
 We do not tolerate harassment, intimidation, or bullying of community members. Sexual language and imagery are not appropriate in presentations, communications or in online venues, including chats.
 
-Any person/s violating these rules may be sanctioned or expelled temporarily or permanently from an electronic platform or event at the discretion of the Code of Conduct committee.
+Any person/s violating the Code of Conduct may be sanctioned or expelled temporarily or permanently from an electronic platform or event at the discretion of the Code of Conduct committee.
 
 **Examples of unacceptable harassment, intimidation, and bullying behavior.**
 
@@ -39,21 +38,23 @@ Harassment includes, but is not limited to:
 * Harassing photography or recording
 * Sustained disruption of talks or other events
 * Unwelcome sexual attention
-*  Advocating for, or encouraging, any of the above behavior
+* Advocating for, or encouraging, any of the above behavior
 
 Intimidation and bullying include, but are not limited to:
 
-*  Aggressive or browbeating behavior 
+* Aggressive or browbeating behavior 
 * Mocking or insulting another person’s intellect, work, perspective, or question/comment
 * Making reference to someone’s gender, gender identity and expression, sexual orientation, disability, physical appearance, body size, race, age, religion, or other personal attributes in the context of a scientific discussion
 * Deliberately making someone feel unwelcome
+* Trolling behaviour (deliberately inflammatory of offensive messages)
+* Sustained off-topic posts
 
 
 **Enforcement**
 
 Anyone asked to stop harassing or intimidating behavior are expected to comply immediately.
 
-If a person/s engage in harassing behavior, the Code of Conduct committee retains the right to take any action that ensures a welcoming environment for all community members. This includes warning the alleged offender or temporary/permanent expulsion from the event and/or electronic platforms under Bioconductor’s control.
+If a person/s contravene the Code of Conduct the Code of Conduct committee retains the right to take any action that ensures a welcoming environment for all community members. This includes warning the alleged offender or temporary/permanent expulsion from the event and/or electronic platforms under Bioconductor’s control.
 
 The Code of Conduct committee may take action to redress anything designed to, or with the clear impact of, disrupting an event or electronic communication platform or making the environment hostile for any community member.
 
@@ -66,7 +67,7 @@ If someone makes you or anyone else feel unsafe or unwelcome, please report it a
 _Electronically_
 
 You can make an anonymous or non-anonymous report via the following link:
-[https://tinyurl.com/bioccomplaint][2]. It is a free-form text box that will be forwarded to the Code of Conduct Committee. Alternatively you can email the Code of Conduct Committee (**code-of-conduct@bioconductor.org**). If you are uncomfortable reporting to the Code of Conduct committee as a group, you can contact any individual committee member via email or a direct message on the community-bioc Slack channel.
+[https://tinyurl.com/bioccomplaint][2]. It is a free-form text box that will be forwarded to the Code of Conduct Committee. Alternatively you can email the Code of Conduct Committee (code-of-conduct@bioconductor.org). If you are uncomfortable reporting to the Code of Conduct committee as a group, you can contact any individual committee member via email or a direct message on the community-bioc Slack channel. Please include screenshots/copies of all relevant electronic conversations whenever possible (you don’t need to compromise your anonymity!).
 
 We can’t follow up an anonymous report with you directly, but we will fully investigate it and take whatever action is necessary to prevent a recurrence.
 
