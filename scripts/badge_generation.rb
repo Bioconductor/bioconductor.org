@@ -184,7 +184,7 @@ end
 # 3. Posts:
 #    support site tags
 #
-#  See rake task: get_post_tag_info
+#  See rake task: get_support_tag_info
 #
 ######################################
 
@@ -196,7 +196,11 @@ end
 # the script only when trying to generate the
 # badge
 
-# See get_post_tag_info.rb
+
+# sql password requirement is legacy
+# consider moving code here 
+
+# See get_support_tag_info.rb
 
 ############################################
 #

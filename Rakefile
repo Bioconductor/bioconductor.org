@@ -690,10 +690,11 @@ end
 
 desc "get all shields"
 task :get_all_shields => [:get_build_dbs,
-  :process_downloads_data, :get_post_tag_info,
-  :get_years_in_bioc_shields, :copy_assets,
-  :get_availability_shields, :get_last_commit_date_shields,
-  :process_dependency_badge]
+  :process_downloads_data, :get_availability_shields,
+  :get_supportsite_info_shield,
+  :get_years_in_bioc_shields,
+  :get_last_commit_date_shields,
+  :process_dependency_badge, :copy_assets]
 
 # should be run every time mirror info in config.yaml changes
 # that's hard to remember do to, so
