@@ -10,76 +10,17 @@ def create_package_list()
   rel_ver = site_config["release_version"]
   dev_ver = site_config["devel_version"]
 
+  puts "getting package list"
   pkgs = []
-
-  ## master get from manifest so any new packages yet to build are included
-
-  File.foreach("../manifest/software.txt"){ |line|
-    if (line.start_with? "Package:")
-      line.sub! "Package:", ""
-      line.strip!
-      pkgs.push line
-    end
-  }
-  File.foreach("../manifest/data-experiment.txt"){ |line|
-    if (line.start_with? "Package:")
-      line.sub! "Package:", ""
-      line.strip!
-      pkgs.push line
-    end
-  }
-  File.foreach("../manifest/workflows.txt"){ |line|
-    if (line.start_with? "Package:")
-      line.sub! "Package:", ""
-      line.strip!
-      pkgs.push line
-    end
-  }
-  File.foreach("../manifest/books.txt"){ |line|
-    if (line.start_with? "Package:")
-      line.sub! "Package:", ""
-      line.strip!
-      pkgs.push line
-    end
-  }
-
-  ## Release -- could either switch to git release branch
-  ## use VIEWS
-  ## or simplest option to use the existing json file
-
-  rel_file = File.join("assets/packages/json/", rel_ver, "data/experiment/packages.json")
-  if File.exists? rel_file
-    json = JSON.parse(File.read(rel_file))
-    pkgs = pkgs | json.keys
+  [true, false].each do |state|
+    pkgs += get_list_of_packages(state)
+    pkgs += get_list_of_packages(bioc=false, state)
+    pkgs += get_annotation_package_list(state)
+    pkgs += get_list_of_workflows(state)
   end
-  rel_file = File.join("assets/packages/json/", rel_ver, "bioc/packages.json")
-  if File.exists? rel_file
-    json = JSON.parse(File.read(rel_file))
-    pkgs = pkgs | json.keys
-  end
-  rel_file = File.join("assets/packages/json/", rel_ver, "workflows/packages.json")
-  if File.exists? rel_file
-    json = JSON.parse(File.read(rel_file))
-    pkgs = pkgs | json.keys
-  end
-
-  ## Annotation does not have complete manifest
-
-  rel_file = File.join("assets/packages/json/", rel_ver, "data/annotation/packages.json")
-  dev_file = File.join("assets/packages/json/", dev_ver, "data/annotation/packages.json")
-
-  if File.exists? rel_file
-    json = JSON.parse(File.read(rel_file))
-    pkgs = pkgs | json.keys
-  end
-  if File.exists? dev_file
-    json = JSON.parse(File.read(dev_file))
-    pkgs = pkgs | json.keys
-  end
-
-  ## ensure unique package list
   pkgs = pkgs.uniq
 
+  puts "writing package file"
   file = File.open("tmp/packageNameList.txt", "w")
   pkgs.each{ |line|
     file.puts line
