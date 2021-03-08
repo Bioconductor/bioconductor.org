@@ -7,7 +7,7 @@ Using similar coding style helps people understand code.  These
 guidelines are preferences and strongly encouraged.
 
 * See also: [package guidelines](/developers/package-guidelines)
-  and [Hadley Wickhams's R Style Guide](http://r-pkgs.had.co.nz/style.html).
+  and [Hadley Wickhams's R Style Guide](https://style.tidyverse.org/).
 
 * See also:
   [formatR](https://cran.r-project.org/web/packages/formatR/index.html) a
