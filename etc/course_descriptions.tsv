@@ -1,4 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2021-03-18 - 2021-03-18	[BiocDevelForum](https://www.youtube.com/watch?v=_QsFRiOBjt8)	Talk	R7 for Bioconductor	Michael Lawrence	[slides](2021/BiocDevelForum/20-R7.pdf), [video](https://www.youtube.com/watch?v=_QsFRiOBjt8)	3.13	4.1
 2021-02-25 - 2021-02-25	[BiocDevelForum](https://www.youtube.com/watch?v=nmY1jIhY9-Q)	Talk	Testing R Packages	Dirk Eddelbuettel	[slides](2021/BiocDevelForum/19-testing.pdf), [video](https://www.youtube.com/watch?v=nmY1jIhY9-Q)	3.13	4.1
 2021-01-21 - 2021-01-21	[BiocDevelForum](https://www.youtube.com/watch?v=ALUTe8eyLOg&feature=youtu.be)	Talk	Bioconductor - Microsoft Genomics	Jass Bagga, Erdal Cosgun	[slides](2021/BiocDevelForum/18-Microsoft.pdf), [video](https://www.youtube.com/watch?v=ALUTe8eyLOg&feature=youtu.be)	3.13	4.1
 2020-12-10 - 2020-12-10	[BiocDevelForum](https://www.youtube.com/watch?v=biygNnJA1oY)	Talk	Say Hello to ALTREP	Jiefei Wang	[slides](2020/BiocDevelForum/17-ALTREP2.pdf), [video](https://www.youtube.com/watch?v=biygNnJA1oY)	3.13	4.1
