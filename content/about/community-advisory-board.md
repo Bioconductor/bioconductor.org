@@ -29,15 +29,22 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
       </figcaption>
     </td>
     <td width="33%">
+      <img src="/images/cab/daniela.png"
+           width="100%" alt="Daniela Cassol" title="Daniela Cassol"/>
+      <figcaption>Daniela Cassol, University of California, Riverside, USA.
+      <a href="https://www.dcassol.com/">website</a>
+      </figcaption>
+    </td>    
+  </tr>
+
+  <tr>
+    <td width="33%">
       <img src="/images/cab/leonardo.png"
            width="100%" alt="Leonardo Collado-Torres" title="Leonardo Collado-Torres"/>
       <figcaption>Leonardo Collado-Torres, Lieber Institute for Brain Development, USA.
       <a href="http://lcolladotor.github.io/">Github</a>
       </figcaption>
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/cab/aedin.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
@@ -52,11 +59,28 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
       <a href="https://github.com/SaskiaFreytag">Github</a>
       </figcaption>
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/cab/susan.png"
            width="100%" alt="Susan Holmes" title="Susan Holmes"/>
       <figcaption>Susan Holmes, Stanford, USA.
       <a href="https://med.stanford.edu/profiles/susan-holmes">website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/katerina.png"
+           width="100%" alt="Katerina Kechris" title="Katerina Kechris"/>
+      <figcaption>Katerina Kechris, University of Colorado, Denver, USA.
+      <a href="http://csph.ucdenver.edu/Sites/Kechris/">website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/estefania.png"
+           width="100%" alt="Estefania Mancini" title="Estefania Mancini"/>
+      <figcaption>Estefania Mancini, Centre for Genomic Regulation, Spain.
+      <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Google Scholar</a>
       </figcaption>
     </td>
   </tr>
@@ -87,41 +111,17 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/lori.png"
-           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
-      <figcaption>Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
-      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">linkedin</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/daniela.png"
-           width="100%" alt="Daniela Cassol" title="Daniela Cassol"/>
-      <figcaption>Daniela Cassol, University of California, Riverside, USA.
-      <a href="https://www.dcassol.com/">website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/katerina.png"
-           width="100%" alt="Katerina Kechris" title="Katerina Kechris"/>
-      <figcaption>Katerina Kechris, University of Colorado, Denver, USA.
-      <a href="http://csph.ucdenver.edu/Sites/Kechris/">website</a>
-      </figcaption>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
-      <img src="/images/cab/estefania.png"
-           width="100%" alt="Estefania Mancini" title="Estefania Mancini"/>
-      <figcaption>Estefania Mancini, Centre for Genomic Regulation, Spain.
-      <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Google Scholar</a>
-      </figcaption>
-    </td>
-    <td width="33%">
       <img src="/images/cab/kevin.png"
            width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
       <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
       <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/lori.png"
+           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
+      <figcaption>Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
+      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">linkedin</a>
       </figcaption>
     </td>
     <td width="33%">
