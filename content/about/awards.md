@@ -7,7 +7,7 @@ The Bioconductor project proudly launched in 2020 honor contributions to the pro
 
 The awardees will be selected among the nominees based on the following criteria. It is possible, but not required, for multiple criteria to contribute towards the selection of an awardee.
 
-* __Outstanding new package contributions__, for developers of high-quality packages, added to Bioconductor in one of the two most recent releases prior to the nomination deadline, which show exemplary use of the Bioconductor package design principles. Summary of new packages in releases 3.10/3.11
+* __Outstanding new package contributions__, for developers of high-quality packages, added to Bioconductor in one of the two most recent releases prior to the nomination deadline, which show exemplary use of the Bioconductor package design principles.
 * __Outstanding support site contributions__, for individuals showing extraordinary helpfulness on the Bioconductor support site and/or in other forums.
 * __Outstanding documentation contributions__, for individuals writing and maintaining excellent user-facing documentation, workflows and/or tutorials. 
 * __Outstanding community engagement and outreach__, for individuals who "make things happen", engage with and provide substantial contributions to the Bioconductor community.
