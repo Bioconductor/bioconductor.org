@@ -26,7 +26,11 @@ In order to nominate someone or self-nominate for the awards, please fill out th
 2.	Full name and e-mail address of the nominee.
 3.	The relevant award criteria.
 4.	Motivation for the nomination and how the nominee satisfies the selected award criteria.
- 
+
+The form is available 3-4 months before the annual Bioconductor conference. It
+will be advertised on the conference website, Bioconductor social media
+platforms, and support site forums.  
+
 
 # FAQ
 * __Am I allowed to nominate more than one person?__
@@ -49,6 +53,9 @@ Yes
 # Questions
 Questions can be addressed via email to cab(at)bioconductor.org 
 
+
+
+![BiocAwards](/images/biocawards/BiocAward.png)
 
 
 
