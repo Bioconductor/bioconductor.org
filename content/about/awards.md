@@ -56,29 +56,10 @@ Yes
 <img src="/images/biocawards/writeup/Lun.png" width="100%" height="100%"/>
 
 ## Lori Shepherd
-<table width="100%">
-  <tr>
-    <td width="10%">
-       <img src="/images/biocawards/pics/lshepherd.jpg" width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
-    </td>      
-    <td width="90%">
-       <img src="/images/biocawards/writeup/Shepherd.png" width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
-    </td>      
-  </tr>
-</table>
+<img src="/images/biocawards/writeup/Shepherd.png" width="100%" />
 
 ## Gordon Smyth
-<table width="100%">
-  <tr>
-    <td width="10%">
-      <img src="/images/biocawards/pics/gsmyth.jpg" width="100%" alt="Gordon Smyth" title="Gordon Smyth"/>
-    </td>      
-    <td width="90%">
-       <img src="/images/biocawards/writeup/Smyth.png" width="100%" alt="Gordon Smyth" title="Gordon Smyth"/>
-    </td>      
-  </tr>
-</table>
-
+<img src="/images/biocawards/writeup/Smyth.png" width="100%" />
 
 
 # Previous Winners
