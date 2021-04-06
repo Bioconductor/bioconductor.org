@@ -47,7 +47,23 @@ Yes
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 
+# Winners
+
+## Helena Lucia Crowell
+<img src="/images/biocawards/writeup/Crowell.png" width="100%" height="100%"/>
+
+## Aaron Lun
+<img src="/images/biocawards/writeup/Lun.png" width="100%" height="100%"/>
+
+## Lori Shepherd
+<img src="/images/biocawards/writeup/Shepherd.png" width="100%" />
+
+## Gordon Smyth
+<img src="/images/biocawards/writeup/Smyth.png" width="100%" />
+
+
 # Previous Winners
+
 2020: Helena Crowell, Aaron Lun, Lori Shepherd, Gordon Smyth
 
 # Questions
