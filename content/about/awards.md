@@ -49,20 +49,37 @@ Yes
 
 # Winners
 
+## Helena Lucia Crowell
+<img src="/images/biocawards/writeup/Crowell.png" width="100%" height="100%"/>
+
+## Aaron Lun
+<img src="/images/biocawards/writeup/Lun.png" width="100%" height="100%"/>
+
+## Lori Shepherd
 <table width="100%">
   <tr>
-    <td width="100%">
-    	<img src="/images/biocawards/gsmyth.jpg" width="75%" alt="Gordon Smyth" title="Gordon Smyth"/>
-	<figcaption>Gordon Smyth</figcaption>
-    </td>	
+    <td width="10%">
+       <img src="/images/biocawards/pics/lshepherd.jpg" width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
+    </td>      
+    <td width="90%">
+       <img src="/images/biocawards/writeup/Shepherd.png" width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
+    </td>      
   </tr>
-   <tr>
-    <td width="100%">
-    	<img src="/images/biocawards/lshepherd.jpg" width="50%" alt="Lori Shepherd" title="Lori Shepherd"/>
-	<figcaption>Lori Shepherd</figcaption>
-    </td>	
+</table>
+
+## Gordon Smyth
+<table width="100%">
+  <tr>
+    <td width="10%">
+      <img src="/images/biocawards/pics/gsmyth.jpg" width="100%" alt="Gordon Smyth" title="Gordon Smyth"/>
+    </td>      
+    <td width="90%">
+       <img src="/images/biocawards/writeup/Smyth.png" width="100%" alt="Gordon Smyth" title="Gordon Smyth"/>
+    </td>      
   </tr>
- </table>
+</table>
+
+
 
 # Previous Winners
 
