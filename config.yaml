@@ -7,12 +7,12 @@ staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-te
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.11"
-r_version_associated_with_release: "4.0.0"
-r_version_associated_with_devel: "4.0.0"
+release_version: "3.12"
+r_version_associated_with_release: "4.0.3"
+r_version_associated_with_devel: "4.1.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.12"
+devel_version: "3.13"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -23,8 +23,8 @@ devel_version: "3.12"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.11"
 - "3.12"
+- "3.13"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
@@ -37,19 +37,19 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
-  linux: "malbec2"
-  windows: "tokay2"
-  mac_highsierra: "machv2"
-active_devel_builders:
   linux: "malbec1"
   windows: "tokay1"
-#  mac_highsierra: "machv2"
+  mac_mojave: "merida1"
+active_devel_builders:
+  linux: "malbec2"
+  windows: "tokay2"
+  mac_mojave: "machv2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.12"
-  r_version: "4.0"
+  bioc_version: "3.13"
+  r_version: "4.1"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
@@ -72,8 +72,9 @@ ami_ids:
  bioc3_8: ami-0565362d8bfb9cbed
  bioc3_9: ami-0f5d1990d8c571cdf
  bioc3_10: ami-0c5ab50ca03a54468
- bioc3_11: ami-02159c2acbdc8f7a9
- bioc3_12: ami-04c50efb93570d53a
+ bioc3_11: ami-071b80cf0d8ca085c
+ bioc3_12: ami-04c69d122c1cf7e81
+ bioc3_13: ami-0e7efd11a6eab85a6
 string_pattern_type: legacy
 data_sources:
 - items_root: /
@@ -152,6 +153,7 @@ r_ver_for_bioc_ver:
   "3.10": "3.6"
   "3.11": "4.0"
   "3.12": "4.0"
+  "3.13": "4.1"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -191,6 +193,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.9": "05/03/2019"
   "3.10": "10/30/2019"
   "3.11": "04/28/2020"
+  "3.12": "10/28/2020"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide

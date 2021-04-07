@@ -64,11 +64,6 @@
       <br>Nitesh Turaga
     </td>
     <td width="33%">
-      <img src="/images/coreTeamPic/DanielVanTwisk.jpeg"
-           width="100%" alt="Daniel van Twisk" title="Daniel van Twisk"/>
-      <br>Daniel van Twisk
-    </td>
-    <td width="33%">
       <img src="/images/coreTeamPic/JiefeiWang.jpeg"
            width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
       <br>Jiefei Wang
@@ -78,6 +73,7 @@
 
 Recent alumni
 
+* Daniel van Twisk
 * Qian Liu
 * Valerie Obenchain
 * Greg Wargula
@@ -119,7 +115,7 @@ Recent alumni
 * Crispin Miller, Paterson Institute Bioinformatics Group, UK.
 * Anthony Rossini, Modeling and Simulation, Novartis Pharma AG,
   Switzerland.
-* Colin Smith, University of California, San Francisco, USA.
+* Colin Smith, Wesleyan University, USA.
 * Gordon Smyth WEHI, Australia.
 * [Luke Tierney](http://www.stat.uiowa.edu/~luke/), University of
   Iowa, USA.

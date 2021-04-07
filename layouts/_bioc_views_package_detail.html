@@ -43,9 +43,9 @@
       <td>
       <% path = "assets"+"/shields/posts/"+@package[:Package]+".svg" %>
       <% if File.exist?(path) %>
-	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>"><img border='0' src="/shields/posts/<%=@package[:Package]%>.svg" title="Support site activity, last 6 months: answered posts / total posts."/></a>
       <% else %>
-	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"><img border='0' src="/images/shields/posts/unknown-posts.svg" title="Support site activity, last 6 months: tagged questions/avg. answers per question/avg. comments per question/accepted answers, or 0 if no tagged posts."/></a>
+	  <a href="https://support.bioconductor.org/t/<%=@package[:Package].downcase%>"><img border='0' src="/images/shields/posts/unknown-posts.svg" title="Support site activity, last 6 months: answered posts / total posts."/></a>
       <% end %>
       </td>
       <%= tr.betweencells %>

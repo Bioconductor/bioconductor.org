@@ -17,4 +17,4 @@ term. Current members are:
 * Benjamin Neale (Broad Institute)
 * Mike Schatz (Johns Hopkins University)
 * Jay Shendure (University of Washington)
-* Levi Waldron (CUNY School of Public Health)
+* Levi Waldron (CUNY Graduate School of Public Health and Health Policy)

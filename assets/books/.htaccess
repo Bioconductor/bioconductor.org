@@ -1,0 +1,44 @@
+
+<IfModule mod_rewrite.c>
+
+
+## define a variable that contains the protocol (http or https) of the
+## current request.
+## You can refer to the variable as  %{ENV:proto} and it will
+## expand to its value.
+## from http://stackoverflow.com/a/20419821/470769
+# initialization code - put only once at the beginning of .htaccess
+RewriteCond %{HTTPS} =on
+RewriteRule ^(.*)$ - [env=proto:https]
+RewriteCond %{HTTPS} !=on
+RewriteRule ^(.*)$ - [env=proto:http]
+
+
+## Short urls for books:
+## This may need tweaking as we adjust for finally location
+
+##### Options -Indexes
+
+RewriteEngine On
+RewriteBase /books/
+
+RewriteRule ^/?$ %{ENV:proto}://bioconductor.org/books/release/index.html [NE,R=302]
+
+## Handle omitted trailing slash:
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteCond %{REQUEST_URI} !(.*)/$
+RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/books/$1/ [L,R]
+
+##     /books/xxx is internally rewritten to
+##     /books/release/xxx.html or 
+##     /books/devel/xxx.html
+##     Note: Release repos are searched first, then devel.
+
+## /books/OSCA -> /books/release/OSCA
+
+RewriteCond %{DOCUMENT_ROOT}/books/release/$1/index\.html -f
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/release/$1 [R=302]
+
+RewriteCond %{DOCUMENT_ROOT}/books/devel/$1/index\.html -f
+RewriteRule ^([^/]+)/?$ %{ENV:proto}://bioconductor.org/books/devel/$1 [R=302]

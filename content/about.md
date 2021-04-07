@@ -155,3 +155,9 @@ The broad goals of the _Bioconductor_ project are:
   or documentation. Additionally _Bioconductor_ provides a mechanism for
   linking together different groups with common goals to foster
   collaboration on software, often at the level of shared development.
+
+## Code of Conduct
+
+Please refer to the [Bioconductor Code of Conduct][coc]
+
+[coc]: code-of-conduct/

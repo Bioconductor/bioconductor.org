@@ -1,4 +1,10 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2021-03-18 - 2021-03-18	[BiocDevelForum](https://www.youtube.com/watch?v=_QsFRiOBjt8)	Talk	R7 for Bioconductor	Michael Lawrence	[slides](2021/BiocDevelForum/20-R7.pdf), [video](https://www.youtube.com/watch?v=_QsFRiOBjt8)	3.13	4.1
+2021-02-25 - 2021-02-25	[BiocDevelForum](https://www.youtube.com/watch?v=nmY1jIhY9-Q)	Talk	Testing R Packages	Dirk Eddelbuettel	[slides](2021/BiocDevelForum/19-testing.pdf), [video](https://www.youtube.com/watch?v=nmY1jIhY9-Q)	3.13	4.1
+2021-01-21 - 2021-01-21	[BiocDevelForum](https://www.youtube.com/watch?v=ALUTe8eyLOg&feature=youtu.be)	Talk	Bioconductor - Microsoft Genomics	Jass Bagga, Erdal Cosgun	[slides](2021/BiocDevelForum/18-Microsoft.pdf), [video](https://www.youtube.com/watch?v=ALUTe8eyLOg&feature=youtu.be)	3.13	4.1
+2020-12-10 - 2020-12-10	[BiocDevelForum](https://www.youtube.com/watch?v=biygNnJA1oY)	Talk	Say Hello to ALTREP	Jiefei Wang	[slides](2020/BiocDevelForum/17-ALTREP2.pdf), [video](https://www.youtube.com/watch?v=biygNnJA1oY)	3.13	4.1
+2020-11-19 - 2020-11-19	[BiocDevelForum](https://youtu.be/8i7ziLqsE2s)	Talk	Alternate Representations of R Objects or ALTREP	Gabe Becker	[slides](2020/BiocDevelForum/16-ALTREP.pdf), [github](https://github.com/ALTREP-examples/vectorwindow), [video](https://youtu.be/8i7ziLqsE2s)	3.13	4.1
+2020-10-22 - 2020-10-22	[BiocDevelForum](https://www.youtube.com/watch?v=uw90J1Oy0Bc)	Talk	Presentation on sparseMatrixStats	Constantin Ahlmann-Eltze	[slides](2020/BiocDevelForum/15-sparseMatrixStats.pdf), [video](https://www.youtube.com/watch?v=uw90J1Oy0Bc)	3.12	4.0
 2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Presentation on AnVIL	Martin Morgan	[video](2020/BiocDevelForum/14-AnVIL.mp4)	3.12	4.0
 2020-09-24 - 2020-09-24	[BiocDevelForum](https://youtu.be/d_fhhHTzrqI)	Talk	Q&A about upcoming release	Lori Shepherd	[video](2020/BiocDevelForum/14-release.mp4)	3.12	4.0
 2020-07-27 - 2020-07-31	[BioC2020](http://bioc2020.bioconductor.org/)	Conference	Where Software and Biology Connect	Various	[Talks & Workshops](http://bioc2020.bioconductor.org/schedule)	3.12	4.0

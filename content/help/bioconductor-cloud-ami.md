@@ -185,12 +185,17 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
-        <td>3.12 (devel)</td>
-        <td>4.0.0</td>
+        <td>3.13 (devel)</td>
+        <td>4.1.0</td>
+        <td><%= ami_url config[:ami_ids][:bioc3_13]%></td>
+    </tr>
+    <tr>
+        <td>3.12 (release, <b>recommended</b>)</td>
+        <td>4.0.3</td>
         <td><%= ami_url config[:ami_ids][:bioc3_12]%></td>
     </tr>
     <tr>
-        <td>3.11  (release, <b>recommended</b>)</td>
+        <td>3.11</td>
         <td>4.0.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_11]%></td>
     </tr>

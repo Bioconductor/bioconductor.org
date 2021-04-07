@@ -23,8 +23,8 @@ board. Governance was formalized in February, 2019.
 
 * [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
   Women's, Harvard Medical School, USA. Chair.
-* [Levi Waldron](http://waldronlab.io/) CUNY School of Public Health
-  at Hunter College, New York, NY. Vice-Chair.
+* [Levi Waldron](http://waldronlab.io/) CUNY Graduate School of Public Health
+  and Health Policy, New York, NY. Vice-Chair.
 * [Charlotte Soneson](https://csoneson.github.io/), Friedrich Miescher
   Institute, Basel, Switzerland. Secretary.
 * [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
@@ -32,7 +32,7 @@ board. Governance was formalized in February, 2019.
 * Hector Corrada Bravo, Genentech Research and Early Development, USA.
 * [Laurent Gatto](https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto)
   Institut de Duve, Belgium.
-* Robert Gentleman, Computational Biology, 23andMe, USA.
+* Robert Gentleman, Harvard Medical School, Boston, USA.
 * [Shila Ghazanfar](https://shazanfar.github.io/), Cancer Research UK,
   Cambridge.
 * [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
@@ -57,7 +57,13 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2020-09-03](2020-09-03-minutes.pdf),
+- [2021-03-04](2021-03-04-minutes.pdf),
+  [2021-02-04](2021-02-04-minutes.pdf),
+  [2021-01-07](2021-01-07-minutes.pdf)
+- [2020-12-03](2020-12-03-minutes.pdf),
+  [2020-11-05](2020-11-05-minutes.pdf),
+  [2020-10-01](2020-10-01-minutes.pdf),
+  [2020-09-03](2020-09-03-minutes.pdf),
   [2020-08-06](2020-08-06-minutes.pdf),
   [2020-07-02](2020-07-02-minutes.pdf),
   [2020-06-04](2020-06-04-minutes.pdf),
