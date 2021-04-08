@@ -274,10 +274,10 @@ associated files.
    non-trivial, a top-level README file should be included to document
    the process.
 
-10. "biocViews:" field: REQUIRED! Specify at least two
-    [biocViews categories][BioC]. Multiple terms are encouraged but
-    terms must come from the same package type (Software,
-    AnnotationData, ExperimentData, Workflow).
+10. "biocViews:" field: REQUIRED! Specify at least two leaf node
+    [biocViews][BioC]. Multiple leaf terms are encouraged but
+    terms must come from the same trunk or package type (i.e.,
+    Software, AnnotationData, ExperimentData, or Workflow).
 
 11. "BugReports:" field: It is encouraged to include the relevant
     links to Github for reporting Issues.
@@ -647,6 +647,7 @@ some best practice guidelines that _Bioconductor_ will look for (see
       functions instead of for loops.
     + Use `seq_len()` or `seq_along()` instead of `1:...`
     + Use TRUE/FALSE instead of T/F
+    + Use of numeric indices (rather than robust named indices)
     + Avoid `class()==` and `class()!=` instead use `is()`
     + Use `system2()` instead of `system`
     + Do not use `set.seed` in any internal R code.
@@ -654,6 +655,8 @@ some best practice guidelines that _Bioconductor_ will look for (see
     + Avoid the use of `<<-`.
     + Avoid use of direct slot access with `@` or `slot()`. Accessor
       methods should be created and utilized
+    + Downloading of external data from unsanctioned providers such
+      as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
 
 3. Some additional formatting and syntax guidelines
 
