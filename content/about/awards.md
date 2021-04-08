@@ -10,13 +10,13 @@ The awardees will be selected among the nominees based on the following criteria
 * __Outstanding new package contributions__, for developers of high-quality packages, added to Bioconductor in one of the two most recent releases prior to the nomination deadline, which show exemplary use of the Bioconductor package design principles.
 * __Outstanding support site contributions__, for individuals showing extraordinary helpfulness on the Bioconductor support site and/or in other forums.
 * __Outstanding documentation contributions__, for individuals writing and maintaining excellent user-facing documentation, workflows and/or tutorials. 
-* __Outstanding community engagement and outreach__, for individuals who "make things happen", engage with and provide substantial contributions to the Bioconductor community.
+* __Outstanding community engagement and outreach__, for individuals who "make things happen", promote diversity, engage with and provide substantial contributions to the Bioconductor community.
 * __Outstanding long-term contributions to the project__, for individuals who have provided excellent contributions in any form to the project over a substantial time period.
 * __Outstanding contributions enabling computational analysis or representation of data from new scientific technologies__, for individuals who, via package development or other means, enable analysis of data from new scientific technologies within Bioconductor.
 * __Outstanding contributions enabling the use of new informatic technologies within the project__, for individuals who, via package development or other means, enable the use of novel informatic technologies within Bioconductor.
  
 
-Nominees suggested by at least two nominators will be considered for the award. The nominations will be processed, and the awardees will be selected, by the Bioconductor conference organization committee and the Bioconductor Community Advisory Board. 
+Nominees suggested by at least two nominators will be considered for the award. The nominations will be processed, and the awardees will be selected, by the current members of the Bioconductor Community Advisory Board. 
 For more details about the selection process see the [Proceedures and Regulations](https://docs.google.com/document/d/1bHFoZS7kJoUh9ZOU2LwZaHwnJhradDmWcDV9EXJc8tI/edit?usp=sharing)
 
 # How to nominate a person 
@@ -43,7 +43,7 @@ Yes
 
 
 # Important dates:
-* Deadline for nominations: TBC
+* Deadline for nominations: May 31, 2021
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 
