@@ -282,7 +282,7 @@ associated files.
    non-trivial, a top-level README file should be included to document
    the process.
 
-10. "biocViews:" field: REQUIRED! Specify at least two leaf node
+2.10 "biocViews:" field: REQUIRED! Specify at least two leaf node
     [biocViews][BioC]. Multiple leaf terms are encouraged but
     terms must come from the same trunk or package type (i.e.,
     Software, AnnotationData, ExperimentData, or Workflow).
