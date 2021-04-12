@@ -1,13 +1,13 @@
 # ![](/images/icons/magnifier.gif) Bioconductor Community Awards
 
 
-The Bioconductor project proudly launched in 2020 honor contributions to the project. Each year, four awardees will be selected, each having contributed to the project in an outstanding way based on one or more of the criteria listed below. The awardees will be recognized during a ceremony at the annual Bioconductor conference, as well as on the Bioconductor website. 
+The Bioconductor project proudly launched in 2020 an initiative to honor contributions to the project. Each year, four awardees will be selected, each having contributed to the project in an outstanding way based on one or more of the criteria listed below. The awardees will be recognized during a ceremony at the annual Bioconductor conference, as well as on the Bioconductor website. 
 
 # Award criteria
 
-The awardees will be selected among the nominees based on the following criteria. It is possible, but not required, for multiple criteria to contribute towards the selection of an awardee.
+The awardees will be selected among the nominees based on the following criteria. It is possible, but not required, for multiple criteria to contribute towards the selection of an awardee. Up to four awardees are selected in each call using the below criteria as justification.
 
-* __Outstanding new package contributions__, for developers of high-quality packages, added to Bioconductor in one of the two most recent releases prior to the nomination deadline, which show exemplary use of the Bioconductor package design principles.
+* __Outstanding new package contributions__, for developers of high-quality packages, added to Bioconductor in one of the two most recent releases prior to the nomination deadline, showing exemplary use of the Bioconductor package design principles.
 * __Outstanding support site contributions__, for individuals showing extraordinary helpfulness on the Bioconductor support site and/or in other forums.
 * __Outstanding documentation contributions__, for individuals writing and maintaining excellent user-facing documentation, workflows and/or tutorials. 
 * __Outstanding community engagement and outreach__, for individuals who "make things happen", promote diversity, engage with and provide substantial contributions to the Bioconductor community.
@@ -36,7 +36,7 @@ platforms, and support site forums.
 
 # FAQ
 * __Am I allowed to nominate more than one person?__
-Yes. We appreciate if you limit your nominations to 3 people.
+Yes. We appreciate it if you limit your nominations to no more than 3 people.
 * __Can the same individual be awarded multiple times (in different years)?__ 
 Yes. However, it has to be clear that the contributions that the individual is recognized for are different and "new" contributions that occured after the previous award was granted.
 * __Are self-nominations allowed?__
@@ -49,7 +49,7 @@ Yes
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 
-# Winners
+# Awardees 2020
 
 ## Helena Lucia Crowell
 <img src="/images/biocawards/writeup/Crowell.png" width="100%" height="100%"/>
