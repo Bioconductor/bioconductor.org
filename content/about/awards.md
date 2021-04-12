@@ -31,10 +31,12 @@ The form is available 3-4 months before the annual Bioconductor conference. It
 will be advertised on the conference website, Bioconductor social media
 platforms, and support site forums.  
 
+2021 Awards now accepting nominations: Please fill out this [nomination form](https://docs.google.com/forms/d/e/1FAIpQLScJmqhoMO8Sa-wPzt7RoNXXV-fM9G2XZJlznyG0LOAl9sx-0A/viewform?usp=sf_link)
+
 
 # FAQ
 * __Am I allowed to nominate more than one person?__
-Yes
+Yes. We appreciate if you limit your nominations to 3 people.
 * __Can the same individual be awarded multiple times (in different years)?__ 
 Yes. However, it has to be clear that the contributions that the individual is recognized for are different and "new" contributions that occured after the previous award was granted.
 * __Are self-nominations allowed?__
