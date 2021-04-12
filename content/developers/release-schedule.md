@@ -3,7 +3,8 @@
 This release will use  R-4.1.0.
 The official release date is schedule for Wednesday May 19th.
 The following highlights important deadlines for the release.
-As R has not officially announced the release of R-4.1.0 there is a possibility
+
+<b>Note:</b> As R has not officially announced the release of R-4.1.0 there is a possibility
 that the release will be pushed back. 
 
 
