@@ -31,7 +31,7 @@ The form is available 3-4 months before the annual Bioconductor conference. It
 will be advertised on the conference website, Bioconductor social media
 platforms, and support site forums.  
 
-2021 Awards now accepting nominations: Please fill out this [nomination form](https://docs.google.com/forms/d/e/1FAIpQLScJmqhoMO8Sa-wPzt7RoNXXV-fM9G2XZJlznyG0LOAl9sx-0A/viewform?usp=sf_link)
+2021 Awards now accepting nominations: Please fill out this [nomination form](https://forms.gle/d9PyAjAw62yVKxjL8)
 
 
 # FAQ
