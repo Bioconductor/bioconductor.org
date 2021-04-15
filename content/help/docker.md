@@ -710,7 +710,7 @@ community members can contribute images
 
 link: https://github.com/Bioconductor/bioconductor_docker/blob/master/best_practices.md
 
-<a name="acknowledgements"></a>
+<a name="deprecation"></a>
 ## Deprecation Notice
 
 For previous users of docker containers for Bioconductor, please note
