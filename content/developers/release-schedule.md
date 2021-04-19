@@ -44,7 +44,7 @@ that the release will be pushed back.
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Monday May 17
+### Tuesday May 18
 
 * Last day to commit changes to the Bioc 3.13 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
@@ -55,12 +55,12 @@ that the release will be pushed back.
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Tuesday May 18
+### Wednesday May 19
 
 * Creation of the Bioc 3.13 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
-### Wednesday May 19
+### Thursday May 20
 
 * Bioconductor Release 3.13.
 
