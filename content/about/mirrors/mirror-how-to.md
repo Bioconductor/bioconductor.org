@@ -1,43 +1,70 @@
-# ![](/images/icons/magnifier.gif)How to Create a Bioconductor Mirror Site #
+# ![](/images/icons/magnifier.gif)How to a Bioconductor repository #
 
-The Bioconductor package repositories may be mirrored with `rsync`.
-If you would like to become a mirror for package and data package
-repositories, please use the commands below.
+Bioconductor package repositories may be mirrored with `rsync`.  This
+is appropriate if you or your user community requires frequent local
+access to many packages, where access to the main repository would be
+expensive or impossible (e.g., because users can only access
+repositories behind a firewall).
 
-## Security
+## SSH key and IP address for `rsync`
 
-### Public mirrors
+Using `rsync` requires that you provide [webmaster@bioconductor.org][]
+with (a) with an ssh public key and (b) the IP address(es) from which
+you will perform `rsync`.
 
-We have increased security requirements for the public Bioconductor
-mirror sites. A mirror is considered "public" if it's an option in R's
-<code>chooseBioCmirror()</code> function and listed on [our mirror
-page](/about/mirrors/). Public site maintainers must support https on their
-site and use secure rsync when retrieving packages from the master. If you are
-interested in hosting a publicly available mirror site, please send a suitable
-public key to
-[webmaster@bioconductor.org](mailto:webmaster@bioconductor.org).
+[webmaster@bioconductor.org]: mailto:webmaster@bioconductor.org
 
-Once your key is added to the `bioc-rsync` account you can `rsync` from
-master.bioconductor.org as this user. You can use a config file to manage your
-ssh keys or include the full path to your key in the `-e` statement:
+## Public mirrors
 
-    rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
+A mirror is considered "public" if it is an option in R's
+`chooseBioCmirror()` function and listed on our [mirrors
+page](/about/mirrors/). Public mirrors must support https on their
+site. If you are interested in hosting a publicly available mirror
+site, please indicate this when contacting
+[webmaster@bioconductor.org][] with your ssh key and IP address(es).
 
 
-Bioconductor for increased security will also need the IP address of the machine
-that will be performing the rsync.  
+## Structure of the `rsync` command
 
-See below section on BioC devel release repos or BioC devel repos for more details
+The overall structure of the `rsync` command is
 
-### Non-public mirrors
+    rsync SSH_OPTION -e "ssh -i /path/to/ssh" [OPTIONS] SRC DEST
 
-We no longer support public mirrors.  All mirrors should be a secure mirror. 
+`SSH_OPTION` is required, and tells `rsync` to use SSH during the
+transfer. An appropriate command might be
 
-## BioC release repos ##
+    -e "ssh -i ~/.ssh/"
 
-If you want to mirror the current Bioconductor release version
-(currently <%= config[:release_version] %>), use the following commands:
+This can often be abbreviated to `-e "ssh"`, and customized through an
+SSH config file.
 
+`[OPTIONS]` determine how files are synchronized with the server. For
+a mirror, appropriate values are `-zrtlv --delete`.
+
+`SRC` consists of the account and host for the connection, and the
+path on the host to the hierarchy to be synchronized. For instance, to
+synchronize the software packages on the current release branch one would use
+
+    bioc-rsync@master.bioconductor.org:<%= config[:release_version] %>/bioc
+    
+`DEST` is the location on the local file system of the synchronized
+repository, e.g.,
+
+    ~/bioconductor_repositories/<%= config[:release_version] %>/bioc
+
+Thus a complete command might be
+
+    rsync -e "ssh -i ~/.ssh" -zrtlv --delete \
+        bioc-rsync@master.bioconductor.org:<%= config[:release_version] %>/bioc \
+        ~/bioconductor_repositories/<%= config[:release_version] %>/bioc
+
+## Example: `rsync` an entire Bioconductor release
+
+This is appropriate if you are providing your user community with a
+version of the entire Bioconductor release, with software, data
+annotation, and data experiment packages. The following uses
+Bioconductor version <%= config[:release_version] %>, the current
+release.
 
 ### Directory structure
 
@@ -55,11 +82,10 @@ change your rsync commands. __But__ you should change the symlink
 targets with every Bioconductor release (see the
 [release schedule](/developers/release-schedule/) for exact dates).
 
-The following
-commands will create the directory structure you'll need (remember
-that `/dest` is just an example of the destination directory
+The following commands will create the directory structure you'll need
+(remember that `/dest` is just an example of the destination directory
 you could use; you can put this directory anywhere on your system
-where there is enough free space). 
+where there is enough free space).
 
     mkdir -p /dest/packages
     mkdir /dest/packages/<%= config[:release_version] %> # current release
@@ -67,33 +93,33 @@ where there is enough free space).
     ln -s /dest/packages/<%= config[:release_version] %> /dest/packages/release # change these links
     ln -s /dest/packages/<%= config[:release_version] %> /dest/packages/devel   # every 6 months (with Bioc release)
 
-### All Bioconductor release repos (RECOMMENDED) ###
+### `rsync` the Bioconductor release repository
+
+To synchronize an entire release, use the command
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release /dest/packages/release
 
-### Bioconductor release Software repo ###
+It is also possible to separately synchronize just the software
+packages...
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/bioc /dest/packages/release/bioc
 
-### Bioconductor release Data repos ###
+...or the data annotation and data experiment packages
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:release/data /dest/packages/release/data
 
-## BioC devel repos ##
+### `rsync` the Bioconductor devel repository
 
-If you want to mirror the Bioconductor 
-devel repos (currently <%= config[:devel_version] %>),
-please use the following commands:
-
-### All Bioconductor <%= config[:devel_version] %> repos (RECOMMENDED) ###
+To mirror all Bioconductor 'devel' (version <%= config[:devel_version] %>)
+repositories:
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel /dest/packages/devel
 
-### Bioconductor devel Software repo ###
+Bioconductor devel software repository:
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/bioc /dest/packages/devel/bioc
 
-### Bioconductor devel Data repos ###
+Bioconductor devel annotation and experiment data repositories:
 
     rsync -e "ssh" -zrtlv --delete bioc-rsync@master.bioconductor.org:devel/data /dest/packages/devel/data
 
@@ -106,8 +132,8 @@ Please check the size of what will be transferred with e.g. `rsync -e "ssh"
 -avn bioc-rsync@master.bioconductor.org:release` and make sure you have enough
 room on your local disk before you start.
 
-It is recommended that package repositories be synced once per day, scheduled
-with cron.
+It is recommended that package repositories be synchronized once per
+day, scheduled with cron.
 
 **Begin** using your new local repository by making it accessible on your
 webserver. See the **"contriburl"** option to **install.packages()** (utils)
