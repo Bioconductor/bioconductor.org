@@ -842,8 +842,9 @@ def get_build_summary(version, repo)
     dateline.sub!(/^This page was generated on /, "")
     #dateline = dateline.split("(").first.strip
 
-    rows = doc.css("table.mainrep tr.summary")
-
+    #rows = doc.css("table.mainrep tr.summary")
+    rows = doc.css("thead.quickstats")
+      
     htmlfrag=<<-"EOT"
         <head>
         <base href="#{url_without_protocol}" target="_blank">
