@@ -28,7 +28,7 @@ site, please indicate this when contacting
 
 The overall structure of the `rsync` command is
 
-    rsync SSH_OPTION-e "ssh -i /path/to/ssh" [OPTIONS] SRC DEST
+    rsync SSH_OPTION -e "ssh -i /path/to/ssh" [OPTIONS] SRC DEST
 
 `SSH_OPTION` is required, and tells `rsync` to use SSH during the
 transfer. An appropriate command might be
