@@ -23,16 +23,15 @@ ssh keys or include the full path to your key in the `-e` statement:
 
     rsync -e "ssh -i path/to/your/key" bioc-rsync@master.bioconductor.org ...
 
+
+Bioconductor for increased security will also need the IP address of the machine
+that will be performing the rsync.  
+
+See below section on BioC devel release repos or BioC devel repos for more details
+
 ### Non-public mirrors
 
-To host a non-secure mirror (maybe for internal purposes), invoke 
-the rsync commands without the `bioc-rsync` user, e.g.,
-
-    rsync -avn master.bioconductor.org::release  ## check size
-    rsync -zrtlv --delete master.bioconductor.org::release /dest/packages/release
-    rsync -zrtlv --delete master.bioconductor.org::devel/bioc /dest/packages/devel
-etc ...
-
+We no longer support public mirrors.  All mirrors should be a secure mirror. 
 
 ## BioC release repos ##
 
