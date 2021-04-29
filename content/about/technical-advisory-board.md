@@ -21,6 +21,7 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
+ 
 <table width="100%">
   <tr>
     <td width="33%">
@@ -32,7 +33,7 @@ board. Governance was formalized in February, 2019.
     </td>
     
    <td width="33%">
-      <img src="/assets/images/tab/LeviWaldron.png"
+      <img src="/assets/images/tab/LeviWaldron.jpg"
             width="100%" alt="Levi Waldron" title="Levi Waldron"/>
       <figcaption>Levi Waldron, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
       <a href="http://waldronlab.io/">Website</a>
@@ -40,7 +41,7 @@ board. Governance was formalized in February, 2019.
     </td>
     
    <td width="33%">
-      <img src="/assets/images/tab/CharlotteSoneson.png"
+      <img src="/assets/images/tab/CharlotteSoneson.jpg"
            width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
       <figcaption>Charlotte Soneson, Friedrich Miescher,Institute, Basel, Switzerland. Secretary.
       <a href="https://csoneson.github.io/">Website</a>
@@ -49,7 +50,7 @@ board. Governance was formalized in February, 2019.
   </tr>
 <tr> 
 <td width="33%">
-      <img src="/assets/images/tab/AedinCulhane.png"
+      <img src="/assets/images/tab/AedinCulhane.jpg"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
       <figcaption>  Aedin Culhane, Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
       <a href="https://connects.catalyst.harvard.edu/profiles/display/person/6746/">Website</a>
@@ -138,7 +139,7 @@ board. Governance was formalized in February, 2019.
     </td>
  
    <td width="33%">
-      <img src="/assets/images/tab/MichaelLove.png"
+      <img src="/assets/images/tab/michaellove.jpeg"
            width="100%" alt="Michael Love" title="Michael Love"/>
       <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
       <a href="https://mikelove.github.io/">Website</a>
@@ -147,7 +148,7 @@ board. Governance was formalized in February, 2019.
     
 
    <td width="33%">
-      <img src="/assets/images/timages/tab/ab/Martin Morgan.png"
+      <img src="/assets/images/timages/tab/ab/MartinMorgan.jpg"
            width="100%" alt="Martin Morgan" title="Martin Morgan"/>
       <figcaption> Martin Morgan, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.roswellpark.org/martin-morgan">Website</a> </figcaption>
