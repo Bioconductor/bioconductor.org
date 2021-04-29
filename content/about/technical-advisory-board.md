@@ -101,7 +101,7 @@ board. Governance was formalized in February, 2019.
     </td>
   </tr>
 
-<tr>
+  <tr>
    <td width="33%">
       <img src="/assets/images/cab/StephanieHicks.png"
            width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
@@ -119,26 +119,25 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
     
-  </tr>
-     <td width="33%">
+
+   <td width="33%">
       <img src="/assets/images/cab/RafaelIrizarry.png"
            width="100%" alt="Rafael Irizarry" title="Rafael Irizarry"/>
       <figcaption> Rafael Irizarry, Dana-Farber Cancer Institute, USA
       <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Website</a>
       </figcaption>
     </td>
-    
+    </tr>
 
-     <td width="33%">
+   <tr>
+    <td width="33%">
       <img src="/assets/images/cab/AaronLun.png"
            width="100%" alt="Aaron Lun" title="Aaron Lun"/>
       <figcaption> Aaron Lun,   Genentech Research and Early Development, USA.
       </figcaption>
     </td>
-  </tr>
-  
-  <tr>
-     <td width="33%">
+ 
+   <td width="33%">
       <img src="/assets/images/cab/MichaelLove.png"
            width="100%" alt="Michael Love" title="Michael Love"/>
       <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
@@ -146,13 +145,14 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
     
-   </tr>
-     <td width="33%">
+
+   <td width="33%">
       <img src="/assets/images/cab/Martin Morgan.png"
            width="100%" alt="Martin Morgan" title="Martin Morgan"/>
       <figcaption> Martin Morgan, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.roswellpark.org/martin-morgan">Website</a> </figcaption>
     </td>
+    </tr>
 </table>
 
 
