@@ -21,12 +21,35 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
-* [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
-  Women's, Harvard Medical School, USA. Chair.
-* [Levi Waldron](http://waldronlab.io/) CUNY Graduate School of Public Health
-  and Health Policy, New York, NY. Vice-Chair.
-* [Charlotte Soneson](https://csoneson.github.io/), Friedrich Miescher
-  Institute, Basel, Switzerland. Secretary.
+<table width="100%">
+  <tr>
+    <td width="33%">
+      <img src="/assets/images/cab/VinceCarey.png"
+           width="100%" alt="Vince Carey" title="Vince Carey"/>
+      <figcaption>Vince Carey, Brigham & Women’s, Harvard Medical School, USA. Chair.
+      <a href="http://www.biostat.harvard.edu/~carey">Lab Website</a>
+      </figcaption>
+    </td>
+    
+   <td width="33%">
+      <img src="/assets/images/cab/LeviWaldron.png"
+            width="100%" alt="Levi Waldron" title="Levi Waldron"/>
+      <figcaption>Levi Waldron CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
+      <a href="http://waldronlab.io/">Lab Website</a>
+      </figcaption>
+    </td>
+    
+   <td width="33%">
+      <img src="/assets/images/cab/CharlotteSoneson.png"
+           width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
+      <figcaption> Friedrich Miescher,Institute, Basel, Switzerland. Secretary.
+      <a href="https://csoneson.github.io/">Lab Website</a>
+      </figcaption>
+    </td>
+  </tr>
+  
+
+</table>
 * [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
   Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
 * Hector Corrada Bravo, Genentech Research and Early Development, USA.
