@@ -59,7 +59,7 @@ board. Governance was formalized in February, 2019.
 
 
 <td width="33%">
-      <img src="/assets/images/tab/HectorCorradaBravo,.jpg"
+      <img src="/assets/images/tab/HectorCorradaBravo.jpg"
            width="100%" alt="Hector Corrada Bravo," title="Hector Corrada Bravo,"/>
       <figcaption>  Hector Corrada Bravo,Genentech Research and Early Development, USA.
       </figcaption>
