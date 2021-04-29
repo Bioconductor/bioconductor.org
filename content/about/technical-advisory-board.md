@@ -146,9 +146,10 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
     
+    
 
    <td width="33%">
-      <img src="/assets/images/timages/tab/ab/MartinMorgan.jpg"
+      <img src="/assets/images/timages/tab/MartinMorgan.jpg"
            width="100%" alt="Martin Morgan" title="Martin Morgan"/>
       <figcaption> Martin Morgan, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.roswellpark.org/martin-morgan">Website</a> </figcaption>
