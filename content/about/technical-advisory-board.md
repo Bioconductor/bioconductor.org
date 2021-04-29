@@ -47,7 +47,7 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
   </tr>
-  
+<tr> 
 <td width="33%">
       <img src="/assets/images/cab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
@@ -55,7 +55,7 @@ board. Governance was formalized in February, 2019.
       <a href="https://connects.catalyst.harvard.edu/profiles/display/person/6746/">Website</a>
       </figcaption>
     </td>
-  </tr>
+
 
 <td width="33%">
       <img src="/assets/images/cab/HectorCorradaBravo,.png"
@@ -63,7 +63,7 @@ board. Governance was formalized in February, 2019.
       <figcaption>  Hector Corrada Bravo,Genentech Research and Early Development, USA.
       </figcaption>
     </td>
-  </tr>
+
   
   <td width="33%">
       <img src="/assets/images/cab/LaurentGatto.png"
@@ -73,7 +73,8 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
   </tr>
-
+  
+ <tr>
  <td width="33%">
       <img src="/assets/images/cab/RobertGentleman.png"
            width="100%" alt="Robert Gentleman" title="Robert Gentleman"/>
@@ -81,7 +82,7 @@ board. Governance was formalized in February, 2019.
       <a href="https://connects.catalyst.harvard.edu/Profiles/display/Person/23826">Website</a>
       </figcaption>
     </td>
-  </tr>
+
   
   <td width="33%">
       <img src="/assets/images/cab/ShilaGhazanfar.png"
@@ -90,7 +91,7 @@ board. Governance was formalized in February, 2019.
       <a href="https://shazanfar.github.io/">Website</a>
       </figcaption>
     </td>
-  </tr>
+
    <td width="33%">
       <img src="/assets/images/cab/KasperHansen.png"
            width="100%" alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
@@ -99,6 +100,8 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
   </tr>
+
+<tr>
    <td width="33%">
       <img src="/assets/images/cab/StephanieHicks.png"
            width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
@@ -106,7 +109,7 @@ board. Governance was formalized in February, 2019.
       <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
       </figcaption>
     </td>
-  </tr>
+
   
   <td width="33%">
       <img src="/assets/images/cab/WolfgangHuber.png"
@@ -125,7 +128,7 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
     
-  </tr>
+
      <td width="33%">
       <img src="/assets/images/cab/AaronLun.png"
            width="100%" alt="Aaron Lun" title="Aaron Lun"/>
@@ -134,7 +137,7 @@ board. Governance was formalized in February, 2019.
     </td>
   </tr>
   
- </tr>
+  <tr>
      <td width="33%">
       <img src="/assets/images/cab/MichaelLove.png"
            width="100%" alt="Michael Love" title="Michael Love"/>
