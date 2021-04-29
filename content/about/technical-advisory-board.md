@@ -186,7 +186,7 @@ minutes were maintained was on 2 May, 2019.
   [2019-05-02](2019-05-02-minutes.pdf)
   
   
-  ## Contact
+## Contact
 
 If you would like to contact the Technical Advisory Board please reach out to us on the Bioconductor slack 
 
