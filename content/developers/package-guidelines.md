@@ -183,11 +183,11 @@ associated files.
    submitted to _Bioconductor_, a package should have pre-release
    version 0.99.0. The following rules apply:
 
-    * x is usually 0 for packages that have not yet been released.
-    * y is even for packages in release, and odd for packages in
-      devel. Generally, do not bump this number especially in
-      pre-release.
-    * z is incremented whenever committing changes to a package.
+* x is usually 0 for packages that have not yet been released.
+* y is even for packages in release, and odd for packages in
+  devel. Generally, do not bump this number especially in
+  pre-release.
+* z is incremented whenever committing changes to a package.
 
 2.4 "Description:" field: The description should be a relatively short
    but detailed overview of what the package functionality entails. It
@@ -231,50 +231,50 @@ associated files.
 
 2.8 "Depends/Imports/Suggests/Enhances:" fields:
 
-    * All packages must be available via [_Bioconductor_][BioC] or
-      [CRAN][cran]; the use of `Remotes` is not supported hence dependencies
-      only available on e.g. github are not allowed.
-    * Reuse, rather than re-implement or duplicate, well-tested
-      functionality from other packages. Make use of appropriate
-      existing packages (e.g., biomaRt, AnnotationDbi, Biostrings) and
-      classes (e.g., SummarizedExperiment, GRanges, Rle,
-      DNAStringSet), and avoid duplication of functionality available
-      in other _Bioconductor_ packages. See
-      [Common _Bioconductor_ Methods and Classes][CommonMethods].
-      _Bioconductor_ Reviewers are very strict on this point! New
-      packages should be interoperable with existing _Bioconductor_
-      classes and not reimplement functionality especially with
-      regards to importing/reading data.
-    * A package can be listed only once between
-      Depends/Imports/Suggests/Enhances. Determine placement of
-      package based on the following guidelines:
+* All packages must be available via [_Bioconductor_][BioC] or
+  [CRAN][cran]; the use of `Remotes` is not supported hence dependencies
+  only available on e.g. github are not allowed.
+* Reuse, rather than re-implement or duplicate, well-tested
+  functionality from other packages. Make use of appropriate
+  existing packages (e.g., biomaRt, AnnotationDbi, Biostrings) and
+  classes (e.g., SummarizedExperiment, GRanges, Rle,
+  DNAStringSet), and avoid duplication of functionality available
+  in other _Bioconductor_ packages. See
+  [Common _Bioconductor_ Methods and Classes][CommonMethods].
+  _Bioconductor_ Reviewers are very strict on this point! New
+  packages should be interoperable with existing _Bioconductor_
+  classes and not reimplement functionality especially with
+  regards to importing/reading data.
+* A package can be listed only once between
+  Depends/Imports/Suggests/Enhances. Determine placement of
+  package based on the following guidelines:
 
-      + **Imports:** is for packages that provide functions, methods,
-        or classes that are used inside your package name space. Most
-        packages are listed here.
-      + **Depends:** is for packages that provide essential
-        functionality for users of your package, e.g., the
-        `GenomicRanges` package is listed in the Depends: field of
-        `GenomicAlignments`.  It is unusual for more than three
-        packages to be listed as 'Depends:'.
-      + **Suggests:** is for packages used in vignettes, examples,
-        and in conditional code. Commonly, annotation and experiment
-        packages (e.g., `TxDb*`) used in vignette and example code are
-        included in this field thus avoiding users a costly download.
-        In the case where an external one-off function is required for
-        package code, external package availability can be checked via
-        `if (!requireNamespace('extraPKG')) stop(...)`.
-      + **Enhances:** is for packages such as `Rmpi` or `parallel`
-        that enhance the performance of your package, but are not
-        strictly needed for its functionality.
+  + **Imports:** is for packages that provide functions, methods,
+    or classes that are used inside your package name space. Most
+    packages are listed here.
+  + **Depends:** is for packages that provide essential
+    functionality for users of your package, e.g., the
+    `GenomicRanges` package is listed in the Depends: field of
+    `GenomicAlignments`.  It is unusual for more than three
+    packages to be listed as 'Depends:'.
+  + **Suggests:** is for packages used in vignettes, examples,
+    and in conditional code. Commonly, annotation and experiment
+    packages (e.g., `TxDb*`) used in vignette and example code are
+    included in this field thus avoiding users a costly download.
+    In the case where an external one-off function is required for
+    package code, external package availability can be checked via
+    `if (!requireNamespace('extraPKG')) stop(...)`.
+  + **Enhances:** is for packages such as `Rmpi` or `parallel`
+    that enhance the performance of your package, but are not
+    strictly needed for its functionality.
 
-   * It is seldom necessary to specify _R_ or specific versions as
-     dependencies, since the _Bioconductor_ release strategy and
-     standard installation instructions guarantee these
-     constraints. Repositories mirrored outside _Bioconductor_ should
-     include branches for each _Bioconductor_ release, and may find it
-     useful to fully specify versions to enforce constraints otherwise
-     guaranteed by _Bioconductor_ installation practices.
+* It is seldom necessary to specify _R_ or specific versions as
+  dependencies, since the _Bioconductor_ release strategy and
+  standard installation instructions guarantee these
+  constraints. Repositories mirrored outside _Bioconductor_ should
+  include branches for each _Bioconductor_ release, and may find it
+  useful to fully specify versions to enforce constraints otherwise
+  guaranteed by _Bioconductor_ installation practices.
 
 2.9 "SystemRequirements:" field: This field is for listing any external
    software which is required, but not automatically installed by the
@@ -656,32 +656,32 @@ some best practice guidelines that _Bioconductor_ will look for (see
    [BiocCheck][BiocCheck-vignette] vignette. Some of
    the more promenient offenders:
 
-    + Use `vapply()` instead of `sapply()` and use the various apply
-      functions instead of for loops.
-    + Use `seq_len()` or `seq_along()` instead of `1:...`
-    + Use TRUE/FALSE instead of T/F
-    + Use of numeric indices (rather than robust named indices)
-    + Avoid `class()==` and `class()!=` instead use `is()`
-    + Use `system2()` instead of `system`
-    + Do not use `set.seed` in any internal R code.
-    + No `browser()` calls should be in code
-    + Avoid the use of `<<-`.
-    + Avoid use of direct slot access with `@` or `slot()`. Accessor
-      methods should be created and utilized
-    + Downloading of external data from unsanctioned providers such
-      as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
++ Use `vapply()` instead of `sapply()` and use the various apply
+  functions instead of for loops.
++ Use `seq_len()` or `seq_along()` instead of `1:...`
++ Use TRUE/FALSE instead of T/F
++ Use of numeric indices (rather than robust named indices)
++ Avoid `class()==` and `class()!=` instead use `is()`
++ Use `system2()` instead of `system`
++ Do not use `set.seed` in any internal R code.
++ No `browser()` calls should be in code
++ Avoid the use of `<<-`.
++ Avoid use of direct slot access with `@` or `slot()`. Accessor
+  methods should be created and utilized
++ Downloading of external data from unsanctioned providers such
+  as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
 
 8.3 Some additional formatting and syntax guidelines
 
-    + Use `<-` instead of `=` for assignment
-    + Function names should be camel case or utilize the underscore
-      `_` and not have a dot `.` which indicates S3 dispatch.
-    + Use `dev.new()` to start a graphics drive if necessary. Avoid
-      using `x11()` or `X11()` for it can only be called on machines
-      that have access to an X server.
-	+ Use `message`/`warning`/`error` and not `cat` method (except for
-      customized `show` methods). `paste0` should generally not be used in these
-      methods except for collapsing multiple values from a variable.
++ Use `<-` instead of `=` for assignment
++ Function names should be camel case or utilize the underscore
+  `_` and not have a dot `.` which indicates S3 dispatch.
++ Use `dev.new()` to start a graphics drive if necessary. Avoid
+  using `x11()` or `X11()` for it can only be called on machines
+  that have access to an X server.
++ Use `message`/`warning`/`error` and not `cat` method (except for
+  customized `show` methods). `paste0` should generally not be used in these
+  methods except for collapsing multiple values from a variable.
 
 8.4 Avoid re-implementing functionality or classes (see also 2.8). Make use of
    appropriate existing packages (e.g., biomaRt, AnnotationDbi,
@@ -769,17 +769,17 @@ Extensions manual. In particular:
    [details about Makevars files][makevars].
 
   - Example for gcc/g++:
-
- 	CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+```
+    CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 	CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 	FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-
+```
   - Example for clang/clang++:
-
+```
 	CFLAGS=-Weverything -O0 -g
 	CXXFLAGS=-Weverything -O0 -g
 	FFLAGS=-Wall -Wextra -pedantic -O0 -g
-
+```
 [Registering native routines]: http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines
 
 <a name="third-party-code"></a>
