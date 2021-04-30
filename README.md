@@ -76,7 +76,7 @@ below.
 			Removing tmp/
 
 6. Once you are confident of your changes, make a new branch and pull
-   request to our `master`. The pull request shoul be made from your `my_changes`
+   request to our `master`. The pull request should be made from your `my_changes`
    branch to the master branch of bioconductor.org repo, on Github.
 
 [Creating a pull request from a fork]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork
