@@ -21,35 +21,144 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
-* [Vince Carey](http://www.biostat.harvard.edu/~carey), Brigham &amp;
-  Women's, Harvard Medical School, USA. Chair.
-* [Levi Waldron](http://waldronlab.io/) CUNY Graduate School of Public Health
-  and Health Policy, New York, NY. Vice-Chair.
-* [Charlotte Soneson](https://csoneson.github.io/), Friedrich Miescher
-  Institute, Basel, Switzerland. Secretary.
-* [Aedin Culhane](https://connects.catalyst.harvard.edu/profiles/display/person/6746),
-  Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
-* Hector Corrada Bravo, Genentech Research and Early Development, USA.
-* [Laurent Gatto](https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto)
-  Institut de Duve, Belgium.
-* Robert Gentleman, Harvard Medical School, Boston, USA.
-* [Shila Ghazanfar](https://shazanfar.github.io/), Cancer Research UK,
-  Cambridge.
-* [Kasper Daniel Hansen](http://www.biostat.jhsph.edu/~khansen/),
-  Bloomberg School of Public Health, Johns Hopkins University.
-* [Stephanie Hicks](https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks)
-  Department of Biostatistics, Johns Hopkins Bloomberg School of
-  Public Health, USA.
-* [Wolfgang Huber](http://www.embl.de/research/units/genome_biology/huber/)
-  European Molecular Biology Laboratory, Heidelberg, Germany.
-* [Rafael Irizarry](http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281)
-  Dana-Farber Cancer Institute, USA
-* [Aaron Lun](mailto:infinite.monkeys.with.keyboards@gmail.com),
-  Genentech Research and Early Development, USA.
-* [Michael Love](https://mikelove.github.io/), University of North
-  Carolina-Chapel Hill, USA.
-* [Martin Morgan](https://www.roswellpark.org/martin-morgan), Roswell
-  Park Comprehensive Cancer Center, Buffalo, NY, USA.
+ 
+<table width="100%">
+  <tr>
+    <td width="33%">
+      <img src="/assets/images/tab/VinceCarey.jpg"
+           width="100%" alt="Vince Carey" title="Vince Carey"/>
+      <figcaption>Vince Carey, Brigham & Women’s, Harvard Medical School, USA. Chair.
+      <a href="http://www.biostat.harvard.edu/~carey">Website</a>
+      </figcaption>
+    </td>
+    
+   <td width="33%">
+      <img src="/assets/images/tab/LeviWaldron.jpg"
+            width="100%" alt="Levi Waldron" title="Levi Waldron"/>
+      <figcaption>Levi Waldron, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
+      <a href="http://waldronlab.io/">Website</a>
+      </figcaption>
+    </td>
+    
+   <td width="33%">
+      <img src="/assets/images/tab/CharlotteSoneson.jpg"
+           width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
+      <figcaption>Charlotte Soneson, Friedrich Miescher,Institute, Basel, Switzerland. Secretary.
+      <a href="https://csoneson.github.io/">Website</a>
+      </figcaption>
+    </td>
+  </tr>
+<tr> 
+<td width="33%">
+      <img src="/assets/images/tab/AedinCulhane.jpg"
+           width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
+      <figcaption>  Aedin Culhane, Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
+      <a href="https://connects.catalyst.harvard.edu/profiles/display/person/6746/">Website</a>
+      </figcaption>
+    </td>
+
+
+<td width="33%">
+      <img src="/assets/images/tab/HectorCorradaBravo.jpg"
+           width="100%" alt="Hector Corrada Bravo," title="Hector Corrada Bravo,"/>
+      <figcaption>  Hector Corrada Bravo,Genentech Research and Early Development, USA.
+      </figcaption>
+    </td>
+
+  
+  <td width="33%">
+      <img src="/assets/images/tab/LaurentGatto.jpg"
+           width="100%" alt="Laurent Gatto" title="Laurent Gatto"/>
+      <figcaption>  Laurent Gatto, Institut de Duve, Belgium.
+      <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Website</a>
+      </figcaption>
+    </td>
+  </tr>
+  
+ <tr>
+ <td width="33%">
+      <img src="/assets/images/tab/RobertGentleman.jpg"
+           width="100%" alt="Robert Gentleman" title="Robert Gentleman"/>
+      <figcaption> Robert Gentleman, Harvard Medical School, Boston, USA.
+      <a href="https://connects.catalyst.harvard.edu/Profiles/display/Person/23826">Website</a>
+      </figcaption>
+    </td>
+
+  
+  <td width="33%">
+      <img src="/assets/images/tab/ShilaGhazanfar.jpg"
+           width="100%" alt="Shila Ghazanfar" title="Shila Ghazanfar"/>
+      <figcaption> Shila Ghazanfar, Cancer Research UK, Cambridge.
+      <a href="https://shazanfar.github.io/">Website</a>
+      </figcaption>
+    </td>
+
+   <td width="33%">
+      <img src="/assets/images/tab/KasperHansen.jpg"
+           width="100%" alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
+      <figcaption> Kasper Daniel Hansen, Bloomberg School of Public Health, Johns Hopkins University.
+      <a href="http://www.biostat.jhsph.edu/~khansen/">Website</a>
+      </figcaption>
+    </td>
+  </tr>
+
+  <tr>
+   <td width="33%">
+      <img src="/assets/images/tab/StephanieHicks.jpg"
+           width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
+      <figcaption> Stephanie Hicks,  Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
+      <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
+      </figcaption>
+    </td>
+
+  
+  <td width="33%">
+      <img src="/assets/images/tab/WolfgangHuber.jpg"
+           width="100%" alt="Wolfgang Huber" title="Wolfgang Huber"/>
+      <figcaption> Wolfgang Huber,  European Molecular Biology Laboratory, Heidelberg, Germany.
+      <a href="http://www.embl.de/research/units/genome_biology/huber/">Website</a>
+      </figcaption>
+    </td>
+    
+
+   <td width="33%">
+      <img src="/assets/images/tab/RafaelIrizarry.jpg"
+           width="100%" alt="Rafael Irizarry" title="Rafael Irizarry"/>
+      <figcaption> Rafael Irizarry, Dana-Farber Cancer Institute, USA
+      <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Website</a>
+      </figcaption>
+    </td>
+    </tr>
+
+   <tr>
+    <td width="33%">
+      <img src="/assets/images/tab/AaronLun.jpg"
+           width="100%" alt="Aaron Lun" title="Aaron Lun"/>
+      <figcaption> Aaron Lun,   Genentech Research and Early Development, USA.
+      </figcaption>
+    </td>
+ 
+   <td width="33%">
+      <img src="/assets/images/tab/michaellove.jpeg"
+           width="100%" alt="Michael Love" title="Michael Love"/>
+      <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
+      <a href="https://mikelove.github.io/">Website</a>
+      </figcaption>
+    </td>
+    
+    
+
+   <td width="33%">
+      <img src="/assets/images/tab/MartinMorgan.jpg"
+           width="100%" alt="Martin Morgan" title="Martin Morgan"/>
+      <figcaption> Martin Morgan, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
+      <a href="https://www.roswellpark.org/martin-morgan">Website</a> </figcaption>
+    </td>
+    </tr>
+</table>
+
+
+
 
 ## Meeting minutes
 
@@ -79,4 +188,11 @@ minutes were maintained was on 2 May, 2019.
   [2019-07-10](2019-07-10-minutes.pdf),
   [2019-06-06](2019-06-06-minutes.pdf), 
   [2019-05-02](2019-05-02-minutes.pdf)
+  
+  
+## Contact
+
+If you would like to contact the Technical Advisory Board please reach out to us on the Bioconductor slack 
+
+![Technical Advisory Board](/assets/images/tab/tab.png)
 
