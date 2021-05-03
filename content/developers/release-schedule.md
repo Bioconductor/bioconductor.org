@@ -17,7 +17,7 @@ that the release will be pushed back.
 * Announce deprecated packages for Bioc 3.13. They'll be removed from Bioc 3.14.
   See [End of Life](/developers/package-end-of-life) for details.
 
-### Tuesday May 4
+### Monday May 3
 
 * Stop building Bioc 3.12, current release. Commits to this branch will be
   disabled.
