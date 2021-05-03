@@ -153,7 +153,7 @@ If a README file is included in the package or the github repository and it
 provides also installation instructions, those instruction should also include
 _Bioconductor_ installation instructions.
 
-## 2 DESCRIPTION file
+## 2. DESCRIPTION file
 
 The DESCRIPTION file must be properly formatted. The following section
 will review some important notes regarding DESCRIPTION fields and
@@ -183,11 +183,11 @@ associated files.
    submitted to _Bioconductor_, a package should have pre-release
    version 0.99.0. The following rules apply:
 
-    * x is usually 0 for packages that have not yet been released.
-    * y is even for packages in release, and odd for packages in
-      devel. Generally, do not bump this number especially in
-      pre-release.
-    * z is incremented whenever committing changes to a package.
+* x is usually 0 for packages that have not yet been released.
+* y is even for packages in release, and odd for packages in
+  devel. Generally, do not bump this number especially in
+  pre-release.
+* z is incremented whenever committing changes to a package.
 
 2.4 "Description:" field: The description should be a relatively short
    but detailed overview of what the package functionality entails. It
@@ -231,50 +231,50 @@ associated files.
 
 2.8 "Depends/Imports/Suggests/Enhances:" fields:
 
-    * All packages must be available via [_Bioconductor_][BioC] or
-      [CRAN][cran]; the use of `Remotes` is not supported hence dependencies
-      only available on e.g. github are not allowed.
-    * Reuse, rather than re-implement or duplicate, well-tested
-      functionality from other packages. Make use of appropriate
-      existing packages (e.g., biomaRt, AnnotationDbi, Biostrings) and
-      classes (e.g., SummarizedExperiment, GRanges, Rle,
-      DNAStringSet), and avoid duplication of functionality available
-      in other _Bioconductor_ packages. See
-      [Common _Bioconductor_ Methods and Classes][CommonMethods].
-      _Bioconductor_ Reviewers are very strict on this point! New
-      packages should be interoperable with existing _Bioconductor_
-      classes and not reimplement functionality especially with
-      regards to importing/reading data.
-    * A package can be listed only once between
-      Depends/Imports/Suggests/Enhances. Determine placement of
-      package based on the following guidelines:
+* All packages must be available via [_Bioconductor_][BioC] or
+  [CRAN][cran]; the use of `Remotes` is not supported hence dependencies
+  only available on e.g. github are not allowed.
+* Reuse, rather than re-implement or duplicate, well-tested
+  functionality from other packages. Make use of appropriate
+  existing packages (e.g., biomaRt, AnnotationDbi, Biostrings) and
+  classes (e.g., SummarizedExperiment, GRanges, Rle,
+  DNAStringSet), and avoid duplication of functionality available
+  in other _Bioconductor_ packages. See
+  [Common _Bioconductor_ Methods and Classes][CommonMethods].
+  _Bioconductor_ Reviewers are very strict on this point! New
+  packages should be interoperable with existing _Bioconductor_
+  classes and not reimplement functionality especially with
+  regards to importing/reading data.
+* A package can be listed only once between
+  Depends/Imports/Suggests/Enhances. Determine placement of
+  package based on the following guidelines:
 
-      + **Imports:** is for packages that provide functions, methods,
-        or classes that are used inside your package name space. Most
-        packages are listed here.
-      + **Depends:** is for packages that provide essential
-        functionality for users of your package, e.g., the
-        `GenomicRanges` package is listed in the Depends: field of
-        `GenomicAlignments`.  It is unusual for more than three
-        packages to be listed as 'Depends:'.
-      + **Suggests:** is for packages used in vignettes, examples,
-        and in conditional code. Commonly, annotation and experiment
-        packages (e.g., `TxDb*`) used in vignette and example code are
-        included in this field thus avoiding users a costly download.
-        In the case where an external one-off function is required for
-        package code, external package availability can be checked via
-        `if (!requireNamespace('extraPKG')) stop(...)`.
-      + **Enhances:** is for packages such as `Rmpi` or `parallel`
-        that enhance the performance of your package, but are not
-        strictly needed for its functionality.
+  + **Imports:** is for packages that provide functions, methods,
+    or classes that are used inside your package name space. Most
+    packages are listed here.
+  + **Depends:** is for packages that provide essential
+    functionality for users of your package, e.g., the
+    `GenomicRanges` package is listed in the Depends: field of
+    `GenomicAlignments`.  It is unusual for more than three
+    packages to be listed as 'Depends:'.
+  + **Suggests:** is for packages used in vignettes, examples,
+    and in conditional code. Commonly, annotation and experiment
+    packages (e.g., `TxDb*`) used in vignette and example code are
+    included in this field thus avoiding users a costly download.
+    In the case where an external one-off function is required for
+    package code, external package availability can be checked via
+    `if (!requireNamespace('extraPKG')) stop(...)`.
+  + **Enhances:** is for packages such as `Rmpi` or `parallel`
+    that enhance the performance of your package, but are not
+    strictly needed for its functionality.
 
-   * It is seldom necessary to specify _R_ or specific versions as
-     dependencies, since the _Bioconductor_ release strategy and
-     standard installation instructions guarantee these
-     constraints. Repositories mirrored outside _Bioconductor_ should
-     include branches for each _Bioconductor_ release, and may find it
-     useful to fully specify versions to enforce constraints otherwise
-     guaranteed by _Bioconductor_ installation practices.
+* It is seldom necessary to specify _R_ or specific versions as
+  dependencies, since the _Bioconductor_ release strategy and
+  standard installation instructions guarantee these
+  constraints. Repositories mirrored outside _Bioconductor_ should
+  include branches for each _Bioconductor_ release, and may find it
+  useful to fully specify versions to enforce constraints otherwise
+  guaranteed by _Bioconductor_ installation practices.
 
 2.9 "SystemRequirements:" field: This field is for listing any external
    software which is required, but not automatically installed by the
@@ -313,7 +313,7 @@ associated files.
 
 <a name="namespace"></a>
 
-## 3 NAMESPACE
+## 3. NAMESPACE
 
 A [Namespace][namespace] file defines the functions, classes, and
 methods that are imported into the name space, and exported for
@@ -334,7 +334,7 @@ users. _Bioconductor_ reviewers will be looking for:
 
 <a name="news"></a>
 
-## 4 NEWS
+## 4. NEWS
 
 A NEWS file should be included to keep track of changes to the code
 from one version to the next. It can be a top level file or in the
@@ -411,7 +411,7 @@ Text: Made the following significant changes o added a subsetting
 
 <a name="citation"></a>
 
-## 4 CITATION
+## 5. CITATION
 
 Appropriate citations must be included in help pages (e.g., in the see
 also section) and vignettes; this aspect of documentation is no
@@ -431,7 +431,7 @@ Authors@R field as described in [Writing R Extensions][].
 
 <a name="data"></a>
 
-## 5 Including Data
+## 6. Including Data
 
 An excellent practice is to develop a software package, and to provide
 or use an existing [experiment data package][expDpkg],
@@ -444,7 +444,7 @@ dataset is needed for examples in the package, data can be included
 either as a separate data package (for larger amounts of data) or
 within the package (for smaller datasets).
 
-### 5.1 Additional Experiment Data Package
+### 6.1 Additional Experiment Data Package
 
 Experimental data packages contain data specific to a particular
 analysis or experiment. They often accompany a software package for
@@ -458,7 +458,7 @@ experiment data package that utilizes ExperimentHub or AnnotationHub
 package that encapsulates the data is also okay. See the Package
 Submission package for submitting related packages.
 
-### 5.2 Adding Data to Existing Package
+### 6.2 Adding Data to Existing Package
 
 _Bioconductor_ strongly encourages the use of existing datasets but if
 not available data can be included directly in the package for use in
@@ -468,7 +468,7 @@ package. This is a good reference by Hadley Wickham
 does not encourage using `LazyData: True` despite its recommendataion
 in this article. Some key points are summarized below.
 
-### 5.3 Exported Data and the `data/` Directory
+### 6.3 Exported Data and the `data/` Directory
 
 Data in `data/` is exported to the user and readily available. It is
 made available in an R session through the use of `data()`.  It will
@@ -477,7 +477,7 @@ information. It is most often a `.RData` file created with `save()`
 but other types are acceptible as well, see `?data()`. Please remember
 to compress the data.
 
-### 5.4 Raw Data and the `inst/extdata/` Directory
+### 6.4 Raw Data and the `inst/extdata/` Directory
 
 It is often desirable to show a workflow which involves parsing or
 loading of raw files. _Bioconductor_ recommends finding existing raw
@@ -487,7 +487,7 @@ is not applicable, raw data files should be included in the
 `system.file()`. _Bioconductor_ requires documentation on these files in
 an `inst/script/` directory.
 
-### 5.5 Internal Data
+### 6.5 Internal Data
 
 Rarely, a package may require parsed data that is used internal but
 should not be exported to the user. An `R/sysdata.rda` is often the
@@ -506,7 +506,7 @@ best place to include this type of data.
 
 <a name="documentation"></a>
 
-## 6 Package Documentation
+## 7. Package Documentation
 
 Package documentation is important for users to understand how to work
 with your code. _Bioconductor_ requires a [vignette][vig] with
@@ -522,7 +522,7 @@ in mind it is always possible to extend existing classes.
 
 <a name="vignettes"></a>
 
-### 6.1 Vignettes
+### 7.1 Vignettes
 
 A vignette demonstrates how to accomplish non-trivial tasks embodying
 the core functionality of your package. There are two common types of
@@ -560,53 +560,53 @@ page. We encourage the use of BiocSytle for formatting.
 
 Some best coding practices for Biocondcutor vigenttes are as follow:
 
-6.1.1 Add an "Introduction" section that serves as an abstract to
+7.1.1 Add an "Introduction" section that serves as an abstract to
    introduce the objective, models, unique functions, key points, etc
    that distinguish the package from other packages of similar type.
 
-6.1.2 Add an "Installation" section that show to users how to download
+7.1.2 Add an "Installation" section that show to users how to download
    and load the package from _Bioconductor_.
 
-6.1.3 If appropriate, we strongly encourage a table of contents
+7.1.3 If appropriate, we strongly encourage a table of contents
 
-6.1.4 Non-trival executable code is a must!!! Static vignettes are not
+7.1.4 Non-trival executable code is a must!!! Static vignettes are not
    acceptable.
 
-6.1.5 Include a section with the `SessionInfo()`
+7.1.5 Include a section with the `SessionInfo()`
 
-6.1.6 Only the vignette file (.Rnw or .Rmd) and any necessary static
+7.1.6 Only the vignette file (.Rnw or .Rmd) and any necessary static
    images should be in the vignette directory. No intermediate files
    should be present.
 
-6.1.7 Remember to include any relavent references to methods.
+7.1.7 Remember to include any relavent references to methods.
 
 <a name="manpages"></a>
 
-### 6.2 'man' Pages
+### 7.2 'man' Pages
 
 See Writing R Extensions section on [man pages][man] for detailed instruction or
 format information for documenting a package, functions, classes, and data
 sets. All help pages should be comprehensive.
 
-6.2.1 All exported functions and classes need will have a man page. Man pages
+7.2.1 All exported functions and classes need will have a man page. Man pages
    describing new classes must be very detailed on the structure and what
    type of information is stored.
 
-6.2.2 _Bioconductor_ encourages having a package man page with an overview of
+7.2.2 _Bioconductor_ encourages having a package man page with an overview of
    the package and links to the main functions.
 
-6.2.3 Data man pages must include source information and data structure 
-   information.  
-   
-6.2.4 All man pages should have an runnable examples. `donttest and dontrun` 
-   are discouraged and generally not allowed; exceptions can be made with 
-   proper justification and are at the _Bioconductor_ Reviewers discretion. If 
-   this option is used it will also be preferrable to use `donttest` instead 
-   of `dontrun`; `donttest` requires valid R code while `dontrun` does not. 
+7.2.3 Data man pages must include source information and data structure
+   information.
+
+7.2.4 All man pages should have an runnable examples. `donttest and dontrun`
+   are discouraged and generally not allowed; exceptions can be made with
+   proper justification and are at the _Bioconductor_ Reviewers discretion. If
+   this option is used it will also be preferrable to use `donttest` instead
+   of `dontrun`; `donttest` requires valid R code while `dontrun` does not.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
-### 6.3 inst/script/
+### 7.3 inst/script/
 
 The scripts in this directory can vary. Most importantly if data was
 included in the `inst/extdata/`, a related script must be present in
@@ -624,7 +624,7 @@ roughly reproduce the file or object that is present as data.
 
 <a name="unittest"></a>
 
-## 7 Unit Tests
+## 8. Unit Tests
 
 Unit tests are highly recommended.  We find them indispensable for
 both package development and maintenance. Two of the main frameworks
@@ -642,48 +642,48 @@ use and justification.
 
 <a name="rcode"></a>
 
-## 8 R Code and Best Practices
+## 9. R Code and Best Practices
 
 Everyone has their own coding style and formats. There are however
 some best practice guidelines that _Bioconductor_ will look for (see
 [coding style][style]). There are also some other key points:
 
-8.1 Only contain code that can be distributed under the license
+9.1 Only contain code that can be distributed under the license
    specified (see also 2.6).
 
-8.2 Many common coding and sytax issues are flagged in `R CMD check`,
+9.2 Many common coding and sytax issues are flagged in `R CMD check`,
    and `BiocCheck()`. (see the `R CMD check` [cheatsheet][] and
    [BiocCheck][BiocCheck-vignette] vignette. Some of
    the more promenient offenders:
 
-    + Use `vapply()` instead of `sapply()` and use the various apply
-      functions instead of for loops.
-    + Use `seq_len()` or `seq_along()` instead of `1:...`
-    + Use TRUE/FALSE instead of T/F
-    + Use of numeric indices (rather than robust named indices)
-    + Avoid `class()==` and `class()!=` instead use `is()`
-    + Use `system2()` instead of `system`
-    + Do not use `set.seed` in any internal R code.
-    + No `browser()` calls should be in code
-    + Avoid the use of `<<-`.
-    + Avoid use of direct slot access with `@` or `slot()`. Accessor
-      methods should be created and utilized
-    + Downloading of external data from unsanctioned providers such
-      as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
++ Use `vapply()` instead of `sapply()` and use the various apply
+  functions instead of for loops.
++ Use `seq_len()` or `seq_along()` instead of `1:...`
++ Use TRUE/FALSE instead of T/F
++ Use of numeric indices (rather than robust named indices)
++ Avoid `class()==` and `class()!=` instead use `is()`
++ Use `system2()` instead of `system`
++ Do not use `set.seed` in any internal R code.
++ No `browser()` calls should be in code
++ Avoid the use of `<<-`.
++ Avoid use of direct slot access with `@` or `slot()`. Accessor
+  methods should be created and utilized
++ Downloading of external data from unsanctioned providers such
+  as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
 
-8.3 Some additional formatting and syntax guidelines
+9.3 Some additional formatting and syntax guidelines
 
-    + Use `<-` instead of `=` for assignment
-    + Function names should be camel case or utilize the underscore
-      `_` and not have a dot `.` which indicates S3 dispatch.
-    + Use `dev.new()` to start a graphics drive if necessary. Avoid
-      using `x11()` or `X11()` for it can only be called on machines
-      that have access to an X server.
-	+ Use `message`/`warning`/`error` and not `cat` method (except for
-      customized `show` methods). `paste0` should generally not be used in these
-      methods except for collapsing multiple values from a variable.
++ Use `<-` instead of `=` for assignment
++ Function names should be camel case or utilize the underscore
+  `_` and not have a dot `.` which indicates S3 dispatch.
++ Use `dev.new()` to start a graphics drive if necessary. Avoid
+  using `x11()` or `X11()` for it can only be called on machines
+  that have access to an X server.
++ Use `message`/`warning`/`error` and not `cat` method (except for
+  customized `show` methods). `paste0` should generally not be used in these
+  methods except for collapsing multiple values from a variable.
 
-8.4 Avoid re-implementing functionality or classes (see also 2.8). Make use of
+9.4 Avoid re-implementing functionality or classes (see also 2.8). Make use of
    appropriate existing packages (e.g., biomaRt, AnnotationDbi,
    Biostrings, GenomicRanges) and classes (e.g., `SummarizedExperiment`,
    `AnnotatedDataFrame`, `GRanges`, `DNAStringSet`) to avoid duplication of
@@ -695,11 +695,11 @@ some best practice guidelines that _Bioconductor_ will look for (see
    [Robust and Efficient Code][]. In general, Bioconductor will insist on
    interoperability with [Common Classes][CommonMethods] for acceptance.
 
-8.5 Avoid large chunks of repeated code. If code is being repeated this
+9.5 Avoid large chunks of repeated code. If code is being repeated this
    is generally a good indication a helper function could be
    implemented.
 
-8.6 Excessively long functions should also be avoided. Write small
+9.6 Excessively long functions should also be avoided. Write small
    functions.  It's best if each function has only one job that needs
    to do.  And it's also best if it does that job in as few lines of
    code as possible.  If you find yourself writing great big functions
@@ -707,19 +707,19 @@ some best practice guidelines that _Bioconductor_ will look for (see
    moment to split it up into smaller helper functions.  Smaller
    functions are easier to read, debug and to reuse.
 
-8.7 Argument names to functions should be descriptive and well
+9.7 Argument names to functions should be descriptive and well
    documented. Arguments should generally have default values. Check
    arguments against a validity check.
 
-8.8 Vectorize! Many R operations are performed on the whole object, not
+9.8 Vectorize! Many R operations are performed on the whole object, not
    just the elements of the object (e.g., `sum(x)`, not `x[1] + x[2] +
    x[2] + ...`).  In particular, relatively few situations require an
    explicit `for` loop. See the [Vectorize][RECVectorize] section of
    [Robust and Efficient Code][] for additional detail.
 
-8.9 Follow guiding principles on [Querying Web Resources][webre] if applicable
+9.9 Follow guiding principles on [Querying Web Resources][webre] if applicable
 
-8.10 For parallel implementation please use
+9.10 For parallel implementation please use
     [BiocParallel](/packages/devel/BiocParallel). See also the
     [Parallel Recommendations][RECPara] section of
     [Robust and Efficient Code][]. A minimal number of cores (1 or 2) should be
@@ -739,28 +739,28 @@ some best practice guidelines that _Bioconductor_ will look for (see
 
 <a name="ccode"></a>
 
-## 9 C or Fortran code
+## 10. C or Fortran code
 
 If the package contains C or Fortran code, it should adhere to the
 standards and methods described in the
 [System and foreign language interfaces][interface] section of the Writing R
 Extensions manual. In particular:
 
-9.1 Use internal R functions, e.g., `R_alloc` and random number
+10.1 Use internal R functions, e.g., `R_alloc` and random number
    generators, over system supplied ones.
-   
-9.2 Use C function registration (See the [Registering native routines][]).
 
-9.3 Use R_CheckUserInterrupt in C level loops when there is a chance
+10.2 Use C function registration (See the [Registering native routines][]).
+
+10.3 Use R_CheckUserInterrupt in C level loops when there is a chance
    that they may not terminate for certain parameter settings or when
    their run time exceeds 10 seconds with typical parameter settings,
    and the method is intended for interactive use.
 
-9.4 Make judicious use of Makevars and Makefile within a package. These
+10.4 Make judicious use of Makevars and Makefile within a package. These
    are often not required at all (See the
    [Configure and cleanup][candc]).
 
-9.5 During package development, enable all warnings and disable
+10.5 During package development, enable all warnings and disable
    optimizations. If you plan to [use a debugger][debug], tell the
    compiler to include debugging symbols. The easiest way to enforce
    these is to create a user-level Makevars file user's home directory
@@ -769,22 +769,22 @@ Extensions manual. In particular:
    [details about Makevars files][makevars].
 
   - Example for gcc/g++:
-
- 	CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
+```
+    CFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 	CXXFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
 	FFLAGS=-Wall -Wextra -pedantic -O0 -ggdb
-
+```
   - Example for clang/clang++:
-
+```
 	CFLAGS=-Weverything -O0 -g
 	CXXFLAGS=-Weverything -O0 -g
 	FFLAGS=-Wall -Wextra -pedantic -O0 -g
-
+```
 [Registering native routines]: http://cran.fhcrc.org/doc/manuals/R-exts.html#Registering-native-routines
 
 <a name="third-party-code"></a>
 
-## 10 Third-party code
+## 11. Third-party code
 
 Use of external libraries whose functionality is redundant with
 libraries already supported is strongly discouraged. In cases where
@@ -810,7 +810,7 @@ Practices guide.
 
 <a name="gitignore"></a>
 
-## 11 The .gitignore File
+## 12. The .gitignore File
 
 _Bioconductor_ requires a git repository for submission.  There are
 certain system files that should not be git tracked and are
