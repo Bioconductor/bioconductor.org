@@ -28,7 +28,7 @@ board. Governance was formalized in February, 2019.
       <img src="/images/tab/VinceCarey.jpg"
            width="100%" alt="Vince Carey" title="Vince Carey"/>
       <figcaption>Vince Carey, Brigham & Women’s, Harvard Medical School, USA. Chair.
-      <a href="http://www.biostat.harvard.edu/~carey">Website</a>
+      <a href="https://vjcitn.github.io/">Website</a>
       </figcaption>
     </td>
     
