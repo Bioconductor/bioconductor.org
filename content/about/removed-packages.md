@@ -8,6 +8,101 @@ with their last-available landing pages.
 Software Packages:
 
 <ul class="inline_list">
+<li><a href="/packages/3.10/bioc/html/adaptest.html">adaptest</a></li>
+<li><a href="/packages/3.10/bioc/html/ArrayTV.html">ArrayTV</a></li>
+<li><a href="/packages/3.10/bioc/html/BioSeqClass.html">BioSeqClass</a></li>
+<li><a href="/packages/3.10/bioc/html/CHARGE.html">CHARGE</a></li>
+<li><a href="/packages/3.10/bioc/html/CNVtools.html">CNVtools</a></li>
+<li><a href="/packages/3.10/bioc/html/CorMut.html">CorMut</a></li>
+<li><a href="/packages/3.10/bioc/html/DESeq.html">DESeq</a> (See replacement DESeq2)</li>
+<li><a href="/packages/3.10/bioc/html/chimera.html">chimera</a></li>
+<li><a href="/packages/3.11/bioc/html/explorase.html">explorase</a></li>
+<li><a href="/packages/3.10/bioc/html/flowFit.html">flowFit</a></li>
+<li><a href="/packages/3.12/bioc/html/flowSpy.html">flowSpy</a></li>
+<li><a href="/packages/3.10/bioc/html/flowType.html">flowType</a></li>
+<li><a href="/packages/3.10/bioc/html/focalCall.html">focalCall</a></li>
+<li><a href="/packages/3.12/bioc/html/FourCSeq.html">FourCSeq</a></li>
+<li><a href="/packages/3.11/bioc/html/FunciSNP.html">FunciSNP</a></li>
+<li><a href="/packages/3.10/bioc/html/GenRank.html">GenRank</a></li>
+<li><a href="/packages/3.10/bioc/html/GeneticsDesign.html">GeneticsDesign</a></li>
+<li><a href="/packages/3.12/bioc/html/GGBase.html">GGBase</a></li>
+<li><a href="/packages/3.12/bioc/html/GGtools.html">GGtools</a></li>
+<li><a href="/packages/3.10/bioc/html/GOFunction.html">GOFunction</a></li>
+<li><a href="/packages/3.12/bioc/html/gQTLBase.html">gQTLBase</a></li>
+<li><a href="/packages/3.12/bioc/html/gQTLstats.html">gQTLstats</a></li>
+<li><a href="/packages/3.10/bioc/html/hicrep.html">hicrep</a></li>
+<li><a href="/packages/3.10/bioc/html/ImpulseDE.html">ImpulseDE</a></li>
+<li><a href="/packages/3.10/bioc/html/ImpulseDE2.html">ImpulseDE2</a></li>
+<li><a href="/packages/3.10/bioc/html/joda.html">joda</a></li>
+<li><a href="/packages/3.10/bioc/html/JunctionSeq.html">JunctionSeq</a></li>
+<li><a href="/packages/3.10/bioc/html/LINC.html">LINC</a></li>
+<li><a href="/packages/3.10/bioc/html/Logolas.html">Logolas</a></li>
+<li><a href="/packages/3.12/bioc/html/mcaGUI.html">mcaGUI</a></li>
+<li><a href="/packages/3.11/bioc/html/metaArray.html">metaArray</a></li>
+<li><a href="/packages/3.12/bioc/html/metaseqR.html">metaseqR</a> (see replacement metaseqR2)</li>
+<li><a href="/packages/3.10/bioc/html/methVisual.html">methVisual</a></li>
+<li><a href="/packages/3.12/bioc/html/methyvim.html">methyvim</a></li>
+<li><a href="/packages/3.10/bioc/html/Mirsynergy.html">Mirsynergy</a></li>
+<li><a href="/packages/3.10/bioc/html/MmPalateMiRNA.html">MmPalateMiRNA</a></li>
+<li><a href="/packages/3.12/bioc/html/MOFA.html">MOFA</a> (see replacement MOFA2)</li>
+<li><a href="/packages/3.10/bioc/html/MotIV.html">MotIV</a></li>
+<li><a href="/packages/3.10/bioc/html/NarrowPeaks.html">NarrowPeaks</a></li>
+<li><a href="/packages/3.10/bioc/html/netbenchmark.html">netbenchmark</a></li>
+<li><a href="/packages/3.10/bioc/html/netReg.html">netReg</a></li>
+<li><a href="/packages/3.10/bioc/html/OGSA.html">OGSA</a></li>
+<li><a href="/packages/3.10/bioc/html/OmicsMarkeR.html">OmicsMarkeR</a></li>
+<li><a href="/packages/3.10/bioc/html/pathprint.html">pathprint</a></li>
+<li><a href="/packages/3.10/bioc/html/PathwaySplice.html">PathwaySplice</a></li>
+<li><a href="/packages/3.11/bioc/html/PGA.html">PGA</a></li>
+<li><a href="/packages/3.10/bioc/html/PGSEA.html">PGSEA</a></li>
+<li><a href="/packages/3.10/bioc/html/plrs.html">plrs</a></li>
+<li><a href="/packages/3.10/bioc/html/prada.html">prada</a></li>
+<li><a href="/packages/3.10/bioc/html/Prize.html">Prize</a></li>
+<li><a href="/packages/3.12/bioc/html/Rariant.html">Rariant</a></li>
+<li><a href="/packages/3.10/bioc/html/reb.html">reb</a></li>
+<li><a href="/packages/3.10/bioc/html/Roleswitch.html">Roleswitch</a></li>
+<li><a href="/packages/3.10/bioc/html/rTANDEM.html">rTANDEM</a></li>
+<li><a href="/packages/3.11/bioc/html/sapFinder.html">sapFinder</a></li>
+<li><a href="/packages/3.10/bioc/html/scsR.html">scsR</a></li>
+<li><a href="/packages/3.11/bioc/html/shinyTANDEM.html">shinyTANDEM</a></li>
+<li><a href="/packages/3.10/bioc/html/sigaR.html">sigaR</a></li>
+<li><a href="/packages/3.10/bioc/html/signet.html">signet</a></li>
+<li><a href="/packages/3.11/bioc/html/simpleaffy.html">simpleaffy</a></li>
+<li><a href="/packages/3.10/bioc/html/spotSegmentation.html">spotSegmentation</a></li>
+<li><a href="/packages/3.10/bioc/html/Starr.html">Starr</a></li>
+<li><a href="/packages/3.10/bioc/html/SVAPLSseq.html">SVAPLSseq</a></li>
+<li><a href="/packages/3.12/bioc/html/TxRegInfra.html">TxRegInfra</a></li>
+<li><a href="/packages/3.10/bioc/html/xps.html">xps</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.12/data/experiment/html/flowFitExampleData.html">flowFitExampleData</a></li>
+<li><a href="/packages/3.11/data/experiment/html/FunciSNP.data.html">FunciSNP.data</a></li>
+<li><a href="/packages/3.12/data/experiment/html/geuvPack.html">geuvPack</a></li>
+<li><a href="/packages/3.12/data/experiment/html/geuvStore2.html">geuvStore2</a></li>
+<li><a href="/packages/3.12/data/experiment/html/GGdata.html">GGdata</a></li>
+<li><a href="/packages/3.12/data/experiment/html/mitoODEdata.html">mitoODEdata</a></li>
+<li><a href="/packages/3.10/data/experiment/html/Mulder2012.html">Mulder2012</a></li>
+<li><a href="/packages/3.12/data/experiment/html/methyvimData.html">methyvimData</a></li>
+<li><a href="/packages/3.12/data/experiment/html/pathprintGEOData.html">pathprintGEOData</a></li>
+<li><a href="/packages/3.12/data/experiment/html/pcaGoPromoter.Hs.hg19.html">pcaGoPromoter.Hs.hg19</a></li>
+<li><a href="/packages/3.12/data/experiment/html/pcaGoPromoter.Mm.mm9.html">pcaGoPromoter.Mm.mm9</a></li>
+<li><a href="/packages/3.12/data/experiment/html/pcaGoPromoter.Rn.rn4.html">pcaGoPromoter.Rn.rn4</a></li>
+<li><a href="/packages/3.12/data/experiment/html/waveTilingData.html">waveTilingData</a></li>
+<li><a href="/packages/3.12/data/experiment/html/yriMulti.html">yriMulti</a></li>
+</ul>
+
+
+
+
+## Packages removed with Bioconductor 3.12 release
+
+Software Packages:
+
+<ul class="inline_list">
 <li><a href="/packages/3.10/bioc/html/QUALIFIER.html">QUALIFIER</a></li>
 <li><a href="/packages/3.10/bioc/html/motifRG.html">motifRG</a></li>
 <li><a href="/packages/3.10/bioc/html/triform.html">triform</a></li>
