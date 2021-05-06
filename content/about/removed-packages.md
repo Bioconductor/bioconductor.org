@@ -3,7 +3,7 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
-## Packages removed with Bioconductor 3.12 release
+## Packages removed with Bioconductor 3.13 release
 
 Software Packages:
 
