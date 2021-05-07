@@ -43,7 +43,7 @@ board. Governance was formalized in February, 2019.
    <td width="33%">
       <img src="/images/tab/CharlotteSoneson.jpg"
            width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
-      <figcaption>Charlotte Soneson, Friedrich Miescher,Institute, Basel, Switzerland. Secretary.
+      <figcaption>Charlotte Soneson, Friedrich Miescher Institute, Basel, Switzerland. Secretary.
       <a href="https://csoneson.github.io/">Website</a>
       </figcaption>
     </td>
@@ -166,7 +166,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2021-03-04](2021-03-04-minutes.pdf),
+- [2021-04-01](2021-04-01-minutes.pdf),
+  [2021-03-04](2021-03-04-minutes.pdf),
   [2021-02-04](2021-02-04-minutes.pdf),
   [2021-01-07](2021-01-07-minutes.pdf)
 - [2020-12-03](2020-12-03-minutes.pdf),
