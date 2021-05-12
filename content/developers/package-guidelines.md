@@ -31,6 +31,7 @@ _Bioconductor_ maintainer.
 - [Unit Tests](#unittest)
 - [R Code](#rcode)
 - [C/Fortran Code](#ccode)
+- [Shiny Apps](#shiny)
 - [.gitignore](#gitignore)
 - [Conclusion](#closing)
 
@@ -151,7 +152,10 @@ export R_CHECK_ENVIRON = <path to downloaded file>
 
 If a README file is included in the package or the github repository and it
 provides also installation instructions, those instruction should also include
-_Bioconductor_ installation instructions.
+_Bioconductor_ installation instructions. If a README.Rmd is provided (rather
+than README.md, or other) those installation instructions should be in an
+`eval=FALSE` code chunk.
+
 
 ## 2. DESCRIPTION file
 
@@ -196,9 +200,9 @@ associated files.
 2.5 "Authors@R:" field: The `Authors@R` field should be used. A maintainer
    designation (`cre` for Authors@R ) is required with an actively maintained
    email. This email will be used for contact regarding any issues that arise
-   with your package in the future. For persons with an ORCID identifier (See 
+   with your package in the future. For persons with an ORCID identifier (See
    [ORCiD](https://orcid.org/) for more information) provide the identifier via
-   an element named "ORCID" in the comment argument of person(). Example: 
+   an element named "ORCID" in the comment argument of person(). Example:
    `person("Lori", "Shepherd", email=Lori.Shepherd@roswellpark.org,
    role=c("cre", aut"), comment = c(ORCID = "0000-0002-5910-4010"))`.
 
@@ -416,10 +420,10 @@ Text: Made the following significant changes o added a subsetting
 Appropriate citations must be included in help pages (e.g., in the see
 also section) and vignettes; this aspect of documentation is no
 different from any scientific endeavor. The file `inst/CITATION` can
-be used to specify how a package is to be cited. If this option is utilized, 
+be used to specify how a package is to be cited. If this option is utilized,
 a maintainer can check proper formatting of the CITATION file by running
-`readCitationFile("inst/CITATION")`; This must run without ERROR for the 
-CITATION to be accurately displayed on the package landing pages. 
+`readCitationFile("inst/CITATION")`; This must run without ERROR for the
+CITATION to be accurately displayed on the package landing pages.
 
 Whether or not a CITATION file is present, an automatically-generated
 citation will appear on the package landing page on the _Bioconductor_
@@ -565,7 +569,11 @@ Some best coding practices for Biocondcutor vigenttes are as follow:
    that distinguish the package from other packages of similar type.
 
 7.1.2 Add an "Installation" section that show to users how to download
-   and load the package from _Bioconductor_.
+   and load the package from _Bioconductor_. These instructions and any
+   installations instructions should be in an `eval=FALSE` code chunk. No where
+   in the code (R code, man pages, vignettes, Rmd files) should someone try to
+   install or download applications, packages, etc. Developers should assume all
+   necessary applications or packages are already downloaded on a users system.
 
 7.1.3 If appropriate, we strongly encourage a table of contents
 
@@ -670,6 +678,7 @@ some best practice guidelines that _Bioconductor_ will look for (see
   methods should be created and utilized
 + Downloading of external data from unsanctioned providers such
   as GitHub, Dropbox, etc. We recommend the use of `*Hub` packages.
++ Use `<-` instead of `=` for assigning variables outside function calls.
 
 9.3 Some additional formatting and syntax guidelines
 
@@ -808,9 +817,20 @@ Practices guide.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
+<a name="shiny"></a>
+
+## 12. Shiny Apps
+
+Shiny Apps are allowable. Please have all relavent R code in the main R
+directory of the package. The bulk of code should not be implemented within the
+shiny app directly.
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
 <a name="gitignore"></a>
 
-## 12. The .gitignore File
+## 13. The .gitignore File
 
 _Bioconductor_ requires a git repository for submission.  There are
 certain system files that should not be git tracked and are
