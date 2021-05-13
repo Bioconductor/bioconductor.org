@@ -43,7 +43,8 @@ GEM
     httparty (0.16.0)
       multi_xml (>= 0.5.2)
     json (2.1.0)
-    kramdown (2.1.0)
+    kramdown (2.3.1)
+      rexml
     kramdown-parser-gfm (1.1.0)
       kramdown (~> 2.0)
     lazy_priority_queue (0.1.1)
@@ -106,6 +107,7 @@ GEM
     rdiscount (2.2.0.1)
     redis (4.0.1)
     ref (2.0.0)
+    rexml (3.2.4)
     rgl (0.5.3)
       lazy_priority_queue (~> 0.1.0)
       stream (~> 0.5.0)
