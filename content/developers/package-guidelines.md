@@ -151,10 +151,14 @@ export R_CHECK_ENVIRON = <path to downloaded file>
 ### 1.4 README file
 
 If a README file is included in the package or the github repository and it
-provides also installation instructions, those instruction should also include
+provides installation instructions, those instruction should also include
 _Bioconductor_ installation instructions. If a README.Rmd is provided (rather
 than README.md, or other) those installation instructions should be in an
-`eval=FALSE` code chunk.
+`eval=FALSE` code chunk. No where in the code (R code, man pages, vignettes, Rmd
+files) should someone try to install or download system dependencies,
+applications, packages, etc. Developers can provide instructions to follow but
+not executed and should assume all necessary dependencies, applications
+or packages are already set up on a users system.
 
 
 ## 2. DESCRIPTION file
@@ -498,6 +502,14 @@ should not be exported to the user. An `R/sysdata.rda` is often the
 best place to include this type of data.
 
 
+### 6.6 Other
+
+Downloads to files on the web and external data should be avoided. If it is
+necessary, at minimum the files should be cached. See
+[BiocFileCache](https://www.bioconductor.org/packages/BiocFileCache) for
+Bioconductor recommended package for caching of files.
+
+
 [expDpkg]: https://bioconductor.org/packages/release/BiocViews.html#___ExperimentData
 [exphub]: https://bioconductor.org/packages/release/bioc/html/ExperimentHub.html
 [annDpkg]: https://bioconductor.org/packages/release/BiocViews.html#___AnnotationData
@@ -572,8 +584,10 @@ Some best coding practices for Biocondcutor vigenttes are as follow:
    and load the package from _Bioconductor_. These instructions and any
    installations instructions should be in an `eval=FALSE` code chunk. No where
    in the code (R code, man pages, vignettes, Rmd files) should someone try to
-   install or download applications, packages, etc. Developers should assume all
-   necessary applications or packages are already downloaded on a users system.
+   install or download system dependencies, applications, packages,
+   etc. Developers can provide instructions to follow but not executed and
+   should assume all necessary dependencies, applications or packages are
+   already set up on a users system.
 
 7.1.3 If appropriate, we strongly encourage a table of contents
 
@@ -733,6 +747,15 @@ some best practice guidelines that _Bioconductor_ will look for (see
     [Parallel Recommendations][RECPara] section of
     [Robust and Efficient Code][]. A minimal number of cores (1 or 2) should be
     set as a default.
+
+9.11 Files downloaded should be cached.  See
+  [BiocFileCache](https://www.bioconductor.org/packages/BiocFileCache) for
+  Bioconductor recommended package for caching of files.
+
+9.12 Do NOT install anything on a users system. System dependencies,
+  applications, and additionally needed packages should be assumed already
+  download. Maintainers should if necessary provide instructions for download and
+  setup but should not execute for a user.
 
 [cheatsheet]: http://r-pkgs.had.co.nz/check.html
 [BiocCheck-vignette]:  https://bioconductor.org/packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html
