@@ -23,9 +23,9 @@
 
   <tr>
     <td width="33%">
-      <img src="/images/coreTeamPic/MartinMorgan.jpg"
-           width="100%" alt="Martin Morgan" title="Martin Morgan"/>
-      <br>Martin Morgan (Project Lead)
+      <img src="/images/tab/VinceCarey.jpg"
+           width="100%" alt="Vince Carey" title="Vince Carey"/>
+      <br>Vince Carey (Project Lead)
     </td>
     <td width="33%">
       <img src="/images/coreTeamPic/AndrzejOles.jpeg"
@@ -71,8 +71,9 @@
   </tr>
 </table>
 
-Recent alumni
+Alumni
 
+* Martin Morgan
 * Daniel van Twisk
 * Qian Liu
 * Valerie Obenchain
