@@ -23,6 +23,7 @@ at different stages of their package.
           <a class="symlink" href="/developers/how-to/git/faq/">FAQ</a>
       </li>
       <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
+      <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable code base</a></li>
       <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
       <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
       <li><a class="symlink" href="/developers/rss-feeds/">RSS Feeds</a></li>
