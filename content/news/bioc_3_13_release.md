@@ -12400,9 +12400,11 @@ hom.Hs.inp.db, hom.Mm.inp.db, hom.Rn.inp.db, hom.Sc.inp.db, KEGG.db,
 MeSH.Eco.55989.eg.db, MeSH.Eco.ED1a.eg.db, MeSH.Eco.IAI39.eg.db,
 MeSH.Eco.UMN026.eg.db, MeSH.Eqc.eg.db
 
-Two annotation packages are deprecated in this release and will be removed in
-Bioc 3.14:
-MafDb.gnomAD.r3.0.GRCh38, MafH5.gnomAD.r3.0.GRCh38
+Eighty seven annotation packages are deprecated in this release and will be 
+removed in Bioc 3.14:
+12 LRBase.XXX.eg.db packages (replaced with AHLRBaseDbs), 
+MafDb.gnomAD.r3.0.GRCh38, MafH5.gnomAD.r3.0.GRCh38, 73 MeSH.XXX.eg.db packages 
+(replaced with AHMeSHDbs)
 
 No workflow packages were removed in this release.
 
