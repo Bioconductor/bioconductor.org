@@ -7,7 +7,7 @@ xxxx software packages, xxx experiment data packages, xxx annotation
 packages, and xx workflows.
 
 There are 133 new software packages, 22 new data experiment packages,
-xx new annotation packages, 1 new workflow, no new books, and many updates and
+7 new annotation packages, 1 new workflow, no new books, and many updates and
 improvements to existing packages; Bioconductor 3.13 is compatible with R 4.1.0,
 and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
 or higher.  This release will include an updated Bioconductor [Docker containers][2].
@@ -12358,7 +12358,8 @@ Deprecated and Defunct Packages
 
 
 Sixty Five software packages were removed from this release (after being deprecated
-in Bioc 3.12): adaptest, ArrayTV, BioSeqClass, CHARGE, chimera, CNVtools,
+in Bioc 3.12): 
+adaptest, ArrayTV, BioSeqClass, CHARGE, chimera, CNVtools,
 CorMut, DESeq, explorase, flowFit, flowSpy, flowType, focalCall, FourCSeq,
 FunciSNP, GeneticsDesign, GenRank, GGBase, GGtools, GOFunction, gQTLBase,
 gQTLstats, hicrep, ImpulseDE, ImpulseDE2, joda, JunctionSeq, LINC, Logolas,
@@ -12370,7 +12371,6 @@ spotSegmentation, Starr, SVAPLSseq, TxRegInfra, xps
 
 
 Forty nine software are deprecated in this release and will be removed in Bioc 3.14:
-
 AffyExpress, affyQCReport, AnnotationFuncs, ArrayTools, bigmemoryExtras,
 BiocCaseStudies, CancerMutationAnalysis, CexoR, ChIPSeqSpike, CompGO, CoRegFlux,
 CrossICC, cytofast, DBChIP, dexus, EasyqpcR, EDDA, eisa, ELBOW, ExpressionView,
@@ -12389,7 +12389,6 @@ pcaGoPromoter.Mm.mm9, pcaGoPromoter.Rn.rn4, waveTilingData, yriMulti
 
 Eleven experimental data packages are deprecated in this release and will be
 removed in Bioc 3.14:
-
 ceu1kg, ceu1kgv, ceuhm3, cgdv17, dsQTL, facsDorit, gskb, hmyriB36, JctSeqData,
 MAQCsubsetAFX, yri1kgv
 
