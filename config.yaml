@@ -7,12 +7,12 @@ staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-te
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.12"
-r_version_associated_with_release: "4.0.3"
+release_version: "3.13"
+r_version_associated_with_release: "4.1.0"
 r_version_associated_with_devel: "4.1.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.13"
+devel_version: "3.14"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -25,25 +25,26 @@ devel_version: "3.13"
 versions:
 - "3.12"
 - "3.13"
+- "3.14"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
-- "data/experiment"
-- "workflows"
-- "data/annotation"
+#- "data/experiment"
+#- "workflows"
+#- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
-  linux: "malbec1"
-  windows: "tokay1"
-  mac_mojave: "merida1"
-active_devel_builders:
-  linux: "malbec2"
-  windows: "tokay2"
+  linux: "nebbiolo1"
+  windows: "riesling1"
   mac_mojave: "machv2"
+active_devel_builders:
+  linux: "nebbiolo2"
+  mac_mojave: "merida1"
+#  windows: "tokay2"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
@@ -154,6 +155,7 @@ r_ver_for_bioc_ver:
   "3.11": "4.0"
   "3.12": "4.0"
   "3.13": "4.1"
+  "3.14": "4.1"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -194,6 +196,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.10": "10/30/2019"
   "3.11": "04/28/2020"
   "3.12": "10/28/2020"
+  "3.13": "05/20/2021"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
