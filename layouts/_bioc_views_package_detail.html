@@ -11,9 +11,10 @@
       <% if ['data/annotation/', 'data/experiment/', 'workflows/'].include? @package[:repo] %>
 	 <% av_img = "/images/shields/availability/all.svg" %>
       <% else %>
-	 <% path = "assets"+"/shields/availability/"+@package[:bioc_version_num]+"/"+@package[:Package]+".svg" %>
+         <% res = isReleaseOrDevel(@package) %>
+	 <% path = "assets"+"/shields/availability/"+res+"/"+@package[:Package]+".svg" %>
 	 <% if File.exist?(path) %>
-	     <% av_img = "/shields/availability/#{@package[:bioc_version_num]}/#{@package[:Package]}.svg" %>
+	     <% av_img = "/shields/availability/#{res}/#{@package[:Package]}.svg" %>
 	 <% else %>
 	     <% av_img = "/images/shields/availability/unknown-build.svg" %>
 	 <% end %>

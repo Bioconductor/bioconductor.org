@@ -26,18 +26,18 @@ require 'json'
 #
 ############################################
 
-def get_availability(item, numeric_version)
+def get_availability(item, numeric_version, reldev)
 
   img = platform_availability(item)
-  availabilityBadge(item['Package'], img, numeric_version)
+  availabilityBadge(item['Package'], img, numeric_version, reldev)
 
 end
 
-def availabilityBadge(pkg, img, numeric_version)
+def availabilityBadge(pkg, img, numeric_version, reldev)
 
   puts "Creating badge for #{pkg} :  #{img}"
   srcdir = File.join('assets', 'images', 'shields', 'availability')
-  destdir = File.join('assets', 'shields', 'availability', numeric_version)
+  destdir = File.join('assets', 'shields', 'availability', reldev)
   FileUtils.mkdir_p destdir
   src = File.join(srcdir, "#{img}.svg")
   dest = File.join(destdir, "#{pkg}.svg")

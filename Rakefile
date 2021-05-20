@@ -467,13 +467,13 @@ task :get_availability_shields  do
 
       if (not meat_index.nil?)
 	for item in meat_index
-	  get_availability(item, numeric_version)
+	  get_availability(item, numeric_version, reldev)
 	  indexList.push(item['Package'])
 	end
 	unknown = json_obj.keys.sort - indexList.sort
 	if unknown.length != 0
 	  for item in unknown
-	    availabilityBadge(item, "unknown-build", numeric_version)
+	    availabilityBadge(item, "unknown-build", numeric_version, reldev)
 	  end
 	end
       else
