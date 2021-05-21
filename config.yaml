@@ -30,7 +30,7 @@ versions:
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
-#- "data/experiment"
+- "data/experiment"
 #- "workflows"
 #- "data/annotation"
 
