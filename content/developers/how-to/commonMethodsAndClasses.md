@@ -14,7 +14,8 @@ searching in [BiocViews](/packages) for your data type.
   [GenomicAlignments][]`::readGAlignment*()`
 + FASTA -- [Biostrings][]`::readDNAStringSet()`
 + FASTQ -- [ShortRead][]`::readFastq()`
-+ MS data (XML-based and mgf formats) -- [MSnbase][]`::readMSData()`,
++ MS data (XML-based and mgf formats) -- [Spectra][]`::Spectra()`, 
+  [MSnbase][]`::readMSData()`, [Spectra][]`::Spectra(source = MsBackendMgf::MsBackendMgf())`, 
   [MSnbase][]`::readMgfData()`
 
 ## Common Classes
@@ -32,7 +33,7 @@ searching in [BiocViews](/packages) for your data type.
   [MultiAssayExperiment][]`::MultiAssayExperiment()`
 + Single cell data --
   [SingleCellExperiment][]`::SingleCellExperiment()`
-+ Mass spec data -- [MSnbase][]`::MSnExp()`
++ Mass spec data -- [Spectra][]`::Spectra()`, [MSnbase][]`::MSnExp()`
 
 [rtracklayer]: https://bioconductor.org/packages/rtracklayer
 [Biostrings]: https://bioconductor.org/packages/Biostrings
@@ -47,3 +48,6 @@ searching in [BiocViews](/packages) for your data type.
 [GSEABase]: https://bioconductor.org/packages/GSEABase
 [MultiAssayExperiment]: https://bioconductor.org/packages/MultiAssayExperiment
 [SingleCellExperiment]: https://bioconductor.org/packages/SingleCellExperiment
+[Spectra]: https://bioconductor.org/packages/Spectra
+[MsBackendMgf]: https://bioconductor.org/packages/MsBackendMgf
+
