@@ -461,8 +461,7 @@ regularly. If you need a general subset of data for workflows or
 examples first check the AnnotationHub resource for available files
 (e.g., BAM, FASTA, BigWig, etc.). _Bioconductor_ strongly encourages creating an
 experiment data package that utilizes ExperimentHub or AnnotationHub
-(See [Creating an Experiment Hub Package][createHubExp] or
-[Creating an Annotation Hub Package][createHubAnn]) but a traditional
+(See [Creating a Hub Package][createHub) but a traditional
 package that encapsulates the data is also okay. See the Package
 Submission package for submitting related packages.
 
@@ -514,8 +513,7 @@ Bioconductor recommended package for caching of files.
 [exphub]: https://bioconductor.org/packages/release/bioc/html/ExperimentHub.html
 [annDpkg]: https://bioconductor.org/packages/release/BiocViews.html#___AnnotationData
 [annhub]: https://bioconductor.org/packages/release/bioc/html/AnnotationHub.html
-[createHubExp]: https://bioconductor.org/packages/release/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
-[createHubAnn]: https://bioconductor.org/packages/release/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
+[createHub]: https://bioconductor.org/packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAHubPackage.html
 [wickhamData]: http://r-pkgs.had.co.nz/data.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
