@@ -67,7 +67,7 @@ _Bioconductor_ packages are broadly defined by three main package types:
   storage and access to large raw data files and their conversion to
   standard R formats. Instructions for adding data to AnnotationHub and
   designing a annotation package to use AnnotationHub can be found here:
-  [Creating AnnotationHub Packages][annoHowTo].
+  [Creating A Hub Packages][HubHowTo].
 
 * [Experiment data packages](#experPackage) provide data sets that are used,
   often by software packages, to illustrate particular analyses. These packages
@@ -77,15 +77,14 @@ _Bioconductor_ packages are broadly defined by three main package types:
   also particularly useful for hosting collections of related data sets.
   Instructions for adding data to ExperimentHub and designing an experiment data
   package to use ExperimentHub can be found here:
-  [Creating ExperimentHub Packages][expHowTo].
+  [Creating A Hub Packages][HubHowTo].
 
 See [Package Guidelines][guidelines] for details on package format and syntax.
 
 [software-pkgs]: /packages/release/bioc/
 [annotation-pkgs]: /packages/release/data/annotation/
 [exptdata-pkgs]: /packages/release/data/experiment/
-[annoHowTo]: /packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
-[expHowTo]: /packages/devel/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
+[HubHowTo]: /packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAHubPackage.html
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
