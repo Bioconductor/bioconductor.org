@@ -25,6 +25,9 @@ searching in [BiocViews](/packages) for your data type.
   matrix, microarray, ...)
 + Genomic coordinates -- [GenomicRanges][]`::GRanges()` (1-based,
   closed interval)
++ Genomic coordinates from multiple samples --
+  [GenomicRanges][]`::GRangesList()`
++ Ragged genomic coordinates -- [RaggedExperiment][]`::RaggedExperiment()`
 + DNA / RNA / AA sequences -- [Biostrings][]`::*StringSet()`
 + Gene sets -- [BiocSet][]`::BiocSet()`,
   [GSEABase][]`::GeneSet()`,
@@ -44,6 +47,7 @@ searching in [BiocViews](/packages) for your data type.
 [MSnbase]: https://bioconductor.org/packages/MSnbase
 [SummarizedExperiment]: https://bioconductor.org/packages/SummarizedExperiment
 [GenomicRanges]: https://bioconductor.org/packages/GenomicRanges
+[RaggedExperiment]: https://bioconductor.org/packages/RaggedExperiment
 [BiocSet]: https://bioconductor.org/packages/BiocSet
 [GSEABase]: https://bioconductor.org/packages/GSEABase
 [MultiAssayExperiment]: https://bioconductor.org/packages/MultiAssayExperiment
