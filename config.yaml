@@ -38,17 +38,17 @@ devel_repos:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
   linux: "nebbiolo1"
-  windows: "riesling1"
+  windows: "tokay2"
   mac_mojave: "machv2"
 active_devel_builders:
   linux: "nebbiolo2"
   mac_mojave: "merida1"
-#  windows: "tokay2"
+  windows: "riesling1"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.13"
+  bioc_version: "3.14"
   r_version: "4.1"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
