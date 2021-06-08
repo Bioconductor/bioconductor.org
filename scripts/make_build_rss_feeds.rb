@@ -37,7 +37,7 @@ end
 
 $results = {release: [], devel: []}
 for vers in [:release, :devel]
-    f = File.open(File.join(DCFDIR, vers.to_s, "STATUS_DB.txt"))
+    f = File.open(File.join(DCFDIR, vers.to_s, "BUILD_STATUS_DB.txt"))
     lines = f.readlines()
     for line in lines
         key, val = line.strip.split(": ")
