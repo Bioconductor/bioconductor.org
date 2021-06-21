@@ -43,7 +43,7 @@ at different stages of their package.
       <li><a class="symlink" href="/developers/how-to/useDevel">Use <em>Bioconductor</em> 'devel'</a></li>
       <li><a class="symlink" href="/developers/how-to/biocViews">Use biocViews</a></li>
       <li><a class="symlink" href="/developers/how-to/version-numbering">Version Numbering</a></li>
-      <li><a class="symlink" href="/developers/how-to/deprecation">Function Deprecation</a></li>
+      <li><a class="symlink" href="/developers/how-to/deprecation">Deprecation Guidelines</a></li>
       <li><a class="symlink" href="/developers/package-end-of-life/">Package End-of-life</a></li>
     </ul>
 
