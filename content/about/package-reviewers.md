@@ -9,7 +9,7 @@ community in addition to assigned reviewers: [Packages Under Review][]. Please
 keep in mind any feedback and interactions must abide by the Bioconductor [Code
 of Conduct][]   
 
-[Expectations of Reviewers]: https://bioconductor.github.io/pkgrevdocs/index.html
+[Expectations of Reviewers]: https://bioconductor.github.io/pkgrevdocs/review-expectation.html
 [Packages Under Review]: https://github.com/Bioconductor/Contributions/issues
 [Code of Conduct]: https://bioconductor.org/about/code-of-conduct/
 
