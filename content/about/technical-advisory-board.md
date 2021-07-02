@@ -131,6 +131,13 @@ board. Governance was formalized in February, 2019.
     </tr>
 
    <tr>
+   <td width="33%">
+      <img src="/images/tab/LoriShepherd.jpg"
+           width="100%" alt="Lori Kern" title="Lori Kern"/>
+      <figcaption> Lori Kern, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
+      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> </figcaption>
+    </td>
+
     <td width="33%">
       <img src="/images/tab/AaronLun.jpg"
            width="100%" alt="Aaron Lun" title="Aaron Lun"/>
@@ -146,14 +153,6 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
     
-    
-
-   <td width="33%">
-      <img src="/images/tab/MartinMorgan.jpg"
-           width="100%" alt="Martin Morgan" title="Martin Morgan"/>
-      <figcaption> Martin Morgan, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
-      <a href="https://www.roswellpark.org/martin-morgan">Website</a> </figcaption>
-    </td>
     </tr>
 </table>
 
@@ -166,7 +165,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2021-05-06](2021-05-06-minutes.pdf),
+- [2021-06-03](2021-06-03-minutes.pdf),
+  [2021-05-06](2021-05-06-minutes.pdf),
   [2021-04-01](2021-04-01-minutes.pdf),
   [2021-03-04](2021-03-04-minutes.pdf),
   [2021-02-04](2021-02-04-minutes.pdf),
