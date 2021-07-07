@@ -10,7 +10,7 @@ community in addition to assigned reviewers: [Packages Under Review][]. All
 package reviews are publicly accessible, therefore any feedback and interactions on
 submitted packages must abide by the Bioconductor [Code of Conduct][].
 
-[Expectations of Reviewers]: https://bioconductor.github.io/pkgrevdocs/review-expectation.html
+[Expectations of Reviewers]: http://contributions.bioconductor.org/review-expectation.html
 [Packages Under Review]: https://github.com/Bioconductor/Contributions/issues
 [Code of Conduct]: https://bioconductor.org/about/code-of-conduct/
 
