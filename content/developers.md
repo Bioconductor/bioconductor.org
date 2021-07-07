@@ -11,9 +11,9 @@ at different stages of their package.
     <p>Design and Submission</p>
 
     <ul>
-      <li><a class="symlink" href="/developers/package-guidelines/">Package Guidelines</a></li>
+      <li><a class="symlink"
+      href="http://contributions.bioconductor.org/">Bioconductor Package Guidelines for Developers and Reviewers</a></li>
       <li><a class="symlink" href="/developers/package-submission">Package Submission</a></li>
-      <li><a class="symlink" href="/developers/how-to/buildingPackagesForBioc/">New Package Primer</a></li>
     </ul>
 
     <p>Package Maintenance</p>
