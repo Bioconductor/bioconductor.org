@@ -5,13 +5,14 @@ principles to follow. See also [Package Guidelines][guidelines] for
 package specific guidelines and requirement and the
 [_Bioconductor_ new package submission tracker][tracker].
 
-[guidelines]: /developers/package-guidelines/
+[guidelines]: https://contributions.bioconductor.org/
 [tracker]: https://github.com/Bioconductor/Contributions
 
 <a name="top"></a>
 
 - [Introduction](#intro)
 - [Types of Packages](#type)
+- [Package Naming Policy](#naming)
 - [Author/Maintainer Expectations](#author)
 - [Submission](#submission)
 - [Experiment data package](#experPackage)
@@ -88,6 +89,20 @@ See [Package Guidelines][guidelines] for details on package format and syntax.
 
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+
+<a name="naming"></a>
+
+## Package Naming Policy
+
+Package naming: i) Ownership of package name. Bioconductor follows [CRAN's
+policy][] in requiring that contributors give the right to use the package name to Bioconductor at time of submission, so that the Bioconductor team can orphan the package and allow another maintainer to take it over in the event that the package contributor discontinues package maintenance. See Bioconductor's package [end-of-life policy][] for more details. ii) Uniqueness of package name. Packages should be named in a way that does not conflict (irrespective of case) with any current or past BIOCONDUCTOR package, nor any current CRAN package.
+
+[CRAN's policy]: https://cran.r-project.org/web/packages/policies.html
+[end-of-life policy]: http://bioconductor.org/developers/package-end-of-life/
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
 
 <a name="author"></a>
 

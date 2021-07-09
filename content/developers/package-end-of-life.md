@@ -1,7 +1,7 @@
 # Package End of Life Policy
 
 Creation Date: 3 March, 2015.<br />
-Last Edit Date: 23 March, 2020
+Last Edit Date: 09 July, 2021
 
 The Bioconductor project strives to provide a software repository that is stable
 and relevant to users across the community. Each year 100-150 new software
@@ -153,5 +153,7 @@ interested replacement maintainer is asked to email the original maintainer and
 maintainer@bioconductor.org, to formally request permission to take over. Unless
 there is an explicit request for a package to be retired, Bioconductor will
 grant access to the interested replacement maintainer in accordance with open
-source software licenses that Bioconductor packages require.
+source software licenses that Bioconductor packages require and [package naming
+policy][] that maintainers agree to upon submission.
 
+[package naming policy]: https://bioconductor.org/developers/package-submission/#naming
