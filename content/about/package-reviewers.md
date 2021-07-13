@@ -18,12 +18,14 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 ## Package Reviewers
 
 <ul>
-<li>Vince Carey</li>
+<li>Vince Carey*</li>
 <li>Kayla Interdonato</li>
 <li>Hervé Pagès</li>
 <li>Marcel Ramos</li>
-<li>Lori Shepherd</li>
+<li>Lori Shepherd*</li>
 <li>Nitesh Turaga</li>
+
+*Current Package Review Administrators
 
 </ul>
 
