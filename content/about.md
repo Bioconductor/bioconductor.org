@@ -41,7 +41,7 @@ Methods 12:115-121][1] and Gentleman et al., 2004 [Genome Biology
 5:R80][2]
 
 [1]: http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html
-[2]: http://genomebiology.com/content/pdf/gb-2004-5-10-r80.pdf
+[2]: https://genomebiology.biomedcentral.com/track/pdf/10.1186/gb-2004-5-10-r80.pdf
 
 ## _Bioconductor_ Packages
 
