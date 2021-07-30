@@ -3,7 +3,8 @@
 ## How and When does the builder pull? When will my changes propagate? 
 
 Please remember the daily builder pulls, installs, builds, and checks package
-only once per day.  This process starts around 2:30 PM (14:30) EST everyday.
+only once per day.  This process starts around 2:30 PM (14:30) EST everyday
+(i.e., [UTC−05:00](https://everytimezone.com/s/f44eab0b)).
 Changes pushed to Bioconductor before 2:30 will be reflected in the following
 day's build report that is posted around 11:30 AM EST.  The build report has
 a time stamp at the top of the page when it was generated.  Changes after
