@@ -30,6 +30,18 @@ at different stages of their package.
     </ul>
 
   </div>
+  
+  <div class="shaded_box">
+    <img src="/images/inv.gif" align="right" height="20" width="1" alt=""/>
+    <p class="box_header">Community</p>
+    
+    <ul>
+      <li><a class="symlink" href="/developers/developers-forum/">Developers' Forum</a></li>
+      <li><a class="symlink" href="/developers/developer-mentor-programme/">Package Development Mentorship Program</a></li>
+    </ul>
+    
+  </div>
+  
 </div>
 
 <div style="width:50%;float:left;">
