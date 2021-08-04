@@ -13,13 +13,11 @@ places in the Bioconductor software stack.
 
 ## Audience
 
-Principally people involved in developing and maintaining Bioconductor packages, but the
-sessions are open, and anyone interested in the topics is welcome to attend and contribute. 
+Principally people involved in developing and maintaining Bioconductor packages, but the sessions are open and anyone interested in a topics is welcome to attend and contribute. 
 
 ## Schedule
 
-The forum takes place on the third Thursday of each month. Timing is typically
-09:00 PDT / 12:00 EDT / 18:00 CEST and the meetings last approximately one hour. We announce upcoming meetings on the Bioconductor developer mailing list, Slack, and Twitter.
+The forum takes place on the third Thursday of each month. Timing is typically 09:00 PDT / 12:00 EDT / 18:00 CEST and the meetings last approximately one hour. We announce upcoming meetings on the Bioconductor developer mailing list, Slack, and Twitter.
 
 ## Previous Meetings
 

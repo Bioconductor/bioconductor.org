@@ -37,7 +37,7 @@ at different stages of their package.
     
     <ul>
       <li><a class="symlink" href="/developers/developers-forum/">Developers' Forum</a></li>
-      <li><a class="symlink" href="/developers/developer-mentor-programme/">Package Development Mentorship Program</a></li>
+      <li><a class="symlink" href="/developers/new-developer-program/">New Developer Program</a></li>
     </ul>
     
   </div>
