@@ -85,8 +85,7 @@ See [Package Guidelines][guidelines] for details on package format and syntax.
 [software-pkgs]: /packages/release/bioc/
 [annotation-pkgs]: /packages/release/data/annotation/
 [exptdata-pkgs]: /packages/release/data/experiment/
-[HubHowTo]: /packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAHubPackage.html
-
+[HubHowTo]: /packages/devel/bioc/vignettes/HubPub/inst/doc/CreateAHubPackage.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
@@ -210,7 +209,7 @@ for that. Instead, please add the data package repository to the same
 issue as the software package.  The process for doing this is
 documented [here][].
 
-[ExperimentHub]: https://bioconductor.org/packages/devel/bioc/vignettes/ExperimentHub/inst/doc/CreateAnExperimentHubPackage.html
+[ExperimentHub]: /packages/devel/bioc/vignettes/HubPub/inst/doc/CreateAHubPackage.html
 [here]: https://github.com/Bioconductor/Contributions/blob/master/CONTRIBUTING.md#submitting-related-packages
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
@@ -232,7 +231,7 @@ description of the proposed annotation package and futher instructions
 of where to send the package will be provided. Whenever possible Annotation
 Packages should use the [AnnotationHub][] for managing files.
 
-[AnnotationHub]: https://bioconductor.org/packages/devel/bioc/vignettes/AnnotationHub/inst/doc/CreateAnAnnotationPackage.html
+[AnnotationHub]: /packages/devel/bioc/vignettes/HubPub/inst/doc/CreateAHubPackage.html
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
