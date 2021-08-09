@@ -124,14 +124,23 @@ Builds occur once per day, and take approximately 24 hours. See the
 
 ## Annotation packages
 
-Due to the size of the Annotation files these packages are not stored in GIT.
-To update an existing Annotation package please make the new version available
-in dropbox (or similar) and send an email to maintainer@bioconductor.org. A
-member of the Bioconductor team will add the package to the appropriate
-repository.
+Traditional Annotation packages are not stored in GIT due to the size of
+annotation files. To update an existing Annotation package please send an email
+to maintainer@bioconductor.org. A member of the Bioconductor team will be in
+contact to receive the updated package.
 
-To contribute a new Annotation package please contact packages@bioconductor.org
-for guidance.
+Newer annotation packages can be stored in GIT as it is a requirement to use the
+[AnnotationHub](https://bioconductor.org/packages/AnnotationHub/) or similar
+server hosted data. The larger sized files are not included directly in the package.
+To contribute a new Annotation package please contact hubs@bioconductor.org
+for guidance and read the documentation on [How to Create A Hub
+package](https://bioconductor.org/packages/devel/bioc/vignettes/HubPub/inst/doc/CreateAHubPackage.html).
+
+Currently direct updates to annotation packages, even those stored on git, are
+not supported. If you wish to updated an annotation package, make required
+changes and push to git.bioconductor.org. Then send an email to
+hubs@bioconductor.org or maintainer@bioconductor.org requesting the package be propagated.
+
 
 ## More help
 
