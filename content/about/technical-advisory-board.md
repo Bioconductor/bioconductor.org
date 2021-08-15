@@ -61,7 +61,7 @@ board. Governance was formalized in February, 2019.
 <td width="33%">
       <img src="/images/tab/HectorCorradaBravo.jpg"
            width="100%" alt="Hector Corrada Bravo," title="Hector Corrada Bravo,"/>
-      <figcaption>  Hector Corrada Bravo,Genentech Research and Early Development, USA.
+      <figcaption>  Hector Corrada Bravo, Genentech Research and Early Development, USA.
       </figcaption>
     </td>
 
@@ -106,7 +106,7 @@ board. Governance was formalized in February, 2019.
    <td width="33%">
       <img src="/images/tab/StephanieHicks.jpg"
            width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
-      <figcaption> Stephanie Hicks,  Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
+      <figcaption> Stephanie Hicks, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
       <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
       </figcaption>
     </td>
@@ -115,7 +115,7 @@ board. Governance was formalized in February, 2019.
   <td width="33%">
       <img src="/images/tab/WolfgangHuber.jpg"
            width="100%" alt="Wolfgang Huber" title="Wolfgang Huber"/>
-      <figcaption> Wolfgang Huber,  European Molecular Biology Laboratory, Heidelberg, Germany.
+      <figcaption> Wolfgang Huber, European Molecular Biology Laboratory, Heidelberg, Germany.
       <a href="http://www.embl.de/research/units/genome_biology/huber/">Website</a>
       </figcaption>
     </td>
@@ -141,7 +141,7 @@ board. Governance was formalized in February, 2019.
     <td width="33%">
       <img src="/images/tab/AaronLun.jpg"
            width="100%" alt="Aaron Lun" title="Aaron Lun"/>
-      <figcaption> Aaron Lun,   Genentech Research and Early Development, USA.
+      <figcaption> Aaron Lun, Genentech Research and Early Development, USA.
       </figcaption>
     </td>
  
@@ -165,7 +165,9 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2021-06-03](2021-06-03-minutes.pdf),
+- (no August meeting), 
+  [2021-07-01](2021-07-01-minutes.pdf),
+  [2021-06-03](2021-06-03-minutes.pdf),
   [2021-05-06](2021-05-06-minutes.pdf),
   [2021-04-01](2021-04-01-minutes.pdf),
   [2021-03-04](2021-03-04-minutes.pdf),
