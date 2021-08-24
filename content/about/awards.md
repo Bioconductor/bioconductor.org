@@ -51,20 +51,22 @@ Yes
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 
-# Awardees 2020
+# Awardees 2021
 
-## Helena Lucia Crowell
-<img src="/images/biocawards/writeup/Crowell.png" width="100%" height="100%"/>
+## Aedin Culhane
+<img src="/images/biocawards/writeup/Culhane.png" width="100%" height="100%"/>
 
-## Aaron Lun
-<img src="/images/biocawards/writeup/Lun.png" width="100%" height="100%"/>
+## Laurent Gatto
+<img src="/images/biocawards/writeup/Gatto.png" width="100%" height="100%"/>
 
-## Lori Shepherd
-<img src="/images/biocawards/writeup/Shepherd.png" width="100%" />
+## James MacDonald
+<img src="/images/biocawards/writeup/MacDonald.png" width="100%" />
 
-## Gordon Smyth
-<img src="/images/biocawards/writeup/Smyth.png" width="100%" />
+## Charlotte Soneson
+<img src="/images/biocawards/writeup/Soneson.png" width="100%" />
 
+## Leonardo Collado-Torres
+<img src="/images/biocawards/writeup/Torres.png" width="100%" />
 
 # Previous Winners
 
