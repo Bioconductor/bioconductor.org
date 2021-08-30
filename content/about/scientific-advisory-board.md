@@ -7,9 +7,8 @@ high-throughput genomic data. Board members participate for a flexible
 term. Current members are:
 
 * Robert Gentleman (Advisory Board Chair, 23andMe)
-* Jenny Bryan (RStudio)
 * Vincent Carey (Brigham &amp; Women's)
-* Valentina di Francesco (NHGRI)
+* Chris Wellington (NHGRI)
 * Wolfgang Huber (European Molecular Biology Laboratory)
 * Rafael Irizarry (Dana Farber)
 * Audrey Kauffmann (Novartis)
