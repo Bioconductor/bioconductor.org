@@ -33,7 +33,7 @@ The following highlights important deadlines for the release.
   tracker must have completed the review processes and been accepted to be added
   to the manifest
 
-### Friday October 18
+### Friday October 22
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
