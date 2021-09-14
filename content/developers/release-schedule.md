@@ -1,6 +1,6 @@
 # Bioconductor 3.14 Release Schedule
 
-This release will use  R-4.2.0
+This release will use  R-4.1.1 (the current R release)
 The official release date is tentatively schedule for Wednesday October 27th.
 The following highlights important deadlines for the release.
 
