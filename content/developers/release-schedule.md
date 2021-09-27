@@ -1,37 +1,39 @@
-# Bioconductor 3.13 Release Schedule
+# Bioconductor 3.14 Release Schedule
 
-This release will use  R-4.1.0.
-The official release date is schedule for Thursday May 20th.
+This release will use  R-4.1.1 (the current R release)
+The official release date is tentatively schedule for Wednesday October 27th.
 The following highlights important deadlines for the release.
 
 
-### Friday April 23
+### Friday October 1
 
 * Deadline for new package submissions.
 
-### Monday April 26
+### Monday October 6
 
-* Announce deprecated packages for Bioc 3.13. They'll be removed from Bioc 3.14.
+* Announce deprecated packages for Bioc 3.14. They'll be removed from Bioc 3.15.
   See [End of Life](/developers/package-end-of-life) for details.
 
-### Monday May 3
+### Monday October 11
 
-* Stop building Bioc 3.12, current release. Commits to this branch will be
+* Stop building Bioc 3.13, current release. Commits to this branch will be
   disabled.
 
-* Start building Bioc 3.14, new devel.
+* Start building Bioc 3.15, new devel (using R-devel).
 
-### Wednesday May 12
+### Wednesday October 13
 
-* No API changes to Bioc 3.13.
-
-* Deadline to add new packages to the Bioc 3.13 manifest. Package submitted to
-  tracker must have completed the review processes and been accepted to be added
-  to the manifest
+* No API changes to Bioc 3.14.
 
 * Contributed annotation packages posted to devel annotation data repository.
 
-### Friday May 14
+### Wednesday October 20
+
+* Deadline to add new packages to the Bioc 3.14 manifest. Package submitted to
+  tracker must have completed the review processes and been accepted to be added
+  to the manifest
+
+### Friday October 22
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
@@ -41,35 +43,33 @@ The following highlights important deadlines for the release.
 * Bioconductor release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Tuesday May 18
+### Monday October 25
 
-* Last day to commit changes to the Bioc 3.13 branch. NEWS files
+* Last day to commit changes to the Bioc 3.14 branch. NEWS files
   must be updated before the builds start at 4:45pm EST or they will
   not be included in the release announcement.
 
   The branch will be frozen prior to creating the release branch on Tuesday,
-  May 18.  Committing last minute changes could break your package in both
+  October 26.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Wednesday May 19
+### Tuesday October 26
 
-* Creation of the Bioc 3.13 release branch. Development can resume on
+* Creation of the Bioc 3.14 release branch. Development can resume on
   trunk, but changes there will not be part of the release.
 
-### Thursday May 20
+### Wednesday October 27
 
-* Bioconductor Release 3.13.
+* Bioconductor Release 3.14.
 
 
 ## Post-release
 
-* Build AMIs for release and devel
-
 * Build Dockers for release and devel
 
-* Packages marked as deprecated in Bioc 3.13 are now removed from the
-  Bioc 3.14 nightly builds.
+* Packages marked as deprecated in Bioc 3.14 are now removed from the
+  Bioc 3.15 nightly builds.
 
-* Identify packages to be deprecated in the new devel, Bioc 3.14.
+* Identify packages to be deprecated in the new devel, Bioc 3.15.
   This includes packages with errors and unresponsive maintainers.
