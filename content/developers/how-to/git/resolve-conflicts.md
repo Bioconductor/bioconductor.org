@@ -72,7 +72,13 @@ _Bioconductor_ repositories.
 
 ## Extra Resources
 
-[Resolving a merge conflict using command line][].
+[Resolving a merge conflict using command line][]
+
+[Based on: Resolving a merge conflict][]
+
+<iframe width="560" height="315" src="https://www.loom.com/embed/03e20ac00992408aadae33a7b7b3384d" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 [Resolving a merge conflict using command line]: https://help.github.com/articles/resolving-a-merge-conflict-using-the-command-line/
+[Based on: Resolving a merge conflict]: https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts
 [pull upstream changes]: ../pull-upstream-changes
+
