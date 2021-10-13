@@ -198,15 +198,10 @@ Calendar](https://calendar.google.com/calendar/b/1?cid=YWtlczFvZGVsbW9kcDAzODV1Z
 is a public facing google calendar for Bioconductor and Bioconductor related
 events. The events posted on this calendar are managed by members of the
 Community Advisory Board.  If you would like an event added to the calendar
-please email: events at biocondutor.org
-
-Please include event details such as:
- - event name 
- - event type (workshop, hack-a-thon, meetup, lecture, etc)
- - sponsor/organization
- - event location 
- - registration details (if applicable) 
- - event website
+please submit [this GitHub issue form](https://github.com/BioconductorBoards/CABWorkingGroups/issues/new?assignees=kozo2&labels=event%2Ccalendar&template=EVENT-CALENDAR.yml&title=%5BEvent%5D%3A+REPLACE+ME+WITH+YOUR+EVENT+TITLE)
+(You have to be signed in to [GitHub](https://github.com/) to see the form
+link.) Any additional questions or if you do not have a github account please
+email events at bioconductor.org
 
 ## Contact
 
