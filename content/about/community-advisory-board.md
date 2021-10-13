@@ -199,7 +199,9 @@ is a public facing google calendar for Bioconductor and Bioconductor related
 events. The events posted on this calendar are managed by members of the
 Community Advisory Board.  If you would like an event added to the calendar
 please submit [this GitHub issue form](https://github.com/BioconductorBoards/CABWorkingGroups/issues/new?assignees=kozo2&labels=event%2Ccalendar&template=EVENT-CALENDAR.yml&title=%5BEvent%5D%3A+REPLACE+ME+WITH+YOUR+EVENT+TITLE)
-(You have to be signed in to [GitHub](https://github.com/) to see the form link.)
+(You have to be signed in to [GitHub](https://github.com/) to see the form
+link.) Any additional questions or if you do not have a github account please
+email events at bioconductor.org
 
 ## Contact
 
