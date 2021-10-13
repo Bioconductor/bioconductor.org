@@ -134,6 +134,42 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
   </tr>
 </table>
 
+## Q&A
+The following Q&As are from [Meet the Community Advisory Board CAB](https://www.youtube.com/watch?v=LTT1i_ACpxc) in [BioC2021](https://bioc2021.bioconductor.org/).
+If you have any other questions, please click [this link](https://github.com/BioconductorBoards/CABWorkingGroups/discussions/new) to ask a question.
+(You need to be signed in to [GitHub](https://github.com/) to open the new question.)
+In addition to asking new questions, you can also continue the discussion following Q&As below at https://github.com/BioconductorBoards/CABWorkingGroups/discussions/categories/q-a.
+
+### How do I join the CAB?
+There is an annual expression of interest process inviting new members to apply to join the CAB. This is announced on the Bioconductor support site and relevant Bioconductor community slack channel. Current CAB members vote on the applications received to select new members. The board is keen to have representatives from diverse backgrounds (i.e. different geographical and cultural backgrounds, genders, statistical analysis interests, career stages and experience levels).
+Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
+
+### Is there a recommended way for community members to give suggestions to the CAB?
+We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack (https://bioc-community.herokuapp.com/).
+(See also: A for the previous Q.)
+
+### Are there any big new CAB projects or plans on the horizon?
+We plan to redevelop the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project (https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/ ). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
+
+### What did you consider the biggest challenges when joining the CAB as a new member?
+Securing funding to increase the effort that can be put in to different activities.
+
+### Can we contribute to CAB activities or organize other ones even if we’re not on the CAB?
+Yes, anyone is free to contribute to the organisation of community events or other CAB initiatives. For instance, there is an annual call for people to join the BioC conference organising committee, which is a great way to get involved and meet new people.
+
+### Do you have current or future plans to collaborate with other R community groups? e.g. R-ladies?
+Yes. A number of CAB members are already connected to various R-Ladies groups, having been involved in their establishment or as active participants in different parts of the world (including the USA and Australia).
+
+### How much time commitment is involved in being a member of the CAB?
+It depends how involved you are in different activities, and may fluctuate throughout the year, but on average, it can take up around 1 day per month. There is a recurring monthly board meeting that runs for 1 hour that all members attend.
+
+### How experienced does someone need to be to join Bioconductor’s CAB?
+The goal is for the board to broadly reflect the diversity of users and developers in the Bioconductor community, so we would encourage people of all career stages and experience levels to consider applying if you are interested in contributing to our community development efforts.
+
+### Would there be an opportunity to visit one of the CAB meetings before being part of it?
+Guests are most welcome to attend a meeting to see what it is about - just get in touch and we can arrange attendance.
+To see what has been discussed at past meetings, you can find the Meeting minutes.
+
 ## Meeting minutes
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
 
