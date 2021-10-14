@@ -138,18 +138,19 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 The following Q&As are from [Meet the Community Advisory Board CAB](https://www.youtube.com/watch?v=LTT1i_ACpxc) in [BioC2021](https://bioc2021.bioconductor.org/).
 If you have any other questions, please click [this link](https://github.com/BioconductorBoards/CABWorkingGroups/discussions/new) to ask a question.
 (You need to be signed in to [GitHub](https://github.com/) to open the new question.)
-In addition to asking new questions, you can also continue the discussion following Q&As below at https://github.com/BioconductorBoards/CABWorkingGroups/discussions/categories/q-a.
+In addition to asking new questions, you can also continue the discussion following Q&As below at
+[github.com/BioconductorBoards/CABWorkingGroups/discussions/categories/q-a](https://github.com/BioconductorBoards/CABWorkingGroups/discussions/categories/q-a).
 
 ### How do I join the CAB?
 There is an annual expression of interest process inviting new members to apply to join the CAB. This is announced on the Bioconductor support site and relevant Bioconductor community slack channel. Current CAB members vote on the applications received to select new members. The board is keen to have representatives from diverse backgrounds (i.e. different geographical and cultural backgrounds, genders, statistical analysis interests, career stages and experience levels).
 Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
 
 ### Is there a recommended way for community members to give suggestions to the CAB?
-We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack (https://bioc-community.herokuapp.com/).
+We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack ([bioc-community.herokuapp.com](https://bioc-community.herokuapp.com/)).
 (See also: A for the previous Q.)
 
 ### Are there any big new CAB projects or plans on the horizon?
-We plan to redevelop the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project (https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/ ). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
+We plan to redevelop the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project ([chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/)). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
 
 ### What did you consider the biggest challenges when joining the CAB as a new member?
 Securing funding to increase the effort that can be put in to different activities.
