@@ -3,6 +3,96 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.14 release
+
+Software Packages:
+
+
+<ul class="inline_list">
+<li><a href="/packages/3.12/bioc/html/AffyExpress.html">AffyExpress</a></li>
+<li><a href="/packages/3.12/bioc/html/affyQCReport.html">affyQCReport</a></li>
+<li><a href="/packages/3.12/bioc/html/AnnotationFuncs.html">AnnotationFuncs</a></li>
+<li><a href="/packages/3.12/bioc/html/ArrayTools.html">ArrayTools</a></li>
+<li><a href="/packages/3.12/bioc/html/bigmemoryExtras.html">bigmemoryExtras</a></li>
+<li><a href="/packages/3.12/bioc/html/BiocCaseStudies.html">BiocCaseStudies</a></li>
+<li><a href="/packages/3.12/bioc/html/CancerMutationAnalysis.html">CancerMutationAnalysis</a></li>
+<li><a href="/packages/3.12/bioc/html/ChIPSeqSpike.html">ChIPSeqSpike</a></li>
+<li><a href="/packages/3.12/bioc/html/CompGO.html">CompGO</a></li>
+<li><a href="/packages/3.12/bioc/html/CoRegFlux.html">CoRegFlux</a></li>
+<li><a href="/packages/3.11/bioc/html/CrossICC.html">CrossICC</a></li>
+<li><a href="/packages/3.12/bioc/html/cytofast.html">cytofast</a></li>
+<li><a href="/packages/3.12/bioc/html/DBChIP.html">DBChIP</a></li>
+<li><a href="/packages/3.12/bioc/html/dexus.html">dexus</a></li>
+<li><a href="/packages/3.12/bioc/html/EasyqpcR.html">EasyqpcR</a></li>
+<li><a href="/packages/3.12/bioc/html/EDDA.html">EDDA</a></li>
+<li><a href="/packages/3.12/bioc/html/eisa.html">eisa</a></li>
+<li><a href="/packages/3.12/bioc/html/ELBOW.html">ELBOW</a></li>
+<li><a href="/packages/3.12/bioc/html/ExpressionView.html">ExpressionView</a></li>
+<li><a href="/packages/3.12/bioc/html/FlowRepositoryR.html">FlowRepositoryR</a></li>
+<li><a href="/packages/3.12/bioc/html/genoset.html">genoset</a></li>
+<li><a href="/packages/3.12/bioc/html/HCABrowser.html">HCABrowser</a></li>
+<li><a href="/packages/3.12/bioc/html/HCAExplorer.html">HCAExplorer</a></li>
+<li><a href="/packages/3.12/bioc/html/HCAMatrixBrowser.html">HCAMatrixBrowser</a></li>
+<li><a href="/packages/3.12/bioc/html/Imetagene.html">Imetagene</a></li>
+<li><a href="/packages/3.12/bioc/html/mdgsa.html">mdgsa</a></li>
+<li><a href="/packages/3.12/bioc/html/metagenomeFeatures.html">metagenomeFeatures </a></li>
+<li><a href="/packages/3.12/bioc/html/methyAnalysis.html">methyAnalysis</a></li>
+<li><a href="/packages/3.12/bioc/html/MSEADbi.html">MSEADbi</a></li>
+<li><a href="/packages/3.12/bioc/html/OutlierD.html">OutlierD</a></li>
+<li><a href="/packages/3.12/bioc/html/pcot2.html">pcot2</a></li>
+<li><a href="/packages/3.12/bioc/html/PCpheno.html">PCpheno</a></li>
+<li><a href="/packages/3.12/bioc/html/Polyfit.html">Polyfit</a></li>
+<li><a href="/packages/3.12/bioc/html/POST.html">POST</a></li>
+<li><a href="/packages/3.12/bioc/html/RchyOptimyx.html">RchyOptimyx</a></li>
+<li><a href="/packages/3.12/bioc/html/RDAVIDWebService.html">RDAVIDWebService</a></li>
+<li><a href="/packages/3.12/bioc/html/RNAither.html">RNAither</a></li>
+<li><a href="/packages/3.12/bioc/html/RNAprobR.html">RNAprobR</a></li>
+<li><a href="/packages/3.12/bioc/html/rnaSeqMap.html">rnaSeqMap</a></li>
+<li><a href="/packages/3.12/bioc/html/SAGx.html">SAGx</a></li>
+<li><a href="/packages/3.12/bioc/html/samExploreR.html">samExploreR</a></li>
+<li><a href="/packages/3.12/bioc/html/seqplots.html">seqplots</a></li>
+<li><a href="/packages/3.12/bioc/html/simulatorZ.html">simulatorZ</a></li>
+<li><a href="/packages/3.12/bioc/html/SSPA.html">SSPA</a></li>
+<li><a href="/packages/3.12/bioc/html/ToPASeq.html">ToPASeq</a></li>
+<li><a href="/packages/3.12/bioc/html/XBSeq.html">XBSeq</a></li>
+<li><a href="/packages/3.12/bioc/html/yaqcaffy.html">yaqcaffy</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.12/data/experiment/html/ceu1kg.html">ceu1kg</a></li>
+<li><a href="/packages/3.12/data/experiment/html/ceu1kgv.html">ceu1kgv</a></li>
+<li><a href="/packages/3.12/data/experiment/html/ceuhm3.html">ceuhm3</a></li>
+<li><a href="/packages/3.12/data/experiment/html/cgdv17.html">cgdv17</a></li>
+<li><a href="/packages/3.12/data/experiment/html/dsQTL.html">dsQTL</a></li>
+<li><a href="/packages/3.12/data/experiment/html/facsDorit.html">facsDorit</a></li>
+<li><a href="/packages/3.12/data/experiment/html/gskb.html">gskb</a></li>
+<li><a href="/packages/3.12/data/experiment/html/hmyriB36.html">hmyriB36</a></li>
+<li><a href="/packages/3.12/data/experiment/html/JctSeqData.html">JctSeqData</a></li>
+<li><a href="/packages/3.12/data/experiment/html/MAQCsubsetAFX.html">MAQCsubsetAFX</a></li>
+<li><a href="/packages/3.12/data/experiment/html/yri1kgv.html">yri1kgv</a></li>
+</ul>
+
+
+Workflow Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.12/workflows/html/eQTL.html">eQTL</a></li>
+</ul>
+
+
+Annotation Data Packages:
+
+<ul>
+<li>All 12 LRBase.XXX.eg.db packages (replaced with AHLRBaseDbs)</li>
+<li>All 73 MeSH.XXX.eg.db packages (replaced with AHMeSHDbs)</li>
+<li><a href="/packages/3.12/data/annotation/html/MafDb.gnomAD.r3.0.GRCh38.html">MafDb.gnomAD.r3.0.GRCh38</a></li>
+<li><a href="/packages/3.12/data/annotation/html/MafH5.gnomAD.r3.0.GRCh38.html">MafH5.gnomAD.r3.0.GRCh38</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.13 release
 
 Software Packages:
