@@ -336,25 +336,36 @@ task :my_task, :arg1 do |t, args|
   pp hargs.keys()
 end
 
-desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)"
+desc "Get BUILD_STATUS_DB.txt file to build RSS feeds (arg: bioc or data-experiment or any other valid buildtype)"
 # requires internet connection
-task :get_build_result_dcfs, :repo do |t, args|
+task :get_build_result_dcfs, :buildtype do |t, args|
     hargs = args.to_hash
-    if hargs.empty? or !hargs.has_key? :repo
-      repo = "bioc"
+    if hargs.empty? or !hargs.has_key? :buildtype
+      buildtype = "bioc"
     else
-      repo = hargs[:repo]
+      buildtype = hargs[:buildtype]
     end
-    unless ["bioc", "data-experiment"].include? repo
-      puts "Argument must be either 'bioc' or 'data-experiment'."
+    unless ["bioc", "data-annotation", "data-experiment", "workflows", "books", "bioc-longtests"].include? buildtype
+      puts "argument must be 'bioc', 'data-annotation', 'data-experiment', 'workflows', 'books', or 'bioc-longtests'"
       next
     end
+    if buildtype == "bioc"
+        dcfdir = "tmp/build_dcfs"
+    elsif buildtype == "data-annotation"
+        dcfdir = "tmp/data_annnotation_build_dcfs"
+    elsif buildtype == "data-experiment"
+        dcfdir = "tmp/data_experiment_build_dcfs"
+    elsif buildtype == "workflows"
+        dcfdir = "tmp/workflows_build_dcfs"
+    elsif buildtype == "books"
+        dcfdir = "tmp/books_build_dcfs"
+    else
+        dcfdir = "tmp/longtests_build_dcfs"
     config = YAML.load_file("./config.yaml")
-    tmpdir = repo=="bioc" ? "tmp/build_dcfs" : "tmp/data_build_dcfs"
-    FileUtils.mkdir_p tmpdir
+    FileUtils.mkdir_p dcfdir
     ary = []
     for version in ["release", "devel"]
-	FileUtils.mkdir_p(File.join(tmpdir, version))
+	FileUtils.mkdir_p(File.join(dcfdir, version))
 	if version == "release"
 	    machine = config["active_release_builders"]["linux"]
 	    biocversion = config["release_version"]
@@ -362,16 +373,16 @@ task :get_build_result_dcfs, :repo do |t, args|
 	    machine = config["active_devel_builders"]["linux"]
 	    biocversion = config["devel_version"]
 	end
-	unless (config["devel_repos"].include? repo.gsub("-", "/"))
+	unless (config["devel_repos"].include? buildtype.gsub("-", "/"))
 	  next
 	end
 
-	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/BUILD_STATUS_DB.txt")
-	f = File.open(File.join(tmpdir, version, "BUILD_STATUS_DB.txt"), "w")
+	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{buildtype}-LATEST/BUILD_STATUS_DB.txt")
+	f = File.open(File.join(dcfdir, version, "BUILD_STATUS_DB.txt"), "w")
 	f.write(res)
 	f.close
 
-	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
+	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{buildtype}/nodes #{dcfdir}/#{version}))
 	#system(cmd)
     end
 end

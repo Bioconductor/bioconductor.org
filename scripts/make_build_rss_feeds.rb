@@ -14,26 +14,46 @@ include REXML
 
 
 if ARGV.empty?
-    $repo = "bioc"
+    $buildtype = "bioc"
 else
-    unless ["bioc", "data-experiment"].include? ARGV.first
-        puts "argument must be 'bioc' or 'data-experiment'"
+    unless ["bioc", "data-annotation", "data-experiment", "workflows", "books", "bioc-longtests"].include? ARGV.first
+        puts "argument must be 'bioc', 'data-annotation', 'data-experiment', 'workflows', 'books', or 'bioc-longtests'"
         exit 1
     else
-        $repo = ARGV.first
+        $buildtype = ARGV.first
     end
 end
 
 $uuid = UUID.new
-BASEURL="http://bioconductor.org/checkResults"
+BASEURL = "http://bioconductor.org/checkResults"
 
-if $repo == "bioc"
-    DCFDIR="tmp/build_dcfs"
-    OUTDIR="assets/rss/build"
+if $buildtype == "bioc"
+    DCFDIR = "tmp/build_dcfs"
+    OUTSUBDIR = "rss/build"
+    RSSFILE = "tmp/rss_urls.txt"
+elsif $buildtype == "data-annotation"
+    DCFDIR = "tmp/data_annnotation_build_dcfs"
+    OUTSUBDIR = "rss/build/data-annotation"
+    RSSFILE = "tmp/data_annnotation_rss_urls.txt"
+elsif $buildtype == "data-experiment"
+    DCFDIR = "tmp/data_experiment_build_dcfs"
+    OUTSUBDIR = "rss/build/data-experiment"
+    RSSFILE = "tmp/data_experiment_rss_urls.txt"
+elsif $buildtype == "workflows"
+    DCFDIR = "tmp/workflows_build_dcfs"
+    OUTSUBDIR = "rss/build/workflows"
+    RSSFILE = "tmp/workflows_rss_urls.txt"
+elsif $buildtype == "books"
+    DCFDIR = "tmp/books_build_dcfs"
+    OUTSUBDIR = "rss/build/books"
+    RSSFILE = "tmp/books_rss_urls.txt"
 else
-    DCFDIR="tmp/data_build_dcfs"
-    OUTDIR="assets/rss/build/data"
+    DCFDIR = "tmp/longtests_build_dcfs"
+    OUTSUBDIR = "rss/build/longtests"
+    RSSFILE = "tmp/longtests_rss_urls.txt"
 end
+
+OUTDIR="assets/#{OUTSUBDIR}"
 
 $results = {release: [], devel: []}
 for vers in [:release, :devel]
@@ -59,8 +79,7 @@ def tweak(rss, outfile)
     #return rss.to_s if true
     outfile.gsub! /#{OUTDIR}/, ""
     outfile.gsub! /^\//, ""
-    spec = ($repo=="bioc") ? "" : "/data"
-    url = "http://bioconductor.org/rss/build#{spec}/#{outfile}"
+    url = "http://bioconductor.org/#{OUTSUBDIR}/#{outfile}"
     xml = Document.new rss.to_s
     hub_link =  Element.new "link" #e.add_element("link")
     hub_link.attributes["rel"] = "hub"
@@ -101,7 +120,7 @@ def make_problem_feed(pkglist, config, problems, outfile)
             bad = pkglist[key].find_all {|i| problems.include? i[:status] }
             for b in bad
                 maker.items.new_item do |item|
-                    item.link = "#{BASEURL}/#{b[:version]}/#{$repo}-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
+                    item.link = "#{BASEURL}/#{b[:version]}/#{$buildtype}-LATEST/#{key}/#{b[:node]}-#{b[:phase]}.html"
                     item.title = "#{b[:status]} in #{b[:version]} version of #{key} on node #{b[:node]}"
                     item.summary = item.title
                     item.updated = Time.now.to_s
@@ -137,7 +156,7 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
                     else
                         version = "devel"
                     end
-                    item.link = "#{BASEURL}/#{version}/#{$repo}-LATEST/#{key}/"
+                    item.link = "#{BASEURL}/#{version}/#{$buildtype}-LATEST/#{key}/"
                     item.updated = Time.now.to_s
                     item.title = "No build problems for #{key}."
                     item.summary = item.title
@@ -173,7 +192,7 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
                     probs = ary.collect{|i| i[:status]}
                     nodes = ary.collect{|i| i[:node]}
                     maker.items.new_item do |item|
-                        item.link = "#{BASEURL}/#{version}/#{$repo}-LATEST/#{key}/"
+                        item.link = "#{BASEURL}/#{version}/#{$buildtype}-LATEST/#{key}/"
                         nword = (nodes.length > 1) ? "nodes" : "node"
                         item.title = "#{key} #{probs.join "/"} in #{version} on #{nword} #{nodes.join "/"}"
                         item.summary = item.title
@@ -233,9 +252,8 @@ def runit()
     puts "making #{pkgs_to_update.keys.length} updated individual pkg rss files"
     make_individual_feed(pkglist, config, pkgs_to_update.keys)
     puts "Done at #{Time.now.to_s}"
-    rssfile = ($repo == "bioc") ? "tmp/rss_urls.txt" : "tmp/data_rss_urls.txt"
-    FileUtils.rm_f rssfile
-    urlfile = File.open(rssfile, "w")
+    FileUtils.rm_f RSSFILE
+    urlfile = File.open(RSSFILE, "w")
     for url in $urls
         urlfile.puts url
     end
