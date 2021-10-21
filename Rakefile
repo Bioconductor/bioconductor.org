@@ -295,7 +295,7 @@ end
 desc "Create CloudFormation templates"
 task :generate_cf_templates do
   FileUtils.mkdir_p "cloud_formation/output"
-  config = YAML.load_file("./config.yaml")
+  site_config = YAML.load_file("./config.yaml")
   dir = Dir.new("cloud_formation")
   for file in dir
     next unless file =~ /\.json$/
@@ -318,11 +318,11 @@ end
 
 desc "write version number to endpoint"
 task :write_version_number do
-    config = YAML.load_file("./config.yaml")
+    site_config = YAML.load_file("./config.yaml")
     f = File.open("assets/bioc-version", "w")
-    f.print(config["release_version"])
+    f.print(site_config["release_version"])
     f = File.open("assets/bioc-devel-version", "w")
-    f.print(config["devel_version"])
+    f.print(site_config["devel_version"])
 end
 
 task :my_task, :arg1 do |t, args|
@@ -362,27 +362,24 @@ task :get_build_result_dcfs, :buildtype do |t, args|
     else
         dcfdir = "tmp/longtests_build_dcfs"
     end
-    config = YAML.load_file("./config.yaml")
     FileUtils.mkdir_p dcfdir
-    ary = []
+    #site_config = YAML.load_file("./config.yaml")
     for version in ["release", "devel"]
 	FileUtils.mkdir_p(File.join(dcfdir, version))
-	if version == "release"
-	    machine = config["active_release_builders"]["linux"]
-	    biocversion = config["release_version"]
-	else
-	    machine = config["active_devel_builders"]["linux"]
-	    biocversion = config["devel_version"]
-	end
-	unless (config["devel_repos"].include? buildtype.gsub("-", "/"))
-	  next
-	end
-
+	#if version == "release"
+	#    machine = site_config["active_release_builders"]["linux"]
+	#    biocversion = site_config["release_version"]
+	#else
+	#    machine = site_config["active_devel_builders"]["linux"]
+	#    biocversion = site_config["devel_version"]
+	#end
+	#unless (site_config["devel_repos"].include? buildtype.gsub("-", "/"))
+	#  next
+	#end
 	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{buildtype}-LATEST/BUILD_STATUS_DB.txt")
 	f = File.open(File.join(dcfdir, version, "BUILD_STATUS_DB.txt"), "w")
 	f.write(res)
 	f.close
-
 	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{buildtype}/nodes #{dcfdir}/#{version}))
 	#system(cmd)
     end
@@ -508,12 +505,12 @@ end
 # shouldn't be run daily - will update minimally
 desc "get years-in-bioc shields"
 task :get_years_in_bioc_shields do
-  sconfig = YAML.load_file("./config.yaml")
-  sconfig[:release_dates] = sconfig["release_dates"]
-  sconfig[:release_dates] = sconfig[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-  rel_ver = sconfig["release_version"]
-  dev_ver = sconfig["devel_version"]
-  all_ver = sconfig["release_dates"].keys
+  site_config = YAML.load_file("./config.yaml")
+  site_config[:release_dates] = site_config["release_dates"]
+  site_config[:release_dates] = site_config[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+  rel_ver = site_config["release_version"]
+  dev_ver = site_config["devel_version"]
+  all_ver = site_config["release_dates"].keys
   all_ver.push dev_ver
   man_path = "../manifest/"
 
@@ -537,10 +534,10 @@ task :get_years_in_bioc_shields do
       end
     end
   }
-  sconfig[:manifests] = manifests
+  site_config[:manifests] = manifests
   system("git -C #{man_path} checkout master")
 
-  sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
+  site_config[:manifest_keys] = manifests.keys.sort do |a,b|
     amaj, amin = a.split(".")
     bmaj, bmin = b.split(".")
     amaj = Integer(amaj)
@@ -555,7 +552,7 @@ task :get_years_in_bioc_shields do
   end
   pkgs = get_list_of_packages()
   for pkg in pkgs
-    get_year_shield(pkg, true, sconfig)
+    get_year_shield(pkg, true, site_config)
   end
 end
 
@@ -713,11 +710,11 @@ task :get_all_shields => [:get_build_dbs,
 # make sure this is run via crontab every hour
 desc "extract mirror information to csv file"
 task :mirror_csv do
-    config = YAML.load_file("./config.yaml")
+    site_config = YAML.load_file("./config.yaml")
     CSV.open(File.join("assets", "BioC_mirrors.csv"), "w") do |csv|
       csv << ["Name","Country","City","URL","Host","Maintainer","OK",
 	      "CountryCode","Comment"]
-      for mirror_outer in config['mirrors']
+      for mirror_outer in site_config['mirrors']
 	country = mirror_outer.keys.first
 	country_mirrors = mirror_outer.values
 	for mirrors in country_mirrors
