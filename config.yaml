@@ -30,9 +30,9 @@ versions:
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
+- "data/annotation"
 - "data/experiment"
 - "workflows"
-- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
@@ -42,8 +42,8 @@ active_release_builders:
   mac_mojave: "machv2"
 active_devel_builders:
   linux: "nebbiolo2"
-  mac_mojave: "merida1"
   windows: "riesling1"
+  mac_mojave: "merida1"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
