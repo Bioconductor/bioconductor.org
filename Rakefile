@@ -361,6 +361,7 @@ task :get_build_result_dcfs, :buildtype do |t, args|
         dcfdir = "tmp/books_build_dcfs"
     else
         dcfdir = "tmp/longtests_build_dcfs"
+    end
     config = YAML.load_file("./config.yaml")
     FileUtils.mkdir_p dcfdir
     ary = []
