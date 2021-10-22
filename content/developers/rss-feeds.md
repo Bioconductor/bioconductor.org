@@ -38,9 +38,9 @@ RSS reader.)
 
 At present, feeds are updated:
 - daily (except on Sundays) at 1:45pm EST for the Software builds
-- on Tuesdays, Thursdays, and Saturdays at 4:45pm EST for the Experiment Data builds
+- on Tuesdays, Thursdays, and Saturdays, at 4:45pm EST for the Experiment Data builds
 - on Tuesdays and Fridays at 3:45pm EST for the Workflow builds
-- on Mondays, Wednesdays, and Fridays at 3:45pm EST for the Book builds
+- on Mondays, Wednesdays, and Fridays, at 3:45pm EST for the Book builds
 - on Sundays at 12:45am EST for the Long Tests builds
 
 The feeds support PubSubHubbub (also known as PuSH) which means updates
