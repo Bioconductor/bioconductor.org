@@ -245,8 +245,10 @@ Review Process
   package, to ensure that it is intended for _Bioconductor_. Appropriate
   packages will be re-labelled '2. review in progress' and a reviewer will be
   automatically assigned. Your assigned reviewer will address your concerns and
-  help you through the review process. The entire review process typically takes
-  between 2 and 5 weeks.
+  help you through the review process. The entire review process typically
+  takes between 2 and 5 weeks. If there is no response after 3 to 4 weeks,
+  package reviewers may close the issue until further updates, changes, and/or
+  commentary are received.
 
 * The package will be submitted to the _Bioconductor_ build
   system (BBS). The system will check out your package from GitHub. It will
