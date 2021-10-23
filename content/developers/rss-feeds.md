@@ -37,7 +37,7 @@ not meant to be viewed by web browsers).
 RSS reader.)
 
 At present, feeds are updated:
-- daily (except on Sundays) at 1:45pm EST for the Software builds
+- daily (except on Sundays) at 2:45pm EST for the Software builds
 - on Tuesdays, Thursdays, and Saturdays, at 4:45pm EST for the Experiment Data builds
 - on Tuesdays and Fridays at 3:45pm EST for the Workflow builds
 - on Mondays, Wednesdays, and Fridays, at 3:45pm EST for the Book builds
