@@ -3966,6 +3966,8 @@ NEW FEATURES
 [GeomxTools](/packages/GeomxTools)
 ----------
 
+- No changes from 1.1.4
+
 [ggmsa](/packages/ggmsa)
 -----
 
