@@ -23,7 +23,6 @@ devel_version: "3.15"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.13"
 - "3.14"
 - "3.15"
 
