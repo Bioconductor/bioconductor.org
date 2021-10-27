@@ -9671,7 +9671,7 @@ XBSeq, yaqcaffy
 Please note:  CexoR and IntramiRExploreR, previously announced as deprecated in
 3.13, fixed their packages and remained in Bioconductor.
 
-Twenty three software are deprecated in this release and will be removed in Bioc 3.15:
+Twenty three software packages are deprecated in this release and will be removed in Bioc 3.15:
 affyPara, ALPS, alsace, BrainStars, destiny, dualKS, ENCODExplorer,
 ENVISIONQuery, FindMyFriends, GeneAnswers, gramm4R, KEGGprofile, MouseFM,
 MSGFgui, MSGFplus, MSstatsTMTPTM, PanVizGenerator, predictionet, RGalaxy,
