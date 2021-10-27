@@ -2,15 +2,14 @@ October 27, 2021
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.14, consisting of 
+We are pleased to announce Bioconductor 3.14, consisting of
 2083 software packages, 408 experiment data packages,  904 annotation
 packages, 29 workflows and 8 books.
 
 There are 89 new software packages, 13 new data experiment packages,
 10 new annotation packages, 1 new workflow, no new books, and many updates and
 improvements to existing packages; Bioconductor 3.14 is compatible with R 4.1.1,
-and is supported on Linux, 32- and 64-bit Windows, and macOS 10.14.6 Mojave
-or higher.  This release will include an updated Bioconductor [Docker containers][2].
+and is supported on Linux, 32- and 64-bit Windows, and Intel 64-bit macOS 10.13 (High Sierra) or higher. We do not currently support arm64 so arm64 Mac users who wish to install Bioconductor Mac binary packages must install the Intel 64-bit build of R available on CRAN. This release will include updated Bioconductor [Docker containers][2].
 
 Thank you to everyone for your contribution to Bioconductor
 
