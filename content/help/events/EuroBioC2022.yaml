@@ -5,4 +5,4 @@ event_host:
 start: 2022-03-16
 end:   2022-03-18
 link:
-  url:
+  url: https://eurobioc2022.bioconductor.org/
