@@ -268,3 +268,13 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Nanjing
      country_code: cn
+ - Norway:
+   - institution: University of Bergen
+     institution_url: https://www.uib.no/
+     contact: Trond Davidsen
+     contact_email: Trond.Davidsen@it.uib.no
+     mirror_url: https://bioconductor.uib.no/
+     https_mirror_url: https://bioconductor.uib.no/
+     rsync: secure_mirror_from_master
+     city: Bergen
+     country_code: no
