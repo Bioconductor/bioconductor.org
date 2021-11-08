@@ -30,7 +30,7 @@ _Bioconductor_ release cycle.
 [Install](#install-R) the latest release of R, then get the latest version of
 _Bioconductor_ by starting R and entering the commands
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
+    if (!require("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install(version = "<%=config[:release_version] %>")
 
@@ -75,7 +75,7 @@ the main ones).
 
 To install core packages, type the following in an R command window:
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
+    if (!require("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install()
 
@@ -119,15 +119,17 @@ prompted.  Read the help page for `?install` for additional details.
 
 <h3 id="upgrade-bioconductor-packages">Upgrading installed <em>Bioconductor</em> packages</h3>
 
-Some versions of R support more than one version of _Bioconductor_. To
-use the latest version of _Bioconductor_ for your version of R, enter
+Due to the development cycle, all versions of R will eventually support more
+than one version of _Bioconductor_. To use the latest version of _Bioconductor_
+for your version of R, enter
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
+    if (!require("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     BiocManager::install()
 
 Remember that more recent versions of _Bioconductor_ may be available if your
-version of R is out-of-date.
+version of R is out-of-date. BiocManager will notify you when your version
+of R is out-of-date.
 
 For more details on <em>Bioconductor</em> approaches to versioning, see
 the <a
@@ -142,7 +144,7 @@ installed packages to be recompiled for source (C or Fortran)
 compatibility. One way to address this might be to start a new R
 session and enter
 
-    if (!requireNamespace("BiocManager", quietly = TRUE))
+    if (!require("BiocManager", quietly = TRUE))
         install.packages("BiocManager")
     pkgs <- rownames(installed.packages())
     BiocManager::install(pkgs, type = "source", checkBuilt = TRUE)
