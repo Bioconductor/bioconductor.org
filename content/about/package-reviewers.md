@@ -19,6 +19,8 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 
 <ul>
 <li>Vince Carey*</li>
+<li>Helena Crowell</li>
+<li>Peter Hickey</li>
 <li>Kayla Interdonato</li>
 <li>Jianhong Oh</li>
 <li>Hervé Pagès</li>
