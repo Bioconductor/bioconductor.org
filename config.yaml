@@ -278,3 +278,13 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Bergen
      country_code: no
+ - Italy:
+   - institution: University of Pisa
+     institution_url: https://www.unipi.it/
+     contact: Fabio Pratelli
+     contact_email: fabio.pratelli@unipi.it 
+     mirror_url: https://bioconductor.unipi.it
+     https_mirror_url: https://bioconductor.unipi.it
+     rsync: secure_mirror_from_master
+     city: Pisa
+     country_code: it
