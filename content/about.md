@@ -1,12 +1,13 @@
 # _Bioconductor_
 
-The _Bioconductor_ mission is to promote the statistical analysis and
-comprehension of current and emerging high-throughput biological
-assays. _Bioconductor_ is based on packages written primarily in the
-[R][] programming language. Bioconductor is committed to open source,
-collaborative, distributed software development and literate,
-reproducible research. Enabling user and developer communities is an
-essential part of our mission. [Scientific][], [Technical][] and [Community][]
+The mission of the Bioconductor project is to develop, support, and
+disseminate free open source software that facilitates rigorous and
+reproducible analysis of data from current and emerging biological assays.
+We are dedicated to building a diverse, collaborative, and welcoming
+community of developers and data scientists.
+
+
+[Scientific][], [Technical][] and [Community][]
 Advisory Boards provide project oversight.
 
 [R]: http://www.r-project.org
