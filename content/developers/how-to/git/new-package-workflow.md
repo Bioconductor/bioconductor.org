@@ -4,7 +4,7 @@ __Goal__: You developed a package in GitHub, following the
 _Bioconductor_ new package [Contributions README][] guidelines,
 [submitted it to _Bioconductor_][], and your package has been
 moderated. As part of moderation process, the package to be reviewed
-has been added as a repository on the [_Bioconductor_ git server][1].
+has been added as a repository on the [_Bioconductor_ git server][].
 
 During and after the review process, package authors must push changes
 that include a **version number 'bump'** to the _Bioconductor_ git

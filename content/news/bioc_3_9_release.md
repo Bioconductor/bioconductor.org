@@ -2778,7 +2778,7 @@ BUGFIXES
 
 - Correct cleavage rules for "pepsin" and "pepsin1.3". According to the
   peptidecutter documentation "pepsin1.3" is more specific (cleaves at
-  [FL]) than "pepsin" (cleaves [FLWY]); see
+  &#91;FL&#93;) than "pepsin" (cleaves &#91;FLWY&#93;); see
   https://github.com/sgibb/cleaver/issues/6 for details. Thanks to Jean
   Manguy <jean@manguy.eu> for reporting this error.
 
@@ -4655,8 +4655,8 @@ BUG FIXES
 
 Improvements
 
-- Add formal experimentData slot to GSE records. Of class MIAME. [from
-  @vlakam]
+- Add formal experimentData slot to GSE records. Of class MIAME. &#91;from
+  @vlakam&#93;
 
 [ggtree](https://bioconductor.org/packages/ggtree)
 ------
@@ -6038,7 +6038,7 @@ Changes in version 2.9.0
 
                        Changes in version 1.9.12                        
 
-- Troublshoot mac "[MSData::Spectrum::getMZIntensityPairs()] Sizes do
+- Troublshoot mac "&#91;MSData::Spectrum::getMZIntensityPairs()&#93; Sizes do
   not match" error
 
                        Changes in version 1.9.11                        
@@ -6954,7 +6954,7 @@ BUGFIXES
 
 - Fixed bug in coveragePlot - github Issue 15: Previously the function
   cleaned the beginning of each peptide sequence by
-  gsub("^\[.\]\.([A-Z]+)\.\[.\]$", "\1", .).  However, it is not always
+  gsub("^\&#91;.\&#93;\.(&#91;A-Z&#93;+)\.\&#91;.\&#93;$", "\1", .).  However, it is not always
   the case that the terminal amino acids are surround by square
   brackets. I have put a more general regex in place that removes
   everything up to the first '.' and everything after the last '.'.
@@ -7235,7 +7235,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 NEW FEATURES
 
-- citation('recount')[5] now lists the recount-brain bioRxiv pre-print
+- citation('recount')&#91;5&#93; now lists the recount-brain bioRxiv pre-print
   citation information.
 
                         Changes in version 1.9.5                        
@@ -7719,13 +7719,13 @@ NEW FEATURES
 
 - Support DataFrame (or any tabular object) in Pairs
 
-- List derivatives now support x[i] <- NULL
+- List derivatives now support x&#91;i&#93; <- NULL
 
 - Some Vector derivatives now support appending with [<-
 
 BUG FIXES
 
-- [<-,DataFrame only makes rownames for new rows when rownames present
+- &#91;<-,DataFrame only makes rownames for new rows when rownames present
 
 - DataFrame() lazily deparses arguments
 
@@ -7972,7 +7972,7 @@ FEATURES
   and rename the relevant parameter names for increased clarity
 
 - Add a check to look for gVCF files as input, including the existance
-  of <NON_REF> alleles (common for gVCF files)
+  of &#60;NON_REF&#62; alleles (common for gVCF files)
 
 - Add checks to see if input VCFs correctly contain DP, AD and GT data
 
@@ -8473,7 +8473,7 @@ Changes in version 1.5.6
 
 - Revert changes for NULL indices of DataFrame introduced in 1.5.4
 (a419f59, c4bfc1c) because they are fixed upstream in S4Vectors.
-Keep unit tests in place. [2019-03-27]
+Keep unit tests in place. &#91;2019-03-27&#93;
 
 Changes in version 1.5.5
 
@@ -8489,25 +8489,25 @@ that uses set.seed (order changed during R-devel upgrade).
 Changes in version 1.5.3
 
 - biocViews: ImmunoOncology added by Kayla-Morrell
-kayla.morrell@roswellpark.org [2019-01-04].
+kayla.morrell@roswellpark.org &#91;2019-01-04&#93;.
 
 Changes in version 1.5.2
 
 - Add expandMs1Conditions, expandTms2Conditions,
 createExperimentsFragmentOptimisation functions to allow more
-flexibility in method creation; see also #77 [2018-12-07].  - Modify
+flexibility in method creation; see also #77 &#91;2018-12-07&#93;.  - Modify
 interface/arguments of writeMethodXmls to adapt to new method
 creation workflow (the old interface will be defunct in Bioconductor
-3.10 and removed in 3.11) [2018-12-07].  - Adapt the data-generation
-vignette to the new workflow [2018-12-07].  - Deprecated
+3.10 and removed in 3.11) &#91;2018-12-07&#93;.  - Adapt the data-generation
+vignette to the new workflow &#91;2018-12-07&#93;.  - Deprecated
 defaultMs1Settings and defaultMs2Settings. They will be defunct in
-Bioconductor 3.10 and removed in 3.11 [2018-12-07].
+Bioconductor 3.10 and removed in 3.11 &#91;2018-12-07&#93;.
 
 Changes in version 1.5.1
 
 - readTopDownFiles gains the argument conditions to control wheter
 "FilterStrings" or a given number of conditions is used to create
-condition IDs; see #77 [2018-11-07].
+condition IDs; see #77 &#91;2018-11-07&#93;.
 
 [TPP2D](https://bioconductor.org/packages/TPP2D)
 -----

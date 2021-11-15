@@ -811,7 +811,7 @@ There are 89 new software packages in this release of Bioconductor.
   (or implicit) networks (unrooted, undirected) and explicit networks
   (rooted, directed) with reticulations extending. 'ggtree' and using
   functions from 'ape' and 'phangorn'. It extends the 'ggtree'
-  package [@Yu2017] to allow the visualization of phylogenetic
+  package &#91;@Yu2017&#93; to allow the visualization of phylogenetic
   networks using the 'ggplot2' syntax. It offers an alternative to
   the plot functions already available in 'ape' Paradis and Schliep
   (2019) <doi:10.1093/bioinformatics/bty633> and 'phangorn' Schliep
@@ -937,8 +937,7 @@ There are 13 new data experiment packages in this release of Bioconductor.
 
 - [GSE103322](/packages/GSE103322) Single cell RNA-Seq data for 5902
   cells from 18 patients with oral cavity head and neck squamous cell
-  carcinoma available as GEO accession [GSE103322]
-  (http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322).
+  carcinoma available as GEO accession [GSE103322](http://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE103322).
   GSE103322 data have been parsed into a SincleCellExperiment object
   available in ExperimentHub.
 
@@ -1143,7 +1142,7 @@ BUG FIXES
   goes
   back to 2014, when macOS produced "warning: 'finite' is deprecated:
   first
-  deprecated in OS X 10.9 [-Wdeprecated-declarations]. isOk =
+  deprecated in OS X 10.9 &#91;-Wdeprecated-declarations&#93;. isOk =
   finite(x);".
   Patched by using isfinite() instead of finite().
 
@@ -3323,7 +3322,7 @@ algorithm (forward-backward & Viterbi algorithm) for a K-state HMM.
 
                         Changes in version 1.0.4                        
 
-- Adding function callPatterns to exp[ort] combinatorial patterns (or
+- Adding function callPatterns to exp&#91;ort&#93; combinatorial patterns (or
 posterior probabilities) associated with a given set of genomic
 regions.
 
@@ -3901,20 +3900,20 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
                         Changes in version 1.2.0                        
 
-- [Bug Fix]
+- &#91;Bug Fix&#93;
   - `n` argument of `annotatePC` was hard-coded. Now it can return
   different number of enriched pathways.
   - `abs` argument of `annotatePC` was fixed.
   - Fix wrongfully assigned variable within `plotAnnotatedPCA`
   function.
 
-- [Major]
+- &#91;Major&#93;
   - `drawWordcloud` has a new argument `droplist`.
   - Argument name for `plotAnnotatedPCA` is changed from `PCs` to
   `PCnum`.
   - New argument `studyTitle` for `findStudiesInCluster` function.
 
-- [Minor]
+- &#91;Minor&#93;
   - Description of the package is updated.
   - If non-existing index is provided for any function, it will return
   with
@@ -5499,8 +5498,8 @@ print the results of diff_analysis. (2021-06-06, Sun)
 Mon)
 - head
 - tail
-- [
-- [[]]
+- &#91;
+- &#91;&#91;&#93;&#93;
 - $
 - dim
 - add get_NRI_NTI to calculate the NRI and NTI. (2021-06-08, Tue)
@@ -7631,7 +7630,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - removed is_GMQL from read_gmql function
   The entire dataset must have the right folder structure in order to
-  works correctly <dataset_name> ---> <files>
+  works correctly &#60;dataset_name&#62; ---&#62; &#60;files&#62;
 
 - Swap order of arguments 'dir_out' and 'name' of the collect()
   function so now the latter comes before the former.
@@ -8738,7 +8737,7 @@ API e.g., 'associated_entities.entity_submitter_id'
 Changes in version 1.15.1
 
 - Add rmarkdown to Suggests:; see
-https://github.com/yihui/knitr/issues/1864 for details [2021-07-27].
+https://github.com/yihui/knitr/issues/1864 for details &#91;2021-07-27&#93;.
 
 [ToxicoGx](/packages/ToxicoGx)
 --------
@@ -8849,7 +8848,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
                         Changes in version 1.5.1                        
 
 - Object transformation functions condensed into the
-  `treeAndLeaf` function, to be made automatically [2020-08-24].
+  `treeAndLeaf` function, to be made automatically &#91;2020-08-24&#93;.
 
 - TreeAndLeaf function became more automated.
 

@@ -1796,7 +1796,7 @@ separate process)
 elegantly, but does from .md renders code chunks and
 pre-formatted rather than evaluation cells, and from .Rmd does
 not process markdown well enough, e.g., not suppporting
-[foo][]-style links when the definition is elsewhere in the
+&#91;foo&#93;&#91;&#93;-style links when the definition is elsewhere in the
 document.
 
                         Changes in version 0.0.6                        
@@ -4663,7 +4663,7 @@ NEWS to NEWS.md
 - The update to R4.0.2 caused warnings like:
   Warning messages:
   1: In .Call("bin_level", fcs@exprs, model@.tmp_tags,
-  model@split_axis[[level]], :
+  model@split_axis&#91;&#91;level&#93;&#93;, :
   converting NULL pointer to R NULL.
   The c code was updated to avoid returning a null pointer.
 
@@ -4726,7 +4726,7 @@ BUG FIXES
 
 - Option to compute z scores in logit space or not
 
-- Add cap value [0.01,0.99] to logit function
+- Add cap value &#91;0.01,0.99&#93; to logit function
 
 - Use pairedEnd counting with Rsubread
 
@@ -6507,7 +6507,7 @@ Code improvements
 - 
   Subsetting of TestResults now requires two arguments, same as
   all of the other data object classes listed above. Previously
-  single index subsetting (for example object[i]) was allowed.
+  single index subsetting (for example object&#91;i&#93;) was allowed.
 
 - 
   Improved treatment of zero weights by weighted.median().
@@ -6711,7 +6711,7 @@ histograms on October 16, 2020.
 
                         Changes in version 1.2.0                        
 
-- Add drop and type to generic signature of [row|col]Quantiles
+- Add drop and type to generic signature of &#91;row|col&#93;Quantiles
   (<URL:
   https://github.com/Bioconductor/MatrixGenerics/pull/14>).
 
@@ -8825,7 +8825,7 @@ BUG FIXES
 
 - Fix bugs of regenrich_diffExpr function.
 - Add an example for %>%.
-- Use Authors@R [cre] designation.
+- Use Authors@R &#91;cre&#93; designation.
 
                        Changes in version 0.99.16                       
 
@@ -11622,7 +11622,7 @@ steps
 
                        Changes in version 1.1.10                        
 
-- Fix bug with weitrix_confects due to [[ ]] <- NULL deleting
+- Fix bug with weitrix_confects due to &#91;&#91; &#93;&#93; <- NULL deleting
 elements
 from a list instead of storing NULL in the list.
 
