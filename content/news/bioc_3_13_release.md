@@ -646,7 +646,7 @@ There are 133 new software packages in this release of Bioconductor.
   compared to predict which one(s) are likely to be responsible for
   the differential gene expression pattern observed in the bulk
   RNA-seq experiments. LRcell is inspired by the
-  LRpath[@sartor2009lrpath] algorithm developed by Sartor et al.,
+  LRpath&#91;@sartor2009lrpath&#93; algorithm developed by Sartor et al.,
   originally designed for pathway/gene set enrichment analysis.
   LRcell contains three major components: LRcell analysis, plot
   generation and marker gene selection. All modules in this package
@@ -965,7 +965,7 @@ There are 133 new software packages in this release of Bioconductor.
   Bioconductor datasets, including the 21 pancreatic cancer patient
   cohorts available in the MetaGxPancreas data package. PDATK has
   been used to replicate results from Sandhu et al (2019)
-  [https://doi.org/10.1200/cci.18.00102] and an additional paper is
+  &#91;https://doi.org/10.1200/cci.18.00102&#93; and an additional paper is
   in the works using CSPC to validate subtypes from the included
   published classifiers, both of which use the data available in
   MetaGxPancreas. The inclusion of subtype centroids and prognostic
@@ -6788,7 +6788,7 @@ Bug Fixes
 
 - calcScores / evaluateParams groups bug (Issue #8)
 
-- Warning for column names with bracket characters "{ ( [ ] ) }" (Issue
+- Warning for column names with bracket characters "{ ( &#91; &#93; ) }" (Issue
   #9)
 
 - QCol bug (Issue #10)
@@ -6804,7 +6804,7 @@ New Functionality
 
 MetaboCoreUtils 0.99.1
 
-- Add [M+H-2(H2O)]+ adduct definition.
+- Add &#91;M+H-2(H2O)&#93;+ adduct definition.
 
 MetaboCoreUtils 0.99.0
 
@@ -8117,7 +8117,7 @@ MODIFICATIONS
 
 - added Rcpp code for online testing algorithms
 
-- added online batch algorithms of Zrnic et al. [2020]
+- added online batch algorithms of Zrnic et al. &#91;2020&#93;
 
 - added Storey-BH algorithm
 
@@ -9212,7 +9212,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - removed is_GMQL from read_gmql function
   The entire dataset must have the right folder structure in order to
-  works correctly <dataset_name> ---> <files>
+  works correctly &#60;dataset_name&#62; ---&#62; &#60;files&#62;
 
 - Swap order of arguments 'dir_out' and 'name' of the collect()
   function so now the latter comes before the former.
@@ -11365,7 +11365,7 @@ Changes in version 1.13.1
 bonds as well.
 - readTopDownFiles gains a new argument customModifications to allow
 user-defined modifications. Suggestion and first implementation by
-Maša Babović masab@bmb.sdu.dk [2021-03-15].
+Maša Babović masab@bmb.sdu.dk &#91;2021-03-15&#93;.
 
 [ToxicoGx](/packages/ToxicoGx)
 --------

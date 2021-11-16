@@ -1270,7 +1270,7 @@ shiftGAlignmentsList.
 
                        Changes in version 1.11.2                        
 
-- Fix the issue of "[E::sam_parse1] unrecognized type N".
+- Fix the issue of "&#91;E::sam_parse1&#93; unrecognized type N".
 
                        Changes in version 1.11.1                        
 
@@ -2525,8 +2525,8 @@ implementation
 Bugs: 
 
 - Fix error from R 4.0 changing definition of treatment of NULL ("For
-  consistency, N <- NULL; N[[1]] <- val now turns N into a list also
-  when val) has length one. This enables dimnames(r1)[[1]] <- "R1" for
+  consistency, N <- NULL; N&#91;&#91;1&#93;&#93; <- val now turns N into a list also
+  when val) has length one. This enables dimnames(r1)&#91;&#91;1&#93;&#93; <- "R1" for
   a 1-row matrix r1, fixing PR#17719 reported by Serguei Sokol.").
   Replaced all `<- c()` with `<- vector(...)` and the appropriate
   class.
@@ -4050,7 +4050,7 @@ allow corresponding arguments for other types of plots.
 - keyword<- behaves now as normal replacement method, i.e.
 keyword(fr) <- list(name = value) will replace the entire keyword
 list instead of partial updating/inserting, to achieve latter, use
-keyword(fr)["name"] <- value - [ method (e.g. fr[, 1:4]) no longer
+keyword(fr)&#91;"name"&#93; <- value - &#91; method (e.g. fr&#91;, 1:4&#93;) no longer
 deletes $PnX keywords automatically so that it is compatible with
 cytoframe
 
@@ -4532,9 +4532,9 @@ USER VISIBLE CHANGES
 Bug fixes:
 
 * Fix test failure due to stricter boolean check lengths
-[#568ae94fb95, from @russHyde]
+&#91;#568ae94fb95, from @russHyde&#93;
 
-* Fix failure on empty file [#88741521a0e, from @vlakam]
+* Fix failure on empty file &#91;#88741521a0e, from @vlakam&#93;
 
 [GGPA](/packages/GGPA)
 ----
@@ -6166,7 +6166,7 @@ normalise) quantitative features.
 Changes in 2.13.9
 
 - Typo in OnDiskMSnExp man page <2020-04-26 Sun> - Fix
-plot,[On]MSnExp for centroided data <2020-04-26 Sun> - Use free x
+plot,&#91;On&#93;MSnExp for centroided data <2020-04-26 Sun> - Use free x
 scaling in plot,MSnExp's facet <2020-04-26 Sun>
 
 Changes in 2.13.8
@@ -6297,7 +6297,7 @@ Bug fixes and minor improvements
 - Add informative error message for ExperimentList (@lgatto, #265) 
 - Informative warning when dropping ExperimentList element columns (@lwaldron) 
 - Fixes to constructor functions, MultiAssayExperiment and MatchedAssayExperiment (@lgatto, #267 #268, @lwaldron) 
-- Add warning when j in mae[i, j, k] is longer than colData rows 
+- Add warning when j in mae&#91;i, j, k&#93; is longer than colData rows 
 - Strict argument matching between generic and methods 
 - Updates due to class(matrix()) 
 - UpsetSamples more robust to differences in names between split sampleMap and names(ExperimentList) (@jonocarroll, #269) 
@@ -6852,7 +6852,7 @@ amounts of shift. Fixes issue #73
 - Left outer join overlap operations now work if either x or y have no metadata columns see #70 
 - Left outer join overlap operations will also correctly behave in situations when there are no non-overlapping
 ranges.  
-- Left outer join overlaps no longer modify seqinfo (see here)[https://support.bioconductor.org/p/125623/] 
+- Left outer join overlaps no longer modify seqinfo [see here](https://support.bioconductor.org/p/125623/)
 - patch left outer join when x or y are IRanges, flesh out overlaps documentation.
 
                         Changes in version 1.7.1                        
@@ -8976,7 +8976,7 @@ NEW FEATURES
 - A workflow control class (SYSargsList) has been added allowing users to manage
   multiple-step workflows from a single container. This way one can select and
   execute multiple workflow steps with standard R subsetting syntax,
-  e.g. runWF[1:3].
+  e.g. runWF&#91;1:3&#93;.
 - Various improvements have been added to systemPipeR’s new command-line
   interface including the recently introduced SYSargs2 class that supports the
   Common Workflow Language (CWL).
@@ -9080,26 +9080,26 @@ INTERNALS
 Changes in version 1.9.4
 
 - Fix unit tests that check for "matrix" class. (class(m) now returns
-c("matrix", "array") in r-devel) [2019-12-17].
+c("matrix", "array") in r-devel) &#91;2019-12-17&#93;.
 
 Changes in version 1.9.3
 
-- Adapt analysis vignette to changed condition argument [2019-11-22].
+- Adapt analysis vignette to changed condition argument &#91;2019-11-22&#93;.
 
 Changes in version 1.9.2
 
 - Set conditions="ScanDescription" as new default for
 readTopDownFiles. The creation of FilterString IDs in the method
 files was deprecated since over a year. conditions="FilterString" is
-still possible for backward-compatibility [2019-11-22].  - Fix error
+still possible for backward-compatibility &#91;2019-11-22&#93;.  - Fix error
 message handling in .validFilename and .translateThermoIdToScanId
-[2019-11-22].
+&#91;2019-11-22&#93;.
 
 Changes in version 1.9.1
 
-- Remove defaultMs1Settings and defaultMs2Settings [2019-11-18].  -
+- Remove defaultMs1Settings and defaultMs2Settings &#91;2019-11-18&#93;.  -
 Fix .rbind for lists with mixed data.frame and DataFrame
-[2019-11-18].
+&#91;2019-11-18&#93;.
 
 [TPP](/packages/TPP)
 ---
@@ -9193,7 +9193,7 @@ Fix .rbind for lists with mixed data.frame and DataFrame
 
                        Changes in version 0.99.0                        
 
-- Submitted to Bioconductor [2019-12-16].
+- Submitted to Bioconductor &#91;2019-12-16&#93;.
 
 [treeio](/packages/treeio)
 ------
@@ -9489,7 +9489,7 @@ BUG FIXES
 
 - fix issue returning residuals from limma
 
-- resolve issue where dream gives error: r[cbind(1L:p, 1L:p)] <- 1 :
+- resolve issue where dream gives error: r&#91;cbind(1L:p, 1L:p)&#93; <- 1 :
   subscript out of bounds - only occured when no fixed effects were
   used
 

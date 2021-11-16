@@ -141,7 +141,7 @@ necessary.
 
 After the promise object has been saved, we update the documentation to
 reflect the changes and provide additional details and resources for
-users as necessary. It is recommended to include a "[Deprecated]" label in the
+users as necessary. It is recommended to include a "&#91;Deprecated&#93;" label in the
 data documentation title.
 
 ### Step 3 - Defunct the dataset
@@ -149,5 +149,5 @@ data documentation title.
 In the following release cycle, you can update the warning message to indicate
 that the dataset is defunct and remove it entirely from the promise object
 i.e., from the expression in the `delayedAssign` function. We can also update
-the "[Deprecated]" label in the documentation title to "[Defunct]".
+the "&#91;Deprecated&#93;" label in the documentation title to "&#91;Defunct&#93;".
 
