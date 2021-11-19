@@ -1,4 +1,5 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2021-11-18 - 2021-11-18	[BiocDevelForum](https://youtu.be/JefyrHl63-0)	Talk	The R-universe Build Infrastructure	Jeroen Ooms 	[slides](https://jeroen.github.io/bioc2021), [video](https://youtu.be/JefyrHl63-0)	3.15	4.2
 2021-06-17 - 2021-06-17	[BiocDevelForum](https://www.youtube.com/watch?v=M8Fyj2HMYVw)	Talk	Translating R package documentation	Martin Morgan 	[slides](2021/BiocDevelForum/23_Translating.pdf), [video](https://www.youtube.com/watch?v=M8Fyj2HMYVw)	3.14	4.1
 2021-06-15 - 2021-06-15	[HCA](https://docs.google.com/document/d/1alr6wT7vDVy0Xz4iQS27V-mhu50Jp65Z6rN21u9fZtE/edit)	Talk	HCA / Bioconductor Seed Network Symposium	Various 	[video](https://fast.wistia.com/embed/channel/jq84g71zlx?wchannelid=jq84g71zlx&wmediaid=uww7wikr4s)	3.13	4.1
 2021-06-14 - 2021-06-14	[AnVILpopup](https://t.co/mf2ztLNFVe)	Workshop	Week 7: Participant stories	Various 	[material](https://docs.google.com/document/d/1VCf1aOjW8BSrPO8Sf5m5rILWUYGdvdZNkZ0RwqVrkxs/edit), [video](https://www.youtube.com/watch?v=77_keFofsu8)	3.13	4.1
