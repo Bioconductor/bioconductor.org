@@ -90,6 +90,9 @@ Annotation Data Packages:
 <li>All 73 MeSH.XXX.eg.db packages (replaced with AHMeSHDbs)</li>
 <li><a href="/packages/3.12/data/annotation/html/MafDb.gnomAD.r3.0.GRCh38.html">MafDb.gnomAD.r3.0.GRCh38</a></li>
 <li><a href="/packages/3.12/data/annotation/html/MafH5.gnomAD.r3.0.GRCh38.html">MafH5.gnomAD.r3.0.GRCh38</a></li>
+<li><a href="/packages/3.12/data/annotation/html/greengenes13.5MgDb.html">greengenes13.5MgDb</a></li>
+<li><a href="/packages/3.12/data/annotation/html/ribosomaldatabaseproject11.5MgDb.html">ribosomaldatabaseproject11.5MgDb</a></li>
+<li><a href="/packages/3.12/data/annotation/html/silva128.1MgDb.html">silva128.1MgDb</a></li>
 </ul>
 
 

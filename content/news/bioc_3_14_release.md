@@ -9685,11 +9685,11 @@ Five experimental data packages are deprecated in this release and will be
 removed in Bioc 3.15:
 ABAData, brainImageRdata, PCHiCdata, RITANdata, tcgaWGBSData.hg19
 
-Eighty seven annotation packages were removed from this release (after being deprecated
+Ninety annotation packages were removed from this release (after being deprecated
 in Bioc 3.13): 
 12 LRBase.XXX.eg.db packages (replaced with AHLRBaseDbs), 
 MafDb.gnomAD.r3.0.GRCh38, MafH5.gnomAD.r3.0.GRCh38, 73 MeSH.XXX.eg.db packages 
-(replaced with AHMeSHDbs)
+(replaced with AHMeSHDbs), greengenes13.5MgDb, ribosomaldatabaseproject11.5MgDb, silva128.1MgDb
 
 One annotation package was deprecated in this release and will be removed in
 Bioc 3.15:
