@@ -201,39 +201,39 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
-     institution_url: http://bioconductor.org
+     institution_url: https://bioconductor.org
      contact: Bioconductor Maintainer
      contact_email: maintainer@bioconductor.org
      city: World-wide
-     mirror_url: http://bioconductor.org/
+     mirror_url: https://bioconductor.org/
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
  - Germany:
    - institution: Department of Statistics, TU Dortmund
-     institution_url: http://www.statistik.tu-dortmund.de/
+     institution_url: https://www.statistik.tu-dortmund.de/
      contact: Uwe Ligges
      contact_email: ligges@statistik.tu-dortmund.de
-     mirror_url: http://bioconductor.statistik.tu-dortmund.de/
+     mirror_url: https://bioconductor.statistik.tu-dortmund.de/
      https_mirror_url: https://bioconductor.statistik.tu-dortmund.de/
      rsync: 
      city: Dortmund
      country_code: de
  - Japan:
    - institution: The Institute of Statistical Mathematics
-     institution_url: http://www.ism.ac.jp/
+     institution_url: https://www.ism.ac.jp/
      contact: Keisuke Honda
      contact_email: khonda@ism.ac.jp
-     mirror_url: http://bioc.ism.ac.jp/
+     mirror_url: https://bioc.ism.ac.jp/
      https_mirror_url: https://bioc.ism.ac.jp/
      rsync: secure_mirror_from_master
      country_code: jp
      city: Tachikawa
    - institution: RIKEN Advanced Center for Computing and Communication
-     institution_url: http://accc.riken.jp/en/
+     institution_url: https://accc.riken.jp/en/
      contact: Itoshi NIKAIDO, Ph.D.
      contact_email: dritoshi@gmail.com
-     mirror_url: http://bioconductor.riken.jp/
+     mirror_url: https://bioconductor.riken.jp/
      https_mirror_url: https://bioconductor.riken.jp/
      rsync: secure_mirror_from_master
      country_code: jp
@@ -243,7 +243,7 @@ mirrors:
      institution_url: mirrors.tuna.tsinghua.edu.cn
      contact: Miao Wang 
      contact_email: mirroradmin@tuna.tsinghua.edu.cn 
-     mirror_url: http://mirrors.tuna.tsinghua.edu.cn/bioconductor/
+     mirror_url: https://mirrors.tuna.tsinghua.edu.cn/bioconductor/
      https_mirror_url: https://mirrors.tuna.tsinghua.edu.cn/bioconductor/ 
      rsync: secure_mirror_from_master
      country_code: cn 
