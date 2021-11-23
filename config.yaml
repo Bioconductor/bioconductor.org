@@ -42,7 +42,7 @@ active_release_builders:
   mac_mojave: "machv2"
 active_devel_builders:
   linux: "nebbiolo1"
-#  windows: "riesling1"
+  windows: "riesling1"
   mac_mojave: "merida1"
 
 ## CHANGE this when the single package builder builds
