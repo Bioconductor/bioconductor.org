@@ -22,7 +22,7 @@ Note, mentors are not expected to be co-authors of the resulting package or any 
 
 Mentors should have 2 or more R packages in Bioconductor (release or accepted in devel) and should be active in the Bioconductor developer community  (for example active on the Bioconductor Slack chanel, or on the [support site](https://support.bioconductor.org).  Register your interest using this [form](https://docs.google.com/forms/d/1If3Va1QJsAcDIgBEWYz8E1jaC7R2eBxp0MSSah3FsRw).
 
-### Join as a mentee (Rolling call, opening soon)
+### Join as a mentee (open now!)
 
 Applicant Mentees should have a GitHub account and at least R scripts or a package in a public code repository (e.g., GitHub , Gitlab).  The R code should demonstrate functionality and the applicant is applying for mentoring to package it into a Bioconductor package. The mentees should have ownership or explicit permission to use the code.  Register your interest using this [form]().   
 
