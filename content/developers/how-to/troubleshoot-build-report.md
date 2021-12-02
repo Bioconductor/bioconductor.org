@@ -3,13 +3,13 @@
 ## How and When does the builder pull? When will my changes propagate? 
 
 Please remember the daily builder pulls, installs, builds, and checks package
-only once per day.  This process starts around 2:30 PM (14:30) EST everyday
-(i.e., [UTC−05:00](https://everytimezone.com/s/f44eab0b)).
-Changes pushed to Bioconductor before 2:30 will be reflected in the following
-day's build report that is posted around 11:30 AM EST.  The build report has
-a time stamp at the top of the page when it was generated.  Changes after
-2:30 PM EST will not be reflect until the day after tomorrow, therefore
-possibly taking up to 36-48 hours.  The build reports for
+only once per day.  This process starts around 1:45 PM (13:45) EST everyday
+(i.e., [UTC−05:00](https://everytimezone.com/s/b47302b3)).
+Changes pushed to Bioconductor before 1:45 PM will be reflected in the
+following day's build report that is posted around 12:45 PM EST.  The
+build report has a time stamp at the top of the page when it was generated.
+Changes after 1:45 PM EST will not be reflected until the day after tomorrow,
+therefore possibly taking up to 36-48 hours.  The build reports for
 [devel](https://bioconductor.org/checkResults/devel/bioc-LATEST/) and
 [release](https://bioconductor.org/checkResults/release/bioc-LATEST/) show
 the package version and commit id that is being reflected for that build.
