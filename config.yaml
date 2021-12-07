@@ -205,7 +205,7 @@ mirrors:
      contact: Bioconductor Maintainer
      contact_email: maintainer@bioconductor.org
      city: World-wide
-     mirror_url: https://bioconductor.org/
+     mirror_url: http://bioconductor.org/
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
@@ -214,7 +214,7 @@ mirrors:
      institution_url: https://www.statistik.tu-dortmund.de/
      contact: Uwe Ligges
      contact_email: ligges@statistik.tu-dortmund.de
-     mirror_url: https://bioconductor.statistik.tu-dortmund.de/
+     mirror_url: http://bioconductor.statistik.tu-dortmund.de/
      https_mirror_url: https://bioconductor.statistik.tu-dortmund.de/
      rsync: 
      city: Dortmund
@@ -223,7 +223,7 @@ mirrors:
      institution_url: https://ftp.gwdg.de/
      contact: Tim Ehlers and Steffen Klemer
      contact_email: ftpmaster@gwdg.de
-     mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
+     mirror_url: http://ftp.gwdg.de/pub/misc/bioconductor/
      https_mirror_url: https://ftp.gwdg.de/pub/misc/bioconductor/
      rsync: secure_mirror_from_master
      city: Gottingen
@@ -233,7 +233,7 @@ mirrors:
      institution_url: https://www.ism.ac.jp/
      contact: Keisuke Honda
      contact_email: khonda@ism.ac.jp
-     mirror_url: https://bioc.ism.ac.jp/
+     mirror_url: http://bioc.ism.ac.jp/
      https_mirror_url: https://bioc.ism.ac.jp/
      rsync: secure_mirror_from_master
      country_code: jp
@@ -242,7 +242,7 @@ mirrors:
      institution_url: https://accc.riken.jp/en/
      contact: Itoshi NIKAIDO, Ph.D.
      contact_email: dritoshi@gmail.com
-     mirror_url: https://bioconductor.riken.jp/
+     mirror_url: http://bioconductor.riken.jp/
      https_mirror_url: https://bioconductor.riken.jp/
      rsync: secure_mirror_from_master
      country_code: jp
@@ -252,7 +252,7 @@ mirrors:
      institution_url: mirrors.tuna.tsinghua.edu.cn
      contact: Miao Wang 
      contact_email: mirroradmin@tuna.tsinghua.edu.cn 
-     mirror_url: https://mirrors.tuna.tsinghua.edu.cn/bioconductor/
+     mirror_url: http://mirrors.tuna.tsinghua.edu.cn/bioconductor/
      https_mirror_url: https://mirrors.tuna.tsinghua.edu.cn/bioconductor/ 
      rsync: secure_mirror_from_master
      country_code: cn 
@@ -261,7 +261,7 @@ mirrors:
      institution_url: https://sci.nju.edu.cn/
      contact: Ge Yao
      contact_email: yaoge@nju.edu.cn
-     mirror_url: https://mirrors.nju.edu.cn/bioconductor/
+     mirror_url: http://mirrors.nju.edu.cn/bioconductor/
      https_mirror_url: https://mirrors.nju.edu.cn/bioconductor/
      rsync: secure_mirror_from_master
      city: Nanjing
@@ -271,7 +271,7 @@ mirrors:
      institution_url: https://www.uib.no/
      contact: Trond Davidsen
      contact_email: Trond.Davidsen@it.uib.no
-     mirror_url: https://bioconductor.uib.no/
+     mirror_url: http://bioconductor.uib.no/
      https_mirror_url: https://bioconductor.uib.no/
      rsync: secure_mirror_from_master
      city: Bergen
@@ -281,7 +281,7 @@ mirrors:
      institution_url: https://www.unipi.it/
      contact: Fabio Pratelli
      contact_email: fabio.pratelli@unipi.it 
-     mirror_url: https://bioconductor.unipi.it
+     mirror_url: http://bioconductor.unipi.it
      https_mirror_url: https://bioconductor.unipi.it
      rsync: secure_mirror_from_master
      city: Pisa

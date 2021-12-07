@@ -1234,13 +1234,13 @@ def mirror_status()
     for country in config[:mirrors]
         for mirror in country.values.first
             status = {}
-            status[:url] = mirror[:mirror_url]
-            url = status[:url]
+            status[:url] = mirror[:https_mirror_url]
+            url = mirror[:mirror_url]
             url += "/" unless url.end_with? "/"
             ["release", "devel"].each do |version|
                 numeric_version = config["#{version}_version".to_sym]
                 url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
-                #puts url_to_check
+                #puts "URL: " + url_to_check
                 begin
                     result = url_ok(url_to_check)
                 rescue
