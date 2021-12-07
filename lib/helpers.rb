@@ -1207,7 +1207,7 @@ end
 
 def url_ok(url)
     url = URI(url)
-
+    
     Net::HTTP.start(url.host, url.port){|http|
        path = "/"
        path = url.path unless url.path.empty?
@@ -1452,12 +1452,19 @@ def get_last_git_commits(release=true)
     tbl_str = "<table>\n\n"
     uni_pkg = []
     dx = 0
+    path = Dir.pwd
+    manifest_path = "#{path}/../manifest/software.txt"
+    manifest = File.open("#{manifest_path}").read
+    lines = manifest.split("\n").drop(1) - [""]
+    pkgs = lines.map {|item| item.gsub("Package: ", "")}
     while uni_pkg.length < 20 do
       item = xml[dx]
       if not uni_pkg.include?(item["title"])
-        uni_pkg.push(item["title"])
-        line = "<tr><td><a href="+item["link"]+">"+item["title"]+"</a></td><td>"+item["pubDate"]+"</td></tr>"
-        tbl_str += line
+        if pkgs.include?(item["title"])
+          uni_pkg.push(item["title"])
+          line = "<tr><td><a href="+item["link"]+">"+item["title"]+"</a></td><td>"+item["pubDate"]+"</td></tr>"
+          tbl_str += line
+        end
       end
       dx = dx + 1
     end
