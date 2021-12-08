@@ -2,31 +2,34 @@ Oct 31, 2018
 
 Bioconductors:
 
-We are pleased to announce Bioconductor 3.8, consisting of 1560
-software packages, 342 experiment data packages, 919 annotation
-packages, and 21 workflows.
 
-There are 95 new software packages, 21 new data experiment packages, 
-2 new workflows, and many updates and improvements
-to existing packages; Bioconductor 3.8 is compatible with R 3.5.0,
-and is supported on Linux, 32- and 64-bit Windows, and Mac OS X.  This
-release will include an updated Bioconductor [Amazon Machine Image][1]
-and [Docker containers][2].
+We are pleased to announce Bioconductor 3.14, consisting of
+2083 software packages, 408 experiment data packages,  904 annotation
+packages, 29 workflows and 8 books.
+
+There are 89 new software packages, 13 new data experiment packages,
+10 new annotation packages, 1 new workflow, no new books, and many updates and
+improvements to existing packages; Bioconductor 3.14 is compatible with R 4.1.1,
+and is supported on Linux, 32- and 64-bit Windows, and Intel 64-bit macOS 10.13 (High Sierra) or higher. We do not currently support arm64 so arm64 Mac users who wish to install Bioconductor Mac binary packages must install the Intel 64-bit build of R available on CRAN. This release will include updated Bioconductor [Docker containers][2].
+
+Thank you to everyone for your contribution to Bioconductor
 
 Visit [Bioconductor BiocViews][3]
 for details and downloads.
 
-[1]: /help/bioconductor-cloud-ami/
 [2]: /help/docker/
 [3]: /packages/release/BiocViews.html
 
 Contents
 --------
 
-* [Getting Started with Bioconductor 3.8](#getting-started-with-bioconductor-35)
+* [Deprecated and Defunct Packages](#deprecated-and-defunct-packages)
+* [Getting Started with Bioconductor 3.14](#getting-started-with-bioconductor-314)
 * [New Software Packages](#new-software-packages)
 * [New Data Experiment Packages](#new-data-experiment-packages)
-* [New Workflows](#new-Workflows)
+* [New Annotation Packages](#new-annotation-packages)
+* [New Workflow](#new-workflow-packages)
+* [New Books](#new-online-books)
 * [NEWS from new and existing software packages](#news-from-new-and-existing-software-packages)
 * [NEWS from new and existing data experiment packages](#news-from-new-and-existing-data-experiment-packages)
 * [NEWS from new and existing workflows](#news-from-new-and-existing-workflows)
@@ -54,12 +57,20 @@ New Data Experiment Packages
 
 There are 21 new data experiment packages in this release of Bioconductor.
 
-
-New Workflows
+New Annotation Packages
 =====================
 
 There are 2 new workflow packages in this release of Bioconductor.
 
+New Workflows Packages
+=====================
+
+There are 2 new workflow packages in this release of Bioconductor.
+
+New Online Books
+=====================
+
+There are 2 new workflow packages in this release of Bioconductor.
 
 NEWS from new and existing Software Packages
 ===================================

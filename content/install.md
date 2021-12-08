@@ -307,9 +307,8 @@ preferred to `install.packages()`.
 
 <h2 id="preconfigured">Pre-configured <em>Bioconductor</em></h2>
 
-_Bioconductor_ is also available as a set of
-[Amazon Machine Images (AMIs)](/help/bioconductor-cloud-ami/) and
-[Docker images](/help/docker/).
+_Bioconductor_ is also available as [Docker images](/help/docker/) or available
+for use in the [AnVIL](https://anvil.bioconductor.org/)
 
 <h2 id="Legacy">Legacy and Older R Versions</h2>
 
