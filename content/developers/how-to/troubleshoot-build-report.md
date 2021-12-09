@@ -68,8 +68,36 @@ and potential solutions.
 
 <a name="top"></a>
 
+- [General Troublshooting](#GeneralTroubleshooting)
 - [Bioconductor 3.11 with R 4.0](#Bioc3.11R4.0)
 
+
+
+<a name="GeneralTroubleshooting"></a>
+
+## General Troubleshooting
+
+- [Cannot Allocate vector of size](#allocationmemory)
+
+<p class="back_to_top">[ <a href="#top">Back to Bioconductor / R List </a> ]</p>
+
+<a name="allocationmemory"></a>
+
+### Memory Allocation Error
+
+This ERROR often occurs on windows 32-bit and takes the form of:
+
+```
+Error: cannot allocate vector of size xxx
+```
+
+A process cannot allocate more than 3Gb of memory on 32-bit Windows. As of
+Bioconducto 3.15 we will be dropping 32-bit windows support but checks that are
+still supporting this architecture can skip checking on Bioconductor windows
+32-bit by adding a `.BBSoptions` file in the top-level folder of your package
+that contains the line `UnsupportedPlatforms: win32`
+
+<p class="back_to_top">[ <a href="#top">Back to Bioconductor / R List </a> ]</p>
 
 <a name="Bioc3.11R4.0"></a>
 
