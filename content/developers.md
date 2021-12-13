@@ -49,6 +49,10 @@ at different stages of their package.
     <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
     <p class="box_header">Developer Resources</p>
 
+    <p><b> Note: </b> This section will be moving to the newly developed <a
+    class="symlink" href="https://contributions.bioconductor.org/">Bioconductor
+    Packages: Development, Maintenance, and Peer Review</a> Webpage.</p>
+
     <p>Package Development</p>
 
     <ul>
