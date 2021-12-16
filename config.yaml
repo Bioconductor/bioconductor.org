@@ -296,3 +296,13 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Seoul
      country_code: kr
+ - Australia:
+   - institution: AARNet Pty Ltd
+     institution_url: https://aarnet.edu.au
+     contact: AARNet Operations Center
+     contact_email: mirror@aarnet.edu.au
+     mirror_url: http://mirror.aarnet.edu.au/pub/bioconductor
+     https_mirror_url: https://mirror.aarnet.edu.au/pub/bioconductor
+     rsync: secure_mirror_from_master
+     city: Sydney
+     country_code: au
