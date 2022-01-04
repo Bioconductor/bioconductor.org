@@ -174,26 +174,27 @@ To see what has been discussed at past meetings, you can find the Meeting minute
 ## Meeting minutes
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
 
-- [2021-10-14](2021-10-14-cab-tab-joint-meeting-minutes.pdf) Joint CAB/TAB meeting
-- [2021-09-09](2021-09-09-minutes.pdf)
-- [2021-08-12](2021-08-12-minutes.pdf)
-- [2021-07-08](2021-07-08-minutes.pdf)
-- [2021-06-10](2021-06-10-minutes.pdf)
-- [2021-05-13](2021-05-13-minutes.pdf)
-- [2021-04-08](2021-04-08-minutes.pdf)
-- [2021-03-11](2021-03-11-minutes.pdf)
-- [2021-02-04](2021-02-04-minutes.pdf)
-- [2021-01-14](2021-01-14-minutes.pdf)
-- [2020-12-10](2020-12-10-minutes.pdf)
-- [2020-11-12](2020-11-12-minutes.pdf)
-- [2020-10-08](2020-10-08-minutes.pdf)
-- [2020-09-10](2020-09-10-minutes.pdf)
-- [2020-08-13](2020-08-13-minutes.pdf)
-- [2020-07-23](2020-07-23-minutes.pdf)
-- [2020-07-09](2020-07-09-minutes.pdf)
-- [2020-06-11](2020-06-11-minutes.pdf)
-- [2020-05-14](2020-05-14-minutes.pdf)
-- [2020-04-09](2020-04-09-minutes.pdf)
+- **2021:** [2021-11-11](2021-11-11-minutes.pdf),
+  [2021-10-14](2021-10-14-cab-tab-joint-meeting-minutes.pdf) Joint CAB/TAB meeting,
+  [2021-09-09](2021-09-09-minutes.pdf),
+  [2021-08-12](2021-08-12-minutes.pdf),
+  [2021-07-08](2021-07-08-minutes.pdf),
+  [2021-06-10](2021-06-10-minutes.pdf),
+  [2021-05-13](2021-05-13-minutes.pdf),
+  [2021-04-08](2021-04-08-minutes.pdf),
+  [2021-03-11](2021-03-11-minutes.pdf),
+  [2021-02-04](2021-02-04-minutes.pdf),
+  [2021-01-14](2021-01-14-minutes.pdf),
+- **2020:** [2020-12-10](2020-12-10-minutes.pdf),
+  [2020-11-12](2020-11-12-minutes.pdf),
+  [2020-10-08](2020-10-08-minutes.pdf),
+  [2020-09-10](2020-09-10-minutes.pdf),
+  [2020-08-13](2020-08-13-minutes.pdf),
+  [2020-07-23](2020-07-23-minutes.pdf),
+  [2020-07-09](2020-07-09-minutes.pdf),
+  [2020-06-11](2020-06-11-minutes.pdf),
+  [2020-05-14](2020-05-14-minutes.pdf),
+  [2020-04-09](2020-04-09-minutes.pdf)
 
 ## Event Calendar
 
