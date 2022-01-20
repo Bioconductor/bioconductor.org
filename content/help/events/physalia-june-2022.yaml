@@ -1,0 +1,14 @@
+---
+title: single-cell RNA-seq analysis with R/Bioconductor
+location: virtual
+event_host: Physalia
+start: 2022-06-06
+end:   2022-06-10
+link:
+  text: "This course will introduce biologists and bioinformaticians to the
+  field of single-cell RNA sequencing. We will cover a range of software and
+  analysis workflows that extend over the spectrum from the best practices in
+  the filtering scRNAseq data to the downstream analysis of cell clusters and
+  temporal ordering. This course will help the attendees gain accurate insights
+  in pre-processing, analysis and interpretation of scRNAseq data."
+  url: https://www.physalia-courses.org/courses-workshops/course18/
