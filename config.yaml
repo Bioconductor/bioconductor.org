@@ -266,6 +266,15 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Nanjing
      country_code: cn
+   - institution: University of Science and Technology of China (USTC)
+     institution_url: https://ustc.edu.cn
+     contact: Linux User Group (LUG) @ USTC
+     contact_email: lug@ustc.edu.cn
+     mirror_url: http://mirrors.ustc.edu.cn/
+     https_mirror_url: https://mirrors.ustc.edu.cn/
+     rsync: secure_mirror_from_master
+     city: Hefei Anhui
+     country_code: cn
  - Norway:
    - institution: University of Bergen
      institution_url: https://www.uib.no/
