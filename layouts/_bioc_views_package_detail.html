@@ -163,7 +163,7 @@
     "<%= r_ver_for_bioc_ver(@package[:bioc_version_num]) %>") and enter:
     </p>
 
-    <pre>if (!requireNamespace("BiocManager", quietly = TRUE))
+    <pre>if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 <% if (@package[:bioc_version_str] == "Development") %>
 # The following initializes usage of Bioc devel
