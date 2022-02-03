@@ -30,12 +30,11 @@ Mentor applications for the 2021-2022 cycle of the Bioconductor Mentorship Progr
 Applicant Mentees should have a GitHub account and at least R scripts or a package in a public code repository (e.g., GitHub , Gitlab).
 The R code should demonstrate functionality and the applicant is applying for mentoring to package it into a Bioconductor package.
 The mentees should have ownership or explicit permission to use the code.
-Register your interest using this [form](https://forms.gle/CNcyGwuVic3m3WNUA).
 
 Mentee applications for the October 2021 - April 2022 pilot cycle of the Bioconductor Mentorship Programme have closed.
 All applicants will be contacted as soon as a decision is made.
 
-Register your interest for future cycles of mentorship using this [form](https://forms.gle/qBHACsuoi1YpK9Q96).
+Register your interest for future cycles of mentorship using this [form](https://forms.gle/8yykWfpVT9xyKd9b8).
 
 *Bioconductor values diversity and aims to build an inclusive, supportive and welcoming global community. Mentor and mentee developer applications from women, minorities, underrepresented group and individuals with disabilities or disadvantage are encouraged.  We also welcome applications from developers who are transitioning between academic disciplines or software languages, who can bring new insights and perspectives.*  
 
