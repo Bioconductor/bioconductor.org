@@ -8,9 +8,10 @@ repositories behind a firewall).
 
 ## SSH key and IP address for `rsync`
 
-Using `rsync` requires that you provide [webmaster@bioconductor.org][]
-with (a) with an ssh public key and (b) the IP address(es) from which
-you will perform `rsync`.
+Using `rsync` requires that you provide Bioconductor with minimal information
+that includes (a) with an ssh public key and (b) the IP address(es) from which
+you will perform `rsync`. If you would like to request rsync access please fill
+out this google form: [private mirror/rsync request form](https://forms.gle/d42JmFCfyJPjpsWT8)
 
 [webmaster@bioconductor.org]: mailto:webmaster@bioconductor.org
 
@@ -20,9 +21,7 @@ A mirror is considered "public" if it is an option in R's
 `chooseBioCmirror()` function and listed on our [mirrors
 page](/about/mirrors/). Public mirrors must support https on their
 site. If you are interested in hosting a publicly available mirror
-site, please indicate this when contacting
-[webmaster@bioconductor.org][] with your ssh key and IP address(es).
-
+site, please fill out this google form: [public Bioc mirror request form](https://forms.gle/2BREvZfQfwgo2rSR6)
 
 ## Structure of the `rsync` command
 
