@@ -77,9 +77,8 @@ RedirectMatch 302 /packages/(2.1[3-4]|3.0)/workflows/src/(.*) http://archive.bio
 RedirectMatch 302 /packages/(2.1[3-4]|3.0)/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
 
 ## Redirect BioC containers to google storage
-RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/terra-jupyter-r/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/terra-jupyter-r/$2
-RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/src/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/bioconductor_docker/$2
-
+RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/src/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/bioconductor_docker/src/$2
+RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/$2
 
 ## papers, slides, screen shots
 RewriteRule ^Docs/Papers/2003/Chiaretti$ /help/publications/2003/Chiaretti/chiaretti2/ [R=301]
