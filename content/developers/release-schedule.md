@@ -70,8 +70,8 @@ The following highlights important deadlines for the release.
 
 * Build Dockers for release and devel
 
-* Packages marked as deprecated in Bioc 3.14 are now removed from the
-  Bioc 3.15 nightly builds.
+* Packages marked as deprecated in Bioc 3.15 are now removed from the
+  Bioc 3.16 nightly builds.
 
-* Identify packages to be deprecated in the new devel, Bioc 3.15.
+* Identify packages to be deprecated in the new devel, Bioc 3.16.
   This includes packages with errors and unresponsive maintainers.
