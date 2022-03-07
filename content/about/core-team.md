@@ -68,6 +68,11 @@
            width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
       <br>Jiefei Wang
     </td>
+    <td width="33%">
+      <img src="/images/coreTeamPic/AlexMahmoud.jpeg"
+           width="100%" alt="Alexandru Mahmoud" title="Alexandru Mahmoud"/>
+      <br>Alexandru Mahmoud
+    </td>
   </tr>
 </table>
 
