@@ -5,6 +5,11 @@
 <table width="100%">
   <tr>
     <td width="33%">
+      <img src="/images/tab/VinceCarey.jpg"
+           width="100%" alt="Vince Carey" title="Vince Carey"/>
+      <br>Vince Carey (Project Lead)
+    </td>
+    <td width="33%">
       <img src="/images/coreTeamPic/KaylaInterdonato.jpeg"
            width="100%" alt="Kayla Interdonato" title="Kayla Interdonato"/>
       <br>Kayla Interdonato
@@ -14,32 +19,32 @@
            width="100%" alt="Michael Lawrence" title="Michael Lawrence"/>
       <br>Michael Lawrence
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/JamesMacDonald.jpg"
            width="100%" alt="James MacDonald" title="James MacDonald"/>
       <br>James MacDonald
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
-      <img src="/images/tab/VinceCarey.jpg"
-           width="100%" alt="Vince Carey" title="Vince Carey"/>
-      <br>Vince Carey (Project Lead)
+      <img src="/images/coreTeamPic/AlexMahmoud.jpeg"
+           width="100%" alt="Alexandru Mahmoud" title="Alexandru Mahmoud"/>
+      <br>Alexandru Mahmoud
     </td>
     <td width="33%">
       <img src="/images/coreTeamPic/AndrzejOles.jpeg"
            width="100%" alt="Andrezej Oles" title="Andrezej Oles"/>
       <br>Andrzej Ole&#347;
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/HervePages.jpg"
            width="100%" alt="Herve Pages" title="Herve Pages"/>
       <br>Herv&eacute; Pag&egrave;s
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/MarcelRamos.JPG"
            width="100%" alt="Marcel Ramos" title="Marcel Ramos"/>
@@ -50,14 +55,14 @@
            width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
       <br>Lori Ann Shepherd
     </td>
+  </tr>
+
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/MikeSmith.jpg"
            width="100%" alt="Mike Smith" title="Mike Smith"/>
       <br>Mike Smith
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/NiteshTuraga.jpeg"
            width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
@@ -67,11 +72,6 @@
       <img src="/images/coreTeamPic/JiefeiWang.jpeg"
            width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
       <br>Jiefei Wang
-    </td>
-    <td width="33%">
-      <img src="/images/coreTeamPic/AlexMahmoud.jpeg"
-           width="100%" alt="Alexandru Mahmoud" title="Alexandru Mahmoud"/>
-      <br>Alexandru Mahmoud
     </td>
   </tr>
 </table>
