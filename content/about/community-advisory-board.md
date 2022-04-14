@@ -89,7 +89,7 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <td width="33%">
       <img src="/images/cab/KozoNishida.png"
            width="100%" alt="Kozo Nishida" title="Kozo Nishida"/>
-      <figcaption>Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
+      <figcaption>Kozo Nishida, Tokyo University of Agriculture and Technology, Japan.
       <a href="https://github.com/kozo2">Github</a>
       </figcaption>
     </td>
