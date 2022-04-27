@@ -3260,6 +3260,33 @@ result(2021-12-11, Sat)
 
 - more efficient data handling (XPtr instead of Rcpp::wrap'ping)
 
+[EpiCompare](/packages/EpiCompare)
+---------
+
+                     Changes in version 0.99.3
+
+New Features
+
+- New functions with examples/unit tests:
+  - `import_narrowPeak`: Import narrowPeak files, with automated header annotation using metadata from ENCODE.\
+  - `gather_files`: Automatically peak/picard/bed files and read them in as a list of `GRanges` objects.\
+  - `write_example_peaks`: Write example peak data to disk.
+- Update *.gitignore*
+- Update *.Rbuildignore*
+
+                     Changes in version 0.99.1
+
+New features
+
+- New parameter in EpiCompare:
+  - `genome_build`: Specify the genome build, either "hg19" or "hg38". This parameter is also included in `plot_chromHMM`, `plot_ChIPseeker_annotation`, `tss_plot` and `plot_enrichment`.
+
+                     Changes in version 0.99.0
+
+New Features
+
+- `EpiCompare` submitted to Bioconductor.
+
 [epigraHMM](/packages/epigraHMM)
 ---------
 
@@ -4898,6 +4925,19 @@ stats::sd)
   characters width requirements. For the most part.
 
 - Included code for generation of dummy-data.
+
+[mbOmic](/packages/mbOmic)
+-----
+
+                        Changes in version 0.99.3
+
+UPDATE MAIN CLASSES
+- remove mbSet S4 class
+- add Set virtual class
+- add bSet and mSet extend to Set class
+
+ADD NEW FUNCTIONS
+- add function to identify enterotype
 
 [memes](/packages/memes)
 -----
@@ -7041,6 +7081,26 @@ https://doi.org/10.1073/pnas.1617384114.
 
 - Citation adapted
 
+[RAREsim](/packages/RAREsim)
+-----
+
+                  Changes in version 0.99.4
+
+- Fixed format of afs_afr and nvariant_afr data
+
+                  Changes in version 0.99.3
+
+- Fixed "Installing the Package" in the vignette
+
+                  Changes in version 0.99.2
+
+- Reformatted vignette
+- Addressed BiocCheck notes
+
+                  Changes in version 0.99.0
+
+- Submitted to Bioconductor
+
 [rawrr](/packages/rawrr)
 -----
 
@@ -7975,6 +8035,18 @@ Changes in 1.5.1
 
 - initial submission to Bioc devel v3.15
 
+[sSNAPPY](/packages/sSNAPPY)
+------
+
+                       Changes in version 0.99.1
+
+- Updated vignette to use pre-computed output
+- Allow removal of isolated nodes in `plot_gs_network`
+
+                       Changes in version 0.99.0                        
+
+- Submitted to Bioconductor
+
 [standR](/packages/standR)
 ------
 
@@ -7993,6 +8065,18 @@ Changes in 1.5.1
                        Changes in version 1.24.1                        
 
 - Remove the GUI
+
+[STdeconvolve](/packages/STdeconvolve)
+------
+
+                        Changes in version 0.99.10
+
+- R version for Bioconductor and `package` branch: (>= 4.1)
+- R version in `devel` branch in GitHub: (>= 3.6)
+
+                        Changes in version 0.99.0
+
+- Submitted to Bioconductor
 
 [struct](/packages/struct)
 ------
