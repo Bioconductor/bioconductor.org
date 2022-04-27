@@ -3,10 +3,10 @@ April 27, 2022
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.15, consisting of
-2123 software packages, 409 experiment data packages, 909 annotation
+2140 software packages, 410 experiment data packages, 909 annotation
 packages, 29 workflows and 8 books.
 
-There are 61 new software packages, 4 new data experiment packages,
+There are 78 new software packages, 5 new data experiment packages,
 8 new annotation packages, no new workflows, no new books, and many updates and
 improvements to existing packages.
 
@@ -54,7 +54,17 @@ To update to or install Bioconductor 3.15:
 New Software Packages
 =====================
 
-There are 61 new software packages in this release of Bioconductor.
+There are 78 new software packages in this release of Bioconductor.
+
+- [APL](/packages/APL) APL is a package developed for computation of
+  Association Plots (AP), a method for visualization and analysis of
+  single cell transcriptomics data. The main focus of APL is the
+  identification of genes characteristic for individual clusters of
+  cells from input data. The package performs correspondence analysis
+  (CA) and allows to identify cluster-specific genes using
+  Association Plots. Additionally, APL computes the
+  cluster-specificity scores for all genes which allows to rank the
+  genes by their specificity for a selected cell cluster of interest.
 
 - [ASURAT](/packages/ASURAT) ASURAT is a software for single-cell
   data analysis. Using ASURAT, one can simultaneously perform
@@ -112,6 +122,12 @@ There are 61 new software packages in this release of Bioconductor.
   functions: DRrefit (the main function), ComputeNormalChromosome and
   PlotCluster.
 
+- [borealis](/packages/borealis) Borealis is an R library performing
+  outlier analysis for count-based bisulfite sequencing data. It
+  detectes outlier methylated CpG sites from bisulfite sequencing
+  (BS-seq). The core of Borealis is modeling Beta-Binomial
+  distributions. This can be useful for rare disease diagnoses.
+
 - [CBEA](/packages/CBEA) This package implements CBEA, a method to
   perform set-based analysis for microbiome relative abundance data.
   This approach constructs a competitive balance between taxa within
@@ -139,6 +155,15 @@ There are 61 new software packages in this release of Bioconductor.
   copy number variations, as well as the status and/or the log2 ratio
   values. Finally, a visualization tool is provided to explore
   resulting metrics.
+
+- [cogeqc](/packages/cogeqc) cogeqc aims to facilitate systematic
+  quality checks on standard comparative genomics analyses to help
+  researchers detect issues and select the most suitable parameters
+  for each data set. cogeqc can be used to asses: i. genome assembly
+  quality with BUSCOs; ii. orthogroup inference using a protein
+  domain-based approach and; iii. synteny detection using synteny
+  network properties. There are also data visualization functions to
+  explore QC summary statistics.
 
 - [comapr](/packages/comapr) comapr detects crossover intervals for
   single gametes from their haplotype states sequences and stores the
@@ -201,6 +226,13 @@ There are 61 new software packages in this release of Bioconductor.
   alignment can work with any reference or custom genomes. Both DNA-
   and RNA-targeting nucleases are supported.
 
+- [crisprBwa](/packages/crisprBwa) Provides a user-friendly interface
+  to map on-targets and off-targets of CRISPR gRNA spacer sequences
+  using bwa. The alignment is fast, and can be performed using either
+  commonly-used or custom CRISPR nucleases. The alignment can work
+  with any reference or custom genomes. Currently not supported on
+  Windows machines.
+
 - [crisprScore](/packages/crisprScore) Provides R wrappers of several
   on-target and off-target scoring methods for CRISPR guide RNAs
   (gRNAs). The following nucleases are supported: SpCas9, AsCas12a,
@@ -239,6 +271,33 @@ There are 61 new software packages in this release of Bioconductor.
   or an individual patient. For more information, please read out
   preprint on bioRxiv: https://doi.org/10.1101/2022.01.11.475864.
 
+- [DifferentialRegulation](/packages/DifferentialRegulation)
+  DifferentialRegulation is a method for detecting differentially
+  regulated genes between two groups of samples (e.g., healthy vs.
+  disease, or treated vs. untreated samples), by targeting
+  differences in the balance of spliced and unspliced mRNA
+  abundances, obtained from single-cell RNA-sequencing (scRNA-seq)
+  data. DifferentialRegulation accounts for the sample-to-sample
+  variability, and embeds multiple samples in a Bayesian hierarchical
+  model. In particular, when reads are compatible with multiple genes
+  or multiple splicing versions of a gene (unspliced spliced or
+  ambiguous), the method allocates these multi-mapping reads to the
+  gene of origin and their splicing version. Parameters are inferred
+  via Markov chain Monte Carlo (MCMC) techniques
+  (Metropolis-within-Gibbs).
+
+- [EpiCompare](/packages/EpiCompare) EpiCompare is used to compare
+  and analyse epigenetic datasets for quality control and
+  benchmarking purposes. The package outputs an HTML report
+  consisting of three sections: (1. General metrics) Metrics on peaks
+  (percentage of blacklisted and non-standard peaks, and peak widths)
+  and fragments (duplication rate) of samples, (2. Peak overlap)
+  Percentage and statistical significance of overlapping and
+  non-overlapping peaks. Also includes upset plot and (3. Functional
+  annotation) functional annotation (ChromHMM, ChIPseeker and
+  enrichment analysis) of peaks. Also includes peak enrichment around
+  TSS.
+
 - [epimutacions](/packages/epimutacions) The package includes some
   statistical outlier detection methods for epimutations detection in
   DNA methylation data. The methods included in the package are
@@ -248,6 +307,14 @@ There are 61 new software packages in this release of Bioconductor.
   of healthy individuals) to identify epimutations in the given case
   sample. It also contains functions to annotate and visualize the
   identified epimutations.
+
+- [extraChIPs](/packages/extraChIPs) This package builds on existing
+  tools and adds some simple but extremely useful capabilities for
+  working with ChIP-Seq data. The focus is on detecting differential
+  binding windows/regions. One set of functions focusses on
+  set-operations retaining mcols for GRanges objects, whilst another
+  group of functions are to aid visualisatino of results. Coercion to
+  tibble objects is also included.
 
 - [fastreeR](/packages/fastreeR) Calculate distances, build
   phylogenetic trees or perform hierarchical clustering between the
@@ -303,6 +370,27 @@ There are 61 new software packages in this release of Bioconductor.
   simple while maintaining customizability. Main functions include
   manhattan_plot, qqunif, and thinPoints.
 
+- [GRaNIE](/packages/GRaNIE) Genetic variants associated with
+  diseases often affect non-coding regions, thus likely having a
+  regulatory role. To understand the effects of genetic variants in
+  these regulatory regions, identifying genes that are modulated by
+  specific regulatory elements (REs) is crucial. The effect of gene
+  regulatory elements, such as enhancers, is often cell-type
+  specific, likely because the combinations of transcription factors
+  (TFs) that are regulating a given enhancer have celltype specific
+  activity. This TF activity can be quantified with existing tools
+  such as diffTF and captures differences in binding of a TF in open
+  chromatin regions. Collectively, this forms a gene regulatory
+  network (GRN) with cell-type and data-specific TF-RE and RE-gene
+  links. Here, we reconstruct such a GRN using bulk RNAseq and open
+  chromatin (e.g., using ATACseq or ChIPseq for open chromatin marks)
+  and optionally TF activity data. Our network contains different
+  types of links, connecting TFs to regulatory elements, the latter
+  of which is connected to genes in the vicinity or within the same
+  chromatin domain (TAD). We use a statistical framework to assign
+  empirical FDRs and weights to all links using a permutation-based
+  approach.
+
 - [hermes](/packages/hermes) Provides classes and functions for
   quality control, filtering, normalization and differential
   expression analysis of pre-processed RNA-seq data. Data can be
@@ -337,6 +425,19 @@ There are 61 new software packages in this release of Bioconductor.
   reconstruct a tree. PlotTree() function will help you to visualize
   the tree.
 
+- [Macarron](/packages/Macarron) Macarron is a workflow for the
+  prioritization of potentially bioactive metabolites from
+  metabolomics experiments. Prioritization integrates strengths of
+  evidences of bioactivity such as covariation with a known
+  metabolite, abundance relative to a known metabolite and
+  association with an environmental or phenotypic indicator of
+  bioactivity. Broadly, the workflow consists of stratified
+  clustering of metabolic spectral features which co-vary in
+  abundance in a condition, transfer of functional annotations,
+  estimation of relative abundance and differential abundance
+  analysis to identify associations between features and
+  phenotype/condition.
+
 - [MBECS](/packages/MBECS) The Microbiome Batch Effect Correction
   Suite (MBECS) provides a set of functions to evaluate and mitigate
   unwated noise due to processing in batches. To that end it
@@ -344,6 +445,14 @@ There are 61 new software packages in this release of Bioconductor.
   various packages. In addition it offers a correction and reporting
   pipeline that provides a preliminary look at the characteristics of
   a data-set before and after correcting for batch effects.
+
+- [mbOmic](/packages/mbOmic) The mbOmic package contains a set of
+  analysis functions for microbiomics and metabolomics data, designed
+  to analyze the inter-omic correlation between microbiology and
+  metabolites. Integrative analysis of the microbiome and metabolome
+  is the aim of mbOmic. Additionally, the identification of
+  enterotype using the gut microbiota abundance is
+  preliminaryimplemented.
 
 - [MetaboAnnotation](/packages/MetaboAnnotation) High level functions
   to assist in annotation of (metabolomics) data sets. These include
@@ -435,6 +544,49 @@ There are 61 new software packages in this release of Bioconductor.
   analyse the extend of overlaps which can also be visualized at a
   genomic level.
 
+- [omicsViewer](/packages/omicsViewer) omicsViewer visualizes
+  ExpressionSet (or SummarizedExperiment) in an interactive way. The
+  omicsViewer has a separate back- and front-end. In the back-end,
+  users need to prepare an ExpressionSet that contains all the
+  necessary information for the downstream data interpretation. Some
+  extra requirements on the headers of phenotype data or feature data
+  are imposed so that the provided information can be clearly
+  recognized by the front-end, at the same time, keep a minimum
+  modification on the existing ExpressionSet object. The pure
+  dependency on R/Bioconductor guarantees maximum flexibility in the
+  statistical analysis in the back-end. Once the ExpressionSet is
+  prepared, it can be visualized using the front-end, implemented by
+  shiny and plotly. Both features and samples could be selected from
+  (data) tables or graphs (scatter plot/heatmap). Different types of
+  analyses, such as enrichment analysis (using Bioconductor package
+  fgsea or fisher's exact test) and STRING network analysis, will be
+  performed on the fly and the results are visualized simultaneously.
+  When a subset of samples and a phenotype variable is selected, a
+  significance test on means (t-test or ranked based test; when
+  phenotype variable is quantitative) or test of independence
+  (chi-square or fisher’s exact test; when phenotype data is
+  categorical) will be performed to test the association between the
+  phenotype of interest with the selected samples. Additionally,
+  other analyses can be easily added as extra shiny modules.
+  Therefore, omicsViewer will greatly facilitate data exploration,
+  many different hypotheses can be explored in a short time without
+  the need for knowledge of R. In addition, the resulting data could
+  be easily shared using a shiny server. Otherwise, a standalone
+  version of omicsViewer together with designated omics data could be
+  easily created by integrating it with portable R, which can be
+  shared with collaborators or submitted as supplementary data
+  together with a manuscript.
+
+- [ompBAM](/packages/ompBAM) This packages provides C++ header files
+  for developers wishing to create R packages that processes BAM
+  files. ompBAM automates file access, memory management, and
+  handling of multiple threads 'behind the scenes', so developers can
+  focus on creating domain-specific functionality. The included
+  vignette contains detailed documentation of this API, including
+  quick-start instructions to create a new ompBAM-based package, and
+  step-by-step explanation of the functionality behind the example
+  packaged included within ompBAM.
+
 - [PanomiR](/packages/PanomiR) PanomiR is a package to detect miRNAs
   that target groups of pathways from gene expression data. This
   package provides functionality for generating pathway activity
@@ -483,6 +635,16 @@ There are 61 new software packages in this release of Bioconductor.
   can be used in differential expression analysis to remove the
   effects of degradation.
 
+- [RAREsim](/packages/RAREsim) Haplotype simulations of rare variant
+  genetic data that emulates real data can be performed with RAREsim.
+  RAREsim uses the expected number of variants in MAC bins - either
+  as provided by default parameters or estimated from target data -
+  and an abundance of rare variants as simulated HAPGEN2 to
+  probabilistically prune variants. RAREsim produces haplotypes that
+  emulate real sequencing data with respect to the total number of
+  variants, allele frequency spectrum, haplotype structure, and
+  variant annotation.
+
 - [Rbwa](/packages/Rbwa) Provides an R wrapper for BWA alignment
   algorithms. Both BWA-backtrack and BWA-MEM are available.
   Convenience function to build a BWA index from a reference genome
@@ -503,6 +665,26 @@ There are 61 new software packages in this release of Bioconductor.
   LIPID MAPS Category and Class information. Also, the structural
   level and further structural details about the head group, fatty
   acyls and functional groups are returned, where applicable.
+
+- [rifi](/packages/rifi) 'rifi' analyses data from rifampicin time
+  series created by microarray or RNAseq. 'rifi' is a transcriptome
+  data analysis tool for the holistic identification of transcription
+  and decay associated processes. The decay constants and the delay
+  of the onset of decay is fitted for each probe/bin. Subsequently,
+  probes/bins of equal properties are combined into segments by
+  dynamic programming, independent of a existing genome annotation.
+  This allows to detect transcript segments of different stability or
+  transcriptional events within one annotated gene. In addition to
+  the classic decay constant/half-life analysis, 'rifi' detects
+  processing sites, transcription pausing sites, internal
+  transcription start sites in operons, sites of partial
+  transcription termination in operons, identifies areas of likely
+  transcriptional interference by the collision mechanism and gives
+  an estimate of the transcription velocity. All data are integrated
+  to give an estimate of continous transcriptional units, i.e.
+  operons. Comprehensive output tables and visualizations of the full
+  genome result and the individual fits for all probes/bins are
+  produced.
 
 - [RolDE](/packages/RolDE) RolDE detects longitudinal differential
   expression between two conditions in noisy high-troughput data.
@@ -565,6 +747,14 @@ There are 61 new software packages in this release of Bioconductor.
   squares (NNLS) to subsequently deconvolute ST capture locations
   (spots).
 
+- [sSNAPPY](/packages/sSNAPPY) A single sample pathway pertrubation
+  testing methods for RNA-seq data. The method propagate changes in
+  gene expression down gene-set topologies to compute single-sample
+  directional pathway perturbation scores that reflect potentail
+  directions of changes.Perturbation scores can be used to test
+  significance of pathway perturbation at both individual-sample and
+  treatment levels.
+
 - [standR](/packages/standR) standR is an user-friendly R package
   providing functions to assist conducting good-practice analysis of
   Nanostring's GeoMX DSP data. All functions in the package are built
@@ -572,6 +762,22 @@ There are 61 new software packages in this release of Bioconductor.
   various spatial transcriptomics-related packages from Bioconductor.
   standR allows data inspection, quality control, normalization,
   batch correction and evaluation with informative visualizations.
+
+- [STdeconvolve](/packages/STdeconvolve) STdeconvolve as an
+  unsupervised, reference-free approach to infer latent cell-type
+  proportions and transcriptional profiles within multi-cellular
+  spatially-resolved pixels from spatial transcriptomics (ST)
+  datasets. STdeconvolve builds on latent Dirichlet allocation (LDA),
+  a generative statistical model commonly used in natural language
+  processing for discovering latent topics in collections of
+  documents. In the context of natural language processing, given a
+  count matrix of words in documents, LDA infers the distribution of
+  words for each topic and the distribution of topics in each
+  document. In the context of ST data, given a count matrix of gene
+  expression in multi-cellular ST pixels, STdeconvolve applies LDA to
+  infer the putative transcriptional profile for each cell-type and
+  the proportional representation of each cell-type in each
+  multi-cellular ST pixel.
 
 - [TEKRABber](/packages/TEKRABber) TEKRABber is made to provide a
   user-friendly pipeline for comparing orthologs and transposable
@@ -583,6 +789,13 @@ There are 61 new software packages in this release of Bioconductor.
   result. Users can prepare orthologs/TEs RNA-seq expression data by
   their own preference to run TEKRABber following the data structure
   mentioned in the vignettes.
+
+- [terraTCGAdata](/packages/terraTCGAdata) Leverage the existing open
+  access TCGA data on Terra with well-established Bioconductor
+  infrastructure. Make use of the Terra data model without learning
+  its complexities. With a few functions, you can copy / download and
+  generate a MultiAssayExperiment from the TCGA example workspaces
+  provided by Terra.
 
 - [tomoseqr](/packages/tomoseqr) `tomoseqr` is an R package for
   analyzing Tomo-seq data. Tomo-seq is a genome-wide RNA tomography
@@ -633,7 +846,7 @@ There are 61 new software packages in this release of Bioconductor.
 New Data Experiment Packages
 =====================
 
-There are 4 new data experiment packages in this release of Bioconductor.
+There are 5 new data experiment packages in this release of Bioconductor.
 
 - [crisprScoreData](/packages/crisprScoreData) Provides an interface
   to access pre-trained models for on-target and off-target gRNA
@@ -657,6 +870,13 @@ There are 4 new data experiment packages in this release of Bioconductor.
   healthy controls data are found, and false otherwise.  GEO: Gene
   Expression Omnibus. ID: identifier code. The GEO datasets are
   downloaded from the URL <https://ftp.ncbi.nlm.nih.gov/geo/series/>.
+
+- [VectraPolarisData](/packages/VectraPolarisData) Provides two
+  multiplex imaging datasets collected on Vectra instruments at the
+  University of Colorado Anschutz Medical Campus. Data are provided
+  as a Spatial Experiment objects. Data is provided in tabular form
+  and has been segmented and phenotyped using Inform software. Raw
+  .tiff files are not included.
 
 - [xcoredata](/packages/xcoredata) Provides data to use with xcore
   package.
