@@ -12,7 +12,7 @@ r_version_associated_with_release: "4.2.0"
 r_version_associated_with_devel: "4.2.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.15"
+devel_version: "3.16"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
