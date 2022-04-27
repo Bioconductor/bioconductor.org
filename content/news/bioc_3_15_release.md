@@ -8911,7 +8911,7 @@ Onassis, perturbatr, phemd, ppiStats, ProteomicsAnnotationHubData, PSICQUIC,
 PubScore, Rgin, RmiR, RpsiXML, ScISI, SLGI, Sushi, tofsims, TSRchitect
 
 
-Three experimental data packages were removed this release (after being
+Three experimental data packages were removed from this release (after being
 deprecated in BioC 3.14):
 ABAData, brainImageRdata, tcgaWGBSData.hg19
 
@@ -8933,6 +8933,6 @@ MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz
 No workflow packages were removed from this release (after being deprecated in
 Bioc 3.14)
 
-One workflow packages were deprecated in this release and will be removed in
+One workflow package was deprecated in this release and will be removed in
 3.16:
 proteomics
