@@ -996,9 +996,7 @@ USER VISIBLE CHANGES
 [bandle](/packages/bandle)
 ------
 
-                       Changes in version 0.99.9                        
-
-version 0.99.9
+                       Changes in version 1.0.0                       
 
 version 0.99.8
 
@@ -1710,14 +1708,6 @@ editable.
 - Improvments to decontX vignette
 - Added ability to subsample to speed up perplexity calculations
 - Added ability to use batch parameter with the raw matrix in decontX
-
-[cellxgenedp](/packages/cellxgenedp)
------------
-
-                        Changes in version 0.0.7                        
-
-- (v. 0.0.7) make errors during local cache update more accessible;
-see https://github.com/mtmorgan/cellxgenedp/issues/1
 
 [ceRNAnetsim](/packages/ceRNAnetsim)
 -----------
@@ -2448,20 +2438,6 @@ Made some minor modifications to the README and the vignette.
 
 - Add DrugAge build 4 database
 
-[cyanoFilter](/packages/cyanoFilter)
------------
-
-                     Changes in version 24.05.2019                      
-
-Kindly pay attention to this!
-
-Note for cyanoFilter VERSION 0.1.0
-
-- This package is requires both flowCore and flowDensity packages to
-work. These packages are available on Bioconductor, kindly install
-BiocManager which is on CRAN and run
-BiocManager::install(c("Biobase", "flowCore", "flowDensity")).
-
 [cytomapper](/packages/cytomapper)
 ----------
 
@@ -3086,15 +3062,6 @@ probabilities from a sequence of states of a Markov chain
                        Changes in version 0.99.0                        
 
 - Submitted to Bioconductor
-
-[epivizrServer](/packages/epivizrServer)
--------------
-
-                       Changes in version 999.999                       
-
-- This NEWS file is only a placeholder. The version 999.999 does
-  not really exist. Please read the NEWS on Github: <URL:
-  https://github.com/epiviz/epivizrServer>
 
 [escape](/packages/escape)
 ------
@@ -4432,22 +4399,14 @@ of empty character vector.
 [karyoploteR](/packages/karyoploteR)
 -----------
 
-Version: 1.21.0
-Category: NEW FEATURES
-Text:
+                        Changes in version 1.21.0
 
-Version: 1.21.0
-Category: SIGNIFICANT USER-VISIBLE CHANGES
-Text:
+BUG FIXES
 
-Version: 1.21.0
-Category: BUG-FIXES
-Text: Fixed wrong positioning of chromosome names in some edge cases
-        (github issue 114)
+- Fixed wrong positioning of chromosome names in some edge cases (github
+  issue #114).
 
-Version: 1.21.0
-Category: BUG-FIXES
-Text: kpAddLabels now work on zoomed in regions (github issue 112)
+- kpAddLabels now work on zoomed in regions (github issue #112).
 
 [kebabs](/packages/kebabs)
 ------
@@ -4762,37 +4721,37 @@ as input
                         Changes in version 1.5.2                        
 
 - Bug Fix in fit_model():
-  + rtx & rty parameter issue resolved
+  - rtx & rty parameter issue resolved
 
                         Changes in version 1.5.1                        
 
 - New function updateTables():
-  + user changes to combinedTable report
-  + inclusion of non-intersected features
+  - user changes to combinedTable report
+  - inclusion of non-intersected features
 
 - Changes in metabCombiner():
-  + handling of missing features enabled (i.e. when update() is used)
-  + new argument "impute"
-  + rtOrder argument bug fix
+  - handling of missing features enabled (i.e. when update() is used)
+  - new argument "impute"
+  - rtOrder argument bug fix
 
 - Changes in metabCombine():
-  + new arguments "union" & "impute"
+  - new arguments "union" & "impute"
 
 - Changes in fit_model/ fit_gam()/ fit_loess():
-  + new arguments rtx & rty
+  - new arguments rtx & rty
 
 - Changes in batchCombine():
-  + new argument "union"
-  + expected multiple (2 or more) datasets as input
-  + end message added
+  - new argument "union"
+  - expected multiple (2 or more) datasets as input
+  - end message added
 
 - Changes in labelRows()/ reduceTable()/ labelRowParam()/
   reduceTableParam():
-  + new argument 'useID'
-  + 'resolveConflicts' and 'remove' set to TRUE in reduceTable()
+  - new argument 'useID'
+  - 'resolveConflicts' and 'remove' set to TRUE in reduceTable()
 
 - Changes to metabData objects:
-  + "extra"" column count added to show() message
+  - "extra"" column count added to show() message
 
 - Package functions updated to handle "group 0"
 
@@ -5066,18 +5025,17 @@ MetaboCoreUtils 1.3.1
                         Changes in version 1.1.2                        
 
 - Development version on Bioconductor
-- Use 3rd version of testthat to fix test error (use
-expect_snapshot()
-rather than expect_known_ouput).
+- Use 3rd version of testthat to fix test error (use expect_snapshot()
+  rather than expect_known_ouput).
 - Add two new arguments in plot_heatmap() scale_by_row and
-annotation_col to improve heatmap viaualization, #52.
+  annotation_col to improve heatmap viaualization, #52.
 - Set slot marker_table to NULL if no marker was identified.
 - Add new import function import_picrust2() to import prediction
-functional table from PICRUSt2, and all DA functions support for
-PICRUSt2 output data.
+  functional table from PICRUSt2, and all DA functions support for
+  PICRUSt2 output data.
 - Keep color consistent between legend and plot in cladogram, #42.
 - Add a new argument clade_label_font_size in plot_cladogram() to
-specify font size of clade label, #49.
+  specify font size of clade label, #49.
 
                  Changes in version 1.1.1 (2020-03-07)                  
 
@@ -5247,26 +5205,6 @@ any distance calculations
 - Add vignette to describe the use and application of contrasts in
 testNhoods
 - Patch to correct SpatialFDR with sparse nhoods where density is ~0
-
-[miRSM](/packages/miRSM)
------
-
-                       Changes in version 1.13.2                        
-
-- Fix bug <2021-12-06, Mon>
-
-[miRspongeR](/packages/miRspongeR)
-----------
-
-                    Changes in version 1.99.0-1.99.7                    
-
-- Parallel version of existing methods, add SPONGE method, add the
-  method of sample-specific miRNA sponge interaction network, and add
-  the function of sample-sample correlation network <2022-04-06, Wed>.
-
-                       Changes in version 1.20.1                        
-
-- Fix bug <2022-02-08, Tues>.
 
 [mirTarRnaSeq](/packages/mirTarRnaSeq)
 ------------
@@ -7827,28 +7765,6 @@ Changes in 1.5.1
 [statTarget](/packages/statTarget)
 ----------
 
-                         Changes in version 2.0                         
-
-NEW FEATURES
-
-- New GUI
-  o Mouse Hover for help information
-  o .log file
-
-- New Signal correction
-  o Combat for QC-free Signal correction
-  o QC-RFSC methods for metabolomics and proteomics data
-
-- New feature slection
-  o Random Forest and the Permutation based variable importance
-  measures
-  o new MDSplot for Random Forest
-  o P-value based importance plot
-
-- New data preprocessing
-  o PQN/SUM/none normalization
-  o center/none Scaling method
-
                        Changes in version 1.25.4                        
 
 - Remove the RGtk2 in Description, which should be installed manually
@@ -7890,15 +7806,6 @@ NEW FEATURES
 DEPRECATED AND DEFUNCT
 
 - readKallisto() is now defunct after being deprecated in BioC 3.12.
-
-[synapsis](/packages/synapsis)
---------
-
-               Changes in version 2021-07-02 (2021-07-02)               
-
-Changes:
-
-- Added this news file
 
 [SynExtend](/packages/SynExtend)
 ---------
@@ -8578,19 +8485,410 @@ Minor changes
 NEWS from new and existing Data Experiment Packages
 ===================================
 
-TODO
+[crisprScoreData](/packages/crisprScoreData)
+---------------
+
+                       Changes in version 0.99.0                        
+
+- Package submission
+
+[curatedMetagenomicData](/packages/curatedMetagenomicData)
+----------------------
+
+                        Changes in version 3.4.0                        
+
+- curatedMetagenomicData now contains 20,533 samples from 90 studies
+- A total of 251 samples added since Bioconductor 3.14 (October 2021)
+- Studies added since Bioconductor 3.14 (October 2021):
+- FrankelAE_2017 (39 samples)
+- LeeKA_2022 (165 samples)
+- PetersBA_2019 (27 samples)
+- WindTT_2020 (20 samples)
+- Both "short" and "NCBI" row names were re-validated against NCBI
+Taxonomy
+
+[depmap](/packages/depmap)
+------
+
+                         Changes in version 1.9                         
+
+Changes in version 1.9.2
+
+- 22Q1 data added for crispr, copyNumber, TPM, mutationCalls and
+metadata datasets. New datasets were added, including gene_summaries
+and achilles describing Depmap Achilles screens and gene
+essentiality probabilities, respectively. New loading functions were
+created for these datasets. Newer versions for the other datasets
+were not released.
+
+Changes in version 1.9.1
+
+- 21Q4 data added for crispr, copyNumber, TPM, mutationCalls and
+metadata datasets. Newer versions for the other datasets were not
+released.
+
+Changes in version 1.9.0
+
+- New devel version for Bioc 3.15
+
+Changes in version 1.7.1
+
+- 21Q3 data added for crispr, copyNumber, TPM, mutationCalls and
+metadata datasets. Newer versions for the other datasets were not
+released.
+- CERES CRISPR data has been deprecated and has been replaced with
+Chronos CRISPR dependency in 21Q3 and all future releases. For more
+information, see:
+https://cancerdatascience.org/blog/posts/ceres-chronos/
+
+Changes in version 1.7.0
+
+- New Bioc devel release.
+
+[dorothea](/packages/dorothea)
+--------
+
+                 Changes in version 1.7.1 (2022-04-07)                  
+
+- Removed outdated vignettes, now instead we point to decoupleR and
+decoupler-py's most up-to-date vignettes.
+
+[epimutacionsData](/packages/epimutacionsData)
+----------------
+
+                       Changes in version 0.99.7                        
+
+- Bugs and notes (if possible) fixed
+
+                       Changes in version 0.99.0                        
+
+- Submitted to Bioconductor
+
+[FlowSorted.Blood.EPIC](/packages/FlowSorted.Blood.EPIC)
+---------------------
+
+                 Changes in version 1.99.1 (2022-01-04)                 
+
+- Made the following significant changes
+  o The IDOL libraries are automatically selected
+  o The slot counts is now only for cell counts, if available
+  o Projections are based on cell proportions
+  o estimateCellCounts2 supports additional packages and extended
+  deconvolution
+  o The reference library is called using libraryDataGet
+
+[healthyControlsPresenceChecker](/packages/healthyControlsPresenceChecker)
+------------------------------
+
+                Changes in version 0.99.17 (2021-11-29)                 
+
+- Fixed YAML
+
+                Changes in version 0.99.15 (2021-11-26)                 
+
+- Fixed additional minor issues
+
+                Changes in version 0.99.13 (2021-11-24)                 
+
+- Fixed additional minor issues
+
+                Changes in version 0.99.12 (2021-11-22)                 
+
+- Fixed minor issues
+
+                Changes in version 0.99.11 (2021-11-19)                 
+
+- Added unit tests
+
+                Changes in version 0.99.10 (2021-11-18)                 
+
+- Edited vignettes
+
+                 Changes in version 0.99.9 (2021-11-18)                 
+
+- Addressed points of the review and added a README
+
+                 Changes in version 0.99.1 (2021-10-29)                 
+
+- First release
+
+                 Changes in version 0.1.6 (2021-11-02)                  
+
+- Added print of the percentages of the elements of the healthy
+  controls and of the other classes
+
+[msdata](/packages/msdata)
+------
+
+                       Changes in version 0.35.3                        
+
+- Adding CE-MS test data, thanks to Liesa Salzer
+
+[pRolocdata](/packages/pRolocdata)
+----------
+
+                       Changes in version 1.33.1                        
+
+- Add hyperLOPIT2015_se data
+
+- Add mulvey2015_se and mulvey2015norm_se data
+
+- Regenerated README to include new datasets
+
+[scpdata](/packages/scpdata)
+-------
+
+                         Changes in version 1.3                         
+
+scpdata 1.3.1
+
+- williams2020: added 2 new datasets (need to be sent to EH)
+- all: added supplementary metadata fields in metadata.csv.
+- zhu2019EL: split protein data into protein_intensity and
+protein_iBAQ
+- dou2019: modified peptide data by excluding low-quality PSMs
+
+scpdata 1.3.0
+
+- New devel (Bioc 3.15)
+
+[signatureSearchData](/packages/signatureSearchData)
+-------------------
+
+                 Changes in version 1.9.3 (2021-12-16)                  
+
+- Add LINCS2 database with file name of lincs2020.h5
+
+                 Changes in version 1.9.2 (2021-12-06)                  
+
+- Add dest_path parameter to getCmapCEL function
+
+[spatialLIBD](/packages/spatialLIBD)
+-----------
+
+                       Changes in version 1.7.19                        
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- Documentation of the layer-level data panel at run_app() has been
+significantly increased. You can now also visualize more than 2
+reduced dimensions computed on the pseudo-bulk level data
+(layer-level for the Maynard et al, Nature Neurosci, 2021 data).
+- Users can now control the font and point size on the reduced
+dimension plots, as well as the overall font size on the model
+boxplots.
+- Image edit scenarios you might be interested in for having a
+uniform
+color background image are now documented; for example if you want a
+white or black background, or actually any valid R color name or
+color HEX value.
+
+                       Changes in version 1.7.18                        
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- run_app() now offers the option to chose any of the
+paletteer::paletteer_d color palettes for discrete variables.
+- Polychrome has been replaced as a dependency by paletteer. Note
+that
+Polychrome::palette36 is still the default.
+- run_app() now looks for columns that end with '_colors' in their
+name which can be used to pre-specify colors for any companion
+variables. For example if you have spe$my_groups and
+spe$my_groups_colors then the second one can specify the colors that
+will be used for visualizing spe$my_groups. This makes specifying
+default colors more flexible than before, and the user is still free
+to change them if necessary.
+
+                       Changes in version 1.7.17                        
+
+BUG FIXES
+
+- Fix bugs in layer_boxplot() where it was too specific to the
+Maynard
+et al 2021 data. We have made it more flexible now.
+- Made the y-axis space more dynamic in gene_set_enrichment_plot()
+and
+layer_matrix_plot().
+
+                       Changes in version 1.7.16                        
+
+BUG FIXES
+
+- Fixed a bug in sig_genes_extract() when there's only one set of
+t-statistics or F statistics to extract.
+
+                       Changes in version 1.7.12                        
+
+SIGNIFICANT USER-VISIBLE CHANGES
+
+- The visualization functions vis_*() of SpatialLIBD in this version
+match the Bioconductor 3.15 version of SpatialExperiment. Note that
+if you used SpatialExperiment::read10xVisium(), the names of the
+spatial coordinates changed at
+https://github.com/drighelli/SpatialExperiment/commit/6710fe8b0a7919191ecce989bb6831647385ef5f
+and thus you might need to switch them back if you created your
+SpatialExperiment object before this change. You can do so with
+spatialCoordsNames(spe) <- rev(spatialCoordsNames(spe)).
+read10xVisiumWrapper() uses SpatialExperiment::read10xVisium()
+internally, so this change on SpatialExperiment would then also
+affect you.
+
+                       Changes in version 1.7.11                        
+
+NEW FEATURES
+
+- Now layer_stat_cor() has the top_n argument which can be used for
+subsetting the marker genes prior to computing the correlation as
+part of the spatial registration process.
+
+                       Changes in version 1.7.10                        
+
+NEW FEATURES
+
+- Added the add_key() function to reduce code duplication and resolve
+https://github.com/LieberInstitute/spatialLIBD/issues/31.
+
+                        Changes in version 1.7.9                        
+
+NEW FEATURES
+
+- This version is now compatible with the bioc-devel version of
+SpatialExperiment where spatialData() was deprecated. Details at
+https://github.com/LieberInstitute/spatialLIBD/pull/29/files.
+
+                        Changes in version 1.7.7                        
+
+BUG FIXES
+
+- Fixed a bug where the using the left-mouse click was not working
+for
+annotating individual spots under the "gene (interactive)" tab.
+
+                        Changes in version 1.7.6                        
+
+NEW FEATURES
+
+- vis_gene_p(), vis_clus_p() and all related functions now have an
+argument point_size which lets you control how big the points are
+plotted. This can be useful for visualization purposes.
+- The shiny app now has an input controlling the point size. If you
+increase it to say 5, then if you zoom in the clusters (interactive)
+panel, you can see larger spots when zooming in.
+- These features are related to
+https://github.com/LieberInstitute/spatialLIBD/issues/28 although
+the spot diameter is still not the true spot diameter. However, now
+you have more flexibility for visualizing the spots.
+
+                        Changes in version 1.7.5                        
+
+NEW FEATURES
+
+- Expanded the Using spatialLIBD with 10x Genomics public datasets
+vignette to show how you can deploy your web application. See
+https://libd.shinyapps.io/spatialLIBD_Human_Lymph_Node_10x/ for the
+live example.
+
+                        Changes in version 1.7.4                        
+
+BUG FIXES
+
+- vis_gene() and vis_grid_gene() now support geneids that are found
+in
+the rownames(spe). This makese these functions more flexible.
+- vis_grid_gene() and vis_grid_clus() now have the sample_order
+argument which gives you more control in case you want to plot a
+subset of samples. This should also reduced the memory required as
+discovered at
+https://github.com/LieberInstitute/spatialDLPFC/issues/45.
+
+                        Changes in version 1.7.3                        
+
+NEW FEATURES
+
+- Added support for more than one background picture per sample. This
+was done through the new argument image_id. Resolves
+https://github.com/LieberInstitute/spatialLIBD/issues/25.
+- Added options for side by side visualization of the background
+image
+and the clusters or gene expression values in the static versions.
+Resolves https://github.com/LieberInstitute/spatialLIBD/issues/19.
+- Allow changing the transparency level of the spots with the alpha
+argument. Resolves
+https://github.com/LieberInstitute/spatialLIBD/issues/20.
+- Add support for image manipulation with the magick package. Adds
+functions img_edit(), img_update() and img_update_all() as well as
+new features on the web application. Resolves
+https://github.com/LieberInstitute/spatialLIBD/issues/21.
+- Added support for more control over the gene color scale and in the
+web application also added support for reversing the order of the
+scale. Resolves
+https://github.com/LieberInstitute/spatialLIBD/issues/22 and
+https://github.com/LieberInstitute/spatialLIBD/issues/23.
+- Added export_cluster() and import_cluster() to help export/import
+clustering results instead of having to save large spe objects when
+exploring different clustering methods.
+- Added locate_images() and add_images() for adding non-standard
+images to a spe object.
+
+                        Changes in version 1.7.2                        
+
+BUG FIXES
+
+- Fixed an issue introduced by newer versions of shiny. This version
+of spatialLIBD works with shiny version 1.7.1, though it's likely
+backwards compatible. Resolves
+https://github.com/LieberInstitute/spatialLIBD/issues/24.
+- Fix an issue where as.data.frame(colData(spe)) uses check.names =
+TRUE by default and then changes the column names unintentionally.
+
+                        Changes in version 1.7.1                        
+
+NEW FEATURES
+
+- Added read10xVisiumWrapper() and related functions that make it
+easier to read in the SpaceRanger output files and launch a shiny
+web application using run_app(). These new functions read in the
+analysis output from SpaceRanger by 10x Genomics, in particular, the
+clustering and dimension reduction (projection) results.
+
+[STexampleData](/packages/STexampleData)
+-------------
+
+                 Changes in version 1.3.3 (2022-01-31)                  
+
+- add new datasets ST_mouseOB, SlideSeqV2_mouseHPC
+
+- reformat datasets to SpatialExperiment version 1.5.2
+
+[tuberculosis](/packages/tuberculosis)
+------------
+
+                        Changes in version 1.2.0                        
+
+- GEO Series GSE126614 is now available through tuberculosis
+- GEO Series GSE152532 is now available through tuberculosis
+- GEO Series GSE174552 is now available through tuberculosis
+- GEO Series GSE183912 is now available through tuberculosis
+- GEO Series GSE184241 is now available through tuberculosis
+- GEO Series GSE190024 is now available through tuberculosis
+- GEO Series GSE190850 is now available through tuberculosis
 
 
 NEWS from new and existing Workflows
 ===================================
 
-TODO
+[GeoMxWorkflows](/packages/GeoMxWorkflows)
+--------------
 
+                        Changes in version 1.1.2                        
 
-NEWS from new and existing books
-===================================
+- Update install instructions, decrease R version, add links to other
+packages, ensure compatibility with updated GeomxTools
 
-No new NEWS to report
+                        Changes in version 1.1.1                        
+
+- Bug Fix: Header in vignette, remove self contained exception
 
 
 Deprecated and Defunct Packages
