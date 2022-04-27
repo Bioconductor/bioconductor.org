@@ -8596,5 +8596,45 @@ No new NEWS to report
 Deprecated and Defunct Packages
 ===============================
 
-TODO
+Twenty one software packages were removed from this release (after being deprecated
+in Bioc 3.14): 
+affyPara, ALPS, alsace, BrainStars, dualKS, ENCODExplorer,
+ENVISIONQuery, FindMyFriends, GeneAnswers, gramm4R, KEGGprofile,
+MSGFgui, MSGFplus, MSstatsTMTPTM, PanVizGenerator, predictionet, RGalaxy,
+scClassifR, slinky, SRGnet, SwimR
 
+Please note:  destiny and MouseFM, previously announced as deprecated in
+3.14, fixed their packages and remained in Bioconductor.
+
+Twenty nine software packages are deprecated in this release and will be removed in Bioc 3.16:
+ABAEnrichment, Autotuner, CAnD, caOmicsV, CHETAH, clonotypeR, CountClust,
+diffloop, GCSConnection, GCSFilesystem, GenoGAM, genphen, gprege, networkBMA,
+Onassis, perturbatr, phemd, ppiStats, ProteomicsAnnotationHubData, PSICQUIC,
+PubScore, Rgin, RmiR, RpsiXML, ScISI, SLGI, Sushi, tofsims, TSRchitect
+
+
+Three experimental data packages were removed this release (after being
+deprecated in BioC 3.14):
+ABAData, brainImageRdata, tcgaWGBSData.hg19
+
+Please note: PCHiCdata and RITANdata previously announced as deprecated in
+3.14, fixed their packages and remained in Bioconductor.
+
+Three experimental data packages are deprecated in this release and will be
+removed in Bioc 3.16:
+DREAM4, MSstatsBioData, ppiData
+
+One annotation packages was removed from this release (after being deprecated
+in Bioc 3.14): 
+org.Pf.plasmo.db
+
+One annotation package was deprecated in this release and will be removed in
+Bioc 3.16:
+MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz
+
+No workflow packages were removed from this release (after being deprecated in
+Bioc 3.14)
+
+One workflow packages were deprecated in this release and will be removed in
+3.16:
+proteomics
