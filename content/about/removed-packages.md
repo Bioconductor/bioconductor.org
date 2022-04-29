@@ -3,6 +3,51 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+
+## Packages removed with Bioconductor 3.15 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.13/bioc/html/affyPara.html">affyPara</a></li>
+<li><a href="/packages/3.13/bioc/html/ALPS.html">ALPS</a></li>
+<li><a href="/packages/3.14/bioc/html/alsace.html">alsace</a></li>
+<li><a href="/packages/3.12/bioc/html/BrainStars.html">BrainStars</a></li>
+<li><a href="/packages/3.13/bioc/html/dualKS.html">dualKS</a></li>
+<li><a href="/packages/3.12/bioc/html/ENCODExplorer.html">ENCODExplorer</a></li>
+<li><a href="/packages/3.12/bioc/html/ENVISIONQuery.html">ENVISIONQuery</a></li>
+<li><a href="/packages/3.12/bioc/html/FindMyFriends.html">FindMyFriends</a></li>
+<li><a href="/packages/3.14/bioc/html/GeneAnswers.html">GeneAnswers</a></li>
+<li><a href="/packages/3.12/bioc/html/gramm4R.html">gramm4R</a></li>
+<li><a href="/packages/3.12/bioc/html/KEGGprofile.html">KEGGprofile</a></li>
+<li><a href="/packages/3.13/bioc/html/MSstatsTMTPTM.html">MSstatsTMTPTM</a></li>
+<li><a href="/packages/3.14/bioc/html/MSGFplus.html">MSGFplus</a></li>
+<li><a href="/packages/3.14/bioc/html/MSGFgui.html">MSGFgui</a></li>
+<li><a href="/packages/3.14/bioc/html/slinky.html">slinky</a></li>
+<li><a href="/packages/3.13/bioc/html/PanVizGenerator.html">PanVizGenerator</a></li>
+<li><a href="/packages/3.14/bioc/html/predictionet.html">predictionet</a></li>
+<li><a href="/packages/3.14/bioc/html/RGalaxy.html">RGalaxy</a></li>
+<li><a href="/packages/3.14/bioc/html/scClassifR.html">scClassifR</a></li>
+<li><a href="/packages/3.12/bioc/html/SRGnet.html">SRGnet</a></li>
+<li><a href="/packages/3.13/bioc/html/SwimR.html">SwimR</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.14/data/experiment/html/ABAData.html">ABAData</a></li>
+<li><a href="/packages/3.14/data/experiment/html/brainImageRdata.html">brainImageRdata</a></li>
+<li><a href="/packages/3.14/data/experiment/html/tcgaWGBSData.hg19.html">tcgaWGBSData.hg19</a></li>
+</ul>
+
+Annotation Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/release/data/annotation/html/org.Pf.plasmo.db.html">org.Pf.plasmo.db</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.14 release
 
 Software Packages:

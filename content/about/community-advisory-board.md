@@ -15,69 +15,69 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/cab/yagoub.png"
+      <img src="/images/cab/YagoubAdam.png"
            width="100%" alt="Yagoub A. I. Adam" title="Yagoub A. I. Adam"/>
       <figcaption>Yagoub A. I. Adam, Covenant University, Nigeria.
-      <a href="https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192">linkedin</a>
+      <a href="https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192">Linkedin</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/benilton.png"
+      <img src="/images/cab/BeniltonCarvalho.png"
            width="100%" alt="Benilton Carvalho" title="Benilton Carvalho"/>
       <figcaption>Benilton Carvalho, University of Campinas, Brazil.
       <a href="https://scholar.google.com/citations?user=44vQTS4AAAAJ&hl=en">Google</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/daniela.png"
+      <img src="/images/cab/DanielaCassol.png"
            width="100%" alt="Daniela Cassol" title="Daniela Cassol"/>
       <figcaption>Daniela Cassol, University of California, Riverside, USA.
-      <a href="https://www.dcassol.com/">website</a>
+      <a href="https://www.dcassol.com/">Website</a>
       </figcaption>
     </td>    
   </tr>
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/leonardo.png"
+      <img src="/images/cab/LeonardoColladoTorres.png"
            width="100%" alt="Leonardo Collado-Torres" title="Leonardo Collado-Torres"/>
       <figcaption>Leonardo Collado-Torres, Lieber Institute for Brain Development, USA.
       <a href="http://lcolladotor.github.io/">Github</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/aedin.png"
+      <img src="/images/cab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
       <figcaption>Aedin Culhane, Dana-Farber Cancer Institute, USA.
-      <a href="https://www.hsph.harvard.edu/aedin-culhane/">website</a>
+      <a href="https://www.hsph.harvard.edu/aedin-culhane/">Website</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/sasika.png"
-           width="100%" alt="Saskia Freytag" title="Saskia Freytag"/>
-      <figcaption>Saskia Freytag, Harry Perkins Institute of Medical Research, Australia.
-      <a href="https://github.com/SaskiaFreytag">Github</a>
+      <img src="/images/cab/XueyiDong.png"
+           width="100%" alt="Xueyi Dong" title="Xueyi Dong"/>
+      <figcaption>Xueyi Dong, Walter and Eliza Hall Institute of Medical Research, Australia.
+      <a href="https://www.linkedin.com/in/xueyidong/">Linkedin</a>
       </figcaption>
     </td>
   </tr>
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/susan.png"
+      <img src="/images/cab/SusanHolmes.png"
            width="100%" alt="Susan Holmes" title="Susan Holmes"/>
       <figcaption>Susan Holmes, Stanford, USA.
-      <a href="https://med.stanford.edu/profiles/susan-holmes">website</a>
+      <a href="https://med.stanford.edu/profiles/susan-holmes">Website</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/katerina.png"
-           width="100%" alt="Katerina Kechris" title="Katerina Kechris"/>
-      <figcaption>Katerina Kechris, University of Colorado, Denver, USA.
-      <a href="http://csph.ucdenver.edu/Sites/Kechris/">website</a>
+      <img src="/images/cab/LeoLahti.png"
+           width="100%" alt="Leo Lahti" title="Leo Lahti"/>
+      <figcaption>Leo Lahti, University of Turku, Finland.
+      <a href="https://datascience.utu.fi/">Website</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/estefania.png"
+      <img src="/images/cab/EstefaniaMancini.png"
            width="100%" alt="Estefania Mancini" title="Estefania Mancini"/>
       <figcaption>Estefania Mancini, Centre for Genomic Regulation, Spain.
       <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Google Scholar</a>
@@ -87,48 +87,73 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/kozo.png"
+      <img src="/images/cab/KozoNishida.png"
            width="100%" alt="Kozo Nishida" title="Kozo Nishida"/>
-      <figcaption>Kozo Nishida, RIKEN Center for Biosystems Dynamics Research, Japan.
+      <figcaption>Kozo Nishida, Tokyo University of Agriculture and Technology, Japan.
       <a href="https://github.com/kozo2">Github</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/johannes.png"
-           width="100%" alt="Johannes Rainer" title="Johannes Rainer"/>
-      <figcaption>Johannes Rainer, Eurac Research, Italy.
-      <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">website</a>
+      <img src="/images/cab/NicoleOrtogero.png"
+           width="100%" alt="Nicole Ortogero" title="Nicole Ortogero"/>
+      <figcaption>Nicole Ortogero, NanoString Technologies, USA.
+      <a href="https://www.linkedin.com/in/nicoleortogero/">Linkedin</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/matt.png"
+      <img src="/images/cab/JohannesRainer.png"
+           width="100%" alt="Johannes Rainer" title="Johannes Rainer"/>
+      <figcaption>Johannes Rainer, Eurac Research, Italy.
+      <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Website</a>
+      </figcaption>
+    </td>
+  </tr>
+
+
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/JananiRavi.png"
+           width="100%" alt="Janani Ravi" title="Janani Ravi"/>
+      <figcaption>Janani Ravi, Michigan State University, USA.
+      <a href="https://jravilab.github.io/">Github</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/MattRitchie.png"
            width="100%" alt="Matt Ritchie" title="Matt Ritchie"/>
       <figcaption>Matt Ritchie, The Walter and Eliza Hall Institute of Medical Research, Australia.
-      <a href="https://www.wehi.edu.au/people/matthew-ritchie">website</a>
+      <a href="https://www.wehi.edu.au/people/matthew-ritchie">Website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/KevinRueAlbrecht.png"
+           width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
+      <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
+      <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Website</a>
       </figcaption>
     </td>
   </tr>
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/kevin.png"
-           width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
-      <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
-      <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/lori.png"
+      <img src="/images/cab/LoriShepherd.png"
            width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
       <figcaption>Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
-      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">linkedin</a>
+      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Linkedin</a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/mike.png"
+      <img src="/images/cab/MikeSmith.png"
            width="100%" alt="Mike Smith" title="Mike Smith"/>
       <figcaption>Mike Smith, EMBL, Germany.
-      <a href="https://www.huber.embl.de/people/mike-smith/">website</a>
+      <a href="https://www.huber.embl.de/people/mike-smith/">Website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/HediaTnani.png"
+           width="100%" alt="Hedia Tnani" title="Hedia Tnani"/>
+      <figcaption>Hedia Tnani, CNAG, Spain.
+      <a href="https://www.linkedin.com/in/h%C3%A9dia-tnani-0095221a7/">Linkedin</a>
       </figcaption>
     </td>
   </tr>
@@ -174,6 +199,7 @@ To see what has been discussed at past meetings, you can find the Meeting minute
 ## Meeting minutes
 The Community Advisory Board meets monthly. Minutes of the last meeting are made available after being approved by the board at the following meeting. The first meeting for which public minutes were maintained was on 9 April, 2020.
 
+- **2022:** [2022-03-10](2022-03-10-minutes.pdf), [2022-02-10](2022-02-10-minutes.pdf), [2022-01-13](2022-01-13-minutes.pdf)
 - **2021:** [2021-12-09](2021-12-09-minutes.pdf),
   [2021-11-11](2021-11-11-minutes.pdf),
   [2021-10-14](2021-10-14-cab-tab-joint-meeting-minutes.pdf) Joint CAB/TAB meeting,
@@ -215,6 +241,13 @@ If you would like to contact the Community Advisory Board please email:  cab at 
 
 ![Community Advisory Board](/images/cab/cab.png)
 
+
+## Past Members
+
+<ul class="inline_list">
+<li>Saskia Freytag</li>
+<li>Katerina Kechris</li>
+</ul>
 
 
 

@@ -20,15 +20,21 @@ Note, mentors are not expected to be co-authors of the resulting package or any 
 
 ### Join as a mentor (currently closed)
 
-Mentors should have 2 or more R packages in Bioconductor (release or accepted in devel) and should be active in the Bioconductor developer community  (for example active on the Bioconductor Slack chanel, or on the [support site](https://support.bioconductor.org).  Register your interest using this [form](https://docs.google.com/forms/d/1If3Va1QJsAcDIgBEWYz8E1jaC7R2eBxp0MSSah3FsRw).
+Mentors should have 2 or more R packages in Bioconductor (release or accepted in devel) and should be active in the Bioconductor developer community (for example active on the Bioconductor Slack chanel, or on the [support site](https://support.bioconductor.org).
+Register your interest using this [form](https://forms.gle/AwJqaVFqsDcAXkpv9).
 
 Mentor applications for the 2021-2022 cycle of the Bioconductor Mentorship Programme have closed.
 
-### Join as a mentee (currently closed)
+### Join as a mentee (rolling basis)
 
-Applicant Mentees should have a GitHub account and at least R scripts or a package in a public code repository (e.g., GitHub , Gitlab).  The R code should demonstrate functionality and the applicant is applying for mentoring to package it into a Bioconductor package. The mentees should have ownership or explicit permission to use the code.  Register your interest using this [form](https://docs.google.com/forms/d/e/1FAIpQLSf_xEOQU6Ye78qF0o0tcUhmMHWui-QVX8R-53KQE8c13qQMqA/viewform?usp=sf_link).
+Applicant Mentees should have a GitHub account and at least R scripts or a package in a public code repository (e.g., GitHub , Gitlab).
+The R code should demonstrate functionality and the applicant is applying for mentoring to package it into a Bioconductor package.
+The mentees should have ownership or explicit permission to use the code.
 
-Mentee applications for the 2021-2022 cycle of the Bioconductor Mentorship Programme have closed.
+Mentee applications for the October 2021 - April 2022 pilot cycle of the Bioconductor Mentorship Programme have closed.
+All applicants will be contacted as soon as a decision is made.
+
+Register your interest for future cycles of mentorship using this [form](https://forms.gle/8yykWfpVT9xyKd9b8).
 
 *Bioconductor values diversity and aims to build an inclusive, supportive and welcoming global community. Mentor and mentee developer applications from women, minorities, underrepresented group and individuals with disabilities or disadvantage are encouraged.  We also welcome applications from developers who are transitioning between academic disciplines or software languages, who can bring new insights and perspectives.*  
 

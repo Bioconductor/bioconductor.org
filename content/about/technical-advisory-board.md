@@ -25,7 +25,7 @@ board. Governance was formalized in February, 2019.
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/tab/VinceCarey.jpg"
+      <img src="/images/tab/VinceCarey.png"
            width="100%" alt="Vince Carey" title="Vince Carey"/>
       <figcaption>Vince Carey, Brigham & Women’s, Harvard Medical School, USA. Chair.
       <a href="https://vjcitn.github.io/">Website</a>
@@ -33,7 +33,7 @@ board. Governance was formalized in February, 2019.
     </td>
     
    <td width="33%">
-      <img src="/images/tab/LeviWaldron.jpg"
+      <img src="/images/tab/LeviWaldron.png"
             width="100%" alt="Levi Waldron" title="Levi Waldron"/>
       <figcaption>Levi Waldron, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
       <a href="http://waldronlab.io/">Website</a>
@@ -41,7 +41,7 @@ board. Governance was formalized in February, 2019.
     </td>
     
    <td width="33%">
-      <img src="/images/tab/CharlotteSoneson.jpg"
+      <img src="/images/tab/CharlotteSoneson.png"
            width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
       <figcaption>Charlotte Soneson, Friedrich Miescher Institute, Basel, Switzerland. Secretary.
       <a href="https://csoneson.github.io/">Website</a>
@@ -50,7 +50,7 @@ board. Governance was formalized in February, 2019.
   </tr>
 <tr> 
 <td width="33%">
-      <img src="/images/tab/AedinCulhane.jpg"
+      <img src="/images/tab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
       <figcaption>  Aedin Culhane, Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
       <a href="https://connects.catalyst.harvard.edu/profiles/display/person/6746/">Website</a>
@@ -59,7 +59,7 @@ board. Governance was formalized in February, 2019.
 
 
 <td width="33%">
-      <img src="/images/tab/HectorCorradaBravo.jpg"
+      <img src="/images/tab/HectorCorradaBravo.png"
            width="100%" alt="Hector Corrada Bravo," title="Hector Corrada Bravo,"/>
       <figcaption>  Hector Corrada Bravo, Genentech Research and Early Development, USA.
       </figcaption>
@@ -67,7 +67,7 @@ board. Governance was formalized in February, 2019.
 
   
   <td width="33%">
-      <img src="/images/tab/LaurentGatto.jpg"
+      <img src="/images/tab/LaurentGatto.png"
            width="100%" alt="Laurent Gatto" title="Laurent Gatto"/>
       <figcaption>  Laurent Gatto, Institut de Duve, Belgium.
       <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Website</a>
@@ -77,7 +77,7 @@ board. Governance was formalized in February, 2019.
   
  <tr>
  <td width="33%">
-      <img src="/images/tab/RobertGentleman.jpg"
+      <img src="/images/tab/RobertGentleman.png"
            width="100%" alt="Robert Gentleman" title="Robert Gentleman"/>
       <figcaption> Robert Gentleman, Harvard Medical School, Boston, USA.
       <a href="https://connects.catalyst.harvard.edu/Profiles/display/Person/23826">Website</a>
@@ -86,7 +86,7 @@ board. Governance was formalized in February, 2019.
 
   
   <td width="33%">
-      <img src="/images/tab/ShilaGhazanfar.jpg"
+      <img src="/images/tab/ShilaGhazanfar.png"
            width="100%" alt="Shila Ghazanfar" title="Shila Ghazanfar"/>
       <figcaption> Shila Ghazanfar, Cancer Research UK, Cambridge.
       <a href="https://shazanfar.github.io/">Website</a>
@@ -94,7 +94,7 @@ board. Governance was formalized in February, 2019.
     </td>
 
    <td width="33%">
-      <img src="/images/tab/KasperHansen.jpg"
+      <img src="/images/tab/KasperHansen.png"
            width="100%" alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
       <figcaption> Kasper Daniel Hansen, Bloomberg School of Public Health, Johns Hopkins University.
       <a href="http://www.biostat.jhsph.edu/~khansen/">Website</a>
@@ -104,7 +104,7 @@ board. Governance was formalized in February, 2019.
 
   <tr>
    <td width="33%">
-      <img src="/images/tab/StephanieHicks.jpg"
+      <img src="/images/tab/StephanieHicks.png"
            width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
       <figcaption> Stephanie Hicks, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
       <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
@@ -113,7 +113,7 @@ board. Governance was formalized in February, 2019.
 
   
   <td width="33%">
-      <img src="/images/tab/WolfgangHuber.jpg"
+      <img src="/images/tab/WolfgangHuber.png"
            width="100%" alt="Wolfgang Huber" title="Wolfgang Huber"/>
       <figcaption> Wolfgang Huber, European Molecular Biology Laboratory, Heidelberg, Germany.
       <a href="http://www.embl.de/research/units/genome_biology/huber/">Website</a>
@@ -122,7 +122,7 @@ board. Governance was formalized in February, 2019.
     
 
    <td width="33%">
-      <img src="/images/tab/RafaelIrizarry.jpg"
+      <img src="/images/tab/RafaelIrizarry.png"
            width="100%" alt="Rafael Irizarry" title="Rafael Irizarry"/>
       <figcaption> Rafael Irizarry, Dana-Farber Cancer Institute, USA
       <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Website</a>
@@ -132,21 +132,21 @@ board. Governance was formalized in February, 2019.
 
    <tr>
    <td width="33%">
-      <img src="/images/tab/LoriShepherd.jpg"
+      <img src="/images/tab/LoriShepherd.png"
            width="100%" alt="Lori Shepherd" title="Lori Kern"/>
       <figcaption> Lori Shepherd, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> </figcaption>
     </td>
 
     <td width="33%">
-      <img src="/images/tab/AaronLun.jpg"
+      <img src="/images/tab/AaronLun.png"
            width="100%" alt="Aaron Lun" title="Aaron Lun"/>
       <figcaption> Aaron Lun, Genentech Research and Early Development, USA.
       </figcaption>
     </td>
  
    <td width="33%">
-      <img src="/images/tab/michaellove.jpeg"
+      <img src="/images/tab/MichaelLove.png"
            width="100%" alt="Michael Love" title="Michael Love"/>
       <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
       <a href="https://mikelove.github.io/">Website</a>
@@ -165,6 +165,9 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
+- [2022-03-03](2022-03-03-minutes.pdf),
+  [2022-02-03](2022-02-03-minutes.pdf),
+  [2022-01-06](2022-01-06-minutes.pdf)
 - [2021-12-02](2021-12-02-minutes.pdf),
   [2021-11-04](2021-11-04-minutes.pdf),
   [2021-10-07](2021-10-07-minutes.pdf),

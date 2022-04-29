@@ -24,6 +24,11 @@ installs/builds/checks without ERROR; We do not propagate broken packages.
 Please also remember a package ALWAYS needs a valid version bump to
 propagate to users.
 
+The schedule for software, data experiment, annotation, books, workflows can be
+found on the [check results page](http://bioconductor.org/checkResults/). In
+order for changes to be included in the report, changes should be committed to
+the Bioconductor git.bioconductor.org location the morning before the listed day
+with a valid version bump. 
 
 ## How do I reproduce the build system ERROR?
 

@@ -44,9 +44,11 @@ The form is available 3-4 months before the annual Bioconductor conference. It
 will be advertised on the conference website, Bioconductor social media
 platforms, and support site forums.  
 
-2021 Awards nominations phase is over.  Please check back next year to nominate
-qualified candidates for 2022.  The Bioc2021 Awards will be announced during the
-annual conference in August. 
+2022 Awards nominations are open. The deadline to nominate a candidate for the
+Bioc2022 Awards is Friday May 20 th, 2022. The Bioc2022 Awards will be announced during the
+[annual conference](https://bioc2022.bioconductor.org/) July 27-29, 2022. 
+
+Please use the following form to nominate: [Bioc2022 Nomination Form](https://forms.gle/u7iWAiRUYaB8pR4H8)
 
 
 # FAQ
@@ -60,7 +62,7 @@ No
 
 
 # Important dates:
-* Deadline for nominations: May 31, 2021
+* Deadline for nominations: May 20, 2022. [BiocAward 2022 Nomination Form](https://forms.gle/u7iWAiRUYaB8pR4H8)
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 

@@ -15,7 +15,7 @@
 	You can alternatively check if you have access to your package
 	using the command line
 
-		  ssh -T git@git.bioconductor.org
+		  ssh -Tv git@git.bioconductor.org
 
 	If you have access to your package, but cannot git `pull` or `push`,
 	please check FAQ #13, #14, and #15.
@@ -143,7 +143,7 @@
 
 1. I cannot push to my package. I get the error,
 
-        $ git push origin master
+        $ git push -v origin master
         fatal: remote error: FATAL: W any packages/myPackage nobody DENIED by fallthru
         (or you mis-spelled the reponame)
 
