@@ -11,20 +11,21 @@ at different stages of their package.
     <p>Design and Submission</p>
 
     <ul>
-      <li><a class="symlink"
-      href="http://contributions.bioconductor.org/">Bioconductor Packages
-      Guidelines for Development, Maintenance, and Peer Review</a></li>
-      <li><a class="symlink" href="/developers/package-submission">Package Submission</a></li>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/">Bioconductor Packages Guidelines for Development, Maintenance, and Peer Review</a></li> 
+      <li><a class="symlink" href="https://contributions.bioconductor.org/submission-overview.html">Package Submission</a></li>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/develop-overview.html">Package Development Guidelines</a></li>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/package-maintenance.html">Package Maintenance Tips</a></li>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/reviewer-resources-overview.html">Package Reviewer Resources</a></li>
     </ul>
 
     <p>Package Maintenance</p>
 
     <ul>
-      <li><a class="symlink" href="/developers/how-to/git/">Git Source Control</a> &
-          <a class="symlink" href="/developers/how-to/git/faq/">FAQ</a>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/git-version-control.html">Git Source Control</a> &
+          <a class="symlink" href="http://contributions.bioconductor.org/git-version-control.html#faq">FAQ</a>
       </li>
       <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
-      <li><a class="symlink" href="/developers/how-to/troubleshoot-build-report/">Troubleshooting Build Report</a></li>
+      <li><a class="symlink" href="https://contributions.bioconductor.org/troubleshooting-build-report.html">Troubleshooting Build Report</a></li>
       <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable code base</a></li>
       <li><a class="symlink" href="/developers/release-schedule/">Release Schedule</a></li>
       <li><a class="symlink" href="https://stat.ethz.ch/mailman/listinfo/bioc-devel">Developer Mailing List</a></li>
