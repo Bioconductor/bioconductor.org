@@ -75,6 +75,10 @@ RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioco
 # Starting in 2.13 also had workflows
 RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9])/workflows/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/src/$2
 RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9])/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
+# 3.7 and 3.8 had webvigs in workflows
+RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
+RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
+
 
 ## Redirect BioC containers to google storage
 RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/src/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/bioconductor_docker/src/$2
