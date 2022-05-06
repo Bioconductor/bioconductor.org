@@ -191,16 +191,52 @@ RewriteRule ^index_html$ / [R=301]
 RewriteRule ^index_html_old$ / [R=301]
 RewriteRule ^main.html$ / [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
-RewriteRule ^developers/deprecatio.*$ /developers/how-to/deprecation
-RewriteRule ^developers/useDeve.*$ /developers/how-to/useDevel
-RewriteRule ^developers/source-contro.*$ /developers/how-to/source-control
-RewriteRule ^developers/unitTesting-guideline.*$ /developers/how-to/unitTesting-guidelines
-RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
-RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
-RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
-RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
 RewriteRule ^help/mailing-lis.*$ /help/support [R=301]
 RewriteRule ^BioC2015/$ http://bioconductor.org/help/course-materials/2015/BioC2015/ [R=301]
+
+##
+## Developers Page move to contributions.bioconductor.org
+##
+
+RewriteRule ^developers/deprecatio.*$ https://contributions.bioconductor.org/deprecation.html [R=301]
+RewriteRule ^developers/useDeve.*$ https://contributions.bioconductor.org/use-devel.html [R=301]
+RewriteRule ^developers/source-contro.*$ https://contributions.bioconductor.org/git-version-control.html [R=301]
+RewriteRule ^developers/unitTesting-guideline.*$ https://contributions.bioconductor.org/tests.html [R=301]
+RewriteRule ^developers/coding-styl.*$ https://contributions.bioconductor.org/r-code.html#r-code [R=301]
+RewriteRule ^developers/c-debuggin.*$ https://contributions.bioconductor.org/debugging-cc-code.html [R=301]
+RewriteRule ^developers/version-numberin.*$ https://contributions.bioconductor.org/versionnum.html [R=301]
+RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
+
+RedirectMatch 301 /developers/how-to/useDevel.*$ https://contributions.bioconductor.org/use-devel.html
+RedirectMatch 301 /developers/how-to/biocViews.*$ https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#biocviews
+RedirectMatch 301 /bioconductor.org/developers/how-to/version-numbering.*$ https://contributions.bioconductor.org/versionnum.html
+RedirectMatch 301 /developers/how-to/deprecation.*$ https://contributions.bioconductor.org/deprecation.html
+RedirectMatch 301 /developers/package-end-of-life/.*$  https://contributions.bioconductor.org/package-end-of-life-policy.html
+
+RedirectMatch 301 /developers/how-to/commonMethodsAndClasses.*$ https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#reusebioc
+RedirectMatch 301 /developers/how-to/efficient-code.*$ https://contributions.bioconductor.org/r-code.html#robust-and-efficient-r-code
+RedirectMatch 301 /developers/how-to/web-query.*$ https://contributions.bioconductor.org/querying-web-resources.html
+RedirectMatch 301 /developers/how-to/unitTesting-guidelines.*$ https://contributions.bioconductor.org/tests.html
+RedirectMatch 301 /developers/how-to/coding-style.*$ https://contributions.bioconductor.org/r-code.html#r-code
+RedirectMatch 301 /developers/how-to/c-debugging.*$ https://contributions.bioconductor.org/debugging-cc-code.html
+RedirectMatch 301 /developers/how-to/mavericks-howto.*$ https://contributions.bioconductor.org/cmavericks-best-practices.html
+
+RedirectMatch 301 /developers/how-to/workflows.*$ https://contributions.bioconductor.org/non-software.html#workflow-packages
+RedirectMatch 301 /developers/how-to/troubleshoot-build-report.*$ https://contributions.bioconductor.org/troubleshooting-build-report.html
+
+RedirectMatch 301 /developers/how-to/git.*$ https://contributions.bioconductor.org/git-version-control.html
+RedirectMatch 301 /developers/how-to/git/faq.*$ https://contributions.bioconductor.org/git-version-control.html#faq
+
+RedirectMatch 301 /developers/package-submission.*$ https://contributions.bioconductor.org/submission-overview.html
+
+##
+## other developers/how-to/ sections
+##
+
+RedirectMatch 301 /developers/how-to/source-contro.*$ https://contributions.bioconductor.org/git-version-control.html
+RedirectMatch 301 /developers/how-to/long-tests.*$ https://contributions.bioconductor.org/long-tests.html
+RewriteRule ^developers/how-to/git-mirrors.*$ /about/mirrors/mirror-how-to.html [R=301]
+
 
 </IfModule>
 
