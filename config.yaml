@@ -32,7 +32,7 @@ devel_repos:
 - "bioc"
 - "data/experiment"
 #- "data/annotation"
-#- "workflows"
+- "workflows"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
@@ -42,8 +42,8 @@ active_release_builders:
   mac_mojave: "merida1"
 active_devel_builders:
   linux: "nebbiolo2"
-#  windows: "riesling1"
-#  mac_mojave: "merida1"
+  windows: "palomino4"
+  mac_monterey: "lconway"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
