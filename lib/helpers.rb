@@ -824,6 +824,9 @@ end
 
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
+    if repo == "bioc"
+      url = url + "long-report.html"
+    end
     url_without_protocol = url.sub(/^http:/i, "")
     css_url = "#{url_without_protocol}report.css"
     begin
