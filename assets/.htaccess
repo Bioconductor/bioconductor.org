@@ -220,7 +220,7 @@ RedirectMatch 301 /developers/how-to/coding-style.*$ https://contributions.bioco
 RedirectMatch 301 /developers/how-to/commonMethodsAndClasses.*$ https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#reusebioc
 RedirectMatch 301 /developers/how-to/deprecation.*$ https://contributions.bioconductor.org/deprecation.html
 RedirectMatch 301 /developers/how-to/efficient-code.*$ https://contributions.bioconductor.org/r-code.html#robust-and-efficient-r-code
-RedirectMatch 301 /developers/how-to/git.*$ https://contributions.bioconductor.org/git-version-control.html
+RedirectMatch 301 /developers/how-to/git.html https://contributions.bioconductor.org/git-version-control.html
 RewriteRule ^developers/how-to/git-mirrors.*$ /about/mirrors/mirror-how-to.html [R=301]
 RedirectMatch 301 /developers/how-to/long-tests.*$ https://contributions.bioconductor.org/long-tests.html
 RedirectMatch 301 /developers/how-to/mavericks-howto.*$ https://contributions.bioconductor.org/cmavericks-best-practices.html
