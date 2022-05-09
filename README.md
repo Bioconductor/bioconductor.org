@@ -720,7 +720,7 @@ by cron jobs (see below).
 On staging.bioconductor.org (ssh to staging.bioconductor.org):
 
     cd ~/biocadmin/bioc-test-web/bioconductor.org
-    rake search_index
+    rake index_production  (see also rake search_index)
 
 What this command does:
 
@@ -729,8 +729,8 @@ What this command does:
   as of the last time the script was run. If the cache file does not exist, all files 
   are indexed. This class also handles new files and deletions.
 * The class actually does not do the indexing itself; it creates another script
-  (index.sh) which does the actual indexing, which is accomplished by using
-  curl to post files to the SOLR web app.
+  (index.sh -- created by scripts/search_indexer.rb) which does the actual
+  indexing, which is accomplished by using curl to post files to the SOLR web app.
 
 To re-index files on master, ssh to staging (not master) and do this:
  
@@ -746,9 +746,9 @@ Doing "crontab -l" on staging shows how the index us updated on master. Here are
     30 */4 * * * cd $HOME/bioc-test-web/bioconductor.org && rake index_production > $HOME/bioc-test-web/production_index.log 2>&1
 
 Notice that the search indexing process is decoupled from the site building process
-(which takes place every 20 minutes). Site indexing can be a time-consuming 
+(which takes place every 30 minutes). Site indexing can be a time-consuming 
 process (especially on master) and the site rebuilding should be quick. So 
-the search indexing takes place every hour on staging and every four hours on
+the search indexing takes place once a day on staging at 8 pm on
 master (where there are many more files to be indexed which originate from the build system).
 
 
