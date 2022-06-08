@@ -1,0 +1,9 @@
+---
+title: DEVELOPING R/BIOCONDUCTOR PACKAGES FOR GENOMICS
+location: virtual
+event_host: Physalia
+start: 2022-10-24
+end:   2022-10-28
+link:
+  text: "This course aims at making Bioconductor package development within one’s reach. It is specifically designed for biologists and newer bioinformaticians who may find themselves using R/Bioconductor packages and who wish to expand their programmatic toolkit. Overall, this course will help the attendees gain accurate insights into the fundamental notions required for proper R/Bioconductor package development. We will cover key theory concepts about package development and the Bioconductor ecosystem, supported by a range of demonstrations and exercises, to get a complete understanding of all the steps of package development. Throughout this workshop, we will emphasise on the best practices for developing a package embedded in the R/Bioconductor ecosystem."
+  url: https://www.physalia-courses.org/courses-workshops/r-packages/
