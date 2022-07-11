@@ -62,6 +62,7 @@ board. Governance was formalized in February, 2019.
       <img src="/images/tab/SeanDavis.png"
            width="100%" alt="Sean Davis" title="Sean Davis"/>
       <figcaption>  Sean Davis, University of Colorado Anschutz School of Medicine, USA.
+      <a href="https://seandavi.github.io/">Website</a>
       </figcaption>
     </td>
 
@@ -150,6 +151,7 @@ board. Governance was formalized in February, 2019.
       <img src="/images/tab/DavideRisso.png"
            width="100%" alt="Davide Risso" title="Davide Risso"/>
       <figcaption> Davide Risso, University of Padova, Italy.
+      <a href="https://drisso.github.io/">Website</a>
       </figcaption>
     </td>
     
