@@ -43,7 +43,7 @@ board. Governance was formalized in February, 2019.
    <td width="33%">
       <img src="/images/tab/CharlotteSoneson.png"
            width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
-      <figcaption>Charlotte Soneson, Friedrich Miescher Institute, Basel, Switzerland. Secretary.
+      <figcaption>Charlotte Soneson, Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland. Secretary.
       <a href="https://csoneson.github.io/">Website</a>
       </figcaption>
     </td>
@@ -52,16 +52,16 @@ board. Governance was formalized in February, 2019.
 <td width="33%">
       <img src="/images/tab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
-      <figcaption>  Aedin Culhane, Dana-Farber Cancer Institute, Harvard School of Public Health, USA.
-      <a href="https://connects.catalyst.harvard.edu/profiles/display/person/6746/">Website</a>
+      <figcaption>  Aedin Culhane, University of Limerick, Ireland.
+      <a href="https://www.ul.ie/medicine/about/staff/academic-faculty/prof-aed%C3%ADn-culhane">Website</a>
       </figcaption>
     </td>
 
 
 <td width="33%">
-      <img src="/images/tab/HectorCorradaBravo.png"
-           width="100%" alt="Hector Corrada Bravo," title="Hector Corrada Bravo,"/>
-      <figcaption>  Hector Corrada Bravo, Genentech Research and Early Development, USA.
+      <img src="/images/tab/SeanDavis.png"
+           width="100%" alt="Sean Davis" title="Sean Davis"/>
+      <figcaption>  Sean Davis, University of Colorado Anschutz School of Medicine, USA.
       </figcaption>
     </td>
 
@@ -88,7 +88,7 @@ board. Governance was formalized in February, 2019.
   <td width="33%">
       <img src="/images/tab/ShilaGhazanfar.png"
            width="100%" alt="Shila Ghazanfar" title="Shila Ghazanfar"/>
-      <figcaption> Shila Ghazanfar, Cancer Research UK, Cambridge.
+      <figcaption> Shila Ghazanfar, University of Sydney, Australia.
       <a href="https://shazanfar.github.io/">Website</a>
       </figcaption>
     </td>
@@ -137,19 +137,19 @@ board. Governance was formalized in February, 2019.
       <figcaption> Lori Shepherd, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> </figcaption>
     </td>
-
-    <td width="33%">
-      <img src="/images/tab/AaronLun.png"
-           width="100%" alt="Aaron Lun" title="Aaron Lun"/>
-      <figcaption> Aaron Lun, Genentech Research and Early Development, USA.
-      </figcaption>
-    </td>
  
    <td width="33%">
       <img src="/images/tab/MichaelLove.png"
            width="100%" alt="Michael Love" title="Michael Love"/>
       <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
       <a href="https://mikelove.github.io/">Website</a>
+      </figcaption>
+    </td>
+
+    <td width="33%">
+      <img src="/images/tab/DavideRisso.png"
+           width="100%" alt="Davide Risso" title="Davide Risso"/>
+      <figcaption> Davide Risso, University of Padova, Italy.
       </figcaption>
     </td>
     
