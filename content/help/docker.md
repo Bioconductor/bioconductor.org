@@ -21,7 +21,8 @@ or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/servi
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
   * [Using docker-compose](#dockercompose)
-- [Modifying Image Container](#modify)
+  * [Using Binary Packages] (#binarypackages)
+- [Modifying Containers](#modify)
 - [Singularity](#singularity)
 - [Microsoft Azure Container Instances](#msft)
   * [Using containers hosted on Microsoft Container Registry](#mcr)
@@ -77,6 +78,11 @@ With Bioconductor containers, we hope to enhance
 * **Convenience**: Easily start a fresh R session with
   no packages installed for testing. Quickly run an analysis with package
   dependencies not typical of your workflow. Containers make this easy.
+
+* **Package Installation**: Binary packages for Bioconductor are available
+  when the main container `bioconductor_docker` is used ( image tag `>= RELEASE_3_14`).
+  These binary packages do not require compilation and install 7x-8x 
+  faster than regular package installation.
 
 Our aim is to provide up-to-date containers for the current release
 and devel versions of Bioconductor, and some older
@@ -325,7 +331,7 @@ For more information on how to use `docker-compose`, use the
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
 <a name="modify"></a>
-## Modifying the images
+## Modifying Containers
 
 There are two ways to modify these images:
 
@@ -412,6 +418,27 @@ Example 2:
   compile vignettes for packages.
 
 	docker run -p 8787:8787 -e PASSWORD=bioc bioconductor_docker_latex:devel
+
+<p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
+
+<a name="binarypackages"></a>
+### Using Binary Packages
+
+Binary packages are now available for Bioconductor containers now for image tags `>= RELEASE_3_14`. This means that for all images
+over `RELEASE_3_14` Bioconductor packages do not need to be 
+compiled, and a package installation using `BiocManager::install()`. 
+
+The binary package installation provides a 7x-8x speed up as it 
+removes the burden of compilation on the container.
+
+For example:
+
+	## Install binary packages on a container
+	BiocManager::install(c('Rhtslib','SingleCellExperiment'))
+
+Keep in mind that the container needs to be the 
+`bioconductor/bioconductor_docker` image or a derived image. To learn how to build your own derived images, look at the section to `Modifying Conatiners`
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 
