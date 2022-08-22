@@ -14,3 +14,4 @@ contributed by members of the Bioconductor community.
 * [Using Bioconductor to Analyze your 23andme Data by Vince Buffalo](https://vincebuffalo.com/blog/2012/03/12/using-bioconductor-to-analyze-your-23andme-data.html)
 * [Bioconductor Code Search by Itoshi NIKAIDO](http://search.bioconductor.jp/)
 * [R/Bioconductor Blog By Sean Davis](https://seandavi.github.io/post/)
+* [Bioconductor Community Blog](https://bioconductor.github.io/biocblog/)
