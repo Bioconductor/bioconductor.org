@@ -64,20 +64,16 @@
       <br>Mike Smith
     </td>
     <td width="33%">
-      <img src="/images/coreTeamPic/NiteshTuraga.png"
-           width="100%" alt="Nitesh Turaga" title="Nitesh Turaga"/>
-      <br>Nitesh Turaga
     </td>
     <td width="33%">
-      <img src="/images/coreTeamPic/JiefeiWang.png"
-           width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
-      <br>Jiefei Wang
     </td>
   </tr>
 </table>
 
 Alumni
 
+* Nitesh Turaga
+* Jiefei Wang
 * Martin Morgan
 * Daniel van Twisk
 * Qian Liu

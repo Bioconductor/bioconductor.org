@@ -65,22 +65,21 @@ No
 
 # Awardees 2021
 
-## Aedin Culhane
-<img src="/images/biocawards/writeup/Culhane.png" width="100%" height="100%"/>
+## Sean Davis
+<img src="/images/biocawards/writeup/Davis.png" width="100%" height="100%"/>
 
-## Laurent Gatto
-<img src="/images/biocawards/writeup/Gatto.png" width="100%" height="100%"/>
+## Erica Feick
+<img src="/images/biocawards/writeup/Feick.png" width="100%" height="100%"/>
 
-## James MacDonald
-<img src="/images/biocawards/writeup/MacDonald.png" width="100%" />
+## Nicole Kramer
+<img src="/images/biocawards/writeup/Kramer.png" width="100%" />
 
-## Charlotte Soneson
-<img src="/images/biocawards/writeup/Soneson.png" width="100%" />
-
-## Leonardo Collado-Torres
-<img src="/images/biocawards/writeup/Torres.png" width="100%" />
+## Herv&eacute; Pag&egrave;s
+<img src="/images/biocawards/writeup/Pages.png" width="100%" />
 
 # Previous Winners
+
+2021: Aedin Culhane, Laurent Gatto, James MacDonald, Charlotte Soneson, Leonardo Collado-Torres
 
 2020: Helena Crowell, Aaron Lun, Lori Shepherd, Gordon Smyth
 
