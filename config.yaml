@@ -317,3 +317,13 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Sydney
      country_code: au
+ - Denmark:
+   - institution: dotsrc
+     institution_url: https://dotsrc.org/
+     contact: Anders Trier Olesen
+     contact_email: staff@dotsrc.org
+     mirror_url: http://mirrors.dotsrc.org/bioconductor/
+     https_mirror_url: https://mirrors.dotsrc.org/bioconductor/
+     rsync: secure_mirror_from_master
+     city: Aalborg
+     country_code: dk
