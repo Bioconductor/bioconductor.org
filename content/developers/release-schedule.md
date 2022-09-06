@@ -48,7 +48,7 @@ The following highlights important deadlines for the release.
 ### Monday October 31
 
 * Last day to commit changes to the Bioc 3.16 branch. NEWS files
-  must be updated before the builds start at 2:30 pm EST or they will
+  must be updated before the builds start at 1:30 pm EST or they will
   not be included in the release announcement.
 
   The branch will be frozen prior to creating the release branch on Tuesday,
