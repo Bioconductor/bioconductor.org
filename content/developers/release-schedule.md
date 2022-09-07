@@ -23,14 +23,16 @@ The following highlights important deadlines for the release.
 * Stop building Bioc 3.15, current release. Commits to this branch will be
   disabled.
 
-* Start building Bioc 3.17.
-
 ### Wednesday October 19
 
 * Contributed annotation packages posted to devel annotation data repository.
 
 * Bioconductor 3.16 release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
+
+### Monday October 24
+
+* Start building Bioc 3.17.
 
 ### Wednesday October 26
 
