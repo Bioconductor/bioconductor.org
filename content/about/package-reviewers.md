@@ -21,6 +21,7 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 <li>Vince Carey*</li>
 <li>Oliver Crook</li>
 <li>Helena Crowell</li>
+<li>Nils Eling</li>
 <li>Laurent Gatto</li>
 <li>Peter Hickey</li>
 <li>Kayla Interdonato</li>
@@ -28,7 +29,7 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 <li>Hervé Pagès</li>
 <li>Marcel Ramos</li>
 <li>Lori Shepherd*</li>
-<li>Nitesh Turaga</li>
+<li>Dario Strbenac</li>
 <li>Luke Zappia</li>
 
 *Current Package Review Administrators
@@ -38,4 +39,5 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 ## Past Package Reviewers
 
 <li>Martin Morgan</li>
+<li>Nitesh Turaga</li>
 
