@@ -24,6 +24,7 @@ at different stages of their package.
       <li><a class="symlink" href="https://contributions.bioconductor.org/git-version-control.html">Git Source Control</a> &
           <a class="symlink" href="http://contributions.bioconductor.org/git-version-control.html#faq">FAQ</a>
       </li>
+      <li><a class="symlink" href="https://git.bioconductor.org/BiocCredentials/">Git Credentials App</a></li>
       <li><a class="symlink" href="/checkResults/">Build Reports</a></li>
       <li><a class="symlink" href="https://contributions.bioconductor.org/troubleshooting-build-report.html">Troubleshooting Build Report</a></li>
       <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable code base</a></li>
