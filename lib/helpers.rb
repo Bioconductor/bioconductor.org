@@ -916,12 +916,12 @@ def get_mac_packs(package, item)
     end
 
     if version >= Gem::Version.new('3.15') and version < Gem::Version.new('3.16')
-        os <<  "macOS binary (x86_64)"
+        os <<  "macOS Binary (x86_64)"
         osvers << "mac.binary.ver"
     end
 
     if version >= Gem::Version.new('3.16')
-        os <<  "macOS binary (x86_64)" << "macOS binary (arm64)"
+        os <<  "macOS Binary (x86_64)" << "macOS Binary (arm64)"
         osvers << "mac.binary.ver" << "mac.binary.big-sur-arm64.ver"
     end
 
