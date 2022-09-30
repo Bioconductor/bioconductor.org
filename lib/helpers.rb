@@ -910,9 +910,19 @@ def get_mac_packs(package, item)
         osvers << "mac.binary.el-capitan.ver"
     end
 
-    if version >= Gem::Version.new('3.11')
+    if version >= Gem::Version.new('3.11') and version < Gem::Version.new('3.15')
         os <<  "macOS 10.13 (High Sierra)"
         osvers << "mac.binary.ver"
+    end
+
+    if version >= Gem::Version.new('3.15') and version < Gem::Version.new('3.16')
+        os <<  "macOS binary (x86_64)"
+        osvers << "mac.binary.ver"
+    end
+
+    if version >= Gem::Version.new('3.16')
+        os <<  "macOS binary (x86_64)" << "macOS binary (arm64)"
+        osvers << "mac.binary.ver" << "mac.binary.big-sur-arm64.ver"
     end
 
     os.each_with_index do |this_os, i|
