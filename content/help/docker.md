@@ -21,7 +21,7 @@ or [Microsoft Azure Container Instances](https://azure.microsoft.com/en-us/servi
   * [Running Containers](#running)
   * [Mounting Additional Volume](#mounting)
   * [Using docker-compose](#dockercompose)
-  * [Using Binary Packages] (#binarypackages)
+  * [Using Binary Packages](#binarypackages)
 - [Modifying Containers](#modify)
 - [Singularity](#singularity)
 - [Microsoft Azure Container Instances](#msft)
