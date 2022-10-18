@@ -1,0 +1,9 @@
+---
+title: FLOW CYTOMETRY ANALYSIS WITH R/BIOCONDUCTOR
+location: online
+event_host: Physalia
+start: 2023-01-16
+end:   2023-01-19
+link:
+  text: "This course introduces what flow cytometry is and why we use it to analyze cell population composition in biological samples. We will learn about best practices for how to analyze flow cytometry data using R/Bioconductor. Said practices include: preprocessing of the data (compensation, transformation, and quality control), multi-dimensional cell population identification via clustering, and visualizing the results in 2D. These tools can be applied to all types of cytometry including flow, mass, and spectral."
+  url: https://www.physalia-courses.org/courses-workshops/flow-cytometry/
