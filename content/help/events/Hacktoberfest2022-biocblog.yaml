@@ -1,9 +1,9 @@
 ---
-title: Hacktoberfest: Let the community know about your activities on the biocblog
+title: Hacktoberfest - Let the community know about your activities on the biocblog
 location: virtual
 event_host: kozo.nishida@gmail.com
 start: 2022-10-22
 end:   2022-10-22
 link:
-  text: "In this meetup, we are looking for blog contributions from community members. This is the Hacktoberfest edition of Bioconductor community meetup. Hacktoberfest is an open source project festival that invites GitHub pull request from everyone. The blog posts are made by sending pull requests to https://github.com/bioconductor/biocblog. You can use any language for your blog posts."
+  text: In this meetup, we are looking for blog contributions from community members. This is the Hacktoberfest edition of Bioconductor community meetup. Hacktoberfest is an open source project festival that invites GitHub pull request from everyone. The blog posts are made by sending pull requests to https://github.com/bioconductor/biocblog. You can use any language for your blog posts.
   url: https://www.meetup.com/bioconductor-community-in-asia/events/288949678/
