@@ -15,14 +15,13 @@ searching in [BiocViews](/packages) for your data type.
 + FASTA -- [Biostrings][]`::readDNAStringSet()`
 + FASTQ -- [ShortRead][]`::readFastq()`
 + MS data (XML-based and mgf formats) -- [Spectra][]`::Spectra()`, 
-  [MSnbase][]`::readMSData()`, [Spectra][]`::Spectra(source = MsBackendMgf::MsBackendMgf())`, 
-  [MSnbase][]`::readMgfData()`
+  [Spectra][]`::Spectra(source = MsBackendMgf::MsBackendMgf())`
 
 ## Common Classes
 
 + Rectangular feature x sample data --
   [SummarizedExperiment][]`::SummarizedExperiment()` (RNAseq count
-  matrix, microarray, ...)
+  matrix, microarray, quantitative proteomics, ...)
 + Genomic coordinates -- [GenomicRanges][]`::GRanges()` (1-based,
   closed interval)
 + Genomic coordinates from multiple samples --
@@ -36,7 +35,7 @@ searching in [BiocViews](/packages) for your data type.
   [MultiAssayExperiment][]`::MultiAssayExperiment()`
 + Single cell data --
   [SingleCellExperiment][]`::SingleCellExperiment()`
-+ Mass spec data -- [Spectra][]`::Spectra()`, [MSnbase][]`::MSnExp()`
++ Mass spec data -- [Spectra][]`::Spectra()`
 
 [rtracklayer]: https://bioconductor.org/packages/rtracklayer
 [Biostrings]: https://bioconductor.org/packages/Biostrings
