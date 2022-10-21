@@ -3,6 +3,56 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.16 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.14/bioc/html/caOmicsV.html">caOmicsV</a></li>
+<li><a href="/packages/3.14/bioc/html/clonotypeR.html">clonotypeR</a></li>
+<li><a href="/packages/3.14/bioc/html/GCSConnection.html">GCSConnection</a></li>
+<li><a href="/packages/3.14/bioc/html/GCSFilesystem.html">GCSFilesystem</a></li>
+<li><a href="/packages/3.12/bioc/html/genphen.html">genphen</a></li>
+<li><a href="/packages/3.14/bioc/html/ppiStats.htm">ppiStats</a></li>
+<li><a href="/packages/3.14/bioc/html/ProteomicsAnnotationHubData.html">ProteomicsAnnotationHubData </a></li>
+<li><a href="/packages/3.14/bioc/html/PSICQUIC.html">PSICQUIC</a></li>
+<li><a href="/packages/3.14/bioc/html/PubScore.html">PubScore </a></li>
+<li><a href="/packages/3.14/bioc/html/Rgin.html">Rgin</a></li>
+<li><a href="/packages/3.14/bioc/html/RpsiXML.html">RpsiXML</a></li>
+<li><a href="/packages/3.13/bioc/html/ScISI.html">ScISI</a></li>
+<li><a href="/packages/3.14/bioc/html/SLGI.html">SLGI</a></li>
+<li><a href="/packages/3.14/bioc/html/Sushi.html">Sushi</a></li>
+
+
+<li><a href="/packages/3.14/bioc/html/ABAEnrichment.html">ABAEnrichment</a></li>
+<li><a href="/packages/3.13/bioc/html/Autotuner.html">Autotuner</a></li>
+<li><a href="/packages/3.14/bioc/html/CAnD.html">CAnD</a></li>
+<li><a href="/packages/3.13/bioc/html/CountClust.html">CountClust</a></li>
+<li><a href="/packages/3.14/bioc/html/diffloop.html">diffloop</a></li>
+<li><a href="/packages/3.13/bioc/html/GenoGAM.html">GenoGAM</a></li>
+<li><a href="/packages/3.14/bioc/html/gprege.html">gprege</a></li>
+<li><a href="/packages/3.12/bioc/html/Onassis.html">Onassis</a></li>
+<li><a href="/packages/3.13/bioc/html/perturbatr.html">perturbatr</a></li>
+<li><a href="/packages/3.14/bioc/html/RmiR.html">RmiR</a></li>
+<li><a href="/packages/3.14/bioc/html/tofsims.html">tofsims</a></li>
+<li><a href="/packages/3.14/bioc/html/TSRchitect.html">TSRchitect</a></li>
+<li><a href="/packages/3.14/bioc/html/networkBMA.html">networkBMA</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.14/data/experiment/html/DREAM4.html">DREAM4</a></li>
+<li><a href="/packages/3.14/data/experiment/html/MSstatsBioData.html">MSstatsBioData</a></li>
+<li><a href="/packages/3.14/data/experiment/html/ppiData.html">ppiData</a></li>
+</ul>
+
+Workflow Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.14/workflow/html/proteomics.html">proteomics</a></li>
+</ul>
 
 ## Packages removed with Bioconductor 3.15 release
 
