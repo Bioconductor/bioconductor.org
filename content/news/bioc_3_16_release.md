@@ -3,8 +3,8 @@ November 2, 2022
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.16, consisting of
-2183 software packages, xxx experiment data packages, xxx annotation
-packages, xx workflows and 8 books.
+2183 software packages, 416 experiment data packages, 909 annotation
+packages, 28 workflows and 8 books.
 
 There are 71 new software packages, 9 new data experiment packages,
 1 new annotation packages, no new workflows, no new books, and many updates and
