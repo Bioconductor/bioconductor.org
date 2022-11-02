@@ -10,7 +10,7 @@ There are 71 new software packages, 9 new data experiment packages,
 1 new annotation packages, no new workflows, no new books, and many updates and
 improvements to existing packages.
 
-Bioconductor 3.16 is compatible with R 4.2.2, and is supported on Linux,
+Bioconductor 3.16 is compatible with R 4.2, and is supported on Linux,
 64-bit Windows, and Intel 64-bit macOS 10.13 (High Sierra) or higher.
 Bioconductor is excited to start supporting arm64 with this release. This
 release will also include updated Bioconductor [Docker containers][2].
@@ -42,7 +42,7 @@ Getting Started with Bioconductor 3.16
 
 To update to or install Bioconductor 3.16:
 
-1. Install R 4.2.2. Bioconductor 3.16 has been designed expressly for
+1. Install R 4.2. Bioconductor 3.16 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
