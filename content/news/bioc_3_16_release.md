@@ -6232,7 +6232,7 @@ New features
 - Resolve disparate columns in mutation files from GBMLGG
 (@andreagrioni, #45)
 - Update codebase to download https resources from newer layout in
-<gdac.broadinstitute.org> (@biostars-nyc, #44).
+gdac.broadinstitute.org (@biostars-nyc, #44).
 - Update makeSummarizedExperimentFromGISTIC interface with rownameCol
 input, type checking, and set row names when the are not duplicated.
 
