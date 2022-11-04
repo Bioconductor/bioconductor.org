@@ -1101,13 +1101,13 @@ end
 
 # try to determine if a package is in the code brower based on biocViews
 def package_in_code_browser(package, item)
+    # Skip anything that's not a software package
+    segs = item.identifier.to_s.split('/')
+    return false if segs[5] != "bioc"
     # Deprecated package are missing in the code browser
     return false if package[:PackageStatus] == "Deprecated"
     # Skip if we can't determine the git branch
     return false if package[:git_branch].nil?
-    # Skip anything that's not a software package
-    segs = item.identifier.to_s.split('/')
-    return false if segs[5] != "bioc"
     # if we get here, it's probably in the code browser
     return true
 end
