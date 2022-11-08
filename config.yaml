@@ -329,3 +329,13 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Aalborg
      country_code: dk
+ - Sweden:
+   - institution: Academic Computer Club Umea
+     institution_url: https://www.accum.se/
+     contact: FTP admins
+     contact_email: ftp-adm@accum.se
+     mirror_url: http://mirror.accum.se/mirror/bioconductor.org/
+     https_mirror_url: https://mirror.accum.se/mirror/bioconductor.org/
+     rsync: secure_mirror_from_master
+     city: Umea
+     country_code: se
