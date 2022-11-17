@@ -52,7 +52,7 @@ lessons are developed as modules in their own repositories.
 
 - The [Google group](https://groups.google.com/g/bioconductor-teaching/).
 - The `education-and-training` channel on the [Bioconductor comunity
-  slack](https://bioc-community.herokuapp.com/).
+  slack](https://slack.bioconductor.org/).
 
 ## Contact
 

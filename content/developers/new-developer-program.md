@@ -48,5 +48,5 @@ We are excited to announce our first group of 6 mentors are [Federico Marini](ht
 
 ## More information
 
-For more information about the program see the [Bioconductor New Developer Mentorship and Assistance statement](https://docs.google.com/document/d/1Q-Hxmy0ZcKzKSbB-dtg02gJRlZ0Vi6WNOTF-W3bwjmY/edit?usp=sharing). For announcements or to contact the program, please message the team via the `#developers-mentorship` slack channel on [Community-Bioc Slack](https://bioc-community.herokuapp.com/). 
+For more information about the program see the [Bioconductor New Developer Mentorship and Assistance statement](https://docs.google.com/document/d/1Q-Hxmy0ZcKzKSbB-dtg02gJRlZ0Vi6WNOTF-W3bwjmY/edit?usp=sharing). For announcements or to contact the program, please message the team via the `#developers-mentorship` slack channel on [Community-Bioc Slack](https://slack.bioconductor.org/). 
 
