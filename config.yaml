@@ -48,8 +48,8 @@ active_release_builders:
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.16"
-  r_version: "4.2"
+  bioc_version: "3.17"
+  r_version: "4.3"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
