@@ -171,7 +171,7 @@ There is an annual expression of interest process inviting new members to apply 
 Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
 
 ### Is there a recommended way for community members to give suggestions to the CAB?
-We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack ([bioc-community.herokuapp.com](https://bioc-community.herokuapp.com/)).
+We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack ([slack.bioconductor.org](https://slack.bioconductor.org/)).
 (See also: A for the previous Q.)
 
 ### Are there any big new CAB projects or plans on the horizon?
