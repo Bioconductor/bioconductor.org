@@ -1,0 +1,10 @@
+---
+title: GENE SET ENRICHMENT ANALYSIS IN R/BIOCONDUCTOR
+location: online
+event_host: Physalia
+start: 2023-01-30
+end:   2023-02-02
+link:
+  text: "Gene set enrichment analysis (GSEA) is a basic method for biological data analysis. It is used to associate biological functions to a list of genes of interest, which is to explain the results from a biology point of view. In this course, we will teach the use of popular GSEA tools, both for online-based tools and those implemented as R packages. We will give a detailed introduction to a variety of methods of GSEA analysis, including overrepresentation analysis, univariate methods, multivariate methods, as well as extensions of GSEA analysis, such as network-based GSEA, and single-sample GSEA. Finally, you will also learn downstream processing of GSEA results, including efficiently visualizing the massive GSEA results, clustering, and simplifying GSEA results via various methods. In the course, we will cover some other topics that are tightly related to GSEA analysis, such as multiple hypothesis testing. You will also learn how to implement GSEA methods completely from scratch in R. Instructor: Dr. Zuguang Gu (https://jokergoo.github.io/; German Cancer Research Center (DKFZ))"
+  url: https://www.physalia-courses.org/courses-workshops/gse-in-r/
+  
