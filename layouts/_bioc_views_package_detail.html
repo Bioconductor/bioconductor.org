@@ -465,6 +465,13 @@ BiocManager::install("<%=@package[:Package]%>")</pre>
 			<td>git clone <%=get_source_url(@package, @item, @item_rep, "ssh")%></td>
 		    </tr>
 		<% end %>
+		
+        <% if package_in_code_browser(@package, @item) %>
+            <tr class="<%=ri.rowclass%>">
+                <td>Bioc Package Browser</td>
+                <td><a href="<%=get_code_browser_url(@package, include_branch=true)%>"><%=get_code_browser_url(@package, include_branch=false)%></a></td>
+            </tr>
+        <% end %>
 
 		    <tr class="<%=ri.rowclass%>">
 			<td>Package Short Url</td>
