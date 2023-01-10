@@ -52,8 +52,8 @@
     </td>
     <td width="33%">
       <img src="/images/coreTeamPic/LoriShepherd.png"
-           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
-      <br>Lori Ann Shepherd
+           width="100%" alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
+      <br>Lori Ann (Shepherd) Kern
     </td>
   </tr>
 

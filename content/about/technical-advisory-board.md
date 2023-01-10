@@ -134,8 +134,8 @@ board. Governance was formalized in February, 2019.
    <tr>
    <td width="33%">
       <img src="/images/tab/LoriShepherd.png"
-           width="100%" alt="Lori Shepherd" title="Lori Kern"/>
-      <figcaption> Lori Shepherd, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
+           width="100%" alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
+      <figcaption> Lori (Shepherd) Kern, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
       <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> </figcaption>
     </td>
  

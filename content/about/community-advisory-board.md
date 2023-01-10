@@ -137,8 +137,8 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
   <tr>
     <td width="33%">
       <img src="/images/cab/LoriShepherd.png"
-           width="100%" alt="Lori Shepherd" title="Lori Shepherd"/>
-      <figcaption>Lori Shepherd, Roswell Park Comprehensive Cancer Center, USA.
+           width="100%" alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
+      <figcaption>Lori (Shepherd) Kern, Roswell Park Comprehensive Cancer Center, USA.
       <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Linkedin</a>
       </figcaption>
     </td>
