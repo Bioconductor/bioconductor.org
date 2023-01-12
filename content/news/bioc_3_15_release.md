@@ -508,7 +508,7 @@ There are 78 new software packages in this release of Bioconductor.
   sources of biological data, including protein-protein interaction
   data, gene expression data, and sequence motif information to
   reconstruct genome-wide, condition-specific regulatory
-  networks.[(Glass et al. 2013)]. LIONESS(Linear Interpolation to
+  networks.&#91;(Glass et al. 2013)&#93;. LIONESS(Linear Interpolation to
   Obtain Network Estimates for Single Samples) is a method to
   estimate sample-specific regulatory networks by applying linear
   interpolation to the predictions made by existing aggregate network
@@ -519,7 +519,7 @@ There are 78 new software packages in this release of Bioconductor.
   et al. 2016). ALPACA(ALtered Partitions Across Community
   Architectures) is a method for comparing two genome-scale networks
   derived from different phenotypic states to identify
-  condition-specific modules.[(Padi and Quackenbush 2018)]. This
+  condition-specific modules.	&#91;(Padi and Quackenbush 2018)&#93;. This
   package integrates pypanda--the Python implementation of PANDA and
   LIONESS(https://github.com/davidvi/pypanda),the R implementation of
   CONDOR(https://github.com/jplatig/condor) and the R implementation
@@ -3810,11 +3810,11 @@ BUG FIXES
 
                         Changes in version 1.4.0                        
 
-- [Bug Fix]
+- &#91;Bug Fix&#93;
   - `findStudiesInCluster`: single-element clusters return the correct
   study now, instead of `null`
 
-- [Major]
+- &#91;Major&#93;
   - `findStudiesInCluster`: the output includes PC number of the
   participating
   study in the cluster and the variance explained by them. With
@@ -3845,7 +3845,7 @@ BUG FIXES
   the
   version of RAVmodel to download.
 
-- [Minor]
+- &#91;Minor&#93;
   - miniRAVmodel is updated
 
 [GenProSeq](/packages/GenProSeq)

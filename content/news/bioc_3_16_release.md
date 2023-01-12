@@ -1074,36 +1074,36 @@ endpoints include:
 
 ## Rawls
 $removed
-[1] admin_delete_refresh_token admin_statistics_get
-[3] refreshToken refreshTokenDate
+&#91;1&#93; admin_delete_refresh_token admin_statistics_get
+&#91;3&#93; refreshToken refreshTokenDate
 
 $updated
-[1] listUserBillingAccounts createWorkspace getTags
-[4] clone entity_type_metadata get_entity
-[7] entityQuery createSubmission validateSubmission
+&#91;1&#93; listUserBillingAccounts createWorkspace getTags
+&#91;4&#93; clone entity_type_metadata get_entity
+&#91;7&#93; entityQuery createSubmission validateSubmission
 
 ## Terra
 $removed
-[1] userTrial listImportPFBJobs importPFBStatus
+&#91;1&#93; userTrial listImportPFBJobs importPFBStatus
 
 $updated
-[1] deleteBillingProject billingAccounts
-[3] createWorkspace cloneWorkspace
-[5] entityQuery flexibleImportEntities
-[7] importEntities createSubmission
-[9] validateSubmission browserDownloadEntitiesTSV
-[11] setProfile
+&#91;1&#93; deleteBillingProject billingAccounts
+&#91;3]&#93; createWorkspace cloneWorkspace
+&#91;5&#93; entityQuery flexibleImportEntities
+&#91;7&#93; importEntities createSubmission
+&#91;9&#93; validateSubmission browserDownloadEntitiesTSV
+&#91;11&#93; setProfile
 
 ## Leonardo
 $removed
-[1] batchNodepoolCreate
+&#91;1&#93; batchNodepoolCreate
 
 $updated
-[1] listApp listAppByProject deleteApp
-[4] createApp listDisks listDisksByProject
-[7] createDisk updateRuntime createRuntime
-[10] setCookie proxyClusterJupyter proxyClusterJupyterLab
-[13] proxyClusterRStudio
+&#91;1&#93; listApp listAppByProject deleteApp
+&#91;4&#93; createApp listDisks listDisksByProject
+&#91;7&#93; createDisk updateRuntime createRuntime
+&#91;10&#93; setCookie proxyClusterJupyter proxyClusterJupyterLab
+&#91;13&#93; proxyClusterRStudio
 
 - (v 1.9.9) add 'gadgets' (simple graphical interfaces) to key
 functions, avworkspace_gadget(), avtable_gadget(),
@@ -1124,7 +1124,7 @@ normalizePath()
 on source and destination arguments to avoid creating directories in
 unexpected locations when provided with paths containing ~, . or ...
 
-- (v 19.10 / v 1.8.6) gcloud_account("<new account>") did not
+- (v 19.10 / v 1.8.6) gcloud_account(&ldquo;&#60;new account&#62;&rdquo;) did not
 invalidate cached access tokens.
 https://github.com/Bioconductor/AnVIL/issues/66
 
@@ -1231,7 +1231,7 @@ version 1.1.0
 
 - Add TransLogit parameter to BASiCS_PlotDE to have volcano plots on a
   logit scale.
-  As the posterior probabilities are in the interval [0, 1] this may
+  As the posterior probabilities are in the interval &#91;0, 1&#93; this may
   make it
   easier to visualise difference in "interesting" regions (e.g., 0.6-1)
 
@@ -1262,7 +1262,7 @@ version 1.1.0
                  Changes in version 2.9.1 (2022-05-04)                  
 
 - switch from using DOUBLE_EPS to a function call to
-  std::numeric_limits<double>::epsilon() - credit Tomas Kalibera for
+  std::numeric_limits&#60;double&#62;::epsilon() - credit Tomas Kalibera for
   informing by private correspondence.
 
 [BASiCStan](/packages/BASiCStan)
@@ -1547,8 +1547,8 @@ BUG FIX
 NEW FEATURES
 
 - (v 1.31.10) bpiterate() when ITER is not a function will use
-  bpiterateAlong() to attempt to iterate over elements ITER[[1]],
-  ITER[[2]], etc.
+  bpiterateAlong() to attempt to iterate over elements ITER&#91;&#91;1&#93;&#93;,
+  ITER&#91;&#91;2&#93;&#93;, etc.
   https://stat.ethz.ch/pipermail/bioc-devel/2022-July/019075.html
 
 USER VISIBLE CHANGES
@@ -3749,7 +3749,7 @@ Additional ones would be dropped.
 - readIDAT() could produce Warning message: In readChar(con, nchars =
 n) : truncating string with embedded nuls if the IDAT file had an
 Unknown.6 field. Until we know what that field represents, it is
-parsed as an (nbytes, <byte sequence>) integer vector.
+parsed as an (nbytes, &#60;byte sequence&#62;) integer vector.
 
                  Changes in version 0.39.0 (2022-04-26)                 
 
@@ -5330,8 +5330,8 @@ to these probes and the 90% threshold could never be met
 the
 PAOLA-1 trial and the recommended threshold is now >=15.
 - The default value for arm-level alterations has been set to 90% as
-mentioned in the publication [Christinat et al., J Mol Diagn 2021;
-PMID: 34454110].
+mentioned in the publication &#91;Christinat et al., J Mol Diagn 2021;
+PMID: 34454110&#93;.
 - The genomic LOH score (percent of LOH bases) has been added;
 score_gloh.
 - Adds a flag "no tumor?" if the percentage of altered bases is less
@@ -6828,8 +6828,8 @@ updated.
 
                        Changes in version 1.9.12                        
 
-- simMat class now supports empty indexing (s[])
-- simMat class now supports logical accession (s[c(T,F,T),])
+- simMat class now supports empty indexing (s&#91;&#93;)
+- simMat class now supports logical accession (s&#91;c(T,F,T),&#93;)
 
                        Changes in version 1.9.11                        
 
@@ -6942,8 +6942,8 @@ largest decoy score (#8, @lievenclement)
 
                  Changes in version 1.3.2 (2022-06-17)                  
 
-- [Fix]: Pass initial argument choices to the gadget
-- [Fix]: Made argument name for the log10-transformation consistent
+- &#91;Fix&#93;: Pass initial argument choices to the gadget
+- &#91;Fix&#93;: Made argument name for the log10-transformation consistent
 (log10)
 - evalTargetDecoysHist(): Updated default colors of targets and
 decoys
