@@ -170,6 +170,12 @@ In addition to asking new questions, you can also continue the discussion follow
 There is an annual expression of interest process inviting new members to apply to join the CAB. This is announced on the Bioconductor support site and relevant Bioconductor community slack channel. Current CAB members vote on the applications received to select new members. The board is keen to have representatives from diverse backgrounds (i.e. different geographical and cultural backgrounds, genders, statistical analysis interests, career stages and experience levels).
 Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
 
+Nominations for 2023 CAB board members is occurring now. Please fill out the
+following [google form](https://forms.gle/2nb2fJE4jgca3nqi7). If you are unable
+to use google forms please see the follow [pdf of
+questions](NominationFormQuesetions.pdf) and email responses to
+shepherd.bioc@gmail.com. 
+
 ### Is there a recommended way for community members to give suggestions to the CAB?
 We are happy to receive suggestions and feedback and recommend reaching us via email (cab@bioconductor.org) or by messaging us on the #community-advisory-board channel of the Bioconductor community slack ([slack.bioconductor.org](https://slack.bioconductor.org/)).
 (See also: A for the previous Q.)
