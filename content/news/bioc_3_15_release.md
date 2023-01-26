@@ -9230,9 +9230,12 @@ One annotation packages was removed from this release (after being deprecated
 in Bioc 3.14): 
 org.Pf.plasmo.db
 
-One annotation package was deprecated in this release and will be removed in
+Seven annotation packages were deprecated in this release and will be removed in
 Bioc 3.16:
-MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz
+MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz, SNPlocs.Hsapiens.dbSNP.20101109,
+SNPlocs.Hsapiens.dbSNP.20120608, SNPlocs.Hsapiens.dbSNP141.GRCh38,
+SNPlocs.Hsapiens.dbSNP142.GRCh37,
+SNPlocs.Hsapiens.dbSNP151.GRCh38,XtraSNPlocs.Hsapiens.dbSNP141.GRCh38 
 
 No workflow packages were removed from this release (after being deprecated in
 Bioc 3.14)

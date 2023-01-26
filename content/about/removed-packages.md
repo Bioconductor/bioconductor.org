@@ -52,6 +52,19 @@ Workflow Packages:
 <li><a href="/packages/3.14/workflow/html/proteomics.html">proteomics</a></li>
 </ul>
 
+Annotation Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.15/data/annotation/html/MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz">MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz</a></li>
+<li><a href="/packages/3.15/data/annotation/html/SNPlocs.Hsapiens.dbSNP.20101109">SNPlocs.Hsapiens.dbSNP.20101109</a></li>
+<li><a href="/packages/3.15/data/annotation/html/SNPlocs.Hsapiens.dbSNP.20120608">SNPlocs.Hsapiens.dbSNP.20120608</a></li>
+<li><a href="/packages/3.15/data/annotation/html/SNPlocs.Hsapiens.dbSNP141.GRCh38">SNPlocs.Hsapiens.dbSNP141.GRCh38</a></li>
+<li><a href="/packages/3.15/data/annotation/html/SNPlocs.Hsapiens.dbSNP142.GRCh37">SNPlocs.Hsapiens.dbSNP142.GRCh37</a></li>
+<li><a href="/packages/3.15/data/annotation/html/SNPlocs.Hsapiens.dbSNP151.GRCh38">SNPlocs.Hsapiens.dbSNP151.GRCh38</a></li>
+<li><a href="/packages/3.15/data/annotation/html/XtraSNPlocs.Hsapiens.dbSNP141.GRCh38">XtraSNPlocs.Hsapiens.dbSNP141.GRCh38</a></li>
+</ul> 
+
+
 ## Packages removed with Bioconductor 3.15 release
 
 Software Packages:
@@ -92,7 +105,7 @@ Experiment Data Packages:
 Annotation Packages:
 
 <ul class="inline_list">
-<li><a href="/packages/release/data/annotation/html/org.Pf.plasmo.db.html">org.Pf.plasmo.db</a></li>
+<li><a href="/packages/3.14/data/annotation/html/org.Pf.plasmo.db.html">org.Pf.plasmo.db</a></li>
 </ul>
 
 

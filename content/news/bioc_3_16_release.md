@@ -7641,9 +7641,12 @@ Two experimental data packages are deprecated in this release and will be
 removed in Bioc 3.17:
 gatingMLData, RNASeqRData
 
-One annotation packages was removed from this release (after being deprecated
+Seven annotation packages were removed from this release (after being deprecated
 in Bioc 3.15): 
-MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz
+MafH5.gnomAD.v3.1.1.GRCh38_3.13.1.tar.gz, SNPlocs.Hsapiens.dbSNP.20101109,
+SNPlocs.Hsapiens.dbSNP.20120608, SNPlocs.Hsapiens.dbSNP141.GRCh38,
+SNPlocs.Hsapiens.dbSNP142.GRCh37, SNPlocs.Hsapiens.dbSNP151.GRCh38,
+XtraSNPlocs.Hsapiens.dbSNP141.GRCh38
 
 No annotation packages were deprecated in this release and will be removed in
 Bioc 3.17.
