@@ -183,6 +183,9 @@ We are happy to receive suggestions and feedback and recommend reaching us via e
 ### Are there any big new CAB projects or plans on the horizon?
 We plan to redevelop the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project ([chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/)). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
 
+### What projects are you working on currently
+The Bioconductor community manager Dr. Maria Doyle is leading the CZI EOSS funded [training and website iniatives](chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community) and CAB members are participating with [working groups](https://workinggroups.bioconductor.org).  Everyone is welcome to join a [working group](https://workinggroups.bioconductor.org) and contribute to our community.
+
 ### What did you consider the biggest challenges when joining the CAB as a new member?
 Securing funding to increase the effort that can be put in to different activities.
 
