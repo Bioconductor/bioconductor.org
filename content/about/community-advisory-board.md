@@ -253,10 +253,13 @@ If you would like to contact the Community Advisory Board please email:  cab at 
 
 
 ## Past Members
+We are grateful to past CAB members;
 
 <ul class="inline_list">
-<li>Saskia Freytag</li>
-<li>Katerina Kechris</li>
+  
+<li>Saskia Freytag (04/2020- 04/2022)</li>
+<li>Katerina Kechris. (04/2021 - 04/2022) </li>
+
 </ul>
 
 
