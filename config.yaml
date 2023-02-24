@@ -9,7 +9,7 @@ production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "3.16"
 r_version_associated_with_release: "4.2.0"
-r_version_associated_with_devel: "4.2.0"
+r_version_associated_with_devel: "4.3.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 devel_version: "3.17"
