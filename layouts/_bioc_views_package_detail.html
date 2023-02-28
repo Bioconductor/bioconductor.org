@@ -121,9 +121,6 @@
 
 	DOI: <a title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)." href="https://doi.org/doi:10.18129/B9.bioc.<%=@package[:Package]%>">10.18129/B9.bioc.<%=@package[:Package]%></a> &nbsp;
 
-<a title="Share on Facebook" href="https://www.facebook.com/sharer/sharer.php?u=<%= get_socialized_url item.identifier %>"><img height="16" width="16" src="/images/facebook.png"/></a> &nbsp;
-<a title="Share on Twitter" href="https://twitter.com/intent/tweet?url=<%= get_socialized_url item.identifier %>&text=<%= get_social_title(item, @package) %>"><img height="16" width="16" src="/images/twitter.png"/></a>
-
    <% if @package.has_key? :PackageStatus and @package[:PackageStatus] == "Deprecated" %>
 
     <p>This package is <b>deprecated</b>. It will probably
