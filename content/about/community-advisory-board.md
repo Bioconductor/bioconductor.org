@@ -9,23 +9,34 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 
 [1]: CAB-Governance.pdf
 
+Quick Links
+--------
+
+* [Current Members](#current-members)
+* [FAQ](#faq)
+* [Meeting Minutes](#meeting-minutes)
+* [Event Calendar](#event-calendar)
+* [Contact](#contact)
+* [Past Members](#past-members)
+
+
 ## Current members
 <!--0. Image, 1. Twitter, 2. Github, 3. Google , 4. LinkedIn, 5. Vcard/website. and 0.x is icon, 1.1 is person link) -->
 
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/cab/YagoubAdam.png"
-           width="100%" alt="Yagoub A. I. Adam" title="Yagoub A. I. Adam"/>
-      <figcaption>Yagoub A. I. Adam, Covenant University, Nigeria.
-      <a href="https://de.linkedin.com/in/yagoub-a-i-adam-59ab13192">Linkedin</a>
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Enis Afgan" title="Enis Afgan"/>
+      <figcaption>Enis Afgan
+      <a href=""></a>
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/BeniltonCarvalho.png"
-           width="100%" alt="Benilton Carvalho" title="Benilton Carvalho"/>
-      <figcaption>Benilton Carvalho, University of Campinas, Brazil.
-      <a href="https://scholar.google.com/citations?user=44vQTS4AAAAJ&hl=en">Google</a>
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Umar Ahmad" title="Umar Ahmad"/>
+      <figcaption>Umar Ahmad.
+      <a href=""></a>
       </figcaption>
     </td>
     <td width="33%">
@@ -38,13 +49,6 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
   </tr>
 
   <tr>
-    <td width="33%">
-      <img src="/images/cab/LeonardoColladoTorres.png"
-           width="100%" alt="Leonardo Collado-Torres" title="Leonardo Collado-Torres"/>
-      <figcaption>Leonardo Collado-Torres, Lieber Institute for Brain Development, USA.
-      <a href="http://lcolladotor.github.io/">Github</a>
-      </figcaption>
-    </td>
     <td width="33%">
       <img src="/images/cab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
@@ -59,77 +63,11 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
       <a href="https://www.linkedin.com/in/xueyidong/">Linkedin</a>
       </figcaption>
     </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
-      <img src="/images/cab/SusanHolmes.png"
-           width="100%" alt="Susan Holmes" title="Susan Holmes"/>
-      <figcaption>Susan Holmes, Stanford, USA.
-      <a href="https://med.stanford.edu/profiles/susan-holmes">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/LeoLahti.png"
-           width="100%" alt="Leo Lahti" title="Leo Lahti"/>
-      <figcaption>Leo Lahti, University of Turku, Finland.
-      <a href="https://datascience.utu.fi/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/EstefaniaMancini.png"
-           width="100%" alt="Estefania Mancini" title="Estefania Mancini"/>
-      <figcaption>Estefania Mancini, Centre for Genomic Regulation, Spain.
-      <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Google Scholar</a>
-      </figcaption>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
-      <img src="/images/cab/KozoNishida.png"
-           width="100%" alt="Kozo Nishida" title="Kozo Nishida"/>
-      <figcaption>Kozo Nishida, Tokyo University of Agriculture and Technology, Japan.
-      <a href="https://github.com/kozo2">Github</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/NicoleOrtogero.png"
-           width="100%" alt="Nicole Ortogero" title="Nicole Ortogero"/>
-      <figcaption>Nicole Ortogero, NanoString Technologies, USA.
-      <a href="https://www.linkedin.com/in/nicoleortogero/">Linkedin</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/JohannesRainer.png"
-           width="100%" alt="Johannes Rainer" title="Johannes Rainer"/>
-      <figcaption>Johannes Rainer, Eurac Research, Italy.
-      <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Website</a>
-      </figcaption>
-    </td>
-  </tr>
-
-
-  <tr>
-    <td width="33%">
-      <img src="/images/cab/JananiRavi.png"
-           width="100%" alt="Janani Ravi" title="Janani Ravi"/>
-      <figcaption>Janani Ravi, Michigan State University, USA.
-      <a href="https://jravilab.github.io/">Github</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/MattRitchie.png"
-           width="100%" alt="Matt Ritchie" title="Matt Ritchie"/>
-      <figcaption>Matt Ritchie, The Walter and Eliza Hall Institute of Medical Research, Australia.
-      <a href="https://www.wehi.edu.au/people/matthew-ritchie">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/cab/KevinRueAlbrecht.png"
-           width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
-      <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
-      <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Website</a>
+     <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Maria Doyle" title="Maria Doyle"/>
+      <figcaption>Maria Doyle
+      <a href=""></a>
       </figcaption>
     </td>
   </tr>
@@ -143,12 +81,101 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
       </figcaption>
     </td>
     <td width="33%">
+      <img src="/images/cab/LeoLahti.png"
+           width="100%" alt="Leo Lahti" title="Leo Lahti"/>
+      <figcaption>Leo Lahti, University of Turku, Finland.
+      <a href="https://datascience.utu.fi/">Website</a>
+      </figcaption>
+    </td>
+     <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Mengobo Li" title="Mengobo Li"/>
+      <figcaption>Mengobo Li
+      <a href=""></a>
+      </figcaption>
+    </td>
+  </tr>
+
+  <tr>
+   <td width="33%">
+      <img src="/images/cab/EstefaniaMancini.png"
+           width="100%" alt="Estefania Mancini" title="Estefania Mancini"/>
+      <figcaption>Estefania Mancini, Centre for Genomic Regulation, Spain.
+      <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Google Scholar</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Jordana Muqanguzi" title="Jordana Muqanguzi"/>
+      <figcaption>Jordana Muqanguzi
+      <a href=""></a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/KozoNishida.png"
+           width="100%" alt="Kozo Nishida" title="Kozo Nishida"/>
+      <figcaption>Kozo Nishida, Tokyo University of Agriculture and Technology, Japan.
+      <a href="https://github.com/kozo2">Github</a>
+      </figcaption>
+    </td>
+    </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/NicoleOrtogero.png"
+           width="100%" alt="Nicole Ortogero" title="Nicole Ortogero"/>
+      <figcaption>Nicole Ortogero, NanoString Technologies, USA.
+      <a href="https://www.linkedin.com/in/nicoleortogero/">Linkedin</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Stevie Pederson" title="Stevie Pederson"/>
+      <figcaption>Stevie Pederson
+      <a href=""></a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/JohannesRainer.png"
+           width="100%" alt="Johannes Rainer" title="Johannes Rainer"/>
+      <figcaption>Johannes Rainer, Eurac Research, Italy.
+      <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Website</a>
+      </figcaption>
+    </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/JananiRavi.png"
+           width="100%" alt="Janani Ravi" title="Janani Ravi"/>
+      <figcaption>Janani Ravi, Michigan State University, USA.
+      <a href="https://jravilab.github.io/">Github</a>
+      </figcaption>
+    </td>
+    <td width="33%">
+      <img src="/images/cab/KevinRueAlbrecht.png"
+           width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
+      <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
+      <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Website</a>
+      </figcaption>
+    </td> 
+    <td width="33%">
       <img src="/images/cab/MikeSmith.png"
            width="100%" alt="Mike Smith" title="Mike Smith"/>
       <figcaption>Mike Smith, EMBL, Germany.
       <a href="https://www.huber.embl.de/people/mike-smith/">Website</a>
       </figcaption>
     </td>
+  </tr>
+
+  <tr>
+    <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Luyi Tian" title="Luyi Tian"/>
+      <figcaption>Luyi Tian
+      <a href=""></a>
+      </figcaption>
+    </td>    
     <td width="33%">
       <img src="/images/cab/HediaTnani.png"
            width="100%" alt="Hedia Tnani" title="Hedia Tnani"/>
@@ -156,10 +183,22 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
       <a href="https://www.linkedin.com/in/h%C3%A9dia-tnani-0095221a7/">Linkedin</a>
       </figcaption>
     </td>
+    <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
+      <figcaption>Jiefei Wang
+      <a href=""></a>
+      </figcaption>
+    </td>
   </tr>
+
 </table>
 
-## Q&A
+The current chair is Aedin Culhane. <br>
+The current secretary is Lori Kern. <br>
+The current Bioconductor Community Manager is Maria Doyle. 
+
+## FAQ
 The following Q&As are from [Meet the Community Advisory Board CAB](https://www.youtube.com/watch?v=LTT1i_ACpxc) in [BioC2021](https://bioc2021.bioconductor.org/).
 If you have any other questions, please click [this link](https://github.com/BioconductorBoards/CABWorkingGroups/discussions/new) to ask a question.
 (You need to be signed in to [GitHub](https://github.com/) to open the new question.)
@@ -251,12 +290,17 @@ If you would like to contact the Community Advisory Board please email:  cab at 
 
 ![Community Advisory Board](/images/cab/cab.png)
 
+There is also a community-advisory-board channel on the [Bioconductor community slack](https://slack.bioconductor.org/) 
 
 ## Past Members
 We are grateful to past CAB members;
 
 <ul class="inline_list">
-  
+<li>Matt Ritchie (04/2020- 04/2023, co-chair 2020/2021) </li>
+<li>Susan Holmes (04/2020- 04/2023, co-chair 2022) </li>
+<li>Leonardo Collado-Torres (04/2020- 04/2023) </li>
+<li>Benilton Carvalho (04/2020- 04/2023) </li>
+<li>Yagoub A. I. Adam (04/2020- 04/2023) </li>
 <li>Saskia Freytag (04/2020- 04/2022)</li>
 <li>Katerina Kechris. (04/2021 - 04/2022) </li>
 
