@@ -64,7 +64,10 @@
       <br>Mike Smith
     </td>
     <td width="33%">
-    </td>
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Jennifer Wokaty" title="Jennifer Wokaty"/>
+      <br>Jennifer Wokaty
+     </td>
     <td width="33%">
     </td>
   </tr>
