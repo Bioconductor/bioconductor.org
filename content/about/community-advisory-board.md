@@ -26,7 +26,7 @@ Quick Links
 <table width="100%">
   <tr>
     <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/cab/EnisAfgan.png"
            width="100%" alt="Enis Afgan" title="Enis Afgan"/>
       <figcaption>Enis Afgan
       <a href=""></a>
