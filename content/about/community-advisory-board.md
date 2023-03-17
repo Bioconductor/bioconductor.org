@@ -28,14 +28,14 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/EnisAfgan.png"
            width="100%" alt="Enis Afgan" title="Enis Afgan"/>
-      <figcaption>Enis Afgan, Johns Hopkins University, USA 
+      <figcaption>Enis Afgan, Johns Hopkins University, USA. 
       <a href="https://www.linkedin.com/in/afgane/">LinkedIn</a>
       </figcaption>
     </td>
     <td width="33%">
       <img src="/images/cab/UmarAhmad.png"
            width="100%" alt="Umar Ahmad" title="Umar Ahmad"/>
-      <figcaption>Umar Ahmad. Molecular Genetics Informatics (MGI), Bauchi State University, Gadau, Nigeria and Africa Centres for Disease Control and Prevention (Africa CDC)
+      <figcaption>Umar Ahmad. Molecular Genetics Informatics (MGI), Bauchi State University, Gadau, Nigeria and Africa Centres for Disease Control and Prevention (Africa CDC).
       <a href="https://www.linkedin.com/in/babasaraki">LinkedIn</a>
       </figcaption>
     </td>
@@ -88,10 +88,10 @@ Quick Links
       </figcaption>
     </td>
      <td width="33%">
-      <img src="/images/cab/placeholder.png"
-           width="100%" alt="Mengobo Li" title="Mengobo Li"/>
-      <figcaption>Mengobo Li
-      <a href=""></a>
+      <img src="/images/cab/MengboLi.png"
+           width="100%" alt="Mengbo Li" title="Mengbo Li"/>
+      <figcaption>Mengbo Li, Walter and Eliza Hall Institute of Medical Research (WEHI), Australia. 
+      <a href="https://au.linkedin.com/in/mengbo-li-064b2b230">LinkedIn</a>
       </figcaption>
     </td>
   </tr>
@@ -172,7 +172,7 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/LuyiTian.png"
            width="100%" alt="Luyi Tian" title="Luyi Tian"/>
-      <figcaption>Luyi Tian, Guangzhou Laboratory, China
+      <figcaption>Luyi Tian, Guangzhou Laboratory, China.
       <a href="https://twitter.com/Luyi_T">Twitter</a>
       </figcaption>
     </td>    
