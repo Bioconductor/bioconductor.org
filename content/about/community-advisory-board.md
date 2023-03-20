@@ -129,10 +129,10 @@ Quick Links
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/cab/SteviePederson.png"
            width="100%" alt="Stevie Pederson" title="Stevie Pederson"/>
-      <figcaption>Stevie Pederson
-      <a href=""></a>
+      <figcaption>Stevie Pederson, Telethon Kids Institute, Australia
+      <a href="https://www.telethonkids.org.au/contact-us/our-people/p/stephen-pederson/">Website</a>
       </figcaption>
     </td>
     <td width="33%">
