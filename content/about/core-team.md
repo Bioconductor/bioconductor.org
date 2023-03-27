@@ -42,10 +42,13 @@
   <tr>
     <td width="33%">
       <img src="/images/cab/placeholder.png"
+           width="100%" alt="Robert Shear" title="Robert Shear"/>
+      <br>Robert Shear
+    </td>
+    <td width="33%">
+      <img src="/images/cab/placeholder.png"
            width="100%" alt="Jennifer Wokaty" title="Jennifer Wokaty"/>
       <br>Jennifer Wokaty
-     </td>
-    <td width="33%">
     </td>
     <td width="33%">
     </td>
