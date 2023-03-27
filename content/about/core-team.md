@@ -41,7 +41,7 @@
 
   <tr>
     <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/coreTeamPic/RobertShear.png"
            width="100%" alt="Robert Shear" title="Robert Shear"/>
       <br>Robert Shear
     </td>
