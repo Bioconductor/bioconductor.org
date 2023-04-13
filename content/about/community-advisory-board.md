@@ -64,10 +64,10 @@ Quick Links
       </figcaption>
     </td>
      <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/cab/MariaDoyle.png"
            width="100%" alt="Maria Doyle" title="Maria Doyle"/>
-      <figcaption>Maria Doyle
-      <a href=""></a>
+      <figcaption>Maria Doyle, University of Limerick, Ireland.
+      <a href="https://www.linkedin.com/in/maria-doyle-11220739/">Linkedin</a>
       </figcaption>
     </td>
   </tr>
