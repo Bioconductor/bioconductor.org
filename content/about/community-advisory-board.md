@@ -184,10 +184,10 @@ Quick Links
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/cab/JiefeiWang.png"
            width="100%" alt="Jiefei Wang" title="Jiefei Wang"/>
-      <figcaption>Jiefei Wang
-      <a href=""></a>
+      <figcaption>Jiefei Wang,University of Texas Medical Branch, USA.
+      <a href="https://github.com/Jiefei-Wang">GitHub</a>
       </figcaption>
     </td>
   </tr>
