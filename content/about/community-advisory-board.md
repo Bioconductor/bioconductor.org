@@ -52,8 +52,8 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/AedinCulhane.png"
            width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
-      <figcaption>Aedin Culhane, Dana-Farber Cancer Institute, USA.
-      <a href="https://www.hsph.harvard.edu/aedin-culhane/">Website</a>
+      <figcaption>Aedin Culhane, University of Limerick, Ireland.
+      <a href="https://www.ul.ie/limerick-dcrc/prof-aedin-culhane">Website</a>
       </figcaption>
     </td>
     <td width="33%">
@@ -64,10 +64,10 @@ Quick Links
       </figcaption>
     </td>
      <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/cab/MariaDoyle.png"
            width="100%" alt="Maria Doyle" title="Maria Doyle"/>
-      <figcaption>Maria Doyle
-      <a href=""></a>
+      <figcaption>Maria Doyle, University of Limerick, Ireland.
+      <a href="https://www.linkedin.com/in/maria-doyle-11220739/">Linkedin</a>
       </figcaption>
     </td>
   </tr>
