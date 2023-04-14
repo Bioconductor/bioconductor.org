@@ -148,8 +148,8 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/JananiRavi.png"
            width="100%" alt="Janani Ravi" title="Janani Ravi"/>
-      <figcaption>Janani Ravi, Michigan State University, USA.
-      <a href="https://jravilab.github.io/">Github</a>
+      <figcaption>Janani Ravi, University of Colorado Anschutz, USA.
+      <a href="https://jravilab.github.io/">Webpage</a>
       </figcaption>
     </td>
     <td width="33%">
