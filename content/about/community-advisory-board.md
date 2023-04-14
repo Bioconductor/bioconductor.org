@@ -194,8 +194,8 @@ Quick Links
 
 </table>
 
-The current chair is Aedin Culhane. <br>
-The current secretary is Lori Kern. <br>
+The current co-chairs are Kevin Rue-Albrecht and Janani Ravi. <br>
+The current secretary is Johannes Rainer. <br>
 The current Bioconductor Community Manager is Maria Doyle. 
 
 ## FAQ
