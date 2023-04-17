@@ -155,7 +155,7 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/KevinRueAlbrecht.png"
            width="100%" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
-      <figcaption>Kevin Rue-Albrecht, Univeristy of Oxford, UK.
+      <figcaption>Kevin Rue-Albrecht, University of Oxford, UK.
       <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Website</a>
       </figcaption>
     </td> 
