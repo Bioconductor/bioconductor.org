@@ -3,6 +3,55 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.17 release
+
+Software Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.16/bioc/html/AffyCompatible.html">AffyCompatible</a></li>
+<li><a href="/packages/3.16/bioc/html/BAC.html">BAC</a></li>
+<li><a href="/packages/3.15/bioc/html/BitSeq.html">BitSeq</a></li>
+<li><a href="/packages/3.16/bioc/html/BrainSABER.html">BrainSABER</a></li>
+<li><a href="/packages/3.15/bioc/html/bridge.html">bridge</a></li>
+<li><a href="/packages/3.16/bioc/html/cellTree.html">cellTree</a></li>
+<li><a href="/packages/3.15/bioc/html/ctgGEM.html">ctgGEM</a></li>
+<li><a href="/packages/3.16/bioc/html/coexnet.html">coexnet</a></li>
+<li><a href="/packages/3.16/bioc/html/conclus.html">conclus</a></li>
+<li><a href="/packages/3.14/bioc/html/CytoTree.html">CytoTree</a></li>
+<li><a href="/packages/3.16/bioc/html/DEComplexDisease.html">DEComplexDisease</a></li>
+<li><a href="/packages/3.15/bioc/html/flowUtils.html">flowUtils</a></li>
+<li><a href="/packages/3.16/bioc/html/flowCL.html">flowCL</a></li>
+<li><a href="/packages/3.15/bioc/html/gaia.html">gaia</a></li>
+<li><a href="/packages/3.14/bioc/html/gpart.html">gpart</a></li>
+<li><a href="/packages/3.14/bioc/html/inveRsion.html">inveRsion</a></li>
+<li><a href="/packages/3.15/bioc/html/IsoGeneGUI.html">IsoGeneGUI</a></li>
+<li><a href="/packages/3.14/bioc/html/iteremoval.html">iteremoval</a></li>
+<li><a href="/packages/3.14/bioc/html/MACPET.html">MACPET</a></li>
+<li><a href="/packages/3.15/bioc/html/PoTRA.html">PoTRA</a></li>
+<li><a href="/packages/3.16/bioc/html/rama.html">rama</a></li>
+<li><a href="/packages/3.14/bioc/html/Rcade.html">Rcade</a></li>
+<li><a href="/packages/3.16/bioc/html/RNASeqR.html">RNASeqR</a></li>
+<li><a href="/packages/3.16/bioc/html/scAlign.html">scAlign</a></li>
+<li><a href="/packages/3.15/bioc/html/scMAGeCK.html">scMAGeCK</a></li>
+<li><a href="/packages/3.15/bioc/html/sojourner.html">sojourner</a></li>
+<li><a href="/packages/3.15/bioc/html/TCGAbiolinksGUI.html">TCGAbiolinksGUI</a></li>
+<li><a href="/packages/3.16/bioc/html/TDARACNE.html">TDARACNE</a></li>
+<li><a href="/packages/3.14/bioc/html/TimeSeriesExperiment.html">TimeSeriesExperiment</a></li>
+<li><a href="/packages/3.16/bioc/html/TraRe.html">TraRe</a></li>
+<li><a href="/packages/3.15/bioc/html/tspair.html">tspair</a></li>
+<li><a href="/packages/3.13/bioc/html/XCIR.html">XCIR</a></li>
+</ul>
+
+
+Experiment Data Packages:
+
+<ul class="inline_list">
+<li><a href="/packages/3.16/data/experiment/html/gatingMLData.html">gatingMLData</a></li>
+<li><a href="/packages/3.16/data/experiment/html/RNASeqRData.html">RNASeqRData</a></li>
+</ul>
+
+
+
 ## Packages removed with Bioconductor 3.16 release
 
 Software Packages:
