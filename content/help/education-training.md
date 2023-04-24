@@ -81,7 +81,7 @@ typos or simple rephrasing can be submitted directly through a Github
 pull request. The lesson maintainer can assess the PR, ask for
 clarifications or amendments and eventually merge the pull request.
 
-**Contributing and handlin big changes** For more substantial changes,
+**Contributing and handling big changes** For more substantial changes,
 we advise to first open an issue to discuss these changes with the
 maintainer, the team that created the lesson, and other instructors
 that have experience teaching the episode. A pull request for such a
@@ -103,7 +103,7 @@ welcome to join the discussion.
 ## Discussions
 
 - The [Google group](https://groups.google.com/g/bioconductor-teaching/).
-- The `education-and-training` channel on the [Bioconductor comunity
+- The `education-and-training` channel on the [Bioconductor community
   slack](https://slack.bioconductor.org/).
 
 ## Contact
