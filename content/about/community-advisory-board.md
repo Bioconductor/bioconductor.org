@@ -35,7 +35,7 @@ Quick Links
     <td width="33%">
       <img src="/images/cab/UmarAhmad.png"
            width="100%" alt="Umar Ahmad" title="Umar Ahmad"/>
-      <figcaption>Umar Ahmad. Molecular Genetics Informatics (MGI), Bauchi State University, Gadau, Nigeria and Africa Centres for Disease Control and Prevention (Africa CDC).
+      <figcaption>Umar Ahmad, Bauchi State University, Gadau, Nigeria and Africa CDC.
       <a href="https://www.linkedin.com/in/babasaraki">LinkedIn</a>
       </figcaption>
     </td>
