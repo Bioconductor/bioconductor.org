@@ -3,7 +3,7 @@ April 26, 2023
 Bioconductors:
 
 We are pleased to announce Bioconductor 3.17, consisting of
-2207 software packages, 419 experiment data packages, 912 annotation
+2230 software packages, 419 experiment data packages, 912 annotation
 packages, 27 workflows and 3 books.
 
 There are 79 new software packages, 7 new data experiment packages,
