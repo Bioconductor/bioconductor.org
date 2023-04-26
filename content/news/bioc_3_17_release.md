@@ -4,7 +4,7 @@ Bioconductors:
 
 We are pleased to announce Bioconductor 3.17, consisting of
 2207 software packages, 419 experiment data packages, 912 annotation
-packages, 27 workflows and 8 books.
+packages, 27 workflows and 3 books.
 
 There are 79 new software packages, 7 new data experiment packages,
 no new annotation packages, 2 new workflows, no new books, and many updates and
@@ -885,7 +885,7 @@ There are 2 new workflow packages in this release of Bioconductor.
   point into spatially resolved single cell data analysis for any
   R-based bioinformatician.
 
-New Books
+New Online Books
 =====================
 
 There are no new online books.
