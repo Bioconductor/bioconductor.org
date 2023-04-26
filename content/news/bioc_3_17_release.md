@@ -1,4 +1,4 @@
-April 25, 2023
+April 26, 2023
 
 Bioconductors:
 
@@ -11,7 +11,7 @@ no new annotation packages, 2 new workflows, no new books, and many updates and
 improvements to existing packages.
 
 Bioconductor 3.17 is compatible with R 4.3, and is supported on Linux,
-64-bit Windows, Intel 64-bit macOS 10.13 (High Sierra) or higher and
+64-bit Windows, Intel 64-bit macOS 11 (Big Sur) or higher and
 macOS arm64. This release will also include updated Bioconductor [Docker containers][2].
 
 Thank you to everyone for your contribution to Bioconductor
