@@ -348,7 +348,7 @@ def get_list_of_packages(bioc=true, release=false)
       branch = "RELEASE_#{version.sub('.', '_')}"
     else
       version = config['devel_version']
-      branch = 'master'
+      branch = 'devel'
     end
 
     if bioc
@@ -365,7 +365,7 @@ def get_list_of_packages(bioc=true, release=false)
     contents = file.read
     pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
     file.close
-    system("git -C #{path} checkout master")
+    system("git -C #{path} checkout devel")
     pkgs
 end
 
@@ -395,7 +395,7 @@ def get_list_of_workflows(release=false)
       branch = "RELEASE_#{version.sub('.', '_')}"
     else
       version = config['devel_version']
-      branch = 'master'
+      branch = 'devel'
     end
 
     manifest_file = "workflows.txt"
@@ -408,6 +408,6 @@ def get_list_of_workflows(release=false)
     contents = file.read
     pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
     file.close
-    system("git -C #{path} checkout master")
+    system("git -C #{path} checkout devel")
     pkgs
 end

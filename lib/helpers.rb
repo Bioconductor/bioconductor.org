@@ -1346,7 +1346,7 @@ end
 
 def coverage_url(package)
   pkgname = package[:Package]
-  branch = "master"
+  branch = "devel"
   if package[:bioc_version_num] == config[:release_version]
     branch = "release-#{config[:release_version]}"
   end
@@ -1384,13 +1384,13 @@ end
 
 def get_github_url(package)
   if package[:bioc_version_num] == config[:devel_version]
-    branch = 'master'
+    branch = 'devel'
   else
     branch = "release-#{package[:bioc_version_num]}"
   end
   url = "https://github.com/Bioconductor-mirror/#{package[:Package]}"
 
-  if branch == 'master'
+  if branch == 'devel'
     url
   else
     "#{url}/tree/#{branch}"

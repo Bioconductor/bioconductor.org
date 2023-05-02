@@ -130,7 +130,7 @@ preprocess do
       ver = v.gsub(/\./,"_")
       manifests[v] = []
       if v == dev_ver
-        system("git -C #{man_path} checkout master")
+        system("git -C #{man_path} checkout devel")
       else
         system("git -C #{man_path} checkout RELEASE_#{ver}")
       end
@@ -145,7 +145,7 @@ preprocess do
       end
     }
     config[:manifests] = manifests
-    system("git -C #{man_path} checkout master")
+    system("git -C #{man_path} checkout devel")
 
     config[:manifest_keys] = manifests.keys.sort do |a,b|
       amaj, amin = a.split(".")

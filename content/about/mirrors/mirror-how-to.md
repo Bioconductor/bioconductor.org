@@ -138,6 +138,6 @@ day, scheduled with cron.
 webserver. See the **"contriburl"** option to **install.packages()** (utils)
 for more information.
 
-The [Bioconductor](/) master package repositories reside at
-[https://master.bioconductor.org](https://master.bioconductor.org) in the
-Amazon cloud.
+The [Bioconductor](/) package repositories for the current release and devel
+reside at [https://master.bioconductor.org](https://master.bioconductor.org) in
+the Amazon cloud.

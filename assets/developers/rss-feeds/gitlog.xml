@@ -1,6 +1,6 @@
 <rss version="2.0">
   <channel>
-  <title>GIT: Bioconductor (master)</title>
+  <title>GIT: Bioconductor (devel)</title>
   <link>https://www.bioconductor.org/</link>
   <description>Git commit log</description>
   <language>en-us</language>

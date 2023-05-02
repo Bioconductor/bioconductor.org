@@ -520,7 +520,7 @@ task :get_years_in_bioc_shields do
     ver = v.gsub(/\./,"_")
     manifests[v] = []
     if v == dev_ver
-      system("git -C #{man_path} checkout master")
+      system("git -C #{man_path} checkout devel")
     else
       system("git -C #{man_path} checkout RELEASE_#{ver}")
     end
@@ -535,7 +535,7 @@ task :get_years_in_bioc_shields do
     end
   }
   site_config[:manifests] = manifests
-  system("git -C #{man_path} checkout master")
+  system("git -C #{man_path} checkout devel")
 
   site_config[:manifest_keys] = manifests.keys.sort do |a,b|
     amaj, amin = a.split(".")

@@ -167,7 +167,7 @@ class GetJson
     default_view = "Workflow" if repo == "workflows"
     rows = nil
     if version == @config["devel_version"]
-      branch = "master"
+      branch = "devel"
     else
       branch = "RELEASE_#{version.gsub(".", "_")}"
     end
@@ -187,7 +187,7 @@ class GetJson
       g.add_edge(row.first, row.last)
       sort_order.push row.first
     end
-#    system("git -C #{path} checkout master")
+#    system("git -C #{path} checkout devel")
     node_attrs = {}
     dcfs.each_pair do |key, value|
       if value.has_key? "biocViews"
