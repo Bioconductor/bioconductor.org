@@ -920,9 +920,14 @@ def get_mac_packs(package, item)
         osvers << "mac.binary.ver"
     end
 
-    if version >= Gem::Version.new('3.16')
+    if version == Gem::Version.new('3.16')
         os <<  "macOS Binary (x86_64)" << "macOS Binary (arm64)"
         osvers << "mac.binary.ver" << "mac.binary.big-sur-arm64.ver"
+    end
+    
+    if version >= Gem::Version.new('3.17')
+        os <<  "macOS Binary (x86_64)" << "macOS Binary (arm64)"
+        osvers << "mac.binary.big-sur-x86_64.ver" << "mac.binary.big-sur-arm64.ver"
     end
 
     os.each_with_index do |this_os, i|
