@@ -62,13 +62,13 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/$1/ [L,R]
 
-## Redirect BioC versions 1.8-3.14 to OSN
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/bioc/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/bioc/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/data/annotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/data/annotation/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/data/experiment/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-4])/data/experiment/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/bin/$2
+## Redirect BioC versions 1.8-3.16 to OSN
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/bin/$2
 # BioC 2.1 has an additional extannotation/ directory
 RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/src/$1
 RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/bin/$1
