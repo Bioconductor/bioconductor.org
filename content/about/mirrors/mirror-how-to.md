@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif)How to a Bioconductor repository #
+# ![](/images/icons/magnifier.gif)How to mirror Bioconductor repository #
 
 Bioconductor package repositories may be mirrored with `rsync`.  This
 is appropriate if you or your user community requires frequent local
