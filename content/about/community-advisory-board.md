@@ -105,10 +105,10 @@ Quick Links
       </figcaption>
     </td>
     <td width="33%">
-      <img src="/images/cab/placeholder.png"
-           width="100%" alt="Jordana Muqanguzi" title="Jordana Muqanguzi"/>
-      <figcaption>Jordana Muqanguzi
-      <a href=""></a>
+      <img src="/images/cab/JordanaMuwanguzi.jpg"
+           width="100%" alt="Jordana Muwanguzi" title="Jordana Muwanguzi"/>
+      <figcaption>Jordana Muwanguzi, Northeastern University, USA
+      <a href="https://www.linkedin.com/in/muwajorda">LinkedIn</a>
       </figcaption>
     </td>
     <td width="33%">
