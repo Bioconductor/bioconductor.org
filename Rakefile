@@ -424,7 +424,7 @@ task :get_build_dbs do
 	fh2.close
 	puts shield_dir
 	puts dest_file_name
-	generate_build_shields(shield_dir, dest_file_name)
+	generate_build_shields(shield_dir, dest_file_name, version)
 
       end
     end

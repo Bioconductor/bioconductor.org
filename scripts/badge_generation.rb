@@ -227,11 +227,17 @@ end
 #
 ######################################
 
-def generate_build_shields(outdir, build_db)
+def generate_build_shields(outdir, build_db, version)
   FileUtils.rm_rf outdir
   FileUtils.mkdir_p  outdir
   data = File.readlines(build_db)
   packages = data.map{|i| i.split('#').first}.uniq
+  site_config = YAML.load_file("./config.yaml")
+  if (version == "devel")
+    activebuilders = site_config["active_devel_builders"].values
+  else
+    activebuilders = site_config["active_release_builders"].values
+  end
 
   colors = {"OK" => "green", "WARNINGS" => "yellow",
     "ERROR" => "red", "TIMEOUT" => "AA0088"}
@@ -239,7 +245,15 @@ def generate_build_shields(outdir, build_db)
   srcdir = File.join("assets", "images", "shields", "builds")
 
   for package in packages
-    relevant = data.find_all{|i| i =~ /^#{package}#/}
+    relevantAll = data.find_all{|i| i =~ /^#{package}#/}
+    builderName = relevantAll.map {|i| i.split('#')[1]}
+    relevant = Array.new
+    indexKeepLog = builderName.map {|i| activebuilders.include?(i) }
+    indexKeepLog.each_index.select{|i|
+      if (indexKeepLog[i] == true)
+        relevant.push(relevantAll[i])
+      end
+    }
     statuses = relevant.map {|i| i.split(' ').last.strip}
     statuses = statuses.reject{|i| i == "NotNeeded"}
     statuses = statuses.uniq
