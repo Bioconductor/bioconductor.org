@@ -6,7 +6,6 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: A11yWatch website scan
-        uses: ./
         with:
           WEBSITE_URL: https://bioconductor.org
           FIX: true
