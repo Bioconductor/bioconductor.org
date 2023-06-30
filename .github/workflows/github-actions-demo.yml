@@ -1,0 +1,13 @@
+name: GitHub Actions accessibility demo
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: A11yWatch website scan
+        uses: ./
+        with:
+          WEBSITE_URL: https://bioconductor.org
+          FIX: true
+          LIST: true

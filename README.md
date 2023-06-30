@@ -1,4 +1,4 @@
-# Site Maintainer README for bioconductor.org 1
+# Site Maintainer README for bioconductor.org
 
 The canonical location for this code is https://github.com/Bioconductor/bioconductor.org
 
