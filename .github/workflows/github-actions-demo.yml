@@ -2,11 +2,13 @@ name: GitHub Actions accessibility demo
 on: [push]
 jobs:
   Explore-GitHub-Actions:
+    name: Accessibility metrics
     runs-on: ubuntu-latest
+    uses: docker://bioconductor/website:latest
     steps:
       - uses: actions/checkout@v3
       - name: A11yWatch website scan
         with:
-          WEBSITE_URL: https://bioconductor.org
+          WEBSITE_URL: "https://www.bioconductor.org/"
           FIX: true
           LIST: true
