@@ -5,8 +5,8 @@ jobs:
     name: Accessibility metrics
     runs-on: ubuntu-latest
     steps:
-      - name: A11yWatch website scan using Docker
-      - uses: a11ywatch/github-action@v2
+      - name: Web Accessibility Evaluation
+        uses: a11ywatch/github-actions@v2.0.2
         with:
           WEBSITE_URL: "https://www.bioconductor.org/"
           FIX: true
