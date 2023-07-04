@@ -12,8 +12,19 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: Install and Build
-        run: printf "would build and install here :)\n"
+
+      - name: Set up ruby
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: "2.6.5"
+
+      - name: Install dependencies
+        run: bundle install
+
+      - name: Build website
+        run: |
+          rake
+
       - name: Deploy Staging
         uses: JamesIves/github-pages-deploy-action@v4
         with:
