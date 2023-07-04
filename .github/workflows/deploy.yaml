@@ -22,9 +22,11 @@ jobs:
           ruby-version: "2.6.5"
       - name: Install dependencies
         run: bundle install
+
       - name: build website
         run: |
-          rake
+          gem install bundler
+          bundle install
 
       - name: Deploy Preview
         uses: rossjrw/pr-preview-action@v1
