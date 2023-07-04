@@ -19,7 +19,9 @@ jobs:
           ruby-version: "2.6.5"
 
       - name: Install dependencies
-        run: bundle install
+        run: |
+          gem install bundler
+          bundle install
 
       - name: Build website
         run: |
