@@ -23,6 +23,7 @@ jobs:
 
       - name: Build website
         run: |
+          pwd
           rake
 
       - name: Deploy Staging
