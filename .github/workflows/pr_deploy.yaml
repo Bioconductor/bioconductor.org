@@ -1,4 +1,4 @@
-name: Deploy PR review
+name: Pr Preview
 
 on:
   pull_request:
@@ -30,6 +30,8 @@ jobs:
         run: |
           pwd
           rake
+          cd output
+          ls -la
 
       - name: Deploy Preview
         uses: rossjrw/pr-preview-action@v1
