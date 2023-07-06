@@ -24,13 +24,13 @@ jobs:
         run: rake
       - name: Create Bucket
         run: |
-          if aws s3api head-bucket --bucket pr-preview-bioconductor-${{github.event.number}} 2>/dev/null; then
+          if aws s3api head-bucket --bucket pr-preview-bioconductor-pr${{github.event.number}} 2>/dev/null; then
             echo "Bucket already exists"
           else
-            aws s3 mb s3://pr-preview-bioconductor-${{github.event.number}}
-            aws s3api delete-public-access-block --bucket pr-preview-bioconductor-${{github.event.number}}
-            aws s3api delete-bucket-ownership-controls --bucket pr-preview-bioconductor-${{github.event.number}}
-            aws s3api put-bucket-website --bucket pr-preview-bioconductor-${{github.event.number}}  \
+            aws s3 mb s3://pr-preview-bioconductor-pr${{github.event.number}}
+            aws s3api delete-public-access-block --bucket pr-preview-bioconductor-pr${{github.event.number}}
+            aws s3api delete-bucket-ownership-controls --bucket pr-preview-bioconductor-pr${{github.event.number}}
+            aws s3api put-bucket-website --bucket pr-preview-bioconductor-pr${{github.event.number}}  \
               --website-configuration '{"IndexDocument":{"Suffix":"index.html"},"ErrorDocument":{"Key":"404.html"}}'
           fi
         env:
