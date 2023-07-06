@@ -1,15 +1,9 @@
-name: Pr Preview
-
+name: Pr - Preview
 on:
   pull_request:
-    types:
-      - opened
-      - reopened
-      - synchronize
-      - closed
-concurrency: preview-${{ github.ref }}
+    types: [opened, reopened, synchronize]
 jobs:
-  dev:
+  dev-pr-create-s3:
     runs-on: ubuntu-latest
     environment: dev
     steps:
@@ -27,14 +21,14 @@ jobs:
           bundle install
 
       - name: build website
-        run: |
-          pwd
-          rake
-          cd output
-          ls -la
+        run: rake
 
-      - name: Deploy Preview
-        uses: rossjrw/pr-preview-action@v1
+      - name: Deploy S3 Website
+        uses: danburtenshaw/s3-website-pr-action@v2
         with:
-          source-dir: ./output/
-          custom-url: https://nearform.github.io/bioconductor.org/pr-preview/pr-1/output
+          bucket-prefix: "PR-preview-bioconductor"
+          folder-to-copy: "./output"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
