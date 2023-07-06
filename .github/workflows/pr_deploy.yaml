@@ -23,6 +23,21 @@ jobs:
       - name: build website
         run: rake
 
+      - name: Create Bucket
+        run: |
+          if aws s3api head-bucket --bucket pr-preview-bioconductor${{github.event.number}} 2>/dev/null; then
+            echo "Bucket already exists"
+          else
+            aws s3 mb s3://<prefix>${{github.event.number}}
+            aws s3api delete-public-access-block --bucket pr-preview-bioconductor${{github.event.number}}
+            aws s3api delete-bucket-ownership-controls --bucket pr-preview-bioconductor${{github.event.number}}
+            aws s3api put-bucket-website --bucket pr-preview-bioconductor${{github.event.number}}  \
+              --website-configuration '{"IndexDocument":{"Suffix":"index.html"},"ErrorDocument":{"Key":"404.html"}}'
+          fi
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Deploy S3 Website
         uses: danburtenshaw/s3-website-pr-action@v2.0.1
         with:
