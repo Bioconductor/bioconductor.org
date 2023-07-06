@@ -9,7 +9,7 @@ jobs:
     environment: dev
     steps:
       - name: Delete Website Bucket
-        uses: danburtenshaw/s3-website-pr-action@v2
+        uses: danburtenshaw/s3-website-pr-action@v2.0.1
         with:
           bucket-prefix: "PR-preview-bioconductor"
         env:

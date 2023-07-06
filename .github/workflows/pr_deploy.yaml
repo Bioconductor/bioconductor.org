@@ -24,7 +24,7 @@ jobs:
         run: rake
 
       - name: Deploy S3 Website
-        uses: danburtenshaw/s3-website-pr-action@v2
+        uses: danburtenshaw/s3-website-pr-action@v2.0.1
         with:
           bucket-prefix: "PR-preview-bioconductor"
           folder-to-copy: "./output"
