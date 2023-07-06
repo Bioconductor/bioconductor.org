@@ -19,6 +19,7 @@ jobs:
         run: |
           gem install bundler
           bundle install
+          pwd
 
       - name: build website
         run: rake
