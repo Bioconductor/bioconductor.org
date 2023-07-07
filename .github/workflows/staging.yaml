@@ -1,0 +1,34 @@
+name: deploy to staging environment
+
+on:
+  workflow_dispatch:
+jobs:
+  staging:
+    concurrency: ci-${{ github.ref }}
+    runs-on: ubuntu-latest
+    environment: staging
+    if: github.ref == 'refs/heads/main'
+
+    steps:
+      - name: checkout
+        uses: actions/checkout@v3
+
+      - name: Set up ruby
+        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+        with:
+          ruby-version: "2.6.5"
+
+      - name: Install dependencies
+        run: |
+          gem install bundler
+          bundle install
+
+      - name: Build website
+        run: |
+          pwd
+          rake
+
+      - name: Deploy Staging
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: ./output/

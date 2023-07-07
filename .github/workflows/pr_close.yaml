@@ -1,0 +1,18 @@
+﻿name: PR - Closed
+on:
+  pull_request:
+    types: [closed]
+
+jobs:
+  dev-pr-close-s3:
+    runs-on: ubuntu-latest
+    environment: dev
+    steps:
+      - name: Delete Website Bucket
+        uses: danburtenshaw/s3-website-pr-action@v2.0.1
+        with:
+          bucket-prefix: "pr-preview-bioconductor"
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
