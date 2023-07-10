@@ -7,7 +7,7 @@ jobs:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     environment: staging
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/redesign2023'
 
     steps:
       - name: checkout
@@ -25,10 +25,13 @@ jobs:
 
       - name: Build website
         run: |
-          pwd
           rake
-
-      - name: Deploy Staging
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Deploy website to staging s3
+        uses: Reggionick/s3-deploy@v4.0.0
         with:
-          folder: ./output/
+          folder: output
+          bucket: ${{secrets.S3_BUCKET}}
+          bucket-region: us-east-1
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
