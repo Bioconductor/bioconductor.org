@@ -1,13 +1,14 @@
 name: deploy to staging environment
 
 on:
-  workflow_dispatch:
+  push:
+    branches:
+      - redesign2023
 jobs:
   staging:
     concurrency: ci-${{ github.ref }}
     runs-on: ubuntu-latest
     environment: staging
-    if: github.ref == 'refs/heads/redesign2023'
 
     steps:
       - name: checkout
