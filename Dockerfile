@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 COPY Gemfile /opt
 COPY Gemfile.lock /opt
 
-## Set the working directory to /tmp/bioconductor.org
+## Set the working directory to /opt/bioconductor.org
 WORKDIR /opt/bioconductor.org
 
 ## Copy the remaining files from bioconductor.org/ to /opt/bioconductor.org
