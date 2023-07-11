@@ -7,6 +7,7 @@ on:
       - "feat/**"
 jobs:
   dev-pr-create-s3:
+    if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     environment: dev
     steps:

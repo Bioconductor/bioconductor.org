@@ -1,0 +1,19 @@
+{
+  "name": "bioconductor.org",
+  "version": "1.0.0",
+  "description": "[CloudFront](https://aws.amazon.com/cloudfront/) is a content delivery network (CDN). The idea is that if a user in say, Singapore hits our web site, the files she requested will be cached in a location near her and her next access (or that of any other user in that area) will be faster.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0",
+    "stylelint-config-standard-scss": "^10.0.0"
+  }
+}
