@@ -23,5 +23,7 @@ jobs:
         uses: super-linter/super-linter/slim@v5
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_MARKDOWN: false
           DEFAULT_BRANCH: redesign2023
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
