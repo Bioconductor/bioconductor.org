@@ -248,9 +248,15 @@ you have been working in.
 
 ### Linters
 
-This project includes the stylelint css linter, which can be run using the following command:
+This project includes the following linters
+
+stylelint:
 
         npx stylelint "**/*.css"
+
+eslint:
+
+        npx eslint <directory/ file>
 
 ## Overview of site source code
 
