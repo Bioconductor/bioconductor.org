@@ -25,3 +25,4 @@ content/help/workflows/*
 postgresql_password
 manifest/*
 node_modules/
+package.json
