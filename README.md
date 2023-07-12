@@ -254,11 +254,15 @@ Install linters:
 
 This project includes the following linters
 
-stylelint:
+stylelint(for linting css code):
 
-        npx stylelint "**/*.css"
+        css-lint
 
-eslint:
+eslint(will lint everything in the assets folder):
+
+        js-lint
+
+or if you need to specify a directory or a file
 
         npx eslint <directory/ file>
 
