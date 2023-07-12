@@ -248,6 +248,10 @@ you have been working in.
 
 ### Linters
 
+Install linters:
+
+    npm ci
+
 This project includes the following linters
 
 stylelint:
