@@ -256,11 +256,11 @@ This project includes the following linters
 
 stylelint(for linting css code):
 
-        css-lint
+        npm run css-lint
 
 eslint(will lint everything in the assets folder):
 
-        js-lint
+       npm run js-lint
 
 or if you need to specify a directory or a file
 
