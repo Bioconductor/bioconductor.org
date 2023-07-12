@@ -40,7 +40,8 @@ below.
 
     where,
 
-        - t is the name of docker image
+        <image_name> is the name you want to give to the docker image.
+        It can be whatever you want as it will be referenced later
 
 3.  Run the docker container before making any changes, you need to use the
     docker image name `<image_name>` that you assigned previously to be able to
@@ -50,7 +51,8 @@ below.
 
         docker run -it -p 3000:3000 \
             -v /<full_path>/bioconductor.org:/opt/bioconductor.org \
-                <image_name> /bin/bash
+                --name <container_name> \
+                    <image_name> /bin/bash
 
     where,
 
@@ -59,9 +61,12 @@ below.
         -p is mapping the container's port 3000 to the host machine's port
 
         -v mounting a volume, the website (bioconductor.org) directory
-           from your local machine is being mounted on the docker container
+        from your local machine is being mounted on the docker container
 
-    it will take you to the container's terminal so you will need to run
+        <container_name> is the name you want to give to the docker container.
+        It will be easier to access the container later if you give it a name
+
+    the command will take you to the container's terminal so you will need to run
 
         rake
 
@@ -80,39 +85,28 @@ below.
 
     or,
 
-    without needing to access the docker shell but you will need the
-    CONTAINER ID, you can run
+    without needing to access the docker shell but you will need either the
+    CONTAINER ID or container name, you can run
 
         docker ps
 
     and,
 
-        docker exec <container_id> rake
+        docker exec <container_id / container_name> rake
 
-6.  Then to kill the process, you need to get the CONTAINER ID with,
+6.  Then to stop the process, you need to get the CONTAINER ID or container name with,
 
         docker ps
 
     and,
 
-        docker kill <CONTAINER ID>
+        docker stop <container_id / container_name>
 
-7.  Before you run the docker image again with more changes, make sure
-    to clean the artifacts produced by the `rake` command, with
+    You can also remove the container by running
 
-        git clean -xdf
+        docker kill <container_id / container_name>
 
-    The output should look like,
-
-        bioconductor.org$ git clean -xdf
-        	Removing assets/bioc-devel-version
-        	Removing assets/bioc-version
-        	Removing assets/config.yaml
-        	Removing content/packages/
-        	Removing output/
-        	Removing tmp/
-
-8.  Once you have reviewed your changes, make a new branch and send a pull
+7.  Once you have reviewed your changes, make a new branch and send a pull
     request to the `devel` branch. The pull request should be made from your
     `my_changes` branch to the [devel branch on GitHub][].
 
@@ -184,9 +178,9 @@ you should never need to become root or fiddle with permissions.
     which provides the `rbenv install` command that simplifies the process of
     installing new Ruby versions:
 
-        ~~~ sh
+        ```sh
         git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-        ~~~
+        ```
 
 Now you need to install ruby. Go to the
 [Ruby Downloads Page](https://www.ruby-lang.org/en/downloads/)
