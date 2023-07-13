@@ -41,7 +41,8 @@ below.
     where,
 
         <image_name> is the name you want to give to the docker image.
-        It can be whatever you want as it will be referenced later
+        it can be whatever you want. You will need to use it later
+        but is only seen and used by you.
 
 3.  Run the docker container before making any changes, you need to use the
     docker image name `<image_name>` that you assigned previously to be able to
@@ -86,15 +87,16 @@ below.
     or,
 
     without needing to access the docker shell but you will need either the
-    CONTAINER ID or container name, you can run
+    container name or CONTAINER ID, you can run
 
-        docker ps
+         docker ps
 
     and,
 
-        docker exec <container_id / container_name> rake
+         docker exec <container_id / container_name> rake
 
-6.  Then to stop the process, you need to get the CONTAINER ID or container name with,
+6.  Then to stop the process, you need to get the container name or
+    CONTAINER ID with,
 
         docker ps
 
@@ -102,11 +104,12 @@ below.
 
         docker stop <container_id / container_name>
 
-    You can also remove the container by running
+7.  If you wish to completely remove the container from your docker once
+    you stopped it, you can run
 
-        docker kill <container_id / container_name>
+        docker rm <container_id / container_name>
 
-7.  Once you have reviewed your changes, make a new branch and send a pull
+8.  Once you have reviewed your changes, make a new branch and send a pull
     request to the `devel` branch. The pull request should be made from your
     `my_changes` branch to the [devel branch on GitHub][].
 
