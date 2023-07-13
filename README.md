@@ -33,49 +33,86 @@ below.
 
         git clone https://github.com/<your fork>/bioconductor.org
 
-2.  Make your changes on this branch, add content or edit content.
+2.  Build a docker image by navigating to the right directory and running
+    this command
 
-3.  Once the changes are made, you need use the docker image
-    `bioconductor/website:latest` and run the
-    container. The container has the dependencies installed to `rake`
-    the ruby code and host the website on your local machine at
-    https://localhost:3000.
-
-        docker run -v /<full_path>/bioconductor.org:/bioconductor.org/ \
-            -p 3000:3000 \
-                bioconductor/website:latest
+        docker build -t <image_name> .
 
     where,
 
+        <image_name> is the name you want to give to the docker image.
+        it can be whatever you want. You will need to use it later
+        but is only seen and used by you.
+
+3.  Run the docker container before making any changes, you need to use the
+    docker image name `<image_name>` that you assigned previously to be able to
+    run the container. The container has the dependencies installed to `rake`
+    the ruby code and host the website on your local machine at
+    https://localhost:3000.
+
+        docker run -it -p 3000:3000 \
+            -v /<full_path>/bioconductor.org:/opt/bioconductor.org \
+                --name <container_name> \
+                    <image_name> /bin/bash
+
+    where,
+
+        -it will take you straight to the container
+
+
          -p is mapping the container's port 3000 to the host machine's port
 
-         -v mounting a volume, the website (bioconductor.org) directory
-            from your local machine is being mounted on the docker container
 
-4.  Then to kill the process, you need to get the CONTAINER ID with,
+        -v mounting a volume, the website (bioconductor.org) directory
+        from your local machine is being mounted on the docker container
+
+        <container_name> is the name you want to give to the docker container.
+        It will be easier to access the container later if you give it a name
+
+    the command will take you to the container's terminal so you will need to run
+
+        rake
+
+    and
+
+        cd output
+        adsf
+
+4.  Make your changes on this branch, add content or edit content.
+
+5.  Once the changes are made and you want to be able to see them on
+    https://localhost:3000, there are two ways to be able to run `rake`:
+
+    by running `rake` inside the docker container shell making sure you
+    are in the `/opt/bioconductor.org` directory.
+
+    or,
+
+    without needing to access the docker shell but you will need either the
+    container name or CONTAINER ID, you can run
+
+         docker ps
+
+    and,
+
+         docker exec <container_id / container_name> rake
+
+6.  Then to stop the process, you need to get the container name or
+    CONTAINER ID with,
 
         docker ps
 
     and,
 
-        docker kill <CONTAINER ID>
+        docker stop <container_id / container_name>
 
-5.  Before you run the docker image again with more changes, make sure
-    to clean the artifacts produced by the `rake` command, with
+7.  If you wish to completely remove the container from your docker once
+    you stopped it, you can run
 
-        git clean -xdf
+        docker rm <container_id / container_name>
 
-    The output should look like,
+8.  Once you have reviewed your changes, make a new branch and send a pull
 
-        bioconductor.org$ git clean -xdf
-        	Removing assets/bioc-devel-version
-        	Removing assets/bioc-version
-        	Removing assets/config.yaml
-        	Removing content/packages/
-        	Removing output/
-        	Removing tmp/
-
-6.  Once you have reviewed your changes, make a new branch and send a pull
     request to the `devel` branch. The pull request should be made from your
     `my_changes` branch to the [devel branch on GitHub][].
 
@@ -147,9 +184,9 @@ you should never need to become root or fiddle with permissions.
     which provides the `rbenv install` command that simplifies the process of
     installing new Ruby versions:
 
-        ~~~ sh
+        ```sh
         git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
-        ~~~
+        ```
 
 Now you need to install ruby. Go to the
 [Ruby Downloads Page](https://www.ruby-lang.org/en/downloads/)
