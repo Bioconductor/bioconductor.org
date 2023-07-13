@@ -247,6 +247,14 @@ you have been working in.
 ### Test in a browser by going to http://localhost:3000/
 
 ### Linters
+You will require node and npm to install the linters.
+Installation instructions for your specific OS can be found on the node.js website: 
+
+https://nodejs.org/en/download
+
+Or if you would like to use your package manager to install, you can find instructions here: 
+
+https://nodejs.org/en/download/package-manager 
 
 Install linters:
 
