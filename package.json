@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint-all": " npx stylelint \"**/*.css\"  \n npx eslint assets/js",
+    "lint": " npx stylelint \"**/*.css\"  \n npx eslint assets/js",
     "css-lint": "npx stylelint \"**/*.css\" ",
     "js-lint": "npx eslint assets/js",
     "test": "echo \"Error: no test specified\" && exit 1"

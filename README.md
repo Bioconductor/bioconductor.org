@@ -284,12 +284,20 @@ you have been working in.
 ### Test in a browser by going to http://localhost:3000/
 
 ### Linters
+You will require node and npm to install the linters.
+Installation instructions for your specific OS can be found on the node.js website: 
+
+https://nodejs.org/en/download
+
+Or if you would like to use your package manager to install, you can find instructions here: 
+
+https://nodejs.org/en/download/package-manager 
 
 Install linters:
 
     npm ci
 
-This project includes the following linters
+This project includes stylelint and eslint.
 
 stylelint(for linting css code):
 
@@ -299,11 +307,11 @@ eslint(will lint everything in the assets folder):
 
     npm run js-lint
 
-or if you need to specify a directory or a file
+or if you need to specify a directory or a file:
 
     npx eslint <directory/ file>
 
-To run all linters use run:
+To run all linters :
 
     npm run lint-all
 
