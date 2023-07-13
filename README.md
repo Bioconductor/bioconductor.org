@@ -252,7 +252,7 @@ Install linters:
 
     npm ci
 
-This project includes the following linters
+This project includes stylelint and eslint.
 
 stylelint(for linting css code):
 
@@ -262,11 +262,11 @@ eslint(will lint everything in the assets folder):
 
     npm run js-lint
 
-or if you need to specify a directory or a file
+or if you need to specify a directory or a file:
 
     npx eslint <directory/ file>
 
-To run all linters use run:
+To run all linters :
 
     npm run lint-all
 
