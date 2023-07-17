@@ -1,0 +1,21 @@
+{
+  "name": "bioconductor.org",
+  "version": "1.0.0",
+  "description": "This is the frontend for the bioconductor.org website. The mission of the Bioconductor project is to develop, support, and disseminate free open source software that facilitates rigorous and reproducible analysis of data from current and emerging biological assays. We are dedicated to building a diverse, collaborative, and welcoming community of developers and data scientists.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "lint": "npm run css-lint && npm run js-lint",
+    "css-lint": "npx stylelint \"**/*.css\" ",
+    "js-lint": "npx eslint assets/js",
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.44.0",
+    "stylelint": "^15.10.1",
+    "stylelint-config-standard": "^34.0.0"
+  }
+}

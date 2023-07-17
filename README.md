@@ -110,6 +110,7 @@ below.
         docker rm <container_id / container_name>
 
 8.  Once you have reviewed your changes, make a new branch and send a pull
+
     request to the `devel` branch. The pull request should be made from your
     `my_changes` branch to the [devel branch on GitHub][].
 
@@ -279,6 +280,39 @@ you have been working in.
     adsf
 
 ### Test in a browser by going to http://localhost:3000/
+
+### Linters
+
+You will require node and npm to install the linters.
+Installation instructions for your specific OS can be found on the node.js website:
+
+https://nodejs.org/en/download
+
+Or if you would like to use your package manager to install, you can find instructions here:
+
+https://nodejs.org/en/download/package-manager
+
+Install linters:
+
+    npm ci
+
+This project includes stylelint and eslint.
+
+stylelint(for linting css code):
+
+    npm run css-lint
+
+eslint(will lint everything in the assets folder):
+
+    npm run js-lint
+
+or if you need to specify a directory or a file:
+
+    npx eslint <directory/ file>
+
+To run all linters :
+
+    npm run lint-all
 
 ## Overview of site source code
 
