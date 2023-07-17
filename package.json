@@ -10,7 +10,6 @@
     "lint": "npm run css-lint && npm run js-lint",
     "css-lint": "npx stylelint \"**/*.css\" ",
     "js-lint": "npx eslint assets/js",
-    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
