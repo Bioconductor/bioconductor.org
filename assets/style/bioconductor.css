@@ -7,7 +7,6 @@
  
 /* reset the margins and padding of all elements so we can 
    specify them ourselves */
-body,h1,h2,h3,h4,h5,h6,p,div,span { margin:0; padding:0; border:0;  } 
 
 /* some general treatments up top */
 body {
@@ -16,41 +15,6 @@ body {
   background-image: url(../images/site_bg.jpg);
   background-position: top center;
   background-repeat: no-repeat;
-}
-h1 {
-  font-size: 250%;
-  margin-bottom:1em;
-  font-weight:normal;
-  color:#87b13f;
-  line-height:1.1em;
-} /* use margin, not padding, due to the fader effect which uses padding */
-h2 {
-  font-size: 160%;
-  margin-bottom:1em;
-  margin-top:1em;
-  font-weight:normal;
-  line-height:1.1em;
-}
-h3 {
-  font-size:130%;
-  margin-bottom:1em;
-  margin-top:1em;
-  font-weight:bold;
-}
-h4,h5,h6 {
-  font-size:115%;
-  margin-bottom:1em;
-  margin-top:1em;
-  font-weight:bold;
-} /* not expecting to dive deeper than four levels on a single page */
-h1,h2,h3,h4,h5,h6 { font-family:Helvetica,Arial,Verdana,Sans-serif; }
-/* we use a little padding below the h1 and h2 tags to get the 8px fading
-   effect, which grows the entire width available to the element */
-h1,h2 {
-  padding-bottom: 8px;
-  background-image: url(../images/hx_fader.gif);
-  background-repeat:repeat-x;
-  background-position:bottom left;
 }
 /* multiple lines (breaking text) won't work nicely with icons, but they
    are only used at top-level pages with short text */ 

@@ -2,7 +2,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en-us" />
   <meta name="robots" content="all" />
-  
+ 
+<!-- Global font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible&display=swap" rel="stylesheet">
+
 <% if  item.identifier =~ /^\/help\/bioc-views\/package-pages\// \
   and not item.identifier =~ /\/all-/ %>
   <meta property="og:title" content="<%= item[:title] %>" />
@@ -49,6 +54,7 @@
 	title = "" if @item[:title].nil? or @item[:title].strip.empty?
   %>
   <title>Bioconductor<%= title %></title>
+  <link rel="stylesheet" type="text/css" href="/style/bioconductor-v2.css" media="screen" />
   <link rel="stylesheet" type="text/css" href="/style/bioconductor.css" media="screen" /><% if item.identifier =~ /^\/help\/workflows\/.*\// %>
   <link rel="stylesheet" type="text/css" href="/style/workflows.css" media="screen" /><% end %>
   <link rel="SHORTCUT ICON" type="image/x-icon" href="/favicon.ico" />
