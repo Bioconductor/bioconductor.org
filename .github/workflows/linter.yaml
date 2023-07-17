@@ -26,5 +26,9 @@ jobs:
           VALIDATE_GITHUB_ACTIONS: false
           VALIDATE_MARKDOWN: false
           VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_JSCPD: false
+          VALIDATE_JSON: false
+          VALIDATE_R: false
+          VALIDATE_RUBY: false
           DEFAULT_BRANCH: redesign2023
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
