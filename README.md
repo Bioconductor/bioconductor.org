@@ -59,9 +59,7 @@ below.
 
         -it will take you straight to the container
 
-
-         -p is mapping the container's port 3000 to the host machine's port
-
+        -p is mapping the container's port 3000 to the host machine's port
 
         -v mounting a volume, the website (bioconductor.org) directory
         from your local machine is being mounted on the docker container
@@ -284,14 +282,15 @@ you have been working in.
 ### Test in a browser by going to http://localhost:3000/
 
 ### Linters
+
 You will require node and npm to install the linters.
-Installation instructions for your specific OS can be found on the node.js website: 
+Installation instructions for your specific OS can be found on the node.js website:
 
 https://nodejs.org/en/download
 
-Or if you would like to use your package manager to install, you can find instructions here: 
+Or if you would like to use your package manager to install, you can find instructions here:
 
-https://nodejs.org/en/download/package-manager 
+https://nodejs.org/en/download/package-manager
 
 Install linters:
 
