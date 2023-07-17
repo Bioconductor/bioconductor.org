@@ -342,17 +342,23 @@ To run all linters :
 - content :: This is where the bulk of the raw (source form) site
   content lives. Important details:
 
-             - Content always has two related files: a `.yaml` file
-               containing item attributes and a `.<extension>` file
-               containing the raw source content. You can actually
-               use whatever extension you want.
+            - Each page has two related files:
+                a `.yaml` file containing item attributes and
+                a `.<extension>` file containing the raw source content
+                this can be `.md` or `.html`.
 
-             - The default behavior is that a content file like
-               `help.md` is filtered into HTML and then written to
-               `output/help/index.html`. This scheme allows for
-               clean URLs that avoid having a file extension.
+            - The default behavior is that a content file like
+               `install.md` is filtered into HTML and then written to
+               `output/install/index.html`. This scheme allows for
+                clean URLs that avoid having a file extension.
 
-- layouts :: This is where the content templates live.
+            - Folders like `about` living inside content have their own default
+                `index` files within.
+
+- layouts :: This is where the content templates live. Important details:
+
+            - Files that live directly inside the layout folder are the
+                layouts, the content blocks would live inside /component
 
 - lib :: Ruby helper functions and nanoc extensions live here. Files
   in this directory are automatically loaded by nanoc during
