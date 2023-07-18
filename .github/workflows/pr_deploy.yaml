@@ -68,12 +68,12 @@ jobs:
       - name: run desktop psi
         run: |
           echo "DESKTOP_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node psi.js ${{env.URL_TO_USE}} desktop 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} desktop 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: run mobile psi
         run: |
           echo "MOBILE_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node psi.js ${{env.URL_TO_USE}} mobile 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} mobile 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: add_comment_pageSpeed
         uses: mshick/add-pr-comment@v2
