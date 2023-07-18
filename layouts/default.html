@@ -5,7 +5,7 @@ prefix="og: http://ogp.me/ns#">
   <body>
     <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
 
-    <div id="SiteContainer" class="SiteContainer">
+    <div id="site-container" class="site-container">
       <% if has_subnav?(@item) %>
       <div id="PageContent" class="PageContent WithRightRail">
       <% else %>

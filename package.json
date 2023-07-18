@@ -9,7 +9,7 @@
   "scripts": {
     "lint": "npm run css-lint && npm run js-lint",
     "css-lint": "npx stylelint \"**/*.css\" ",
-    "js-lint": "npx eslint assets/js",
+    "js-lint": "npx eslint assets/js"
   },
   "author": "",
   "license": "ISC",

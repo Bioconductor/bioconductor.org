@@ -1,0 +1,134 @@
+/* global styles defined at the topmost level.
+   these can be overridden by subsequent selectors. */
+
+/* Downloaded the font format */
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Regular.woff") format("woff");
+  src: url("fonts/AtkinsonHyperlegible-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Atkinson Hyperlegible";
+  src: url("fonts/AtkinsonHyperlegible-Bold.woff") format("woff");
+  src: url("fonts/AtkinsonHyperlegible-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+
+/* CSS global styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 120%;
+}
+
+h1 {
+  font-size: 2.25rem; /* 36px */
+}
+
+h2 {
+  font-size: 2rem; /* 32px */
+}
+
+h3 {
+  font-size: 1.6rem; /* 25px */
+}
+
+h4 {
+  font-size: 1.5rem; /* 23px */
+}
+
+h5 {
+  font-size: 1.2rem; /* 19px */
+}
+
+h6 {
+  font-size: 1.2rem; /* 18px */
+}
+
+.hero {
+  font-size: 5rem; /* 80px */
+  line-height: 105%;
+}
+
+@media screen and (width <= 700px) {
+  /* 700px */
+  .hero {
+    font-size: 2.5rem; /* 40px */
+  }
+
+  h1 {
+    font-size: 2.1rem; /* 34px */
+  }
+
+  h2 {
+    font-size: 1.5rem; /* 24px */
+  }
+
+  h3 {
+    font-size: 1.4rem; /* 22px */
+  }
+
+  h4 {
+    font-size: 1.25rem; /* 20px */
+  }
+
+  h5 {
+    font-size: 1.125rem; /* 18px */
+  }
+
+  h6 {
+    font-size: 1.1rem; /* 17px */
+  }
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1rem; /* 16px */
+  line-height: 130%;
+  letter-spacing: 0;
+}
+
+.code {
+  line-height: 120%;
+  font-family: Courier, monospace;
+}
+
+.code-body {
+  font-size: 1.25rem; /* 20px */
+}
+
+.code-small {
+  font-size: 1rem; /* 16px */
+}
+
+.format-bold {
+  font-weight: bold;
+}
+
+.format-boldunderline {
+  text-decoration: underline;
+  font-weight: bold;
+}
+
+.format-underline {
+  text-decoration: underline;
+}
+
+.text-xsmall {
+  font-size: 0.6rem; /* 10px */
+  line-height: 120%;
+}
+
+.text-small {
+  font-size: 0.8rem; /* 13px */
+  line-height: 120%;
+}
+
+.text-large {
+  font-size: 1.25rem; /* 20px */
+}
