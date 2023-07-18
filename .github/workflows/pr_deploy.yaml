@@ -2,12 +2,10 @@ name: Pr - Preview
 on:
   pull_request:
     types: [opened, reopened, synchronize]
-    branches:
-      - "fix/**"
-      - "feat/**"
 jobs:
   dev-pr-create-s3:
     if: github.event.pull_request.draft == false
+
     runs-on: ubuntu-latest
     environment: dev
     steps:

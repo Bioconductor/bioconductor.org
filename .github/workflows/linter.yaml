@@ -8,7 +8,6 @@ jobs:
     if: github.event.pull_request.draft == false
     name: Run Linters
     runs-on: ubuntu-latest
-    environment: dev
     permissions:
       contents: read
       packages: read
