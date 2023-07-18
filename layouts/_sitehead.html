@@ -3,7 +3,7 @@
   <meta http-equiv="Content-Language" content="en-us" />
   <meta name="robots" content="all" />
 
-  <% if item.identifier =~ /^\/help\/bioc-views\/package-pages\// \ and not
+  <% if item.identifier =~ /^\/help\/bioc-views\/package-pages\// and not
   item.identifier =~ /\/all-/ %>
   <meta property="og:title" content="<%= item[:title] %>" />
   <meta property="og:type" content="website" />
@@ -34,7 +34,13 @@
     gtag("config", "G-WJMEEH1J58");
   </script>
 
-  <% if (item.identifier =~ /BiocViews\.html$/) item[:rebase] = true end %> <%
+  <%
+    if (item.identifier =~ /BiocViews\.html$/)
+      item[:rebase] = true
+    end
+  %>
+
+  <%
   if !item[:rebase].nil? && item[:rebase]%>
   <script
     type="text/javascript"
@@ -52,8 +58,10 @@
   landing pages:%>
   <script src="/js/jquery.tools.min.js"></script>
 
-  <% title = " - #{@item[:title]}" title = "" if @item[:title].nil? or
-  @item[:title].strip.empty? %>
+  <%
+    title = " - #{@item[:title]}"
+    title = "" if @item[:title].nil? or @item[:title].strip.empty?
+  %>
   <title>Bioconductor<%= title %></title>
   <link
     rel="stylesheet"
