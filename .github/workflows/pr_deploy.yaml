@@ -68,12 +68,12 @@ jobs:
       - name: run desktop psi
         run: |
           echo "DESKTOP_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} desktop 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js http://pr-preview-bioconductor-pr${{github.event.number}}.s3-website-us-east-1.amazonaws.com desktop 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: run mobile psi
         run: |
           echo "MOBILE_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} mobile 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js http://pr-preview-bioconductor-pr${{github.event.number}}.s3-website-us-east-1.amazonaws.com mobile 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: add_comment_pageSpeed
         uses: mshick/add-pr-comment@v2
@@ -85,7 +85,7 @@ jobs:
       - name: run axe accesibility test
         run: |
           echo "AXE_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(npx axe ${{env.URL_TO_USE}})" >> $GITHUB_ENV
+          echo "$(npx axe http://pr-preview-bioconductor-pr${{github.event.number}}.s3-website-us-east-1.amazonaws.com)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: add_comment_axe
         uses: mshick/add-pr-comment@v2

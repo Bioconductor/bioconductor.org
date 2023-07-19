@@ -57,17 +57,17 @@ jobs:
       - name: run desktop psi
         run: |
           echo "DESKTOP_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} desktop 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js ${{env.STAGING_URL}} desktop 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: run mobile psi
         run: |
           echo "MOBILE_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js ${{env.URL_TO_USE}} mobile 50)" >> $GITHUB_ENV
+          echo "$(node PageSpeed.js ${{env.STAGING_URL}} mobile 50)" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: run axe accesibility test
         run: |
           echo "AXE_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(npx axe ${{env.URL_TO_USE}})" >> $GITHUB_ENV
+          echo "$(npx axe ${{env.STAGING_URL}})" >> $GITHUB_ENV
           echo "EOF" >> $GITHUB_ENV
       - name: send notification psi
         if: ${{ github.ref == 'refs/heads/redesign2023' }}
