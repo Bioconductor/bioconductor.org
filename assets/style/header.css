@@ -1,0 +1,127 @@
+header {
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+.header-size {
+  margin: 0 auto;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 3rem);
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+
+.header-logo {
+  display: flex;
+  align-items: center;
+}
+
+.header-desktop {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.header-size a {
+  text-decoration: transparent;
+  color: var(--misc-dark);
+  transition: 300ms;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  text-decoration: underline;
+  text-underline-offset: 7px;
+  text-decoration-thickness: 3px;
+}
+
+.search-container {
+  border: 1px solid var(--neutral-n75);
+  border-radius: 4rem;
+  width: 15rem;
+  height: 2.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.site-search {
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  padding-left: 5px;
+}
+
+.masthead-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.masthead-logo img {
+  width: 12.6rem;
+  height: 3.6rem;
+  flex-shrink: 0;
+}
+
+.header-button {
+  background-image: var(--gradient-brand);
+  border-radius: 8rem;
+  box-sizing: border-box;
+  color: var(--primary-p400);
+  display: flex;
+  height: 2.5rem;
+  padding: 2px;
+  width: 8.8rem;
+}
+
+.header-button svg path {
+  transition: stroke 0.5s ease;
+}
+
+.header-button:hover {
+  color: #fff;
+}
+
+.header-button:hover svg path {
+  stroke: #fff;
+}
+
+.get-started {
+  align-items: center;
+  border-radius: 4rem;
+  display: flex;
+  justify-content: center;
+  background: #fff;
+  transition: background 0.5s ease;
+  width: 100%;
+  gap: 5px;
+  margin: 1px;
+}
+
+.header-button:hover span {
+  background: var(--primary-p400);
+}
+
+@media (width <= 700px) {
+  .header-desktop {
+    display: none;
+  }
+}

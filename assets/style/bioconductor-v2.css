@@ -1,5 +1,6 @@
 body {
   font-family: "Atkinson Hyperlegible", sans-serif;
+  margin: 0;
 }
 
 /* "site-container" is the single div containing every other element in the site.
@@ -8,7 +9,7 @@ body {
    to allow more flexible cascading: id rules are highly ranked while
    class names play nicer with other rules. */
 
-#site-container {
+.site-container {
   margin: 0 auto; /* floats the design center */
-  width: 1600px; /* change the site design width here */
+  max-width: 1400px; /* change the site design width here */
 }

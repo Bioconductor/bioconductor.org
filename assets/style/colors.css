@@ -53,6 +53,8 @@
   --misc-neutral: #007a9f;
   --misc-warning: #ffc600;
   --misc-annotations: #ff8a00;
+  --misc-error: #a92626;
+  --misc-dark: #070707;
 
   /* Gradients */
   --gradient-warmcool: linear-gradient(to right, #ff2f4b, #4e5cff);

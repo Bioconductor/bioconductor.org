@@ -1,0 +1,33 @@
+.announcement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  background-color: var(--misc-dark);
+  color: #fff;
+  stroke: #fff;
+}
+
+.announcement p {
+  font-size: 0.8125rem;
+}
+
+.announcement-warning {
+  background-color: var(--misc-warning);
+  color: var(--misc-dark);
+  stroke: var(--misc-dark);
+}
+
+.announcement-error {
+  background-color: var(--misc-error);
+  color: #fff;
+  stroke: #fff;
+}
+
+.announcement-brand {
+  background-image: var(--gradient-brand);
+  color: #fff;
+  stroke: #fff;
+}

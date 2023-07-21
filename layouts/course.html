@@ -2,8 +2,10 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
   <%= render("/_sitehead/") %>
   <body>
-    <%= render("/_nav/", :section_navigation => has_subnav?(@item) &&
-    subnav_items(@item).length > 0) %>
+    <%= render("/components/header/") %> <%= render("/_nav/",
+    :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0)
+    %>
+
     <div id="site-container" class="site-container">
       <div id="PageContent" class="PageContent WithRightRail">
         <%= render("/_crumbs/") %>
