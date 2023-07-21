@@ -9,12 +9,20 @@ jobs:
     environment: dev
     steps:
       - name: Empty Website Bucket
-        run: aws s3 rm s3://pr-preview-bioconductor-pr${{github.event.number}} --recursive
+        run: |
+          if aws s3api head-bucket --bucket pr-preview-bioconductor-pr${{github.event.number}} 2>/dev/null; then
+            aws s3 rm s3://pr-preview-bioconductor-pr${{github.event.number}} --recursive
+            echo "BUCKET_EXISTS=true" >> "$GITHUB_ENV"
+          else
+            echo "Bucket does not exist"
+            echo "BUCKET_EXISTS=false" >> "$GITHUB_ENV"
+          fi
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           AWS_REGION: "us-east-1"
       - name: Delete Website Bucket
+        if: ${{env.BUCKET_EXISTS == 'true'}}
         uses: danburtenshaw/s3-website-pr-action@v2.0.1
         with:
           bucket-prefix: "pr-preview-bioconductor"
