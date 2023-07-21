@@ -23,6 +23,7 @@ h4,
 h5,
 h6 {
   line-height: 120%;
+  margin-bottom: 0.3rem; /* 5px  */
 }
 
 h1 {
@@ -85,12 +86,14 @@ h6 {
   }
 }
 
-p {
+p,
+a {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1rem; /* 16px */
   line-height: 130%;
   letter-spacing: 0;
+  text-decoration: none;
 }
 
 .code {
