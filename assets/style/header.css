@@ -24,7 +24,7 @@ header {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 1.3rem;
+  gap: 1.5rem;
 }
 
 .header-size a {
@@ -36,6 +36,7 @@ header {
 .nav-links {
   display: flex;
   gap: 2rem;
+  margin-right: 0.5rem;
 }
 
 .nav-links a:hover,
@@ -60,13 +61,26 @@ header {
 .site-search {
   display: flex;
   align-items: center;
+  gap: 0.38rem;
 }
 
 .search-bar {
   border: none;
   outline: none;
   background-color: transparent;
-  padding-left: 5px;
+  padding-left: 0.25rem;
+  padding-top: 3px;
+}
+
+input::placeholder {
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 1.3rem;
+  color: var(--misc-dark);
+}
+
+input:focus::placeholder {
+  color: transparent;
 }
 
 .masthead-logo {
@@ -88,7 +102,7 @@ header {
   color: var(--primary-p400);
   display: flex;
   height: 2.5rem;
-  padding: 2px;
+  padding: 1px;
   width: 8.8rem;
 }
 
@@ -110,18 +124,16 @@ header {
   display: flex;
   justify-content: center;
   background: #fff;
+  color: var(--primary-p400);
   transition: background 0.5s ease;
   width: 100%;
   gap: 5px;
   margin: 1px;
+  padding-left: 0.75rem;
+  padding-right: 0.4rem;
 }
 
 .header-button:hover span {
   background: var(--primary-p400);
-}
-
-@media (width <= 700px) {
-  .header-desktop {
-    display: none;
-  }
+  color: #fff;
 }
