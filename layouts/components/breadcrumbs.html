@@ -1,0 +1,16 @@
+<ul class="breadcrumbs">
+  <% crumbs = get_updated_breadcrumbs(breadcrumbs_trail, item) %>
+  <% crumbs.each_with_index do |crumb, i| %>
+  <% next unless crumb %>
+    <% if (i + 1 < crumbs.length) %>
+      <% 
+        crumb_id = crumb.identifier.to_s.dup
+        crumb_id = "/packages/release/BiocViews.html" if crumb_id == "/packages/"
+        crumb_id.sub!(/BiocViews\.html\/$/, "BiocViews.html")
+      %>
+      <li><a href="<%= crumb_id %>"><%= crumb.attributes[:title] %></a></li>
+    <% else %>
+      <li><%= crumb.attributes[:title] %></li>
+    <% end %>
+  <% end %>
+</ul>

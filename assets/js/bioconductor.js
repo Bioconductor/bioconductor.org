@@ -85,33 +85,6 @@ function addEvent(elem, evtType, func) {
   }
 }
 
-// parse the page and pick out div's that have a certain class
-// and change those into shaded boxes by adding HTML. this inserts
-// table code, but that should be transparent to all users.
-function renderShadedBoxes() {
-  // prepare the HTML to insert into the divs of target class
-  var insert1 =
-    '<table cellspacing="0" cellpadding="0" class="sb"><tr><td class="sb1"></td><td class="sb2"></td><td class="sb3"></td></tr><tr><td class="sb4">&nbsp;</td><td class="sb5">';
-  var insert2 =
-    '</td><td class="sb6">&nbsp;</td></tr><tr><td class="sb7"></td><td class="sb8"></td><td class="sb9"></td></tr></table>';
-
-  // obtain all the div's of the target class. note that pre-ie7 doesn't return .getAttribute('class') but does return .getAttribute('className') so we check for that specially
-  var oDivs = document.getElementsByTagName("div");
-  var className = "";
-  for (var i = 0; i < oDivs.length; i++) {
-    className =
-      oDivs.item(i).getAttribute("class") ||
-      oDivs.item(i).getAttribute("className"); //alert(className);
-    if (className && className.indexOf("shaded_box") > -1) {
-      //alert(i);
-      oDivs.item(i).innerHTML = insert1 + oDivs.item(i).innerHTML + insert2;
-      oDivs.item(i).className = ""; // this removes the shaded_box class from the original div so the styling i just made takes over
-    }
-  }
-}
-
-// check each page load to see if there is any shaded_box class
-addEvent(window, "load", renderShadedBoxes);
 
 Object.size = function (obj) {
   var size = 0,

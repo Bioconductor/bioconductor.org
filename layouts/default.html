@@ -6,35 +6,36 @@ prefix="og: http://ogp.me/ns#">
 	<%= render("/components/header/") %>
     <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
 
-    <div id="site-container" class="site-container">
+    <% if @item[:hero] %>
+      <section class="hero"><%= render(@item[:hero]) %></section>
+    <%end%>
+  
+    <main>
       <% if has_subnav?(@item) %>
-      <div id="PageContent" class="PageContent WithRightRail">
+      <div class="container main-subnav">
       <% else %>
-      <div id="PageContent" class="PageContent">
+      <div class="container">
       <% end %>
+        <% if @item.attributes.has_key?(:package_index_page) %>
+          <%= render("/_pkg_idx/", :info => @item.attributes) %>
+        <% end %>
 
+        <% if @item.attributes.has_key?(:Package) %>
+          <%= render("/_bioc_views_package_detail/", :package => @item.attributes) %>
+        <% end %>
 
-	<% if (@item.identifier != '/')%>
-	  <%= render("/_crumbs/") %>
-	<% end %>
+        <% if has_subnav?(@item) %>
+          <section class="left-col"><%= render("/components/subnav/", :pages => subnav_items(@item)) %></section>
+        <% end %>
 
-	<% if @item.attributes.has_key?(:package_index_page)%>
-	    <%= render("/_pkg_idx/", :info => @item.attributes)%>
-	<% end %>
-	<% if @item.attributes.has_key?(:Package)%>
-	    <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
-	<% end %>
-	<%# end hack%>
+        <section class="content">
+          <% if (@item.identifier != '/') %>
+      	    <%= render("/components/breadcrumbs/") %>
+          <% end %>
 
-	<%= yield if block_given? %>
-	<% if has_subnav?(@item) %>
-	  </div>
-	  <div id="RightRail" class="RightRail">
-	  <a name="section-navigation"></a> <!-- accessibility anchor -->
-	  <%= render("/_subnav/", :pages => subnav_items(@item)) %>
-	<% end %>
-
-      </div>
+          <%= yield if block_given? %>
+        </section>
+      </main>
 
     </div>
 	<%= render("/components/footer/") %>

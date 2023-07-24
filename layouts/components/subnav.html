@@ -1,0 +1,13 @@
+<% if @item.attributes.include? :suppress_subnav and @item[:suppress_subnav] == true %>
+<% elsif @pages.length > 0 %>
+    <nav class="subnav">
+      <% @pages.sort{|a, b| a[:title] <=> b[:title]}.select do |p| %>
+        <a href="<%= p.identifier %>"><%= p[:title] %></a>
+      <% end %>
+    </nav>
+<% end %>
+<% if (@item[:subnav].kind_of? Array) %>
+  <% @item[:subnav].each do |s| %>
+    <%= render(s[:include].to_s) %>
+  <% end %>
+<% end %>
