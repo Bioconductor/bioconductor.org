@@ -300,13 +300,14 @@ To run all linters you can use the command `npm run lint`
 For each linter here are the options available:
 
 - stylelint (CSS):
-  - `npm run css-lint`
+
+  - `npm run lint-css <(optional)directory/file>` (default directory is current working directory)
 - eslint (JavaScript):
-  - `npm run js-lint <(optional)directory/file>` (default directory is current working directory)
+  - `npm run lint-js <(optional)directory/file>` (default directory is current working directory)
 - htmllint (HTML)
-  - `npm run html-lint <(optional)directory/file>` (default directory is current working directory)
+  - `npm run lint-html <(optional)directory/file>` (default directory is current working directory)
 - markdownLint (Markdown)
-  - `npm run md-lint <(required)directory/file>`
+  - `npm run lint-md <(required)directory/file>`
 
 ## Overview of site source code
 

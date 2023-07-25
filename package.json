@@ -8,14 +8,18 @@
   },
   "scripts": {
     "lint": "npm run css-lint && npm run js-lint",
-    "css-lint": "npx stylelint \"**/*.css\" ",
-    "js-lint": "npx eslint assets/js"
+    "lint-css": "npx stylelint",
+    "lint-js": "npx eslint",
+    "lint-md": "npx markdownlint",
+    "lint-html": "npx htmllint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.44.0",
+    "htmllint-cli": "^0.0.7",
+    "markdownlint-cli": "^0.35.0",
     "stylelint": "^15.10.1",
-    "stylelint-config-standard": "^34.0.0"
+    "stylelint-config-standard": "^34.0.0",
   }
 }
