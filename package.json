@@ -11,13 +11,13 @@
     "lint-css": "npx stylelint",
     "lint-js": "npx eslint",
     "lint-md": "npx markdownlint",
-    "lint-html": "npx htmllint"
+    "lint-html": "npx htmlhint"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "eslint": "^8.44.0",
-    "htmllint-cli": "^0.0.7",
+    "htmlhint": "^1.1.4",
     "markdownlint-cli": "^0.35.0",
     "stylelint": "^15.10.1",
     "stylelint-config-standard": "^34.0.0"

@@ -15,40 +15,11 @@
   <meta property="og:image" content="http://bioconductor.org/images/logo/jpg/bioconductor_logo_rgb.jpg" />
 <% end %>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJMEEH1J58"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WJMEEH1J58');
-</script>
-
   <%
     if (item.identifier =~ /BiocViews\.html$/)
       item[:rebase] = true
     end
   %>
-
-  <%
-  if !item[:rebase].nil? && item[:rebase]%>
-  <script
-    type="text/javascript"
-    src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"
-  ></script>
-  <script type="text/javascript">
-    if (!window.location.href.match(/bioconductor\.org|\/\/localhost/i)) {
-      var mirror = true;
-      document.write('<base href="//www.bioconductor.org"/>\n');
-    }
-  </script>
-    
-  <% else %>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-  <% end %>
-  <%# see about including this conditionally, only needed for pkg landing pages:%>
-  <script src="/js/jquery.tools.min.js"></script>
     
   <%
     title = " - #{@item[:title]}"
@@ -66,13 +37,5 @@
   <link rel="stylesheet" type="text/css" href="/style/footer.css" media="screen"/>
   <link rel="SHORTCUT ICON" type="image/x-icon" href="/favicon.ico" />
   <link rel="ICON" type="image/x-icon" href="/favicon.ico" />
-  <script type="text/javascript" src="/js/bioconductor.js"></script>
- <% if item.identifier =~ /help\/cloud/ and not item.identifier =~ /launch/ %>
-  <script type="text/javascript" src="/js/encrypt.min.js"></script>
- <% end %>
-  <script type="text/javascript" src="/js/jquery.corner.js"></script>
-  <script type="text/javascript" src="/js/jquery.timeago.js"></script>
-  <script type="text/javascript" src="/js/bioc-style.js"></script>
-  <script type="text/javascript" src="/js/versions.js"></script>
 
 </head>
