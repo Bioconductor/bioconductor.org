@@ -1,3 +1,43 @@
+.information-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  background-color: inherit;
+  gap: 2rem;
+}
+
+.news,
+.packages,
+.about-bioconductor {
+  max-width: 24rem;
+  min-width: 24rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.information-container section * {
+  text-align: start;
+}
+
+.news p {
+  border-left: 3px solid;
+  border-color: var(--primary);
+  padding-left: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.info-section-button-padding {
+  width: fit-content;
+}
+
+.info-section-button-padding .brand-border-button {
+  height: 2.5rem;
+}
+
 .learn-gradient {
   background-image: var(--gradient-brand);
   border-radius: 4px;
@@ -91,6 +131,12 @@
 
   .button-padding {
     width: 60%;
+  }
+
+  .information-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
