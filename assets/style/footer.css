@@ -15,6 +15,7 @@ footer {
 
 footer * {
   color: #fff;
+  text-decoration: none;
 }
 
 .footer-container {

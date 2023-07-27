@@ -11,6 +11,7 @@
   --primary: #3792ad;
   --primary-p400: #035771;
   --primary-p500: #003242;
+  --default-body: #070707;
 
   /* secondary colors */
   --secondary-s50: #f3fae9;
@@ -61,4 +62,12 @@
   --gradient-brand: linear-gradient(to right, #0087af, #0484a9, #18a603);
   --gradient-brandreverse: linear-gradient(to right, #18a603, #0484a9, #0087af);
   --gradient-purpleblue: linear-gradient(to right, #445cf3, #a333f1);
+
+  /* Code blocks */
+  --code-blocks-dark: #3d4049;
+  --code-dark-string: #f1c736;
+  --code-light-string: #800;
+  --code-light-literal: #008a00;
+  --code-dark-literal: #13cd13;
+  --code-dark-operator: #ff8a8a;
 }

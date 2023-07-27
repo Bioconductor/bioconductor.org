@@ -1,0 +1,31 @@
+.breadcrumbs {
+  list-style-type: none;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  line-height: 1.3rem;
+}
+
+.breadcrumbs li:not(:first-of-type) {
+  background-image: url("/images/chevron_right.svg");
+  background-repeat: no-repeat;
+  padding-left: 1.625rem; /* make space for the background image */
+}
+
+.breadcrumbs li:last-of-type {
+  font-weight: bold;
+}
+
+.breadcrumbs a {
+  color: var(--neutral-n400);
+  text-decoration: none;
+}
+
+.breadcrumbs li::before {
+  content: "";
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}

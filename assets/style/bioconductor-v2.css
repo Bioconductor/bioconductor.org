@@ -1,7 +1,8 @@
 body {
   font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0;
-  color: #070707;
+  color: var(--default-body);
+  background: var(--neutral-n50);
 }
 
 main {
@@ -28,36 +29,13 @@ main > .container.main-subnav {
   gap: 1rem;
 }
 
-/* TODO: shaded box is a legacy block, and included here for backwards compatibility. once the content is updated this should be removed */
-.shaded_box {
-  padding: 0.5rem;
-}
-
-.shaded_box .box_header {
-  font-size: 1rem;
-  text-decoration: underline;
-  font-weight: 700;
-}
-
-.shaded_box .box_header .olive {
-  display: none;
-}
-
-.shaded_box ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-nav.subnav,
-.shaded_box {
+nav.subnav {
   border-radius: 0.5rem;
   border: 1px solid var(--primary-p75);
   padding: 0.5rem;
 }
 
-nav.subnav a,
-.shaded_box ul li {
+nav.subnav a {
   text-decoration: underline;
   display: block;
   padding: 0.5rem;
@@ -65,39 +43,15 @@ nav.subnav a,
   background-image: url("/images/chevron_right.svg");
   background-repeat: no-repeat;
   background-position: right center;
-}
-
-nav.subnav a,
-.shaded_box ul li a {
   color: black;
 }
 
-.breadcrumbs {
-  list-style-type: none;
-  display: flex;
-  gap: 0.5rem;
-  margin: 0 0 0.75rem;
-  padding: 0;
-  line-height: 1.3rem;
-}
-
-.breadcrumbs li:not(:first-of-type) {
-  background-image: url("/images/chevron_right.svg");
-  background-repeat: no-repeat;
-  padding-left: 1.625rem; /* make space for the background image */
-}
-
-.breadcrumbs li:last-of-type {
-  font-weight: bold;
-}
-
-.breadcrumbs a {
-  color: var(--neutral-n400);
-  text-decoration: none;
+img {
+  max-width: 100%;
 }
 
 @media (width <= 768px) {
-  main > .container {
+  main > .container.main-subnav {
     display: block;
   }
 

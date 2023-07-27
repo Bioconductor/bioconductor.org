@@ -7,7 +7,7 @@
     "lib": "lib"
   },
   "scripts": {
-    "lint": "npm run css-lint && npm run js-lint",
+    "lint": "npm run lint-css && npm run lint-js && npm run link-md && npm run lint-html",
     "lint-css": "npx stylelint",
     "lint-js": "npx eslint",
     "lint-md": "npx markdownlint",

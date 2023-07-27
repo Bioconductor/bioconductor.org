@@ -1,0 +1,57 @@
+pre:has(code) {
+  border-radius: 5px;
+  padding: 2px;
+  background: var(--gradient-brandreverse);
+  white-space: normal;
+  margin-bottom: 2rem;
+}
+
+code,
+code.hljs {
+  border-radius: 3px;
+  font-family: Courier, monospace;
+  background: none;
+  background-color: var(--code-blocks-dark);
+  overflow-x: auto;
+  display: block;
+  padding: 1rem;
+  white-space: pre;
+}
+
+code,
+pre code.hljs,
+.hljs-punctuation {
+  color: white;
+  font-size: 1rem;
+  line-height: 1.3rem;
+}
+
+.hljs-string {
+  color: var(--code-dark-string);
+}
+
+.hljs-literal {
+  color: var(--code-dark-literal);
+}
+
+code.light .hljs-literal {
+  color: var(--code-light-literal);
+}
+
+code.dark .hljs-operator {
+  color: var(--code-dark-operator);
+}
+
+code.light {
+  background-color: white;
+}
+
+.hljs.light,
+code.light .hljs-punctuation,
+code.light {
+  color: var(--default-body);
+}
+
+code.light .hljs-string {
+  color: var(--code-light-string);
+}

@@ -17,8 +17,12 @@
 /* stylelint-enable */
 
 .hero p {
-  margin-top: 24px;
-  margin-bottom: 40px;
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+a.button-hero {
+  text-decoration: none;
 }
 
 @media screen and (width <= 768px) {
