@@ -1,0 +1,28 @@
+.button-hero {
+  padding: 1rem 1.625rem;
+  border-radius: 16rem;
+  background: var(--gradient-brandreverse);
+  margin: auto auto 0.3rem;
+  transition: 0.3s;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+}
+
+.button-hero img {
+  width: 1rem;
+  height: 1rem;
+  vertical-align: middle;
+}
+
+.button-hero:hover {
+  background: var(--gradient-brand);
+  box-shadow: 0 5px 4px 0 rgba(0 0 0 / 18%) inset;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button-hero {
+    transition: none;
+  }
+}

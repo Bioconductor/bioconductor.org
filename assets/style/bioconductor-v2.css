@@ -1,6 +1,7 @@
 body {
   font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0;
+  color: #070707;
 }
 
 .container {
@@ -13,8 +14,7 @@ main > .container.main-subnav {
   display: grid;
   gap: 2rem;
   grid-template-columns: 300px 1fr;
-  grid-template-areas:
-    "left-col .";
+  grid-template-areas: "left-col .";
 }
 
 .left-col {
@@ -45,13 +45,15 @@ main > .container.main-subnav {
   margin: 0;
 }
 
-nav.subnav, .shaded_box {
+nav.subnav,
+.shaded_box {
   border-radius: 0.5rem;
   border: 1px solid var(--primary-p75);
   padding: 0.5rem;
 }
 
-nav.subnav a, .shaded_box ul li {
+nav.subnav a,
+.shaded_box ul li {
   text-decoration: underline;
   display: block;
   padding: 0.5rem;
@@ -61,7 +63,8 @@ nav.subnav a, .shaded_box ul li {
   background-position: right center;
 }
 
-nav.subnav a, .shaded_box ul li a {
+nav.subnav a,
+.shaded_box ul li a {
   color: black;
 }
 
@@ -94,11 +97,12 @@ nav.subnav a, .shaded_box ul li a {
     display: block;
   }
 
-.left-col {
-  display: none;
-}
+  .left-col {
+    display: none;
+  }
 
-.site-container {
-  margin: 0 auto; /* floats the design center */
-  max-width: 1400px; /* change the site design width here */
+  .site-container {
+    margin: 0 auto; /* floats the design center */
+    max-width: 1400px; /* change the site design width here */
+  }
 }

@@ -1,0 +1,28 @@
+.hero {
+  max-width: 100%;
+  margin: 4.5rem auto;
+  text-align: center;
+}
+
+.hero h1 {
+  color: var(--primary-p500);
+}
+
+/* stylelint-disable */
+.hero mark {
+  background: var(--gradient-brandreverse);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* stylelint-enable */
+
+.hero p {
+  margin-top: 24px;
+  margin-bottom: 40px;
+}
+
+@media screen and (width <= 768px) {
+  .hero p {
+    font-size: 1rem;
+  }
+}

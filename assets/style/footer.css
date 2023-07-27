@@ -8,15 +8,15 @@ footer {
   border-width: 0.625rem 0 0; /* 10px */
   border-image: var(--gradient-brandreverse) 1;
   margin-top: 1.875rem; /* 30px */
-  color: #fff;
   font-size: 0.7rem;
   height: auto;
   box-sizing: border-box;
 }
 
-footer a {
+footer * {
   color: #fff;
 }
+
 .footer-container {
   max-width: 1400px;
   margin: auto;
@@ -38,7 +38,7 @@ footer a {
   flex-direction: column;
   align-items: start;
   gap: 0.625rem;
-  padding-inline-start: 0px;
+  padding-inline-start: 0;
   margin-right: auto;
 }
 
@@ -60,8 +60,8 @@ footer a {
 }
 
 .socials {
-  margin-top: 0.5rem;
   margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .footer-logo {
@@ -83,7 +83,7 @@ footer a {
 
   :is(.link-container-inner nav) {
     min-width: 10rem;
-    margin-inline-end: 0px;
+    margin-inline-end: 0;
   }
 
   .list-container-inner {
@@ -106,7 +106,7 @@ footer a {
 
   .socials-logo-container {
     display: block;
-    padding: 1rem 0rem;
+    padding: 1rem 0;
   }
 
   .socials {
