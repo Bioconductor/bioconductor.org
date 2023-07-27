@@ -31,22 +31,20 @@
 	    Release Schedule and Deadlines.</li>
 -->
 
+	    
 	    <li><em>Bioconductor</em> <a href="/news/bioc_3_17_release">Bioc 3.17</a>
 	    Released.</li>
     
-            <li><em>Bioconductor</em> <a href="https://bioconductor.github.io/biocblog">Community Blog</a> </li>
 
 	    <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable
 	    code base</a> now available.</li>
 
+	    <li><a href="https://bioc2023.bioconductor.org/">Bioc2023</a> August 2-4</li>
+	    
 	    <li>See
 	      our <a href="https://bioconductor.org/help/events/">google
 	      calendar</a> for events, conferences, meetings, forums,
-	      etc. </li>
-
-	    <li><em>Bioconductor</em>
-	      <a href="http://f1000research.com/channels/bioconductor">F1000
-		Research Channel</a> is available.</li>
+	      etc.; email <i>events at bioconductor.org</i> to add an event. </li>
 
 	    <li>
 	      Orchestrating single-cell analysis
@@ -60,6 +58,35 @@
 	  </ul>
 	</p>
 
+	<h1 style="border:0;margin:0;background-image:none">Connect With the Community</h1>
+
+	<p style="line-height:1.5em;padding-right:5em">
+	  <ul>
+
+	    <li><a class="symlink" href="https://slack.bioconductor.org/">Community Slack</a> sign-up<li>
+	    <li><a class="symlink" href="/help/support/">Get support</a></li>
+            <li><em>Bioconductor</em> <a href="https://bioconductor.github.io/biocblog">Community Blog</a> </li>
+	    <li><a class="symlink" href="https://www.youtube.com/user/bioconductor">Bioconductor YouTube </a></li>
+	    <li><a class="symlink" rel="me" href="https://genomic.social/@bioconductor">Follow us on Mastodon</a></li>
+	    <li><a class="symlink" href="https://twitter.com/Bioconductor">Follow us on Twitter</a></li>
+    	    <li><em>Bioconductor</em> <a href="http://f1000research.com/channels/bioconductor">F1000 Research Channel</a> is available.</li>
+	    <li><a class="symlink" href="/help/publications">Literature citations</a></li>
+	    
+	  </ul>
+	</p>
+
+
+	<h2><img src="/images/icons/calendar.gif" alt=""/><a href="/help/events/">Events</a></h2>
+	<p style="line-height:1.5em;padding-right:5em">
+
+
+	  <%= render('/_upcoming_events/', :events => find_item(@items, '/help/events/')) %>
+	  <p style="font-weight:bold"><a href="/help/events/">See all events</a>&nbsp;
+	  <span class="blue">&raquo;</span></p>
+	  
+	</p>
+
+	
       </td>
 
       <td style="padding-left:35px">
@@ -99,13 +126,15 @@
   </table>
 
 </div>
+<!--
 
 <div class="hp_options_box">
 
+  
   <div style="float:left;width:33%;">
     <%= render('/_mlwidget/', :ml_item => get_biostar_post_summaries(@items)) %>
   </div>
-
+  
   <div style="float:left;width:33%;">
     <div style="padding:0 0 0 12px">
       <h2><img src="/images/icons/calendar.gif" alt=""/><a href="/help/events/">Events</a></h2>
@@ -120,14 +149,15 @@
   <div style="float:right;width:33%;">
     <div style="padding:0 0 0 12px">
 
-      <!-- NEWS was here -->
-
 <a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
 
 
     </div>
   </div>
 
 </div>
+-->
+
 <br clear="all"/>
