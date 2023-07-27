@@ -1,8 +1,11 @@
 body {
   font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0;
-  background: var(--neutral-n50);
   color: #070707;
+}
+
+main {
+  background: var(--neutral-n50);
 }
 
 .container {

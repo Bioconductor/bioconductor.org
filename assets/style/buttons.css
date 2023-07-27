@@ -1,3 +1,37 @@
+.white-button {
+  background: var(--neutral-n50);
+  color: var(--primary-p400);
+  min-height: 20px;
+  max-height: 20px;
+  cursor: pointer;
+  display: block;
+  width: fit-content;
+  transition: 0.3s;
+  padding: 0.6rem 0.8rem;
+  border-radius: 8rem;
+}
+
+.white-button:hover {
+  background: var(--primary-p50);
+}
+
+.white-button:active {
+  background: var(--primary-p200);
+}
+
+.white-button * {
+  vertical-align: middle;
+}
+
+.white-button svg {
+  margin-bottom: 1px;
+}
+
+.white-button svg:hover {
+  background: var(--primary-p50);
+  stroke: black;
+}
+
 .button-hero {
   padding: 1rem 1.625rem;
   border-radius: 16rem;
@@ -64,10 +98,11 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .button-hero,
+  .white-button,
   .brand-border-button,
   .brand-border-button svg path,
-  .brand-border-button span,
-  .button-hero {
+  .brand-border-button span {
     transition: none;
   }
 }

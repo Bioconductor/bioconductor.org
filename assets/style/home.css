@@ -1,3 +1,64 @@
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 6.25rem;
+  margin-bottom: 1rem;
+}
+
+.events-header h3 {
+  margin-left: 1rem;
+}
+
+.events-container {
+  display: flex;
+  overflow-x: scroll;
+  gap: 1.56rem;
+  margin-bottom: 1.5rem;
+  -ms-overflow-style: none; /* disable scrollbar for IE and Edge */
+  scrollbar-width: none; /* disable scrollbar for Firefox */
+}
+
+.events-container::-webkit-scrollbar {
+  display: none; /* disable scrollbar for chrome */
+}
+
+.event-card-container {
+  display: inline-block;
+  background-color: white;
+  padding: 0.875rem;
+  min-width: 17.5rem;
+  max-width: 17.5rem;
+  max-height: 12.25rem;
+}
+
+.event-card {
+  height: 100%;
+  width: 100%;
+}
+
+.event-card .format-bold {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+  width: 100%;
+  flex: 1 0 0;
+  align-self: stretch;
+  height: 4.75rem;
+  color: var(--primary-p500);
+  max-width: 12.8rem;
+}
+
+.event-date-location {
+  padding-top: 1rem;
+  border-top: 1px solid;
+  border-color: var(--primary-p-50, #ebf4f7);
+}
+
+.event-date-location * {
+  margin-block-start: 0;
+  margin-block-end: 0;
+  color: var(--neutral-n400);
+}
+
 .information-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
@@ -131,6 +192,10 @@
 
   .button-padding {
     width: 60%;
+  }
+
+  .events-header {
+    margin: auto;
   }
 
   .information-container {
