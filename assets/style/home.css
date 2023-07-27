@@ -1,0 +1,109 @@
+.learn-gradient {
+  background-image: var(--gradient-brand);
+  border-radius: 4px;
+  padding: 1px;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.learn-block {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 4px;
+}
+
+.learn-block h4 {
+  margin-top: 0;
+}
+
+.learn-content {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.info {
+  flex: 1;
+  gap: 0.5rem;
+}
+
+.info p {
+  padding-bottom: 1rem;
+}
+
+.learn-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  flex: 1;
+}
+
+.learn-nav a {
+  border: 1px solid var(--primary-p75);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  align-items: center;
+  text-decoration: underline;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+
+  /* gradient backgrounds are difficult to add transition */
+  transition: background 0.5s ease;
+}
+
+.learn-nav a:hover {
+  background-image: var(--gradient-brand);
+  color: #fff;
+}
+
+.learn-nav svg path {
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.learn-nav a:hover svg path {
+  stroke: #fff;
+  transform: translateX(3px);
+}
+
+.button-padding {
+  width: 50%;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.info .brand-border-button {
+  height: 2.5rem;
+  width: 100%;
+}
+
+@media (width <= 768px) {
+  .learn-block {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .learn-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .button-padding {
+    width: 60%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .learn-nav a:hover {
+    background: inherit;
+    color: inherit;
+    transition: none;
+  }
+
+  .learn-nav a:hover svg path {
+    stroke: var(--primary-p75);
+    transition: none;
+    transform: none;
+  }
+}

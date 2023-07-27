@@ -7,7 +7,7 @@ footer {
   border-style: solid;
   border-width: 0.625rem 0 0; /* 10px */
   border-image: var(--gradient-brandreverse) 1;
-  margin-top: 1.875rem; /* 30px */
+  color: #fff;
   font-size: 0.7rem;
   height: auto;
   box-sizing: border-box;

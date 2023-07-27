@@ -1,0 +1,133 @@
+<div class="shaded_box">
+
+  <table cellspacing="0" cellpadding="0" summary="" style="padding-bottom: 0;"><!-- table used for precise positioning -->
+    <tr valign="top">
+      <td style="border-right:1px silver solid;width:266px;">
+
+	<h1 style="border:0;margin:0;background-image:none">About<br/><em>Bioconductor</em></h1>
+
+	<p style="line-height:1.5em;padding-right:5em">
+	  The mission of the <em>Bioconductor</em>
+	  project is to develop, support, and disseminate free open source
+	  software that facilitates rigorous and reproducible analysis of data
+	  from current and emerging biological assays. We are dedicated to
+	  building a diverse, collaborative, and welcoming community of
+	  developers and data scientists.</p>
+
+	<p style="line-height:1.5em;padding-right:5em">
+	  <em>Bioconductor</em> uses the R statistical
+	  programming language, and is open source and open
+	  development. It has two releases each year, and an active
+	  user community. <em>Bioconductor</em> is also available as
+	  <a href="/help/docker/">Docker</a> images.</p>
+
+
+	<h1 style="border:0;margin:0;background-image:none">News</h1>
+
+	<p style="line-height:1.5em;padding-right:5em">
+	  <ul>
+<!--
+	    <li><em>Bioconductor</em> <a href="/developers/release-schedule">Bioc 3.17</a>
+	    Release Schedule and Deadlines.</li>
+-->
+
+	    <li><em>Bioconductor</em> <a href="/news/bioc_3_17_release">Bioc 3.17</a>
+	    Released.</li>
+    
+            <li><em>Bioconductor</em> <a href="https://bioconductor.github.io/biocblog">Community Blog</a> </li>
+
+	    <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable
+	    code base</a> now available.</li>
+
+	    <li>See
+	      our <a href="https://bioconductor.org/help/events/">google
+	      calendar</a> for events, conferences, meetings, forums,
+	      etc. </li>
+
+	    <li><em>Bioconductor</em>
+	      <a href="http://f1000research.com/channels/bioconductor">F1000
+		Research Channel</a> is available.</li>
+
+	    <li>
+	      Orchestrating single-cell analysis
+	      with <em>Bioconductor</em>
+	      (<a href="https://doi.org/10.1038/s41592-019-0654-x">abstract</a>;
+	      <a href="https://bioconductor.org/books/OSCA/">website</a>)
+	      and other <a href="/help/publications/">recent literature</a>.
+	    </li>
+
+
+	  </ul>
+	</p>
+
+      </td>
+
+      <td style="padding-left:35px">
+
+	<br clear = "all">
+<!--
+	<div style="width:100%;float:left;">
+	  <%= render("/_main_top_panel/") %>
+	</div>
+-->
+	<div style="width:100%;float:left;">
+	  <%= render("/_main_top_panel/") %>
+	</div>
+	
+	<br clear="all">
+	
+	<div style="width:50%;float:left;">
+	  <%= render("/_install/") %>
+	</div>
+
+	<div style="width:50%;float:left;">
+	  <%= render("/_learn/") %>
+	</div>
+
+	<br clear="all">
+
+	<div style="width:50%;float:left;">
+	  <%= render("/_use/") %>
+	</div>
+
+	<div style="width:50%;float:left;">
+	  <%= render("/_develop/") %>
+	</div>
+
+      </td>
+    </tr>
+  </table>
+
+</div>
+
+<div class="hp_options_box">
+
+  <div style="float:left;width:33%;">
+    <%= render('/_mlwidget/', :ml_item => get_biostar_post_summaries(@items)) %>
+  </div>
+
+  <div style="float:left;width:33%;">
+    <div style="padding:0 0 0 12px">
+      <h2><img src="/images/icons/calendar.gif" alt=""/><a href="/help/events/">Events</a></h2>
+
+
+      <%= render('/_upcoming_events/', :events => find_item(@items, '/help/events/')) %>
+      <p style="font-weight:bold"><a href="/help/events/">See all events</a>&nbsp;
+	  <span class="blue">&raquo;</span></p>
+    </div>
+  </div>
+
+  <div style="float:right;width:33%;">
+    <div style="padding:0 0 0 12px">
+
+      <!-- NEWS was here -->
+
+<a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+
+
+    </div>
+  </div>
+
+</div>
+<br clear="all"/>

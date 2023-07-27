@@ -1,133 +1,346 @@
-<div class="shaded_box">
+<div class="homepage-block">
+  <span class="buttons">
+    <button>For Data scientists</button>
+    <button>For developers</button>
+  </span>
 
-  <table cellspacing="0" cellpadding="0" summary="" style="padding-bottom: 0;"><!-- table used for precise positioning -->
-    <tr valign="top">
-      <td style="border-right:1px silver solid;width:266px;">
+  <div class="data-scientist-container">
+    <img alt="start using bioconductor now!" />
+    <section class="brand-box data-scientist-content">
+      <h2>Create bioinformatic solutions with Bioconductor</h2>
+      <div class="box data-scientist-border">
+        <div class="box box-green">
+          <p>software, Annotation and experiment packages</p>
+          <p>Docker containers for Bioconductor</p>
+        </div>
 
-	<h1 style="border:0;margin:0;background-image:none">About<br/><em>Bioconductor</em></h1>
-
-	<p style="line-height:1.5em;padding-right:5em">
-	  The mission of the <em>Bioconductor</em>
-	  project is to develop, support, and disseminate free open source
-	  software that facilitates rigorous and reproducible analysis of data
-	  from current and emerging biological assays. We are dedicated to
-	  building a diverse, collaborative, and welcoming community of
-	  developers and data scientists.</p>
-
-	<p style="line-height:1.5em;padding-right:5em">
-	  <em>Bioconductor</em> uses the R statistical
-	  programming language, and is open source and open
-	  development. It has two releases each year, and an active
-	  user community. <em>Bioconductor</em> is also available as
-	  <a href="/help/docker/">Docker</a> images.</p>
-
-
-	<h1 style="border:0;margin:0;background-image:none">News</h1>
-
-	<p style="line-height:1.5em;padding-right:5em">
-	  <ul>
-<!--
-	    <li><em>Bioconductor</em> <a href="/developers/release-schedule">Bioc 3.17</a>
-	    Release Schedule and Deadlines.</li>
--->
-
-	    <li><em>Bioconductor</em> <a href="/news/bioc_3_17_release">Bioc 3.17</a>
-	    Released.</li>
-    
-            <li><em>Bioconductor</em> <a href="https://bioconductor.github.io/biocblog">Community Blog</a> </li>
-
-	    <li><em>Bioconductor</em> <a href="https://code.bioconductor.org/">browsable
-	    code base</a> now available.</li>
-
-	    <li>See
-	      our <a href="https://bioconductor.org/help/events/">google
-	      calendar</a> for events, conferences, meetings, forums,
-	      etc. </li>
-
-	    <li><em>Bioconductor</em>
-	      <a href="http://f1000research.com/channels/bioconductor">F1000
-		Research Channel</a> is available.</li>
-
-	    <li>
-	      Orchestrating single-cell analysis
-	      with <em>Bioconductor</em>
-	      (<a href="https://doi.org/10.1038/s41592-019-0654-x">abstract</a>;
-	      <a href="https://bioconductor.org/books/OSCA/">website</a>)
-	      and other <a href="/help/publications/">recent literature</a>.
-	    </li>
-
-
-	  </ul>
-	</p>
-
-      </td>
-
-      <td style="padding-left:35px">
-
-	<br clear = "all">
-<!--
-	<div style="width:100%;float:left;">
-	  <%= render("/_main_top_panel/") %>
-	</div>
--->
-	<div style="width:100%;float:left;">
-	  <%= render("/_main_top_panel/") %>
-	</div>
-	
-	<br clear="all">
-	
-	<div style="width:50%;float:left;">
-	  <%= render("/_install/") %>
-	</div>
-
-	<div style="width:50%;float:left;">
-	  <%= render("/_learn/") %>
-	</div>
-
-	<br clear="all">
-
-	<div style="width:50%;float:left;">
-	  <%= render("/_use/") %>
-	</div>
-
-	<div style="width:50%;float:left;">
-	  <%= render("/_develop/") %>
-	</div>
-
-      </td>
-    </tr>
-  </table>
-
-</div>
-
-<div class="hp_options_box">
-
-  <div style="float:left;width:33%;">
-    <%= render('/_mlwidget/', :ml_item => get_biostar_post_summaries(@items)) %>
+        <p>
+          Bioconductor Books: <a>csawBook</a>, <a>OSCA</a> and
+          <a>SingleRBook</a>
+        </p>
+        <a>Latest release announcement</a>
+        <p>
+          <a>Use Bioconductor in theAnVIL</a>. See our <a>project updates</a>
+        </p>
+        <a>Community Slack sigh-up</a>
+        <a>Support site</a>
+        <a>Events calendar</a>
+      </div>
+    </section>
+    <img alt="learn more about bioconductor" />
   </div>
 
-  <div style="float:left;width:33%;">
-    <div style="padding:0 0 0 12px">
-      <h2><img src="/images/icons/calendar.gif" alt=""/><a href="/help/events/">Events</a></h2>
-
-
-      <%= render('/_upcoming_events/', :events => find_item(@items, '/help/events/')) %>
-      <p style="font-weight:bold"><a href="/help/events/">See all events</a>&nbsp;
-	  <span class="blue">&raquo;</span></p>
+  <div>
+    <div class="learn-gradient">
+      <div class="learn-block">
+        <h4>Learn</h4>
+        <div class="learn-content">
+          <div class="info">
+            <p>Resources to maximize the potential of Bioconductor.</p>
+            <p>
+              From basic functionalities to advanced features, our tutorials,
+              guides, and documentation have you covered.
+            </p>
+            <div class="button-padding">
+              <a class="brand-border-button" href="/install/">
+                <span class="span-brand format-bold">
+                  See all Resources
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="15"
+                    viewBox="0 0 14 15"
+                    fill="none"
+                  >
+                    <path
+                      d="M5.25 3.66665L9.33333 7.74998L5.25 11.8333"
+                      stroke="#3792AD"
+                      stroke-width="2.2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </span>
+              </a>
+            </div>
+          </div>
+          <nav class="learn-nav">
+            <a href="/help/course-materials/"
+              >Courses<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="/help/education-training/"
+              >Education and Training<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="https://support.bioconductor.org"
+              >Support site<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="/help/package-vignettes/"
+              >Package vignettes<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="/help/publications"
+              >Literature citations<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+          </nav>
+          <nav class="learn-nav">
+            <a href="/packages/release/BiocViews.html#___Workflow"
+              >Common workflows<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="/help/faq"
+              >FAQ<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="/help/community/"
+              >Community resources<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="https://www.youtube.com/user/bioconductor"
+              >Videos<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+            <a href="https://bioconductor.github.io/biocblog/"
+              >Bioconductor Community Blog<svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="25"
+                height="25"
+                viewBox="0 0 25 25"
+                fill="none"
+              >
+                <path
+                  d="M13.5 9.29999L16.5 12.3M16.5 12.3L13.5 15.3M16.5 12.3L8.5 12.3M21.5 12.3C21.5 17.2706 17.4706 21.3 12.5 21.3C7.52944 21.3 3.5 17.2706 3.5 12.3C3.5 7.32942 7.52944 3.29999 12.5 3.29999C17.4706 3.29999 21.5 7.32942 21.5 12.3Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                /></svg
+            ></a>
+          </nav>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <div style="float:right;width:33%;">
-    <div style="padding:0 0 0 12px">
+    <div class="info-content">
+      <section>
+        <h2>About Bioconductor</h2>
+        <p>
+          Bioconductor uses the R statistical programming language, and is open
+          source and open development. It has two releases each year, and an
+          active user community.<br />
+          Bioconductor is also available as Docker images.
+        </p>
+        <button>more about bioconductor</button>
+      </section>
+      <section>
+        <h2>Packages</h2>
+        <p>
+          Discover 2230 software packages available in Bioconductor release
+          3.17. <br />
+          <a>Download package Vignettes</a>
+        </p>
 
-      <!-- NEWS was here -->
-
-<a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
+        <button>see all packages</button>
+      </section>
+      <section>
+        <h2>News</h2>
+        <p class="news-item">Bioconductor <a>Bioc 3.17</a> Released</p>
+        <p class="news-item">Bioconductor <a>Community Blog</a></p>
+        <p class="news-item">
+          Bioconductor <a>browsable code base</a> now available
+        </p>
+        <p class="news-item">
+          See our <a>google calendar</a> for events, conferences, meetings,
+          forums, etc
+        </p>
+        <p class="news-item">
+          Bioconductor<a>F1000 Research Channel</a> is available.
+        </p>
+        <button>see all news</button>
+      </section>
     </div>
+    <div class="warmcool-box join-content">
+      <section>
+        <h2>Join 1 Million + people using Bioconductor</h2>
+        <p>
+          Join our ever-growing community and discover how Bioconductor can
+          <mark class="text-gradient">Improve your pipeline</mark>
+        </p>
+        <span>
+          <button>Get started</button>
+          <a>learn more</a>
+        </span>
+      </section>
+    </div>
+    <section class="events">
+      <span>
+        <h3>Events</h3>
+        <a>see all events</a>
+      </span>
+      <div class="event-container">
+        <div class="event-card">
+          <p>CSHL course: Statistical Analysis of Genome Scale Data</p>
+          <div class="event-date-location">
+            <span>
+              <time datetime="2023-06-30">30 June</time> -
+              <time datetime="2023-07-13">13 July 2023</time>
+            </span>
+            New York, USA
+          </div>
+        </div>
+        <div class="event-card">
+          <p>
+            ISMB/ECCB 2023 tutorial: Orchestrating Large-Scale Single-Cell
+            Analysis with Bioconductor
+          </p>
+          <div class="event-date-location">
+            <span class="event-date-location">
+              <time datetime="2023-07-23">23 July 2023</time>
+            </span>
+            <p>Lyon, France</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <p>RNA-seq analysis with Bioconductor</p>
+          <div class="event-date-location">
+            <span class="event-date-location"></span>
+            <time datetime="2023-07-31">31 June</time> -
+            <time datetime="2023-08-01">01 August 2023</time>
+            <p>Boston, USA</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <p>BioC2023: Where Software and Biology Connect</p>
+          <div class="event-date-location">
+            <span class="event-date-location">
+              <time datetime="2023-08-02">02</time> -
+              <time datetime="2023-08-04">04 August 2023</time>
+            </span>
+            <p>Boston, USA and Virtual Conference</p>
+          </div>
+        </div>
+        <div class="event-card">
+          <p>EuroBioC2023: European Bioconductor cONFERENCE</p>
+          <div class="event-date-location">
+            <span>
+              <time datetime="2023-08-02">02</time> -
+              <time datetime="2023-08-04">04 August 2023</time>
+            </span>
+            <p>Ghent, Belgium</p>
+          </div>
+        </div>
+      </div>
+    </section>
   </div>
-
 </div>
-<br clear="all"/>

@@ -240,7 +240,7 @@ input:focus::placeholder {
   .search-container,
   .header-button {
     margin: 0.5rem 0;
-  } 
+  }
 
   .hamburger {
     display: block;
