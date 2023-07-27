@@ -20,7 +20,7 @@ header {
   align-items: center;
 }
 
-.header-desktop {
+.header-nav {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -136,4 +136,126 @@ input:focus::placeholder {
 .header-button:hover span {
   background: var(--primary-p400);
   color: #fff;
+}
+
+.nav-mobile {
+  display: none;
+}
+
+.bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  border-radius: 25px;
+  margin: 5px auto;
+  transition: all 0.3s ease-in-out;
+  background-color: var(--misc-dark);
+}
+
+@media (width <= 768px) {
+  .header-size {
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0.5rem;
+  }
+
+  .header-nav {
+    position: fixed;
+    flex-direction: column;
+    width: 100vw;
+    top: -100%;
+    left: 0;
+    background-color: #fff;
+    transition: 0.3s;
+    gap: 0;
+    z-index: -1;
+  }
+
+  .header-nav.active {
+    top: 9rem;
+  }
+
+  .nav-mobile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+  }
+
+  .nav-mobile h6 {
+    margin: 0;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 0;
+    padding-left: 2rem;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--neutral-n75);
+    padding-top: 0.5rem;
+  }
+
+  .nav-links a {
+    text-decoration: none !important;
+    width: 100vw;
+    border-bottom: 1px solid var(--neutral-n75);
+    padding-left: 1.5rem;
+    padding-bottom: 1rem;
+  }
+
+  .search-container {
+    height: 2.5rem;
+    display: flex;
+    width: calc(100vw - 3rem);
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0.75rem;
+    padding-right: 0;
+  }
+
+  .header-button {
+    background-image: var(--gradient-brand);
+    color: var(--primary-p400);
+    display: flex;
+    width: 100%;
+    border-radius: 0%;
+    align-items: center;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .get-started {
+    background: none;
+    color: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0.5rem;
+  }
+
+  .get-started svg {
+    display: none;
+  }
+
+  .nav-links a,
+  .search-container,
+  .header-button {
+    margin: 0.5rem 0;
+  } 
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
 }

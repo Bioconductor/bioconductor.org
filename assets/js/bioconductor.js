@@ -36,6 +36,28 @@ function checkNav() {
 
 window.addEventListener("load", checkNav);
 
+//Mobile siteHead js
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".header-nav");
+
+  function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+  }
+
+  window.addEventListener("click", mobileMenu);
+
+  const navLink = document.querySelectorAll(".mobile-link");
+
+  function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+  }
+
+  navLink.forEach((n) => n.addEventListener("click", closeMenu));
+});
+
 function log(message) {
   if (fb_lite) {
     //console.log(message);

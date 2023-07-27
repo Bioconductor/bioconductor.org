@@ -34,3 +34,14 @@
   color: #fff;
   stroke: #fff;
 }
+
+@media (width <= 768px) {
+  .announcement {
+    display: flex;
+    padding: 0.625rem;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0.5rem;
+    text-align: center;
+  }
+}
