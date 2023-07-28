@@ -28,7 +28,7 @@
       <br>Alexandru Mahmoud
     </td>
      <td width="33%">
-      <img src="/images/cab/placeholder.png"
+      <img src="/images/coreTeamPic/NikhilMane.png"
            width="100%" alt="Nikhil Mane" title="Nikhil Mane"/>
       <br>Nikhil Mane
     </td>
