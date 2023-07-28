@@ -27,19 +27,23 @@
            width="100%" alt="Alexandru Mahmoud" title="Alexandru Mahmoud"/>
       <br>Alexandru Mahmoud
     </td>
+     <td width="33%">
+      <img src="/images/cab/placeholder.png"
+           width="100%" alt="Nikhil Mane" title="Nikhil Mane"/>
+      <br>Nikhil Mane
+    </td>
     <td width="33%">
       <img src="/images/coreTeamPic/HervePages.png"
            width="100%" alt="Herve Pages" title="Herve Pages"/>
       <br>Herv&eacute; Pag&egrave;s
     </td>
+  </tr>
+  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/MarcelRamos.png"
            width="100%" alt="Marcel Ramos" title="Marcel Ramos"/>
       <br>Marcel Ramos
     </td>
-  </tr>
-
-  <tr>
     <td width="33%">
       <img src="/images/coreTeamPic/RobertShear.png"
            width="100%" alt="Robert Shear" title="Robert Shear"/>
