@@ -18,20 +18,26 @@
         <a class="format-bold mobile-link" href="/developers/">Developers</a>
         <a class="format-bold mobile-link" href="/help/">Learn</a>
       </div>
-      <div class="search-container mobile-link">
+      <div class="search-container">
         <form
           class="site-search"
           id="search-form"
           method="GET"
           action="/help/search/index.html"
         >
+          <label for="search-bar" class="sr-only">Search</label>
           <img
             src="/images/icons/search-icon.svg"
             class="search-icon"
             alt=""
             aria-hidden="true"
           />
-          <input class="search-bar" name="search-bar" placeholder="Search" />
+          <input
+            class="search-bar"
+            name="search-bar"
+            placeholder="Search"
+            id="search-bar"
+          />
         </form>
       </div>
 

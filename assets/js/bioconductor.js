@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navMenu.classList.toggle("active");
   }
 
-  window.addEventListener("click", mobileMenu);
+  hamburger.addEventListener("click", mobileMenu);
 
   const navLink = document.querySelectorAll(".mobile-link");
 
@@ -106,7 +106,6 @@ function addEvent(elem, evtType, func) {
     elem["on" + evtType] = func;
   }
 }
-
 
 Object.size = function (obj) {
   var size = 0,
