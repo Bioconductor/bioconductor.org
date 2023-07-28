@@ -1,7 +1,9 @@
 .hero {
   max-width: 100%;
-  margin: 4.5rem auto;
+  margin: 0 auto;
   text-align: center;
+  background-color: white;
+  padding: 4.5rem 0;
 }
 
 .hero h1 {
@@ -11,6 +13,7 @@
 /* stylelint-disable */
 .hero mark {
   background: var(--gradient-brandreverse);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
