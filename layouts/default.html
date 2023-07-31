@@ -7,10 +7,16 @@
 >
   <%= render("/_sitehead/") %>
   <body>
-    <%= render("/components/header/") %> <%= render("/_nav/",
-    :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0)
-    %> <% if @item[:hero] %>
-    <section class="hero"><%= render(@item[:hero]) %></section>
+    <%= render("/components/header/") %>
+    <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
+
+    <% if @item[:hero] %>
+    <section class="hero">
+      <% if (@item.identifier != '/') %>
+        <%= render("/components/breadcrumbs/") %>
+      <% end %>
+      <%= render(@item[:hero]) %>
+    </section>
     <%end%>
 
     <main>
@@ -29,7 +35,7 @@
           <% end %>
 
           <section class="content">
-            <% if (@item.identifier != '/') %>
+            <% if (@item.identifier != '/' && !@item[:hero]) %>
               <%= render("/components/breadcrumbs/") %>
             <% end %>
   

@@ -5,10 +5,11 @@
   margin: 0;
   padding: 0;
   line-height: 1.3rem;
+  color: var(--neutral-n400);
 }
 
 .breadcrumbs li:not(:first-of-type) {
-  background-image: url("/images/chevron_right.svg");
+  background-image: url("/images/icons/svgs/chevron-right-n400.svg");
   background-repeat: no-repeat;
   padding-left: 1.625rem; /* make space for the background image */
 }
