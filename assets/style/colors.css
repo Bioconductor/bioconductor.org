@@ -59,6 +59,7 @@
 
   /* Gradients */
   --gradient-warmcool: linear-gradient(to right, #ff2f4b, #4e5cff);
+  --gradient-reversewarmcool: linear-gradient(to right, #4e5cff, #ff2f4b);
   --gradient-brand: linear-gradient(to right, #0087af, #0484a9, #18a603);
   --gradient-brandreverse: linear-gradient(to right, #18a603, #0484a9, #0087af);
   --gradient-purpleblue: linear-gradient(to right, #445cf3, #a333f1);

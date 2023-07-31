@@ -105,6 +105,7 @@ input:focus::placeholder {
   height: 2.5rem;
   padding: 1px;
   width: 8.8rem;
+  text-decoration: none;
 }
 
 .header-button svg path {
@@ -130,8 +131,8 @@ input:focus::placeholder {
   width: 100%;
   gap: 5px;
   margin: 1px;
-  padding-left: 0.75rem;
-  padding-right: 0.4rem;
+  padding: 0.5rem 0.4rem 0.5rem 0.75rem;
+  line-height: 100%;
 }
 
 .header-button:hover span {
@@ -223,8 +224,6 @@ input:focus::placeholder {
     width: 100%;
     border-radius: 0%;
     align-items: center;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
   }
 
   .get-started {
