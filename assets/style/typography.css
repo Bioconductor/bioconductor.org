@@ -55,6 +55,10 @@ h6,
   border: none;
 }
 
+a {
+  color: black;
+}
+
 @media screen and (width <= 700px) {
   /* 700px */
   .hero {
