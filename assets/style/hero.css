@@ -3,7 +3,12 @@
   margin: 0 auto;
   text-align: center;
   background-color: white;
-  padding: 4.5rem 0;
+  padding-top: 2rem;
+}
+
+.homepage-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
 }
 
 .hero h1 {
@@ -29,8 +34,21 @@ a.button-hero {
   text-decoration: none;
 }
 
+.mobile-break {
+  display: none;
+}
+
 @media screen and (width <= 768px) {
+  .homepage-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
   .hero p {
-    font-size: 1rem;
+    margin: 0;
+    margin-bottom: 1rem;
   }
 }

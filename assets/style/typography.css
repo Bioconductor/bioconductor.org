@@ -128,3 +128,7 @@ p {
 .text-large {
   font-size: 1.25rem; /* 20px */
 }
+
+.text-underline {
+  text-decoration: underline;
+}

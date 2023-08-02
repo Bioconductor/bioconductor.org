@@ -1,6 +1,7 @@
 .data-scientist-and-developer-info {
   display: flex;
   flex-wrap: wrap;
+  width: fit-content;
 }
 
 .tab-radio {
@@ -47,8 +48,7 @@
 
 .doodle-data-scientist-container {
   display: flex;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0.2rem 1rem 0.4rem;
 }
 
 .brand-gradient-border {
@@ -69,6 +69,7 @@
 .developer-container h2 {
   text-align: center;
   margin-top: 24px;
+  margin-bottom: 0;
 }
 
 .data-scientist-content {
@@ -80,6 +81,13 @@
 
 .data-scientist-content a {
   color: black;
+}
+
+.data-scientist-rest-row {
+  display: flex;
+  flex-direction: row;
+  gap: 0.7rem;
+  align-items: center;
 }
 
 .left-doodle {
@@ -152,28 +160,40 @@
 .data-scientist-rest {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 1rem 0.7rem 0.6rem;
 }
 
 .user-quote {
-  background: #fff;
+  background: var(--neutral-n50);
   padding: 1rem;
   border-radius: 4px;
   display: flex;
-  gap: 24px;
+}
+
+.user-quote p {
+  margin-bottom: 0;
+  margin-top: 0.5rem;
 }
 
 .data-dev-chip {
   background: var(--gradient-purpleblue);
   color: white;
-  padding: 0.75rem 1rem;
   border-radius: 4rem;
-  max-width: 51.5rem;
-  margin: 1rem auto;
   text-decoration: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin: auto;
+}
+
+.data-chip {
+  padding: 0.55rem 1rem;
+  max-width: 51rem;
+}
+
+.dev-chip {
+  padding: 0.75rem 1rem;
+  max-width: 55rem;
 }
 
 .data-scientist-chip * {
@@ -184,19 +204,17 @@
   margin-bottom: 3px;
 }
 
-.developer-container {
-  margin-bottom: 2rem;
-}
-
 .doodle-developer-container {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  margin-left: 1.4rem;
+  margin-right: 1.4rem;
 }
 
 .developer-content {
-  padding: 1rem;
+  padding: 2rem 2rem 0;
   border-radius: 4px;
   background: var(--code-blocks-dark);
   height: 24rem;
@@ -218,6 +236,7 @@
 .dev-nav p a {
   text-decoration: underline;
   color: #fff;
+  font-family: Courier, monospace;
 }
 
 .dev-nav p {
@@ -235,6 +254,8 @@
 
 .dev-quote p {
   color: #fff;
+  margin-bottom: 0;
+  margin-top: 0.3rem;
 }
 
 .news p {
@@ -249,21 +270,23 @@
   padding-bottom: 1rem;
 }
 
-.dev-quote p:first-child {
-  line-height: 150%;
+.data-dev-logo p {
+  text-align: center;
+  margin-bottom: 0;
+  padding-top: 0.25rem;
 }
 
-.dev-quote:last-child {
+.dev-quote p:first-child {
+  margin-top: 0;
+}
+
+.dev-quote p:last-child {
   font-size: 0.8125rem;
   line-height: 120%;
+  padding-top: 0.2rem;
 }
 
-.dev-slack {
-  margin: auto;
-  max-width: 53rem;
-}
-
-.dev-logo {
+.data-dev-logo {
   display: inherit;
   gap: 0.62rem;
   color: #fff;
@@ -272,14 +295,18 @@
   line-height: 130%;
 }
 
+.mobile-text-block {
+  display: none;
+}
+
 .events {
   padding-top: 2rem;
 }
 
 .events-header {
   display: flex;
+  width: 100%;
   justify-content: space-between;
-  margin-right: 6.25rem;
   margin-bottom: 1rem;
 }
 
@@ -292,18 +319,21 @@
   overflow-x: scroll;
   gap: 1.56rem;
   margin-bottom: 1.5rem;
-  -ms-overflow-style: none; /* disable scrollbar for IE and Edge */
-  scrollbar-width: none; /* disable scrollbar for Firefox */
+  width: 100vw;
+  -ms-overflow-style: none;
+
+  /* disable scrollbar for IE and Edge */
+  scrollbar-width: none;
 }
 
 .events-container::-webkit-scrollbar {
-  display: none; /* disable scrollbar for chrome */
+  display: none;
 }
 
 .event-card-container {
   display: inline-block;
   background-color: white;
-  padding: 0.875rem;
+  padding: 1.5rem;
   min-width: 17.5rem;
   max-width: 17.5rem;
   max-height: 12.25rem;
@@ -363,6 +393,7 @@
 
 .info-section-button-padding {
   width: fit-content;
+  margin-top: 1.5rem;
 }
 
 .info-section-button-padding .brand-border-button {
@@ -379,7 +410,7 @@
 
 .section-block {
   background: #fff;
-  padding: 1rem;
+  padding: 2rem;
   border-radius: 4px;
 }
 
@@ -428,7 +459,7 @@
 }
 
 .button-padding {
-  width: 50%;
+  width: 41%;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
@@ -522,7 +553,7 @@ input[type="radio"].tabs-join-radio:checked::before {
 }
 
 .join-buttons span {
-  padding: 0.5rem 0.4rem 0.5rem 0.75rem;
+  padding: 0.73rem 0.93rem 0.73rem 1.1rem;
 }
 
 .learn-more {
@@ -531,12 +562,18 @@ input[type="radio"].tabs-join-radio:checked::before {
 }
 
 hr {
-  border: 1px solid var(--secondary-s75);
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  border: none;
+  border-top: 0.13rem solid var(--secondary-s75);
 }
 
-@media (width <= 768px) {
+@media (width <=768px) {
   .doodle-developer-container img,
-  .doodle-data-scientist-container img {
+  .left-doodle img,
+  .right-doodle img,
+  .user-quote img {
     display: none;
   }
 
@@ -549,22 +586,72 @@ hr {
     padding: 1rem;
   }
 
+  .tab-content {
+    margin-bottom: 0;
+  }
+
+  .tab-label {
+    padding: 0.75rem 0.8rem;
+  }
+
+  .data-scientist-content p {
+    font-size: 1rem;
+  }
+
   .dev-navs {
     display: flex;
     flex-direction: column;
   }
 
-  .dev-quote p {
+  .dev-quote p,
+  .user-quote p {
     font-size: 0.8125rem;
+  }
+
+  .user-quote p {
+    margin-top: 0;
+  }
+
+  .mobile-text-block p {
+    text-align: left;
+  }
+
+  .info p {
+    padding-bottom: 0;
+  }
+
+  .user-quote p:last-child {
+    margin-top: 0.5rem;
+  }
+
+  .dev-quote p:last-child {
+    font-weight: 400;
   }
 
   .data-dev-chip {
     display: none;
   }
 
+  .mobile-text-block {
+    background-image: var(--gradient-purpleblue);
+    width: calc(100% - 4rem);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0.63rem;
+    border-radius: 0.25rem;
+  }
+
+  .mobile-text-block .data-dev-logo {
+    display: flex;
+    align-items: center;
+  }
+
   .learn-block {
     display: flex;
     flex-direction: column;
+    padding: 1.5rem;
   }
 
   .learn-content {
@@ -574,6 +661,8 @@ hr {
 
   .button-padding {
     width: 60%;
+    padding-top: 0.5rem;
+    padding-bottom: 1rem;
   }
 
   .events-header {
@@ -599,8 +688,8 @@ hr {
   }
 
   .join-buttons {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 }
 

@@ -70,7 +70,7 @@ header {
   outline: none;
   background-color: transparent;
   padding-left: 0.25rem;
-  padding-top: 3px;
+  padding-top: 5px;
 }
 
 input::placeholder {
@@ -224,6 +224,7 @@ input:focus::placeholder {
     width: 100%;
     border-radius: 0%;
     align-items: center;
+    padding: 1.5rem 0;
   }
 
   .get-started {

@@ -21,30 +21,39 @@
 
     <main>
       <% if has_subnav?(@item) %>
-      <div class="container main-subnav">
-        <% else %>
+        <div class="container main-subnav">
+      <% elsif !@item[:fullwidth] %>
         <div class="container">
-          <% end %> <% if @item.attributes.has_key?(:package_index_page) %> <%=
-          render("/_pkg_idx/", :info => @item.attributes) %> <% end %> <% if
-          @item.attributes.has_key?(:Package) %> <%=
-          render("/_bioc_views_package_detail/", :package => @item.attributes)
-          %> <% end %> <% if has_subnav?(@item) %>
+      <% end %>
+
+        <% if @item.attributes.has_key?(:package_index_page) %>
+          <%= render("/_pkg_idx/", :info => @item.attributes) %>
+        <% end %>
+
+        <% if @item.attributes.has_key?(:Package) %> 
+          <%= render("/_bioc_views_package_detail/", :package => @item.attributes) %>
+        <% end %> 
+
+        <% if has_subnav?(@item) %>
           <section class="left-col">
             <%= render("/components/subnav/", :pages => subnav_items(@item)) %>
           </section>
-          <% end %>
+        <% end %>
 
-          <section class="content">
-            <% if (@item.identifier != '/' && !@item[:hero]) %>
-              <%= render("/components/breadcrumbs/") %>
-            <% end %>
-  
-            <%= yield if block_given? %>
-          </section>
+        <section class="content">
+          <% if (@item.identifier != '/' && !@item[:hero]) %>
+            <%= render("/components/breadcrumbs/") %>
+          <% end %>
+    
+          <%= yield if block_given? %>
+        </section>
+
+      <% if (!has_subnav?(@item) && !@item[:fullwidth]) %>
         </div>
-      </div>
+      <% end %>
     </main>
-      <%= render("/components/footer/") %>
-      <%= render("/components/sitescripts/") %>
+
+    <%= render("/components/footer/") %>
+    <%= render("/components/sitescripts/") %>
   </body>
 </html>
