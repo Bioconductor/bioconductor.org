@@ -1,0 +1,92 @@
+<div class="install-hero">
+  <h1 class="get-started-h1">Get started</h1>
+  <div class="install-row">
+    <div class="instructions-install">
+      <h4>1. Install R</h4>
+      <p class="text-large">
+        The current release of Bioconductor is version 3.17; it works with R
+        version 4.3.0. Users of older R and Bioconductor must update their
+        installation to take advantage of new features and to access packages
+        that have been added to Bioconductor since the last release.
+      </p>
+      <p class="text-large">
+        The development version of Bioconductor is version 3.18; it works with R
+        version 4.3.0. More recent ‘devel’ versions of R (if available) will be
+        supported during the next Bioconductor release cycle.
+      </p>
+      <img src="/images/icons/Step 1 quote.svg" alt="blank_" class="step-1" />
+      <div class="warmcool-gradient">
+        <div class="install-row">
+          <div class="install-content">
+            <blockquote class="install-blockquote">
+              <p class="format-bold">1.</p>
+              <p>
+                Download the most recent version of R. The R FAQs and the R
+                Installation and Administration Manual contain detailed
+                instructions for installing R on various platforms (Linux, OS X,
+                and Windows being the main ones).
+              </p>
+            </blockquote>
+            <blockquote class="install-blockquote">
+              <p class="format-bold">2.</p>
+              <p>
+                Start the R program; on Windows and OS X, this will usually mean
+                double-clicking on the R application, on UNIX-like systems, type
+                “R” at a shell prompt.
+              </p>
+            </blockquote>
+            <blockquote class="install-blockquote">
+              <p class="format-bold">3.</p>
+              <p>
+                As a first step with R, start the R help browser by typing
+                <strong>help.start()</strong> in the R command window. For help
+                on any function, e.g. the “mean” function, type
+                <strong>?mean</strong>.
+              </p>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="instructions-install">
+      <h4>2. Get latest version of Bioconductor</h4>
+      <p class="text-large">
+        Once R has been installed, get the latest version of Bioconductor by
+        starting R and entering the following commands.
+      </p>
+      <p class="text-large">
+        It may be possible to change the Bioconductor version of an existing
+        installation;
+        <a
+          href="https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html"
+          >see the ‘Changing version’ section of the BiocManager vignette.</a
+        >
+      </p>
+      <p class="text-large">
+        Details, including instructions to
+        <a href="#install-bioconductor-packages">install additional packages</a>
+        and to <a href="#update-bioconductor-packages">update,</a>
+        <a href="#find-bioconductor-packages">find,</a> and
+        <a href="#troubleshoot-bioconductor-packages">troubleshoot</a> are
+        provided below. A
+        <a href="https://contributions.bioconductor.org/use-devel.html"
+          >devel</a
+        >
+        version of Bioconductor is available. There are good
+        <a href="#why-biocmanagerinstall"
+          >reasons for using <strong>BiocManager::install()</strong></a
+        >
+        for managing Bioconductor resources.
+      </p>
+      <pre class="code-install">
+        <code class="light nohighlight">
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install(version = "3.17")
+        </code>
+        </pre>
+      <img src="/images/icons/Step 2 quote.svg" alt="blank_" class="step-2" />
+      <img src="/images/icons/Step 3 quote.svg" alt="blank_" class="step-3" />
+    </div>
+  </div>
+</div>

@@ -58,6 +58,21 @@ document.addEventListener("DOMContentLoaded", function () {
   navLink.forEach((n) => n.addEventListener("click", closeMenu));
 });
 
+//Changes body and hero background color once clicked on certain links
+function changeBackgroundColors() {
+  const heroElement = document.querySelector(".hero");
+  const targetPageRegex = /\/install\//;
+
+  if (targetPageRegex.test(window.location.href)) {
+    document.body.style.backgroundColor = "#fff";
+    heroElement.style.backgroundColor = "var(--neutral-n50)";
+  }
+}
+
+changeBackgroundColors();
+
+window.addEventListener("hashchange", changeBackgroundColors);
+
 function log(message) {
   if (fb_lite) {
     //console.log(message);

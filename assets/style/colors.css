@@ -56,6 +56,7 @@
   --misc-annotations: #ff8a00;
   --misc-error: #a92626;
   --misc-dark: #070707;
+  --misc-purple: #a333f1;
 
   /* Gradients */
   --gradient-warmcool: linear-gradient(to right, #ff2f4b, #4e5cff);

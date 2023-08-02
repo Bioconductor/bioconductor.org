@@ -16,6 +16,7 @@
 }
 
 /* disabled here due to a linting error, but we need the webkit marker for this to work */
+
 /* stylelint-disable */
 .hero mark {
   background: var(--gradient-brandreverse);

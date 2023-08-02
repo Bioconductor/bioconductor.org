@@ -6,7 +6,6 @@ body {
 }
 
 main {
-  background: var(--neutral-n50);
   margin: 1rem 0;
   overflow: hidden;
 }

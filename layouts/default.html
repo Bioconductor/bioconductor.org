@@ -12,10 +12,12 @@
 
     <% if @item[:hero] %>
     <section class="hero">
+      <div class="container">
       <% if (@item.identifier != '/') %>
         <%= render("/components/breadcrumbs/") %>
       <% end %>
       <%= render(@item[:hero]) %>
+    </div>
     </section>
     <%end%>
 
