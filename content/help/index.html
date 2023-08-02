@@ -1,36 +1,602 @@
-   <!-- because this page is special, with three boxes per row, three columns,
-        we'll use a bumper image to make sure the heights are all the same
-        for each row. (see inv.gif.) make the bumper image for each row taller
-		than the tallest  expected content for each row. this is lame, but the
-		closest we could come to making the effect look correct on all browsers
-		and platforms.
+<h1 class="format-bold">Learn</h1>
+<div class="learn-container">
+  <div class="learn-content-upper">
+    <section class="learn-intro">
+      <h2>
+        Find out all you need to know about Bioconductor and it’s packages
+      </h2>
+      <p class="text-large">
+        Whether you're a new user seeking to get started or an experienced
+        developer, our knowledge base provides you with the necessary tools and
+        insights to navigate our product effortlessly.
+      </p>
+    </section>
+    <div class="learn-links">
+      <section>
+        <h4>Documentation</h4>
+        <ul>
+          <li>
+            <a class="text-large" href="/help/package-vignettes/">
+              Package vignettes and manuals.
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" href="/packages/release/workflows/">
+              Workflows for learning and use.
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" href="/books/release/">
+              Several online books for comprehensive coverage of a particular
+              research field, biological question, or technology.</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" href="/help/course-materials/"
+              >Course and conference material.</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              href="https://www.youtube.com/user/bioconductor"
+              >Videos</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <p class="text-large">
+              <a class="text-large" href="/help/community/">
+                Community resources
+              </a>
+              and
+              <a
+                class="text-large"
+                href="https://support.bioconductor.org/t/Tutorials/"
+                >tutorials
+              </a>.
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+              <p class="text-large">
+              <a class="text-large" href="http://cran.r-project.org/">
+                R / CRAN packages
+              </a>
+              and
+              <a
+                class="text-large"
+                href="http://www.r-project.org/other-docs.html"
+                >documentation</a
+              >
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+        </ul>
+      </section>
 
-        to avoid problems with ie7, or ie8/compatibility mode, be sure to place a 
-        &nbsp; as the last line in each box.  if omitted and the box ends with a 
-        <ul> element, the boxes won't line up correctly.  --> 
+      <section>
+        <h4>Support</h4>
+        <p class="text-large" class="text-large">
+          Please read the
+          <a class="text-large" href="/help/support/posting-guide/"
+            >posting guide </a
+          >. Post questions about Bioconductor to one of the following
+          locations:
+        </p>
+        <ul>
+          <li>
+            <a class="text-large" href="https://support.bioconductor.org/"
+              >Support site - for questions about Bioconductor packages
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" href="/help/support/#bioc-devel"
+              >Bioc-devel mailing list - for package developers
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+        </ul>
+      </section>
 
-<div style="width:33%;float:left;">
-<%= render("/_documentation/") %>
-</div>
+      <section>
+        <h4>Packages</h4>
+        <p class="text-large" class="text-large">
+          Bioconductor's stable, semi-annual release:
+        </p>
+        <ul>
+          <li>
+            <a
+              class="text-large"
+              class="symlink"
+              href="/packages/release/BiocViews.html#___Software"
+              >Analysis software packages.
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              class="symlink"
+              href="/packages/release/BiocViews.html#___AnnotationData"
+              >Annotation packages.
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              class="symlink"
+              href="/packages/release/BiocViews.html#___ExperimentData"
+              >Illustrative experiment data packages
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              class="symlink"
+              href="/packages/release/BiocViews.html#___Workflow"
+              >Workflow packages.
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" class="symlink" href="/books/release/"
+              >Online books
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a class="text-large" href="/news/bioc_<%=config[:release_version].sub(".", "_")%>_release"> Latest release announcement
+              
+            </a>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <p class="text-large">
+              Bioconductor is also available via
+              <a class="text-large" href="/help/docker/">Docker Images</a>
+              and for use in the
+              <a class="text-large" href="https://anvil.bioconductor.org/"
+                >AnVIL</a
+              >.
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+  <hr class="learn-divider" />
+  <div class="learn-content-lower">
+    <div class="publications-releases-faq">
+      <section>
+        <ul>
+          <h4>Publications</h4>
+          <li>
+            <p class="text-large">
+              <a class="text-large" href="/help/publications/index.html#featured"
+                >Featured</a
+              >
+              and
+              <a class="text-large" href="/help/publications/index.html#recent">
+                recent citations</a
+              >
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <p class="text-large">
+              <a
+                class="text-large"
+                href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=pubdate"
+                >PubMed</a
+              >,
+              <a
+                class="text-large"
+                href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=pubdate"
+                >PubMed Central</a
+              >
+            </p>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
 
-<div style="width:33%;float:left;">
-<%= render("/_support/") %>
-</div>
+          <li>
+             <a
+                class="text-large"
+                href="http://scholar.google.com/scholar?q=bioconductor&btnG=Search"
+                >Google Scholar searches</a
+              >
+              <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+        </ul>
 
-<div style="width:33%;float:left;">
-<%= render("/_bioc_release_packages/") %>
-</div>
+        <p class="publications-footer">
+          <a class="format-underline">Source code is stored in Git.</a><br />
+          Software packages are built and checked nightly.
+        </p>
+      </section>
 
-<br clear="all"/>
+      <section>
+        <ul>
+          <h4>Previous releases</h4>
+          <li>
+            <a
+              class="text-large"
+              href="/packages/3.16/BiocViews.html#___Software"
+              >3.16 (4.2)</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              href="/packages/3.15/BiocViews.html#___Software"
+              >3.15 (4.2)</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              href="/packages/3.14/BiocViews.html#___Software"
+              >3.14 (4.1)</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              href="/packages/3.13/BiocViews.html#___Software"
+              >3.13 (4.1)</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+          <li>
+            <a
+              class="text-large"
+              href="/packages/3.12/BiocViews.html#___Software"
+              >3.12 (4.0)</a
+            >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="25"
+              viewBox="0 0 24 25"
+              fill="none">
+              <path
+                d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                stroke="#ADD2DD"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </li>
+        </ul>
+        <p class="prev-releases-footer">
+          <a
+            class="format-underline"
+            href="https://www.bioconductor.org/about/release-announcements/#release-versions">
+            All Bioconductor (R) versions</a
+          >
+          <a class="format-underline" href=""> Release announcements</a>
+        </p>
+      </section>
 
-<div style="width:33%;float:left;">
-<%= render("/_publications/") %>
-</div>
+      <section>
+        <ul>
+          <h4>FAQ</h4>
+          <ul>
+            <li>
+              <a class="text-large" href="/help/faq">Bioconductor FAQ</a>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="25"
+                viewBox="0 0 24 25"
+                fill="none">
+                <path
+                  d="M13 9.5L16 12.5M16 12.5L13 15.5M16 12.5L8 12.5M21 12.5C21 17.4706 16.9706 21.5 12 21.5C7.02944 21.5 3 17.4706 3 12.5C3 7.52944 7.02944 3.5 12 3.5C16.9706 3.5 21 7.52944 21 12.5Z"
+                  stroke="#ADD2DD"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </li>
+          </ul>
+        </ul>
+      </section>
+    </div>
+  </div>
 
-<div style="width:33%;float:left;">
-<%= render("/_bioc_older_packages/") %>
-</div>
-
-<div style="width:33%;float:left;">
-<%= render("/_faq/") %>
+  <span class="learn-chip">
+    <img class="learn-question-mark" src="/images/icons/svgs/question-mark-circle.svg" alt="?" />
+    <p class="text-large format-bold">
+      For questions / concerns, please contact us at email:
+      <a class="text-large format-underline format-bold">bioc-devel@r-project.org</a>
+    </p>
+    <img class="learn-chevron"src="/images/icons/svgs/chevron-right.svg" alt="?" />
+  </span>
 </div>

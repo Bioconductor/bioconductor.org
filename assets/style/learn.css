@@ -1,0 +1,173 @@
+.learn-container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px;
+  border: 1px solid #0000;
+  border-radius: 4px;
+  background: linear-gradient(white, white) padding-box,
+    var(--gradient-brand) border-box;
+}
+
+.learn-content-upper {
+  display: flex;
+  padding: 0;
+  gap: 56px;
+}
+
+.learn-content-lower {
+  padding: 8px 0 24px;
+}
+
+.learn-container hr {
+  position: static;
+  width: 100%;
+  height: 1px;
+  background: var(--primary-p75);
+  border: none;
+}
+
+.learn-container li::before {
+  all: unset;
+}
+
+.learn-intro {
+  width: 24.188rem;
+  height: 100%;
+}
+
+.learn-links {
+  padding: 8px 0 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  flex: 1 0 0;
+}
+
+.publications-releases-faq {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.learn-chip * {
+  color: white;
+  margin: 0;
+}
+
+.learn-links > section,
+.publications-releases-faq > section {
+  width: 100%;
+}
+
+.learn-links > section > ul,
+.publications-releases-faq > section > ul {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.learn-links > section li,
+.publications-releases-faq > section li {
+  border: 1px solid;
+  border-color: var(--primary-p75);
+  padding: 1rem;
+  margin-bottom: 0;
+  border-radius: 0.5rem;
+  align-items: center;
+  color: inherit;
+  display: flex;
+  justify-content: space-between;
+  transition: background 0.5s ease;
+}
+
+.learn-links > section li *,
+.publications-releases-faq > section li * {
+  margin-bottom: 0;
+}
+
+.learn-links > section li svg path,
+.publications-releases-faq > section li svg path {
+  /* transition: stroke 0.5s ease; */
+  transform: translateX(0);
+  transition: transform 0.2s ease;
+}
+
+.publications-footer {
+  border-left: 3px solid var(--primary-p-300, #3792ad);
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+}
+
+.prev-releases-footer a {
+  border-left: 3px solid var(--primary-p-300, #3792ad);
+  padding-right: 0.75rem;
+  padding-left: 0.75rem;
+  display: block;
+}
+
+.learn-chip {
+  background: var(--gradient-purpleblue);
+  padding: 0.75rem 1rem;
+  border-radius: 4rem;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.learn-chevron {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.learn-question-mark {
+  vertical-align: middle;
+}
+
+.learn-links > section li:hover,
+.publications-releases-faq > section li:hover {
+  background-image: var(--gradient-brand);
+}
+
+.learn-links > section li:hover *,
+.publications-releases-faq > section li:hover * {
+  color: #fff;
+}
+
+.learn-links > section li:hover svg path,
+.publications-releases-faq > section li:hover svg path {
+  stroke: #fff;
+  transform: translateX(3px);
+}
+
+@media (width <= 768px) {
+  .learn-container {
+    padding: 1rem;
+  }
+
+  .learn-container * {
+    font-size: 1rem;
+  }
+
+  .learn-container * a {
+    max-width: 16rem;
+  }
+
+  .learn-content-upper,
+  .publications-releases-faq {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .learn-intro {
+    width: 100%;
+  }
+
+  .learn-chip {
+    border-radius: 4px;
+  }
+
+  .learn-chevron {
+    display: none;
+  }
+}
