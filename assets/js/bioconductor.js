@@ -61,11 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
 //Changes body and hero background color once clicked on certain links
 function changeBackgroundColors() {
   const heroElement = document.querySelector(".hero");
-  const targetPageRegex = /\/install\//;
+  const installPageRegex = /\/install\//;
+  const aboutPageRegex = /\/about\//;
 
-  if (targetPageRegex.test(window.location.href)) {
+  if (installPageRegex.test(window.location.href)) {
     document.body.style.backgroundColor = "#fff";
     heroElement.style.backgroundColor = "var(--neutral-n50)";
+  }
+
+  if (aboutPageRegex.test(window.location.href)) {
+    document.body.style.backgroundColor = "#fff";
   }
 }
 

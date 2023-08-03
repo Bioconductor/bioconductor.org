@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif)European Bioconductor Society e.V.
+# European Bioconductor Society e.V.
 
 <table>
   <tbody>
@@ -28,7 +28,3 @@
 ## Email
 
 | simone.bell (at) embl.de |
-
-
-
-

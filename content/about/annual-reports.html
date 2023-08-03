@@ -1,10 +1,10 @@
-<h1><img src="/images/icons/magnifier.gif" alt="" />Annual Reports</h1>
+<h1>Annual Reports</h1>
 
 <p>
   Project Annual Reports are available in PDF format for the following years:
 </p>
 
-<ul class="inline_list">
+<ul class="inline-list">
   <% annual_reports.sort{|a, b| b[:name] <=> a[:name]}.select do |r| %>
   <li><a href="<%= r[:href] %>"><%= r[:name] %></a></li>
   <% end %>
