@@ -372,13 +372,13 @@
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   background-color: inherit;
   gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .news,
 .packages,
 .about-bioconductor {
-  max-width: 24rem;
-  min-width: 24rem;
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: white;
