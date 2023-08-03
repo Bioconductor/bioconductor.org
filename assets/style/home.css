@@ -326,6 +326,10 @@
   scrollbar-width: none;
 }
 
+.events-container.active {
+  cursor: grabbing;
+}
+
 .events-container::-webkit-scrollbar {
   display: none;
 }
