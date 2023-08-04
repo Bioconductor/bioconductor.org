@@ -2,6 +2,7 @@ header {
   position: sticky;
   top: 0;
   background: #fff;
+  z-index: 2;
 }
 
 .header-size {
@@ -177,6 +178,7 @@ input:focus::placeholder {
 
   .header-nav.active {
     top: 100%;
+    z-index: 1;
   }
 
   .nav-mobile {

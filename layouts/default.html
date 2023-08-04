@@ -3,13 +3,14 @@
   xmlns="http://www.w3.org/1999/xhtml"
   dir="ltr"
   lang="en-US"
-  prefix="og: http://ogp.me/ns#"
->
+  prefix="og: http://ogp.me/ns#">
   <%= render("/_sitehead/") %>
   <body>
+
     <%= render("/components/header/") %>
 
     <% if @item[:hero] %>
+
     <section class="hero">
       <div class="container">
       <% if (@item.identifier != '/') %>
@@ -37,7 +38,10 @@
 
         <% if has_subnav?(@item) %>
           <section class="left-col">
-            <%= render("/components/subnav/", :pages => subnav_items(@item)) %>
+            <div class="left-col-inner">
+              <%= render("/components/subnav/", :pages => subnav_items(@item))
+              %>
+            </div>
           </section>
         <% end %>
 
@@ -53,7 +57,6 @@
         </div>
       <% end %>
     </main>
-
     <%= render("/components/footer/") %>
     <%= render("/components/sitescripts/") %>
   </body>
