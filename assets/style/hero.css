@@ -39,7 +39,7 @@ a.button-hero {
   display: none;
 }
 
-@media screen and (width <= 768px) {
+@media (max-device-width: 768px) {
   .homepage-container {
     padding: 1rem 0.5rem;
   }

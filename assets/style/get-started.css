@@ -96,7 +96,7 @@
   align-self: end;
 }
 
-@media (width <= 678px) {
+@media (max-device-width: 768px) {
   .instructions-install img {
     display: none;
   }

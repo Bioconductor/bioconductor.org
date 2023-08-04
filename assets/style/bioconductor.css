@@ -11,19 +11,22 @@ body {
   max-width: 1400px;
 }
 
+main > .container {
+  margin-top: 2rem;
+}
+
 main > .container.main-subnav {
   display: grid;
   gap: 2rem;
   grid-template-columns: 300px 1fr;
   grid-template-areas: "left-col .";
-  margin-top: 2rem;
 }
 
 img {
   max-width: 100%;
 }
 
-@media (width <=768px) {
+@media (max-device-width: 768px) {
   main > .container.main-subnav {
     display: flex;
     flex-direction: column-reverse;

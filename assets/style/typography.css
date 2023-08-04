@@ -59,7 +59,7 @@ a {
   color: black;
 }
 
-@media screen and (width <= 700px) {
+@media (max-device-width: 768px) {
   h1,
   .text-h1 {
     font-size: 2.1rem; /* 34px */

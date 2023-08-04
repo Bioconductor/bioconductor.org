@@ -133,7 +133,7 @@
   padding-right: 0.75rem;
 }
 
-@media (width <=768px) {
+@media (max-device-width: 768px) {
   .left-col-inner {
     margin-left: 0;
   }

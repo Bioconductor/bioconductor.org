@@ -155,7 +155,7 @@ input:focus::placeholder {
   background-color: var(--misc-dark);
 }
 
-@media (width <= 768px) {
+@media (max-device-width: 768px) {
   .header-size {
     justify-content: space-between;
     align-items: center;
