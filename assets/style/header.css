@@ -195,10 +195,10 @@ input:focus::placeholder {
   .nav-links {
     flex-direction: column;
     gap: 0;
-    padding-left: 2rem;
     margin-top: 0.5rem;
     border-top: 1px solid var(--neutral-n75);
     padding-top: 0.5rem;
+    margin-right: 0;
   }
 
   .nav-links a {
@@ -207,6 +207,7 @@ input:focus::placeholder {
     border-bottom: 1px solid var(--neutral-n75);
     padding-left: 1.5rem;
     padding-bottom: 1rem;
+    box-sizing: border-box;
   }
 
   .search-container {
