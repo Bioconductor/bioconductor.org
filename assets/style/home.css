@@ -695,6 +695,10 @@ hr {
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
+
+  .homepage-block .text-large {
+    font-size: 1rem;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

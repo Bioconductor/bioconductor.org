@@ -6,6 +6,7 @@
   border-radius: 4px;
   background: linear-gradient(white, white) padding-box,
     var(--gradient-brand) border-box;
+  margin-bottom: 1rem;
 }
 
 .upper-container {
