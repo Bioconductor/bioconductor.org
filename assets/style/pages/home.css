@@ -715,3 +715,10 @@ hr {
     transform: none;
   }
 }
+
+@media(max-device-width: 1250px), (width <= 1250px) {
+  .left-doodle, .right-doodle {
+    display: none;
+  }
+
+}
