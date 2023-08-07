@@ -133,7 +133,7 @@
   padding-right: 0.75rem;
 }
 
-@media (max-device-width: 768px) {
+@media (max-device-width: 768px), (width <= 768px)   {
   .left-col-inner {
     margin-left: 0;
   }
@@ -186,3 +186,4 @@
     height: calc(100% + 19rem);
   }
 }
+

@@ -573,7 +573,7 @@ hr {
   border-top: 0.13rem solid var(--secondary-s75);
 }
 
-@media (max-device-width: 768px) {
+@media (max-device-width: 768px), (width <= 768px)  {
   .doodle-developer-container img,
   .left-doodle img,
   .right-doodle img,

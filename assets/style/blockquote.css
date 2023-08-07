@@ -17,7 +17,7 @@ blockquote {
   margin: 1rem 0;
 }
 
-@media (max-device-width: 1250px) {
+@media (max-device-width: 1250px), (width <= 1250px) {
   .two-col {
     display: block;
   }

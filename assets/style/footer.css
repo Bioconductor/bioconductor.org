@@ -73,7 +73,7 @@ footer * {
   padding-top: 1rem;
 }
 
-@media (max-device-width: 768px) {
+@media (max-device-width: 768px), (width <= 768px) {
   footer {
     display: flex;
     padding: 2rem;

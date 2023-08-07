@@ -59,7 +59,7 @@ a {
   color: black;
 }
 
-@media (max-device-width: 768px) {
+@media (max-device-width: 768px),(width <= 768px){
   h1,
   .text-h1 {
     font-size: 2.1rem; /* 34px */
@@ -95,6 +95,7 @@ a {
     font-size: 2.5rem; /* 40px */
   }
 }
+
 
 p {
   margin: 0 0 1rem;
