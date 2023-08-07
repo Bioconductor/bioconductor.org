@@ -96,7 +96,8 @@
   align-self: end;
 }
 
-@media (max-device-width: 768px), (width <= 768px)  {
+
+@media (max-device-width: 1250px), (width <= 1250px) {
   .instructions-install img {
     display: none;
   }
@@ -116,5 +117,16 @@
   .code-install {
     margin-top: 0;
   }
+
+  .install-section {
+    width: calc(100vw - 350px);
+  }
+}
+
+@media (max-device-width: 768px), (width <= 768px) {
+  .install-section {
+    width: initial;
+  }
+ 
 }
 
