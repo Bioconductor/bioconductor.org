@@ -17,7 +17,7 @@ h6,
 
 h1,
 .text-h1 {
-  font-size: 2.25rem; /* 36px */
+  font-size: 2.25rem;
   border-image: var(--gradient-brandreverse) 1;
   border-bottom-style: solid;
   border-bottom-width: 4px;
@@ -26,31 +26,31 @@ h1,
 
 h2,
 .text-h2 {
-  font-size: 2rem; /* 32px */
+  font-size: 2rem;
 }
 
 h3,
 .text-h3 {
-  font-size: 1.6rem; /* 25px */
+  font-size: 1.6rem;
 }
 
 h4,
 .text-h4 {
-  font-size: 1.5rem; /* 23px */
+  font-size: 1.5rem;
 }
 
 h5,
 .text-h5 {
-  font-size: 1.4rem; /* 19px */
+  font-size: 1.4rem;
 }
 
 h6,
 .text-h6 {
-  font-size: 1.2rem; /* 18px */
+  font-size: 1.2rem;
 }
 
 .text-hero {
-  font-size: 5rem; /* 80px */
+  font-size: 5rem;
   line-height: 105%;
   border: none;
 }
@@ -62,37 +62,36 @@ a {
 @media (max-device-width: 768px),(width <= 768px){
   h1,
   .text-h1 {
-    font-size: 2.1rem; /* 34px */
+    font-size: 2.1rem;
   }
 
   h2,
   .text-h2 {
-    font-size: 1.5rem; /* 24px */
+    font-size: 1.5rem;
   }
 
   h3,
   .text-h3 {
-    font-size: 1.4rem; /* 22px */
+    font-size: 1.4rem;
   }
 
   h4,
   .text-h4 {
-    font-size: 1.25rem; /* 20px */
+    font-size: 1.25rem;
   }
 
   h5,
   .text-h5 {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
   }
 
   h6,
   .text-h6 {
-    font-size: 1.1rem; /* 17px */
+    font-size: 1.1rem;
   }
 
-  /* 700px */
   .text-hero {
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem;
   }
 }
 
@@ -117,17 +116,17 @@ p {
 }
 
 .text-xsmall {
-  font-size: 0.6rem; /* 10px */
+  font-size: 0.6rem;
   line-height: 120%;
 }
 
 .text-small {
-  font-size: 0.8rem; /* 13px */
+  font-size: 0.8rem;
   line-height: 120%;
 }
 
 .text-large {
-  font-size: 1.25rem; /* 20px */
+  font-size: 1.25rem;
 }
 
 .text-underline {

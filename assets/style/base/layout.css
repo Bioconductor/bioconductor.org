@@ -1,5 +1,4 @@
 body {
-  font-family: "Atkinson Hyperlegible", sans-serif;
   margin: 0;
   color: var(--default-body);
   background: var(--neutral-n50);
@@ -26,7 +25,7 @@ img {
   max-width: 100%;
 }
 
-@media (max-device-width: 768px), (width <= 768px)  {
+@media (max-device-width: 768px), (width <= 768px) {
   main > .container.main-subnav {
     display: flex;
     flex-direction: column-reverse;
