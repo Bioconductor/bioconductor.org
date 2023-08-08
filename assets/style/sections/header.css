@@ -166,19 +166,20 @@ input:focus::placeholder {
     position: absolute;
     flex-direction: column;
     width: 100vw;
-
-    /* This is a magic number. I couldn't figure out a nice way to get the height of the parent element here */
-    top: calc(-100% - 12rem);
     left: 0;
     background-color: #fff;
     transition: 0.3s;
     gap: 0;
-    z-index: -1;
+    top: 100%;
+    height: 2px;
+    overflow: hidden;
+    opacity: 0;
   }
 
   .header-nav.active {
     top: 100%;
-    z-index: 1;
+    opacity: 1;
+    height: 19rem;
   }
 
   .nav-mobile {
