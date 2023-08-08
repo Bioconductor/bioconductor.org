@@ -177,7 +177,6 @@ input:focus::placeholder {
   }
 
   .header-nav.active {
-    top: 100%;
     opacity: 1;
     height: 19rem;
   }
@@ -262,7 +261,7 @@ input:focus::placeholder {
     transform: translateY(8px) rotate(45deg);
   }
 
-  .hamburger.active .bar:nth-child(3) {
+.hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }

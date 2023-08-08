@@ -38,6 +38,7 @@ window.addEventListener("load", checkNav);
 
 //Mobile siteHead js
 document.addEventListener("DOMContentLoaded", function () {
+  findHeaderTop();
   const hamburger = document.querySelector(".hamburger");
   const navMenu = document.querySelector(".header-nav");
 
@@ -56,7 +57,21 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   navLink.forEach((n) => n.addEventListener("click", closeMenu));
+
+  window.addEventListener( "resize", findHeaderTop);
+
 });
+
+function findHeaderTop() {
+
+  const announcementHeight = document.querySelector(".announcement")?.offsetHeight;
+  const header = document.querySelector(".site-masthead");
+
+  if(announcementHeight){
+    header.style.top = `-${announcementHeight}px`
+  }
+
+}
 
 //Changes body and hero background color once clicked on certain links
 function changeBackgroundColors() {

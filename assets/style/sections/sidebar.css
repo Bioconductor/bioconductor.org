@@ -29,6 +29,10 @@
   margin-right: 1rem;
 }
 
+#header-sidebar-container {
+  display: none;
+}
+
 .sidebar-nav {
   transition: 0.3s;
   width: 100%;
@@ -160,9 +164,12 @@
   }
 
   .sidebar-nav-container {
+    display: none;
+  }
+
+  #header-sidebar-container {
     margin-right: -2px;
     display: block;
-    position: fixed;
     height: 4.5rem;
     width: 100%;
     background-color: #fff;
