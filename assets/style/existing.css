@@ -1,0 +1,8 @@
+.grey_box {
+  background-color: var(--primary-p50);
+}
+
+.grey_box,
+.white_box {
+  padding: 1.5rem;
+}

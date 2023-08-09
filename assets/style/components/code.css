@@ -6,10 +6,13 @@ pre:has(code) {
   margin-bottom: 2rem;
 }
 
-code,
-code.hljs {
-  border-radius: 3px;
+code {
   font-family: Courier, monospace;
+}
+
+pre code,
+pre code.hljs {
+  border-radius: 3px;
   background: none;
   background-color: var(--code-blocks-dark);
   overflow-x: auto;
@@ -18,7 +21,7 @@ code.hljs {
   white-space: pre;
 }
 
-code,
+pre code,
 pre code.hljs,
 .hljs-punctuation {
   color: white;
@@ -27,33 +30,37 @@ pre code.hljs,
 }
 
 .hljs-string,
-.hljs-title {
+.hljs-title,
+.hljs-number,
+.hljs-selector-class {
   color: var(--code-dark-string);
 }
 
-.hljs-literal {
+.hljs-literal,
+.hljs-built_in {
   color: var(--code-dark-literal);
 }
 
-code.light .hljs-literal {
+pre code.light .hljs-literal,
+pre code.light .hljs-built_in {
   color: var(--code-light-literal);
 }
 
-code.dark .hljs-operator {
+pre code.dark .hljs-operator {
   color: var(--code-dark-operator);
 }
 
-code.light {
+pre code.light {
   background-color: white;
 }
 
 .hljs.light,
-code.light .hljs-punctuation,
-code.light {
+pre code.light .hljs-punctuation,
+pre code.light {
   color: var(--default-body);
 }
 
-code.light .hljs-string,
-code.light .hljs-title {
+pre code.light .hljs-string,
+pre code.light .hljs-title {
   color: var(--code-light-string);
 }

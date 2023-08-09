@@ -10,9 +10,21 @@ li {
 li::before {
   content: "•";
   color: var(--primary);
-  display: inline-block;
+  display: inline;
   font-size: 0.8rem;
   margin-right: 0.5rem;
   width: 0.25rem;
   height: 0.25rem;
+}
+
+li p {
+  display: inline;
+}
+
+li:has(p) {
+  margin-left: 1rem;
+}
+
+li:has(p)::before {
+  margin-left: -1.1rem;
 }

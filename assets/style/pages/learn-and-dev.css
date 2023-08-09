@@ -31,6 +31,10 @@
   all: unset;
 }
 
+.page-container li:has(p) {
+  margin: 0;
+}
+
 .page-intro {
   width: 24.188rem;
   height: 100%;
@@ -159,7 +163,7 @@
   transform: translateX(3px);
 }
 
-@media (max-device-width: 768px), (width <= 768px)  {
+@media (max-device-width: 768px), (width <= 768px) {
   .page-container {
     padding: 1rem;
   }
@@ -191,4 +195,3 @@
     display: none;
   }
 }
-
