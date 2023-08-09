@@ -26,7 +26,8 @@ pre code.hljs,
   line-height: 1.3rem;
 }
 
-.hljs-string {
+.hljs-string,
+.hljs-title {
   color: var(--code-dark-string);
 }
 
@@ -52,6 +53,7 @@ code.light {
   color: var(--default-body);
 }
 
-code.light .hljs-string {
+code.light .hljs-string,
+code.light .hljs-title {
   color: var(--code-light-string);
 }

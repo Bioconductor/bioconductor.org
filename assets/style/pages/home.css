@@ -67,8 +67,7 @@
 .data-scientist-container h2,
 .developer-container h2 {
   text-align: center;
-  margin-top: 24px;
-  margin-bottom: 0;
+  margin: 1.5rem auto 0;
 }
 
 .data-scientist-content {

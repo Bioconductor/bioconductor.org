@@ -1,0 +1,70 @@
+<h3 id="archives">Package Archives</h3>
+
+<p>Follow <a href="/install/#install-bioconductor-packages">Installation</a> instructions to use this package in your R session.</p>
+
+<table class="full-width">
+  <tr>
+    <td>Source Package</td>
+    <td class="rpack">
+      <a href="../<%=@package[:"source.ver"]%>"><%= base_filename(@package[:"source.ver"]) %></a>
+    </td>
+  </tr>
+
+  <tr>
+    <td>Windows Binary</td>
+    <td class="rpack">
+      <% wb = windows_binary(@package) %>
+      <% unless wb.nil?%>
+        <a href="../<%=wb%>">
+        <%= base_filename(wb)%></a> <%=win_format(@package)%>
+      <% end %>
+    </td>
+</tr>
+
+
+<% for h in get_mac_packs(@package, @item) %>
+  <tr>
+    <td><%= h[:os] %></td>
+    <td class="rpack">
+      <a href="<%=h[:url]%>"><%=h[:basename]%></a>
+    </td>
+  </tr>
+<% end %>
+
+<% if package_has_source_url(@item) %>
+  <tr>
+    <td id="svn-source">Source Repository</td>
+    <td>git clone <%=get_source_url(@package, @item, @item_rep, "https")%></td>
+  </tr>
+  <tr>
+    <td id="svn-source">Source Repository (Developer Access)</td>
+    <td>git clone <%=get_source_url(@package, @item, @item_rep, "ssh")%></td>
+  </tr>
+<% end %>
+
+<% if package_in_code_browser(@package, @item) %>
+  <tr>
+    <td>Bioc Package Browser</td>
+    <td><a href="<%=get_code_browser_url(@package, include_branch=true)%>"><%=get_code_browser_url(@package, include_branch=false)%></a></td>
+  </tr>
+<% end %>
+
+<tr>
+  <td>Package Short Url</td>
+  <td><a title="For citation in publications, etc., please use DOI: 10.18129/B9.bioc.<%=@package[:Package]%>" href="<%=get_short_url(@package)%>"><%=get_short_url(@package, true)%></a></td>
+</tr>
+
+<tr>
+  <td>Package Downloads Report</td>
+  <td><a href="<%=get_stats_url(@package)%>">Download Stats</a></td>
+</tr>
+
+<% if package_has_archive(@package) %>
+  <tr>
+    <td>Old Source Packages for BioC <%=@package[:bioc_version_num]%></td>
+    <td><a href="<%=get_archive_url(@package)%>"><%=get_archive_url(@package, true)%></a></td>
+  </tr>
+<% end %>
+
+</table>
+

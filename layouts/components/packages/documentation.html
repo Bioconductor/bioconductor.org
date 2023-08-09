@@ -1,0 +1,97 @@
+<h3>Documentation</h3>
+
+<% if @package.has_key? :vignettes and !@package[:vignettes].empty? %>
+<p>To view documentation for the version of this package installed in your system, start R and enter:</p>
+<pre>browseVignettes("<%=@package[:Package]%>")</pre>
+<% end %>
+
+<table>
+  <% doc_obj = doc_object(@package)%>
+  <% if doc_obj.empty? %>
+    <tr><td>No vignettes available</td></tr>
+  <% else %>
+    <% doc_obj.each_with_index do |item, i|%>
+    <% if !item[:file].strip! then next end %>
+      <tr>
+        <td><%= item[:title]%></td>
+        <td>
+          <% if item[:file] and item[:file] != "" %>
+          <a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:file]%>"><%=item[:type]%></a>
+          <% end %>
+        </td>
+        <td>
+          <% if item[:script] and item[:script] != "" %>
+          <a href="../vignettes/<%=@package[:Package]%>/inst/doc/<%=item[:script]%>">R Script</a>
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  <% end %>
+
+  <% if @package[:repo] != "workflows/" %>
+    <tr>
+      <td>Reference Manual</td>
+      <td>
+        <a href="../manuals/<%=@package[:Package]%>/man/<%=@package[:Package]%>.pdf">PDF</a>
+      </td>
+    </tr>
+  <% end %>
+
+  <% if @package.has_key? :hasREADME and @package[:hasREADME] == true%>
+    <tr>
+      <td>README</td>
+      <td>
+        <a href="../readmes/<%=@package[:Package]%>/README">Text</a>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  <% end %>
+
+
+  <% if @package.has_key? :hasNEWS and @package[:hasNEWS] == true%>
+    <tr>
+      <td>NEWS</td>
+      <td>
+        <a href="../news/<%=@package[:Package]%>/NEWS">Text</a>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  <% end %>
+
+
+  <% if @package.has_key? :hasINSTALL and @package[:hasINSTALL] == true%>
+    <tr>
+      <td>INSTALL</td>
+      <td>
+        <a href="../install/<%=@package[:Package]%>/INSTALL">Text</a>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  <% end %>
+
+
+  <% if @package.has_key? :hasLICENSE and @package[:hasLICENSE] == true%>
+    <tr>
+      <td>LICENSE</td>
+      <td>
+        <a href="../licenses/<%=@package[:Package]%>/LICENSE">Text</a>
+      </td>
+      <td>&nbsp;</td>
+    </tr>
+  <% end %>
+
+  <% if @package.has_key? :Video %>
+    <% videos = @package[:Video].gsub(/\s/, "").split(",") %>
+    <% for video in videos %>
+      <tr>
+        <td><%=get_video_title(video)%></td>
+        <td>
+          <a href="<%=video%>">Video</a>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+
+

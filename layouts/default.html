@@ -6,7 +6,7 @@
   prefix="og: http://ogp.me/ns#">
   <%= render("/_sitehead/") %>
   <body>
-
+    <%= render("/components/sitescripts/") %>
     <%= render("/components/header/") %>
 
     <% if @item[:hero] %>
@@ -28,14 +28,6 @@
         <div class="container">
       <% end %>
 
-        <% if @item.attributes.has_key?(:package_index_page) %>
-          <%= render("/_pkg_idx/", :info => @item.attributes) %>
-        <% end %>
-
-        <% if @item.attributes.has_key?(:Package) %> 
-          <%= render("/_bioc_views_package_detail/", :package => @item.attributes) %>
-        <% end %> 
-
         <% if has_subnav?(@item) %>
           <section class="left-col">
             <div class="left-col-inner">
@@ -47,17 +39,24 @@
 
         <section class="content">
           <% if (@item.identifier != '/' && !@item[:hero]) %>
-            <%= render("/components/breadcrumbs/") %>
+          <%= render("/components/breadcrumbs/") %>
           <% end %>
-    
+   
+          <% if @item.attributes.has_key?(:package_index_page) %>
+          <%= render("/_pkg_idx/", :info => @item.attributes) %>
+          <% end %>
+
+          <% if @item.attributes.has_key?(:Package) %>
+          <%= render("/_bioc_views_package_detail/", :package => @item.attributes) %>
+          <% end %>
+
           <%= yield if block_given? %>
         </section>
-
       <% if (!has_subnav?(@item) && !@item[:fullwidth]) %>
         </div>
       <% end %>
     </main>
+
     <%= render("/components/footer/") %>
-    <%= render("/components/sitescripts/") %>
   </body>
 </html>

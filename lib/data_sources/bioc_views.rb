@@ -164,6 +164,7 @@ class BiocViews < Nanoc::DataSource
               id = "/#{version}/#{repo}#{package}/"
               pkgs = packages[package]
               subnav = []
+              subnav.push({:include => "/components/packages/badges/"})
               subnav.push({:include => "/_documentation/"})
               subnav.push({:include => "/_support/"})
 

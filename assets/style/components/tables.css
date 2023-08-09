@@ -1,0 +1,40 @@
+td {
+  padding: 1rem;
+  border: 1px solid var(--neutral-n75);
+  vertical-align: top;
+}
+
+table {
+  border-spacing: 0;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+table.full-width {
+  width: 100%;
+}
+
+.dataTables_scrollHead {
+  background: var(--neutral-n75);
+  padding-top: 10px;
+}
+
+tr:first-of-type *:first-child {
+  border-top-left-radius: 3px;
+}
+
+tr:first-of-type *:last-child {
+  border-top-right-radius: 3px;
+}
+
+tr:last-of-type *:first-child {
+  border-bottom-left-radius: 3px;
+}
+
+tr:last-of-type *:last-child {
+  border-bottom-right-radius: 3px;
+}
+
+table.full-width tr *:first-child {
+  width: 15.5rem;
+}

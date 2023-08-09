@@ -1,0 +1,117 @@
+<h3 id="details">Details</h3>
+  <table class="full-width">
+	  <tr>
+	    <td>biocViews</td>
+	    <td><%= bioc_views_links @package %></td>
+  	</tr>
+
+	  <tr>
+	    <td>Version</td>
+	    <td><%= @package[:Version]%></td>
+  	</tr>
+
+	  <%
+    	since = since(@package[:Package])
+    	r = nil
+    	r = r_ver_for_bioc_ver(since) unless since.nil?
+    	yib = years_in_bioc(@package[:Package])
+    	if yib.nil?
+	      yearstr = ""
+    	else
+	      yearstr = "(#{yib})"
+    	end
+    	yearstr.sub!(">", "&gt;")
+    	if not (since.nil? or r.nil?)
+	      or_earlier = ""
+	      or_earlier = " or earlier" if since == "1.6"
+    	%>
+	    <tr id="since">
+		    <td>In Bioconductor since</td>
+    		<td>BioC <%= since %> (R-<%= r %>)<%=or_earlier%> <%=yearstr %></td>
+	    </tr>
+  	<% end %>
+
+  	<tr>
+	    <td>License</td>
+	    <% if @package.has_key? :hasLICENSE and @package[:hasLICENSE] == true%>
+                <td><%= linkify_license(@package)%></td>
+            <% else %>
+                <td><%= @package[:License]%></td>
+	    <% end %>
+  	</tr>
+
+	  <tr>
+	    <td>Depends</td>
+	    <td><%= linkify(:Depends, @package)%></td>
+  	</tr>
+
+  	<tr>
+	    <td>Imports</td>
+	    <td><%= linkify(:Imports, @package)%></td>
+  	</tr>
+
+  	<tr>
+	    <td>Linking To</td>
+	    <td><%= linkify(:LinkingTo, @package)%></td>
+  	</tr>
+
+  	<tr>
+	    <td>Suggests</td>
+	    <td><%= linkify(:Suggests, @package)%></td>
+  	</tr>
+
+  	<tr>
+	    <td>System Requirements</td>
+	    <td><%= @package[:SystemRequirements]%></td>
+	  </tr>
+
+  	<tr>
+	    <td>Enhances</td>
+	    <td><%= linkify(:Enhances, @package)%></td>
+	  </tr>
+
+  	<tr>
+	    <td>URL</td>
+	    <td><%=make_package_url_links(@package[:URL])%></td>
+	  </tr>
+
+  	<% if @package.has_key? :BugReports %>
+	    <tr>
+		    <td>Bug Reports</td>
+    		<td><%=make_package_url_links(@package[:BugReports])%></td>
+	    </tr>
+  	<% end %>
+</table>
+
+<details>
+  <summary class="package-details">See More</summary>
+  <table class="full-width">
+	  <tr>
+	    <td>Depends On Me</td>
+	    <td><%= linkify(:dependsOnMe, @package)%></td>
+  	</tr>
+
+	  <tr>
+	    <td>Imports Me</td>
+	    <td><%= linkify(:importsMe, @package)%></td>
+  	</tr>
+
+  	<tr>
+	    <td>Suggests Me</td>
+	    <td><%= linkify(:suggestsMe, @package)%></td>
+	  </tr>
+
+  	<tr>
+	    <td>Links To Me</td>
+	    <td><%= linkify(:linksToMe, @package)%></td>
+	  </tr>
+
+  	<% if ["bioc/", "data/experiment/", "workflows"].include? @package[:repo] %>
+	    <tr>
+	    	<td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
+    		<td>&nbsp;</td>
+	    </tr>
+  	<% end %>
+  </table>
+</details>
+

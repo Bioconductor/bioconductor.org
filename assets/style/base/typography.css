@@ -13,6 +13,7 @@ h6,
 .text-h6 {
   line-height: 120%;
   margin: 0 0 1rem;
+  width: fit-content;
 }
 
 h1,
