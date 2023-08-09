@@ -9,9 +9,9 @@
       <a href="/help/course-materials/">recent course material</a>.
     </p>
   </div>
-  <ul class="inline_list">
+  <nav class="inline_list">
     <% course_materials.each do |item| %>
-    <li><a href="<%= item.identifier %>"><%= item[:title] %></a></li>
+    <div><a href="<%= item.identifier %>"><%= item[:title] %></a></div>
     <% end %>
-  </ul>
+  </nav>
 </div>
