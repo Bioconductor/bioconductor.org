@@ -21,7 +21,12 @@ try {
 
 //Sitehead code that will underline the nav element if the page URL matches the element
 
-const nav_elements = [/^\/about\//, /^\/developers\//, /^\/help\//];
+const nav_elements = [
+  /^\/about\//,
+  /^\/help\//,
+  /^\/packages\//,
+  /^\/developers\//,
+];
 
 function checkNav() {
   const currentPath = window.location.pathname;
@@ -58,19 +63,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
   navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
-  window.addEventListener( "resize", findHeaderTop);
-
+  window.addEventListener("resize", findHeaderTop);
 });
 
 function findHeaderTop() {
-
-  const announcementHeight = document.querySelector(".announcement")?.offsetHeight;
+  const announcementHeight =
+    document.querySelector(".announcement")?.offsetHeight;
   const header = document.querySelector(".site-masthead");
 
-  if(announcementHeight){
-    header.style.top = `-${announcementHeight}px`
+  if (announcementHeight) {
+    header.style.top = `-${announcementHeight}px`;
   }
-
 }
 
 //Changes body and hero background color once clicked on certain links

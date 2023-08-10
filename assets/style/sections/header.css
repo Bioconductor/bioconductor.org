@@ -155,7 +155,7 @@ input:focus::placeholder {
   background-color: var(--misc-dark);
 }
 
-@media (max-device-width: 768px), (width <= 768px)   {
+@media (max-device-width: 1080px), (width <= 1080px) {
   .header-size {
     justify-content: space-between;
     align-items: center;
@@ -178,7 +178,7 @@ input:focus::placeholder {
 
   .header-nav.active {
     opacity: 1;
-    height: 19rem;
+    height: 21rem;
   }
 
   .nav-mobile {
@@ -261,7 +261,7 @@ input:focus::placeholder {
     transform: translateY(8px) rotate(45deg);
   }
 
-.hamburger.active .bar:nth-child(3) {
+  .hamburger.active .bar:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
 }
