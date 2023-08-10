@@ -25,6 +25,13 @@ main > .container.main-subnav :is(h1, h2, h3, h4, h5, h6) {
   padding-top: 0.5rem;
 }
 
+.content {
+  white-space: normal;
+  word-wrap: break-word;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
 img {
   max-width: 100%;
 }
