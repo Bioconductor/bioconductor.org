@@ -1,3 +1,4 @@
---- 
+---
 title: Docker for Bioconductor
-subnav: true
+subnav:
+  - include: /_docker_subnav/

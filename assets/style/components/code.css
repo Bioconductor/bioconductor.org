@@ -6,7 +6,7 @@ pre:has(code) {
   margin-bottom: 2rem;
 }
 
-code {
+code * {
   font-family: Courier, monospace;
 }
 
@@ -19,6 +19,7 @@ pre code.hljs {
   display: block;
   padding: 1rem;
   white-space: pre;
+  font-family: Courier, monospace;
 }
 
 pre code,
