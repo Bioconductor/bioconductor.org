@@ -47,7 +47,9 @@
 
 .doodle-data-scientist-container {
   display: flex;
-  margin: 1rem 0.2rem 1rem 0.4rem;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .brand-gradient-border {
