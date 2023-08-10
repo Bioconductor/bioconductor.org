@@ -111,7 +111,7 @@ summary.package-details {
   padding-left: 0.75rem;
 }
 
-@media (max-device-width: 768px), (max-width: 768px) {
+@media (max-device-width: 1250px), (max-width: 1250px) {
   .biocViewsTreeContainer {
     display: flex;
     flex-direction: column;
