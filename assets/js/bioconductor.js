@@ -166,6 +166,19 @@ function wrapChildDivs() {
 
 window.addEventListener("load", wrapChildDivs);
 
+window.addEventListener("load", function () {
+  if (window.innerWidth < 1250) {
+    var parentElement = document.getElementById("tree_outer");
+
+    parentElement.addEventListener("click", function (event) {
+      if (event.target.classList.contains("jstree-clicked")) {
+        var tbodyTable = document.querySelector(".dataTables_scroll");
+        tbodyTable.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
+
 function log(message) {
   if (fb_lite) {
     //console.log(message);
