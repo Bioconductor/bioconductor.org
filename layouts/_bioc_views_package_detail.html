@@ -17,16 +17,24 @@
 
   <h2><%= @package[:Title]%></h2>
 
-  <p>
-    <strong>Bioconductor version:</strong> <%= verbose_bioc_version(@package) %><br />
-    <%= @package[:Description] %><br />
-    <strong>Author:</strong> <%= filter_emails(@package[:Author])%><br />
-    <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%><br />
+  <div class="package-info">
+
+    <p>
+      <strong>Bioconductor version:</strong> <%= verbose_bioc_version(@package) %>
+      <br />
+      <%= @package[:Description] %>
+    </p>
+    <p>
+      <strong>Author:</strong> <%= filter_emails(@package[:Author])%>
+    <p />
+    <p>
+      <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%>
+    </p>
     <div id="bioc-citation-outer">
       <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
       <div id="bioc-citation" class="bioc-citation"></div>
     </div>
-  </p>
+  </div>
 
 
 
