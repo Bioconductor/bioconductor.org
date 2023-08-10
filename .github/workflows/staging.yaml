@@ -1,99 +1,99 @@
-name: Deploy To staging
+# name: Deploy To staging
 
-on:
-  push:
-    branches:
-      - redesign2023
-jobs:
-  staging-deploy:
-    concurrency: ci-${{ github.ref }}
-    runs-on: ubuntu-latest
-    environment: staging
+# on:
+#   push:
+#     branches:
+#       - redesign2023
+# jobs:
+#   staging-deploy:
+#     concurrency: ci-${{ github.ref }}
+#     runs-on: ubuntu-latest
+#     environment: staging
 
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v3
 
-      - name: Use Nanoc Cache
-        id: cache-nanoc-tmp
-        uses: actions/cache@v3
-        with:
-          path: tmp
-          key: ${{ runner.os }}-nanoc-tmp
+#       - name: Use Nanoc Cache
+#         id: cache-nanoc-tmp
+#         uses: actions/cache@v3
+#         with:
+#           path: tmp
+#           key: ${{ runner.os }}-nanoc-tmp
 
-      - name: Use Site Output Cache
-        id: cache-site-output
-        uses: actions/cache@v3
-        with:
-          path: output
-          key: ${{ runner.os }}-site-output
+#       - name: Use Site Output Cache
+#         id: cache-site-output
+#         uses: actions/cache@v3
+#         with:
+#           path: output
+#           key: ${{ runner.os }}-site-output
 
-      - name: Set up ruby
-        uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
-        with:
-          ruby-version: "2.6.5"
+#       - name: Set up ruby
+#         uses: ruby/setup-ruby@ec02537da5712d66d4d50a0f33b7eb52773b5ed1
+#         with:
+#           ruby-version: "2.6.5"
 
-      - name: Install dependencies
-        run: bundle install --jobs 4 --retry 3
+#       - name: Install dependencies
+#         run: bundle install --jobs 4 --retry 3
 
-      - name: Build website
-        run: rake
+#       - name: Build website
+#         run: rake
 
-      - name: Deploy website to staging s3
-        uses: Reggionick/s3-deploy@v4.0.0
-        with:
-          folder: output
-          bucket: ${{secrets.S3_BUCKET}}
-          bucket-region: us-east-1
-          delete-removed: true
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-  kpi_metrics:
-    needs: staging-deploy
-    permissions:
-      pull-requests: write
-    name: All KPI metrics
-    runs-on: ubuntu-latest
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3.7.0
-        with:
-          node-version: 18
-      - name: install psi and axe
-        run: |
-          npm install psi
-          npm install @axe-core/cli
-      - name: run desktop psi
-        run: |
-          echo "DESKTOP_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js url=${{vars.STAGING_URL}},strategy=desktop,threshold=50,apiKey=none)" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-      - name: run mobile psi
-        run: |
-          echo "MOBILE_PSI_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(node PageSpeed.js url=${{vars.STAGING_URL}},strategy=mobile,threshold=50,apiKey=none)" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-      - name: run axe accesibility test
-        run: |
-          echo "AXE_RESULTS<<EOF" >> $GITHUB_ENV
-          echo "$(npx axe ${{vars.STAGING_URL}})" >> $GITHUB_ENV
-          echo "EOF" >> $GITHUB_ENV
-      - name: send notification psi
-        if: ${{ github.ref == 'refs/heads/redesign2023' }}
-        uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          text: "${{env.DESKTOP_PSI_RESULTS}} \n ${{env.MOBILE_PSI_RESULTS}}"
-        env:
-          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK}}
-      - name: send notification axe
-        if: ${{ github.ref == 'refs/heads/redesign2023' }}
-        uses: 8398a7/action-slack@v2
-        with:
-          status: ${{ job.status }}
-          text: "${{env.AXE_RESULTS}}"
-        env:
-          SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK}}
+#       - name: Deploy website to staging s3
+#         uses: Reggionick/s3-deploy@v4.0.0
+#         with:
+#           folder: output
+#           bucket: ${{secrets.S3_BUCKET}}
+#           bucket-region: us-east-1
+#           delete-removed: true
+#         env:
+#           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+#           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+#   kpi_metrics:
+#     needs: staging-deploy
+#     permissions:
+#       pull-requests: write
+#     name: All KPI metrics
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: checkout
+#         uses: actions/checkout@v3
+#       - name: Setup Node.js environment
+#         uses: actions/setup-node@v3.7.0
+#         with:
+#           node-version: 18
+#       - name: install psi and axe
+#         run: |
+#           npm install psi
+#           npm install @axe-core/cli
+#       - name: run desktop psi
+#         run: |
+#           echo "DESKTOP_PSI_RESULTS<<EOF" >> $GITHUB_ENV
+#           echo "$(node PageSpeed.js url=${{vars.STAGING_URL}},strategy=desktop,threshold=50,apiKey=none)" >> $GITHUB_ENV
+#           echo "EOF" >> $GITHUB_ENV
+#       - name: run mobile psi
+#         run: |
+#           echo "MOBILE_PSI_RESULTS<<EOF" >> $GITHUB_ENV
+#           echo "$(node PageSpeed.js url=${{vars.STAGING_URL}},strategy=mobile,threshold=50,apiKey=none)" >> $GITHUB_ENV
+#           echo "EOF" >> $GITHUB_ENV
+#       - name: run axe accesibility test
+#         run: |
+#           echo "AXE_RESULTS<<EOF" >> $GITHUB_ENV
+#           echo "$(npx axe ${{vars.STAGING_URL}})" >> $GITHUB_ENV
+#           echo "EOF" >> $GITHUB_ENV
+#       - name: send notification psi
+#         if: ${{ github.ref == 'refs/heads/redesign2023' }}
+#         uses: 8398a7/action-slack@v2
+#         with:
+#           status: ${{ job.status }}
+#           text: "${{env.DESKTOP_PSI_RESULTS}} \n ${{env.MOBILE_PSI_RESULTS}}"
+#         env:
+#           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK}}
+#       - name: send notification axe
+#         if: ${{ github.ref == 'refs/heads/redesign2023' }}
+#         uses: 8398a7/action-slack@v2
+#         with:
+#           status: ${{ job.status }}
+#           text: "${{env.AXE_RESULTS}}"
+#         env:
+#           SLACK_WEBHOOK_URL: ${{secrets.SLACK_WEBHOOK}}
