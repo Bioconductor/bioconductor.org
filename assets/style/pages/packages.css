@@ -25,6 +25,7 @@ summary.package-details {
   flex-direction: row;
   justify-content: center;
   gap: 2rem;
+  margin-left: 1px;
 }
 
 .biocViewsPackages {
@@ -122,7 +123,7 @@ ul.ui-autocomplete li::marker {
   margin: 0.5rem 0 1rem;
 }
 
-@media (max-device-width: 1400px), (max-width: 1400px) {
+@media (max-device-width: 1450px), (max-width: 1450px) {
   .biocViewsTreeContainer {
     display: flex;
     flex-direction: column;
