@@ -12,7 +12,7 @@
   padding-left: 0;
 }
 
-.jstree-apple li::before {
+.jstree-apple li::marker {
   content: none;
 }
 

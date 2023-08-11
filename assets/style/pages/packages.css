@@ -111,7 +111,7 @@ summary.package-details {
   padding-left: 0.75rem;
 }
 
-ul.ui-autocomplete li::before {
+ul.ui-autocomplete li::marker {
   content: none;
 }
 
