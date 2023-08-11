@@ -30,12 +30,12 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 <li>Lori Shepherd*</li>
 <li>Dario Strbenac</li>
 <li>Luke Zappia</li>
-
-\*Current Package Review Administrators
-
 </ul>
 
-## Past Package Reviewers
+<p>*Current Package Review Administrators</p>
 
+## Past Package Reviewers
+<ul>
 <li>Martin Morgan</li>
 <li>Nitesh Turaga</li>
+</ul>
