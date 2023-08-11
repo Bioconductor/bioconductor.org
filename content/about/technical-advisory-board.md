@@ -31,16 +31,14 @@ board. Governance was formalized in February, 2019.
       <a href="https://vjcitn.github.io/">Website</a>
       </figcaption>
     </td>
-    
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/LeviWaldron.png"
             width="100%" alt="Levi Waldron" title="Levi Waldron"/>
       <figcaption>Levi Waldron, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
       <a href="http://waldronlab.io/">Website</a>
       </figcaption>
     </td>
-    
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/CharlotteSoneson.png"
            width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
       <figcaption>Charlotte Soneson, Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland. Secretary.
@@ -48,53 +46,47 @@ board. Governance was formalized in February, 2019.
       </figcaption>
     </td>
   </tr>
-<tr> 
-<td width="33%">
-      <img src="/images/tab/AedinCulhane.png"
-           width="100%" alt="Aedin Culhane" title="Aedin Culhane"/>
-      <figcaption>  Aedin Culhane, University of Limerick, Ireland.
-      <a href="https://www.ul.ie/medicine/about/staff/academic-faculty/prof-aed%C3%ADn-culhane">Website</a>
+
+  <tr> 
+    <td width="33%">
+      <img src="/images/tab/HenrikBengtsson.jpg"
+           width="100%" alt="Henrik Bengtsson" title="Henrik Bengtsson"/>
+      <figcaption> Henrik Bengtsson, University of California, San Francisco, USA.
+      <a href="https://profiles.ucsf.edu/henrik.bengtsson">Website</a>
       </figcaption>
     </td>
-
-
-<td width="33%">
+    <td width="33%">
+      <img src="/images/tab/HelenaCrowell.png"
+           width="100%" alt="Helena Lucia Crowell" title="Helena Lucia Crowell"/>
+      <figcaption> Helena Lucia Crowell, University of Zurich, Switzerland.
+      <a href="http://helenalc.github.io/">Website</a>
+      </figcaption>
+    </td>
+    <td width="33%">
       <img src="/images/tab/SeanDavis.png"
            width="100%" alt="Sean Davis" title="Sean Davis"/>
       <figcaption>  Sean Davis, University of Colorado Anschutz School of Medicine, USA.
       <a href="https://seandavi.github.io/">Website</a>
       </figcaption>
     </td>
-
+  </tr>
   
-  <td width="33%">
+  <tr>
+    <td width="33%">
       <img src="/images/tab/LaurentGatto.png"
            width="100%" alt="Laurent Gatto" title="Laurent Gatto"/>
       <figcaption>  Laurent Gatto, Institut de Duve, Belgium.
       <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Website</a>
       </figcaption>
     </td>
-  </tr>
-  
- <tr>
- <td width="33%">
-      <img src="/images/tab/RobertGentleman.png"
-           width="100%" alt="Robert Gentleman" title="Robert Gentleman"/>
-      <figcaption> Robert Gentleman, Harvard Medical School, Boston, USA.
-      <a href="https://connects.catalyst.harvard.edu/Profiles/display/Person/23826">Website</a>
+    <td width="33%">
+      <img src="/images/tab/LudwigGeistlinger.png"
+           width="100%" alt="Ludwig Geistlinger" title="Ludwig Geistlinger"/>
+      <figcaption> Ludwig Geistlinger, Center for Computational Biomedicine, Harvard Medical School, Boston, MA, USA.
+      <a href="https://computationalbiomed.hms.harvard.edu/about/people/ludwig-geistlinger-phd/">Website</a>
       </figcaption>
     </td>
-
-  
-  <td width="33%">
-      <img src="/images/tab/ShilaGhazanfar.png"
-           width="100%" alt="Shila Ghazanfar" title="Shila Ghazanfar"/>
-      <figcaption> Shila Ghazanfar, University of Sydney, Australia.
-      <a href="https://shazanfar.github.io/">Website</a>
-      </figcaption>
-    </td>
-
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/KasperHansen.png"
            width="100%" alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
       <figcaption> Kasper Daniel Hansen, Bloomberg School of Public Health, Johns Hopkins University.
@@ -104,49 +96,44 @@ board. Governance was formalized in February, 2019.
   </tr>
 
   <tr>
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/StephanieHicks.png"
            width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
       <figcaption> Stephanie Hicks, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
       <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
       </figcaption>
     </td>
-
-  
-  <td width="33%">
+    <td width="33%">
       <img src="/images/tab/WolfgangHuber.png"
            width="100%" alt="Wolfgang Huber" title="Wolfgang Huber"/>
       <figcaption> Wolfgang Huber, European Molecular Biology Laboratory, Heidelberg, Germany.
       <a href="http://www.embl.de/research/units/genome_biology/huber/">Website</a>
       </figcaption>
     </td>
-    
-
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/RafaelIrizarry.png"
            width="100%" alt="Rafael Irizarry" title="Rafael Irizarry"/>
       <figcaption> Rafael Irizarry, Dana-Farber Cancer Institute, USA
       <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Website</a>
       </figcaption>
     </td>
-    </tr>
+  </tr>
 
-   <tr>
-   <td width="33%">
+  <tr>
+    <td width="33%">
       <img src="/images/tab/LoriShepherd.png"
            width="100%" alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
       <figcaption> Lori (Shepherd) Kern, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
-      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> </figcaption>
+      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> 
+      </figcaption>
     </td>
- 
-   <td width="33%">
+    <td width="33%">
       <img src="/images/tab/MichaelLove.png"
            width="100%" alt="Michael Love" title="Michael Love"/>
       <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
       <a href="https://mikelove.github.io/">Website</a>
       </figcaption>
     </td>
-
     <td width="33%">
       <img src="/images/tab/DavideRisso.png"
            width="100%" alt="Davide Risso" title="Davide Risso"/>
@@ -154,8 +141,7 @@ board. Governance was formalized in February, 2019.
       <a href="https://drisso.github.io/">Website</a>
       </figcaption>
     </td>
-    
-    </tr>
+  </tr>
 </table>
 
 
@@ -167,7 +153,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2023-05-04](2023-05-04-minutes.pdf),
+- [2023-06-01](2023-06-01-minutes.pdf),
+  [2023-05-04](2023-05-04-minutes.pdf),
   [2023-04-06](2023-04-06-minutes.pdf),
   [2023-03-02](2023-03-02-minutes.pdf),
   [2023-02-02](2023-02-02-minutes.pdf),
