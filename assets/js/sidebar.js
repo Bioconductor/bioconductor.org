@@ -2,13 +2,25 @@ const addedTopBounding = 80;
 const headerOffSetToAdd = 7;
 let headerHeight;
 document.addEventListener("DOMContentLoaded", function () {
+  const header = document.querySelector(".header-size");
+  headerHeight = header.offsetHeight + headerOffSetToAdd;
+
+  if (document.location.hash) {
+    const target = document.querySelector(document.location.hash);
+    let offsetTop;
+    window.innerWidth < 768
+      ? (offsetTop = target.offsetTop + headerHeight)
+      : (offsetTop = target.offsetTop - headerHeight);
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth",
+    });
+  }
   copySidebar();
   addTopMobileNav();
   const sidebarToggle = document.querySelector(".sidebar-nav");
   const sidebarContentLinks = document.querySelectorAll(".internal-nav a");
   const headings = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
-  const header = document.querySelector(".header-size");
-  headerHeight = header.offsetHeight + headerOffSetToAdd;
 
   sidebarToggle?.addEventListener("click", () => {
     toggleNavMenu(sidebarToggle);
