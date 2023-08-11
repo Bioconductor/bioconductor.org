@@ -29,3 +29,9 @@
   -webkit-text-fill-color: transparent;
 }
 /* stylelint-enable */
+
+#european-bioconductor-society {
+  display: grid;
+  grid-template-columns: 1fr 75px;
+  gap: 1rem;
+}
