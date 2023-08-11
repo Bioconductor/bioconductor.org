@@ -167,7 +167,7 @@ function wrapChildDivs() {
 window.addEventListener("load", wrapChildDivs);
 
 window.addEventListener("load", function () {
-  if (window.innerWidth < 1250) {
+  if (window.innerWidth < 1400) {
     var parentElement = document.getElementById("tree_outer");
 
     parentElement.addEventListener("click", function (event) {
