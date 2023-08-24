@@ -1,0 +1,132 @@
+.install-hero {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 0.5rem;
+}
+
+.get-started-h1 {
+  color: var(--misc-dark) !important;
+}
+
+.instructions-install {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-bottom: 2rem;
+}
+
+.instructions-install p {
+  text-align: left;
+  margin: 0 0 1rem;
+}
+
+.instructions-install a {
+  color: var(--misc-dark);
+}
+
+/* stylelint-disable color-function-notation, alpha-value-notation */
+.warmcool-gradient {
+  background-image: var(--gradient-reversewarmcool);
+  border-radius: 0.5rem;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06),
+    0 10px 10px 0 rgba(0, 0, 0, 0.05), 0 22px 13px 0 rgba(0, 0, 0, 0.03),
+    0 39px 16px 0 rgba(0, 0, 0, 0.01), 0 61px 17px 0 rgba(0, 0, 0, 0);
+}
+
+.install-row {
+  border-radius: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  margin: 1px;
+  gap: 3rem;
+}
+
+.install-content {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0.9rem 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.install-blockquote {
+  border-left: 2px solid var(--misc-purple);
+  background-color: transparent;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-around;
+  padding: 0;
+  padding-left: 10px;
+  gap: 10px;
+}
+
+.install-section {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.install-section a {
+  color: black;
+}
+
+.code-install {
+  margin-top: 1.6rem;
+  width: 100%;
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.06), 0 2px 5px 0 rgba(0, 0, 0, 0.06),
+    0 10px 10px 0 rgba(0, 0, 0, 0.05), 0 22px 13px 0 rgba(0, 0, 0, 0.03),
+    0 39px 16px 0 rgba(0, 0, 0, 0.01), 0 61px 17px 0 rgba(0, 0, 0, 0);
+}
+
+/* stylelint-enable color-function-notation, alpha-value-notation */
+
+.code-install code {
+  font-size: 1.25rem;
+  text-align: start;
+}
+
+.step-1 {
+  padding-bottom: 0.5rem;
+}
+
+.step-3 {
+  align-self: end;
+}
+
+
+@media (max-device-width: 1250px), (width <= 1250px) {
+  .instructions-install img {
+    display: none;
+  }
+
+  .instructions-install {
+    padding-bottom: 0;
+  }
+
+  .install-row {
+    flex-direction: column;
+
+    /* stylelint-disable-next-line value-no-vendor-prefix */
+    width: -webkit-fill-available;
+    gap: 1.5rem;
+  }
+
+  .code-install {
+    margin-top: 0;
+  }
+
+  .install-section {
+    width: calc(100vw - 350px);
+  }
+}
+
+@media (max-device-width: 768px), (width <= 768px) {
+  .install-section {
+    width: initial;
+  }
+ 
+}
+

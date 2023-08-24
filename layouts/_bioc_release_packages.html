@@ -1,15 +1,21 @@
-<div class="shaded_box">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header">Packages <span class="olive">&raquo;</span></p>
-  <p><em>Bioconductor's</em> stable, semi-annual release:</p>
-  <ul>
-    <li>Analysis <a class="symlink" href="/packages/release/BiocViews.html#___Software">software</a> packages.</li>
-    <li><a class="symlink" href="/packages/release/BiocViews.html#___AnnotationData">Annotation</a> packages.</li>
-    <li>Illustrative <a class="symlink" href="/packages/release/BiocViews.html#___ExperimentData">experiment data</a> packages.</li>
-    <li><a class="symlink" href="/packages/release/BiocViews.html#___Workflow">Workflow</a> packages.</li>
-    <li><a class="symlink" href="/books/release/">Online books</a>.</li>
-    <li>Latest <a href="/news/bioc_<%=config[:release_version].sub(".", "_")%>_release">release announcement</a>.</li>
-  </ul>
-  <p><em>Bioconductor</em> is also available via<a href="/help/docker/">Docker
-  Images</a> and for use in the <a href="https://anvil.bioconductor.org/">AnVIL</a>.</p>
+<div class="sidebar-box">
+  <div class="sidebar-box-header">
+    <p class="format-bold">Packages: </p>
+    <p>Bioconductor's stable, semi-annual release:</p>
+  </div>
+  <nav>
+    <div><a class="symlink" href="/packages/release/BiocViews.html#___Software"> Analysis software packages </a></div>
+    <div><a class="symlink" href="/packages/release/BiocViews.html#___AnnotationData"> Annotation packages</a></div>
+    <div><a class="symlink" href="/packages/release/BiocViews.html#___ExperimentData"> Illustrative experiment data packages</a></div>
+    <div><a class="symlink" href="/packages/release/BiocViews.html#___Workflow">Workflow packages</a> </div>
+    <div><a class="symlink" href="/books/release/">Online books</a></div>
+   <div><a href="/news/bioc_<%=config[:release_version].sub(".", "_")%>_release">  Latest release announcement</a></div>
+  </nav>
+  <div class="bottom-note">
+    <p class="text-small">Bioconductor is also available via 
+      <a class="text-small" href="/help/docker/">Docker Images </a>
+      and for use in the 
+      <a class="text-small" href="https://anvil.bioconductor.org/">AnVIL.</a>
+    </p>
+  </div>
 </div>

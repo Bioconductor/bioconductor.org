@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif) Package Reviewers
+# Package Reviewers
 
 This page is in recognition to members of the community who have volunteered to
 assist with the review of newly submitted packages to Bioconductor. Anyone from
@@ -13,7 +13,6 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 [Expectations of Reviewers]: http://contributions.bioconductor.org/review-expectation.html
 [Packages Under Review]: https://github.com/Bioconductor/Contributions/issues
 [Code of Conduct]: https://bioconductor.org/about/code-of-conduct/
-
 
 ## Package Reviewers
 
@@ -31,13 +30,12 @@ submitted packages must abide by the Bioconductor [Code of Conduct][].
 <li>Lori Shepherd*</li>
 <li>Dario Strbenac</li>
 <li>Luke Zappia</li>
-
-*Current Package Review Administrators
-
 </ul>
 
-## Past Package Reviewers
+<p>*Current Package Review Administrators</p>
 
+## Past Package Reviewers
+<ul>
 <li>Martin Morgan</li>
 <li>Nitesh Turaga</li>
-
+</ul>

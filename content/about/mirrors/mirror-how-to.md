@@ -1,6 +1,6 @@
-# ![](/images/icons/magnifier.gif)How to mirror Bioconductor repository #
+# How to mirror Bioconductor repository #
 
-Bioconductor package repositories may be mirrored with `rsync`.  This
+Bioconductor package repositories may be mirrored with `rsync`  This
 is appropriate if you or your user community requires frequent local
 access to many packages, where access to the main repository would be
 expensive or impossible (e.g., because users can only access

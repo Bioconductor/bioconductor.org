@@ -1,22 +1,34 @@
-<div class="shaded_box">
-  <img src="/images/inv.gif" align="right" height="200" width="1" alt=""/>
-  <p class="box_header">Development Version
-    <span class="olive">&raquo;</span></p>
-  <p>Bioconductor packages under development:</p>
-  <ul>
-    <% devel_repos = config[:devel_repos] %>
-    <% if devel_repos.include? "bioc" %>
-    <li>Analysis <a class="symlink" href="/packages/devel/BiocViews.html#___Software">software</a> packages.</li>
+<div class="sidebar-box">
+  <div class="sidebar-box-header">
+    <p class="format-bold">Development Version</p>
+    <p>Bioconductor packages under development:</p>
+  </div>
+  <nav>
+    <% devel_repos = config[:devel_repos] %> <% if devel_repos.include? "bioc"
+    %>
+    <div>
+      
+      <a class="symlink" href="/packages/devel/BiocViews.html#___Software">
+         Analysis software packages.
+      </a>
+      
+    </div>
+    <% end %> <% if devel_repos.include? "data/annotation" %>
+    <div>
+      <a class="symlink" href="/packages/devel/BiocViews.html#___AnnotationData"
+        >Annotation packages
+      </a>
+    </div>
+    <% end %> <% if devel_repos.include? "data/experiment" %>
+    <div>
+      <a class="symlink" href="/packages/devel/BiocViews.html#___ExperimentData">
+        Illustrative experiment data packages
+      </a>
+    </div>
     <% end %>
-    <% if devel_repos.include? "data/annotation" %>
-    <li><a class="symlink" href="/packages/devel/BiocViews.html#___AnnotationData">Annotation</a> packages</li>
-    <% end %>
-    <% if devel_repos.include? "data/experiment" %>
-    <li>Illustrative <a class="symlink" href="/packages/devel/BiocViews.html#___ExperimentData">experiment data</a> packages</li>
-    <% end %>
-  </ul>
-  <p>Developer Resources:</p>
-  <ul>
-    <li><a href="/developers/gitlog">GIT Log</a></li>
-  </ul>
+  </nav>
+  
+  <div class="bottom-note">
+    <p class="text-small">Developer Resources: <a class="text-small" href="/developers/gitlog">GIT Log</a></p>
+  </div>
 </div>

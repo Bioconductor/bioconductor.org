@@ -1,0 +1,164 @@
+<div class="sidebar-box" id="badges-box">
+<% if current? @item %>
+<section class="badges">
+  <%# Shield 1. Availability %> 
+  <% if ['data/annotation/', 'data/experiment/', 'workflows/' ].include? @item[:repo] %>
+    <%  av_img="/images/shields/availability/all.svg" %>
+  <% else %>
+    <% res=isReleaseOrDevel(@item) %>
+    <% path="assets"+"/shields/availability/"+res+"/"+@item[:Package]+".svg" %>
+    <% if File.exist?(path) %>
+      <% av_img="/shields/availability/#{res}/#{@item[:Package]}.svg" %>
+    <% else %>
+      <% av_img="/images/shields/availability/unknown-build.svg" %>
+    <% end %>
+  <% end %>
+
+  <a href="#archives">
+    <img
+      src="<%=av_img%>"
+      alt="Platform availability badge"
+      title="Whether the package is available on all platforms; click for details."
+    />
+  </a>
+
+  <%# shield 2: downloads %>
+  <% res=isReleaseOrDevel(@item) %>
+  <% path="assets"+"/shields/downloads/"+res+"/"+@item[:Package]+".svg" %>
+  <% if File.exist?(path) %>
+    <a href="<%=get_stats_url(@item)%>">
+      <img
+        src="/shields/downloads/<%=isReleaseOrDevel(@item)%>/<%=@item[:Package]%>.svg"
+        alt="Ranking badge"
+        title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow) and uses the number of distinct IPs for the last 12 months."
+      />
+    </a>
+  <% else %>
+    <a href="<%=get_stats_url(@item)%>">
+      <img
+        src="/images/shields/downloads/unknown-downloads.svg"
+        alt="Ranking badge"
+        title="Ranking by number of downloads. A lower number means the package is downloaded more frequently. Determined within a package type (software, experiment, annotation, workflow) and uses the number of distinct IPs for the last 12 months."
+      />
+    </a>
+  <% end %>
+
+  <%# shield 3: posts %>
+  <% path="assets"+"/shields/posts/"+@item[:Package]+".svg" %>
+  <% if File.exist?(path) %>
+    <a href="https://support.bioconductor.org/tag/<%=@item[:Package].downcase%>">
+      <img
+        src="/shields/posts/<%=@item[:Package]%>.svg"
+        alt="Support activity badge"
+        title="Support site activity, last 6 months: answered posts / total posts."
+      />
+    </a>
+  <% else %>
+    <a href="https://support.bioconductor.org/tag/<%=@item[:Package].downcase%>">
+      <img
+        src="/images/shields/posts/unknown-posts.svg"
+        alt="Support activity badge"
+        title="Support site activity, last 6 months: answered posts / total posts."
+        />
+    </a>
+  <% end %>
+
+  <%# shield 4: years in bioc %>
+  <% result=get_year_shield(@item) %>
+  <% if @item[:repo]=='bioc/' and not result.nil? %>
+    <a href="#since">
+      <img
+        src="/shields/years-in-bioc/<%=@item[:Package]%>.svg"
+        alt="Years in BioConductor badge"
+        title="How long since the package was first in a released Bioconductor version (or is it in devel only)."
+      />
+    </a>
+  <% elsif @item[:repo]=='bioc/' and result.nil? %>
+    <a href="#since">
+      <img
+        src="/images/shields/in-bioc/unknown-bioc.svg"
+        alt="Years in BioConductor badge"
+        title="How long since the package was first in a released Bioconductor version (or is it in devel only)."
+      />
+    </a>
+  <% end %>
+
+  <%# shield 5: build %>
+  <% res=get_build_results(@item) %>
+  <% unless res.nil? %>
+    <% path="assets"+"/shields/build/"+res[:version]+"/"+res[:repo]+"/"+@item[:Package]+".svg" %>
+    <% if File.exist?(path) %>
+      <a href="<%=res[:report_url]%>">
+        <img
+          src="/shields/build/<%=res[:version]%>/<%=res[:repo]%>/<%=@item[:Package]%>.svg"
+          alt="Build results badge"
+          title="build results; click for full report"
+        />
+      </a>
+    <% else %>
+      <a href="<%=res[:report_url]%>">
+        <img
+          src="/images/shields/builds/unknown-builds.svg"
+          alt="Build results badge"
+          title="build results; click for full report"
+        />
+      </a>
+    <% end %>
+  <% end %>
+
+  <%# shield 6: last commit %>
+  <% if ['bioc/', 'data/experiment/','workflows/' ].include? @item[:repo] %>
+    <% path="assets"+"/shields/lastcommit/"+res[:version]+"/"+res[:repo]+"/"+@item[:Package]+".svg" %>
+    <% if File.exist?(path) %>
+      <a href="<%=res[:report_url]%>">
+        <img
+          src="/shields/lastcommit/<%=res[:version]%>/<%=res[:repo]%>/<%=@item[:Package]%>.svg"
+          alt="Last commit badge"
+          title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"
+        />
+      </a>
+    <% else %>
+      <a href="<%=res[:report_url]%>">
+        <img
+          src="/images/shields/lastcommit/Unknown.svg"
+          alt="Last commit badge"
+          title="time since last commit. possible values: today, < 1 week, < 1 month, < 3 months, since release, before release"
+        />
+      </a>
+    <% end %>
+  <% end %>
+
+  <%# shield 7: dependencies %>
+  <% if ['bioc/', 'data/experiment/', 'workflows/' ].include? @item[:repo] %>
+    <% path="assets" + "/shields/dependencies/" + res[:version] + "/" + @item[:Package] + ".svg" %>
+    <% if File.exist?(path) %>
+      <a href="#since">
+        <img
+          src="/shields/dependencies/<%=res[:version]%>/<%=@item[:Package]%>.svg"
+          alt="Dependency count badge"
+          title="Number of recursive dependencies needed to install package."
+        />
+      </a>
+    <% else %>
+      <a href="#since">
+        <img
+          src="/images/shields/dependencies/unknown-dependencies.svg"
+          alt="Dependency count badge"
+          title="Number of recursive dependencies need to install package."
+        />
+      </a>
+    <% end %>
+  <% end %>
+</section>
+<% end %>
+
+<p>
+  DOI:
+  <a
+    title="DOI for use in publications, etc., will always redirect to current release version (or devel if package is not in release yet)."
+    href="https://doi.org/doi:10.18129/B9.bioc.<%=@item[:Package]%>"
+  >
+    10.18129/B9.bioc.<%=@item[:Package]%>
+  </a>
+</p>
+</div>

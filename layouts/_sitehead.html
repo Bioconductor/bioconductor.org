@@ -1,10 +1,14 @@
+<!-- htmllint preset="none" -->
 <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="Content-Language" content="en-us" />
   <meta name="robots" content="all" />
-  
-<% if  item.identifier =~ /^\/help\/bioc-views\/package-pages\// \
-  and not item.identifier =~ /\/all-/ %>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="The Bioconductor project aims to develop and share open source software for precise and repeatable analysis of biological data. We foster an inclusive and collaborative community of developers and data scientists." />
+
+  <% if item.identifier =~ /^\/help\/bioc-views\/package-pages\// and not
+  item.identifier =~ /\/all-/ %>
   <meta property="og:title" content="<%= item[:title] %>" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Bioconductor" />
@@ -13,53 +17,53 @@
   <meta property="og:image" content="http://bioconductor.org/images/logo/jpg/bioconductor_logo_rgb.jpg" />
 <% end %>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-WJMEEH1J58"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-WJMEEH1J58');
-</script>
-
   <%
-    if (item.identifier  =~ /BiocViews\.html$/)
-        item[:rebase] = true
+    if (item.identifier =~ /BiocViews\.html$/)
+      item[:rebase] = true
     end
-   %>
-  
-  <% if !item[:rebase].nil? && item[:rebase]%>
-    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
-    <script type="text/javascript">
-        if (!window.location.href.match(/bioconductor\.org|\/\/localhost/i)) {
-            var mirror = true;
-            document.write('<base href="//www.bioconductor.org"/>\n');
-        } 
-    </script>
-  <% else %>
-    <script type="text/javascript" src="/js/jquery.js"></script>
-  <% end %>
-  <%# see about including this conditionally, only needed for pkg landing pages:%>
-  <script src="/js/jquery.tools.min.js"></script>
-
-  
-  <% 
-	title = " - #{@item[:title]}"
-	title = "" if @item[:title].nil? or @item[:title].strip.empty?
   %>
+    
+  <%
+    title = " - #{@item[:title]}"
+    title = "" if @item[:title].nil? or @item[:title].strip.empty?
+  %>
+    
   <title>Bioconductor<%= title %></title>
-  <link rel="stylesheet" type="text/css" href="/style/bioconductor.css" media="screen" /><% if item.identifier =~ /^\/help\/workflows\/.*\// %>
-  <link rel="stylesheet" type="text/css" href="/style/workflows.css" media="screen" /><% end %>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/default.min.css">
+  <link rel="stylesheet" href="/style/existing.css" />
+   
+  <!-- General styling -->
+  <link rel="stylesheet" type="text/css" href="/style/base/fonts.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/base/colors.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/base/typography.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/base/layout.css" media="screen" />
+    
+  <!-- Component styling -->
+
+  <link rel="stylesheet" type="text/css" href="/style/components/code.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/gallery.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/blockquote.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/lists.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/breadcrumbs.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/buttons.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/components/tables.css" media="screen" />
+
+  <!-- Block styling -->
+  <link rel="stylesheet" type="text/css" href="/style/sections/announcement.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/sections/hero.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/sections/header.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/sections/sidebar.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/sections/footer.css" media="screen"/>
+
+  <!-- Page styling -->
+  <link rel="stylesheet" type="text/css" href="/style/pages/home.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/pages/get-started.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/pages/learn-and-dev.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/pages/about.css" media="screen" />
+  <link rel="stylesheet" type="text/css" href="/style/pages/packages.css" media="screen"/>
+
   <link rel="SHORTCUT ICON" type="image/x-icon" href="/favicon.ico" />
   <link rel="ICON" type="image/x-icon" href="/favicon.ico" />
-  <script type="text/javascript" src="/js/bioconductor.js"></script>
- <% if item.identifier =~ /help\/cloud/ and not item.identifier =~ /launch/ %>
-  <script type="text/javascript" src="/js/encrypt.min.js"></script>
- <% end %>
-  <script type="text/javascript" src="/js/jquery.corner.js"></script>
-  <script type="text/javascript" src="/js/jquery.timeago.js"></script>
-  <script type="text/javascript" src="/js/bioc-style.js"></script>
-  <script type="text/javascript" src="/js/versions.js"></script>
+
 
 </head>

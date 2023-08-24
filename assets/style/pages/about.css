@@ -1,0 +1,37 @@
+.about-join .join {
+  width: 99.8%;
+  margin-bottom: 2rem;
+}
+
+.about-join .join-img-div {
+  display: none;
+}
+
+.about-join .gradient-border-inner {
+  padding: 2rem;
+}
+
+.about-join .join-content,
+.about-join h2 {
+  padding: 0;
+}
+
+.about-join .join-buttons {
+  padding-bottom: 0.62rem;
+}
+
+/* disabled here due to a linting error, but we need the webkit marker for this to work */
+
+/* stylelint-disable */
+.about-join .text-gradient {
+  background: var(--misc-pink);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* stylelint-enable */
+
+#european-bioconductor-society {
+  display: grid;
+  grid-template-columns: 1fr 75px;
+  gap: 1rem;
+}

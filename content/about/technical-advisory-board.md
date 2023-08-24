@@ -1,4 +1,4 @@
-# ![](/images/icons/magnifier.gif)Technical Advisory Board
+# Technical Advisory Board
 
 The Technical Advisory Board purpose is to support the _Bioconductor_
 mission by
@@ -21,131 +21,84 @@ board. Governance was formalized in February, 2019.
 
 ## Current members
 
- 
-<table width="100%">
-  <tr>
-    <td width="33%">
-      <img src="/images/tab/VinceCarey.png"
-           width="100%" alt="Vince Carey" title="Vince Carey"/>
-      <figcaption>Vince Carey, Brigham & Women’s, Harvard Medical School, USA. Chair.
-      <a href="https://vjcitn.github.io/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/LeviWaldron.png"
-            width="100%" alt="Levi Waldron" title="Levi Waldron"/>
-      <figcaption>Levi Waldron, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
-      <a href="http://waldronlab.io/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/CharlotteSoneson.png"
-           width="100%" alt="Charlotte Soneson" title="Charlotte Soneson"/>
-      <figcaption>Charlotte Soneson, Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland. Secretary.
-      <a href="https://csoneson.github.io/">Website</a>
-      </figcaption>
-    </td>
-  </tr>
 
-  <tr> 
-    <td width="33%">
-      <img src="/images/tab/HenrikBengtsson.jpg"
-           width="100%" alt="Henrik Bengtsson" title="Henrik Bengtsson"/>
-      <figcaption> Henrik Bengtsson, University of California, San Francisco, USA.
-      <a href="https://profiles.ucsf.edu/henrik.bengtsson">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/HelenaCrowell.png"
-           width="100%" alt="Helena Lucia Crowell" title="Helena Lucia Crowell"/>
-      <figcaption> Helena Lucia Crowell, University of Zurich, Switzerland.
-      <a href="http://helenalc.github.io/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/SeanDavis.png"
-           width="100%" alt="Sean Davis" title="Sean Davis"/>
-      <figcaption>  Sean Davis, University of Colorado Anschutz School of Medicine, USA.
-      <a href="https://seandavi.github.io/">Website</a>
-      </figcaption>
-    </td>
-  </tr>
-  
-  <tr>
-    <td width="33%">
-      <img src="/images/tab/LaurentGatto.png"
-           width="100%" alt="Laurent Gatto" title="Laurent Gatto"/>
-      <figcaption>  Laurent Gatto, Institut de Duve, Belgium.
-      <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/LudwigGeistlinger.png"
-           width="100%" alt="Ludwig Geistlinger" title="Ludwig Geistlinger"/>
-      <figcaption> Ludwig Geistlinger, Center for Computational Biomedicine, Harvard Medical School, Boston, MA, USA.
-      <a href="https://computationalbiomed.hms.harvard.edu/about/people/ludwig-geistlinger-phd/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/KasperHansen.png"
-           width="100%" alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
-      <figcaption> Kasper Daniel Hansen, Bloomberg School of Public Health, Johns Hopkins University.
-      <a href="http://www.biostat.jhsph.edu/~khansen/">Website</a>
-      </figcaption>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
-      <img src="/images/tab/StephanieHicks.png"
-           width="100%" alt="Stephanie Hicks" title="Stephanie Hicks"/>
-      <figcaption> Stephanie Hicks, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA.
-      <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
+<div class="gallery">
+  <div class="gallery-card">
+    <img src="/images/tab/VinceCarey.png"
+           alt="Vince Carey" title="Vince Carey"/>
+    <a href="https://vjcitn.github.io/">Vince Carey</a>, Brigham & Women’s, Harvard Medical School, USA. Chair
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/LeviWaldron.png"
+            alt="Levi Waldron" title="Levi Waldron"/>
+    <a href="http://waldronlab.io/">Levi Waldron</a>, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/CharlotteSoneson.png"
+          alt="Charlotte Soneson" title="Charlotte Soneson"/>
+    <a href="https://csoneson.github.io/">Charlotte Soneson</a>, Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland. Secretary
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/HenrikBengtsson.jpg"
+          alt="Henrik Bengtsson" title="Henrik Bengtsson"/>
+    <a href="https://profiles.ucsf.edu/henrik.bengtsson">Henrik Bengtsson</a>, University of California, San Francisco, USA.
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/HelenaCrowell.png"
+          alt="Helena Crowell" title="Helena Crowell"/>
+    <a href="http://helenalc.github.io/">Helena Crowell</a>, University of Zurich, Switzerland.
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/SeanDavis.png"
+          alt="Sean Davis" title="Sean Davis"/>
+    <a href="https://seandavi.github.io/">Sean Davis</a>, University of Colorado Anschutz School of Medicine, USA
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/LaurentGatto.png"
+          alt="Laurent Gatto" title="Laurent Gatto"/>
+    <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Laurent Gatto</a>, Institut de Duve, Belgium
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/LudwigGeistlinger.png"
+          alt="Ludwig Geistlinger" title="Ludwig Geistlinger"/>
+    <a href="https://computationalbiomed.hms.harvard.edu/about/people/ludwig-geistlinger-phd/">Ludwig Geistlinger</a>, Center for Computational Biomedicine, Harvard Medical School, Boston, MA, USA.
+  </div>
+   <div class="gallery-card">
+    <img src="/images/tab/KasperHansen.png"
+          alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
+    <a href="http://www.biostat.jhsph.edu/~khansen/">Kasper Daniel Hansen</a>, Bloomberg School of Public Health, Johns Hopkins University
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/StephanieHicks.png"
+          alt="Stephanie Hicks" title="Stephanie Hicks"/>
+   <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Stephanie Hicks</a>, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA
+  </div>
+  <div class="gallery-card">
       <img src="/images/tab/WolfgangHuber.png"
-           width="100%" alt="Wolfgang Huber" title="Wolfgang Huber"/>
-      <figcaption> Wolfgang Huber, European Molecular Biology Laboratory, Heidelberg, Germany.
-      <a href="http://www.embl.de/research/units/genome_biology/huber/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/RafaelIrizarry.png"
-           width="100%" alt="Rafael Irizarry" title="Rafael Irizarry"/>
-      <figcaption> Rafael Irizarry, Dana-Farber Cancer Institute, USA
-      <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Website</a>
-      </figcaption>
-    </td>
-  </tr>
-
-  <tr>
-    <td width="33%">
-      <img src="/images/tab/LoriShepherd.png"
-           width="100%" alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
-      <figcaption> Lori (Shepherd) Kern, Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA.
-      <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Website</a> 
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/MichaelLove.png"
-           width="100%" alt="Michael Love" title="Michael Love"/>
-      <figcaption> Michael Love, University of North Carolina-Chapel Hill, USA.
-      <a href="https://mikelove.github.io/">Website</a>
-      </figcaption>
-    </td>
-    <td width="33%">
-      <img src="/images/tab/DavideRisso.png"
-           width="100%" alt="Davide Risso" title="Davide Risso"/>
-      <figcaption> Davide Risso, University of Padova, Italy.
-      <a href="https://drisso.github.io/">Website</a>
-      </figcaption>
-    </td>
-  </tr>
-</table>
-
-
-
+            alt="Wolfgang Huber" title="Wolfgang Huber"/>
+      <a href="http://www.embl.de/research/units/genome_biology/huber/">Wolfgang Huber</a>, European Molecular Biology Laboratory, Heidelberg, Germany
+    </div>
+  <div class="gallery-card">
+    <img src="/images/tab/RafaelIrizarry.png"
+          alt="Rafael Irizarry" title="Rafael Irizarry"/>
+    <<a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Rafael Irizarry</a>, Dana-Farber Cancer Institute, USA
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/LoriShepherd.png"
+          alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
+    <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a> , Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/MichaelLove.png"
+          alt="Michael Love" title="Michael Love"/>
+    <a href="https://mikelove.github.io/">Michael Love</a>, University of North Carolina-Chapel Hill, USA.
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/DavideRisso.png"
+          alt="Davide Risso" title="Davide Risso"/>
+    <a href="https://drisso.github.io/">Davide Risso</a>, University of Padova, Italy
+  </div>
+</div>
 
 ## Meeting minutes
 
@@ -177,7 +130,7 @@ minutes were maintained was on 2 May, 2019.
   [2021-11-04](2021-11-04-minutes.pdf),
   [2021-10-07](2021-10-07-minutes.pdf),
   [2021-09-02](2021-09-02-minutes.pdf),
-  (no August meeting), 
+  (no August meeting),
   [2021-07-01](2021-07-01-minutes.pdf),
   [2021-06-03](2021-06-03-minutes.pdf),
   [2021-05-06](2021-05-06-minutes.pdf),
@@ -199,16 +152,14 @@ minutes were maintained was on 2 May, 2019.
 - [2019-12-05](2019-12-05-minutes.pdf),
   [2019-11-07](2019-11-07-minutes.pdf),
   [2019-10-03](2019-10-03-minutes.pdf),
-  [2019-09-05](2019-09-05-minutes.pdf), 
-  [2019-08-01](2019-08-01-minutes.pdf), 
+  [2019-09-05](2019-09-05-minutes.pdf),
+  [2019-08-01](2019-08-01-minutes.pdf),
   [2019-07-10](2019-07-10-minutes.pdf),
-  [2019-06-06](2019-06-06-minutes.pdf), 
+  [2019-06-06](2019-06-06-minutes.pdf),
   [2019-05-02](2019-05-02-minutes.pdf)
-  
-  
+
 ## Contact
 
-If you would like to contact the Technical Advisory Board please reach out to us on the Bioconductor slack 
+If you would like to contact the Technical Advisory Board please reach out to us on the Bioconductor slack
 
 ![Technical Advisory Board](/images/tab/tab.png)
-

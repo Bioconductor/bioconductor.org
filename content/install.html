@@ -1,0 +1,357 @@
+<div class="install-section">
+  <h3 id="install-bioconductor-packages">Install Bioconductor Packages</h3>
+  <p>To install core packages, type the following in an R command window:</p>
+
+  <pre>
+<code class="dark nohighlight">
+if (!require("BiocManager", quietly = TRUE))
+  install.packages("BiocManager")
+BiocManager::install(version = "3.17")
+</code>
+</pre>
+
+  <p>To install core packages, type the following in an R command window:</p>
+
+  <pre>
+<code class="dark nohighlight">
+BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
+</code>
+</pre>
+
+  <p>
+    The <strong>install()</strong> function (in the BiocManager package) has
+    arguments that change its default behavior; type ?install for further help.
+  </p>
+  <p>
+    For a more detailed explanation on using BiocManager and its advanced usage,
+    such as version switching, please refer to the
+    <a
+      href="https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html"
+      >BiocManager vignette</a
+    >.
+  </p>
+
+  <h3 id="find-bioconductor-packages">Find Bioconductor Packages</h3>
+
+  <p>Visit the <a href="/packages/release/BiocViews.html#___Software" >software package list</a> to discover available packages.</p>
+  <p>
+    To search through available packages programmatically, use the following:
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+BiocManager::available()
+</code>
+</pre>
+
+  <p>
+    For example, using a “^org” search pattern will show all of the available
+    organism annotation packages.
+  </p>
+
+  <h3 id="update-bioconductor-packages">
+    Update Installed Bioconductor Packages
+  </h3>
+
+  <p>
+    Bioconductor packages, especially those in the development branch, are
+    updated fairly regularly. To identify packages requiring update within your
+    version of Bioconductor, start a new session of R and enter:
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+BiocManager::install()
+</code>
+</pre>
+
+  <p>
+    Use the argument <strong>ask=FALSE</strong> to update old packages without
+    being prompted. Read the help page for ?install for additional details.
+  </p>
+
+  <h5>Updgrading Installed Bioconductor Packages</h5>
+
+  <p>
+    Due to the development cycle, all versions of R will eventually support more
+    than one version of Bioconductor. To use the latest version of Bioconductor
+    for your version of R, enter:
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+BiocManager::install()
+</code>
+</pre>
+
+  <p>
+    Remember that more recent versions of Bioconductor may be available if your
+    version of R is out-of-date. BiocManager will notify you when your version
+    of R is out-of-date.
+  </p>
+
+  <p>
+    For more details on Bioconductor approaches to versioning, see the
+    <a
+      href="https://cran.r-project.org/web/packages/BiocManager/vignettes/BiocManager.html#managing-multiple-versions"
+      >advanced section</a
+    >
+    in the vignette and version numbering in the
+    <a href="https://contributions.bioconductor.org/versionnum.html"
+      >developer reference</a
+    >
+    section.
+  </p>
+
+  <h5>Recompiling Installed Bioconductor Packages</h5>
+
+  <p>
+    Rarely, underlying changes in the operating system require ALL installed
+    packages to be recompiled for source (C or Fortran) compatibility. One way
+    to address this might be to start a new R session and enter:
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+if (!require("BiocManager", quietly = TRUE))
+    install.packages("BiocManager")
+pkgs <- rownames(installed.packages())
+BiocManager::install(pkgs, type = "source", checkBuilt = TRUE)
+</code>
+</pre>
+
+  <p>
+    As this will reinstall all currently installed packages, it likely involves
+    a significant amount of network bandwidth and compilation time. All packages
+    are implicitly updated, and the cumulative effect might introduce wrinkles
+    that disrupt your work flow. It also requires that you have the necessary
+    compilers installed.
+  </p>
+
+  <h3 id="troubleshoot-bioconductor-packages">
+    Troubleshoot Package Installations
+  </h3>
+
+  <p>Use the commands:</p>
+
+  <pre>
+<code class="dark nohighlight">
+BiocManager::valid()     ## R version 3.5 or later
+</code>
+</pre>
+
+  <p>
+    to flag packages that are either out-of-date or too new for your version of
+    Bioconductor. The output suggests ways to solve identified problems, and the
+    help page <strong>?valid</strong> lists arguments influencing the behavior
+    of the function.
+  </p>
+
+  <h5>Troubleshoot BiocManager</h5>
+
+  <p>
+    One likely reason for BiocManager not working on your system could be that
+    your version of R is too old for <stronger>BiocManager</stronger>. In order
+    avoid this issue, please ensure that you have the latest version of R
+    installed in your system. BiocManager supports R versions from 3.5.0 and
+    above.
+  </p>
+
+  <h3 id="why-biocmanagerinstall">Why use BiocManager::install()?</h3>
+
+  <p>
+    <strong>BiocManager::install()</strong> is the recommended way to install
+    Bioconductor packages. There are several reasons for preferring this to the
+    ‘standard’ way in which R pacakges are installed via
+    <strong>install.packages()</strong>.
+  </p>
+
+  <p>
+    Bioconductor has a repository and release schedule that differs from R
+    (Bioconductor has a ‘devel’ branch to which new packages and updates are
+    introduced, and a stable ‘release’ branch emitted once every 6 months to
+    which bug fixes but not new features are introduced).
+  </p>
+
+  <p>
+    A consequence of the mismatch between R and Bioconductor release schedules
+    is that the Bioconductor version identified by
+    <strong>install.packages()</strong> is sometimes not the most recent
+    ‘release’ available. For instance, an R minor version may be introduced some
+    months before the next Bioc release. After the Bioc release the users of the
+    R minor version will be pointed to an out-of-date version of Bioconductor.
+  </p>
+
+  <p>
+    A consequence of the distinct ‘devel’ branch is that
+    <strong>install.packages()</strong>
+    sometimes points only to the ‘release’ repository, whereas Bioconductor
+    developers and users wanting leading-edge features wish to access the
+    Bioconductor ‘devel’ repository. For instance, the Bioconductor 3.0 release
+    is available for R.3.1.x, so Bioconductor developers and leading-edge users
+    need to be able to install the devel version of Bioconductor packages into
+    the same version (though perhaps different instance or at least library
+    location) of R that supports version 2.14 of Bioconductor.
+  </p>
+
+  <p>
+    An indirect consequence of Bioconductor’s structured release is that
+    packages generally have more extensive dependencies with one another, both
+    explicitly via the usual package mechanisms and implicitly because the
+    repository, release structure, and Bioconductor community interactions favor
+    re-use of data representations and analysis concepts across packages. There
+    is thus a higher premium on knowing that packages are from the same release,
+    and that all packages are current within the release.
+  </p>
+
+  <p>
+    The BiocManager package serves as the primary way to ensure that the
+    appropriate Bioconductor installation is used with respect to the version of
+    R in use regardless of the R and Bioconductor release cycles.
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+> library(BiocManager)
+Bioconductor version 3.9 (BiocManager 1.30.4), ?BiocManager::install
+for help
+</code>
+</pre>
+
+  <p>
+    The <strong>install()</strong> function is provided by BiocManager. This is
+    a wrapper around install.packages, but with the repository chosen according
+    to the version of Bioconductor in use, rather than to the version relevant
+    at the time of the release of R.
+  </p>
+
+  <p>
+    <strong>install()</strong> also nudges users to remain current within a
+    release, by default checking for out-of-date packages and asking if the user
+    would like to update.
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+> BiocManager::install()
+Bioconductor version 3.9 (BiocManager 1.30.4), R 3.6.0 Patched
+(2019-05-02 r76454)
+Update old packages: 'BBmisc', 'genefilter', 'GenomicAlignments',
+  'GenomicRanges', 'IRanges', 'MASS', 'reshape2', 'Rgraphviz',
+  'RJSONIO', 'rtracklayer'
+Update all/some/none? [a/s/n]:
+</code>
+</pre>
+
+  <p>
+    The BiocManager package provides facilities for switching to the ‘devel’
+    version of Bioconductor.
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+> BiocManager::install(version = "devel")
+Upgrade 89 packages to Bioconductor version '3.10'? [y/n]: y
+Installing package(s) 'BiocVersion'
+trying URL 'https://bioconductor.org/packages/3.10/bioc/src/contrib/BiocVersion_3.10.0.tar.gz'
+Content type 'application/x-gzip' length 987 bytes
+==================================================
+downloaded 987 bytes
+
+* installing *source* package 'BiocVersion' ...
+** help
+*** installing help indices
+** building package indices
+** testing if installed package can be loaded
+* DONE (BiocVersion)
+
+...
+Bioconductor version 3.10 (BiocManager 1.30.4), ?BiocManager::install for
+help
+</code>
+</pre>
+
+  <p>
+    (at some points in the R / Bioconductor release cycle use of ‘devel’
+    requires use of a different version of R itself, in which case the attempt
+    to install devel fails with an appropriate message).
+  </p>
+
+  <p>
+    The BiocManager package also provides <strong>valid()</strong> to test that
+    the installed packages are not a hodgepodge from different Bioconductor
+    releases (the ‘too new’ packages have been installed from source rather than
+    a repository; regular users would seldom have these).
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+> BiocManager::valid()
+
+* sessionInfo()
+
+R version 3.6.0 Patched (2019-05-02 r76454)
+Platform: x86_64-pc-linux-gnu (64-bit)
+...
+
+Bioconductor version '3.9'
+
+  * 2 packages out-of-date
+  * 0 package too new
+...
+create a valid installation with
+
+  BiocManager::install(c(
+    "GenomicFeatures", "AnnotationDbi"
+  ), update = TRUE, ask = FALSE)
+
+more details: BiocManager::valid()$too_new, BiocManager::valid()$out_of_date
+
+Warning message:
+2 packages out-of-date; 0 packages too new
+</code>
+</pre>
+
+  <p>
+    For users who spend a lot of time in Bioconductor, the features outlined
+    above become increasingly important and <strong>install()</strong> is much
+    preferred to <strong>install.packages()</strong>.
+  </p>
+
+  <h3>Pre-configured Bioconductor</h3>
+
+  <p>
+    Bioconductor is also available as
+    <a href="/help/docker/">Docker images</a> or available for use in the
+    <a href="https://anvil.bioconductor.org/">AnVIL</a>.
+  </p>
+
+  <h3>Legacy and Older R Versions</h3>
+
+  <p>
+    is always recommended to update to the most current version of R and
+    Bioconductor. If this is not possible and <strong>R < 3.5.0</strong> ,
+    please use the following for installing Bioconductor packages.
+  </p>
+
+  <p>To install core packages, type the following in an R command window:</p>
+
+  <pre>
+<code class="dark nohighlight">
+source("https://bioconductor.org/biocLite.R")
+</code>
+</pre>
+
+  <p>
+    Install specific packages, e.g., “GenomicFeatures” and “AnnotationDbi”,
+    with:
+  </p>
+
+  <pre>
+<code class="dark nohighlight">
+BiocInstaller::biocLite(c("GenomicFeatures", "AnnotationDbi"))
+</code>
+</pre>
+</div>

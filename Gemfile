@@ -1,6 +1,6 @@
 raise 'Ruby version must be 2.3 or greater' unless  RUBY_VERSION.to_f >= 2.3
 source 'http://rubygems.org'
-gem "nanoc", "~> 4.0"
+gem "nanoc", "~> 4.9.5"
 gem "pry"
 gem "pry-byebug"
 gem "rdiscount"

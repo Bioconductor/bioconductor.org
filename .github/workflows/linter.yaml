@@ -1,0 +1,35 @@
+name: Run Linters
+on:
+  pull_request:
+    types: [opened, reopened, synchronize]
+
+jobs:
+  build:
+    if: github.event.pull_request.draft == false
+    name: Run Linters
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+      statuses: write
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Lint Code Base
+        uses: super-linter/super-linter/slim@v5
+        env:
+          LINTER_RULES_PATH: /
+          VALIDATE_ALL_CODEBASE: false
+          VALIDATE_GITHUB_ACTIONS: false
+          VALIDATE_MARKDOWN: false
+          VALIDATE_NATURAL_LANGUAGE: false
+          VALIDATE_JSCPD: false
+          VALIDATE_JSON: false
+          VALIDATE_R: false
+          VALIDATE_RUBY: false
+          VALIDATE_JAVASCRIPT_STANDARD: false
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          DEFAULT_BRANCH: redesign2023
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

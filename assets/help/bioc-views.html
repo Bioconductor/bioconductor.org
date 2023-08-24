@@ -1,5 +1,7 @@
-
-<script type="text/javascript" src="/packages/json/<%=get_version_from_item_id(@item)%>/tree.js"></script>
+<script
+  type="text/javascript"
+  src="/packages/json/<%=get_version_from_item_id(@item)%>/tree.js"
+></script>
 <%= script_tag_for_package_data(@item) %>
 
 <script type="text/javascript" src="/js/jquery.cookie.js"></script>
@@ -8,52 +10,43 @@
 <script type="text/javascript" src="/js/jsnetworkx.js"></script>
 <script type="text/javascript" src="/js/bioc_views.js"></script>
 
-<!-- DataTables CSS -->
-<link rel="stylesheet" type="text/css" href="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/css/jquery.dataTables.css">
- 
 <!-- DataTables -->
-<script type="text/javascript" charset="utf8" src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"></script>
+<script
+  type="text/javascript"
+  charset="utf8"
+  src="//ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.4/jquery.dataTables.min.js"
+></script>
 
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<link
+  rel="stylesheet"
+  href="//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"
+/>
 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
 <!--<link rel="stylesheet" href="/resources/demos/style.css">-->
 
-
-<h1>All Packages</h1>
-
-
-
-<link type="text/css" rel="stylesheet" href="/style/tree-widget/!style.css"/>
-
+<link type="text/css" rel="stylesheet" href="/style/tree-widget/!style.css" />
 
 <div id="tree_outer" class="biocViewsTreeContainer">
-    <div class="do_not_rebase">
-        <div style="float:left;width:33%;">
-            <h3>Bioconductor version <span id="bioc_version"></span></h3>
-            <div id="tree-toggler-div">
-                <p>&nbsp;</p>
-                <p>
-                    <input id="tree-toggler" type="checkbox">
-                    Developers: check this box
-                    to toggle the visibility of childless biocViews.
-                </p>
-            </div>
-
-            <div class="ui-widget">
-                <label for="autocompleter">Autocomplete biocViews search:</label>
-                <input id="autocompleter" size="35"/>
-                <p>&nbsp;</p>
-            </div>
-
-            <div id="tree"></div>
-        </div>
-        <div id="packages" class="biocViewsPackages"></div>
-        <div id="below_tree" class="biocViewsBelowTree"></div>
+  <div class="packages-subnav">
+    <p class="format-bold">
+      Bioconductor version <span id="bioc_version"></span>
+    </p>
+    <div id="tree-toggler-div">
+      <p>
+        <input id="tree-toggler" type="checkbox" />
+        Developers: check this box to toggle the visibility of childless
+        biocViews.
+      </p>
     </div>
+
+    <div class="ui-widget">
+      <label for="autocompleter">Find biocViews:</label>
+      <input type="text" id="autocompleter" size="35" class="package-input" />
+    </div>
+
+    <div id="tree"></div>
+  </div>
+
+  <div id="packages" class="biocViewsPackages"></div>
+  <div id="below_tree" class="biocViewsBelowTree"></div>
 </div>
-
-
-
-</body>
-</html>

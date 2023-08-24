@@ -1,0 +1,22 @@
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.gallery-card {
+  width: 320px;
+  flex-grow: 1;
+}
+
+.gallery-card img {
+  display: block;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.gallery-card a {
+  color: black;
+  text-decoration: underline;
+}

@@ -1,4 +1,4 @@
-![](/images/icons/magnifier.gif)Mirrors
+Mirrors
 =======================================
 
 If you are interested in maintaining a mirror of this site (for either

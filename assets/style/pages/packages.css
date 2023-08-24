@@ -1,0 +1,149 @@
+/* stylelint-disable selector-class-pattern, selector-id-pattern */
+
+details {
+  margin: 1rem 0;
+}
+
+summary.package-details {
+  display: block;
+  margin: 1rem 0;
+  font-weight: 700;
+  background-image: url("/images/icons/svgs/chevron-down.svg");
+  background-repeat: no-repeat;
+  background-position: center right;
+  cursor: pointer;
+}
+
+.badges {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.biocViewsTreeContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2rem;
+  margin-left: 1px;
+}
+
+.biocViewsPackages {
+  display: flex;
+  flex-direction: column;
+}
+
+.packages-subnav,
+#biocViews_package_table select {
+  padding: 1rem;
+  border: 1px solid #0000;
+  border-radius: 0.5rem;
+}
+
+.packages-subnav {
+  background: linear-gradient(white, white) padding-box,
+    var(--gradient-purpleblue) border-box;
+  margin-top: 8px;
+  float: left;
+  width: 33%;
+  height: fit-content;
+}
+
+.package-input,
+#biocViews_package_table_filter input {
+  border-radius: 0.25rem;
+  border: 1px solid var(--neutral-n75);
+  height: 2rem;
+  padding: 0 0.5rem;
+}
+
+.package-input {
+  margin-top: 0.63rem;
+}
+
+#biocViews_package_table_info {
+  margin-top: 1rem;
+}
+
+#package-info-wrapper,
+#package-entries-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+#biocViews_package_table_paginate {
+  display: inherit;
+  margin: 1rem 0 2rem;
+  font-weight: 700;
+  gap: 1rem;
+}
+
+#biocViews_package_table_previous,
+#biocViews_package_table_next {
+  color: var(--neutral-n200);
+  cursor: pointer;
+}
+
+#biocViews_package_table_filter label {
+  gap: 24px;
+  display: flex;
+  align-items: center;
+}
+
+#package-entries-wrapper {
+  margin-bottom: 1rem;
+  align-items: center;
+}
+
+#biocViews_package_table_length select {
+  padding: 0.5rem 0.65rem 0.5rem 0.5rem;
+  border: 2px solid var(--neutral-n75);
+  border-radius: 0.5rem;
+}
+
+#badges-box section,
+#badges-box p {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+#badges-box p {
+  border-left: 0.19rem solid var(--primary);
+  padding-left: 0.75rem;
+}
+
+ul.ui-autocomplete li::marker {
+  content: none;
+}
+
+.bioc-citation {
+  background-color: var(--neutral-n50);
+  border: 1px solid var(--neutral-n75);
+  padding: 1rem 1rem 0;
+  margin: 0.5rem 0 1rem;
+}
+
+@media (max-device-width: 1450px), (max-width: 1450px) {
+  .biocViewsTreeContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .packages-subnav {
+    float: none;
+    width: inherit;
+  }
+
+  #autocompleter {
+    width: 95%;
+  }
+
+  #package-entries-wrapper {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  #package-info-wrapper {
+    gap: 2rem;
+  }
+}
