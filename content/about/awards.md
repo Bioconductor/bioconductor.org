@@ -60,25 +60,23 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 
 - Deadline for nominations: May 31, 2023.
 - Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
-# Awardees 2022
+# Awardees 2023
 
-## Sean Davis
+## Susan Holmes
+<img src="/images/biocawards/writeup/SusanHolmes.png" width="100%" height="100%"/>
 
-<img src="/images/biocawards/writeup/Davis.png" width="100%" height="100%"/>
+## Matthew Ritchie
+<img src="/images/biocawards/writeup/MatthewRitchie.png" width="100%" height="100%"/>
 
-## Erica Feick
+## Constantin Ahlmann-Eltze
+<img src="/images/biocawards/writeup/ConstantinAhlmann-Eltze.png" width="100%" />
 
-<img src="/images/biocawards/writeup/Feick.png" width="100%" height="100%"/>
-
-## Nicole Kramer
-
-<img src="/images/biocawards/writeup/Kramer.png" width="100%" />
-
-## Herv&eacute; Pag&egrave;s
-
-<img src="/images/biocawards/writeup/Pages.png" width="100%" />
+## Simone Bell
+<img src="/images/biocawards/writeup/SimoneBell.png" width="100%" />
 
 # Previous Winners
+
+2022: Sean Davis, Erica Feick, Nicole Kramer, Herv&eacute; Pag&egrave;s
 
 2021: Aedin Culhane, Laurent Gatto, James MacDonald, Charlotte Soneson, Leonardo Collado-Torres
 
