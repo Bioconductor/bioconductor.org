@@ -64,21 +64,23 @@ No
 * Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 
-# Awardees 2022
+# Awardees 2023
 
-## Sean Davis
-<img src="/images/biocawards/writeup/Davis.png" width="100%" height="100%"/>
+## Susan Holmes
+<img src="/images/biocawards/writeup/SusanHolmes.png" width="100%" height="100%"/>
 
-## Erica Feick
-<img src="/images/biocawards/writeup/Feick.png" width="100%" height="100%"/>
+## Matthew Ritchie
+<img src="/images/biocawards/writeup/MatthewRitchie.png" width="100%" height="100%"/>
 
-## Nicole Kramer
-<img src="/images/biocawards/writeup/Kramer.png" width="100%" />
+## Constantin Ahlmann-Eltze
+<img src="/images/biocawards/writeup/ConstantinAhlmann-Eltze.png" width="100%" />
 
-## Herv&eacute; Pag&egrave;s
-<img src="/images/biocawards/writeup/Pages.png" width="100%" />
+## Simone Bell
+<img src="/images/biocawards/writeup/SimoneBell.png" width="100%" />
 
 # Previous Winners
+
+2022: Sean Davis, Erica Feick, Nicole Kramer, Herv&eacute; Pag&egrave;s
 
 2021: Aedin Culhane, Laurent Gatto, James MacDonald, Charlotte Soneson, Leonardo Collado-Torres
 
