@@ -1,9 +1,8 @@
 # Bioconductor 3.18 Release Schedule
 
-This release will use R-devel. The release date for Bioc 3.18 is tentatively
-schedule for Wednesday October 25th. The following highlights important
+The release date for Bioc 3.18 is tentatively schedule for Wednesday October
+25th. The 3.18 release will use R-4.3. The following highlights important
 deadlines for the release.
-
 
 ### Friday September 29
 
