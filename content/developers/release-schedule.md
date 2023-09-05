@@ -61,7 +61,7 @@ deadlines for the release.
 ### Tuesday October 24
 
 * Creation of the Bioc 3.18 release branch. Development can resume on
-  trunk, but changes there will not be part of the release.
+  devel branch, but changes there will not be part of the release.
 
 ### Wednesday October 25
 
