@@ -58,7 +58,7 @@ board. Governance was formalized in February, 2019.
     <td width="33%">
       <img src="/images/tab/HelenaCrowell.png"
            width="100%" alt="Helena Lucia Crowell" title="Helena Lucia Crowell"/>
-      <figcaption> Helena Lucia Crowell, University of Zurich, Switzerland.
+      <figcaption> Helena Lucia Crowell, National Center of Genomic Analysis, Barcelona, Spain.
       <a href="http://helenalc.github.io/">Website</a>
       </figcaption>
     </td>
