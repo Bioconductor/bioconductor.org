@@ -3,6 +3,53 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages removed with Bioconductor 3.18 release
+
+Software Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.17/bioc/html/alpine.html">alpine</a></li>
+<li><a href="/packages/3.15/bioc/html/ArrayExpressHTS.html">ArrayExpressHTS</a></li>
+<li><a href="/packages/3.16/bioc/html/ASpediaFI.html">ASpediaFI</a></li>
+<li><a href="/packages/3.16/bioc/html/BiocDockerManager.html">BiocDockerManager</a></li>
+<li><a href="/packages/3.16/bioc/html/ChIC.html">ChIC</a></li>
+<li><a href="/packages/3.17/bioc/html/chromswitch.html">chromswitch</a></li>
+<li><a href="/packages/3.14/bioc/html/copynumber.html">copynumber</a></li>
+<li><a href="/packages/3.16/bioc/html/CopywriteR.html">CopywriteR</a></li>
+<li><a href="/packages/3.15/bioc/html/dasper.html">dasper</a></li>
+<li><a href="/packages/3.16/bioc/html/epihet.html">epihet</a></li>
+<li><a href="/packages/3.14/bioc/html/GAPGOM.html">GAPGOM</a></li>
+<li><a href="/packages/3.16/bioc/html/GeneAccord.html">GeneAccord</a></li>
+<li><a href="/packages/3.16/bioc/html/genotypeeval.html">genotypeeval</a></li>
+<li><a href="/packages/3.16/bioc/html/maanova.html">maanova</a></li>
+<li><a href="/packages/3.15/bioc/html/metavizr.html">metavizr</a></li>
+<li><a href="/packages/3.16/bioc/html/MethCP.html">MethCP</a></li>
+<li><a href="/packages/3.16/bioc/html/MIGSA.html">MIGSA</a></li>
+<li><a href="/packages/3.16/bioc/html/MIMOSA.html">MIMOSA</a></li>
+<li><a href="/packages/3.16/bioc/html/NanoStringQCPro.html">NanoStringQCPro</a></li>
+<li><a href="/packages/3.16/bioc/html/NBSplice.html">NBSplice</a></li>
+<li><a href="/packages/3.16/bioc/html/netboxr.html">netboxr</a></li>
+<li><a href="/packages/3.17/bioc/html/NxtIRFcore.html">NxtIRFcore</a></li>
+<li><a href="/packages/3.15/bioc/html/ODER.html">ODER</a></li>
+<li><a href="/packages/3.16/bioc/html/pkgDepTools.html">pkgDepTools</a></li>
+<li><a href="/packages/3.15/bioc/html/PrecisionTrialDrawer.html">PrecisionTrialDrawer</a></li>
+<li><a href="/packages/3.16/bioc/html/proBatch.html">proBatch</a></li>
+<li><a href="/packages/3.16/bioc/html/proFIA.html">proFIA</a></li>
+<li><a href="/packages/3.15/bioc/html/pulsedSilac.html">pulsedSilac</a></li>
+<li><a href="/packages/3.16/bioc/html/savR.html">savR</a></li>
+<li><a href="/packages/3.16/bioc/html/sigPathway.html">sigPathway</a></li>
+<li><a href="/packages/3.16/bioc/html/STAN.html">STAN</a></li>
+<li><a href="/packages/3.16/bioc/html/TarSeqQC.html">TarSeqQC</a></li>
+<li><a href="/packages/3.16/bioc/html/tscR.html">tscR</a></li>
+</ul>
+
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.17/data/experiment/html/alpineData.html">alpineData</a></li>
+<li><a href="/packages/3.16/data/experiment/html/plasFIA.html">plasFIA</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.17 release
 
 Software Packages:
