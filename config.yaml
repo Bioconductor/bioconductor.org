@@ -31,8 +31,8 @@ versions:
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
-#- "data/experiment"
-#- "workflows"
+- "data/experiment"
+- "workflows"
 #- "data/annotation"
 
 ## CHANGE this when the build machines change:
