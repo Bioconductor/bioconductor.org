@@ -529,13 +529,13 @@ There are 69 new software packages in this release of Bioconductor.
   Vignettes detail application to bulk- and single cell- multi-omics
   studies.
 
-- [orthos](/packages/orthos) `orthos` decomposes RNA-seq contrasts,
+- [orthos](/packages/orthos) orthos decomposes RNA-seq contrasts,
   for example obtained from a gene knock-out or compound treatment
   experiment, into unspecific and experiment-specific components.
   Original and decomposed contrasts can be efficiently queried
   against a large database of contrasts (derived from ARCHS4,
   https://maayanlab.cloud/archs4/) to identify similar experiments.
-  `orthos` furthermore provides plotting functions to visualize the
+  orthos furthermore provides plotting functions to visualize the
   results of such a search for similar contrasts.
 
 - [partCNV](/packages/partCNV) This package uses a statistical
@@ -563,9 +563,9 @@ There are 69 new software packages in this release of Bioconductor.
   mutation arises from the tumor relative to non-tumor origin.
 
 - [plyinteractions](/packages/plyinteractions) Operate on
-  `GInteractions` objects as tabular data using `dplyr`-like verbs.
-  The functions and methods in `plyinteractions` provide a
-  grammatical approach to manipulate `GInteractions`, to facilitate
+  GInteractions objects as tabular data using dplyr-like verbs.
+  The functions and methods in plyinteractions provide a
+  grammatical approach to manipulate GInteractions, to facilitate
   their integration in genomic analysis workflows.
 
 - [QTLExperiment](/packages/QTLExperiment) QLTExperiment defines an
@@ -743,8 +743,8 @@ There are 10 new data experiment packages in this release of Bioconductor.
   These data can be accessed using the ExperimentHub workflow (see
   multiWGCNA vignettes).
 
-- [orthosData](/packages/orthosData) `orthosData` is the companion
-  ExperimentData package to the `orthos` R package for mechanistic
+- [orthosData](/packages/orthosData) orthosData is the companion
+  ExperimentData package to the orthos R package for mechanistic
   studies using differential gene expression experiments. It provides
   functions for retrieval from ExperimentHub and local caching of the
   models and datasets used internally in orthos.
@@ -823,9 +823,9 @@ There are 8 new annotation packages.
   functions for previous uncharacteried genes and alleles.We have
   developed the [DOSE](https://bioconductor.org/packages/DOSE/)
   package for semantic similarity analysis and disease enrichment
-  analysis, and `DOSE` import an Bioconductor package 'DO.db' to get
+  analysis, and DOSE import an Bioconductor package DO.db to get
   the relationship(such as parent and child) between MPO terms. But
-  `DO.db` hasn't been updated for years, and a lot of semantic
+  DO.db hasn't been updated for years, and a lot of semantic
   information is
   [missing](https://github.com/YuLab-SMU/DOSE/issues/57). So we
   developed the new package `HPO.db` for Human Human Phenotype
@@ -890,9 +890,9 @@ New Online Books
 
 There is one new online book.
 
-- [BiocBookDemo](/packages/BiocBookDemo) This package has been
+- [BiocBookDemo](https://bioconductor.org/books/3.18/BiocBookDemo/) This package has been
   created using the BiocBook package. It serves as a demo of a
-  `BiocBook` online book. Read `BiocBook` package documentation to
+  BiocBook online book. Read BiocBook package documentation to
   know more about BiocBooks.
 
 NEWS from existing Software Packages
@@ -1596,57 +1596,6 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - Prepare for Bioconductor submission
 
-                        Changes in version 0.7.0                        
-
-NEW FEATURES
-
-- Added 'parseAnalyze()' and 'writeAnalyze()'
-
-- Support for Analyze 7.5 files
-
-                        Changes in version 0.6.0                        
-
-SIGNIFICANT USER-VISIBLE CHANGES
-
-- Update vignette to include writing imzML files
-
-                        Changes in version 0.5.0                        
-
-NEW FEATURES
-
-- New 'writeImzML()' method for 'ImzMeta'
-
-- Support for writing the ".ibd" file
-
-                        Changes in version 0.4.0                        
-
-NEW FEATURES
-
-- New 'ImzMeta' class
-
-                        Changes in version 0.3.0                        
-
-NEW FEATURES
-
-- Added 'extra' argument to parseImzML()
-
-- Added 'ibd' argument to parseImzmL()
-
-- Added checking of UUIDs and checksums
-
-                        Changes in version 0.2.0                        
-
-NEW FEATURES
-
-- Added 'writeImzML()' method
-
-                        Changes in version 0.1.0                        
-
-NEW FEATURES
-
-- Get parseImzML() working
-
-- New 'ImzML' class
 
 [cBioPortalData](/packages/cBioPortalData)
 --------------
@@ -2063,13 +2012,6 @@ vignette.
 CTdata 1.1.0
 
 - New Bioconductor devel release.
-
-[CuratedAtlasQueryR](/packages/CuratedAtlasQueryR)
-------------------
-
-                        Changes in version 0.1.0                        
-
-- Added a NEWS.md file to track changes to the package.
 
 [cytomapper](/packages/cytomapper)
 ----------
@@ -2526,10 +2468,6 @@ using cell hashing and SNPs to aid in:
 [DESpace](/packages/DESpace)
 -------
 
-                        Changes in version 1.2.1                        
-
-- Update to RELEASE_3_18
-
                         Changes in version 1.0.2                        
 
 - sample-specific covariates allowed
@@ -2729,379 +2667,6 @@ https://github.com/Bioconductor/Contributions/issues/2955#issuecomment-147603723
 - March 15, 2023
 - Biocondcutor submission
 
-                       Changes in version 0.0.64                        
-
-- March 7, 2023
-- fix topTable() to deal with multiple coef as array
-- add vignette about non-linear effects
-- Add colData<- for dreamletProcessedData
-
-                       Changes in version 0.0.63                        
-
-- March 3, 2023
-- small bug fixes in topTable() and plotForest()
-
-                       Changes in version 0.0.62                        
-
-- Feb 27, 2023
-- aggregateToPseudoBulk() stores mean of cell-level covariates in
-metadata(pb)$aggr_means
-- Use these covariates in processAssays(), dreamlet(), fitVarPart()
-- extend to aggregateNonCountSignal()
-
-                       Changes in version 0.0.61                        
-
-- Jan 25, 2023
-- add plotProjection()
-- add outlier()
-- update plotForest()
-
-                       Changes in version 0.0.60                        
-
-- Jan 18, 2023
-- allow custom ordering of assays in plots
-
-                       Changes in version 0.0.59                        
-
-- Jan 12, 2023
-- update plotVolcano() to allow scales="free_y"
-- warning when p-values are zero.
-
-                       Changes in version 0.0.58                        
-
-- Jan 9, 2023
-- RewriteaggregateNonCountSignal() to include filters
-- Depend only on CRAN and BioC packages
-
-                       Changes in version 0.0.57                        
-
-- Jan 4, 2023
-- Include precision weights in aggregateNonCountSignal()
-
-                       Changes in version 0.0.56                        
-
-- Jan 3, 2023
-- Enable processing of non-count data with aggregateNonCountSignal()
-
-                       Changes in version 0.0.55                        
-
-- Dec 7, 2022
-- in plotGeneHeatmap() drop empty genes
-
-                       Changes in version 0.0.54                        
-
-- Nov 30, 2022
-- add buildClusterTreeFromPB()
-
-                       Changes in version 0.0.53                        
-
-- Nov 18, 2022
-- fix bug in topTable()
-
-                       Changes in version 0.0.52                        
-
-- Nov 18, 2022
-- add as.dreamletResult()
-- update variancePartition dependency and source
-
-                       Changes in version 0.0.51                        
-
-- Nov 10, 2022
-- in processAssays() and processOneAssay(), add argument min.prop
-indicating the minimum proportion of retained samples with
-non-zero counts
-
-                       Changes in version 0.0.50                        
-
-- Nov 2, 2022
-- fix bug in zenith_gsa() for few gene sets
-
-                       Changes in version 0.0.49                        
-
-- Oct 17, 2022
-- add computeCellCounts()
-
-                       Changes in version 0.0.48                        
-
-- Sept 14, 2022
-- add transpose argument to plotGeneHeatmap()
-- and alpha arugment to plotVoom()
-- update y axis and outlines in plotVarPart()
-
-                       Changes in version 0.0.47                        
-
-- update filtering of covariates, especially for when many samples
-are
-dropped
-
-                       Changes in version 0.0.46                        
-
-- add totalCPM column to output of cellTypeSpecificity() to use for
-filtering. Functions dreamlet::plotHeatmap() plotViolin() and
-plotPercentBars() now ignore this column
-
-                       Changes in version 0.0.45                        
-
-- update documentation
-
-                       Changes in version 0.0.44                        
-
-- add plotGeneHeatmap()
-- add argument assays to plotVarPart()
-- add extractData()
-
-                       Changes in version 0.0.43                        
-
-- faster aggregateToPseudoBulk() by speeding up check in
-.check_arg_assay()
-- more flexibility for tabToMatrix()
-
-                       Changes in version 0.0.42                        
-
-- fix misc issues with plotting and order of facets
-- fix issue with redundant variables in small sample sizes
-
-                       Changes in version 0.0.41                        
-
-- fix issue with topTable() when all random effects are dropped
-
-                       Changes in version 0.0.40                        
-
-- Compatibility with zenith package submitted to Bioconductor.
-
-                       Changes in version 0.0.39                        
-
-- fix issue with aggregateToPseudoBulk() when summarizing for just 1
-sample
-
-                       Changes in version 0.0.38                        
-
-- add getTreat() for dreamlet() result
-
-                       Changes in version 0.0.37                        
-
-- droplevels for colData in processAssays()
-
-                       Changes in version 0.0.36                        
-
-- fixes in processAssays() to detect issues with SCE
-
-                       Changes in version 0.0.35                        
-
-- remove old code and dependencies
-- change website theme
-
-                       Changes in version 0.0.34                        
-
-- bug fix for aggregateToPseudoBulk() with sample ordering
-
-                       Changes in version 0.0.33                        
-
-- bug fix for dreamletCompareClusters()
-
-                       Changes in version 0.0.32                        
-
-- add colsum2() using beachmat code.
-
-                       Changes in version 0.0.31                        
-
-- reduce memory usage in aggregateToPseudoBulk() by fixing
-`aggregateByColnames()
-
-                       Changes in version 0.0.30                        
-
-- update run_mash() to combine results across coefs
-
-                       Changes in version 0.0.29                        
-
-- fix bug in dreamlet::colsum_fast() used in pseudobulk
-
-                       Changes in version 0.0.28                        
-
-- add da_to_sparseMatrix()
-
-                       Changes in version 0.0.27                        
-
-- aggregateToPseudoBulk() for DelayedArray now uses colsum_fast()
-- this is faster then the previous version for DelayedArray
-
-                       Changes in version 0.0.26                        
-
-- update dreamletCompareClusters():
-- now compatable with plotZenithResults()
-- include flag errorsAsWarnings. If TRUE warns and returns NULL.
-
-                       Changes in version 0.0.25                        
-
-- change return value for dreamletCompareClusters() to be compatible
-with zenith_gsa()
-- fix usage of formula in dreamletCompareClusters()
-
-                       Changes in version 0.0.24                        
-
-- additional speed up aggregateToPseudoBulk() when a Seurat object is
-used
-- uses RcppEigen sparse matrix iterator
-
-                       Changes in version 0.0.23                        
-
-- dramatic speed up aggregateToPseudoBulk() when a Seurat object is
-used
-- uses RcppEigen
-
-                       Changes in version 0.0.22                        
-
-- Speed up aggregateToPseudoBulk() when a Seurat object is used
-
-                       Changes in version 0.0.21                        
-
-- Add collapse=TRUE to dreamletCompareClusters()
-
-                       Changes in version 0.0.20                        
-
-- Fix bug in dreamletCompareClusters()
-
-                       Changes in version 0.0.19                        
-
-- Fix bug in dreamletCompareClusters()
-
-                       Changes in version 0.0.18                        
-
-- add min.samples to processAssays(), processOneAssay()
-- add dreamletCompareClusters() and run_mash()
-- Fix bug in dreamletCompareClusters()
-- updated mashr dependency
-
-                       Changes in version 0.0.17                        
-
-- add run_mash()
-- add zenith_gsa(), plotVolcano(), plotForest() for results
-- fix bug in cellTypeSpecificity() for genes with zero reads across
-all cell types
-- order of arguments in plotForest() and zenith_gsa() changed for
-consistancy
-- expand vignettes
-- bug fix for removeConstantTerms() when excluded variable string
-(i.e. tissue) is also a substring of other variables (i.e.
-tissueStatus)
-
-                       Changes in version 0.0.16                        
-
-- add residuals() for dreamlet() result
-- add dreamletPairs()
-- fix bug in removeConstantTerms() with multiple constant terms
-- improve usability of cellTypeSpecificity() by adding
-plotPercentBars() and plotViolin() compatability
-- fix bug in topTable() when coef is not estimated
-- add argument assays to dreamlet(), fitVarPart(), and
-processAssays()
-
-                       Changes in version 0.0.15                        
-
-- processOneAssay() weights by number of cells
-- require variancePartition >= 1.25.1 to handle weights in
-voomWithDreamWeights()
-- fix bug in topTable()
-- add plotPercentBars() for class vpDF
-- misc bug fixes
-- improve documentation
-
-                       Changes in version 0.0.14                        
-
-- move count ratio code to crumblr package
-- use applyQualityWeights()
-
-                       Changes in version 0.0.13                        
-
-- Oct 25, 2021
-- add ilr_composition_test.R
-
-                       Changes in version 0.0.12                        
-
-- Oct 15, 2021
-- update print for dreamletResult using coefNames()
-- small bug fix
-- fix bugs in regModel()
-
-                       Changes in version 0.0.11                        
-
-- Oct 6, 2021
-- removeConstantTerms() now doesn't drop terms solely because of NA's
-- this means that other functions can gracefully warn the user
-about NA's
-
-                       Changes in version 0.0.10                        
-
-- Oct 5, 2021
-
-- suppress package startup messages in aggregateToPseudoBulk()
-
-- bug fix in removeConstantTerms()
-
-- Sept 30, 2021
-
-- call to zenith_gsa() adds argument inter.gene.cor and progressbar
-
-- fix output to cellTypeCompositionVarPart() and
-cellTypeCompositionTest()
-
-- fix issue with topTable() where FDR was evaluated on only a subset
-of genes
-
-                        Changes in version 0.0.8                        
-
-- Sept 28, 2021
-- update docs, logos, TODO
-- update dreamlet() to handle linear contrasts
-- removeConstantTerms() now drops categorical variables with only a
-max of one example per category
-- Cleaner code for cell composition test
-
-                        Changes in version 0.0.7                        
-
-- Sept 2, 2021
-- add cellTypeCompositionTest()
-- handle random effects
-
-                        Changes in version 0.0.6                        
-
-- Sept 1, 2021
-- enforce package version requirements
-
-                        Changes in version 0.0.5                        
-
-- August 25, 2021
-- handling of pmetadata by processAssays(), fitVarPart(), and
-dreamlet()
-- change defaults for bpparam to SerialParam()
-- Created new files for code
-- Create object dreamletResult returned by dreamlet() and used by
-topTable()
-- more capable dreamletProcessedData object
-- add details() functions for dreamletResult, dreamletProcessedData
-and vpDF
-- More information about when terms are dropped from formulas
-- type definition to zenith_gsa
-
-                        Changes in version 0.0.4                        
-
-- add aggregateToPseudoBulk() for faster access to
-SingleCellExperiment() backed by H5AD
-
-                        Changes in version 0.0.3                        
-
-- add argument to processAssays() to include extra meta-data
-- add subseting with assay() for dreamletProcessedData
-- adapt plotVoom(), plotVolcano(), plotVarPart() to be more flexiable
-- fitVarPart() returns DataFrame
-
-                        Changes in version 0.0.2                        
-
-- check failed regression
-
-                        Changes in version 0.0.1                        
-
-- Initial version
 
 [dupRadar](/packages/dupRadar)
 --------
@@ -3230,30 +2795,6 @@ NEW FEATURES
 - The new 'createEnrichMap()' function enables the creation of an
 enrichment map from enrichment results.
 
-                        Changes in version 0.0.4                        
-
-NEW FEATURES
-
-- When 'intersection' column present in the GOST object, the software
-uses the column to create the output for Cytoscape, without having
-to call 'gconvert()'. The output is generated much more rapidly.
-
-                        Changes in version 0.0.2                        
-
-NEW FEATURES
-
-- Added a NEWS.md file to track changes to the package.
-
-SIGNIFICANT USER-VISIBLE CHANGES
-
-- createNetwork() method has a new parameter fileName that enables
-the
-creation of a CX JSON file when Cytoscape is not running.
-
-BUG FIXES
-
-- createCytoscapeCXJSON() method does not replicate anymore the genes
-that are associated to more than one term.
 
 [ensembldb](/packages/ensembldb)
 ---------
@@ -3511,83 +3052,6 @@ longer to check).
 
 - Pre-release Bioconductor version.
 
-                 Changes in version 0.1.17 (2023-04-18)                 
-
-- New units tests added
-
-                 Changes in version 0.1.16 (2023-03-16)                 
-
-- Added a fix to work correctly with integer feature IDs.
-
-                 Changes in version 0.1.15 (2023-03-02)                 
-
-- Fixed a bug where there are some features at a term that are not
-present in the universe (all features). This could happen when the
-universe was particularly small. Potentially a serious bug.
-
-                 Changes in version 0.1.14 (2023-02-02)                 
-
-- Ditched large and clunky Rfast and using native R environments as
-fast hashes (see
-https://riptutorial.com/r/example/18339/environments-as-hash-maps)
-- A few tweaks and improvements
-
-                       Changes in version 0.1.13                        
-
-- Added functions get_term_features and get_feature_terms to access
-data safely
-- HACK: BioPlanet server's SSL certificate expired, so need insecure
-download.
-
-                 Changes in version 0.1.11 (2022-10-11)                 
-
-- Significant speed-up of enrichment by using Rfast::Hash in place of
-R lists
-- KEGG improvements, recognizing flat file genes with no gene synonym
-- Additional tests for Reactome
-- Minor improvements and fixes
-
-                 Changes in version 0.1.10 (2022-10-04)                 
-
-- Style changes for BiocCheck
-- Adding more tests
-- Fixing a bug in parse_kegg_genes
-
-                 Changes in version 0.1.9 (2022-09-13)                  
-
-- Replacing ontologyIndex::get_ontology with a simpler parser
-- Replacing KEGGREST with own simple API parsers
-- Applying BiocStyle to the vignette
-- improving test_functional_enrichment
-
-                 Changes in version 0.1.8 (2022-09-06)                  
-
-- fetch_reactome provides two ways of retrieving data, via one
-downloadable file or via APIs
-
-                 Changes in version 0.1.7 (2022-09-01)                  
-
-- small fixes
-- link to a separate GitHub Shiny app added
-- added support for WikiPathways
-- improved robustness
-- more tests
-
-                 Changes in version 0.1.6 (2022-08-23)                  
-
-- bug fix in fetch_kegg
-- removed min_count and fdr_limit arguments from
-functional_enrichment; filtering can be done afterwards
-- added a small Shiny app as an example of fenr
-- updates to vignette
-
-                        Changes in version 0.1.5                        
-
-- added vignette
-- removeLazyData
-- DESCRIPTION updaates
-- replacing url_exists with RCurl::url.exists
-- added NEWS.md
 
 [fishpond](/packages/fishpond)
 --------
@@ -3830,81 +3294,6 @@ USER VISIBLE CHANGES
 
 - switch to Bioc compatible versioning
 
-                Changes in version 0.1.3.7 (2023-03-23)                 
-
-- drop gDRcomponents dependency
-
-                Changes in version 0.1.3.6 (2023-03-13)                 
-
-- bugfix - assure proper path to shared_dir in the vignette
-
-                Changes in version 0.1.3.5 (2023-03-08)                 
-
-- add functions from gDRcomponents
-
-                Changes in version 0.1.3.4 (2023-02-28)                 
-
-- update vignette
-
-                Changes in version 0.1.3.3 (2023-01-18)                 
-
-- fixed NOTES
-
-                Changes in version 0.1.3.2 (2022-12-15)                 
-
-- update deps
-
-                Changes in version 0.1.3.1 (2022-10-05)                 
-
-- add BioCparallel and kableExtra as dep
-
-                Changes in version 0.1.3.0 (2022-06-02)                 
-
-- release 1.3.0
-
-                Changes in version 0.0.0.12 (2022-04-21)                
-
-- update unit tests
-
-                Changes in version 0.0.0.11 (2022-04-21)                
-
-- remove redundant function argument
-
-                Changes in version 0.0.0.10 (2022-04-20)                
-
-- adjust for removal of large RDS files from gDRtestData
-
-                Changes in version 0.0.0.9 (2021-09-13)                 
-
-- update CODEOWNERS to use teams
-
-                Changes in version 0.0.0.7 (2021-09-13)                 
-
-- remove unnecessary exports
-
-                Changes in version 0.0.0.6 (2021-09-13)                 
-
-- update version and package dependencies
-
-                Changes in version 0.0.0.5 (2021-09-13)                 
-
-- update vignette
-
-                Changes in version 0.0.0.4 (2021-06-25)                 
-
-- update version and package dependencies
-
-                Changes in version 0.0.0.3 (2021-06-25)                 
-
-- update roxygen documentation
-
-                Changes in version 0.0.0.2 (2021-06-24)                 
-
-- add example data
-
-                Changes in version 0.0.0.1 (2021-02-03)                 
-
-- initial version
 
 [gDRcore](/packages/gDRcore)
 -------
@@ -4097,482 +3486,6 @@ iterative approach)
 
 - make the package Bioc-compatible
 
-                Changes in version 0.1.3.22 (2023-03-21)                
-
-- improve performance of 'map_df' with refactored logic for exact
-matches
-
-                Changes in version 0.1.3.21 (2023-03-15)                
-
-- refactor pipeline
-
-                Changes in version 0.1.3.20 (2023-03-09)                
-
-- address co-treatment fit by using the matrix data type instead
-
-                Changes in version 0.1.3.19 (2023-03-07)                
-
-- add support for splitting normalization types
-
-                Changes in version 0.1.3.18 (2023-03-06)                
-
-- improve logic in functions used to generate isobolograms' data
-
-                Changes in version 0.1.3.17 (2023-03-06)                
-
-- remove obsolete code
-
-                Changes in version 0.1.3.16 (2023-02-21)                
-
-- add support for partial pipeline runs
-
-                Changes in version 0.1.3.15 (2023-02-10)                
-
-- update path to annotation data
-
-                Changes in version 0.1.3.14 (2023-02-10)                
-
-- Clean-up code
-
-                Changes in version 0.1.3.13 (2023-01-13)                
-
-- Clean-up code
-
-                Changes in version 0.1.3.12 (2023-01-12)                
-
-- refactor mapping function to properly handle drug3
-
-                Changes in version 0.1.3.11 (2022-12-16)                
-
-- Replace parallelize function with gDRutils::loop
-
-                Changes in version 0.1.3.10 (2022-12-15)                
-
-- add assert for vehicle values in input data in
-runDrugResponseProcessingPipeline
-
-                Changes in version 0.1.3.9 (2022-12-14)                 
-
-- fix error-handling if conditions in average_SE
-
-                Changes in version 0.1.3.8 (2022-11-07)                 
-
-- fix invalid encapsulation in tests
-
-                Changes in version 0.1.3.7 (2022-10-18)                 
-
-- add missing namespacing
-
-                Changes in version 0.1.3.6 (2022-10-10)                 
-
-- add support for setting number of cores for BiocParallel based on
-the env variable
-
-                Changes in version 0.1.3.5 (2022-10-07)                 
-
-- remove global parameters for BiocParallel
-
-                Changes in version 0.1.3.4 (2022-09-29)                 
-
-- Change the logic for using cores in BiocParallel
-
-                Changes in version 0.1.3.3 (2022-09-27)                 
-
-- update the logic for parallel computing
-
-                Changes in version 0.1.3.2 (2022-08-17)                 
-
-- update the logic for default nested_confounders in create_SE
-function
-
-                Changes in version 0.1.3.1 (2022-07-08)                 
-
-- refactor create_SE to support reverse single-agent data
-
-                Changes in version 0.1.3.0 (2022-06-02)                 
-
-- release 1.3.0
-
-                Changes in version 0.1.1.39 (2022-05-30)                
-
-- add missing namespace for get_env_identifiers
-
-                Changes in version 0.1.1.38 (2022-05-09)                
-
-- replace NA by 0 in Concentration loaded in manifest file
-
-                Changes in version 0.1.1.37 (2022-05-06)                
-
-- switch from data.table to data.frame in add_annotation* functions
-
-                Changes in version 0.1.1.36 (2022-04-12)                
-
-- update function for adding unknown cell line annotations
-- update logic for using nested confounders
-- remove grr from dependencies
-
-                Changes in version 0.1.1.35 (2022-04-07)                
-
-- get rid of gDRwrapper
-
-                Changes in version 0.1.1.34 (2022-03-30)                
-
-- add support for additional barcode identifiers
-
-                Changes in version 0.1.1.33 (2022-03-18)                
-
-- fix documentation in calculate_matrix_metric
-
-                Changes in version 0.1.1.32 (2022-03-17)                
-
-- switch from catchr to purrr
-
-                Changes in version 0.1.1.31 (2022-03-02)                
-
-- fix mapping reference values of inverted treatments
-- remove duplication of single-agent data
-
-                Changes in version 0.1.1.30 (2022-02-17)                
-
-- wrap SE into MAE on the level of runDrugResponseProcessingPipeline
-
-                Changes in version 0.1.1.29 (2022-02-14)                
-
-- change identifier drugname to drug_name
-
-                Changes in version 0.1.1.28 (2022-02-09)                
-
-- switch from gDRinternal to gDRinternalData for internal annotations
-
-                Changes in version 0.1.1.27 (2022-02-08)                
-
-- issue with subsetting by list in R 4.2.0
-
-                Changes in version 0.1.1.26 (2022-02-02)                
-
-- unlist output of intersect as per R 4.2.0
-
-                Changes in version 0.1.1.25 (2022-01-31)                
-
-- align version criteria between dependencies.yaml and DESCRIPTION
-package versions
-
-                Changes in version 0.1.1.24 (2022-01-25)                
-
-- standardize/improve CI
-
-                Changes in version 0.1.1.23 (2022-01-24)                
-
-- switch from cores variable to detect_cores() function
-
-                Changes in version 0.1.1.22 (2022-01-24)                
-
-- fix wrong type of NUM_CORES env variable
-
-                Changes in version 0.1.1.21 (2022-01-03)                
-
-- speed-up functions for mapping treated and untreated cases
-
-                Changes in version 0.1.1.20 (2021-12-30)                
-
-- fix linter issues
-
-                Changes in version 0.1.1.19 (2021-12-14)                
-
-- use parallel computing as an alternative for for loops
-
-                Changes in version 0.1.1.18 (2021-12-07)                
-
-- update annotation script as per new csv annotation files
-
-                Changes in version 0.1.1.17 (2021-12-07)                
-
-- detect co-trt data and treat them as single-agent
-
-                Changes in version 0.1.1.16 (2021-11-08)                
-
-- set excess = NA for single-agent
-
-                Changes in version 0.1.1.15 (2021-10-29)                
-
-- solve rounding issues
-- add new bliss metric
-
-                Changes in version 0.1.1.14 (2021-10-25)                
-
-- refactor isobolograms
-
-                Changes in version 0.1.1.13 (2021-10-25)                
-
-- move p_trt_keys to the proper place
-
-                Changes in version 0.1.1.12 (2021-10-20)                
-
-- add support for masked data in fit_SE.combinations.R
-
-                Changes in version 0.1.1.11 (2021-10-14)                
-
-- address issues in creating the SE for combo matrix experiments
-
-                Changes in version 0.1.1.10 (2021-10-13)                
-
-- refactor the logic for calculation Loewe when there is no
-Concentration == 0
-
-                Changes in version 0.1.1.9 (2021-10-12)                 
-
-- refactor the logic for combo data
-
-                Changes in version 0.1.1.8 (2021-09-27)                 
-
-- updated normalization_types in 'calculate_combo_matrix' and
-'fit_SE'
-
-                Changes in version 0.1.1.7 (2021-09-21)                 
-
-- calculate_GR_value by removing cl_name param
-
-                Changes in version 0.1.1.6 (2021-08-25)                 
-
-- fix but with missing nested_identifiers variables for creating
-DataFrame for masked values
-
-                Changes in version 0.1.1.5 (2021-08-04)                 
-
-- refactor reading annotations and add default parameters
-
-                Changes in version 0.1.1.4 (2021-07-30)                 
-
-- fix bug for nested_confounders not present in ref_df
-
-                Changes in version 0.1.1.3 (2021-07-27)                 
-
-- add support for nested_identifiers and nested_confounders
-
-                Changes in version 0.1.1.2 (2021-07-23)                 
-
-- remove obsolete dependencies from DESCRIPTION:Imports
-
-                Changes in version 0.1.0.9 (2021-07-01)                 
-
-- function for testing synthetic data
-
-                Changes in version 0.1.0.8 (2021-06-25)                 
-
-- move functions for importing template files to gDRimport package
-
-                Changes in version 0.1.0.7 (2021-06-23)                 
-
-- add linter
-- remove obsolete functions from test.utils.R
-
-                Changes in version 0.1.0.6 (2021-06-22)                 
-
-- move importing functions to gDRimport package
-
-                Changes in version 0.1.0.5 (2021-06-14)                 
-
-- add unit tests for synthetic data
-
-                Changes in version 0.1.0.4 (2021-06-14)                 
-
-- remove deprecated functions and unit tests
-
-                Changes in version 0.1.0.3 (2021-06-14)                 
-
-- update namespace for 'metadata()'
-
-                Changes in version 0.1.0.2 (2021-06-10)                 
-
-- change package name (gDR => gDRcore)
-
-                Changes in version 0.1.0.1 (2021-06-04)                 
-
-- export/update docs for 'standardize_record_values'
-
-                Changes in version 0.1.0.0 (2021-06-02)                 
-
-- release 1.0.0
-
-                Changes in version 0.0.1.52 (2021-04-29)                
-
-- remove all the gDRinternal-related files
-
-                Changes in version 0.0.1.51 (2021-04-27)                
-
-- fix wrong argument name in fit_curves
-
-                Changes in version 0.0.1.50 (2021-04-23)                
-
-- ensure that dts in assay(se,"Averaged") are NULL when there are not
-treatments
-
-                Changes in version 0.0.1.49 (2021-04-20)                
-
-- add processing info metadata to SE
-
-                Changes in version 0.0.1.48 (2021-04-14)                
-
-- improve handling of nested_keys and override_controls
-
-                Changes in version 0.0.1.47 (2021-04-09)                
-
-- get rid of sorting index columns in getMetaData
-
-                Changes in version 0.0.1.46 (2021-03-31)                
-
-- move SE metadata getters and setters to gDRutils
-
-                Changes in version 0.0.1.45 (2021-03-31)                
-
-- fix a bug in map_df function
-
-                Changes in version 0.0.1.44 (2021-03-26)                
-
-- refactor processing functions in create_SE2, normalize_SE2,
-average_SE2, and fit_SE2 and friends
-
-                Changes in version 0.0.1.43 (2021-02-22)                
-
-- add drug_moa_2 to merged df
-
-                Changes in version 0.0.1.42 (2021-02-17)                
-
-- fix a bug with adding annotation to codrugs
-
-                Changes in version 0.0.1.41 (2021-02-04)                
-
-- add script for benchmarking [normalize/average/metrics]-SE
-functions
-
-                Changes in version 0.0.1.40 (2021-02-02)                
-
-- fix unit tests
-- include discard keys info in getMetaData for rowData
-
-                Changes in version 0.0.1.39 (2021-01-29)                
-
-- utilize refactored and renamed fitting function RVGRfit to
-fit_curves
-
-                Changes in version 0.0.1.38 (2021-01-27)                
-
-- export some functions for use in gDRutils
-
-                Changes in version 0.0.1.37 (2021-01-20)                
-
-- move df_to_assay and df_to_bm_assay to gDRutils
-
-                Changes in version 0.0.1.36 (2021-01-18)                
-
-- updated rowData and colData in SE with additional columns
-
-                Changes in version 0.0.1.35 (2021-01-14)                
-
-- update positional header calls to explicit identifier calls
-- minor changes to comply with gDRstyle
-- minor changes to use identifiers over hard coded DrugName
-requirements
-
-                Changes in version 0.0.1.34 (2021-01-12)                
-
-- update scripts related to annotation of drugs and cell lines
-
-                Changes in version 0.0.1.33 (2021-01-05)                
-
-- anonymize test data
-
-                Changes in version 0.0.1.32 (2020-12-24)                
-
-- switch from GeneDataScreenR to gDRinternal from QCS to gDR
-functions
-
-                Changes in version 0.0.1.31 (2020-12-22)                
-
-- make createSE returning assays as 'BumpyMatrix' objects (previously
-'matrix' objects only)
-- add df_to_bm_assay function (returning BumpyMatrix object from raw
-experiment data)
-- add initial tests for createSE function
-
-                Changes in version 0.0.1.30 (2020-12-21)                
-
-- minor clean-up
-
-                Changes in version 0.0.1.29 (2020-12-15)                
-
-- remove dplyr
-- use the latest version of gDRutils
-
-                Changes in version 0.0.1.28 (2020-12-07)                
-
-- error messages
-
-                Changes in version 0.0.1.27 (2020-12-02)                
-
-- refactor analyze_data.R with taking account codilution combo
-
-                Changes in version 0.0.1.26 (2020-11-24)                
-
-- bug with reading raw data
-
-                Changes in version 0.0.1.25 (2020-11-08)                
-
-- clean-up repository from duplicated functions
-
-- switch to R 4.0
-
-                Changes in version 0.0.1.24 (2020-10-01)                
-
-- bugs in function for metrics calculation as per QCS dataset
-- QCS data
-- scripts for processing and pushing QCS data on Rosalind
-
-                Changes in version 0.0.1.23 (2020-09-29)                
-
-- updated README.md
-
-                Changes in version 0.0.1.22 (2020-09-22)                
-
-- bug in update_experiment_metadata
-
-                Changes in version 0.0.1.21 (2020-09-03)                
-
-- logic as per new db model
-
-                Changes in version 0.0.1.20 (2020-08-26)                
-
-- RDS files for the other GDS data (GDS5, GDS6, GDS7)
-
-                Changes in version 0.0.1.19 (2020-08-03)                
-
-- support an import of single agent data from GDS
-- including the masked field to be able to remove the masked data
-from averages
-- add a function to annotate drug combinations (add_codrug_group)
-- update the tests that contained combination experiments
-accordingly.
-- add new tests for the GDS data
-- minor refactor to use the 'masked' column. If it is not part of
-the initial dataframe it is added automatically (and set to
-FALSE)
-
-                Changes in version 0.0.1.18 (2020-07-29)                
-
-- fixed issue in update_experiment_metadata.R
-- unit test for update_experiment_metadata.R
-
-                Changes in version 0.0.1.17 (2020-07-14)                
-
-- function for updating metadata in SE
-
-                Changes in version 0.0.1.16 (2020-07-14)                
-
-- dependencies: kcloak, gDRwrapper
-
-                Changes in version 0.0.1.15 (2020-07-08)                
-
-- dependencies
 
 [gDRimport](/packages/gDRimport)
 ---------
@@ -4682,142 +3595,6 @@ FALSE)
 
 - make the package Bioc-compatible
 
-                Changes in version 0.1.3.18 (2023-03-01)                
-
-- remove obsolete code
-
-                Changes in version 0.1.3.17 (2023-02-14)                
-
-- add tests for check_metadata_names
-
-                Changes in version 0.1.3.16 (2023-01-23)                
-
-- add function for detecting format of raw data
-
-                Changes in version 0.1.3.15 (2022-12-20)                
-
-- add exceptions for missing drugs' and cell lines' annotations
-
-                Changes in version 0.1.3.14 (2022-12-14)                
-
-- make exception tests more robust
-
-                Changes in version 0.1.3.13 (2022-12-13)                
-
-- add additional error message for handling data in gDRin
-
-                Changes in version 0.1.3.12 (2022-11-02)                
-
-- add exception table and getter and update exceptions in
-load_files.R
-
-                Changes in version 0.1.3.11 (2022-10-26)                
-
-- fix bug with reading two untreated templates
-
-                Changes in version 0.1.3.10 (2022-10-17)                
-
-- add missing namespace and add unit tests for
-correct_template_sheets
-
-                Changes in version 0.1.3.9 (2022-10-06)                 
-
-- extend logic for correcting template data (II)
-
-                Changes in version 0.1.3.8 (2022-10-04)                 
-
-- extend logic for correcting manifest and template data
-
-                Changes in version 0.1.3.7 (2022-09-12)                 
-
-- extend the logic for filling empty cols in plate design
-
-                Changes in version 0.1.3.6 (2022-07-28)                 
-
-- change the logic for identification plates using more versatile
-solution
-
-                Changes in version 0.1.3.5 (2022-07-27)                 
-
-- add assert for templates without untreated controls
-
-                Changes in version 0.1.3.4 (2022-07-06)                 
-
-- reduce warnings and get rid of apply()
-
-                Changes in version 0.1.3.3 (2022-06-17)                 
-
-- modify the logic for detecting empty columns
-
-                Changes in version 0.1.3.2 (2022-06-15)                 
-
-- extend the logic for loading EnVision data for other plate size
-
-                Changes in version 0.1.3.1 (2022-06-03)                 
-
-- add support to load drug doses from D300 .tdd files
-
-                Changes in version 0.1.3.0 (2022-06-02)                 
-
-- release
-
-                 Changes in version 0.0.14 (2022-05-18)                 
-
-- add load_results_Tecan
-- add tests for load_results_Tecan
-
-                 Changes in version 0.0.12 (2022-04-21)                 
-
-- fix unit tests
-
-                 Changes in version 0.0.11 (2022-03-30)                 
-
-- add support for Plate as an equivalent of Barcode
-
-                 Changes in version 0.0.10 (2022-03-24)                 
-
-- fix hardcoded identifiers
-- update error message for custom column names
-
-                 Changes in version 0.0.9 (2021-09-10)                  
-
-- switch from get_identifier to get_env_identifiers
-
-                 Changes in version 0.0.8 (2021-08-24)                  
-
-- fix wrong argument in convert_se_assay_to_dt
-
-                 Changes in version 0.0.7 (2021-07-23)                  
-
-- 's/assay_to_dt/convert_se_assay_to_dt/' in write_ref_data_se
-- fix linter issues
-- knitr as Suggested package
-
-                 Changes in version 0.0.6 (2021-07-06)                  
-
-- remove nested repo structure
-
-                 Changes in version 0.0.5 (2021-06-28)                  
-
-- restore functions for reading reference data
-
-- add unit tests
-
-                 Changes in version 0.0.4 (2021-06-25)                  
-
-- add exemplary EnVision data
-
-                 Changes in version 0.0.3 (2021-06-25)                  
-
-- move functions related to reading template from gDRcore package
-
-                 Changes in version 0.0.2 (2021-06-25)                  
-
-- code refactor using lintr
-
-                 Changes in version 0.0.1 (2021-06-22)                  
-
-- initial release ( importing fucntions moved from gDRcore package)
 
 [gDRstyle](/packages/gDRstyle)
 --------
@@ -4922,41 +3699,6 @@ ignored)
 - downgrade version to make it Bioconductor compatible
 - fix unit tests
 
-               Changes in version 0.1.16.17 (2023-03-23)                
-
-- move R package from subdir to the maindir
-
-               Changes in version 0.1.16.16 (2023-03-22)                
-
-- fix examples
-
-               Changes in version 0.1.16.15 (2023-03-21)                
-
-- handle BiocCheck
-
-               Changes in version 0.1.16.14 (2023-03-15)                
-
-- appease BiocCheck requirements
-
-                Changes in version 0.1.3.13 (2023-02-10)                
-
-- increase unit tests coverage
-
-                Changes in version 0.1.3.12 (2023-02-01)                
-
-- fix tests for dependencies check
-
-                Changes in version 0.1.3.11 (2023-01-26)                
-
-- improve dependencies check
-
-                Changes in version 0.1.3.10 (2023-01-05)                
-
-- fixed WARNINGS and NOTES in check()
-
-                Changes in version 0.1.3.9 (2023-01-05)                 
-
-- the note test is stricter
 
 [gDRutils](/packages/gDRutils)
 --------
@@ -5104,506 +3846,6 @@ and be able to revert standardization
 
 - downgrade version to make it Bioconductor compatible
 
-                Changes in version 0.1.3.22 (2023-03-13)                
-
-- tidy code
-
-                Changes in version 0.1.3.21 (2023-03-09)                
-
-- better handling of corner cases for the single-agent fitting
-
-                Changes in version 0.1.3.20 (2023-03-08)                
-
-- add support for splitting normalization data types
-
-                Changes in version 0.1.3.19 (2023-03-08)                
-
-- restore necessary functions
-
-                Changes in version 0.1.3.18 (2023-03-01)                
-
-- add examples of identifiers
-
-                Changes in version 0.1.3.17 (2023-03-01)                
-
-- remove obsolete code
-
-                Changes in version 0.1.3.16 (2023-02-22)                
-
-- tidy code
-
-                Changes in version 0.1.3.15 (2023-02-10)                
-
-- add tests for convert_se_ref_assay_to_dt
-
-                Changes in version 0.1.3.14 (2023-01-10)                
-
-- add helpers for colData/rowData refinement
-
-                Changes in version 0.1.3.13 (2022-12-22)                
-
-- fix warnings in unit tests
-
-                Changes in version 0.1.3.12 (2022-12-20)                
-
-- R CMD check returns 0 errors ✓ | 0 warnings ✓ | 0 notes ✓
-
-                Changes in version 0.1.3.11 (2022-12-15)                
-
-- default apply_bumpy_function parallelize to TRUE
-
-                Changes in version 0.1.3.10 (2022-12-08)                
-
-- add apply_bumpy_function support
-
-                Changes in version 0.1.3.9 (2022-12-07)                 
-
-- add co-dilution to single-agent group
-
-                Changes in version 0.1.3.8 (2022-11-30)                 
-
-- bugfix in validate_SE
-
-                Changes in version 0.1.3.7 (2022-10-18)                 
-
-- add update_env_idfs_from_mae function
-
-                Changes in version 0.1.3.6 (2022-10-04)                 
-
-- add helper for dealing with idfs' synonyms
-
-                Changes in version 0.1.3.5 (2022-09-21)                 
-
-- promote or demote fields in a BumpyMatrix object and perform
-summarization on assays.
-
-                Changes in version 0.1.3.4 (2022-08-11)                 
-
-- major improvements in JSON validation/conversion logic
-- provide info about JSON schemes via env variables
-- convert and validate MAE summary next to the SE experiments
-
-                Changes in version 0.1.3.3 (2022-07-25)                 
-
-- move json validation/convertion logic from gDRelastic
-
-                Changes in version 0.1.3.2 (2022-07-11)                 
-
-- standardize MAE using default gDR identifiers
-
-                Changes in version 0.1.3.1 (2022-06-29)                 
-
-- remove adding integer identifiers at the end of colnames/rownames
-
-                Changes in version 0.1.3.0 (2022-06-02)                 
-
-- release 1.3.0
-
-                Changes in version 0.1.0.48 (2022-05-27)                
-
-- correct recognition of empty SE
-
-                Changes in version 0.1.0.47 (2022-05-25)                
-
-- remove redundant validation of rownames in SE
-
-                Changes in version 0.1.0.46 (2022-05-03)                
-
-- update prettify function
-- fix hardcoded identifiers in validated_SE
-
-                Changes in version 0.1.0.45 (2022-04-29)                
-
-- avoid using grep for getting cotreatment identifiers
-
-                Changes in version 0.1.0.44 (2022-04-26)                
-
-- switched from unnamed to named vector of experiment groups for
-single-agent
-- fix the logic in validating single-agent experiments
-
-                Changes in version 0.1.0.43 (2022-04-13)                
-
-- set r2 value to NA for invalid and 0 for constant fits
-
-                Changes in version 0.1.0.42 (2022-04-08)                
-
-- added identifier descriptions
-
-                Changes in version 0.1.0.41 (2022-04-08)                
-
-- fix wrong order of elements in rownames in SE
-
-                Changes in version 0.1.0.40 (2022-04-07)                
-
-- add cap_ic50 function
-
-                Changes in version 0.1.0.39 (2022-03-31)                
-
-- extend possible Barcode identifiers
-
-                Changes in version 0.1.0.38 (2022-03-30)                
-
-- fix hardcoded identifiers in validate SE
-
-                Changes in version 0.1.0.37 (2022-03-28)                
-
-- added a space between two-word cotreatment identifiers
-
-                Changes in version 0.1.0.36 (2022-03-24)                
-
-- remove all R CMD check warnings
-
-                Changes in version 0.1.0.35 (2022-03-22)                
-
-- change prettify functions to not substitute metadata
-
-                Changes in version 0.1.0.34 (2022-03-21)                
-
-- add helper function for MAE/experiments
-
-                Changes in version 0.1.0.33 (2022-03-19)                
-
-- move constant fit warning
-
-                Changes in version 0.1.0.32 (2022-03-18)                
-
-- add .calculate_complement
-
-                Changes in version 0.1.0.31 (2022-03-16)                
-
-- move duplication warning
-
-                Changes in version 0.1.0.30 (2022-03-14)                
-
-- add support for identifier validation
-
-                Changes in version 0.1.0.29 (2022-03-03)                
-
-- add getter and setter for experiment_raw_data
-
-                Changes in version 0.1.0.28 (2022-02-16)                
-
-- refactor identifier drugname to drug_name
-
-                Changes in version 0.1.0.27 (2022-02-10)                
-
-- add MAEpply function
-
-                Changes in version 0.1.0.26 (2022-02-01)                
-
-- update documentation
-
-                Changes in version 0.1.0.25 (2022-01-31)                
-
-- support SE() init for different BioC versions
-
-                Changes in version 0.1.0.24 (2022-01-25)                
-
-- standardize/improve CI
-
-                Changes in version 0.1.0.23 (2022-01-25)                
-
-- switch unit tests from SE to MAE from gDRtestData
-
-                Changes in version 0.1.0.22 (2022-01-07)                
-
-- update assert in validate_MAE
-
-                Changes in version 0.1.0.21 (2022-01-07)                
-
-- update SE-related functions of gDRutils to support MAE
-
-                Changes in version 0.1.0.20 (2021-12-21)                
-
-- move combo-related functions from gDRviz
-- add unit tests for combo-related functions
-
-                Changes in version 0.1.0.19 (2021-11-04)                
-
-- do not create a nested list of identifiers during mergin SE
-
-                Changes in version 0.1.0.18 (2021-11-01)                
-
-- fix issued with new SummarizedExperiment
-
-                Changes in version 0.1.0.17 (2021-10-22)                
-
-- refactor: generalize prediction help functions for fits
-
-                Changes in version 0.1.0.16 (2021-09-27)                
-
-- update validate_SE as per combos
-
-                Changes in version 0.1.0.15 (2021-09-22)                
-
-- feat: use 'GRvalue' and 'RelativeViability' as normalization_types
-in 'fit_curves'
-
-                Changes in version 0.1.0.14 (2021-09-15)                
-
-- fix bug with getting_SE_identifiers for untreated_tag
-
-                Changes in version 0.1.0.13 (2021-09-13)                
-
-- fix obsolete arguments in reset_env_identifiers
-
-                Changes in version 0.1.0.12 (2021-09-07)                
-
-- fix bug with getting identifiers for untreated_tag
-
-                Changes in version 0.1.0.11 (2021-08-26)                
-
-- move NA logic for elements of BumpyMatrix with no data to fit_curve
-
-                Changes in version 0.1.0.10 (2021-08-25)                
-
-- remove additional ordering line in df_to_bm_assay.R
-
-                Changes in version 0.1.0.9 (2021-08-19)                 
-
-- update list of available identifiers (2nd and 3rd drug,
-data_source)
-- update the logic for get_identifier and .get_id
-- add prettified_identifier()
-
-                Changes in version 0.1.0.8 (2021-08-13)                 
-
-- fix bug with wrong order of rows and cols in df_to_bm_assay
-
-                Changes in version 0.1.0.7 (2021-07-06)                 
-
-- remove hard version equality for pkg deps
-
-                Changes in version 0.1.0.6 (2021-06-29)                 
-
-- add barcode as identifiers and store identifiers within
-split_SE_components
-
-                Changes in version 0.1.0.5 (2021-06-25)                 
-
-- update the logic for CI/CD (repos fetching is now handled with
-technical user)
-
-                Changes in version 0.1.0.4 (2021-06-18)                 
-
-- add concentration and template as additional identifiers
-
-                Changes in version 0.1.0.3 (2021-06-21)                 
-
-- refactor logisticFit with error handling
-
-                Changes in version 0.1.0.2 (2021-06-18)                 
-
-- remove deprecated functions
-- switch from getMetadata to split_SE_components
-- refactor df_to_bm_assay
-
-                Changes in version 0.1.0.1 (2021-06-02)                 
-
-- upgrade validate_SE by checking if rowData and colData do not have
-empty strings
-- isolate flatten function
-
-                Changes in version 0.1.0.0 (2021-06-02)                 
-
-- release 1.0.0
-
-                Changes in version 0.0.0.49 (2021-06-02)                
-
-- fix bug with merging flatten assays
-
-                Changes in version 0.0.0.48 (2021-05-24)                
-
-- refactor validate_SE function
-
-                Changes in version 0.0.0.47 (2021-05-18)                
-
-- add merge_SE function
-
-                Changes in version 0.0.0.46 (2021-05-18)                
-
-- fix typo in SE validator function
-
-                Changes in version 0.0.0.45 (2021-05-18)                
-
-- add SE validator function
-
-                Changes in version 0.0.0.44 (2021-05-13)                
-
-- refactor prettify_flat_metrics function
-
-                Changes in version 0.0.0.43 (2021-04-30)                
-
-- remove Metrics_rownames during flattening data.frame/data.table
-
-                Changes in version 0.0.0.42 (2021-04-29)                
-
-- add prettify_flat_metrics function
-
-                Changes in version 0.0.0.41 (2021-04-29)                
-
-- bugfix flattening data.tables
-
-                Changes in version 0.0.0.40 (2021-04-29)                
-
-- bugfix data.table merge in convert_se_assay_ref_to_dt
-
-                Changes in version 0.0.0.39 (2021-04-27)                
-
-- add support for flattening data.tables
-
-                Changes in version 0.0.0.38 (2021-04-21)                
-
-- switch from processing_metadata to .internal
-
-                Changes in version 0.0.0.37 (2021-04-20)                
-
-- add support for getting and setting processing info metadata
-
-                Changes in version 0.0.0.36 (2021-04-19)                
-
-- sort BumpyMatrix created from dt
-
-                Changes in version 0.0.0.35 (2021-04-14)                
-
-- revert metric arguments in 'convert_se_assay_to_dt'
-
-                Changes in version 0.0.0.34 (2021-04-09)                
-
-- add support for getting and setting fit parameter metadata
-
-                Changes in version 0.0.0.33 (2021-04-07)                
-
-- standardize metric header names
-
-                Changes in version 0.0.0.32 (2021-04-07)                
-
-- add more options for returned data (with 'Metrics' assay) in the
-case of convert_se_assay_to_dt
-- add 'convert_se_ref_assay_to_dt' function
-
-                Changes in version 0.0.0.31 (2021-03-30)                
-
-- add support for getting and setting metadata on the
-SummarizedExperiment object
-
-                Changes in version 0.0.0.30 (2021-03-30)                
-
-- add support for getting and setting metadata on the
-SummarizedExperiment object
-- add numeric type assertions and tests for logistic_4parameters
-
-                Changes in version 0.0.0.29 (2021-03-23)                
-
-- remove positional naming dependence on assay_to_dt for
-(merge_metrics = TRUE) argument
-
-                Changes in version 0.0.0.28 (2021-03-16)                
-
-- minor refactor to assay_to_dt
-- deprecated support for assay_to_dt(include_controls = TRUE)
-argument
-(not backwards compatible)
-
-                Changes in version 0.0.0.27 (2021-03-09)                
-
-- update .estimate_xc50 and add tests
-
-                Changes in version 0.0.0.26 (2021-03-04)                
-
-- fix bug with wrong class for S3 methods in convert_assay_data_to_dt
-- update the documentation
-
-                Changes in version 0.0.0.25 (2021-03-02)                
-
-- fix bug with missing class in assert for matrix
-
-                Changes in version 0.0.0.24 (2021-02-10)                
-
-- modify fit_curves to take in flexible curve_type(s)
-- clean-up assay_to_dt
-
-                Changes in version 0.0.0.23 (2021-02-04)                
-
-- added linter
-
-                Changes in version 0.0.0.22 (2021-02-03)                
-
-- move assay_to_dt from gDR to gDRutils
-- refactor assay_to_dt to support two assay types
-- list of DFrame(s)
-- BumpyMatrix objects
-- move .get_treated_conditions and .get_untreated_conditions from gDR
-to gDRutils
-
-                Changes in version 0.0.0.21 (2021-01-26)                
-
-- allow for DFrame as input
-
-                Changes in version 0.0.0.20 (2021-01-26)                
-
--
-'s/BumpyMatrix::splitToBumpyMatrix/BumpyMatrix::splitAsBumpyMatrix/'
-
-                Changes in version 0.0.0.19 (2021-01-20)                
-
-- refactor RVGRfits and rename to fit_curves
-- make logisticFit function independent of curve_type
-
-                Changes in version 0.0.0.18 (2021-01-19)                
-
-- move df_to_assay.R from gDRcore to gDRutils
-- move df_to_bm_assay.R from gDRcore to gDRutils
-- update identifiers_list.R
-
-                Changes in version 0.0.0.15 (2020-12-14)                
-
-- refactor get_identifiers and get_headers to be settable and cached
-
-                Changes in version 0.0.0.14 (2020-12-14)                
-
-- totally, finally, and unscrupulously remove dplyr package from
-gDRutils
-- replace IC by RV
-
-                Changes in version 0.0.0.13 (2020-10-12)                
-
-- add CI
-
-                Changes in version 0.0.0.12 (2020-10-09)                
-
-- fix assay_to_df
-
-                Changes in version 0.0.0.11 (2020-10-09)                
-
-- update namespaces
-
-                Changes in version 0.0.0.10 (2020-10-05)                
-
-- minor refactor
-
-                Changes in version 0.0.0.9 (2020-09-14)                 
-
-- add small fixes for assays with empty DataFrame
-
-                Changes in version 0.0.0.8 (2020-09-02)                 
-
-- update logic as per new db model
-
-                Changes in version 0.0.0.7 (2020-08-07)                 
-
-- update variable names as per new db model
-
-                Changes in version 0.0.0.6 (2020-07-02)                 
-
-- import pipes from magrittr
-
-                Changes in version 0.0.0.4 (2020-06-10)                 
-
-- including the masked field to be able to remove the masked data
-from
-averages
 
 [gdsfmt](/packages/gdsfmt)
 ------
@@ -5858,19 +4100,6 @@ each clusters (2023-09-13, Wed)
 in CRAN
 - add H&E image to sc_spatial() (#3)
 
-                        Changes in version 0.0.3                        
-
-- sc_spatial to visualize spatial features (2022-12-07, Wed)
-
-                        Changes in version 0.0.2                        
-
-- sc_dim_geom_sub and sc_dim_sub (2022-12-03, Sat)
-- sc_dim_geom_ellipse to draw ellipse on sc_dim() (2022-12-02, Fri)
-
-                        Changes in version 0.0.1                        
-
-- sc_dim, sc_dim_geom_feature, sc_dim_geom_label, sc_feature,
-sc_geom_point and sc_violin functions (2022-11-09, Wed)
 
 [ggtree](/packages/ggtree)
 ------
@@ -9006,69 +7235,65 @@ New features
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Updating installation section in vignette.
+- Updating installation section in vignette.
 
                        Changes in version 0.99.14                       
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Adding missing author David Tuveson.
-o Updating BiocViews terms.
+- Adding missing author David Tuveson.
+- Updating BiocViews terms.
 
                        Changes in version 0.99.13                       
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Update in Reference GDS vignette.
+- Update in Reference GDS vignette.
 
                        Changes in version 0.99.12                       
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Seven new loadable objects are available in the package.
-o The new readSNVVCF() function enable the use of VCF SNP files as
-input for the runExomeAncestry() and runRNAAncestry() functions.
+- Seven new loadable objects are available in the package.
+- The new readSNVVCF() function enable the use of VCF SNP files as input for the runExomeAncestry() and runRNAAncestry() functions.
 
                        Changes in version 0.99.11                       
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Update main vignette.
+- Update main vignette.
 
                        Changes in version 0.99.10                       
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Update main vignette.
+- Update main vignette.
 
                        Changes in version 0.99.9                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Better documentation for the runRNAAncestry() function.
+- Better documentation for the runRNAAncestry() function.
 
                        Changes in version 0.99.8                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Some examples have been updated in the documentation.
+- Some examples have been updated in the documentation.
 
                        Changes in version 0.99.7                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o The new runRNAAncestry() function executes most steps leading to
-the ancestry inference call on a specific RNA profile.
-o A vignette describing the content of the Reference GDS files has
-been created.
-o More parameter names have been changed to follow the camelCase
-style.
+- The new runRNAAncestry() function executes most steps leading to the ancestry inference call on a specific RNA profile.
+- A vignette describing the content of the Reference GDS files has been created.
+- More parameter names have been changed to follow the camelCase style.
 
                        Changes in version 0.99.6                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o The vignette now referes to the generic formatted reference GDS
+- The vignette now referes to the generic formatted reference GDS
 rather than 1KG GDS file to showcase that the software is not
 dependant of the 1KG GDS file. Any refence dataset can be used as
 long as the dataset is formatted into a GDS file.
@@ -9077,60 +7302,55 @@ long as the dataset is formatted into a GDS file.
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o The function documentation has been improved.
-o New vignette has been created. The vignette covers the steps done
+- The function documentation has been improved.
+- New vignette has been created. The vignette covers the steps done
 by the runExomeAncestry() function.
 
                        Changes in version 0.99.4                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o More parameter names have been changed to follow the camelCase
+- More parameter names have been changed to follow the camelCase
 style.
-o The function documentation has been improved.
-o A wrapper function runExomeAncestry() is now available.
+- The function documentation has been improved.
+- A wrapper function runExomeAncestry() is now available.
 
                        Changes in version 0.99.3                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o More parameter names have been changed to follow the camelCase
+- More parameter names have been changed to follow the camelCase
 style.
 
 BUG FIXES
 
-o The warning related to the package man page has been removed.
+- The warning related to the package man page has been removed.
 
                        Changes in version 0.99.2                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Most parameter names have been changed to follow the camelCase
+- Most parameter names have been changed to follow the camelCase
 style.
 
                        Changes in version 0.99.1                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o The new runExomeAncestry() function encapsulates multiple ancestry
+- The new runExomeAncestry() function encapsulates multiple ancestry
 inference steps in one command.
 
 BUG FIXES
 
-o Ensure GDS file is closed before using stop() in the
+- Ensure GDS file is closed before using stop() in the
 addPhase1KG2SampleGDSFromFile() function.
 
                        Changes in version 0.99.0                        
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o The number of visible functions has been limited to simplify usage.
+- The number of visible functions has been limited to simplify usage.
 
-                       Changes in version 0.50.1                        
-
-SIGNIFICANT USER-VISIBLE CHANGES
-
-o NEWS file added to the package
 
 [Rarr](/packages/Rarr)
 ----
@@ -9241,9 +7461,6 @@ DOCUMENTATION
 - Improved man pages with runnable examples for all exported
 functions.
 
-                        Changes in version 0.0.1                        
-
-- Initial release.
 
 [RegionalST](/packages/RegionalST)
 ----------
@@ -9541,13 +7758,6 @@ BUG FIXES
 
 - fix "Matrix-deprecated" when calling `as(<dsCMatrix>, "dgCMatrix")`
 
-[sangeranalyseR](/packages/sangeranalyseR)
---------------
-
-                        Changes in version 99.1                         
-
-- Base class: SangerReads is designed to store each forward/revers
-  reads.
 
 [SCArray](/packages/SCArray)
 -------
@@ -10201,14 +8411,6 @@ SIGNIFICANT USER-VISIBLE CHANGES
 - Removal of unnecessary variables in differential expression and
 classification analyses
 
-[synapsis](/packages/synapsis)
---------
-
-               Changes in version 2021-07-02 (2021-07-02)               
-
-Changes:
-
-- Added this news file
 
 [SynExtend](/packages/SynExtend)
 ---------
@@ -11185,28 +9387,6 @@ Other notes
 - specify version number of ExperimentHub and remove version number of
   R
 
-[scpdata](/packages/scpdata)
--------
-
-Version: 1.9
-Text:
-
-Version: 1.9.3
-Text: (nothing yet)
-
-Version: 1.9.2
-Text: woo2022: added woo2022_lung and woo2022_macrophage
-
-Version: 1.9.2
-Text: leduc2022: added leduc2022_plexDIA and renamed leduc2022 to
-        leduc2022_pSCoPE
-
-Version: 1.9.1
-Text: Updated citation
-
-Version: 1.9.0
-Text: New Bioconductor 3.18 (devel) release
-
 [SingleCellMultiModal](/packages/SingleCellMultiModal)
 --------------------
 
@@ -11237,22 +9417,6 @@ NEW FEATURES
 - Provides access to smokingMouse project objects. Check here for the
   code and data generation.
 
-[SpatialDatasets](/packages/SpatialDatasets)
----------------
-
-                 Changes in version 1.5.0 (2022-04-27)                  
-
-- reformat datasets to SpatialExperiment version 1.5.3
-
-                 Changes in version 1.3.3 (2022-01-31)                  
-
-- add new datasets ST_mouseOB, SlideSeqV2_mouseHPC
-
-- reformat datasets to SpatialExperiment version 1.5.2
-
-                 Changes in version 0.99.0 (2021-03-28)                 
-
-- initial submission to Bioconductor
 
 [spatialLIBD](/packages/spatialLIBD)
 -----------
