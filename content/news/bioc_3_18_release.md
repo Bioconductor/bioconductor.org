@@ -161,9 +161,9 @@ There are 69 new software packages in this release of Bioconductor.
   into a SingleCellExperiment object.
 
 - [CytoPipelineGUI](/packages/CytoPipelineGUI) This package is the
-  companion of the `CytoPipeline` package. It provides GUI's (shiny
+  companion of the CytoPipeline package. It provides GUI's (shiny
   apps) for the visualization of flow cytometry data analysis
-  pipelines that are run with `CytoPipeline`. Two shiny applications
+  pipelines that are run with CytoPipeline. Two shiny applications
   are provided, i.e. an interactive flow frame assessment and
   comparison tool and an interactive scale transformations
   visualization and adjustment tool.
@@ -828,7 +828,7 @@ There are 8 new annotation packages.
   DO.db hasn't been updated for years, and a lot of semantic
   information is
   [missing](https://github.com/YuLab-SMU/DOSE/issues/57). So we
-  developed the new package `HPO.db` for Human Human Phenotype
+  developed the new package HPO.db for Human Human Phenotype
   Ontology annotation.
 
 - [JASPAR2024](/packages/JASPAR2024) JASPAR
