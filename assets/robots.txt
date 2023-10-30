@@ -39,6 +39,7 @@ Disallow: /packages/3.15/
 Disallow: /packages/3.16/
 Disallow: /packages/3.17/
 Disallow: /packages/3.18/
+Disallow: /packages/3.19/
 Disallow: /packages/bioc/
 Disallow: /packages/data/
 Disallow: /repository/
