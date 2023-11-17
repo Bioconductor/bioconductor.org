@@ -170,7 +170,8 @@ def make_individual_feed(pkglist, config, pkgs_to_update)
                       "mac_mavericks" => 4,
                       "mac_elcapitan" => 5,
                       "mac_highsierra" => 6,
-                      "mac_mojave" => 7}
+                      "mac_mojave" => 7,
+                      "mac_monterey" => 8}
                 for ary in [relprobs, devprobs]
                     machines = ary == relprobs ? config["active_release_builders"] : config["active_devel_builders"]
                     ary = ary.find_all{|i| machines.values.include? i[:node]}
