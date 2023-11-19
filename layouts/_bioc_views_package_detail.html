@@ -2,6 +2,33 @@
 
   <% if current? @package %>
 
+<script type="application/ld+json">
+{
+  "@context":"http://schema.org/",
+  "@type":"Tool",
+  "provider":[{
+    "@type":"Organization",
+    "name":"Bioconductor",
+    "url":"https://bioconductor.org/"
+  }],
+  "programmingLanguage":"R",
+  "name":"<%=@package[:Package]%>",
+  "description":"<%= @package[:Description]%>",
+  "url":[
+    "<%=get_short_url(@package)%>"
+  ],
+  "downloadUrl":[
+    "<%=get_short_url(@package)%>"
+  ],
+  "license":[{
+    "@type":"CreativeWork",
+    "name":"<%=@package[:License]%>"
+  }],
+  "softwareVersion":"<%= @package[:version_num]%>",
+  "discussionUrl":["https://support.bioconductor.org/t/<%=@package[:Package].downcase%>/"]
+}
+</script>
+
     <% tr = TableRower.new %>
 
     <table border="0">
