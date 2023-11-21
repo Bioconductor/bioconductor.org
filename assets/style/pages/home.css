@@ -267,6 +267,14 @@
   margin-bottom: 6px;
 }
 
+.community p {
+  border-left: 3px solid;
+  border-color: var(--primary);
+  padding-left: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
 .info p {
   padding-bottom: 1rem;
 }
@@ -382,6 +390,7 @@
 }
 
 .news,
+.community,
 .packages,
 .about-bioconductor {
   padding: 2rem;
