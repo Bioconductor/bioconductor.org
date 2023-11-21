@@ -8,12 +8,12 @@ production_deploy_root: webadmin@master.bioconductor.org:/extra/www/biocnew
 staging_dir: /loc/www/bioconductor-test-new
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.17"
+release_version: "3.18"
 r_version_associated_with_release: "4.3.0"
 r_version_associated_with_devel: "4.3.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.18"
+devel_version: "3.19"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -24,8 +24,8 @@ devel_version: "3.18"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.17"
 - "3.18"
+- "3.19"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
@@ -38,19 +38,19 @@ devel_repos:
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
-  linux: "nebbiolo1"
-  windows: "palomino3"
-  mac_monterey: "merida1"
-active_devel_builders:
   linux: "nebbiolo2"
   windows: "palomino4"
   mac_monterey: "lconway"
+active_devel_builders:
+  linux: "nebbiolo1"
+  windows: "palomino3"
+  mac_monterey: "merida1"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.18"
-  r_version: "4.3"
+  bioc_version: "3.19"
+  r_version: "4.4"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
 ## CHANGE these as AMI IDS change
@@ -160,6 +160,7 @@ r_ver_for_bioc_ver:
   "3.16": "4.2"
   "3.17": "4.3"
   "3.18": "4.3"
+  "3.19": "4.4"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -205,6 +206,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.15": "04/27/2022"
   "3.16": "11/02/2022"
   "3.17": "04/26/2023"
+  "3.18": "10/25/2023"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
