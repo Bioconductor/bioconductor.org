@@ -514,9 +514,9 @@
 input[type="radio"].tabs-join-radio {
   appearance: none;
   background-color: #fff;
-  box-shadow: inset 1em 1em var(--primary-p50);
-  width: 1em;
-  height: 1em;
+  box-shadow: inset 1.5em 1.5em var(--primary-p50);
+  width: 1.5em;
+  height: 1.5em;
   content: "";
   border-radius: 50%;
   display: grid;
@@ -527,7 +527,7 @@ input[type="radio"].tabs-join-radio::before {
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--primary);
+  box-shadow: inset 1.5em 1.5em var(--primary);
 }
 
 input[type="radio"].tabs-join-radio:checked::before {
