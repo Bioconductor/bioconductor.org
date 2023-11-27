@@ -4,14 +4,14 @@
     <div class="instructions-install">
       <h4>1. Install R</h4>
       <p class="text-large">
-        The current release of Bioconductor is version 3.17; it works with R
-        version 4.3.0. Users of older R and Bioconductor must update their
+        The current release of Bioconductor is version <%=config[:release_version] %>; it works with R
+        version <%=config[:r_version_associated_with_release]%>. Users of older R and Bioconductor must update their
         installation to take advantage of new features and to access packages
         that have been added to Bioconductor since the last release.
       </p>
       <p class="text-large">
-        The development version of Bioconductor is version 3.18; it works with R
-        version 4.3.0. More recent ‘devel’ versions of R (if available) will be
+        The development version of Bioconductor is version <%=config[:devel_version] %>; it works with R
+        version <%=config[:r_version_associated_with_devel]%>. More recent ‘devel’ versions of R (if available) will be
         supported during the next Bioconductor release cycle.
       </p>
       <img src="/images/icons/Step 1 quote.svg" alt="blank_" class="step-1" />
@@ -82,7 +82,7 @@
         <code class="light nohighlight">
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
-BiocManager::install(version = "3.17")
+BiocManager::install(version = "<%=config[:release_version] %>")
         </code>
         </pre>
       <img src="/images/icons/Step 2 quote.svg" alt="blank_" class="step-2" />
