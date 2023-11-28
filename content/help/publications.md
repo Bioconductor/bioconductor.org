@@ -1,8 +1,12 @@
-# ![](/images/icons/magnifier.gif)Publications
+# ![](/images/icons/magnifier.gif) Publications
 
-*Bioconductor*
-[F1000 Research Channel](http://f1000research.com/channels/bioconductor)
-launched!
+
+<h2 name="f1000">F1000 Channel</h2>
+
+<div class="grey_box">
+
+See Bioconductor <a href="http://f1000research.com/channels/bioconductor">F1000 Research Channel]</a>
+</div>
 
 <h2 name="featured">Featured</h2>
 
@@ -58,7 +62,30 @@ Last updated <abbr class="timeago" title="<%=get_pubmed_cache_date()%>"><%=get_p
 <p></p>
 <%= render('/_pubmed/', :pb_item => find_item(@items, '/help/publications/papers/pubmed/')) %>
 
-## Books
+
+<h2 name="onlinebooks">Online Books</h2>
+
+<div class="white_box">
+<a href="https://www.huber.embl.de/msmb/">Modern Statistics for Modern Biology</a> 
+</div>
+<div class="grey_box">
+<a href="/books/release/OSCA">Orchestrating Single-Cell Analysis with Bioconductor</a>
+</div>
+<div class="white_box">
+<a href="https://jserizay.com/OHCA/">Orchestrating Hi-C Analysis with Bioconductor</a>
+</div>
+<div class="grey_box">
+<a href="https://rformassspectrometry.github.io/book/">R for Mass Spectrometry</a>
+</div>
+<div class="white_box">
+<a href="/books/release/SingleRBook">SingleRBook</a>
+</div>
+<div class="grey_box">
+<a href="/books/release/csawBook">csawBook</a>
+</div>
+
+
+<h2 name="books">Books</h2>
 
 <a
 href="books/bioinformatics-and-computational-biology-solutions/"
@@ -75,15 +102,16 @@ height="110" alt="R Programming for Bioinformatics" width="85" /></a>&nbsp;&nbsp
 src="books/bioconductor-case-studies/case-studies-small.jpg"
 height="110" alt="Bioconductor Case Studies" width="85" /></a>
 
-## Book Chapters
+<h2 name="bookschapters">Book Chapters</h2>
+
 * [Analyzing biological data using R: methods for graphs and networks.](book-chapters/MiMB)
 
-## Technical Reports and Working Papers
+<h2 name="techreport">Technical Reports and Working Papers</h2>
 
 * [Technical Reports](tech-reports/)
 * [Working Papers](http://www.bepress.com/bioconductor/) ([Instructions for Authors](http://www.bepress.com/bioconductor/authors.instructions.html))
 
-## Compendia
+<h2 name="compendia">Compendia</h2>
 
 * [GeneMetaEx](compendia/genemetaex/)
 * [GolubRR](compendia/golubrr/)
