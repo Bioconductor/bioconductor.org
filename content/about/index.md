@@ -165,7 +165,7 @@ to computational biology in general. The reasons include:
 #### Open development
 
 Users are encouraged to become developers, either by contributing
-[Bioconductor compliant packages](/developers/package-guidelines/)
+[Bioconductor compliant packages](http://contributions.bioconductor.org/develop-overview.html)
 or documentation. Additionally Bioconductor provides a mechanism for
 linking together different groups with common goals to foster
 collaboration on software, often at the level of shared development.
