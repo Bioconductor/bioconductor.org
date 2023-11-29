@@ -108,7 +108,7 @@ data_sources:
   encoding: utf-8
   config:
     cache_file: tmp/pubmed_cache_file.yaml
-    retmax: 20
+    retmax: 10
     ttl: 24
     baseurl: http://eutils.ncbi.nlm.nih.gov/entrez/eutils/
 #   queried database, e.g. "pubmed" or "pmc"; can be a vector
