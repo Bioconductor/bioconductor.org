@@ -19,8 +19,8 @@
 <p class="news-item text-large"> See also </p>
 <ul>
 <li>
-<a class="text-large format-underline" href="/help/publications">Literature
-  	       Citations</a>
+<a class="text-large format-underline" href="/help/publications">Publications
+and Literature Citations</a>
 </li>
 <li>
 <a class="text-large format-underline" href="http://f1000research.com/channels/bioconductor"
