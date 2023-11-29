@@ -86,4 +86,4 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 
 
 Questions can be addressed via email to cab(at)bioconductor.org
 
-![BiocAwards](/images/biocawards/BiocAward.png)
+<img src="/images/biocawards/BiocAward.png" alt="BiocAward Sticker" />
