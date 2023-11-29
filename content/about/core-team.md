@@ -56,18 +56,20 @@
 
 Alumni
 
-- Nitesh Turaga
-- Jiefei Wang
-- Martin Morgan
-- Daniel van Twisk
-- Qian Liu
-- Valerie Obenchain
-- Greg Wargula
-- Dan Tenenbaum
-- Brian Long
-- Jim Hester
-- Jim Java
-- Marc Carlson
-- Nathaniel Hayden
-- Paul Shannon
-- Sonali Arora
+<ul class="inline_list">
+<li>Nitesh Turaga</li>
+<li>Jiefei Wang</li>
+<li>Martin Morgan</li>
+<li>Daniel van Twisk</li>
+<li>Qian Liu</li>
+<li>Valerie Obenchain</li>
+<li>Greg Wargula</li>
+<li>Dan Tenenbaum</li>
+<li>Brian Long</li>
+<li>Jim Hester</li>
+<li>Jim Java</li>
+<li>Marc Carlson</li>
+<li>Nathaniel Hayden</li>
+<li>Paul Shannon</li>
+<li>Sonali Arora</li>
+</ul>

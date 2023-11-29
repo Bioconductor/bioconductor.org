@@ -33,4 +33,5 @@ and Literature Citations</a>
 <li>
 <a class="text-large format-underline" href="https://bioconductor.github.io/biocblog"
         >Community Blog</a>
-</li>	
+</li>
+</ul>

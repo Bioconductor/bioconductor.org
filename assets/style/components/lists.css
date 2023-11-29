@@ -26,3 +26,18 @@ li:has(p) {
 li:has(p)::before {
   margin-left: -1.1rem;
 }
+
+.inline_list ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 10px;
+}
+
+.inline_list li {
+  display: inline-block;
+}
+
+.inline_list li::before {
+  content: "•";
+  margin-right: 0.5rem;
+}

@@ -287,7 +287,7 @@ Workflow Packages:
 
 Annotation Data Packages:
 
-<ul>
+<ul class="inline_list">
 <li>All 12 LRBase.XXX.eg.db packages (replaced with AHLRBaseDbs)</li>
 <li>All 73 MeSH.XXX.eg.db packages (replaced with AHMeSHDbs)</li>
 <li><a href="/packages/3.12/data/annotation/html/MafDb.gnomAD.r3.0.GRCh38.html">MafDb.gnomAD.r3.0.GRCh38</a></li>
@@ -696,9 +696,6 @@ Annotation Packages:
 <li><a href="/packages/3.4/data/annotation/html/org.Tgondii.eg.db.html">org.Tgondii.eg.db</a></li>
 </ul>
 
-9 software package and 1 experimental data packages were marked as deprecated,
-to be removed in the next release.
-
 
 ## Packages removed with Bioconductor 3.4 release
 
@@ -729,9 +726,6 @@ Experimental Data Packages:
 <li><a href="/packages/3.2/data/experiment/html/geuvStore.html">geuvStore</a></li>
 <li><a href="/packages/3.2/data/experiment/html/ind1KG.html">ind1KG</a></li>
 </ul>
-
-1 software package and 2 experimental data packages were marked as deprecated,
-to be removed in the next release.
 
 ## Packages removed with Bioconductor 3.3 release
 
