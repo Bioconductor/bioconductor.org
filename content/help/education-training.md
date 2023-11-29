@@ -111,3 +111,5 @@ welcome to join the discussion.
 If you are interested in this project and want to get in touch or
 participate, please contact the group via the Google group or
 individual members on slack or by email.
+
+<img src="/images/icons/BiocTeachingSticker.png" alt="BiocTeaching sticker" />
