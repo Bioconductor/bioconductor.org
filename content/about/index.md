@@ -175,3 +175,6 @@ collaboration on software, often at the level of shared development.
 Please refer to the [Bioconductor Code of Conduct][coc]
 
 [coc]: code-of-conduct/
+
+
+<img src="/images/icons/BioconductorSticker1.png" alt="Bioconductor sticker" />
