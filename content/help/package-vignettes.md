@@ -73,7 +73,7 @@ Please also remember to check package documention help files. You can access
 help files for a package within R with <code>?</code>.
 
 ```r
-library(Biostrings)
+library("Biostrings")
 ?DNAString
 ?reverseComplement
 ```
