@@ -1497,7 +1497,7 @@ def get_last_git_commits(release=true)
     manifest = File.open("#{manifest_path}").read
     lines = manifest.split("\n").drop(1) - [""]
     pkgs = lines.map {|item| item.gsub("Package: ", "")}
-    while uni_pkg.length < 20 do
+    while uni_pkg.length < 10 do
       item = xml[dx]
       if not uni_pkg.include?(item["title"])
         if pkgs.include?(item["title"])
@@ -1513,7 +1513,7 @@ def get_last_git_commits(release=true)
   rescue Exception => ex
     tbl_str = "<table>\n<tr><td> Can't read / no records in rss feed, not report last git commit time </td></tr>\n"
     i = 0
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1565,7 +1565,7 @@ def latest_packages(repo)
   if (!File.directory?("#{path}/../manifest/"))
     tbl_str = "<table>\n<tr><td> file not found. skipping information </td></tr>\n"
     i = 0 
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1579,7 +1579,7 @@ def latest_packages(repo)
     pkgs = lines.map {|item| item.gsub("Package: ", "")}
     pkgs.reverse!
 
-    trunc_pkgs = pkgs[0..19]
+    trunc_pkgs = pkgs[0..9]
   
     tbl_str = "<table>\n"
     trunc_pkgs.each do |pkg|
