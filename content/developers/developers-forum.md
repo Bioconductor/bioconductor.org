@@ -1,5 +1,13 @@
 # Developers' Forum
 
+## Attention
+
+We are currently looking for someone interested in taking over organizing this
+initiative. Please reach out on the developer-form channel on the [Bioconductor
+slack](https://slack.bioconductor.org/) if interested.
+
+## Overview
+
 The Bioconductor Developers' Forum aims to provide a regular platform for Bioconductor developers to describe existing software infrastructure, to present plans for future developments, and discuss changes that may impact developers within the Bioconductor project.
 
 The goals we hope to address include:
