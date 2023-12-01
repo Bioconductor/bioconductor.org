@@ -1397,7 +1397,7 @@ def check_mirror_url(url)
   end
   begin
     response = http.head(uri.path)
-    if response.code  =~ /^2/
+    if response.code =~ /^2/
       "1"
     else
       "0"
