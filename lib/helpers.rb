@@ -1275,14 +1275,15 @@ def mirror_status()
         for mirror in country.values.first
             status = {}
             status[:url] = mirror[:https_mirror_url]
-            url = mirror[:mirror_url]
+            status[:main] = (check_mirror_url(mirror[:https_mirror_url]) == "1") ? "yes" : "no"
+            url = mirror[:https_mirror_url]
             url += "/" unless url.end_with? "/"
             ["release", "devel"].each do |version|
                 numeric_version = config["#{version}_version".to_sym]
                 url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
                 #puts "URL: " + url_to_check
                 begin
-                    result = url_ok(url_to_check)
+                    result = (check_mirror_url(url_to_check) == "1")
                 rescue
                     result = false
                 end
@@ -1411,7 +1412,7 @@ def check_mirror_url(url)
   end
   begin
     response = http.head(uri.path)
-    if response.code == "200"
+    if response.code =~ /^2/
       "1"
     else
       "0"

@@ -142,12 +142,14 @@
 <table>
   <tr>
     <th>URL</th>
+    <th>Mirror</th>
     <th>Release</th>
     <th>Devel</th>
   </tr>
   <% for row in status[:status] %>
     <tr>
       <td><a href="<%= row[:url] %>"><%= row[:url] %></a></td>
+      <td><%= row[:main] %></td>
       <td><%= row[:release] %></td>
       <td><%= row[:devel] %></td>
     </tr>
