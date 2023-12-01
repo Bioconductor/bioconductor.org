@@ -2,3 +2,4 @@
 title: Package Vignettes
 subnav:
   - include: /_bioc_release_packages/
+  - include: /_bioc_devel_packages/
