@@ -62,21 +62,21 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/$1/ [L,R]
 
-## Redirect BioC versions 1.8-3.16 to OSN
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/src/contrib/(.*gz) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/contrib/$2
-RedirectMatch 302 /packages/(3.[6-9]|3.1[0-6])/bioc/src/contrib/Archive/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/$2
-RedirectMatch 302 /packages/(3.[6-9]|3.1[0-6])/bioc/src/contrib/Archive https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/bin/$2
+## Redirect BioC versions 1.8-3.17 to OSN
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/bioc/src/contrib/(.*gz) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/contrib/$2
+RedirectMatch 302 /packages/(3.[6-9]|3.1[0-7])/bioc/src/contrib/Archive/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/$2
+RedirectMatch 302 /packages/(3.[6-9]|3.1[0-7])/bioc/src/contrib/Archive https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/bioc/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/annotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/annotation/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/experiment/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/experiment/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/bin/$2
 # BioC 2.1 has an additional extannotation/ directory
 RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/src/$1
 RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/bin/$1
 # Starting in 2.13 also had workflows
-RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-6])/workflows/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/src/$2
-RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-6])/workflows/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/bin/$2
+RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-7])/workflows/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/src/$2
+RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-7])/workflows/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/bin/$2
 # 3.7 and 3.8 had webvigs in workflows
 RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/webvigs/$2
 RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/webvigs/$2
@@ -86,20 +86,20 @@ RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) https://mghp.osn.xs
 
 ## Keep these if ever OSN is unavailable or down for maintanence we can switch
 ## back to using S3 easily
-## Redirect BioC versions 1.8-3.16 to S3 buckets
+## Redirect BioC versions 1.8-3.17 to S3 buckets
 ##
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/annotation/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/src/$2
-##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-6])/data/experiment/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/annotation/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/src/$2
+##RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-7])/data/experiment/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
 # BioC 2.1 has an additional extannotation/ directory
 ##RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/src/$1
 ##RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/bin/$1
 # Starting in 2.13 also had workflows
-##RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-6])/workflows/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/src/$2
-##RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-6])/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
+##RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-7])/workflows/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/src/$2
+##RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-7])/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
 # 3.7 and 3.8 had webvigs in workflows
 ##RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
 ##RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
