@@ -738,7 +738,7 @@ task :mirror_csv do
 	    csv << data
 	    # Second row is http
 	    data[3] = mirror['mirror_url']
-	    data[0] = "#{country} (#{mirror['city']})"
+	    data[0] = "#{country} (#{mirror['city']}) [unsecure]"
 	    data[6] = check_mirror_url(mirror['mirror_url'])
 	    csv << data
 	  end
