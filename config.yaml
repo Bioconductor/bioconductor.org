@@ -292,7 +292,7 @@ mirrors:
      https_mirror_url: https://bioconductor.uib.no/
      rsync: secure_mirror_from_master
      city: Bergen
-     country_code: no
+     country_code: "no"
  - Italy:
    - institution: University of Pisa
      institution_url: https://www.unipi.it/
