@@ -1017,7 +1017,7 @@ BUG FIXES
 
 BUG FIXES
 
-- Solves jCounts() Error in av[at] <- a[at] : NAs are not allowed in
+- Solves jCounts() Error in av&#91;at&#93; <- a&#91;at&#93; : NAs are not allowed in
   subscripted assignments bug with large junction possitions.
 
 [ATACseqQC](/packages/ATACseqQC)
@@ -4698,7 +4698,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 BUG FIXES
 
-- Fix is.unsorted() methods for Compressed[Integer|Numeric]List
+- Fix is.unsorted() methods for Compressed&#91;Integer|Numeric&#93;List
   objects (they were never working since their introduction years
   ago).
 
@@ -5460,7 +5460,7 @@ NEW FEATURES
 
 BUG FIXES
 
-- Fix missing <cstdint> include for gcc 13.1.1 compatibility
+- Fix missing &#60;cstdint&#62; include for gcc 13.1.1 compatibility
 
 [mbQTL](/packages/mbQTL)
 -----
@@ -5593,7 +5593,7 @@ Text: fix R cmd check warnings: - fix "Undocumented arguments in
         arguments for methylRawList and methylRawListDB constructors -
         methCall: replace variable length char with vector of chars to
         fix the warning: "variable length arrays are a C99 feature
-        [-Wvla-extension]" - methCall: simplify the parsing of cigar
+        &#91;-Wvla-extension&#93;" - methCall: simplify the parsing of cigar
         string and replace calls to deprecated std::sprintf with
         std::snprintf
 
@@ -8089,7 +8089,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - Rename nzvals() slot getter (for COO_SparseArray objects) ->
   nzdata().
-  Also reintroduce nzvals() as a fast way to get 'x[nzwhich(x)]' on a
+  Also reintroduce nzvals() as a fast way to get 'x&#91;nzwhich(x)&#93;' on a
   sparse array-like object 'x'.
 
 - Re-implement all matrixStats methods (except row/colMedians()) for
