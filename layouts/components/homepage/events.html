@@ -1,6 +1,6 @@
 <section class="events">
   <span class="events-header container">
-    <h3>🗓️ Upcoming Events</h3>
+    <h3>🗓️ Events</h3>
     <a class="button white-button format-bold" href="/help/events/"
       >See all events
       <svg
@@ -22,7 +22,7 @@
   </span>
   <div class="events-container" tabindex="0">
 
-    <%= render('/_upcoming_events/', :events => find_item(@items, '/help/events/'))%>
+    <%= render('/_top_events/', :events => find_item(@items, '/help/events/'))%>
 
   </div>
 </section>

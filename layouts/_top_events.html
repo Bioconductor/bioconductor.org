@@ -1,0 +1,19 @@
+<% top_events(@events).each do |e| %>
+
+<a href="<%= e[:link][:url] %>">
+  <div class="event-card-container">
+    <div class="event-card">
+      <p class="format-bold">
+	<%= e[:title] %>
+      </p>
+      <div class="event-date-location">
+	<p class="text-small"><%= event_date(e) %></p>
+        <p class="text-small"><%= e[:location] %></p>
+      </div>
+    </div>
+  </div>
+</a>
+<br>
+<br>
+
+<% end %>

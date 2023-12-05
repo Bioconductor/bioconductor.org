@@ -437,6 +437,14 @@ def previous_events(events)
   end
 end
 
+def top_events(events)
+  sorted = events.children.sort do |a, b|
+      a[:start] <=> b[:start]
+  end
+  toplist = sorted[-5..-1]
+  toplist.reverse
+end
+
 def event_date(e)
   if (e[:start].month == e[:end].month)
     if (e[:start].day == e[:end].day)
