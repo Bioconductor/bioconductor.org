@@ -1,6 +1,6 @@
 <h1>Events</h1>
 
-<h2>Events Google calendar</h2>
+<h2>Google calendar</h2>
 <iframe
   class="google-calendar"
   src="https://calendar.google.com/calendar/embed?height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;ctz=America%2FNew_York&amp;src=YWtlczFvZGVsbW9kcDAzODV1ZHB2NDhpY29AZ3JvdXAuY2FsZW5kYXIuZ29vZ2xlLmNvbQ&amp;color=%231A81C2"
@@ -28,16 +28,19 @@
   bioconductor.org
 </p>
 
-<h2>Course material</h2>
-<p>
-  <a href="/help/course-materials/">Course material</a> from many previous
-  events is available.
-</p>
+<h1>Event Listings</h1>
 
 <h2>Upcoming</h2>
 <%= render('/_upcoming_events/', :events => find_item(@items, '/help/events/'))
 %>
 
 <h2>Previous (recent)</h2>
+
+<p>
+  <a href="/help/course-materials/">Course material</a> from many previous
+  events is available.
+</p>
+<br>
+
 <%= render('/_previous_events/', :events => find_item(@items, '/help/events/'))
 %>

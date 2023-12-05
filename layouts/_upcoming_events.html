@@ -1,11 +1,19 @@
 <% upcoming_events(@events).each do |e| %>
-  <% if e[:link].nil? %>
-    <p> <%= e[:title] %> <br/>
-      <%= event_date(e) %> &mdash; <%= e[:location] %>
-    </p>
-  <% else %>
-    <p><a href="<%= e[:link][:url] %>"><b><%= e[:title] %></b></a><br/>
-      <%= event_date(e) %> &mdash; <%= e[:location] %>
-    </p>
-  <% end %>
+
+<a href="<%= e[:link][:url] %>">
+  <div class="event-card-container">
+    <div class="event-card">
+      <p class="format-bold">
+	<%= e[:title] %>
+      </p>
+      <div class="event-date-location">
+	<p class="text-small"><%= event_date(e) %></p>
+        <p class="text-small"><%= e[:location] %></p>
+      </div>
+    </div>
+  </div>
+</a>
+<br>
+<br>
+
 <% end %>
