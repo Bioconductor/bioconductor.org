@@ -10,106 +10,130 @@
         developer, our knowledge base provides you with the necessary tools and
         insights to navigate Bioconductor packages effortlessly.
       </p>
+
+    <div class="info-section-button-padding">
+      <a class="brand-border-button" href="/install/">
+        <span class="span-brand format-bold">
+          Get Started
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+          >
+            <path
+              d="M5.25 3.66665L9.33333 7.74998L5.25 11.8333"
+              stroke="#3792AD"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+
+    <div class="info-section-button-padding">
+      <a class="brand-border-button" href="/about/">
+        <span class="span-brand format-bold">
+          More About Bioconductor
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+          >
+            <path
+              d="M5.25 3.66665L9.33333 7.74998L5.25 11.8333"
+              stroke="#3792AD"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+    </div>
+
+	
     </section>
     <div class="upper-content">
       <section>
-        <h4>Documentation</h4>
+        <h4>Learn</h4>
         <ul>
           <li>
-            <a class="text-large" href="/help/package-vignettes/">
-              Package vignettes and manuals.
+            <a class="text-large" href="/help/education-training/">
+              Education and Training.
             </a>
             
           </li>
           <li>
-            <a class="text-large" href="/packages/release/workflows/">
-              Workflows for learning and use.
-            </a>
-            
+            <a class="text-large" href="/help/bioconductor-books/">
+              Bioconductor Books
+	    </a>   
           </li>
           <li>
-            <a class="text-large" href="/books/release/">
-              Several online books for comprehensive coverage of a particular
-              research field, biological question, or technology.</a
-            >
-            
+            <a class="text-large" href="/help/events/"
+              >Upcoming and Past Events</a>  
           </li>
           <li>
             <a class="text-large" href="/help/course-materials/"
-              >Course and conference material.</a
-            >
-            
+              >Courses and Conference Materials</a>  
           </li>
           <li>
-            <a
-              class="text-large"
-              href="https://www.youtube.com/user/bioconductor"
-              >Videos</a
-            >
-            
+            <a class="text-large" href="https://www.youtube.com/user/bioconductor"
+              >Videos</a>  
           </li>
           <li>
-            <p class="text-large">
+            <a class="text-large" href="/help/package-vignettes/"
+              >Package Vignettes</a>  
+          </li> 
+          <li>
+            <a class="text-large" href="/packages/release/BiocViews.html#___Workflow">
+              Common Workflows
+            </a>
+          </li>
+          <li>
+            <a class="text-large" href="/help/faq/"
+              >FAQ</a>  
+          </li> 
+	  <li>
               <a class="text-large" href="/help/community/">
                 Community resources
               </a>
-              and
+	  </li>
+	  <li>
               <a
                 class="text-large"
                 href="https://support.bioconductor.org/t/Tutorials/"
-                >tutorials
-              </a>.
-            </p>
-            
+                >Tutorials
+              </a>             
           </li>
           <li>
-              <p class="text-large">
-              <a class="text-large" href="http://cran.r-project.org/">
-                R / CRAN packages
-              </a>
-              and
-              <a
-                class="text-large"
-                href="http://www.r-project.org/other-docs.html"
-                >documentation</a
-              >
-            </p>
-            
-          </li>
+            <a class="text-large" href="/help/support/"
+              >Get Help</a>  
+          </li> 
         </ul>
       </section>
 
+   </div>
+  </div>
+  <hr class="page-divider" />
+  <div class="lower-container">
+    <div class="lower-content">
       <section>
-        <h4>Support</h4>
-        <p class="text-large" class="text-large">
-          Please read the
-          <a class="text-large" href="/help/support/posting-guide/"
-            >posting guide </a
-          >. Post questions about Bioconductor to one of the following
-          locations:
-        </p>
-        <ul>
-          <li>
-            <a class="text-large" href="https://support.bioconductor.org/"
-              >Support site - for questions about Bioconductor packages
-            </a>
-            
-          </li>
-          <li>
-            <a class="text-large" href="/help/support/#bioc-devel"
-              >Bioc-devel mailing list - for package developers
-            </a>
-            
-          </li>
-        </ul>
-      </section>
-
-      <section>
-        <h4>Packages</h4>
+       <h4>Packages</h4>
         <p class="text-large" class="text-large">
           Bioconductor's stable, semi-annual release:
         </p>
         <ul>
+          <li>
+            <a class="text-large" href="/news/bioc_<%=config[:release_version].sub(".", "_")%>_release"> Latest release announcement
+              
+            </a>            
+          </li>
           <li>
             <a
               class="text-large"
@@ -133,7 +157,7 @@
               class="text-large"
               class="symlink"
               href="/packages/release/BiocViews.html#___ExperimentData"
-              >Illustrative experiment data packages
+              >Experiment data packages
             </a>
             
           </li>
@@ -147,146 +171,132 @@
             
           </li>
           <li>
-            <a class="text-large" class="symlink" href="/books/release/"
+            <a class="text-large" class="symlink" href="/help/bioconductor-books/"
               >Online books
-            </a>
-            
+            </a>            
           </li>
           <li>
-            <a class="text-large" href="/news/bioc_<%=config[:release_version].sub(".", "_")%>_release"> Latest release announcement
-              
-            </a>
-            
-          </li>
-          <li>
-            <p class="text-large">
-              Bioconductor is also available via
-              <a class="text-large" href="/help/docker/">Docker Images</a>
-              and for use in the
-              <a class="text-large" href="https://anvil.bioconductor.org/"
+            <a class="text-large" href="/help/docker/">Docker Containers</a>
+	  </li>
+	  <li>
+            <a class="text-large" href="https://anvil.bioconductor.org/"
                 >AnVIL</a
-              >.
-            </p>
-            
+              >            
           </li>
-        </ul>
+        </ul> 
       </section>
-    </div>
-  </div>
-  <hr class="page-divider" />
-  <div class="lower-container">
-    <div class="lower-content">
+
       <section>
-        <ul>
-          <h4>Publications</h4>
-          <li>
-            <p class="text-large">
-              <a class="text-large" href="/help/publications/index.html#featured"
-                >Featured</a
-              >
-              and
-              <a class="text-large" href="/help/publications/index.html#recent">
-                recent citations</a
-              >
-            </p>
-            
-          </li>
-          <li>
-            <p class="text-large">
-              <a
-                class="text-large"
-                href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=pubdate"
-                >PubMed</a
-              >,
-              <a
-                class="text-large"
-                href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=pubdate"
-                >PubMed Central</a
-              >
-            </p>
-            
-          </li>
-
-          <li>
-             <a
-                class="text-large"
-                href="http://scholar.google.com/scholar?q=bioconductor&btnG=Search"
-                >Google Scholar searches</a
-              >
-              
-          </li>
-        </ul>
-
-        <p class="publications-footer">
-          <a class="format-underline">Source code is stored in Git.</a><br />
-          Software packages are built and checked nightly.
+       <h4>Developers</h4>
+        <p class="text-large" class="text-large">
+          See <a href="/developers/">Deverlopers Section</a> for more information
         </p>
+	<ul>
+	  <li>
+	    <a class="text-large format-underline"
+               href="/checkResults/">Build Reports
+	    </a>
+	  <li>
+	    <a class="text-large format-underline"
+               href="https://contributions.bioconductor.org">Guidelines for Package
+               Development, Submission, and Peer Review
+	    </a>
+	  </li>
+	  <li>
+	    <a class="text-large format-underline"
+               href="https://contributions.bioconductor.org/use-devel.html">Use Bioconductor 'Devel' Version
+	    </a>
+	  </li>
+	  <li>
+	    <a class="text-large format-underline"
+               href="https://contributions.bioconductor.org/git-version-control.html">Git Source Control
+	    </a>
+	  </li>
+	  <li>
+	    <a class="text-large format-underline"
+               href="https://contributions.bioconductor.org/git-version-control.html#faq">Git FAQ
+	    </a>
+	  </li>
+	  <li>
+	    <a class="text-large format-underline"
+               href="/developers/release-schedule/">Release Schedule
+	    </a>
+	  </li>
+	  <li>
+	    <a class="text-large format-underline"
+               href="https://code.bioconductor.org/">Browsable Code Base
+	    </a>
+	  </li>
+	</ul>
       </section>
-
+      
       <section>
-        <ul>
-          <h4>Previous releases</h4>
-          <li>
-            <a
-              class="text-large"
-              href="/packages/3.16/BiocViews.html#___Software"
-              >3.16 (4.2)</a
-            >
-            
-          </li>
-          <li>
-            <a
-              class="text-large"
-              href="/packages/3.15/BiocViews.html#___Software"
-              >3.15 (4.2)</a
-            >
-            
-          </li>
-          <li>
-            <a
-              class="text-large"
-              href="/packages/3.14/BiocViews.html#___Software"
-              >3.14 (4.1)</a
-            >
-            
-          </li>
-          <li>
-            <a
-              class="text-large"
-              href="/packages/3.13/BiocViews.html#___Software"
-              >3.13 (4.1)</a
-            >
-            
-          </li>
-          <li>
-            <a
-              class="text-large"
-              href="/packages/3.12/BiocViews.html#___Software"
-              >3.12 (4.0)</a
-            >
-            
-          </li>
-        </ul>
-        <p class="prev-releases-footer">
-          <a
-            class="format-underline"
-            href="https://www.bioconductor.org/about/release-announcements/#release-versions">
-            All Bioconductor (R) versions</a
-          >
-          <a class="format-underline" href=""> Release announcements</a>
+        <h4>Connect With the Community</h4>
+        <p class="text-large" class="text-large">
+          Interact with the Bioconductor Community
         </p>
+        <ul>
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="/help/support/"
+              >Support Forums</a
+			       >
+	  </li>
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="https://bioconductor.github.io/biocblog"
+              >Community Blog</a
+			       >
+	  </li>
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="https://www.youtube.com/user/bioconductor"
+              >YouTube Channel</a
+				>
+	  </li>
+	  <li>
+            <a
+              class="text-large format-underline"
+              href="https://slack.bioconductor.org/"
+              >Community Slack</a
+				>
+	  </li>
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="https://genomic.social/@bioconductor"
+              >Mastodon</a
+			 >
+	  </li>    
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="http://f1000research.com/channels/bioconductor"
+              >F1000 Research Channel</a
+				       >
+	  </li>
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="/help/publications"
+              >Publications</a
+			     >
+	  </li>    
+	  <li>
+	    <a
+              class="text-large format-underline"
+              href="/help/events/"
+              >Bioconductor Related Events</a
+					    >
+	  </li>
+	</ul>
       </section>
 
-      <section>
-        <ul>
-          <h4>FAQ</h4>
-          <ul>
-            <li>
-              <a class="text-large" href="/help/faq">Bioconductor FAQ</a>
-            </li>
-          </ul>
-        </ul>
-      </section>
+
+
     </div>
   </div>
 
