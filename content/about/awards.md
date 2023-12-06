@@ -63,16 +63,16 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 
 # Awardees 2023
 
 ## Susan Holmes
-<img src="/images/biocawards/writeup/SusanHolmes.png" width="100%" height="100%"/>
+<img src="/images/biocawards/writeup/SusanHolmes.png" alt="Susan Holmes" width="100%" height="100%"/>
 
 ## Matthew Ritchie
-<img src="/images/biocawards/writeup/MatthewRitchie.png" width="100%" height="100%"/>
+<img src="/images/biocawards/writeup/MatthewRitchie.png" alt="Matthew Ritchie" width="100%" height="100%"/>
 
 ## Constantin Ahlmann-Eltze
-<img src="/images/biocawards/writeup/ConstantinAhlmann-Eltze.png" width="100%" />
+<img src="/images/biocawards/writeup/ConstantinAhlmann-Eltze.png" alt="Constantin Ahlmann-Eltze" width="100%" />
 
 ## Simone Bell
-<img src="/images/biocawards/writeup/SimoneBell.png" width="100%" />
+<img src="/images/biocawards/writeup/SimoneBell.png" alt="Simone Bell" width="100%" />
 
 # Previous Winners
 
@@ -86,4 +86,4 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 
 
 Questions can be addressed via email to cab(at)bioconductor.org
 
-![BiocAwards](/images/biocawards/BiocAward.png)
+<img src="/images/biocawards/BiocAward.png" alt="BiocAward Sticker" />

@@ -14,19 +14,17 @@ Advisory Boards provide project oversight.
 [Scientific]: scientific-advisory-board/
 [Community]: community-advisory-board/
 
-## Release and core development
+## Release and Core Development
 
-The Bioconductor [release version](/packages/release/bioc/) is updated
+The Bioconductor [release version](/packages/release/) is updated
 twice each year, and is appropriate for most users. There is also a
-[development version](/packages/devel/bioc), to which new features and
+[development version](/packages/devel/), to which new features and
 packages are added prior to incorporation in the release. A large
 number of [meta-data packages](/packages/release/data/annotation)
 provide pathway, organism, microarray and other annotations.
 
 The Bioconductorproject started in 2001 and is overseen by a [core
-team](/about/core-team/), based primarily at [Roswell Park Comprehensive Cancer
-Center](https://www.roswellpark.org), and by other members coming
-from US and international institutions. A [Community Advisory Board][Community]
+team](/about/core-team/). A [Community Advisory Board][Community]
 and a [Technical Advisory Board][Technical] of key participants
 meets monthly to support the Bioconductor mission by coordinating
 training and outreach activities, developing strategies to ensure long-term
@@ -50,8 +48,9 @@ Methods 12:115-121][1] and Gentleman et al., 2004 [Genome Biology
 
 Most Bioconductor components are distributed as [R
 packages](http://cran.r-project.org/doc/FAQ/R-FAQ.html#R-Add_002dOn-Packages).
-The functional scope of [Bioconductor packages](/packages/release/bioc/)
-includes the analysis of DNA microarray, sequence, flow, SNP, and other data.
+The functional scope of [Bioconductor packages](/packages/release/)
+includes the analysis of DNA microarray, sequence, flow, SNP, and other genetic
+or genomic data.
 
 ## Project Goals
 
@@ -66,7 +65,7 @@ The broad goals of the Bioconductor project are:
   and deployment of extensible, scalable, and interoperable software.
 - To further scientific understanding by producing high-quality
   [documentation](/help/package-vignettes/) and reproducible research.
-- To [train](/help/course-materials/) researchers on computational and
+- To [train](/help/education-training/) researchers on computational and
   statistical methods for the analysis of genomic data.
 
 ## Main Project Features
@@ -89,7 +88,7 @@ to the Bioconductor project, including:
 
 #### Documentation and reproducible research
 
-Each [Bioconductor package](/packages/release/bioc/) contains one or more
+Each [Bioconductor package](/packages/release/) contains one or more
 [vignettes](/help/package-vignettes/), documents that provide a
 textual, task-oriented description of the package's functionality.
 Vignettes come in several forms. Many are "HowTo"s that demonstrate
@@ -135,7 +134,9 @@ program of [short courses](/help/course-materials/) on software and
 statistical methods for the analysis of genomic data. Courses have been
 given for audiences with backgrounds in either biology or statistics. All
 [course materials](/help/course-materials/) (lectures and computer labs)
-are available on this site.
+are available on this site. There is also a [Bioconductor teaching
+committee](/help/education-training/) to consolidate Bioconductor-focused
+training materials and establish a community of Bioconductor trainers. 
 
 #### Open source
 
@@ -164,7 +165,7 @@ to computational biology in general. The reasons include:
 #### Open development
 
 Users are encouraged to become developers, either by contributing
-[Bioconductor compliant packages](/developers/package-guidelines/)
+[Bioconductor compliant packages](http://contributions.bioconductor.org/develop-overview.html)
 or documentation. Additionally Bioconductor provides a mechanism for
 linking together different groups with common goals to foster
 collaboration on software, often at the level of shared development.
@@ -174,3 +175,6 @@ collaboration on software, often at the level of shared development.
 Please refer to the [Bioconductor Code of Conduct][coc]
 
 [coc]: code-of-conduct/
+
+
+<img src="/images/icons/BioconductorSticker1.png" alt="Bioconductor sticker" />

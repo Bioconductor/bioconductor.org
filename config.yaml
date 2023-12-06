@@ -10,7 +10,7 @@ staging_dir: /loc/www/bioconductor-test-new
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "3.18"
 r_version_associated_with_release: "4.3.0"
-r_version_associated_with_devel: "4.3.0"
+r_version_associated_with_devel: "4.4.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 devel_version: "3.19"
@@ -108,7 +108,7 @@ data_sources:
   encoding: utf-8
   config:
     cache_file: tmp/pubmed_cache_file.yaml
-    retmax: 20
+    retmax: 10
     ttl: 24
     baseurl: http://eutils.ncbi.nlm.nih.gov/entrez/eutils/
 #   queried database, e.g. "pubmed" or "pmc"; can be a vector
@@ -279,8 +279,8 @@ mirrors:
      institution_url: https://ustc.edu.cn
      contact: Linux User Group (LUG) @ USTC
      contact_email: lug@ustc.edu.cn
-     mirror_url: http://mirrors.ustc.edu.cn/
-     https_mirror_url: https://mirrors.ustc.edu.cn/
+     mirror_url: http://mirrors.ustc.edu.cn/bioc/
+     https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
      rsync: secure_mirror_from_master
      city: Hefei Anhui
      country_code: cn
@@ -293,7 +293,7 @@ mirrors:
      https_mirror_url: https://bioconductor.uib.no/
      rsync: secure_mirror_from_master
      city: Bergen
-     country_code: no
+     country_code: "no"
  - Italy:
    - institution: University of Pisa
      institution_url: https://www.unipi.it/

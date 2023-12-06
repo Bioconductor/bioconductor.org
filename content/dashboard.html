@@ -1,165 +1,176 @@
-<h1>Dashboard</h1>
+<style type="text/css">
+  SPAN.TIMEOUT {
+      background: #A08;
+      font-weight: bold;
+      color: white;
+  }
+  SPAN.ERROR {
+      background: #B33;
+      font-weight: bold;
+      color: white;
+  }
+  SPAN.WARNINGS {
+      background: #D82;
+      font-weight: bold;
+      color: white;
+  }
+  SPAN.OK {
+      background: #282;
+      font-weight: bold;
+      color: #DDD;
+  }
+</style>
 
-
-<div class="hp_options_box">
-
-
+<h1 class="format-bold">Dashboard</h1>
 <div>
-<% page_build_time = get_current_time() %>
-<p>This page was built <abbr class="timeago" title="<%=page_build_time%>">
-        <%=page_build_time%></abbr>.</p>
+  <% page_build_time = get_current_time() %>
+  <p>This page was built <abbr class="timeago" title="<%=page_build_time%>">
+      <%=page_build_time%></abbr>.</p>
 </div>
 
-
-
-
-  <div  style="float:left;width:50%;">
-    <p>Last 20 commit to Bioconductor release:  <%= get_last_git_commits(release=true) %>.</p>
-  </div>
-  <div  style="float:right;width:50%;">
-    <p>Last 20 commit to Bioconductor devel:  <%= get_last_git_commits(release=false) %>.</p>
-  </div>
-
-
-
-
-<div>
-      <div style="float:left;width:100%;">
-      <h2><img src="/images/icons/buildicon.gif" alt=""/><a href="/checkResults/">Build System Status</a></h2>
-
-    <style type="text/css">
-    SPAN.TIMEOUT {
-        background: #A08;
-        font-weight: bold;
-        color: white;
-    }
-    SPAN.ERROR {
-        background: #B33;
-        font-weight: bold;
-        color: white;
-    }
-    SPAN.WARNINGS {
-        background: #D82;
-        font-weight: bold;
-        color: white;
-    }
-    SPAN.OK {
-        background: #282;
-        font-weight: bold;
-        color: #DDD;
-    }
-    </style>
+<div class="page-container">
+  
+  <section>
+    <h2><a href="/checkResults/">Build System Status</a></h2>
     <p>Legend:
-        <span class="TIMEOUT">&nbsp;TIMEOUT&nbsp;</span>
-        <span class="ERROR">&nbsp;ERROR&nbsp;</span>
-        <span class="WARNINGS">&nbsp;WARNINGS&nbsp;</span>
-        <span class="OK">&nbsp;OK&nbsp;</span>
+      <span class="TIMEOUT">&nbsp;TIMEOUT&nbsp;</span>
+      <span class="ERROR">&nbsp;ERROR&nbsp;</span>
+      <span class="WARNINGS">&nbsp;WARNINGS&nbsp;</span>
+      <span class="OK">&nbsp;OK&nbsp;</span>
     </p>
+    <p><br></p>	 	 
+  </section>
+  
+  <section>
+    <h4>Release</h4>
+    
+    <p><a class="text-large format-bold" href="/checkResults/release/bioc-LATEST/">Software</a></p>
+    <%= get_build_summary("release", "bioc") %>
+    <p>&nbsp;</p>
+    
+    <p><a class="text-large format-bold" href="/checkResults/release/data-experiment-LATEST/">Experiment Data</a></p>
+    <%= get_build_summary("release", "data-experiment") %>
+    <p>&nbsp;</p>
+    
+    <p><a class="text-large format-bold" href="/checkResults/release/workflows-LATEST/">Workflows</a></p>
+    <%= get_build_summary("release", "workflows") %>
+    <p>&nbsp;</p>
+	   
+  </section>
 
+  <section>
+    <h4>Devel</h4>
 
-       <div>
-            <p><a href="/checkResults/release/bioc-LATEST/">Release, Software</a></p>
-            <%= get_build_summary("release", "bioc") %>
-            <p>&nbsp;</p>
-      </div>
+    <p><a class="text-large format-bold" href="/checkResults/devel/bioc-LATEST/">Software</a></p>
+    <%= get_build_summary("devel", "bioc") %>
+    <p>&nbsp;</p>
+    
+    <p><a class="text-large format-bold" href="/checkResults/devel/data-experiment-LATEST/">Experiment Data</a></p>
+    <%= get_build_summary("devel", "data-experiment") %>
+    <p>&nbsp;</p>
 
-       <div>
-            <p><a href="/checkResults/release/data-experiment-LATEST/">Release, Experiment Data</a></p>
-            <%= get_build_summary("release", "data-experiment") %>
-            <p>&nbsp;</p>
-      </div>
+    <p><a class="text-large format-bold" href="/checkResults/devel/workflows-LATEST/">Workflows</a></p>
+    <%= get_build_summary("devel", "workflows") %>
+    <p>&nbsp;</p>
+ 	 
+  </section>
+       
+  <hr class="page-divider" />
 
-       <div>
-            <p><a href="/checkResults/release/workflows-LATEST/">Release, Workflows</a></p>
-            <%= get_build_summary("release", "workflows") %>
-            <p>&nbsp;</p>
-      </div>
+  <section>
+    <h2>Recent Commits</h2>
+    
+    <div  style="float:left;width:50%;">
+      <p>Last 10 commit to Bioconductor <b>release</b>:
+	<%= get_last_git_commits(release=true) %>
+      </p>
+    </div>
+    <div  style="float:right;width:50%;">
+      <p>Last 10 commit to Bioconductor <b>devel</b>:
+	<%= get_last_git_commits(release=false) %>
+      </p>
+    </div>
+      
+  </section>
 
-       <div>
-            <p><a href="/checkResults/devel/bioc-LATEST/">Devel, Software</a></p>
-            <%= get_build_summary("devel", "bioc") %>
-            <p>&nbsp;</p>
-      </div>
+  <hr class="page-divider" />
 
-       <div>
-            <p><a href="/checkResults/devel/data-experiment-LATEST/">Devel, Experiment Data</a></p>
-            <%= get_build_summary("devel", "data-experiment") %>
-            <p>&nbsp;</p>
-      </div>
-
-      <div>
-            <p><a href="/checkResults/devel/workflows-LATEST/">Devel, Workflows</a></p>
-            <%= get_build_summary("devel", "workflows") %>
-            <p>&nbsp;</p>
-      </div>
-
+  <section>
+    <h2>Newest Packages</h2>
+ 
+    <div style="float:left;width:50%;">
+      <h6>Software Packages</h6>
+      <p> <%=latest_packages("bioc")%> </p>
+    </div>
+    <div style="float:right;width:50%;">
+      <h6>Experiment Data Packages</h6>
+      <p> <%=latest_packages("data-experiment")%> </p>
     </div>
 
-</div>
+  </section>
 
+  <hr class="page-divider" />
 
-<div>
-  <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/>Newest Packages</h2>
-   <div style="float:left;width:50%;">
-     <h4> Software Packages </h4> <br>
-     <%=latest_packages("bioc")%>
-  </div>
-   <div style="float:right;width:50%;">
-     <h4> Data Experiment Packages </h4> <br>
-     <%=latest_packages("data-experiment")%>
-  </div>
-</div>
+  <section>
+    <h2>Single Package Builder</h2>
+    <a href="https://github.com/Bioconductor/Contributions/issues">All Current Submissions</a>
+    <p></p>
+    <div style="float:left;width:50%;">
+      Recent Submissions <br>
+      <%=recent_spb_submissions()%>
+    </div>
+    <div style="float:right;width:50%;">
+      <%=recent_spb_builds()%>
+    </div>
+    
+  </section>
 
-
-
-   <h2 style="min-height:40px;"><img src="/images/icons/buildicon.gif" alt=""/><a href="https://github.com/Bioconductor/Contributions/issues">Single Package Builder</a></h2>
-   <div style="float:left;width:50%;">
-    Recent Submissions <br>
-    <%=recent_spb_submissions()%>
-  </div>
-   <div style="float:right;width:50%;">
-    <%=recent_spb_builds()%>
-  </div>
-
+  <hr class="page-divider" />
 
 
   <div style="float:left;width:50%;">
     <%= render('/_mlwidget/', :ml_item => get_biostar_post_summaries(@items)) %>
   </div>
 
+  <hr class="page-divider" />
 
+  
+  <h2>Mirror Status</h2>
 
-  <div style="float:right;width:50%;">
-    <div style="padding:0 0 0 12px">
+  <% status = mirror_status() %>
+  
+  <p>Last updated <abbr class="timeago" title="<%=status[:last_updated]%>">
+      <%=status[:last_updated]%></abbr>. (Will be updated every 24 hours).</p>
+  
+  <table>
+    <tr>
+      <th>URL</th>
+      <th>Mirror</th>
+      <th>Release</th>
+      <th>Devel</th>
+    </tr>
+    <% for row in status[:status] %>
 
-<a class="twitter-timeline" href="https://twitter.com/Bioconductor" data-widget-id="343120893754626048">Tweets by @Bioconductor</a>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
-
-    </div>
-  </div>
-
-</div>
-
-<h2>Mirror Status</h2>
-
-<% status = mirror_status() %>
-
-<p>Last updated <abbr class="timeago" title="<%=status[:last_updated]%>">
-        <%=status[:last_updated]%></abbr>. (Will be updated every 24 hours).</p>
-
-
-<table>
-  <tr>
-    <th>URL</th>
-    <th>Release</th>
-    <th>Devel</th>
-  </tr>
-  <% for row in status[:status] %>
     <tr>
       <td><a href="<%= row[:url] %>"><%= row[:url] %></a></td>
+      <td><%= row[:main] %></td>
       <td><%= row[:release] %></td>
       <td><%= row[:devel] %></td>
     </tr>
-  <% end %>
-</table>
+    <% end %>
+  </table>
+  
+
+</div>
+
+
+
+
+  
+
+
+
+
+
+
+

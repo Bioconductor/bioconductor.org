@@ -437,6 +437,14 @@ def previous_events(events)
   end
 end
 
+def top_events(events)
+  sorted = events.children.sort do |a, b|
+      a[:start] <=> b[:start]
+  end
+  toplist = sorted[-5..-1]
+  toplist.reverse
+end
+
 def event_date(e)
   if (e[:start].month == e[:end].month)
     if (e[:start].day == e[:end].day)
@@ -1245,21 +1253,6 @@ def render_mirror_contacts(mirror_orig)
     out
 end
 
-def url_ok(url)
-    url = URI(url)
-    
-    Net::HTTP.start(url.host, url.port){|http|
-       path = "/"
-       path = url.path unless url.path.empty?
-       response = http.head(path)
-       if response.code =~ /^2/
-           return true
-       else
-           return false
-       end
-    }
-end
-
 def mirror_status()
     cachefile = "tmp#{File::SEPARATOR}mirror.cache"
     now = Time.now
@@ -1275,14 +1268,15 @@ def mirror_status()
         for mirror in country.values.first
             status = {}
             status[:url] = mirror[:https_mirror_url]
-            url = mirror[:mirror_url]
+            status[:main] = (check_mirror_url(mirror[:https_mirror_url]) == "1") ? "yes" : "no"
+            url = mirror[:https_mirror_url]
             url += "/" unless url.end_with? "/"
             ["release", "devel"].each do |version|
                 numeric_version = config["#{version}_version".to_sym]
                 url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
                 #puts "URL: " + url_to_check
                 begin
-                    result = url_ok(url_to_check)
+                    result = (check_mirror_url(url_to_check) == "1")
                 rescue
                     result = false
                 end
@@ -1411,7 +1405,7 @@ def check_mirror_url(url)
   end
   begin
     response = http.head(uri.path)
-    if response.code == "200"
+    if response.code =~ /^2/
       "1"
     else
       "0"
@@ -1497,7 +1491,7 @@ def get_last_git_commits(release=true)
     manifest = File.open("#{manifest_path}").read
     lines = manifest.split("\n").drop(1) - [""]
     pkgs = lines.map {|item| item.gsub("Package: ", "")}
-    while uni_pkg.length < 20 do
+    while uni_pkg.length < 10 do
       item = xml[dx]
       if not uni_pkg.include?(item["title"])
         if pkgs.include?(item["title"])
@@ -1513,7 +1507,7 @@ def get_last_git_commits(release=true)
   rescue Exception => ex
     tbl_str = "<table>\n<tr><td> Can't read / no records in rss feed, not report last git commit time </td></tr>\n"
     i = 0
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1565,7 +1559,7 @@ def latest_packages(repo)
   if (!File.directory?("#{path}/../manifest/"))
     tbl_str = "<table>\n<tr><td> file not found. skipping information </td></tr>\n"
     i = 0 
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1579,7 +1573,7 @@ def latest_packages(repo)
     pkgs = lines.map {|item| item.gsub("Package: ", "")}
     pkgs.reverse!
 
-    trunc_pkgs = pkgs[0..19]
+    trunc_pkgs = pkgs[0..9]
   
     tbl_str = "<table>\n"
     trunc_pkgs.each do |pkg|

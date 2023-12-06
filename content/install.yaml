@@ -1,7 +1,3 @@
 --- 
 title: Install
 hero: components/install_hero
-subnav:
-  - include: /_bioc_release_packages/
-  - include: /_documentation/
-  - include: /_bioc_older_packages/

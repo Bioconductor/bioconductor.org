@@ -267,6 +267,14 @@
   margin-bottom: 6px;
 }
 
+.community p {
+  border-left: 3px solid;
+  border-color: var(--primary);
+  padding-left: 12px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
 .info p {
   padding-bottom: 1rem;
 }
@@ -382,6 +390,7 @@
 }
 
 .news,
+.community,
 .packages,
 .about-bioconductor {
   padding: 2rem;
@@ -505,9 +514,9 @@
 input[type="radio"].tabs-join-radio {
   appearance: none;
   background-color: #fff;
-  box-shadow: inset 1em 1em var(--primary-p50);
-  width: 1em;
-  height: 1em;
+  box-shadow: inset 1.5em 1.5em var(--primary-p50);
+  width: 1.5em;
+  height: 1.5em;
   content: "";
   border-radius: 50%;
   display: grid;
@@ -518,7 +527,7 @@ input[type="radio"].tabs-join-radio::before {
   border-radius: 50%;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em var(--primary);
+  box-shadow: inset 1.5em 1.5em var(--primary);
 }
 
 input[type="radio"].tabs-join-radio:checked::before {

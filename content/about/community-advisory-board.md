@@ -157,7 +157,7 @@ We plan to redevelop the Bioconductor website to make it easier to navigate and 
 
 ### What projects are you working on currently
 
-The Bioconductor community manager Dr. Maria Doyle is leading the CZI EOSS funded [training and website iniatives](chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community) and CAB members are participating with [working groups](https://workinggroups.bioconductor.org). Everyone is welcome to join a [working group](https://workinggroups.bioconductor.org) and contribute to our community.
+The Bioconductor community manager Dr. Maria Doyle is leading the CZI EOSS funded [training and website iniatives](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/) and CAB members are participating with [working groups](https://workinggroups.bioconductor.org). Everyone is welcome to join a [working group](https://workinggroups.bioconductor.org) and contribute to our community.
 
 ### What did you consider the biggest challenges when joining the CAB as a new member?
 
@@ -237,7 +237,7 @@ email events at bioconductor.org
 
 If you would like to contact the Community Advisory Board please email: cab at bioconductor.org
 
-![Community Advisory Board](/images/cab/cab.png)
+<img src="/images/cab/cab.png" alt="CAB sticker" />
 
 There is also a community-advisory-board channel on the [Bioconductor community slack](https://slack.bioconductor.org/)
 
@@ -256,13 +256,6 @@ We are grateful to past CAB members;
 
 </ul>
 
-<!---- links for each member --->
-<!-- Need to work out  how to do this better --->
-
-<!-- links to social media icons -->
-<!-- no need to change these -->
-<!--  See https://github.com/paulrobertlloyd/socialmediaicons--->
-<!-- 1. Twitter, 2. Github, 3. Google , 4. LinkedIn, 5. Vcard/website) -->
 
 [1.1]: https://github.com/paulrobertlloyd/socialmediaicons/blob/main/twitter-24x24.png "twitter icon without padding"
 [1.2]: https://github.com/paulrobertlloyd/socialmediaicons/blob/main/github-24x24.png "github icon without padding"
