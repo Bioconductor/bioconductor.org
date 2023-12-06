@@ -165,8 +165,6 @@ class BiocViews < Nanoc::DataSource
               pkgs = packages[package]
               subnav = []
               subnav.push({:include => "/components/packages/badges/"})
-              subnav.push({:include => "/_documentation/"})
-              subnav.push({:include => "/_support/"})
 
               title = pkgs["Package"]
               if  version == @site_config["devel_version"]
