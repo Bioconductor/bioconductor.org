@@ -14,7 +14,7 @@ pre code,
 pre code.hljs {
   border-radius: 3px;
   background: none;
-  background-color: var(--code-blocks-dark);
+  background-color: #f0f0f0;
   overflow-x: auto;
   display: block;
   padding: 1rem;
@@ -25,30 +25,58 @@ pre code.hljs {
 pre code,
 pre code.hljs,
 .hljs-punctuation {
-  color: white;
+  color: black;
   font-size: 1rem;
   line-height: 1.3rem;
+}
+
+
+.hljs-selector-tag,
+.hljs-attribute,
+.hljs-keyword {
+  color: black;
+  font-weight: 1;
+}
+
+.hljs-operator {
+  color: black;
+}
+
+.hljs-meta,
+.hljs-regexp,
+.hljs-variable,
+.hljs-varable.constant_ {
+  color: black;
+}
+
+.hljs-symbol {
+  color: black;
+}
+
+.hljs-comment {
+    color: #697070;
 }
 
 .hljs-string,
 .hljs-title,
 .hljs-number,
-.hljs-selector-class {
-  color: var(--code-dark-string);
+.hljs-selector-class,
+.hljs-selector-attr{
+  color: black;
 }
 
 .hljs-literal,
 .hljs-built_in {
-  color: var(--code-dark-literal);
+  color: black;
 }
 
 pre code.light .hljs-literal,
 pre code.light .hljs-built_in {
-  color: var(--code-light-literal);
+  color: black;
 }
 
 pre code.dark .hljs-operator {
-  color: var(--code-dark-operator);
+  color: black;
 }
 
 pre code.light {
@@ -64,4 +92,18 @@ pre code.light {
 pre code.light .hljs-string,
 pre code.light .hljs-title {
   color: var(--code-light-string);
+}
+
+.code_box { 
+  background-color: #f0f0f0;
+  padding-top:1em;
+  padding-bottom: 1em;
+  padding-left: 3em;
+  padding-right: 1em;
+  border:1px #aaaaaa;
+  font-family:'Lucida Console',monaco,monospace;
+  margin-top:1em;
+  margin-bottom:1em;
+  overflow-x:auto;
+  white-space:pre;
 }
