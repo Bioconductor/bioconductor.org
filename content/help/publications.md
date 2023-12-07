@@ -166,7 +166,7 @@
 
   	   <p><br></p>
 
-	   <h6>Technical Reports</h6>
+	   <h6>Initial Bioconductor Technical Reports</h6>
 
 	   Bioconductor Core (November 2002) <a href="tech-reports/relProjTR.pdf"><em>An Overview of Projects in Computing for Genomic Analysis</em></a>
 	    <p><br></p>
