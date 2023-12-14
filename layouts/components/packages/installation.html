@@ -4,7 +4,7 @@
   To install this package, start R (version "<%= r_ver_for_bioc_ver(@package[:bioc_version_num]) %>") and enter:
 </p>
 
-<p class="code_box">
+<pre><code>
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 <% if (@package[:bioc_version_str] == "Development") %>
@@ -12,7 +12,7 @@ if (!require("BiocManager", quietly = TRUE))
 BiocManager::install(version='devel')
 <% end %>
 BiocManager::install("<%=@package[:Package]%>")
-</p>
+</code></pre>
 
 <p>
   For older versions of R, please refer to the appropriate	<a href="/about/release-announcements/">Bioconductor release</a>.

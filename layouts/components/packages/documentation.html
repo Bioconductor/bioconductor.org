@@ -2,7 +2,7 @@
 
 <% if @package.has_key? :vignettes and !@package[:vignettes].empty? %>
 <p>To view documentation for the version of this package installed in your system, start R and enter:</p>
-<p class="code_box">browseVignettes("<%=@package[:Package]%>")</p>
+<pre><code>browseVignettes("<%=@package[:Package]%>")</code></pre>
 <% end %>
 
 <table>
