@@ -17,6 +17,9 @@
 
   <h2><%= @package[:Title]%></h2>
 
+  <%= render("/components/packages/badges/", :package => @package) %>
+  <p><br></p>
+  
   <div class="package-info">
 
     <p>
