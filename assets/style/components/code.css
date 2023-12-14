@@ -62,7 +62,8 @@ pre code.hljs,
 .hljs-number,
 .hljs-selector-class,
 .hljs-selector-attr{
-  color: white;
+    color: white;
+    font-weight: normal;
 }
 
 .hljs-literal,
