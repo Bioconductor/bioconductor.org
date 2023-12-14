@@ -156,7 +156,7 @@
 	   <p><br></p>
 	   
            <h4>Other</h4>
-	   F1000 Channel,Technical Reports, and Compendia
+	   F1000 Channel and Original Technical Reports
 	   
 	   <p><br></p>
 	   
