@@ -1296,7 +1296,7 @@ def get_build_report_link(package)
     repo = repo.sub "/", "-"
     version = package[:bioc_version_num]
     package_name = package[:Package]
-    "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
+    "https://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
 end
 
 

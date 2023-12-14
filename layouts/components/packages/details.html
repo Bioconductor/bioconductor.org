@@ -107,10 +107,10 @@
 	  </tr>
 
   	<% if ["bioc/", "data/experiment/", "workflows"].include? @package[:repo] %>
-	    <tr>
+	  <tr>
+	    <td>Build Report</td>
 	    	<td><a href="<%= get_build_report_link(@package) %>">Build Report</a></td>
-    		<td>&nbsp;</td>
-	    </tr>
+	  </tr>
   	<% end %>
   </table>
 </details>

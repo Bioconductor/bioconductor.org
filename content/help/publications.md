@@ -5,8 +5,8 @@
       <h2>Publications</h2>
       <p class="text-large">
         This is a select list of featured and recent publications that cite
-	Bioconductor, along with select books, book chapters, technical reports,
-	and compendia. 
+	Bioconductor, along with select books, book chapters, and original
+	Bioconductor technical reports. 
       </p>  
       <div class="sidebar-box">
       <div class="sidebar-box-header">
@@ -156,7 +156,7 @@
 	   <p><br></p>
 	   
            <h4>Other</h4>
-	   F1000 Channel,Technical Reports, and Compendia
+	   F1000 Channel and Original Technical Reports
 	   
 	   <p><br></p>
 	   
@@ -171,16 +171,6 @@
 	   Bioconductor Core (November 2002) <a href="tech-reports/relProjTR.pdf"><em>An Overview of Projects in Computing for Genomic Analysis</em></a>
 	    <p><br></p>
 	   Bioconductor Core (November 2002) <a href="tech-reports/currProgTR.pdf"><em>Bioconductor: Assessment of Current Progress</em></a>
-
-	   <p><br></p>
-	   
-           <h6>Compendia</h6>
-
-	   <a href="compendia/genemetaex/">GeneMetaEx</a>
-	   <p><br></p>
-	   <a href="compendia/golubrr/">GolubRR</a>
-	   <p><br></p>
-	   <a href="compendia/CompStatViz/">CompStatViz</a>
 
       </section>
 
