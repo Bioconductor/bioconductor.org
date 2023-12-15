@@ -19,7 +19,7 @@
 <p class="news-item text-large"> See also </p>
 <ul>
 <li>
-<a class="text-large format-underline" href="/help/publications">Publications
+<a class="text-large format-underline" href="/help/publications/">Publications
 and Literature Citations</a>
 </li>
 <li>
