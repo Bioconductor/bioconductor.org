@@ -170,6 +170,15 @@ or documentation. Additionally Bioconductor provides a mechanism for
 linking together different groups with common goals to foster
 collaboration on software, often at the level of shared development.
 
+## Quick Statistics
+
+<p class="text-large">A selection of statistics about the project.</p>
+
+<div>
+  <%= render('/components/quickstats/') %>
+</div>
+
+
 ## Code of Conduct
 
 Please refer to the [Bioconductor Code of Conduct][coc]
