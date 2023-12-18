@@ -42,7 +42,7 @@ summary.package-details {
 
 .packages-subnav {
   background: linear-gradient(white, white) padding-box,
-    var(--gradient-purpleblue) border-box;
+    var(--gradient-brand) border-box;
   margin-top: 8px;
   float: left;
   width: 33%;

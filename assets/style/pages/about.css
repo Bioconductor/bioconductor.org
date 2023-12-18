@@ -24,7 +24,7 @@
 
 /* stylelint-disable */
 .about-join .text-gradient {
-  background: var(--misc-pink);
+  background: var(--gradient-brand);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

@@ -75,7 +75,7 @@
 }
 
 .jstree-apple .jstree-clicked {
-  background: var(--gradient-purpleblue);
+  background: var(--gradient-brand);
   color: #fff;
   height: 1rem;
   padding: 0.5rem;
