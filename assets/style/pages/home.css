@@ -55,7 +55,7 @@
 .brand-gradient-border {
   background-image: var(--gradient-brand);
   border-radius: 4px;
-  padding: 1px;
+  padding: 2px;
 }
 
 .warmcool-gradient-border {
@@ -417,7 +417,7 @@
 /* components css */
 .gradient-border {
   border-radius: 4px;
-  padding: 1px;
+  padding: 2px;
   margin-top: 1rem;
   margin-bottom: 1rem;
 }

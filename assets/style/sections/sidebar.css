@@ -88,11 +88,11 @@
 }
 
 .sidebar-box {
-  width: 100%;
+  width: auto;
   display: flex;
   flex-direction: column;
   background: white;
-  border: solid 1px var(--primary-p75);
+  border: solid 2px var(--primary-p75);
   border-radius: 8px;
   padding: 8px;
   gap: 8px;
