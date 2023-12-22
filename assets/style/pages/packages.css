@@ -12,6 +12,10 @@ summary.package-details {
   background-repeat: no-repeat;
   background-position: center right;
   cursor: pointer;
+  color: var(--primary);
+  font-size: 25px;
+  font-weight: 1000;
+  
 }
 
 .badges {
