@@ -4,7 +4,7 @@
 
 output_dir: output
 staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-test-new
-production_deploy_root: webadmin@master.bioconductor.org:/extra/www/biocnew
+production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 staging_dir: /loc/www/bioconductor-test-new
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
