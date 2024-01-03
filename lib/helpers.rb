@@ -1311,7 +1311,7 @@ def get_build_results(package)
     config[:devel_version] => 'devel'}
   version = h[package[:bioc_version_num]]
   res = {}
-  res[:report_url] = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
+  res[:report_url] = "https://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
   res[:repo] = repo
   res [:version] = version
   res
@@ -1453,9 +1453,14 @@ def package_has_archive(package)
     return false
   end
   version = package[:bioc_version_num]
-  url = "http://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  uri = URI.parse(url)
-  response = Net::HTTP.start(uri.host, uri.port) {|http|http.head(uri.path)}
+  url = "https://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  uri = URI(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  if uri.port == 443
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+  response = http.head(uri.path)
   valid_url = response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
   if valid_url
     return true
