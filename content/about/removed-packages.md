@@ -3,6 +3,76 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages deprecated in Bioconductor 3.18 release (to be removed in 3.19)
+
+Software Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.18/bioc/html/baySeq.html">baySeq</a></li>
+<li><a href="/packages/3.16/bioc/html/BGmix.html">BGmix</a></li>
+<li><a href="/packages/3.16/bioc/html/bigPint.html">bigPint</a></li>
+<li><a href="/packages/3.17/bioc/html/biodbMirbase.html">biodbMirbase</a></li>
+<li><a href="/packages/3.16/bioc/html/BioMM.html">BioMM</a></li>
+<li><a href="/packages/3.16/bioc/html/Clonality.html">Clonality</a></li>
+<li><a href="/packages/3.16/bioc/html/CSSP.html">CSSP</a></li>
+<li><a href="/packages/3.16/bioc/html/deco.html">deco</a></li>
+<li><a href="/packages/3.17/bioc/html/DeepBlueR.html">DeepBlueR</a></li>
+<li><a href="/packages/3.16/bioc/html/DMRforPairs.html">DMRforPairs</a></li>
+<li><a href="/packages/3.18/bioc/html/exomeCopy.html">exomeCopy</a></li>
+<li><a href="/packages/3.16/bioc/html/fcoex.html">fcoex</a></li>
+<li><a href="/packages/3.18/bioc/html/gaggle.html">gaggle</a></li>
+<li><a href="/packages/3.17/bioc/html/GCSscore.html">GCSscore</a></li>
+<li><a href="/packages/3.16/bioc/html/genbankr.html">genbankr</a></li>
+<li><a href="/packages/3.18/bioc/html/GISPA.html">GISPA</a></li>
+<li><a href="/packages/3.18/bioc/html/GOsummaries.html">GOsummaries</a></li>
+<li><a href="/packages/3.16/bioc/html/GRridge.html">GRridge</a></li>
+<li><a href="/packages/3.16/bioc/html/HPAStainR.html">HPAStainR</a></li>
+<li><a href="/packages/3.16/bioc/html/imageHTS.html">imageHTS</a></li>
+<li><a href="/packages/3.18/bioc/html/LineagePulse.html">LineagePulse</a></li>
+<li><a href="/packages/3.17/bioc/html/logitT.html">logitT</a></li>
+<li><a href="/packages/3.15/bioc/html/LowMACA.html">LowMACA</a></li>
+<li><a href="/packages/3.18/bioc/html/LPEadj.html">LPEadj</a></li>
+<li><a href="/packages/3.18/bioc/html/macat.html">macat</a></li>
+<li><a href="/packages/3.16/bioc/html/mAPKL.html">mAPKL</a></li>
+<li><a href="/packages/3.16/bioc/html/mbOmic.html">mbOmic</a></li>
+<li><a href="/packages/3.16/bioc/html/MEIGOR.html">MEIGOR</a></li>
+<li><a href="/packages/3.16/bioc/html/Metab.html">Metab</a></li>
+<li><a href="/packages/3.16/bioc/html/MSstatsSampleSize.html">MSstatsSampleSize</a></li>
+<li><a href="/packages/3.16/bioc/html/multiSight.html">multiSight</a></li>
+<li><a href="/packages/3.16/bioc/html/netbiov.html">netbiov</a></li>
+<li><a href="/packages/3.16/bioc/html/OmicsLonDA.html">OmicsLonDA</a></li>
+<li><a href="/packages/3.16/bioc/html/PFP.html">PFP</a></li>
+<li><a href="/packages/3.16/bioc/html/plethy.html">plethy</a></li>
+<li><a href="/packages/3.16/bioc/html/pwrEWAS.html">pwrEWAS</a></li>
+<li><a href="/packages/3.16/bioc/html/qrqc.html">qrqc</a></li>
+<li><a href="/packages/3.18/bioc/html/Ringo.html">Ringo</a></li>
+<li><a href="/packages/3.16/bioc/html/RNAdecay.html">RNAdecay</a></li>
+<li><a href="/packages/3.16/bioc/html/SCATE.html">SCATE</a></li>
+<li><a href="/packages/3.17/bioc/html/SEPIRA.html">SEPIRA</a></li>
+<li><a href="/packages/3.15/bioc/html/seqbias.html">seqbias</a></li>
+<li><a href="/packages/3.18/bioc/html/seqCNA.html">seqCNA</a></li>
+<li><a href="/packages/3.17/bioc/html/SISPA.html">SISPA</a></li>
+<li><a href="/packages/3.17/bioc/html/snapCGH.html">snapCGH</a></li>
+<li><a href="/packages/3.17/bioc/html/sscore.html">sscore</a></li>
+<li><a href="/packages/3.15/bioc/html/Travel.html">Travel</a></li>
+<li><a href="/packages/3.17/bioc/html/trena.html">trena</a></li>
+
+</ul>
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.17/data/experiment/html/ccTutorial.html">ccTutorial</a></li>
+<li><a href="/packages/3.17/data/experiment/html/ChIC.data.html">ChIC.data</a></li>
+<li><a href="/packages/3.17/data/experiment/html/DLBCL.html">DLBCL</a></li>
+<li><a href="/packages/3.17/data/experiment/html/mAPKLData.html">mAPKLData</a></li>
+<li><a href="/packages/3.17/data/experiment/html/MAQCsubsetILM.html">MAQCsubsetILM</a></li>
+<li><a href="/packages/3.17/data/experiment/html/MIGSAdata.html">MIGSAdata</a></li>
+<li><a href="/packages/3.17/data/experiment/html/pwrEWAS.data.html">pwrEWAS.data</a></li>
+<li><a href="/packages/3.17/data/experiment/html/SCATEData.html">SCATEData</a></li>
+<li><a href="/packages/3.17/data/experiment/html/seqCNA.annot.html">seqCNA.annot</a></li>
+<li><a href="/packages/3.17/data/experiment/html/stjudem.html">stjudem</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.18 release
 
 Software Packages:
