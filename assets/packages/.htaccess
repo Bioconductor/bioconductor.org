@@ -151,10 +151,3 @@ RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packag
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 -f
 RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=302]
-
-
-## Custom ERROR for Archive
-RewriteCond %{REQUEST_URI} ^/packages/release/bioc/src/contrib/Archive/([^/]+)/ [OR]
-RewriteCond %{REQUEST_URI} ^/packages/3.18/bioc/src/contrib/Archive/([^/]+)/
-RewriteCond %{DOCUMENT_ROOT}%{REQUEST_URI} !-d
-RewriteRule ^ %{ENV:proto}://bioconductor.org/help/404v2/index.html [R=302,L]
