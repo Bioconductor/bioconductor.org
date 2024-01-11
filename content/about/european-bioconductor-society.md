@@ -13,14 +13,9 @@
 
 # Contact details
 
-## Postal Address
-
 European Bioconductor Society e.V.<br/>
-c/o Simone Bell<br/>
-Postfach 1140<br/>
-68799 Reilingen<br/>
-Germany<br/>
+Heidelberg, Germany
 
 ## Email
 
-simone.bell (at) embl.de
+info (at) bioconductor.eu
