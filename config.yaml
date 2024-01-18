@@ -24,7 +24,6 @@ devel_version: "3.19"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
-- "3.17"
 - "3.18"
 - "3.19"
 
@@ -284,6 +283,15 @@ mirrors:
      https_mirror_url: https://mirrors.ustc.edu.cn/bioc/
      rsync: secure_mirror_from_master
      city: Hefei Anhui
+     country_code: cn
+   - institution: High-Performance Computing Center, Westlake University
+     institution_url: https://www.westlake.edu.cn/
+     contact: Ling Yang
+     contact_email: yangling@westlake.edu.cn
+     mirror_url: https://mirrors.westlake.edu.cn/bioconductor
+     https_mirror_url: https://mirrors.westlake.edu.cn/bioconductor
+     rsync: secure_mirror_from_master
+     city: Hangzhou Westlake
      country_code: cn
  - Norway:
    - institution: University of Bergen
