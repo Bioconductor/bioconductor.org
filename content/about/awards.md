@@ -26,7 +26,7 @@ All nominees suggested will be considered for the award. The nominations will be
 processed, and the awardees will be selected, by the current members of the
 Bioconductor Community Advisory Board and Technical Advisory Board. Currently
 active members of either of these boards are not eligible for an award. For more
-details about the selection process see the [Proceedures and
+details about the selection process see the [Procedures and
 Regulations](https://docs.google.com/document/d/1bHFoZS7kJoUh9ZOU2LwZaHwnJhradDmWcDV9EXJc8tI/edit?usp=sharing)
 
 # How to nominate a person
@@ -40,10 +40,10 @@ In order to nominate someone for the awards, please fill out the nomination [Goo
 
 The form is available 3-4 months before the annual Bioconductor conference. It
 will be advertised on the conference website, Bioconductor social media
-platforms, and support site forums. If you are unable to fill out a google form,
+platforms, and support site forums. If you are unable to fill out a Google form,
 please contact bioconductorcoreteam@gmail.com to nominate a candidate.
 
-The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 st, 2023. The Bioc2023 Awards will be announced during the
+The deadline to nominate a candidate for the Bioc2023 Awards is Wednesday May 31 st, 2023. The Bioc2023 Awards will be announced during the
 [annual conference](https://bioc2023.bioconductor.org/) August 2-4, 2023.
 
 # FAQ
@@ -51,7 +51,7 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednsday May 31 
 - **Am I allowed to nominate more than one person?**
   Yes. We appreciate it if you limit your nominations to no more than 3 people.
 - **Can the same individual be awarded multiple times (in different years)?**
-  Yes. However, it has to be clear that the contributions that the individual is recognized for are different and "new" contributions that occured after the previous award was granted.
+  Yes. However, it has to be clear that the contributions that the individual is recognized for are different and "new" contributions that occurred after the previous award was granted.
 - **Are self-nominations allowed?**
   No
 
