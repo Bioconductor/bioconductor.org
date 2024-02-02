@@ -17,7 +17,7 @@ The Technical Advisory Board governance document ([PDF][1]) outlines
 membership, procedures, and committees and working groups of the
 board. Governance was formalized in February, 2019.
 
-[1]: TAB-Governance.pdf
+[1]: TAB-Governance-v1.1.0.pdf
 
 ## Current members
 
@@ -106,6 +106,7 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
+- [2024-01-04](2024-01-04-minutes.pdf)
 - [2023-12-07](2023-12-07-minutes.pdf),
   [2023-11-02](2023-11-02-minutes.pdf),
   [2023-10-05](2023-10-05-minutes.pdf),
