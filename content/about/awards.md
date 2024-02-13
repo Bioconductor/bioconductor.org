@@ -31,7 +31,7 @@ Regulations](https://docs.google.com/document/d/1bHFoZS7kJoUh9ZOU2LwZaHwnJhradDm
 
 # How to nominate a person
 
-In order to nominate someone for the awards, please fill out the nomination [Google Form](https://forms.gle/gPzmH8ewHNHWckdv6), with the following information:
+In order to nominate someone for the awards, please fill out the nomination [Google Form](https://forms.gle/PBsJQPqBwVuA95xD9), with the following information:
 
 1. Your full name and e-mail address.
 2. Full name and e-mail address of the nominee.
@@ -43,8 +43,8 @@ will be advertised on the conference website, Bioconductor social media
 platforms, and support site forums. If you are unable to fill out a Google form,
 please contact bioconductorcoreteam@gmail.com to nominate a candidate.
 
-The deadline to nominate a candidate for the Bioc2023 Awards is Wednesday May 31 st, 2023. The Bioc2023 Awards will be announced during the
-[annual conference](https://bioc2023.bioconductor.org/) August 2-4, 2023.
+The deadline to nominate a candidate for the Bioc2024 Awards is Wednesday May 15 th, 2024. The Bioc2024 Awards will be announced during the
+[annual conference](https://bioc2024.bioconductor.org/) July 24-26, 2024.
 
 # FAQ
 
@@ -57,7 +57,7 @@ The deadline to nominate a candidate for the Bioc2023 Awards is Wednesday May 31
 
 # Important dates:
 
-- Deadline for nominations: May 31, 2023.
+- Deadline for nominations: May 15, 2024.
 - Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
 # Awardees 2023
