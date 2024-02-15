@@ -234,6 +234,7 @@ RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocChec
 
 RedirectMatch 301 /developers/package-end-of-life/.*$  https://contributions.bioconductor.org/package-end-of-life-policy.html
 RedirectMatch 301 /developers/package-submission.*$ https://contributions.bioconductor.org/submission-overview.html
+RedirectMatch 301 /developers/package-guidelines.*$ http://contributions.bioconductor.org/develop-overview.html
 
 ##
 ## developers/how-to/ sections
