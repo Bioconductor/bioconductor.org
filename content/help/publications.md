@@ -94,7 +94,44 @@
       </section>
 
       <section>
-           <h4>Books</h4>
+
+	   <h4>Bioconductor Project Papers</h4>
+
+	   Bioconductor key papers and technical reports. 
+
+	   <h6>Papers</h6>
+
+	   <div class="grey_box">
+	   Gentleman et al. <a
+	   href="https://genomebiology.biomedcentral.com/counter/pdf/10.1186/gb-2004-5-10-r80.pdf">Bioconductor:
+	   open software development for computation biology and bioinformatics.</a> Genome Biology. 2004, 5:R80.
+	   </div>	   
+
+	   <div class="white_box">
+	   Huber et al. <a
+	   href="https://www.nature.com/articles/nmeth.3252">Orchestrating
+	   high-throughput genomic analysis with Bioconductor.</a> Nature
+	   Methods. 2015, 12:115-121. 
+	   </div>
+
+	   
+	   <h6>Initial Bioconductor Technical Reports</h6>
+
+	   <div class="grey_box">
+	   Bioconductor Core (November 2002) <a
+	   href="tech-reports/relProjTR.pdf"><em>An Overview of Projects in
+	   Computing for Genomic Analysis</em></a>
+	   </div>
+	   
+	   <div class="white_box">	
+	   Bioconductor Core (November 2002) <a
+	   href="tech-reports/currProgTR.pdf"><em>Bioconductor: Assessment of
+	   Current Progress</em></a>
+	   </div>
+
+	   <p><br></p>
+
+	   <h4>Books</h4>
 	   A selection of Bioconductor releated books, book chapters, and online
            books.
 
@@ -156,21 +193,8 @@
 	   <p><br></p>
 	   
            <h4>Other</h4>
-	   F1000 Channel and Original Technical Reports
-	   
-	   <p><br></p>
-	   
-           <h6>F1000 Channel</h6>
 	   
  	   <a href="http://f1000research.com/channels/bioconductor">F1000 Research Channel</a>
-
-  	   <p><br></p>
-
-	   <h6>Initial Bioconductor Technical Reports</h6>
-
-	   Bioconductor Core (November 2002) <a href="tech-reports/relProjTR.pdf"><em>An Overview of Projects in Computing for Genomic Analysis</em></a>
-	    <p><br></p>
-	   Bioconductor Core (November 2002) <a href="tech-reports/currProgTR.pdf"><em>Bioconductor: Assessment of Current Progress</em></a>
 
       </section>
 
