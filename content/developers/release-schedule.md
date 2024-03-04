@@ -38,9 +38,9 @@ The following highlights important deadlines for the release:
 
 ### Wednesday April 17
 
-* Deadline to add new packages to the Bioc 3.19 manifest. Package submitted to
-  tracker must have completed the review processes and been accepted to be added
-  to the manifest
+* Deadline to add new packages to the Bioc 3.19 manifest. Packages submitted to
+  Bioconductor new package submission process must have completed the review
+  processes and been accepted to be added to the manifest.
 
 ### Friday April 19
 
