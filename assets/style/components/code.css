@@ -67,9 +67,17 @@ pre code.hljs,
 }
 
 .hljs-literal,
-.hljs-built_in {
+.hljs-built_in,
+.hljs-tag{
   color: white;
 }
+
+.hljs-tag .hljs-attr,
+.hljs-tag .hljs-name{
+    color: white;
+    font-weight: 1;
+}
+
 
 pre code.light .hljs-literal,
 pre code.light .hljs-built_in {
