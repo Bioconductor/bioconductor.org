@@ -34,6 +34,7 @@ Software Packages:
 <li><a href="/packages/3.18/bioc/html/macat.html">macat</a></li>
 <li><a href="/packages/3.16/bioc/html/mAPKL.html">mAPKL</a></li>
 <li><a href="/packages/3.16/bioc/html/mbOmic.html">mbOmic</a></li>
+<li><a href="/packages/3.16/bioc/html/MEIGOR.html">MEIGOR</a></li>
 <li><a href="/packages/3.16/bioc/html/Metab.html">Metab</a></li>
 <li><a href="/packages/3.16/bioc/html/MSstatsSampleSize.html">MSstatsSampleSize</a></li>
 <li><a href="/packages/3.16/bioc/html/multiSight.html">multiSight</a></li>
