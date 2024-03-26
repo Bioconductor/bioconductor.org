@@ -1,9 +1,7 @@
 # Bioconductor 3.19 Release Schedule
 
-The release date for Bioc 3.19 is tentatively schedule for Wednesday April
-24th. The 3.19 release will use R-4.4. With the R dependency for 3.19 being
-R-4.4, these deadlines are subject to change once CRAN announces the official
-4.4 release date.
+The release date for Bioc 3.19 is schedule for Wednesday May 1st. The 3.19
+release will use R-4.4. R-4.4 is schedule to be released April 24th.
 
 The following highlights important deadlines for the release:
 
@@ -11,45 +9,42 @@ The following highlights important deadlines for the release:
 
 * Deadline for new package submissions.
 
-### Monday April 1
+### Monday April 8
 
 * Announce deprecated packages for Bioc 3.19. They'll be removed from Bioc 3.20.
   See [End of Life](http://contributions.bioconductor.org/package-end-of-life-policy.html) for details.
 
-### Wednesday April 3
+### Wednesday April 10
 
 *  No major API changes to Bioc 3.19.
 
-### Monday April 8
+### Monday April 15
 
 * Stop building Bioc 3.18, current release. Commits to this branch will be
-  disabled. Start configuring builders for 3.20.
+  disabled. Start configuring builders for 3.20 and start 3.20 builds as soon as
+  possible.  
 
-### Wednesday April 10
+### Wednesday April 17
 
 * Contributed annotation packages posted to devel annotation data repository.
 
 * Bioconductor 3.19 release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Monday April 15
-
-* Start building Bioc 3.20.
-
-### Wednesday April 17
+### Wednesday April 24
 
 * Deadline to add new packages to the Bioc 3.19 manifest. Packages submitted to
   Bioconductor new package submission process must have completed the review
   processes and been accepted to be added to the manifest.
 
-### Friday April 19
+### Friday April 26
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
   and workflow packages. Some warnings will be accepted, clarification
   on the bioc-devel mailing list.
 
-### Monday April 22
+### Monday April 29
 
 * Last day to commit changes to the Bioc 3.19 branch. NEWS files
   must be updated before the builds start at 1:30 pm EST or they will
@@ -60,12 +55,12 @@ The following highlights important deadlines for the release:
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Tuesday April 23
+### Tuesday April 30
 
 * Creation of the Bioc 3.19 release branch. Development can resume on
   devel branch, but changes there will not be part of the release.
 
-### Wednesday April 24
+### Wednesday May 1
 
 * Bioconductor Release 3.19.
 
