@@ -27,6 +27,8 @@ Software Packages:
 <li><a href="/packages/3.16/bioc/html/GRridge.html">GRridge</a></li>
 <li><a href="/packages/3.16/bioc/html/HPAStainR.html">HPAStainR</a></li>
 <li><a href="/packages/3.16/bioc/html/imageHTS.html">imageHTS</a></li>
+<li><a href="/packages/3.17/bioc/html/IntOMICS.html">IntOMICS (because of
+naming trademark issue)</a></li>
 <li><a href="/packages/3.18/bioc/html/LineagePulse.html">LineagePulse</a></li>
 <li><a href="/packages/3.17/bioc/html/logitT.html">logitT</a></li>
 <li><a href="/packages/3.15/bioc/html/LowMACA.html">LowMACA</a></li>
