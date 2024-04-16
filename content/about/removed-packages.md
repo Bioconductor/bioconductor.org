@@ -7,12 +7,12 @@ with their last-available landing pages.
 
 Software Packages:
 <ul class="inline_list">
-<li><a href="/packages/3.18/bioc/html/baySeq.html">baySeq</a></li>
 <li><a href="/packages/3.16/bioc/html/BGmix.html">BGmix</a></li>
 <li><a href="/packages/3.16/bioc/html/bigPint.html">bigPint</a></li>
 <li><a href="/packages/3.17/bioc/html/biodbMirbase.html">biodbMirbase</a></li>
 <li><a href="/packages/3.16/bioc/html/BioMM.html">BioMM</a></li>
 <li><a href="/packages/3.16/bioc/html/Clonality.html">Clonality</a></li>
+<li><a href="/packages/3.18/bioc/html/COHCAP.html">COHCAP</a></li>
 <li><a href="/packages/3.16/bioc/html/CSSP.html">CSSP</a></li>
 <li><a href="/packages/3.16/bioc/html/deco.html">deco</a></li>
 <li><a href="/packages/3.17/bioc/html/DeepBlueR.html">DeepBlueR</a></li>
