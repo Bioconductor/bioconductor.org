@@ -5,6 +5,88 @@ with their last-available landing pages.
 
 ## Packages deprecated in Bioconductor 3.19 (to be removed in 3.20)
 
+Software Packages:
+<ul class="inline_list">
+<li><a href="">CancerInSilico</a></li>
+<li><a href="">cellHTS2</a></li>
+<li><a href="">CNVgears</a></li>
+<li><a href="">compartmap</a></li>
+<li><a href="">ensemblVEP</a></li>
+<li><a href="">HumanTranscriptomeCompendium</a></li>
+<li><a href="">maigesPack</a></li>
+<li><a href="">MMAPPR2</a></li>
+<li><a href="">openPrimeRui</a></li>
+<li><a href="">pwOmics</a></li>
+<li><a href="">restfulSE</a></li>
+
+<li><a href="">beadarraySNP</a></li>
+<li><a href="">BCMMAcorrect</a></li>
+<li><a href="">BHC</a></li>
+<li><a href="">biodbLipidmaps</a></li>
+<li><a href="">BioNetStat</a></li>
+<li><a href="">CancerSubtypes</a></li>
+<li><a href="">cliqueMS</a></li>
+<li><a href="">contiBAIT</a></li>
+<li><a href="">CoRegNet</a></li>
+<li><a href="">CORREP</a></li>
+<li><a href="">crisperseekplus</a></li>
+<li><a href="">DNABarcodes</a></li>
+<li><a href="">dpeak</a></li>
+<li><a href="">eegc</a></li>
+<li><a href="">enrichTF</a></li>
+<li><a href="">exomePeak2</a></li>
+<li><a href="">farms</a></li>
+<li><a href="">FCBF</a></li>
+<li><a href="">flowMap</a></li>
+<li><a href="">FoldGO</a></li>
+<li><a href="">FScanR</a></li>
+<li><a href="">FunChIP</a></li>
+<li><a href="">GOSim</a></li>
+<li><a href="">ImmuneSpaceR</a></li>
+<li><a href="">InterMineR</a></li>
+<li><a href="">IntOMICS</a></li>
+<li><a href="">IRISFGM</a></li>
+<li><a href="">iterClust</a></li>
+<li><a href="">MetaVolcanoR</a></li>
+<li><a href="">miRmine</a></li>
+<li><a href="">MobilityTransformR</a></li>
+<li><a href="">multiOmicsViz</a></li>
+<li><a href="">NeighborNet</a></li>
+<li><a href="">NetPathMiner</a></li>
+<li><a href="">oneSENSE</a></li>
+<li><a href="">pathVar</a></li>
+<li><a href="">pcxn</a></li>
+<li><a href="">PERFect</a></li>
+<li><a href="">phemd</a></li>
+<li><a href="">PloGO2</a></li>
+<li><a href="">proteasy</a></li>
+<li><a href="">PSEA</a></li>
+<li><a href="">RefPlus</a></li>
+<li><a href="">ReQON</a></li>
+<li><a href="">RIPAT</a></li>
+<li><a href="">RLSeq</a></li>
+<li><a href="">SimBindProfiles</a></li>
+<li><a href="">singleCellTK</a></li>
+<li><a href="">SMAP</a></li>
+<li><a href="">sparseDOSSA</a></li>
+<li><a href="">SpidermiR</a></li>
+<li><a href="">SQUADD</a></li>
+<li><a href="">StarBioTrek</a></li>
+<li><a href="">STROMA4</a></li>
+<li><a href="">TimiRGeN</a></li>
+<li><a href="">TNBC.CMS</a></li>
+<li><a href="">TnT</a></li>
+</ul>
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="">MMAPPR2data</a></li>
+<li><a href="">pcxnData</a></li>
+<li><a href="">restfulSEData</a></li>
+<li><a href="">RLHub</a></li>
+</ul>
+
+
 ## Packages removed with Bioconductor 3.19 release
 
 Software Packages:
