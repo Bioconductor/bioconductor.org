@@ -11,9 +11,9 @@ who want to learn to analyse their data with Bioconductor packages.
 The Bioconductor teaching committee reports to the Bioconductor 
 [Community Advisory Board](http://bioconductor.org/about/community-advisory-board/). 
 It is currently chaired by Charlotte Soneson and Laurent Gatto. 
-Membership is open to everybody interested in contributing and 
-joining the discussion during the monthly meetings (announced on 
-the Google group, see below).
+There’s no formal joining process or minimum commitment required — simply attend 
+one of the monthly meetings (announced on the Google group, see below) or engage 
+in our discussions to become a part of our community.
 
 This meta-repository is used for general discussions. The respective
 lessons are developed as modules in their own repositories.
