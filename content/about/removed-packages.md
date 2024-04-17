@@ -3,7 +3,9 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
-## Packages deprecated in Bioconductor 3.18 release (to be removed in 3.19)
+## Packages deprecated in Bioconductor 3.19 (to be removed in 3.20)
+
+## Packages removed with Bioconductor 3.19 release
 
 Software Packages:
 <ul class="inline_list">
@@ -12,7 +14,8 @@ Software Packages:
 <li><a href="/packages/3.17/bioc/html/biodbMirbase.html">biodbMirbase</a></li>
 <li><a href="/packages/3.16/bioc/html/BioMM.html">BioMM</a></li>
 <li><a href="/packages/3.16/bioc/html/Clonality.html">Clonality</a></li>
-<li><a href="/packages/3.18/bioc/html/COHCAP.html">COHCAP</a></li>
+<li><a href="/packages/3.18/bioc/html/COHCAP.html">COHCAP</a> (maintainer requested
+immediate removal)</li>
 <li><a href="/packages/3.16/bioc/html/CSSP.html">CSSP</a></li>
 <li><a href="/packages/3.16/bioc/html/deco.html">deco</a></li>
 <li><a href="/packages/3.17/bioc/html/DeepBlueR.html">DeepBlueR</a></li>
@@ -27,8 +30,8 @@ Software Packages:
 <li><a href="/packages/3.16/bioc/html/GRridge.html">GRridge</a></li>
 <li><a href="/packages/3.16/bioc/html/HPAStainR.html">HPAStainR</a></li>
 <li><a href="/packages/3.16/bioc/html/imageHTS.html">imageHTS</a></li>
-<li><a href="/packages/3.17/bioc/html/IntOMICS.html">IntOMICS (because of
-naming trademark issue)</a></li>
+<li><a href="/packages/3.17/bioc/html/IntOMICS.html">IntOMICS</a> (because of
+naming trademark issue)</li>
 <li><a href="/packages/3.18/bioc/html/LineagePulse.html">LineagePulse</a></li>
 <li><a href="/packages/3.17/bioc/html/logitT.html">logitT</a></li>
 <li><a href="/packages/3.15/bioc/html/LowMACA.html">LowMACA</a></li>
@@ -46,7 +49,6 @@ naming trademark issue)</a></li>
 <li><a href="/packages/3.16/bioc/html/pwrEWAS.html">pwrEWAS</a></li>
 <li><a href="/packages/3.16/bioc/html/qrqc.html">qrqc</a></li>
 <li><a href="/packages/3.18/bioc/html/Ringo.html">Ringo</a></li>
-<li><a href="/packages/3.16/bioc/html/RNAdecay.html">RNAdecay</a></li>
 <li><a href="/packages/3.16/bioc/html/SCATE.html">SCATE</a></li>
 <li><a href="/packages/3.17/bioc/html/SEPIRA.html">SEPIRA</a></li>
 <li><a href="/packages/3.15/bioc/html/seqbias.html">seqbias</a></li>
