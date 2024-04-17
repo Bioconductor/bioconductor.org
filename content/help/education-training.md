@@ -105,6 +105,10 @@ welcome to join the discussion.
 - The [Google group](https://groups.google.com/g/bioconductor-teaching/).
 - The `education-and-training` channel on the [Bioconductor community
   slack](https://slack.bioconductor.org/).
+  
+## Events
+
+Explore upcoming opportunities and past Bioconductor workshops and training sessions on our [events page](https://www.bioconductor.org/help/events/). Interested in sharing your own Bioconductor training event with the community? Learn how to add your event directly through this page.  
 
 ## Contact
 
