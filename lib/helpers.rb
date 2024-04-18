@@ -214,6 +214,7 @@ def filter_emails(str)
 end
 
 def remove_emails(str)
+  return str if str.nil?
   str.gsub(/<([^>]*)>/,"").gsub("  "," ").gsub(" ,", ",")
 end
 
