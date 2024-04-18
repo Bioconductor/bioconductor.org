@@ -147,7 +147,6 @@ Experiment Data Packages:
 <ul class="inline_list">
 <li><a href="/packages/3.17/data/experiment/html/ccTutorial.html">ccTutorial</a></li>
 <li><a href="/packages/3.17/data/experiment/html/ChIC.data.html">ChIC.data</a></li>
-<li><a href="/packages/3.17/data/experiment/html/DLBCL.html">DLBCL</a></li>
 <li><a href="/packages/3.17/data/experiment/html/mAPKLData.html">mAPKLData</a></li>
 <li><a href="/packages/3.17/data/experiment/html/MAQCsubsetILM.html">MAQCsubsetILM</a></li>
 <li><a href="/packages/3.17/data/experiment/html/MIGSAdata.html">MIGSAdata</a></li>
