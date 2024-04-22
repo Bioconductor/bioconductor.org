@@ -1446,8 +1446,16 @@ def package_is_release(package)
   end
 end
 
+def package_is_devel(package)
+  if package[:bioc_version_num] == config[:devel_version]
+    true
+  else
+    false
+  end
+end
+
 def package_has_archive(package)
-  if !(package_is_release(package))
+  if (package_is_devel(package))
     return false
   end
   if !(package[:repo] == "bioc/")
