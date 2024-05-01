@@ -24,6 +24,7 @@ devel_version: "3.20"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
+- "3.18"
 - "3.19"
 - "3.20"
 
@@ -33,7 +34,7 @@ devel_repos:
 - "bioc"
 - "data/experiment"
 - "workflows"
-- "data/annotation"
+#- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
