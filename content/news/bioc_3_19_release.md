@@ -10097,8 +10097,7 @@ removed in Bioc 3.20:
 
 **ANNOTATION DATA:** 
 
-No annotation packages were removed from this release (after being deprecated
-in Bioc 3.18).
+No annotation packages were removed from this release.
 
 One annotation package is deprecated in this release and will be removed in
 Bioc 3.20.
