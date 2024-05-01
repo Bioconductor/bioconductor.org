@@ -8,12 +8,12 @@ production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 staging_dir: /loc/www/bioconductor-test-new
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-release_version: "3.18"
-r_version_associated_with_release: "4.3.0"
+release_version: "3.19"
+r_version_associated_with_release: "4.4.0"
 r_version_associated_with_devel: "4.4.0"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
-devel_version: "3.19"
+devel_version: "3.20"
 
 ## CHANGE THIS WHEN WE ADD A VERSION:
 ## This is the list of all versions for which we want to generate "new" 
@@ -26,6 +26,7 @@ devel_version: "3.19"
 versions:
 - "3.18"
 - "3.19"
+- "3.20"
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
@@ -33,17 +34,17 @@ devel_repos:
 - "bioc"
 - "data/experiment"
 - "workflows"
-- "data/annotation"
+#- "data/annotation"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
-  linux: "nebbiolo2"
-  windows: "palomino4"
-  mac_monterey: "lconway"
-active_devel_builders:
   linux: "nebbiolo1"
   windows: "palomino3"
+  mac_monterey: "lconway"
+active_devel_builders:
+  linux: "nebbiolo2"
+  windows: "palomino4"
   mac_monterey: "merida1"
 
 ## CHANGE this when the single package builder builds
@@ -161,6 +162,7 @@ r_ver_for_bioc_ver:
   "3.17": "4.3"
   "3.18": "4.3"
   "3.19": "4.4"
+  "3.20": "4.4"
 # UPDATE THIS when we release a version
 release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milestones
   "1.0": "1/5/2001"
@@ -207,6 +209,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.16": "11/02/2022"
   "3.17": "04/26/2023"
   "3.18": "10/25/2023"
+  "3.19": "05/01/2024"
 mirrors:
  - 0-Bioconductor:
    - institution: Bioconductor, automatic redirection to servers worldwide
