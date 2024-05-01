@@ -41,7 +41,7 @@ Getting Started with Bioconductor 3.19
 
 To update to or install Bioconductor 3.19
 
-1. Install R 4.4 Bioconductor 3.19 has been designed expressly for
+1. Install R 4.4. Bioconductor 3.19 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
@@ -584,12 +584,11 @@ There are 80 new software packages in this release of Bioconductor.
   framework for aberrant expression and splicing analyses. The main
   functions are: BamtoAspliCounts, convertASpli, calculateOffsets,
   saseRfindEncodingDim, saseRfitFor. information upon how to use these
-  functions, check out our vignette at
-  \url{https://github.com/statOmics/saseR/blob/main/vignettes/Vignette.Rmd}
+  functions, check out our [vignette](https://bioconductor.org/packages/release/bioc/vignettes/saseR/inst/doc/saseR-vignette.html)
   and the saseR paper: Segers, A. et al. (2023). Juggling offsets
   unlocks RNA-seq tools for fast scalable differential usage,
   aberrant splicing and expression analyses. bioRxiv.
-  \url{https://doi.org/10.1101/2023.06.29.547014}.
+  https://doi.org/10.1101/2023.06.29.547014.
 
 - [scMitoMut](/packages/scMitoMut) This package is designed for
   analyzing mitochondrial mutations using single-cell sequencing
