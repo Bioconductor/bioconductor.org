@@ -11,6 +11,7 @@ updates to existing packages, and package removals.
 
 | Release                         | Date              | Software packages                           | R    |
 |:--------------------------------|:------------------|--------------------------------------------:|:-----|
+| [3.19](/news/bioc_3_19_release) | May 1, 2024       | [2300](/packages/3.19/)                     | 4.4  |
 | [3.18](/news/bioc_3_18_release) | October 25, 2023  | [2266](/packages/3.18/)                     | 4.3  |
 | [3.17](/news/bioc_3_17_release) | April 26, 2023    | [2230](/packages/3.17/)                     | 4.3  |
 | [3.16](/news/bioc_3_16_release) | November 2, 2022  | [2183](/packages/3.16/)                     | 4.2  |
