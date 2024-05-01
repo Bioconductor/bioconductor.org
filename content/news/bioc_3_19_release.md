@@ -1026,7 +1026,7 @@ biocViews term.
 function.
 - Report file size when downloading.
 - Improve test coverage.
-- See GitHub [issue comment][]; thanks @LiNk-NY
+- See GitHub issue comment; thanks @LiNk-NY
 - (v. 0.99.11) Use an S4 class for alphamissense_connection,
 extending
 duckdb_connection.
@@ -2810,7 +2810,7 @@ BUG FIXES
 
 NEW FEATURES
 
-- rowsum(<DelayedMatrix>)/colsum(<DelayedMatrix>) now acknowledge the
+- rowsum(&lt;DelayedMatrix&gt;)/colsum(&lt;DelayedMatrix&gt;) now acknowledge the
   current "automatic realization backend" and "automatic BiocParallel
   BPPARAM". See '?DelayedArray::rowsum' for more information.
 
@@ -2837,8 +2837,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
   library(HDF5Array)
   library(ExperimentHub)
   hub <- ExperimentHub()
-  tenx <- TENxMatrix(hub[["EH1039"]], group="mm10")
-  M <- tenx[ , 1:25000]
+  tenx <- TENxMatrix(hub&#91;&#91;"EH1039"&#93;&#93;, group="mm10")
+  M <- tenx&#91; , 1:25000&#93;
   m <- cbind(runif(ncol(M)), runif(ncol(M)))
   M %*% m
   Doing 'M %*% m' now takes 7.6s and uses 1.1Gb of memory, compared to
@@ -2993,9 +2993,9 @@ requested data quantiles for "vlnplot" representations.
 5.  Added a new built in 'color.method' style for
 'dittoScatterHex()' and 'dittoDimHex()' plotters:
 - When 'color.var' targets discrete data, giving 'color.method
-= "prop.<value>"', where <value> is an actual data level of
+= "prop.&lt;value&gt;"', where &lt;value&gt; is an actual data level of
 'color.var'-data, will set coloring to represent the
-proportion of <value> among the 'color.var'-data of each
+proportion of &lt;value&gt; among the 'color.var'-data of each
 bin.
 6.  New input 'labels.repel.adjust' allows finer control of the
 'do.label' plot addition, via input pass-through to the geom
@@ -3019,7 +3019,7 @@ previous simple 'list' and 'do.call()' management.
 2.  Seurat-v5: When the user's Seurat package version is 5.0 or
 higher, conditional code switches expression data retrieval from
 a call to the reportedly superseded 'GetAssayData()' function to
-the newly supported 'SeuratObj[[<assay>]][<slot>]' syntax.
+the newly supported 'SeuratObj&#91;&#91;&lt;assay&gt;&#93;&#93;&#91;&lt;slot&gt;&#93;' syntax.
 
 [DMRcate](/packages/DMRcate)
 -------
@@ -3229,7 +3229,7 @@ Description, not ID(2023-12-1, Fri, #193)
 'showCategory' parameter (2023-11-30, Thu, #193)
 - fix treeplot() to compatible with the current version of ggtree and
 ggtreeExtra. (2023-10-28, Sat)
-- add clusterPanel.params[["colnames_angle"]] parameter to set the
+- add clusterPanel.params&#91;&#91;"colnames_angle"&#93;&#93; parameter to set the
 angle of colnames. (2023-10-28, Sat)
 
 [enrichViewNet](/packages/enrichViewNet)
@@ -7320,7 +7320,7 @@ global environment (issue #208).
 
 QFeatures 1.13.6
 
-- Migrate .splitS[C]E() unit test form scp to QFeatures.
+- Migrate .splitS&#91;C&#93;E() unit test form scp to QFeatures.
 
 QFeatures 1.13.5
 
@@ -8473,7 +8473,7 @@ NEW FEATURES
 
 BUG FIXES
 
-- Fix aperm(<SVT_SparseArray>) when inner dimensions are not permuted
+- Fix aperm(&lt;SVT_SparseArray&gt;) when inner dimensions are not permuted
   See https://github.com/Bioconductor/SparseArray/issues/6
 
 - Fix long-standing bug in C function
