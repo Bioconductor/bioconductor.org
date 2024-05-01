@@ -10107,16 +10107,12 @@ Bioc 3.20.
 
 **WORKFLOWS:** 
 
-No workflow packages were removed from this release (after being deprecated in
-Bioc 3.18).
+No workflow packages were removed from this release.
 
-No workflow packages were deprecated in this release and will be removed in
-3.20.
+No workflow packages were deprecated in this release.
 
 **BOOKS:**
 
-No books were removed from this release (after being deprecated in
-Bioc 3.18).
+No books were removed from this release.
 
-No books were deprecated in this release and will be removed in
-3.20.
+No books were deprecated in this release.
