@@ -7,11 +7,11 @@ We are pleased to announce Bioconductor 3.19, consisting of
 packages, 30 workflows and 5 books.
 
 There are 80 new software packages, 10 new data experiment packages,
-1 new annotation packages, no new workflows, 1 new book, and many updates and
+5 new annotation packages, no new workflows, 1 new book, and many updates and
 improvements to existing packages.
 
 Bioconductor 3.19 is compatible with R 4.4, and is supported on Linux,
-64-bit Windows, Intel 64-bit macOS 11 (Big Sur) or higher, macOS arm64 and linux
+64-bit Windows, Intel 64-bit macOS 11 (Big Sur) or higher, macOS arm64 and Linux
 arm64. This release will also include updated Bioconductor [Docker containers][2].
 
 Thank you to everyone for your contribution to Bioconductor
@@ -41,7 +41,7 @@ Getting Started with Bioconductor 3.19
 
 To update to or install Bioconductor 3.19
 
-1. Install R 4.4 Bioconductor 3.19has been designed expressly for
+1. Install R 4.4 Bioconductor 3.19 has been designed expressly for
    this version of R.
 
 2. Follow the instructions at
@@ -582,17 +582,9 @@ There are 80 new software packages in this release of Bioconductor.
 
 - [saseR](/packages/saseR) saseR is a highly performant and fast
   framework for aberrant expression and splicing analyses. The main
-  functions are: \itemize{ \item \code{\link{BamtoAspliCounts}} -
-  Process BAM files to ASpli counts \item \code{\link{convertASpli}}
-  - Get gene, bin or junction counts from ASpli SummarizedExperiment
-  \item \code{\link{calculateOffsets}} - Create an offsets assays for
-  aberrant expression or splicing analysis \item
-  \code{\link{saseRfindEncodingDim}} - Estimate the optimal number of
-  latent factors to include when estimating the mean expression \item
-  \code{\link{saseRfit}} - Parameter estimation of the negative
-  binomial distribution and compute p-values for aberrant expression
-  and splicing } For information upon how to use these functions,
-  check out our vignette at
+  functions are: BamtoAspliCounts, convertASpli, calculateOffsets,
+  saseRfindEncodingDim, saseRfitFor. information upon how to use these
+  functions, check out our vignette at
   \url{https://github.com/statOmics/saseR/blob/main/vignettes/Vignette.Rmd}
   and the saseR paper: Segers, A. et al. (2023). Juggling offsets
   unlocks RNA-seq tools for fast scalable differential usage,
@@ -924,7 +916,7 @@ New Online Books
 
 There is one new online book.
 
-- [OHCA](/packages/OHCA) The primary aim of this book is to introduce
+- [OHCA](https://bioconductor.org/books/3.19/OHCA/) The primary aim of this book is to introduce
   the R user to Hi-C analysis. This book starts with key concepts
   important for the analysis of chromatin conformation capture and
   then presents Bioconductor tools that can be leveraged to process,
