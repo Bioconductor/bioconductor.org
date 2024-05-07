@@ -295,6 +295,15 @@ mirrors:
      rsync: secure_mirror_from_master
      city: Hangzhou Westlake
      country_code: cn
+   - institution: Zhejiang University
+     institution_url: https://www.zju.edu.cn/
+     contact: ZJUSCT Team Falcon
+     contact_email: mirrors@zju.edu.cn
+     mirror_url: https://mirrors.zju.edu.cn/bioconductor
+     https_mirror_url: https://mirrors.zju.edu.cn/bioconductor
+     rsync: TUNA
+     city: Zhejiang University
+     country_code: cn
  - Norway:
    - institution: University of Bergen
      institution_url: https://www.uib.no/
