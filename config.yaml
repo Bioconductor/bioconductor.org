@@ -49,7 +49,7 @@ active_devel_builders:
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.19"
+  bioc_version: "3.20"
   r_version: "4.4"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
