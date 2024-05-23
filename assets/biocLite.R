@@ -15,7 +15,10 @@ local({
             "packages using BiocManager; see https://bioconductor.org/install",
             call. = FALSE
         )
+    }else{
+        warning("Sourcing this script is defunct!\nThis script is schedule to be removed from this location.\nPlease obtain from https://github.com/Bioconductor/LegacyInstall")
     }
+    
     biocVers <- tryCatch({
         BiocInstaller::biocVersion() # recent BiocInstaller
     }, error=function(...) {         # no / older BiocInstaller
