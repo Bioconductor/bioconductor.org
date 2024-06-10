@@ -92,7 +92,7 @@ def get_cran_packages()
   lines = html.split("\n")
   for line in lines
     next unless line =~ /^<td><a href="/
-    if line =~ /<a href="[^"]*">([^<]*)<\/a>/
+    if line =~ /<a href="[^"]*"><span class="CRAN">([^<]*)<\/span>/
       cran_packages.push $1
     end
   end
