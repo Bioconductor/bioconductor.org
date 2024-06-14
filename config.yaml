@@ -275,15 +275,6 @@ mirrors:
      city: Gottingen
      country_code: de
  - Japan:
-   - institution: The Institute of Statistical Mathematics
-     institution_url: https://www.ism.ac.jp/
-     contact: Keisuke Honda
-     contact_email: khonda@ism.ac.jp
-     mirror_url: http://bioc.ism.ac.jp/
-     https_mirror_url: https://bioc.ism.ac.jp/
-     rsync: secure_mirror_from_master
-     country_code: jp
-     city: Tachikawa
    - institution: RIKEN Advanced Center for Computing and Communication
      institution_url: https://accc.riken.jp/en/
      contact: Itoshi NIKAIDO, Ph.D.
