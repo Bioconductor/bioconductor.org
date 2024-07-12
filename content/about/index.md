@@ -185,5 +185,9 @@ Please refer to the [Bioconductor Code of Conduct][coc]
 
 [coc]: code-of-conduct/
 
+## Contact
+
+Please reach out to <a href="mailto:bioconductorcoreteam@gmail.com">bioconductorcoreteam@gmail.com</a> 
+
 
 <img src="/images/icons/BioconductorSticker1.png" alt="Bioconductor sticker" />

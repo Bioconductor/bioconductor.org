@@ -22,14 +22,29 @@
 </style>
 
 <h1 class="format-bold">Dashboard</h1>
+<a id="top"></a>
 <div>
   <% page_build_time = get_current_time() %>
   <p>This page was built <abbr class="timeago" title="<%=page_build_time%>">
       <%=page_build_time%></abbr>.</p>
 </div>
 
+<div>
+  <h3 class="format-bold">Quick Links</h3>
+  <ol>
+  <li><a href="#build_system_status">Build System Status</a></li>
+  <li><a href="#recent_commits">Recent Commits To Git</a></li>
+  <li><a href="#newest_packages">Newly Accepted Packages</a></li>
+  <li><a href="#spb">Single Package Builder Activity</a></li>
+  <li><a href="#recent_support_site">Support Site Activity</a></li>
+  <li><a href="#mirror_status">Mirror Status</a></li>
+  </ol>
+</div>
+
 <div class="page-container">
   
+  <a id="build_system_status"></a>
+
   <section>
     <h2><a href="/checkResults/">Build System Status</a></h2>
     <p>Legend:
@@ -57,7 +72,7 @@
     <p>&nbsp;</p>
 	   
   </section>
-
+  
   <section>
     <h4>Devel</h4>
 
@@ -75,8 +90,11 @@
  	 
   </section>
        
-  <hr class="page-divider" />
+  <a id="recent_commits"></a>
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
+  <hr class="page-divider" />
+  
   <section>
     <h2>Recent Commits</h2>
     
@@ -92,6 +110,9 @@
     </div>
       
   </section>
+  
+  <a id="newest_packages"></a>
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
   <hr class="page-divider" />
 
@@ -108,6 +129,9 @@
     </div>
 
   </section>
+  
+  <a id="spb"></a>
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
   <hr class="page-divider" />
 
@@ -124,23 +148,29 @@
     </div>
     
   </section>
+  
+  <a id="recent_support_site"></a>
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
   <hr class="page-divider" />
-
 
   <div style="float:left;width:50%;">
     <%= render('/_mlwidget/', :ml_item => get_biostar_post_summaries(@items)) %>
   </div>
+    
+  <a id="mirror_status"></a>
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
   <hr class="page-divider" />
 
-  
   <h2>Mirror Status</h2>
 
   <% status = mirror_status() %>
   
   <p>Last updated <abbr class="timeago" title="<%=status[:last_updated]%>">
       <%=status[:last_updated]%></abbr>. (Will be updated every 24 hours).</p>
+
+  To use a Bioconductor mirror use the R function `chooseBioCmirror()`
   
   <table>
     <tr>
@@ -159,7 +189,7 @@
     </tr>
     <% end %>
   </table>
-  
+  <a href="#top" style="font-size: small; float: right; text-align: right">Back to top</a>
 
 </div>
 

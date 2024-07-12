@@ -92,7 +92,7 @@ def get_cran_packages()
   lines = html.split("\n")
   for line in lines
     next unless line =~ /^<td><a href="/
-    if line =~ /<a href="[^"]*">([^<]*)<\/a>/
+    if line =~ /<a href="[^"]*"><span class="CRAN">([^<]*)<\/span>/
       cran_packages.push $1
     end
   end
@@ -834,10 +834,13 @@ end
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
     if repo == "bioc"
+      url_without_protocol = url.sub(/^http:/i, "")
+      css_url = "#{url_without_protocol}report.css"
       url = url + "long-report.html"
+    else
+      url_without_protocol = url.sub(/^http:/i, "")
+      css_url = "#{url_without_protocol}report.css" 
     end
-    url_without_protocol = url.sub(/^http:/i, "")
-    css_url = "#{url_without_protocol}report.css"
     begin
       html = open(url)
     rescue Exception => e
@@ -874,7 +877,7 @@ def get_build_summary(version, repo)
         f.puts htmlfrag
     end
     ret=<<-EOT
-    <iframe src="/dashboard/build_#{version}_#{repo}.html" width="80%"></iframe>
+    <iframe src="/dashboard/build_#{version}_#{repo}.html" width="80%", height=200></iframe>
     EOT
     ret
 end

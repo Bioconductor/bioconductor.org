@@ -20,7 +20,7 @@ lessons are developed as modules in their own repositories.
 
 ## Modules
 
-- [bioc-intro](https://github.com/carpentries-incubator/bioc-intro)
+- [bioc-intro](https://carpentries-incubator.github.io/bioc-intro/)
   The **Data science** lesson is based on the [Carpentries Ecology
   Curriculum](https://datacarpentry.org/lessons/#ecology-workshop). There
   are no pre-requisites for this module, and the materials assume no
@@ -29,19 +29,19 @@ lessons are developed as modules in their own repositories.
   introduces some Bioconductor concepts. Notes are collated in 
   `bioc-intro.md` in this repo.
 
-- [bioc-project](https://github.com/carpentries-incubator/bioc-project)
+- [bioc-rnaseq](https://carpentries-incubator.github.io/bioc-rnaseq/)
+  **Analysis and interpretation of bulk RNA-Sequencing data using
+  Bioconductor** shows how to use Bioconductor packages to analyse
+  RNA-Seq data. It expects good familiarity with R and the
+  Bioconductor project.
+
+- [bioc-project](https://carpentries-incubator.github.io/bioc-project/)
   The **Bioconductor project** lesson provides an introduction to the
   Bioconductor project such as the Bioconductor home page, packages,
   package landing pages, and package vignettes, where to find help,
   Bioconductor workflows, Bioconductor release schedule and versions,
   some core infrastructure, ... It is meant to be use in combination
   with other modules as part of a wider workshop.
-
-- [bioc-rnaseq](https://github.com/carpentries-incubator/bioc-rnaseq)
-  **Analysis and interpretation of bulk RNA-Sequencing data using
-  Bioconductor** shows how to use Bioconductor packages to analyse
-  RNA-Seq data. It expects good familiarity with R and the
-  Bioconductor project.
 
 ### New lessons
 
