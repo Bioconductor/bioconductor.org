@@ -39,12 +39,12 @@ devel_repos:
 ## also, don't include machines that are not building yet (comment them out)
 active_release_builders:
   linux: "nebbiolo1"
-  windows: "palomino3"
-  mac_monterey: "lconway"
+  windows: "palomino7"
+  mac_monterey: "merida1"
 active_devel_builders:
   linux: "nebbiolo2"
-  windows: "palomino4"
-  mac_monterey: "merida1"
+  windows: "palomino8"
+  mac_monterey: "lconway"
 
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
