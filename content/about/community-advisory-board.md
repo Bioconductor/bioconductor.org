@@ -140,11 +140,8 @@ In addition to asking new questions, you can also continue the discussion follow
 There is an annual expression of interest process inviting new members to apply to join the CAB. This is announced on the Bioconductor support site and relevant Bioconductor community slack channel. Current CAB members vote on the applications received to select new members. The board is keen to have representatives from diverse backgrounds (i.e. different geographical and cultural backgrounds, genders, statistical analysis interests, career stages and experience levels).
 Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
 
-Nominations for 2023 CAB board members is occurring now. Please fill out the
-following [google form](https://forms.gle/2nb2fJE4jgca3nqi7). If you are unable
-to use google forms please see the follow [pdf of
-questions](NominationFormQuesetions.pdf) and email responses to
-shepherd.bioc@gmail.com.
+Nominations for 2024 CAB board members are occurring now. Please fill out the
+following [google form](https://docs.google.com/forms/d/e/1FAIpQLSc6qcBo_NN2q0bbmGGm08pwmkDvQrqophIf3Iao2xc33ooFew/viewform).
 
 ### Is there a recommended way for community members to give suggestions to the CAB?
 
@@ -153,11 +150,11 @@ We are happy to receive suggestions and feedback and recommend reaching us via e
 
 ### Are there any big new CAB projects or plans on the horizon?
 
-We plan to redevelop the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project ([chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/)). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
+We plan to build on our work redeveloping the Bioconductor website to make it easier to navigate and use on different devices and also develop new training resources aligned with the Carpentries project ([chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/)), with our new CZI EOSS6 grants for delivering training and supporting developers, see the blog post [here](https://blog.bioconductor.org/posts/2024-07-12-czi-eoss6-grants/). Hosting a BioC Africa meeting in the future to compliment the annual meetings that are run in other parts of the world is another ambition.
 
 ### What projects are you working on currently
 
-The Bioconductor community manager Dr. Maria Doyle is leading the CZI EOSS funded [training and website iniatives](https://chanzuckerberg.com/eoss/proposals/bioconductor-high-quality-training-and-support-for-a-worldwide-community/) and CAB members are participating with [working groups](https://workinggroups.bioconductor.org). Everyone is welcome to join a [working group](https://workinggroups.bioconductor.org) and contribute to our community.
+We will be working on delivering training and supporting developers through the CZI EOSS6 grants in the blog post [here](https://blog.bioconductor.org/posts/2024-07-12-czi-eoss6-grants/). CAB members are also leading and participating in [working groups](https://workinggroups.bioconductor.org). Everyone is welcome to join a [working group](https://workinggroups.bioconductor.org) and contribute to our community.
 
 ### What did you consider the biggest challenges when joining the CAB as a new member?
 
