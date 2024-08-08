@@ -255,6 +255,16 @@ mirrors:
      https_mirror_url: https://bioconductor.org/
      rsync: secure_mirror_from_master
      country_code: us
+ - USA:
+   - institution: Posit Software, PBC
+     institution_url: https://posit.co/
+     contact: Joshua Spiewak
+     contact_email: bioconductor@posit.co
+     city: Boston
+     mirror_url: http://bioconductor.posit.co/
+     https_mirror_url: https://bioconductor.posit.co/
+     rsync: secure_mirror_from_master
+     country_code: us
  - Germany:
    - institution: Department of Statistics, TU Dortmund
      institution_url: https://www.statistik.tu-dortmund.de/
@@ -284,6 +294,16 @@ mirrors:
      rsync: secure_mirror_from_master
      country_code: jp
      city: Wako
+ - Taiwan:
+   - institution: National Center for High-performance Computing
+     institution_url: https://www.nchc.org.tw/
+     contact: Chenkai Sun
+     contact_email: ceasar@narlabs.org.tw
+     mirror_url: http://free.nchc.org.tw/
+     https_mirror_url: https://free.nchc.org.tw/
+     rsync: secure_mirror_from_master
+     country_code: tw
+     city: Hsinchu
  - China:
    - institution: TUNA Mirror Site, Tsinghua University 
      institution_url: mirrors.tuna.tsinghua.edu.cn
