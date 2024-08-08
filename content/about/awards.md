@@ -60,21 +60,27 @@ The deadline to nominate a candidate for the Bioc2024 Awards is Wednesday May 15
 - Deadline for nominations: May 15, 2024.
 - Notification about the awards: at the Bioconductor conference and via email, if the awardee does not attend the conference.
 
-# Awardees 2023
+# Awardees 2024
 
-## Susan Holmes
-<img src="/images/biocawards/writeup/SusanHolmes.png" alt="Susan Holmes" width="100%" height="100%"/>
+## Martin Morgan
+<img src="/images/biocawards/writeup/Morgan.png" alt="Martin Morgan" width="100%" height="100%"/>
 
-## Matthew Ritchie
-<img src="/images/biocawards/writeup/MatthewRitchie.png" alt="Matthew Ritchie" width="100%" height="100%"/>
+## Jenny Drnevich
+<img src="/images/biocawards/writeup/Drnevich.png" alt="Jenny Drnevich" width="100%" height="100%"/>
 
-## Constantin Ahlmann-Eltze
-<img src="/images/biocawards/writeup/ConstantinAhlmann-Eltze.png" alt="Constantin Ahlmann-Eltze" width="100%" />
+## Lambda Moses
+<img src="/images/biocawards/writeup/Moses.png" alt="Lambda Moses" width="100%" />
 
-## Simone Bell
-<img src="/images/biocawards/writeup/SimoneBell.png" alt="Simone Bell" width="100%" />
+## Saskia Freytag
+<img src="/images/biocawards/writeup/Freytag.png" alt="Saskia Freytag" width="100%" />
+
+## Beatriz Calvo-Serra
+Inaugural Bioconductor Athena Award winner. Read more in the [blog post](https://blog.bioconductor.org/posts/2024-07-29-athena-award/).
+<img src="/images/biocawards/writeup/Calvo-Serra.png" alt="Beatriz Calvo-Serra" width="100%" />
 
 # Previous Winners
+
+2023: Susan Holmes, Matthew Ritchie, Constantin Ahlmann-Eltze, Simone Bell
 
 2022: Sean Davis, Erica Feick, Nicole Kramer, Herv&eacute; Pag&egrave;s
 
