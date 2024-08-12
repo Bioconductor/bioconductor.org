@@ -299,8 +299,8 @@ mirrors:
      institution_url: https://www.nchc.org.tw/
      contact: Chenkai Sun
      contact_email: ceasar@narlabs.org.tw
-     mirror_url: http://free.nchc.org.tw/
-     https_mirror_url: https://free.nchc.org.tw/
+     mirror_url: http://free.nchc.org.tw/bioconductor/
+     https_mirror_url: https://free.nchc.org.tw/bioconductor/
      rsync: secure_mirror_from_master
      country_code: tw
      city: Hsinchu
