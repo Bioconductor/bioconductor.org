@@ -7,8 +7,12 @@ The following highlights important deadlines for the release:
 
 ### Friday September 20
 
-* Deadline for new package submissions.
-
+* Deadline for new package submissions. Packages will still need to pass the
+  formal review process to be included in the release. Package reviewers are
+  volunteer and have a limited capacity for review. Packages submitted by this
+  date we will try to have at least an initial review of the pacakge; packages
+  submitted after this date are not guaranteed to be reviewed.
+  
 ### Monday October 7
 
 * Announce deprecated packages for Bioc 3.20. They'll be removed from Bioc 3.21.
