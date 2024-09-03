@@ -17,7 +17,7 @@ The Technical Advisory Board governance document ([PDF][1]) outlines
 membership, procedures, and committees and working groups of the
 board. Governance was formalized in February, 2019.
 
-[1]: TAB-Governance-v1.1.1.pdf
+[1]: TAB_Governance_v1.1.1.pdf
 
 ## Current members
 
