@@ -65,7 +65,7 @@ The broad goals of the Bioconductor project are:
   and deployment of extensible, scalable, and interoperable software.
 - To further scientific understanding by producing high-quality
   [documentation](/help/package-vignettes/) and reproducible research.
-- To [train](/help/education-training/) researchers on computational and
+- To [train](https://training.bioconductor.org/) researchers on computational and
   statistical methods for the analysis of genomic data.
 
 ## Main Project Features
@@ -135,7 +135,7 @@ statistical methods for the analysis of genomic data. Courses have been
 given for audiences with backgrounds in either biology or statistics. All
 [course materials](/help/course-materials/) (lectures and computer labs)
 are available on this site. There is also a [Bioconductor teaching
-committee](/help/education-training/) to consolidate Bioconductor-focused
+committee](https://training.bioconductor.org/) to consolidate Bioconductor-focused
 training materials and establish a community of Bioconductor trainers. 
 
 #### Open source
