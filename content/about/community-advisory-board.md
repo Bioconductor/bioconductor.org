@@ -33,10 +33,6 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <a href="https://www.linkedin.com/in/babasaraki">Umar Ahmad</a>, Bauchi State University, Gadau, Nigeria and Africa CDC
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/DanielaCassol.png" alt="Daniela Cassol" title="Daniela Cassol"/>
-    <a href="https://www.dcassol.com/">Daniela Cassol</a>, Daniela Cassol, University of California, Riverside, USA
-  </div>
-  <div class="gallery-card">
     <img src="/images/cab/AedinCulhane.png" alt="Aedin Culhane" title="Aedin Culhane"/>
     <a href="https://www.ul.ie/limerick-dcrc/prof-aedin-culhane">Aedin Culhane</a>, University of Limerick, Ireland
   </div>
@@ -63,16 +59,6 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <img src="/images/cab/MengboLi.png"
           alt="Mengbo Li" title="Mengbo Li"/>
     <a href="https://au.linkedin.com/in/mengbo-li-064b2b230">Mengbo Li</a>, Walter and Eliza Hall Institute of Medical Research (WEHI), Australia
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/EstefaniaMancini.png"
-          alt="Estefania Mancini" title="Estefania Mancini"/>
-    <a href="https://scholar.google.com/citations?user=ypGqJkEAAAAJ">Estefania Mancini</a>, Centre for Genomic Regulation, Spain.
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/JordanaMuwanguzi.png"
-          alt="Jordana Muwanguzi" title="Jordana Muwanguzi"/>
-    <a href="https://www.linkedin.com/in/muwajorda">Jordana Muwanguzi</a>, Northeastern University, USA
   </div>
   <div class="gallery-card">
     <img src="/images/cab/KozoNishida.png"
@@ -103,11 +89,6 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <img src="/images/cab/KevinRueAlbrecht.png"
           alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK, co-chair
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/MikeSmith.png"
-          alt="Mike Smith" title="Mike Smith"/>
-    <a href="https://www.huber.embl.de/people/mike-smith/">Mike Smith</a>, EMBL, Germany
   </div>
   <div class="gallery-card">
     <img src="/images/cab/LuyiTian.png"
@@ -189,7 +170,10 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
   [2024-02-08-minutes.pdf](2024-02-08-minutes.pdf),
   [2024-03-14-minutes.pdf](2024-03-14-minutes.pdf),
   [2024-04-11-minutes.pdf](2024-04-11-minutes.pdf),
-  [2024-05-09-minutes.pdf](2024-05-09-minutes.pdf)
+  [2024-05-09-minutes.pdf](2024-05-09-minutes.pdf),
+  [2024-06-13-minutes.pdf](2024-06-13-minutes.pdf),
+  [2024-07-11-minutes.pdf](2024-07-11-minutes.pdf),
+  [2024-08-08-minutes.pdf](2024-08-08-minutes.pdf)
 - **2023:**  [2023-12-14](2023-12-14-minutes.pdf),
   [2023-11-09](2023-11-09-minutes.pdf),
   [2023-10-12](2023-10-12-minutes.pdf),
@@ -251,6 +235,10 @@ There is also a community-advisory-board channel on the [Bioconductor community 
 We are grateful to past CAB members;
 
 <ul class="inline_list">
+<li>Jordana Muwanguzi (2023 - 2024) </li>
+<li>Mike Smith (2021 - 2024) </li>
+<li>Estefania Mancini (2021 - 2024) </li>
+<li>Daniela Cassol (2021 - 2024) </li>
 <li>Matt Ritchie (04/2020- 04/2023, co-chair 2020/2021) </li>
 <li>Susan Holmes (04/2020- 04/2023, co-chair 2022) </li>
 <li>Leonardo Collado-Torres (04/2020- 04/2023) </li>
