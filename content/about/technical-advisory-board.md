@@ -49,11 +49,6 @@ board. Governance was formalized in February, 2019.
     <a href="http://helenalc.github.io/">Helena Crowell</a>, National Center of Genomic Analysis, Barcelona, Spain.
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/SeanDavis.png"
-          alt="Sean Davis" title="Sean Davis"/>
-    <a href="https://seandavi.github.io/">Sean Davis</a>, University of Colorado Anschutz School of Medicine, USA
-  </div>
-  <div class="gallery-card">
     <img src="/images/tab/LaurentGatto.png"
           alt="Laurent Gatto" title="Laurent Gatto"/>
     <a href="https://www.deduveinstitute.be/fr/research/computational-biology/laurent-gatto">Laurent Gatto</a>, Institut de Duve, Belgium
@@ -89,14 +84,19 @@ board. Governance was formalized in February, 2019.
     <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a> , Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/MichaelLove.png"
-          alt="Michael Love" title="Michael Love"/>
-    <a href="https://mikelove.github.io/">Michael Love</a>, University of North Carolina-Chapel Hill, USA.
+    <img src="/images/tab/MichaelLawrence.png"
+          alt="Michael Lawrence" title="Michael Lawrence"/>
+    <a href="https://www.linkedin.com/in/michael-lawrence-74a9b482">Michael Lawrence</a>, Genentech, USA.
   </div>
   <div class="gallery-card">
     <img src="/images/tab/DavideRisso.png"
           alt="Davide Risso" title="Davide Risso"/>
     <a href="https://drisso.github.io/">Davide Risso</a>, University of Padova, Italy
+  </div>
+  <div class="gallery-card">
+    <img src="/images/tab/JacquesSerizay.jpeg"
+          alt="Jacques Serizay" title="Jacques Serizay"/>
+    <a href="https://jserizay.com/">Jacques Serizay</a>, Institut Pasteur, Paris, France
   </div>
 </div>
 
@@ -106,7 +106,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2024-08-01](2024-08-01-minutes.pdf),
+- [2024-09-05](2024-09-05-minutes.pdf),
+  [2024-08-01](2024-08-01-minutes.pdf),
   [2024-07-18](2024-07-18-minutes.pdf),
   [2024-06-06](2024-06-06-minutes.pdf),
   [2024-05-02](2024-05-02-minutes.pdf),
