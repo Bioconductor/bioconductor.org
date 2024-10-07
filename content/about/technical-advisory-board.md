@@ -86,7 +86,7 @@ board. Governance was formalized in February, 2019.
   <div class="gallery-card">
     <img src="/images/tab/MichaelLawrence.png"
           alt="Michael Lawrence" title="Michael Lawrence"/>
-    <a href="">Michael Lawrence</a>, Genentech, USA.
+    <a href="https://www.linkedin.com/in/michael-lawrence-74a9b482">Michael Lawrence</a>, Genentech, USA.
   </div>
   <div class="gallery-card">
     <img src="/images/tab/DavideRisso.png"
@@ -94,7 +94,7 @@ board. Governance was formalized in February, 2019.
     <a href="https://drisso.github.io/">Davide Risso</a>, University of Padova, Italy
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/JacquesSerizay.png"
+    <img src="/images/tab/JacquesSerizay.jpeg"
           alt="Jacques Serizay" title="Jacques Serizay"/>
     <a href="https://jserizay.com/">Jacques Serizay</a>, Institut Pasteur, Paris, France
   </div>
