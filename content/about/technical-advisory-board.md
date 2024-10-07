@@ -76,7 +76,7 @@ board. Governance was formalized in February, 2019.
   <div class="gallery-card">
     <img src="/images/tab/RafaelIrizarry.png"
           alt="Rafael Irizarry" title="Rafael Irizarry"/>
-    <<a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Rafael Irizarry</a>, Dana-Farber Cancer Institute, USA
+    <a href="http://bcb.dfci.harvard.edu/index.php?option=com_content&view=article&id=166&Itemid=281">Rafael Irizarry</a>, Dana-Farber Cancer Institute, USA
   </div>
   <div class="gallery-card">
     <img src="/images/tab/LoriShepherd.png"
@@ -84,7 +84,7 @@ board. Governance was formalized in February, 2019.
     <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a> , Roswell Park Comprehensive Cancer Center, Buffalo, NY, USA
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/MichaelLawrence.png"
+    <img src="/images/tab/MichaelLawrence.jpg"
           alt="Michael Lawrence" title="Michael Lawrence"/>
     <a href="https://www.linkedin.com/in/michael-lawrence-74a9b482">Michael Lawrence</a>, Genentech, USA.
   </div>
