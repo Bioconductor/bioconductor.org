@@ -37,6 +37,9 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
 <div>Jianhong Ou</div>
 <div>Hervé Pagès</div>
 <div>Marcel Ramos</div>
+<div>Mireia Ramos-Rodriguez</div>
+<div>Alvaro Sanchez</div>
+<div>Jacques Serizay</div>
 <div>Dario Strbenac</div>
 <div>Luke Zappia</div>
 <p><br></p>
