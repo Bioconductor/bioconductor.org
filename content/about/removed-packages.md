@@ -55,7 +55,6 @@ Software Packages:
 <li><a href="">MobilityTransformR</a></li>
 <li><a href="">multiOmicsViz</a></li>
 <li><a href="">NeighborNet</a></li>
-<li><a href="">NetPathMiner</a></li>
 <li><a href="">oneSENSE</a></li>
 <li><a href="">pathVar</a></li>
 <li><a href="">pcxn</a></li>
@@ -69,7 +68,6 @@ Software Packages:
 <li><a href="">RIPAT</a></li>
 <li><a href="">RLSeq</a></li>
 <li><a href="">SimBindProfiles</a></li>
-<li><a href="">singleCellTK</a></li>
 <li><a href="">SMAP</a></li>
 <li><a href="">sparseDOSSA</a></li>
 <li><a href="">SpidermiR</a></li>
@@ -78,7 +76,6 @@ Software Packages:
 <li><a href="">STROMA4</a></li>
 <li><a href="">TimiRGeN</a></li>
 <li><a href="">TNBC.CMS</a></li>
-<li><a href="">TnT</a></li>
 </ul>
 
 Experiment Data Packages:
