@@ -29,7 +29,6 @@ Software Packages:
 <li><a href="">contiBAIT</a></li>
 <li><a href="">CoRegNet</a></li>
 <li><a href="">CORREP</a></li>
-<li><a href="">CoSIA</a></li>
 <li><a href="">crisperseekplus</a></li>
 <li><a href="">DNABarcodes</a></li>
 <li><a href="">dpeak</a></li>
@@ -80,7 +79,6 @@ Software Packages:
 
 Experiment Data Packages:
 <ul class="inline_list">
-<li><a href="">CoSIAdata</a></li>
 <li><a href="">MMAPPR2data</a></li>
 <li><a href="">pcxnData</a></li>
 <li><a href="">restfulSEData</a></li>
