@@ -3,91 +3,115 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
-## Packages deprecated in Bioconductor 3.19 (to be removed in 3.20)
+## Packages deprecated in Bioconductor 3.20 (to be removed in 3.21)
 
 Software Packages:
 <ul class="inline_list">
-<li><a href="">CancerInSilico</a></li>
-<li><a href="">cellHTS2</a></li>
-<li><a href="">CNVgears</a></li>
-<li><a href="">compartmap</a></li>
-<li><a href="">ensemblVEP</a></li>
-<li><a href="">HumanTranscriptomeCompendium</a></li>
-<li><a href="">maigesPack</a></li>
-<li><a href="">MMAPPR2</a></li>
-<li><a href="">openPrimeRui</a></li>
-<li><a href="">pwOmics</a></li>
-<li><a href="">restfulSE</a></li>
+<li><a href="/packages/3.17/bioc/html/BiocOncoTK.html">BiocOncoTK</a></li>
+<li><a href="/packages/3.18/bioc/html/psygenet2r.html">psygenet2r</a></li>
+<li><a href="/packages/3.17/bioc/html/rDGIdb.html">rDGIdb</a></li>
+<li><a href="/packages/3.18/bioc/html/ATACCoGAPS.html">ATACCoGAPS</a></li>
+<li><a href="/packages/3.18/bioc/html/biodbExpasy.html">biodbExpasy</a></li>
+<li><a href="/packages/3.18/bioc/html/biodbKegg.html">biodbKegg</a></li>
+<li><a href="/packages/3.18/bioc/html/brainflowprobes.html">brainflowprobes</a></li>
+<li><a href="/packages/3.16/bioc/html/BRGenomics.html">BRGenomics</a></li>
+<li><a href="/packages/3.18/bioc/html/CellaRepertorium.html">CellaRepertorium</a></li>
+<li><a href="/packages/3.18/bioc/html/HTqPCR.html">HTqPCR</a></li>
+<li><a href="/packages/3.18/bioc/html/microbiomeMarker.html">microbiomeMarker</a></li>
+<li><a href="/packages/3.17/bioc/html/MQmetrics.html">MQmetrics</a></li>
+<li><a href="/packages/3.18/bioc/html/nanotatoR.html">nanotatoR</a></li>
+<li><a href="/packages/3.17/bioc/html/netOmics.html">netOmics</a></li>
+<li><a href="/packages/3.17/bioc/html/Pi.html">Pi</a></li>
+<li><a href="/packages/3.18/bioc/html/polyester.html">polyester</a></li>
+<li><a href="/packages/3.17/bioc/html/RandomWalkRestartMH.html">RandomWalkRestartMH</a></li>
+<li><a href="/packages/3.18/bioc/html/Risa.html">Risa</a></li>
+<li><a href="/packages/3.17/bioc/html/single.html">single</a></li>
+<li><a href="/packages/3.17/bioc/html/SummarizedBenchmark.html">SummarizedBenchmark</a></li>
+</ul>
 
-<li><a href="">beadarraySNP</a></li>
-<li><a href="">BCMMAcorrect</a></li>
-<li><a href="">BHC</a></li>
-<li><a href="">biodbLipidmaps</a></li>
-<li><a href="">BioNetStat</a></li>
-<li><a href="">CancerSubtypes</a></li>
-<li><a href="">cliqueMS</a></li>
-<li><a href="">contiBAIT</a></li>
-<li><a href="">CoRegNet</a></li>
-<li><a href="">CORREP</a></li>
-<li><a href="">CoSIA</a></li>
-<li><a href="">crisperseekplus</a></li>
-<li><a href="">DNABarcodes</a></li>
-<li><a href="">dpeak</a></li>
-<li><a href="">EBSeqHMM</a></li>
-<li><a href="">eegc</a></li>
-<li><a href="">enrichTF</a></li>
-<li><a href="">exomePeak2</a></li>
-<li><a href="">farms</a></li>
-<li><a href="">FCBF</a></li>
-<li><a href="">flowMap</a></li>
-<li><a href="">FoldGO</a></li>
-<li><a href="">FScanR</a></li>
-<li><a href="">FunChIP</a></li>
-<li><a href="">GOSim</a></li>
-<li><a href="">ImmuneSpaceR</a></li>
-<li><a href="">InterMineR</a></li>
-<li><a href="">IntOMICS</a></li>
-<li><a href="">IRISFGM</a></li>
-<li><a href="">iterClust</a></li>
-<li><a href="">metagene</a></li>
-<li><a href="">MetaVolcanoR</a></li>
-<li><a href="">miRmine</a></li>
-<li><a href="">MobilityTransformR</a></li>
-<li><a href="">multiOmicsViz</a></li>
-<li><a href="">NeighborNet</a></li>
-<li><a href="">NetPathMiner</a></li>
-<li><a href="">oneSENSE</a></li>
-<li><a href="">pathVar</a></li>
-<li><a href="">pcxn</a></li>
-<li><a href="">PERFect</a></li>
-<li><a href="">phemd</a></li>
-<li><a href="">PloGO2</a></li>
-<li><a href="">proteasy</a></li>
-<li><a href="">PSEA</a></li>
-<li><a href="">RefPlus</a></li>
-<li><a href="">ReQON</a></li>
-<li><a href="">RIPAT</a></li>
-<li><a href="">RLSeq</a></li>
-<li><a href="">SimBindProfiles</a></li>
-<li><a href="">singleCellTK</a></li>
-<li><a href="">SMAP</a></li>
-<li><a href="">sparseDOSSA</a></li>
-<li><a href="">SpidermiR</a></li>
-<li><a href="">SQUADD</a></li>
-<li><a href="">StarBioTrek</a></li>
-<li><a href="">STROMA4</a></li>
-<li><a href="">TimiRGeN</a></li>
-<li><a href="">TNBC.CMS</a></li>
-<li><a href="">TnT</a></li>
+Note: <a href="/packages/3.19/bioc/html/zlibbioc.html">zlibbioc</a> is deprecated but will be given an extra 6 months
+(removed in 3.22) to allow multiple dependencies to adapt. 
+
+## Packages removed with Bioconductor 3.20 release
+
+Software Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.16/bioc/html/CancerInSilico.html">CancerInSilico</a></li>
+<li><a href="/packages/3.18/bioc/html/cellHTS2.html">cellHTS2</a></li>
+<li><a href="/packages/3.18/bioc/html/CNVgears.html">CNVgears</a></li>
+<li><a href="/packages/3.16/bioc/html/compartmap.html">compartmap</a></li>
+<li><a href="/packages/3.15/bioc/html/ensemblVEP.html">ensemblVEP</a></li>
+<li><a href="/packages/3.17/bioc/html/HumanTranscriptomeCompendium.html">HumanTranscriptomeCompendium</a></li>
+<li><a href="/packages/3.16/bioc/html/maigesPack.html">maigesPack</a></li>
+<li><a href="/packages/3.15/bioc/html/MMAPPR2.html">MMAPPR2</a></li>
+<li><a href="/packages/3.18/bioc/html/openPrimeRui.html">openPrimeRui</a></li>
+<li><a href="/packages/3.16/bioc/html/pwOmics.html">pwOmics</a></li>
+<li><a href="/packages/3.15/bioc/html/restfulSE.html">restfulSE</a></li>
+
+<li><a href="/packages/3.18/bioc/html/beadarraySNP.html">beadarraySNP</a></li>
+<li><a href="/packages/3.16/bioc/html/BDMMAcorrect.html">BDMMAcorrect</a></li>
+<li><a href="/packages/3.16/bioc/html/BHC.html">BHC</a></li>
+<li><a href="/packages/3.17/bioc/html/biodbLipidmaps.html">biodbLipidmaps</a></li>
+<li><a href="/packages/3.17/bioc/html/BioNetStat.html">BioNetStat</a></li>
+<li><a href="/packages/3.16/bioc/html/CancerSubtypes.html">CancerSubtypes</a></li>
+<li><a href="/packages/3.17/bioc/html/cliqueMS.html">cliqueMS</a></li>
+<li><a href="/packages/3.18/bioc/html/contiBAIT.html">contiBAIT</a></li>
+<li><a href="/packages/3.16/bioc/html/CoRegNet.html">CoRegNet</a></li>
+<li><a href="/packages/3.18/bioc/html/CORREP.html">CORREP</a></li>
+<li><a href="/packages/3.16/bioc/html/crisprseekplus.html">crisprseekplus</a></li>
+<li><a href="/packages/3.16/bioc/html/DNABarcodes.html">DNABarcodes</a></li>
+<li><a href="/packages/3.16/bioc/html/dpeak.html">dpeak</a></li>
+<li><a href="/packages/3.17/bioc/html/EBSeqHMM.html">EBSeqHMM</a></li>
+<li><a href="/packages/3.16/bioc/html/eegc.html">eegc</a></li>
+<li><a href="/packages/3.16/bioc/html/enrichTF.html">enrichTF</a></li>
+<li><a href="/packages/3.16/bioc/html/exomePeak2.html">exomePeak2</a></li>
+<li><a href="/packages/3.16/bioc/html/farms.html">farms</a></li>
+<li><a href="/packages/3.16/bioc/html/FCBF.html">FCBF</a></li>
+<li><a href="/packages/3.16/bioc/html/flowMap.html">flowMap</a></li>
+<li><a href="/packages/3.16/bioc/html/FoldGO.html">FoldGO</a></li>
+<li><a href="/packages/3.18/bioc/html/FScanR.html">FScanR</a></li>
+<li><a href="/packages/3.18/bioc/html/FunChIP.html">FunChIP</a></li>
+<li><a href="/packages/3.18/bioc/html/GOSim.html">GOSim</a></li>
+<li><a href="/packages/3.17/bioc/html/ImmuneSpaceR.html">ImmuneSpaceR</a></li>
+<li><a href="/packages/3.18/bioc/html/InterMineR.html">InterMineR</a></li>
+<li><a href="/packages/3.17/bioc/html/IntOMICS.html">IntOMICS</a></li>
+<li><a href="/packages/3.16/bioc/html/IRISFGM.html">IRISFGM</a></li>
+<li><a href="/packages/3.18/bioc/html/iterClust.html">iterClust</a></li>
+<li><a href="/packages/3.16/bioc/html/metagene.html">metagene</a></li>
+<li><a href="/packages/3.18/bioc/html/MetaVolcanoR.html">MetaVolcanoR</a></li>
+<li><a href="/packages/3.18/bioc/html/miRmine.html">miRmine</a></li>
+<li><a href="/packages/3.18/bioc/html/MobilityTransformR.html">MobilityTransformR</a></li>
+<li><a href="/packages/3.16/bioc/html/multiOmicsViz.html">multiOmicsViz</a></li>
+<li><a href="/packages/3.16/bioc/html/NeighborNet.html">NeighborNet</a></li>
+<li><a href="/packages/3.12/bioc/html/oneSENSE.html">oneSENSE</a></li>
+<li><a href="/packages/3.16/bioc/html/pathVar.html">pathVar</a></li>
+<li><a href="/packages/3.18/bioc/html/pcxn.html">pcxn</a></li>
+<li><a href="/packages/3.16/bioc/html/PERFect.html">PERFect</a></li>
+<li><a href="/packages/3.17/bioc/html/phemd.html">phemd</a></li>
+<li><a href="/packages/3.16/bioc/html/PloGO2.html">PloGO2</a></li>
+<li><a href="/packages/3.16/bioc/html/proteasy.html">proteasy</a></li>
+<li><a href="/packages/3.18/bioc/html/PSEA.html">PSEA</a></li>
+<li><a href="/packages/3.16/bioc/html/RefPlus.html">RefPlus</a></li>
+<li><a href="/packages/3.16/bioc/html/ReQON.html">ReQON</a></li>
+<li><a href="/packages/3.16/bioc/html/RIPAT.html">RIPAT</a></li>
+<li><a href="/packages/3.16/bioc/html/RLSeq.html">RLSeq</a></li>
+<li><a href="/packages/3.18/bioc/html/SimBindProfiles.html">SimBindProfiles</a></li>
+<li><a href="/packages/3.18/bioc/html/SMAP.html">SMAP</a></li>
+<li><a href="/packages/3.16/bioc/html/sparseDOSSA.html">sparseDOSSA</a></li>
+<li><a href="/packages/3.17/bioc/html/SpidermiR.html">SpidermiR</a></li>
+<li><a href="/packages/3.18/bioc/html/SQUADD.html">SQUADD</a></li>
+<li><a href="/packages/3.17/bioc/html/StarBioTrek.html">StarBioTrek</a></li>
+<li><a href="/packages/3.16/bioc/html/STROMA4.html">STROMA4</a></li>
+<li><a href="/packages/3.16/bioc/html/TimiRGeN.html">TimiRGeN</a></li>
+<li><a href="/packages/3.18/bioc/html/TNBC.CMS.html">TNBC.CMS</a></li>
 </ul>
 
 Experiment Data Packages:
 <ul class="inline_list">
-<li><a href="">CoSIAdata</a></li>
-<li><a href="">MMAPPR2data</a></li>
-<li><a href="">pcxnData</a></li>
-<li><a href="">restfulSEData</a></li>
-<li><a href="">RLHub</a></li>
+<li><a href="/packages/3.19/data/experiment/html/MMAPPR2data.html">MMAPPR2data</a></li>
+<li><a href="/packages/3.18/data/experiment/html/pcxnData.html">pcxnData</a></li>
+<li><a href="/packages/3.19/data/experiment/html/restfulSEData.html">restfulSEData</a></li>
+<li><a href="/packages/3.16/data/experiment/html/RLHub.html">RLHub</a></li>
 </ul>
 
 
