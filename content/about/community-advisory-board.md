@@ -33,8 +33,18 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <a href="https://www.linkedin.com/in/babasaraki">Umar Ahmad</a>, Bauchi State University, Gadau, Nigeria and Africa CDC
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/ZahraaAlsafwani.png"
+            alt="Zahraa W. Alsafwani" title="Zahraa W. Alsafwani"/>
+    <a href="https://www.linkedin.com/in/zahraa-wajih-alsafwani-967659234">Zahraa W. Alsafwani</a>, University of Nebraska Medical Center, USA
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/AedinCulhane.png" alt="Aedin Culhane" title="Aedin Culhane"/>
     <a href="https://www.ul.ie/limerick-dcrc/prof-aedin-culhane">Aedin Culhane</a>, University of Limerick, Ireland
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/JasmineDaly.png"
+            alt="Jasmine Daly" title="Jasmine Daly"/>
+    <a href="https://www.dalyanalytics.com/">Jasmine Daly</a>, Daly Analytics, USA.
   </div>
   <div class="gallery-card">
     <img src="/images/cab/XueyiDong.png" alt="Xueyi Dong" title="Xueyi Dong"/>
@@ -66,6 +76,11 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <a href="https://github.com/kozo2">Kozo Nishida</a>, Tokyo University of Agriculture and Technology, Japan
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/TobilolaOgunbowale.png"
+            alt="Oluwatobilola Ogunbowale" title="Oluwatobilola Ogunbowale"/>
+    <a href="https://www.linkedin.com/in/oluwatobilolaogunbowale/">Oluwatobilola Ogunbowale</a>, Jacobs School of Medicine University at Buffalo, USA.
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/NicoleOrtogero.png"
           alt="Nicole Ortogero" title="Nicole Ortogero"/>
     <a href="https://www.linkedin.com/in/nicoleortogero/">Nicole Ortogero</a>, NanoString Technologies, USA
@@ -84,6 +99,11 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
     <img src="/images/cab/JananiRavi.png"
           alt="Janani Ravi" title="Janani Ravi"/>
     <a href="https://jravilab.github.io/">Janani Ravi</a>, University of Colorado Anschutz, USA, co-chair
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/LluisRevilla.png"
+            alt="Lluís Revilla Sancho" title="Lluís Revilla Sancho"/>
+    <a href="https://llrs.dev">Lluís Revilla Sancho</a>, .
   </div>
   <div class="gallery-card">
     <img src="/images/cab/KevinRueAlbrecht.png"
