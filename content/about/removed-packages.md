@@ -10,6 +10,7 @@ Software Packages:
 <li><a href="/packages/3.17/bioc/html/BiocOncoTK.html">BiocOncoTK</a></li>
 <li><a href="/packages/3.18/bioc/html/psygenet2r.html">psygenet2r</a></li>
 <li><a href="/packages/3.17/bioc/html/rDGIdb.html">rDGIdb</a></li>
+<li><a href="/packages/3.19/bioc/html/RNAinteract.html">RNAinteract</a></li>
 <li><a href="/packages/3.18/bioc/html/ATACCoGAPS.html">ATACCoGAPS</a></li>
 <li><a href="/packages/3.18/bioc/html/biodbExpasy.html">biodbExpasy</a></li>
 <li><a href="/packages/3.18/bioc/html/biodbKegg.html">biodbKegg</a></li>
@@ -31,6 +32,11 @@ Software Packages:
 
 Note: <a href="/packages/3.19/bioc/html/zlibbioc.html">zlibbioc</a> is deprecated but will be given an extra 6 months
 (removed in 3.22) to allow multiple dependencies to adapt. 
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.19/data/experiment/html/RNAinteractMAPK.html">RNAinteractMAPK</a></li>
+</ul>
 
 ## Packages removed with Bioconductor 3.20 release
 
