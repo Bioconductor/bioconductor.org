@@ -35,6 +35,7 @@ Note: <a href="/packages/3.19/bioc/html/zlibbioc.html">zlibbioc</a> is deprecate
 
 Experiment Data Packages:
 <ul class="inline_list">
+<li><a href="/packages/3.19/data/experiment/html/DmelSGI.html">DmelSGI</a></li>
 <li><a href="/packages/3.19/data/experiment/html/RNAinteractMAPK.html">RNAinteractMAPK</a></li>
 </ul>
 
