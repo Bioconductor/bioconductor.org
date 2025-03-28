@@ -203,7 +203,7 @@ def filter_emails(str)
   emails = str.scan( /(<[^>]*>)/).flatten
   for email in emails
     if email.include? "orcid"
-      email2="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
+      email2="<a title='orcid' href='"+email[1...-1]+"'>"+email[1...-1]+" <img src='/images/orcid.png'/></a>"
       email1="("+email+")"
       str = str.gsub(email1, email2)
     else
