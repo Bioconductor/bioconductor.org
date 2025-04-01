@@ -37,5 +37,6 @@ span.orcid-expanded {
 /* Hover effect to show expanded text */
 a.orcid-container:hover span.orcid-expanded {
   max-width: 200px; /* Allow the content to expand */
+  z-index: 1;
   opacity: 1;
 }
