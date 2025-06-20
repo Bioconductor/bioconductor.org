@@ -10,6 +10,13 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 
 [1]: CAB-Governance.pdf
 
+## 2025 Elections Are Open!
+
+Nominations for 2025 CAB board members are occurring now. Please fill out the
+following [google form](https://forms.gle/8NYxRGhprfuNBoRK7). If you are unable
+to use the google form, please email cab@bioconductor.org for alternative
+submission options.
+
 ## Quick Links
 
 - [Current Members](#current-members)
@@ -141,8 +148,10 @@ In addition to asking new questions, you can also continue the discussion follow
 There is an annual expression of interest process inviting new members to apply to join the CAB. This is announced on the Bioconductor support site and relevant Bioconductor community Zulip channel. Current CAB members vote on the applications received to select new members. The board is keen to have representatives from diverse backgrounds (i.e. different geographical and cultural backgrounds, genders, statistical analysis interests, career stages and experience levels).
 Also: Community members interested but not elected to CAB, or that would like more specialized work would be encouraged to volunteer to be part of a working group organized by the CAB/TAB -- there is a soon to be released page where we will list the active and inactive (needing someone to lead) working groups and for community members to suggest working groups.
 
-Nominations for 2024 CAB board members are occurring now. Please fill out the
-following [google form](https://docs.google.com/forms/d/e/1FAIpQLSc6qcBo_NN2q0bbmGGm08pwmkDvQrqophIf3Iao2xc33ooFew/viewform).
+Nominations for 2025 CAB board members are occurring now. Please fill out the
+following [google form](https://forms.gle/8NYxRGhprfuNBoRK7). If you are unable
+to use the google form, please email cab@bioconductor.org for alternative
+submission options.
 
 ### Is there a recommended way for community members to give suggestions to the CAB?
 
