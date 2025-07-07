@@ -112,7 +112,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2025-05-01](2025-05-01-minutes.pdf),
+- [2025-06-05](2025-06-05-minutes.pdf),
+  [2025-05-01](2025-05-01-minutes.pdf),
   [2025-04-03](2025-04-03-minutes.pdf),
   [2025-03-06](2025-03-06-minutes.pdf),
   [2025-02-06](2025-02-06-minutes.pdf),
