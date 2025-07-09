@@ -33,27 +33,22 @@ below.
 
         git clone https://github.com/<your fork>/bioconductor.org
 
-2.  Build a docker image by navigating to the right directory and running
-    this command
+2.  Build a Docker image with the name `bioconductor/bioconductor.org` by
+    running this command in the main repository directory:
 
-        docker build -t <image_name> .
+        docker build -t bioconductor/bioconductor.org .
 
-    where,
-
-        <image_name> is the name you want to give to the docker image.
-        it can be whatever you want. You will need to use it later
-        but is only seen and used by you.
-
-3.  Run the docker container before making any changes, you need to use the
-    docker image name `<image_name>` that you assigned previously to be able to
-    run the container. The container has the dependencies installed to `rake`
+3.  Run the Docker container before making any changes, you need to use the
+    Docker image name i.e. `bioconductor/bioconductor.org` assigned in the
+    Docker build step. The container has the dependencies installed to `rake`
     the ruby code and host the website on your local machine at
-    https://localhost:3000.
+    <https://localhost:3000>.
 
         docker run -it -p 3000:3000 \
-            -v /<full_path>/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/manifest:/opt/manifest \
                 --name <container_name> \
-                    <image_name> /bin/bash
+                bioconductor/bioconductor.org /bin/bash
 
     where,
 
