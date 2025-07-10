@@ -17,7 +17,7 @@ WORKDIR /opt/bioconductor.org
 COPY . .
 
 ## Install bundle and dependencies
-RUN gem install bundler
+RUN gem install bundler -v 2.4.22
 RUN bundle install --jobs=4 && bundle clean --force
 
 ## Set up web server
