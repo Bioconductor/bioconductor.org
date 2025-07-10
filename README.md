@@ -33,38 +33,33 @@ below.
 
         git clone https://github.com/<your fork>/bioconductor.org
 
-2.  Build a docker image by navigating to the right directory and running
-    this command
+2.  Build a Docker image with the name `bioconductor/bioconductor.org` by
+    running this command in the main repository directory:
 
-        docker build -t <image_name> .
+        docker build -t bioconductor/bioconductor.org .
 
-    where,
-
-        <image_name> is the name you want to give to the docker image.
-        it can be whatever you want. You will need to use it later
-        but is only seen and used by you.
-
-3.  Run the docker container before making any changes, you need to use the
-    docker image name `<image_name>` that you assigned previously to be able to
-    run the container. The container has the dependencies installed to `rake`
+3.  Run the Docker container before making any changes, you need to use the
+    Docker image name i.e. `bioconductor/bioconductor.org` assigned in the
+    Docker build step. The container has the dependencies installed to `rake`
     the ruby code and host the website on your local machine at
-    https://localhost:3000.
+    <https://localhost:3000>.
 
         docker run -it -p 3000:3000 \
-            -v /<full_path>/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/manifest:/opt/manifest \
                 --name <container_name> \
-                    <image_name> /bin/bash
+                bioconductor/bioconductor.org /bin/bash
 
     where,
 
-        -it will take you straight to the container
+        `-it` will take you straight to the container
 
-        -p is mapping the container's port 3000 to the host machine's port
+        `-p` is mapping the container's port 3000 to the host machine's port
 
-        -v mounting a volume, the website (bioconductor.org) directory
-        from your local machine is being mounted on the docker container
+        `-v` mounting a volume, the website (bioconductor.org) directory
+        from your local machine is being mounted on the Docker container
 
-        <container_name> is the name you want to give to the docker container.
+        `<container_name>` is an arbitrary name for the Docker container.
         It will be easier to access the container later if you give it a name
 
     the command will take you to the container's terminal so you will need to run
@@ -79,14 +74,14 @@ below.
 4.  Make your changes on this branch, add content or edit content.
 
 5.  Once the changes are made and you want to be able to see them on
-    https://localhost:3000, there are two ways to be able to run `rake`:
+    <https://localhost:3000>, there are two ways to be able to run `rake`:
 
-    by running `rake` inside the docker container shell making sure you
+    by running `rake` inside the Docker container shell making sure you
     are in the `/opt/bioconductor.org` directory.
 
     or,
 
-    without needing to access the docker shell but you will need either the
+    without needing to access the Docker shell but you will need either the
     container name or CONTAINER ID, you can run
 
          docker ps
@@ -104,7 +99,7 @@ below.
 
         docker stop <container_id / container_name>
 
-7.  If you wish to completely remove the container from your docker once
+7.  If you wish to completely remove the container from your Docker once
     you stopped it, you can run
 
         docker rm <container_id / container_name>
@@ -260,7 +255,7 @@ to install all dependencies, again prepending `sudo` if necessary:
     cd bioconductor.org # if you aren't already in the working copy
     rake
 
-One step in the build process runs 'nanoc', "a Ruby web publishing system  
+One step in the build process runs 'nanoc', "a Ruby web publishing system
 for building small to medium-sized websites"; it is one of the
 gems you installed above. If you ever need to run nanoc explicitly:
 
