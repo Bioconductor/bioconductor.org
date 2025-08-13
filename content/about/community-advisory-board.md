@@ -65,7 +65,7 @@ submission options.
   <div class="gallery-card">
     <img src="/images/cab/LoriShepherd.png"
             alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
-    <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a>, Roswell Park Comprehensive Cancer Center, USA
+    <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a>, Roswell Park Comprehensive Cancer Center, USA, secretary
   </div>
   <div class="gallery-card">
     <img src="/images/cab/LeoLahti.png"
@@ -95,12 +95,12 @@ submission options.
   <div class="gallery-card">
     <img src="/images/cab/SteviePederson.png"
           alt="Stevie Pederson" title="Stevie Pederson"/>
-    <a href="https://www.telethonkids.org.au/contact-us/our-people/p/stephen-pederson/">Stevie Pederson</a>, Telethon Kids Institute, Australia
+    <a href="https://www.thekids.org.au/contact-us/our-people/p/stephen-stevie-pederson/">Stevie Pederson</a>, The Kids Research Institute Australia, co-chair
   </div>
   <div class="gallery-card">
     <img src="/images/cab/JohannesRainer.png"
           alt="Johannes Rainer" title="Johannes Rainer"/>
-    <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Johannes Rainer</a>, Eurac Research, Italy, secretary
+    <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Johannes Rainer</a>, Eurac Research, Italy
   </div>
   <div class="gallery-card">
     <img src="/images/cab/JananiRavi.png"
@@ -115,7 +115,7 @@ submission options.
   <div class="gallery-card">
     <img src="/images/cab/KevinRueAlbrecht.png"
           alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
-    <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK, co-chair
+    <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
   <div class="gallery-card">
     <img src="/images/cab/LuyiTian.png"
