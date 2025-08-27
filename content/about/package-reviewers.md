@@ -29,14 +29,18 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
  
 <h2 class="format-bold"> Package Reviewers</h2>
 
+<div>Fabricio Almeida-Silva</div>
 <div>Helena Crowell</div>
 <div>Peter Hickey</div>
 <div>Kayla Interdonato</div>
+<div>Stefano Mangiola</div>
 <div>Jianhong Ou</div>
 <div>Marcel Ramos</div>
 <div>Mireia Ramos-Rodriguez</div>
 <div>Jacques Serizay</div>
 <div>Dario Strbenac</div>
+<div>Christopher Vanderaa</div>
+<div>Andres Wokaty</div>
 <p><br></p>
 <p><br></p>
 <p class="text-large">Current Package Review Administrators</p>
