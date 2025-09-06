@@ -19,12 +19,6 @@ board. Governance was formalized in February, 2019.
 
 [1]: TAB_Governance_v1.1.1.pdf
 
-## 2025 Elections Are Open!
-
-Nominations for 3-year TAB membership terms are open. Please fill out the
-following [Google Form](https://forms.gle/eqef9ThpUypcJ5936) before 
-August 31, 2025.
-
 ## Current members
 
 
