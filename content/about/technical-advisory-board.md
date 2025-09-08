@@ -19,12 +19,6 @@ board. Governance was formalized in February, 2019.
 
 [1]: TAB_Governance_v1.1.1.pdf
 
-## 2025 Elections Are Open!
-
-Nominations for 3-year TAB membership terms are open. Please fill out the
-following [Google Form](https://forms.gle/eqef9ThpUypcJ5936) before 
-August 31, 2025.
-
 ## Current members
 
 
@@ -112,7 +106,8 @@ The Technical Advisory Board meets monthly. Minutes of the last meeting are made
 after being approved by the board on the following meeting. The first meeting for which public
 minutes were maintained was on 2 May, 2019.
 
-- [2025-07-03](2025-07-03-minutes.pdf),
+- [2025-08-07](2025-08-07-minutes.pdf),
+  [2025-07-03](2025-07-03-minutes.pdf),
   [2025-06-05](2025-06-05-minutes.pdf),
   [2025-05-01](2025-05-01-minutes.pdf),
   [2025-04-03](2025-04-03-minutes.pdf),
