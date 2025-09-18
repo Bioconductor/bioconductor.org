@@ -199,7 +199,8 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
   [2025-03-13](2025-03-13-minutes.pdf),
   [2025-04-10 Joint CAB/TAB](2025-04-10-minutes-joint.pdf),
   [2025-05-08](2025-05-08-minutes.pdf),
-  [2025-06-12](2025-06-12-minutes.pdf)
+  [2025-06-12](2025-06-12-minutes.pdf),
+  [2025-07-10](2025-07-10-minutes.pdf)
 - **2024:**  [2024-01-11](2024-01-11-minutes.pdf),
   [2024-02-08](2024-02-08-minutes.pdf),
   [2024-03-14](2024-03-14-minutes.pdf),
@@ -273,6 +274,15 @@ There is also a community-advisory-board channel on the [Bioconductor community 
 We are grateful to past CAB members;
 
 <ul class="inline_list">
+
+<li>Jasmine Daly (2024 - 2025) </li>
+<li>Luyi Tan (2023 - 2025) </li>
+<li>Jeifei Wang (2023 - 2025) </li>
+<li>Nicole Ortogero (2022 - 2025) </li>
+<li>Janani Ravi (2022 - 2025) </li>
+<li>Hedia Tnani (2022 - 2025) </li>
+<li>Xueyi Dong (2022 - 2025) </li>
+<li>Leo Lahti (2022 - 2025) </li>
 <li>Jordana Muwanguzi (2023 - 2024) </li>
 <li>Mike Smith (2021 - 2024) </li>
 <li>Estefania Mancini (2021 - 2024) </li>
