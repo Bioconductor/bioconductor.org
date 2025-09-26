@@ -59,7 +59,7 @@ board. Governance was formalized in February, 2019.
     <a href="https://computationalbiomed.hms.harvard.edu/about/people/ludwig-geistlinger-phd/">Ludwig Geistlinger</a>, Center for Computational Biomedicine, Harvard Medical School, Boston, MA, USA.
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/HugoGruson.png"
+    <img src="/images/tab/HugoGruson.jpg"
           alt="Hugo Gruson" title="Hugo Gruson"/>
     <a href="https://www.embl.org/people/person/hugo-gruson/">Hugo Gruson</a>, European Molecular Biology Laboratory, Heidelberg, Germany
   </div>
