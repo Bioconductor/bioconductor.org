@@ -34,19 +34,19 @@ board. Governance was formalized in February, 2019.
     <a href="http://waldronlab.io/">Levi Waldron</a>, CUNY Graduate School of Public Health  and Health Policy, New York, NY. Vice-Chair
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/CharlotteSoneson.png"
-          alt="Charlotte Soneson" title="Charlotte Soneson"/>
-    <a href="https://csoneson.github.io/">Charlotte Soneson</a>, Friedrich Miescher Institute for Biomedical Research, Basel, Switzerland. Secretary
+    <img src="/images/tab/HelenaCrowell.png"
+          alt="Helena Crowell" title="Helena Crowell"/>
+    <a href="http://helenalc.github.io/">Helena Crowell</a>, National Center of Genomic Analysis, Barcelona, Spain. Secretary
   </div>
   <div class="gallery-card">
     <img src="/images/tab/HenrikBengtsson.jpg"
           alt="Henrik Bengtsson" title="Henrik Bengtsson"/>
-    <a href="https://profiles.ucsf.edu/henrik.bengtsson">Henrik Bengtsson</a>, University of California, San Francisco, USA.
+    <a href="https://profiles.ucsf.edu/henrik.bengtsson">Henrik Bengtsson</a>, University of California, San Francisco, USA
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/HelenaCrowell.png"
-          alt="Helena Crowell" title="Helena Crowell"/>
-    <a href="http://helenalc.github.io/">Helena Crowell</a>, National Center of Genomic Analysis, Barcelona, Spain.
+    <img src="/images/tab/RobertCastelo.jpg"
+          alt="Robert Castelo" title="Robert Castelo"/>
+    <a href="https://functionalgenomics.upf.edu/people/rcastelo/">Robert Castelo</a>, Universitat Pompeu Fabra, Barcelona, Spain
   </div>
   <div class="gallery-card">
     <img src="/images/tab/LaurentGatto.png"
@@ -58,21 +58,21 @@ board. Governance was formalized in February, 2019.
           alt="Ludwig Geistlinger" title="Ludwig Geistlinger"/>
     <a href="https://computationalbiomed.hms.harvard.edu/about/people/ludwig-geistlinger-phd/">Ludwig Geistlinger</a>, Center for Computational Biomedicine, Harvard Medical School, Boston, MA, USA.
   </div>
-   <div class="gallery-card">
+  <div class="gallery-card">
+    <img src="/images/tab/HugoGruson.png"
+          alt="Hugo Gruson" title="Hugo Gruson"/>
+    <a href="https://www.embl.org/people/person/hugo-gruson/">Hugo Gruson</a>, European Molecular Biology Laboratory, Heidelberg, Germany
+  </div>
+  <div class="gallery-card">
     <img src="/images/tab/KasperHansen.png"
           alt="Kasper Daniel Hansen" title="Kasper Daniel Hansen"/>
     <a href="http://www.biostat.jhsph.edu/~khansen/">Kasper Daniel Hansen</a>, Bloomberg School of Public Health, Johns Hopkins University
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/StephanieHicks.png"
-          alt="Stephanie Hicks" title="Stephanie Hicks"/>
-   <a href="https://www.jhsph.edu/faculty/directory/profile/3639/stephanie-c-hicks">Stephanie Hicks</a>, Department of Biostatistics, Johns Hopkins Bloomberg School of Public Health, USA
-  </div>
-  <div class="gallery-card">
       <img src="/images/tab/WolfgangHuber.png"
             alt="Wolfgang Huber" title="Wolfgang Huber"/>
       <a href="http://www.embl.de/research/units/genome_biology/huber/">Wolfgang Huber</a>, European Molecular Biology Laboratory, Heidelberg, Germany
-    </div>
+  </div>
   <div class="gallery-card">
     <img src="/images/tab/RafaelIrizarry.png"
           alt="Rafael Irizarry" title="Rafael Irizarry"/>
@@ -86,12 +86,12 @@ board. Governance was formalized in February, 2019.
   <div class="gallery-card">
     <img src="/images/tab/MichaelLawrence.jpg"
           alt="Michael Lawrence" title="Michael Lawrence"/>
-    <a href="https://www.linkedin.com/in/michael-lawrence-74a9b482">Michael Lawrence</a>, Genentech, USA.
+    <a href="https://www.linkedin.com/in/michael-lawrence-74a9b482">Michael Lawrence</a>, Genentech, USA
   </div>
   <div class="gallery-card">
-    <img src="/images/tab/DavideRisso.png"
-          alt="Davide Risso" title="Davide Risso"/>
-    <a href="https://drisso.github.io/">Davide Risso</a>, University of Padova, Italy
+    <img src="/images/tab/GabrieleSales.png"
+          alt="Gabriele Sales" title="Gabriele Sales"/>
+    <a href="https://sales.bio.unipd.it/index.html">Gabriele Sales</a>, Department of Biology, University of Padova, Italy
   </div>
   <div class="gallery-card">
     <img src="/images/tab/JacquesSerizay.jpeg"
