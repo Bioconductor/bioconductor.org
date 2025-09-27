@@ -1,5 +1,0 @@
----
-title: "Package guidelines"
-subnav:
-  - include: /_package_build_reports_and_svn/
-  - include: /_bioc_devel_packages/

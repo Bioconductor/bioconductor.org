@@ -1,41 +1,62 @@
-<%= doctype %>
-<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US"
-prefix="og: http://ogp.me/ns#">
+<!DOCTYPE html>
+<html
+  xmlns="http://www.w3.org/1999/xhtml"
+  dir="ltr"
+  lang="en-US"
+  prefix="og: http://ogp.me/ns#">
   <%= render("/_sitehead/") %>
   <body>
-    <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
+    <%= render("/components/sitescripts/") %>
+    <%= render("/components/header/") %>
 
-    <div id="SiteContainer" class="SiteContainer">
+    <% if @item[:hero] %>
+
+    <section class="hero">
+      <div class="container">
+      <% if (@item.identifier != '/') %>
+        <%= render("/components/breadcrumbs/") %>
+      <% end %>
+      <%= render(@item[:hero]) %>
+    </div>
+    </section>
+    <%end%>
+
+    <main>
       <% if has_subnav?(@item) %>
-      <div id="PageContent" class="PageContent WithRightRail">
-      <% else %>
-      <div id="PageContent" class="PageContent">
+        <div class="container main-subnav">
+      <% elsif !@item[:fullwidth] %>
+        <div class="container">
       <% end %>
 
+        <% if has_subnav?(@item) %>
+          <section class="left-col">
+            <div class="left-col-inner">
+              <%= render("/components/subnav/", :pages => subnav_items(@item))
+              %>
+            </div>
+          </section>
+        <% end %>
 
-	<% if (@item.identifier != '/')%>
-	  <%= render("/_crumbs/") %>
-	<% end %>
+        <section class="content">
+          <% if (@item.identifier != '/' && !@item[:hero]) %>
+          <%= render("/components/breadcrumbs/") %>
+          <% end %>
+   
+          <% if @item.attributes.has_key?(:package_index_page) %>
+          <%= render("/_pkg_idx/", :info => @item.attributes) %>
+          <% end %>
 
-	<% if @item.attributes.has_key?(:package_index_page)%>
-	    <%= render("/_pkg_idx/", :info => @item.attributes)%>
-	<% end %>
-	<% if @item.attributes.has_key?(:Package)%>
-	    <%= render("/_bioc_views_package_detail/", :package => @item.attributes)%>
-	<% end %>
-	<%# end hack%>
+          <% if @item.attributes.has_key?(:Package) %>
+          <%= render("/_bioc_views_package_detail/", :package => @item.attributes) %>
+          <% end %>
 
-	<%= yield if block_given? %>
-	<% if has_subnav?(@item) %>
-	  </div>
-	  <div id="RightRail" class="RightRail">
-	  <a name="section-navigation"></a> <!-- accessibility anchor -->
-	  <%= render("/_subnav/", :pages => subnav_items(@item)) %>
-	<% end %>
+          <%= yield if block_given? %>
+        </section>
+      <% if (!has_subnav?(@item) && !@item[:fullwidth]) %>
+        </div>
+      <% end %>
+    </main>
 
-      </div>
-
-      <%= render("/_footer/") %>
-    </div>
+    <%= render("/components/footer/") %>
   </body>
 </html>

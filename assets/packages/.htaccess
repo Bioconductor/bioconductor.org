@@ -151,4 +151,3 @@ RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packag
 
 RewriteCond %{DOCUMENT_ROOT}/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 -f
 RewriteRule ^([^/]+)/vignettes/([^/]+)/?$ %{ENV:proto}://bioconductor.org/packages/devel/data/experiment/vignettes/$1/inst/doc/$2 [R=302]
-

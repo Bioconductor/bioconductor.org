@@ -208,10 +208,11 @@ rake
 ### Merge the git branches and test locally again 
 
 This may seem like overkill but feel like it is a good precautionary step. Once
-The testing branch is debugged locally, Merge the local testing branch into master. 
+The testing branch is debugged locally, Merge the local testing branch into
+devel.
 
 ```
-git checkout master
+git checkout devel
 git merge updatingRubyTesting
 ```
 Make sure the Gemfile.lock was updated to the most recent versions of everything 

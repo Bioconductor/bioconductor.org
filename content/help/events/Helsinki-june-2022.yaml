@@ -1,0 +1,10 @@
+---
+title: Multi-omic data science with R/Bioconductor
+location: University of Oulu, Finland
+event_host: Health and Biosciences Doctoral Programme University of Oulu Graduate School, Cancer & Translational Medicine Research Unit, University of Oulu, and the Department of Computing, University of Turku, Finland.
+start: 2022-06-20
+end:   2022-06-23
+link:
+  text: "The course focuses on R/Bioconductor for multi-omic data integration and analysis using the state-of-the-art data containers including MultiAssayExperiment and TreeSummarizedExepriment. We will use demonstration data sets from microbiome studies but the participants will also have a chance to experiment with their own data, if they wish."
+  url: https://microbiome.github.io/course_2022_oulu
+  

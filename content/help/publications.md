@@ -1,87 +1,204 @@
-# ![](/images/icons/magnifier.gif)Publications
+<h1 class="format-bold">📖 Bioconductor Publications</h1>
+<div class="page-container">
+  <div class="upper-container">
+    <section class="page-intro">
+      <h2>Publications</h2>
+      <p class="text-large">
+        This is a select list of featured and recent publications that cite
+	Bioconductor, along with select books, book chapters, and original
+	Bioconductor technical reports. 
+      </p>  
+      <div class="sidebar-box">
+      <div class="sidebar-box-header">
+      <p class="format-bold">Literature Search</p>
+      </div>
+      <nav>
+        <div>
+          <a
+            href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor&sort=date"
+            >PubMed</a
+          >
+        </div>
+        <div>
+          <a href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate"
+            >PubMed Central</a
+          >
+        </div>
+        <div>
+          <a href="http://scholar.google.com/scholar?q=bioconductor&btnG=Search"
+            >Google Scholar</a
+          >
+        </div>
+      </nav>
+      </div>
 
-*Bioconductor*
-[F1000 Research Channel](http://f1000research.com/channels/bioconductor)
-launched!
+    </section>
+    <div class="upper-content">
+      <section>
+         <h4>Featured</h4>
+       
+       <div class="white_box">
+       Alexander TA, Irizarry RA, Bravo HC. <a
+       href="https://doi.org/10.1093/biostatistics/kxab030">Capturing discrete latent
+       structures: choose LDs over PCs.</a> Biostatistics. 2021 Sep 1:kxab030. doi:
+       10.1093/biostatistics/kxab030. Epub ahead of print. PMID: 34467372.
+       </div>
 
-<h2 name="featured">Featured</h2>
+       <div class="grey_box">
+       Oh S, Geistlinger L, Ramos M, Blankenberg D, van den Beek M, Taroni JN, Carey
+       VJ, Greene CS, Waldron L, Davis S. <a
+       href="https://www.nature.com/articles/s41467-022-31411-3">GenomicSuperSignature facilitates
+       interpretation of RNA-seq experiments through robust, efficient comparison to
+       public databases.</a> Nat Commun. 2022 Jun 27;13(1):3695. doi:
+       10.1038/s41467-022-31411-3. PMID: 35760813; PMCID: PMC9237024
+       </div>
 
-<div>
+       <div class="white_box">
+       Schatz MC, Philippakis AA, Afgan E, Banks E, Carey VJ, Carroll RJ, Culotti A,
+       Ellrott K, Goecks J, Grossman RL, Hall IM, Hansen KD, Lawson J, Leek JT, Luria
+       AO, Mosher S, Morgan M, Nekrutenko A, O'Connor BD, Osborn K, Paten B, Patterson
+       C, Tan FJ, Taylor CO, Vessio J, Waldron L, Wang T, Wuichet K. <a
+       href="https://www.sciencedirect.com/science/article/pii/S2666979X21001063?via%3Dihub">Inverting the
+       model of genomics data sharing with the NHGRI Genomic Data Science Analysis,
+       Visualization, and Informatics Lab-space.</a> Cell Genom. 2022 Jan
+       12;2(1):100085. doi: 10.1016/j.xgen.2021.100085. Epub 2022 Jan 13. PMID:
+       35199087; PMCID: PMC8863334
+       </div>
 
-<div class="white_box">
-Amezquita, R.A., Lun, A.T.L., Becht, E. et al. <a
-href="https://doi.org/10.1038/s41592-019-0654-x">Orchestrating
-single-cell analysis with Bioconductor</a>. Nature Methods (2019)
-doi:10.1038/s41592-019-0654-x
+       <div class="grey_box">
+       He D, Zakeri M, Sarkar H, Soneson C, Srivastava A, Patro R. <a
+       href="https://www.nature.com/articles/s41592-022-01408-3">Alevin-fry unlocks
+       rapid, accurate and memory-frugal quantification of single-cell RNA-seq
+       data.</a> Nat Methods. 2022 Mar;19(3):316-322. doi: 10.1038/s41592-022-01408-3. Epub
+       2022 Mar 11. PMID: 35277707; PMCID: PMC8933848
+       </div>
+
+      </section>
+    </div>
+  </div>
+  <hr class="page-divider" />
+  <div class="lower-container">
+    <div class="lower-content">
+      <section>
+          <h4>Recent</h4>
+
+	  10 most recent PubMed and PubMed Central citations mentioning &quot;*Bioconductor*&quot;.
+	  For a complete list, go to 
+	  <a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor" target="_blank">PubMed</a> and
+	  <a href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate" target="_blank">PubMed Central</a>.
+	  Last updated <abbr class="timeago" title="<%=get_pubmed_cache_date()%>"><%=get_pubmed_cache_date()%></abbr>.
+
+	  <p></p>
+	  <%= render('/_pubmed/', :pb_item => find_item(@items, '/help/publications/papers/pubmed/')) %>
+
+      </section>
+
+      <section>
+
+	   <h4>Bioconductor Project Papers</h4>
+
+	   Bioconductor key papers and technical reports. 
+
+	   <h6>Papers</h6>
+
+	   <div class="grey_box">
+	   Gentleman et al. <a
+	   href="https://genomebiology.biomedcentral.com/counter/pdf/10.1186/gb-2004-5-10-r80.pdf">Bioconductor:
+	   open software development for computation biology and bioinformatics.</a> Genome Biology. 2004, 5:R80.
+	   </div>	   
+
+	   <div class="white_box">
+	   Huber et al. <a
+	   href="https://www.nature.com/articles/nmeth.3252">Orchestrating
+	   high-throughput genomic analysis with Bioconductor.</a> Nature
+	   Methods. 2015, 12:115-121. 
+	   </div>
+
+	   
+	   <h6>Initial Bioconductor Technical Reports</h6>
+
+	   <div class="grey_box">
+	   Bioconductor Core (November 2002) <a
+	   href="tech-reports/relProjTR.pdf"><em>An Overview of Projects in
+	   Computing for Genomic Analysis</em></a>
+	   </div>
+	   
+	   <div class="white_box">	
+	   Bioconductor Core (November 2002) <a
+	   href="tech-reports/currProgTR.pdf"><em>Bioconductor: Assessment of
+	   Current Progress</em></a>
+	   </div>
+
+	   <p><br></p>
+
+	   <h4>Books</h4>
+	   A selection of Bioconductor releated books, book chapters, and online
+           books.
+
+	   <p><br></p>
+	   
+           <h6>Books</h6>
+
+	   <a
+	   href="books/bioinformatics-and-computational-biology-solutions/"
+	   title="Landmark Bioconductor Book">
+	   <img src="books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg" height="110"
+	   alt="Landmark Bioconductor Book" width="85" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+	   <a
+	   href="books/r-programming-for-bioinformatics/" title="R Programming for Bioinformatics">
+	   <img
+	   src="books/r-programming-for-bioinformatics/rbioinf-small.jpg"
+	   height="110" alt="R Programming for Bioinformatics" width="85" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
+
+	   <a href="books/bioconductor-case-studies/" title="Bioconductor Case Studies">
+	   <img
+	   src="books/bioconductor-case-studies/case-studies-small.jpg"
+	   height="110" alt="Bioconductor Case Studies" width="85" /></a>
+
+	   <p><br></p>
+
+           <h6>Book Chapters</h6>
+
+	   <a href="book-chapters/MiMB">Analyzing biological data using R: methods for graphs and networks</a>
+
+	   <p><br></p>
+	   
+	   <h6>Online Books</h6>
+
+	   <div class="white_box">
+	   <a href="https://www.huber.embl.de/msmb/">Modern Statistics for Modern Biology</a> 
+	   </div>
+
+	   <div class="grey_box">
+	   <a href="/books/release/OSCA">Orchestrating Single-Cell Analysis with Bioconductor</a>
+	   </div>
+
+	   <div class="white_box">
+	   <a href="https://jserizay.com/OHCA/">Orchestrating Hi-C Analysis with Bioconductor</a>
+	   </div>
+
+	   <div class="grey_box">
+	   <a href="https://rformassspectrometry.github.io/book/">R for Mass Spectrometry</a>
+	   </div>
+
+	   <div class="white_box">
+	   <a href="/books/release/SingleRBook">SingleRBook</a>
+	   </div>
+
+	   <div class="grey_box">
+	   <a href="/books/release/csawBook">csawBook</a>
+	   </div>
+
+	   <p><br></p>
+	   
+           <h4>Other</h4>
+	   
+ 	   <a href="http://f1000research.com/channels/bioconductor">F1000 Research Channel</a>
+
+      </section>
+
+    </div>
+  </div>
+
 </div>
-
-<div class="grey_box">
-Pasolli, E, et al. (2017) <a href="https://doi.org/10.1038/nmeth.4468">
-Accessible, curated metagenomic data through ExperimentHub</a>
-Nature Methods 14, 1023–1024. doi:10.1038/nmeth.4468
-</div>
-
-<div class="white_box"> Huber W, et al. (2015) <a
-href="http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html">Orchestrating
-high-throughput genomic analysis with
-<em>Bioconductor</em></a>. Nature Methods 12:115-121;
-doi:10.1038/nmeth.3252 (full-text free with registration).
-</div>
-
-<div class="grey_box">
-Lawrence M, Huber W, Pagès H, Aboyoun P, Carlson M, et al. (2013) <a
-href="https://doi.org/10.1371/journal.pcbi.1003118">Software for
-Computing and Annotating Genomic Ranges</a>. PLoS Comput Biol 9(8):
-e1003118. doi: 10.1371/journal.pcbi.1003118
-</div>
-
-<div class="white_box">
-Irizarry R, et al. (2015) <a
-href="http://genomicsclass.github.io/book/">Biomedical Data
-Science</a>. Course Notes, EdX PH525.1x.
-</div>
-
-</div>
-
-<h2 name="recent">Recent</h2>
-
-20 most recent PubMed and PubMed Central citations mentioning &quot;*Bioconductor*&quot;.
-For a complete list, go to 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=bioconductor" target="_blank">PubMed</a> and
-<a href="http://www.ncbi.nlm.nih.gov/pmc/?term=bioconductor&sort=ePubDate" target="_blank">PubMed Central</a>.
-Last updated <abbr class="timeago" title="<%=get_pubmed_cache_date()%>"><%=get_pubmed_cache_date()%></abbr>.
-
-<p></p>
-<%= render('/_pubmed/', :pb_item => find_item(@items, '/help/publications/papers/pubmed/')) %>
-
-## Books
-
-<a
-href="books/bioinformatics-and-computational-biology-solutions/"
-title="Landmark Bioconductor Book">
-<img src="books/bioinformatics-and-computational-biology-solutions/bcbs_small.jpg" height="110"
-alt="Monograph" width="85" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a
-href="books/r-programming-for-bioinformatics/" title="R Programming for Bioinformatics">
-<img
-src="books/r-programming-for-bioinformatics/rbioinf-small.jpg"
-height="110" alt="R Programming for Bioinformatics" width="85" /></a>&nbsp;&nbsp;&nbsp;&nbsp;
-<a href="books/bioconductor-case-studies/" title="Bioconductor Case Studies">
-<img
-src="books/bioconductor-case-studies/case-studies-small.jpg"
-height="110" alt="Bioconductor Case Studies" width="85" /></a>
-
-## Book Chapters
-* [Analyzing biological data using R: methods for graphs and networks.](book-chapters/MiMB)
-
-## Technical Reports and Working Papers
-
-* [Technical Reports](tech-reports/)
-* [Working Papers](http://www.bepress.com/bioconductor/) ([Instructions for Authors](http://www.bepress.com/bioconductor/authors.instructions.html))
-
-## Compendia
-
-* [GeneMetaEx](compendia/genemetaex/)
-* [GolubRR](compendia/golubrr/)
-* [CompStatViz](compendia/CompStatViz/)
-

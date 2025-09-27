@@ -2,11 +2,20 @@
 <html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
   <%= render("/_sitehead/") %>
   <body>
+    <%= render("/components/header/") %>
     <%= render("/_nav/", :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0) %>
-    <div id="SiteContainer" class="SiteContainer">
+    <main>
+      <div class='container'>
+        <% if @item[:hero] %>d
+        <%= render(@item[:hero]) %>
+        <%end%>
+    :section_navigation => has_subnav?(@item) && subnav_items(@item).length > 0)
+    %>
+
+    <div id="site-container" class="site-container">
       <div id="PageContent" class="PageContent WithRightRail">
         <%= render("/_crumbs/") %>
-        <h1><img src="/images/icons/help.gif" alt="" /><%=  @item[:title] %></h1>
+        <h1><img src="/images/icons/help.gif" alt="" /><%= @item[:title] %></h1>
         <p class="location"><%= @item[:location] %></p>
         <p class="dates"><%= @item[:start_date] %> ~ <%= @item[:end_date] %></p>
         <h2>Instructors</h2>
@@ -21,11 +30,12 @@
         <%= yield %>
       </div>
       <div id="RightRail" class="RightRail">
-        <a name="section-navigation"></a> <!-- accessibility anchor -->
-        <%= render("/_bioc_release_packages/") %>
-        <%= render("/_documentation/") %>
+        <a name="section-navigation"></a>
+        <!-- accessibility anchor -->
+        <%= render("/_bioc_release_packages/") %> <%= render("/_documentation/")
+        %>
       </div>
-      <%= render("/_footer/") %>
-    </div>
+      <%= render("/components/footer") %>
+    </main>
   </body>
 </html>

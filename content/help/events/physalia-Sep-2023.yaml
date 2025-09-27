@@ -1,0 +1,9 @@
+---
+title: Network Analysis in Systems Biology with R/Bioconductor
+location: Online
+event_host:  Physalia
+start: 2023-09-11
+end:   2023-09-14
+link:
+  text: "This course will introduce participants with the inference and analysis of biological networks from RNA-seq data using R and Bioconductor packages. The course will cover data structures for quantitative data and graphs, statistical methods for network inference, functional analyses of biological networks, and network comparison. At the end of the course, participants will be able to infer and analyze gene coexpression networks (GCNs) and gene regulatory networks (GRNs), compare networks, and integrate GCNs with genetic markers to prioritize candidate genes associated with traits."
+  url: https://www.physalia-courses.org/courses-workshops/network-in-systems-biology/

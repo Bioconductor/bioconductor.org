@@ -26,6 +26,20 @@ EPS
 * [bioconductor_logo_rgb.eps](/images/logo/eps/bioconductor_logo_rgb.eps)
 * [bioconductor_logo_spot.eps](/images/logo/eps/bioconductor_logo_spot.eps)
 
+SVG
+
+* [bioconductor_logo_cmyk.svg](/images/logo/svg/bioconductor_logo_cmyk.svg)
+* [bioconductor_logo_grey.svg](/images/logo/svg/bioconductor_logo_grey.svg)
+* [bioconductor_logo_rgb.svg](/images/logo/svg/bioconductor_logo_rgb.svg)
+* [bioconductor_logo_spot.svg](/images/logo/svg/bioconductor_logo_spot.svg)
+
+PNG
+
+* [bioconductor_logo_cmyk.png](/images/logo/png/bioconductor_logo_cmyk.png)
+* [bioconductor_logo_grey.png](/images/logo/png/bioconductor_logo_grey.png)
+* [bioconductor_logo_rgb.png](/images/logo/png/bioconductor_logo_rgb.png)
+* [bioconductor_logo_spot.png](/images/logo/png/bioconductor_logo_spot.png)
+
 GIF
 
 * [logo_bioconductor.gif](/images/logo_bioconductor.gif)

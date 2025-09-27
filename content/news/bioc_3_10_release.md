@@ -1020,7 +1020,7 @@ K-FOLD CROSS-VALIDATION IS SUPPORTED
 
 - In literature, GReX of genes for which the mean of the R^2 is above
   0.01 are considered non-randomly predicted, according to the new
-  benchmarking standards [ref]
+  benchmarking standards &#91;ref&#93;
 
 [alevinQC](/packages/alevinQC)
 --------
@@ -1334,11 +1334,11 @@ Changes in version 1.17.3
 
 - Fixed WARNING: bamsignals.cpp:521:9: warning: ignoring return value
   of function declared with 'warn_unused_result' attribute
-  [-Wunused-result] bamsignals.cpp:516:5: warning: ignoring return
+  &#91;-Wunused-result&#93; bamsignals.cpp:516:5: warning: ignoring return
   value of function declared with 'warn_unused_result' attribute
-  [-Wunused-result] bamsignals.cpp:530:5: warning: ignoring return
+  &#91;-Wunused-result&#93; bamsignals.cpp:530:5: warning: ignoring return
   value of function declared with 'warn_unused_result' attribute
-  [-Wunused-result]
+  &#91;-Wunused-result&#93;
 
 Changes in version 1.17.2
 
@@ -6110,16 +6110,16 @@ Changes in version 1.4.0
 
 MODIFICATIONS
 
-- added online FWER algorithms of Tian and Ramdas [2019b]
+- added online FWER algorithms of Tian and Ramdas &#91;2019b&#93;
 
-- added the ADDIS algorithms of Tian and Ramdas [2019a]
+- added the ADDIS algorithms of Tian and Ramdas &#91;2019a&#93;
 
-- added asynchronous online testing algorithms of Zrnic et al. [2018]
+- added asynchronous online testing algorithms of Zrnic et al. &#91;2018&#93;
 
-- added the SAFFRON procedure for online FDR control [Ramdas et al.,
-  2018]
+- added the SAFFRON procedure for online FDR control &#91;Ramdas et al.,
+  2018&#93;
 
-- added the Alpha-investing procedure of Ramdas et al. [2018]
+- added the Alpha-investing procedure of Ramdas et al. &#91;2018&#93;
 
 - updated vignette
 
@@ -8332,12 +8332,12 @@ Changes in version 1.7.1
 - Remove NEWS file (just keep NEWS.md).  - Never remove "AgcTarget"
 column from colData DataFrame.  - Strip white spaces from
 ScanHeadsman output.  - Defunct defaultMs1Settings and
-defaultMs2Settings. They will be removed in 3.11 [2019-06-19].
+defaultMs2Settings. They will be removed in 3.11 &#91;2019-06-19&#93;.
 
 Changes in version 1.7.2
 
 - Add readTopDownSet(..., conditions="ScanDescription") as a new way
-to read scan conditions (see #80/#81) [2019-08-08].
+to read scan conditions (see #80/#81) &#91;2019-08-08&#93;.
 
 [TPP](/packages/TPP)
 ---

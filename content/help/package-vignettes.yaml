@@ -1,3 +1,5 @@
 --- 
 title: Package Vignettes
-subnav: true
+subnav:
+  - include: /_bioc_release_packages/
+  - include: /_bioc_devel_packages/

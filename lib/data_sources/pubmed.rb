@@ -10,7 +10,7 @@ class PubmedPapers < Nanoc::DataSource
     # set default options here
     @opts = {
       :cache_file => "tmp/pubmed_cache_file.yaml",
-      :retmax => 20,
+      :retmax => 10,
       :ttl => 24,
       :baseurl => "http://eutils.ncbi.nlm.nih.gov/entrez/eutils/",
       :term => "bioconductor",

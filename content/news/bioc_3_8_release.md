@@ -1053,7 +1053,7 @@ Changes in version 1.11.6:
 
 USER-LEVEL CHANGES
 
-- sort output aba_enrich()[[1]] by FWER first and then by age category
+- sort output aba_enrich()&#91;&#91;1&#93;&#93; by FWER first and then by age category
   (previously it was sorted by age category first)
 
 Changes in version 1.11.3:
@@ -4223,9 +4223,9 @@ DEPRECATED AND DEFUNCT
 
 BUG FIXES
 
-- Fix DF[IRanges(...), ] on a DataFrame with data.frame columns.
+- Fix DF&#91;IRanges(...), &#93; on a DataFrame with data.frame columns.
 
-- Make [[, as.list(), lapply(), and unlist() fail more graciously on
+- Make &#91;&#91;, as.list(), lapply(), and unlist() fail more graciously on
       a IRanges object.
 
 - NCList objects now properly support c().
@@ -6575,7 +6575,7 @@ Changes in version 1.7.1:
 
 Changes in version 1.13.1:
 
-- fix compatibility issues with new ggplot package [2018-08-02 Wed]
+- fix compatibility issues with new ggplot package &#91;2018-08-02 Wed&#93;
 
 [SIMD](https://bioconductor.org/packages/SIMD)
 ----
@@ -6867,7 +6867,7 @@ NEW FEATURES
 
 Changes in version 2.5.2:
 
-- Use `BiocManager::install` [2018-07-16]. # Synapter 2.3
+- Use `BiocManager::install` &#91;2018-07-16&#93;. # Synapter 2.3
 
 [TargetSearch](https://bioconductor.org/packages/TargetSearch)
 ------------
@@ -6949,39 +6949,39 @@ INTERNALS
 
 Changes in version 1.3.6:
 
-- Add Pavel's and Ole's ORCID to DESCRIPTION [2018-10-23].
+- Add Pavel's and Ole's ORCID to DESCRIPTION &#91;2018-10-23&#93;.
 
 Changes in version 1.3.5:
 
 - Fix format of roxygen links to foreign packages to avoid link warning
-  in `R CMD check` [2018-10-10].
+  in `R CMD check` &#91;2018-10-10&#93;.
 
 Changes in version 1.3.4:
 
-- Add inst/CITATION file [2018-09-26].
+- Add inst/CITATION file &#91;2018-09-26&#93;.
 
 Changes in version 1.3.3:
 
 - Revert commit c6e8dfd: "Adapt to `MSnbase 2.7.2` with internal
-  fragments; see #82 [2018-06-03]."
+  fragments; see #82 &#91;2018-06-03&#93;."
 
 Changes in version 1.3.2:
 
-- Use `BiocManager::install` [2018-07-16].
+- Use `BiocManager::install` &#91;2018-07-16&#93;.
 
 Changes in version 1.3.1:
 
 - Adapt to `MSnbase 2.7.2` with internal fragments; see #82
-  [2018-06-03].
+  &#91;2018-06-03&#93;.
 
 - Fix `FragmentViews` start/end/width and labels for internal fragments
-  [2018-06-03].
+  &#91;2018-06-03&#93;.
 
-- Fix `as(tds, "MSnSet")` unit test [2018-07-06].
+- Fix `as(tds, "MSnSet")` unit test &#91;2018-07-06&#93;.
 
 - Use `elementMetadata(..., use.names=FALSE)` in
   `combine,FragmentViews,FragmentViews-method` to avoid duplicated
-  rownames in elementMetadata slot [2018-07-06].
+  rownames in elementMetadata slot &#91;2018-07-06&#93;.
 
 Changes in version 1.3.0:
 

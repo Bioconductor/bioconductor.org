@@ -46,7 +46,7 @@ mid-October to mid-April release cycle, you must install the devel
 version of _R_.
 
 * [Source](https://stat.ethz.ch/R/daily/)
-* [macOS](http://r.research.att.com/)
+* [macOS](https://mac.r-project.org/)
 * [Windows](https://cran.r-project.org/bin/windows/base/rdevel.html)
 
 Then, make sure that your version of [BiocManager][] is current and

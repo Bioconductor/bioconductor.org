@@ -26,18 +26,18 @@ require 'json'
 #
 ############################################
 
-def get_availability(item, numeric_version)
+def get_availability(item, numeric_version, reldev)
 
   img = platform_availability(item)
-  availabilityBadge(item['Package'], img, numeric_version)
+  availabilityBadge(item['Package'], img, numeric_version, reldev)
 
 end
 
-def availabilityBadge(pkg, img, numeric_version)
+def availabilityBadge(pkg, img, numeric_version, reldev)
 
   puts "Creating badge for #{pkg} :  #{img}"
   srcdir = File.join('assets', 'images', 'shields', 'availability')
-  destdir = File.join('assets', 'shields', 'availability', numeric_version)
+  destdir = File.join('assets', 'shields', 'availability', reldev)
   FileUtils.mkdir_p destdir
   src = File.join(srcdir, "#{img}.svg")
   dest = File.join(destdir, "#{pkg}.svg")
@@ -227,11 +227,17 @@ end
 #
 ######################################
 
-def generate_build_shields(outdir, build_db)
+def generate_build_shields(outdir, build_db, version)
   FileUtils.rm_rf outdir
   FileUtils.mkdir_p  outdir
   data = File.readlines(build_db)
   packages = data.map{|i| i.split('#').first}.uniq
+  site_config = YAML.load_file("./config.yaml")
+  if (version == "devel")
+    activebuilders = site_config["active_devel_builders"].values
+  else
+    activebuilders = site_config["active_release_builders"].values
+  end
 
   colors = {"OK" => "green", "WARNINGS" => "yellow",
     "ERROR" => "red", "TIMEOUT" => "AA0088"}
@@ -239,7 +245,15 @@ def generate_build_shields(outdir, build_db)
   srcdir = File.join("assets", "images", "shields", "builds")
 
   for package in packages
-    relevant = data.find_all{|i| i =~ /^#{package}#/}
+    relevantAll = data.find_all{|i| i =~ /^#{package}#/}
+    builderName = relevantAll.map {|i| i.split('#')[1]}
+    relevant = Array.new
+    indexKeepLog = builderName.map {|i| activebuilders.include?(i) }
+    indexKeepLog.each_index.select{|i|
+      if (indexKeepLog[i] == true)
+        relevant.push(relevantAll[i])
+      end
+    }
     statuses = relevant.map {|i| i.split(' ').last.strip}
     statuses = statuses.reject{|i| i == "NotNeeded"}
     statuses = statuses.uniq
@@ -348,7 +362,7 @@ def get_list_of_packages(bioc=true, release=false)
       branch = "RELEASE_#{version.sub('.', '_')}"
     else
       version = config['devel_version']
-      branch = 'master'
+      branch = 'devel'
     end
 
     if bioc
@@ -365,7 +379,7 @@ def get_list_of_packages(bioc=true, release=false)
     contents = file.read
     pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
     file.close
-    system("git -C #{path} checkout master")
+    system("git -C #{path} checkout devel")
     pkgs
 end
 
@@ -395,7 +409,7 @@ def get_list_of_workflows(release=false)
       branch = "RELEASE_#{version.sub('.', '_')}"
     else
       version = config['devel_version']
-      branch = 'master'
+      branch = 'devel'
     end
 
     manifest_file = "workflows.txt"
@@ -408,6 +422,6 @@ def get_list_of_workflows(release=false)
     contents = file.read
     pkgs = contents.to_s.split("\n").find_all{|i| i =~ /^Package:/}.map{|i| i.sub("Package:", "").strip}.sort_by{|i|i.downcase}
     file.close
-    system("git -C #{path} checkout master")
+    system("git -C #{path} checkout devel")
     pkgs
 end

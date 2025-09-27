@@ -1,78 +1,91 @@
-# Bioconductor 3.13 Release Schedule
+# Bioconductor 3.22 Release Schedule
 
-This release will use  R-4.1.0.
-The official release date is schedule for Wednesday May 19th.
-The following highlights important deadlines for the release.
+The release date for Bioc 3.22 is schedule for Wednesday October 29th. The 3.22
+release will use R-4.5.
 
-<b>Note:</b> As R has not officially announced the release of R-4.1.0 there is a possibility
-that the release will be pushed back. 
+<!--
+With the R dependency for 3.22 being R-4.5, these
+deadlines are subject to change based on CRAN official R-4.5 release date.
+-->
 
+The following highlights important deadlines for the release:
 
-### Friday April 23
+### Friday September 26
 
-* Deadline for new package submissions.
+* Deadline for new package submissions. Packages will still need to pass the
+  formal review process to be included in the release. Package reviewers are
+  volunteer and have a limited capacity for review. Packages submitted by this
+  date we will try to have at least an initial review of the pacakge but is
+  still subject to reviewer availability; packages submitted after this date are
+  not guaranteed to be reviewed and will so only as reviewer time permits.
+    
+### Monday October 6
 
-### Monday April 26
+* Announce deprecated packages for Bioc 3.22. They'll be removed from Bioc 3.23.
+  See [End of Life](http://contributions.bioconductor.org/package-end-of-life-policy.html) for details.
 
-* Announce deprecated packages for Bioc 3.13. They'll be removed from Bioc 3.14.
-  See [End of Life](/developers/package-end-of-life) for details.
+### Wednesday October 8
 
-### Tuesday May 4
+*  No major API changes to Bioc 3.22.
 
-* Stop building Bioc 3.12, current release. Commits to this branch will be
-  disabled.
+### Monday October 13
 
-* Start building Bioc 3.14, new devel.
+* Stop building Bioc 3.21, current release. Commits to this branch will be
+  disabled. Start configuring builders for 3.23 and start 3.23 builds as soon as
+  possible.  
 
-### Wednesday May 12
-
-* No API changes to Bioc 3.13.
-
-* Deadline to add new packages to the Bioc 3.13 manifest. Package submitted to
-  tracker must have completed the review processes and been accepted to be added
-  to the manifest
+### Wednesday October 15
 
 * Contributed annotation packages posted to devel annotation data repository.
 
-### Friday May 14
+* Bioconductor 3.22 release candidate.  Package maintainers should limit
+  changes to "show-stopper" bugs and documentation improvements.
+
+### Wednesday October 22
+
+* Deadline to add new packages to the Bioc 3.22 manifest. Packages submitted to
+  Bioconductor new package submission process must have completed the review
+  processes and been accepted to be added to the manifest.
+
+### Friday October 24
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
   and workflow packages. Some warnings will be accepted, clarification
   on the bioc-devel mailing list.
 
-* Bioconductor release candidate.  Package maintainers should limit
-  changes to "show-stopper" bugs and documentation improvements.
+### Monday October 27
 
-### Monday May 17
-
-* Last day to commit changes to the Bioc 3.13 branch. NEWS files
-  must be updated before the builds start at 4:45pm EST or they will
+* Last day to commit changes to the Bioc 3.22 branch. NEWS files
+  must be updated before the builds start at 1:30 pm EST or they will
   not be included in the release announcement.
 
   The branch will be frozen prior to creating the release branch on Tuesday,
-  May 18.  Committing last minute changes could break your package in both
+  October 28.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Tuesday May 18
+### Tuesday October 28
 
-* Creation of the Bioc 3.13 release branch. Development can resume on
-  trunk, but changes there will not be part of the release.
+* Creation of the Bioc 3.22 release branch. Development can resume on
+  devel branch, but changes there will not be part of the release.
 
-### Wednesday May 19
+### Wednesday October 29
 
-* Bioconductor Release 3.13.
+* Bioconductor Release 3.22.
 
 
 ## Post-release
 
-* Build AMIs for release and devel
-
 * Build Dockers for release and devel
 
-* Packages marked as deprecated in Bioc 3.13 are now removed from the
-  Bioc 3.14 nightly builds.
+* Packages marked as deprecated in Bioc 3.22 are now removed from the
+  Bioc 3.23 nightly builds.
 
-* Identify packages to be deprecated in the new devel, Bioc 3.14.
+* Identify packages to be deprecated in the new devel, Bioc 3.23.
   This includes packages with errors and unresponsive maintainers.
+
+* Move 3.21 products to archive. Mirrors should adjust accordingly to not have
+  3.21 mirror deleted.
+
+* Update New Submission to use 3.23 devel.

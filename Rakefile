@@ -124,18 +124,18 @@ task :default => :build
 
 desc "deploy (sync) to staging server root on staging"
 task :deploy_staging do
-  dst = '/loc/www/bioconductor-test.fhcrc.org'
   site_config = YAML.load_file("./config.yaml")
+  staging_dir = site_config["staging_dir"]
   output_dir = site_config["output_dir"]
-  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.git' #{output_dir}/ #{dst}"
-  chmod_cmd = "chmod -R a+r /loc/www/bioconductor-test.fhcrc.org/packages/json"
+  system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.git' #{output_dir}/ #{staging_dir}"
+  chmod_cmd = "chmod -R a+r #{staging_dir}/packages/json"
   system chmod_cmd
 end
 
 desc "deploy (sync) to production"
 task :deploy_production do
   site_config = YAML.load_file("./config.yaml")
-  src = '/loc/www/bioconductor-test.fhcrc.org'
+  src = site_config["staging_dir"]
   dst = site_config["production_deploy_root"]
   system "rsync -av --links --partial --partial-dir=.rsync-partial --exclude='.git' #{src}/ #{dst}/"
 end
@@ -295,7 +295,7 @@ end
 desc "Create CloudFormation templates"
 task :generate_cf_templates do
   FileUtils.mkdir_p "cloud_formation/output"
-  config = YAML.load_file("./config.yaml")
+  site_config = YAML.load_file("./config.yaml")
   dir = Dir.new("cloud_formation")
   for file in dir
     next unless file =~ /\.json$/
@@ -318,11 +318,11 @@ end
 
 desc "write version number to endpoint"
 task :write_version_number do
-    config = YAML.load_file("./config.yaml")
+    site_config = YAML.load_file("./config.yaml")
     f = File.open("assets/bioc-version", "w")
-    f.print(config["release_version"])
+    f.print(site_config["release_version"])
     f = File.open("assets/bioc-devel-version", "w")
-    f.print(config["devel_version"])
+    f.print(site_config["devel_version"])
 end
 
 task :my_task, :arg1 do |t, args|
@@ -336,42 +336,51 @@ task :my_task, :arg1 do |t, args|
   pp hargs.keys()
 end
 
-desc "Get build result summaries to build RSS feeds (arg: bioc or data-experiment)"
+desc "Get BUILD_STATUS_DB.txt file to build RSS feeds (arg: bioc or data-experiment or any other valid buildtype)"
 # requires internet connection
-task :get_build_result_dcfs, :repo do |t, args|
+task :get_build_result_dcfs, :buildtype do |t, args|
     hargs = args.to_hash
-    if hargs.empty? or !hargs.has_key? :repo
-      repo = "bioc"
+    if hargs.empty? or !hargs.has_key? :buildtype
+      buildtype = "bioc"
     else
-      repo = hargs[:repo]
+      buildtype = hargs[:buildtype]
     end
-    unless ["bioc", "data-experiment"].include? repo
-      puts "Argument must be either 'bioc' or 'data-experiment'."
+    unless ["bioc", "data-annotation", "data-experiment", "workflows", "books", "bioc-longtests"].include? buildtype
+      puts "argument must be 'bioc', 'data-annotation', 'data-experiment', 'workflows', 'books', or 'bioc-longtests'"
       next
     end
-    config = YAML.load_file("./config.yaml")
-    tmpdir = repo=="bioc" ? "tmp/build_dcfs" : "tmp/data_build_dcfs"
-    FileUtils.mkdir_p tmpdir
-    ary = []
+    if buildtype == "bioc"
+        dcfdir = "tmp/build_dcfs"
+    elsif buildtype == "data-annotation"
+        dcfdir = "tmp/data_annnotation_build_dcfs"
+    elsif buildtype == "data-experiment"
+        dcfdir = "tmp/data_experiment_build_dcfs"
+    elsif buildtype == "workflows"
+        dcfdir = "tmp/workflows_build_dcfs"
+    elsif buildtype == "books"
+        dcfdir = "tmp/books_build_dcfs"
+    else
+        dcfdir = "tmp/longtests_build_dcfs"
+    end
+    FileUtils.mkdir_p dcfdir
+    #site_config = YAML.load_file("./config.yaml")
     for version in ["release", "devel"]
-	FileUtils.mkdir_p(File.join(tmpdir, version))
-	if version == "release"
-	    machine = config["active_release_builders"]["linux"]
-	    biocversion = config["release_version"]
-	else
-	    machine = config["active_devel_builders"]["linux"]
-	    biocversion = config["devel_version"]
-	end
-	unless (config["devel_repos"].include? repo.gsub("-", "/"))
-	  next
-	end
-
-	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt")
-	f = File.open(File.join(tmpdir, version, "STATUS_DB.txt"), "w")
+	FileUtils.mkdir_p(File.join(dcfdir, version))
+	#if version == "release"
+	#    machine = site_config["active_release_builders"]["linux"]
+	#    biocversion = site_config["release_version"]
+	#else
+	#    machine = site_config["active_devel_builders"]["linux"]
+	#    biocversion = site_config["devel_version"]
+	#end
+	#unless (site_config["devel_repos"].include? buildtype.gsub("-", "/"))
+	#  next
+	#end
+	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{buildtype}-LATEST/BUILD_STATUS_DB.txt")
+	f = File.open(File.join(dcfdir, version, "BUILD_STATUS_DB.txt"), "w")
 	f.write(res)
 	f.close
-
-	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{repo}/nodes #{tmpdir}/#{version}))
+	#cmd = (%Q(rsync --delete --include="*/" --include="**/*.dcf" --exclude="*" -ave "ssh -o StrictHostKeyChecking=no -i #{ENV['HOME']}/.ssh/bioconductor.org.rsa" biocbuild@#{machine}:~/public_html/BBS/#{biocversion}/#{buildtype}/nodes #{dcfdir}/#{version}))
 	#system(cmd)
     end
 end
@@ -393,7 +402,7 @@ task :get_build_dbs do
   %w(release devel).each do |version|
     %w(bioc data-experiment workflows).each do |repo|
       puts "Working On: #{version} #{repo}"
-      url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/STATUS_DB.txt"
+      url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/BUILD_STATUS_DB.txt"
       dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
       dest_etag_name = dest_file_name.sub("dcf", "etag")
       etag = HTTParty.head(url).headers["etag"]
@@ -408,14 +417,14 @@ task :get_build_dbs do
 	fh = File.open(dest_file_name, "w")
 	fh.write(body)
 	fh.close
-	url2 = url.sub "STATUS_DB.txt", 'meat-index.dcf'
+	url2 = url.sub "BUILD_STATUS_DB.txt", 'meat-index.dcf'
 	body2 = HTTParty.get(url2).to_s
 	fh2 = File.open(dest_file_name.sub(/dcf$/, "meat-index.txt"), 'w')
 	fh2.write(body2)
 	fh2.close
 	puts shield_dir
 	puts dest_file_name
-	generate_build_shields(shield_dir, dest_file_name)
+	generate_build_shields(shield_dir, dest_file_name, version)
 
       end
     end
@@ -467,13 +476,13 @@ task :get_availability_shields  do
 
       if (not meat_index.nil?)
 	for item in meat_index
-	  get_availability(item, numeric_version)
+	  get_availability(item, numeric_version, reldev)
 	  indexList.push(item['Package'])
 	end
 	unknown = json_obj.keys.sort - indexList.sort
 	if unknown.length != 0
 	  for item in unknown
-	    availabilityBadge(item, "unknown-build", numeric_version)
+	    availabilityBadge(item, "unknown-build", numeric_version, reldev)
 	  end
 	end
       else
@@ -496,12 +505,12 @@ end
 # shouldn't be run daily - will update minimally
 desc "get years-in-bioc shields"
 task :get_years_in_bioc_shields do
-  sconfig = YAML.load_file("./config.yaml")
-  sconfig[:release_dates] = sconfig["release_dates"]
-  sconfig[:release_dates] = sconfig[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
-  rel_ver = sconfig["release_version"]
-  dev_ver = sconfig["devel_version"]
-  all_ver = sconfig["release_dates"].keys
+  site_config = YAML.load_file("./config.yaml")
+  site_config[:release_dates] = site_config["release_dates"]
+  site_config[:release_dates] = site_config[:release_dates].inject({}){|memo,(k,v)| memo[k.to_sym] = v; memo}
+  rel_ver = site_config["release_version"]
+  dev_ver = site_config["devel_version"]
+  all_ver = site_config["release_dates"].keys
   all_ver.push dev_ver
   man_path = "../manifest/"
 
@@ -511,7 +520,7 @@ task :get_years_in_bioc_shields do
     ver = v.gsub(/\./,"_")
     manifests[v] = []
     if v == dev_ver
-      system("git -C #{man_path} checkout master")
+      system("git -C #{man_path} checkout devel")
     else
       system("git -C #{man_path} checkout RELEASE_#{ver}")
     end
@@ -525,10 +534,10 @@ task :get_years_in_bioc_shields do
       end
     end
   }
-  sconfig[:manifests] = manifests
-  system("git -C #{man_path} checkout master")
+  site_config[:manifests] = manifests
+  system("git -C #{man_path} checkout devel")
 
-  sconfig[:manifest_keys] = manifests.keys.sort do |a,b|
+  site_config[:manifest_keys] = manifests.keys.sort do |a,b|
     amaj, amin = a.split(".")
     bmaj, bmin = b.split(".")
     amaj = Integer(amaj)
@@ -543,7 +552,7 @@ task :get_years_in_bioc_shields do
   end
   pkgs = get_list_of_packages()
   for pkg in pkgs
-    get_year_shield(pkg, true, sconfig)
+    get_year_shield(pkg, true, site_config)
   end
 end
 
@@ -701,11 +710,11 @@ task :get_all_shields => [:get_build_dbs,
 # make sure this is run via crontab every hour
 desc "extract mirror information to csv file"
 task :mirror_csv do
-    config = YAML.load_file("./config.yaml")
+    site_config = YAML.load_file("./config.yaml")
     CSV.open(File.join("assets", "BioC_mirrors.csv"), "w") do |csv|
       csv << ["Name","Country","City","URL","Host","Maintainer","OK",
 	      "CountryCode","Comment"]
-      for mirror_outer in config['mirrors']
+      for mirror_outer in site_config['mirrors']
 	country = mirror_outer.keys.first
 	country_mirrors = mirror_outer.values
 	for mirrors in country_mirrors
@@ -729,7 +738,7 @@ task :mirror_csv do
 	    csv << data
 	    # Second row is http
 	    data[3] = mirror['mirror_url']
-	    data[0] = "#{country} (#{mirror['city']})"
+	    data[0] = "#{country} (#{mirror['city']}) [unsecure]"
 	    data[6] = check_mirror_url(mirror['mirror_url'])
 	    csv << data
 	  end

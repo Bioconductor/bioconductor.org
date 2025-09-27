@@ -4366,7 +4366,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - GenomicRangesList is now a virtual class (like IntegerRangesList is).
 
-- GRanges derivatives no longer support the 'x[i, j] <- value' form of
+- GRanges derivatives no longer support the 'x&#91;i, j&#93; <- value' form of
   subassignment. This feature was of very limited usefulness and no
   Bioconductor package was using it.
 
@@ -5336,11 +5336,11 @@ Changes in version 1.9.1:
 
 - no changes, check if package passes R CMD build and R CMD check
   without any error messages and vignette can be run without any errors
-  [2018-04-16 Mon]
+  &#91;2018-04-16 Mon&#93;
 
 Changes in version 1.7.0:
 
-- implement calculation for parameter m = 0 in NDP [2017-11-14 Tue]
+- implement calculation for parameter m = 0 in NDP &#91;2017-11-14 Tue&#93;
 
 [methimpute](https://bioconductor.org/packages/methimpute)
 ----------
@@ -6731,7 +6731,7 @@ NEW FEATURES
 - Improved testPhenotype() to have consistent input (variables by
   columns)
 
-- BAM scanning [ramwas1scanBams] rescans BAMs newer than the rbam files
+- BAM scanning &#91;ramwas1scanBams&#93; rescans BAMs newer than the rbam files
 
 BUG FIXES
 
@@ -6943,8 +6943,8 @@ NEW FEATURES
 
 BUG FIXES
 
-- Datasets can now be subset using `[` and a range of values e.g.
-  did[,1:5].
+- Datasets can now be subset using `&#91;` and a range of values e.g.
+  did&#91;,1:5&#93;.
 
 - Writing a data.frame that contains factors and setting
   DataFrameAsCompound=FALSE now works.
@@ -7220,7 +7220,7 @@ NEW FEATURES
   was moved from the IRangesOverview.Rnw vignette to the new
   S4VectorsOverview.Rnw vignette.
 
-- All Vector derivatives now support 'x[i, j]' by default. This allows
+- All Vector derivatives now support 'x&#91;i, j&#93;' by default. This allows
   the user to conveniently subset the metadata columns thru 'j'. Note
   that GenomicRanges objects have been supporting this feature for
   years but now all Vector derivatives support it. Developers of Vector
@@ -7908,7 +7908,7 @@ BUG FIXES
 
 - Modify the "[<-" method for SummarizedExperiment to leave
   'metadata(x)' intact instead of trying to combine it with
-  'metadata(value)'. With this change 'x[i , j] <- x[i , j]' behaves
+  'metadata(value)'. With this change 'x&#91;i , j&#93; <- x&#91;i , j&#93;' behaves
   like a no-op (as expected) instead of duplicating metadata(x).
 
 - The SummarizedExperiment() constructor does not try to downgrade the
@@ -7953,7 +7953,7 @@ Changes in version 2.3.1:
   is gone.
 
 - Use `html_document` instead of `html_document2` in the vignettes
-  [2018-01-17]. # Synapter 2.1
+  &#91;2018-01-17&#93;. # Synapter 2.1
 
 [TargetSearch](https://bioconductor.org/packages/TargetSearch)
 ------------
@@ -8091,128 +8091,128 @@ Changes in version 1.13.2:
 
 Changes in version 1.1.7:
 
-- Add `mz,FragmentViews-method` [2018-02-01].
+- Add `mz,FragmentViews-method` &#91;2018-02-01&#93;.
 
 - Remove internal `fragmentMass` and `fragmentNames` functions
-  [2018-02-22].
+  &#91;2018-02-22&#93;.
 
 - Parse "spectrumId" column of the mzML header to find the scan number
   (instead of the "acquisitionNum") because ProteomDiscover generates
   non-standard "spectrumId" and proteowizard fails to translated it
-  into a valid "acquisitionNum". See #73 for details [2018-02-22].
+  into a valid "acquisitionNum". See #73 for details &#91;2018-02-22&#93;.
 
 - Recalculate TotIonCurrent in the main loop of `.readMzMl`
-  [2018-02-22].
+  &#91;2018-02-22&#93;.
 
 - Add `FragmentCoverage` and `BondCoverage` columns to
-  `bestConditions,NCBSet-method` [2018-02-23].
+  `bestConditions,NCBSet-method` &#91;2018-02-23&#93;.
 
 - Use retention times to test for correct matching between ScanHeadsman
-  .txt output and mzML files; closes #74; [2018-02-23].
+  .txt output and mzML files; closes #74; &#91;2018-02-23&#93;.
 
 Changes in version 1.1.6:
 
-- Rotate fragment labels (vertical orientation) in `plot` [2018-01-17].
+- Rotate fragment labels (vertical orientation) in `plot` &#91;2018-01-17&#93;.
 
 - Replace signature for `updateMedianInjectionTime,TopDownSet-method`
   to `updateMedianInjectionTime,AbstractTopDownSet-method`; closes #69;
-  see also #71 [2018-01-27].
+  see also #71 &#91;2018-01-27&#93;.
 
-- Fix `.matchFragments` for `length(fmass) == 0` [2018-01-27].
+- Fix `.matchFragments` for `length(fmass) == 0` &#91;2018-01-27&#93;.
 
 - Just plot fragments that are present in current `TopDownSet` see #70
-  [2018-01-27].
+  &#91;2018-01-27&#93;.
 
-- Add `combine,FragmentViews,FragmentViews-method` [2018-01-27].
+- Add `combine,FragmentViews,FragmentViews-method` &#91;2018-01-27&#93;.
 
 - Allow to `combine` `TopDownSet` objects with different fragment
-  types; closes #71 [2018-01-27].
+  types; closes #71 &#91;2018-01-27&#93;.
 
-- Add `all.equal` for `AbstractTopDownSet` objects [2018-01-27].
+- Add `all.equal` for `AbstractTopDownSet` objects &#91;2018-01-27&#93;.
 
 - Allow the user to decide how to handle redundant fragment matching.
   Current default is `redundantFragmentMatch="remove"` and
   `redundantIonMatch="remove"`. This will reduce the number of fragment
   matches. Choose `"closest"` for both to get the old behaviour. See
-  also #72 [2018-01-29].
+  also #72 &#91;2018-01-29&#93;.
 
 - `TopDownSet` object store the matching `tolerance` and strategies
   (`redundantIonMatch`, `redundantFragmentMatch`). `AbstractTopDownSet`
   and `NCBSet` lost their `tolerance` slot. Saved objects need to be
-  recreated [2018-01-30].
+  recreated &#91;2018-01-30&#93;.
 
 - `bestConditions,NCBSet-method` returns a 5-column matrix now. Colums
   are: Index, FragmentsAddedToCombination, BondsAddedToCombination,
-  FragmentsInCondition, BondsInCondition; see #52 [2018-01-30].
+  FragmentsInCondition, BondsInCondition; see #52 &#91;2018-01-30&#93;.
 
 Changes in version 1.1.5:
 
 - Keep full filename (before `basename` was used) in
-  `AbstractTopDownSet` objects [2017-12-28].
+  `AbstractTopDownSet` objects &#91;2017-12-28&#93;.
 
-- Add `plot,TopDownSet-method` [2017-12-29].
+- Add `plot,TopDownSet-method` &#91;2017-12-29&#93;.
 
 - `bestConditions,NCBSet-method` gains a new argument `maximise` that
   allows to optimise for number of fragments or bonds covered (default:
-  `"fragments"`); see #52 [2018-01-15].
+  `"fragments"`); see #52 &#91;2018-01-15&#93;.
 
 Changes in version 1.1.4:
 
-- Add missing export of `combine` and documentation [2017-12-28].
+- Add missing export of `combine` and documentation &#91;2017-12-28&#93;.
 
 - Resave `tds` example data set to reflect changes in `colData`
-  introduced in version 1.1.2 [2017-12-28].
+  introduced in version 1.1.2 &#91;2017-12-28&#93;.
 
 Changes in version 1.1.3:
 
 - Add `conditionNames,AbstractTopDownSet-method` to access
-  `rownames(colData(tds))` [2017-12-23].
+  `rownames(colData(tds))` &#91;2017-12-23&#93;.
 
 - Add `updateConditionNames,AbstractTopDownSet-method` (closes #60)
-  [2017-12-23].
+  &#91;2017-12-23&#93;.
 
 - Turn `updateMedianInjectionTime,TopDownSet-method` into
   `updateMedianInjectionTime,AbstractTopDownSet-method` to work with
-  `TopDownSet` and `NCBSet` objects [2017-12-27].
+  `TopDownSet` and `NCBSet` objects &#91;2017-12-27&#93;.
 
 - Add `combine,AbstractTopDownSet-method` to combine multiple
-  `TopDownSet`/`NCBSet` objects (closes #69) [2017-12-28].
+  `TopDownSet`/`NCBSet` objects (closes #69) &#91;2017-12-28&#93;.
 
 Changes in version 1.1.2:
 
 - Add `.rbind` to combine scan and method information with different
   number of colums (could happen when CID/HCD and UVPD scans are taken
-  independently with different software versions) [2017-12-22].
+  independently with different software versions) &#91;2017-12-22&#93;.
 
-- Don't replace NA values with zeros in the `colData` [2017-12-22].
+- Don't replace NA values with zeros in the `colData` &#91;2017-12-22&#93;.
 
 - Convert On/Off `character` columns in scan and method information to
-  `logical` [2017-12-22].
+  `logical` &#91;2017-12-22&#93;.
 
 - Fix `.camelCase` to avoid "TIC" to "TIc" and
   "UseCalibratedUVPDTimeMs2" to "UseCalibrateduvpdTimems2" conversion
-  (now: "Tic" and "UseCalibratedUvpdTimeMs2") [2017-12-22].
+  (now: "Tic" and "UseCalibratedUvpdTimeMs2") &#91;2017-12-22&#93;.
 
 Changes in version 1.1.1:
 
 - Respect assigned intensity in conditions for
   `bestConditions,NCBSet-method` and `fragmentationMap` (closes #62)
-  [2017-12-02].
+  &#91;2017-12-02&#93;.
 
 - Fix explanation of random forest barchart in analysis vignette
-  [2017-12-02].
+  &#91;2017-12-02&#93;.
 
 - Create all fragmentation methods in `.readScanHeadsTable` to avoid
-  error if any is missing (fixes #68) [2017-12-20].
+  error if any is missing (fixes #68) &#91;2017-12-20&#93;.
 
 - Never remove Activation column in `colData` (even not if
   `readTopDownFiles(..., dropNonInformativeColumns=TRUE)`)
-  [2017-12-20].
+  &#91;2017-12-20&#93;.
 
-- Allow UVPD in `fragmentationMap,NCBSet-method` [2017-12-20].
+- Allow UVPD in `fragmentationMap,NCBSet-method` &#91;2017-12-20&#93;.
 
 - Add new method: `updateMedianInjectionTime,TopDownSet-method` (closes
-  #66) [2017-12-20].
+  #66) &#91;2017-12-20&#93;.
 
 Changes in version 1.1.0:
 

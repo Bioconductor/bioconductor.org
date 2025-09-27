@@ -11,6 +11,15 @@ updates to existing packages, and package removals.
 
 | Release                         | Date              | Software packages                           | R    |
 |:--------------------------------|:------------------|--------------------------------------------:|:-----|
+| [3.21](/news/bioc_3_21_release) | April 16, 2025    | [2341](/packages/3.21/)                     | 4.5  |
+| [3.20](/news/bioc_3_20_release) | October 30, 2024  | [2289](/packages/3.20/)                     | 4.4  |
+| [3.19](/news/bioc_3_19_release) | May 1, 2024       | [2300](/packages/3.19/)                     | 4.4  |
+| [3.18](/news/bioc_3_18_release) | October 25, 2023  | [2266](/packages/3.18/)                     | 4.3  |
+| [3.17](/news/bioc_3_17_release) | April 26, 2023    | [2230](/packages/3.17/)                     | 4.3  |
+| [3.16](/news/bioc_3_16_release) | November 2, 2022  | [2183](/packages/3.16/)                     | 4.2  |
+| [3.15](/news/bioc_3_15_release) | April 27, 2022    | [2140](/packages/3.15/)                     | 4.2  |
+| [3.14](/news/bioc_3_14_release) | October 27, 2021  | [2083](/packages/3.14/)                     | 4.1  |
+| [3.13](/news/bioc_3_13_release) | May 20, 2021      | [2042](/packages/3.13/)                     | 4.1  |
 | [3.12](/news/bioc_3_12_release) | October 28, 2020  | [1974](/packages/3.12/)                     | 4.0  |
 | [3.11](/news/bioc_3_11_release) | April 28, 2020    | [1903](/packages/3.11/)                     | 4.0  |
 | [3.10](/news/bioc_3_10_release) | October 30, 2019  | [1823](/packages/3.10/)                     | 3.6  |

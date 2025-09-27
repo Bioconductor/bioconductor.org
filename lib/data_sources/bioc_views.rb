@@ -164,9 +164,7 @@ class BiocViews < Nanoc::DataSource
               id = "/#{version}/#{repo}#{package}/"
               pkgs = packages[package]
               subnav = []
-              subnav.push({:include => "/_documentation/"})
-              subnav.push({:include => "/_support/"})
-
+ 
               title = pkgs["Package"]
               if  version == @site_config["devel_version"]
                 title += " (development version)"
@@ -191,7 +189,7 @@ class BiocViews < Nanoc::DataSource
 
               temp = pkgs.merge({
                   :rebase => true,
-                  :subnav => subnav,
+#                  :subnav => subnav,
                   :title => title,
                   :repo => repo,
                   :bioc_version_num => version,

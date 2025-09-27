@@ -14,16 +14,19 @@ searching in [BiocViews](/packages) for your data type.
   [GenomicAlignments][]`::readGAlignment*()`
 + FASTA -- [Biostrings][]`::readDNAStringSet()`
 + FASTQ -- [ShortRead][]`::readFastq()`
-+ MS data (XML-based and mgf formats) -- [MSnbase][]`::readMSData()`,
-  [MSnbase][]`::readMgfData()`
++ MS data (XML-based and mgf formats) -- [Spectra][]`::Spectra()`, 
+  [Spectra][]`::Spectra(source = MsBackendMgf::MsBackendMgf())`
 
 ## Common Classes
 
 + Rectangular feature x sample data --
   [SummarizedExperiment][]`::SummarizedExperiment()` (RNAseq count
-  matrix, microarray, ...)
+  matrix, microarray, quantitative proteomics, ...)
 + Genomic coordinates -- [GenomicRanges][]`::GRanges()` (1-based,
   closed interval)
++ Genomic coordinates from multiple samples --
+  [GenomicRanges][]`::GRangesList()`
++ Ragged genomic coordinates -- [RaggedExperiment][]`::RaggedExperiment()`
 + DNA / RNA / AA sequences -- [Biostrings][]`::*StringSet()`
 + Gene sets -- [BiocSet][]`::BiocSet()`,
   [GSEABase][]`::GeneSet()`,
@@ -32,7 +35,7 @@ searching in [BiocViews](/packages) for your data type.
   [MultiAssayExperiment][]`::MultiAssayExperiment()`
 + Single cell data --
   [SingleCellExperiment][]`::SingleCellExperiment()`
-+ Mass spec data -- [MSnbase][]`::MSnExp()`
++ Mass spec data -- [Spectra][]`::Spectra()`
 
 [rtracklayer]: https://bioconductor.org/packages/rtracklayer
 [Biostrings]: https://bioconductor.org/packages/Biostrings
@@ -43,7 +46,11 @@ searching in [BiocViews](/packages) for your data type.
 [MSnbase]: https://bioconductor.org/packages/MSnbase
 [SummarizedExperiment]: https://bioconductor.org/packages/SummarizedExperiment
 [GenomicRanges]: https://bioconductor.org/packages/GenomicRanges
+[RaggedExperiment]: https://bioconductor.org/packages/RaggedExperiment
 [BiocSet]: https://bioconductor.org/packages/BiocSet
 [GSEABase]: https://bioconductor.org/packages/GSEABase
 [MultiAssayExperiment]: https://bioconductor.org/packages/MultiAssayExperiment
 [SingleCellExperiment]: https://bioconductor.org/packages/SingleCellExperiment
+[Spectra]: https://bioconductor.org/packages/Spectra
+[MsBackendMgf]: https://bioconductor.org/packages/MsBackendMgf
+

@@ -1,8 +1,13 @@
-# ![](/images/icons/magnifier.gif)Posting guide
+# ![](/images/icons/magnifier.gif) Posting guide
 
-General advise to posting on the _Bioconductor_ help sites. 
+<p class="text-large">
+General advise to posting on the Bioconductor help sites. 
+Please remember when posting a question or response to abide by the
+<a class="text-large" href="/about/code-of-conduct/">Bioconductor Code of
+Conduct</a>.
+</p>
 
-Revised: 9 May, 2018
+Revised: 1 Dec, 2023
 
 <a name="top"></a>
 
@@ -12,7 +17,6 @@ Revised: 9 May, 2018
 - [Before Posting](#before)
 - [Composing](#composing)
 - [Replying](#replying)
-- [Acknowledgments and Further Reading](#acknowledgments)
 
 
 
@@ -40,8 +44,9 @@ Revised: 9 May, 2018
 
 * Post all of your _R_ code.
 
-* Include a copy of any error or warning messages that appeared in _R_.
-
+* Include a copy of all output including any error or warning messages that
+  appeared in _R_.
+  
 * If your question involves experimental data, include an example of
   the [sample-level covariate data][] (one row per sample, one column
   per covariate). If it would help answer your technical question, and
@@ -99,11 +104,6 @@ Revised: 9 May, 2018
   with `site:support.bioconductor.org` followed by a space and a set
   of keywords and the package name.
 
-* If searching the support site with Google doesn't help, then try
-  searching the [FAQ](/docs/faq/) and
-  [_R_-help](https://tolstoy.newcastle.edu.au/R/) archives for similar
-  posts.
-
 * Ensure that your question is on topic. The _Bioconductor_ support site
   is intended primarily for helping people with questions about using
   _Bioconductor_ software. Questions about non-_Bioconductor_ _R_ packages
@@ -129,10 +129,6 @@ Revised: 9 May, 2018
   responder to answer your specific question instead of simply
   referring you to the existing documentation.
 
-* If your question is about package development, send email to the
-  [bioc-devel list](/support/#bioc-devel); otherwise post to the
-  [_Bioconductor_ support site](https://support.bioconductor.org).
-
 * As mentioned above, tag your post with the names of the appropriate
   packages.
 
@@ -150,6 +146,10 @@ Revised: 9 May, 2018
 
 * There is also a helpful tutorial to using/formatting with the markdown
   editor. This can be found [here](https://support.bioconductor.org/p/117436/)
+
+* Package development questions are best asked by sending an email to the
+  [bioc-devel list](https://stat.ethz.ch/mailman/listinfo/bioc-devel).
+
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
 <a name="replying"></a>
@@ -174,19 +174,19 @@ Revised: 9 May, 2018
 
 * Rudeness and personal attacks are not acceptable.
 
-
 * Brevity is OK. Consider, though, that information that is obvious to
   you may be very helpful to others.
 
 * Provide URLs to other relevant threads or web sites.
 
 <p class="back_to_top">[ <a href="#top">Back to top</a> ]</p>
-<a name="acknowledgments"></a>
 
-## Acknowledgments
 
+
+<p class="publications-footer">
 This posting guide has been heavily adapted from the
-[_R_-help posting guide](http://www.r-project.org/posting-guide.html),
+<a href="http://www.r-project.org/posting-guide.html">R-help posting guide</a>,
 various comments and suggestions by _Bioconductor_ posters and
 inspired by Eric Steven Raymond's essay on
-[How To Ask Questions The Smart Way](http://www.catb.org/%7Eesr/faqs/smart-questions.html).
+<a href="http://www.catb.org/%7Eesr/faqs/smart-questions.html">How To Ask Questions The Smart Way</a>.
+</p>

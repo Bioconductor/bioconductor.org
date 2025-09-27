@@ -92,7 +92,7 @@ def get_cran_packages()
   lines = html.split("\n")
   for line in lines
     next unless line =~ /^<td><a href="/
-    if line =~ /<a href="[^"]*">([^<]*)<\/a>/
+    if line =~ /<a href="[^"]*"><span class="CRAN">([^<]*)<\/span>/
       cran_packages.push $1
     end
   end
@@ -200,12 +200,23 @@ end
 
 def filter_emails(str)
   return str if str.nil?
-  emails = str.scan( /(<[^>]*>)/).flatten
+  emails = str.scan(/(<[^>]*>)|(\((?:ORCID:\s*)?<[^>]+>\))/).flatten.compact
   for email in emails
     if email.include? "orcid"
-      email2="<a title='orcid' href='"+email[1...-1]+"'><img src='/images/orcid.png'/></a>"
-      email1="("+email+")"
-      str = str.gsub(email1, email2)
+      url_match = email.match(/<([^>]+)>/)
+      if url_match
+        orcid_url = url_match[1]
+        orcid_id = orcid_url.split('/').last
+
+         email2 = <<-HTML
+           <a href="#{orcid_url}" title="ORCID iD" class="orcid-container">
+             <img src="/images/orcid.png" alt="ORCID iD" class="orcid-icon">
+             <span class="orcid-expanded"> ORCID: #{orcid_id} </span>
+           </a>
+         HTML
+
+        str = str.gsub(email, email2)
+      end
     else
       str = str.gsub(email, munge_email(email))
     end
@@ -214,6 +225,7 @@ def filter_emails(str)
 end
 
 def remove_emails(str)
+  return str if str.nil?
   str.gsub(/<([^>]*)>/,"").gsub("  "," ").gsub(" ,", ",")
 end
 
@@ -435,6 +447,14 @@ def previous_events(events)
   events.children.sort{|a, b| b[:start] <=> a[:start]}.select do |e|
     e[:end] < Time.now.to_date
   end
+end
+
+def top_events(events)
+  sorted = events.children.sort do |a, b|
+      a[:start] <=> b[:start]
+  end
+  toplist = sorted[-5..-1]
+  toplist.reverse
 end
 
 def event_date(e)
@@ -684,6 +704,30 @@ def get_version_from_item_id(item)
   version
 end
 
+def get_reversed_version_from_item_id(item)
+  segs = item.identifier.to_s.split "/"
+  segs.pop
+  version = segs.pop
+  if version == config[:devel_version]
+    vertext = config[:release_version] + " (Release)"
+  else
+    vertext = config[:devel_version] + " (Devel)"
+  end
+  vertext
+end
+
+def get_reversed_url_from_item_id(item)
+  segs = item.identifier.to_s.split "/"
+  segs.pop
+  version = segs.pop
+  if version == config[:devel_version]
+    verurl = "/packages/release/BiocViews.html#___Software"
+  else
+    verurl = "/packages/devel/BiocViews.html#___Software"
+  end
+  verurl
+end
+
 def script_tag_for_package_data(item)
   # todo - something sensible if get_json hasn't been run
   segs = item.identifier.to_s.split "/"
@@ -824,8 +868,14 @@ end
 
 def get_build_summary(version, repo)
     url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
-    url_without_protocol = url.sub(/^http:/i, "")
-    css_url = "#{url_without_protocol}report.css"
+    if repo == "bioc"
+      url_without_protocol = url.sub(/^http:/i, "")
+      css_url = "#{url_without_protocol}report.css"
+      url = url + "long-report.html"
+    else
+      url_without_protocol = url.sub(/^http:/i, "")
+      css_url = "#{url_without_protocol}report.css" 
+    end
     begin
       html = open(url)
     rescue Exception => e
@@ -842,8 +892,9 @@ def get_build_summary(version, repo)
     dateline.sub!(/^This page was generated on /, "")
     #dateline = dateline.split("(").first.strip
 
-    rows = doc.css("table.mainrep tr.summary")
-
+    #rows = doc.css("table.mainrep tr.summary")
+    rows = doc.css("thead.quickstats")
+      
     htmlfrag=<<-"EOT"
         <head>
         <base href="#{url_without_protocol}" target="_blank">
@@ -861,7 +912,7 @@ def get_build_summary(version, repo)
         f.puts htmlfrag
     end
     ret=<<-EOT
-    <iframe src="/dashboard/build_#{version}_#{repo}.html" width="80%"></iframe>
+    <iframe src="/dashboard/build_#{version}_#{repo}.html" width="80%", height=200></iframe>
     EOT
     ret
 end
@@ -906,9 +957,24 @@ def get_mac_packs(package, item)
         osvers << "mac.binary.el-capitan.ver"
     end
 
-    if version >= Gem::Version.new('3.11')
+    if version >= Gem::Version.new('3.11') and version < Gem::Version.new('3.15')
         os <<  "macOS 10.13 (High Sierra)"
         osvers << "mac.binary.ver"
+    end
+
+    if version >= Gem::Version.new('3.15') and version < Gem::Version.new('3.16')
+        os <<  "macOS Binary (x86_64)"
+        osvers << "mac.binary.ver"
+    end
+
+    if version == Gem::Version.new('3.16')
+        os <<  "macOS Binary (x86_64)" << "macOS Binary (arm64)"
+        osvers << "mac.binary.ver" << "mac.binary.big-sur-arm64.ver"
+    end
+    
+    if version >= Gem::Version.new('3.17')
+        os <<  "macOS Binary (x86_64)" << "macOS Binary (arm64)"
+        osvers << "mac.binary.big-sur-x86_64.ver" << "mac.binary.big-sur-arm64.ver"
     end
 
     os.each_with_index do |this_os, i|
@@ -1004,6 +1070,9 @@ def get_release_url(item)
     item.path.sub(/\/devel\/|\/#{config[:devel_version]}\//, "/release/")
 end
 
+def get_devel_url(item)
+    item.path.sub(/\/release\/|\/#{config[:release_version]}\//, "/devel/")
+end
 
 def get_fragment(package, item, item_rep)
   return \
@@ -1012,7 +1081,8 @@ def get_fragment(package, item, item_rep)
     get_devel_fragment(package, item, item_rep) if is_devel? item
   return \
     get_old_fragment(package, item, item_rep) if is_old? item
-  return ""
+  return \
+    get_release_fragment(package, item, item_rep)
 end
 
 def get_removed_link(item)
@@ -1065,6 +1135,20 @@ EOT
     str
 end
 
+
+def get_release_fragment(package, item, item_rep)
+    str=<<-"EOT"
+<p>This is the <b>released</b> version of #{@package[:Package]}
+EOT
+   str2=<<-"EOT"
+; for the devel version, see
+<a href="#{get_devel_url(item)}">#{@package[:Package]}</a>
+EOT
+    str = str.strip() + str2
+    str = str.strip() + ".</p>"
+    str
+end
+
 def package_has_source_url(item, software_only=false)
     segs = item.identifier.to_s.split('/')
     return true if segs[5] == "bioc"
@@ -1083,6 +1167,28 @@ def get_source_url(package, item, item_rep, access_type)
     else
         "https://git.bioconductor.org/packages/" + package[:Package]
     end
+end
+
+# try to determine if a package is in the code brower based on biocViews
+def package_in_code_browser(package, item)
+    # Skip anything that's not a software package
+    segs = item.identifier.to_s.split('/')
+    return false if segs[5] != "bioc"
+    # Deprecated package are missing in the code browser
+    return false if package[:PackageStatus] == "Deprecated"
+    # Skip if we can't determine the git branch
+    return false if package[:git_branch].nil?
+    # if we get here, it's probably in the code browser
+    return true
+end
+
+# create URL for package in code browser 
+def get_code_browser_url(package, include_branch=true)
+    url = "https://code.bioconductor.org/browse/" + package[:Package] + "/"
+    if include_branch
+      url = url + package[:git_branch] + "/"
+    end
+    return url
 end
 
 def get_video_title(video)
@@ -1204,21 +1310,6 @@ def render_mirror_contacts(mirror_orig)
     out
 end
 
-def url_ok(url)
-    url = URI(url)
-
-    Net::HTTP.start(url.host, url.port){|http|
-       path = "/"
-       path = url.path unless url.path.empty?
-       response = http.head(path)
-       if response.code =~ /^2/
-           return true
-       else
-           return false
-       end
-    }
-end
-
 def mirror_status()
     cachefile = "tmp#{File::SEPARATOR}mirror.cache"
     now = Time.now
@@ -1233,15 +1324,16 @@ def mirror_status()
     for country in config[:mirrors]
         for mirror in country.values.first
             status = {}
-            status[:url] = mirror[:mirror_url]
-            url = status[:url]
+            status[:url] = mirror[:https_mirror_url]
+            status[:main] = (check_mirror_url(mirror[:https_mirror_url]) == "1") ? "yes" : "no"
+            url = mirror[:https_mirror_url]
             url += "/" unless url.end_with? "/"
             ["release", "devel"].each do |version|
                 numeric_version = config["#{version}_version".to_sym]
                 url_to_check = "#{url}packages/#{numeric_version}/bioc/src/contrib/PACKAGES"
-                #puts url_to_check
+                #puts "URL: " + url_to_check
                 begin
-                    result = url_ok(url_to_check)
+                    result = (check_mirror_url(url_to_check) == "1")
                 rescue
                     result = false
                 end
@@ -1261,7 +1353,7 @@ def get_build_report_link(package)
     repo = repo.sub "/", "-"
     version = package[:bioc_version_num]
     package_name = package[:Package]
-    "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
+    "https://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package_name}/"
 end
 
 
@@ -1276,7 +1368,7 @@ def get_build_results(package)
     config[:devel_version] => 'devel'}
   version = h[package[:bioc_version_num]]
   res = {}
-  res[:report_url] = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
+  res[:report_url] = "https://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/#{package[:Package]}/"
   res[:repo] = repo
   res [:version] = version
   res
@@ -1310,7 +1402,7 @@ end
 
 def coverage_url(package)
   pkgname = package[:Package]
-  branch = "master"
+  branch = "devel"
   if package[:bioc_version_num] == config[:release_version]
     branch = "release-#{config[:release_version]}"
   end
@@ -1348,13 +1440,13 @@ end
 
 def get_github_url(package)
   if package[:bioc_version_num] == config[:devel_version]
-    branch = 'master'
+    branch = 'devel'
   else
     branch = "release-#{package[:bioc_version_num]}"
   end
   url = "https://github.com/Bioconductor-mirror/#{package[:Package]}"
 
-  if branch == 'master'
+  if branch == 'devel'
     url
   else
     "#{url}/tree/#{branch}"
@@ -1370,7 +1462,7 @@ def check_mirror_url(url)
   end
   begin
     response = http.head(uri.path)
-    if response.code == "200"
+    if response.code =~ /^2/
       "1"
     else
       "0"
@@ -1410,17 +1502,30 @@ def package_is_release(package)
   end
 end
 
+def package_is_devel(package)
+  if package[:bioc_version_num] == config[:devel_version]
+    true
+  else
+    false
+  end
+end
+
 def package_has_archive(package)
-  if !(package_is_release(package))
+  if (package_is_devel(package))
     return false
   end
   if !(package[:repo] == "bioc/")
     return false
   end
   version = package[:bioc_version_num]
-  url = "http://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
-  uri = URI.parse(url)
-  response = Net::HTTP.start(uri.host, uri.port) {|http|http.head(uri.path)}
+  url = "https://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  uri = URI(url)
+  http = Net::HTTP.new(uri.host, uri.port)
+  if uri.port == 443
+    http.use_ssl = true
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+  end
+  response = http.head(uri.path)
   valid_url = response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
   if valid_url
     return true
@@ -1451,12 +1556,19 @@ def get_last_git_commits(release=true)
     tbl_str = "<table>\n\n"
     uni_pkg = []
     dx = 0
-    while uni_pkg.length < 20 do
+    path = Dir.pwd
+    manifest_path = "#{path}/../manifest/software.txt"
+    manifest = File.open("#{manifest_path}").read
+    lines = manifest.split("\n").drop(1) - [""]
+    pkgs = lines.map {|item| item.gsub("Package: ", "")}
+    while uni_pkg.length < 10 do
       item = xml[dx]
       if not uni_pkg.include?(item["title"])
-        uni_pkg.push(item["title"])
-        line = "<tr><td><a href="+item["link"]+">"+item["title"]+"</a></td><td>"+item["pubDate"]+"</td></tr>"
-        tbl_str += line
+        if pkgs.include?(item["title"])
+          uni_pkg.push(item["title"])
+          line = "<tr><td><a href="+item["link"]+">"+item["title"]+"</a></td><td>"+item["pubDate"]+"</td></tr>"
+          tbl_str += line
+        end
       end
       dx = dx + 1
     end
@@ -1465,7 +1577,7 @@ def get_last_git_commits(release=true)
   rescue Exception => ex
     tbl_str = "<table>\n<tr><td> Can't read / no records in rss feed, not report last git commit time </td></tr>\n"
     i = 0
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1517,7 +1629,7 @@ def latest_packages(repo)
   if (!File.directory?("#{path}/../manifest/"))
     tbl_str = "<table>\n<tr><td> file not found. skipping information </td></tr>\n"
     i = 0 
-    while i < 19
+    while i < 9
       line = "<tr><td> . </td></tr>\n"
       tbl_str += line
       i += 1
@@ -1531,21 +1643,32 @@ def latest_packages(repo)
     pkgs = lines.map {|item| item.gsub("Package: ", "")}
     pkgs.reverse!
 
-    trunc_pkgs = pkgs[0..19]
+    trunc_pkgs = pkgs[0..9]
   
     tbl_str = "<table>\n"
     trunc_pkgs.each do |pkg|
       short_url = "https://bioconductor.org/packages/#{pkg}/"
-      long_url = "http://bioconductor.org/packages/devel/#{base_url}/html/#{pkg}.html"
-
-      url = URI.parse(long_url)
-      req = Net::HTTP.new(url.host, url.port)
-      res = req.request_head(url.path)
-      if res.code == "200"
-          line = "<tr><td><a href= #{short_url} > #{pkg} </a></td></tr>\n"
+      long_url = "https://bioconductor.org/packages/devel/#{base_url}/html/#{pkg}.html"
+      
+      res = check_mirror_url(long_url)
+      if res == "1"
+          line = "<tr><td><a href= #{short_url} > #{pkg} </a></td>"
       else
-          line = "<tr><td> #{pkg} </td></tr>\n"
+          line = "<tr><td> #{pkg} </td>"
       end
+      dev_ver = config[:devel_version] 
+      json_file = "assets/packages/json/#{dev_ver}/#{base_url}/packages.json"
+      f = File.open(json_file)
+      json = f.readlines.join
+      f.close
+      hsh = JSON.parse(json)
+      if !hsh.keys.include?("#{pkg}")
+        line += "<td> . </td>"
+      else
+        pkg_data_title = hsh["#{pkg}"]["Title"]
+        line += "<td> #{pkg_data_title} </td>"
+      end      
+      line += "</tr>\n"
       tbl_str += line
     end
     tbl_str += "</table>"

@@ -99,15 +99,15 @@ var ajaxErrHandler = function(jqXHR, textStatus, errorThrown) {
 };
 
 var initSearch = function() {
-	q = getParameterByName("q");
+	q = getParameterByName("search-bar");
 	q = q.replace(/\/$/, "");
 
 
 	if (q == "") {
-		jQuery("#q").focus();
+		jQuery("#search-bar").focus();
 	} else {
 		$("#search_results").html("Searching....");
-		jQuery("#q").val(q);
+		jQuery("#search-bar").val(q);
 	}
 	
 	jQuery("#if_search_results_present").hide();

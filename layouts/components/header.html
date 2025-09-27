@@ -1,0 +1,76 @@
+<header id="site-masthead" class="site-masthead">
+  <%= render("/components/announcement/") %>
+  <!-- If there are no announcements, comment out the element  -->
+  <div class="header-size">
+    <div class="header-logo">
+      <a href="/">
+        <img
+          src="/images/logo/svg/Logo.svg"
+          class="masthead-logo"
+          alt="Bioconductor home"
+        />
+      </a>
+    </div>
+
+    <nav class="header-nav">
+      <div class="nav-links">
+        <a class="format-bold mobile-link" href="/about/">About</a>
+        <a class="format-bold mobile-link" href="/help/">Learn</a>
+        <a class="format-bold mobile-link" href="/packages/release/BiocViews.html#___Software">Packages</a>
+        <a class="format-bold mobile-link" href="/developers/">Developers</a>
+      </div>
+      <div class="search-container">
+        <form
+          class="site-search"
+          id="search-form"
+          method="GET"
+          action="/help/search/index.html"
+        >
+          <label for="search-bar" class="sr-only">Search</label>
+          <img
+            src="/images/icons/search-icon.svg"
+            class="search-icon"
+            alt="Search icon"
+            aria-hidden="true"
+          />
+          <input
+            class="search-bar"
+            name="search-bar"
+            placeholder="Search"
+            id="search-bar"
+          />
+        </form>
+      </div>
+
+      <a class="header-button format-bold mobile-link" href="/install/">
+        <span class="get-started format-bold">
+          Get Started
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="15"
+            viewBox="0 0 14 15"
+            fill="none"
+          >
+            <path
+              d="M5.25 3.66665L9.33333 7.74998L5.25 11.8333"
+              stroke="#3792AD"
+              stroke-width="2.2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </span>
+      </a>
+    </nav>
+
+    <div class="nav-mobile">
+      <h6>Menu</h6>
+      <div class="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+      </div>
+    </div>
+  </div>
+</header>

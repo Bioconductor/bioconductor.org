@@ -6,6 +6,11 @@
 href="https://console.aws.amazon.com/cloudformation/home?region=us-east-1#cstack=sn~StartBioconductorAMI|turl~https://s3.amazonaws.com/bioc-cloudformation-templates/start_instance.json">start
 the AMI</a></b>. Additional instructions below.
 
+**Note:** Bioconductor preconfigured AMI's are deprecated and no longer being
+  provided as of Bioc3.13. Other related resources are <a class="symlink"
+  href="/help/docker/">Docker Images</a> and the <a class="symlink"
+  href="https://anvil.bioconductor.org/">AnVIL project</a>
+
 ## Contents
 * <a href="#overview">Overview</a>
 * <a href="#preloaded_ami">Preloaded AMI</a>
@@ -173,7 +178,9 @@ Server login page. Log in with the username `ubuntu` and password `bioc`.
 
 ## AMI IDs
 
-Our AMIs have the following IDs.
+As of Bioc3.13 Bioconductor has stopped provided preconfigured AMI. AMIs for
+previous release have the following IDs.
+
 
 <table border="1" cellpadding="5" cellspacing="0">
   <thead valign="bottom">
@@ -185,12 +192,12 @@ Our AMIs have the following IDs.
    </thead>
   <tbody valign="top">
     <tr>
-        <td>3.13 (devel)</td>
+        <td>3.13</td>
         <td>4.1.0</td>
         <td><%= ami_url config[:ami_ids][:bioc3_13]%></td>
     </tr>
     <tr>
-        <td>3.12 (release, <b>recommended</b>)</td>
+        <td>3.12</td>
         <td>4.0.3</td>
         <td><%= ami_url config[:ami_ids][:bioc3_12]%></td>
     </tr>

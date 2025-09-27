@@ -28,7 +28,7 @@ Header set Cache-Control "max-age=300"
 <FilesMatch "gitlog\.xml$">
 Header set Cache-Control "max-age=30"
 </FilesMatch>
-<FilesMatch "^biocLite\.R$|^BiocInstaller\.dcf$">
+<FilesMatch "^BiocInstaller\.dcf$">
 Header set Cache-Control "max-age=60"
 </FilesMatch>
 <FilesMatch "\.svg$">
@@ -62,20 +62,55 @@ RewriteCond %{REQUEST_FILENAME} -d
 RewriteCond %{REQUEST_URI} !(.*)/$
 RewriteRule ^(.*)$ %{ENV:proto}://bioconductor.org/$1/ [L,R]
 
-## Redirect BioC versions 1.8-2.6 to static S3 website
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/data/annotation/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/src/$2
-RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.0)/data/experiment/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
-# BioC 2.1 has an additional extannotation/ directory
-RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/src/$1
-RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/bin/$1
-# Starting in 2.13 also had workflows
-RedirectMatch 302 /packages/(2.1[3-4]|3.0)/workflows/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/src/$2
-RedirectMatch 302 /packages/(2.1[3-4]|3.0)/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
+## Redirect BioC versions 1.8-3.17 to OSN
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/bioc/src/contrib/(.*gz) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/contrib/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/bioc/src/contrib/PACKAGES https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/src/contrib/PACKAGES
+RedirectMatch 302 /packages/(3.[6-9]|3.1[0-9]|3.2[0])/bioc/src/contrib/Archive/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/$2
+RedirectMatch 302 /packages/(3.[6-9]|3.1[0-9]|3.2[0])/bioc/src/contrib/Archive https://mghp.osn.xsede.org/bir190004-bucket01/index.html#archive.bioconductor.org/packages/$1/bioc/src/contrib/Archive/
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/bioc/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/bioc/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/annotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/annotation/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/annotation/bin/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/experiment/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/src/$2
+RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/experiment/\s?bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/data/experiment/bin/$2
+## BioC 2.1 has an additional extannotation/ directory
+RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/src/$1
+RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/2.1/data/extannotation/bin/$1
+## Starting in 2.13 also had workflows
+RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-9]|3.2[0])/workflows/src/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/src/$2
+RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-9]|3.2[0])/workflows/bin/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/bin/$2
+## 3.7 and 3.8 had webvigs in workflows
+RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/webvigs/$2
+RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) https://mghp.osn.xsede.org/bir190004-bucket01/archive.bioconductor.org/packages/$1/workflows/webvigs/$2
 
+
+
+
+# Keep these if ever OSN is unavailable or down for maintanence we can switch
+# back to using S3 easily
+# Redirect BioC versions 1.8-3.17 to S3 buckets
+#
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/bioc/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/src/$2
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/bioc/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/bioc/bin/$2
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/annotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/src/$2
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/annotation/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/annotation/bin/$2
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/experiment/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/src/$2
+#RedirectMatch 302 /packages/(1.[8-9]|2.[0-9]|2.1[0-4]|3.[0-9]|3.1[0-9]|3.2[0])/data/experiment/\s?bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/data/experiment/bin/$2
+# BioC 2.1 has an additional extannotation/ directory
+#RedirectMatch 302 /packages/2.1/data/extannotation/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/src/$1
+#RedirectMatch 302 /packages/2.1/data/extannotation/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/2.1/data/extannotation/bin/$1
+# Starting in 2.13 also had workflows
+#RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-9]|3.2[0])/workflows/src/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/src/$2
+#RedirectMatch 302 /packages/(2.1[3-4]|3.[0-9]|3.1[0-9]|3.2[0])/workflows/bin/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/bin/$2
+# 3.7 and 3.8 had webvigs in workflows
+#RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
+#RedirectMatch 302 /packages/(3.[7-8])/workflows/webvigs/(.*) http://archive.bioconductor.org.s3-website-us-east-1.amazonaws.com/packages/$1/workflows/webvigs/$2
+
+
+
+
+## Redirect BioC containers to google storage
+RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/src/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/bioconductor_docker/src/$2
+RedirectMatch 302 /packages/(3.[0-9][0-9])/container-binaries/(.*) https://storage.googleapis.com/bioconductor-packages/$1/container-binaries/$2
 
 ## papers, slides, screen shots
 RewriteRule ^Docs/Papers/2003/Chiaretti$ /help/publications/2003/Chiaretti/chiaretti2/ [R=301]
@@ -184,16 +219,67 @@ RewriteRule ^index_html$ / [R=301]
 RewriteRule ^index_html_old$ / [R=301]
 RewriteRule ^main.html$ / [R=301]
 RewriteRule ^slogan.*$ /about/ [R=301]
-RewriteRule ^developers/deprecatio.*$ /developers/how-to/deprecation
-RewriteRule ^developers/useDeve.*$ /developers/how-to/useDevel
-RewriteRule ^developers/source-contro.*$ /developers/how-to/source-control
-RewriteRule ^developers/unitTesting-guideline.*$ /developers/how-to/unitTesting-guidelines
-RewriteRule ^developers/coding-styl.*$ /developers/how-to/coding-style
-RewriteRule ^developers/c-debuggin.*$ /developers/how-to/c-debugging
-RewriteRule ^developers/version-numberin.*$ /developers/how-to/version-numbering
-RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
 RewriteRule ^help/mailing-lis.*$ /help/support [R=301]
 RewriteRule ^BioC2015/$ http://bioconductor.org/help/course-materials/2015/BioC2015/ [R=301]
+
+##
+## Developers Page move to contributions.bioconductor.org
+##
+
+RewriteRule ^developers/deprecatio.*$ https://contributions.bioconductor.org/deprecation.html [R=301]
+RewriteRule ^developers/useDeve.*$ https://contributions.bioconductor.org/use-devel.html [R=301]
+RewriteRule ^developers/source-contro.*$ https://contributions.bioconductor.org/git-version-control.html [R=301]
+RewriteRule ^developers/unitTesting-guideline.*$ https://contributions.bioconductor.org/tests.html [R=301]
+RewriteRule ^developers/coding-styl.*$ https://contributions.bioconductor.org/r-code.html#r-code [R=301]
+RewriteRule ^developers/c-debuggin.*$ https://contributions.bioconductor.org/debugging-cc-code.html [R=301]
+RewriteRule ^developers/version-numberin.*$ https://contributions.bioconductor.org/versionnum.html [R=301]
+RewriteRule ^developers/BiocCheck.htm.*$ /packages/devel/bioc/vignettes/BiocCheck/inst/doc/BiocCheck.html [R=301]
+
+RedirectMatch 301 /developers/package-end-of-life/.*$  https://contributions.bioconductor.org/package-end-of-life-policy.html
+RedirectMatch 301 /developers/package-submission.*$ https://contributions.bioconductor.org/submission-overview.html
+RedirectMatch 301 /developers/package-guidelines.*$ http://contributions.bioconductor.org/develop-overview.html
+
+##
+## developers/how-to/ sections
+##
+
+RedirectMatch 301 /developers/how-to/biocViews.*$ https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#biocviews
+RedirectMatch 301 /developers/how-to/c-debugging.*$ https://contributions.bioconductor.org/debugging-cc-code.html
+RedirectMatch 301 /developers/how-to/coding-style.*$ https://contributions.bioconductor.org/r-code.html#r-code
+RedirectMatch 301 /developers/how-to/commonMethodsAndClasses.*$ https://contributions.bioconductor.org/important-bioconductor-package-development-features.html#reusebioc
+RedirectMatch 301 /developers/how-to/deprecation.*$ https://contributions.bioconductor.org/deprecation.html
+RedirectMatch 301 /developers/how-to/efficient-code.*$ https://contributions.bioconductor.org/r-code.html#robust-and-efficient-r-code
+RedirectMatch 301 /developers/how-to/git.html https://contributions.bioconductor.org/git-version-control.html
+RewriteRule ^developers/how-to/git-mirrors.*$ /about/mirrors/mirror-how-to.html [R=301]
+RedirectMatch 301 /developers/how-to/long-tests.*$ https://contributions.bioconductor.org/long-tests.html
+RedirectMatch 301 /developers/how-to/mavericks-howto.*$ https://contributions.bioconductor.org/cmavericks-best-practices.html
+RedirectMatch 301 /developers/how-to/source-contro.*$ https://contributions.bioconductor.org/git-version-control.html
+RedirectMatch 301 /developers/how-to/troubleshoot-build-report.*$ https://contributions.bioconductor.org/troubleshooting-build-report.html
+RedirectMatch 301 /developers/how-to/unitTesting-guidelines.*$ https://contributions.bioconductor.org/tests.html
+RedirectMatch 301 /developers/how-to/useDevel.*$ https://contributions.bioconductor.org/use-devel.html
+RedirectMatch 301 /developers/how-to/version-numbering.*$ https://contributions.bioconductor.org/versionnum.html
+RedirectMatch 301 /developers/how-to/web-query.*$ https://contributions.bioconductor.org/querying-web-resources.html
+RedirectMatch 301 /developers/how-to/workflows.*$ https://contributions.bioconductor.org/non-software.html#workflow-packages
+
+##
+## developers/how-to/git/ sections
+##
+RedirectMatch 301 /developers/how-to/git/abandon-changes.*$ https://contributions.bioconductor.org/git-version-control.html#abandon-changes
+RedirectMatch 301 /developers/how-to/git/add-collaborators.*$ https://contributions.bioconductor.org/git-version-control.html#add-collaborators-and-leverage-github-features
+RedirectMatch 301 /developers/how-to/git/bug-fix-in-release-and-devel.*$ https://contributions.bioconductor.org/git-version-control.html#bug-fix-in-release-and-devel
+RedirectMatch 301 /developers/how-to/git/change-maintainer.*$ https://contributions.bioconductor.org/git-version-control.html#change-maintainer
+RedirectMatch 301 /developers/how-to/git/create-local-repository.*$ https://contributions.bioconductor.org/git-version-control.html#create-local-repository
+RedirectMatch 301 /developers/how-to/git/faq.*$ https://contributions.bioconductor.org/git-version-control.html#faq
+RedirectMatch 301 /developers/how-to/git/maintain-bioc-only.*$ https://contributions.bioconductor.org/git-version-control.html#maintain-bioc-only
+RedirectMatch 301 /developers/how-to/git/maintain-github-bioc.*$ https://contributions.bioconductor.org/git-version-control.html#maintain-github-bioc
+RedirectMatch 301 /developers/how-to/git/new-package-workflow.*$ https://contributions.bioconductor.org/git-version-control.html#new-package-workflow
+RedirectMatch 301 /developers/how-to/git/pull-upstream-changes.*$ https://contributions.bioconductor.org/git-version-control.html#pull-upstream-changes
+RedirectMatch 301 /developers/how-to/git/push-to-github-bioc.*$ https://contributions.bioconductor.org/git-version-control.html#push-to-github-bioc
+RedirectMatch 301 /developers/how-to/git/remove-large-data.*$ https://contributions.bioconductor.org/git-version-control.html#remove-large-data-files-and-clean-git-tree
+RedirectMatch 301 /developers/how-to/git/resolve-conflicts.*$ https://contributions.bioconductor.org/git-version-control.html#resolve-merge-conflicts
+RedirectMatch 301 /developers/how-to/git/resolve-duplicate-commits.*$ https://contributions.bioconductor.org/git-version-control.html#resolve-duplicate-commits
+RedirectMatch 301 /developers/how-to/git/sync-existing-repositories.*$ https://contributions.bioconductor.org/git-version-control.html#sync-existing-repositories
+
 
 </IfModule>
 

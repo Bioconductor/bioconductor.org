@@ -1,0 +1,55 @@
+.hero {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  background-color: white;
+  padding-top: 2rem;
+}
+
+.homepage-container {
+  padding-top: 2rem;
+  padding-bottom: 4rem;
+}
+
+.hero h1 {
+  color: var(--primary-p500);
+}
+
+/* disabled here due to a linting error, but we need the webkit marker for this to work */
+
+/* stylelint-disable */
+.hero mark {
+  background: var(--gradient-brandreverse);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* stylelint-enable */
+
+.hero p {
+  margin-top: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+a.button-hero {
+  text-decoration: none;
+}
+
+.mobile-break {
+  display: none;
+}
+
+@media (max-device-width: 768px), (width <= 768px)  {
+  .homepage-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+
+  .hero p {
+    margin: 0;
+    margin-bottom: 1rem;
+  }
+}

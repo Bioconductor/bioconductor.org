@@ -1,0 +1,42 @@
+/* Base container styling */
+a.orcid-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Base icon styling */
+img.orcid-icon {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Hidden expanded text */
+span.orcid-expanded {
+  position: absolute;
+  left: 0;
+  height: 16px;
+  line-height: 16px;
+  background-color: #A6CE39;
+  border-radius: 8px;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  padding: 0 10px 0 20px; /* Space for the icon plus right padding */
+  overflow: hidden;
+  max-width: 0; /* Start with no width */
+  opacity: 0;
+  transition: max-width 0.3s ease, opacity 0.2s ease;
+  pointer-events: none;
+}
+
+/* Hover effect to show expanded text */
+a.orcid-container:hover span.orcid-expanded {
+  max-width: 200px; /* Allow the content to expand */
+  z-index: 1;
+  opacity: 1;
+}
