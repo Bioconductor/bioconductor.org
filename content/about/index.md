@@ -20,7 +20,7 @@ The Bioconductor [release version](/packages/release/) is updated
 twice each year, and is appropriate for most users.
 Each Bioconductor release is designed to work with a specific
 version of R, with the relationship summarized in
-[this table](about/release-announcements). There is also a
+[this table](release-announcements). There is also a
 [development version](/packages/devel/), to which new features and
 packages are added prior to incorporation in the release. A large
 number of [meta-data packages](/packages/release/data/annotation)
