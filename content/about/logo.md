@@ -1,17 +1,17 @@
 ## Logos
 
-[Contact us](mailto:maintainer@bioconductor.org?subject=Permission%20for%20use)
-for permission to use the _Bioconductor_ name and logo.  Permission
-will usually be granted when:
+The Bioconductor logo is available in different formats below. You can
+distribute the logo under the terms of the [Creative Commons
+Attribution-ShareAlike 4.0 International
+license](https://creativecommons.org/licenses/by-sa/4.0/) (CC-BY-SA 4.0).
 
-* The use is clearly in reference to _Bioconductor_ or packages
-  distributed by _Bioconductor_.
-* The use does not imply sponsorship or endorsement by _Bioconductor_;
-  the use is not disparaging of _Bioconductor_.
-* The logo is used in its original color scheme and format. The logo
-  may be scaled but not stretched, cropped or distorted.
-* Where possible, the logo links to the _Bioconductor_ web site,
-  [http://bioconductor.org](http://bioconductor.org).
+The **CC-BY-SA 4.0** license allows you to share and adapt the logo for any
+purpose, including commercial use, provided that you give appropriate credit,
+provide a link to the license, and indicate if any changes were made.
+
+See also the [Bioconductor
+BiocSticker](https://github.com/Bioconductor/BiocStickers) GitHub repository for
+logos and stickers of Bioconductor **packages**.
 
 JPEG
 
