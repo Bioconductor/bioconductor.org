@@ -63,6 +63,10 @@ submission options.
     <a href="https://www.linkedin.com/in/maria-doyle-11220739/">Maria Doyle</a>, University of Limerick, Ireland, Bioconductor Community Manager
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/LaurentGatto.png" alt="Laurent Gatto" title="Laurent Gatto"/>
+    <a href="https://lgatto.github.io/about/">Laurent Gatto</a>, de Duve Institute, UCLouvain, Belgium
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/LoriShepherd.png"
             alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
     <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a>, Roswell Park Comprehensive Cancer Center, USA, secretary
