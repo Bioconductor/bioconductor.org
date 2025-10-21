@@ -3,7 +3,68 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
-## Packages deprecated in Bioconductor 3.21 (to be removed in 3.22)
+## Packages deprecated in Bioconductor 3.22 (to be removed in 3.23)
+
+Software Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/bioc/html/DEP.html">DEP</a></li> 
+<li><a href="/packages/3.21/bioc/html/gpuMagic.html">gpuMagic</a></li> 
+<li><a href="/packages/3.21/bioc/html/hiAnnotator.html">hiAnnotator</a></li> 
+<li><a href="/packages/3.21/bioc/html/hiReadsProcessor.html">hiReadsProcessor</a></li> 
+<li><a href="/packages/3.21/bioc/html/interactiveDisplay.html">interactiveDisplay</a></li> 
+<li><a href="/packages/3.21/bioc/html/interactiveDisplayBase.html">interactiveDisplayBase</a></li> 
+<li><a href="/packages/3.21/bioc/html/Repitools.html">Repitools</a></li> 
+<li><a href="/packages/3.21/bioc/html/rRDP.html">rRDP</a></li> 
+<li><a href="/packages/3.21/bioc/html/Streamer.html">Streamer</a></li> 
+<li><a href="/packages/3.19/bioc/html/bgx.html">bgx</a></li> 
+<li><a href="/packages/3.21/bioc/html/BiGGR.html">BiGGR</a></li> 
+<li><a href="/packages/3.21/bioc/html/biodbHmdb.html">biodbHmdb</a></li> 
+<li><a href="/packages/3.21/bioc/html/biodbNci.html">biodbNci</a></li> 
+<li><a href="/packages/3.21/bioc/html/biodbNcbi.html">biodbNcbi</a></li> 
+<li><a href="/packages/3.21/bioc/html/biodbUniprot.html">biodbUniprot</a></li> 
+<li><a href="/packages/3.21/bioc/html/ccmap.html">ccmap</a></li> 
+<li><a href="/packages/3.20/bioc/html/CellScore.html">CellScore</a></li> 
+<li><a href="/packages/3.21/bioc/html/CINdex.html">CINdex</a></li> 
+<li><a href="/packages/3.21/bioc/html/cisPath.html">cisPath</a></li> 
+<li><a href="/packages/3.20/bioc/html/Harshlight.html">Harshlight</a></li> 
+<li><a href="/packages/3.20/bioc/html/hypeR.html">hypeR</a></li> 
+<li><a href="/packages/3.20/bioc/html/lapmix.html">lapmix</a></li> 
+<li><a href="/packages/3.21/bioc/html/LinTInd.html">LinTInd</a></li> 
+<li><a href="/packages/3.21/bioc/html/lute.html">lute</a></li> 
+<li><a href="/packages/3.21/bioc/html/MADSEQ.html">MADSEQ</a></li> 
+<li><a href="/packages/3.20/bioc/html/netZooR.html">netZooR</a></li> 
+<li><a href="/packages/3.20/bioc/html/oppti.html">oppti</a></li> 
+<li><a href="/packages/3.21/bioc/html/PhenStat.html">PhenStat</a></li> 
+<li><a href="/packages/3.21/bioc/html/qckitfastq.html">qckitfastq</a></li> 
+<li><a href="/packages/3.19/bioc/html/ReactomeGraph4R.html">ReactomeGraph4R</a></li> 
+<li><a href="/packages/3.21/bioc/html/Rfastp.html">Rfastp</a></li> 
+<li><a href="/packages/3.21/bioc/html/rGADEM.html">rGADEM</a></li> 
+<li><a href="/packages/3.21/bioc/html/SARC.html">SARC</a></li> 
+<li><a href="/packages/3.20/bioc/html/seqArchR.html">seqArchR</a></li> 
+<li><a href="/packages/3.21/bioc/html/seqArchRplus.html">seqArchRplus</a></li> 
+<li><a href="/packages/3.21/bioc/html/seqTools.html">seqTools</a></li> 
+<li><a href="/packages/3.20/bioc/html/TitanCNA.html">TitanCNA</a></li> 
+<li><a href="/packages/3.19/bioc/html/TransView.html">TransView</a></li> 
+<li><a href="/packages/3.19/bioc/html/traviz.html">traviz</a></li> 
+<li><a href="/packages/3.20/bioc/html/XNAString.html">XNAString</a></li> 
+</ul>
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/data/experiment/html/rRDPData.html">rRDPData</a></li> 
+<li><a href="/packages/3.21/data/experiment/html/AneuFinderData.html">AneuFinderData</a></li> 
+<li><a href="/packages/3.21/data/experiment/html/chromstaRData.html">chromstaRData</a></li> 
+<li><a href="/packages/3.19/data/experiment/html/curatedCRCData.html">curatedCRCData</a></li> 
+<li><a href="/packages/3.21/data/experiment/html/RGMQLlib.html">RGMQLlib</a></li> 
+</ul>
+
+Workflow Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/workflows/html/spicyWorkflow.html">spicyWorkflow</a></li> 
+</ul>
+
+
+## Packages removed with Bioconductor 3.22 release
 
 Software Packages:
 <ul class="inline_list">

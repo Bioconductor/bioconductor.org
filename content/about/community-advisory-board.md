@@ -32,6 +32,10 @@ submission options.
 
 <div class="gallery">
   <div class="gallery-card">
+    <img src="/images/cab/FabricioAlmeidaSilva.png" alt="Fabricio Almeida-Silva" title="Fabricio Almeida-Silva"/>
+    Fabricio Almeida-Silva
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/EnisAfgan.png" alt="Enis Afgan" title="Enis Afgan"/>
     <a href="https://www.linkedin.com/in/afgane/">Enis Afgan</a>, Johns Hopkins University, USA
   </div>
@@ -45,17 +49,12 @@ submission options.
     <a href="https://www.linkedin.com/in/zahraa-wajih-alsafwani-967659234">Zahraa W. Alsafwani</a>, University of Nebraska Medical Center, USA
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/TuomasBorman.png" alt="Tuomas Borman" title="Tuomas Borman"/>
+    Tuomas Borman
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/AedinCulhane.png" alt="Aedin Culhane" title="Aedin Culhane"/>
     <a href="https://www.ul.ie/limerick-dcrc/prof-aedin-culhane">Aedin Culhane</a>, University of Limerick, Ireland
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/JasmineDaly.png"
-            alt="Jasmine Daly" title="Jasmine Daly"/>
-    <a href="https://www.dalyanalytics.com/">Jasmine Daly</a>, Daly Analytics, USA.
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/XueyiDong.png" alt="Xueyi Dong" title="Xueyi Dong"/>
-    <a href="#">Xueyi Dong</a>, Walter and Eliza Hall Institute of Medical Research, Australia
   </div>
   <div class="gallery-card">
     <img src="/images/cab/MariaDoyle.png"
@@ -63,19 +62,34 @@ submission options.
     <a href="https://www.linkedin.com/in/maria-doyle-11220739/">Maria Doyle</a>, University of Limerick, Ireland, Bioconductor Community Manager
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/LaurentGatto.png" alt="Laurent Gatto" title="Laurent Gatto"/>
+    <a href="https://lgatto.github.io/about/">Laurent Gatto</a>, de Duve Institute, UCLouvain, Belgium
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/ZuguangGu.png" alt="Zuguang Gu" title="Zuguang Gu"/>
+    <a href="https://zuguang.de/">Zuguang Gu</a>, German Cancer Research Center, Heidelberg, Germany
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/ElianaIbrahimi.png" alt="Eliana Ibrahimi" title="Eliana Ibrahimi"/>
+    Eliana Ibrahimi
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/LoriShepherd.png"
             alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
     <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a>, Roswell Park Comprehensive Cancer Center, USA, secretary
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/LeoLahti.png"
-          alt="Leo Lahti" title="Leo Lahti"/>
-    <a href="https://datascience.utu.fi/">Leo Lahti</a>, University of Turku, Finland
-  </div>
-  <div class="gallery-card">
     <img src="/images/cab/MengboLi.png"
           alt="Mengbo Li" title="Mengbo Li"/>
     <a href="https://au.linkedin.com/in/mengbo-li-064b2b230">Mengbo Li</a>, Walter and Eliza Hall Institute of Medical Research (WEHI), Australia
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/MarthaLuka.png" alt="Martha Luka" title="Martha Luka"/>
+    Martha Luka
+</div>
+  <div class="gallery-card">
+    <img src="/images/cab/IzabelaMamede.png" alt="Izabela Mamede" title="Izabela Mamede"/>
+    Izabela Mamede
   </div>
   <div class="gallery-card">
     <img src="/images/cab/KozoNishida.png"
@@ -88,11 +102,6 @@ submission options.
     <a href="https://www.linkedin.com/in/oluwatobilolaogunbowale/">Oluwatobilola Ogunbowale</a>, Jacobs School of Medicine University at Buffalo, USA.
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/NicoleOrtogero.png"
-          alt="Nicole Ortogero" title="Nicole Ortogero"/>
-    <a href="https://www.linkedin.com/in/nicoleortogero/">Nicole Ortogero</a>, NanoString Technologies, USA
-  </div>
-  <div class="gallery-card">
     <img src="/images/cab/SteviePederson.png"
           alt="Stevie Pederson" title="Stevie Pederson"/>
     <a href="https://www.thekids.org.au/contact-us/our-people/p/stephen-stevie-pederson/">Stevie Pederson</a>, The Kids Research Institute Australia, co-chair
@@ -101,11 +110,6 @@ submission options.
     <img src="/images/cab/JohannesRainer.png"
           alt="Johannes Rainer" title="Johannes Rainer"/>
     <a href="http://www.eurac.edu/en/research/health/biomed/staff/Pages/staffdetails.aspx?persId=34084">Johannes Rainer</a>, Eurac Research, Italy
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/JananiRavi.png"
-          alt="Janani Ravi" title="Janani Ravi"/>
-    <a href="https://jravilab.github.io/">Janani Ravi</a>, University of Colorado Anschutz, USA, co-chair
   </div>
   <div class="gallery-card">
     <img src="/images/cab/LluisRevilla.png"
@@ -118,20 +122,6 @@ submission options.
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/LuyiTian.png"
-          alt="Luyi Tian" title="Luyi Tian"/>
-    <a href="https://twitter.com/Luyi_T">Luyi Tian</a>, Guangzhou Laboratory, China.
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/HediaTnani.png"
-          alt="Hedia Tnani" title="Hedia Tnani"/>
-    <a href="https://www.linkedin.com/in/h%C3%A9dia-tnani-0095221a7/">Hedia Tnani</a>
-    , CNAG, Spain
-  </div>
-  <div class="gallery-card">
-    <img src="/images/cab/JiefeiWang.png"
-          alt="Jiefei Wang" title="Jiefei Wang"/>
-    <a href="https://github.com/Jiefei-Wang">Jiefei Wang</a>,University of Texas Medical Branch, USA
   </div>
 </div>
 
