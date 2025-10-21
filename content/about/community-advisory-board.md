@@ -80,7 +80,7 @@ submission options.
   <div class="gallery-card">
     <img src="/images/cab/KozoNishida.png"
           alt="Kozo Nishida" title="Kozo Nishida"/>
-    <a href="https://github.com/kozo2">Kozo Nishida</a>, Tokyo University of Agriculture and Technology, Japan
+    <a href="https://github.com/kozo2">Kozo Nishida</a>, RIKEN Center for Biosystems Dynamics Research, Japan
   </div>
   <div class="gallery-card">
     <img src="/images/cab/TobilolaOgunbowale.png"
