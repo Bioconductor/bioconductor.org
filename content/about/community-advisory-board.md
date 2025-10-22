@@ -50,7 +50,7 @@ submission options.
   </div>
   <div class="gallery-card">
     <img src="/images/cab/TuomasBorman.png" alt="Tuomas Borman" title="Tuomas Borman"/>
-    Tuomas Borman
+    <a href="https://www.linkedin.com/in/tuomasborman">Tuomas Borman</a>, University of Turku, Finland
   </div>
   <div class="gallery-card">
     <img src="/images/cab/AedinCulhane.png" alt="Aedin Culhane" title="Aedin Culhane"/>
