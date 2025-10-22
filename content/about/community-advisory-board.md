@@ -67,7 +67,7 @@ submission options.
   </div>
   <div class="gallery-card">
     <img src="/images/cab/ZuguangGu.png" alt="Zuguang Gu" title="Zuguang Gu"/>
-    <a href="https://zuguang.de/">Zuguang Gu</a>, German Cancer Research Center, Heidelberg, Germany
+    <a href="https://jokergoo.github.io/">Zuguang Gu</a>, German Cancer Research Center, Heidelberg, Germany
   </div>
   <div class="gallery-card">
     <img src="/images/cab/ElianaIbrahimi.png" alt="Eliana Ibrahimi" title="Eliana Ibrahimi"/>
