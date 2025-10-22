@@ -66,12 +66,12 @@ submission options.
     <a href="https://lgatto.github.io/about/">Laurent Gatto</a>, de Duve Institute, UCLouvain, Belgium
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/ZuguangGu.png" alt="Zuguang Gu" title="Zuguang Gu"/>
+    <img src="/images/cab/ZuguangGu.jpg" alt="Zuguang Gu" title="Zuguang Gu"/>
     <a href="https://jokergoo.github.io/">Zuguang Gu</a>, German Cancer Research Center, Heidelberg, Germany
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/ElianaIbrahimi.png" alt="Eliana Ibrahimi" title="Eliana Ibrahimi"/>
-    Eliana Ibrahimi
+    <img src="/images/cab/ElianaIbrahimi.jpg" alt="Eliana Ibrahimi" title="Eliana Ibrahimi"/>
+    Eliana Ibrahimi, University of Tirana, Albania
   </div>
   <div class="gallery-card">
     <img src="/images/cab/LoriShepherd.png"
@@ -84,12 +84,12 @@ submission options.
     <a href="https://au.linkedin.com/in/mengbo-li-064b2b230">Mengbo Li</a>, Walter and Eliza Hall Institute of Medical Research (WEHI), Australia
   </div>
   <div class="gallery-card">
-    <img src="/images/cab/MarthaLuka.png" alt="Martha Luka" title="Martha Luka"/>
+    <img src="/images/cab/MarthaLuka.jpg" alt="Martha Luka" title="Martha Luka"/>
     Martha Luka
 </div>
   <div class="gallery-card">
     <img src="/images/cab/IzabelaMamede.png" alt="Izabela Mamede" title="Izabela Mamede"/>
-    Izabela Mamede
+    <a href="https://www.linkedin.com/in/izabela-mamede-358ab983/">Izabela Mamede</a>, Brazil
   </div>
   <div class="gallery-card">
     <img src="/images/cab/KozoNishida.png"
