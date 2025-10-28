@@ -1,7 +1,7 @@
 # Bioconductor 3.22 Release Schedule
 
-The release date for Bioc 3.22 is schedule for Wednesday October 29th. The 3.22
-release will use R-4.5.
+The release date for Bioc 3.22 is schedule for <s>Wednesday October 29th</s>
+Thursday October 30th. The 3.22 release will use R-4.5.
 
 <!--
 With the R dependency for 3.22 being R-4.5, these
@@ -65,12 +65,12 @@ The following highlights important deadlines for the release:
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Tuesday October 28
+### <s>Tuesday October 28</s> Wednesday October 29
 
 * Creation of the Bioc 3.22 release branch. Development can resume on
   devel branch, but changes there will not be part of the release.
 
-### Wednesday October 29
+### <s>Wednesday October 29</s> Thursday October 30
 
 * Bioconductor Release 3.22.
 
