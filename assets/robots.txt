@@ -43,6 +43,9 @@ Disallow: /packages/3.19/
 Disallow: /packages/3.20/
 Disallow: /packages/3.21/
 Disallow: /packages/3.22/
+Disallow: /packages/3.23/
+Disallow: /packages/devel/
+Disallow: /packages/release/
 Disallow: /packages/bioc/
 Disallow: /packages/data/
 Disallow: /repository/

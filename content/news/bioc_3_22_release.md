@@ -3,7 +3,7 @@ October 30, 2025
 **Bioconductor:**
 
 We are pleased to announce Bioconductor 3.22, consisting of
-2334 software packages, 435 experiment data packages, 926 annotation
+2361 software packages, 435 experiment data packages, 926 annotation
 packages, 29 workflows and 6 books.
 
 There are 59 new software packages, 6 new data experiment packages,
