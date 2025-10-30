@@ -19,7 +19,7 @@ will be testing the windows binaries generated through the r-universe
 system. These updated windows binaries will be available shortly after this
 release. We appreciate your patience as we make them available.
 
-Thank you to everyone for your contribution to Bioconductor
+Thank you to everyone for your contribution to Bioconductor.
 
 Visit [Bioconductor BiocViews][3] for details and downloads.
 
@@ -43,7 +43,7 @@ Contents
 Getting Started with Bioconductor 3.22
 ======================================
 
-To update to or install Bioconductor 3.22
+To update to or install Bioconductor 3.22:
 
 1. Install R 4.5. Bioconductor 3.22 has been designed expressly for
    this version of R.
@@ -700,7 +700,7 @@ There are no new workflow packages in this release of Bioconductor.
 New Online Books
 =====================
 
-There is one new books in this release of Bioconductor.
+There is one new book in this release of Bioconductor.
 
 - [OSTA](/packages/OSTA) This package contains source files for the
   "Orchestrating Spatial Transcriptomics Analysis with Bioconductor"
@@ -7723,7 +7723,7 @@ No annotation packages are deprecated in this release.
 
 **WORKFLOWS:** 
 
-One workflow packages were removed from this release (after being deprecated in
+One workflow packages was removed from this release (after being deprecated in
 Bioc 3.22).
 
 - BiocMetaWorkflow
