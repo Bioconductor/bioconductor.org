@@ -1115,7 +1115,7 @@ BUG FIXES
 - Fix updateObject() infinite recursion on an environment that contains
   itself.
 
-- Small tweak to updateObject(<data.frame>).
+- Small tweak to updateObject(&#60;data.frame&#62;).
 
 [BiocNeighbors](/packages/BiocNeighbors)
 -------------
@@ -2563,7 +2563,7 @@ BUG FIXES
 
 Bug Fixes
 
-- [BREAKING CHANGE] Temporarily disable upset_plot option as one of
+- &#91;BREAKING CHANGE&#93; Temporarily disable upset_plot option as one of
 the dependencies, ComplexUpset, is not yet updated to support
 ggplot 4.4.0.
 - Fix deprecated ggplot arguments.
@@ -3226,8 +3226,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
   For example:
   > cigarOpTable(c("18M4S", "8M2X5M2I10M"))
   M I D N S H P = X
-  [1,] 1 0 0 0 1 0 0 0 0
-  [2,] 3 1 0 0 0 0 0 0 1
+  &#91;1,&#93; 1 0 0 0 1 0 0 0 0
+  &#91;2,&#93; 3 1 0 0 0 0 0 0 1
   Warning message:
   In call_new_fun_in_cigarillo("cigarOpTable", "tabulate_cigar_ops", :
   cigarOpTable() is formally deprecated in GenomicAlignments >= 1.45.5
@@ -3862,7 +3862,7 @@ NEW FEATURES
 
 - Add makeIRangesFromDataFrame(). Also add:
   - coercion from data.frame or DataFrame to IRanges,
-  - support for IRanges(<data.frame>) and IRanges(<DataFrame>).
+  - support for IRanges(&#60;data.frame&#62;) and IRanges(&#60;DataFrame&#62;).
 
 - Define Views() methods for integer and numeric vectors (they require
   the XVector package).
@@ -4821,7 +4821,7 @@ c("Spe.Pos", "Spe.Neg", "Other") by c("UpRegulated",
 Melt.Dat.2 <- stats::aggregate(Nb.Spe.DE~., data=Melt.Dat.2,
 sum) so Melt.Dat.2 is more representative of the data used by
 our function. We also modify the function to prevent recent
-warnings from ggplot2 (.data[["<col_names>"]]).
+warnings from ggplot2 (.data&#91;&#91;"<col_names>"&#93;&#93;).
 - Vignette (MultiRNAflow_vignette-knitr.Rnw)
 - We add our publication from Bioinformatics
 - we correct new errors produced by latex output

@@ -456,8 +456,8 @@ There are 72 new software packages in this release of Bioconductor.
   flexible family of non-parametric two-sample tests and K-sample
   tests, which is based on theoretical work around non-parametric
   tests, spacing statistics and local asymptotic normality
-  (Erdmann-Pham et al., 2022+ [arXiv:2008.06664v2]; Erdmann-Pham,
-  2023+ [arXiv:2209.14235v2]).
+  (Erdmann-Pham et al., 2022+ &#91;arXiv:2008.06664v2&#93;; Erdmann-Pham,
+  2023+ &#91;arXiv:2209.14235v2&#93;).
 
 - [RbowtieCuda](/packages/RbowtieCuda) This package provides an R
   wrapper for the popular Bowtie2 sequencing read aligner, optimized
@@ -1181,7 +1181,7 @@ every Bioconductor release. This was motivated by the "dynamic
 matrix generation" documentation available at
 https://runs-on.com/github-actions/the-matrix-strategy/#dynamic-matrix-generation.
 For a detailed explanation of the changes in this version, check the
-LIBD RStats club presentation "[2025-03-21] biocthis v1.17.4 updated
+LIBD RStats club presentation "&#91;2025-03-21&#93; biocthis v1.17.4 updated
 GitHub Actions workflow". The video is available at
 https://www.youtube.com/watch?v=bzzPBt3Mz0A and the notes at
 https://docs.google.com/document/d/1z8xkC_3kAsGlpF_UyM9YfV-08o1lTer7xoBz2lQ1IjY/edit?usp=sharing.
@@ -1566,7 +1566,7 @@ on Linux-aarch64 machines
 
 Solved bug causing errors while using torch with a CPU device
 
-Ensure the drop out cluster from cellsUnifromClustersing() [-1] keeps
+Ensure the drop out cluster from cellsUnifromClustersing() &#91;-1&#93; keeps
 its name if it has not been merged at the end of the function
 mergeUniformCellsClusters()
 
@@ -1988,7 +1988,7 @@ contingency table to the p-value calculation output
 
                         Changes in version 2.5.2                        
 
-- Using c++14 for the updated [BH]
+- Using c++14 for the updated &#91;BH&#93;
   (https://cran.r-project.org/web/packages/BH/index.html) dependency,
   and restrict BH version <= 1.87.0-1 to prevent higher version C++
   requirement in the future
@@ -2432,8 +2432,8 @@ blacklisted column)
 UTILITIES
 
 - fix the C++ error with Apple clang version 17: no
-  'std::basic_string<unsigned short>' & 'std::basic_string<unsigned
-  int>'
+  'std::basic_string&#60;unsigned short&#62;' & 'std::basic_string&#60;unsigned
+  int&#62;'
 
                        Changes in version 1.42.2                        
 
@@ -4935,7 +4935,7 @@ NEW FEATURES
 - Arith operations between a SparseArray (or NaArray) object 'x' and an
   atomic vector 'y' are no longer restricted to the latter being a
   single
-  value: now the length of the latter can also be 'dim(x)[[1]]' or a
+  value: now the length of the latter can also be 'dim(x)&#91;&#91;1&#93;&#93;' or a
   divisor of it.
 
 BUG FIXES
