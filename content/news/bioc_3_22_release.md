@@ -4821,7 +4821,7 @@ c("Spe.Pos", "Spe.Neg", "Other") by c("UpRegulated",
 Melt.Dat.2 <- stats::aggregate(Nb.Spe.DE~., data=Melt.Dat.2,
 sum) so Melt.Dat.2 is more representative of the data used by
 our function. We also modify the function to prevent recent
-warnings from ggplot2 (.data&#91;&#91;"<col_names>"&#93;&#93;).
+warnings from ggplot2 (.data&#91;&#91;"&#60;col_names&#62;"&#93;&#93;).
 - Vignette (MultiRNAflow_vignette-knitr.Rnw)
 - We add our publication from Bioinformatics
 - we correct new errors produced by latex output
