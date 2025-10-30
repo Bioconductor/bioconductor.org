@@ -14,6 +14,11 @@ Bioconductor 3.22 is compatible with R 4.5, and is supported on Linux,
 64-bit Windows, Intel 64-bit macOS 11 (Big Sur) or higher, macOS arm64 and Linux
 arm64. This release will also include updated Bioconductor [Docker containers][2].
 
+Note: Currently Bioconductor does not have active daily windows builders. We
+will be testing the windows binaries generated through the r-universe
+system. These updated windows binaries will be available shortly after this
+release. We appreciate your patience as we make them available.
+
 Thank you to everyone for your contribution to Bioconductor
 
 Visit [Bioconductor BiocViews][3] for details and downloads.
