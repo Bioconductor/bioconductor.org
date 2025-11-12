@@ -177,7 +177,15 @@
 	   <div class="white_box">
 	   <a href="https://jserizay.com/OHCA/">Orchestrating Hi-C Analysis with Bioconductor</a>
 	   </div>
+	   
+	   <div class="white_box">
+	   <a href="https://www.bioconductor.org/books/OSTA/">Orchestrating Spatial Transcriptomics Analysis with Bioconductor</a>
+	   </div>
 
+	   <div class="white_box">
+	   <a href="https://microbiome.github.io/OMA/">Orchestrating Spatial Microbiome Analysis with Bioconductor</a>
+	   </div>
+	   
 	   <div class="grey_box">
 	   <a href="https://rformassspectrometry.github.io/book/">R for Mass Spectrometry</a>
 	   </div>
