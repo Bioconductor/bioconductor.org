@@ -10,12 +10,12 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 
 [1]: CAB-Governance.pdf
 
-## 2025 Elections Are Open!
+<!-- ## 2025 Elections Are Open! -->
 
-Nominations for 2025 CAB board members are occurring now. Please fill out the
-following [google form](https://forms.gle/8NYxRGhprfuNBoRK7). If you are unable
-to use the google form, please email cab@bioconductor.org for alternative
-submission options.
+<!-- Nominations for 2025 CAB board members are occurring now. Please fill out the -->
+<!-- following [google form](https://forms.gle/8NYxRGhprfuNBoRK7). If you are unable -->
+<!-- to use the google form, please email cab@bioconductor.org for alternative -->
+<!-- submission options. -->
 
 ## Quick Links
 
@@ -192,7 +192,8 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
   [2025-06-12](2025-06-12-minutes.pdf),
   [2025-07-10](2025-07-10-minutes.pdf),
   [2025-08-14](2025-08-14-minutes.pdf),
-  [2025-09-11](2025-09-11-minutes.pdf)
+  [2025-09-11](2025-09-11-minutes.pdf),
+  [2025-10-09](2025-10-09-minutes.pdf)
 - **2024:**  [2024-01-11](2024-01-11-minutes.pdf),
   [2024-02-08](2024-02-08-minutes.pdf),
   [2024-03-14](2024-03-14-minutes.pdf),
