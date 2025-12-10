@@ -24,9 +24,9 @@ Quarterly (four sessions per year).
 *Deep-learning-based Gene Perturbation Effect Prediction Does Not Yet Outperform Simple Linear Baselines* (Nature Methods, 2025)  
 **Speakers:** Constantin Ahlmann-Eltze, Wolfgang Huber, Simon Anders  
 **Discussant:** Davide Risso  
-**Links:** [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12328236/) | Recording (coming soon) | [Discussion and slides on Zulip](https://community-bioc.zulipchat.com/#narrow/channel/549579-bioc-seminar-series/topic/Dec.202.20.E2.80.93.20Gene.20Perturbation.20Discussion/with/562131190)
+**Links:** [Paper](https://pmc.ncbi.nlm.nih.gov/articles/PMC12328236/) | [Recording](https://www.youtube.com/watch?v=ldYJ703CPBA) | [Discussion and slides on Zulip](https://community-bioc.zulipchat.com/#narrow/channel/549579-bioc-seminar-series/topic/Dec.202.20.E2.80.93.20Gene.20Perturbation.20Discussion/with/562131190)
 
 ## Join the Discussion
 
-Ask questions, share comments, and suggest future topics in our Zulip channel: **#bioc-seminar-series**.  
+Ask questions, share comments, and suggest future topics in our Zulip channel: [**#bioc-seminar-series**](https://community-bioc.zulipchat.com/#narrow/channel/549579-bioc-seminar-series).  
 Everyone in the wider Bioconductor community is welcome, whether you’re developing packages, analysing data, or simply curious about new methods.
