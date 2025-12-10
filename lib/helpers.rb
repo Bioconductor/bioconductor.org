@@ -1453,22 +1453,33 @@ def get_github_url(package)
   end
 end
 
-def check_mirror_url(url)
-  uri = URI(url)
-  http = Net::HTTP.new(uri.host, uri.port)
-  if uri.port == 443
-    http.use_ssl = true
-    http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-  end
+def check_mirror_url(url, limit = 5)
   begin
-    response = http.head(uri.path)
-    if response.code =~ /^2/
+    # parse URL (URI is already loaded)
+    uri = URI(url)
+
+    # build HTTP client
+    http = Net::HTTP.new(uri.host, uri.port)
+    http.use_ssl = (uri.scheme == 'https')
+    http.verify_mode = OpenSSL::SSL::VERIFY_NONE if http.use_ssl?
+
+    # perform HEAD request
+    response = http.head(uri.request_uri)
+
+    case response
+    when Net::HTTPSuccess
       "1"
+    when Net::HTTPRedirection
+      return "0" if limit <= 0
+      # resolve relative redirect URLs
+      new_url = URI.join(url, response['location']).to_s
+      check_mirror_url(new_url, limit - 1)
     else
       "0"
     end
+
   rescue
-    return "0"
+    "0"
   end
 end
 
