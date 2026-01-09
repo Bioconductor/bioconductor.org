@@ -67,7 +67,7 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
   </div>
   <div class="gallery-card">
     <img src="/images/cab/ZuguangGu.jpg" alt="Zuguang Gu" title="Zuguang Gu"/>
-    <a href="https://jokergoo.github.io/">Zuguang Gu</a>, German Cancer Research Center, Heidelberg, Germany
+    <a href="https://jokergoo.github.io/">Zuguang Gu</a>, Shenzhen University of Advanced Technology, Shenzhen, China
   </div>
   <div class="gallery-card">
     <img src="/images/cab/ElianaIbrahimi.jpg" alt="Eliana Ibrahimi" title="Eliana Ibrahimi"/>
