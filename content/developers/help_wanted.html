@@ -1,0 +1,153 @@
+<h1> Help Wanted </h1>
+
+<p> This page lists packages in various stages that may need assistance to stay
+  in Bioconductor.  Either the package is voluntarily given up and requesting a
+  new maintainer or the package is marked for deprecation.
+
+<h3>Table of Contents</h3>
+<ul>
+  <li><a href="#voluntarily-listed">Voluntarily Listed</a></li>
+  <li><a href="#deprecated-packages">Deprecated Packages</a></li>
+  <li><a href="#large-files">Packages With Large Files</a></li>
+</ul>
+
+<div style="padding: 20px 0;">
+  <hr style="border: none; height: 1px; background-color: grey;">
+</div>
+
+
+  <h2 id="voluntarily-listed">Voluntarily Listed</h2>
+
+<p> This section lists Bioconductor packages whose maintainers no longer wish to
+  maintainer their package. The package may not currently be failing but the
+  maintainer wishes either a new maintainer transfer or assistance with maintaining the
+  code base. An interested party should contact bioc-devel@r-project.org with
+  the currently listed maintainer in the table also cc'd </p>
+
+<table class="package_table" border="1" cellspacing="0" cellpadding="5">
+  <thead>
+    <tr>
+      <th>Package</th>
+      <th>Maintainer Name</th>
+      <th>Maintainer Email</th>
+      <th>Transfer or Assistance</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a class="symlink" href="/packages/VariantAnnotation">VariantAnnotation</a></td>
+      <td>Bioconductor Core Team</td>
+      <td>maintainer@bioconductor.org</td>
+      <td>Transfer</td>
+    </tr>
+    <tr>
+      <td><a class="symlink" href="/packages/BiocStyle">BiocStyle</a></td>
+      <td>Bioconductor Core Team</td>
+      <td>maintainer@bioconductor.org</td>
+      <td>Assistance</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="padding: 20px 0;">
+  <hr style="border: none; height: 1px; background-color: grey;">
+</div>
+
+  <h2 id="deprecated-packages"> Deprecaetd Packages </h2>
+  
+<p>
+  This section lists Bioconductor packages marked with
+  <code>PackageStatus: Deprecated</code> in the
+  <a href="/packages/release/">release</a> and
+  <a href="/packages/devel/">development</a> versions of Bioconductor.
+  These packages either have requested deprecation or the packages are failing
+  and the maintainers have been unresponsive. If you are intersted in saving a
+  deprecated package, please send an email to bioc-devel@r-project.org.  
+</p>
+
+<%
+  deprecated_release = get_deprecated("release")
+  deprecated_devel   = get_deprecated("devel")
+
+  categories = {
+    software:   :bioc,
+    experiment: :experiment,
+    annotation: :annotation,
+    workflow:   :workflows
+  }
+%>
+
+<h3>RELEASE</h3>
+
+<% categories.each do |label, key| %>
+  <h6><%= label.to_s.capitalize %> Packages</h6>
+
+  <% pkgs = (deprecated_release[key] || []).sort %>
+
+  <% if pkgs.empty? %>
+    <p><em>No deprecated packages.</em></p>
+  <% else %>
+    <ul class="inline_list">
+      <% pkgs.each do |pkg| %>
+        <li>
+          <a class="symlink" href="/packages/<%= pkg %>/"><%= pkg %></a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+<% end %>
+
+<h3>DEVEL</h3>
+
+<% categories.each do |label, key| %>
+  <h6><%= label.to_s.capitalize %> Packages</h6>
+
+  <% pkgs = (deprecated_devel[key] || []).sort %>
+
+  <% if pkgs.empty? %>
+    <p><em>No deprecated packages.</em></p>
+  <% else %>
+    <ul class="inline_list">
+      <% pkgs.each do |pkg| %>
+        <li>
+          <a class="symlink" href="/packages/<%= pkg %>/"><%= pkg %></a>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+  <% end %>
+
+<div style="padding: 20px 0;">
+  <hr style="border: none; height: 1px; background-color: grey;">
+</div>
+
+  <h2 id="large-files"> Packages with Large Files </h2>
+  
+<p>
+  This section lists Bioconductor packages that contain large files directly 
+  distributed in the code base. Bioconductor is exploring alternative hosting 
+  solutions for packages that are more cost-effective and efficient. This prevents 
+  packages from having files over 100 MB directly in the package. The files may 
+  still be distributed via external sites such as 
+  <a href="https://zenodo.org" target="_blank" rel="noopener noreferrer">Zenodo</a> 
+  or 
+  <a href="https://datadryad.org/" target="_blank" rel="noopener noreferrer">Dryad</a>, 
+  and then either hosted in 
+  <a class="symlink" href="/packages/ExperimentHub">ExperimentHub</a> or 
+  <a class="symlink" href="/packages/AnnotationHub">AnnotationHub</a>, 
+  or provided with a caching mechanism using 
+  <a class="symlink" href="/packages/BiocFileCache">BiocFileCache</a>. 
+  Data can no longer be hosted directly in the package, and Bioconductor does 
+  not support git-lfs or hosting on private locations like GitHub or Dropbox; 
+  it must be a secure location.
+</p>
+
+<p> These packages have been warned about the large files in their source code
+  and have yet to reach out for action. If the data remains past the next release,
+  the package will be deprecated. We encourage if you utilize one of these packages to
+  help us locate the maintainer to find alternative solutions or if the
+  maintainer is unreachable to request a transfer of maintainership at
+  bioc-devel@r-project.org </p>
+													 
+  
+<%= get_packages_with_large_files %>

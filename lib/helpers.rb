@@ -1723,3 +1723,182 @@ def recent_packages()
     return []
   end
 end
+
+def extract_inline_list(p_node)
+  ul = p_node.next_element
+  return [] unless ul&.name == "ul" && ul["class"]&.include?("inline_list")
+
+  ul.css("li a").map { |a| a.text.strip }
+end
+
+def deprecated_on_website
+  url = "https://bioconductor.org/about/removed-packages/"
+  doc = Nokogiri::HTML(URI.open(url))
+
+  # Always include all categories
+  packages = {
+    bioc: [],
+    experiment: [],
+    annotation: [],
+    workflows: []
+  }
+
+  # Find first H2 starting with "Packages deprecated"
+  header = doc.css("h2").find { |h| h.text =~ /^Packages deprecated/i }
+  return packages unless header
+
+  node = header.next_element
+
+  while node
+    break if node.name == "h2" # stop at next major section
+
+    if node.name == "p"
+      case node.text
+      when /Software Packages/i
+        packages[:bioc] += extract_inline_list(node)
+      when /Experiment Data Packages/i
+        packages[:experiment] += extract_inline_list(node)
+      when /Annotation Packages/i
+        packages[:annotation] += extract_inline_list(node)
+      when /Workflow Packages/i
+        packages[:workflows] += extract_inline_list(node)
+      end
+    end
+
+    node = node.next_element
+  end
+
+  # Deduplicate and sort each category
+  packages.transform_values { |v| v.uniq.sort }
+end
+
+def parse_views_dcf(text)
+  records = []
+  current = {}
+  last_key = nil
+
+  text.each_line do |line|
+    line.chomp!
+
+    if line.empty?
+      records << current unless current.empty?
+      current = {}
+      last_key = nil
+      next
+    end
+
+    if line =~ /^(\S+):\s*(.*)$/
+      last_key = $1
+      current[last_key] = $2
+    elsif line =~ /^\s+(.*)$/ && last_key
+      current[last_key] << " #{$1}"
+    end
+  end
+
+  records << current unless current.empty?
+  records
+end
+
+def get_deprecated(ver)
+  unless %w[devel release].include?(ver)
+    raise ArgumentError, "ver must be 'devel' or 'release'"
+  end
+
+  base = "https://www.bioconductor.org/packages/#{ver}"
+  views = {
+    bioc:        "#{base}/bioc/VIEWS",
+    experiment:  "#{base}/data/experiment/VIEWS",
+    annotation:  "#{base}/data/annotation/VIEWS",
+    workflows:   "#{base}/workflows/VIEWS"
+  }
+
+  # Deprecated packages from website (release only)
+  website_deprecated = (ver == "release") ? deprecated_on_website : {}
+
+  deprecated = {}
+
+  views.each do |category, url|
+    text = URI.open(url, &:read)
+    records = parse_views_dcf(text)
+
+    records.each do |rec|
+      next unless rec["PackageStatus"] == "Deprecated"
+      pkg = rec["Package"]
+      next unless pkg
+
+      deprecated[category] ||= []
+      deprecated[category] << pkg
+    end
+  end
+
+  # Merge in website deprecated packages for release
+  website_deprecated.each do |category, pkgs|
+    deprecated[category] ||= []
+    deprecated[category].concat(pkgs)
+  end
+
+  # Deduplicate and sort each category
+  deprecated.transform_values { |v| v.compact.uniq.sort }
+end
+
+def get_packages_with_large_files
+  url = URI.parse("https://raw.githubusercontent.com/lshep/LargeFileInvestigation/main/run2_Jan_2026/PackageMaintainers_LargeFiles_ForWebsite.csv")
+
+  res = Net::HTTP.get_response(url)
+  unless res.is_a?(Net::HTTPSuccess)
+    raise "Failed to fetch CSV file: #{res.code} #{res.message}"
+  end
+
+  csv_text = res.body
+
+  # Split lines, trim whitespace, skip empty lines
+  lines = csv_text.split("\n").map(&:strip).reject(&:empty?)
+
+  # Split header by comma
+  header = lines.shift.split(",").map(&:strip).map(&:downcase)
+
+  # Find indexes of required columns
+  package_i = header.index('package')
+  name_i    = header.index('name')
+  email_i   = header.index('email')
+  notes_i   = header.index('notes')
+
+  unless package_i && name_i && email_i && notes_i
+    raise "CSV header missing one or more required columns: #{header.inspect}"
+  end
+
+  html = []
+  html << '<table class="package_table" border="1" cellspacing="0" cellpadding="5">'
+  html << '  <thead>'
+  html << '    <tr>'
+  html << '      <th>Package</th>'
+  html << '      <th>Maintainer Name</th>'
+  html << '      <th>Maintainer Email</th>'
+  html << '      <th>Notes</th>'
+  html << '    </tr>'
+  html << '  </thead>'
+  html << '  <tbody>'
+
+  lines.each do |line|
+    cols = line.split(",").map(&:strip)
+    package = cols[package_i]
+    name    = cols[name_i]
+    email   = cols[email_i]
+    notes   = cols[notes_i] || ""
+
+    next if package.nil? || package.empty?
+
+    package_link = "<a class=\"symlink\" href=\"/packages/#{package}/\">#{package}</a>"
+    html << '    <tr>'
+    html << "      <td>#{package_link}</td>"
+    html << "      <td>#{name}</td>"
+    html << "      <td>#{email}</td>"
+    html << "      <td>#{notes}</td>"
+    html << '    </tr>'
+  end
+
+  html << '  </tbody>'
+  html << '</table>'
+
+  html.join("\n")
+end
