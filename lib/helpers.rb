@@ -1842,7 +1842,9 @@ def get_deprecated(ver)
 end
 
 def get_packages_with_large_files
-  url = URI.parse("https://raw.githubusercontent.com/lshep/LargeFileInvestigation/main/run2_Jan_2026/PackageMaintainers_LargeFiles_ForWebsite.csv")
+  url = URI.parse(
+    "https://raw.githubusercontent.com/lshep/LargeFileInvestigation/main/run2_Jan_2026/PackageMaintainers_LargeFiles_ForWebsite.csv"
+  )
 
   res = Net::HTTP.get_response(url)
   unless res.is_a?(Net::HTTPSuccess)
@@ -1854,17 +1856,15 @@ def get_packages_with_large_files
   # Split lines, trim whitespace, skip empty lines
   lines = csv_text.split("\n").map(&:strip).reject(&:empty?)
 
-  # Split header by comma
+  # Parse header
   header = lines.shift.split(",").map(&:strip).map(&:downcase)
 
-  # Find indexes of required columns
-  package_i = header.index('package')
-  name_i    = header.index('name')
-  email_i   = header.index('email')
-  notes_i   = header.index('notes')
+  # Required columns
+  package_i = header.index("package")
+  notes_i   = header.index("notes")
 
-  unless package_i && name_i && email_i && notes_i
-    raise "CSV header missing one or more required columns: #{header.inspect}"
+  unless package_i && notes_i
+    raise "CSV header missing required columns: #{header.inspect}"
   end
 
   html = []
@@ -1872,8 +1872,6 @@ def get_packages_with_large_files
   html << '  <thead>'
   html << '    <tr>'
   html << '      <th>Package</th>'
-  html << '      <th>Maintainer Name</th>'
-  html << '      <th>Maintainer Email</th>'
   html << '      <th>Notes</th>'
   html << '    </tr>'
   html << '  </thead>'
@@ -1882,17 +1880,14 @@ def get_packages_with_large_files
   lines.each do |line|
     cols = line.split(",").map(&:strip)
     package = cols[package_i]
-    name    = cols[name_i]
-    email   = cols[email_i]
     notes   = cols[notes_i] || ""
 
     next if package.nil? || package.empty?
 
     package_link = "<a class=\"symlink\" href=\"/packages/#{package}/\">#{package}</a>"
+
     html << '    <tr>'
     html << "      <td>#{package_link}</td>"
-    html << "      <td>#{name}</td>"
-    html << "      <td>#{email}</td>"
     html << "      <td>#{notes}</td>"
     html << '    </tr>'
   end
