@@ -1197,10 +1197,28 @@ def get_code_browser_url(package, include_branch=true)
 end
 
 def get_video_title(video)
-   response = HTTParty.get(video, :verify => false)
-   doc = Nokogiri::HTML(response.body)
-   doc.css("title").text.sub(/ - YouTube$| on Vimeo$/, "")
+  response = HTTParty.get(
+    video,
+    verify: false,
+    timeout: 10,
+    open_timeout: 5
+  )
+
+  return nil unless response&.body
+
+  doc   = Nokogiri::HTML(response.body)
+  title = doc.css("title").text.strip
+
+  return nil if title.empty?
+  return nil if title =~ /\A403 Forbidden\z/i
+  return nil if title =~ /\A401 Unauthorized\z/i
+  return nil if title =~ /\AAccess Denied\z/i
+
+  title.sub(/ - YouTube$| on Vimeo$/, "")
+rescue Net::OpenTimeout, Timeout::Error, SocketError, StandardError
+  nil
 end
+
 
 def render_courses()
     lines = File.readlines("etc/course_descriptions.tsv")

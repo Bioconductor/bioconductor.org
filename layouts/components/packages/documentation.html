@@ -80,13 +80,14 @@
     <% videos = @package[:Video].gsub(/\s/, "").split(",") %>
     <% for video in videos %>
       <tr>
-        <td><%=get_video_title(video)%></td>
+        <td><%=get_video_title(video) || "Video" %></td>
         <td>
           <a href="<%=video%>">Video</a>
         </td>
       </tr>
     <% end %>
-  <% end %>
+    <% end %>
+    
 </table>
 
 
