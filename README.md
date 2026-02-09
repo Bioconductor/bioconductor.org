@@ -815,7 +815,11 @@ It contains a list of all current Bioconductor packages. Make sure that
 it is in the same folder as the `bioconductor.org` repository checkout.
 To clone it, first ensure appropriate access rights and then run:
 
-    git clone git@git.bioconductor.org:admin/manifest.git
+`git clone https://git.bioconductor.org/admin/manifest`
+
+or, if you have Bioconductor SSH credentials:
+
+`git clone git@git.bioconductor.org:admin/manifest.git`
 
 #### Step 1: rake get_json
 
