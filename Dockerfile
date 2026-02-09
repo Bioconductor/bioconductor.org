@@ -1,5 +1,9 @@
 FROM ruby:2.6.5
 
+## Fix apt sources for archived Debian Buster
+RUN sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list \
+ && sed -i '/security.debian.org/d' /etc/apt/sources.list
+
 ## System dependencies
 RUN apt-get update && apt-get install -y \
     rsync \
