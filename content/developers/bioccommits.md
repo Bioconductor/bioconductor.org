@@ -79,8 +79,76 @@ Project scope and goals will be discussed at the beginning of the event.
 
 ## Planned BiocCommit events
 
-The first BioCommits event is currently planned to take place before
-EuroBioc2026 in Turku, Finland.
+### Hackathon on spatial omics and image-derived data
+
+This event is planned for **19-22 April 2026** and will take place at
+the San Servolo Conference Centre of Venice International University on
+**San Servolo, Italy** (an island in front of Venice’s San Marco
+square).
+
+Topics of interest will include spatial omics and other bioimaging data,
+with a focus on data representation, interoperable serialization,
+scalability data handling, Python interoperability, interactive
+visualization, etc.
+
+We expect both remote and in-person participants from the Bioconductor
+and scverse communities – across Europe, the USA and Australia – who are
+working in this field and have a background in software development.
+
+Contributions during and following the event will be coordinated through
+GitHub,
+[here](https://github.com/BiocCodingCollaborations/VeniceHackathon2026).
+
+Organizers: - Prof Dr. Davide Risso, Professor of Statistics, University
+of Padova, Italy - Dr. Wolfgang Huber, Research Group Leader & Senior
+Scientist, EMBL, Germany - Dr. Helena L. Crowell, SNSF Postdoctoral
+Fellow, CNAG, Barcelona
+
+*The event is funded in part by the European Research Council (ERC)
+Grant CoG 101171662.*
+
+### EuroBioc2026 General Hackathon
+
+A general bioconductor-centric hackathon is being planned for the two
+days preceding EuroBioc2026 in Turku, Finland. A few projects are
+already planned, but participants are welcome to bring their own as long
+as those ideas have been communicated to organizers beforehand. General
+bug hunting or feature additions in existing packages that are willing
+to accept pull requests will also be supported!
+
+In person participation is encouraged, and virtual participation will be
+supported on a project by project basis.
+
+Current projects include:
+
+- An R package for CUDA API bindings, to facilitate development and
+  access to CUDA natively in R, package name TBD
+- A tool for building minimal, lightweight containers for bioconductor
+  packages on the fly, from the package dependency graph
+- A package or function for converting R scripts into commandline
+  executables, with an emphasis on robust and reliable deployment
+- A tidy / spatial -omics project, TBD (this was a generally solicited
+  project, if you are interested in leading or organizing it, please
+  reach out!)
+
+If you’re interested [please complete our participant
+form](https://forms.gle/9aPgtFcpyKfMe52g7)!
+
+Bioconductor is a mature, diverse, and well-maintained project with many
+different ways to contribute. Participants from all career stages and
+technical backgrounds are welcome, with the only requirements being a
+willingness to learn and work well in a collaborative environment.
+
+We will be in contact about a month before the conference to confirm
+participation, plan out teams for projects, and ensure any questions or
+concerns are addressed.
+
+Hackathon goals can vary widely depending on project complexity, but in
+general working and tested R packages are the goal where applicable.
+Tangible contributions to repositories that can be clearly
+professionally communicated by participants will be the goal otherwise.
+
+Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
 
 ## Products and Projects from previous BiocCommits events
 
