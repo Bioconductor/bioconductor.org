@@ -99,10 +99,10 @@ Contributions during and following the event will be coordinated through
 GitHub,
 [here](https://github.com/BiocCodingCollaborations/VeniceHackathon2026).
 
-Organizers: - Prof Dr. Davide Risso, Professor of Statistics, University
-of Padova, Italy - Dr. Wolfgang Huber, Research Group Leader & Senior
-Scientist, EMBL, Germany - Dr. Helena L. Crowell, SNSF Postdoctoral
-Fellow, CNAG, Barcelona
+Organizers: \* Prof Dr. Davide Risso, Professor of Statistics,
+University of Padova, Italy \* Dr. Wolfgang Huber, Research Group Leader
+& Senior Scientist, EMBL, Germany \* Dr. Helena L. Crowell, SNSF
+Postdoctoral Fellow, CNAG, Barcelona
 
 *The event is funded in part by the European Research Council (ERC)
 Grant CoG 101171662.*
@@ -112,7 +112,7 @@ Grant CoG 101171662.*
 A general bioconductor-centric hackathon is being planned for the two
 days preceding EuroBioc2026 in Turku, Finland. A few projects are
 already planned, but participants are welcome to bring their own as long
-as those ideas have been communicated to organizers beforehand. General
+as those ideas have been communicated to organisers beforehand. General
 bug hunting or feature additions in existing packages that are willing
 to accept pull requests will also be supported!
 
@@ -128,7 +128,7 @@ Current projects include:
 - A package or function for converting R scripts into commandline
   executables, with an emphasis on robust and reliable deployment
 - A tidy / spatial -omics project, TBD (this was a generally solicited
-  project, if you are interested in leading or organizing it, please
+  project, if you are interested in leading or organising it, please
   reach out!)
 
 If you’re interested [please complete our participant
