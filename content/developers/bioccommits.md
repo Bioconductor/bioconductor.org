@@ -99,10 +99,13 @@ Contributions during and following the event will be coordinated through
 GitHub,
 [here](https://github.com/BiocCodingCollaborations/VeniceHackathon2026).
 
-Organizers: \* Prof Dr. Davide Risso, Professor of Statistics,
-University of Padova, Italy \* Dr. Wolfgang Huber, Research Group Leader
-& Senior Scientist, EMBL, Germany \* Dr. Helena L. Crowell, SNSF
-Postdoctoral Fellow, CNAG, Barcelona
+Organizers:
+
+- Prof Dr. Davide Risso, Professor of Statistics, University of Padova,
+  Italy
+- Dr. Wolfgang Huber, Research Group Leader & Senior Scientist, EMBL,
+  Germany
+- Dr. Helena L. Crowell, SNSF Postdoctoral Fellow, CNAG, Barcelona
 
 *The event is funded in part by the European Research Council (ERC)
 Grant CoG 101171662.*
