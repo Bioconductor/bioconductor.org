@@ -1,6 +1,6 @@
 # Bioconductor 3.23 Release Schedule
 
-The release date for Bioc 3.23 is schedule for Wednesday October 29th. The 3.23
+The release date for Bioc 3.23 is schedule for Wednesday April 29th. The 3.23
 release will use R-4.6. With the R dependency for 3.23 being R-4.6, these
 deadlines are subject to change based on CRAN official R-4.6 release date.
 
@@ -24,7 +24,7 @@ The following highlights important deadlines for the release:
 
 *  No major API changes to Bioc 3.23.
 
-### <s>Monday April 6</s> Tuesday April 7
+### Monday April 6
 
 * Stop building Bioc 3.22, current release. Commits to this branch will be
   disabled. Start configuring builders for 3.24 and start 3.24 builds as soon as
@@ -37,36 +37,36 @@ The following highlights important deadlines for the release:
 * Bioconductor 3.23 release candidate.  Package maintainers should limit
   changes to "show-stopper" bugs and documentation improvements.
 
-### Wednesday April 15
+### Wednesday April 22
 
 * Deadline to add new packages to the Bioc 3.23 manifest. Packages submitted to
   Bioconductor new package submission process must have completed the review
   processes and been accepted to be added to the manifest.
 
-### Friday April 17
+### Friday April 24
 
 * Deadline for packages passing ''R CMD build'' and ''R CMD check''
   without errors or warnings. This includes software, data experiment
   and workflow packages. Some warnings will be accepted, clarification
   on the bioc-devel mailing list.
 
-### Monday April 20
+### Monday April 27
 
 * Last day to commit changes to the Bioc 3.23 branch. NEWS files
   must be updated before the builds start at 1:30 pm EST or they will
   not be included in the release announcement.
 
   The branch will be frozen prior to creating the release branch on Tuesday,
-  April 21.  Committing last minute changes could break your package in both
+  April 28.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
-### Wednesday April 22
+### Tuesday April 28
 
 * Creation of the Bioc 3.23 release branch. Development can resume on
   devel branch, but changes there will not be part of the release.
 
-### Thursday April 23
+### Wednesday April 29
 
 * Bioconductor Release 3.23.
 
