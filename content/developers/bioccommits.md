@@ -107,7 +107,9 @@ Organizers:
   Germany
 - Dr. Helena L. Crowell, SNSF Postdoctoral Fellow, CNAG, Barcelona
 
-*The event is funded in part by the European Research Council (ERC)
+*The event is organized by the Department of Statistical Sciences of the
+University of Padova in collaboration with Venice International
+University and funded in part by the European Research Council (ERC)
 Grant CoG 101171662.*
 
 ### EuroBioc2026 General Hackathon
@@ -152,6 +154,14 @@ Tangible contributions to repositories that can be clearly
 professionally communicated by participants will be the goal otherwise.
 
 Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
+
+### Bioc2026 General Hackathon
+
+A general bioconductor-centric hackathon is being planned for the two
+days following Bioc2026 in Seattle, USA. This hackathon will have topics
+or projects originating from the discussions that take place on
+Developer Day, as well as some predetermined topics. More details to
+come!
 
 ## Products and Projects from previous BiocCommits events
 
