@@ -63,21 +63,26 @@ the upcoming time slot.
 
 ## Upcoming Meetings
 
-- Thursday February 26th 2026 8am PST, 4pm GMT, 6pm CEST
-  - Presentation 1: Native GPU compute access in R; Metal, openCL, CUDA,
-    and heterogeneous compute hardware frameworks, Nicholas Cooley
-  - Presentation 2: TBA - please contact NPC if you wish to present
 - Thursday March 26th 2026 8am PST, 4pm GMT, 6pm CEST
-  - Presentation 1: TBA - please contact NPC if you wish to present
+  - Presentation 1: S7 Classes, Michael Lawrence
   - Presentation 2: TBA - please contact NPC if you wish to present
 - Thursady April 30th 2026 8am PST, 4pm GMT, 6pm CEST
+  - Presentation 1: TBA - please contact NPC if you wish to present
+  - Presentation 2: TBA - please contact NPC if you wish to present
+- Thursday May 28th 2026 9am PDT, 4pm GMT, 6pm CEST
   - Presentation 1: TBA - please contact NPC if you wish to present
   - Presentation 2: TBA - please contact NPC if you wish to present
 
 ## Previous Meetings
 
-Recordings of previous meetings can be found on the [Bioconductor
-YouTube
+The most recent meeting was a discussion on builtin access to
+alternative compute in R:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/_sjtIY498uY" title="March Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+
+</iframe>
+
+Previous Developer Forums can be found on the [Bioconductor YouTube
 channel](https://www.youtube.com/playlist?list=PLdl4u5ZRDMQQLMupAtEzm2y4gUIUm_1n6)
 as well as on the [Course
 Materials](https://bioconductor.org/help/course-materials/) page.
