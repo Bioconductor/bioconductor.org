@@ -1822,12 +1822,12 @@ def get_deprecated(ver)
     raise ArgumentError, "ver must be 'devel' or 'release'"
   end
 
-  base = "https://www.bioconductor.org/packages/#{ver}"
+  base = "https://bioconductor.org/checkResults/#{ver}"
   views = {
-    bioc:        "#{base}/bioc/VIEWS",
-    experiment:  "#{base}/data/experiment/VIEWS",
-    annotation:  "#{base}/data/annotation/VIEWS",
-    workflows:   "#{base}/workflows/VIEWS"
+    bioc:        "#{base}/bioc-LATEST/meat-index.dcf",
+    experiment:  "#{base}/data-experiment-LATEST/meat-index.dcf",
+    annotation:  "#{base}/data-annotation-LATEST/meat-index.dcf",
+    workflows:   "#{base}/workflows-LATEST/meat-index.dcf"
   }
 
   # Deprecated packages from website (release only)
@@ -1836,7 +1836,8 @@ def get_deprecated(ver)
   deprecated = {}
 
   views.each do |category, url|
-    text = URI.open(url, &:read)
+    #puts "FETCHING #{url}"
+    text = URI.open(url, "Cache-Control" => "no-cache"){ |f| f.read }
     records = parse_views_dcf(text)
 
     records.each do |rec|
