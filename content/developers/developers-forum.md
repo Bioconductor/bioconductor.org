@@ -54,7 +54,9 @@ time.
 ## Upcoming Meetings
 
 - Thursday April 30th 2026 4pm UTC
-  - Presentation not yet scheduled
+  - Anthony Christidis and Ludwig Geistlinger: Integrating AI tools into
+    IDEs = [Zulip
+    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/April.20Developer.20Forum/near/584399219)
 - Thursday May 28th 2026 4pm UTC
   - Enis Afgan: Galaxy, tool wrapping, and workflow development - [Zulip
     announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/May.20Developer.20Forum/near/583953030)
