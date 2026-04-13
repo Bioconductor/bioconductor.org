@@ -77,6 +77,16 @@ and serve as a clear resume line representing a work product.
 
 Project scope and goals will be discussed at the beginning of the event.
 
+Bioconductor is a mature, diverse, and well-maintained project with many
+different ways to contribute. Participants from all career stages and
+technical backgrounds are welcome, with the only requirements being a
+willingness to learn and work well in a collaborative environment.
+
+Hackathon goals can vary widely depending on project complexity, but in
+general working and tested R packages are the goal where applicable.
+Tangible contributions to repositories that can be clearly
+professionally communicated by participants will be the goal otherwise.
+
 ## Planned BiocCommit events
 
 ### Hackathon on spatial omics and image-derived data
@@ -139,29 +149,41 @@ Current projects include:
 If you’re interested [please complete our participant
 form](https://forms.gle/9aPgtFcpyKfMe52g7)!
 
-Bioconductor is a mature, diverse, and well-maintained project with many
-different ways to contribute. Participants from all career stages and
-technical backgrounds are welcome, with the only requirements being a
-willingness to learn and work well in a collaborative environment.
+Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
 
 We will be in contact about a month before the conference to confirm
 participation, plan out teams for projects, and ensure any questions or
 concerns are addressed.
 
-Hackathon goals can vary widely depending on project complexity, but in
-general working and tested R packages are the goal where applicable.
-Tangible contributions to repositories that can be clearly
-professionally communicated by participants will be the goal otherwise.
+### Bioc North America 2026 General Hackathon
+
+A general bioconductor-centric hackathon is being planned for the two
+days following Bioc North America in Seattle, Washington (USA). A few
+projects are already planned, and some space is being set aside for
+projects that come from Developer day, but participants are welcome to
+bring their own as long as those ideas have been communicated to
+organizers beforehand. General bug hunting or feature additions in
+existing packages that are willing to accept pull requests will also be
+supported!
+
+In person participation is encouraged, and virtual participation will be
+supported on a project by project basis.
+
+Current projects include:
+
+- A continuation of the R package for CUDA API bindings, to facilitate
+  development and access to CUDA natively in R
+- Benchmarking LLM generated workflows
+- Developer Day associated projects
+
+If you’re interested [please complete our participant
+form](https://forms.gle/7jsVrEnhp74dBrXMA)!
 
 Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
 
-### Bioc2026 General Hackathon
-
-A general bioconductor-centric hackathon is being planned for the two
-days following Bioc2026 in Seattle, USA. This hackathon will have topics
-or projects originating from the discussions that take place on
-Developer Day, as well as some predetermined topics. More details to
-come!
+We will be in contact about a month before the conference to confirm
+participation, plan out teams for projects, and ensure any questions or
+concerns are addressed.
 
 ## Products and Projects from previous BiocCommits events
 
