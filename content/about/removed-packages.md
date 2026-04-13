@@ -104,7 +104,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/LinTInd.html">LinTInd</a></li> 
 <li><a href="/packages/3.21/bioc/html/lute.html">lute</a></li> 
 <li><a href="/packages/3.21/bioc/html/MADSEQ.html">MADSEQ</a></li> 
-<li><a href="/packages/3.20/bioc/html/netZooR.html">netZooR</a></li> 
 <li><a href="/packages/3.20/bioc/html/oppti.html">oppti</a></li> 
 <li><a href="/packages/3.21/bioc/html/PhenStat.html">PhenStat</a></li> 
 <li><a href="/packages/3.21/bioc/html/qckitfastq.html">qckitfastq</a></li> 
