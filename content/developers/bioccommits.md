@@ -147,7 +147,9 @@ Current projects include:
   reach out!)
 
 If you’re interested [please complete our participant
-form](https://forms.gle/9aPgtFcpyKfMe52g7)!
+form](https://forms.gle/9aPgtFcpyKfMe52g7)! Further information can be
+[found
+here](https://github.com/BiocCodingCollaborations/EuroBioc2026_Hackathon).
 
 Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
 
@@ -177,7 +179,9 @@ Current projects include:
 - Developer Day associated projects
 
 If you’re interested [please complete our participant
-form](https://forms.gle/7jsVrEnhp74dBrXMA)!
+form](https://forms.gle/7jsVrEnhp74dBrXMA)! Further information can be
+[found
+here](https://github.com/BiocCodingCollaborations/BiocNA2026_Hackathon).
 
 Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
 
