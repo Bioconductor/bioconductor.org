@@ -1,14 +1,4 @@
-# Developers’ Forum
-
-## Attention
-
-The Developer’s Forum is starting up again! It is currently planned for
-the last Thursday of every month at 4pm GMT, with the first iteration
-taking place February 26th 4pm GMT.
-
-If you have a topic, concern, or project you would like to present or
-solicit feedback on, please contact Nicholas Cooley (NPC) at
-Nicholas(dot)Cooley(at)ul(dot)ie.
+# Developer Forum
 
 ## Overview
 
@@ -17,12 +7,12 @@ tools intended for an increasingly diverse array of computational
 biology and medical informatics research questions. This growth of
 project scope is deeply intertwined with the complexities of computer
 science that serve as infrastructure for modern data science. The
-Developers’ Forum aims to provide a regular platform for developers and
+developer forum aims to provide a regular platform for developers and
 users to describe existing software and hardware infrastructure, present
 plans for future developments, and discuss changes that may impact
 developers within the Bioconductor project.
 
-The goals of the Forum include, but are not limited to:
+The goals of the forum include, but are not limited to:
 
 - Ensuring the retention and accessibility of institutional knowledge.
 - Informing the community of ongoing or imminent work to key packages.
@@ -32,53 +22,54 @@ The goals of the Forum include, but are not limited to:
   (i.e. r-devel changes) are understood and publicized to the community
   when necessary.
 - Ensure a community minded perspective on the maintenance and expansion
-  of the Bioconductor core codebase.
+  of the Bioconductor core code base.
 - Provide developers a seat at the table for discussions on changes to
-  Bioconductor and/or the scientific and compute infrastucture that
+  Bioconductor and/or the scientific and compute infrastructure that
   surrounds the project.
 
-The structure of the Forum is currently set to include two *short*
-presentations (10-ish minutes preferred, shorter or longer is fine
-within reason), and provided time for long discussions about the topics
-of those presentations. Discussions are to remain collegial and
-welcoming to all participants.
+Presentations at the developer forum should be informal, technical, and
+contain space for discussion and interaction with the audience. If you
+are interested in presenting, please contact Nick Cooley
+Nicholas(dot)Cooley(at)ul(dot)ie.
 
 ## Audience
 
-The Forum will often be deeply technical in some form or another, but
+The forum will often be technical in some form or another, but
 attendance is open to any Bioconductor user or developer, especially
 junior career academics and developers, regardless of training
 background or skill levels.
 
 ## Schedule
 
-The Forum takes place on the last Thursday of each month. The current
-time slot is planned for 8am PST, 4pm GMT, 6pm CEST, and meetings will
-last approximately one hour. We will announce upcoming meetings on the
-Bioconductor developer mailing list, Zulip, and Bioconductor socials.
-Bioconductor is a global project with developers and users across many
-time zones, so Forum times may be subject to change, but calendar
-invites, announcements, and social media material will be explicit for
-the upcoming time slot.
+The forum takes place on the last Thursday of each month. The current
+time slot is 4pm UTC, and meetings will last approximately one hour. We
+will announce upcoming meetings on the Bioconductor developer mailing
+list, Zulip, and Bioconductor social media accounts. Bioconductor is a
+global project with developers and users across many time zones, so
+forum times may change in the future to accommodate the globally
+distributed nature of the community. All calendar invites,
+announcements, and social media material will be explicit about the
+time.
 
 ## Upcoming Meetings
 
-- Thursday March 26th 2026 8am PST, 4pm GMT, 6pm CEST
-  - Presentation 1: S7 Classes, Michael Lawrence
-  - Presentation 2: TBA - please contact NPC if you wish to present
-- Thursady April 30th 2026 8am PST, 4pm GMT, 6pm CEST
-  - Presentation 1: TBA - please contact NPC if you wish to present
-  - Presentation 2: TBA - please contact NPC if you wish to present
-- Thursday May 28th 2026 9am PDT, 4pm GMT, 6pm CEST
-  - Presentation 1: TBA - please contact NPC if you wish to present
-  - Presentation 2: TBA - please contact NPC if you wish to present
+- Thursday April 30th 2026 4pm UTC
+  - Anthony Christidis and Ludwig Geistlinger: Integrating AI tools into
+    IDEs = [Zulip
+    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/April.20Developer.20Forum/near/584399219)
+- Thursday May 28th 2026 4pm UTC
+  - Enis Afgan: Galaxy, tool wrapping, and workflow development - [Zulip
+    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/May.20Developer.20Forum/near/583953030)
+- Thursday June 25th 4pm UTC
+  - Szabolcs Horvát: Title TBA - Igraph associated talk - Zulip link to
+    come!
 
 ## Previous Meetings
 
-The most recent meeting was a discussion on builtin access to
-alternative compute in R:
+The most recent meeting was a discussion Bioconductor internal resources
+and annotation resources.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/_sjtIY498uY" title="March Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M1BeWpEukCo" title="March Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
