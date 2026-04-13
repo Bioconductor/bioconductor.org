@@ -3,7 +3,79 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
-## Packages deprecated in Bioconductor 3.22 (to be removed in 3.23)
+
+## Packages deprecated in Bioconductor 3.23 (to be removed in 3.24)
+
+Software Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/bioc/html/BubbleTree.html">BubbleTree</a></li> 
+<li><a href="/packages/3.21/bioc/html/CuratedAtlasQueryR.html">CuratedAtlasQueryR</a></li> 
+<li><a href="/packages/3.21/bioc/html/IONiseR.html">IONiseR</a></li> 
+<li><a href="/packages/3.21/bioc/html/hmdbQuery.html">hmdbQuery</a></li> 
+<li><a href="/packages/3.21/bioc/html/rols.html">rols</a></li> 
+<li><a href="/packages/3.18/bioc/html/scviR.html">scviR</a></li> 
+<li><a href="/packages/3.21/bioc/html/SGCP.html">SGCP</a></li> 
+<li><a href="/packages/3.21/bioc/html/APAlyzer.html">APAlyzer</a></li> 
+<li><a href="/packages/3.21/bioc/html/ballgown.html">ballgown</a></li> 
+<li><a href="/packages/3.21/bioc/html/bamsignals.html">bamsignals</a></li> 
+<li><a href="/packages/3.21/bioc/html/barcodetrackR.html">barcodetrackR</a></li> 
+<li><a href="/packages/3.21/bioc/html/basecallQC.html">basecallQC</a></li> 
+<li><a href="/packages/3.21/bioc/html/biobroom.html">biobroom</a></li> 
+<li><a href="/packages/3.21/bioc/html/biodbChebi.html">biodbChebi</a></li> 
+<li><a href="/packages/3.21/bioc/html/BiRewire.html">BiRewire</a></li> 
+<li><a href="/packages/3.21/bioc/html/BPRMeth.html">BPRMeth</a></li> 
+<li><a href="/packages/3.21/bioc/html/CelliD.html">CelliD</a></li> 
+<li><a href="/packages/3.21/bioc/html/ChIPQC.html">ChIPQC</a></li> 
+<li><a href="/packages/3.21/bioc/html/ccrepe.html">ccrepe</a></li> 
+<li><a href="/packages/3.21/bioc/html/cummeRbund.html">cummeRbund</a></li> 
+<li><a href="/packages/3.21/bioc/html/debCAM.html">debCAM</a></li> 
+<li><a href="/packages/3.21/bioc/html/DeconRNASeq.html">DeconRNASeq</a></li> 
+<li><a href="/packages/3.21/bioc/html/geneXtendeR.html">geneXtendeR</a></li> 
+<li><a href="/packages/3.21/bioc/html/GEOexplorer.html">GEOexplorer</a></li> 
+<li><a href="/packages/3.21/bioc/html/GNET2.html">GNET2</a></li> 
+<li><a href="/packages/3.21/bioc/html/granulator.html">granulator</a></li> 
+<li><a href="/packages/3.21/bioc/html/hca.html">hca</a></li> 
+<li><a href="/packages/3.21/bioc/html/IMAS.html">IMAS</a></li> 
+<li><a href="/packages/3.21/bioc/html/Melissa.html">Melissa</a></li> 
+<li><a href="/packages/3.21/bioc/html/MetaNeighbor.html">MetaNeighbor</a></li> 
+<li><a href="/packages/3.21/bioc/html/MethReg.html">MethReg</a></li> 
+<li><a href="/packages/3.21/bioc/html/mfa.html">mfa</a></li> 
+<li><a href="/packages/3.21/bioc/html/microSTASIS.html">microSTASIS</a></li> 
+<li><a href="/packages/3.21/bioc/html/MineICA.html">MineICA</a></li> 
+<li><a href="/packages/3.21/bioc/html/motifcounter.html">motifcounter</a></li> 
+<li><a href="/packages/3.21/bioc/html/MSPrep.html">MSPrep</a></li> 
+<li><a href="/packages/3.21/bioc/html/nearBynding.html">nearBynding</a></li> 
+<li><a href="/packages/3.21/bioc/html/netprioR.html">netprioR</a></li> 
+<li><a href="/packages/3.21/bioc/html/normr.html">normr</a></li> 
+<li><a href="/packages/3.21/bioc/html/Organism.dplyr.html">Organism.dplyr</a></li> 
+<li><a href="/packages/3.21/bioc/html/partCNV.html">partCNV</a></li> 
+<li><a href="/packages/3.21/bioc/html/RcisTarget.html">RcisTarget</a></li> 
+<li><a href="/packages/3.21/bioc/html/receptLoss.html">receptLoss</a></li> 
+<li><a href="/packages/3.21/bioc/html/RgnTX.html">RgnTX</a></li> 
+<li><a href="/packages/3.21/bioc/html/RiboProfiling.html">RiboProfiling</a></li> 
+<li><a href="/packages/3.21/bioc/html/RTCGA.html">RTCGA</a></li> 
+<li><a href="/packages/3.21/bioc/html/shiny.gosling.html">shiny.gosling</a></li> 
+<li><a href="/packages/3.21/bioc/html/soGGi.html">soGGi</a></li> 
+<li><a href="/packages/3.21/bioc/html/SigFuge.html">SigFuge</a></li> 
+<li><a href="/packages/3.21/bioc/html/spatzie.html">spatzie</a></li> 
+<li><a href="/packages/3.21/bioc/html/SQLDataFrame.html">SQLDataFrame</a></li> 
+<li><a href="/packages/3.21/bioc/html/supersigs.html">supersigs</a></li> 
+<li><a href="/packages/3.21/bioc/html/tLOH.html">tLOH</a></li> 
+</ul>
+
+Experiment Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/data/experiment/html/curatedBreastData.html">curatedBreastData</a></li> 
+<li><a href="/packages/3.21/data/experiment/html/Fletcher2013b.html">Fletcher2013b</a></li> 
+<li><a href="/packages/3.21/data/experiment/html/rRDPData.html">rRDPData</a></li> 
+</ul>
+
+Annotation Data Packages:
+<ul class="inline_list">
+<li><a href="/packages/3.21/data/annotation/html/hpAnnot.html">hpAnnot</a></li> 
+</ul>
+
+## Packages removed with Bioconductor 3.23
 
 Software Packages:
 <ul class="inline_list">
@@ -37,7 +109,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/PhenStat.html">PhenStat</a></li> 
 <li><a href="/packages/3.21/bioc/html/qckitfastq.html">qckitfastq</a></li> 
 <li><a href="/packages/3.19/bioc/html/ReactomeGraph4R.html">ReactomeGraph4R</a></li> 
-<li><a href="/packages/3.21/bioc/html/Rfastp.html">Rfastp</a></li> 
 <li><a href="/packages/3.21/bioc/html/rGADEM.html">rGADEM</a></li> 
 <li><a href="/packages/3.21/bioc/html/SARC.html">SARC</a></li> 
 <li><a href="/packages/3.20/bioc/html/seqArchR.html">seqArchR</a></li> 
@@ -54,7 +125,6 @@ Experiment Data Packages:
 <li><a href="/packages/3.21/data/experiment/html/rRDPData.html">rRDPData</a></li> 
 <li><a href="/packages/3.21/data/experiment/html/AneuFinderData.html">AneuFinderData</a></li> 
 <li><a href="/packages/3.21/data/experiment/html/chromstaRData.html">chromstaRData</a></li> 
-<li><a href="/packages/3.19/data/experiment/html/curatedCRCData.html">curatedCRCData</a></li> 
 <li><a href="/packages/3.21/data/experiment/html/RGMQLlib.html">RGMQLlib</a></li> 
 </ul>
 
