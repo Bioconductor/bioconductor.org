@@ -10,6 +10,7 @@ Software Packages:
 <ul class="inline_list">
 <li><a href="/packages/3.21/bioc/html/BubbleTree.html">BubbleTree</a></li> 
 <li><a href="/packages/3.21/bioc/html/CuratedAtlasQueryR.html">CuratedAtlasQueryR</a></li> 
+<li><a href="/packages/3.22/bioc/html/InterCellar.html">InterCellar</a></li> 
 <li><a href="/packages/3.21/bioc/html/IONiseR.html">IONiseR</a></li> 
 <li><a href="/packages/3.21/bioc/html/hmdbQuery.html">hmdbQuery</a></li> 
 <li><a href="/packages/3.21/bioc/html/rols.html">rols</a></li> 
