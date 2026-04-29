@@ -1837,7 +1837,13 @@ def get_deprecated(ver)
 
   views.each do |category, url|
     #puts "FETCHING #{url}"
-    text = URI.open(url, "Cache-Control" => "no-cache"){ |f| f.read }
+    begin
+      text = URI.open(url, "Cache-Control" => "no-cache"){ |f| f.read }
+    rescue OpenURI::HTTPError => e
+      warn "Skipping #{url}: #{e.message}"
+      next
+    end
+    
     records = parse_views_dcf(text)
 
     records.each do |rec|
