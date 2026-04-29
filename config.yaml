@@ -24,6 +24,7 @@ devel_version: "3.24"
 ## let the no-longer-release version build one last time so package
 ## landing pages won't say "release version"):
 versions:
+- "3.22"
 - "3.23"
 - "3.24"
 
@@ -31,7 +32,7 @@ versions:
 ## become available. set to "[]" if none are available.
 devel_repos:
 - "bioc"
-#- "data/experiment"
+- "data/experiment"
 #- "workflows"
 #- "data/annotation"
 
@@ -50,7 +51,7 @@ active_devel_builders:
 ## CHANGE this when the single package builder builds
 ## on a newer version of bioc
 single_package_builder:
-  bioc_version: "3.24"
+  bioc_version: "3.23"
   r_version: "4.6"
 
 rss_hub_url: "https://pubsubhubbub.appspot.com/"
@@ -217,7 +218,7 @@ release_dates: # old info from http://en.wikipedia.org/wiki/Bioconductor#Milesto
   "3.20": "10/30/2024"
   "3.21": "04/16/2025"
   "3.22": "10/30/2025"
-  "3.23": "04/28/2026"
+  "3.23": "04/29/2026"
 release_last_built_dates:
   '2.0': 09/12/2007
   '2.1': 04/09/2008
