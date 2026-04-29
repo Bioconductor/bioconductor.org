@@ -7,7 +7,7 @@ We are pleased to announce Bioconductor 3.23, consisting of
 packages, 28 workflows and 8 books.
 
 There are 94 new software packages, 5 new data experiment packages,
-no new annotation packages, no new workflows, 2 new book, and many updates and
+no new annotation packages, no new workflows, 2 new books, and many updates and
 improvements to existing packages.
 
 Bioconductor 3.23 is compatible with R 4.6, and is supported on Linux,
@@ -1068,7 +1068,7 @@ USER VISIBLE CHANGES
 
 - (v 1.23.10) Use sha256 instead of md5sum for service validation.
 
-- (v 1.23.4) Use native pipe operator |> instead of magrittr pipe.
+- (v 1.23.4) Use native pipe operator &#124;&#62; instead of magrittr pipe.
 
 BUG FIXES AND MINOR IMPROVEMENTS
 
@@ -8267,57 +8267,6 @@ BUG FIXES
 total size of collapsed events is now computed as the true genomic
 span of the region rather than the sum of individual event sizes.
 
-[variancePartition](/packages/variancePartition)
------------------
-
-                        Changes in version 2.0.5                        
-
-- May 31, 2023
-- fix convergence issues
-- fix initialization of lmer() fit
-- use 1 OMP thread internally, then restore to original value
-
-                        Changes in version 2.0.4                        
-
-- May 30, 2023
-- When running dream(), ensure model convergence using second fitting
-with Nelder_Mead to avoid edge cases where the approximate hessian
-from lmerTest::as_lmerModLT() has a negative eigenvalue
-- fix issue in get_prediction() returning NA values when variables
-modeled as categorical and levels are omitted
-- fix issue in voomWithDreamWeights() when some genes don't converge
-- retry lmer() model fit with another optimizer after it fails
-convergence test.
-
-                        Changes in version 2.0.3                        
-
-- May 13, 2023
-- fix vcov()
-
-                        Changes in version 2.0.2                        
-
-- May 17, 2023
-- add matrix argument to mvTest()
-
-                        Changes in version 2.0.1                        
-
-- May 12, 2023
-- mvTest() now shrinks covariance using the Schafer-Strimmer method
-- vcovSqrt() returns the matrix whose cross product gives the vcov()
-result from fits with dream()
-
-                        Changes in version 2.0.0                        
-
-- April 20, 2023
-- Major code refactoring to:
-- improve code reuse
-- simplify debugging and maintaining code
-- simplify addition of new features
-- improve error handling
-- some linear mixed model analyses are 50% faster
-- enable additional features for dreamlet package that depends
-heavily on variancePartition.
-
 
 [velociraptor](/packages/velociraptor)
 ------------
@@ -8644,7 +8593,7 @@ Bioc 3.22).
 
 - spicyWorkflow
 
-No workflow packages have been deprecated in this release:
+No workflow packages have been deprecated in this release.
 
 **BOOKS:**
 
