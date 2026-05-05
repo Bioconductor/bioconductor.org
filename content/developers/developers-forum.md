@@ -53,23 +53,25 @@ time.
 
 ## Upcoming Meetings
 
-- Thursday April 30th 2026 4pm UTC
-  - Anthony Christidis and Ludwig Geistlinger: Integrating AI tools into
-    IDEs = [Zulip
-    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/April.20Developer.20Forum/near/584399219)
 - Thursday May 28th 2026 4pm UTC
   - Enis Afgan: Galaxy, tool wrapping, and workflow development - [Zulip
     announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/May.20Developer.20Forum/near/583953030)
-- Thursday June 25th 4pm UTC
-  - Szabolcs Horvát: Title TBA - Igraph associated talk - Zulip link to
-    come!
+- Thursday June 25th 2026 4pm UTC
+  - Szabolcs Horvát: igraph: complex network analysis across multiple
+    programming languages - [Zulip
+    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/June.20Developer.20Forum/with/593047626)
+- Thursday July 30th 2026 4pm UTC
+  - Aaron Lun: The Great Deprecation (working title) - Zulip
+    Announcement coming soon!
 
 ## Previous Meetings
 
-The most recent meeting was a discussion Bioconductor internal resources
-and annotation resources.
+The most recent meeting was: - Thursday April 30th 2026 4pm UTC -
+Anthony Christidis and Ludwig Geistlinger: Integrating AI tools into
+IDEs - [Zulip
+announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/April.20Developer.20Forum/near/584399219)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M1BeWpEukCo" title="March Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://youtu.be/ougaIm5LIL4" title="April Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
