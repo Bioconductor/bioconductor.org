@@ -71,7 +71,7 @@ Anthony Christidis and Ludwig Geistlinger: Integrating AI tools into
 IDEs - [Zulip
 announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/April.20Developer.20Forum/near/584399219)
 
-<iframe width="560" height="315" src="https://youtu.be/ougaIm5LIL4" title="April Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/ougaIm5LIL4" title="April Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
