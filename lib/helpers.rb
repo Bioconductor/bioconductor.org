@@ -978,8 +978,8 @@ def get_mac_packs(package, item)
     end
 
     if version >= Gem::Version.new('3.23')
-        os <<  "macOS Binary (big-sur-x86_64)" << "macOS Binary (big-sur-arm64)" << "macOS Binary (sonoma-arm64)"
-        osvers << "mac.binary.big-sur-x86_64.ver" << "mac.binary.big-sur-arm64.ver" << "mac.binary.sonoma-arm64.ver"
+        os <<  "macOS Binary (big-sur-x86_64)" << "macOS Binary (sonoma-arm64)"
+        osvers << "mac.binary.big-sur-x86_64.ver" << "mac.binary.sonoma-arm64.ver"
     end
 
     os.each_with_index do |this_os, i|
