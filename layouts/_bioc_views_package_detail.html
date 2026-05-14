@@ -34,9 +34,10 @@
     <p>
       <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%>
     </p>
-    <div id="bioc-citation-outer">
+    <div id="bioc-citation-outer" data-package="<%=@package[:Package]%>">
       <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
       <div id="bioc-citation" class="bioc-citation"></div>
+      <div class="citation-actions" id="bioc-citation-actions"></div>
     </div>
   </div>
 

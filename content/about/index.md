@@ -43,6 +43,32 @@ Methods 12:115-121][1] and Gentleman et al., 2004 [Genome Biology
 [1]: http://www.nature.com/nmeth/journal/v12/n2/abs/nmeth.3252.html
 [2]: https://genomebiology.biomedcentral.com/track/pdf/10.1186/gb-2004-5-10-r80.pdf
 
+<div class="bioc-project-citations">
+
+<p><strong>Huber W</strong>, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS,
+Bravo HC, Davis S, Gatto L, Girke T, Gottardo R, Hahne F, Hansen KD, Irizarry RA,
+Lawrence M, Love MI, MacDonald J, Obenchain V, Oleś AK, Pagès H, Reyes A, Shannon P,
+Smyth GK, Tenenbaum D, Waldron L, Morgan M (2015). "Orchestrating high-throughput
+genomic analysis with Bioconductor." <em>Nature Methods</em>, <strong>12</strong>(2),
+115–121. doi:<a href="https://doi.org/10.1038/nmeth.3252">10.1038/nmeth.3252</a>.</p>
+<div class="citation-actions">
+  <button class="citation-btn" onclick="(function(btn){var t='Huber W, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS, Bravo HC, Davis S, Gatto L, Girke T, Gottardo R, Hahne F, Hansen KD, Irizarry RA, Lawrence M, Love MI, MacDonald J, Obenchain V, Oles AK, Pages H, Reyes A, Shannon P, Smyth GK, Tenenbaum D, Waldron L, Morgan M (2015). Orchestrating high-throughput genomic analysis with Bioconductor. Nature Methods, 12(2), 115-121. doi:10.1038/nmeth.3252.';navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent=o;btn.classList.remove('copied');},2000);});})(this)">📋 Copy Text</button>
+  <button class="citation-btn" onclick="(function(btn){var b='@Article{Huber2015-bp,\n  title    = {Orchestrating high-throughput genomic analysis with Bioconductor},\n  author   = {Huber, Wolfgang and Carey, Vincent J and Gentleman, Robert and Anders, Simon and Carlson, Marc and Carvalho, Benilton S and Bravo, Hector Corrada and Davis, Sean and Gatto, Laurent and Girke, Thomas and Gottardo, Raphael and Hahne, Florian and Hansen, Kasper D and Irizarry, Rafael A and Lawrence, Michael and Love, Michael I and MacDonald, James and Obenchain, Valerie and Oles, Andrzej K and Pages, Herve and Reyes, Alejandro and Shannon, Paul and Smyth, Gordon K and Tenenbaum, Dan and Waldron, Levi and Morgan, Martin},\n  journal  = {Nat. Methods},\n  volume   = 12,\n  number   = 2,\n  pages    = {115--121},\n  month    = feb,\n  year     = 2015,\n  language = {en}\n}';navigator.clipboard.writeText(b).then(function(){var o=btn.textContent;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent=o;btn.classList.remove('copied');},2000);});})(this)">📋 Copy BibTeX</button>
+</div>
+
+<p><strong>Gentleman RC</strong>, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S,
+Ellis B, Gautier L, Ge Y, Gentry J, Hornik K, Hothorn T, Huber W, Iacus S, Irizarry R,
+Leisch F, Li C, Maechler M, Rossini AJ, Sawitzki G, Smith C, Smyth G, Tierney L, Yang JYH,
+Zhang J (2004). "Bioconductor: open software development for computational biology and
+bioinformatics." <em>Genome Biology</em>, <strong>5</strong>(10), R80.
+doi:<a href="https://doi.org/10.1186/gb-2004-5-10-r80">10.1186/gb-2004-5-10-r80</a>.</p>
+<div class="citation-actions">
+  <button class="citation-btn" onclick="(function(btn){var t='Gentleman RC, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S, Ellis B, Gautier L, Ge Y, Gentry J, Hornik K, Hothorn T, Huber W, Iacus S, Irizarry R, Leisch F, Li C, Maechler M, Rossini AJ, Sawitzki G, Smith C, Smyth G, Tierney L, Yang JYH, Zhang J (2004). Bioconductor: open software development for computational biology and bioinformatics. Genome Biology, 5(10), R80. doi:10.1186/gb-2004-5-10-r80.';navigator.clipboard.writeText(t).then(function(){var o=btn.textContent;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent=o;btn.classList.remove('copied');},2000);});})(this)">📋 Copy Text</button>
+  <button class="citation-btn" onclick="(function(btn){var b='@Article{Gentleman2004-wd,\n  title     = {Bioconductor: open software development for computational biology and bioinformatics},\n  author    = {Gentleman, Robert C and Carey, Vincent J and Bates, Douglas M and Bolstad, Ben and Dettling, Marcel and Dudoit, Sandrine and Ellis, Byron and Gautier, Laurent and Ge, Yongchao and Gentry, Jeff and Hornik, Kurt and Hothorn, Torsten and Huber, Wolfgang and Iacus, Stefano and Irizarry, Rafael and Leisch, Friedrich and Li, Cheng and Maechler, Martin and Rossini, Anthony J and Sawitzki, Gunther and Smith, Colin and Smyth, Gordon and Tierney, Luke and Yang, Jean Y H and Zhang, Jianhua},\n  journal   = {Genome Biol.},\n  publisher = {Springer Nature},\n  volume    = 5,\n  number    = 10,\n  pages     = {R80},\n  month     = sep,\n  year      = 2004,\n  language  = {en}\n}';navigator.clipboard.writeText(b).then(function(){var o=btn.textContent;btn.textContent='Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent=o;btn.classList.remove('copied');},2000);});})(this)">📋 Copy BibTeX</button>
+</div>
+
+</div>
+
 <div class="about-join">
   <%= render('/components/homepage/join/') %>
 </div>

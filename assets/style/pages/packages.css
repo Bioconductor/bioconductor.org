@@ -128,6 +128,43 @@ ul.ui-autocomplete li::marker {
   margin: 0.5rem 0 1rem;
 }
 
+.citation-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0.25rem;
+}
+
+.citation-btn {
+  background: var(--neutral-n50);
+  color: var(--primary-p400);
+  border: 1px solid var(--neutral-n75);
+  border-radius: 8rem;
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0.2rem 0.75rem;
+  transition: background 0.2s;
+}
+
+.citation-btn:hover {
+  background: var(--primary-p50);
+}
+
+.citation-btn:active {
+  background: var(--primary-p200);
+}
+
+.citation-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.citation-btn.copied {
+  background: #d4edda;
+  color: #155724;
+  border-color: #c3e6cb;
+}
+
 @media (max-device-width: 1450px), (max-width: 1450px) {
   .biocViewsTreeContainer {
     display: flex;

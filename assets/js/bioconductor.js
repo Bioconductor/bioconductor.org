@@ -331,6 +331,8 @@ var handleCitations = function () {
     segs.push(pkg);
     segs.push("citation.html");
     url = segs.join("/");
+    var bibUrl = url.replace("citation.html", "citation.bib");
+    var pkgName = jQuery("#bioc-citation-outer").data("package") || pkg;
     jQuery.ajax({
       url: url,
       dataType: "html",
@@ -342,6 +344,59 @@ var handleCitations = function () {
 
         data = data.replace(" (????)", "");
         jQuery("#bioc-citation").html(data);
+
+        // Extract preferred DOI from citation text
+        var citationText = jQuery("#bioc-citation").text();
+        var doiMatch = citationText.match(/\bdoi:?(10\.\d{4,}\/\S+)/i) ||
+                       citationText.match(/https?:\/\/doi\.org\/(10\.\d{4,}\/\S+)/i);
+        var preferredDoi = doiMatch ? doiMatch[1] : "10.18129/B9.bioc." + pkgName;
+        // Strip trailing punctuation from DOI
+        preferredDoi = preferredDoi.replace(/[.,;)>]+$/, "");
+
+        // Update DOI badge with preferred citation DOI
+        var encodedDoi = preferredDoi.replace(/-/g, "--").replace(/_/g, "__").replace(/\//g, "%2F");
+        var badgeHtml = '<a href="https://doi.org/' + preferredDoi + '" ' +
+          'title="Preferred citation DOI">' +
+          '<img src="https://img.shields.io/badge/DOI-' + encodedDoi + '-blue" ' +
+          'alt="DOI badge" /></a>';
+        jQuery("#citation-doi-badge").html(badgeHtml);
+
+        // Add copy/download action buttons
+        var actionsHtml =
+          '<button class="citation-btn" id="bioc-copy-text-btn">\uD83D\uDCCB Copy Text</button>' +
+          '<button class="citation-btn" id="bioc-copy-bibtex-btn">\uD83D\uDCCB Copy BibTeX</button>';
+        jQuery("#bioc-citation-actions").html(actionsHtml);
+
+        jQuery("#bioc-copy-text-btn").on("click", function () {
+          var btn = jQuery(this);
+          var text = jQuery("#bioc-citation").text().trim();
+          navigator.clipboard.writeText(text).then(function () {
+            var orig = btn.text();
+            btn.text("Copied!").addClass("copied");
+            setTimeout(function () { btn.text(orig).removeClass("copied"); }, 2000);
+          });
+        });
+
+        jQuery("#bioc-copy-bibtex-btn").on("click", function () {
+          var btn = jQuery(this);
+          btn.prop("disabled", true);
+          jQuery.ajax({
+            url: bibUrl,
+            dataType: "text",
+            success: function (bibData) {
+              navigator.clipboard.writeText(bibData).then(function () {
+                var orig = "\uD83D\uDCCB Copy BibTeX";
+                btn.text("Copied!").addClass("copied");
+                setTimeout(function () { btn.text(orig).removeClass("copied").prop("disabled", false); }, 2000);
+              });
+            },
+            error: function () {
+              btn.text("BibTeX unavailable").prop("disabled", false);
+              setTimeout(function () { btn.text("\uD83D\uDCCB Copy BibTeX"); }, 3000);
+            },
+          });
+        });
+
         jQuery("#bioc-citation-outer").show();
       },
       error: function (data, textStatus, jqXHR) {
