@@ -330,7 +330,7 @@ var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
       if (statusEl) { statusEl.text(""); }
     }, 2000);
   }).catch(function () {
-    btn.text("Copy failed").prop("disabled", false);
+    btn.text("Copy failed");
     if (statusEl) { statusEl.text("Copy failed. Please copy the text manually."); }
     setTimeout(function () {
       btn.text(label);
@@ -339,16 +339,18 @@ var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
   });
 };
 
-// Copy a static citation text to clipboard; used for hardcoded project citations.
-// Called from inline onclick handlers in content pages.
-var copyStaticCitationText = function (btn, text) {
-  copyToClipboardWithFeedback(jQuery(btn), text, btn.textContent, null);
-};
-
-// Copy a static BibTeX string to clipboard; used for hardcoded project citations.
-// Called from inline onclick handlers in content pages.
-var copyStaticBibtex = function (btn, bibtex) {
-  copyToClipboardWithFeedback(jQuery(btn), bibtex, btn.textContent, null);
+// Attach event listeners to static citation copy buttons that use data attributes.
+// Handles .citation-btn elements with data-citation-text or data-bibtex attributes,
+// replacing the need for inline onclick handlers in content pages.
+var handleStaticCitationButtons = function () {
+  jQuery(document).on("click", ".citation-btn[data-citation-text]", function () {
+    var btn = jQuery(this);
+    copyToClipboardWithFeedback(btn, btn.data("citation-text"), btn.text(), null);
+  });
+  jQuery(document).on("click", ".citation-btn[data-bibtex]", function () {
+    var btn = jQuery(this);
+    copyToClipboardWithFeedback(btn, btn.data("bibtex"), btn.text(), null);
+  });
 };
 
 var handleCitations = function () {
@@ -377,29 +379,37 @@ var handleCitations = function () {
         jQuery("#bioc-citation").html(data);
 
         // Extract preferred DOI from citation text.
-        // Use a precise pattern that avoids capturing trailing punctuation.
+        // Use a permissive pattern (same character set as the sanitization step below).
         var citationText = jQuery("#bioc-citation").text();
-        var doiPattern = /\bdoi:?(10\.\d{4,}\/[^\s.,;)>]+)/i;
-        var urlPattern = /https?:\/\/doi\.org\/(10\.\d{4,}\/[^\s.,;)>]+)/i;
+        var doiChars = "[\\w./:;()\\[\\]<>-]+";
+        var doiPattern = new RegExp("\\bdoi:?(10\\.\\d{4,}\\/" + doiChars + ")", "i");
+        var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(10\\.\\d{4,}\\/" + doiChars + ")", "i");
         var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
         var preferredDoi = doiMatch ? doiMatch[1] : "10.18129/B9.bioc." + pkgName;
 
-        // Sanitize DOI: only allow characters valid in a DOI (alphanumeric,
-        // and the punctuation permitted by the DOI specification).
-        if (!/^10\.\d{4,}\/[\w./:;()\[\]<>-]+$/.test(preferredDoi)) {
+        // Sanitize DOI: only allow characters valid in a DOI (alphanumeric and
+        // DOI-permitted punctuation). Falls back to the package landing page DOI.
+        if (!/^10\.\d{4,}\/[\w./:;()[\]<>-]+$/.test(preferredDoi)) {
           preferredDoi = "10.18129/B9.bioc." + pkgName;
         }
 
         // Build shields.io badge URL. Shields.io requires hyphens doubled,
-        // underscores doubled, and slashes percent-encoded in badge label text.
-        var encodedDoi = preferredDoi.replace(/-/g, "--").replace(/_/g, "__").replace(/\//g, "%2F");
+        // underscores doubled, slashes and other special chars percent-encoded
+        // in the badge label text.
+        var encodedDoi = preferredDoi
+          .replace(/-/g, "--")
+          .replace(/_/g, "__")
+          .replace(/[^A-Za-z0-9.-]/g, function (c) { return encodeURIComponent(c); });
 
-        // Build badge using DOM construction to avoid XSS via preferredDoi
+        // Build badge using DOM construction. encodeURI ensures the URL is valid
+        // and safe even before the DOI sanitization step above.
+        var doiHref = encodeURI("https://doi.org/" + preferredDoi);
+        var badgeSrc = encodeURI("https://img.shields.io/badge/DOI-" + encodedDoi + "-blue");
         var $badgeLink = jQuery("<a>")
-          .attr("href", "https://doi.org/" + preferredDoi)
+          .attr("href", doiHref)
           .attr("title", "Preferred citation DOI");
         var $badgeImg = jQuery("<img>")
-          .attr("src", "https://img.shields.io/badge/DOI-" + encodedDoi + "-blue")
+          .attr("src", badgeSrc)
           .attr("alt", "DOI badge");
         jQuery("#citation-doi-badge").empty().append($badgeLink.append($badgeImg));
 
@@ -458,6 +468,7 @@ jQuery(function () {
   });
   jQuery(".rpack").tooltip({ tip: "#tooltip" }); //{ effect: 'slide'});
   handleCitations();
+  handleStaticCitationButtons();
 });
 
 var submit_tryitnow = function () {
