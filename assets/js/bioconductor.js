@@ -320,6 +320,37 @@ var getHrefForSymlinks = function (href) {
   }
 };
 
+// Copy text to clipboard and show brief feedback on the button
+var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
+  navigator.clipboard.writeText(text).then(function () {
+    btn.text("Copied!").addClass("copied");
+    if (statusEl) { statusEl.text("Copied to clipboard."); }
+    setTimeout(function () {
+      btn.text(label).removeClass("copied");
+      if (statusEl) { statusEl.text(""); }
+    }, 2000);
+  }).catch(function () {
+    btn.text("Copy failed").prop("disabled", false);
+    if (statusEl) { statusEl.text("Copy failed. Please copy the text manually."); }
+    setTimeout(function () {
+      btn.text(label);
+      if (statusEl) { statusEl.text(""); }
+    }, 3000);
+  });
+};
+
+// Copy a static citation text to clipboard; used for hardcoded project citations.
+// Called from inline onclick handlers in content pages.
+var copyStaticCitationText = function (btn, text) {
+  copyToClipboardWithFeedback(jQuery(btn), text, btn.textContent, null);
+};
+
+// Copy a static BibTeX string to clipboard; used for hardcoded project citations.
+// Called from inline onclick handlers in content pages.
+var copyStaticBibtex = function (btn, bibtex) {
+  copyToClipboardWithFeedback(jQuery(btn), bibtex, btn.textContent, null);
+};
+
 var handleCitations = function () {
   if (jQuery("#bioc-citation").length) {
     jQuery("#bioc-citation-outer").hide();
@@ -345,23 +376,34 @@ var handleCitations = function () {
         data = data.replace(" (????)", "");
         jQuery("#bioc-citation").html(data);
 
-        // Extract preferred DOI from citation text
+        // Extract preferred DOI from citation text.
+        // Use a precise pattern that avoids capturing trailing punctuation.
         var citationText = jQuery("#bioc-citation").text();
-        var doiMatch = citationText.match(/\bdoi:?(10\.\d{4,}\/\S+)/i) ||
-                       citationText.match(/https?:\/\/doi\.org\/(10\.\d{4,}\/\S+)/i);
+        var doiPattern = /\bdoi:?(10\.\d{4,}\/[^\s.,;)>]+)/i;
+        var urlPattern = /https?:\/\/doi\.org\/(10\.\d{4,}\/[^\s.,;)>]+)/i;
+        var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
         var preferredDoi = doiMatch ? doiMatch[1] : "10.18129/B9.bioc." + pkgName;
-        // Strip trailing punctuation from DOI
-        preferredDoi = preferredDoi.replace(/[.,;)>]+$/, "");
 
-        // Update DOI badge with preferred citation DOI
+        // Sanitize DOI: only allow characters valid in a DOI (alphanumeric,
+        // and the punctuation permitted by the DOI specification).
+        if (!/^10\.\d{4,}\/[\w./:;()\[\]<>-]+$/.test(preferredDoi)) {
+          preferredDoi = "10.18129/B9.bioc." + pkgName;
+        }
+
+        // Build shields.io badge URL. Shields.io requires hyphens doubled,
+        // underscores doubled, and slashes percent-encoded in badge label text.
         var encodedDoi = preferredDoi.replace(/-/g, "--").replace(/_/g, "__").replace(/\//g, "%2F");
-        var badgeHtml = '<a href="https://doi.org/' + preferredDoi + '" ' +
-          'title="Preferred citation DOI">' +
-          '<img src="https://img.shields.io/badge/DOI-' + encodedDoi + '-blue" ' +
-          'alt="DOI badge" /></a>';
-        jQuery("#citation-doi-badge").html(badgeHtml);
 
-        // Add copy/download action buttons
+        // Build badge using DOM construction to avoid XSS via preferredDoi
+        var $badgeLink = jQuery("<a>")
+          .attr("href", "https://doi.org/" + preferredDoi)
+          .attr("title", "Preferred citation DOI");
+        var $badgeImg = jQuery("<img>")
+          .attr("src", "https://img.shields.io/badge/DOI-" + encodedDoi + "-blue")
+          .attr("alt", "DOI badge");
+        jQuery("#citation-doi-badge").empty().append($badgeLink.append($badgeImg));
+
+        // Add copy action buttons
         var actionsHtml =
           '<button class="citation-btn" id="bioc-copy-text-btn">\uD83D\uDCCB Copy Text</button>' +
           '<button class="citation-btn" id="bioc-copy-bibtex-btn">\uD83D\uDCCB Copy BibTeX</button>';
@@ -369,30 +411,30 @@ var handleCitations = function () {
 
         jQuery("#bioc-copy-text-btn").on("click", function () {
           var btn = jQuery(this);
+          var statusEl = jQuery("#bioc-citation-status");
           var text = jQuery("#bioc-citation").text().trim();
-          navigator.clipboard.writeText(text).then(function () {
-            var orig = btn.text();
-            btn.text("Copied!").addClass("copied");
-            setTimeout(function () { btn.text(orig).removeClass("copied"); }, 2000);
-          });
+          copyToClipboardWithFeedback(btn, text, "\uD83D\uDCCB Copy Text", statusEl);
         });
 
         jQuery("#bioc-copy-bibtex-btn").on("click", function () {
           var btn = jQuery(this);
+          var statusEl = jQuery("#bioc-citation-status");
+          var origLabel = "\uD83D\uDCCB Copy BibTeX";
           btn.prop("disabled", true);
           jQuery.ajax({
             url: bibUrl,
             dataType: "text",
             success: function (bibData) {
-              navigator.clipboard.writeText(bibData).then(function () {
-                var orig = "\uD83D\uDCCB Copy BibTeX";
-                btn.text("Copied!").addClass("copied");
-                setTimeout(function () { btn.text(orig).removeClass("copied").prop("disabled", false); }, 2000);
-              });
+              copyToClipboardWithFeedback(btn, bibData, origLabel, statusEl);
+              btn.prop("disabled", false);
             },
             error: function () {
-              btn.text("BibTeX unavailable").prop("disabled", false);
-              setTimeout(function () { btn.text("\uD83D\uDCCB Copy BibTeX"); }, 3000);
+              btn.text("BibTeX unavailable");
+              if (statusEl) { statusEl.text("BibTeX format is not available for this package."); }
+              setTimeout(function () {
+                btn.text(origLabel).prop("disabled", false);
+                if (statusEl) { statusEl.text(""); }
+              }, 3000);
             },
           });
         });
