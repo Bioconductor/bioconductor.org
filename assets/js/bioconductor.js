@@ -353,10 +353,15 @@ var writeTextToClipboard = function (text) {
   return fallbackCopyText(text);
 };
 
+var CLIPBOARD_EMOJI = "\uD83D\uDCCB";
+var DOI_BODY_PATTERN = "[\\w.()/_-]+";
+var DOI_PATTERN = "10\\.\\d{4,}\\/" + DOI_BODY_PATTERN;
+
 var encodeForShieldsIO = function (text) {
   return text
     .replace(/-/g, "--")
     .replace(/_/g, "__")
+    .replace(/ /g, "_")
     .replace(/[^A-Za-z0-9._-]/g, function (c) { return encodeURIComponent(c); });
 };
 
@@ -421,15 +426,14 @@ var handleCitations = function () {
         // Extract preferred DOI from citation text.
         // Use a pattern matching only valid DOI characters per the DOI specification.
         var citationText = jQuery("#bioc-citation").text();
-        var doiChars = "[\\w.()/_-]+";
-        var doiPattern = new RegExp("\\bdoi:?(10\\.\\d{4,}\\/" + doiChars + ")", "i");
-        var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(10\\.\\d{4,}\\/" + doiChars + ")", "i");
+        var doiPattern = new RegExp("\\bdoi:?(" + DOI_PATTERN + ")", "i");
+        var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(" + DOI_PATTERN + ")", "i");
         var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
         var preferredDoi = doiMatch ? doiMatch[1] : "10.18129/B9.bioc." + pkgName;
 
         // Sanitize DOI: only allow characters valid in a DOI (alphanumeric and
         // DOI-permitted punctuation). Falls back to the package landing page DOI.
-        if (!/^10\.\d{4,}\/[\w.()/_-]+$/.test(preferredDoi)) {
+        if (!(new RegExp("^" + DOI_PATTERN + "$")).test(preferredDoi)) {
           preferredDoi = "10.18129/B9.bioc." + pkgName;
         }
 
@@ -447,21 +451,21 @@ var handleCitations = function () {
 
         // Add copy action buttons
         var actionsHtml =
-          '<button class="citation-btn" id="bioc-copy-text-btn" aria-label="Copy citation as text">\uD83D\uDCCB Copy Text</button>' +
-          '<button class="citation-btn" id="bioc-copy-bibtex-btn" aria-label="Copy citation as BibTeX">\uD83D\uDCCB Copy BibTeX</button>';
+          '<button class="citation-btn" id="bioc-copy-text-btn" aria-label="Copy citation as text">' + CLIPBOARD_EMOJI + ' Copy Text</button>' +
+          '<button class="citation-btn" id="bioc-copy-bibtex-btn" aria-label="Copy citation as BibTeX">' + CLIPBOARD_EMOJI + ' Copy BibTeX</button>';
         jQuery("#bioc-citation-actions").html(actionsHtml);
 
         jQuery("#bioc-copy-text-btn").on("click", function () {
           var btn = jQuery(this);
           var statusEl = jQuery("#bioc-citation-status");
           var text = jQuery("#bioc-citation").text().trim();
-          copyToClipboardWithFeedback(btn, text, "\uD83D\uDCCB Copy Text", statusEl);
+          copyToClipboardWithFeedback(btn, text, CLIPBOARD_EMOJI + " Copy Text", statusEl);
         });
 
         jQuery("#bioc-copy-bibtex-btn").on("click", function () {
           var btn = jQuery(this);
           var statusEl = jQuery("#bioc-citation-status");
-          var origLabel = "\uD83D\uDCCB Copy BibTeX";
+          var origLabel = CLIPBOARD_EMOJI + " Copy BibTeX";
           btn.prop("disabled", true);
           jQuery.ajax({
             url: bibUrl,
