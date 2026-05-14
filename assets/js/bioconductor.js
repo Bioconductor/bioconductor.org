@@ -379,9 +379,9 @@ var handleCitations = function () {
         jQuery("#bioc-citation").html(data);
 
         // Extract preferred DOI from citation text.
-        // Use a permissive pattern (same character set as the sanitization step below).
+        // Use a pattern matching only valid DOI characters per the DOI specification.
         var citationText = jQuery("#bioc-citation").text();
-        var doiChars = "[\\w./:;()\\[\\]<>-]+";
+        var doiChars = "[\\w./:;()\\[\\]_-]+";
         var doiPattern = new RegExp("\\bdoi:?(10\\.\\d{4,}\\/" + doiChars + ")", "i");
         var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(10\\.\\d{4,}\\/" + doiChars + ")", "i");
         var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
@@ -389,17 +389,18 @@ var handleCitations = function () {
 
         // Sanitize DOI: only allow characters valid in a DOI (alphanumeric and
         // DOI-permitted punctuation). Falls back to the package landing page DOI.
-        if (!/^10\.\d{4,}\/[\w./:;()[\]<>-]+$/.test(preferredDoi)) {
+        if (!/^10\.\d{4,}\/[\w./:;()[\]_-]+$/.test(preferredDoi)) {
           preferredDoi = "10.18129/B9.bioc." + pkgName;
         }
 
-        // Build shields.io badge URL. Shields.io requires hyphens doubled,
-        // underscores doubled, slashes and other special chars percent-encoded
-        // in the badge label text.
+        // Build shields.io badge URL. Shields.io requires hyphens doubled and
+        // underscores doubled in the badge label. Slashes and other special chars
+        // must be percent-encoded. The underscore is excluded from percent-encoding
+        // because it is doubled in the preceding step.
         var encodedDoi = preferredDoi
           .replace(/-/g, "--")
           .replace(/_/g, "__")
-          .replace(/[^A-Za-z0-9.-]/g, function (c) { return encodeURIComponent(c); });
+          .replace(/[^A-Za-z0-9._-]/g, function (c) { return encodeURIComponent(c); });
 
         // Build badge using DOM construction. encodeURI ensures the URL is valid
         // and safe even before the DOI sanitization step above.
