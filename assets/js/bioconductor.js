@@ -320,9 +320,42 @@ var getHrefForSymlinks = function (href) {
   }
 };
 
+var fallbackCopyText = function (text) {
+  return new Promise(function (resolve, reject) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    try {
+      if (document.execCommand("copy")) {
+        resolve();
+      } else {
+        reject(new Error("Copy command failed"));
+      }
+    } catch (e) {
+      reject(e);
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  });
+};
+
+var writeTextToClipboard = function (text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(function () {
+      return fallbackCopyText(text);
+    });
+  }
+  return fallbackCopyText(text);
+};
+
 // Copy text to clipboard and show brief feedback on the button
 var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
-  navigator.clipboard.writeText(text).then(function () {
+  writeTextToClipboard(text).then(function () {
     btn.text("Copied!").addClass("copied");
     if (statusEl) { statusEl.text("Copied to clipboard."); }
     setTimeout(function () {
