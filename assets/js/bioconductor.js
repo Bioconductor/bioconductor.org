@@ -353,6 +353,13 @@ var writeTextToClipboard = function (text) {
   return fallbackCopyText(text);
 };
 
+var encodeForShieldsIO = function (text) {
+  return text
+    .replace(/-/g, "--")
+    .replace(/_/g, "__")
+    .replace(/[^A-Za-z0-9._-]/g, function (c) { return encodeURIComponent(c); });
+};
+
 // Copy text to clipboard and show brief feedback on the button
 var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
   writeTextToClipboard(text).then(function () {
@@ -414,7 +421,7 @@ var handleCitations = function () {
         // Extract preferred DOI from citation text.
         // Use a pattern matching only valid DOI characters per the DOI specification.
         var citationText = jQuery("#bioc-citation").text();
-        var doiChars = "[\\w./:;()\\[\\]_-]+";
+        var doiChars = "[\\w.()/_-]+";
         var doiPattern = new RegExp("\\bdoi:?(10\\.\\d{4,}\\/" + doiChars + ")", "i");
         var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(10\\.\\d{4,}\\/" + doiChars + ")", "i");
         var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
@@ -422,23 +429,14 @@ var handleCitations = function () {
 
         // Sanitize DOI: only allow characters valid in a DOI (alphanumeric and
         // DOI-permitted punctuation). Falls back to the package landing page DOI.
-        if (!/^10\.\d{4,}\/[\w./:;()[\]_-]+$/.test(preferredDoi)) {
+        if (!/^10\.\d{4,}\/[\w.()/_-]+$/.test(preferredDoi)) {
           preferredDoi = "10.18129/B9.bioc." + pkgName;
         }
 
-        // Build shields.io badge URL. Shields.io requires hyphens doubled and
-        // underscores doubled in the badge label. Slashes and other special chars
-        // must be percent-encoded. The underscore is excluded from percent-encoding
-        // because it is doubled in the preceding step.
-        var encodedDoi = preferredDoi
-          .replace(/-/g, "--")
-          .replace(/_/g, "__")
-          .replace(/[^A-Za-z0-9._-]/g, function (c) { return encodeURIComponent(c); });
+        var encodedDoi = encodeForShieldsIO(preferredDoi);
 
-        // Build badge using DOM construction. encodeURI ensures the URL is valid
-        // and safe even before the DOI sanitization step above.
-        var doiHref = encodeURI("https://doi.org/" + preferredDoi);
-        var badgeSrc = encodeURI("https://img.shields.io/badge/DOI-" + encodedDoi + "-blue");
+        var doiHref = "https://doi.org/" + encodeURIComponent(preferredDoi);
+        var badgeSrc = "https://img.shields.io/badge/DOI-" + encodedDoi + "-blue";
         var $badgeLink = jQuery("<a>")
           .attr("href", doiHref)
           .attr("title", "Preferred citation DOI");
@@ -449,8 +447,8 @@ var handleCitations = function () {
 
         // Add copy action buttons
         var actionsHtml =
-          '<button class="citation-btn" id="bioc-copy-text-btn">\uD83D\uDCCB Copy Text</button>' +
-          '<button class="citation-btn" id="bioc-copy-bibtex-btn">\uD83D\uDCCB Copy BibTeX</button>';
+          '<button class="citation-btn" id="bioc-copy-text-btn" aria-label="Copy citation as text">\uD83D\uDCCB Copy Text</button>' +
+          '<button class="citation-btn" id="bioc-copy-bibtex-btn" aria-label="Copy citation as BibTeX">\uD83D\uDCCB Copy BibTeX</button>';
         jQuery("#bioc-citation-actions").html(actionsHtml);
 
         jQuery("#bioc-copy-text-btn").on("click", function () {
