@@ -29,11 +29,15 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
  
 <h2 class="format-bold"> Package Reviewers</h2>
 
+<div>Najla Abassi</div>
 <div>Fabricio Almeida-Silva</div>
 <div>Helena Crowell</div>
+<div>James Eapen</div>
+<div>Hugo Gruson</div>
 <div>Peter Hickey</div>
-<div>Kayla Interdonato</div>
+<div>Hyu Kim</div>
 <div>Stefano Mangiola</div>
+<div>Pariksheet Nanda</div>
 <div>Jianhong Ou</div>
 <div>Marcel Ramos</div>
 <div>Mireia Ramos-Rodriguez</div>
@@ -66,5 +70,6 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
 <li>Nils Eling</li>
 <li>Martin Morgan</li>
 <li>Nitesh Turaga</li>
+<li>Kayla Interdonato<li>
 </ul>
 
