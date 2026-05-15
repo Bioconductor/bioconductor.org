@@ -62,12 +62,33 @@ below.
         `<container_name>` is an arbitrary name for the Docker container.
         It will be easier to access the container later if you give it a name
 
-    the command will take you to the container's terminal so you will need to run
+    To use your existing SSH credentials, you can mount the SSH agent
+    socket and set the `SSH_AUTH_SOCK` environment variable as shown below.
+    This will allow you to use your SSH keys for authentication when
+    accessing the container and pulling from git repositories.
+
+        # use id_rsa, id_ed25519, etc. depending on your set up
+        ssh-add ~/.ssh/id_ed25519
+
+        docker run -it -p 3000:3000 \
+            -v /home/user/bioc/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/manifest:/opt/manifest \
+            -v $SSH_AUTH_SOCK:/ssh-agent \
+            -e SSH_AUTH_SOCK=/ssh-agent \
+            --name <container_name> \
+            bioconductor/bioconductor.org /bin/bash
+
+    Note that if you need to populate biocViews data, you can mount the
+    `manifest` repository as shown above and then run
+
+        rake get_json
+
+    to populate the JSON files in `assets/packages/json` that are used to build
+    the BiocViews pages.
+
+    After running the above command, you can run
 
         rake
-
-    and
-
         cd output
         adsf
 
