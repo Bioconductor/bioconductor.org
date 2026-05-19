@@ -32,7 +32,7 @@ versions:
 devel_repos:
 - "bioc"
 - "data/experiment"
-#- "workflows"
+- "workflows"
 - "data/annotation"
 
 ## CHANGE this when the build machines change:
