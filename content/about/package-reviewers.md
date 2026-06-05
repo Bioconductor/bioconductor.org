@@ -13,7 +13,7 @@ of Reviewers</a>
 <p>
 We also encourage communication and conversation on any package review from the
 community in addition to assigned reviewers: <a
-href="https://github.com/Bioconductor/Contributions/issues">Packages Under
+href="https://github.com/Bioconductor/BiocContributions/issues">Packages Under
 Review</a>. All package reviews are publicly accessible, therefore any feedback
 and interactions on submitted packages must abide by the Bioconductor <a
 href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a> 

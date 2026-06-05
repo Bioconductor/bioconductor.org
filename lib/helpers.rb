@@ -1632,7 +1632,7 @@ end
 
 def recent_spb_submissions
   client = Octokit::Client.new(:access_token => ENV["GITHUB_TOKEN"])
-  issues = client.issues 'Bioconductor/Contributions'
+  issues = client.issues 'Bioconductor/BiocContributions'
   issue_names = []
   issue_url = []
   issues.each do |item|
