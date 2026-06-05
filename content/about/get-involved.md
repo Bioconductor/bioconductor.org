@@ -30,13 +30,10 @@ Engage with Bioconductor's training community by participating in or contributin
 Join special initiatives and work together to advance Bioconductor's goals.\
 *Find out more about Bioconductor Working Groups [here](https://workinggroups.bioconductor.org/).*
 
-<!--
-# Add when page is ready
-
 - ##### 💻 Contribute Code
 Improve existing projects or develop new ones to enhance Bioconductor.\
-*Explore opportunities for coding contributions here.*
--->
+*Explore opportunities for hack-a-thon events [here](https://bioconductor.org/developers/bioccommits/).*
+*Consider helping maintainer a package [here](https://bioconductor.org/developers/help_wanted/)*
 
 - ##### 🔍 Review Packages
 Maintain Bioconductor’s high standards by reviewing package submissions.\
