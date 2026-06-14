@@ -43,7 +43,7 @@ Anyone who is a bioinformatics domain expert.
   <lori.shepherd@roswellpark.org>.
 
 * Submit the package to the [GitHub submission
-  tracker](https://github.com/Bioconductor/Contributions) for a formal
+  tracker](https://github.com/Bioconductor/BiocContributions) for a formal
   review. Please also indicate in the tracker issue that this package is a
   workflow.
 

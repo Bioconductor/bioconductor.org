@@ -13,7 +13,7 @@ of Reviewers</a>
 <p>
 We also encourage communication and conversation on any package review from the
 community in addition to assigned reviewers: <a
-href="https://github.com/Bioconductor/Contributions/issues">Packages Under
+href="https://github.com/Bioconductor/BiocContributions/issues">Packages Under
 Review</a>. All package reviews are publicly accessible, therefore any feedback
 and interactions on submitted packages must abide by the Bioconductor <a
 href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a> 
@@ -29,11 +29,15 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
  
 <h2 class="format-bold"> Package Reviewers</h2>
 
+<div>Najla Abassi</div>
 <div>Fabricio Almeida-Silva</div>
 <div>Helena Crowell</div>
+<div>James Eapen</div>
+<div>Hugo Gruson</div>
 <div>Peter Hickey</div>
-<div>Kayla Interdonato</div>
+<div>Hyu Kim</div>
 <div>Stefano Mangiola</div>
+<div>Pariksheet Nanda</div>
 <div>Jianhong Ou</div>
 <div>Marcel Ramos</div>
 <div>Mireia Ramos-Rodriguez</div>
@@ -66,5 +70,6 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
 <li>Nils Eling</li>
 <li>Martin Morgan</li>
 <li>Nitesh Turaga</li>
+<li>Kayla Interdonato<li>
 </ul>
 

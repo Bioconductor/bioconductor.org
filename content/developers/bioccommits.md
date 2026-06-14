@@ -1,4 +1,4 @@
-# BiocCommits: Bioconductor centric hackathons
+# BiocCodingCollaborations: Bioconductor centric hackathons
 
 Bioconductor is a mature, diverse, and well-maintained project that
 performs and facilitates research across a variety of medical and
@@ -19,7 +19,7 @@ virtually.
 
 ## How to contribute
 
-For BiocCommits events attached to conferences, in-person participation
+For BiocCodingCollaborations events attached to conferences, in-person participation
 is encouraged, but not required. Virtual contributions are welcomed.
 Most contributions, particularly those to R packages will be expected to
 be R centric in terms of code actually written. However, some projects
@@ -33,7 +33,7 @@ contribute.
 
 ## Project types
 
-BiocCommits events will feature a small array of proposed or solicited
+BiocCodingCollaborations events will feature a small array of proposed or solicited
 project ideas, but participants are welcome to bring their own as long
 as they’ve been discussed with event organisers beforehand. Generally
 projects will fall into, but are not limited to, one of three general
@@ -87,7 +87,7 @@ general working and tested R packages are the goal where applicable.
 Tangible contributions to repositories that can be clearly
 professionally communicated by participants will be the goal otherwise.
 
-## Planned BiocCommit events
+## Planned BiocCodingCollaboration events
 
 ### Hackathon on spatial omics and image-derived data
 
@@ -183,12 +183,12 @@ form](https://forms.gle/7jsVrEnhp74dBrXMA)! Further information can be
 [found
 here](https://github.com/BiocCodingCollaborations/BiocNA2026_Hackathon).
 
-Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie.
+Please direct questions to Nicholas(dot)Cooley(at)ul(dot)ie or Lori(dot)Shepherd(at)RowsellPark(dot)org.
 
 We will be in contact about a month before the conference to confirm
 participation, plan out teams for projects, and ensure any questions or
 concerns are addressed.
 
-## Products and Projects from previous BiocCommits events
+## Products and Projects from previous BiocCodingCollaborations events
 
 Coming soon!
