@@ -69,11 +69,7 @@ The most recent meeting was: - Thursday May 28th 2026 4pm UTC - Enis
 Afgan: Galaxy, tool wrapping, and workflow development - [Zulip
 announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/May.20Developer.20Forum/near/583953030)
 
-<<<<<<< HEAD
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ougaIm5LIL4" title="April Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-=======
 <iframe width="560" height="315" src="https://youtu.be/qbNSAirpBtY" title="May Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
->>>>>>> 70c2ea80 (delayed updates)
 
 </iframe>
 
