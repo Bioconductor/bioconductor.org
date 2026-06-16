@@ -70,6 +70,6 @@ href="https://bioconductor.org/about/code-of-conduct/">Code of Conduct</a>
 <li>Nils Eling</li>
 <li>Martin Morgan</li>
 <li>Nitesh Turaga</li>
-<li>Kayla Interdonato<li>
+<li>Kayla Interdonato</li>
 </ul>
 
