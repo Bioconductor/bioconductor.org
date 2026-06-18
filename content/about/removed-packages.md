@@ -26,7 +26,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/BiRewire.html">BiRewire</a></li> 
 <li><a href="/packages/3.21/bioc/html/BPRMeth.html">BPRMeth</a></li> 
 <li><a href="/packages/3.21/bioc/html/CelliD.html">CelliD</a></li> 
-<li><a href="/packages/3.21/bioc/html/ChIPQC.html">ChIPQC</a></li> 
 <li><a href="/packages/3.21/bioc/html/ccrepe.html">ccrepe</a></li> 
 <li><a href="/packages/3.21/bioc/html/cummeRbund.html">cummeRbund</a></li> 
 <li><a href="/packages/3.21/bioc/html/debCAM.html">debCAM</a></li> 
@@ -100,7 +99,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/CINdex.html">CINdex</a></li> 
 <li><a href="/packages/3.21/bioc/html/cisPath.html">cisPath</a></li> 
 <li><a href="/packages/3.20/bioc/html/Harshlight.html">Harshlight</a></li> 
-<li><a href="/packages/3.20/bioc/html/hypeR.html">hypeR</a></li> 
 <li><a href="/packages/3.20/bioc/html/lapmix.html">lapmix</a></li> 
 <li><a href="/packages/3.21/bioc/html/LinTInd.html">LinTInd</a></li> 
 <li><a href="/packages/3.21/bioc/html/lute.html">lute</a></li> 
