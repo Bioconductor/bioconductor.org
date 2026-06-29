@@ -99,85 +99,113 @@ def downloadBadge(repo, destdir, release=false)
 
 end
 
-def getRanking(repo, release=false)
+# def getRanking(repo, release=false)
 
-  site_config = YAML.load_file("./config.yaml")
-  if release
-    ver = site_config["release_version"]
-  else
-    ver = site_config["devel_version"]
-  end
+#   site_config = YAML.load_file("./config.yaml")
+#   if release
+#     ver = site_config["release_version"]
+#   else
+#     ver = site_config["devel_version"]
+#   end
 
-  if ["bioc", "workflows"].include? repo
-     url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_scores.tab"))
-     json_file = File.join("assets/packages/json/", ver, repo, "packages.json")
-  else
-     url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_scores.tab"))
-     json_file = File.join("assets/packages/json/", ver, "data", repo, "packages.json")
-  end
-  urls = [url]
+#   if ["bioc", "workflows"].include? repo
+#      url = File.join("https://bioconductor.org/packages/stats/", repo, (repo+"_pkg_scores.tab"))
+#      json_file = File.join("assets/packages/json/", ver, repo, "packages.json")
+#   else
+#      url = File.join("https://bioconductor.org/packages/stats/",("data-"+repo), (repo+"_pkg_scores.tab"))
+#      json_file = File.join("assets/packages/json/", ver, "data", repo, "packages.json")
+#   end
+#   urls = [url]
 
-  raw_data = Hash.new(0)
+#   raw_data = Hash.new(0)
 
-  urls.each do |url|
-    url2 = URI.parse(url)
-    req = Net::HTTP.new(url2.host, url2.port)
-    req.use_ssl = true
-    res = req.request_head(url2.path)
-    if res.code == "200"
-      lines = HTTParty.get(url).split("\n")
-      for line in lines
-        next if line =~ /^Package\tDownload_score/ # skip header
-        package, distinct_ips = line.strip.split(/\t/)
-        raw_data[package] = Integer(distinct_ips)
-      end
+#   urls.each do |url|
+#     url2 = URI.parse(url)
+#     req = Net::HTTP.new(url2.host, url2.port)
+#     req.use_ssl = true
+#     res = req.request_head(url2.path)
+#     if res.code == "200"
+#       lines = HTTParty.get(url).split("\n")
+#       for line in lines
+#         next if line =~ /^Package\tDownload_score/ # skip header
+#         package, distinct_ips = line.strip.split(/\t/)
+#         raw_data[package] = Integer(distinct_ips)
+#       end
+#     else
+#       if File.exists? json_file
+#         json = JSON.parse(File.read(json_file))
+#         json.keys.each do |pkg|
+#           raw_data[pkg] = json[pkg]["Rank"]
+#         end
+#       end
+#     end
+#   end
+
+#   sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
+
+#   # filter on above helpers for active packages
+#   case repo
+#   when "workflows"
+#       pkgs = get_list_of_workflows(release=release)
+#   when "annotation"
+#       pkgs = get_annotation_package_list(release=release)
+#   when "experiment"
+#       pkgs = get_list_of_packages(bioc=false, release=release)
+#   when "bioc"
+#       pkgs = get_list_of_packages(bioc=true, release=release)
+#   end
+
+#   filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
+#   # add packages with no download stats yet
+#   nostats = pkgs.reject{|x| filtered_data.keys.include? x}
+#   nostats.each do |pkg|
+#       filtered_data[pkg] = 0
+#   end
+
+#   # add sorting ranking for ties
+#   # ties will have highest rank, i.e  if 1:3 are all the same
+#   # 1:3 get ranked 1/4 then 4 would rank 4/4 etc ...
+#   preVal = 0
+#   rankHash = Hash.new(0)
+#   filtered_data.each_with_index { |(key, value), index|
+#     if preVal != value
+#       rankHash["#{key}"] = index+1
+#       preVal = value
+#     else
+#       rankHash["#{key}"] = rankHash[rankHash.keys[index-1]]
+#     end
+#   }
+#   rankHash
+
+# end
+
+
+
+def getRanking(repo, release = false)
+
+  ver = "3.22"
+  json_file =
+    if %w[bioc workflows].include?(repo)
+      File.join("assets/packages/json", ver, repo, "packages.json")
     else
-      if File.exists? json_file
-        json = JSON.parse(File.read(json_file))
-        json.keys.each do |pkg|
-          raw_data[pkg] = json[pkg]["Rank"]
-        end
-      end
+      File.join("assets/packages/json", ver, "data", repo, "packages.json")
     end
+
+  raise "Cannot find #{json_file}" unless File.exist?(json_file)
+
+  json = JSON.parse(File.read(json_file))
+
+  rankHash = {}
+
+  json.each do |pkg, info|
+    rankHash[pkg] = info["Rank"].to_i
   end
 
-  sorted_data = Hash[raw_data.sort_by(&:last).to_a.reverse]
-
-  # filter on above helpers for active packages
-  case repo
-  when "workflows"
-      pkgs = get_list_of_workflows(release=release)
-  when "annotation"
-      pkgs = get_annotation_package_list(release=release)
-  when "experiment"
-      pkgs = get_list_of_packages(bioc=false, release=release)
-  when "bioc"
-      pkgs = get_list_of_packages(bioc=true, release=release)
-  end
-
-  filtered_data = sorted_data.select{ |k,v| pkgs.include?(k) }
-  # add packages with no download stats yet
-  nostats = pkgs.reject{|x| filtered_data.keys.include? x}
-  nostats.each do |pkg|
-      filtered_data[pkg] = 0
-  end
-
-  # add sorting ranking for ties
-  # ties will have highest rank, i.e  if 1:3 are all the same
-  # 1:3 get ranked 1/4 then 4 would rank 4/4 etc ...
-  preVal = 0
-  rankHash = Hash.new(0)
-  filtered_data.each_with_index { |(key, value), index|
-    if preVal != value
-      rankHash["#{key}"] = index+1
-      preVal = value
-    else
-      rankHash["#{key}"] = rankHash[rankHash.keys[index-1]]
-    end
-  }
   rankHash
-
 end
+
+
+
 
 ######################################
 #
