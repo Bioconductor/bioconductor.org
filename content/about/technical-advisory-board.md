@@ -111,8 +111,8 @@ minutes were maintained was on 2 May, 2019.
   [2026-04-02](2026-04-02-minutes.pdf),
   [2026-03-05](2026-03-05-minutes.pdf),
   [2026-02-05](2026-02-05-minutes.pdf),
-  [2026-01-08](2026-01-08-minutes.pdf),
-  [2025-12-04](2025-12-04-minutes.pdf),
+  [2026-01-08](2026-01-08-minutes.pdf)
+- [2025-12-04](2025-12-04-minutes.pdf),
   [2025-11-06](2025-11-06-minutes.pdf),
   [2025-10-02](2025-10-02-minutes.pdf),
   [2025-09-04](2025-09-04-minutes.pdf),
