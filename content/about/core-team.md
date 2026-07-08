@@ -38,6 +38,30 @@
   </div>
 </div>
 
+
+## Community Team
+
+The Community Team supports Bioconductor's training, community engagement, developer engagement, and communications activities.
+
+<div class="gallery">
+  <div class="gallery-card">
+    <img src="/images/coreTeamPic/MariaDoyle.jpeg"
+          alt="Maria Doyle" title="Maria Doyle"/>
+    Maria Doyle (Community & Training Manager)
+  </div>
+    <div class="gallery-card">
+    <img src="/images/coreTeamPic/Nicholas Cooley.jpeg"
+          alt="Nicholas Cooley" title="Nicholas Cooley/>
+    Nicholas Cooley (Developer Engagement Lead)
+  </div>
+    <div class="gallery-card">
+    <img src="/images/coreTeamPic/LaurahOndari.jpeg"
+          alt="Laurah Nyasita Ondari" title="Laurah Nyasita Ondari"/>
+    Laurah Nyasita Ondari (Community Engagement & Communications)
+  </div>
+</div>
+
+
 Alumni
 
 <ul class="inline_list">
