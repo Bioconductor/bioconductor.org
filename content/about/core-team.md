@@ -45,7 +45,7 @@ The Community Team supports Bioconductor's training, community engagement, devel
 
 <div class="gallery">
   <div class="gallery-card">
-    <img src="/images/coreTeamPic/MariaDoyle.jpeg"
+    <img src="/images/coreTeamPic/MariaDoyle.png"
           alt="Maria Doyle" title="Maria Doyle"/>
     Maria Doyle (Community & Training Manager)
   </div>
