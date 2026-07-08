@@ -50,8 +50,8 @@ The Community Team supports Bioconductor's training, community engagement, devel
     Maria Doyle (Community & Training Manager)
   </div>
     <div class="gallery-card">
-    <img src="/images/coreTeamPic/Nicholas Cooley.jpeg"
-          alt="Nicholas Cooley" title="Nicholas Cooley/>
+    <img src="/images/coreTeamPic/NicholasCooley.jpeg"
+          alt="Nicholas Cooley" title="Nicholas Cooley"/>
     Nicholas Cooley (Developer Engagement Lead)
   </div>
     <div class="gallery-card">
