@@ -23,6 +23,11 @@ pre code.hljs {
   font-family: Courier, monospace;
 }
 
+pre[data-copyable] code,
+pre[data-copyable] code.hljs {
+  padding-top: 3rem;
+}
+
 pre code,
 pre code.hljs,
 .hljs-punctuation {

@@ -4,6 +4,7 @@ const copyButtonIcon = `
   </svg>
 `;
 const defaultCopyLabel = "Copy";
+let copyFallbackWarningShown = false;
 
 const trimCodeBlocks = () => {
   Array.from(document.getElementsByTagName("code")).forEach((block) => {
@@ -59,9 +60,15 @@ const fallbackCopyText = (text) => {
   const textArea = document.createElement("textarea");
   textArea.value = text;
   textArea.setAttribute("readonly", "");
-  textArea.className = "sr-only";
+  textArea.style.position = "fixed";
+  textArea.style.left = "-9999px";
+  textArea.style.top = "0";
   document.body.appendChild(textArea);
   textArea.select();
+  if (!copyFallbackWarningShown) {
+    console.warn("Falling back to document.execCommand('copy').");
+    copyFallbackWarningShown = true;
+  }
   const copied = document.execCommand("copy");
   document.body.removeChild(textArea);
 
