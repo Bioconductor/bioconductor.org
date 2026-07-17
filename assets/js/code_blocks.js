@@ -60,8 +60,12 @@ const fallbackCopyText = (text) => {
   textArea.className = "sr-only";
   document.body.appendChild(textArea);
   textArea.select();
-  document.execCommand("copy");
+  const copied = document.execCommand("copy");
   document.body.removeChild(textArea);
+
+  if (!copied) {
+    throw new Error("Copy command failed");
+  }
 };
 
 const handleCopyClick = async (event) => {
@@ -99,7 +103,7 @@ const initializeCopyButton = (button) => {
     button.innerHTML = `${copyButtonIcon}<span class="copy-button-label">${button.dataset.copyLabel || "Copy"}</span>`;
   }
 
-  setCopyButtonState(button, false);
+  setCopyButtonState(button);
   button.addEventListener("click", handleCopyClick);
   button.dataset.copyButtonReady = "true";
 };
