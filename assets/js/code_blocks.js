@@ -3,6 +3,7 @@ const copyButtonIcon = `
     <path d="M16 1H6C4.9 1 4 1.9 4 3V17H6V3H16V1ZM19 5H10C8.9 5 8 5.9 8 7V21C8 22.1 8.9 23 10 23H19C20.1 23 21 22.1 21 21V7C21 5.9 20.1 5 19 5ZM19 21H10V7H19V21Z"></path>
   </svg>
 `;
+const defaultCopyLabel = "Copy";
 
 const trimCodeBlocks = () => {
   Array.from(document.getElementsByTagName("code")).forEach((block) => {
@@ -31,15 +32,16 @@ const getCopyText = (button) => {
 };
 
 const setCopyButtonState = (button, state = "default") => {
-  const defaultLabel = button.dataset.copyLabel || "Copy";
+  const defaultLabel = button.dataset.copyLabel || defaultCopyLabel;
   const successLabel = button.dataset.copySuccessLabel || "Copied";
   const errorLabel = button.dataset.copyErrorLabel || "Copy failed";
-  const label =
-    state === "copied"
-      ? successLabel
-      : state === "error"
-        ? errorLabel
-        : defaultLabel;
+  let label = defaultLabel;
+
+  if (state === "copied") {
+    label = successLabel;
+  } else if (state === "error") {
+    label = errorLabel;
+  }
 
   button.classList.toggle("copied", state === "copied");
   button.classList.toggle("copy-error", state === "error");
@@ -100,7 +102,7 @@ const initializeCopyButton = (button) => {
   button.classList.add("copy-button");
 
   if (!button.querySelector(".copy-button-label")) {
-    button.innerHTML = `${copyButtonIcon}<span class="copy-button-label">${button.dataset.copyLabel || "Copy"}</span>`;
+    button.innerHTML = `${copyButtonIcon}<span class="copy-button-label">${button.dataset.copyLabel || defaultCopyLabel}</span>`;
   }
 
   setCopyButtonState(button);
@@ -115,7 +117,7 @@ const addCodeCopyButton = (pre) => {
 
   const button = document.createElement("button");
   button.className = "copy-button code-copy-button";
-  button.dataset.copyLabel = "Copy";
+  button.dataset.copyLabel = defaultCopyLabel;
   button.dataset.copySuccessLabel = "Copied";
   pre.appendChild(button);
   initializeCopyButton(button);
