@@ -30,12 +30,19 @@ const getCopyText = (button) => {
   return "";
 };
 
-const setCopyButtonState = (button, copied) => {
+const setCopyButtonState = (button, state = "default") => {
   const defaultLabel = button.dataset.copyLabel || "Copy";
   const successLabel = button.dataset.copySuccessLabel || "Copied";
-  const label = copied ? successLabel : defaultLabel;
+  const errorLabel = button.dataset.copyErrorLabel || "Copy failed";
+  const label =
+    state === "copied"
+      ? successLabel
+      : state === "error"
+        ? errorLabel
+        : defaultLabel;
 
-  button.classList.toggle("copied", copied);
+  button.classList.toggle("copied", state === "copied");
+  button.classList.toggle("copy-error", state === "error");
   button.setAttribute("aria-label", label);
   button.setAttribute("title", label);
 
@@ -72,10 +79,11 @@ const handleCopyClick = async (event) => {
       fallbackCopyText(text);
     }
 
-    setCopyButtonState(button, true);
-    window.setTimeout(() => setCopyButtonState(button, false), 2000);
-  } catch (error) {
-    setCopyButtonState(button, false);
+    setCopyButtonState(button, "copied");
+    window.setTimeout(() => setCopyButtonState(button), 2000);
+  } catch {
+    setCopyButtonState(button, "error");
+    window.setTimeout(() => setCopyButtonState(button), 2000);
   }
 };
 

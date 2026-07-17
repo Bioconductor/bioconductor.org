@@ -140,6 +140,11 @@ pre code.light .hljs-title {
   border-color: var(--primary-p400);
 }
 
+.copy-button.copy-error {
+  background: var(--error-e500);
+  border-color: var(--error-e500);
+}
+
 .copy-button svg {
   fill: currentcolor;
   height: 0.9rem;
