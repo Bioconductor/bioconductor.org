@@ -47,6 +47,7 @@ below.
         docker run -it -p 3000:3000 \
             -v /home/user/bioc/bioconductor.org:/opt/bioconductor.org \
             -v /home/user/bioc/manifest:/opt/manifest \
+            -v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent \
                 --name <container_name> \
                 bioconductor/bioconductor.org /bin/bash
 
@@ -58,6 +59,9 @@ below.
 
         `-v` mounting a volume, the website (bioconductor.org) directory
         from your local machine is being mounted on the Docker container
+
+        `-v $SSH_AUTH_SOCK:/ssh-agent -e SSH_AUTH_SOCK=/ssh-agent` mounts the host's SSH agent
+        socket into the container so Git SSH commands (such as `rake get_json`) can authenticate automatically
 
         `<container_name>` is an arbitrary name for the Docker container.
         It will be easier to access the container later if you give it a name
