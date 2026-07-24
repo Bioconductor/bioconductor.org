@@ -34,9 +34,29 @@
     <p>
       <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%>
     </p>
-    <div id="bioc-citation-outer">
+
+    <!-- Package-specific citation (loaded from citations directory) -->
+
+    <div id="bioc-citation-outer" data-package="<%=@package[:Package]%>">
       <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
       <div id="bioc-citation" class="bioc-citation"></div>
+    </div>
+    <div class="bioc-project-citations">
+      <strong>Seminal Bioconductor project articles:</strong>
+      <div class="bioc-citation">
+        <p><strong>Huber W</strong>, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS,
+        Bravo HC, Davis S, Gatto L, Girke T, Gottardo R, Hahne F, Hansen KD, Irizarry RA,
+        Lawrence M, Love MI, MacDonald J, Obenchain V, Oleś AK, Pagès H, Reyes A, Shannon P,
+        Smyth GK, Tenenbaum D, Waldron L, Morgan M (2015). "Orchestrating high-throughput
+        genomic analysis with Bioconductor." <em>Nature Methods</em>, <strong>12</strong>(2),
+        115–121. doi:<a href="https://doi.org/10.1038/nmeth.3252">10.1038/nmeth.3252</a>.</p>
+        <p><strong>Gentleman RC</strong>, Carey VJ, Bates DM, Bolstad B, Dettling M, Dudoit S,
+        Ellis B, Gautier L, Ge Y, Gentry J, Hornik K, Hothorn T, Huber W, Iacus S, Irizarry R,
+        Leisch F, Li C, Maechler M, Rossini AJ, Sawitzki G, Smith C, Smyth G, Tierney L, Yang JYH,
+        Zhang J (2004). "Bioconductor: open software development for computational biology and
+        bioinformatics." <em>Genome Biology</em>, <strong>5</strong>(10), R80.
+        doi:<a href="https://doi.org/10.1186/gb-2004-5-10-r80">10.1186/gb-2004-5-10-r80</a>.</p>
+      </div>
     </div>
   </div>
 
