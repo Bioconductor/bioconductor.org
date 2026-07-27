@@ -56,8 +56,17 @@ h6,
   border: none;
 }
 
+/* Links need to differ from body text to be recognisable as links. Components
+   that need another treatment (header, footer, buttons) already set their own
+   colour, so this only affects links in body content.
+
+   --misc-neutral is chosen over the nearer brand tokens because it clears both
+   thresholds at once: 4.90:1 against the white background (WCAG AA text) and
+   4.11:1 against --default-body (WCAG 1.4.1, which wants 3:1 when colour alone
+   separates a link from its surrounding text). --primary-p400 manages 8.06:1 on
+   white but only 2.50:1 against body text; --primary is the reverse. */
 a {
-  color: black;
+  color: var(--misc-neutral);
 }
 
 @media (max-device-width: 768px),(width <= 768px){
