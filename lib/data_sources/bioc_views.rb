@@ -157,6 +157,16 @@ class BiocViews < Nanoc::DataSource
               packages.delete(bad)
             end
 
+            pkg_filter = ENV["ONLY_PACKAGES"] || ENV["PKG"]
+            if (ENV["TEST_PACKAGES"] == "true" || ENV["DEBUG_PACKAGES"] == "true") && (!pkg_filter || pkg_filter.empty?)
+              pkg_filter = "SummarizedExperiment,Biobase,BiocBaseUtils,BiocGenerics,DelayedArray,GenomicRanges,IRanges,S4Vectors"
+            end
+
+            if pkg_filter && !pkg_filter.empty?
+              allowed = pkg_filter.split(",").map(&:strip)
+              packages.select! { |k, _| allowed.include?(k) }
+            end
+
             items.push(get_index_page(packages, v, version))
 
             for package in packages.keys

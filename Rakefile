@@ -53,6 +53,18 @@ desc "Run nanoc compile"
 task :compile => [:pre_compile,
   :real_compile, :post_compile]
 
+desc "Run nanoc compile for a predefined set of test packages"
+task :compile_test do
+  ENV["TEST_PACKAGES"] = "true"
+  Rake::Task[:compile].invoke
+end
+
+desc "Build the bioconductor.org site for test packages"
+task :build_test do
+  ENV["TEST_PACKAGES"] = "true"
+  Rake::Task[:build].invoke
+end
+
 desc "Pre-compilation tasks"
 task :pre_compile do
   FileUtils.mkdir_p "content/packages"

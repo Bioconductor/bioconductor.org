@@ -320,6 +320,84 @@ var getHrefForSymlinks = function (href) {
   }
 };
 
+var fallbackCopyText = function (text) {
+  return new Promise(function (resolve, reject) {
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "absolute";
+    textarea.style.left = "-9999px";
+    document.body.appendChild(textarea);
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+    try {
+      if (document.execCommand("copy")) {
+        resolve();
+      } else {
+        reject(new Error("Copy command failed"));
+      }
+    } catch (e) {
+      reject(e);
+    } finally {
+      document.body.removeChild(textarea);
+    }
+  });
+};
+
+var writeTextToClipboard = function (text) {
+  if (navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard.writeText(text).catch(function () {
+      return fallbackCopyText(text);
+    });
+  }
+  return fallbackCopyText(text);
+};
+
+var CLIPBOARD_EMOJI = "\uD83D\uDCCB";
+var DOI_BODY_PATTERN = "[\\w.()/_-]+";
+var DOI_PATTERN = "10\\.\\d{4,}\\/" + DOI_BODY_PATTERN;
+
+var encodeForShieldsIO = function (text) {
+  return text
+    .replace(/-/g, "--")
+    .replace(/_/g, "__")
+    .replace(/ /g, "_")
+    .replace(/[^A-Za-z0-9._-]/g, function (c) { return encodeURIComponent(c); });
+};
+
+// Copy text to clipboard and show brief feedback on the button
+var copyToClipboardWithFeedback = function (btn, text, label, statusEl) {
+  writeTextToClipboard(text).then(function () {
+    btn.text("Copied!").addClass("copied");
+    if (statusEl) { statusEl.text("Copied to clipboard."); }
+    setTimeout(function () {
+      btn.text(label).removeClass("copied");
+      if (statusEl) { statusEl.text(""); }
+    }, 2000);
+  }).catch(function () {
+    btn.text("Copy failed");
+    if (statusEl) { statusEl.text("Copy failed. Please copy the text manually."); }
+    setTimeout(function () {
+      btn.text(label);
+      if (statusEl) { statusEl.text(""); }
+    }, 3000);
+  });
+};
+
+// Attach event listeners to static citation copy buttons that use data attributes.
+// Handles .citation-btn elements with data-citation-text or data-bibtex attributes,
+// replacing the need for inline onclick handlers in content pages.
+var handleStaticCitationButtons = function () {
+  jQuery(document).on("click", ".citation-btn[data-citation-text]", function () {
+    var btn = jQuery(this);
+    copyToClipboardWithFeedback(btn, btn.data("citation-text"), btn.text(), null);
+  });
+  jQuery(document).on("click", ".citation-btn[data-bibtex]", function () {
+    var btn = jQuery(this);
+    copyToClipboardWithFeedback(btn, btn.data("bibtex"), btn.text(), null);
+  });
+};
+
 var handleCitations = function () {
   if (jQuery("#bioc-citation").length) {
     jQuery("#bioc-citation-outer").hide();
@@ -331,6 +409,8 @@ var handleCitations = function () {
     segs.push(pkg);
     segs.push("citation.html");
     url = segs.join("/");
+    var bibUrl = url.replace("citation.html", "citation.bib");
+    var pkgName = jQuery("#bioc-citation-outer").data("package") || pkg;
     jQuery.ajax({
       url: url,
       dataType: "html",
@@ -342,6 +422,69 @@ var handleCitations = function () {
 
         data = data.replace(" (????)", "");
         jQuery("#bioc-citation").html(data);
+
+        // Extract preferred DOI from citation text.
+        // Use a pattern matching only valid DOI characters per the DOI specification.
+        var citationText = jQuery("#bioc-citation").text();
+        var doiPattern = new RegExp("\\bdoi:?(" + DOI_PATTERN + ")", "i");
+        var urlPattern = new RegExp("https?:\\/\\/doi\\.org\\/(" + DOI_PATTERN + ")", "i");
+        var doiMatch = citationText.match(doiPattern) || citationText.match(urlPattern);
+        var preferredDoi = doiMatch ? doiMatch[1] : "10.18129/B9.bioc." + pkgName;
+
+        // Sanitize DOI: only allow characters valid in a DOI (alphanumeric and
+        // DOI-permitted punctuation). Falls back to the package landing page DOI.
+        if (!(new RegExp("^" + DOI_PATTERN + "$")).test(preferredDoi)) {
+          preferredDoi = "10.18129/B9.bioc." + pkgName;
+        }
+
+        var encodedDoi = encodeForShieldsIO(preferredDoi);
+
+        var doiHref = "https://doi.org/" + encodeURIComponent(preferredDoi);
+        var badgeSrc = "https://img.shields.io/badge/DOI-" + encodedDoi + "-blue";
+        var $badgeLink = jQuery("<a>")
+          .attr("href", doiHref)
+          .attr("title", "Preferred citation DOI");
+        var $badgeImg = jQuery("<img>")
+          .attr("src", badgeSrc)
+          .attr("alt", "DOI badge");
+        jQuery("#citation-doi-badge").empty().append($badgeLink.append($badgeImg));
+
+        // Add copy action buttons
+        var actionsHtml =
+          '<button class="citation-btn" id="bioc-copy-text-btn" aria-label="Copy citation as text">' + CLIPBOARD_EMOJI + ' Copy Text</button>' +
+          '<button class="citation-btn" id="bioc-copy-bibtex-btn" aria-label="Copy citation as BibTeX">' + CLIPBOARD_EMOJI + ' Copy BibTeX</button>';
+        jQuery("#bioc-citation-actions").html(actionsHtml);
+
+        jQuery("#bioc-copy-text-btn").on("click", function () {
+          var btn = jQuery(this);
+          var statusEl = jQuery("#bioc-citation-status");
+          var text = jQuery("#bioc-citation").text().trim();
+          copyToClipboardWithFeedback(btn, text, CLIPBOARD_EMOJI + " Copy Text", statusEl);
+        });
+
+        jQuery("#bioc-copy-bibtex-btn").on("click", function () {
+          var btn = jQuery(this);
+          var statusEl = jQuery("#bioc-citation-status");
+          var origLabel = CLIPBOARD_EMOJI + " Copy BibTeX";
+          btn.prop("disabled", true);
+          jQuery.ajax({
+            url: bibUrl,
+            dataType: "text",
+            success: function (bibData) {
+              copyToClipboardWithFeedback(btn, bibData, origLabel, statusEl);
+              btn.prop("disabled", false);
+            },
+            error: function () {
+              btn.text("BibTeX unavailable");
+              if (statusEl) { statusEl.text("BibTeX format is not available for this package."); }
+              setTimeout(function () {
+                btn.text(origLabel).prop("disabled", false);
+                if (statusEl) { statusEl.text(""); }
+              }, 3000);
+            },
+          });
+        });
+
         jQuery("#bioc-citation-outer").show();
       },
       error: function (data, textStatus, jqXHR) {
@@ -361,6 +504,7 @@ jQuery(function () {
   });
   jQuery(".rpack").tooltip({ tip: "#tooltip" }); //{ effect: 'slide'});
   handleCitations();
+  handleStaticCitationButtons();
 });
 
 var submit_tryitnow = function () {
