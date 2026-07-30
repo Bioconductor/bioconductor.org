@@ -342,6 +342,9 @@ var handleCitations = function () {
 
         data = data.replace(" (????)", "");
         jQuery("#bioc-citation").html(data);
+        if (window.initializeCopyButtons) {
+          window.initializeCopyButtons();
+        }
         jQuery("#bioc-citation-outer").show();
       },
       error: function (data, textStatus, jqXHR) {

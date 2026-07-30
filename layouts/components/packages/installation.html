@@ -4,7 +4,7 @@
   To install this package, start R (version "<%= r_ver_for_bioc_ver(@package[:bioc_version_num]) %>") and enter:
 </p>
 
-<pre><code>
+<pre data-copyable><code>
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 <% if (@package[:bioc_version_str] == "Development") %>

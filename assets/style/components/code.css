@@ -4,6 +4,7 @@ pre:has(code) {
   background: var(--gradient-brandreverse);
   white-space: normal;
   margin-bottom: 2rem;
+  position: relative;
 }
 
 code * {
@@ -20,6 +21,11 @@ pre code.hljs {
   padding: 1rem;
   white-space: pre;
   font-family: Courier, monospace;
+}
+
+pre[data-copyable] code,
+pre[data-copyable] code.hljs {
+  padding-top: 3rem;
 }
 
 pre code,
@@ -113,4 +119,75 @@ pre code.light .hljs-title {
   margin-bottom:1em;
   overflow-x:auto;
   white-space:pre;
+}
+
+.copy-button {
+  align-items: center;
+  background: rgb(255 255 255 / 12%);
+  border: 1px solid rgb(255 255 255 / 30%);
+  border-radius: 999px;
+  color: white;
+  cursor: pointer;
+  display: inline-flex;
+  gap: 0.35rem;
+  line-height: 1;
+  padding: 0.4rem 0.7rem;
+  transition: background 0.2s ease;
+}
+
+.copy-button:hover,
+.copy-button:focus {
+  background: rgb(255 255 255 / 20%);
+}
+
+.copy-button.copied {
+  background: var(--primary-p400);
+  border-color: var(--primary-p400);
+}
+
+.copy-button.copy-error {
+  background: var(--error-e500);
+  border-color: var(--error-e500);
+}
+
+.copy-button svg {
+  fill: currentcolor;
+  height: 0.9rem;
+  width: 0.9rem;
+}
+
+.code-copy-button {
+  position: absolute;
+  right: 0.75rem;
+  top: 0.75rem;
+  z-index: 1;
+}
+
+.copy-button-label {
+  font-size: 0.85rem;
+  font-family: inherit;
+}
+
+.bioc-citation-header {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.bioc-citation-header .copy-button {
+  background: var(--primary-p400);
+  border-color: var(--primary-p400);
+}
+
+.bioc-citation-header .copy-button:hover,
+.bioc-citation-header .copy-button:focus {
+  background: var(--primary-p500);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .copy-button {
+    transition: none;
+  }
 }

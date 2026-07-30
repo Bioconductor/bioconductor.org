@@ -35,7 +35,17 @@
       <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%>
     </p>
     <div id="bioc-citation-outer">
-      <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
+      <div class="bioc-citation-header">
+        <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
+        <button
+          type="button"
+          class="copy-button"
+          data-copy-target="#bioc-citation"
+          data-copy-label="Copy citation"
+          data-copy-success-label="Citation copied">
+          Copy citation
+        </button>
+      </div>
       <div id="bioc-citation" class="bioc-citation"></div>
     </div>
   </div>
@@ -47,4 +57,3 @@
   <%= render("/components/packages/details/", :package => @package) %>
   <%= render("/components/packages/archives/", :package => @package) %> 
 </div>
-

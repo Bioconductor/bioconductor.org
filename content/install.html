@@ -2,7 +2,7 @@
   <h3 id="install-bioconductor-packages">Install Bioconductor Packages</h3>
   <p>To install core packages, type the following in an R command window:</p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 if (!require("BiocManager", quietly = TRUE))
   install.packages("BiocManager")
@@ -12,7 +12,7 @@ BiocManager::install(version = "<%=config[:release_version] %>")
 
   <p>To install core packages, type the following in an R command window:</p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
 </code>
@@ -38,7 +38,7 @@ BiocManager::install(c("GenomicFeatures", "AnnotationDbi"))
     To search through available packages programmatically, use the following:
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 BiocManager::available()
 </code>
@@ -59,7 +59,7 @@ BiocManager::available()
     version of Bioconductor, start a new session of R and enter:
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 BiocManager::install()
 </code>
@@ -78,7 +78,7 @@ BiocManager::install()
     for your version of R, enter:
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
@@ -113,7 +113,7 @@ BiocManager::install()
     to address this might be to start a new R session and enter:
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
@@ -136,7 +136,7 @@ BiocManager::install(pkgs, type = "source", checkBuilt = TRUE)
 
   <p>Use the commands:</p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 BiocManager::valid()     ## R version 3.5 or later
 </code>
@@ -212,7 +212,7 @@ BiocManager::valid()     ## R version 3.5 or later
     R in use regardless of the R and Bioconductor release cycles.
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 > library(BiocManager)
 Bioconductor version 3.9 (BiocManager 1.30.4), ?BiocManager::install
@@ -233,7 +233,7 @@ for help
     would like to update.
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 > BiocManager::install()
 Bioconductor version 3.9 (BiocManager 1.30.4), R 3.6.0 Patched
@@ -250,7 +250,7 @@ Update all/some/none? [a/s/n]:
     version of Bioconductor.
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 > BiocManager::install(version = "devel")
 Upgrade 89 packages to Bioconductor version '3.10'? [y/n]: y
@@ -286,7 +286,7 @@ help
     a repository; regular users would seldom have these).
   </p>
 
-  <pre>
+  <pre data-copyable>
 <code class="dark nohighlight">
 > BiocManager::valid()
 
