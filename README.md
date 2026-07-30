@@ -108,6 +108,36 @@ below.
         cd output
         adsf
 
+    **Mounting Build Products (Extracted from Package Tarballs via `biocViews`):**
+
+    When testing package detail and citation pages locally, assets generated
+    from R package source tarballs (using `biocViews::extract*` functions such
+    as `biocViews::extractCitations()`, `biocViews::extractManuals()`, etc.)
+    can be mounted into the container's output directory tree.
+
+    For example, if package tarballs have been processed by `biocViews` into a
+    local directory structure (e.g., `~/minibioc/packages/<version>/bioc/`),
+    you can mount these extracted build products when launching the container:
+
+        docker run -it -p 3000:3000 \
+            -v /home/user/bioc/bioconductor.org:/opt/bioconductor.org \
+            -v /home/user/bioc/manifest:/opt/manifest \
+            -v /home/user/minibioc/packages/devel/bioc/citations:/opt/bioconductor.org/output/packages/devel/bioc/citations \
+            -v /home/user/minibioc/packages/devel/bioc/manuals:/opt/bioconductor.org/output/packages/devel/bioc/manuals \
+            --name bioconductor.org \
+            bioconductor/bioconductor.org /bin/bash
+
+    *Note on Release vs. Devel Versions:* `rake build` generates version
+    symlinks in `output/packages/` (e.g., `release -> 3.23` and `devel -> 3.24`
+    according to `config.yaml`). When testing URLs under
+    `/packages/release/...` or `/packages/devel/...`, ensure volume mounts
+    target the corresponding version number, or mount to both `release` and
+    `devel` version directories if needed.
+
+    *Note:* See the `setup_repo.R` script in
+    https://github.com/LiNk-NY/minibioc to build a subset of packages and
+    extract build products locally.
+
 4.  Make your changes on this branch, add content or edit content.
 
 5.  Once the changes are made and you want to be able to see them on
