@@ -65,6 +65,12 @@ task :build_test do
   Rake::Task[:build].invoke
 end
 
+desc "Get JSON files for a predefined set of test packages"
+task :get_json_test do
+  ENV["TEST_PACKAGES"] = "true"
+  Rake::Task[:get_json].invoke
+end
+
 desc "Pre-compilation tasks"
 task :pre_compile do
   FileUtils.mkdir_p "content/packages"

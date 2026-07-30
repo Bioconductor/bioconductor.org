@@ -157,6 +157,17 @@ class GetJson
       key = dcf["Package"]
       ret[key] = dcf
     end
+
+    pkg_filter = ENV["ONLY_PACKAGES"] || ENV["PKG"]
+    if (ENV["TEST_PACKAGES"] == "true" || ENV["DEBUG_PACKAGES"] == "true") && (!pkg_filter || pkg_filter.empty?)
+      pkg_filter = "SummarizedExperiment,Biobase,BiocGenerics,DelayedArray,GenomicRanges,IRanges,S4Vectors"
+    end
+
+    if pkg_filter && !pkg_filter.empty?
+      allowed = pkg_filter.split(",").map(&:strip)
+      ret.select! { |k, _| allowed.include?(k) }
+    end
+
     ret
   end
 
