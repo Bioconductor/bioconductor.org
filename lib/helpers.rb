@@ -1791,6 +1791,7 @@ def deprecated_on_website
 end
 
 def parse_views_dcf(text)
+  text = text.to_s.force_encoding("UTF-8").scrub
   records = []
   current = {}
   last_key = nil
@@ -1838,7 +1839,7 @@ def get_deprecated(ver)
   views.each do |category, url|
     #puts "FETCHING #{url}"
     begin
-      text = URI.open(url, "Cache-Control" => "no-cache"){ |f| f.read }
+      text = URI.open(url, "r:UTF-8", "Cache-Control" => "no-cache") { |f| f.read }
     rescue OpenURI::HTTPError => e
       warn "Skipping #{url}: #{e.message}"
       next
