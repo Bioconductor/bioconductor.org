@@ -34,15 +34,26 @@
     <p>
       <strong>Maintainer:</strong> <%= filter_emails(@package[:Maintainer])%>
     </p>
+  </div>
 
+  <h4>Citation(s)</h4>
+
+  <div class="package-info">
     <!-- Package-specific citation (loaded from citations directory) -->
-
     <div id="bioc-citation-outer" data-package="<%=@package[:Package]%>">
-      <strong>Citation (from within R, enter <code>citation("<%=@package[:Package]%>")</code>):</strong>
+      <p>
+        To cite <strong><%=@package[:Package]%></strong> with R, run:
+      </p>
+      <pre style="margin-bottom: 0.5rem;"><code>citation("<%=@package[:Package]%>")</code></pre>
       <div id="bioc-citation" class="bioc-citation"></div>
     </div>
+
+    <p></p>
+
     <div class="bioc-project-citations">
-      <strong>Seminal Bioconductor project articles:</strong>
+      <p>
+        <strong>Seminal Bioconductor project articles:</strong>
+      </p>
       <div class="bioc-citation">
         <p><strong>Huber W</strong>, Carey VJ, Gentleman R, Anders S, Carlson M, Carvalho BS,
         Bravo HC, Davis S, Gatto L, Girke T, Gottardo R, Hahne F, Hansen KD, Irizarry RA,
