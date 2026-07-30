@@ -86,7 +86,23 @@ below.
     to populate the JSON files in `assets/packages/json` that are used to build
     the BiocViews pages.
 
-    After running the above command, you can run
+    **Testing with a reduced package set:** Fetching JSON for all packages can
+    be slow. For development and testing purposes, the following rake tasks
+    limit processing to a small predefined set of packages
+    (`SummarizedExperiment`, `Biobase`, `BiocGenerics`, `DelayedArray`,
+    `GenomicRanges`, `IRanges`, and `S4Vectors`) by setting the
+    `TEST_PACKAGES=true` environment variable internally:
+
+    - `rake get_json_test` — fetch JSON files for only the test packages
+    - `rake compile_test` — run `nanoc compile` for only the test packages
+    - `rake build_test` — run the full build for only the test packages
+
+    You can also target a custom set of packages by setting the `PKG` (or
+    `ONLY_PACKAGES`) environment variable directly:
+
+        PKG="BiocGenerics,IRanges" rake get_json
+
+    After running `rake get_json` (or `rake get_json_test`), you can run
 
         rake
         cd output
