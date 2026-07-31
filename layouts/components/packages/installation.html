@@ -9,7 +9,7 @@ if (!require("BiocManager", quietly = TRUE))
     install.packages("BiocManager")
 <% if (@package[:bioc_version_str] == "Development") %>
 # The following initializes usage of Bioc devel
-BiocManager::install(version='devel')
+BiocManager::install(version="devel")
 <% end %>
 BiocManager::install("<%=@package[:Package]%>")
 </code></pre>
