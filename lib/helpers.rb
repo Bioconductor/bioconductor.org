@@ -1552,7 +1552,7 @@ def package_has_archive(package)
     return false
   end
   version = package[:bioc_version_num]
-  url = "https://bioconductor.org/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
+  url = "#{bioc_data_origin}/packages/#{version}/bioc/src/contrib/Archive/#{package[:Package]}/"
   uri = URI(url)
   http = Net::HTTP.new(uri.host, uri.port)
   if uri.port == 443
@@ -1715,7 +1715,7 @@ end
 # but needed currently to rake website
 def recent_packages()
   begin
-    xml = HTTParty.get("http://master.bioconductor.org/rss/new_packages.rss").body
+    xml = HTTParty.get("#{bioc_data_origin}/rss/new_packages.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -1750,7 +1750,7 @@ def extract_inline_list(p_node)
 end
 
 def deprecated_on_website
-  url = "https://bioconductor.org/about/removed-packages/"
+  url = "#{bioc_data_origin}/about/removed-packages/"
   doc = Nokogiri::HTML(URI.open(url))
 
   # Always include all categories
@@ -1822,7 +1822,7 @@ def get_deprecated(ver)
     raise ArgumentError, "ver must be 'devel' or 'release'"
   end
 
-  base = "https://bioconductor.org/checkResults/#{ver}"
+  base = "#{bioc_data_origin}/checkResults/#{ver}"
   views = {
     bioc:        "#{base}/bioc-LATEST/meat-index.dcf",
     experiment:  "#{base}/data-experiment-LATEST/meat-index.dcf",
