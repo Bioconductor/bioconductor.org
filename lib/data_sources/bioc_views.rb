@@ -119,7 +119,7 @@ class BiocViews < Nanoc::DataSource
     }
 
     item = new_item("", attributes, Nanoc::Identifier.new("all-#{repo}-#{version}", type: :legacy))
-    rep = Nanoc::Int::ItemRep.new(item, :package_index_page)
+    rep = Nanoc::Core::ItemRep.new(item, :package_index_page)
 
 
     item
@@ -210,7 +210,7 @@ class BiocViews < Nanoc::DataSource
               identifier = Nanoc::Identifier.new(id, type: :legacy)
 
               item = new_item(" ", attributes, identifier)
-              rep = Nanoc::Int::ItemRep.new(item, :unique_name)
+              rep = Nanoc::Core::ItemRep.new(item, :unique_name)
 
               items.push item
             end
