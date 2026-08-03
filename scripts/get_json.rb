@@ -87,12 +87,15 @@ class GetJson
 
   def get_dcfs(repo, version)
     url = URI.parse("#{bioc_data_origin}/packages/#{version}/#{repo}/VIEWS")
-    req = Net::HTTP::Get.new(url.path)
-    # FIXME make sure that the request was successful (returns
-    # http status 200)
-    res = Net::HTTP.start(url.host, url.port) {|http|
+    req = Net::HTTP::Get.new(url.request_uri)
+    # use_ssl must track the scheme: the origin is configurable, so it is not
+    # safe to assume plain http as this did when the host was hardcoded.
+    res = Net::HTTP.start(url.host, url.port, use_ssl: url.scheme == 'https') {|http|
       http.request(req)
     }
+    unless res.is_a?(Net::HTTPSuccess)
+      raise "VIEWS fetch failed: #{url} returned #{res.code}"
+    end
     views = res.body
     # how to test locally
     # views = File.read("/home/lori/MasterTest/#{repo}/VIEWS")
