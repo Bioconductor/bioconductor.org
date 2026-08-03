@@ -122,7 +122,9 @@ class GmaneList < Nanoc::DataSource
 
   def read_cache
     if File.exist? cache_file
-      YAML.load_file(cache_file)
+      # See pubmed.rb: Psych 4 safe-loads by default and rejects the Time objects
+      # this cache serialises. Self-written file, not user input.
+      YAML.unsafe_load_file(cache_file)
     else
       { :cache_time => nil,
         :last_modified => nil,

@@ -132,7 +132,7 @@ end
 #         raw_data[package] = Integer(distinct_ips)
 #       end
 #     else
-#       if File.exists? json_file
+#       if File.exist? json_file
 #         json = JSON.parse(File.read(json_file))
 #         json.keys.each do |pkg|
 #           raw_data[pkg] = json[pkg]["Rank"]

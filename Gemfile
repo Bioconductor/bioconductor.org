@@ -1,6 +1,6 @@
 raise 'Ruby version must be 2.3 or greater' unless  RUBY_VERSION.to_f >= 2.3
 source 'http://rubygems.org'
-gem "nanoc", "~> 4.9.5"
+gem "nanoc", "~> 4.12"
 gem "pry"
 gem "pry-byebug"
 gem "rdiscount"
@@ -29,3 +29,8 @@ gem "sequel"
 gem "pg"
 gem "treetop-dcf"
 gem "octokit"
+
+# Ruby 3.x moved these from default to *bundled* gems, so bundler excludes them
+# from the load path unless they are declared here. Required by lib/ and scripts/.
+gem "rexml"
+gem "rss"

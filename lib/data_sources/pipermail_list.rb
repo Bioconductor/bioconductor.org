@@ -23,7 +23,7 @@ class PipermailList < Nanoc::DataSource
         # why is the certificate not valid from dan's home laptop?
         doc = nil
         begin
-            doc = Nokogiri::HTML(open(url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+            doc = Nokogiri::HTML(URI.open(url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))
         rescue
             return []
         end
@@ -48,7 +48,7 @@ class PipermailList < Nanoc::DataSource
             msg_url = url.sub("date.html", href)
             msg_doc = nil
             begin
-                msg_doc = Nokogiri::HTML(open(msg_url, {ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE}))
+                msg_doc = Nokogiri::HTML(URI.open(msg_url, ssl_verify_mode: OpenSSL::SSL::VERIFY_NONE))
             rescue
                 return []
             end

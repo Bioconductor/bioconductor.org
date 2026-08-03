@@ -5,7 +5,7 @@ require 'yaml'
 require './scripts/PubSubHubbub-master/lib/pubsubhubbub'
 require 'pp'
 
-unless File.exists?("tmp/rss_urls.txt")
+unless File.exist?("tmp/rss_urls.txt")
     puts "url file does not exist!"
     exit 1
 end

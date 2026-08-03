@@ -83,8 +83,8 @@ task :pre_compile do
     FileUtils.rm_f "output/packages/#{version}/BiocViews.html"
     FileUtils.mkdir_p "output/packages/#{version}/BiocViews"
     unless(ENV.has_key?("QUICK_NANOC_COMPILE") && ENV["QUICK_NANOC_COMPILE"] == "true")
-      FileUtils.cp "assets/help/bioc-views.html", "#{destdir}/BiocViews.html", {:preserve => false}
-      FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", {:preserve => false}
+      FileUtils.cp "assets/help/bioc-views.html", "#{destdir}/BiocViews.html", preserve: false
+      FileUtils.cp "assets/help/bioc-views.yaml", "#{destdir}/BiocViews.yaml", preserve: false
     end
   end
 
@@ -425,7 +425,7 @@ task :get_build_dbs do
       dest_etag_name = dest_file_name.sub("dcf", "etag")
       etag = HTTParty.head(url).headers["etag"]
       urlcode = HTTParty.head(url).response.code
-      if ((!File.exists? dest_etag_name) or File.readlines(dest_etag_name).first != etag) and urlcode == "200"
+      if ((!File.exist? dest_etag_name) or File.readlines(dest_etag_name).first != etag) and urlcode == "200"
 	shield_dir = File.join("assets", "shields", "build", version, repo)
 	FileUtils.mkdir_p shield_dir
 	efh = File.open(dest_etag_name, 'w')
@@ -486,7 +486,7 @@ task :get_availability_shields  do
     json_file = File.join("assets", "packages", "json", numeric_version, "bioc", "packages.json")
 
     indexList=[]
-    if File.exists? meat_index_file
+    if File.exist? meat_index_file
 
       mitxt = File.readlines(meat_index_file).join
       meat_index = Dcf.parse(mitxt)

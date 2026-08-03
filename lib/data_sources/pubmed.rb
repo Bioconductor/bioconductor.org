@@ -177,7 +177,9 @@ class PubmedPapers < Nanoc::DataSource
   def read_cache
     if File.exist? @opts[:cache_file]
         file_name = @opts[:cache_file]
-        YAML.load_file(file_name)
+        # Psych 4 (Ruby 3.1+) made YAML.load_file safe-by-default, which rejects the
+        # Time objects write_cache serialises. This file is written by us, not user input.
+        YAML.unsafe_load_file(file_name)
     else
       {
         :timestamp => nil,

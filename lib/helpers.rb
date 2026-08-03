@@ -634,7 +634,7 @@ def get_year_shield(package, make_shield=false, conf=nil)
   shield = File.join(destdir, "#{package}.svg")
   now = DateTime.now
   onedayago = now.prev_day
-  if ((!File.exists?(shield)) or  DateTime.parse(File.mtime(shield).to_s) < onedayago)
+  if ((!File.exist?(shield)) or  DateTime.parse(File.mtime(shield).to_s) < onedayago)
     if is_new_package2(package, config)
       if make_shield
         puts "Downloading years-in-bioc shield for #{package}..."
@@ -877,7 +877,7 @@ def get_build_summary(version, repo)
       css_url = "#{url_without_protocol}report.css" 
     end
     begin
-      html = open(url)
+      html = URI.open(url)
     rescue Exception => e
       puts "open(url) failed"
       puts "  url: " + url
@@ -1046,7 +1046,7 @@ def is_new_package(package)
             next if entry =~ /^\./
             file = File.join(dir, entry,
                 package[:repo].sub(/\/$/, "").gsub("/", File::SEPARATOR), "packages.json")
-            if (File.exists?(file))
+            if (File.exist?(file))
                 f = File.open(file)
                 $pkgdata[package[:repo]][entry] = JSON.load(f)
                 f.close
@@ -1304,7 +1304,7 @@ end
 
 def get_pubmed_cache_date
     cachefile = "tmp/pubmed_cache_file.yaml"
-    return "" unless File.exists? cachefile
+    return "" unless File.exist? cachefile
     File.mtime(cachefile).iso8601
 end
 
@@ -1338,7 +1338,7 @@ def mirror_status()
     now = Time.now
     yesterday = now - (60*60*24)
     FileUtils.mkdir_p "tmp"
-    if File.exists? (cachefile) and File.mtime(cachefile) > yesterday
+    if File.exist? (cachefile) and File.mtime(cachefile) > yesterday
         return YAML.load_file(cachefile)
     end
     h = {}
@@ -1433,7 +1433,7 @@ def coverage_url(package)
   dirname = "release" if branch =~ /^release/
   shield = File.join("assets", "shields", "coverage",
     dirname, "#{pkgname}.svg")
-  unless File.exists? shield
+  unless File.exist? shield
     return "https://codecov.io/github/Bioconductor-mirror/#{pkgname}/branch/#{branch}"
   end
   content = File.readlines(shield).first

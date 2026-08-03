@@ -32,7 +32,7 @@ end
 
 def get_support_tag_info()
 
-  if File.exists? "tmp/packageNameList.txt"
+  if File.exist? "tmp/packageNameList.txt"
     res = RestClient.post("https://support.bioconductor.org/api/tags/list/", :tags => File.new("tmp/packageNameList.txt"))
     my_hash = JSON.parse(res.body)
 

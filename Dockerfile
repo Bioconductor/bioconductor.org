@@ -1,38 +1,32 @@
-FROM ruby:2.6.5
+FROM ubuntu:24.04
 
-## Fix apt sources for archived Debian Buster
-RUN sed -i 's|deb.debian.org/debian|archive.debian.org/debian|g' /etc/apt/sources.list \
- && sed -i '/security.debian.org/d' /etc/apt/sources.list
+# Ruby 3.2 from Ubuntu 24.04 LTS (supported until 2029). The previous image was
+# ruby:2.6.5 on Debian Buster, both long EOL — Buster was archived, so that build
+# needed apt sources rewritten to archive.debian.org just to install anything.
 
-## System dependencies
-RUN apt-get update && apt-get install -y \
-    rsync \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+ENV DEBIAN_FRONTEND=noninteractive \
+    LANG=C.UTF-8 \
+    BUNDLE_PATH=/usr/local/bundle
 
-## Install gems
-COPY Gemfile /opt
-COPY Gemfile.lock /opt
+RUN apt-get update && apt-get install -y --no-install-recommends \
+      ruby-full ruby-dev \
+      build-essential pkg-config \
+      libxml2-dev libxslt1-dev zlib1g-dev libffi-dev libyaml-dev \
+      libsqlite3-dev libpq-dev \
+      git rsync ca-certificates curl \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
-## Set the working directory to /opt/bioconductor.org
 WORKDIR /opt/bioconductor.org
 
-## Copy the remaining files from bioconductor.org/ to /opt/bioconductor.org
+# Gems first, so dependency installation caches independently of content changes.
+COPY Gemfile Gemfile.lock ./
+RUN gem install bundler --no-document \
+    && bundle install --jobs=4 \
+    && bundle clean --force
+
 COPY . .
 
-## Install bundle and dependencies
-RUN gem install bundler -v 2.4.22
-RUN bundle install --jobs=4 && bundle clean --force
-
-## Set up web server
 EXPOSE 3000
 
-## Create startup script
-RUN echo '#! /bin/bash' > .startup.sh \
-    && echo 'cd /opt/bioconductor.org' >> .startup.sh \
-    && echo 'rake' >> .startup.sh \
-    && echo 'cd output' >> .startup.sh \
-    && echo 'adsf' >> .startup.sh \
-    && chmod +x .startup.sh
-
-CMD ["/opt/bioconductor.org/.startup.sh"]
+# `rake` builds the site into output/; adsf serves it. Same contract as before.
+CMD ["bash", "-lc", "bundle exec rake && cd output && bundle exec adsf -p 3000"]

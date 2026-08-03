@@ -83,7 +83,7 @@ class SearchIndexer
 
     cachefilename = "#{path_to_cache_file}/search_indexer_cache.yaml"
 
-    if File.exists?(cachefilename) #todo also make sure file is not empty
+    if File.exist?(cachefilename) #todo also make sure file is not empty
       cache = YAML.load_file(cachefilename)
       cache_exists = true
     end

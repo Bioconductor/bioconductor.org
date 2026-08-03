@@ -42,7 +42,7 @@ for file in files
   
   dir = "#{webroot}/packages/#{version}/#{repo}/html"
   
-  next unless (File.exists? dir and File.directory? dir)
+  next unless (File.exist? dir and File.directory? dir)
   
   existing_files = `ls -1 #{dir}`.split("\n")
   
