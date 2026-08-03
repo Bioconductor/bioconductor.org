@@ -1,3 +1,4 @@
+require_relative 'lib/bioc_data_origin'
 require 'rubygems'
 require 'nanoc'
 require 'yaml'
@@ -394,7 +395,7 @@ task :get_build_result_dcfs, :buildtype do |t, args|
 	#unless (site_config["devel_repos"].include? buildtype.gsub("-", "/"))
 	#  next
 	#end
-	res = HTTParty.get("http://bioconductor.org/checkResults/#{version}/#{buildtype}-LATEST/BUILD_STATUS_DB.txt")
+	res = HTTParty.get("#{bioc_data_origin}/checkResults/#{version}/#{buildtype}-LATEST/BUILD_STATUS_DB.txt")
 	f = File.open(File.join(dcfdir, version, "BUILD_STATUS_DB.txt"), "w")
 	f.write(res)
 	f.close
@@ -420,7 +421,7 @@ task :get_build_dbs do
   %w(release devel).each do |version|
     %w(bioc data-experiment workflows).each do |repo|
       puts "Working On: #{version} #{repo}"
-      url = "http://master.bioconductor.org/checkResults/#{version}/#{repo}-LATEST/BUILD_STATUS_DB.txt"
+      url = "#{bioc_data_origin}/checkResults/#{version}/#{repo}-LATEST/BUILD_STATUS_DB.txt"
       dest_file_name = File.join build_dbs_dir, "#{version}-#{repo}.dcf"
       dest_etag_name = dest_file_name.sub("dcf", "etag")
       etag = HTTParty.head(url).headers["etag"]

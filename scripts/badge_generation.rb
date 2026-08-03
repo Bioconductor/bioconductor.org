@@ -1,3 +1,4 @@
+require_relative '../lib/bioc_data_origin'
 #!/usr/bin/env ruby
 
 require 'yaml'
@@ -418,7 +419,7 @@ def get_annotation_package_list(release=false)
   else
     version = 'devel'
   end
-  url = "http://bioconductor.org/packages/#{version}/data/annotation/src/contrib/PACKAGES"
+  url = "#{bioc_data_origin}/packages/#{version}/data/annotation/src/contrib/PACKAGES"
   res = HTTParty.get(url).to_s
   res.split("\n").each do |line|
     if line =~ /^Package: /

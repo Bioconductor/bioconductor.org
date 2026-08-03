@@ -1,3 +1,4 @@
+require_relative '../lib/bioc_data_origin'
 #!/usr/bin/env ruby
 
 require 'find'
@@ -25,7 +26,7 @@ else
 end
 
 $uuid = UUID.new
-BASEURL = "http://bioconductor.org/checkResults"
+BASEURL = "#{bioc_data_origin}/checkResults"
 
 if $buildtype == "bioc"
     DCFDIR = "tmp/build_dcfs"

@@ -1,3 +1,4 @@
+require_relative '../lib/bioc_data_origin'
 #!/usr/bin/env ruby
 
 # coding: utf-8
@@ -85,7 +86,7 @@ class GetJson
 
 
   def get_dcfs(repo, version)
-    url = URI.parse("http://master.bioconductor.org/packages/#{version}/#{repo}/VIEWS")
+    url = URI.parse("#{bioc_data_origin}/packages/#{version}/#{repo}/VIEWS")
     req = Net::HTTP::Get.new(url.path)
     # FIXME make sure that the request was successful (returns
     # http status 200)

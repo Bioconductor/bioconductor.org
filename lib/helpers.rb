@@ -569,7 +569,7 @@ def get_svn_commits()
     # for this. See https://stackoverflow.com/questions/15593133/rexml-runtimeerror-entity-expansion-has-grown-too-large
     REXML::Document.entity_expansion_text_limit =
       REXML::Document.entity_expansion_text_limit * 4
-    xml = HTTParty.get("http://bioconductor.org/rss/gitlog.rss").body
+    xml = HTTParty.get("#{bioc_data_origin}/rss/gitlog.rss").body
     doc = Document.new xml
     items = []
     doc.elements.each("rss/channel/item") {|i| items.push i}
@@ -867,7 +867,7 @@ def make_package_url_links(url)
 end
 
 def get_build_summary(version, repo)
-    url = "http://bioconductor.org/checkResults/#{version}/#{repo}-LATEST/"
+    url = "#{bioc_data_origin}/checkResults/#{version}/#{repo}-LATEST/"
     if repo == "bioc"
       url_without_protocol = url.sub(/^http:/i, "")
       css_url = "#{url_without_protocol}report.css"
@@ -1581,9 +1581,9 @@ end
 
 def get_last_git_commits(release=true)
   if release
-    url = "https://master.bioconductor.org/developers/rss-feeds/gitlog.release.xml"
+    url = "#{bioc_data_origin}/developers/rss-feeds/gitlog.release.xml"
   else
-    url = "https://master.bioconductor.org/developers/rss-feeds/gitlog.xml"
+    url = "#{bioc_data_origin}/developers/rss-feeds/gitlog.xml"
   end
   begin
     xml = HTTParty.get(url).parsed_response["rss"]["channel"]["item"]
