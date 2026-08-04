@@ -38,10 +38,10 @@ var displayPackages = function (packageList, nodeName) {
   html +=
     "<table role='table' id='biocViews_package_table' aria-label='Packages table' tabindex='0'>\n" +
     "<thead><tr role='row'>" +
-    "<th role='columnheader' scope='col'>Package</th>" +
-    "<th role='columnheader' scope='col'>Maintainer</th>" +
-    "<th role='columnheader' scope='col'>Title</th>" +
-    "<th role='columnheader' scope='col'>Rank</th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Package column'>Package</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Maintainer column'>Maintainer</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Title column'>Title</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Rank column'>Rank</button></th>" +
     "</tr></thead><tbody>\n";
 
   var tableData = "";
@@ -80,16 +80,35 @@ var displayPackages = function (packageList, nodeName) {
   };
   jQuery("#packages").html(html);
   jQuery("#biocViews_package_table").dataTable({
-    sScrollX: "100%",
     aLengthMenu: [
-      [-1, 10, 25, 50, 100],
-      ["All", 10, 25, 50, 100],
+      [50, 100, 250, -1],
+      [50, 100, 250, "All"],
     ],
-    iDisplayLength: -1,
+    iDisplayLength: 50,
     aoColumns: [null, null, null, { sType: "numWithNull" }],
     aaSorting: [[3, "asc"]],
     oLanguage: {
       sSearch: "Search table:",
+    },
+    fnDrawCallback: function () {
+      var table = jQuery("#biocViews_package_table");
+      table.find("tbody")
+        .removeAttr("role")
+        .removeAttr("aria-live")
+        .removeAttr("aria-relevant");
+
+      table.find("th").each(function () {
+        var th = jQuery(this);
+        th.removeAttr("tabindex").removeAttr("aria-label");
+
+        if (th.hasClass("sorting_asc")) {
+          th.attr("aria-sort", "ascending");
+        } else if (th.hasClass("sorting_desc")) {
+          th.attr("aria-sort", "descending");
+        } else if (th.hasClass("sorting")) {
+          th.attr("aria-sort", "none");
+        }
+      });
     },
   });
 };
