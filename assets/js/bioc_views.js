@@ -90,8 +90,22 @@ var displayPackages = function (packageList, nodeName) {
     oLanguage: {
       sSearch: "Search table:",
     },
+    fnInitComplete: function () {
+      // DataTables automatically stamps role="grid" onto the wrapper div
+      // it generates. That conflicts with the role="table"/"row"/
+      // "columnheader" semantics already set on the markup above, and
+      // makes screen readers like Orca treat this as an interactive grid
+      // widget (expecting arrow-key grid navigation) instead of a normal,
+      // browsable table. Remove it so native table navigation works.
+      jQuery("#biocViews_package_table")
+        .closest(".dataTables_wrapper")
+        .removeAttr("role");
+    },
     fnDrawCallback: function () {
       var table = jQuery("#biocViews_package_table");
+      table
+        .closest(".dataTables_wrapper")
+        .removeAttr("role");
       table.find("tbody")
         .removeAttr("role")
         .removeAttr("aria-live")
