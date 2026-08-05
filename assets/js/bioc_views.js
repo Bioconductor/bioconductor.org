@@ -36,7 +36,7 @@ var displayPackages = function (packageList, nodeName) {
   };
 
   html +=
-    "<table role='table' id='biocViews_package_table' aria-label='Packages table' tabindex='0'>\n" +
+    "<table role='table' id='biocViews_package_table' aria-label='Packages table'>\n" +
     "<thead><tr role='row'>" +
     "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Package column'>Package</button></th>" +
     "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Maintainer column'>Maintainer</button></th>" +
@@ -51,14 +51,14 @@ var displayPackages = function (packageList, nodeName) {
     var url = getHostUrl() + "/" + map[category] + "/html/" + pkg + ".html";
     //tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
     tableData += '<tr role="row" id="pkg_' + pkg + '">\n';
-    tableData += '\t<td role="cell" tabindex="0"><a href="' + url + '" aria-label="' + pkg + '">' + pkg + "</a></td>\n";
+    tableData += '\t<td role="cell"><a href="' + url + '" aria-label="' + pkg + '">' + pkg + "</a></td>\n";
     var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(
       / *<[^>]*>/g,
       ""
     );
-    tableData += '\t<td role="cell" tabindex="0">' + cleanMaintainer + "</td>\n";
-    tableData += '\t<td role="cell" tabindex="0">' + packageInfo[pkg]["Title"] + "</td>\n";
-    tableData += '\t<td role="cell" tabindex="0">' + packageInfo[pkg]["Rank"] + "</td>\n";
+    tableData += '\t<td role="cell">' + cleanMaintainer + "</td>\n";
+    tableData += '\t<td role="cell">' + packageInfo[pkg]["Title"] + "</td>\n";
+    tableData += '\t<td role="cell">' + packageInfo[pkg]["Rank"] + "</td>\n";
     tableData += "</tr>\n";
   }
   html += tableData;
