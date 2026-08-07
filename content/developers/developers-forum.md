@@ -6,11 +6,11 @@ The Bioconductor project is a rich and complex ecosystem of software
 tools intended for an increasingly diverse array of computational
 biology and medical informatics research questions. This growth of
 project scope is deeply intertwined with the complexities of computer
-science that serve as infrastructure for modern data science. The
-developer forum aims to provide a regular platform for developers and
-users to describe existing software and hardware infrastructure, present
-plans for future developments, and discuss changes that may impact
-developers within the Bioconductor project.
+science that serve as infrastructure for modern data and biological
+science. The developer forum aims to provide a regular platform for
+developers and users to describe existing software and hardware
+infrastructure, present plans for future developments, and discuss
+changes that may impact developers within the Bioconductor project.
 
 The goals of the forum include, but are not limited to:
 
@@ -53,23 +53,27 @@ time.
 
 ## Upcoming Meetings
 
-- Thursday June 25th 2026 4pm UTC
-  - Szabolcs Horvát: igraph: complex network analysis across multiple
-    programming languages - [Zulip
-    announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/June.20Developer.20Forum/with/593047626)
 - Thursday July 30th 2026 4pm UTC
   - Aaron Lun: Ruminations on the future of the OSCA books - [Zulip
     Announcement](https://us06web.zoom.us/meeting/register/qtozL2LDSkK2-7eXxFdlVw)
 - Thursday August 27th 2026 4pm UTC
-  - Sebastian Fischer: r-xla and GPU access in R - placeholder title
+  - Sebastian Fischer: {anvl} - [Zulip
+    Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/August.20Developer.20Forum/with/608998993)
+- Thursday September 24th 2026 4pm UTC
+  - Andrew Ghazi: Managing dependencies and improving performance in R
+    package development - [Zulip
+    Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/September.20Developer.20Forum/with/615169092)
+- Thursday October 29th 2026 4pm UTC
+  - Louis Le Nézet: Bridging R and Nextflow in nf-core modules - [Zulip
+    Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/October.20Developer.20Forum/with/615169952)
 
 ## Previous Meetings
 
-The most recent meeting was: - Thursday May 28th 2026 4pm UTC - Enis
-Afgan: Galaxy, tool wrapping, and workflow development - [Zulip
-announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/May.20Developer.20Forum/near/583953030)
+The most recent meeting was: - Thursday July 30th 2026 4pm UTC - Aaron
+Lun: Ruminations on the future of the OSCA books - [Zulip
+Announcement](https://us06web.zoom.us/meeting/register/qtozL2LDSkK2-7eXxFdlVw)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/qbNSAirpBtY" title="May Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/R7jf5ul-9bU" title="July Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
