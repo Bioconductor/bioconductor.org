@@ -45,6 +45,18 @@ summary.package-details {
   border-radius: 0.5rem;
 }
 
+#biocViews_package_table th button.sort-btn {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  text-align: inherit;
+  width: 100%;
+}
+
 .packages-subnav {
   background: linear-gradient(white, white) padding-box,
     var(--gradient-brand) border-box;
