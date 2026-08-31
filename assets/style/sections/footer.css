@@ -13,8 +13,12 @@ footer {
   box-sizing: border-box;
 }
 
-footer * {
+footer a {
   color: #fff;
+  text-decoration: underline;
+}
+
+footer a:hover {
   text-decoration: none;
 }
 
