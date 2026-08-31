@@ -57,7 +57,12 @@ h6,
 }
 
 a {
-  color: black;
+  color: #1a0dab; /* Or use the site's standard brand/accent blue */
+  text-decoration: underline;
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 @media (max-device-width: 768px),(width <= 768px){
