@@ -57,8 +57,7 @@ h6,
 }
 
 a {
-  color: #1a0dab; /* Or use the site's standard brand/accent blue */
-  text-decoration: underline;
+  color: black
 }
 
 a:hover {
