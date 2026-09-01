@@ -178,9 +178,7 @@ input:focus::placeholder {
 
   .header-nav.active {
     opacity: 1;
-    height: auto;
-    max-height: 80vh;
-    overflow-y: auto;
+    height: 21rem;
   }
 
   .nav-mobile {
