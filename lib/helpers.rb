@@ -450,10 +450,11 @@ def previous_events(events)
 end
 
 def top_events(events)
-  upcoming = events.children.select { |e| e[:end] >= Time.now.to_date }
-  sorted = upcoming.sort_by { |e| e[:start] }
-  
-  sorted.last(5).reverse
+  sorted = events.children.sort do |a, b|
+      a[:start] <=> b[:start]
+  end
+  toplist = sorted[-5..-1]
+  toplist.reverse
 end    
 
 def event_date(e)
