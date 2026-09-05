@@ -15,7 +15,12 @@ footer {
 
 footer * {
   color: #fff;
-  text-decoration: none;
+}
+
+/* Footer links keep the white needed for contrast on the dark background, so
+   the underline is the only thing marking them as links. */
+footer a {
+  text-decoration: underline;
 }
 
 .footer-container {
