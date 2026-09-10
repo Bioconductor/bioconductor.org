@@ -189,7 +189,9 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
   [2026-03-12](2026-03-12-minutes.pdf),
   [2026-04-09](2026-04-09-minutes.pdf),
   [2026-05-07 Joint CAB/TAB](2026-05-07-minutes.pdf),
-  [2026-06-11](2026-06-11-minutes.pdf)
+  [2026-06-11](2026-06-11-minutes.pdf),
+  [2026-07-09](2026-07-09-minutes.pdf),
+  [2026-08-13](2026-08-13-minutes.pdf)
 - **2025:**  [2025-01-09](2025-01-09-minutes.pdf),
   [2025-02-13](2025-02-13-minutes.pdf),
   [2025-03-13](2025-03-13-minutes.pdf),
