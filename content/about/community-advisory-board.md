@@ -11,11 +11,14 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 [1]: CAB-Governance.pdf
 
 ## 2026 Elections Are Open!
-
+<!--
 Nominations for 2026 CAB board members are occurring now. Please fill out the
 following [google form](https://forms.gle/SUxUR1Szbr4HzS9j8). If you are unable
-to use the google form, please email cab@bioconductor.org for alternative
-submission options.
+to use the google form, please email cab@bioconductor.
+-->
+
+Nominations for 2026 CAB are now closed. Please look for announcement for next
+years elections.
 
 ## Quick Links
 
