@@ -57,7 +57,11 @@ h6,
 }
 
 a {
-  color: black;
+  color: black
+}
+
+a:hover {
+  text-decoration: none;
 }
 
 @media (max-device-width: 768px),(width <= 768px){
