@@ -455,7 +455,7 @@ def top_events(events)
   end
   toplist = sorted[-5..-1]
   toplist.reverse
-end
+end    
 
 def event_date(e)
   if (e[:start].month == e[:end].month)
