@@ -124,6 +124,11 @@ years elections.
           alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
+    <div class="gallery-card">
+    <img src="/images/cab/AnneMarieSharp.png"
+          alt="Anne-Marie Sharp" title="Anne-Marie Sharp"/>
+    <a href="https://www.linkedin.com/in/anne-mariesharp">Anne-Marie Sharp</a>, Nigeria
+  </div>
   <div class="gallery-card">
   </div>
 </div>
