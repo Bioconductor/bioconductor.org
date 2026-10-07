@@ -49,20 +49,20 @@ member of the Bioconductor Technical Advisory Board and Code of Conduct
 committee.
 
 <div class="gallery">
-<div class="gallery-card">
-<img src="/images/cab/KozoNishida.png" alt="Kozo Nishida" title="Kozo Nishida"/>
-<a href="https://github.com/kozo2">Kozo Nishida</a>, RIKEN Center for Biosystems Dynamics Research, Japan
-</div>
-<div class="gallery-card">
-<img src="/images/cab/KevinRueAlbrecht.png" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
-<a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
-</div>
-<div class="gallery-card">
-<img src="/images/champions/dariorighelli.png" alt="Dario Righelli" title="Dario Righelli"/>
-<a href="https://github.com/drighelli">Dario Righelli</a>, Napoli, Italy
-</div>
-<div class="gallery-card">
-<img src="/images/champions/CharlotteSoneson.jpeg" alt="Charlotte Soneson" title="Charlotte Soneson"/>
-<a href="https://csoneson.github.io/">Charlotte Soneson</a>, Friedrich Miescher Institute for Biomedical Research, Switzerland
-</div>
+  <div class="gallery-card">
+   <img src="/images/cab/KozoNishida.png" alt="Kozo Nishida" title="Kozo Nishida"/>
+   <a href="https://github.com/kozo2">Kozo Nishida</a>, RIKEN Center for Biosystems Dynamics Research, Japan
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/KevinRueAlbrecht.png" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
+    <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
+  </div>
+  <div class="gallery-card">
+    <img src="/images/champions/dariorighelli.png" alt="Dario Righelli" title="Dario Righelli"/>
+    <a href="https://github.com/drighelli">Dario Righelli</a>, Napoli, Italy
+  </div>
+  <div class="gallery-card">
+    <img src="/images/champions/CharlotteSoneson.jpeg" alt="Charlotte Soneson" title="Charlotte Soneson"/>
+    <a href="https://csoneson.github.io/">Charlotte Soneson</a>, Friedrich Miescher Institute for Biomedical Research, Switzerland
+  </div>
 </div>
