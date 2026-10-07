@@ -74,8 +74,6 @@ committee.
 
 </div>
 
-</div>
-
 <div class="gallery-card">
 
     <img src="/images/champions/CharlotteSoneson.jpeg"
