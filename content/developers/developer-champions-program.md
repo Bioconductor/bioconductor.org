@@ -7,7 +7,11 @@ remains a healthy, welcoming, and innovative scientific community.
 
 ## 2026 Bioconductor Developer Champions
 
-*Jenny Drnevich* Coming Soon!
+*Jenny Drnevich* Jenny Drnevich is co-chair of the Bioconductor Training
+Committee and member of the North American Bioconductor conference
+committee. She has been active in the Bioconductor community for over 20
+years, attending conferences, developing training materials and leading
+workshops.
 
 *Kozo Nishida* Kozo Nishida is a member of [the Bioconductor Community
 Advisory
@@ -35,9 +39,32 @@ extends to community initiatives, including meetups and other activities
 that foster exchange and collaboration among Bioconductor users and
 developers.
 
-*Kevin Rue-Albrecht* Coming soon!
+*Kevin Rue-Albrecht* Kevin Rue-Albrecht is a member of the [Bioconductor
+Community Advisory
+Board](https://bioconductor.org/about/community-advisory-board/) and the
+[Code of Conduct
+Committee](https://www.bioconductor.org/about/code-of-conduct/),
+contributing to the governance and development of a welcoming and
+inclusive Bioconductor community.
 
-*Claire Rioualen* Coming Soon!
+He has been involved in several [Bioconductor working groups and
+committees](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html)
+over the years. He currently co-leads efforts around FAIR data sharing
+and multilingual resources, while also contributing to user and
+developer training, hackathon planning, and initiatives supporting the
+sustainability and growth of the developer community.
+
+*Claire Rioualen* Claire Rioualen is the co-lead of the working group
+[EDAM
+collaboration](https://workinggroups.bioconductor.org/currently-active-working-groups-committees.html#edam-collaboration),
+whose goal is to use the standard [EDAM
+ontology](https://edamontology.org/page) for the annotation of
+Bioconductor software packages. This initiative connects Bioconductor
+resources to the [ELIXIR Research Software
+Ecosystem](https://research-software-ecosystem.org/), including the
+[bio.tools](https://bio.tools/) software registry and resources such as
+Bioconda or Galaxy. She has co-led two related projects at the ELIXIR
+BioHackathon in 2024 and 2025.
 
 *Charlotte Soneson* Charlotte is co-chair of the [Bioconductor Training
 Committee](https://training.bioconductor.org/), one of the deputy chairs
@@ -48,18 +75,26 @@ conference committees and the workflow working group, and a previous
 member of the Bioconductor Technical Advisory Board and Code of Conduct
 committee.
 
-<div class="gallery">
+<div class="gallery">  
   <div class="gallery-card">
-   <img src="/images/cab/KozoNishida.png" alt="Kozo Nishida" title="Kozo Nishida"/>
-   <a href="https://github.com/kozo2">Kozo Nishida</a>, RIKEN Center for Biosystems Dynamics Research, Japan
+    <img src="/images/champions/JennyDrnevich.jpg" alt="Jenny Drnevich" title="Jenny Drnevich"/>
+    <a href="https://www.psych.uic.edu/profile/jenny-drnevich-zadeh">Jenny Drnevich</a>, Institute for Genomic Biology, University of Illinois at Urbana-Champaign
+  </div>
+  <div class="gallery-card">
+    <img src="/images/cab/KozoNishida.png" alt="Kozo Nishida" title="Kozo Nishida"/>
+    <a href="https://github.com/kozo2">Kozo Nishida</a>, RIKEN Center for Biosystems Dynamics Research, Japan
+  </div>
+  <div class="gallery-card">
+    <img src="/images/champions/dariorighelli.png" alt="Dario Righelli" title="Dario Righelli"/>
+    <a href="https://github.com/drighelli">Dario Righelli</a>, Napoli, Italy
   </div>
   <div class="gallery-card">
     <img src="/images/cab/KevinRueAlbrecht.png" alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
   <div class="gallery-card">
-    <img src="/images/champions/dariorighelli.png" alt="Dario Righelli" title="Dario Righelli"/>
-    <a href="https://github.com/drighelli">Dario Righelli</a>, Napoli, Italy
+    <img src="/images/champions/ClaireRioualen.png" alt="Claire Rioualen" title="Claire Rioualen"/>
+    <a href="https://github.com/rioualen">Claire Rioualen</a>
   </div>
   <div class="gallery-card">
     <img src="/images/champions/CharlotteSoneson.jpeg" alt="Charlotte Soneson" title="Charlotte Soneson"/>
