@@ -125,6 +125,11 @@ years elections.
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/DavidRach.jpg"
+            alt="David Rach" title="David Rach"/>
+    <a href="https://www.linkedin.com/in/david-rach/">David Rach</a>, University of Maryland, Baltimore, USA.
+  </div>
+  <div class="gallery-card">
   </div>
 </div>
 
