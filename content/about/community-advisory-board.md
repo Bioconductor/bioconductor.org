@@ -77,6 +77,10 @@ years elections.
     Eliana Ibrahimi, University of Tirana, Albania
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/AliSajidImami.png" alt="Ali Sajid Imami" title="Ali Sajid Imami"/>
+    <a href="https://www.linkedin.com/in/asimami/">Ali Sajid Imami</a>, Universitätsklinikum Hamburg-Eppendorf (UKE), Hamburg, Germany
+  </div>
+  <div class="gallery-card">
     <img src="/images/cab/LoriShepherd.png"
             alt="Lori (Shepherd) Kern" title="Lori (Shepherd) Kern"/>
     <a href="https://www.linkedin.com/in/lori-shepherd-b49993172">Lori (Shepherd) Kern</a>, Roswell Park Comprehensive Cancer Center, USA, secretary
