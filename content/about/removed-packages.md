@@ -18,7 +18,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/SGCP.html">SGCP</a></li> 
 <li><a href="/packages/3.21/bioc/html/APAlyzer.html">APAlyzer</a></li> 
 <li><a href="/packages/3.21/bioc/html/ballgown.html">ballgown</a></li> 
-<li><a href="/packages/3.21/bioc/html/bamsignals.html">bamsignals</a></li> 
 <li><a href="/packages/3.21/bioc/html/barcodetrackR.html">barcodetrackR</a></li> 
 <li><a href="/packages/3.21/bioc/html/basecallQC.html">basecallQC</a></li> 
 <li><a href="/packages/3.21/bioc/html/biobroom.html">biobroom</a></li> 
@@ -54,7 +53,6 @@ Software Packages:
 <li><a href="/packages/3.21/bioc/html/RgnTX.html">RgnTX</a></li> 
 <li><a href="/packages/3.21/bioc/html/RiboProfiling.html">RiboProfiling</a></li> 
 <li><a href="/packages/3.21/bioc/html/RTCGA.html">RTCGA</a></li> 
-<li><a href="/packages/3.21/bioc/html/shiny.gosling.html">shiny.gosling</a></li> 
 <li><a href="/packages/3.21/bioc/html/soGGi.html">soGGi</a></li> 
 <li><a href="/packages/3.21/bioc/html/SigFuge.html">SigFuge</a></li> 
 <li><a href="/packages/3.21/bioc/html/spatzie.html">spatzie</a></li> 
@@ -65,7 +63,6 @@ Software Packages:
 
 Experiment Data Packages:
 <ul class="inline_list">
-<li><a href="/packages/3.21/data/experiment/html/curatedBreastData.html">curatedBreastData</a></li> 
 <li><a href="/packages/3.21/data/experiment/html/Fletcher2013b.html">Fletcher2013b</a></li> 
 <li><a href="/packages/3.21/data/experiment/html/rRDPData.html">rRDPData</a></li> 
 </ul>

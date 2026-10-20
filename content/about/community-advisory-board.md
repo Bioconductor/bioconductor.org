@@ -11,11 +11,14 @@ The Community Advisory Board governance document ([PDF][1]) outlines membership,
 [1]: CAB-Governance.pdf
 
 ## 2026 Elections Are Open!
-
+<!--
 Nominations for 2026 CAB board members are occurring now. Please fill out the
 following [google form](https://forms.gle/SUxUR1Szbr4HzS9j8). If you are unable
-to use the google form, please email cab@bioconductor.org for alternative
-submission options.
+to use the google form, please email cab@bioconductor.
+-->
+
+Nominations for 2026 CAB are now closed. Please look for announcement for next
+years elections.
 
 ## Quick Links
 
@@ -121,6 +124,11 @@ submission options.
           alt="Kevin Rue-Albrecht" title="Kevin Rue-Albrecht"/>
     <a href="https://www.rdm.ox.ac.uk/people/kevin-rue-albrecht">Kevin Rue-Albrecht</a>, University of Oxford, UK
   </div>
+    <div class="gallery-card">
+    <img src="/images/cab/AnneMarieSharp.png"
+          alt="Anne-Marie Sharp" title="Anne-Marie Sharp"/>
+    <a href="https://www.linkedin.com/in/anne-mariesharp">Anne-Marie Sharp</a>, Nigeria
+  </div>
   <div class="gallery-card">
   </div>
 </div>
@@ -189,7 +197,9 @@ The Community Advisory Board meets monthly. Minutes of the last meeting are made
   [2026-03-12](2026-03-12-minutes.pdf),
   [2026-04-09](2026-04-09-minutes.pdf),
   [2026-05-07 Joint CAB/TAB](2026-05-07-minutes.pdf),
-  [2026-06-11](2026-06-11-minutes.pdf)
+  [2026-06-11](2026-06-11-minutes.pdf),
+  [2026-07-09](2026-07-09-minutes.pdf),
+  [2026-08-13](2026-08-13-minutes.pdf)
 - **2025:**  [2025-01-09](2025-01-09-minutes.pdf),
   [2025-02-13](2025-02-13-minutes.pdf),
   [2025-03-13](2025-03-13-minutes.pdf),
