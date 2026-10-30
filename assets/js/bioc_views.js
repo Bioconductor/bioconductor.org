@@ -36,12 +36,12 @@ var displayPackages = function (packageList, nodeName) {
   };
 
   html +=
-    "<table role='table' id='biocViews_package_table' aria-label='Packages table' tabindex='0'>\n" +
+    "<table role='table' id='biocViews_package_table' aria-label='Packages table'>\n" +
     "<thead><tr role='row'>" +
-    "<th role='columnheader' scope='col'>Package</th>" +
-    "<th role='columnheader' scope='col'>Maintainer</th>" +
-    "<th role='columnheader' scope='col'>Title</th>" +
-    "<th role='columnheader' scope='col'>Rank</th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Package column'>Package</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Maintainer column'>Maintainer</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Title column'>Title</button></th>" +
+    "<th role='columnheader' scope='col'><button type='button' class='sort-btn' aria-label='Sort Rank column'>Rank</button></th>" +
     "</tr></thead><tbody>\n";
 
   var tableData = "";
@@ -51,14 +51,14 @@ var displayPackages = function (packageList, nodeName) {
     var url = getHostUrl() + "/" + map[category] + "/html/" + pkg + ".html";
     //tableData += '<tr class="'+rowClass+'" id="pkg_' + pkg + '">\n';
     tableData += '<tr role="row" id="pkg_' + pkg + '">\n';
-    tableData += '\t<td role="cell" tabindex="0"><a href="' + url + '" aria-label="' + pkg + '">' + pkg + "</a></td>\n";
+    tableData += '\t<td role="cell"><a href="' + url + '" aria-label="' + pkg + '">' + pkg + "</a></td>\n";
     var cleanMaintainer = packageInfo[pkg]["Maintainer"].replace(
       / *<[^>]*>/g,
       ""
     );
-    tableData += '\t<td role="cell" tabindex="0">' + cleanMaintainer + "</td>\n";
-    tableData += '\t<td role="cell" tabindex="0">' + packageInfo[pkg]["Title"] + "</td>\n";
-    tableData += '\t<td role="cell" tabindex="0">' + packageInfo[pkg]["Rank"] + "</td>\n";
+    tableData += '\t<td role="cell">' + cleanMaintainer + "</td>\n";
+    tableData += '\t<td role="cell">' + packageInfo[pkg]["Title"] + "</td>\n";
+    tableData += '\t<td role="cell">' + packageInfo[pkg]["Rank"] + "</td>\n";
     tableData += "</tr>\n";
   }
   html += tableData;
@@ -80,16 +80,49 @@ var displayPackages = function (packageList, nodeName) {
   };
   jQuery("#packages").html(html);
   jQuery("#biocViews_package_table").dataTable({
-    sScrollX: "100%",
     aLengthMenu: [
-      [-1, 10, 25, 50, 100],
-      ["All", 10, 25, 50, 100],
+      [50, 100, 250, -1],
+      [50, 100, 250, "All"],
     ],
-    iDisplayLength: -1,
+    iDisplayLength: 50,
     aoColumns: [null, null, null, { sType: "numWithNull" }],
     aaSorting: [[3, "asc"]],
     oLanguage: {
       sSearch: "Search table:",
+    },
+    fnInitComplete: function () {
+      // DataTables automatically stamps role="grid" onto the wrapper div
+      // it generates. That conflicts with the role="table"/"row"/
+      // "columnheader" semantics already set on the markup above, and
+      // makes screen readers like Orca treat this as an interactive grid
+      // widget (expecting arrow-key grid navigation) instead of a normal,
+      // browsable table. Remove it so native table navigation works.
+      jQuery("#biocViews_package_table")
+        .closest(".dataTables_wrapper")
+        .removeAttr("role");
+    },
+    fnDrawCallback: function () {
+      var table = jQuery("#biocViews_package_table");
+      table
+        .closest(".dataTables_wrapper")
+        .removeAttr("role");
+      table.find("tbody")
+        .removeAttr("role")
+        .removeAttr("aria-live")
+        .removeAttr("aria-relevant");
+
+      table.find("th").each(function () {
+        var th = jQuery(this);
+        th.removeAttr("tabindex").removeAttr("aria-label");
+
+        if (th.hasClass("sorting_asc")) {
+          th.attr("aria-sort", "ascending");
+        } else if (th.hasClass("sorting_desc")) {
+          th.attr("aria-sort", "descending");
+        } else if (th.hasClass("sorting")) {
+          th.attr("aria-sort", "none");
+        }
+      });
     },
   });
 };

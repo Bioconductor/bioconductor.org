@@ -14,9 +14,10 @@ table.full-width {
   width: 100%;
 }
 
+#biocViews_package_table thead th,
 .dataTables_scrollHead {
   background: var(--neutral-n75);
-  padding-top: 10px;
+  padding: 0.75rem 0.5rem;
 }
 
 tr:first-of-type *:first-child {
