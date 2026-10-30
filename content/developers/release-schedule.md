@@ -58,7 +58,7 @@ The following highlights important deadlines for the release:
 
 ### Tuesday November 24
 
-* Creation of the Bioc 3.23 release branch. Development can resume on
+* Creation of the Bioc 3.24 release branch. Development can resume on
   devel branch, but changes there will not be part of the release.
 
 ### Wednesday November 25
