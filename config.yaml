@@ -34,6 +34,7 @@ devel_repos:
 - "data/experiment"
 - "workflows"
 - "data/annotation"
+- "books"
 
 ## CHANGE this when the build machines change:
 ## also, don't include machines that are not building yet (comment them out)
