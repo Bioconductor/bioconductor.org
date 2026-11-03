@@ -51,12 +51,10 @@ The following highlights important deadlines for the release:
   must be updated before the builds start at 1:30 pm EST or they will
   not be included in the release announcement.
 
-  The branch will be frozen prior to creating the release branch on Tuesday,
-  November 24.  Committing last minute changes could break your package in both
+  The branch will be frozen prior to creating the release branch at
+  approximately 16:00 ET.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
-
-### Tuesday November 24
 
 * Creation of the Bioc 3.24 release branch. Development can resume on
   devel branch, but changes there will not be part of the release.
