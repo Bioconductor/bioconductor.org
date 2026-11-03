@@ -53,27 +53,23 @@ time.
 
 ## Upcoming Meetings
 
-- Thursday July 30th 2026 4pm UTC
-  - Aaron Lun: Ruminations on the future of the OSCA books - [Zulip
-    Announcement](https://us06web.zoom.us/meeting/register/qtozL2LDSkK2-7eXxFdlVw)
-- Thursday August 27th 2026 4pm UTC
-  - Sebastian Fischer: {anvl} - [Zulip
-    Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/August.20Developer.20Forum/with/608998993)
-- Thursday September 24th 2026 4pm UTC
-  - Andrew Ghazi: Managing dependencies and improving performance in R
-    package development - [Zulip
-    Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/September.20Developer.20Forum/with/615169092)
 - Thursday October 29th 2026 4pm UTC
   - Louis Le Nézet: Bridging R and Nextflow in nf-core modules - [Zulip
     Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/October.20Developer.20Forum/with/615169952)
+- Thursday November 26th 2026 4pm UTC
+  - Ali Sajid Imami: Toward a Bioconductor Kinomics Ecosystem: Packages,
+    Gaps, and Opportunities for Interoperability - Zulip Announcement
+    pending
+- There will be no December Developer Forum for 2026, see you all in
+  2027!
 
 ## Previous Meetings
 
-The most recent meeting was: - Thursday July 30th 2026 4pm UTC - Aaron
-Lun: Ruminations on the future of the OSCA books - [Zulip
-Announcement](https://us06web.zoom.us/meeting/register/qtozL2LDSkK2-7eXxFdlVw)
+The most recent recorded meeting was: - Thursday August 27th 2026 4pm
+UTC - Sebastian Fischer: {anvl} - [Zulip
+Announcement](https://community-bioc.zulipchat.com/#narrow/channel/507552-developers-forum/topic/August.20Developer.20Forum/with/608998993)
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/R7jf5ul-9bU" title="July Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/uuhmcx9aiVM" title="August Developer Forum" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 
 </iframe>
 
