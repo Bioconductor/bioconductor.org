@@ -117,6 +117,11 @@ years elections.
     <a href="https://www.linkedin.com/in/david-rach/">David Rach</a>, University of Maryland, Baltimore, USA.
   </div>
   <div class="gallery-card">
+    <img src="/images/cab/CarissaChen.png"
+          alt="Carissa Chen" title="Carissa Chen"/>
+    <a href="https://www.linkedin.com/in/carissa-chen1/">Carissa Chen</a>, University of Padova, Italy
+  </div>
+  <div class="gallery-card">
   </div>
 </div>
 
