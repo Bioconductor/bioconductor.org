@@ -1,4 +1,12 @@
 Date	Course	Keyword	Title	Instructor	Material	Bioc version	R version
+2026-08-27 - 2026-08-27	[BiocDevelForum](https://www.youtube.com/watch?v=uuhmcx9aiVM)	Talk	anvl: Accelerated Array Computing and Code Transformations in R	Sebastian Fischer	[video](https://www.youtube.com/watch?v=uuhmcx9aiVM)	3.24	4.6
+2026-07-30 - 2026-07-30	[BiocDevelForum](https://www.youtube.com/watch?v=R7jf5ul-9bU)	Talk	History, maintenance, and future of the Orchestrating Single Cell Analysis (OSCA) books	Aaron Lun	[video](https://www.youtube.com/watch?v=R7jf5ul-9bU)	3.24	4.6
+2026-06-25 - 2026-06-25	[BiocDevelForum](https://www.youtube.com/watch?v=Q9A7ivNAoy8)	Talk	igraph internals and its high-level language front ends	Szabolcs Horv&aacute;t	[video](https://www.youtube.com/watch?v=Q9A7ivNAoy8)	3.24	4.6
+2026-05-28 - 2026-05-28	[BiocDevelForum](https://www.youtube.com/watch?v=qbNSAirpBtY)	Talk	Galaxy tool wrapping for Bioconductor-based scripts	Enis Afgan	[video](https://www.youtube.com/watch?v=qbNSAirpBtY)	3.24	4.6
+2026-04-30 - 2026-04-30	[BiocDevelForum](https://www.youtube.com/watch?v=ougaIm5LIL4)	Talk	Integrating agentic AI into IDEs	Anthony Christidis	[video](https://www.youtube.com/watch?v=ougaIm5LIL4)	3.24	4.6
+2026-03-26 - 2026-03-26	[BiocDevelForum](https://www.youtube.com/watch?v=M1BeWpEukCo)	Talk	Bioconductor annotation resources	Vince Carey	[video](https://www.youtube.com/watch?v=M1BeWpEukCo)	3.23	4.6
+2026-02-26 - 2026-02-26	[BiocDevelForum](https://www.youtube.com/watch?v=_sjtIY498uY)	Talk	Access to alternative compute frameworks (CUDA, OpenCL, Metal) in R	Various	[video](https://www.youtube.com/watch?v=_sjtIY498uY)	3.23	4.6
+2025-07-28 - 2025-07-28	[BiocDevelForum](https://www.youtube.com/watch?v=8tEhReSZvkY)	Talk	Exploring R and Rust in Bioinformatics	Sun Wenjie, Mossa Merhi Reimert, Josiah Parry	[video](https://www.youtube.com/watch?v=8tEhReSZvkY)	3.22	4.5
 2023-10-15 - 2023-10-17	[BiocAsia2023](https://biocasia2023.bioconductor.org/)	Course	Bioconductor Asia 2023 Symposium	Various		3.18	4.3
 2023-09-20 - 2023-09-22	[EuroBioc2023](https://eurobioc2023.bioconductor.org/)	Course	European Bioconductor Conference 2023	Various		3.17	4.3
 2023-08-02 - 2023-08-04	[Bioc2023](https://bioc2023.bioconductor.org/)	Course	Bioc2023	Various	[videos](https://www.youtube.com/watch?v=sTq6skZGgoI&list=PLdl4u5ZRDMQRVvXBi29h7MDtRn-AQGlXS)	3.17	4.3
