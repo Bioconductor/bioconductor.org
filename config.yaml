@@ -7,6 +7,11 @@ staging_deploy_root: biocadmin@staging.bioconductor.org:/loc/www/bioconductor-te
 production_deploy_root: webadmin@master.bioconductor.org:/extra/www/bioc
 staging_dir: /loc/www/bioconductor-test-new
 
+## RUniverse Versions
+## CHANGE THIS AFTER BUMP AND BRANCH
+r_universe_release_version: "3.23"
+r_universe_devel_version: "3.24"
+
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "3.23"
 r_version_associated_with_release: "4.6.0"
@@ -26,6 +31,7 @@ devel_version: "3.24"
 versions:
 - "3.23"
 - "3.24"
+
 
 ## CHANGE THIS (i.e., uncomment) as various parts of the new devel version 
 ## become available. set to "[]" if none are available.
