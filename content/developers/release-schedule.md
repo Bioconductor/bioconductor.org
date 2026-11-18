@@ -52,7 +52,7 @@ The following highlights important deadlines for the release:
   not be included in the release announcement.
 
   The branch will be frozen prior to creating the release branch at
-  approximately 16:00 ET.  Committing last minute changes could break your package in both
+  approximately 12:00 ET.  Committing last minute changes could break your package in both
   release and devel! Be sure to run 'R CMD build' and 'R CMD check' locally
   before committing any changes.
 
