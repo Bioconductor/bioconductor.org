@@ -3,8 +3,16 @@
 A list of packages removed from Bioconductor along
 with their last-available landing pages.
 
+## Packages deprecated in Bioconductor 3.24 (to be removed in 3.25)
 
-## Packages deprecated in Bioconductor 3.23 (to be removed in 3.24)
+Software Packages:
+
+Experiment Data Packages:
+
+Annotation Packages:
+
+
+## Packages removed with Bioconductor 3.24
 
 Software Packages:
 <ul class="inline_list">
