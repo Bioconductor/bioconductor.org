@@ -13,7 +13,6 @@ Software Packages:
 <li><a href="/packages/3.22/bioc/html/InterCellar.html">InterCellar</a></li> 
 <li><a href="/packages/3.21/bioc/html/IONiseR.html">IONiseR</a></li> 
 <li><a href="/packages/3.21/bioc/html/hmdbQuery.html">hmdbQuery</a></li> 
-<li><a href="/packages/3.21/bioc/html/rols.html">rols</a></li> 
 <li><a href="/packages/3.18/bioc/html/scviR.html">scviR</a></li> 
 <li><a href="/packages/3.21/bioc/html/SGCP.html">SGCP</a></li> 
 <li><a href="/packages/3.21/bioc/html/APAlyzer.html">APAlyzer</a></li> 
