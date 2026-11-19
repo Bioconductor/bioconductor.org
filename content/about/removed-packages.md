@@ -6,6 +6,7 @@ with their last-available landing pages.
 ## Packages deprecated in Bioconductor 3.24 (to be removed in 3.25)
 
 Software Packages:
+<ul class="inline_list">
 <li><a href="/packages/3.23/bioc/html/ChAMP.html">ChAMP</a></li> 
 <li><a href="/packages/3.23/bioc/html/ChIPXpress.html">ChIPXpress</a></li> 
 <li><a href="/packages/3.23/bioc/html/CSAR.html">CSAR</a></li> 
@@ -23,8 +24,10 @@ Software Packages:
 <li><a href="/packages/3.23/bioc/html/systemPipeTools.html">systemPipeTools</a></li> 
 <li><a href="/packages/3.23/bioc/html/tidytof.html">tidytof</a></li> 
 <li><a href="/packages/3.23/bioc/html/TSAR.html">TSAR</a></li> 
+</ul>
 
 Experiment Data Packages:
+<ul class="inline_list">
 <li><a href="/packages/3.23/data/experiment/html/Affyhgu133aExpr.html">Affyhgu133aExpr</a></li> 
 <li><a href="/packages/3.23/data/experiment/html/Affyhgu133Plus2Expr.html">Affyhgu133Plus2Expr</a></li> 
 <li><a href="/packages/3.23/data/experiment/html/Affymoe4302Expr.html">Affymoe4302Expr</a></li> 
@@ -57,11 +60,13 @@ Experiment Data Packages:
 <li><a href="/packages/3.23/data/experiment/html/Single.mTEC.Transcriptomes.html">Single.mTEC.Transcriptomes</a></li> 
 <li><a href="/packages/3.23/data/experiment/html/SVM2CRMdata.html">SVM2CRMdata</a></li> 
 <li><a href="/packages/3.23/data/experiment/html/tofsimsData.html">tofsimsData</a></li> 
+</ul>
 
 Annotation Packages:
+<ul class="inline_list">
 <li><a href="/packages/3.23/data/annotation/html/cMAP.html">cMAP</a></li> 
 <li><a href="/packages/3.23/data/annotation/html/hgu95av2.html">hgu95av2</a></li> 
-
+</ul>
 
 ## Packages removed with Bioconductor 3.24
 
