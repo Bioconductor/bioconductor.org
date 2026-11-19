@@ -453,7 +453,13 @@ def top_events(events)
   sorted = events.children.sort do |a, b|
       a[:start] <=> b[:start]
   end
-  toplist = sorted[-5..-1]
+  upcoming = sorted.select do |e|
+    e[:end] >= Time.now.to_date
+  end
+  # last(5) rather than [-5..-1]: the latter returns nil when fewer than five
+  # events remain, which is now reachable because the filter above can leave
+  # any number of them.
+  toplist = upcoming.last(5)
   toplist.reverse
 end
 
