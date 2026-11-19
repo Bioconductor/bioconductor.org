@@ -171,14 +171,19 @@ input:focus::placeholder {
     transition: 0.3s;
     gap: 0;
     top: 100%;
-    height: 2px;
+    max-height: 0;
     overflow: hidden;
     opacity: 0;
   }
 
   .header-nav.active {
     opacity: 1;
-    height: 21rem;
+    /* max-height rather than a fixed height: the drawer holds the nav links,
+       the search box and the Get Started button, and a hard 21rem clipped the
+       last two out of view with no way to scroll to them. Sizing to content
+       keeps them reachable however many nav items there are. */
+    max-height: 100vh;
+    overflow-y: auto;
   }
 
   .nav-mobile {
