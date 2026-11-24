@@ -9,8 +9,8 @@ staging_dir: /loc/www/bioconductor-test-new
 
 ## RUniverse Versions
 ## CHANGE THIS AFTER BUMP AND BRANCH
-r_universe_release_version: "3.23"
-r_universe_devel_version: "3.24"
+r_universe_release_version: "3.24"
+r_universe_devel_version: "3.25"
 
 ## CHANGE THIS WHEN WE RELEASE A VERSION:
 release_version: "3.23"
