@@ -2165,7 +2165,7 @@ Bug fixes
   truncate the store when mode = "w", so that a store can no
   longer end up with a mix of Zarr v2 and v3 nodes.
 
-[see more with `news(package = "anndataR")`]
+[See the full NEWS](/packages/release/bioc/news/anndataR/NEWS) or run `news(package = "anndataR")`.
 
 
 [AnnotationDbi](/packages/AnnotationDbi)
@@ -2242,7 +2242,7 @@ NEW FEATURES
   plotting
   functions. Gene symbols come from an EnsDb or an optional OrgDb.
 
-[see more with `news(package = "annotatr")`]
+[See the full NEWS](/packages/release/bioc/news/annotatr/NEWS) or run `news(package = "annotatr")`.
 
 
 [AnVIL](/packages/AnVIL)
@@ -2476,7 +2476,7 @@ OTHER CHANGES
 - Runnable examples for DUreport.norm, DUreport.offset, filterSignals,
   plotBins, rds, subset and the accessors, using the example objects.
 
-[see more with `news(package = "ASpli")`]
+[See the full NEWS](/packages/release/bioc/news/ASpli/NEWS) or run `news(package = "ASpli")`.
 
 
 [ATACseqQC](/packages/ATACseqQC)
@@ -2813,7 +2813,7 @@ variance.
 - functions now also return an effective N per motif that is used in
 normalizeDevsForSize for more accurate adjustment.
 
-[see more with `news(package = "betterChromVAR")`]
+[See the full NEWS](/packages/release/bioc/news/betterChromVAR/NEWS) or run `news(package = "betterChromVAR")`.
 
 
 [BgeeDB](/packages/BgeeDB)
@@ -3023,7 +3023,7 @@ inst/requirements.yml declares the python packages a book imports
 under pip:, and keeps conda for python itself and for command-line
 tools, rather than pinning matplotlib below 3.11.
 
-[see more with `news(package = "BiocBook")`]
+[See the full NEWS](/packages/release/bioc/news/BiocBook/NEWS) or run `news(package = "BiocBook")`.
 
 
 [BiocCheck](/packages/BiocCheck)
@@ -3089,7 +3089,7 @@ BUG FIXES AND MINOR IMPROVEMENTS
   list
   subscription check (@lshep, #267).
 
-[see more with `news(package = "BiocCheck")`]
+[See the full NEWS](/packages/release/bioc/news/BiocCheck/NEWS) or run `news(package = "BiocCheck")`.
 
 
 [BiocDuckDB](/packages/BiocDuckDB)
@@ -3353,7 +3353,7 @@ alias-coded AUTO inputs still fail, now with the same error as the
 corresponding five-class call. TN.v2, all five-class results and the
 other methods' results, summaries and entropy are unchanged.
 
-[see more with `news(package = "BreastSubtypeR")`]
+[See the full NEWS](/packages/release/bioc/news/BreastSubtypeR/NEWS) or run `news(package = "BreastSubtypeR")`.
 
 
 [BrowserViz](/packages/BrowserViz)
@@ -3831,7 +3831,7 @@ which can move that bin considerably (up to ~40% for a 7 bp
 remainder in a 300 bp bin). The x-axis breaks of plotPeakProf2() are
 derived from the same column layout. (2026-10-01, Thu)
 
-[see more with `news(package = "ChIPseeker")`]
+[See the full NEWS](/packages/release/bioc/news/ChIPseeker/NEWS) or run `news(package = "ChIPseeker")`.
 
 
 [Chromatograms](/packages/Chromatograms)
@@ -3965,7 +3965,7 @@ knockout only, had been reported as having no data. The search stops
 at the first spelling that yields datasets, so methods are not
 united; overexpression stays excluded (2026-11-11, Wed)
 
-[see more with `news(package = "clusterProfiler")`]
+[See the full NEWS](/packages/release/bioc/news/clusterProfiler/NEWS) or run `news(package = "clusterProfiler")`.
 
 
 [ClustIRR](/packages/ClustIRR)
@@ -4198,7 +4198,7 @@ diva_get_sample_groups
 - divaWorkspace -> diva_workspace
 - flowJoWorkspace -> flowjo_workspace
 
-[see more with `news(package = "CytoML")`]
+[See the full NEWS](/packages/release/bioc/news/CytoML/NEWS) or run `news(package = "CytoML")`.
 
 
 [CytoPipeline](/packages/CytoPipeline)
@@ -4409,7 +4409,7 @@ Imports
 (icons come via shiny::icon(); no brewer.pal/RColorBrewer:: usage),
 clearing the R CMD check "declared Imports should be used" note.
 
-[see more with `news(package = "debrowser")`]
+[See the full NEWS](/packages/release/bioc/news/debrowser/NEWS) or run `news(package = "debrowser")`.
 
 
 [decemedip](/packages/decemedip)
@@ -4512,7 +4512,7 @@ not a percentage; simulateContamination() gives its real delta
 default (c(1, 10)) and lists everything it returns; decontXcounts()
 has an example (#83).
 
-[see more with `news(package = "decontX")`]
+[See the full NEWS](/packages/release/bioc/news/decontX/NEWS) or run `news(package = "decontX")`.
 
 
 [DESeq2](/packages/DESeq2)
@@ -4617,7 +4617,7 @@ has an example (#83).
   file(s) with Rd \link{} targets missing package anchors'' R CMD
   check NOTE. 14 man/*.Rd files updated. No code change.
 
-[see more with `news(package = "DiffBind")`]
+[See the full NEWS](/packages/release/bioc/news/DiffBind/NEWS) or run `news(package = "DiffBind")`.
 
 
 [DiPPER](/packages/DiPPER)
@@ -4705,7 +4705,7 @@ clust_de, and cor must be consistent within the object. Objects
 created with earlier versions may fail validObject(), in which case
 they should be recreated.
 
-[see more with `news(package = "dominoSignal")`]
+[See the full NEWS](/packages/release/bioc/news/dominoSignal/NEWS) or run `news(package = "dominoSignal")`.
 
 
 [doppelgangR](/packages/doppelgangR)
@@ -4794,7 +4794,7 @@ gson::read.gson()
 - enforce ontology, species, and Entrez ID consistency (2026-07-15,
 Wed)
 
-[see more with `news(package = "DOSE")`]
+[See the full NEWS](/packages/release/bioc/news/DOSE/NEWS) or run `news(package = "DOSE")`.
 
 
 [drawProteins](/packages/drawProteins)
@@ -5040,7 +5040,7 @@ MINOR CHANGES
   catchSalmonGene(), and catchKallisto(), that replaces `paths`
   and allows individual samples to be specified.
 
-[see more with `news(package = "edgeR")`]
+[See the full NEWS](/packages/release/bioc/news/edgeR/NEWS) or run `news(package = "edgeR")`.
 
 
 [eisaR](/packages/eisaR)
@@ -5140,7 +5140,7 @@ helper for retained-pair density diagnostics (2026-09-27, Sun)
 through one- and two-term reductions, and validate edge/coordinate
 controls before plotting (2026-09-27, Sun)
 
-[see more with `news(package = "enrichplot")`]
+[See the full NEWS](/packages/release/bioc/news/enrichplot/NEWS) or run `news(package = "enrichplot")`.
 
 
 [ensembldb](/packages/ensembldb)
@@ -5275,7 +5275,7 @@ object returned by follow() for an empty query to features[], and
 annotateSeq() reports the seqlevels mismatch together with how to
 align the chromosome names (seqlevelsStyle()). (2026-10-01, Thu)
 
-[see more with `news(package = "epiSeeker")`]
+[See the full NEWS](/packages/release/bioc/news/epiSeeker/NEWS) or run `news(package = "epiSeeker")`.
 
 
 [escape](/packages/escape)
@@ -5336,7 +5336,7 @@ Seurat-mangled form as a fallback, and per-set scale factors are
 aligned to the enrichment columns explicitly so a partial match can
 never divide the wrong column.
 
-[see more with `news(package = "escape")`]
+[See the full NEWS](/packages/release/bioc/news/escape/NEWS) or run `news(package = "escape")`.
 
 
 [EventPointer](/packages/EventPointer)
@@ -5410,7 +5410,7 @@ generics. subsetSummary() loops with seq_along() and createSubset()
 drops an internal variable that always equalled parentAssay. No
 change in behavior (#37)
 
-[see more with `news(package = "ExperimentSubset")`]
+[See the full NEWS](/packages/release/bioc/news/ExperimentSubset/NEWS) or run `news(package = "ExperimentSubset")`.
 
 
 [exploreSE](/packages/exploreSE)
@@ -5710,7 +5710,7 @@ UTILITIES
   million elements holding a hundred thousand non-zero values is about
   87 times faster
 
-[see more with `news(package = "gdsfmt")`]
+[See the full NEWS](/packages/release/bioc/news/gdsfmt/NEWS) or run `news(package = "gdsfmt")`.
 
 
 [gemma.R](/packages/gemma.R)
@@ -5894,7 +5894,7 @@ clear geoquery_ncbi_challenge error (#230, #235).
 no
 longer fail (#98).
 
-[see more with `news(package = "GEOquery")`]
+[See the full NEWS](/packages/release/bioc/news/GEOquery/NEWS) or run `news(package = "GEOquery")`.
 
 
 [gesel](/packages/gesel)
@@ -5968,7 +5968,7 @@ geom_msaBar() and facet_msa() work in either order — the
 conservation bar is split with the same field, so its columns stay
 aligned with the tiles. issues#49 issues#72 (2026-09-21, Mon)
 
-[see more with `news(package = "ggmsa")`]
+[See the full NEWS](/packages/release/bioc/news/ggmsa/NEWS) or run `news(package = "ggmsa")`.
 
 
 [ggsc](/packages/ggsc)
@@ -6072,7 +6072,7 @@ ggplot2 3.4.0 "size aesthetic for lines" deprecation warning; the
 parameter is translated to linewidth inside stat_tree(), so the
 documented idiom keeps working (2026-09-14, Mon, #684)
 
-[see more with `news(package = "ggtree")`]
+[See the full NEWS](/packages/release/bioc/news/ggtree/NEWS) or run `news(package = "ggtree")`.
 
 
 [ggtreeExtra](/packages/ggtreeExtra)
@@ -6177,7 +6177,7 @@ IC slightly, since they count towards the denominator but can never
 contribute to an ancestor's descendant sum; about 0.3% of terms were
 overestimated by more than 0.5 (2026-09-22, Tue)
 
-[see more with `news(package = "GOSemSim")`]
+[See the full NEWS](/packages/release/bioc/news/GOSemSim/NEWS) or run `news(package = "GOSemSim")`.
 
 
 [GPlinksR](/packages/GPlinksR)
@@ -6271,7 +6271,7 @@ USER VISIBLE CHANGES
 - Rows whose values are all missing are now discarded during row
   filtering.
 
-[see more with `news(package = "GSVA")`]
+[See the full NEWS](/packages/release/bioc/news/GSVA/NEWS) or run `news(package = "GSVA")`.
 
 
 [gVenn](/packages/gVenn)
@@ -6326,7 +6326,7 @@ the type of the input: "Region size" for a GenomicOverlapResult and
 of regions (~10x at 10^5-10^6 regions), by vectorizing the internal
 defineCategories() helper instead of looping row by row.
 
-[see more with `news(package = "gVenn")`]
+[See the full NEWS](/packages/release/bioc/news/gVenn/NEWS) or run `news(package = "gVenn")`.
 
 
 [h5mread](/packages/h5mread)
@@ -6429,7 +6429,7 @@ BUG FIXES
   it
   would not propagate type() under certain circumstances.
 
-[see more with `news(package = "HDF5Array")`]
+[See the full NEWS](/packages/release/bioc/news/HDF5Array/NEWS) or run `news(package = "HDF5Array")`.
 
 
 [HIBAG](/packages/HIBAG)
@@ -6559,7 +6559,7 @@ BUG FIXES
   returned table gains a resolved column marking which rows met the
   criteria.
 
-[see more with `news(package = "HiCPotts")`]
+[See the full NEWS](/packages/release/bioc/news/HiCPotts/NEWS) or run `news(package = "HiCPotts")`.
 
 
 [hoodscanR](/packages/hoodscanR)
@@ -6620,7 +6620,7 @@ NEW FEATURES
   gets included in the germline db.
   See '?get_fwrcdr_widths_for_imgt_organism' for more information.
 
-[see more with `news(package = "igblastr")`]
+[See the full NEWS](/packages/release/bioc/news/igblastr/NEWS) or run `news(package = "igblastr")`.
 
 
 [igvR](/packages/igvR)
@@ -6820,7 +6820,7 @@ all-pairs comparison, with no new dependencies and identical edge
 output
 for the default settings:
 
-[see more with `news(package = "immApex")`]
+[See the full NEWS](/packages/release/bioc/news/immApex/NEWS) or run `news(package = "immApex")`.
 
 
 [immGLIPH](/packages/immGLIPH)
@@ -6892,7 +6892,7 @@ directory into the current working directory, so runScXpand()
 downloads the model as an explicit step with an explicit cache
 location.
 
-[see more with `news(package = "immLynx")`]
+[See the full NEWS](/packages/release/bioc/news/immLynx/NEWS) or run `news(package = "immLynx")`.
 
 
 [immunoClust](/packages/immunoClust)
@@ -7124,7 +7124,7 @@ BUG FIXES AND MINOR IMPROVEMENTS
 - KYCG_plotEnrichAll: geom_segment(linewidth=), not the deprecated
   size=.
 
-[see more with `news(package = "knowYourCG")`]
+[See the full NEWS](/packages/release/bioc/news/knowYourCG/NEWS) or run `news(package = "knowYourCG")`.
 
 
 [LACHESIS](/packages/LACHESIS)
@@ -7205,7 +7205,7 @@ UnknownCompoundInstanceItemsConsolidatedUnknownCompoundItems instead
 of ConsolidatedUnknownCompoundItemsUnknownCompoundInstanceItems.
 Previously such files failed with "no such table".
 
-[see more with `news(package = "lcmsPlot")`]
+[See the full NEWS](/packages/release/bioc/news/lcmsPlot/NEWS) or run `news(package = "lcmsPlot")`.
 
 
 [LEA](/packages/LEA)
@@ -7315,7 +7315,7 @@ Behaviour changes (these alter landscapes and regional P-values
   lists both directions no longer puts two support points on each edge
   midpoint.
 
-[see more with `news(package = "levi")`]
+[See the full NEWS](/packages/release/bioc/news/levi/NEWS) or run `news(package = "levi")`.
 
 
 [limma](/packages/limma)
@@ -7382,7 +7382,7 @@ Behaviour changes (these alter landscapes and regional P-values
 
 - Fix filtering error in Agilent rat case study in User's Guide.
 
-[see more with `news(package = "limma")`]
+[See the full NEWS](/packages/release/bioc/news/limma/NEWS) or run `news(package = "limma")`.
 
 
 [LIPIDIFy](/packages/LIPIDIFy)
@@ -7477,7 +7477,7 @@ Behaviour changes (these alter landscapes and regional P-values
 - Tests pass with a single-threaded BLAS (R's reference BLAS, as on the
   Bioconductor build machines).
 
-[see more with `news(package = "lisaClust")`]
+[See the full NEWS](/packages/release/bioc/news/lisaClust/NEWS) or run `news(package = "lisaClust")`.
 
 
 [LRDE](/packages/LRDE)
@@ -7746,7 +7746,7 @@ object is still a list, so existing $ access is unchanged.
 are numerically identical to 1.1.4; these changes do not alter the
 method.
 
-[see more with `news(package = "MeLSI")`]
+[See the full NEWS](/packages/release/bioc/news/MeLSI/NEWS) or run `news(package = "MeLSI")`.
 
 
 [memes](/packages/memes)
@@ -7935,7 +7935,7 @@ from then on.
 - Results follow the same policy: HDF5 as the durable store with an
 in-memory cache, and persist() to keep a session result.
 
-[see more with `news(package = "methylclock")`]
+[See the full NEWS](/packages/release/bioc/news/methylclock/NEWS) or run `news(package = "methylclock")`.
 
 
 [methylSig](/packages/methylSig)
@@ -7997,7 +7997,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
   vignettes
   already do.
 
-[see more with `news(package = "methylSig")`]
+[See the full NEWS](/packages/release/bioc/news/methylSig/NEWS) or run `news(package = "methylSig")`.
 
 
 [methylumi](/packages/methylumi)
@@ -8058,7 +8058,7 @@ where scale_size used an area one, so line widths differ slightly.
 https://seandavi.github.io/methylumi/
 from a GitHub Actions workflow. (#43)
 
-[see more with `news(package = "methylumi")`]
+[See the full NEWS](/packages/release/bioc/news/methylumi/NEWS) or run `news(package = "methylumi")`.
 
 
 [MetMashR](/packages/MetMashR)
@@ -8218,7 +8218,7 @@ Date: 2026-10-19
 - getPERMANOVA: binary=TRUE when Jaccard calculated (1.21.28,
   2026-11-05)
 
-[see more with `news(package = "mia")`]
+[See the full NEWS](/packages/release/bioc/news/mia/NEWS) or run `news(package = "mia")`.
 
 
 [miaTime](/packages/miaTime)
@@ -8324,7 +8324,7 @@ SIGNIFICANT USER-VISIBLE CHANGES
   stay
   visible
 
-[see more with `news(package = "miaViz")`]
+[See the full NEWS](/packages/release/bioc/news/miaViz/NEWS) or run `news(package = "miaViz")`.
 
 
 [MiCARA](/packages/MiCARA)
@@ -8509,7 +8509,7 @@ the old mixOmicsTeam address
 data
 sources whose pages have moved or gone link to the paper's DOI
 
-[see more with `news(package = "mixOmics")`]
+[See the full NEWS](/packages/release/bioc/news/mixOmics/NEWS) or run `news(package = "mixOmics")`.
 
 
 [MLP](/packages/MLP)
@@ -8976,7 +8976,7 @@ in-memory MS2–MS4 searches against experimental spectra or a
 reference library. Hits carry the input positions, compatibility
 reason, scores and rank (#159).
 
-[see more with `news(package = "msPurity")`]
+[See the full NEWS](/packages/release/bioc/news/msPurity/NEWS) or run `news(package = "msPurity")`.
 
 
 [msqrob2](/packages/msqrob2)
@@ -9039,7 +9039,7 @@ condition + (1 | Sequence)), the sample variable keeps its type (in
 the previous release a factor became integer codes and a numeric
 covariate was treated as a factor).
 
-[see more with `news(package = "msqrob2")`]
+[See the full NEWS](/packages/release/bioc/news/msqrob2/NEWS) or run `news(package = "msqrob2")`.
 
 
 [MsStash](/packages/MsStash)
@@ -9216,7 +9216,7 @@ allele column headers (#208).
 now applies rmv_chr (#211). Its documented rmv_chr default is
 corrected.
 
-[see more with `news(package = "MungeSumstats")`]
+[See the full NEWS](/packages/release/bioc/news/MungeSumstats/NEWS) or run `news(package = "MungeSumstats")`.
 
 
 [muscat](/packages/muscat)
@@ -9285,7 +9285,7 @@ is both; before, a signature in two duplicate groups was counted in
 both. Predicted signatures whose names contain "like" are no longer
 left out of duplicate merging.
 
-[see more with `news(package = "musicatk")`]
+[See the full NEWS](/packages/release/bioc/news/musicatk/NEWS) or run `news(package = "musicatk")`.
 
 
 [MutSeqR](/packages/MutSeqR)
@@ -9347,7 +9347,7 @@ loop, and each distinct REF/ALT pair and context is classified once.
 Three 48,000-record gVCFs import in 4 seconds instead of 23, with
 identical results.
 
-[see more with `news(package = "MutSeqR")`]
+[See the full NEWS](/packages/release/bioc/news/MutSeqR/NEWS) or run `news(package = "MutSeqR")`.
 
 
 [mzR](/packages/mzR)
@@ -9431,7 +9431,7 @@ parsing.
 - Fixed modbam_to_tabix() leaving the tabix index (.tbi) in the
 temporary directory, making the converted file unqueryable.
 
-[see more with `news(package = "NanoMethViz")`]
+[See the full NEWS](/packages/release/bioc/news/NanoMethViz/NEWS) or run `news(package = "NanoMethViz")`.
 
 
 [ncRNAtools](/packages/ncRNAtools)
@@ -9606,7 +9606,7 @@ OTHER CHANGES
   - the deprecated functions getXref(), getAnnotation(),
     getGenomeAlignment() and getData() are now defunct
 
-[see more with `news(package = "OmaDB")`]
+[See the full NEWS](/packages/release/bioc/news/OmaDB/NEWS) or run `news(package = "OmaDB")`.
 
 
 [OmnipathR](/packages/OmnipathR)
@@ -9660,7 +9660,7 @@ finish within omnipathr.uniprot_idmapping_timeout, it stops with an
 error that names the job and its status. Before, it went on, and
 failed with "object 'result' not found"
 
-[see more with `news(package = "OmnipathR")`]
+[See the full NEWS](/packages/release/bioc/news/OmnipathR/NEWS) or run `news(package = "OmnipathR")`.
 
 
 [omXplore](/packages/omXplore)
@@ -9736,7 +9736,7 @@ MODIFICATIONS
 - LOND now checks that a user-supplied betai is at least as long as the
   number of p-values
 
-[see more with `news(package = "onlineFDR")`]
+[See the full NEWS](/packages/release/bioc/news/onlineFDR/NEWS) or run `news(package = "onlineFDR")`.
 
 
 [ontoProc2](/packages/ontoProc2)
@@ -9797,7 +9797,7 @@ test-map_genes to fail on the GitHub Actions Windows runner whenever
 the planosphere mapping file failed to download. Same fix has been
 backported to RELEASE_3_23 as 1.18.1.
 
-[see more with `news(package = "orthogene")`]
+[See the full NEWS](/packages/release/bioc/news/orthogene/NEWS) or run `news(package = "orthogene")`.
 
 
 [PACE](/packages/PACE)
@@ -10033,7 +10033,7 @@ ERF) are now in PlantTFDB_subfamily, and PlantTFDB_family contains
 PlantTFDB families (e.g., AP2/ERF). Genes assigned to more than one
 PlantTFDB family have families (and subfamilies) separated by ';'.
 
-[see more with `news(package = "planttfhunter")`]
+[See the full NEWS](/packages/release/bioc/news/planttfhunter/NEWS) or run `news(package = "planttfhunter")`.
 
 
 [PLSDAbatch](/packages/PLSDAbatch)
@@ -10488,7 +10488,7 @@ empty list by read_zarr_attributes().
 write_zarr_array(data_type = ) argument is left empty or "character"
 and no NAs are present.
 
-[see more with `news(package = "Rarr")`]
+[See the full NEWS](/packages/release/bioc/news/Rarr/NEWS) or run `news(package = "Rarr")`.
 
 
 [rawrr](/packages/rawrr)
@@ -10777,7 +10777,7 @@ Bug fixes
   variable length types. Thanks to Luke Zappia for the report and
   reproducible example.
 
-[see more with `news(package = "rhdf5")`]
+[See the full NEWS](/packages/release/bioc/news/rhdf5/NEWS) or run `news(package = "rhdf5")`.
 
 
 [rhdf5filters](/packages/rhdf5filters)
@@ -11116,7 +11116,7 @@ AA
 accessors that return the cached slot when populated, otherwise
 compute on demand via the existing calculateAASeq helper.
 
-[see more with `news(package = "sangeranalyseR")`]
+[See the full NEWS](/packages/release/bioc/news/sangeranalyseR/NEWS) or run `news(package = "sangeranalyseR")`.
 
 
 [sbivar](/packages/sbivar)
@@ -11476,7 +11476,7 @@ scp 1.23.0
   scoreMarkers(). Now, an error is thrown if a NA value is
   detected.
 
-[see more with `news(package = "scrapper")`]
+[See the full NEWS](/packages/release/bioc/news/scrapper/NEWS) or run `news(package = "scrapper")`.
 
 
 [scRepertoire](/packages/scRepertoire)
@@ -11536,7 +11536,7 @@ It previously took the last column, which picked up an unrelated
 column in the case where no sequence pair passes the threshold and
 clonalCluster() returns the input untouched.
 
-[see more with `news(package = "scRepertoire")`]
+[See the full NEWS](/packages/release/bioc/news/scRepertoire/NEWS) or run `news(package = "scRepertoire")`.
 
 
 [scRNAseqApp](/packages/scRNAseqApp)
@@ -11641,7 +11641,7 @@ clonalCluster() returns the input untouched.
 
 - Fix the coordinates issue for init.
 
-[see more with `news(package = "scRNAseqApp")`]
+[See the full NEWS](/packages/release/bioc/news/scRNAseqApp/NEWS) or run `news(package = "scRNAseqApp")`.
 
 
 [scTensor](/packages/scTensor)
@@ -11814,7 +11814,7 @@ UTILITIES
 - `seqVCF2GDS()` parses diploid genotypes with single-digit alleles
   (e.g., "0|1" and "0/1") faster
 
-[see more with `news(package = "SeqArray")`]
+[See the full NEWS](/packages/release/bioc/news/SeqArray/NEWS) or run `news(package = "SeqArray")`.
 
 
 [Seqinfo](/packages/Seqinfo)
@@ -11884,7 +11884,7 @@ UTILITIES
   declared
   encoding. BiocCheck warned "Unable to read CITATION file".
 
-[see more with `news(package = "sesame")`]
+[See the full NEWS](/packages/release/bioc/news/sesame/NEWS) or run `news(package = "sesame")`.
 
 
 [sfi](/packages/sfi)
@@ -12005,7 +12005,7 @@ it horizontally within the loader container
   TIFF
   files. Paths return cells by default, images in R return masks.
 
-[see more with `news(package = "simpleSeg")`]
+[See the full NEWS](/packages/release/bioc/news/simpleSeg/NEWS) or run `news(package = "simpleSeg")`.
 
 
 [singleCellTK](/packages/singleCellTK)
@@ -12071,7 +12071,7 @@ data. runPerCellQC() uses BPPARAM to set the number of threads.
 The metadata packageVersion recorded by runPerCellQC() is now
 singleCellTK's.
 
-[see more with `news(package = "singleCellTK")`]
+[See the full NEWS](/packages/release/bioc/news/singleCellTK/NEWS) or run `news(package = "singleCellTK")`.
 
 
 [SingleR](/packages/SingleR)
@@ -12142,7 +12142,7 @@ sd and hdb.
 sparse input, which also broke gs_score() and ova_score_boxplot().
 It now uses sparseMatrixStats::colMeans2().
 
-[see more with `news(package = "smartid")`]
+[See the full NEWS](/packages/release/bioc/news/smartid/NEWS) or run `news(package = "smartid")`.
 
 
 [smoothclust](/packages/smoothclust)
@@ -12256,7 +12256,7 @@ absent.
 - No changes to the exported API in this release (NAMESPACE is
 unchanged since 2.3.1).
 
-[see more with `news(package = "SpaceMarkers")`]
+[See the full NEWS](/packages/release/bioc/news/SpaceMarkers/NEWS) or run `news(package = "SpaceMarkers")`.
 
 
 [SpaceTrooper](/packages/SpaceTrooper)
@@ -12361,7 +12361,7 @@ appropriate, e.g. pooled across a coarser model, which errs
 conservative. psi composes with offset, and psi = NULL (the default)
 is a strict no-op.
 
-[see more with `news(package = "SpaNorm")`]
+[See the full NEWS](/packages/release/bioc/news/SpaNorm/NEWS) or run `news(package = "SpaNorm")`.
 
 
 [SparseArray](/packages/SparseArray)
@@ -12622,7 +12622,7 @@ the ORF matcher. The default still returns the list. get_pairs() S4
 output sets metadata$matching = "legacy" and drops earlier ORF
 diagnostics.
 
-[see more with `news(package = "SpliceImpactR")`]
+[See the full NEWS](/packages/release/bioc/news/SpliceImpactR/NEWS) or run `news(package = "SpliceImpactR")`.
 
 
 [splicelogic](/packages/splicelogic)
@@ -12684,7 +12684,7 @@ exon that faces the candidate exon, on either strand.
 arguments on to GenomicRanges::findOverlaps(), e.g. minoverlap = 5L.
 - plyranges moved to Depends, so it is attached with splicelogic.
 
-[see more with `news(package = "splicelogic")`]
+[See the full NEWS](/packages/release/bioc/news/splicelogic/NEWS) or run `news(package = "splicelogic")`.
 
 
 [SpNeigh](/packages/SpNeigh)
@@ -12862,7 +12862,7 @@ will
 be used, without asking STRING; version = "latest" will ask STRING
 for its current version.
 
-[see more with `news(package = "STRINGdb")`]
+[See the full NEWS](/packages/release/bioc/news/STRINGdb/NEWS) or run `news(package = "STRINGdb")`.
 
 
 [STRprofilerR](/packages/STRprofilerR)
@@ -13078,7 +13078,7 @@ for and describes both approaches, TaxSEA() on ranked taxa and
 ssTaxSEA() on a single sample. Also fixed two long-standing typos in
 it ("alternations", and a missing "can be applied").
 
-[see more with `news(package = "TaxSEA")`]
+[See the full NEWS](/packages/release/bioc/news/TaxSEA/NEWS) or run `news(package = "TaxSEA")`.
 
 
 [TDbasedUFE](/packages/TDbasedUFE)
@@ -13312,7 +13312,7 @@ non-consecutive keys (e.g. MEGA output); the tips are
 numbered 1:Ntip and the node data is mapped accordingly (2026-09-20,
 Sun, #132)
 
-[see more with `news(package = "treeio")`]
+[See the full NEWS](/packages/release/bioc/news/treeio/NEWS) or run `news(package = "treeio")`.
 
 
 [TSENAT](/packages/TSENAT)
@@ -13409,7 +13409,7 @@ companion Snakemake rule using compute_fasta_digest. The digest
 structure is compatible with the existing inspectDigests() and
 updateMetadata() functions.
 
-[see more with `news(package = "tximeta")`]
+[See the full NEWS](/packages/release/bioc/news/tximeta/NEWS) or run `news(package = "tximeta")`.
 
 
 [tximport](/packages/tximport)
@@ -13507,7 +13507,7 @@ NEW FEATURES
   "rectangular" and "slanted" layouts and are unavailable for dist
   input. See ?motif_tree_lite for alignment and sizing options.
 
-[see more with `news(package = "universalmotif")`]
+[See the full NEWS](/packages/release/bioc/news/universalmotif/NEWS) or run `news(package = "universalmotif")`.
 
 
 [updateObject](/packages/updateObject)
@@ -13622,7 +13622,7 @@ imported TPM, and counts_from = "length" transcript lengths, as if
 they were counts, and edgeR and limma tested them without complaint.
 Both now raise an error.
 
-[see more with `news(package = "VISTA")`]
+[See the full NEWS](/packages/release/bioc/news/VISTA/NEWS) or run `news(package = "VISTA")`.
 
 
 [vsn](/packages/vsn)
