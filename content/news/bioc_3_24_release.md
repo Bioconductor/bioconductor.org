@@ -992,8 +992,7 @@ There are 149 new software packages in this release of Bioconductor.
   directly and seamlessly integrated into R-based analysis workflows
   with the Spectra and MsBackendMassIVE package.
 
--
-  [MsBackendMetabolomicsWorkbench](/packages/MsBackendMetabolomicsWorkbench)
+- [MsBackendMetabolomicsWorkbench](/packages/MsBackendMetabolomicsWorkbench)
   Metabolomics Workbench is one of the main public repositories for
   storage of metabolomics experiments. The
   MsBackendMetabolomicsWorkbench package provides functionality to
@@ -1047,8 +1046,7 @@ There are 149 new software packages in this release of Bioconductor.
   arguments. This package consists of two functions: one to build the
   graph and another one for plotting.
 
--
-  [MultiAssaySpatialExperiment](/packages/MultiAssaySpatialExperiment)
+- [MultiAssaySpatialExperiment](/packages/MultiAssaySpatialExperiment)
   Extends MultiAssayExperiment with spatial context elements (images,
   labels, points, shapes) for integrative analysis of spatially
   resolved multi-omics data. A spatial map links the columns of each
@@ -1843,8 +1841,7 @@ There are 6 new annotation packages in this release of Bioconductor.
   first use; this package provides the accessors and the
   documentation.
 
--
-  [TxDb.Athaliana.Ensembl.TAIR10](/packages/TxDb.Athaliana.Ensembl.TAIR10)
+- [TxDb.Athaliana.Ensembl.TAIR10](/packages/TxDb.Athaliana.Ensembl.TAIR10)
   TxDb.Athaliana.Ensembl.TAIR10 provides transcript, exon, CDS, and
   gene annotations for Arabidopsis thaliana based on the TAIR10
   reference genome and Ensembl Plants release 63. The TxDb object is
@@ -2105,30 +2102,25 @@ files being retrieved from GitHub.
 
 New features
 
-- 
-  Add support for writing Zarr v3 stores, using (i) zarr_format
+- Add support for writing Zarr v3 stores, using (i) zarr_format
   argument of write_zarr()/as_ZarrAnnData() or (ii) the
   anndataR.zarr_format option. New stores are written as Zarr v3
   by default.
 
-- 
-  Add support for reading backed objects using DelayedArray
+- Add support for reading backed objects using DelayedArray
   matrices, including a backed argument for HDF5AnnData,
   ZarrAnnData and InMemoryAnnData, and conversion of backed
   AnnData objects to SingleCellExperiment/Seurat.
 
-- 
-  Add support for nullable-string-array elements in H5AD and
+- Add support for nullable-string-array elements in H5AD and
   Zarr.
 
-- 
-  Add a group argument to read_h5ad(), write_h5ad(),
+- Add a group argument to read_h5ad(), write_h5ad(),
   as_HDF5AnnData() and HDF5AnnData, to read and write an AnnData
   stored in a group inside an HDF5 file, e.g. a modality inside a
   .h5mu file.
 
-- 
-  Add read_elem() and write_elem() to read and write a single
+- Add read_elem() and write_elem() to read and write a single
   element of an H5AD file or Zarr store, e.g. read_elem(path,
   "obsm/X_pca"), without reading the whole object. With backed =
   TRUE, read_elem() returns arrays and matrices as DelayedArray
@@ -2136,126 +2128,99 @@ New features
 
 Minor changes
 
-- 
-  Support the anndata.AnnData class name used by Python anndata
-  >= 0.13
+- Support the anndata.AnnData class name used by Python anndata >= 0.13
 
-- 
-  Handle the None layer key used by Python anndata >= 0.13 which
+- Handle the None layer key used by Python anndata >= 0.13 which
   stores X as a layer
 
-- 
-  Read the sharded Zarr v3 stores that Python anndata >= 0.13
+- Read the sharded Zarr v3 stores that Python anndata >= 0.13
   writes by default. This requires Rarr 2.1.45 or later.
 
-- 
-  Check that the indices of sparse matrices fit their shape when
+- Check that the indices of sparse matrices fit their shape when
   reading H5AD files and Zarr stores, with an error that suggests
   the indices may not be 0-based.
 
-- 
-  Keep NA in double and integer matrices written to H5AD instead
+- Keep NA in double and integer matrices written to H5AD instead
   of replacing it with NaN, so that NA and NaN can still be told
   apart when reading the file back in R. Python anndata reads
   both as NaN.
 
-- 
-  Use zstd compression by default in write_zarr()
+- Use zstd compression by default in write_zarr()
 
-- 
-  Error when writing a logical matrix containing NA to H5AD or
+- Error when writing a logical matrix containing NA to H5AD or
   Zarr, instead of writing a nullable-boolean that neither R nor
   Python anndata can read back. Convert it to numeric first.
 
-- 
-  Require rhdf5 2.57.13 or later, which fixes a spurious
+- Require rhdf5 2.57.13 or later, which fixes a spurious
   NA_character_ warning for numeric datasets containing NA, and
   Rarr 2.1.59 or later, which fixes reading and writing
   zstd-compressed Zarr arrays on R 4.6.2.
 
 Bug fixes
 
-- 
-  Fix create_zarr() so that Zarr stores can be created at
+- Fix create_zarr() so that Zarr stores can be created at
   relative paths and at paths containing regex metacharacters.
 
-- 
-  Use the format of an existing Zarr store when writing to it and
+- Use the format of an existing Zarr store when writing to it and
   truncate the store when mode = "w", so that a store can no
   longer end up with a mix of Zarr v2 and v3 nodes.
 
-- 
-  Write strings as VLen-UTF8 rather than as fixed-width, so that
+- Write strings as VLen-UTF8 rather than as fixed-width, so that
   string arrays read back as variable length strings in Python
   anndata.
 
-- 
-  Remove the workaround for LZF compression of VLen strings in
+- Remove the workaround for LZF compression of VLen strings in
   HDF5.  This is fixed in later versions of rhdf5.
 
-- 
-  Fix HDF5AnnData writing logical matrices as flat 1D datasets
+- Fix HDF5AnnData writing logical matrices as flat 1D datasets
   instead of preserving their shape.
 
-- 
-  Fix writing data.frames in obsm/varm so that the stored index
+- Fix writing data.frames in obsm/varm so that the stored index
   is the obs_names/var_names of the parent object instead of R's
   automatic row numbers
 
-- 
-  Fix writing non-ASCII strings to H5AD files by using UTF-8 for
+- Fix writing non-ASCII strings to H5AD files by using UTF-8 for
   string datasets
 
-- 
-  Fix the error and warning messages when reading or writing an
+- Fix the error and warning messages when reading or writing an
   element fails. The original error is now shown instead of a cli
   parsing error.
 
-- 
-  Fix writing integer matrices containing NA to Zarr.
+- Fix writing integer matrices containing NA to Zarr.
 
-- 
-  Write length 1 data.frame columns and indices as arrays instead
+- Write length 1 data.frame columns and indices as arrays instead
   of scalars.
 
-- 
-  Fix writing empty arrays to Zarr v3.
+- Fix writing empty arrays to Zarr v3.
 
-- 
-  Fix writing a length 1 NA_character_ to Zarr and H5AD, so that
+- Fix writing a length 1 NA_character_ to Zarr and H5AD, so that
   it stays missing when the file is read back in R or in Python
   anndata.
 
-- 
-  Fix as_AnnData() failing with "`rownames(X)` is not as
+- Fix as_AnnData() failing with "`rownames(X)` is not as
   expected" when the assay of a SingleCellExperiment mapped to X
   has different dimnames than the object.
 
-- 
-  Fix as_AnnData() dropping the loadings of a Seurat reduction
+- Fix as_AnnData() dropping the loadings of a Seurat reduction
   when their row names already match the feature names of the
   object.
 
-- 
-  Fix as_Seurat() failing with "No feature overlap between
+- Fix as_Seurat() failing with "No feature overlap between
   existing object and new layer data" when var_names contain
   underscores. The underscores are now replaced with dashes in
   the feature names of the Seurat object, with a warning.
 
-- 
-  Don't add the vlen-utf8 filter twice to Zarr v2 string arrays,
+- Don't add the vlen-utf8 filter twice to Zarr v2 string arrays,
   which newer versions of Rarr add themselves.
 
-- 
-  Fix read_h5ad() and read_zarr() losing a whole element, e.g.
+- Fix read_h5ad() and read_zarr() losing a whole element, e.g.
   all of uns, when one of its items can't be read, such as an
   item without encoding metadata. That item is now skipped with a
   warning naming it.
 
 Documentation
 
-- 
-  Update CITATION to include the anndataR publication: Deconinck
+- Update CITATION to include the anndataR publication: Deconinck
   L, Zappia L, Cannoodt R, Morgan M, Virshup I, Sang-aram C,
   Bredikhin D, Seurinck R, Saeys Y, scverse core (2026).
   "anndataR improves interoperability between R and Python in
@@ -2263,24 +2228,19 @@ Documentation
   doi:10.1093/bioinformatics/btag288
   https://doi.org/10.1093/bioinformatics/btag288.
 
-- 
-  Minor updates and simplifications to function documentation.
+- Minor updates and simplifications to function documentation.
 
 Testing
 
-- 
-  Add Bioconductor R-universe checks
+- Add Bioconductor R-universe checks
 
-- 
-  Add Zarr functionality to benchmarking
+- Add Zarr functionality to benchmarking
 
-- 
-  Check release branches against the appropriate Bioconductor
+- Check release branches against the appropriate Bioconductor
   release.  Run BiocCheck on RELEASE_* branches as well as on
   devel.
 
-- 
-  Add a strict mode for Python tests with
+- Add a strict mode for Python tests with
   ANNDATAR_TEST_REQUIRE_PYTHON=true
 
 [AnnotationDbi](/packages/AnnotationDbi)
@@ -2399,8 +2359,7 @@ BUGFIXES
   not in
   the data now names those elements (issue #16).
 
-- Document that BED files are 0-based, so single bases need start = end
-  - 1,
+- Document that BED files are 0-based, so single bases need start = end - 1,
   in read_regions() and the vignette (issue #27).
 
 - Fix CpG islands read from UCSC database tables (hg38, mm10, mm39,
@@ -2670,12 +2629,12 @@ BUG FIXES
   same column
   names as before, with two differences:
   - the {domain} column now uses the g:Profiler source names ({GO:BP},
-  {KEGG}, {REAC}, ...)
+    {KEGG}, {REAC}, ...)
   - the gProfileR-only columns {subgraph.number} and {relative.depth}
-  are no longer included
-  {OMIM} is no longer available in g:Profiler and is ignored.
-  Install {gprofiler2} to use these functions:
-  {install.packages("gprofiler2")}
+    are no longer included
+    {OMIM} is no longer available in g:Profiler and is ignored.
+    Install {gprofiler2} to use these functions:
+    {install.packages("gprofiler2")}
 
 - Fix typo in the enrichment error message
 
@@ -2987,17 +2946,17 @@ Minor Changes
                  Changes in version 2.29.2 (2026-09-14)                 
 
 - Bug fixes
-  o Batch effects are detected in both directions again, as 1.12.x did.
-  o correctBatchEffect no longer fails with when glue isn't installed
+  - Batch effects are detected in both directions again, as 1.12.x did.
+  - correctBatchEffect no longer fails with when glue isn't installed
 
 - Tests
-  o Test for batches shifted downward in calcSummary
-  o Test for logging when logger formats with sprintf
+  - Test for batches shifted downward in calcSummary
+  - Test for logging when logger formats with sprintf
 
                  Changes in version 2.29.1 (2026-06-07)                 
 
 - Tests
-  o Reintroduced integration tests for correctBatchEffect
+  - Reintroduced integration tests for correctBatchEffect
 
 [bedbaser](/packages/bedbaser)
 --------
@@ -3036,8 +2995,7 @@ clearly instead of failing or requiring xml2 (#34, @jwokaty)
 
                         Changes in version 1.0.0                        
 
-- 
-  Initial release.
+- Initial release.
 
 [betterChromVAR](/packages/betterChromVAR)
 --------------
@@ -3650,7 +3608,7 @@ BUG FIXES
 - Fix a bug on combineScores: if a vector was all NA the calculation
 was performed.
 - Removed all sapply() calls.
-- Used shortcut logical operators (&&, ||) whenever possible.
+- Used shortcut logical operators (&&, &#124;&#124;) whenever possible.
 
 [BiocPkgTools](/packages/BiocPkgTools)
 ------------
@@ -4197,8 +4155,7 @@ score instead of NaN or Inf, so ROR-P, original ROR-PC and the
 additional ROR-PC score and groups are missing for that sample
 rather than the literal text "NaN" or an apparently valid high/low
 category. Every exported numerical ROR score is now finite or NA: a
-NaN or infinite result, including overflow in the final 100 * (score
-+ 0.35) / 0.85 scaling or an infinite tumor-size covariate, is
+NaN or infinite result, including overflow in the final 100 * (score + 0.35) / 0.85 scaling or an infinite tumor-size covariate, is
 reported as NA with a missing group for ROR-S, ROR-P, ROR-C,
 original ROR-PC and the additional subtype-specific ROR-PC score.
 This missing-value correction alone preserved finite complete-input
@@ -4380,10 +4337,8 @@ Confidence can still be zero. This finding alone does not invalidate
 subtype calls or numerical ROR scores, which the fix does not
 change. Confidence is not a calibrated subtype probability.
 - Correct the additional NODE-dependent ROR-PC Group (Subtype +
-Clinic
-+ Prolif.Subtype) boundaries (#154): NODE = 0 uses <= 40 / > 40
-through 60 / > 60, and NODE = 1--3 uses <= 15 / > 15 through 40 /
-> 40; at least four positive nodes remain high risk with nonmissing
+Clinic + Prolif.Subtype) boundaries (#154): NODE = 0 uses <= 40 / > 40
+through 60 / > 60, and NODE = 1--3 uses <= 15 / > 15 through 40 / > 40; at least four positive nodes remain high risk with nonmissing
 tumor size. Scores are not rounded for grouping.
 - Represent an undefined numerical NaN score as an actual missing
 category in the additional NODE-dependent ROR-PC group for NODE = 0
@@ -6216,7 +6171,7 @@ Moved to new version
 [CyFj11](/packages/CyFj11)
 ------
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 [CySA](/packages/CySA)
 ----
@@ -6738,8 +6693,8 @@ PASS).
 
 Phase B3 — Sane defaults harmonization
 
-- Switched DE cutoff input from fold-change to |log2FC| convention.
-The cutoff numeric inputs are now labelled padj <= and |log2FC| >=.
+- Switched DE cutoff input from fold-change to &#124;log2FC&#124; convention.
+The cutoff numeric inputs are now labelled padj <= and &#124;log2FC&#124; >=.
 - Added [ Strict ] [ Standard ] preset buttons above the DE cutoff
 inputs. Strict (padj 0.01, |log2FC| 1) is the default; Standard is
 (padj 0.05, |log2FC| 1). Manual edits clear the preset highlight
@@ -7091,8 +7046,7 @@ selected) and qc_keep_meta_rows(meta, selected) in R/fct_qc.R.
 
 Phase B4 — Friendly errors
 
-- User-facing error messages now follow a consistent "what went wrong
-+ what to do" format with correct severity (red blocks, yellow
+- User-facing error messages now follow a consistent "what went wrong + what to do" format with correct severity (red blocks, yellow
 warns, green/blue empty-result).
 - Replaced raw R diagnostics in file-upload errors (separator
 mismatch, duplicate gene IDs, column/metadata mismatch).
@@ -7194,7 +7148,6 @@ as ambient =, or background = for background_sd, since background
 now names the empty-droplet counts), and a positional value after an
 alias (such as cell_type = k, 1e-2) (#81).
 - New decontPro() arguments iter (default 50000) and seed (default
-
 12345) control Stan's fit; the defaults are the values used before,
 so
 results don't change. verbose = FALSE hides decontPro's messages
@@ -8208,7 +8161,7 @@ devices or Rplots.pdf), new node_support and branch_table outputs.
 [DuckDBGRanges](/packages/DuckDBGRanges)
 -------------
 
- - Initail Bioconductor Submission
+- Initail Bioconductor Submission
 
 [DuckDBSpatial](/packages/DuckDBSpatial)
 -------------
@@ -8263,52 +8216,43 @@ MINOR CHANGES
 
                  Changes in version 5.0.0 (2026-11-25)                  
 
-- 
-  The genewise C kernels (GLM fitting, deviances, CPM,
+- The genewise C kernels (GLM fitting, deviances, CPM,
   quasi-likelihood adjustment, exact test, diffSplice, etc.) are
   now parallelized with OpenMP. The number of threads is
   controlled by a new `nthreads` argument on the affected
   functions, or globally via `options(edgeR.nthreads=)`, and
   defaults to 1 (serial) so results are unchanged by default.
 
-- 
-  The C backend for diffSplice() now exploits the bordered
+- The C backend for diffSplice() now exploits the bordered
   block-diagonal (arrowhead) structure of the splice design
   matrix, fitting the genewise null models in time that increases
   linearly, rather than cubicly, with the number of exons per
   gene. Results are unchanged. diffSplice() also gains `maxit`
   and `tol` arguments controlling the genewise GLM fits.
 
-- 
-  voomLmFit() has been removed from edgeR and is now provided by
+- voomLmFit() has been removed from edgeR and is now provided by
   the limma package.
 
-- 
-  New functions binQLFit() and binQLFTest() to fit quasi-binomial
+- New functions binQLFit() and binQLFTest() to fit quasi-binomial
   generalized linear models, to estimate bias-adjusted deviances,
   and to test hypotheses. These functions are closely analogous
   to glmQLFit() and glmQLFTest() but for paired counts and
   differential proportion analyses instead of regular counts and
   differential abundance analyses.
 
-- 
-  New functions binFit(), mBinOneWay(), and mBinIWLS() to fit
+- New functions binFit(), mBinOneWay(), and mBinIWLS() to fit
   binomial generalized models.
 
-- 
-  New class DGEBin to store quasi-binomial generalized linear
+- New class DGEBin to store quasi-binomial generalized linear
   model fits.
 
-- 
-  New function readBismark2PC() to read Bismark output into an
+- New function readBismark2PC() to read Bismark output into an
   edgeR PCList object.
 
-- 
-  New class PCList to store paired counts, for example methylated
+- New class PCList to store paired counts, for example methylated
   and unmethylated reads, for the same genomic regions.
 
-- 
-  New functions catchKallistoGene(), catchSalmonGene(), and
+- New functions catchKallistoGene(), catchSalmonGene(), and
   catchOarfishGene() that produce gene-level quantifications from
   kallisto, Salmon or Oarfish output, collapsing the tx
   quantifications to gene-level counts and RTA dispersions. They
@@ -8316,54 +8260,44 @@ MINOR CHANGES
   transcript names if they are present, or alternatively accept
   tx to gene mappings via a data.frame.
 
-- 
-  New function splitGencodeTxNames() to unpack gene and
+- New function splitGencodeTxNames() to unpack gene and
   transcript annotation found in Gencode transcript IDs.
 
-- 
-  catchSalmon(), catchKallisto(), catchOarfish() and catchRSEM()
+- catchSalmon(), catchKallisto(), catchOarfish() and catchRSEM()
   will now detect and unpack Gencode transcript IDs if they are
   present. This provides gene IDs and other annotation that is
   stored in the output object.
 
-- 
-  New argument `parent.dir` for catchSalmon(), catchSalmonGene(),
+- New argument `parent.dir` for catchSalmon(), catchSalmonGene(),
   catchKallisto(), catchOarfish() and catchRSEM() to more easily
   read all the samples available in a specified output directory.
   New argument `sample.dirs` for catchSalmon(),
   catchSalmonGene(), and catchKallisto(), that replaces `paths`
   and allows individual samples to be specified.
 
-- 
-  All members of the catch family of functions optionally produce
+- All members of the catch family of functions optionally produce
   an `offset.prior` matrix that represents tx length
   normalization.
 
-- 
-  New argument `offset.prior` for cpm() and rpkm() to allow the
+- New argument `offset.prior` for cpm() and rpkm() to allow the
   offset matrix to be specified relative to the log(library
   sizes). The `offset` argument still takes priority if it is
   set.
 
-- 
-  The "TMM" method of normLibSizes() now uses `offset.prior` if
+- The "TMM" method of normLibSizes() now uses `offset.prior` if
   provided.
 
-- 
-  sampleWeights() now accepts a DGEGLM fitted model object from
+- sampleWeights() now accepts a DGEGLM fitted model object from
   glmQLFit() instead of a matrix of adjusted unit deviances.
 
-- 
-  Update featureCounts2DGEList() to work with the current version
+- Update featureCounts2DGEList() to work with the current version
   of Rsubread.
 
-- 
-  estimateDisp() now uses classic model only if the design and
+- estimateDisp() now uses classic model only if the design and
   offset matrices are both absent. Previously it ignored the
   offset matrix if the design matrix was NULL.
 
-- 
-  Revision of all the Rd help files to add DOIs, to fix typos,
+- Revision of all the Rd help files to add DOIs, to fix typos,
   and to standardize formating and American spellings.
 
 [eisaR](/packages/eisaR)
@@ -8441,8 +8375,7 @@ expect_false(anyNA(result$rank)), expect_true(all(rank >= 0L)).
 - The final check carries an in-line comment documenting the
 canonical rank == 0L no-signal sentinel — "no usable weighted
 in-set signal for this pathway" (N_R == 0, empty gene-set
-overlap, or a non-finite running score; matches enrichit
->= 0.2.5.9008).
+overlap, or a non-finite running score; matches enrichit >= 0.2.5.9008).
 - Together the three assertions guard against silent type drift
 (numeric 0 or NA_real_ leaking in for the documented integer
 sentinel) and against accidental re-introduction of an
@@ -9683,8 +9616,7 @@ TRUE in setSubsetAssay() or assay<-; the subset and subsets made
 from it then use their own version (including assay(x, "subset")
 when the name is the one its parentAssay refers to), and the
 parent's is unchanged
-- A bare name in assay(), getSubsetAssay(), createSubset(parentAssay
-=
+- A bare name in assay(), getSubsetAssay(), createSubset(parentAssay =
 ), subsetParent(), subsetRownames() and subsetColnames() now means a
 main assay or a subset. An assay stored in a subset is named
 "subset/assay"; a bare stored-assay name is an error that shows the
@@ -11508,7 +11440,7 @@ BUG FIXES
   Starting with rhdf5 2.57.10, NULL pointers in an H5T_VARIABLE dataset
   are interpreted as NAs. So h5mread() now:
   - works on an H5T_VARIABLE dataset with NULL pointers (used to
-  crash!);
+    crash!);
   - interprets NULL pointers as NAs like rhdf5::h5read() does.
 
 [HDF5Array](/packages/HDF5Array)
@@ -11870,25 +11802,25 @@ Add the published hoodscanR paper as the preferred package citation.
                         Changes in version 1.31                         
 
 - Changes in version 1.31.2
-  + Update built-in data and internal gene name lookup table to HPA
-  version 25.1.
+  - Update built-in data and internal gene name lookup table to HPA
+    version 25.1.
 
 - Changes in version 1.31.1
-  + Add hpaSearch() to query the HPA search API.
-  + Add hpaXmlParse() to generically parse an entire imported xml
-  document
-  (based on the proteinatlas.xsd schema) into a flat, joinable list of
-  tibbles, and a new vignette documenting it.
-  + Add a new vignette documenting hpaSearch(), and cover hpaSearch()
-  and
-  hpaXmlParse() in the quick-start and in-depth vignettes.
-  + Add testthat unit tests and clean up internal code.
-  + Various BiocCheck and continuous integration fixes.
+  - Add hpaSearch() to query the HPA search API.
+  - Add hpaXmlParse() to generically parse an entire imported xml
+    document
+    (based on the proteinatlas.xsd schema) into a flat, joinable list of
+    tibbles, and a new vignette documenting it.
+  - Add a new vignette documenting hpaSearch(), and cover hpaSearch()
+    and
+    hpaXmlParse() in the quick-start and in-depth vignettes.
+  - Add testthat unit tests and clean up internal code.
+  - Various BiocCheck and continuous integration fixes.
 
 [HTAN](/packages/HTAN)
 ----
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 [iCOBRA](/packages/iCOBRA)
 ------
@@ -11918,48 +11850,48 @@ NEW FEATURES
 - Thanks to many improvements, install_IMGT_germline_db() now is able
   to compute the internal and auxiliary data for the following IMGT
   organisms:
-  * when making an IG germline db (i.e. 'tcr.db=FALSE'):
-  - Bos taurus
-  - Canis lupus familiaris
-  - Ctenopharyngodon idella
-  - Equus caballus
-  - Felis catus
-  - Gallus gallus
-  - Gorilla gorilla gorilla
-  - Homo sapiens
-  - Lemur catta
-  - Macaca fascicularis
-  - Macaca mulatta
-  - Mus musculus
-  - Mustela putorius furo
-  - Neogale vison
-  - Oncorhynchus mykiss
-  - Ornithorhynchus anatinus
-  - Oryctolagus cuniculus
-  - Pongo pygmaeus
-  - Rattus norvegicus
-  - Salmo salar
-  - Sus scrofa
-  - Vicugna pacos
-  * when making a TR germline db (i.e. 'tcr.db=TRUE'):
-  - Bos taurus
-  - Camelus dromedarius
-  - Canis lupus familiaris
-  - Danio rerio
-  - Felis catus
-  - Gorilla gorilla gorilla
-  - Heterocephalus glaber
-  - Homo sapiens
-  - Macaca fascicularis
-  - Macaca mulatta
-  - Mus musculus
-  - Mustela putorius furo
-  - Oryctolagus cuniculus
-  - Ovis aries
-  - Pan troglodytes
-  - Pongo abelii
-  - Pongo pygmaeus
-  - Sus scrofa
+  - when making an IG germline db (i.e. 'tcr.db=FALSE'):
+    - Bos taurus
+    - Canis lupus familiaris
+    - Ctenopharyngodon idella
+    - Equus caballus
+    - Felis catus
+    - Gallus gallus
+    - Gorilla gorilla gorilla
+    - Homo sapiens
+    - Lemur catta
+    - Macaca fascicularis
+    - Macaca mulatta
+    - Mus musculus
+    - Mustela putorius furo
+    - Neogale vison
+    - Oncorhynchus mykiss
+    - Ornithorhynchus anatinus
+    - Oryctolagus cuniculus
+    - Pongo pygmaeus
+    - Rattus norvegicus
+    - Salmo salar
+    - Sus scrofa
+    - Vicugna pacos
+  - when making a TR germline db (i.e. 'tcr.db=TRUE'):
+    - Bos taurus
+    - Camelus dromedarius
+    - Canis lupus familiaris
+    - Danio rerio
+    - Felis catus
+    - Gorilla gorilla gorilla
+    - Heterocephalus glaber
+    - Homo sapiens
+    - Macaca fascicularis
+    - Macaca mulatta
+    - Mus musculus
+    - Mustela putorius furo
+    - Oryctolagus cuniculus
+    - Ovis aries
+    - Pan troglodytes
+    - Pongo abelii
+    - Pongo pygmaeus
+    - Sus scrofa
 
 - use_germline_db() now emits warning if IMGT germline db contains
   incorrect internal data.
@@ -12016,6 +11948,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - Update the list of preinstalled germline dbs.
   The new list is:
+
+  ```
   > list_germline_dbs()
   db_name V D J intdata auxdata
   _OGRDB.human.IGH+IGK+IGL.202410 342 31 23 TRUE TRUE
@@ -12030,6 +11964,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
   _OGRDB.mouse.PWD_PhJ.IGH+IGK+IGL.202410 184 10 22 TRUE TRUE
   _OGRDB.rainbow_trout.IGH.202606 81 26 18 TRUE TRUE
   _OGRDB.rhesus_monkey.IGH+IGK+IGL.202602 2294 72 39 TRUE TRUE
+  ```
+
 
 - Update the preinstalled C-region dbs.
   This follows major updates of the artificially spliced exons sets for
@@ -12039,6 +11975,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
   are available here:
   https://www.imgt.org/vquest/refseqh.html#constant-sets
   With this update, the new list of preinstalled C-region dbs is:
+
+  ```
   > list_c_region_dbs()
   db_name C
   _IMGT.human.IGH+IGK+IGL.202605 180
@@ -12050,7 +11988,11 @@ SIGNIFICANT USER-VISIBLE CHANGES
   _IMGT.rat.IGH+IGK+IGL.202605 25
   _IMGT.rhesus_monkey.IGH+IGK+IGL.202605 44
   _IMGT.rhesus_monkey.TRA+TRB+TRG+TRD.202605 10
+  ```
+
   The old set was:
+
+  ```
   > list_c_region_dbs()
   db_name C
   _IMGT.human.IGH+IGK+IGL.202412 76
@@ -12060,6 +12002,8 @@ SIGNIFICANT USER-VISIBLE CHANGES
   _IMGT.rabbit.IGH.202412 28
   _IMGT.rat.IGH.202508 18
   _IMGT.rhesus_monkey.IGH+IGK+IGL.202509 40
+  ```
+
 
 - Rename list_germline_dbs()'s and list_c_region_dbs()'s
   argument 'builtin.only' -> 'preinstalled.only'.
@@ -12454,12 +12398,12 @@ prefix.
                        Changes in version 1.45.1                        
 
 - CHANGES
-  * added ICL_bias accessor for immunoClust- and immunoMeta-objects
+  - added ICL_bias accessor for immunoClust- and immunoMeta-objects
 
 [IntegratedLearner](/packages/IntegratedLearner)
 -----------------
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 [InteractiveComplexHeatmap](/packages/InteractiveComplexHeatmap)
 -------------------------
@@ -12472,7 +12416,7 @@ prefix.
 [IntrinsicScan](/packages/IntrinsicScan)
 -------------
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 [IRanges](/packages/IRanges)
 -------
@@ -12695,10 +12639,10 @@ BUG FIXES AND MINOR IMPROVEMENTS
 
 NEW FEATURES
 
-o LACHESIS now allows de novo estimation of mutation rates from
-cohort data
-o Inferred time axis updated
-o Copy number segments with negative values are now filtered
+- LACHESIS now allows de novo estimation of mutation rates from
+  cohort data
+- Inferred time axis updated
+- Copy number segments with negative values are now filtered
 
 [lantern](/packages/lantern)
 -------
@@ -14076,47 +14020,39 @@ Bug fixes
 
                  Changes in version 4.0.0 (2026-10-30)                  
 
-- 
-  voomLmFit() transferred to limma from the edgeR package.
+- voomLmFit() transferred to limma from the edgeR package.
   Previously, voomLmFit() needed to call edgeR::glmFit() in order
   to identify exact zero fitted values, but voomLmFit() now calls
   a new limma C routine 'poisfit' for the same purpose, removing
   the dependence on edgeR.
 
-- 
-  For the purpose of estimating sample weights, voomLmFit() calls
+- For the purpose of estimating sample weights, voomLmFit() calls
   arrayWeights() with 'method="reml"' if there is no loss of df
   due to exact zero fitted values and 'method="genebygene"'
   otherwise.
 
-- 
-  The voomLmFit help page has been expanded, while the voom and
+- The voomLmFit help page has been expanded, while the voom and
   voomWithQualityWeights help pages now have preambles that point
   users to voomLmFit.
 
-- 
-  voomLmFit() now gives priority to 'offset' over 'offset.prior'
+- voomLmFit() now gives priority to 'offset' over 'offset.prior'
   or 'lib.size' and no longer forces the rows of 'offset.prior'
   to add to zero.
 
-- 
-  New argument 'contrasts' for voomLmFit(), lmFit(), lm.series()
+- New argument 'contrasts' for voomLmFit(), lmFit(), lm.series()
   and gls.series(), which converts coefficient estimates and
   standard deviations into contrast estimates and standard
   deviations. This argument provides the same functionality as
   calling 'contrasts.fit' on the output object, but with exact
   rather than approximate standard deviations.
 
-- 
-  New argument 'nthreads' for voomLmFit(), lmFit(), lm.series(),
+- New argument 'nthreads' for voomLmFit(), lmFit(), lm.series(),
   gls.series(), duplicateCorrelation(), and arrayWeights() to
   enable OpenMP parallelization of genewise fits.
 
-- 
-  C code backends for lm.series() and gls.series().
+- C code backends for lm.series() and gls.series().
 
-- 
-  C code backend for duplicateCorrelation().
+- C code backend for duplicateCorrelation().
   duplicateCorrelation() previously called statmod::mixedModel2()
   to estimate genewise correlations, but this functionality is
   now absorbed into the C code. The new code is able to evaluate
@@ -14124,33 +14060,26 @@ Bug fixes
   was possible for the univariate R function, resulting in
   substantial speed and memory improvements.
 
-- 
-  C code backend for .arrayWeightsPrWtsREML(), which is called by
+- C code backend for .arrayWeightsPrWtsREML(), which is called by
   arrayWeights() when 'method="reml"' and prior weights are set.
 
-- 
-  Minor changes to weightedLowess() C code to fit in with the new
+- Minor changes to weightedLowess() C code to fit in with the new
   C code elsewhere.
 
-- 
-  New function normalizeBetweenSamples(). Similar to
+- New function normalizeBetweenSamples(). Similar to
   normalizeBetweenArrays() but works on ELists.
 
-- 
-  camera() and cameraPR() now support gene sets as expression
+- camera() and cameraPR() now support gene sets as expression
   signatures, whereby a logFC or similar expected directional
   change is provided for each gene in the gene set.
 
-- 
-  avearrays() methods for EList and MAList objects now sum the
+- avearrays() methods for EList and MAList objects now sum the
   weights instead of averaging them. Other matrices are still
   averaged.
 
-- 
-  Fix filtering error in Agilent rat case study in User's Guide.
+- Fix filtering error in Agilent rat case study in User's Guide.
 
-- 
-  All the Rd pages have been checked for typos and inconsistent
+- All the Rd pages have been checked for typos and inconsistent
   formating, especially regarding the reference lists. Reference
   URLs converted to DOIs where possible and some new DOIs added.
   Old statsci.org/smyth/pubs preprint URLs updated to
@@ -14158,14 +14087,11 @@ Bug fixes
   PubMed style without unnecessary punctuation. A few instances
   of British spellings converted to American spellings.
 
-- 
-  Expand changelog.txt entries for limma 1.0 and earlier.
+- Expand changelog.txt entries for limma 1.0 and earlier.
 
-- 
-  Minor code update to strsplit2().
+- Minor code update to strsplit2().
 
-- 
-  Add test files dupcor.R, gls-series-c.R, lmfit-contrasts.R,
+- Add test files dupcor.R, gls-series-c.R, lmfit-contrasts.R,
   lm-series-c.R, and voomlmfit-contrasts.R.
 
 [LIPIDIFy](/packages/LIPIDIFy)
@@ -15628,18 +15554,18 @@ SIGNIFICANT USER-VISIBLE CHANGES
 
 - More readable default labels:
   - plotHeatmap and plotJointRPCACovariance draw column labels
-  vertically
+    vertically
   - plotOrdination titles the axes by the method and component, e.g.
-  "MDS1 (23.4%)" instead of "MDS_bray1"
+    "MDS1 (23.4%)" instead of "MDS_bray1"
   - plotLoadings shows the components in their order (PC2 before PC10),
-  names unnamed components "Component 1", ..., titles the value axis
-  "Loading" and leaves out the sign legend when all loadings have the
-  same sign
+    names unnamed components "Component 1", ..., titles the value axis
+    "Loading" and leaves out the sign legend when all loadings have the
+    same sign
   - Prevalence plots title their axes "Detection threshold (<assay>)",
-  "Number of features" and "Mean relative abundance"
+    "Number of features" and "Mean relative abundance"
   - plotBoxplot facets (facet.by = "rownames") follow the order of
-  'features', and plotMediation forest panels the order of the
-  components
+    'features', and plotMediation forest panels the order of the
+    components
   - plotJointRPCANetwork keeps labels off the nodes
 
 - plotMediation heatmap: each tile shows the effect estimate with its
@@ -15788,18 +15714,18 @@ MINOR NOTES
 
 - Added support for TreeSummarizedExperiment and other
   SummarizedExperiment-derived objects
-  * abundances(), meta() and taxa() now accept these objects alongside
-  phyloseq objects, which extends support to most of the package
-  * abundances() gains an assay.type argument, defaulting to the counts
-  assay when present and otherwise the first assay
-  * transform() stores its result as a new named assay and leaves the
-  original assays untouched, following the mia transformAssay
-  convention. It gains a name argument to control that assay name, and
-  the result is read back with abundances(x, assay.type = name) rather
-  than abundances(x)
-  * Functions that manipulate the taxonomy table (aggregate_taxa,
-  plot_composition, map_levels, psmelt2, the tibble utilities and the
-  read_* family) remain phyloseq only
+  - abundances(), meta() and taxa() now accept these objects alongside
+    phyloseq objects, which extends support to most of the package
+  - abundances() gains an assay.type argument, defaulting to the counts
+    assay when present and otherwise the first assay
+  - transform() stores its result as a new named assay and leaves the
+    original assays untouched, following the mia transformAssay
+    convention. It gains a name argument to control that assay name, and
+    the result is read back with abundances(x, assay.type = name) rather
+    than abundances(x)
+  - Functions that manipulate the taxonomy table (aggregate_taxa,
+    plot_composition, map_levels, psmelt2, the tibble utilities and the
+    read_* family) remain phyloseq only
 
 - We recommend switching from phyloseq to the TreeSummarizedExperiment
   based methods described in the Orchestrating Microbiome Analysis
@@ -16949,7 +16875,7 @@ explicitly may produce different results.
 [multipointR](/packages/multipointR)
 -----------
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 [MultiRNAflow](/packages/MultiRNAflow)
 ------------
@@ -17057,7 +16983,7 @@ and in check_save_path() (#34).
 remove", closes its log connection and leaves a caller's own sink in
 place (#207, #80).
 - parse_logs() default pattern now matches the current
-<save_path>_log_msg.txt log names (#68).
+&lt;save_path>_log_msg.txt log names (#68).
 - read_sumstats() matches file suffixes literally so e.g.
 gwas_vcf.tsv
 is read as a tabular file (#155).
@@ -17656,8 +17582,7 @@ them (#123).
 the first deleted base, as in MAF files, so a deletion gets the same
 ID83 bin from either format. ID83 counts from VCF input can change
 (#108).
-- Indels whose first base differs between ref and alt (for example A
->
+- Indels whose first base differs between ref and alt (for example A >
 GGT) are removed as complex variants with a message; before, they
 were rewritten as indels (#109).
 - convert_dbs = TRUE merges adjacent SBS only within a sample;
@@ -18034,66 +17959,66 @@ OTHER CHANGES
                  Changes in version 2.29.2 (2026-11-18)                 
 
 - BUG FIXES
-  o CITATION file uses bibentry() and includes the DOI of the
-  publication
+  - CITATION file uses bibentry() and includes the DOI of the
+    publication
 
                  Changes in version 2.29.1 (2026-11-13)                 
 
 - NEW FEATURES
-  o caching of all API responses in memory, and optionally on disk with
-  setOmaCache(persistent = TRUE). The persistent cache is cleared
-  automatically when a new OMA release is available. clearOmaCache()
-  empties the caches.
-  o new functions getHOGs() (all HOGs / ancestral genes at a taxonomic
-  level), getSynteny() (ancestral synteny), getSharedAncestry() and
-  getOrthoXML(), providing similar functionality as the pyomadb package
-  o getProtein() gains the attributes 'hog_derived_orthologs', 'xref'
-  and
-  'isoforms', and the argument rel_type to filter orthologs
-  o getHOG() gains the argument attribute to retrieve the members, the
-  Gene Ontology annotations and HOGs with similar phylogenetic profiles
-  o getGenome() gains the attribute 'genes'
-  o getTaxonomy() gains the argument collapse
-  o as.data.frame() and print() methods for omadb_obj objects
+  - caching of all API responses in memory, and optionally on disk with
+    setOmaCache(persistent = TRUE). The persistent cache is cleared
+    automatically when a new OMA release is available. clearOmaCache()
+    empties the caches.
+  - new functions getHOGs() (all HOGs / ancestral genes at a taxonomic
+    level), getSynteny() (ancestral synteny), getSharedAncestry() and
+    getOrthoXML(), providing similar functionality as the pyomadb package
+  - getProtein() gains the attributes 'hog_derived_orthologs', 'xref'
+    and
+    'isoforms', and the argument rel_type to filter orthologs
+  - getHOG() gains the argument attribute to retrieve the members, the
+    Gene Ontology annotations and HOGs with similar phylogenetic profiles
+  - getGenome() gains the attribute 'genes'
+  - getTaxonomy() gains the argument collapse
+  - as.data.frame() and print() methods for omadb_obj objects
 
 - BUG FIXES
-  o resolveURL() always returns a data.frame for endpoints that return
-  a
-  list of entries, also if the list contains a single entry (GitHub
-  issue #4)
-  o getProtein(attribute = 'homeologs') queried a non-existing endpoint
-  o getTopGO() with format 'GO2geneID' and formatTopGO() for lists of
-  proteins failed
-  o getTree() keeps the full names of species containing special
-  characters
+  - resolveURL() always returns a data.frame for endpoints that return
+    a
+    list of entries, also if the list contains a single entry (GitHub
+    issue #4)
+  - getProtein(attribute = 'homeologs') queried a non-existing endpoint
+  - getTopGO() with format 'GO2geneID' and formatTopGO() for lists of
+    proteins failed
+  - getTree() keeps the full names of species containing special
+    characters
 
 - CHANGES IN RETURN TYPES AND BEHAVIOUR
-  o all functions return results of consistent types: a single entity
-  is
-  an omadb_obj, a list of entities a data.frame - independent of the
-  number of entries
-  o getHOG() always returns a data.frame (one row per matching HOG)
-  o loci are GRanges objects with the chromosome as seqnames and the
-  OMA
-  id as names (previously the OMA id was used as seqnames)
-  o errors of the OMA Browser API (e.g. unknown ids) raise R errors
-  with
-  the explanation of the server instead of returning NULL
-  o accessing an attribute of an omadb_obj that is loaded from the OMA
-  Browser no longer modifies the object in the global environment;
-  the data is cached instead
-  o getObjectAttributes() returns a named character vector
-  o getTopGO() requires topGO to be attached with library(topGO)
-  o the deprecated functions getXref(), getAnnotation(),
-  getGenomeAlignment() and getData() are now defunct
+  - all functions return results of consistent types: a single entity
+    is
+    an omadb_obj, a list of entities a data.frame - independent of the
+    number of entries
+  - getHOG() always returns a data.frame (one row per matching HOG)
+  - loci are GRanges objects with the chromosome as seqnames and the
+    OMA
+    id as names (previously the OMA id was used as seqnames)
+  - errors of the OMA Browser API (e.g. unknown ids) raise R errors
+    with
+    the explanation of the server instead of returning NULL
+  - accessing an attribute of an omadb_obj that is loaded from the OMA
+    Browser no longer modifies the object in the global environment;
+    the data is cached instead
+  - getObjectAttributes() returns a named character vector
+  - getTopGO() requires topGO to be attached with library(topGO)
+  - the deprecated functions getXref(), getAnnotation(),
+    getGenomeAlignment() and getData() are now defunct
 
 - INTERNAL
-  o the package uses httr2 instead of httr and no longer depends on
-  plyr
-  o example datasets were regenerated from the current OMA release (see
-  inst/scripts/make-data.R); LazyData is no longer used, load them with
-  data()
-  o extensive unit tests using recorded API responses
+  - the package uses httr2 instead of httr and no longer depends on
+    plyr
+  - example datasets were regenerated from the current OMA release (see
+    inst/scripts/make-data.R); LazyData is no longer used, load them with
+    data()
+  - extensive unit tests using recorded API responses
 
 [OmnipathR](/packages/OmnipathR)
 ---------
@@ -18626,7 +18551,7 @@ as long as the expected species is among them.
 [PACE](/packages/PACE)
 ----
 
- - Initial Bioconductor submission.
+- Initial Bioconductor submission.
 
 [pairedGSEA](/packages/pairedGSEA)
 ----------
@@ -18938,7 +18863,7 @@ NAs
 [PostChicago](/packages/PostChicago)
 -----------
 
- - Initial Bioconductor submission
+- Initial Bioconductor submission
 
 [powerTCR](/packages/powerTCR)
 --------
@@ -18991,7 +18916,7 @@ BUG FIXES
 [prolfqua](/packages/prolfqua)
 --------
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
 
 
 [pRolocGUI](/packages/pRolocGUI)
@@ -19224,10 +19149,10 @@ deprecation warnings from scuttle functions on Bioconductor devel.
 
 SIGNIFICANT USER-VISIBLE CHANGES
 
-o Integration of ADMIXTURE
-o New RAIDSparam object that contains all the parameters needed to
-run the pipeline
-o Update vignette to showcase how to use the RAIDSparam object
+- Integration of ADMIXTURE
+- New RAIDSparam object that contains all the parameters needed to
+  run the pipeline
+- Update vignette to showcase how to use the RAIDSparam object
 
 [RAMEN](/packages/RAMEN)
 -----
@@ -20000,7 +19925,7 @@ for taking the package over!
 [RPBC](/packages/RPBC)
 ----
 
- - Initial Bioconductor Submission
+- Initial Bioconductor Submission
  
 [rprimer](/packages/rprimer)
 -------
@@ -20093,8 +20018,7 @@ BUG FIXES
 - SPA root-finding hardening in `SPATest.cpp`: the saddlepoint equation
   solvers `Saddle_Prob()` and `Saddle_Prob_Fast()` now use a bracketed
   safeguarded Newton (rtsafe) fallback for `getroot_K1()` /
-  `getroot_K1_fast()`. Since K1_adj is strictly increasing (dK1/dt = K2
-  > 0)
+  `getroot_K1_fast()`. Since K1_adj is strictly increasing (dK1/dt = K2 > 0)
   the root is unique and bracketable, so the bisection safeguard
   guarantees
   convergence. The fallback is hybrid: the existing fast Newton runs
@@ -20241,8 +20165,7 @@ test-Phase9-GlobalTrim-testServer.R (UI).
 - Coverage measured by covr::package_coverage(): 35.7 % overall, > 87
 % on every non-Shiny R file (the three Shiny server files at 0 %
 require a real browser harness; deferred).
-- DESCRIPTION modernised: Authors@R (replacing the deprecated Author:
-+ Maintainer: pair), URL, BugReports, License: GPL-2 | file LICENSE,
+- DESCRIPTION modernised: Authors@R (replacing the deprecated Author: + Maintainer: pair), URL, BugReports, License: GPL-2 | file LICENSE,
 LinkingTo: Rcpp, R version dependency >= 4.0.0 (intentionally
 permissive).
 - Depends: slimmed from 27 entries to the 4 packages whose types are
@@ -20548,7 +20471,7 @@ cell types and/or groups are plotted
 
                  Changes in version 1.12.0 (2026-11-20)                 
 
-- Now requires R >= 4.4.0, for the base R operator %||%.
+- Now requires R >= 4.4.0, for the base R operator %&#124;&#124;%.
 - RBioFormats is now suggested rather than imported, so installing
 scider no longer requires Java. readXenium() reads the morphology
 image only when RBioFormats is installed.
@@ -20648,18 +20571,18 @@ scp 1.23.0
   has some additional specific consequences for individual
   functions:
   
-  • Updated default max.bias= in choosePseudoCount() to reduce
-  log-transformation bias.
+  - Updated default max.bias= in choosePseudoCount() to reduce
+    log-transformation bias.
   
-  • Updated default extra.work= in runPca() and scoreGeneSet()
-  for better performance.
+  - Updated default extra.work= in runPca() and scoreGeneSet()
+    for better performance.
   
-  • Updated default compute.median= in aggregateAcrossCells()
-  to avoid unnecessary work.
+  - Updated default compute.median= in aggregateAcrossCells()
+    to avoid unnecessary work.
   
-  • Updated default use.min.width= in fitVarianceTrend() and
-  modelGeneVariances() to improve trend fits for typical
-  scRNA-seq datasets.
+  - Updated default use.min.width= in fitVarianceTrend() and
+    modelGeneVariances() to improve trend fits for typical
+    scRNA-seq datasets.
 
 - Deprecated the num.neighbors= argument in runTsne(). Now, the
   number of neighbors is fully determined by perplexity=. For
@@ -20685,14 +20608,14 @@ scp 1.23.0
 
 - Improved support for experiments with spike-in transcripts:
   
-  • Added centerSpikeInFactors() for convenient centering of
-  size factors for endogenous genes and spike-in transcripts.
+  - Added centerSpikeInFactors() for convenient centering of
+    size factors for endogenous genes and spike-in transcripts.
   
-  • Added normalizeRnaCountsWithSpikeIns.se() for convenient
-  normalization in the presence of spike-in transcripts.
+  - Added normalizeRnaCountsWithSpikeIns.se() for convenient
+    normalization in the presence of spike-in transcripts.
   
-  • Added chooseRnaHvgsWithSpikeIns.se() for convenient
-  variance modelling against a spike-in trend.
+  - Added chooseRnaHvgsWithSpikeIns.se() for convenient
+    variance modelling against a spike-in trend.
 
 - Renamed components.from.residuals= to center.scores.by.block=
   in runPca(), for consistency with the C++ code.
@@ -20713,11 +20636,11 @@ scp 1.23.0
 
 - Various improvments to aggregateAcrossCells.se():
   
-  • Added an include.factors= option to omit storage of the
-  factor combinations in
+  - Added an include.factors= option to omit storage of the
+    factor combinations in
   
-  • Propagate the rowRanges() of the input SummarizedExperiment
-  to the output object.
+  - Propagate the rowRanges() of the input SummarizedExperiment
+    to the output object.
 
 - Updated the work-sharing scheme for certain parallelized
   operations on matrices to improve efficiency. This introduces
@@ -21607,9 +21530,9 @@ and rt (seconds) columns.
                        Changes in version 1.27.1                        
 
 - NEW FEATURES:
-  + Use new R's C API
-  + Fix a bug in the subset method for shared vectors that may cause a
-  crash when the indices are out of range
+  - Use new R's C API
+  - Fix a bug in the subset method for shared vectors that may cause a
+    crash when the indices are out of range
 
 [shinybiocloader](/packages/shinybiocloader)
 ---------------
@@ -21823,8 +21746,7 @@ stops with an informative message if scMerge is not installed.
 - Fixed runHarmony() with harmony >= 1.0.0, where HarmonyMatrix() was
 removed. The function now detects the installed harmony version and
 calls RunHarmony() on 1.0.0 and above, while keeping the original
-HarmonyMatrix() code path for older installations. With harmony
->= 1.0.0 the PCA for a full-size assay is computed by singleCellTK,
+HarmonyMatrix() code path for older installations. With harmony >= 1.0.0 the PCA for a full-size assay is computed by singleCellTK,
 since harmony no longer performs it, using all features of the
 selected assay with scaling so that it matches the PCA the legacy
 interface performed internally. Corrected embeddings are not
@@ -22458,8 +22380,11 @@ NEW FEATURES
 BUG FIXES
 
 - Fix the following stack imbalance warning:
+
+  ```
   nms <- asNamespace("SparseArray")
   # Warning: stack imbalance in '<-', 2 then 4
+  ```
 
 - Small tweak to type() setter.
   Changing the type of an SVT_SparseArray object can replace non-one
@@ -22527,12 +22452,12 @@ allow row names and must have withDimNames = FALSE
 
 UPDATES
 
-  - Removed the rols package and developed custom internal functions for 
-    retrieving tissue ontology. 
+- Removed the rols package and developed custom internal functions for
+  retrieving tissue ontology.
   
-  -  Removed the scran
-        and scuttle packages, and related functions are replaced with
-        counterparts in bluster and scrapper respectively.
+- Removed the scran
+  and scuttle packages, and related functions are replaced with
+  counterparts in bluster and scrapper respectively.
 
 [Spectra](/packages/Spectra)
 -------
@@ -23008,22 +22933,22 @@ metadata(spe)$NegProbes.
 NEW FEATURES
 
 - New GUI
-  o Mouse Hover for help information
-  o .log file
+  - Mouse Hover for help information
+  - .log file
 
 - New Signal correction
-  o Combat for QC-free Signal correction
-  o QC-RFSC methods for metabolomics and proteomics data
+  - Combat for QC-free Signal correction
+  - QC-RFSC methods for metabolomics and proteomics data
 
 - New feature slection
-  o Random Forest and the Permutation based variable importance
-  measures
-  o new MDSplot for Random Forest
-  o P-value based importance plot
+  - Random Forest and the Permutation based variable importance
+    measures
+  - new MDSplot for Random Forest
+  - P-value based importance plot
 
 - New data preprocessing
-  o PQN/SUM/none normalization
-  o center/none Scaling method
+  - PQN/SUM/none normalization
+  - center/none Scaling method
 
 [strainspy](/packages/strainspy)
 ---------
@@ -25515,8 +25440,7 @@ DEPRECATED AND DEFUNCT
 
 New features
 
-- 
-  Add an environment for *anndata* v0.13.4. This is now the
+- Add an environment for *anndata* v0.13.4. This is now the
   default.
 
 NEWS from existing Data Experiment Packages
@@ -25526,7 +25450,7 @@ NEWS from existing Data Experiment Packages
 [AnnotatedBCGEData](/packages/AnnotatedBCGEData)
 -----------------
 
- - Initial Bioconductor submission.
+- Initial Bioconductor submission.
 
 [aracne.networks](/packages/aracne.networks)
 ---------------
@@ -26041,20 +25965,26 @@ DOCUMENTATION AND METADATA
   returns the same SnpSet. The first call downloads the object and
   stores it in the local ExperimentHub cache; later calls read from
   that cache.
+
+  ```
   ## before
   data(crlmmResult)
   ## now
   crlmmResult <- crlmmResult()
+  ```
 
 - USER VISIBLE CHANGE: the three CEL files are now obtained through
   celFiles(), which returns their paths on disk. Code that used
   system.file("celFiles", package = "hapmapsnp6") should use
   celFiles(asDir = TRUE), which returns a directory holding the files.
+
+  ```
   ## before
   path <- system.file("celFiles", package = "hapmapsnp6")
   cels <- list.celfiles(path, full.names = TRUE)
   ## now
   cels <- celFiles()
+  ```
 
 - crlmmResult(metadata = TRUE) and celFiles(metadata = TRUE) return the
   resource metadata without downloading anything.
@@ -26079,33 +26009,33 @@ DOCUMENTATION AND METADATA
   Salmon output for all 24 samples, on Zenodo:  The `with-inf-reps` branch
   on GitHub is a frozen snapshot of the package that still includes them.
 
-    * The Gibbs inferential replicates
-      (`inst/extdata/quants/*/aux_info/bootstrap/`, ~393 MB).
-      `tximeta()` / `tximport()` on the files in `inst/extdata/quants` no
-      longer imports inferential replicates.
-    * `aux_info/ambig_info.tsv.gz` for each sample.
-    * The full Gencode v29 GTF, `inst/extdata/gencode.v29.annotation.gtf.gz`.
+  - The Gibbs inferential replicates
+    (`inst/extdata/quants/*/aux_info/bootstrap/`, ~393 MB).
+    `tximeta()` / `tximport()` on the files in `inst/extdata/quants` no
+    longer imports inferential replicates.
+  - `aux_info/ambig_info.tsv.gz` for each sample.
+  - The full Gencode v29 GTF, `inst/extdata/gencode.v29.annotation.gtf.gz`.
 
 - new files and datatsets
 
-    * `inst/extdata/gencode.v29.annotation.slim.gtf.gz`: a slim Gencode v29
-      GTF with only gene and transcript lines and 6 attributes (5 MB instead
-      of 38 MB). It has no exon lines, so `tximeta::addExons()` will not
-      work with it. It has a different filename from the full GTF on purpose:
-      tximeta caches TxDbs by GTF filename, so this avoids clashing with a
-      TxDb built from the full Gencode v29 GTF. Code that called
-      `makeLinkedTxome(gtf=...)` with the full GTF path should switch to the
-      slim filename. Built by `inst/scripts/makeSlimGTF.sh`.
-    * `data(macro_txp_se)`: a transcript-level `SummarizedExperiment` with
-      20 inferential replicates, for all transcripts of 2000 random expressed
-      genes plus GBP1-GBP7. The `counts` and `infRep` assays are rounded to
-      1 decimal. This is now used by the fishpond `swish` vignette.
-    * `data(macro_tx2gene)`: a transcript-to-gene table for all Gencode v29
-      transcripts, for use with
-      `tximeta::summarizeToGene(se, skipRanges=TRUE, tx2gene=macro_tx2gene)`.
-    * Both datasets are built by `inst/scripts/makeSumExp.R`. The script
-      needs a macrophage install that still has the inferential replicates
-      (<= 1.29.0, or the `with-inf-reps` branch).
+  - `inst/extdata/gencode.v29.annotation.slim.gtf.gz`: a slim Gencode v29
+    GTF with only gene and transcript lines and 6 attributes (5 MB instead
+    of 38 MB). It has no exon lines, so `tximeta::addExons()` will not
+    work with it. It has a different filename from the full GTF on purpose:
+    tximeta caches TxDbs by GTF filename, so this avoids clashing with a
+    TxDb built from the full Gencode v29 GTF. Code that called
+    `makeLinkedTxome(gtf=...)` with the full GTF path should switch to the
+    slim filename. Built by `inst/scripts/makeSlimGTF.sh`.
+  - `data(macro_txp_se)`: a transcript-level `SummarizedExperiment` with
+    20 inferential replicates, for all transcripts of 2000 random expressed
+    genes plus GBP1-GBP7. The `counts` and `infRep` assays are rounded to
+    1 decimal. This is now used by the fishpond `swish` vignette.
+  - `data(macro_tx2gene)`: a transcript-to-gene table for all Gencode v29
+    transcripts, for use with
+    `tximeta::summarizeToGene(se, skipRanges=TRUE, tx2gene=macro_tx2gene)`.
+  - Both datasets are built by `inst/scripts/makeSumExp.R`. The script
+    needs a macrophage install that still has the inferential replicates
+    (<= 1.29.0, or the `with-inf-reps` branch).
 
 
 [marinerData](/packages/marinerData)
@@ -26344,36 +26274,36 @@ REDUCED PACKAGE SIZE
   https://github.com/mikelove/tximportData and archived on Zenodo:
   https://doi.org/10.5281/zenodo.22982575
 
-    * Removed
+  - Removed
 
-        - `salmon_gibbs/`: Salmon 0.8.1 output with Gibbs samples (Ensembl v87,
-          6 samples)
-        - `kallisto_boot/`: kallisto 0.43.0 output with bootstraps (Ensembl v87,
-          6 samples)
-        - `tx2gene.ensembl.v87.csv`
-        - `gencode/gencode.v48.annotation.gtf.gz`. tximeta can now link
-          transcripts to genes with a DataFrame, so it no longer needs a GTF.
-        - `alevin/{mouse1_unst_50,mouse1_LPS2_50}/alevin/bfh.txt` and
-          `raw_cb_frequency.txt`
-        - `kallisto/*/abundance.h5` (no bootstraps). `abundance.tsv.gz` is kept.
-        - GEUVADIS samples `ERR188297`, `ERR188329`, `ERR188288` and `ERR188356`
-          from `kallisto/`, `rsem/`, `salmon/` and `sailfish/`. `samples.txt` and
-          `samples_extended.txt` now have 2 rows: `ERR188088` and `ERR188021`.
+    - `salmon_gibbs/`: Salmon 0.8.1 output with Gibbs samples (Ensembl v87,
+      6 samples)
+    - `kallisto_boot/`: kallisto 0.43.0 output with bootstraps (Ensembl v87,
+      6 samples)
+    - `tx2gene.ensembl.v87.csv`
+    - `gencode/gencode.v48.annotation.gtf.gz`. tximeta can now link
+      transcripts to genes with a DataFrame, so it no longer needs a GTF.
+    - `alevin/{mouse1_unst_50,mouse1_LPS2_50}/alevin/bfh.txt` and
+      `raw_cb_frequency.txt`
+    - `kallisto/*/abundance.h5` (no bootstraps). `abundance.tsv.gz` is kept.
+    - GEUVADIS samples `ERR188297`, `ERR188329`, `ERR188288` and `ERR188356`
+      from `kallisto/`, `rsem/`, `salmon/` and `sailfish/`. `samples.txt` and
+      `samples_extended.txt` now have 2 rows: `ERR188088` and `ERR188021`.
 
-    * Kept
+  - Kept
 
-        - `salmon_ec/*/aux_info/eq_classes.txt` (used by fishpond)
-        - `alevin/mouse1_unst_50_boot/` (used by eds)
-        - `cufflinks/`, still with all 6 samples
+    - `salmon_ec/*/aux_info/eq_classes.txt` (used by fishpond)
+    - `alevin/mouse1_unst_50_boot/` (used by eds)
+    - `cufflinks/`, still with all 6 samples
 
-    * Changes needed in downstream code
+  - Changes needed in downstream code
 
-        - Code that reads `samples.txt` now gets 2 samples instead of 6. For example,
-          replace `paste0("sample", 1:6)` with `paste0("sample", seq_along(files))`,
-          and replace `rep(c("A","B"), each=3)` with `factor(c("A","B"))`.
-        - For example data with inferential replicates (Gibbs samples or
-          bootstraps), use the Zenodo record above or another data package such as
-          `macrophage`.
+    - Code that reads `samples.txt` now gets 2 samples instead of 6. For example,
+      replace `paste0("sample", 1:6)` with `paste0("sample", seq_along(files))`,
+      and replace `rep(c("A","B"), each=3)` with `factor(c("A","B"))`.
+    - For example data with inferential replicates (Gibbs samples or
+      bootstraps), use the Zenodo record above or another data package such as
+      `macrophage`.
 
 Deprecated and Defunct Packages
 ===============================
