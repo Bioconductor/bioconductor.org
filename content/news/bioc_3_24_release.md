@@ -14649,13 +14649,10 @@ in Bioc 3.23).
 
 - hpAnnot, humanCHRLOC, mouseCHRLOC, ratCHRLOC 
 
-The following out-dated packages were removed from 3.24:
+The following out-dated annotation packages were deprecated in 3.24 and will be removed in
+Bioc 3.25:
 
-- TxDb.Mmusculus.UCSC.mm10.ensGene, TxDb.Athaliana.BioMart.plantsmart22, TxDb.Athaliana.BioMart.plantsmart25, TxDb.Cfamiliaris.UCSC.canFam3.refGene, TxDb.Rnorvegicus.UCSC.rn4.ensGene, TxDb.Hsapiens.BioMart.igis, TxDb.Rnorvegicus.BioMart.igis
-
-
-No annotation packages are deprecated in this release.
-
+- TxDb.Mmusculus.UCSC.mm10.ensGene, TxDb.Athaliana.BioMart.plantsmart22, TxDb.Athaliana.BioMart.plantsmart25, TxDb.Cfamiliaris.UCSC.canFam3.refGene, TxDb.Cfamiliaris.UCSC.canFam4.refGene, TxDb.Ggallus.UCSC.galGal4.refGene, TxDb.Mmulatta.UCSC.rheMac3.refGene, TxDb.Ptroglodytes.UCSC.panTro4.refGene, TxDb.Rnorvegicus.UCSC.rn4.ensGene, TxDb.Hsapiens.BioMart.igis, TxDb.Rnorvegicus.BioMart.igis, TxDb.Hsapiens.UCSC.hg19.lincRNAsTranscripts
 
 **WORKFLOWS:** 
 
