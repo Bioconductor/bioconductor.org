@@ -3,7 +3,7 @@ November 25, 2026
 **Bioconductor:**
 
 We are pleased to announce Bioconductor 3.24, consisting of
-2505 software packages, 412 experiment data packages, 929 annotation
+2521 software packages, 442 experiment data packages, 929 annotation
 packages, 29 workflows and 8 books.
 
 There are 149 new software packages, 8 new data experiment packages,
